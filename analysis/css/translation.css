@@ -1,0 +1,20 @@
+text {
+  font-size: 11px;
+}
+
+.term {
+  font-size: 13px;
+}
+
+.axis line, path {
+  stroke: #ddd;
+}
+
+
+rect {
+  fill: #ccc;
+}
+
+.arrowHead {
+  stroke: none;
+}
