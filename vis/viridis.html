@@ -38,7 +38,6 @@
       "transform":[],
       "mark": "bar",
       "encoding": {
-        "row": {"field": "term", "header": {"title": false, "labelFontSize": 0.1}},
         "x": {
           "field": "binNum",
           "type": "ordinal",
@@ -80,6 +79,7 @@
       draw(
         "viridis",
         [
+          {"term": ""},
           {"term": "보라"},
           {"term": "purple"},
           {"term": "파랑"},
@@ -121,9 +121,17 @@
         let workingSpec = copy(spec);
         pairs.forEach(p => {
           let s = copy(subSpec);
-          s.transform.push({"filter": `datum.term === '${p.term}'`});
-          s.transform.push({"filter": `datum.scheme === '${scheme}'`});
-          s.encoding.y.axis.title = `${p.term} (${getCount(p.term)})`;
+          if (p.term) {
+            s.transform.push({"filter": `datum.term === '${p.term}'`});
+            s.transform.push({"filter": `datum.scheme === '${scheme}'`});
+            s.encoding.y.axis.title = `${p.term} (${getCount(p.term)})`;
+          } else {
+            s.encoding.y = { "value": 10 };
+            s.encoding.x.axis = null;
+            s.height = 20;
+            s.title = "Color Bins";
+          }
+
           let colors = unique(drawingData.map(d => d.rgb));
           s.encoding.color.scale.domain = colors;
           s.encoding.color.scale.range = colors;
