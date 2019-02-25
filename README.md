@@ -1,4 +1,4 @@
-# How Languages Divide Colors: Color Naming Models andTranslation
+# How Languages Divide Colors: Color Naming Models and Translation
 
 This repository contains supplement material of [the paper](TODO) including:
 - Color-name judgements that are collected from LabIntheWild
