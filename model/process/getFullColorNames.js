@@ -315,7 +315,7 @@ let vlSpec = {
             100
           ],
           "type": "pow",
-          "exponent": 3,
+          "exponent": 2.5,
           "zero": false
         },
         "legend": null

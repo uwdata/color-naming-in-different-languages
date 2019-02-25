@@ -86,7 +86,7 @@
           {"term": "blue"},
           {"term": "청록"},
           {"term": "teal"},
-          {"term": "초록"},
+          {"term": "초록"}, // which is the second best translation  of "green". The best was "녹", but it only contains 3 recrods and its distribution is super similar to 초록.
           {"term": "green"},
           {"term": "연두"},
           {"term": "lightgreen"},
@@ -95,6 +95,7 @@
         ],
         "#vis-viridis"
       );
+
 
 
 
@@ -150,6 +151,18 @@
         .key(accessor)
         .entries(arr)
         .map(d => d.values[0]);
+    }
+
+
+    function EMD(arr1, arr2, accessor, startBinNum = 0){
+      let EMD = new Array(arr1.length+1).fill(0);
+      let distance = 0;
+      for (var i = 0; i < arr1.length; i++) {
+        let binNum = (startBinNum + i) % arr1.length
+        EMD[binNum+1] = accessor(arr1[binNum]) + EMD[binNum] - accessor(arr2[binNum]);
+        distance += Math.abs(EMD[binNum+1]);
+      }
+      return distance;
     }
     </script>
 </html>

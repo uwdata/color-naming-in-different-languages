@@ -20,16 +20,6 @@ fs.writeFileSync("temp/distanceMatrix.json", JSON.stringify(getDistanceMetrix())
 // 2. Run 'getEMD.py'
 
 
-
-//3.
-// let emds = JSON.parse(fs.readFileSync("../translation_loss.json"));
-
-
-
-
-
-
-
 function eucDist(d1, d2){
   let v1 = d1.values;
   let v2 = d2.values;

@@ -28,30 +28,30 @@
 - age : Age
 - colorBlindness : Self-reported color blindness (none, red-green, other )
 - colorBlindnessText0 : Details of the participant's color blindness
-- surrBrightness :
-- surrBrightIDK :
-- mBrightness :
-- mBrightIDK :
+- surrBrightness : ?
+- surrBrightIDK : ?
+- mBrightness : ?
+- mBrightIDK : ?
 - colorWork : (Do your work or studies require you to have a knowledge of different colors and their names that might be considered above average? (e.g. graphic designer, painter, make-up artist)?) 0 - No, 1 - Yes, (blank) - NA
 - colorWorkText0 : Description for the color work. (Please tell us what those work or studies are)
-- langAOtherText0 :
-- langBOtherText0 :
-- langCOtherText0 :
-- surrBrightnessSlider :
-- mBrightnessSlider :
-- mbidk :
-- sbidk :
+- langAOtherText0 : ?
+- langBOtherText0 : ?
+- langCOtherText0 : ?
+- surrBrightnessSlider : ?
+- mBrightnessSlider : ?
+- mbidk : ?
+- sbidk : ?
 - ageInput : ?
 
 
 -- The below columns are not collected --
-- normalvision, urban, web_usage, profession, years0, years1, years2, years3, years4, years5, father, mother, 
+- normalvision, urban, web_usage, profession, years0, years1, years2, years3, years4, years5, father, mother,
 
-## History of Technical Issues
+## History of Maintenance Issues
 
-- Null Pariticipants ID in demographics.csv
-- Participant ID = 0
-- Ill-recorded Color Blindness data
+- Missing Demographics : Due to a technical issue, we could not collect some of participants demographic information. (Most of the participants were Farsi.) Now, it works properly.
+- Participant ID = 0 : ???
+- Missing Color Blindness data : Some of responses have incorrect colorBlindness value as 0.
 - Version 1.1.4 : Possible Priming effect due to the advertisement showing Korean and English color names for some hue colors.
 
 
