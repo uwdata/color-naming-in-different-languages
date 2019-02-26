@@ -132,7 +132,7 @@ converter.on("end_parsed", function (colorNames) {
 
 
   let avgColors = getAvgColors(flatten, unique(saliency.map(d => d.majorTerm)));
-  vlSpec.spec.encoding.color.scale = {
+  vlSpec.spec.layer[0].encoding.color.scale = {
     "domain": avgColors.map(c => c.name),
     "range": avgColors.map(c => c.avgColorRGBCode)
   };
@@ -222,133 +222,211 @@ let vlSpec = {
   },
   "spacing": {"row": -20, "column": -20},
   "spec":{
-    "height": 144,
-    "width": 144,
-
-    "selection": {
-      "bins": {
-        "type": "single",
-        "fields": [
-          "majorTerm"
-        ],
-        "on": "mouseover"
-      }
-    },
-    "mark": {
-      "type":"square",
-      "strokeWidth": "0.5",
-      "stroke": "white"
-    },
-    "encoding": {
-      "x": {
-        "field": "binA2",
-        "type": "ordinal",
-        "scale": {
-          "domain": [
-            -12,
-            -11,
-            -10,
-            -9,
-            -8,
-            -7,
-            -6,
-            -5,
-            -4,
-            -3,
-            -2,
-            -1,
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9
-          ]
+    "layer": [
+      {
+        "height": 144,
+        "width": 144,
+        "mark": {
+          "type":"square",
+          "strokeWidth": "0.5",
+          "stroke": "white"
         },
-        "axis": null
-      },
-      "y": {
-        "field": "binB2",
-        "type": "ordinal",
-        "scale": {
-          "domain": [
-            9,
-            8,
-            7,
-            6,
-            5,
-            4,
-            3,
-            2,
-            1,
-            0,
-            -1,
-            -2,
-            -3,
-            -4,
-            -5,
-            -6,
-            -7,
-            -8,
-            -9,
-            -10,
-            -11,
-            -12
-          ]
-        },
-        "axis": null
-      },
-      "detail": {
-        "field": "majorTerm",
-        "type": "nominal"
-      },
-      "size": {
-        "field": "maxpTC",
-        "type": "quantitative",
-        "scale": {
-          "range": [
-            9,
-            100
-          ],
-          "type": "pow",
-          "exponent": 2.5,
-          "zero": false
-        },
-        "legend": null
-      },
-      "opacity": {
-        "condition": {
-          "selection": "bins",
-          "value": 1
-        },
-        "value": 0
-      },
-      "color": {
-        "field": "majorTerm",
-        "type": "nominal",
-        "scale": {
-          "domain": [],
-          "range": []
-        },
-        "legend": null
-      },
-      "tooltip": [
-        {
-          "field": "majorTerm",
-          "type": "nominal",
-          "title": "Max Prob. Term"
-        },
-        {
-          "field": "lab",
-          "type": "nominal",
-          "title": "Lab (L,a,b)"
+        "encoding": {
+          "x": {
+            "field": "binA2",
+            "type": "ordinal",
+            "scale": {
+              "domain": [
+                -12,
+                -11,
+                -10,
+                -9,
+                -8,
+                -7,
+                -6,
+                -5,
+                -4,
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
+            },
+            "axis": null
+          },
+          "y": {
+            "field": "binB2",
+            "type": "ordinal",
+            "scale": {
+              "domain": [
+                9,
+                8,
+                7,
+                6,
+                5,
+                4,
+                3,
+                2,
+                1,
+                0,
+                -1,
+                -2,
+                -3,
+                -4,
+                -5,
+                -6,
+                -7,
+                -8,
+                -9,
+                -10,
+                -11,
+                -12
+              ]
+            },
+            "axis": null
+          },
+          "detail": {
+            "field": "majorTerm",
+            "type": "nominal"
+          },
+          "size": {
+            "field": "maxpTC",
+            "type": "quantitative",
+            "scale": {
+              "range": [
+                9,
+                100
+              ],
+              "type": "pow",
+              "exponent": 2.5,
+              "zero": false
+            },
+            "legend": null
+          },
+          "opacity": {
+            "condition": {
+              "selection": "bins",
+              "value": 1
+            },
+            "value": 0
+          },
+          "color": {
+            "field": "majorTerm",
+            "type": "nominal",
+            "scale": {
+              "domain": [],
+              "range": []
+            },
+            "legend": null
+          }
         }
-      ]
-    },
+      },
+      {
+        "height": 144,
+        "width": 144,
+        "selection": {
+          "bins": {
+            "type": "single",
+            "fields": [
+              "majorTerm"
+            ],
+            "on": "mouseover"
+          }
+        },
+        "mark": "square",
+        "encoding": {
+          "x": {
+            "field": "binA2",
+            "type": "ordinal",
+            "scale": {
+              "domain": [
+                -12,
+                -11,
+                -10,
+                -9,
+                -8,
+                -7,
+                -6,
+                -5,
+                -4,
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9
+              ]
+            },
+            "axis": null
+          },
+          "y": {
+            "field": "binB2",
+            "type": "ordinal",
+            "scale": {
+              "domain": [
+                9,
+                8,
+                7,
+                6,
+                5,
+                4,
+                3,
+                2,
+                1,
+                0,
+                -1,
+                -2,
+                -3,
+                -4,
+                -5,
+                -6,
+                -7,
+                -8,
+                -9,
+                -10,
+                -11,
+                -12
+              ]
+            },
+            "axis": null
+          },
+          "opacity": {
+            "value": 0
+          },
+          "size": {
+            "value": 81
+          },
+          "tooltip": [
+            {
+              "field": "majorTerm",
+              "type": "nominal",
+              "title": "Max Prob. Term"
+            },
+            {
+              "field": "lab",
+              "type": "nominal",
+              "title": "Lab (L,a,b)"
+            }
+          ]
+        }
+      }
+    ],
     "resolve": {"scale": {"color": "independent"}}
   },
 
