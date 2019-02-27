@@ -16,8 +16,6 @@ const LANG_CODE = {
   'Korean (한국어, 조선어)' : "ko"
 };
 
-const CLUSTERED_TERMS = ["blue","green","purple","pink","red","orange","yellow","brown","black","gray","보라","파랑","연두","하늘","초록","자주","빨강","분홍","연보라","주황","청록","갈","남","노랑","검정","회"];
-
 
 
 fs.createReadStream("../../raw/color_perception_table_color_names.csv").pipe(converter);
@@ -53,6 +51,7 @@ converter.on("end_parsed", function (colorNames) {
   let result = {};
   let flatten = [], saliency = [];
   let [N_L, N_A, N_B] = labBinner.createLABBinN(BIN_SIZE);
+
   grouped.forEach(group => {
     console.log("Start : " + group.key);
 
@@ -126,16 +125,23 @@ converter.on("end_parsed", function (colorNames) {
 
   fs.writeFileSync(FILE_O, JSON.stringify(flatten));
 
-
-
+  let saliencyRange = d3.extent(saliency, d => d.saliency);
+  vlSpec.transform[2] = {"calculate": `datum.saliency + ${-saliencyRange[0]}`, "as": "sal"};
   vlSpec.data = { "values": saliency };
 
 
   let avgColors = getAvgColors(flatten, unique(saliency.map(d => d.majorTerm)));
+  let modalColor = getModalColors(flatten, unique(saliency.map(d => d.majorTerm)));
+
   vlSpec.spec.layer[0].encoding.color.scale = {
     "domain": avgColors.map(c => c.name),
     "range": avgColors.map(c => c.avgColorRGBCode)
   };
+  // vlSpec.spec.layer[0].encoding.color.scale = {
+  //   "domain": modalColor.map(c => c.name),
+  //   "range": modalColor.map(c => c.modalColorRGBCode)
+  // };
+
   fs.writeFileSync(FILE_O_VIS, JSON.stringify(vlSpec, null, 2));
 });
 
@@ -144,6 +150,32 @@ function entropy(arr){
     acc += curr === 0 ? 0 : -1 * curr * Math.log2(curr);
     return acc;
   }, 0);
+}
+
+
+function getModalColors(data, clusteredTerms){
+  let colorTerms = [];
+  let grouped = d3.nest().key(d => d.lang).key(d => d.term).entries(data);
+  grouped.forEach(g_lang => {
+    let topTerms  = g_lang.values;
+    if (clusteredTerms) {
+      topTerms  = topTerms.filter(g_term => clusteredTerms.indexOf(g_term.key) >= 0);
+    }
+
+    topTerms.forEach(g_term => {
+      let mode = d3.max(g_term.values, d => d.pCT);
+      let modalColor = g_term.values.find(d => d.pCT === mode);
+
+      colorTerms.push({
+        "lang": g_lang.key,
+        "name": g_term.key,
+        "modalColorRGBCode": d3.color(d3.lab(...labBinner.getLAB(modalColor.binL, modalColor.binA, modalColor.binB))).toString()
+      });
+
+    });
+
+  });
+  return colorTerms;
 }
 
 
@@ -161,7 +193,6 @@ function getAvgColors(data, clusteredTerms){
       let avgL = d3.sum(g_term.values, d => d.binL * d.pCT);
       let avgA = d3.sum(g_term.values, d => d.binA * d.pCT);
       let avgB = d3.sum(g_term.values, d => d.binB * d.pCT);
-      d3.color(d3.lab(...labBinner.getLAB(avgL, avgA, avgB))).toString();
 
       colorTerms.push({
         "lang": g_lang.key,
@@ -196,7 +227,7 @@ let vlSpec = {
       "as": "binB2"
     },
     {
-      "calculate": "10+datum.saliency",
+      "calculate": "5 + datum.saliency",
       "as": "sal"
     },
     {
@@ -303,7 +334,7 @@ let vlSpec = {
             "type": "quantitative",
             "scale": {
               "range": [
-                9,
+                4,
                 100
               ],
               "type": "pow",
