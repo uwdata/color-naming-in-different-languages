@@ -8,12 +8,9 @@
 - name : Color name entered by participant
 - r/g/b : RGB code of the displayed color
 - studyVersion : Study Version
-- rgbSet : full - Full Color Set, line - Hue Color Set
+- rgbSet : full - Full Color Set, line - Saturated Color Set
 - locale : Language that the study instructions were displayed in
 
--- The below columns are not collected --
-- phaseNum
-- lab_l/lab_a/lab_b : CIELAB code of the displayed color
 
 
 ### color_perception_table_demographics.csv
@@ -39,7 +36,7 @@
 
 -- Duplicate / helper fields --
 - mBrightness : Should be the same as mBrightnessSlider, but mBrightnessSlider is most accurate.
-- surrBrightness : Should be the same as surrBrightnessSlider, but surrBrightnessSlider is most accurate. 
+- surrBrightness : Should be the same as surrBrightnessSlider, but surrBrightnessSlider is most accurate.
 - langAOtherText0 : data from a custom entry box for people who selected "other" in the lang0 dropdown
 - langBOtherText0 : data from a custom entry box for people who selected "other" in the lang1 dropdown
 - langCOtherText0 : data from a custom entry box for people who selected "other" in the lang2 dropdown
@@ -47,14 +44,16 @@
 - sbidk : Data from a helper html element, should be the same as surrBrightIDK, but isn't. Not sure which is more accurate.
 - ageInput : Data from a helper age input box (to help translate alternate numeral systems into Arabic numerls, e.g., "۱۳" -> "13")
 
--- The below columns are not collected --
-- normalvision, urban, web_usage, profession, years0, years1, years2, years3, years4, years5, father, mother,
 
 ## History of Maintenance Issues
 
 - Missing Demographics : Due to a technical issue, we could not collect some of participants demographic information. (Most of the participants were Farsi.) Now, it works properly.
-- Duplicate Participant ID (often 0): Due to a technical bug, sometimes duplicate Participant IDs are selected, and sometimes the system fails to generate a participant ID, resulting in a participant ID of 0. 
+- Duplicate Participant ID (often 0): Due to a technical bug, sometimes duplicate Participant IDs are selected, and sometimes the system fails to generate a participant ID, resulting in a participant ID of 0.
 - Missing Color Blindness data : For much of the study, a data type bug caused all colorBlindness entries to save as 0. Any values that are not 0 should be valid
-- Version 1.1.4 : Possible Priming effect due to the advertisement showing Korean and English color names for some hue colors.
+- Version 1.1.4 : Possible Priming effect due to the advertisement showing Korean and English color names for some saturated colors.
 
+## Color Sampling Procedure
 
+To ensure that each participant is given an approximately perceptually uniform set of colors, we discretize the hue circle into 36 equally-spaced 36 bins within CIELAB color space. Every subject saw one color from each of these 36 bins, with the specific color stimuli randomly sampled from each bin.
+
+To sample the RGB cube, we select 36 random colors from the full space, subject to the constraint that all samples must be at least 20 units apart in CIELAB space to ensure that reasonably different colors are presented. Also, To cover the perceptual space more evenly, we increased the likelihood of selecting colors with larger CIELAB sizes (though this redistribution step failed for some of our data due to a programming error).
