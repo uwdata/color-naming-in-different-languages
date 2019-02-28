@@ -2,7 +2,7 @@ const fs = require('fs'),
   d3 = require('d3'),
   labBinner = require('./labBinner.js');
 let flatData = JSON.parse(fs.readFileSync("../full_color_names.json"));
-const BIN_SIZE = 10, BIN_NUM = 10;
+const BIN_NUM = 10;
 const LANG_CODE = {
   'English (English)' : "en",
   'Korean (한국어, 조선어)' : "ko"
@@ -58,4 +58,4 @@ schemes.forEach(scheme => {
 });
 
 
-fs.writeFileSync("../scheme_color_names.json", JSON.stringify(result));
+fs.writeFileSync("../scheme_color_names.json", JSON.stringify(result, null, 2));
