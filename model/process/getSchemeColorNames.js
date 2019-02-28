@@ -32,18 +32,18 @@ schemes.forEach(scheme => {
     for (var i = 0; i < (BIN_NUM + 1); i++) {
       let lab = d3.lab(d3.color(scheme.fn(i/BIN_NUM)));
       let [binL, binA, binB] = labBinner.getLABBinNum(lab.l, lab.a, lab.b);
-
+      let binData = flatData.filter(d => {
+        return d.lang === lang &&
+          d.binL === binL && d.binA === binA && d.binB === binB;
+      });
       data = data.concat(
-        flatData.filter(d => {
-          return d.lang === lang &&
-            d.binL === binL && d.binA === binA && d.binB === binB;
-        }).map(d => {
+        binData.map(d => {
           return {
             "scheme": scheme.name,
             "lang": lang,
             "term": d.term,
             "cnt": d.cnt,
-            "pTC": d.cnt / d3.sum(flatData, d2 => d2.cnt),
+            "pTC": d.cnt / d3.sum(binData, d2 => d2.cnt),
             "binNum": i,
             "rgb": lab.rgb().toString()
           };
