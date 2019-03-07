@@ -5,7 +5,9 @@ let flatData = JSON.parse(fs.readFileSync("../full_color_names.json"));
 const BIN_SIZE = 10, TOP_N = 100;
 const LANG_CODE = {
   'English (English)' : "en",
-  'Korean (한국어, 조선어)' : "ko"
+  'Korean (한국어, 조선어)' : "ko",
+  "Persian (Farsi) (فارسی)" : "fa",
+  "Chinese (中文 (Zhōngwén), 汉语, 漢語)" : "zh"
 };
 
 

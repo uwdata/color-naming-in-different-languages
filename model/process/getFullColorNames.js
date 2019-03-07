@@ -1,5 +1,6 @@
 const fs = require('fs'),
   refine = require('./refine.js'),
+  csv = require("csvtojson"),
   Converter = require("csvtojson").Converter,
   d3 = require('d3'),
   labBinner = require('./labBinner');
@@ -13,7 +14,9 @@ const FILE_O_VIS = "../full_color_map.vl.json";
 
 const LANG_CODE = {
   'English (English)' : "en",
-  'Korean (한국어, 조선어)' : "ko"
+  'Korean (한국어, 조선어)' : "ko",
+  "Persian (Farsi) (فارسی)" : "fa",
+  "Chinese (中文 (Zhōngwén), 汉语, 漢語)" : "zh"
 };
 
 const CLUSTERED_TERMS = ["blue","green","purple","pink","red","orange","yellow","brown","black","gray","보라","파랑","연두","하늘","초록","자주","빨강","분홍","연보라","주황","청록","갈","남","노랑","검정","회"];
@@ -21,10 +24,26 @@ const CLUSTERED_TERMS = ["blue","green","purple","pink","red","orange","yellow",
 
 
 fs.createReadStream("../../raw/color_perception_table_color_names.csv").pipe(converter);
-converter.on("end_parsed", function (colorNames) {
-  colorNames = colorNames.filter(cn => Object.keys(LANG_CODE).indexOf(cn.lang0) >= 0 );
+
+
+converter.on("error",function(error){
+	console.log(error);
+})
+
+converter.on("record_parsed", function (record) {
+  console.log(record);
+});
+
+csv().fromFile("../../raw/color_perception_table_color_names.csv")
+  .then((colorNames)=> {
+  colorNames = colorNames.filter(cn => {
+
+    
+    return Object.keys(LANG_CODE).indexOf(cn.lang0) >= 0 } );
   colorNames = colorNames.filter(cn => cn.participantId !== 0);
   colorNames = colorNames.filter(cn => !(cn.studyVersion === "1.1.4" && cn.rgbSet === "line")); //There is a priming effect for that set.
+
+
 
   colorNames.forEach(cn => {
     let lab = d3.lab(d3.color(`rgb(${cn.r}, ${cn.g}, ${cn.b})`));
