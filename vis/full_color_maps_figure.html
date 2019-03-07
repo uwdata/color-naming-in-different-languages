@@ -122,7 +122,8 @@
   <script type="text/javascript">
     d3.json("full_color_map.vl.json").then(spec =>{
       delete spec.facet.column;
-
+      spec.spec.layer[0].encoding.opacity = {"value":1.0};
+      delete spec.spec.layer[1].selection;
       for (var binL = 0; binL < 10; binL++) {
         let copiedSpec = JSON.parse(JSON.stringify(spec));
         copiedSpec.facet.row.header.labelFontSize = 0.1;

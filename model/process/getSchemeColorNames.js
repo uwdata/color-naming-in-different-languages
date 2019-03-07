@@ -2,7 +2,7 @@ const fs = require('fs'),
   d3 = require('d3'),
   labBinner = require('./labBinner.js');
 let flatData = JSON.parse(fs.readFileSync("../full_color_names.json"));
-const BIN_SIZE = 10, BIN_NUM = 10;
+const BIN_NUM = 10;
 const LANG_CODE = {
   'English (English)' : "en",
   'Korean (한국어, 조선어)' : "ko"
@@ -32,18 +32,18 @@ schemes.forEach(scheme => {
     for (var i = 0; i < (BIN_NUM + 1); i++) {
       let lab = d3.lab(d3.color(scheme.fn(i/BIN_NUM)));
       let [binL, binA, binB] = labBinner.getLABBinNum(lab.l, lab.a, lab.b);
-
+      let binData = flatData.filter(d => {
+        return d.lang === lang &&
+          d.binL === binL && d.binA === binA && d.binB === binB;
+      });
       data = data.concat(
-        flatData.filter(d => {
-          return d.lang === lang &&
-            d.binL === binL && d.binA === binA && d.binB === binB;
-        }).map(d => {
+        binData.map(d => {
           return {
             "scheme": scheme.name,
             "lang": lang,
             "term": d.term,
             "cnt": d.cnt,
-            "pTC": d.cnt / d3.sum(flatData, d2 => d2.cnt),
+            "pTC": d.cnt / d3.sum(binData, d2 => d2.cnt),
             "binNum": i,
             "rgb": lab.rgb().toString()
           };
@@ -58,4 +58,4 @@ schemes.forEach(scheme => {
 });
 
 
-fs.writeFileSync("../scheme_color_names.json", JSON.stringify(result));
+fs.writeFileSync("../scheme_color_names.json", JSON.stringify(result, null, 2));

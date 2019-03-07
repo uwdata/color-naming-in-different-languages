@@ -17,9 +17,8 @@ if (!fs.existsSync("temp/")){
 }
 convertToMatrices();
 fs.writeFileSync("temp/distanceMatrix.json", JSON.stringify(getDistanceMetrix()));
+console.log("Please run getEMD.py on python 2 to transition_loss.json.");
 
-
-// 2. Run 'getEMD.py'
 
 
 function eucDist(d1, d2){
@@ -45,11 +44,15 @@ function flattenCluster(cluster, acc){
 
 function convertToMatrices(){
 
-  let grouped = d3.nest().key(d => d.lang).key(d => d.term).entries(flatData);
+  let grouped = d3.nest()
+    .key(d => d.lang)
+    .key(d => d.term)
+    .entries(flatData);
 
   grouped.forEach(g_lang => {
     let terms = [];
-    g_lang.values.splice(0,TOP_N).forEach(g_term => {
+    g_lang.values = g_lang.values.sort((a,b) => d3.sum(b.values, d => d.cnt) - d3.sum(a.values, d => d.cnt));
+    g_lang.values.slice(0,TOP_N).forEach(g_term => {
       let labCnt = labBinner.createLABBins(BIN_SIZE);
       let labPct = labBinner.createLABBins(BIN_SIZE);
       let labPtc = labBinner.createLABBins(BIN_SIZE);
