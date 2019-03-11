@@ -51,8 +51,13 @@ function convertToMatrices(){
 
   grouped.forEach(g_lang => {
     let terms = [];
+    //note, this should really by on the sum of the cnt's, like below
+    // actually, for som set, this should be sum of the counts of the line set (colorNames = colorNames.filter(cn => cn.rgbSet != "line"));
+    g_lang.values = g_lang.values .filter(a => a.values.length >= 15);
+    
     g_lang.values = g_lang.values.sort((a,b) => d3.sum(b.values, d => d.cnt) - d3.sum(a.values, d => d.cnt));
-    g_lang.values.slice(0,TOP_N).forEach(g_term => {
+    
+    g_lang.values.forEach(g_term => {
       let labCnt = labBinner.createLABBins(BIN_SIZE);
       let labPct = labBinner.createLABBins(BIN_SIZE);
       let labPtc = labBinner.createLABBins(BIN_SIZE);
