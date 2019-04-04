@@ -3,59 +3,47 @@ var SOM = require('./SOM');
 const fs = require('fs'),
   d3 = require('d3'),
   csv=require("csvtojson");;
+
+let colorNamesAbrv = {
+	"English": "en",
+	'Korean': "ko",
+	"Persian": "fa",
+	"Chinese": "zh",
+	"German": "de",
+	"French": "fr",
+	"Portuguese": "pt",
+	"Spanish": "es"
+};
+
+let commonColorNameLookup = {};
   
-csv().fromFile("../cleaned_fullRGB_color_names.csv")
+csv().fromFile("../cleaned_color_names.csv")
   .then((namingData)=>{
-    console.log(namingData[0]);
-	createSOMs(namingData);
+	  csv().fromFile("../basic_color_info.csv")
+		.then((colorInfo)=>{
+			console.log(colorInfo);
+			createSOMs(colorInfo, namingData);
+	 });
   });
  
 
-function createSOMs(namingData){
-	var translationFile = fs.readFileSync("../translation_loss/translation_loss_en_ko.json");
-	// Define to JSON type
-	var translations = JSON.parse(translationFile);
+function createSOMs(colorInfo, namingData){
 	let colorNames = {};
-	colorNames.en = [];
-	colorNames.ko = [];
-	for(i in translations){
-		colorNames.en.push(translations[i].enterm);
-		colorNames.ko.push(translations[i].koterm);
-	}	
+	colorInfo.forEach(color => {
+		let langAbv = colorNamesAbrv[color.lang.split("(")[0].trim()];
+		if(!langAbv){
+			throw new Error("Could not find abbreviation for '"+color.lang.split("(")[0].trim()+"'");
+		}
+
+		if(!colorNames[langAbv]){
+			colorNames[langAbv] = [];
+		}
+		colorNames[langAbv].push(color.simplifiedName);
+		commonColorNameLookup[color.simplifiedName] = color.commonName;
+	});
 	
-	translationFile = fs.readFileSync("../translation_loss/translation_loss_fa_ko.json");
-	// Define to JSON type
-	translations = JSON.parse(translationFile);
-	colorNames.fa = [];
-	for(i in translations){
-		colorNames.fa.push(translations[i].faterm);
-		colorNames.ko.push(translations[i].koterm);
-	}	
+	//en, fa, ko, zh
 	
-	translationFile = fs.readFileSync("../translation_loss/translation_loss_fa_zh.json");
-	// Define to JSON type
-	translations = JSON.parse(translationFile);
-	colorNames.zh = [];
-	for(i in translations){
-		colorNames.fa.push(translations[i].faterm);
-		colorNames.zh.push(translations[i].zhterm);
-	}	
-	
-	translationFile = fs.readFileSync("../translation_loss/translation_loss_en_en.json");
-	// Define to JSON type
-	translations = JSON.parse(translationFile);
-	colorNames.en = [];
-	for(i in translations){
-		colorNames.en.push(translations[i].enterm);
-		colorNames.en.push(translations[i].enterm2);
-	}	
-	
-	console.log(colorNames.en.length);
-	
-	colorNames.en = [...new Set(colorNames.en)]; // get distinct
-	colorNames.ko = [...new Set(colorNames.ko)]; // get distinct
-	colorNames.fa = [...new Set(colorNames.fa)]; // get distinct
-	colorNames.zh = [...new Set(colorNames.zh)]; // get distinct
 	
 	console.log(colorNames.en.length);
 	
@@ -63,8 +51,7 @@ function createSOMs(namingData){
 	
 	outputJSON = {};
 	let languages = ["fa", "zh", "en", "ko"];
-	for(var i in languages){
-		let lang = languages[i];
+	Object.keys(colorNames).forEach(lang => {
 		outputJSON[lang] = {};
 		for(var i in colorNames[lang]){
 			let colorName = colorNames[lang][i];
@@ -105,11 +92,12 @@ function createSOMs(namingData){
 			}
 			thisColorInfo["representativeColor"] = representativeColor;
 			
-			outputJSON[lang][colorName] = thisColorInfo;
+			let commonColorName = commonColorNameLookup[colorName];
+			outputJSON[lang][commonColorName] = thisColorInfo;
 
 			
 		}
-	}
+	});
 	fs.writeFileSync("../colorSOM.json", JSON.stringify(outputJSON));
 }	
  
