@@ -12,14 +12,15 @@ let colorNamesAbrv = {
 	"German": "de",
 	"French": "fr",
 	"Portuguese": "pt",
-	"Spanish": "es"
+	"Spanish": "es",
+	"Swedish": "sv"
 };
 
 let commonColorNameLookup = {};
   
 csv().fromFile("../cleaned_color_names.csv")
   .then((namingData)=>{
-	  csv().fromFile("../basic_color_info.csv")
+	  csv().fromFile("../basic_full_color_info.csv")
 		.then((colorInfo)=>{
 			console.log(colorInfo);
 			createSOMs(colorInfo, namingData);

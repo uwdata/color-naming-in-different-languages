@@ -15,7 +15,7 @@ const FULL_RGB_SET = "full";
 
 // Path or the input csv file
 const FILE_I = "../cleaned_color_names.csv"
-const FILE_O = "../basic_color_info.csv"; // Path for the output
+const FILE_O = "../basic_full_color_info.csv"; // Path for the output
 
 csv().fromFile(FILE_I)
   .then((colorNames)=>{
