@@ -6,5 +6,6 @@ Binned data and translation loss
 * getEMDparallel.py - finds the earth mover distance for color terms, and creates the translation_loss files. Depends on th fullColorNames_ files and the distanceMatrix.json file.
 
 SOMs
-* dataCleaning.js - create a cleaned version of the data with the color names standardized
+* dataCleaning.js - create a cleaned version of the data with the color names standardized: cleaned_color_names.csv
+* getBasicFullColorInfo.js - Extract some basic info about colors (num records, most common version of name) into basic_color_info.csv
 * createColorSOMs.js - creates SOMs for each color term. depends on cleaned_fullRGB_color_names.csv and uses translation_loss files to figure out which terms to do (probably bad)
