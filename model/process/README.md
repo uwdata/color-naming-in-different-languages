@@ -4,7 +4,7 @@ The files in this directory are used to generate the model files.
 TODO: Make these steps depend on cleaned_color_names.csv (from dataCleaning.js) and basic_color_info.csv from (getBasicFullColorInfo.js ). That is, let those files determine which colors and languages to process. Also make the commonColorName the cononical name used for colors throughout the rest of the process.
 * getFullColorNames.js - takes the raw file (raw/color_perception_table_color_names.csv) and generates binned info on each color name
 * getTranslation.js - creates the distanceMatrix.json file used by getEMDparallel.py to generate the translation_loss files. Depends on the full_color_names.json file
-* getEMDparallel.py - finds the earth mover distance for color terms, and creates the translation_loss files. Depends on th fullColorNames_ files and the distanceMatrix.json file.
+* getEMDparallel.py (very slow!) - finds the earth mover distance for color terms, and creates the translation_loss files. Depends on th fullColorNames_ files and the distanceMatrix.json file.
 
 ## SOMs
 * dataCleaning.js - create a cleaned version of the data with the color names standardized: cleaned_color_names.csv
