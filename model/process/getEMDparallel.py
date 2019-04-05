@@ -35,7 +35,7 @@ def job(lang1_lang2_terms):
 	return returnval
 
 def main():
-	languages = ["ko", "en", "fa", "zh"];
+	languages = ["sv", "es", "ko", "en", "fa", "zh",  "pt", "fr",  "de"];
 	ColorNames = {}
 
 	for lang in languages:
@@ -52,24 +52,27 @@ def main():
 
 	
 	print "starting jobs"
-	#for lang1 in languages:
-	#	for lang2 in languages:
-	#		if(lang2 < lang1):
-	#			continue
-	lang1 = sys.argv[1]
-	lang2 = sys.argv[2]
-	pairs = list(itertools.product(ColorNames[lang1], ColorNames[lang2]))
-	pairs = list(map(lambda x: [lang1, lang2, x, distance_matrix], pairs))
-	
-	# core_num = mp.cpu_count() -> 8
 	pool = mp.Pool(processes=2)
-	emdDistances = pool.map(job, pairs)
+	for lang1 in languages:
+		for lang2 in languages:
+			if(lang2 < lang1):
+				continue
+			#lang1 = sys.argv[1]
+			#lang2 = sys.argv[2]
+			print "computing translations " + lang1 + "_" + lang2
+
+			pairs = list(itertools.product(ColorNames[lang1], ColorNames[lang2]))
+			pairs = list(map(lambda x: [lang1, lang2, x, distance_matrix], pairs))
+	
+			# core_num = mp.cpu_count() -> 8
+			emdDistances = pool.map(job, pairs)
 
 
-	with open("../translation_loss/translation_loss_"+lang1+"_"+lang2+".json", "w") as text_file:
-		text_file.write(json.dumps(emdDistances, indent = 2, ensure_ascii=False).encode('utf-8'))
+			with open("../translation_loss/translation_loss_"+lang1+"_"+lang2+".json", "w") as text_file:
+				text_file.write(json.dumps(emdDistances, indent = 2, ensure_ascii=False).encode('utf-8'))
 
 
 if __name__ == '__main__':
 	# freeze_support() here if program needs to be frozen
+	print "starting"
 	main()

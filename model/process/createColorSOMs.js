@@ -51,13 +51,15 @@ function createSOMs(colorInfo, namingData){
 	//let colorNames = ["연두", "초록", "green", "armygreen", "mint", "blue", "하늘", "파랑", "aqua", "cyan", "red", "magenta", "purple", "pink", "white", "cream", "black", "gray", "pastel", "neon"];
 	
 	outputJSON = {};
-	let languages = ["fa", "zh", "en", "ko"];
 	Object.keys(colorNames).forEach(lang => {
 		outputJSON[lang] = {};
 		for(var i in colorNames[lang]){
 			let colorName = colorNames[lang][i];
 			
-			let thisColorData = namingData.filter(function(item){return item.name == colorName;});
+			let thisColorData = namingData.filter(function(item){
+				return lang == colorNamesAbrv[item.lang0.split("(")[0].trim()] && 
+						item.name == colorName &&
+						item.rgbSet == "full";}); // only include full colors, since those are proportionally spaced
 			console.log(thisColorData.length);
 			if(thisColorData.length == 0){
 				console.log("Color name had no data", colorName, lang, i);

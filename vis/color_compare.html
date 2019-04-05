@@ -8,6 +8,9 @@
 
 <script src="js/jquery-1.12.0.min.js"></script>
 <script src="js/d3.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
 <script src="js/colorspaces.min.js"></script>
 <script src="../model/process/SOM.js"></script>
 
@@ -28,33 +31,37 @@ function checkStatus(response) {
   } 
 }
 
+//$(document).ready(function() {
+//    $('.js-example-basic-single').select2();
+//});
+
 
 let allColorInfo;
 let translationLoss = {};
 
 
-let langAbv = ["en", "fa", "ko", "zh"];
-
 let colorNamesAbrv = {
 	"English (English)": "en",
 	"Korean (한국어, 조선어)": "ko",
 	"Persian (Farsi) (فارسی)": "fa",
-	"Chinese (中文 (Zhōngwén), 汉语, 漢語)": "zh"
+	"Chinese (中文 (Zhōngwén), 汉语, 漢語)": "zh",
+	"German (Deutsch)": "de",
+	"Spanish (español)": "es",
+	"French (français, langue française)": "fr",
+	"Portuguese (português)": "pt",
+	"Swedish (svenska)": "sv"
 };
 
-let colorNamesKey = {
-	"English (English)": "enterm",
-	"Korean (한국어, 조선어)": "koterm",
-	"Persian (Farsi) (فارسی)": "faterm",
-	"Chinese (中文 (Zhōngwén), 汉语, 漢語)": "zhterm"
-};
-
-let colorNames = {
-	"English (English)": [],
-	"Korean (한국어, 조선어)": [],
-	"Persian (Farsi) (فارسی)": [],
-	"Chinese (中文 (Zhōngwén), 汉语, 漢語)": []
-};
+let langAbv = [];
+let abvToColorName = {};
+let colorNamesKey = {}
+let colorNames = {};
+for(lang in colorNamesAbrv){
+	abvToColorName[colorNamesAbrv[lang]] = lang;
+	langAbv.push(colorNamesAbrv[lang]);
+	colorNamesKey[lang] = colorNamesAbrv[lang]+"term";
+	colorNames[lang] = [];
+}
 
 var d3Data =[];
 var svg, somNodes;
@@ -112,22 +119,10 @@ function start(){
   
  //create handlers
  $("#startLang").change(function(){
-	//update dest lang 
-	//if( $("#startLang").val() == "English (English)"){
-	//	$("#destLang").val("Korean (한국어, 조선어)");
-	//} else {
-	//	$("#destLang").val("English (English)");
-	//}
 	updateColorNames();
  });
  
   $("#destLang").change(function(){
-	//update dest lang 
-	//if( $("#destLang").val() == "English (English)"){
-	//	$("#startLang").val("Korean (한국어, 조선어)");
-	//} else {
-	//	$("#startLang").val("English (English)");
-	//}
 	updateColorNames();
  });
  
@@ -141,37 +136,34 @@ function start(){
 
 function  initializeTerms(){
 	//drawColorResults();
-	
-	for(i in translationLoss.en_ko){
-		colorNames["English (English)"].push(translationLoss.en_ko[i].enterm);
-		colorNames["Korean (한국어, 조선어)"].push(translationLoss.en_ko[i].koterm);
-	}	
-	
-	for(i in translationLoss.en_en){
-		colorNames["English (English)"].push(translationLoss.en_en[i].enterm);
-		colorNames["English (English)"].push(translationLoss.en_en[i].enterm2);
-	}	
-	
-	for(i in translationLoss.fa_zh){
-		colorNames["Persian (Farsi) (فارسی)"].push(translationLoss.fa_zh[i].faterm);
-		colorNames["Chinese (中文 (Zhōngwén), 汉语, 漢語)"].push(translationLoss.fa_zh[i].zhterm);
-	}	
-	
-	colorNames["English (English)"] = [...new Set(colorNames["English (English)"])]; // get distinct
-	colorNames["Korean (한국어, 조선어)"] = [...new Set(colorNames["Korean (한국어, 조선어)"])]; // get distinct
-	colorNames["Persian (Farsi) (فارسی)"] = [...new Set(colorNames["Persian (Farsi) (فارسی)"])];
-	colorNames["Chinese (中文 (Zhōngwén), 汉语, 漢語)"] = [...new Set(colorNames["Chinese (中文 (Zhōngwén), 汉语, 漢語)"])];
-	
-	colorNames["English (English)"] = colorNames["English (English)"].filter( a => a !== undefined);
-	
+	for(langAbv in allColorInfo){
+		for(colorName in allColorInfo[langAbv]){
+			if(colorNames[abvToColorName[langAbv]]){
+				colorNames[abvToColorName[langAbv]].push(colorName);
+			} else{
+				console.error("could not find language: " + langAbv);
+			}
+		}
+	}
+
+	let allLangs = [];
 	for(lang in colorNames){
+		allLangs.push(lang);
 		let langAbrv = colorNamesAbrv[lang];
 		colorNames[lang].sort(function(a, b){return allColorInfo[langAbrv][b].numRecords - allColorInfo[langAbrv][a].numRecords});
 		
 		for(i in colorNames[lang]){
 			allColorInfo[langAbrv][colorNames[lang][i]]["rank"] = Number(i) + 1;
 		}
-	}	
+	}
+
+	allLangs.sort(function(a, b){return colorNames[b].length - colorNames[a].length})
+	for(i in allLangs){
+		if(colorNames[allLangs[i]].length >= 10){
+			$("#startLang").append('<option value="'+allLangs[i]+'">'+allLangs[i]+'</option>');
+			$("#destLang").append('<option value="'+allLangs[i]+'">'+allLangs[i]+'</option>');
+		}
+	}
 	
 	
 	updateColorNames();
@@ -183,10 +175,8 @@ function updateColorNames(){
 	$("#startTerm").html("");
 	for(i in colorNames[currentLang]){
 		let name = colorNames[currentLang][i];
-		if(allColorInfo[currentLangAbrv][name].numRecords >= 15){
-			$("#startTerm").append("<option style= 'background-color:"+allColorInfo[currentLangAbrv][name].representativeColor+";color:white;text-shadow: 3px 2px red' value='"+name+"'>"+name+
-			"</option>");
-		}
+		$("#startTerm").append("<option style= 'background-color:"+allColorInfo[currentLangAbrv][name].representativeColor+";color:white;text-shadow: 3px 2px red' value='"+name+"'>"+name+
+		"</option>");
 	}
 	
 	updateTranslation();
@@ -233,7 +223,6 @@ function updateTranslation(){
 		}
 	}
 	
-	matchedTranslations = matchedTranslations.filter(function(a){return allColorInfo[currentEndLangAbrv][a[currentEndLangKey]].numRecords >= 15});
 	matchedTranslations.sort(function(a, b){return a.dist - b.dist})
 	
 	
@@ -251,10 +240,13 @@ function updateTranslation(){
 
 
 function generateColorInfoString(name, colorInfo){
-
 	let str = "";
 	
 	str += "<div style='margin: auto;' >" //onmouseover='nameMouseOver(\""+name+"\");' onmouseleave='nameMouseLeave();'
+
+	if(!colorInfo){
+		return "Color Info not found for: " + name + "</div>";
+	}
 
 	str += "<div style='";
 	str += "width: 20px; height: 20px; float:left;"
@@ -483,6 +475,10 @@ function drawSOMByD3(n, m, divID){
 
 
 function getProportionalLABColorSet(langAbv, term){
+	if(!allColorInfo[langAbv][term]){
+		console.error("could not find term " + langAbv + ": " + term);
+		return [];
+	}
 	let nodes = allColorInfo[langAbv][term].colorNodes9;
 	let colorTerms = [];
 	for(let i = 0; i < nodes.length; i++){
@@ -510,6 +506,9 @@ function getNodeColorsInfo(labColor, term, translations, lang1Abrv, lang2Abrv){
 }
 
 function getNodeColorAmount(labColor, term, langAbrv){
+	if(!allColorInfo[langAbrv][term]){
+		return 0;
+	}
 	let infoNodes = allColorInfo[langAbrv][term].colorNodes9;
 	let multiplier = 1;
 	if(allColorInfo[langAbrv][term].numRecords < 50){ //if not much data, compare with only 4 nodes
@@ -569,15 +568,10 @@ function nameMouseLeave(){
  <div class="row" style="height:100%">
  <div class="col-6">
 	 <label>Start Language</label>
-	 <select id="startLang">
-		<option value="English (English)">English (English)</option>
-		<option value="Korean (한국어, 조선어)">Korean (한국어, 조선어)</option>
-		<option value="Persian (Farsi) (فارسی)">Persian (Farsi) (فارسی)</option>
-		<option value="Chinese (中文 (Zhōngwén), 汉语, 漢語)">"Chinese (中文 (Zhōngwén), 汉语, 漢語)"</option>
-	 </select>
+	 <select id="startLang"></select>
 	 <br>
 	 <label>Start Term</label>
-	 <select id="startTerm">
+	 <select id="startTerm"  class="js-example-basic-single" >
 	 
 	 </select>
 	 <div id="startColorInfo">
@@ -590,12 +584,7 @@ function nameMouseLeave(){
 
   <div class="col-6" style="height:100%">
 	 <label>Destination Language</label>
-	 <select id="destLang">
-		<option value="English (English)" selected>English (English)</option>
-		<option value="Korean (한국어, 조선어)">Korean (한국어, 조선어)</option>
-		<option value="Persian (Farsi) (فارسی)">Persian (Farsi) (فارسی)</option>
-		<option value="Chinese (中文 (Zhōngwén), 汉语, 漢語)">"Chinese (中文 (Zhōngwén), 汉语, 漢語)"</option>
-	 </select>
+	 <select id="destLang"> </select>
 	 <div id="results" style="overflow-y: auto; height:100%; max-height:500px"></div>
  </div>
  

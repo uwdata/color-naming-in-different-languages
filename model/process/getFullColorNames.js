@@ -12,45 +12,15 @@ const MIN_NperBin = 4;
 const FILE_O = "../full_color_names.json";
 const FILE_O_VIS = "../full_color_map.vl.json";
 
-const LANG_CODE = {
-  'English (English)' : "en",
-  'Korean (한국어, 조선어)' : "ko",
-  "Persian (Farsi) (فارسی)" : "fa",
-  "Chinese (中文 (Zhōngwén), 汉语, 漢語)" : "zh"
-};
-
-
-
-fs.createReadStream("../../raw/color_perception_table_color_names.csv").pipe(converter);
-
-
-converter.on("error",function(error){
-	console.log(error);
-})
-
-converter.on("record_parsed", function (record) {
-  console.log(record);
-});
-
-csv().fromFile("../../raw/color_perception_table_color_names.csv")
-  .then((colorNames)=> {
-  colorNames = colorNames.filter(cn => {
-
-    
-    return Object.keys(LANG_CODE).indexOf(cn.lang0) >= 0 } );
-  colorNames = colorNames.filter(cn => cn.participantId !== 0);
-  colorNames = colorNames.filter(cn => !(cn.studyVersion === "1.1.4" && cn.rgbSet === "line")); //There is a priming effect for that set.
-
-
-
-  colorNames.forEach(cn => {
-    let lab = d3.lab(d3.color(`rgb(${cn.r}, ${cn.g}, ${cn.b})`));
-
-    cn.lab_l = lab.l;
-    cn.lab_a = lab.a;
-    cn.lab_b = lab.b;
-  });
-
+csv().fromFile("../cleaned_color_names.csv").then((colorNames)=> {
+csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
+  commonColorNameLookup = {};
+  colorInfo.forEach(ci => {
+		if(!commonColorNameLookup[ci.lang]){
+      commonColorNameLookup[ci.lang] = [];
+    }
+		commonColorNameLookup[ci.lang][ci.simplifiedName] = ci.commonName;
+	});
 
   let grouped = d3.nest()
     .key(d => d.lang0)
@@ -60,12 +30,14 @@ csv().fromFile("../../raw/color_perception_table_color_names.csv")
   grouped.forEach(g => {
     g.terms = d3.nest()
                 .key(v => v.name)
-                .entries(refine(g.values, RGB_SET))
+                .entries(g.values)
                 .sort((a,b) => -a.values.length + b.values.length);
 
-    g.terms = g.terms.filter(g_term => g_term.values.length >= MIN_NperTerm);
-
+    g.terms = g.terms.filter(g_term => commonColorNameLookup[g.key] && commonColorNameLookup[g.key][g_term.key]);
   });
+
+  grouped = grouped.filter(g => g.terms.length > 0);
+
 
   let result = {};
   let flatten = [], saliency = [];
@@ -94,6 +66,7 @@ csv().fromFile("../../raw/color_perception_table_color_names.csv")
               bufFlatten.push({
                 "lang": group.key,
                 "term": term.key,
+                "commonTerm": commonColorNameLookup[group.key][term.key],
                 "binL": l,
                 "binA": a,
                 "binB": b,
@@ -126,13 +99,16 @@ csv().fromFile("../../raw/color_perception_table_color_names.csv")
               "lab": labBinner.getLAB(l, a, b).join(","),
               "saliency": -entropy(bufFlatten.filter(d => d.binL === l && d.binA === a && d.binB === b).map(d => d.pTC)),
               "maxpTC": maxpTC,
-              "majorTerm": bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term
+              "majorTerm": bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term,
+              "commonTerm": commonColorNameLookup[group.key][bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term]
             });
           }
 
         }
       }
     }
+
+    
     console.log("End : " + group.key);
     saliency = saliency.concat(bufSaliency);
     flatten = flatten.concat(bufFlatten);
@@ -162,6 +138,7 @@ csv().fromFile("../../raw/color_perception_table_color_names.csv")
   // };
 
   fs.writeFileSync(FILE_O_VIS, JSON.stringify(vlSpec, null, 2));
+});
 });
 
 function entropy(arr){

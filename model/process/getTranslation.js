@@ -3,13 +3,17 @@ const fs = require('fs'),
   labBinner = require('./labBinner.js');
 let flatData = JSON.parse(fs.readFileSync("../full_color_names.json"));
 const BIN_SIZE = 10, TOP_N = 100;
-const LANG_CODE = {
-  'English (English)' : "en",
-  'Korean (한국어, 조선어)' : "ko",
-  "Persian (Farsi) (فارسی)" : "fa",
-  "Chinese (中文 (Zhōngwén), 汉语, 漢語)" : "zh"
+let colorNamesAbrv = {
+	"English": "en",
+	'Korean': "ko",
+	"Persian": "fa",
+	"Chinese": "zh",
+	"German": "de",
+	"French": "fr",
+	"Portuguese": "pt",
+	"Spanish": "es",
+	"Swedish": "sv"
 };
-
 
 // 1.
 if (!fs.existsSync("temp/")){
@@ -46,14 +50,14 @@ function convertToMatrices(){
 
   let grouped = d3.nest()
     .key(d => d.lang)
-    .key(d => d.term)
+    .key(d => d.commonTerm)
     .entries(flatData);
 
   grouped.forEach(g_lang => {
     let terms = [];
     //note, this should really by on the sum of the cnt's, like below
     // actually, for som set, this should be sum of the counts of the line set (colorNames = colorNames.filter(cn => cn.rgbSet != "line"));
-    g_lang.values = g_lang.values .filter(a => a.values.length >= 15);
+    //g_lang.values = g_lang.values .filter(a => a.values.length >= 15);
     
     g_lang.values = g_lang.values.sort((a,b) => d3.sum(b.values, d => d.cnt) - d3.sum(a.values, d => d.cnt));
     
@@ -76,7 +80,7 @@ function convertToMatrices(){
         "labPtc": convertTo1D(convertTo1D(labPtc))
       });
     });
-    fs.writeFileSync(`temp/fullColorNames_${LANG_CODE[g_lang.key]}.json`, JSON.stringify(terms, null, 2));
+    fs.writeFileSync(`temp/fullColorNames_${colorNamesAbrv[g_lang.key.split("(")[0].trim()]}.json`, JSON.stringify(terms, null, 2));
   });
 
 }
