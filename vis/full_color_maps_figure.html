@@ -120,14 +120,15 @@
 
   </body>
   <script type="text/javascript">
-    d3.json("full_color_map.vl.json").then(spec =>{
+    d3.json("../model/full_color_map.vl.json").then(spec =>{
       delete spec.facet.column;
       spec.spec.layer[0].encoding.opacity = {"value":1.0};
       delete spec.spec.layer[1].selection;
       for (var binL = 0; binL < 10; binL++) {
         let copiedSpec = JSON.parse(JSON.stringify(spec));
         copiedSpec.facet.row.header.labelFontSize = 0.1;
-        copiedSpec.data.values = copiedSpec.data.values.filter(d => d.binL=== binL);
+        copiedSpec.data.values = copiedSpec.data.values.filter(d => d.binL=== binL && 
+          ["Korean (한국어, 조선어)", "English (English)"].indexOf(d.lang) >= 0);
         vegaEmbed('#vis'+binL, copiedSpec, {actions:false, "renderer": "svg"});
       }
 

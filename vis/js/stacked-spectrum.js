@@ -2,7 +2,7 @@ $(document).on('ready page:load', function () {
   let Nbin, emptyNbin;
   let rootPath = window.location.pathname.split('/').slice(0,-1).join("/");
 
-  $.getJSON( rootPath + "/model/hue_color_names_aggregated.json", function( data ) {
+  $.getJSON("../model/hue_color_names_aggregated.json", function( data ) {
 
     Nbin = data.colorSet.length;
     emptyNbin = [];

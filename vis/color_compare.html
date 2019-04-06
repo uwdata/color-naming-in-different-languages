@@ -23,12 +23,12 @@
 // Based on code by Matt Gaunt
 // https://developers.google.com/web/updates/2015/03/introduction-to-fetch
 
-function checkStatus(response) {  
-  if (response.status >= 200 && response.status < 300) {  
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
     return response.text();
-  } else {  
-    return Promise.reject(new Error(response.status + ": " + response.statusText)); 
-  } 
+  } else {
+    return Promise.reject(new Error(response.status + ": " + response.statusText));
+  }
 }
 
 //$(document).ready(function() {
@@ -73,9 +73,9 @@ var somHeight = M * boxWidth;
 
 function start(){
   let fileLoadPromises = [];
- 
+
   let url = "../model/colorSOM.json" // put url string here
-  fileLoadPromises.push( 
+  fileLoadPromises.push(
 	  fetch(url) // include credentials for cloud9
 		.then(checkStatus)
 		.then(JSON.parse)
@@ -93,10 +93,10 @@ function start(){
     for(j in langAbv){
 		let lang1 = langAbv[i];
 		let lang2 = langAbv[j];
-		
+
 		if(lang1 <= lang2){
 		    url = "../model/translation_loss/translation_loss_"+lang1+"_"+lang2+".json"
-			fileLoadPromises.push( 
+			fileLoadPromises.push(
 			  fetch(url) // include credentials for cloud9
 				.then(checkStatus)
 				.then(JSON.parse)
@@ -107,31 +107,31 @@ function start(){
 					console.error(error);
 				})
 			);
-			
+
 		}
 	}
-  
+
   }
-  
+
   Promise.all(fileLoadPromises).then(function(){
 	initializeTerms();
   });
-  
+
  //create handlers
  $("#startLang").change(function(){
 	updateColorNames();
  });
- 
+
   $("#destLang").change(function(){
 	updateColorNames();
  });
- 
+
   $("#startTerm").change(function(){
 	updateTranslation();
  });
 
 
- 
+
 }
 
 function  initializeTerms(){
@@ -151,7 +151,7 @@ function  initializeTerms(){
 		allLangs.push(lang);
 		let langAbrv = colorNamesAbrv[lang];
 		colorNames[lang].sort(function(a, b){return allColorInfo[langAbrv][b].numRecords - allColorInfo[langAbrv][a].numRecords});
-		
+
 		for(i in colorNames[lang]){
 			allColorInfo[langAbrv][colorNames[lang][i]]["rank"] = Number(i) + 1;
 		}
@@ -164,8 +164,8 @@ function  initializeTerms(){
 			$("#destLang").append('<option value="'+allLangs[i]+'">'+allLangs[i]+'</option>');
 		}
 	}
-	
-	
+
+
 	updateColorNames();
 }
 
@@ -178,7 +178,7 @@ function updateColorNames(){
 		$("#startTerm").append("<option style= 'background-color:"+allColorInfo[currentLangAbrv][name].representativeColor+";color:white;text-shadow: 3px 2px red' value='"+name+"'>"+name+
 		"</option>");
 	}
-	
+
 	updateTranslation();
 }
 
@@ -190,9 +190,9 @@ function updateTranslation(){
 	let currentEndLangAbrv = colorNamesAbrv[currentEndLang];
 	let currentEndLangKey = colorNamesKey[currentEndLang];
 	let term = $("#startTerm").val();
-	
+
 	$("#startColorInfo").html(generateColorInfoString(term, allColorInfo[currentStartLangAbrv][term]));
-	
+
 	// get key for translation file
 	let lang1 = currentStartLangAbrv;
 	let lang2 = currentEndLangAbrv;
@@ -202,11 +202,11 @@ function updateTranslation(){
 		lang2 = tmp;
 	}
 	let translationKey = lang1 + "_" + lang2;
-	
+
 	if(lang1 == lang2){
 		currentEndLangKey = currentEndLangKey+"2";
 	}
-	
+
 	let matchedTranslations = [];
 	for(i in translationLoss[translationKey]){
 		if(translationLoss[translationKey][i][currentStartLangKey] == term){
@@ -222,26 +222,26 @@ function updateTranslation(){
 			matchedTranslations.push(newObj);
 		}
 	}
-	
+
 	matchedTranslations.sort(function(a, b){return a.dist - b.dist})
-	
-	
+
+
 	$("#results").html("");
 	for(i in matchedTranslations){
 		let matchedName = matchedTranslations[i][currentEndLangKey]
 		$("#results").append(generateColorInfoString(matchedName, allColorInfo[currentEndLangAbrv][matchedName]));
 		$("#results").append("<small>Translation Loss: " + Math.round(matchedTranslations[i].dist * 100) / 100 + "</small><br><br>");
 	}
-	
-	
+
+
 	createSOMCompare(currentStartLangAbrv, currentEndLangAbrv, term, matchedTranslations.map(function(a){ return a[currentEndLangKey];}));
-	
+
 }
 
 
 function generateColorInfoString(name, colorInfo){
 	let str = "";
-	
+
 	str += "<div style='margin: auto;' >" //onmouseover='nameMouseOver(\""+name+"\");' onmouseleave='nameMouseLeave();'
 
 	if(!colorInfo){
@@ -252,37 +252,37 @@ function generateColorInfoString(name, colorInfo){
 	str += "width: 20px; height: 20px; float:left;"
 	str += "background-color:"+colorInfo.representativeColor+ "'></div>"
 	str += "<strong style='padding-left:5px;'>" + name + "</strong> ";
-	
+
 	str += "(#"+colorInfo.rank +" color)";
-	
+
 	if(colorInfo.rank <= 10){
 	   str += "****"
 	}
-	
+
 	str +="<br>";
-		
+
 	//str += "<div style='float:left;padding-left:20px;'> 2x2: </div> <div style='float:left'> ";
-	
+
 	//str += generateColorGrid(colorInfo.colorNodes4)
 	//str += </div>
 
 	//str += "<div style='float:left;padding-left:20px;'> 3x3: </div>"
 	str += "<div> </div>"
-	
+
 	str += "<div style='float:left; padding-right:20px;'>  <div style='clear:both;'><strong>Color range:</strong></div>"
 	str += generateColorGrid(colorInfo.colorNodes9)
-	
+
 	str += "</div>"
 	str +=  "<div style='float:left;'><strong>Comparison Map</strong>"
 	str +=  "<div id='compareSOM-"+name+"'></div>"
 	str += " </div><div style='clear:both'>";
-	
+
 	str += colorInfo.numRecords + "number of records<br>";
 	//str += "2x2 excluded: " + Math.round(colorInfo.colorNodes4Excluded*100*100)/100 + "%, 3x3 excluded: "+ Math.round(colorInfo.colorNodes9Excluded*100*100)/100 + "%<br>";
-	
-	
+
+
 	str += "</div>"
-	
+
 	return str;
 
 }
@@ -302,7 +302,7 @@ function generateColorGrid(nodes){
 		}
 		str += "<div style='clear:both'></div>";
 	}
-	
+
 	return str;
 }
 
@@ -310,20 +310,20 @@ function generateColorGrid(nodes){
 function createSOMCompare(lang1Abrv, lang2Abrv, term, translations){
 	console.log(lang1Abrv,lang2Abrv, term, translations);
 	labColors = [];
-	
+
 	//get starting term
 	labColors =labColors.concat(getProportionalLABColorSet(lang1Abrv, term));
-	
+
 	translations = translations.slice(0, 10)
-	
+
 	//get first four translations
 	for(let i = 0; i < translations.length; i++){
 		labColors = labColors.concat(getProportionalLABColorSet(lang2Abrv, translations[i]));
 	}
-	
+
 	//now create SOM with terms
 
-	
+
 	var compareSom = new som(N, M, 3);
 
 	// shuffle color data
@@ -331,18 +331,18 @@ function createSOMCompare(lang1Abrv, lang2Abrv, term, translations){
 	  return .5 - Math.random();
 	});
 	compareSom.train(labColors, 5000, .9);
-	
+
 	let SOMD3Data = getSOMD3Data(compareSom, term, translations, lang1Abrv, lang2Abrv)
-	
+
 	//TODO: create distance function that incorporates naming
 	drawSOMByD3(N, M, "compareSOM-" + term);
 	updateSOM(compareSom, "compareSOM-" + term, term, SOMD3Data);
-	
+
 	for(let i = 0; i < translations.length; i++){
 		drawSOMByD3(N, M, "compareSOM-" + translations[i]);
 		updateSOM(compareSom, "compareSOM-" + translations[i], translations[i], SOMD3Data);
 	}
-	
+
 }
 
 function getSOMD3Data(compareSom, term, translations, lang1Abrv, lang2Abrv){
@@ -359,7 +359,7 @@ function getSOMD3Data(compareSom, term, translations, lang1Abrv, lang2Abrv){
 			result["x"] = i;
 			result["y"] = j;
 			result["lab"] = $.colorspaces.make_color('sRGB', [rgbColor.r/256, rgbColor.g/256, rgbColor.b/256]).as("CIELAB");
-      
+
 			return result;
 		}))
 	},[]);
@@ -371,7 +371,7 @@ function updateSOM(compareSom, divID, term, d3Data){
 
 	somNodes = svg.selectAll(".som-node")
  			.data(d3Data);
- 	
+
  	var somNodesEnter = somNodes.enter()
  				.append("g")
  				.attr("class","som-node");
@@ -393,56 +393,56 @@ function updateSOM(compareSom, divID, term, d3Data){
 				.attr("class","horizontal-line black")
 				.attr("stroke", "black")
 				.attr("stroke-width",".5")
-				
+
 	somNodesEnter.append("line")
 			.attr("class","horizontal-line white")
 			.attr("stroke", "white")
 			.attr("stroke-width",".5")
-					
 
-	
-	
-	somNodes.select(".horizontal-line.white")	
+
+
+
+	somNodes.select(".horizontal-line.white")
 		.attr("y1", function(d){ return (d.y + 0.5) * boxHeight - 1 ; })
 		.attr("y2", function(d){ return (d.y  + 0.5) * boxHeight -1; })
 		.attr("x1", function(d){ return (d.x) * boxWidth ; })
 		.attr("x2", function(d){ return (d.x + 1) * boxWidth; })
 		.attr("stroke-opacity", function(d){ return hasColorName(d, term) ? 1 : 0;});
-	somNodes.select(".horizontal-line.black")	
+	somNodes.select(".horizontal-line.black")
 		.attr("y1", function(d){ return (d.y + 0.5) * boxHeight; })
 		.attr("y2", function(d){ return (d.y  + 0.5) * boxHeight; })
 		.attr("x1", function(d){ return (d.x) * boxWidth ; })
 		.attr("x2", function(d){ return (d.x + 1) * boxWidth; })
 		.attr("stroke-opacity", function(d){ return hasColorName(d, term) ? 1 : 0;});
-				
+
 	//vertical midline
 	somNodesEnter.append("line")
 				.attr("class","vertical-line black")
 				.attr("stroke","black")
 				.attr("stroke-width",".5")
-				
+
 	somNodesEnter.append("line")
 			.attr("class","vertical-line white")
 			.attr("stroke","white")
 			.attr("stroke-width",".5")
-	
-	
-	
-	somNodes.select(".vertical-line.white")	
+
+
+
+	somNodes.select(".vertical-line.white")
 		.attr("x1", function(d){ return (d.x + 0.5) * boxWidth - 1 ; })
 		.attr("x2", function(d){ return (d.x + 0.5) * boxWidth - 1; })
 		.attr("y1", function(d){ return (d.y) * boxHeight - 1 ; })
 		.attr("y2", function(d){ return (d.y + 1) * boxHeight -1; })
 		.attr("stroke-opacity", function(d){ return hasColorName(d, term) ? 1 : 0;});
 
-	somNodes.select(".vertical-line.black")	
+	somNodes.select(".vertical-line.black")
 		.attr("x1", function(d){ return (d.x + 0.5) * boxWidth ; })
 		.attr("x2", function(d){ return (d.x + 0.5) * boxWidth; })
 		.attr("y1", function(d){ return (d.y) * boxHeight - 1 ; })
 		.attr("y2", function(d){ return (d.y + 1) * boxHeight -1; })
 		.attr("stroke-opacity", function(d){ return hasColorName(d, term) ? 1 : 0;});
-	
-					
+
+
 	somNodes.exit().remove();
 }
 
@@ -455,14 +455,14 @@ function hasColorName(htmlNode, term){
 
 function getColorAmountOpacity(htmlNode, term){
 	let colorAmt = htmlNode.colorInfo[term];
-	
+
 	// scale  0 to .1 -> 0 to 1
 	let opacity = colorAmt * 10;
 	//make sure opacity not < 1
 	if(opacity > 1){
 		opacity = 1;
 	}
-	
+
 	return opacity;
 }
 
@@ -523,12 +523,12 @@ function getNodeColorAmount(labColor, term, langAbrv){
 		}
 		infoNodesWeights.push(tmparray);
 	}
-	
-	
+
+
 	//create SOM object to reuse it's code
-	let colorSOM = new som(infoNodesWeights.length, infoNodesWeights[0].length, infoNodesWeights[0][0].length);	
+	let colorSOM = new som(infoNodesWeights.length, infoNodesWeights[0].length, infoNodesWeights[0][0].length);
 	colorSOM.setNodeWeights(infoNodesWeights);
-	
+
 	let bmuCoords = colorSOM.findBMU(labColor);
 	//console.log(bmuCoords, colorSOM.neurons[bmuCoords.x][bmuCoords.y].calcDistance(labColor), colorSOM.findMaxNeighborDist()/2);
 	if( colorSOM.neurons[bmuCoords.x][bmuCoords.y].calcDistance(labColor) < colorSOM.findMaxNeighborDist()/2){
@@ -562,8 +562,8 @@ function nameMouseLeave(){
 </head>
 
 <body onload = "start()">
- <div id = "main" class="container" style="height:100%"> 
- 
+ <div id = "main" class="container" style="height:100%">
+
  <h1>Color Translator</h1>
  <div class="row" style="height:100%">
  <div class="col-6">
@@ -572,22 +572,22 @@ function nameMouseLeave(){
 	 <br>
 	 <label>Start Term</label>
 	 <select id="startTerm"  class="js-example-basic-single" >
-	 
+
 	 </select>
 	 <div id="startColorInfo">
-	 
+
 	 </div>
 
-	 
+
  </div>
- 
+
 
   <div class="col-6" style="height:100%">
 	 <label>Destination Language</label>
 	 <select id="destLang"> </select>
 	 <div id="results" style="overflow-y: auto; height:100%; max-height:500px"></div>
  </div>
- 
+
  </div></div>
 </body>
 </html>

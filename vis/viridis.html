@@ -73,8 +73,8 @@
       },
       "config":{"view":{"stroke": "transparent"}}
     };
-    const rootPath = window.location.pathname.split('/').slice(0,-1).join("/");
-    d3.json(rootPath + "/model/scheme_color_names.json").then(data => {
+    // const rootPath = window.location.pathname.split('/').slice(0,-1).join("/");
+    d3.json("../model/scheme_color_names.json").then(data => {
 
       draw(
         "viridis",
