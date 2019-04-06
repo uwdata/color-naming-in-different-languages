@@ -21,7 +21,7 @@ def job(lang1_lang2_terms):
 			returnval[lang1+"term"] = lang1Term["term"]
 			if(lang1 == lang2):
 				returnval[lang2+"term2"] =lang2Term["term"]
-			else: 
+			else:
 				returnval[lang2+"term"] =lang2Term["term"]
 			returnval["dist"] = emd(np.array(lang1Term["labPct"]),
 						  np.array(lang2Term["labPct"]),
@@ -50,7 +50,7 @@ def main():
 	with open('temp/distanceMatrix.json', 'r') as distance_matrix_f:
 		distance_matrix=np.array(json.loads(distance_matrix_f.read()))
 
-	
+
 	print "starting jobs"
 	pool = mp.Pool(processes=2)
 	for lang1 in languages:
@@ -63,7 +63,7 @@ def main():
 
 			pairs = list(itertools.product(ColorNames[lang1], ColorNames[lang2]))
 			pairs = list(map(lambda x: [lang1, lang2, x, distance_matrix], pairs))
-	
+
 			# core_num = mp.cpu_count() -> 8
 			emdDistances = pool.map(job, pairs)
 

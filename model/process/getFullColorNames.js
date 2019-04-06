@@ -11,6 +11,7 @@ const MIN_NperTerm = 2;
 const MIN_NperBin = 4;
 const FILE_O = "../full_color_names.json";
 const FILE_O_VIS = "../full_color_map.vl.json";
+const FILE_O_VIS_SALIENCY = "../full_color_map_sal.vl.json";
 
 csv().fromFile("../cleaned_color_names.csv").then((colorNames)=> {
 csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
@@ -108,7 +109,7 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
       }
     }
 
-    
+
     console.log("End : " + group.key);
     saliency = saliency.concat(bufSaliency);
     flatten = flatten.concat(bufFlatten);
@@ -138,6 +139,8 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
   // };
 
   fs.writeFileSync(FILE_O_VIS, JSON.stringify(vlSpec, null, 2));
+  vlSpec.spec.layer[0].encoding.size.field = "sal";
+  fs.writeFileSync(FILE_O_VIS_SALIENCY, JSON.stringify(vlSpec, null, 2));
 });
 });
 
