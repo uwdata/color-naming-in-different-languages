@@ -274,7 +274,7 @@ function generateColorInfoString(name, colorInfo){
 
 	str += "</div>"
 	str +=  "<div style='float:left;'><strong>Comparison Map</strong>"
-	str +=  "<div id='compareSOM-"+name+"'></div>"
+	str +=  "<div id='compareSOM-"+name.replace(/\s+/g,  "_")+"'></div>"
 	str += " </div><div style='clear:both'>";
 
 	str += colorInfo.numRecords + "number of records<br>";
@@ -335,12 +335,12 @@ function createSOMCompare(lang1Abrv, lang2Abrv, term, translations){
 	let SOMD3Data = getSOMD3Data(compareSom, term, translations, lang1Abrv, lang2Abrv)
 
 	//TODO: create distance function that incorporates naming
-	drawSOMByD3(N, M, "compareSOM-" + term);
-	updateSOM(compareSom, "compareSOM-" + term, term, SOMD3Data);
+	drawSOMByD3(N, M, "compareSOM-" + term.replace(/\s+/g,  "_"));
+	updateSOM(compareSom, "compareSOM-" + term.replace(/\s+/g,  "_"), term, SOMD3Data);
 
 	for(let i = 0; i < translations.length; i++){
-		drawSOMByD3(N, M, "compareSOM-" + translations[i]);
-		updateSOM(compareSom, "compareSOM-" + translations[i], translations[i], SOMD3Data);
+		drawSOMByD3(N, M, "compareSOM-" + translations[i].replace(/\s+/g,  "_"));
+		updateSOM(compareSom, "compareSOM-" + translations[i].replace(/\s+/g,  "_"), translations[i], SOMD3Data);
 	}
 
 }
