@@ -14,6 +14,19 @@
 <script src="js/colorspaces.min.js"></script>
 <script src="../model/process/SOM.js"></script>
 
+<style>
+.select2-container--default .select2-results > .select2-results__options {
+    max-height: 400px;
+    min-height: 200px;
+    overflow-y: auto;
+}
+
+.select2-results__option {
+	padding-top:1px;
+	padding-bottom:1px;
+}
+</style>
+
 <script>
 
 //This is a helper file for using fetch() for Ajax
@@ -31,9 +44,27 @@ function checkStatus(response) {
   }
 }
 
-//$(document).ready(function() {
-//    $('.js-example-basic-single').select2();
-//});
+function formatColorOpt (colorOpt) {
+  console.log("state", colorOpt);
+  if (!colorOpt.id) { //handles loading
+    return colorOpt.text;
+  }
+  var $colorOpt = $(
+    '<span style="background-color:'+colorOpt.element.style.backgroundColor +';' +
+	'padding-right: 20px;margin-right:5px;"></span>' +
+	'<span>' + colorOpt.element.value +
+	" (#"+colorOpt.element.attributes["data-colornum"].value + ')</span>'
+  );
+  return $colorOpt;
+};
+
+
+$(document).ready(function() {
+   $('.js-example-basic-single').select2({
+	templateResult: formatColorOpt,
+	templateSelection: formatColorOpt
+   });
+});
 
 
 let allColorInfo;
@@ -175,8 +206,11 @@ function updateColorNames(){
 	$("#startTerm").html("");
 	for(i in colorNames[currentLang]){
 		let name = colorNames[currentLang][i];
-		$("#startTerm").append("<option style= 'background-color:"+allColorInfo[currentLangAbrv][name].representativeColor+";color:white;text-shadow: 3px 2px red' value='"+name+"'>"+name+
-		"</option>");
+		$("#startTerm").append("<option value='"+name+"' "+
+								" style='background-color:"+allColorInfo[currentLangAbrv][name].representativeColor+"' "
+								+" data-colornum="+(+i + 1)+" >"
+								+name+
+								"</option>");
 	}
 
 	updateTranslation();
@@ -571,7 +605,7 @@ function nameMouseLeave(){
 	 <select id="startLang"></select>
 	 <br>
 	 <label>Start Term</label>
-	 <select id="startTerm"  class="js-example-basic-single" >
+	 <select id="startTerm"  class="js-example-basic-single" style="width:250px">
 
 	 </select>
 	 <div id="startColorInfo">
