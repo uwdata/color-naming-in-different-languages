@@ -19,7 +19,7 @@ const FILE_O = "../basic_full_color_info.csv"; // Path for the output
 
 csv().fromFile(FILE_I)
   .then((colorNames)=>{
-  
+
    let grouped = d3.nest()
     .key(d => d.lang0)
     .entries(colorNames)
@@ -40,14 +40,14 @@ csv().fromFile(FILE_I)
           .entries(term.values)
           .sort((a,b) => -a.values.length + b.values.length)[0].key;
       })
-  
+
       g.terms = g.terms.filter(g_term => g_term.numFullNames >= MIN_FULL_COLOR_NAMES);
 
-      g.terms.sort((a,b) => -a.numFullNames + b.numFullNames)
+      g.terms.sort((a,b) => -a.numFullNames + b.numFullNames);
     });
-	
+
     grouped.sort((a,b) =>  - a.terms.length + b.terms.length);
-  
+
   console.log("writing file");
   let writer = csvWriter();
   writer.pipe(fs.createWriteStream(FILE_O));
@@ -64,7 +64,7 @@ csv().fromFile(FILE_I)
         numLineNames: term.numLineNames,
       });
     })
-   
+
   });
 
   writer.end();

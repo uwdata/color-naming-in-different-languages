@@ -125,12 +125,11 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
   vlSpec.transform[2] = {"calculate": `datum.saliency + ${-saliencyRange[0]}`, "as": "sal"};
   vlSpec.data = { "values": saliency };
 
-
   let avgColors = getAvgColors(flatten, unique(saliency.map(d => d.majorTerm)));
   let modalColor = getModalColors(flatten, unique(saliency.map(d => d.majorTerm)));
 
   vlSpec.spec.layer[0].encoding.color.scale = {
-    "domain": avgColors.map(c => c.name),
+    "domain": avgColors.map(c => c.name + "-" + c.lang),
     "range": avgColors.map(c => c.avgColorRGBCode)
   };
   // vlSpec.spec.layer[0].encoding.color.scale = {
@@ -230,9 +229,10 @@ let vlSpec = {
       "as": "sal"
     },
     {
-      "calculate": "datum.lab",
-      "as": "lab2"
-    }
+      "calculate": "datum.majorTerm +'-' + datum.lang",
+      "as": "majorTermLang"
+    },
+    {"filter": {"field": "lang", "oneOf": ["English (English)", "Korean (한국어, 조선어)"]}}
   ],
   "config":{
     "view": {"stroke": null},
@@ -350,7 +350,7 @@ let vlSpec = {
             "value": 0
           },
           "color": {
-            "field": "majorTerm",
+            "field": "majorTermLang",
             "type": "nominal",
             "scale": {
               "domain": [],
