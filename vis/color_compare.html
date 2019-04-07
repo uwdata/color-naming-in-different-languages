@@ -52,8 +52,8 @@ function formatColorOpt (colorOpt) {
   var $colorOpt = $(
     '<span style="background-color:'+colorOpt.element.style.backgroundColor +';' +
 	'padding-right: 20px;margin-right:5px;"></span>' +
-	'<span>' + colorOpt.element.value +
-	" (#"+colorOpt.element.attributes["data-colornum"].value + ')</span>'
+	'<span><span>' + colorOpt.element.value + '</span>' + // an extra span around the name to make text direction in different languages not mess things up
+	" <span dir='ltr'>(#"+colorOpt.element.attributes["data-colornum"].value + ')</span></span>'
   );
   return $colorOpt;
 };
