@@ -29,13 +29,11 @@
 
 <script>
 
-//This is a helper file for using fetch() for Ajax
+//The checkStatus function for using fetch() for Ajax
 // Either copy the function below into your JavaScript file
 // or add this line to your html head:
-
 // Based on code by Matt Gaunt
 // https://developers.google.com/web/updates/2015/03/introduction-to-fetch
-
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response.text();
