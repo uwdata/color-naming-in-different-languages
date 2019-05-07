@@ -50,7 +50,7 @@ function convertToMatrices(){
 
   let grouped = d3.nest()
     .key(d => d.lang)
-    .key(d => d.commonTerm)
+    .key(d => d.term)
     .entries(flatData);
 
   grouped.forEach(g_lang => {
