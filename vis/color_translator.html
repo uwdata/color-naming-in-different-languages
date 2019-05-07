@@ -9,8 +9,8 @@
 <script src="js/jquery-1.12.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/d3.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/select2.min.js"></script>
 
 <script src="js/colorspaces.min.js"></script>
 <script src="../model/process/SOM.js"></script>
@@ -47,7 +47,6 @@ function checkStatus(response) {
 }
 
 function formatColorOpt (colorOpt) {
-  console.log("state", colorOpt);
   if (!colorOpt.id) { //handles loading
     return colorOpt.text;
   }
@@ -78,7 +77,7 @@ let colorNamesAbrv = {
 	"Korean (한국어, 조선어)": "ko",
 	"Persian (Farsi) (فارسی)": "fa",
 	"Chinese (中文 (Zhōngwén), 汉语, 漢語)": "zh",
-	"German (Deutsch)": "de",
+	"German (Deutsch)": "de", // Note: German should not be used until we do dynamically binned color translation (the uniform bins end up just comparing the hue colors, which leads to inaccurate translations)
 	"Spanish (español)": "es",
 	"French (français, langue française)": "fr",
 	"Portuguese (português)": "pt",
@@ -191,10 +190,23 @@ function  initializeTerms(){
 	}
 
 	allLangs.sort(function(a, b){return colorNames[b].length - colorNames[a].length})
+	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
+	
 	for(i in allLangs){
 		if(colorNames[allLangs[i]].length >= 10){
-			$("#startLang").append('<option value="'+allLangs[i]+'">'+allLangs[i]+'</option>');
-			$("#destLang").append('<option value="'+allLangs[i]+'">'+allLangs[i]+'</option>');
+			// set selection from url hash params 
+			let startSelectedStr = "";
+			if(colorNamesAbrv[allLangs[i]] == urlParams.get("start_lang")){
+				startSelectedStr = " selected ";
+			}
+			let destSelectedStr = "";
+			if(colorNamesAbrv[allLangs[i]] == urlParams.get("dest_lang")){
+				destSelectedStr = " selected ";
+			}
+			
+			// create options
+			$("#startLang").append('<option value="'+allLangs[i]+'" '+startSelectedStr+'>'+allLangs[i]+'</option>');
+			$("#destLang").append('<option value="'+allLangs[i]+'" '+destSelectedStr+'>'+allLangs[i]+'</option>');
 		}
 	}
 
@@ -205,16 +217,29 @@ function  initializeTerms(){
 function updateColorNames(){
 	let currentLang = $("#startLang").val();
 	let currentLangAbrv = colorNamesAbrv[currentLang];
+	
+	
+	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
+	
 	$("#startTerm").html("");
 	for(i in colorNames[currentLang]){
 		let name = colorNames[currentLang][i];
+		
+		// set selection from url hash params 
+		let termSelectedStr = "";
+		if(name == urlParams.get("term")){
+			termSelectedStr = " selected ";
+		}
+		
+		//TODO GET URL params for selection
 		$("#startTerm").append("<option value='"+name+"' "+
 								" style='background-color:"+allColorInfo[currentLangAbrv][name].representativeColor+"' "
-								+" data-colornum="+(+i + 1)+" >"
+								+" data-colornum="+(+i + 1)
+								+ termSelectedStr
+								+" >"
 								+name+
 								"</option>");
 	}
-
 	updateTranslation();
 }
 
@@ -226,6 +251,14 @@ function updateTranslation(){
 	let currentEndLangAbrv = colorNamesAbrv[currentEndLang];
 	let currentEndLangKey = colorNamesKey[currentEndLang];
 	let term = $("#startTerm").val();
+	
+	//Save languages and start term to url
+	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
+	urlParams.set("term", term);
+	urlParams.set("start_lang", currentStartLangAbrv);
+	urlParams.set("dest_lang", currentEndLangAbrv);
+	window.location.hash = urlParams.toString().replace("?", "");
+	
 
 	$("#startColorInfo").html(generateColorInfoString(term, allColorInfo[currentStartLangAbrv][term]));
 
@@ -344,7 +377,6 @@ function generateColorGrid(nodes){
 
 
 function createSOMCompare(lang1Abrv, lang2Abrv, term, translations){
-	console.log(lang1Abrv,lang2Abrv, term, translations);
 	labColors = [];
 
 	//get starting term
@@ -600,7 +632,8 @@ function nameMouseLeave(){
 <body onload = "start()">
  <div id = "main" class="container" style="height:100%">
 
- <h1>Color Translator</h1>
+ <h1 style="margin-bottom:0px;">Color Translator</h1>
+ <p>Choose a start color and destination language, and we will show you the most similar colors.</p>
  <div class="row" style="height:100%">
  <div class="col-6">
 	 <label>Start Language</label>
@@ -611,7 +644,7 @@ function nameMouseLeave(){
 
 	 </select>
 	 <div id="startColorInfo">
-
+		Loading...
 	 </div>
 
 
@@ -621,7 +654,7 @@ function nameMouseLeave(){
   <div class="col-6" style="height:100%">
 	 <label>Destination Language</label>
 	 <select id="destLang"> </select>
-	 <div id="results" style="overflow-y: auto; height:100%; max-height:500px"></div>
+	 <div id="results" style="overflow-y: auto; height:100%; max-height:500px"> Loading...</div>
  </div>
 
  </div></div>

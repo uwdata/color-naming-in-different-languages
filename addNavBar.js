@@ -28,7 +28,7 @@ $( document ).ready(function() {
 	navBarStr += '         Visualizations';
 	navBarStr += '        </a>';
 	navBarStr += '        <div class="dropdown-menu" aria-labelledby="navbarDropdown">';
-	navBarStr += '          <a class="dropdown-item" href="'+visPath+'color_compare.html">Color Comparisons</a>';
+	navBarStr += '          <a class="dropdown-item" href="'+visPath+'color_translator.html">Color Translator</a>';
 	navBarStr += '          <a class="dropdown-item" href="'+visPath+'stacked-spectrum.html">Hue Color Comparisons (more languages)</a>';
 	navBarStr += '          <a class="dropdown-item" href="'+visPath+'full_color_maps.html">Color Map</a>';
 	navBarStr += '          <a class="dropdown-item" href="'+visPath+'translation.html">Korean-English Translation Comparison</a>';
