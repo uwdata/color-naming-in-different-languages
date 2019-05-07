@@ -50,10 +50,11 @@ function formatColorOpt (colorOpt) {
   if (!colorOpt.id) { //handles loading
     return colorOpt.text;
   }
+  
   var $colorOpt = $(
     '<span style="background-color:'+colorOpt.element.style.backgroundColor +';' +
 	'padding-right: 20px;margin-right:5px;"></span>' +
-	'<span><span>' + colorOpt.element.value + '</span>' + // an extra span around the name to make text direction in different languages not mess things up
+	'<span><span>' + colorOpt.element.attributes["data-comonColorName"].value + '</span>' + // an extra span around the name to make text direction in different languages not mess things up
 	" <span dir='ltr'>(#"+colorOpt.element.attributes["data-colornum"].value + ')</span></span>'
   );
   return $colorOpt;
@@ -230,14 +231,13 @@ function updateColorNames(){
 		if(name == urlParams.get("term")){
 			termSelectedStr = " selected ";
 		}
-		
-		//TODO GET URL params for selection
 		$("#startTerm").append("<option value='"+name+"' "+
 								" style='background-color:"+allColorInfo[currentLangAbrv][name].representativeColor+"' "
 								+" data-colornum="+(+i + 1)
 								+ termSelectedStr
+								+ " data-comonColorName=\""+allColorInfo[currentLangAbrv][name].commonColorName+"\""
 								+" >"
-								+name+
+								+allColorInfo[currentLangAbrv][name].commonColorName+
 								"</option>");
 	}
 	updateTranslation();

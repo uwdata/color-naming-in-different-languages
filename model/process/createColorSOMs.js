@@ -80,6 +80,7 @@ function createSOMs(colorInfo, namingData){
 			let thisColorInfo = {};
 			console.log("color:", colorName);
 			
+			thisColorInfo["commonColorName"] = commonColorNameLookup[colorName];
 			thisColorInfo["numRecords"] = thisColorData.length;
 			thisColorInfo["colorNodes4"] = createSOM(colorName, LABdata, 2);
 			thisColorInfo["colorNodes4Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes4"]);
@@ -94,9 +95,8 @@ function createSOMs(colorInfo, namingData){
 				representativeColor = findMostDenseNode(thisColorInfo["colorNodes4"]).rgb;
 			}
 			thisColorInfo["representativeColor"] = representativeColor;
-			
-			let commonColorName = commonColorNameLookup[colorName];
-			outputJSON[lang][commonColorName] = thisColorInfo;
+
+			outputJSON[lang][colorName] = thisColorInfo;
 
 			
 		}
