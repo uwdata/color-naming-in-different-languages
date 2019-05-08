@@ -368,6 +368,9 @@ function generateColorInfoString(name, colorInfo){
 	str += "<div style='clear:both'>";
 
 	str += "Color name appears " + colorInfo.numRecords + " times<br>";
+	if(name == "skin" || name == "flesh" || name == "nude"){
+		str += "<small>Note: We represent the color labels provided by the participants in our study, which includes whatever racial biases they have. This is not meant to be a prescriptive definition of what colors  fit what labels.</small><br>"
+	}
 	//str += "2x2 excluded: " + Math.round(colorInfo.colorNodes4Excluded*100*100)/100 + "%, 3x3 excluded: "+ Math.round(colorInfo.colorNodes9Excluded*100*100)/100 + "%<br>";
 
 
