@@ -30,8 +30,8 @@ $( document ).ready(function() {
 	navBarStr += '        <div class="dropdown-menu" aria-labelledby="navbarDropdown">';
 	navBarStr += '          <a class="dropdown-item" href="'+visPath+'color_translator.html">Color Translator</a>';
 	navBarStr += '          <a class="dropdown-item" href="'+visPath+'stacked-spectrum.html">Hue Color Comparisons (more languages)</a>';
-	navBarStr += '          <a class="dropdown-item" href="'+visPath+'full_color_maps.html">Color Map</a>';
-	navBarStr += '          <a class="dropdown-item" href="'+visPath+'translation.html">Korean-English Translation Comparison</a>';
+	navBarStr += '          <a class="dropdown-item" href="'+visPath+'full_color_maps.html">Color Maps</a>';
+	navBarStr += '          <a class="dropdown-item" href="'+visPath+'en-ko-translation-comparison.html">Korean-English Translation Comparison</a>';
 	navBarStr += '          <a class="dropdown-item" href="'+visPath+'viridis.html">Korean-English Viridis Color Spectrum</a>';
 	navBarStr += '        </div>';
 	navBarStr += '      </li>';

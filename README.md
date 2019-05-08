@@ -8,7 +8,7 @@ This repository contains supplement material of [the paper](TODO) including:
   - [Interactive version of the above](https://uwdata.github.io/color-naming-in-different-languages/vis/stacked-spectrum.html)
   - [Maximum Probability Maps for English and Korean color names](https://uwdata.github.io/color-naming-in-different-languages/vis/full_color_maps.html)
   - [Color Similarity Tool](https://uwdata.github.io/color-naming-in-different-languages/vis/color_compare.html) Finds similar colors in the same language or across languages.
-  - [Comparison of translations](https://uwdata.github.io/color-naming-in-different-languages/vis/translation.html)
+  - [Comparison of translations](https://uwdata.github.io/color-naming-in-different-languages/vis/en-ko-translation-comparison.html)
   - [The probabilities of viridis colors for some nameable terms](https://uwdata.github.io/color-naming-in-different-languages/vis/viridis.html)
 
 
