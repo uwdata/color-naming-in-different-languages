@@ -3,6 +3,10 @@
 }*/
 
 body {
+  /*font: 10px sans-serif;*/
+}
+
+text {
   font: 10px sans-serif;
 }
 .main-term {
@@ -16,7 +20,7 @@ body {
   shape-rendering: crispEdges;
 }
 
-.y.axis {
+.y.axis text {
   font: 8px sans-serif;
 }
 
