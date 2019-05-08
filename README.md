@@ -1,6 +1,6 @@
 # How Languages Divide Colors: Color Naming Models and Translation
 
-This repository contains supplement material of [the paper](TODO) including:
+This repository contains supplement material of [the paper](http://idl.cs.washington.edu/papers/multi-lingual-color-names/) including:
 - Color-name judgements that are collected from LabIntheWild
 - Color naming probabilistic models for _hue colors_ and _full colors_
 - Interactive visualizations
