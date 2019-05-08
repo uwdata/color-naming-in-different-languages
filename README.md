@@ -14,4 +14,4 @@ This repository contains supplement material of [the paper](http://idl.cs.washin
 
 ## Cite us!
 
-If you use the data in published research, please cite [this paper](TODO).
+If you use the data in published research, please cite [this paper](http://idl.cs.washington.edu/papers/multi-lingual-color-names/).
