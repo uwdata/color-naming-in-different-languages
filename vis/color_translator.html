@@ -79,7 +79,7 @@ let colorNamesAbrv = {
 	"Korean (한국어, 조선어)": "ko",
 	"Persian (Farsi) (فارسی)": "fa",
 	"Chinese (中文 (Zhōngwén), 汉语, 漢語)": "zh",
-	"German (Deutsch)": "de", // Note: German should not be used until we do dynamically binned color translation (the uniform bins end up just comparing the hue colors, which leads to inaccurate translations)
+	"German (Deutsch)": "de",
 	"Spanish (español)": "es",
 	"French (français, langue française)": "fr",
 	"Portuguese (português)": "pt",
@@ -197,6 +197,11 @@ function  initializeTerms(){
 	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
 	
 	for(i in allLangs){
+		// Note: German should not be used until we do dynamically binned color translation (the uniform bins end up just comparing the hue colors, which leads to inaccurate translations)
+		if(colorNamesAbrv[allLangs[i]] == "de"){
+			continue;
+		}
+		
 		if(colorNames[allLangs[i]].length >= 10){
 			// set selection from url hash params 
 			let startSelectedStr = "";
