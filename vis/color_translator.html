@@ -97,13 +97,15 @@ for(lang in colorNamesAbrv){
 	colorNames[lang] = [];
 }
 
-var d3Data =[];
-var svg, somNodes;
-var N=20, M=10;
-var somWidth = 180;
-var boxWidth = somWidth / N;
-var boxHeight = boxWidth;
-var somHeight = M * boxWidth;
+
+let drawComparisonMap = false; //TODO: make this a setting that can be changed
+let d3Data =[];
+let svg, somNodes;
+let N=20, M=10;
+let somWidth = 180;
+let boxWidth = somWidth / N;
+let boxHeight = boxWidth;
+let somHeight = M * boxWidth;
 
 function start(){
   let fileLoadPromises = [];
@@ -303,8 +305,9 @@ function updateTranslation(){
 		$("#results").append("<small>Translation Loss: " + Math.round(matchedTranslations[i].dist * 100) / 100 + "</small><br><br>");
 	}
 
-
-	createSOMCompare(currentStartLangAbrv, currentEndLangAbrv, term, matchedTranslations.map(function(a){ return a[currentEndLangKey];}));
+	if(drawComparisonMap){
+		createSOMCompare(currentStartLangAbrv, currentEndLangAbrv, term, matchedTranslations.map(function(a){ return a[currentEndLangKey];}));
+	}
 
 }
 
@@ -331,23 +334,33 @@ function generateColorInfoString(name, colorInfo){
 
 	str +="<br>";
 
+	
 	//str += "<div style='float:left;padding-left:20px;'> 2x2: </div> <div style='float:left'> ";
 
 	//str += generateColorGrid(colorInfo.colorNodes4)
 	//str += </div>
 
-	//str += "<div style='float:left;padding-left:20px;'> 3x3: </div>"
+	//str += "<div style='float:left;padding-left:20px;'> 3x3: </div>"\
+
 	str += "<div> </div>"
 
 	str += "<div style='float:left; padding-right:20px;'>  <div style='clear:both;'><strong>Color range:</strong></div>"
-	str += generateColorGrid(colorInfo.colorNodes9)
+	if(colorInfo.numRecords > 18){
+		str += generateColorGrid(colorInfo.colorNodes9)
+	} else {
+		str += generateColorGrid(colorInfo.colorNodes4)
+	}
 
 	str += "</div>"
-	str +=  "<div style='float:left;'><strong>Comparison Map</strong>"
-	str +=  "<div id='compareSOM-"+name.replace(/\s+/g,  "_")+"'></div>"
-	str += " </div><div style='clear:both'>";
+	if(drawComparisonMap){
+		str +=  "<div style='float:left;'><strong>Comparison Map</strong>"
+		str +=  "<div id='compareSOM-"+name.replace(/\s+/g,  "_")+"'></div>"
+		str += " </div>";
+	}
+	
+	str += "<div style='clear:both'>";
 
-	str += colorInfo.numRecords + "number of records<br>";
+	str += "Color name appears " + colorInfo.numRecords + " times<br>";
 	//str += "2x2 excluded: " + Math.round(colorInfo.colorNodes4Excluded*100*100)/100 + "%, 3x3 excluded: "+ Math.round(colorInfo.colorNodes9Excluded*100*100)/100 + "%<br>";
 
 
