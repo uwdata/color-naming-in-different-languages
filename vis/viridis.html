@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	
+	<title>Korean-English Viridis Color Spectrum - Many Languages, Many Colors</title>
 
+	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,12 +32,14 @@
 
   </head>
   <body>
-
+  <div class="container">
+	<h1>Korean-English Viridis Color Spectrum</h1>
+	<p>This visualization shows how color names in Korean and English map onto the Viridis color spectrum  ( <img src='viridis-smallest.png'> ) used in visualizations. You can see that the range of Viridis colors referred to by the name "green" doesn't line up with any Korean color name.</p>
     <div id="vis-viridis"></div>
-    <div>
-      <span>Labels next each y-axis mean the corresponding term and the number of records forming the distribution. We note that "파랑" only have 1 record.</span>
-    </div>
-
+    <p>
+      Labels next each y-axis mean the corresponding term and the number of records forming the distribution. We note that "파랑" only have 1 record.
+    </p>
+  </div>
   </body>
    <script type="text/javascript">
     const xDomain = [-1, 1];

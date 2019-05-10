@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	
+	<title>Color Maps - Many Languages, Many Colors</title>
 
+	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,6 +37,10 @@
 
   </head>
   <body>
+  <div class="container">
+	<h1>Color Maps</h1>
+	<p>These visualizations represent how Korean and English divide up the whole color spectrum.</p>
+	<p>Each dot represents a 10x10x10 LAB color space. Each dot is given the average color of the most common name used for that color. The size of the dots is proportional to either what percent of names were that most common name (Max P(T|C) or by the saliency measure of color name agreement.</p>
     <h4>Max P(T|C) Map</h4>
     <div id="vis">
 
@@ -42,6 +49,6 @@
     <div id="vis-saliency">
 
     </div>
-
+  </div>
   </body>
 </html>

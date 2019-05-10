@@ -58,17 +58,23 @@ $(document).on('ready page:load', function () {
 
 
     function extendTail(){
-      //Repeating 0.5 times more
+      //Repeating 20% times more (13% at start, 7% at end) to make it start 
+	  // with the full arc of red in most languages, and have a little repeat
       data_line = data_line.map(function(colorCount){
-        return colorCount.concat(colorCount.slice().splice(0,Math.round(colorCount.length/2)));
+		let beforeExtra = colorCount.slice().splice(.87*Math.round(colorCount.length));
+		let afterExtra = colorCount.slice().splice(0,.07*Math.round(colorCount.length));
+        return beforeExtra.concat(colorCount.concat(afterExtra));
       });
 
       stacked_area = stacked_area.map(function(colorCount){
-        return colorCount.concat(colorCount.slice().splice(0,Math.round(colorCount.length/2)));
+		let beforeExtra = colorCount.slice().splice(.87*Math.round(colorCount.length));
+		let afterExtra = colorCount.slice().splice(0,.07*Math.round(colorCount.length));
+        return beforeExtra.concat(colorCount.concat(afterExtra));
       });
 
-
-      data_colors = data_colors.concat(data_colors.slice().splice(0,Math.round(data_colors.length/2)));
+	  let beforeExtra = data_colors.slice().splice(.87*Math.round(data_colors.length));
+	  let afterExtra = data_colors.slice().splice(0,.07*Math.round(data_colors.length));
+      data_colors = beforeExtra.concat(data_colors.concat(afterExtra));
     }
     function drawing(){
       let spectrumN = stacked_area[0].length;

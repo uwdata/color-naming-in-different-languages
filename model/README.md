@@ -16,3 +16,4 @@ Each color naming model is a JSON array of color-name pairs. Each pair has the b
 `translation_loss` is also an array having the translation losses between the top 100 English and Korean color name for full colors. 'dist' property indicate the distance (loss) between the English term (enTerm) and the Korean term (koTerm).
 
 
+Note: We represent the color labels provided by the participants in our study, which includes whatever racial biases they have (e.g., the color "skin"). This is not meant to be a prescriptive definition of what colors  fit what labels.

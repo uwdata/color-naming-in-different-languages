@@ -3,6 +3,9 @@
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 
+<title>Color Translator - Many Languages, Many Colors</title>
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/color-translator.css" rel="stylesheet">
 
@@ -78,7 +81,7 @@ let colorNamesAbrv = {
 	"Korean (한국어, 조선어)": "ko",
 	"Persian (Farsi) (فارسی)": "fa",
 	"Chinese (中文 (Zhōngwén), 汉语, 漢語)": "zh",
-	"German (Deutsch)": "de", // Note: German should not be used until we do dynamically binned color translation (the uniform bins end up just comparing the hue colors, which leads to inaccurate translations)
+	"German (Deutsch)": "de",
 	"Spanish (español)": "es",
 	"French (français, langue française)": "fr",
 	"Portuguese (português)": "pt",
@@ -96,13 +99,15 @@ for(lang in colorNamesAbrv){
 	colorNames[lang] = [];
 }
 
-var d3Data =[];
-var svg, somNodes;
-var N=20, M=10;
-var somWidth = 180;
-var boxWidth = somWidth / N;
-var boxHeight = boxWidth;
-var somHeight = M * boxWidth;
+
+let drawComparisonMap = false; //TODO: make this a setting that can be changed
+let d3Data =[];
+let svg, somNodes;
+let N=20, M=10;
+let somWidth = 180;
+let boxWidth = somWidth / N;
+let boxHeight = boxWidth;
+let somHeight = M * boxWidth;
 
 function start(){
   let fileLoadPromises = [];
@@ -194,6 +199,11 @@ function  initializeTerms(){
 	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
 	
 	for(i in allLangs){
+		// Note: German should not be used until we do dynamically binned color translation (the uniform bins end up just comparing the hue colors, which leads to inaccurate translations)
+		if(colorNamesAbrv[allLangs[i]] == "de"){
+			continue;
+		}
+		
 		if(colorNames[allLangs[i]].length >= 10){
 			// set selection from url hash params 
 			let startSelectedStr = "";
@@ -302,8 +312,9 @@ function updateTranslation(){
 		$("#results").append("<small>Translation Loss: " + Math.round(matchedTranslations[i].dist * 100) / 100 + "</small><br><br>");
 	}
 
-
-	createSOMCompare(currentStartLangAbrv, currentEndLangAbrv, term, matchedTranslations.map(function(a){ return a[currentEndLangKey];}));
+	if(drawComparisonMap){
+		createSOMCompare(currentStartLangAbrv, currentEndLangAbrv, term, matchedTranslations.map(function(a){ return a[currentEndLangKey];}));
+	}
 
 }
 
@@ -330,23 +341,36 @@ function generateColorInfoString(name, colorInfo){
 
 	str +="<br>";
 
+	
 	//str += "<div style='float:left;padding-left:20px;'> 2x2: </div> <div style='float:left'> ";
 
 	//str += generateColorGrid(colorInfo.colorNodes4)
 	//str += </div>
 
-	//str += "<div style='float:left;padding-left:20px;'> 3x3: </div>"
+	//str += "<div style='float:left;padding-left:20px;'> 3x3: </div>"\
+
 	str += "<div> </div>"
 
 	str += "<div style='float:left; padding-right:20px;'>  <div style='clear:both;'><strong>Color range:</strong></div>"
-	str += generateColorGrid(colorInfo.colorNodes9)
+	if(colorInfo.numRecords > 18){
+		str += generateColorGrid(colorInfo.colorNodes9)
+	} else {
+		str += generateColorGrid(colorInfo.colorNodes4)
+	}
 
 	str += "</div>"
-	str +=  "<div style='float:left;'><strong>Comparison Map</strong>"
-	str +=  "<div id='compareSOM-"+name.replace(/\s+/g,  "_")+"'></div>"
-	str += " </div><div style='clear:both'>";
+	if(drawComparisonMap){
+		str +=  "<div style='float:left;'><strong>Comparison Map</strong>"
+		str +=  "<div id='compareSOM-"+name.replace(/\s+/g,  "_")+"'></div>"
+		str += " </div>";
+	}
+	
+	str += "<div style='clear:both'>";
 
-	str += colorInfo.numRecords + "number of records<br>";
+	str += "Color name appears " + colorInfo.numRecords + " times<br>";
+	if(name == "skin" || name == "flesh" || name == "nude"){
+		str += "<small>Note: We represent the color labels provided by the participants in our study, which includes whatever racial biases they have. This is not meant to be a prescriptive definition of what colors  fit what labels.</small><br>"
+	}
 	//str += "2x2 excluded: " + Math.round(colorInfo.colorNodes4Excluded*100*100)/100 + "%, 3x3 excluded: "+ Math.round(colorInfo.colorNodes9Excluded*100*100)/100 + "%<br>";
 
 
@@ -644,7 +668,7 @@ function nameMouseLeave(){
 
 	 </select>
 	 <div id="startColorInfo">
-		Loading...
+		<strong>Loading...</strong>
 	 </div>
 
 
@@ -654,7 +678,7 @@ function nameMouseLeave(){
   <div class="col-6" style="height:100%">
 	 <label>Destination Language</label>
 	 <select id="destLang"> </select>
-	 <div id="results" style="overflow-y: auto; height:100%; max-height:500px"> Loading...</div>
+	 <div id="results" style="overflow-y: auto; height:100%; max-height:500px"> <strong>Loading...</strong></div>
  </div>
 
  </div></div>
