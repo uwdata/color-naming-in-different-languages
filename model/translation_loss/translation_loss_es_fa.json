@@ -1,1402 +1,1002 @@
 [
   {
-    "esterm": "azul",
-    "dist": 12.345756158436357,
-    "faterm": "سبز",
-    "esterm_refined": "azul",
-    "faterm_refined": "سبز"
-  },
-  {
-    "esterm": "azul",
-    "dist": 5.5250217762365,
-    "faterm": "بنفش",
-    "esterm_refined": "azul",
-    "faterm_refined": "بنفش"
-  },
-  {
-    "esterm": "azul",
-    "dist": 1.2910438680137424,
-    "faterm": "آبی",
-    "esterm_refined": "azul",
-    "faterm_refined": "آبی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 13.609134205619316,
-    "faterm": "قرمز",
-    "esterm_refined": "azul",
-    "faterm_refined": "قرمز"
-  },
-  {
-    "esterm": "azul",
-    "dist": 8.171464184343359,
-    "faterm": "صورتی",
-    "esterm_refined": "azul",
-    "faterm_refined": "صورتی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 14.267083284810662,
-    "faterm": "نارنجی",
-    "esterm_refined": "azul",
-    "faterm_refined": "نارنجی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 15.677184082264716,
-    "faterm": "زرد",
-    "esterm_refined": "azul",
-    "faterm_refined": "زرد"
-  },
-  {
-    "esterm": "azul",
-    "dist": 10.612774068128235,
-    "faterm": "قهوه ای",
-    "esterm_refined": "azul",
-    "faterm_refined": "قهوهآی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 5.56210254037505,
-    "faterm": "آبی آسمانی",
-    "esterm_refined": "azul",
-    "faterm_refined": "آبیآسمانی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 9.40012355237973,
-    "faterm": "سرخابی",
-    "esterm_refined": "azul",
-    "faterm_refined": "سرخابی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 15.626728507073214,
-    "faterm": "سبز فسفری",
-    "esterm_refined": "azul",
-    "faterm_refined": "سبزفسفری"
-  },
-  {
-    "esterm": "azul",
-    "dist": 9.27988150258592,
-    "faterm": "سبز آبی",
-    "esterm_refined": "azul",
-    "faterm_refined": "سبزآبی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 2.858621367847856,
-    "faterm": "آبی نفتی",
-    "esterm_refined": "azul",
-    "faterm_refined": "آبینفتی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 13.755548486956622,
-    "faterm": "خردلی",
-    "esterm_refined": "azul",
-    "faterm_refined": "خردلی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 14.096275797672362,
-    "faterm": "سبز روشن",
-    "esterm_refined": "azul",
-    "faterm_refined": "سبزروشن"
-  },
-  {
-    "esterm": "azul",
-    "dist": 13.82261567066104,
-    "faterm": "سبز چمنی",
-    "esterm_refined": "azul",
-    "faterm_refined": "سبزچمنی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 10.1899994997749,
-    "faterm": "سبز لجنی",
-    "esterm_refined": "azul",
-    "faterm_refined": "سبزلجنی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 3.2098265493097617,
-    "faterm": "آبی تیره",
-    "esterm_refined": "azul",
-    "faterm_refined": "آبیتیره"
-  },
-  {
-    "esterm": "azul",
-    "dist": 15.749789745125357,
-    "faterm": "فسفری",
-    "esterm_refined": "azul",
-    "faterm_refined": "فسفری"
-  },
-  {
-    "esterm": "azul",
-    "dist": 7.767022703923316,
-    "faterm": "فیروزه ای",
-    "esterm_refined": "azul",
-    "faterm_refined": "فیروزهآی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 10.267483620081908,
-    "faterm": "گلبهی",
-    "esterm_refined": "azul",
-    "faterm_refined": "گلبهی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 10.65098607887488,
-    "faterm": "سبز تیره",
-    "esterm_refined": "azul",
-    "faterm_refined": "سبزتیره"
-  },
-  {
-    "esterm": "azul",
-    "dist": 12.503508427839307,
-    "faterm": "آجری",
-    "esterm_refined": "azul",
-    "faterm_refined": "آجری"
-  },
-  {
-    "esterm": "azul",
-    "dist": 10.871940916174033,
-    "faterm": "زرشکی",
-    "esterm_refined": "azul",
-    "faterm_refined": "زرشکی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 13.599793696776587,
-    "faterm": "سبز پسته ای",
-    "esterm_refined": "azul",
-    "faterm_refined": "سبزپستهآی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 7.663558520889367,
-    "faterm": "آبی فیروزه ای",
-    "esterm_refined": "azul",
-    "faterm_refined": "آبیفیروزهآی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 13.054757757893062,
-    "faterm": "سبز کم رنگ",
-    "esterm_refined": "azul",
-    "faterm_refined": "سبزکمرنگ"
-  },
-  {
-    "esterm": "azul",
-    "dist": 4.3490807850159605,
-    "faterm": "سرمه ای",
-    "esterm_refined": "azul",
-    "faterm_refined": "سرمهآی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 5.49271213734576,
-    "faterm": "آبی کاربنی",
-    "esterm_refined": "azul",
-    "faterm_refined": "آبیکاربنی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 6.634108887581895,
-    "faterm": "ارغوانی",
-    "esterm_refined": "azul",
-    "faterm_refined": "آرغوانی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 4.005590266440455,
-    "faterm": "سورمه ای",
-    "esterm_refined": "azul",
-    "faterm_refined": "سورمهآی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 7.258482602396368,
-    "faterm": "خاکستری",
-    "esterm_refined": "azul",
-    "faterm_refined": "خاکستری"
-  },
-  {
-    "esterm": "azul",
-    "dist": 10.514923021760444,
-    "faterm": "یشمی",
-    "esterm_refined": "azul",
-    "faterm_refined": "یشمی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 5.529912661159184,
-    "faterm": "یاسی",
-    "esterm_refined": "azul",
-    "faterm_refined": "یاسی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 4.292280954877541,
-    "faterm": "نیلی",
-    "esterm_refined": "azul",
-    "faterm_refined": "نیلی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 5.730305676654501,
-    "faterm": "بنفش روشن",
-    "esterm_refined": "azul",
-    "faterm_refined": "بنفشروشن"
-  },
-  {
-    "esterm": "azul",
-    "dist": 7.309200891326747,
-    "faterm": "طوسی",
-    "esterm_refined": "azul",
-    "faterm_refined": "طوسی"
-  },
-  {
-    "esterm": "azul",
-    "dist": 10.95002979740162,
-    "faterm": "کرم",
-    "esterm_refined": "azul",
-    "faterm_refined": "کرم"
-  },
-  {
-    "esterm": "azul",
-    "dist": 5.225428580683958,
-    "faterm": "بنفش تیره",
-    "esterm_refined": "azul",
-    "faterm_refined": "بنفشتیره"
-  },
-  {
-    "esterm": "azul",
-    "dist": 10.541657218681003,
-    "faterm": "سبز پررنگ",
-    "esterm_refined": "azul",
-    "faterm_refined": "سبزپررنگ"
-  },
-  {
-    "esterm": "verde",
-    "dist": 2.595573384154314,
-    "faterm": "سبز",
-    "esterm_refined": "verde",
-    "faterm_refined": "سبز"
-  },
-  {
-    "esterm": "verde",
-    "dist": 16.792832414937262,
-    "faterm": "بنفش",
-    "esterm_refined": "verde",
-    "faterm_refined": "بنفش"
-  },
-  {
-    "esterm": "verde",
-    "dist": 14.286969048895553,
-    "faterm": "آبی",
-    "esterm_refined": "verde",
-    "faterm_refined": "آبی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 13.624580599624647,
-    "faterm": "قرمز",
-    "esterm_refined": "verde",
-    "faterm_refined": "قرمز"
-  },
-  {
-    "esterm": "verde",
-    "dist": 15.145783643253026,
-    "faterm": "صورتی",
-    "esterm_refined": "verde",
-    "faterm_refined": "صورتی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 10.459868237278641,
-    "faterm": "نارنجی",
-    "esterm_refined": "verde",
-    "faterm_refined": "نارنجی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 5.720057782902394,
-    "faterm": "زرد",
-    "esterm_refined": "verde",
-    "faterm_refined": "زرد"
-  },
-  {
-    "esterm": "verde",
-    "dist": 9.252712782536099,
-    "faterm": "قهوه ای",
-    "esterm_refined": "verde",
-    "faterm_refined": "قهوهآی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 9.94509731671717,
-    "faterm": "آبی آسمانی",
-    "esterm_refined": "verde",
-    "faterm_refined": "آبیآسمانی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 15.501936673023804,
-    "faterm": "سرخابی",
-    "esterm_refined": "verde",
-    "faterm_refined": "سرخابی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 1.3781544838555622,
-    "faterm": "سبز فسفری",
-    "esterm_refined": "verde",
-    "faterm_refined": "سبزفسفری"
-  },
-  {
-    "esterm": "verde",
-    "dist": 5.9673253688812125,
-    "faterm": "سبز آبی",
-    "esterm_refined": "verde",
-    "faterm_refined": "سبزآبی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 16.728440673995355,
-    "faterm": "آبی نفتی",
-    "esterm_refined": "verde",
-    "faterm_refined": "آبینفتی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 7.183989484693307,
-    "faterm": "خردلی",
-    "esterm_refined": "verde",
-    "faterm_refined": "خردلی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 1.4446563486449675,
-    "faterm": "سبز روشن",
-    "esterm_refined": "verde",
-    "faterm_refined": "سبزروشن"
-  },
-  {
-    "esterm": "verde",
-    "dist": 2.0127553928683786,
-    "faterm": "سبز چمنی",
-    "esterm_refined": "verde",
-    "faterm_refined": "سبزچمنی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 6.319555349384012,
-    "faterm": "سبز لجنی",
-    "esterm_refined": "verde",
-    "faterm_refined": "سبزلجنی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 16.8606692874627,
-    "faterm": "آبی تیره",
-    "esterm_refined": "verde",
-    "faterm_refined": "آبیتیره"
-  },
-  {
-    "esterm": "verde",
-    "dist": 2.8283040990065516,
-    "faterm": "فسفری",
-    "esterm_refined": "verde",
-    "faterm_refined": "فسفری"
-  },
-  {
-    "esterm": "verde",
-    "dist": 7.675062838851746,
-    "faterm": "فیروزه ای",
-    "esterm_refined": "verde",
-    "faterm_refined": "فیروزهآی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 11.437037989154955,
-    "faterm": "گلبهی",
-    "esterm_refined": "verde",
-    "faterm_refined": "گلبهی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 5.621244476367559,
-    "faterm": "سبز تیره",
-    "esterm_refined": "verde",
-    "faterm_refined": "سبزتیره"
-  },
-  {
-    "esterm": "verde",
-    "dist": 10.239030136535153,
-    "faterm": "آجری",
-    "esterm_refined": "verde",
-    "faterm_refined": "آجری"
-  },
-  {
-    "esterm": "verde",
-    "dist": 12.880301960143703,
-    "faterm": "زرشکی",
-    "esterm_refined": "verde",
-    "faterm_refined": "زرشکی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 2.1707653076024798,
-    "faterm": "سبز پسته ای",
-    "esterm_refined": "verde",
-    "faterm_refined": "سبزپستهآی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 8.128549661550549,
-    "faterm": "آبی فیروزه ای",
-    "esterm_refined": "verde",
-    "faterm_refined": "آبیفیروزهآی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 2.922359655753751,
-    "faterm": "سبز کم رنگ",
-    "esterm_refined": "verde",
-    "faterm_refined": "سبزکمرنگ"
-  },
-  {
-    "esterm": "verde",
-    "dist": 15.908651760586025,
-    "faterm": "سرمه ای",
-    "esterm_refined": "verde",
-    "faterm_refined": "سرمهآی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 19.610440362777187,
-    "faterm": "آبی کاربنی",
-    "esterm_refined": "verde",
-    "faterm_refined": "آبیکاربنی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 15.660040773072637,
-    "faterm": "ارغوانی",
-    "esterm_refined": "verde",
-    "faterm_refined": "آرغوانی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 15.259126796989305,
-    "faterm": "سورمه ای",
-    "esterm_refined": "verde",
-    "faterm_refined": "سورمهآی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 9.249030493999859,
-    "faterm": "خاکستری",
-    "esterm_refined": "verde",
-    "faterm_refined": "خاکستری"
-  },
-  {
-    "esterm": "verde",
-    "dist": 5.932407425285593,
-    "faterm": "یشمی",
-    "esterm_refined": "verde",
-    "faterm_refined": "یشمی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 13.264292893251822,
-    "faterm": "یاسی",
-    "esterm_refined": "verde",
-    "faterm_refined": "یاسی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 10.838332570486624,
-    "faterm": "نیلی",
-    "esterm_refined": "verde",
-    "faterm_refined": "نیلی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 15.71344471357643,
-    "faterm": "بنفش روشن",
-    "esterm_refined": "verde",
-    "faterm_refined": "بنفشروشن"
-  },
-  {
-    "esterm": "verde",
-    "dist": 9.015962736387262,
-    "faterm": "طوسی",
-    "esterm_refined": "verde",
-    "faterm_refined": "طوسی"
-  },
-  {
-    "esterm": "verde",
-    "dist": 7.56976103657744,
-    "faterm": "کرم",
-    "esterm_refined": "verde",
-    "faterm_refined": "کرم"
-  },
-  {
-    "esterm": "verde",
-    "dist": 15.582565151172235,
-    "faterm": "بنفش تیره",
-    "esterm_refined": "verde",
-    "faterm_refined": "بنفشتیره"
-  },
-  {
-    "esterm": "verde",
-    "dist": 5.883055406037631,
-    "faterm": "سبز پررنگ",
-    "esterm_refined": "verde",
-    "faterm_refined": "سبزپررنگ"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 13.819857623342422,
-    "faterm": "سبز",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سبز"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 4.9475646023962545,
-    "faterm": "بنفش",
-    "esterm_refined": "rosa",
-    "faterm_refined": "بنفش"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 8.803758794383505,
-    "faterm": "آبی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "آبی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 6.109538258111093,
-    "faterm": "قرمز",
-    "esterm_refined": "rosa",
-    "faterm_refined": "قرمز"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 1.577254596387675,
-    "faterm": "صورتی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "صورتی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 8.9119762190312,
-    "faterm": "نارنجی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "نارنجی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 13.477842194871627,
-    "faterm": "زرد",
-    "esterm_refined": "rosa",
-    "faterm_refined": "زرد"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 7.648450955069211,
-    "faterm": "قهوه ای",
-    "esterm_refined": "rosa",
-    "faterm_refined": "قهوهآی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 10.9916799674914,
-    "faterm": "آبی آسمانی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "آبیآسمانی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 1.0753910017418968,
-    "faterm": "سرخابی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سرخابی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 16.307798056281246,
-    "faterm": "سبز فسفری",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سبزفسفری"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 12.929684026749035,
-    "faterm": "سبز آبی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سبزآبی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 8.536228167056075,
-    "faterm": "آبی نفتی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "آبینفتی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 10.626606677482009,
-    "faterm": "خردلی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "خردلی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 15.157158882575422,
-    "faterm": "سبز روشن",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سبزروشن"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 14.698641114768762,
-    "faterm": "سبز چمنی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سبزچمنی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 10.790947844154934,
-    "faterm": "سبز لجنی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سبزلجنی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 8.323896876090364,
-    "faterm": "آبی تیره",
-    "esterm_refined": "rosa",
-    "faterm_refined": "آبیتیره"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 15.512506285645895,
-    "faterm": "فسفری",
-    "esterm_refined": "rosa",
-    "faterm_refined": "فسفری"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 12.111523693972318,
-    "faterm": "فیروزه ای",
-    "esterm_refined": "rosa",
-    "faterm_refined": "فیروزهآی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 5.004079062456965,
-    "faterm": "گلبهی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "گلبهی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 12.039745729515143,
-    "faterm": "سبز تیره",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سبزتیره"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 7.646348635314026,
-    "faterm": "آجری",
-    "esterm_refined": "rosa",
-    "faterm_refined": "آجری"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 4.883575737451238,
-    "faterm": "زرشکی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "زرشکی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 14.329610403679688,
-    "faterm": "سبز پسته ای",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سبزپستهآی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 12.39388673328606,
-    "faterm": "آبی فیروزه ای",
-    "esterm_refined": "rosa",
-    "faterm_refined": "آبیفیروزهآی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 13.621208584691901,
-    "faterm": "سبز کم رنگ",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سبزکمرنگ"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 7.623201484643917,
-    "faterm": "سرمه ای",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سرمهآی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 9.096292785587872,
-    "faterm": "آبی کاربنی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "آبیکاربنی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 3.4696815619850905,
-    "faterm": "ارغوانی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "آرغوانی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 7.8781287224136545,
-    "faterm": "سورمه ای",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سورمهآی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 8.028195964049273,
-    "faterm": "خاکستری",
-    "esterm_refined": "rosa",
-    "faterm_refined": "خاکستری"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 10.749004414013358,
-    "faterm": "یشمی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "یشمی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 5.102666503922704,
-    "faterm": "یاسی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "یاسی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 9.779967579879681,
-    "faterm": "نیلی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "نیلی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 4.447129638954057,
-    "faterm": "بنفش روشن",
-    "esterm_refined": "rosa",
-    "faterm_refined": "بنفشروشن"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 8.59278030726394,
-    "faterm": "طوسی",
-    "esterm_refined": "rosa",
-    "faterm_refined": "طوسی"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 8.821488379084592,
-    "faterm": "کرم",
-    "esterm_refined": "rosa",
-    "faterm_refined": "کرم"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 5.801971649315333,
-    "faterm": "بنفش تیره",
-    "esterm_refined": "rosa",
-    "faterm_refined": "بنفشتیره"
-  },
-  {
-    "esterm": "rosa",
-    "dist": 12.168751283322587,
-    "faterm": "سبز پررنگ",
-    "esterm_refined": "rosa",
-    "faterm_refined": "سبزپررنگ"
-  },
-  {
-    "esterm": "morado",
-    "dist": 16.88834200980607,
-    "faterm": "سبز",
-    "esterm_refined": "morado",
-    "faterm_refined": "سبز"
-  },
-  {
-    "esterm": "morado",
-    "dist": 2.7150917211484864,
-    "faterm": "بنفش",
-    "esterm_refined": "morado",
-    "faterm_refined": "بنفش"
-  },
-  {
-    "esterm": "morado",
-    "dist": 6.907735759849698,
-    "faterm": "آبی",
-    "esterm_refined": "morado",
-    "faterm_refined": "آبی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 11.929100208565997,
-    "faterm": "قرمز",
-    "esterm_refined": "morado",
-    "faterm_refined": "قرمز"
-  },
-  {
-    "esterm": "morado",
-    "dist": 5.800919180698603,
-    "faterm": "صورتی",
-    "esterm_refined": "morado",
-    "faterm_refined": "صورتی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 14.57591345251517,
-    "faterm": "نارنجی",
-    "esterm_refined": "morado",
-    "faterm_refined": "نارنجی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 18.23426530410102,
-    "faterm": "زرد",
-    "esterm_refined": "morado",
-    "faterm_refined": "زرد"
-  },
-  {
-    "esterm": "morado",
-    "dist": 11.933988772491173,
-    "faterm": "قهوه ای",
-    "esterm_refined": "morado",
-    "faterm_refined": "قهوهآی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 11.411492863812272,
-    "faterm": "آبی آسمانی",
-    "esterm_refined": "morado",
-    "faterm_refined": "آبیآسمانی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 6.414288941262937,
-    "faterm": "سرخابی",
-    "esterm_refined": "morado",
-    "faterm_refined": "سرخابی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 19.91521803527863,
-    "faterm": "سبز فسفری",
-    "esterm_refined": "morado",
-    "faterm_refined": "سبزفسفری"
-  },
-  {
-    "esterm": "morado",
-    "dist": 14.745253165950178,
-    "faterm": "سبز آبی",
-    "esterm_refined": "morado",
-    "faterm_refined": "سبزآبی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 5.108505269245429,
-    "faterm": "آبی نفتی",
-    "esterm_refined": "morado",
-    "faterm_refined": "آبینفتی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 15.538963627633862,
-    "faterm": "خردلی",
-    "esterm_refined": "morado",
-    "faterm_refined": "خردلی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 18.529212178259346,
-    "faterm": "سبز روشن",
-    "esterm_refined": "morado",
-    "faterm_refined": "سبزروشن"
-  },
-  {
-    "esterm": "morado",
-    "dist": 18.10395344355022,
-    "faterm": "سبز چمنی",
-    "esterm_refined": "morado",
-    "faterm_refined": "سبزچمنی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 13.85620939230379,
-    "faterm": "سبز لجنی",
-    "esterm_refined": "morado",
-    "faterm_refined": "سبزلجنی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 4.955392459308605,
-    "faterm": "آبی تیره",
-    "esterm_refined": "morado",
-    "faterm_refined": "آبیتیره"
-  },
-  {
-    "esterm": "morado",
-    "dist": 19.509909936164792,
-    "faterm": "فسفری",
-    "esterm_refined": "morado",
-    "faterm_refined": "فسفری"
-  },
-  {
-    "esterm": "morado",
-    "dist": 13.40717908921804,
-    "faterm": "فیروزه ای",
-    "esterm_refined": "morado",
-    "faterm_refined": "فیروزهآی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 10.305086577058004,
-    "faterm": "گلبهی",
-    "esterm_refined": "morado",
-    "faterm_refined": "گلبهی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 14.823114696621824,
-    "faterm": "سبز تیره",
-    "esterm_refined": "morado",
-    "faterm_refined": "سبزتیره"
-  },
-  {
-    "esterm": "morado",
-    "dist": 12.892279789689473,
-    "faterm": "آجری",
-    "esterm_refined": "morado",
-    "faterm_refined": "آجری"
-  },
-  {
-    "esterm": "morado",
-    "dist": 9.645231657812955,
-    "faterm": "زرشکی",
-    "esterm_refined": "morado",
-    "faterm_refined": "زرشکی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 17.819003387523853,
-    "faterm": "سبز پسته ای",
-    "esterm_refined": "morado",
-    "faterm_refined": "سبزپستهآی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 13.465692412952821,
-    "faterm": "آبی فیروزه ای",
-    "esterm_refined": "morado",
-    "faterm_refined": "آبیفیروزهآی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 17.148288002455416,
-    "faterm": "سبز کم رنگ",
-    "esterm_refined": "morado",
-    "faterm_refined": "سبزکمرنگ"
-  },
-  {
-    "esterm": "morado",
-    "dist": 5.532028876620432,
-    "faterm": "سرمه ای",
-    "esterm_refined": "morado",
-    "faterm_refined": "سرمهآی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 3.9025297402908614,
-    "faterm": "آبی کاربنی",
-    "esterm_refined": "morado",
-    "faterm_refined": "آبیکاربنی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 4.407366110638734,
-    "faterm": "ارغوانی",
-    "esterm_refined": "morado",
-    "faterm_refined": "آرغوانی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 6.19302965205581,
-    "faterm": "سورمه ای",
-    "esterm_refined": "morado",
-    "faterm_refined": "سورمهآی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 10.258287695472442,
-    "faterm": "خاکستری",
-    "esterm_refined": "morado",
-    "faterm_refined": "خاکستری"
-  },
-  {
-    "esterm": "morado",
-    "dist": 14.066087493125249,
-    "faterm": "یشمی",
-    "esterm_refined": "morado",
-    "faterm_refined": "یشمی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 6.250603598320296,
-    "faterm": "یاسی",
-    "esterm_refined": "morado",
-    "faterm_refined": "یاسی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 9.790189016052024,
-    "faterm": "نیلی",
-    "esterm_refined": "morado",
-    "faterm_refined": "نیلی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 4.142133573933614,
-    "faterm": "بنفش روشن",
-    "esterm_refined": "morado",
-    "faterm_refined": "بنفشروشن"
-  },
-  {
-    "esterm": "morado",
-    "dist": 10.628447741327793,
-    "faterm": "طوسی",
-    "esterm_refined": "morado",
-    "faterm_refined": "طوسی"
-  },
-  {
-    "esterm": "morado",
-    "dist": 13.032794506562889,
-    "faterm": "کرم",
-    "esterm_refined": "morado",
-    "faterm_refined": "کرم"
-  },
-  {
-    "esterm": "morado",
-    "dist": 4.722524874688449,
-    "faterm": "بنفش تیره",
-    "esterm_refined": "morado",
-    "faterm_refined": "بنفشتیره"
-  },
-  {
-    "esterm": "morado",
-    "dist": 14.838197679510758,
-    "faterm": "سبز پررنگ",
-    "esterm_refined": "morado",
-    "faterm_refined": "سبزپررنگ"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 16.143069744467915,
-    "faterm": "سبز",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سبز"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 2.1629385962222414,
-    "faterm": "بنفش",
-    "esterm_refined": "violeta",
-    "faterm_refined": "بنفش"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 6.302089604824235,
-    "faterm": "آبی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "آبی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 11.471957156731557,
-    "faterm": "قرمز",
-    "esterm_refined": "violeta",
-    "faterm_refined": "قرمز"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 5.342243421075671,
-    "faterm": "صورتی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "صورتی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 13.969924212495496,
-    "faterm": "نارنجی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "نارنجی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 17.567426139223343,
-    "faterm": "زرد",
-    "esterm_refined": "violeta",
-    "faterm_refined": "زرد"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 11.226582595292,
-    "faterm": "قهوه ای",
-    "esterm_refined": "violeta",
-    "faterm_refined": "قهوهآی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 10.802547745481345,
-    "faterm": "آبی آسمانی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "آبیآسمانی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 6.037752558330369,
-    "faterm": "سرخابی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سرخابی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 19.195092289146118,
-    "faterm": "سبز فسفری",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سبزفسفری"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 14.056438157301551,
-    "faterm": "سبز آبی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سبزآبی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 4.525906124260391,
-    "faterm": "آبی نفتی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "آبینفتی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 14.867228239219472,
-    "faterm": "خردلی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "خردلی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 17.803554202403987,
-    "faterm": "سبز روشن",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سبزروشن"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 17.370934027251923,
-    "faterm": "سبز چمنی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سبزچمنی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 13.108545038435812,
-    "faterm": "سبز لجنی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سبزلجنی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 4.430976900233157,
-    "faterm": "آبی تیره",
-    "esterm_refined": "violeta",
-    "faterm_refined": "آبیتیره"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 18.799700849467058,
-    "faterm": "فسفری",
-    "esterm_refined": "violeta",
-    "faterm_refined": "فسفری"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 12.769518908733328,
-    "faterm": "فیروزه ای",
-    "esterm_refined": "violeta",
-    "faterm_refined": "فیروزهآی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 9.681528799107403,
-    "faterm": "گلبهی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "گلبهی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 14.085493694721103,
-    "faterm": "سبز تیره",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سبزتیره"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 12.248846161683886,
-    "faterm": "آجری",
-    "esterm_refined": "violeta",
-    "faterm_refined": "آجری"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 9.105454725069755,
-    "faterm": "زرشکی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "زرشکی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 17.096894305061976,
-    "faterm": "سبز پسته ای",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سبزپستهآی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 12.848115850679797,
-    "faterm": "آبی فیروزه ای",
-    "esterm_refined": "violeta",
-    "faterm_refined": "آبیفیروزهآی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 16.441434826085455,
-    "faterm": "سبز کم رنگ",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سبزکمرنگ"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 5.017358677175697,
-    "faterm": "سرمه ای",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سرمهآی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 3.928588786941083,
-    "faterm": "آبی کاربنی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "آبیکاربنی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 3.8087452812857685,
-    "faterm": "ارغوانی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "آرغوانی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 5.594864108507932,
-    "faterm": "سورمه ای",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سورمهآی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 9.611701617176566,
-    "faterm": "خاکستری",
-    "esterm_refined": "violeta",
-    "faterm_refined": "خاکستری"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 13.306485728539458,
-    "faterm": "یشمی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "یشمی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 5.692349557735321,
-    "faterm": "یاسی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "یاسی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 9.122413815343588,
-    "faterm": "نیلی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "نیلی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 3.767542972851344,
-    "faterm": "بنفش روشن",
-    "esterm_refined": "violeta",
-    "faterm_refined": "بنفشروشن"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 9.951383384239257,
-    "faterm": "طوسی",
-    "esterm_refined": "violeta",
-    "faterm_refined": "طوسی"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 12.368152308776615,
-    "faterm": "کرم",
-    "esterm_refined": "violeta",
-    "faterm_refined": "کرم"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 4.2160722425140245,
-    "faterm": "بنفش تیره",
-    "esterm_refined": "violeta",
-    "faterm_refined": "بنفشتیره"
-  },
-  {
-    "esterm": "violeta",
-    "dist": 14.079074990529739,
-    "faterm": "سبز پررنگ",
-    "esterm_refined": "violeta",
-    "faterm_refined": "سبزپررنگ"
+    "esterm": "azul", 
+    "dist": 12.345756158436357, 
+    "faterm": "سبز"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 5.5250217762365, 
+    "faterm": "بنفش"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 1.2910438680137424, 
+    "faterm": "آبی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 13.609134205619316, 
+    "faterm": "قرمز"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 8.171464184343359, 
+    "faterm": "صورتی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 14.267083284810662, 
+    "faterm": "نارنجی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 15.677184082264716, 
+    "faterm": "زرد"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 10.612774068128235, 
+    "faterm": "قهوهآی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 5.56210254037505, 
+    "faterm": "آبیآسمانی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 9.40012355237973, 
+    "faterm": "سرخابی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 15.626728507073214, 
+    "faterm": "سبزفسفری"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 9.27988150258592, 
+    "faterm": "سبزآبی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 2.858621367847856, 
+    "faterm": "آبینفتی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 13.755548486956622, 
+    "faterm": "خردلی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 14.096275797672362, 
+    "faterm": "سبزروشن"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 13.82261567066104, 
+    "faterm": "سبزچمنی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 10.1899994997749, 
+    "faterm": "سبزلجنی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 3.2098265493097617, 
+    "faterm": "آبیتیره"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 15.749789745125357, 
+    "faterm": "فسفری"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 7.767022703923316, 
+    "faterm": "فیروزهآی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 10.267483620081908, 
+    "faterm": "گلبهی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 10.65098607887488, 
+    "faterm": "سبزتیره"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 12.503508427839307, 
+    "faterm": "آجری"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 10.871940916174033, 
+    "faterm": "زرشکی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 13.599793696776587, 
+    "faterm": "سبزپستهآی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 7.663558520889367, 
+    "faterm": "آبیفیروزهآی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 13.054757757893062, 
+    "faterm": "سبزکمرنگ"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 4.3490807850159605, 
+    "faterm": "سرمهآی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 5.49271213734576, 
+    "faterm": "آبیکاربنی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 6.634108887581895, 
+    "faterm": "آرغوانی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 4.005590266440455, 
+    "faterm": "سورمهآی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 7.258482602396368, 
+    "faterm": "خاکستری"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 10.514923021760444, 
+    "faterm": "یشمی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 5.529912661159184, 
+    "faterm": "یاسی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 4.292280954877541, 
+    "faterm": "نیلی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 5.730305676654501, 
+    "faterm": "بنفشروشن"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 7.309200891326747, 
+    "faterm": "طوسی"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 10.95002979740162, 
+    "faterm": "کرم"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 5.225428580683958, 
+    "faterm": "بنفشتیره"
+  }, 
+  {
+    "esterm": "azul", 
+    "dist": 10.541657218681003, 
+    "faterm": "سبزپررنگ"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 2.595573384154314, 
+    "faterm": "سبز"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 16.792832414937262, 
+    "faterm": "بنفش"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 14.286969048895553, 
+    "faterm": "آبی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 13.624580599624647, 
+    "faterm": "قرمز"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 15.145783643253026, 
+    "faterm": "صورتی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 10.459868237278641, 
+    "faterm": "نارنجی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 5.720057782902394, 
+    "faterm": "زرد"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 9.252712782536099, 
+    "faterm": "قهوهآی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 9.94509731671717, 
+    "faterm": "آبیآسمانی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 15.501936673023804, 
+    "faterm": "سرخابی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 1.3781544838555622, 
+    "faterm": "سبزفسفری"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 5.9673253688812125, 
+    "faterm": "سبزآبی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 16.728440673995355, 
+    "faterm": "آبینفتی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 7.183989484693307, 
+    "faterm": "خردلی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 1.4446563486449675, 
+    "faterm": "سبزروشن"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 2.0127553928683786, 
+    "faterm": "سبزچمنی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 6.319555349384012, 
+    "faterm": "سبزلجنی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 16.8606692874627, 
+    "faterm": "آبیتیره"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 2.8283040990065516, 
+    "faterm": "فسفری"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 7.675062838851746, 
+    "faterm": "فیروزهآی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 11.437037989154955, 
+    "faterm": "گلبهی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 5.621244476367559, 
+    "faterm": "سبزتیره"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 10.239030136535153, 
+    "faterm": "آجری"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 12.880301960143703, 
+    "faterm": "زرشکی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 2.1707653076024798, 
+    "faterm": "سبزپستهآی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 8.128549661550549, 
+    "faterm": "آبیفیروزهآی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 2.922359655753751, 
+    "faterm": "سبزکمرنگ"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 15.908651760586025, 
+    "faterm": "سرمهآی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 19.610440362777187, 
+    "faterm": "آبیکاربنی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 15.660040773072637, 
+    "faterm": "آرغوانی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 15.259126796989305, 
+    "faterm": "سورمهآی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 9.249030493999859, 
+    "faterm": "خاکستری"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 5.932407425285593, 
+    "faterm": "یشمی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 13.264292893251822, 
+    "faterm": "یاسی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 10.838332570486624, 
+    "faterm": "نیلی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 15.71344471357643, 
+    "faterm": "بنفشروشن"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 9.015962736387262, 
+    "faterm": "طوسی"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 7.56976103657744, 
+    "faterm": "کرم"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 15.582565151172235, 
+    "faterm": "بنفشتیره"
+  }, 
+  {
+    "esterm": "verde", 
+    "dist": 5.883055406037631, 
+    "faterm": "سبزپررنگ"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 13.819857623342422, 
+    "faterm": "سبز"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 4.9475646023962545, 
+    "faterm": "بنفش"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 8.803758794383505, 
+    "faterm": "آبی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 6.109538258111093, 
+    "faterm": "قرمز"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 1.577254596387675, 
+    "faterm": "صورتی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 8.9119762190312, 
+    "faterm": "نارنجی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 13.477842194871627, 
+    "faterm": "زرد"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 7.648450955069211, 
+    "faterm": "قهوهآی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 10.9916799674914, 
+    "faterm": "آبیآسمانی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 1.0753910017418968, 
+    "faterm": "سرخابی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 16.307798056281246, 
+    "faterm": "سبزفسفری"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 12.929684026749035, 
+    "faterm": "سبزآبی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 8.536228167056075, 
+    "faterm": "آبینفتی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 10.626606677482009, 
+    "faterm": "خردلی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 15.157158882575422, 
+    "faterm": "سبزروشن"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 14.698641114768762, 
+    "faterm": "سبزچمنی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 10.790947844154934, 
+    "faterm": "سبزلجنی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 8.323896876090364, 
+    "faterm": "آبیتیره"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 15.512506285645895, 
+    "faterm": "فسفری"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 12.111523693972318, 
+    "faterm": "فیروزهآی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 5.004079062456965, 
+    "faterm": "گلبهی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 12.039745729515143, 
+    "faterm": "سبزتیره"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 7.646348635314026, 
+    "faterm": "آجری"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 4.883575737451238, 
+    "faterm": "زرشکی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 14.329610403679688, 
+    "faterm": "سبزپستهآی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 12.39388673328606, 
+    "faterm": "آبیفیروزهآی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 13.621208584691901, 
+    "faterm": "سبزکمرنگ"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 7.623201484643917, 
+    "faterm": "سرمهآی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 9.096292785587872, 
+    "faterm": "آبیکاربنی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 3.4696815619850905, 
+    "faterm": "آرغوانی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 7.8781287224136545, 
+    "faterm": "سورمهآی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 8.028195964049273, 
+    "faterm": "خاکستری"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 10.749004414013358, 
+    "faterm": "یشمی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 5.102666503922704, 
+    "faterm": "یاسی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 9.779967579879681, 
+    "faterm": "نیلی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 4.447129638954057, 
+    "faterm": "بنفشروشن"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 8.59278030726394, 
+    "faterm": "طوسی"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 8.821488379084592, 
+    "faterm": "کرم"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 5.801971649315333, 
+    "faterm": "بنفشتیره"
+  }, 
+  {
+    "esterm": "rosa", 
+    "dist": 12.168751283322587, 
+    "faterm": "سبزپررنگ"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 16.88834200980607, 
+    "faterm": "سبز"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 2.7150917211484864, 
+    "faterm": "بنفش"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 6.907735759849698, 
+    "faterm": "آبی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 11.929100208565997, 
+    "faterm": "قرمز"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 5.800919180698603, 
+    "faterm": "صورتی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 14.57591345251517, 
+    "faterm": "نارنجی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 18.23426530410102, 
+    "faterm": "زرد"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 11.933988772491173, 
+    "faterm": "قهوهآی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 11.411492863812272, 
+    "faterm": "آبیآسمانی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 6.414288941262937, 
+    "faterm": "سرخابی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 19.91521803527863, 
+    "faterm": "سبزفسفری"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 14.745253165950178, 
+    "faterm": "سبزآبی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 5.108505269245429, 
+    "faterm": "آبینفتی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 15.538963627633862, 
+    "faterm": "خردلی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 18.529212178259346, 
+    "faterm": "سبزروشن"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 18.10395344355022, 
+    "faterm": "سبزچمنی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 13.85620939230379, 
+    "faterm": "سبزلجنی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 4.955392459308605, 
+    "faterm": "آبیتیره"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 19.509909936164792, 
+    "faterm": "فسفری"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 13.40717908921804, 
+    "faterm": "فیروزهآی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 10.305086577058004, 
+    "faterm": "گلبهی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 14.823114696621824, 
+    "faterm": "سبزتیره"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 12.892279789689473, 
+    "faterm": "آجری"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 9.645231657812955, 
+    "faterm": "زرشکی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 17.819003387523853, 
+    "faterm": "سبزپستهآی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 13.465692412952821, 
+    "faterm": "آبیفیروزهآی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 17.148288002455416, 
+    "faterm": "سبزکمرنگ"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 5.532028876620432, 
+    "faterm": "سرمهآی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 3.9025297402908614, 
+    "faterm": "آبیکاربنی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 4.407366110638734, 
+    "faterm": "آرغوانی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 6.19302965205581, 
+    "faterm": "سورمهآی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 10.258287695472442, 
+    "faterm": "خاکستری"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 14.066087493125249, 
+    "faterm": "یشمی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 6.250603598320296, 
+    "faterm": "یاسی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 9.790189016052024, 
+    "faterm": "نیلی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 4.142133573933614, 
+    "faterm": "بنفشروشن"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 10.628447741327793, 
+    "faterm": "طوسی"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 13.032794506562889, 
+    "faterm": "کرم"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 4.722524874688449, 
+    "faterm": "بنفشتیره"
+  }, 
+  {
+    "esterm": "morado", 
+    "dist": 14.838197679510758, 
+    "faterm": "سبزپررنگ"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 16.143069744467915, 
+    "faterm": "سبز"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 2.1629385962222414, 
+    "faterm": "بنفش"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 6.302089604824235, 
+    "faterm": "آبی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 11.471957156731557, 
+    "faterm": "قرمز"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 5.342243421075671, 
+    "faterm": "صورتی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 13.969924212495496, 
+    "faterm": "نارنجی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 17.567426139223343, 
+    "faterm": "زرد"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 11.226582595292, 
+    "faterm": "قهوهآی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 10.802547745481345, 
+    "faterm": "آبیآسمانی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 6.037752558330369, 
+    "faterm": "سرخابی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 19.195092289146118, 
+    "faterm": "سبزفسفری"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 14.056438157301551, 
+    "faterm": "سبزآبی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 4.525906124260391, 
+    "faterm": "آبینفتی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 14.867228239219472, 
+    "faterm": "خردلی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 17.803554202403987, 
+    "faterm": "سبزروشن"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 17.370934027251923, 
+    "faterm": "سبزچمنی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 13.108545038435812, 
+    "faterm": "سبزلجنی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 4.430976900233157, 
+    "faterm": "آبیتیره"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 18.799700849467058, 
+    "faterm": "فسفری"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 12.769518908733328, 
+    "faterm": "فیروزهآی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 9.681528799107403, 
+    "faterm": "گلبهی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 14.085493694721103, 
+    "faterm": "سبزتیره"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 12.248846161683886, 
+    "faterm": "آجری"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 9.105454725069755, 
+    "faterm": "زرشکی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 17.096894305061976, 
+    "faterm": "سبزپستهآی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 12.848115850679797, 
+    "faterm": "آبیفیروزهآی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 16.441434826085455, 
+    "faterm": "سبزکمرنگ"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 5.017358677175697, 
+    "faterm": "سرمهآی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 3.928588786941083, 
+    "faterm": "آبیکاربنی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 3.8087452812857685, 
+    "faterm": "آرغوانی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 5.594864108507932, 
+    "faterm": "سورمهآی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 9.611701617176566, 
+    "faterm": "خاکستری"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 13.306485728539458, 
+    "faterm": "یشمی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 5.692349557735321, 
+    "faterm": "یاسی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 9.122413815343588, 
+    "faterm": "نیلی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 3.767542972851344, 
+    "faterm": "بنفشروشن"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 9.951383384239257, 
+    "faterm": "طوسی"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 12.368152308776615, 
+    "faterm": "کرم"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 4.2160722425140245, 
+    "faterm": "بنفشتیره"
+  }, 
+  {
+    "esterm": "violeta", 
+    "dist": 14.079074990529739, 
+    "faterm": "سبزپررنگ"
   }
 ]
