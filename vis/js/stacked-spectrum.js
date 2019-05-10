@@ -81,7 +81,7 @@ $(document).on('ready page:load', function () {
 
       let margin = {top: 30, right: 50, bottom: 30, left: 50},
           width = $(targetSelector).width() - margin.left - margin.right,
-          height = 200 - margin.top - margin.bottom;
+          height = Math.min(200 - margin.top - margin.bottom, width/4);
 
       let x = d3.scaleLinear()
           .range([0, width])
