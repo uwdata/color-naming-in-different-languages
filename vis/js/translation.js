@@ -9,52 +9,52 @@ const MIN_L = 0,
       MAX_A = 93.55002493980824,
       MAX_B = 93.38847788323793;
 const translationByDict = [
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "red", "koterm_refined": "빨강", "by": "dict", "gid": 1 },
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "빨강", "enterm_refined": "red", "by": "dict", "gid": 1 },
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "red", "koterm": "빨강", "by": "dict", "gid": 1 },
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "빨강", "enterm": "red", "by": "dict", "gid": 1 },
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "brown", "koterm_refined": "갈", "by": "dict", "gid": 2 },
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "갈", "enterm_refined": "brown", "by": "dict", "gid": 2 },
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "brown", "koterm": "갈", "by": "dict", "gid": 2 },
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "갈", "enterm": "brown", "by": "dict", "gid": 2 },
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "orange", "koterm_refined": "주황", "by": "dict", "gid": 3},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "주황", "enterm_refined": "orange", "by": "dict", "gid": 3},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "orange", "koterm": "주황", "by": "dict", "gid": 3},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "주황", "enterm": "orange", "by": "dict", "gid": 3},
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "yellow", "koterm_refined": "노랑", "by": "dict", "gid": 4},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "노랑", "enterm_refined": "yellow", "by": "dict", "gid": 4},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "yellow", "koterm": "노랑", "by": "dict", "gid": 4},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "노랑", "enterm": "yellow", "by": "dict", "gid": 4},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "연두", "enterm_refined": "lightgreen", "by": "dict", "gid":5},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "연두", "enterm": "lightgreen", "by": "dict", "gid":5},
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "green", "koterm_refined": "녹", "by": "dict" , "gid": 6},
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "green", "koterm_refined": "초록", "by": "dict" , "gid": 6},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "초록", "enterm_refined": "green", "by": "dict" , "gid": 6},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "green", "koterm": "녹", "by": "dict" , "gid": 6},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "green", "koterm": "초록", "by": "dict" , "gid": 6},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "초록", "enterm": "green", "by": "dict" , "gid": 6},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "하늘", "enterm_refined": "skyblue", "by": "dict", "gid":7},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "하늘", "enterm": "skyblue", "by": "dict", "gid":7},
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "blue", "koterm_refined": "청", "by": "dict", "gid": 8},
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "blue", "koterm_refined": "파랑", "by": "dict", "gid": 8},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "파랑", "enterm_refined": "blue", "by": "dict", "gid": 8},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "blue", "koterm": "청", "by": "dict", "gid": 8},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "blue", "koterm": "파랑", "by": "dict", "gid": 8},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "파랑", "enterm": "blue", "by": "dict", "gid": 8},
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "purple", "koterm_refined": "자주", "by": "dict", "gid": 9},
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "purple", "koterm_refined": "보라", "by": "dict", "gid": 9},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "보라", "enterm_refined": "purple", "by": "dict", "gid": 9},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "purple", "koterm": "자주", "by": "dict", "gid": 9},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "purple", "koterm": "보라", "by": "dict", "gid": 9},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "보라", "enterm": "purple", "by": "dict", "gid": 9},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "자주", "enterm_refined": "purple", "by": "dict", "gid": 10},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "자주", "enterm": "purple", "by": "dict", "gid": 10},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "연보라", "enterm_refined": "lightpurple", "by": "dict", "gid": 11},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "연보라", "enterm": "lightpurple", "by": "dict", "gid": 11},
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "pink", "koterm_refined": "분홍", "by": "dict", "gid": 12},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "분홍", "enterm_refined": "pink", "by": "dict", "gid": 12},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "pink", "koterm": "분홍", "by": "dict", "gid": 12},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "분홍", "enterm": "pink", "by": "dict", "gid": 12},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "남", "enterm_refined": "indigo", "by": "dict", "gid": 13},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "남", "enterm": "indigo", "by": "dict", "gid": 13},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "청록", "enterm_refined": "turquoise", "by": "dict", "gid": 14},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "청록", "enterm_refined": "teal", "by": "dict", "gid": 14},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "청록", "enterm_refined": "cyan", "by": "dict", "gid": 14},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "청록", "enterm": "turquoise", "by": "dict", "gid": 14},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "청록", "enterm": "teal", "by": "dict", "gid": 14},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "청록", "enterm": "cyan", "by": "dict", "gid": 14},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "회", "enterm_refined": "gray", "by": "dict", "gid": 15},
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "gray", "koterm_refined": "회", "by": "dict", "gid": 15},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "회", "enterm": "gray", "by": "dict", "gid": 15},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "gray", "koterm": "회", "by": "dict", "gid": 15},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm_refined": "검정", "enterm_refined": "black", "by": "dict", "gid": 16},
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm_refined": "black", "koterm_refined": "검정", "by": "dict", "gid": 16}
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "검정", "enterm": "black", "by": "dict", "gid": 16},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "black", "koterm": "검정", "by": "dict", "gid": 16}
 ];
 //Papago translator
 //Google Translator
@@ -82,28 +82,28 @@ $(document).on('ready page:load', function () {
           "by": "color",
           "gid": td.gid
         };
-        td.dist = data.find(d => d.koterm_refined === td.koterm_refined && d.enterm_refined === td.enterm_refined).dist;
+        td.dist = data.find(d => d.koterm === td.koterm && d.enterm === td.enterm).dist;
         if (td.lang_s === "ko") {
-          minD = d3.min(data.filter(d => d.koterm_refined === td.koterm_refined), d => d.dist);
+          minD = d3.min(data.filter(d => d.koterm === td.koterm), d => d.dist);
           best = data.find(d => d.dist === minD);
           translationByColor = Object.assign(translationByColor, {
-            "koterm_refined": td.koterm_refined,
-            "enterm_refined": best.enterm_refined,
+            "koterm": td.koterm,
+            "enterm": best.enterm,
             "dist": minD
           });
         } else {
-          minD = d3.min(data.filter(d => d.enterm_refined === td.enterm_refined), d => d.dist);
+          minD = d3.min(data.filter(d => d.enterm === td.enterm), d => d.dist);
           best = data.find(d => d.dist === minD);
           translationByColor = Object.assign(translationByColor, {
-            "koterm_refined": best.koterm_refined,
-            "enterm_refined": td.enterm_refined,
+            "koterm": best.koterm,
+            "enterm": td.enterm,
             "dist": minD
           });
         }
 
         translations.push(translationByColor);
       });
-      translations = unique(translations, tr => tr.koterm_refined + tr.enterm_refined + tr.direction + tr.by + tr.gid);
+      translations = unique(translations, tr => tr.koterm + tr.enterm + tr.direction + tr.by + tr.gid);
       draw(translations, avgColors);
     });
   });
@@ -117,7 +117,7 @@ function draw(translations, avgColors){
   //Extract terms and check each of them if it is a basic term.
   let basicTerms = translationByDict.map(d => {
     return {
-      "term": d.lang_s === "ko" ? d.koterm_refined : d.enterm_refined,
+      "term": d.lang_s === "ko" ? d.koterm : d.enterm,
       "lang": d.lang_s,
       "gid": d.gid,
       "basic": true
@@ -126,7 +126,7 @@ function draw(translations, avgColors){
 
   let otherTerms = translations.map(d => {
     return {
-      "term": d.lang_t === "ko" ? d.koterm_refined : d.enterm_refined,
+      "term": d.lang_t === "ko" ? d.koterm : d.enterm,
       "lang": d.lang_t,
       "gid": d.gid,
       "basic": false
@@ -147,10 +147,10 @@ function draw(translations, avgColors){
     t.lab = avgC.avgLABColor;
     t.avgColorCode = avgC.avgColorRGBCode;
     t.soleTarget = translations.filter(tr => {
-      return t.term === (tr.lang_t === "ko" ? tr.koterm_refined : tr.enterm_refined);
+      return t.term === (tr.lang_t === "ko" ? tr.koterm : tr.enterm);
     }).length === 1;
     t.soleSource = translations.filter(tr => {
-      return t.term === (tr.lang_s === "ko" ? tr.koterm_refined : tr.enterm_refined);
+      return t.term === (tr.lang_s === "ko" ? tr.koterm : tr.enterm);
     }).length === 1;
   });
   console.log(terms);
@@ -171,15 +171,15 @@ function draw(translations, avgColors){
 
   //Divide translations into "directional" and "bidirectional"
   function viceVersa(tr1, tr2){
-    return tr1.koterm_refined === tr2.koterm_refined &&
-           tr1.enterm_refined === tr2.enterm_refined &&
+    return tr1.koterm === tr2.koterm &&
+           tr1.enterm === tr2.enterm &&
            tr1.lang_t === tr2.lang_s &&
            tr1.by === tr2.by &&
            tr1.gid === tr2.gid;
   }
   let biDTrans = translations.filter(tr => translations.find(tr2 => viceVersa(tr, tr2)));
   let uniDTrans = translations.filter(tr => !translations.find(tr2 => viceVersa(tr, tr2)));
-  biDTrans = unique(biDTrans, tr => tr.koterm_refined + tr.enterm_refined + tr.by + tr.gid);
+  biDTrans = unique(biDTrans, tr => tr.koterm + tr.enterm + tr.by + tr.gid);
 
 
 
@@ -190,13 +190,13 @@ function draw(translations, avgColors){
   let maxTermY = d3.max(terms, t => termY(t));
   let lineEndX = (tr, st) => {
     let lang = st === "source" ? tr.lang_s : tr.lang_t;
-    let term = lang === "ko" ? tr.koterm_refined : tr.enterm_refined;
+    let term = lang === "ko" ? tr.koterm : tr.enterm;
     let sign = lang === "ko" ? -1 : 1;
     return termX(lang) + sign * (document.getElementById(term).getComputedTextLength() + 5 + chipR*2);
   };
   let lineEndY = (tr, st) => {
     let lang = st === "source" ? tr.lang_s : tr.lang_t;
-    let termName = lang === "ko" ? tr.koterm_refined : tr.enterm_refined;
+    let termName = lang === "ko" ? tr.koterm : tr.enterm;
     let term = terms.find(t => t.term === termName && tr.gid === t.gid);
     let offset = tr.by === "dict" ? -2.5 : 2.5;
     if ( (term.soleTarget && st==="target") || (term.soleSource && st==="source") ) {
@@ -206,7 +206,7 @@ function draw(translations, avgColors){
   };
 
   let colorChipX= t => {
-    let term = t.lang === "ko" ? t.koterm_refined : t.enterm_refined;
+    let term = t.lang === "ko" ? t.koterm : t.enterm;
     let sign = t.lang === "ko" ? -1 : 1;
     return termX(t.lang) + sign * (document.getElementById(t.term).getComputedTextLength() + 7);
   };
@@ -220,7 +220,7 @@ function draw(translations, avgColors){
       termX(trans.lang_t) - barWidth(trans.dist) - barOffset;
   };
   let barY = (trans) => {
-    let term = trans.lang_t === "ko" ? trans.koterm_refined : trans.enterm_refined;
+    let term = trans.lang_t === "ko" ? trans.koterm : trans.enterm;
     return termY(terms.find(t2 => t2.term === term && trans.gid === t2.gid));
   };
   let barHeight = 10;
