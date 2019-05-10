@@ -254,8 +254,8 @@ let vlSpec = {
   "spec":{
     "layer": [
       {
-        "height": 144,
-        "width": 144,
+        "height": 120,
+        "width": 120,
         "mark": {
           "type":"square",
           "strokeWidth": "0.5",
@@ -361,8 +361,8 @@ let vlSpec = {
         }
       },
       {
-        "height": 144,
-        "width": 144,
+        "height": 120,
+        "width": 120,
         "selection": {
           "bins": {
             "type": "single",
