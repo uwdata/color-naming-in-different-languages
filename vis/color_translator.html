@@ -310,7 +310,7 @@ function updateTranslation(){
 	$("#results").html("");
 	for(i in matchedTranslations){
 		let matchedName = matchedTranslations[i][currentEndLangKey]
-		$("#results").append(generateColorInfoString(matchedName, allColorInfo[currentEndLangAbrv][matchedName]));
+		$("#results").append(generateColorInfoString(matchedName,  allColorInfo[currentEndLangAbrv][matchedName]));
 		$("#results").append("<small>Translation Loss: " + Math.round(matchedTranslations[i].dist * 100) / 100 + "</small><br><br>");
 	}
 
@@ -333,7 +333,7 @@ function generateColorInfoString(name, colorInfo){
 	str += "<div style='";
 	str += "width: 20px; height: 20px; float:left;"
 	str += "background-color:"+colorInfo.representativeColor+ "'></div>"
-	str += "<strong style='padding-left:5px;'>" + name + "</strong> ";
+	str += "<strong style='padding-left:5px;'>" + colorInfo.commonColorName + "</strong> ";
 
 	str += "(#"+colorInfo.rank +" color)";
 
