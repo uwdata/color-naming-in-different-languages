@@ -21,7 +21,7 @@ $( document ).ready(function() {
  	navBarStr += '       <a class="nav-link" href="'+rootPath+'index.html">Home <span class="sr-only">(current)</span></a>';
 	navBarStr += '      </li>';
 	navBarStr += '      <li class="nav-item">';
-	navBarStr += '        <a class="nav-link" href="http://labinthewild.org/studies/color_perception/">Take the Survey</a>';
+	navBarStr += '        <a class="nav-link" href="http://labinthewild.org/studies/color_perception/" target="_blank">Take the Survey</a>';
 	navBarStr += '      </li>';
 	navBarStr += '      <li class="nav-item dropdown">';
 	navBarStr += '        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
