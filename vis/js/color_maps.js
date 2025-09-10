@@ -3,6 +3,9 @@ $(document).on('ready page:load', function () {
   // let rootPath = window.location.pathname.split('/').slice(0,-1).join("/");
 
   $.getJSON("../model/lab_bins.json", function( lab_bins ) {
+  $.getJSON("../model/full_color_map_saliency_bins.json", function( saliencies ) {
+    console.log(saliencies);
+    
     lab_bins_array = []
     for(const [l_bin, l_bin_entries] of Object.entries(lab_bins)){
       for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries)){
@@ -16,23 +19,39 @@ $(document).on('ready page:load', function () {
     $(".container").append('<div class="row" id="vis"></div>')
 
     let margin = {top: 30, right: 50, bottom: 30, left: 50},
-        width = $('#vis').width() - margin.left - margin.right,
-        height = Math.min(200 - margin.top - margin.bottom, width/4);
+        width = 1200,//$('#vis').width() - margin.left - margin.right,
+        height = 400//Math.min(800 - margin.top - margin.bottom, width/4);
     
     let svg = d3.select('#vis').append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
-      
+    
+
+    const saliencies_en = saliencies.filter((a) => a.lang.split(" ")[0]=="English" 
+  ||  a.lang.split(" ")[0]=="Korean")
+    const lang_positions = {
+      "English": 0,
+      "Korean": 1
+    }
+
     svg.append("g")
         
       .selectAll()
-      .data(lab_bins_array)
+      .data(saliencies_en)
       .join("rect")
-        .attr("x", (d) => d.a_bin*5 +100 + 100*d.l_bin )
-        .attr("y", (d) => -d.b_bin*5 + 100)
-        .attr("fill", (d) => `rgb(${d.representative_rgb.r},${d.representative_rgb.g},${d.representative_rgb.b})`)
-        .attr("height", 3)
-        .attr("width", 3)
+        .attr("x", (d) => d.binA*5 +100 + 100*d.binL )
+        .attr("y", (d) => {
+          return -d.binB*5 + 100 + lang_positions[d.lang.split(" ")[0]] * 150
+        })
+        .attr("fill", (d) => {
+          return d.avgTermColor
+          //return d3.lab(d.lab.split(",")[0], d.lab.split(",")[1], d.lab.split(",")[2]).rgb()
+          //const bin = lab_bins[d.binL][d.binA][d.binB]
+          //return `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
+          })
+        .attr("height", (d) => 5*d.maxpTC)
+        .attr("width", (d) => 5*d.maxpTC)
+        //.attr("style", "border: solid white 1px")
     // Nbin = data.colorSet.length;
     // emptyNbin = [];
     // for (let i = 0; i < Nbin; i++) {
@@ -45,6 +64,7 @@ $(document).on('ready page:load', function () {
     //   $(".container").append('<div class="row" id="vis'+i+'"></div>');
     //   drawLangSpec('#vis'+i, data, lang, data.colorSet);
     // });
+  })
   });
 
 

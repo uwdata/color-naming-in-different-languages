@@ -1,19 +1,14 @@
 const fs = require('fs'),
-  refine = require('./refine.js'),
   csv = require("csvtojson"),
-  Converter = require("csvtojson").Converter,
   d3 = require('d3'),
-  labBinner = require('./labBinner');
-const converter = new Converter({});
-const BIN_SIZE = 10;
-const RGB_SET = "all";
-const MIN_NperTerm = 2;
+  labBinHelper = require('./labBinHelper.js');
+
 const MIN_NperBin = 4;
 const FILE_O = "../full_color_names.json";
-const FILE_O_VIS = "../full_color_map.vl.json";
-const FILE_O_VIS_SALIENCY = "../full_color_map_sal.vl.json";
-const FILE_O_VIS_LONG = "../full_color_map_long.vl.json";
-const FILE_O_VIS_SALIENCY_LONG = "../full_color_map_sal_long.vl.json";
+const FILE_O_SALIENCY = "../full_color_map_saliency_bins.json"
+
+const lab_bins = JSON.parse(fs.readFileSync("../lab_bins.json"))
+const lab_bins_arr = labBinHelper.labBinsToArray(lab_bins)
 
 csv().fromFile("../cleaned_color_names.csv").then((colorNames)=> {
 csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
@@ -42,43 +37,41 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
   grouped = grouped.filter(g => g.terms.length > 0);
 
 
-  let result = {};
   let flatten = [], saliency = [];
-  let [N_L, N_A, N_B] = labBinner.createLABBinN(BIN_SIZE);
 
   grouped.forEach(group => {
     console.log("Start : " + group.key);
 
     let bufFlatten = [];
 
-    let gColorNameCnt = labBinner.createLABBins(BIN_SIZE);
+    let gColorNameCnt = labBinHelper.createLABNumBins(lab_bins);
     group.terms.forEach(term => {
-      let colorNameCnt = labBinner.createLABBins(BIN_SIZE);
+      let colorNameCnt = labBinHelper.createLABNumBins(lab_bins);
       term.values.forEach(response => {
         let responseLab = d3.lab(d3.rgb(response.r, response.g, response.b));
-        let [l, a, b] = labBinner.getLABBinNum(responseLab.l, responseLab.a, responseLab.b);
+        let [l, a, b] = labBinHelper.bins_from_lab({l: responseLab.l, a: responseLab.a, b: responseLab.b});
         colorNameCnt[l][a][b] += 1;
         gColorNameCnt[l][a][b] += 1;
       });
 
-      for (let l = 0; l < N_L; l++) {
-        for (let a = 0; a < N_A; a++) {
-          for (let b = 0; b < N_B; b++) {
-            if (colorNameCnt[l][a][b] !== 0) {
+      for(let i = 0; i < lab_bins_arr.length; i++){
+        const thisBin = lab_bins_arr[i]
 
-              bufFlatten.push({
-                "lang": group.key,
-                "term": term.key,
-                "commonTerm": commonColorNameLookup[group.key][term.key],
-                "binL": l,
-                "binA": a,
-                "binB": b,
-                "cnt": colorNameCnt[l][a][b],
-                "pCT": colorNameCnt[l][a][b] / term.values.length
-              });
-            }
+        const l = thisBin.l_bin,
+              a = thisBin.a_bin,
+              b = thisBin.b_bin
+        if (colorNameCnt[l][a][b] !== 0) {
 
-          }
+          bufFlatten.push({
+            "lang": group.key,
+            "term": term.key,
+            "commonTerm": commonColorNameLookup[group.key][term.key],
+            "binL": l,
+            "binA": a,
+            "binB": b,
+            "cnt": colorNameCnt[l][a][b],
+            "pCT": colorNameCnt[l][a][b] / term.values.length
+          });
         }
       }
     });
@@ -88,30 +81,29 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
       d.pTC = d.cnt / gColorNameCnt[d.binL][d.binA][d.binB];
     });
     let bufSaliency = [];
-    for (let l = 0; l < N_L; l++) {
-      for (let a = 0; a < N_A; a++) {
-        for (let b = 0; b < N_B; b++) {
+    for(let i = 0; i < lab_bins_arr.length; i++){
+      const thisBin = lab_bins_arr[i]
 
-          if (gColorNameCnt[l][a][b] >= MIN_NperBin) {
-            let maxpTC = d3.max(bufFlatten.filter(d => d.binL === l && d.binA === a && d.binB === b), d => d.pTC);
-            bufSaliency.push({
-              "lang": group.key,
-              "binL": l,
-              "binA": a,
-              "binB": b,
-              "lab": labBinner.getLAB(l, a, b).join(","),
-              "saliency": -entropy(bufFlatten.filter(d => d.binL === l && d.binA === a && d.binB === b).map(d => d.pTC)),
-              "maxpTC": maxpTC,
-              "majorTerm": bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term,
-              "commonTerm": commonColorNameLookup[group.key][bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term]
-            });
-          }
-
-        }
+      const l = thisBin.l_bin,
+            a = thisBin.a_bin,
+            b = thisBin.b_bin
+      if (gColorNameCnt[l][a][b] >= MIN_NperBin) {
+        let maxpTC = d3.max(bufFlatten.filter(d => d.binL === l && d.binA === a && d.binB === b), d => d.pTC);
+        const rep_lab = lab_bins[l][a][b].representative_lab
+        bufSaliency.push({
+          "lang": group.key,
+          "binL": l,
+          "binA": a,
+          "binB": b,
+          "lab": [rep_lab.l, rep_lab.a, rep_lab.b].join(","),
+          "saliency": -entropy(bufFlatten.filter(d => d.binL === l && d.binA === a && d.binB === b).map(d => d.pTC)),
+          "maxpTC": maxpTC,
+          "majorTerm": bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term,
+          "commonTerm": commonColorNameLookup[group.key][bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term]
+        });
       }
     }
-
-
+    
     console.log("End : " + group.key);
     saliency = saliency.concat(bufSaliency);
     flatten = flatten.concat(bufFlatten);
@@ -119,58 +111,19 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
 
   });
 
+    const avgColors = getAvgColors(flatten, unique(saliency.map(d => d.majorTerm)));
+
+    for(let i = 0; i < saliency.length; i++){
+      const saliency_info = saliency[i]
+      const avgColor = avgColors.find(d => d.lang === saliency_info.lang && d.name === saliency_info.majorTerm)
+      saliency_info.avgTermColor = avgColor.avgColorRGBCode
+    }
 
 
   fs.writeFileSync(FILE_O, JSON.stringify(flatten));
 
-  let saliencyRange = d3.extent(saliency, d => d.saliency);
-  vlSpec.transform[2] = {"calculate": `datum.saliency + ${-saliencyRange[0]}`, "as": "sal"};
-  vlSpec.data = { "values": saliency };
+  fs.writeFileSync(FILE_O_SALIENCY, JSON.stringify(saliency))
 
-  let avgColors = getAvgColors(flatten, unique(saliency.map(d => d.majorTerm)));
-  let modalColor = getModalColors(flatten, unique(saliency.map(d => d.majorTerm)));
-
-  vlSpec.spec.layer[0].encoding.color.scale = {
-    "domain": avgColors.map(c => c.name + "-" + c.lang),
-    "range": avgColors.map(c => c.avgColorRGBCode)
-  };
-
-  let langsToShowShort = grouped
-    .filter(g => g.values.length > 10000)
-    .sort((a,b) => a.values.length > b.values.length)
-    .map(g => g.key)
-
-  let langsToShowLong = grouped
-    .filter(g => g.values.length > 6000)
-    .sort((a,b) => a.values.length > b.values.length)
-    .map(g => g.key)
-
-  console.log("langstoshow: " + langsToShowShort)
-  vlSpec.transform.push({filter: {
-    field: "lang",
-    //oneOf: ["English (English)", "Korean (한국어, 조선어)"]
-    oneOf: langsToShowShort
-  }})
-  vlSpec.facet.row["sort"] = langsToShowShort
-
-  //vlSpec.transform[4].filter.oneOf = grouped.filter(g => g.values.length > 5000).map(g => g.key)
-  // vlSpec.spec.layer[0].encoding.color.scale = {
-  //   "domain": modalColor.map(c => c.name),
-  //   "range": modalColor.map(c => c.modalColorRGBCode)
-  // };
-
-  fs.writeFileSync(FILE_O_VIS, JSON.stringify(vlSpec, null, 2));
-  vlSpec.spec.layer[0].encoding.size.field = "sal";
-  fs.writeFileSync(FILE_O_VIS_SALIENCY, JSON.stringify(vlSpec, null, 2));
-
-  console.log("langstoshow: " + langsToShowLong)
-  vlSpec.transform[4].filter.oneOf = langsToShowLong
-
-  vlSpec.spec.layer[0].encoding.size.field = "maxpTC";
-  fs.writeFileSync(FILE_O_VIS_LONG, JSON.stringify(vlSpec, null, 2));
-  vlSpec.spec.layer[0].encoding.size.field = "sal";
-  fs.writeFileSync(FILE_O_VIS_SALIENCY_LONG, JSON.stringify(vlSpec, null, 2));
-  
 });
 });
 
@@ -179,32 +132,6 @@ function entropy(arr){
     acc += curr === 0 ? 0 : -1 * curr * Math.log2(curr);
     return acc;
   }, 0);
-}
-
-
-function getModalColors(data, clusteredTerms){
-  let colorTerms = [];
-  let grouped = d3.nest().key(d => d.lang).key(d => d.term).entries(data);
-  grouped.forEach(g_lang => {
-    let topTerms  = g_lang.values;
-    if (clusteredTerms) {
-      topTerms  = topTerms.filter(g_term => clusteredTerms.indexOf(g_term.key) >= 0);
-    }
-
-    topTerms.forEach(g_term => {
-      let mode = d3.max(g_term.values, d => d.pCT);
-      let modalColor = g_term.values.find(d => d.pCT === mode);
-
-      colorTerms.push({
-        "lang": g_lang.key,
-        "name": g_term.key,
-        "modalColorRGBCode": d3.color(d3.lab(...labBinner.getLAB(modalColor.binL, modalColor.binA, modalColor.binB))).toString()
-      });
-
-    });
-
-  });
-  return colorTerms;
 }
 
 
@@ -219,14 +146,16 @@ function getAvgColors(data, clusteredTerms){
 
     topTerms.forEach(g_term => {
       let cnt = d3.sum(g_term.values, d => d.pTC);
-      let avgL = d3.sum(g_term.values, d => d.binL * d.pCT);
-      let avgA = d3.sum(g_term.values, d => d.binA * d.pCT);
-      let avgB = d3.sum(g_term.values, d => d.binB * d.pCT);
+      let avgLBin = d3.sum(g_term.values, d => d.binL * d.pCT);
+      let avgABin = d3.sum(g_term.values, d => d.binA * d.pCT);
+      let avgBBin = d3.sum(g_term.values, d => d.binB * d.pCT);
+
+      let [avg_l, avg_a, avg_b] = labBinHelper.lab_from_bins(avgLBin, avgABin, avgBBin)
 
       colorTerms.push({
         "lang": g_lang.key,
         "name": g_term.key,
-        "avgColorRGBCode": d3.color(d3.lab(...labBinner.getLAB(avgL, avgA, avgB))).toString()
+        "avgColorRGBCode": d3.color(d3.lab(avg_l, avg_a, avg_b)).toString()
       });
 
     });
@@ -242,255 +171,3 @@ function unique(arr, accessor) {
     .entries(arr)
     .map(d => d.values[0]);
 }
-
-let vlSpec = {
-
-  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
-  "transform": [
-    {
-      "calculate": "datum.binA + -8",
-      "as": "binA2"
-    },
-    {
-      "calculate": "datum.binB + -12",
-      "as": "binB2"
-    },
-    {
-      "calculate": "5 + datum.saliency",
-      "as": "sal"
-    },
-    {
-      "calculate": "datum.majorTerm +'-' + datum.lang",
-      "as": "majorTermLang"
-    }
-  ],
-  "config":{
-    "view": {"stroke": null},
-    "background": "#fff"
-  },
-  "facet": {
-    "row": {
-      "field": "lang",
-      "type": "ordinal",
-      "header": {"title": null},
-    },
-    "column": {
-      "field": "binL",
-      "type": "ordinal",
-      "header": {"title": null}
-    }
-  },
-  "spacing": {"row": -20, "column": -20},
-  "spec":{
-    "layer": [
-      {
-        "height": 120,
-        "width": 120,
-        "mark": {
-          "type":"square",
-          "strokeWidth": "0.5",
-          "stroke": "white"
-        },
-        "encoding": {
-          "x": {
-            "field": "binA2",
-            "type": "ordinal",
-            "scale": {
-              "domain": [
-                -12,
-                -11,
-                -10,
-                -9,
-                -8,
-                -7,
-                -6,
-                -5,
-                -4,
-                -3,
-                -2,
-                -1,
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9
-              ]
-            },
-            "axis": null
-          },
-          "y": {
-            "field": "binB2",
-            "type": "ordinal",
-            "scale": {
-              "domain": [
-                9,
-                8,
-                7,
-                6,
-                5,
-                4,
-                3,
-                2,
-                1,
-                0,
-                -1,
-                -2,
-                -3,
-                -4,
-                -5,
-                -6,
-                -7,
-                -8,
-                -9,
-                -10,
-                -11,
-                -12
-              ]
-            },
-            "axis": null
-          },
-          "detail": {
-            "field": "majorTerm",
-            "type": "nominal"
-          },
-          "size": {
-            "field": "maxpTC",
-            "type": "quantitative",
-            "scale": {
-              "range": [
-                4,
-                100
-              ],
-              "type": "pow",
-              "exponent": 2.5,
-              "zero": false
-            },
-            "legend": null
-          },
-          "opacity": {
-            "condition": {
-              "selection": "bins",
-              "value": 1
-            },
-            "value": 0
-          },
-          "color": {
-            "field": "majorTermLang",
-            "type": "nominal",
-            "scale": {
-              "domain": [],
-              "range": []
-            },
-            "legend": null
-          }
-        }
-      },
-      {
-        "height": 120,
-        "width": 120,
-        "selection": {
-          "bins": {
-            "type": "single",
-            "fields": [
-              "majorTerm"
-            ],
-            "on": "mouseover"
-          }
-        },
-        "mark": "square",
-        "encoding": {
-          "x": {
-            "field": "binA2",
-            "type": "ordinal",
-            "scale": {
-              "domain": [
-                -12,
-                -11,
-                -10,
-                -9,
-                -8,
-                -7,
-                -6,
-                -5,
-                -4,
-                -3,
-                -2,
-                -1,
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9
-              ]
-            },
-            "axis": null
-          },
-          "y": {
-            "field": "binB2",
-            "type": "ordinal",
-            "scale": {
-              "domain": [
-                9,
-                8,
-                7,
-                6,
-                5,
-                4,
-                3,
-                2,
-                1,
-                0,
-                -1,
-                -2,
-                -3,
-                -4,
-                -5,
-                -6,
-                -7,
-                -8,
-                -9,
-                -10,
-                -11,
-                -12
-              ]
-            },
-            "axis": null
-          },
-          "opacity": {
-            "value": 0
-          },
-          "size": {
-            "value": 81
-          },
-          "tooltip": [
-            {
-              "field": "majorTerm",
-              "type": "nominal",
-              "title": "Max Prob. Term"
-            },
-            {
-              "field": "lab",
-              "type": "nominal",
-              "title": "Lab (L,a,b)"
-            }
-          ]
-        }
-      }
-    ],
-    "resolve": {"scale": {"color": "independent"}}
-  },
-
-  "data": {
-    "values": []
-  }
-};

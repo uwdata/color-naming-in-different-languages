@@ -2,61 +2,15 @@ const fs = require('fs'),
   csv = require("csvtojson"),
   Converter = require("csvtojson").Converter,
   d3 = require('d3')
-  //labBinner = require('./labBinner');
+  labBinHelper = require('./labBinHelper');
 
-
-// calculate LAB Range:
-// const d3 = require('d3')
-
-// let MIN_L = 10, MIN_A = 0, MIN_B = 0, MAX_L = 10, MAX_A = 0, MAX_B = 0;
-
-// for(r = 0; r <=255; r++){
-//   console.log("r", r)
-//   for(g = 0; g <= 255; g++){
-//     for(b = 0; b <= 255; b++){
-//         let lab = d3.lab(d3.color(`rgb(${r}, ${g}, ${b})`));
-//         if(lab.l < MIN_L){ MIN_L = lab.l}
-//         if(lab.l > MAX_L){ MAX_L = lab.l}
-//         if(lab.a < MIN_A){ MIN_A = lab.a
-//         }
-//         if(lab.a > MAX_A){
-//           MAX_A = lab.a
-//         }
-//         if(lab.b < MIN_B){
-//           MIN_B = lab.b
-//         }
-//         if(lab.b > MAX_B){
-//           MAX_B = lab.b
-//         }
-//     }
-//   }
-// }
-// console.log("L", MIN_L, MAX_L)
-// console.log("A", MIN_A, MAX_A)
-// console.log("B", MIN_B, MAX_B)
-
-// const MIN_L = 0,
-//       MIN_A = -86.1827164205346,
-//       MIN_B = -107.8601617541481,
-//       MAX_L = 100,
-//       MAX_A = 98.23431188800397,
-//       MAX_B = 94.47797505367026;
-
-
-// should be 1 bin centered at L=1 a,b=0, and 1 L=100, a,b=0
-// then evenly distributed around that
-// Even though this makes the bin cover non-existent colors,
-// I want to capture "white" and "black"
 const FILE_O_LAB_BINS = "../lab_bins.json"
 
-const BIN_L_N = 10 
-const BIN_AB_N = 25 // Must be odd so white/black are centered
-const MIN_L = 0
-const MAX_L = 100
-const MIN_MAX_AB = 107.8601617541481
-
-const BIN_DELTA_L = (MAX_L - MIN_L) / (BIN_L_N - 1)
-const BIN_DELTA_AB = (MIN_MAX_AB * 2) / (BIN_AB_N - 1)
+const BIN_L_N = labBinHelper.BIN_L_N,
+  BIN_AB_N = labBinHelper.BIN_AB_N,
+  MIN_L = labBinHelper.MIN_L,
+  BIN_DELTA_L = labBinHelper.BIN_DELTA_L,
+  BIN_DELTA_AB = labBinHelper.BIN_DELTA_AB
 
 // calculate bin info
 //const binInfoArr = []
@@ -122,7 +76,7 @@ for(r = 0; r <=255; r++){
   for(g = 0; g <= 255; g++){
     for(b = 0; b <= 255; b++){
         let lab = d3.lab(d3.color(`rgb(${r}, ${g}, ${b})`));
-        let [l_bin, a_bin, b_bin] = bins_from_lab(lab)
+        let [l_bin, a_bin, b_bin] = labBinHelper.bins_from_lab(lab)
         let bin = labBinInfo[l_bin][a_bin][b_bin]
         if(lab.l < bin.l_min || lab.l > bin.l_max){
             throw new Error("L out of range " + lab + " " + bin)
@@ -166,6 +120,7 @@ for(let l_bin = 0; l_bin < BIN_L_N; l_bin++){
             }else{
                 let center_rgb = bin_info.center_rgb
                 bin_info.representative_rgb = center_rgb
+                bin_info.representative_lab = {l: bin_info.l_center, a: bin_info.a_center, b: bin_info.b_center}
                 if(center_rgb.r > 255 || center_rgb.r < 0 ||
                     center_rgb.g > 255 || center_rgb.g < 0 ||
                     center_rgb.b > 255 || center_rgb.b < 0
@@ -178,6 +133,7 @@ for(let l_bin = 0; l_bin < BIN_L_N; l_bin++){
                         g: closest_rgb.g,
                         b: closest_rgb.b,
                     }
+                    bin_info.representative_lab = d3.lab(d3.color(`rgb(${closest_rgb.r}, ${closest_rgb.g}, ${closest_rgb.b})`))
                 }
                 delete bin_info.rgbs
             }
