@@ -1,0 +1,299 @@
+$(document).on('ready page:load', function () {
+  // let Nbin, emptyNbin;
+  // let rootPath = window.location.pathname.split('/').slice(0,-1).join("/");
+
+  $.getJSON("../model/lab_bins.json", function( lab_bins ) {
+    lab_bins_array = []
+    for(const [l_bin, l_bin_entries] of Object.entries(lab_bins)){
+      for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries)){
+        for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries)){
+          lab_bins_array.push(b_bin_entry)
+        }
+      }
+    }
+    console.log(lab_bins_array);
+
+    $(".container").append('<div class="row" id="vis"></div>')
+
+    let margin = {top: 30, right: 50, bottom: 30, left: 50},
+        width = $('#vis').width() - margin.left - margin.right,
+        height = Math.min(200 - margin.top - margin.bottom, width/4);
+    
+    let svg = d3.select('#vis').append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+      
+    svg.append("g")
+        
+      .selectAll()
+      .data(lab_bins_array)
+      .join("rect")
+        .attr("x", (d) => d.a_bin*5 +100 + 100*d.l_bin )
+        .attr("y", (d) => -d.b_bin*5 + 100)
+        .attr("fill", (d) => `rgb(${d.representative_rgb.r},${d.representative_rgb.g},${d.representative_rgb.b})`)
+        .attr("height", 3)
+        .attr("width", 3)
+    // Nbin = data.colorSet.length;
+    // emptyNbin = [];
+    // for (let i = 0; i < Nbin; i++) {
+    //   emptyNbin.push(0);
+    // }
+
+    // let langs = Object.keys(data).filter(key => key !== "colorSet").sort((a,b) => - data[a].totalCount + data[b].totalCount);
+    // langs =langs.sort();
+    // langs.forEach((lang, i) => {
+    //   $(".container").append('<div class="row" id="vis'+i+'"></div>');
+    //   drawLangSpec('#vis'+i, data, lang, data.colorSet);
+    // });
+  });
+
+
+
+  // function drawLangSpec(targetSelector, data, lang, colorSet){
+
+  //   let data_terms = data[lang].terms;
+  //   let data_common_names = data[lang].commonNames;
+  //   let data_colors = colorSet;
+  //   let data_color_counts = emptyNbin.slice();
+  //   let data_line = data[lang].colorNameCount;
+  //   let data_avgColor = data[lang].avgColor.slice();
+  //   let stacked_area = [];
+  //   let stacked_terms = [];
+  //   let stacked_common_names = []
+  //   dataProcess();
+  //   stackedArea();
+  //   extendTail();
+
+
+  //   data_line = stacked_area;
+  //   data_terms = stacked_terms;
+  //   data_common_names = stacked_common_names;
+
+
+  //   drawing();
+
+
+  //   function extendTail(){
+  //     //Repeating 20% times more (13% at start, 7% at end) to make it start 
+	//   // with the full arc of red in most languages, and have a little repeat
+  //     data_line = data_line.map(function(colorCount){
+	// 	let beforeExtra = colorCount.slice().splice(.87*Math.round(colorCount.length));
+	// 	let afterExtra = colorCount.slice().splice(0,.07*Math.round(colorCount.length));
+  //       return beforeExtra.concat(colorCount.concat(afterExtra));
+  //     });
+
+  //     stacked_area = stacked_area.map(function(colorCount){
+	// 	let beforeExtra = colorCount.slice().splice(.87*Math.round(colorCount.length));
+	// 	let afterExtra = colorCount.slice().splice(0,.07*Math.round(colorCount.length));
+  //       return beforeExtra.concat(colorCount.concat(afterExtra));
+  //     });
+
+	//   let beforeExtra = data_colors.slice().splice(.87*Math.round(data_colors.length));
+	//   let afterExtra = data_colors.slice().splice(0,.07*Math.round(data_colors.length));
+  //     data_colors = beforeExtra.concat(data_colors.concat(afterExtra));
+  //   }
+  //   function drawing(){
+  //     let spectrumN = stacked_area[0].length;
+
+  //     let margin = {top: 30, right: 50, bottom: 30, left: 50},
+  //         width = $(targetSelector).width() - margin.left - margin.right,
+  //         height = Math.min(200 - margin.top - margin.bottom, width/4);
+
+  //     let x = d3.scaleLinear()
+  //         .range([0, width])
+  //         .clamp(true);
+
+  //     let y = d3.scaleLinear()
+  //         .range([height, 0]);
+
+
+  //     x.domain([0,spectrumN]);
+  //     y.domain([0,1]);
+
+
+  //     let yAxis = d3.axisLeft()
+  //         .scale(y);
+
+  //     let toggle = false;
+
+  //     let termDiv = $('<div class="termDiv table-center"></div>');
+  //     termDiv.append('<div class="main-term" id="'+targetSelector.replace('#','')+'-selected-title" class="text-center">Color Name</div>');
+
+  //     let termLabel = $(targetSelector).append(termDiv);
+  //     let area = d3.area()
+  //         .x((d, i) => x(i))
+  //         .y0((d, i) => y(d.y0))
+  //         .y1((d, i) => y(d.y1));
+
+  //     let svg = d3.select(targetSelector).append("svg")
+  //         .attr("width", width + margin.left + margin.right)
+  //         .attr("height", height + margin.top + margin.bottom)
+  //       .append("g")
+  //         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+  //     let title = svg.append('text')
+  //           .attr('class','vis-title')
+  //           .attr('x',10)
+  //           .attr('y',-10)
+  //           .text(lang + " (# of names : "+ data[lang].totalCount +")");
+
+  //     let colorPatch = svg.selectAll(".color_patch")
+  //         .data(data_colors)
+  //       .enter().append("rect")
+  //         .attr("class", "color_patch")
+  //         .attr("x", function(d,i) { return (x(i)+x(i-1))/2; })
+  //         .attr("y", 0)
+  //         .attr("width", function(d,i) { return i===(spectrumN-1) ? (x(1)-x(0)) /2 : x(1)-x(0)+1; } )
+  //         .attr("height", height+20 )
+  //         .attr("fill", function(d){ return 'rgb(' + d.rgb.r + ',' + d.rgb.g+',' + d.rgb.b + ')';})
+  //         .on('click',function(){
+  //           if (toggle) {
+  //             toggle = false;
+  //             dehighlight();
+  //           }
+  //         });
+
+  //     let axisTitle = 'Probability of Name, given Color';
+  //     svg.append("g")
+  //         .attr("class", "y axis")
+  //         .call(yAxis);
+
+  //     svg.append('text')
+  //         .text(axisTitle)
+  //         .attr('y',-30)
+  //         .attr('x', -height/2)
+  //         .attr('transform','rotate(-90)')
+  //         .attr('text-anchor','middle');
+
+
+
+  //     avgColor = (i) => {
+  //       let c = data_avgColor[i];
+  //       return `rgb(${Math.floor(c.r)},${Math.floor(c.g)},${Math.floor(c.b)})`;
+  //     };
+
+
+  //     let term = svg.selectAll(".term")
+  //         .data(stacked_area)
+  //       .enter().append("g")
+  //         .attr("class", "term");
+
+  //     term.append("path")
+  //         .attr("class", "area area1")
+  //         .attr("d", d => area(d))
+  //         .attr("fill", (d, i) => avgColor(i))
+  //         .style("stroke", '#000')
+  //         .style("opacity", 1)
+
+
+  //     term.append("path")
+  //         .attr("class", "fake-area")
+  //         .attr("d", area)
+  //         .style("fill", '#fff')
+  //         .attr('opacity', 0)
+  //         .on('mouseover',function(d,i){
+  //           if (!toggle) {
+  //             highlight(d, i);
+  //           }
+  //         })
+  //         .on('mouseout', function(d){
+  //           if (!toggle) {
+  //             dehighlight();
+  //           }
+  //         }).
+  //         on('click',function(d,i){
+  //           if (!toggle) {
+  //             toggle = true;
+  //             highlight(d, i, true);
+  //           }
+  //           else{
+  //             toggle = false;
+  //           }
+  //           d3.event.stopPropagation();
+  //         });
+
+  //     function dehighlight(){
+  //       svg.selectAll('.area')
+  //         .style('stroke-width', "1")
+  //     .style('stroke-opacity', 1);
+  //       $(targetSelector+"-selected-title").html('Color Name ');
+  //       $('.tr-result').html('');
+  //       $('.google').html('');
+  //     }
+  //     function highlight(d, i, clicked){
+  //       svg.selectAll('.area1')
+  //         .style('stroke-width', function(g,j){
+  //           if (j==i) {
+  //             $(targetSelector+"-selected-title").html(data_common_names[j]);
+  //           }
+  //           return j==i ? 3 : 1;
+  //         })
+  //     .style('stroke-opacity', function(g,j){
+  //           if (j==i) {
+  //             $(targetSelector+"-selected-title").html(data_common_names[j]);
+  //           }
+  //           return j==i ? 1 : .2;
+  //         });
+
+
+  //     }
+
+  //   }
+
+  //   function dataProcess(){
+  //     for (let i = 0; i < Nbin; i++) {
+  //       for (let j = 0; j < data_line.length; j++) {
+  //         data_color_counts[i]+= data_line[j][i];
+  //       }
+  //       if(data_color_counts[i] === 0 ) {
+  //         console.log("[ERR]Color space is not fully covered.");
+  //       }
+  //     }
+
+  //     data_line = data_line.map(function(colorCount, index){
+  //       let total = 0;
+  //       for (let i = 0; i < colorCount.length; i++) {
+  //         total += colorCount[i];
+  //       }
+  //       if(total === 0 ) {
+  //         console.log("[ERR]Color space is not fully covered.");
+  //       }
+  //       return colorCount.map(function(count,i){
+  //         return data_color_counts[i] === 0 ? 0 : count/data_color_counts[i];
+  //       });
+  //     });
+
+
+
+  //   }
+
+  //   function stackedArea(){
+  //     //Sort the terms by mean(binNum)
+  //     stacked_area = data_line.slice().sort((a, b) => meanIndex(a) - meanIndex(b));
+  //     stacked_terms = data_terms.slice().sort((a, b) => meanIndex(data_line[data_terms.indexOf(a)]) - meanIndex(data_line[data_terms.indexOf(b)]));
+  //     stacked_common_names = data_common_names.slice().sort((a, b) => meanIndex(data_line[data_common_names.indexOf(a)]) - meanIndex(data_line[data_common_names.indexOf(b)]));
+  //     data_avgColor = data_avgColor.slice().sort((a, b) => meanIndex(data_line[data_avgColor.indexOf(a)]) - meanIndex(data_line[data_avgColor.indexOf(b)]));
+  //     let acc = new Array(data_colors.length).fill(0);
+  //     stacked_area = stacked_area.map(line => {
+  //       let area = acc.slice().map((v, i) => {
+  //         return {"y0": v, "y1": v + line[i]};
+  //       });
+  //       acc = acc.map((v, i) => v + line[i]);
+  //       return area;
+  //     });
+
+  //   }
+  // }
+
+
+
+});
+// function meanIndex(arr){
+//   let acc = arr.reduce((acc, cnt, i) => {
+//     acc.cnt += cnt;
+//     acc.sum += cnt * i;
+//     return acc;
+//   }, {sum: 0, cnt: 0});
+//   return acc.sum / acc.cnt;
+// }
