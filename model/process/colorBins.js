@@ -33,7 +33,7 @@ let binNum = function(response, binEndPoints){
 }
 function equal(colorA, colorB){
   // console.log(colorA);
-  return colorA.r === colorB.r && colorA.g === colorB.g && colorA.b === colorB.b;
+  return colorA.r+"" === colorB.r && colorA.g+"" === colorB.g && colorA.b+"" === colorB.b;
 }
 
 module.exports = {

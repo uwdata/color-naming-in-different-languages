@@ -11,23 +11,7 @@ $(document).on('ready page:load', function () {
     }
 
     let langs = Object.keys(data).filter(key => key !== "colorSet").sort((a,b) => - data[a].totalCount + data[b].totalCount);
-    let langsIndex =[
-      "Spanish",
-      "French",
-      "English",
-      "Portuguese",
-      "Romanian",
-      "Dutch",
-      "Polish",
-      "Persian (Farsi)",
-      "Swedish",
-      "Finnish",
-      "German",
-      "Russian",
-      "Chinese",
-      "Korean"
-    ]; // sorted by similarity of saliency
-    langs =langs.sort((a,b) => langsIndex.findIndex(d => a.indexOf(d) >=0) - langsIndex.findIndex(d => b.indexOf(d) >=0) );
+    langs =langs.sort();
     langs.forEach((lang, i) => {
       $(".container").append('<div class="row" id="vis'+i+'"></div>');
       drawLangSpec('#vis'+i, data, lang, data.colorSet);
@@ -39,12 +23,14 @@ $(document).on('ready page:load', function () {
   function drawLangSpec(targetSelector, data, lang, colorSet){
 
     let data_terms = data[lang].terms;
+    let data_common_names = data[lang].commonNames;
     let data_colors = colorSet;
     let data_color_counts = emptyNbin.slice();
     let data_line = data[lang].colorNameCount;
     let data_avgColor = data[lang].avgColor.slice();
     let stacked_area = [];
     let stacked_terms = [];
+    let stacked_common_names = []
     dataProcess();
     stackedArea();
     extendTail();
@@ -52,6 +38,7 @@ $(document).on('ready page:load', function () {
 
     data_line = stacked_area;
     data_terms = stacked_terms;
+    data_common_names = stacked_common_names;
 
 
     drawing();
@@ -209,13 +196,13 @@ $(document).on('ready page:load', function () {
         svg.selectAll('.area1')
           .style('stroke-width', function(g,j){
             if (j==i) {
-              $(targetSelector+"-selected-title").html(data_terms[j]);
+              $(targetSelector+"-selected-title").html(data_common_names[j]);
             }
             return j==i ? 3 : 1;
           })
       .style('stroke-opacity', function(g,j){
             if (j==i) {
-              $(targetSelector+"-selected-title").html(data_terms[j]);
+              $(targetSelector+"-selected-title").html(data_common_names[j]);
             }
             return j==i ? 1 : .2;
           });
@@ -256,6 +243,7 @@ $(document).on('ready page:load', function () {
       //Sort the terms by mean(binNum)
       stacked_area = data_line.slice().sort((a, b) => meanIndex(a) - meanIndex(b));
       stacked_terms = data_terms.slice().sort((a, b) => meanIndex(data_line[data_terms.indexOf(a)]) - meanIndex(data_line[data_terms.indexOf(b)]));
+      stacked_common_names = data_common_names.slice().sort((a, b) => meanIndex(data_line[data_common_names.indexOf(a)]) - meanIndex(data_line[data_common_names.indexOf(b)]));
       data_avgColor = data_avgColor.slice().sort((a, b) => meanIndex(data_line[data_avgColor.indexOf(a)]) - meanIndex(data_line[data_avgColor.indexOf(b)]));
       let acc = new Array(data_colors.length).fill(0);
       stacked_area = stacked_area.map(line => {

@@ -40,6 +40,7 @@ var fiNameReplacingRules = [["lila", "liila"]];
 
 var arNameReplacingRules = [[/احمر/, "أحمر"], [/اخضر/, "أخضر"], [/ازرق/, "أزرق"], [/ازرقفاتح/, "أزرقفاتح"], [/اصفر/, "أصفر"], [/فوشي/, "فوشي"], [/فوشيا/, "فوشي"]];
 
+var elNameReplacingRules = [[/μοβ/,"μωβ"]];
 
 module.exports = function refine(colorNames, rgbSet = "line"){
 
@@ -162,6 +163,14 @@ module.exports = function refine(colorNames, rgbSet = "line"){
       // cn.name = (replaceByArray(cn.name, faNameReplacingRules));
     }else if (cn.lang0.indexOf("Finnish") >= 0) {
       cn.name = (replaceByArray(cn.name, fiNameReplacingRules));
+    }else if (cn.lang0.indexOf("Greek") >= 0){
+      cn.name = cn.name.toLowerCase()
+          .normalize("NFD").replace(/\p{Diacritic}/gu, "")
+      cn.name = (replaceByArray(cn.name, elNameReplacingRules));
+      cn.name = cn.name.replace(/[a-zA-Z]/g,"")
+    }else if (cn.lang0.indexOf("Hebrew") >= 0){
+      cn.name = cn.name.toLowerCase()
+      cn.name = cn.name.replace(/[a-zA-Z]/g,"")
     }
   });
 

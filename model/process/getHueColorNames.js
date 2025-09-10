@@ -1,52 +1,19 @@
 const fs = require('fs'),
   refine = require('./refine.js'),
   colorBins = require('./colorBins.js'),
-  Converter = require("csvtojson").Converter,
+  csv = require("csvtojson"),
   d3 = require('d3');
-const converter = new Converter({});
+//const converter = new Converter({});
 const N_BINS = 36, N_TERMS = 20;
+const MIN_COUNT = 400;
 const O_FILE_NAME = `../hue_color_names_aggregated.json`;
 const O_FILE_NAME_FLATTEN = `../hue_color_names.json`;
 
-const LANG_CODE = {
-  'English (English)' : "en",
-  'Korean (한국어, 조선어)' : "ko",
-  'Spanish (español)': "es",
-  'German (Deutsch)': "de",
-  'French (français, langue française)': "fr",
-  'Chinese (中文 (Zhōngwén), 汉语, 漢語)': "zh-CN",
-  'Swedish (svenska)' : "sv",
-  'Portuguese (português)' : "pt",
-  'Polish (język polski, polszczyzna)': "pl",
-  'Russian (Русский)' : "ru",
-  'Dutch (Nederlands, Vlaams)': "nl",
-  'Finnish (suomi, suomen kieli)': "fi",
-  'Arabic (العربية)' : "ar",
-  'Romanian (limba română)' : "ro",
-  'Danish (dansk)': "da",
-  'Italian (italiano)': "it",
-  'Persian (Farsi) (فارسی)': 'fa'
-};
-
-const TOP_LANGS = ['English (English)' ,
- 'Korean (한국어, 조선어)' ,
- 'Spanish (español)',
- 'German (Deutsch)',
- 'French (français, langue française)',
- 'Chinese (中文 (Zhōngwén), 汉语, 漢語)',
- 'Swedish (svenska)' ,
- 'Portuguese (português)' ,
- 'Polish (język polski, polszczyzna)',
- 'Russian (Русский)' ,
- 'Dutch (Nederlands, Vlaams)',
- 'Finnish (suomi, suomen kieli)',
- 'Romanian (limba română)' ,
- 'Persian (Farsi) (فارسی)'];
-
-
-fs.createReadStream("../../raw/color_perception_table_color_names.csv").pipe(converter);
-converter.on("end_parsed", function (colorNames) {
-  colorNames = colorNames.filter(cn => cn.studyVersion !== "1.1.4" && cn.rgbSet === "line"); //There is a priming effect.
+csv()
+.fromFile("../cleaned_color_names.csv")
+.then((colorNames)=>{
+  //There is a possible priming effect for studies with version 1.1.4, but we'll ignore that for now
+  colorNames = colorNames.filter(cn => cn.rgbSet === "line");
   colorNames = colorNames.filter(cn => cn.participantId !== 0);
 
   // 1. Get top languages
@@ -54,8 +21,6 @@ converter.on("end_parsed", function (colorNames) {
     .key(d => d.lang0)
     .entries(colorNames)
     .sort((a,b) =>  - a.values.length + b.values.length)
-    .filter(g => TOP_LANGS.indexOf(g.key) >=0 );
-
 
   // 2. Get top terms
   grouped.forEach(g => {
@@ -89,11 +54,20 @@ converter.on("end_parsed", function (colorNames) {
     let mapped = {
       'colorNameCount': [],
       'terms': [],
+      'commonNames': [],
       'totalCount' : 0,
       'avgColor': []
     }
     group.topNTerms.forEach(term => {
       mapped.terms.push(term.key);
+
+      //find most common name for term
+      let commonName = d3.nest()
+                .key(t => t.entered_name)
+                .entries(term.values)
+                .sort((a,b) => -a.values.length + b.values.length)[0].key;
+      mapped.commonNames.push(commonName)
+      
       let colorNameCnt = new Array(N_BINS).fill(0);
       let [l, a, b] = [0, 0, 0];
       term.values.forEach(response => {
@@ -114,6 +88,7 @@ converter.on("end_parsed", function (colorNames) {
         bufFlatten.push({
           "lang": group.key,
           "term": term.key,
+          "commonName": commonName,
           "rank": term.rank,
           "binNum": i,
           "cnt": colorNameCnt[i],
@@ -130,8 +105,10 @@ converter.on("end_parsed", function (colorNames) {
       d.termSubID = terms.findIndex(t => t.term === d.term);
       d.pTC = d.cnt / d3.sum(bufFlatten.filter(d2 => d2.binNum === d.binNum), x => x.cnt);
     });
-    flatten = flatten.concat(bufFlatten);
-    result[group.key] = mapped;
+    if(mapped.totalCount > MIN_COUNT){ // limit what comes through
+      flatten = flatten.concat(bufFlatten);
+      result[group.key] = mapped;
+    }
   });
 
 
