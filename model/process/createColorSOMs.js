@@ -13,7 +13,12 @@ let colorNamesAbrv = {
 	"French": "fr",
 	"Portuguese": "pt",
 	"Spanish": "es",
-	"Swedish": "sv"
+	"Swedish": "sv",
+	"Russian": "ru",
+	"Dutch": "nl",
+	"Polish": "pl",
+	"Finnish": "fi",
+	"Romanian": "ro"
 };
 
 let commonColorNameLookup = {};
@@ -82,19 +87,22 @@ function createSOMs(colorInfo, namingData){
 			
 			thisColorInfo["commonColorName"] = commonColorNameLookup[colorName];
 			thisColorInfo["numRecords"] = thisColorData.length;
+			
 			thisColorInfo["colorNodes4"] = createSOM(colorName, LABdata, 2);
 			thisColorInfo["colorNodes4Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes4"]);
-			
-			thisColorInfo["colorNodes9"] = createSOM(colorName, LABdata, 3);
-			thisColorInfo["colorNodes9Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes9"]);
-			
-			let representativeColor;
+			thisColorInfo["representativeColor"] = findMostDenseNode(thisColorInfo["colorNodes4"]).rgb;
+
 			if(thisColorData.length > 18){
-				representativeColor = findMostDenseNode(thisColorInfo["colorNodes9"]).rgb;
-			} else {
-				representativeColor = findMostDenseNode(thisColorInfo["colorNodes4"]).rgb;
+				thisColorInfo["colorNodes9"] = createSOM(colorName, LABdata, 3);
+				thisColorInfo["colorNodes9Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes9"]);
+				thisColorInfo["representativeColor"] = findMostDenseNode(thisColorInfo["colorNodes9"]).rgb;
 			}
-			thisColorInfo["representativeColor"] = representativeColor;
+
+			if(thisColorData.length > 200){
+				thisColorInfo["colorNodes16"] = createSOM(colorName, LABdata, 4);
+				thisColorInfo["colorNodes16Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes16"]);
+				thisColorInfo["representativeColor"] = findMostDenseNode(thisColorInfo["colorNodes16"]).rgb;
+			}
 
 			outputJSON[lang][colorName] = thisColorInfo;
 
@@ -261,10 +269,10 @@ function initializeSOMNodes(som, size){
 		labColor = RGBtoLAB(255,127,127);
 		som.neurons[0][1].setWeights([labColor.l, labColor.a, labColor.b]);
 		
-		labColor = RGBtoLAB(223,96,127);
+		labColor = RGBtoLAB(191,63,127);
 		som.neurons[1][1].setWeights([labColor.l, labColor.a, labColor.b]);
 		
-		labColor = RGBtoLAB(255,127,255);
+		labColor = RGBtoLAB(127,0,127);
 		som.neurons[2][1].setWeights([labColor.l, labColor.a, labColor.b]);
 		
 		
@@ -276,6 +284,57 @@ function initializeSOMNodes(som, size){
 		
 		labColor = RGBtoLAB(0,0,0);
 		som.neurons[2][2].setWeights([labColor.l, labColor.a, labColor.b]);
+	} else if (size == 4){
+		let labColor = RGBtoLAB(255,255,255);
+		som.neurons[0][0].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		labColor = RGBtoLAB(255,170,255);
+		som.neurons[1][0].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		labColor = RGBtoLAB(255,85,255);
+		som.neurons[2][0].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		labColor = RGBtoLAB(255,0,255);
+		som.neurons[3][0].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		
+		labColor = RGBtoLAB(255,170,170);
+		som.neurons[0][1].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		labColor = RGBtoLAB(223,96,160);
+		som.neurons[1][1].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		labColor = RGBtoLAB(191,64,160);
+		som.neurons[2][1].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		labColor = RGBtoLAB(170,0,170);
+		som.neurons[3][1].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+
+		labColor = RGBtoLAB(255,85,85);
+		som.neurons[0][2].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		labColor = RGBtoLAB(191,64,96);
+		som.neurons[1][2].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		labColor = RGBtoLAB(160,64,96);
+		som.neurons[2][2].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		labColor = RGBtoLAB(85,0,85);
+		som.neurons[3][2].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		
+		labColor = RGBtoLAB(255,0,0);
+		som.neurons[0][3].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		labColor = RGBtoLAB(170,0,0);
+		som.neurons[1][3].setWeights([labColor.l, labColor.a, labColor.b]);
+		
+		labColor = RGBtoLAB(85,0,0);
+		som.neurons[2][3].setWeights([labColor.l, labColor.a, labColor.b]);
+
+		labColor = RGBtoLAB(0,0,0);
+		som.neurons[2][3].setWeights([labColor.l, labColor.a, labColor.b]);
 	}
 	
 }

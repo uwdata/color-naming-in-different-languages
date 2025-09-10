@@ -87,7 +87,12 @@ let colorNamesAbrv = {
 	"Spanish (español)": "es",
 	"French (français, langue française)": "fr",
 	"Portuguese (português)": "pt",
-	"Swedish (svenska)": "sv"
+	"Swedish (svenska)": "sv",
+	"Russian (Русский)": "ru",
+	"Dutch (Nederlands, Vlaams)": "nl",
+	"Polish (język polski, polszczyzna)": "pl",
+	"Finnish (suomi, suomen kieli)": "fi",
+	"Romanian (limba română)": "ro"
 };
 
 let langAbv = [];
@@ -354,7 +359,9 @@ function generateColorInfoString(name, colorInfo){
 	str += "<div> </div>"
 
 	str += "<div style='float:left; padding-right:20px;'>  <div style='clear:both;'><strong>Color range:</strong></div>"
-	if(colorInfo.numRecords > 18){
+	if(colorInfo.numRecords > 200){
+		str += generateColorGrid(colorInfo.colorNodes16)
+	}else if(colorInfo.numRecords > 18){
 		str += generateColorGrid(colorInfo.colorNodes9)
 	} else {
 		str += generateColorGrid(colorInfo.colorNodes4)
@@ -388,7 +395,7 @@ function generateColorGrid(nodes){
 		for(let j = 0; j < nodes.length; j++){
 			let node = nodes[i][j];
 			str += "<div style='";
-			str += "width: 30px; height: 30px;float:left;"
+			str += "width: "+90/nodes.length+"px; height: "+90/nodes.length+"px;float:left;"
 			str += "background-color:"+node.rgb;
 			str += "'><small>";
 			//str += Math.round(node.PCgN*100) + "%"
