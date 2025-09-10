@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Color Translator - Many Languages, Many Colors</title>
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/color-translator.css" rel="stylesheet">
+
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.min.js"></script>
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/select2.min.js"></script>
+
+<script src="js/colorspaces.min.js"></script>
+<script src="../model/process/SOM.js"></script>
+
+<script src="../addNavBar.js"></script>
+
+
+<style>
+.select2-container--default .select2-results > .select2-results__options {
+    max-height: 400px;
+    min-height: 200px;
+    overflow-y: auto;
+}
+
+.select2-results__option {
+	padding-top:1px;
+	padding-bottom:1px;
+}
+</style>
+
+<script>
+
+//The checkStatus function for using fetch() for Ajax
+// Either copy the function below into your JavaScript file
+// or add this line to your html head:
+// Based on code by Matt Gaunt
+// https://developers.google.com/web/updates/2015/03/introduction-to-fetch
+function checkStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response.text();
+  } else {
+    return Promise.reject(new Error(response.status + ": " + response.statusText));
+  }
+}
+
+function formatColorOpt (colorOpt) {
+  if (!colorOpt.id) { //handles loading
+    return colorOpt.text;
+  }
+  
+  var $colorOpt = $(
+    '<span style="background-color:'+colorOpt.element.style.backgroundColor +';' +
+	'padding-right: 20px;margin-right:5px;"></span>' +
+	'<span><span>' + colorOpt.element.attributes["data-comonColorName"].value + '</span>' + // an extra span around the name to make text direction in different languages not mess things up
+	" <span dir='ltr'>(#"+colorOpt.element.attributes["data-colornum"].value + ')</span></span>'
+  );
+  return $colorOpt;
+};
+
+
+$(document).ready(function() {
+   $('.js-example-basic-single').select2({
+	templateResult: formatColorOpt,
+	templateSelection: formatColorOpt
+   });
+});
+
+
+let allColorInfo;
+let translationLoss = {};
+
+
+let colorNamesAbrv = {
+	"English (English)": "en",
+	"Korean (한국어, 조선어)": "ko",
+	"Persian (Farsi) (فارسی)": "fa",
+	"Chinese (中文 (Zhōngwén), 汉语, 漢語)": "zh",
+	"German (Deutsch)": "de",
+	"Spanish (español)": "es",
+	"French (français, langue française)": "fr",
+	"Portuguese (português)": "pt",
+	"Swedish (svenska)": "sv"
+};
+
+let langAbv = [];
+let abvToColorName = {};
+let colorNamesKey = {}
+let colorNames = {};
+for(lang in colorNamesAbrv){
+	abvToColorName[colorNamesAbrv[lang]] = lang;
+	langAbv.push(colorNamesAbrv[lang]);
+	colorNamesKey[lang] = colorNamesAbrv[lang]+"term";
+	colorNames[lang] = [];
+}
+
+
+let drawComparisonMap = false; //TODO: make this a setting that can be changed
+let d3Data =[];
+let svg, somNodes;
+let N=20, M=10;
+let somWidth = 180;
+let boxWidth = somWidth / N;
+let boxHeight = boxWidth;
+let somHeight = M * boxWidth;
+
+function start(){
+  let fileLoadPromises = [];
+
+  let url = "../model/colorSOM.json" // put url string here
+  fileLoadPromises.push(
+	  fetch(url) // include credentials for cloud9
+		.then(checkStatus)
+		.then(JSON.parse)
+		.then(function(responseJSON) {
+		  allColorInfo = responseJSON;
+		 })
+		.catch(function(error) {
+			console.error(error);
+		})
+	);
+
+
+  // load translations
+  for(i in langAbv){
+    for(j in langAbv){
+		let lang1 = langAbv[i];
+		let lang2 = langAbv[j];
+
+		if(lang1 <= lang2){
+		    url = "../model/translation_loss/translation_loss_"+lang1+"_"+lang2+".json"
+			fileLoadPromises.push(
+			  fetch(url) // include credentials for cloud9
+				.then(checkStatus)
+				.then(JSON.parse)
+				.then(function(responseJSON) {
+					translationLoss[lang1 + "_" + lang2] = responseJSON;
+				 })
+				.catch(function(error) {
+					console.error(error);
+				})
+			);
+
+		}
+	}
+
+  }
+
+  Promise.all(fileLoadPromises).then(function(){
+	initializeTerms();
+  });
+
+ //create handlers
+ $("#startLang").change(function(){
+	updateColorNames();
+ });
+
+  $("#destLang").change(function(){
+	updateColorNames();
+ });
+
+  $("#startTerm").change(function(){
+	updateTranslation();
+ });
+
+
+
+}
+
+function  initializeTerms(){
+	//drawColorResults();
+	for(langAbv in allColorInfo){
+		for(colorName in allColorInfo[langAbv]){
+			if(colorNames[abvToColorName[langAbv]]){
+				colorNames[abvToColorName[langAbv]].push(colorName);
+			} else{
+				console.error("could not find language: " + langAbv);
+			}
+		}
+	}
+
+	let allLangs = [];
+	for(lang in colorNames){
+		allLangs.push(lang);
+		let langAbrv = colorNamesAbrv[lang];
+		colorNames[lang].sort(function(a, b){return allColorInfo[langAbrv][b].numRecords - allColorInfo[langAbrv][a].numRecords});
+
+		for(i in colorNames[lang]){
+			allColorInfo[langAbrv][colorNames[lang][i]]["rank"] = Number(i) + 1;
+		}
+	}
+
+	allLangs.sort(function(a, b){return colorNames[b].length - colorNames[a].length})
+	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
+	
+	for(i in allLangs){
+		// Note: German should not be used until we do dynamically binned color translation (the uniform bins end up just comparing the hue colors, which leads to inaccurate translations)
+		if(colorNamesAbrv[allLangs[i]] == "de"){
+			continue;
+		}
+		
+		if(colorNames[allLangs[i]].length >= 10){
+			// set selection from url hash params 
+			let startSelectedStr = "";
+			if(colorNamesAbrv[allLangs[i]] == urlParams.get("start_lang")){
+				startSelectedStr = " selected ";
+			}
+			let destSelectedStr = "";
+			if(colorNamesAbrv[allLangs[i]] == urlParams.get("dest_lang")){
+				destSelectedStr = " selected ";
+			}
+			
+			// create options
+			$("#startLang").append('<option value="'+allLangs[i]+'" '+startSelectedStr+'>'+allLangs[i]+'</option>');
+			$("#destLang").append('<option value="'+allLangs[i]+'" '+destSelectedStr+'>'+allLangs[i]+'</option>');
+		}
+	}
+
+
+	updateColorNames();
+}
+
+function updateColorNames(){
+	let currentLang = $("#startLang").val();
+	let currentLangAbrv = colorNamesAbrv[currentLang];
+	
+	
+	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
+	
+	$("#startTerm").html("");
+	for(i in colorNames[currentLang]){
+		let name = colorNames[currentLang][i];
+		
+		// set selection from url hash params 
+		let termSelectedStr = "";
+		if(name == urlParams.get("term")){
+			termSelectedStr = " selected ";
+		}
+		$("#startTerm").append("<option value='"+name+"' "+
+								" style='background-color:"+allColorInfo[currentLangAbrv][name].representativeColor+"' "
+								+" data-colornum="+(+i + 1)
+								+ termSelectedStr
+								+ " data-comonColorName=\""+allColorInfo[currentLangAbrv][name].commonColorName+"\""
+								+" >"
+								+allColorInfo[currentLangAbrv][name].commonColorName+
+								"</option>");
+	}
+	updateTranslation();
+}
+
+function updateTranslation(){
+	let currentStartLang = $("#startLang").val();
+	let currentStartLangAbrv = colorNamesAbrv[currentStartLang];
+	let currentStartLangKey = colorNamesKey[currentStartLang];
+	let currentEndLang = $("#destLang").val();
+	let currentEndLangAbrv = colorNamesAbrv[currentEndLang];
+	let currentEndLangKey = colorNamesKey[currentEndLang];
+	let term = $("#startTerm").val();
+	
+	//Save languages and start term to url
+	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
+	urlParams.set("term", term);
+	urlParams.set("start_lang", currentStartLangAbrv);
+	urlParams.set("dest_lang", currentEndLangAbrv);
+	window.location.hash = urlParams.toString().replace("?", "");
+	
+
+	$("#startColorInfo").html(generateColorInfoString(term, allColorInfo[currentStartLangAbrv][term]));
+
+	// get key for translation file
+	let lang1 = currentStartLangAbrv;
+	let lang2 = currentEndLangAbrv;
+	if(lang1 > lang2){
+		let tmp = lang1;
+		lang1 = lang2;
+		lang2 = tmp;
+	}
+	let translationKey = lang1 + "_" + lang2;
+
+	if(lang1 == lang2){
+		currentEndLangKey = currentEndLangKey+"2";
+	}
+
+	let matchedTranslations = [];
+	for(i in translationLoss[translationKey]){
+		if(translationLoss[translationKey][i][currentStartLangKey] == term){
+			matchedTranslations.push(translationLoss[translationKey][i]);
+		}
+		// if same language, need to search oppositely stored ones
+		if(lang1 == lang2 && translationLoss[translationKey][i][currentEndLangKey] == term){
+			let newObj = {
+				dist: translationLoss[translationKey][i].dist
+			}
+			newObj[currentStartLangKey] = translationLoss[translationKey][i][currentEndLangKey],
+			newObj[currentEndLangKey] = translationLoss[translationKey][i][currentStartLangKey];
+			matchedTranslations.push(newObj);
+		}
+	}
+
+	matchedTranslations.sort(function(a, b){return a.dist - b.dist})
+
+
+	$("#results").html("");
+	for(i in matchedTranslations){
+		let matchedName = matchedTranslations[i][currentEndLangKey]
+		$("#results").append(generateColorInfoString(matchedName,  allColorInfo[currentEndLangAbrv][matchedName]));
+		$("#results").append("<small>Translation Loss: " + Math.round(matchedTranslations[i].dist * 100) / 100 + "</small><br><br>");
+	}
+
+	if(drawComparisonMap){
+		createSOMCompare(currentStartLangAbrv, currentEndLangAbrv, term, matchedTranslations.map(function(a){ return a[currentEndLangKey];}));
+	}
+
+}
+
+
+function generateColorInfoString(name, colorInfo){
+	let str = "";
+
+	str += "<div style='margin: auto;' >" //onmouseover='nameMouseOver(\""+name+"\");' onmouseleave='nameMouseLeave();'
+
+	if(!colorInfo){
+		return "Color Info not found for: " + name + "</div>";
+	}
+
+	str += "<div style='";
+	str += "width: 20px; height: 20px; float:left;"
+	str += "background-color:"+colorInfo.representativeColor+ "'></div>"
+	str += "<strong style='padding-left:5px;'>" + colorInfo.commonColorName + "</strong> ";
+
+	str += "(#"+colorInfo.rank +" color)";
+
+	if(colorInfo.rank <= 10){
+	   str += "****"
+	}
+
+	str +="<br>";
+
+	
+	//str += "<div style='float:left;padding-left:20px;'> 2x2: </div> <div style='float:left'> ";
+
+	//str += generateColorGrid(colorInfo.colorNodes4)
+	//str += </div>
+
+	//str += "<div style='float:left;padding-left:20px;'> 3x3: </div>"\
+
+	str += "<div> </div>"
+
+	str += "<div style='float:left; padding-right:20px;'>  <div style='clear:both;'><strong>Color range:</strong></div>"
+	if(colorInfo.numRecords > 18){
+		str += generateColorGrid(colorInfo.colorNodes9)
+	} else {
+		str += generateColorGrid(colorInfo.colorNodes4)
+	}
+
+	str += "</div>"
+	if(drawComparisonMap){
+		str +=  "<div style='float:left;'><strong>Comparison Map</strong>"
+		str +=  "<div id='compareSOM-"+name.replace(/\s+/g,  "_")+"'></div>"
+		str += " </div>";
+	}
+	
+	str += "<div style='clear:both'>";
+
+	str += "Color name appears " + colorInfo.numRecords + " times<br>";
+	if(name == "skin" || name == "flesh" || name == "nude"){
+		str += "<small>Note: We represent the color labels provided by the participants in our study, which includes whatever racial biases they have. This is not meant to be a prescriptive definition of what colors  fit what labels.</small><br>"
+	}
+	//str += "2x2 excluded: " + Math.round(colorInfo.colorNodes4Excluded*100*100)/100 + "%, 3x3 excluded: "+ Math.round(colorInfo.colorNodes9Excluded*100*100)/100 + "%<br>";
+
+
+	str += "</div>"
+
+	return str;
+
+}
+
+function generateColorGrid(nodes){
+	let str = "";
+	for(let i = 0; i < nodes.length; i++){
+		for(let j = 0; j < nodes.length; j++){
+			let node = nodes[i][j];
+			str += "<div style='";
+			str += "width: 30px; height: 30px;float:left;"
+			str += "background-color:"+node.rgb;
+			str += "'><small>";
+			//str += Math.round(node.PCgN*100) + "%"
+			//str += Math.round(node.PCgN*100) + "%"
+			str += "</small></div>";
+		}
+		str += "<div style='clear:both'></div>";
+	}
+
+	return str;
+}
+
+
+function createSOMCompare(lang1Abrv, lang2Abrv, term, translations){
+	labColors = [];
+
+	//get starting term
+	labColors =labColors.concat(getProportionalLABColorSet(lang1Abrv, term));
+
+	translations = translations.slice(0, 10)
+
+	//get first four translations
+	for(let i = 0; i < translations.length; i++){
+		labColors = labColors.concat(getProportionalLABColorSet(lang2Abrv, translations[i]));
+	}
+
+	//now create SOM with terms
+
+
+	var compareSom = new som(N, M, 3);
+
+	// shuffle color data
+	labColors.sort(function() {
+	  return .5 - Math.random();
+	});
+	compareSom.train(labColors, 5000, .9);
+
+	let SOMD3Data = getSOMD3Data(compareSom, term, translations, lang1Abrv, lang2Abrv)
+
+	//TODO: create distance function that incorporates naming
+	drawSOMByD3(N, M, "compareSOM-" + term.replace(/\s+/g,  "_"));
+	updateSOM(compareSom, "compareSOM-" + term.replace(/\s+/g,  "_"), term, SOMD3Data);
+
+	for(let i = 0; i < translations.length; i++){
+		drawSOMByD3(N, M, "compareSOM-" + translations[i].replace(/\s+/g,  "_"));
+		updateSOM(compareSom, "compareSOM-" + translations[i].replace(/\s+/g,  "_"), translations[i], SOMD3Data);
+	}
+
+}
+
+function getSOMD3Data(compareSom, term, translations, lang1Abrv, lang2Abrv){
+	var d3Data = compareSom.neurons.reduce(function(prev, neuron, i){
+		return prev.concat(neuron.map(function(n,j){
+			var labColor = d3.lab(n.weights[0], n.weights[1], n.weights[2]);
+			var rgbColor = labColor.rgb();
+			//var color = n.weights.map(function(w){ return Math.round(w); });
+			var result = {"rgbColor": rgbColor};
+			result["labColor"] = labColor;
+			//result["colorInfo"] = JSON.parse(JSON.stringify(reverseLookup(rgbColor)[0]));
+			result["colorInfo"] = getNodeColorsInfo(n.weights, term, translations, lang1Abrv, lang2Abrv);
+			//TODO:**********************************************************************
+			result["x"] = i;
+			result["y"] = j;
+			result["lab"] = $.colorspaces.make_color('sRGB', [rgbColor.r/256, rgbColor.g/256, rgbColor.b/256]).as("CIELAB");
+
+			return result;
+		}))
+	},[]);
+	return d3Data;
+}
+
+
+function updateSOM(compareSom, divID, term, d3Data){
+
+	somNodes = svg.selectAll(".som-node")
+ 			.data(d3Data);
+
+ 	var somNodesEnter = somNodes.enter()
+ 				.append("g")
+ 				.attr("class","som-node");
+
+	somNodesEnter.append("rect");
+
+	somNodes.select("rect")
+		 			.attr("x", function(d){ return d.x * boxWidth ; })
+	 				.attr("y", function(d){ return d.y * boxHeight ; })
+	 				// .attr("rx",1)
+	 				// .attr("ry",1)
+	 				.attr("width", boxWidth + .2)
+	 				.attr("height", boxHeight + .2)
+	 				.style("fill", function(d){ return "rgb(" + d.rgbColor.r + "," + d.rgbColor.g+ "," + d.rgbColor.b +")"});
+
+
+	//horizontal midline
+	somNodesEnter.append("line")
+				.attr("class","horizontal-line black")
+				.attr("stroke", "black")
+				.attr("stroke-width",".5")
+
+	somNodesEnter.append("line")
+			.attr("class","horizontal-line white")
+			.attr("stroke", "white")
+			.attr("stroke-width",".5")
+
+
+
+
+	somNodes.select(".horizontal-line.white")
+		.attr("y1", function(d){ return (d.y + 0.5) * boxHeight - 1 ; })
+		.attr("y2", function(d){ return (d.y  + 0.5) * boxHeight -1; })
+		.attr("x1", function(d){ return (d.x) * boxWidth ; })
+		.attr("x2", function(d){ return (d.x + 1) * boxWidth; })
+		.attr("stroke-opacity", function(d){ return hasColorName(d, term) ? 1 : 0;});
+	somNodes.select(".horizontal-line.black")
+		.attr("y1", function(d){ return (d.y + 0.5) * boxHeight; })
+		.attr("y2", function(d){ return (d.y  + 0.5) * boxHeight; })
+		.attr("x1", function(d){ return (d.x) * boxWidth ; })
+		.attr("x2", function(d){ return (d.x + 1) * boxWidth; })
+		.attr("stroke-opacity", function(d){ return hasColorName(d, term) ? 1 : 0;});
+
+	//vertical midline
+	somNodesEnter.append("line")
+				.attr("class","vertical-line black")
+				.attr("stroke","black")
+				.attr("stroke-width",".5")
+
+	somNodesEnter.append("line")
+			.attr("class","vertical-line white")
+			.attr("stroke","white")
+			.attr("stroke-width",".5")
+
+
+
+	somNodes.select(".vertical-line.white")
+		.attr("x1", function(d){ return (d.x + 0.5) * boxWidth - 1 ; })
+		.attr("x2", function(d){ return (d.x + 0.5) * boxWidth - 1; })
+		.attr("y1", function(d){ return (d.y) * boxHeight - 1 ; })
+		.attr("y2", function(d){ return (d.y + 1) * boxHeight -1; })
+		.attr("stroke-opacity", function(d){ return hasColorName(d, term) ? 1 : 0;});
+
+	somNodes.select(".vertical-line.black")
+		.attr("x1", function(d){ return (d.x + 0.5) * boxWidth ; })
+		.attr("x2", function(d){ return (d.x + 0.5) * boxWidth; })
+		.attr("y1", function(d){ return (d.y) * boxHeight - 1 ; })
+		.attr("y2", function(d){ return (d.y + 1) * boxHeight -1; })
+		.attr("stroke-opacity", function(d){ return hasColorName(d, term) ? 1 : 0;});
+
+
+	somNodes.exit().remove();
+}
+
+function hasColorName(htmlNode, term){
+	if(htmlNode.colorInfo[term] > .05){
+		return true;
+	}
+	return false;
+}
+
+function getColorAmountOpacity(htmlNode, term){
+	let colorAmt = htmlNode.colorInfo[term];
+
+	// scale  0 to .1 -> 0 to 1
+	let opacity = colorAmt * 10;
+	//make sure opacity not < 1
+	if(opacity > 1){
+		opacity = 1;
+	}
+
+	return opacity;
+}
+
+
+function drawSOMByD3(n, m, divID){
+  svg = d3.select("#"+divID).append("svg")
+      .attr("width", somWidth )
+      .attr("height", somHeight )
+}
+
+
+function getProportionalLABColorSet(langAbv, term){
+	if(!allColorInfo[langAbv][term]){
+		console.error("could not find term " + langAbv + ": " + term);
+		return [];
+	}
+	let nodes = allColorInfo[langAbv][term].colorNodes9;
+	let colorTerms = [];
+	for(let i = 0; i < nodes.length; i++){
+		for(let j = 0; j < nodes[i].length; j++){
+			let color = [nodes[i][j].lab.l, nodes[i][j].lab.a, nodes[i][j].lab.b];
+			//add up to 50 copies of the color (1 for every 2 %)
+			for(let k=0; k < nodes[i][j].PCgN*50; k++){
+				colorTerms.push(color);
+			}
+		}
+	}
+	return colorTerms;
+}
+
+
+function getNodeColorsInfo(labColor, term, translations, lang1Abrv, lang2Abrv){
+
+	let info = {};
+	info[term] = getNodeColorAmount(labColor, term,lang1Abrv);
+	for(let i = 0; i < translations.length; i++){
+		info[translations[i]] = getNodeColorAmount(labColor, translations[i], lang2Abrv)
+	}
+	return info;
+
+}
+
+function getNodeColorAmount(labColor, term, langAbrv){
+	if(!allColorInfo[langAbrv][term]){
+		return 0;
+	}
+	let infoNodes = allColorInfo[langAbrv][term].colorNodes9;
+	let multiplier = 1;
+	if(allColorInfo[langAbrv][term].numRecords < 50){ //if not much data, compare with only 4 nodes
+		infoNodes = allColorInfo[langAbrv][term].colorNodes4;
+		multiplier = 4/9;
+	}
+	let infoNodesWeights = [];
+	for(let i = 0; i < infoNodes.length; i++){
+		let tmparray = [];
+		for(let j = 0; j < infoNodes[i].length; j++){
+			tmparray.push([infoNodes[i][j].lab.l, infoNodes[i][j].lab.a, infoNodes[i][j].lab.b]);
+		}
+		infoNodesWeights.push(tmparray);
+	}
+
+
+	//create SOM object to reuse it's code
+	let colorSOM = new som(infoNodesWeights.length, infoNodesWeights[0].length, infoNodesWeights[0][0].length);
+	colorSOM.setNodeWeights(infoNodesWeights);
+
+	let bmuCoords = colorSOM.findBMU(labColor);
+	//console.log(bmuCoords, colorSOM.neurons[bmuCoords.x][bmuCoords.y].calcDistance(labColor), colorSOM.findMaxNeighborDist()/2);
+	if( colorSOM.neurons[bmuCoords.x][bmuCoords.y].calcDistance(labColor) < colorSOM.findMaxNeighborDist()/2){
+		return infoNodes[bmuCoords.x][bmuCoords.y].PCgN * multiplier;
+	}else {
+		return 0;
+	}
+}
+
+/*
+function nameMouseOver(name){
+	$(".som-node ").each(function(i){
+		if( hasColorName(this.__data__, name)){
+			this.style.opacity = 1;
+		}
+		else {
+			this.style.opacity = .25;
+		}
+	});
+}
+
+function nameMouseLeave(){
+
+	$(".som-node ").each(function(i){
+		this.style.opacity = 1;
+	});
+
+}
+*/
+</script>
+</head>
+
+<body onload = "start()">
+ <div id = "main" class="container" style="height:100%">
+
+ <h1 style="margin-bottom:0px;">Color Translator</h1>
+ <p>Choose a start color and destination language, and we will show you the most similar colors.</p>
+ <div class="row" style="height:100%">
+ <div class="col-12 col-md-6">
+	 <label>Start Language</label>
+	 <select id="startLang"></select>
+	 <br>
+	 <label>Start Term</label>
+	 <select id="startTerm"  class="js-example-basic-single" style="width:250px">
+
+	 </select>
+	 <div id="startColorInfo">
+		<strong>Loading...</strong>
+	 </div>
+
+
+ </div>
+ 
+ <hr class="d-block d-md-none col-12">
+
+
+  <div class="col-12 col-md-6" style="height:100%">
+	 <label>Destination Language</label>
+	 <select id="destLang"> </select>
+	 <div id="results" style="overflow-y: auto; height:100%; max-height:500px"> <strong>Loading...</strong></div>
+ </div>
+
+ </div></div>
+</body>
+</html>

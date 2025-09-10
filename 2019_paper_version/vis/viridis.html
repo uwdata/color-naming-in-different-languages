@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	
+	<title>Korean-English Viridis Color Spectrum - Many Languages, Many Colors</title>
+
+	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="bower_components/d3/d3.min.js"></script>
+    <script src="js/vega.js"></script>
+    <script src="js/vega-lite.js"></script>
+    <script src="js/vega-embed.js"></script>
+	
+	<script src="js/jquery-1.12.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	
+	<script src="../addNavBar.js"></script>
+
+
+  </head>
+  <body>
+  <div class="container">
+	<h1>Korean-English Viridis Color Spectrum</h1>
+	<p>This visualization shows how color names in Korean and English map onto the Viridis color spectrum  ( <img src='viridis-smallest.png'> ) used in visualizations. You can see that the range of Viridis colors referred to by the name "green" doesn't line up with any Korean color name.</p>
+    <div id="vis-viridis"></div>
+    <p>
+      Labels next each y-axis mean the corresponding term and the number of records forming the distribution. We note that "파랑" only have 1 record.
+    </p>
+  </div>
+  </body>
+   <script type="text/javascript">
+    const xDomain = [-1, 1];
+    const subSpec = {
+
+      "width": 300,
+      "height": 50,
+      "transform":[],
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "binNum",
+          "type": "ordinal",
+          "scale": {"domain": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
+          "axis": null
+        },
+        "y": {
+          "field": "pCT",
+          "type": "quantitative",
+          "scale": {"domain": [0, 1]},
+          "axis": {
+            "values": [0, 0.5 , 1],
+            "tickStep": 0.5,
+            "titleAngle": 0,
+            "titleAlign": "right"
+          }
+        },
+        "color": {
+          "field": "rgb",
+          "legend": null,
+          "scale": {
+            "domain": [],
+            "range": []
+          }
+        }
+      }
+    };
+    const spec = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+      "vconcat": [],
+      "data": {
+        "values": []
+      },
+      "config":{"view":{"stroke": "transparent"}}
+    };
+    // const rootPath = window.location.pathname.split('/').slice(0,-1).join("/");
+    d3.json("../model/scheme_color_names.json").then(data => {
+
+      draw(
+        "viridis",
+        [
+          {"term": ""},
+          {"term": "보라"},
+          {"term": "purple"},
+          {"term": "파랑"},
+          {"term": "blue"},
+          {"term": "청록"},
+          {"term": "teal"},
+          {"term": "초록"}, // which is the second best translation  of "green". The best was "녹", but it only contains 3 recrods and its distribution is super similar to 초록.
+          {"term": "green"},
+          {"term": "연두"},
+          {"term": "lightgreen"},
+          {"term": "노랑"},
+          {"term": "yellow"}
+        ],
+        "#vis-viridis"
+      );
+
+
+
+
+      function draw(scheme, pairs, target){
+        let drawingData = data.filter(d => d.scheme === scheme);
+        let topWords = d3.nest()
+          .key(d => d.lang)
+          .key(d => d.term)
+          .rollup(values => {
+          return {
+            "totalpTC": d3.sum(values, v=>v.pTC),
+            "totalCnt": d3.sum(values, v=>v.cnt)
+          };
+        }).entries(drawingData);
+
+        topWords.forEach(langTerm => langTerm.values.sort((a,b) => b.value.totalpTC - a.value.totalpTC));
+        console.log(topWords[0]);
+        console.log(topWords[1]);
+        console.log(d3.sum(topWords[1].values, v => v.value.totalCnt));
+        let getCount = (term) => {
+          return topWords[0].values.concat(topWords[1].values).find(d=>d.key === term).value.totalCnt;
+        };
+        let workingSpec = copy(spec);
+        pairs.forEach(p => {
+          let s = copy(subSpec);
+          if (p.term) {
+            s.transform.push({"filter": `datum.term === '${p.term}'`});
+            s.transform.push({"filter": `datum.scheme === '${scheme}'`});
+            s.encoding.y.axis.title = `${p.term} (${getCount(p.term)})`;
+          } else {
+            s.encoding.y = { "value": 10 };
+            s.encoding.x.axis = null;
+            s.height = 20;
+            s.title = "Color Bins";
+          }
+
+          let colors = unique(drawingData.map(d => d.rgb));
+          s.encoding.color.scale.domain = colors;
+          s.encoding.color.scale.range = colors;
+          // s.encoding.y.axis.title = false;
+          workingSpec.vconcat.push(s);
+        });
+        workingSpec.data.values = drawingData;
+        vegaEmbed(target, workingSpec, {"renderer":"svg"}).then(result => {
+          let doms = document.getElementsByClassName("mark-rule role-axis-domain");
+          for (var i = 0; i < doms.length; i++) {
+            doms[i].firstChild.style.stroke = "none";
+          }
+
+        });
+      }
+    });
+
+    function copy(o){
+      return JSON.parse(JSON.stringify(o));
+    }
+
+    function unique(arr, accessor) {
+      accessor = !accessor ? (d) => { return d; } : accessor;
+      return d3.nest()
+        .key(accessor)
+        .entries(arr)
+        .map(d => d.values[0]);
+    }
+
+
+    function EMD(arr1, arr2, accessor, startBinNum = 0){
+      let EMD = new Array(arr1.length+1).fill(0);
+      let distance = 0;
+      for (var i = 0; i < arr1.length; i++) {
+        let binNum = (startBinNum + i) % arr1.length
+        EMD[binNum+1] = accessor(arr1[binNum]) + EMD[binNum] - accessor(arr2[binNum]);
+        distance += Math.abs(EMD[binNum+1]);
+      }
+      return distance;
+    }
+    </script>
+</html>
