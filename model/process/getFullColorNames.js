@@ -12,6 +12,8 @@ const MIN_NperBin = 4;
 const FILE_O = "../full_color_names.json";
 const FILE_O_VIS = "../full_color_map.vl.json";
 const FILE_O_VIS_SALIENCY = "../full_color_map_sal.vl.json";
+const FILE_O_VIS_LONG = "../full_color_map_long.vl.json";
+const FILE_O_VIS_SALIENCY_LONG = "../full_color_map_sal_long.vl.json";
 
 csv().fromFile("../cleaned_color_names.csv").then((colorNames)=> {
 csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
@@ -133,18 +135,23 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
     "range": avgColors.map(c => c.avgColorRGBCode)
   };
 
-  let langsToShow = grouped
+  let langsToShowShort = grouped
+    .filter(g => g.values.length > 10000)
+    .sort((a,b) => a.values.length > b.values.length)
+    .map(g => g.key)
+
+  let langsToShowLong = grouped
     .filter(g => g.values.length > 6000)
     .sort((a,b) => a.values.length > b.values.length)
     .map(g => g.key)
 
-  console.log("langstoshow: " + langsToShow)
+  console.log("langstoshow: " + langsToShowShort)
   vlSpec.transform.push({filter: {
     field: "lang",
     //oneOf: ["English (English)", "Korean (한국어, 조선어)"]
-    oneOf: langsToShow
+    oneOf: langsToShowShort
   }})
-  vlSpec.facet.row["sort"] = langsToShow
+  vlSpec.facet.row["sort"] = langsToShowShort
 
   //vlSpec.transform[4].filter.oneOf = grouped.filter(g => g.values.length > 5000).map(g => g.key)
   // vlSpec.spec.layer[0].encoding.color.scale = {
@@ -155,6 +162,15 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
   fs.writeFileSync(FILE_O_VIS, JSON.stringify(vlSpec, null, 2));
   vlSpec.spec.layer[0].encoding.size.field = "sal";
   fs.writeFileSync(FILE_O_VIS_SALIENCY, JSON.stringify(vlSpec, null, 2));
+
+  console.log("langstoshow: " + langsToShowLong)
+  vlSpec.transform[4].filter.oneOf = langsToShowLong
+
+  vlSpec.spec.layer[0].encoding.size.field = "maxpTC";
+  fs.writeFileSync(FILE_O_VIS_LONG, JSON.stringify(vlSpec, null, 2));
+  vlSpec.spec.layer[0].encoding.size.field = "sal";
+  fs.writeFileSync(FILE_O_VIS_SALIENCY_LONG, JSON.stringify(vlSpec, null, 2));
+  
 });
 });
 
