@@ -132,6 +132,21 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
     "domain": avgColors.map(c => c.name + "-" + c.lang),
     "range": avgColors.map(c => c.avgColorRGBCode)
   };
+
+  let langsToShow = grouped
+    .filter(g => g.values.length > 6000)
+    .sort((a,b) => a.values.length > b.values.length)
+    .map(g => g.key)
+
+  console.log("langstoshow: " + langsToShow)
+  vlSpec.transform.push({filter: {
+    field: "lang",
+    //oneOf: ["English (English)", "Korean (한국어, 조선어)"]
+    oneOf: langsToShow
+  }})
+  vlSpec.facet.row["sort"] = langsToShow
+
+  //vlSpec.transform[4].filter.oneOf = grouped.filter(g => g.values.length > 5000).map(g => g.key)
   // vlSpec.spec.layer[0].encoding.color.scale = {
   //   "domain": modalColor.map(c => c.name),
   //   "range": modalColor.map(c => c.modalColorRGBCode)
@@ -231,8 +246,7 @@ let vlSpec = {
     {
       "calculate": "datum.majorTerm +'-' + datum.lang",
       "as": "majorTermLang"
-    },
-    {"filter": {"field": "lang", "oneOf": ["English (English)", "Korean (한국어, 조선어)"]}}
+    }
   ],
   "config":{
     "view": {"stroke": null},
@@ -242,7 +256,7 @@ let vlSpec = {
     "row": {
       "field": "lang",
       "type": "ordinal",
-      "header": {"title": null}
+      "header": {"title": null},
     },
     "column": {
       "field": "binL",
