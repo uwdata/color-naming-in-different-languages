@@ -35,7 +35,7 @@ $(document).on('ready page:load', function () {
       .filter(lang_stat => lang_stat.numBins > MIN_BINS_HIDE)
       .sort((a,b) => a.numBins > b.numBins)
 
-    const allColorsName = "All Color Bins"
+    const allColorsName = "All Color Bins (Reference)"
     language_stats.unshift({lang: allColorsName, numBins: lab_bins_array.length})
     saliencies_by_lang[allColorsName] = lab_bins_array
     // make fields in lab_bins_array match what graph expects
