@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 	let rootPath = "";
 	let visPath = "";
-	if(window.location.pathname.indexOf("index.html") > 0){
+	if(!window.location.pathname.includes("/vis/")){
 		visPath = "vis/";
 	} else{
 		rootPath = "../";
