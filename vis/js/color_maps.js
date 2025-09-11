@@ -4,6 +4,16 @@ $(document).on('ready page:load', function () {
   $.getJSON("../model/full_color_map_saliency_bins.json", function( saliencies ) {
     console.log(saliencies);
 
+    lab_bins_array = []
+    for(const [l_bin, l_bin_entries] of Object.entries(lab_bins)){
+      for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries)){
+        for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries)){
+          lab_bins_array.push(b_bin_entry)
+        }
+      }
+    }
+    console.log(lab_bins_array);
+
     const languages = [...new Set(saliencies.map(s => s.lang))];
     console.log(languages)
 
@@ -24,13 +34,27 @@ $(document).on('ready page:load', function () {
     language_stats = language_stats
       .filter(lang_stat => lang_stat.numBins > MIN_BINS_HIDE)
       .sort((a,b) => a.numBins > b.numBins)
+
+    const allColorsName = "All Color Bins"
+    language_stats.unshift({lang: allColorsName, numBins: lab_bins_array.length})
+    saliencies_by_lang[allColorsName] = lab_bins_array
+    // make fields in lab_bins_array match what graph expects
+    lab_bins_array.forEach(tile => {
+      tile.maxpTC = 0.5
+      tile.binL = tile.l_bin
+      tile.binA = tile.a_bin
+      tile.binB = tile.b_bin
+      tile.avgTermColor = `rgb(${tile.representative_rgb.r},${tile.representative_rgb.g},${tile.representative_rgb.b})`
+    })
+
     console.log(language_stats)
 
     let backgroundColor = 'white'
 
     $("#main").append('<div class="row" id="vis"></div>')
 
-    
+
+
 
     for(let i = 0; i < language_stats.length; i++){
       const language_stat = language_stats[i]
