@@ -34,7 +34,7 @@ $(document).on('ready page:load', function () {
 
     for(let i = 0; i < language_stats.length; i++){
       const language_stat = language_stats[i]
-      d3.select('#vis').append("h3").text(language_stat.lang)
+      
       d3.select('#vis').append("div").attr("id", "lang"+i)
 
 
@@ -43,12 +43,24 @@ $(document).on('ready page:load', function () {
         width = 1100,//$('#vis').width() - margin.left - margin.right,
         height = 200//Math.min(800 - margin.top - margin.bottom, width/4);
     
-      let svg = d3.select("#lang"+i).append("svg")
+      const svg = d3.select("#lang"+i).append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
+      const textBackground = svg.append("rect")
+      const text = svg.append("text")
+        .text(language_stat.lang)
+        .attr("x", 20)
+        .attr("y", 50)
+        //var bbox = focus.select("text").node().getBBox();
+      textBackground
+        .attr("fill", "white")
+        .attr("x", 15)
+        .attr("y", 50 - 5 - (text.node().getBBox().height + 10)/2)
+        .attr("width", text.node().getBBox().width + 10)
+        .attr("height", text.node().getBBox().height + 10)
       let sal = saliencies_by_lang[language_stat.lang]
 
-      drawColorTiles(svg, sal)
+      drawColorTiles(i, sal)
 
     }
     
@@ -57,11 +69,15 @@ $(document).on('ready page:load', function () {
       const brightness = $(this).val() 
       const brightness255 = Math.round(255*brightness/100)
       backgroundColor = `rgb(${brightness255}, ${brightness255}, ${brightness255})`
-      $("#visualization svg").css("background-color", backgroundColor)
-      //drawColorTiles(saliencies_en)
+      $("#vis").css("background-color", backgroundColor)
+      for(let i = 0; i < language_stats.length; i++){
+        drawColorTiles(i, saliencies_by_lang[language_stats[i].lang])
+      }
+      
     })
 
-    function drawColorTiles(svg, saliencies){
+    function drawColorTiles(i, saliencies){
+      const svg = d3.select("#lang"+i + " svg")
       svg.selectAll(".tile")
         .data(saliencies)
         .join("rect")
@@ -85,25 +101,22 @@ $(document).on('ready page:load', function () {
           .attr("width", (d) => 10*d.maxpTC)
           .on("mouseover", (event, d) => {
             saliencies.forEach((tileInfo) => {
-              if(d.commonTerm == tileInfo.commonTerm && d.lang == tileInfo.lang){
+              if(d.commonTerm == tileInfo.commonTerm){
                 tileInfo.highlighted = true;
                 tileInfo.hidden = false;
-              } else if(d.lang == tileInfo.lang) {
-                tileInfo.highlighted = false;
-                tileInfo.hidden = true;
               } else {
                 tileInfo.highlighted = false;
-                tileInfo.hidden = false;
+                tileInfo.hidden = true;
               }
             }) 
-            drawColorTiles(svg, saliencies)
+            drawColorTiles(i, saliencies)
           })
           .on("mouseout", (event, d) => {
             saliencies.forEach((tileInfo) => {
               tileInfo.highlighted = false;
               tileInfo.hidden = false;
             }) 
-            drawColorTiles(svg, saliencies)
+            drawColorTiles(i, saliencies)
           })
     }
 
