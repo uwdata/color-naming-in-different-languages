@@ -51,9 +51,13 @@ $(document).on('ready page:load', function () {
 
     let backgroundColor = 'white'
 
+    // since bins are unevenly distributed, this makes the L levels
+    // spaced evenly on the x axis
+    const L_OFFSETS = [0, 50, 110, 185, 270, 365, 465, 575, 675, 770, 820]
+    
     //let margin = {top: 30, right: 50, bottom: 30, left: 50},
     let margin = {top: 0, right: 0, bottom: 0, left: 0},
-      width = 1045,//$('#vis').width() - margin.left - margin.right,
+      width = 870,//$('#vis').width() - margin.left - margin.right,
       height = 125//Math.min(800 - margin.top - margin.bottom, width/4);
         
     $("#main").append(`
@@ -113,7 +117,7 @@ $(document).on('ready page:load', function () {
           .attr("class", "tile")
           .style("stroke", backgroundColor)
           .style("stroke-width", "1")
-          .attr("x", (d) => d.binA*5 +20 + 100*d.binL )
+          .attr("x", (d) => d.binA*5 +20 + L_OFFSETS[d.binL] )
           .attr("y", (d) => {
             return -d.binB*5 + 55
           })
