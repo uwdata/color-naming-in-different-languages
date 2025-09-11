@@ -3,95 +3,111 @@ $(document).on('ready page:load', function () {
   $.getJSON("../model/lab_bins.json", function( lab_bins ) {
   $.getJSON("../model/full_color_map_saliency_bins.json", function( saliencies ) {
     console.log(saliencies);
-    
-    lab_bins_array = []
-    for(const [l_bin, l_bin_entries] of Object.entries(lab_bins)){
-      for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries)){
-        for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries)){
-          lab_bins_array.push(b_bin_entry)
-        }
-      }
-    }
-    console.log(lab_bins_array);
 
+    const languages = [...new Set(saliencies.map(s => s.lang))];
+    console.log(languages)
 
+    const saliencies_by_lang = {};
+    languages.forEach(lang => {
+      saliencies_by_lang[lang] = saliencies.filter(s => s.lang == lang)
+    })
 
-    $("#visualization").append('<div class="row" id="vis"></div>')
+    const MIN_BINS_DISPLAY = 700
+    const MIN_BINS_HIDE = 300
+    let language_stats = languages
+      .map(lang => {
+        return {lang: lang, numBins: saliencies_by_lang[lang].length}
+      })
+      
+    console.log(language_stats)
 
-    let margin = {top: 30, right: 50, bottom: 30, left: 50},
-        width = 1200,//$('#vis').width() - margin.left - margin.right,
-        height = 400//Math.min(800 - margin.top - margin.bottom, width/4);
-    
-    let svg = d3.select('#vis').append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-    
-
-    const saliencies_en = saliencies.filter((a) => a.lang.split(" ")[0]=="English" 
-  ||  a.lang.split(" ")[0]=="Korean")
-    const lang_positions = {
-      "English": 0,
-      "Korean": 1
-    }
+    language_stats = language_stats
+      .filter(lang_stat => lang_stat.numBins > MIN_BINS_HIDE)
+      .sort((a,b) => a.numBins > b.numBins)
+    console.log(language_stats)
 
     let backgroundColor = 'white'
-        
-    drawColorTiles(svg, saliencies_en, lab_bins, lang_positions, backgroundColor)
 
+    $("#main").append('<div class="row" id="vis"></div>')
+
+    
+
+    for(let i = 0; i < language_stats.length; i++){
+      const language_stat = language_stats[i]
+      d3.select('#vis').append("h3").text(language_stat.lang)
+      d3.select('#vis').append("div").attr("id", "lang"+i)
+
+
+       //let margin = {top: 30, right: 50, bottom: 30, left: 50},
+       let margin = {top: 0, right: 0, bottom: 0, left: 0},
+        width = 1100,//$('#vis').width() - margin.left - margin.right,
+        height = 200//Math.min(800 - margin.top - margin.bottom, width/4);
+    
+      let svg = d3.select("#lang"+i).append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+      let sal = saliencies_by_lang[language_stat.lang]
+
+      drawColorTiles(svg, sal)
+
+    }
+    
 
     $("#background-brightness").on("input", function(){
       const brightness = $(this).val() 
       const brightness255 = Math.round(255*brightness/100)
       backgroundColor = `rgb(${brightness255}, ${brightness255}, ${brightness255})`
       $("#visualization svg").css("background-color", backgroundColor)
-      drawColorTiles(svg, saliencies_en, lab_bins, lang_positions, backgroundColor)
+      //drawColorTiles(saliencies_en)
     })
+
+    function drawColorTiles(svg, saliencies){
+      svg.selectAll(".tile")
+        .data(saliencies)
+        .join("rect")
+          .attr("class", "tile")
+          .style("stroke", backgroundColor)
+          .style("stroke-width", "1")
+          .attr("x", (d) => d.binA*5 +100 + 100*d.binL )
+          .attr("y", (d) => {
+            return -d.binB*5 + 100
+          })
+          .attr("fill", (d) => {
+            if(d.highlighted){
+              const bin = lab_bins[d.binL][d.binA][d.binB]
+              return `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
+            }
+            if(d.hidden){return backgroundColor}
+
+            return d.avgTermColor
+            })
+          .attr("height", (d) => 10*d.maxpTC)
+          .attr("width", (d) => 10*d.maxpTC)
+          .on("mouseover", (event, d) => {
+            saliencies.forEach((tileInfo) => {
+              if(d.commonTerm == tileInfo.commonTerm && d.lang == tileInfo.lang){
+                tileInfo.highlighted = true;
+                tileInfo.hidden = false;
+              } else if(d.lang == tileInfo.lang) {
+                tileInfo.highlighted = false;
+                tileInfo.hidden = true;
+              } else {
+                tileInfo.highlighted = false;
+                tileInfo.hidden = false;
+              }
+            }) 
+            drawColorTiles(svg, saliencies)
+          })
+          .on("mouseout", (event, d) => {
+            saliencies.forEach((tileInfo) => {
+              tileInfo.highlighted = false;
+              tileInfo.hidden = false;
+            }) 
+            drawColorTiles(svg, saliencies)
+          })
+    }
+
   })
-});
+  });
 });
 
-function drawColorTiles(svg, saliencies, lab_bins, lang_positions, backgroundColor){
-  svg.selectAll(".tile")
-    .data(saliencies)
-    .join("rect")
-      .attr("class", "tile")
-      .style("stroke", backgroundColor)
-      .style("stroke-width", "1")
-      .attr("x", (d) => d.binA*5 +100 + 100*d.binL )
-      .attr("y", (d) => {
-        return -d.binB*5 + 100 + lang_positions[d.lang.split(" ")[0]] * 150
-      })
-      .attr("fill", (d) => {
-        if(d.highlighted){
-          const bin = lab_bins[d.binL][d.binA][d.binB]
-          return `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
-        }
-        if(d.hidden){return backgroundColor}
-
-        return d.avgTermColor
-        })
-      .attr("height", (d) => 10*d.maxpTC)
-      .attr("width", (d) => 10*d.maxpTC)
-      .on("mouseover", (event, d) => {
-        saliencies.forEach((tileInfo) => {
-          if(d.commonTerm == tileInfo.commonTerm && d.lang == tileInfo.lang){
-            tileInfo.highlighted = true;
-            tileInfo.hidden = false;
-          } else if(d.lang == tileInfo.lang) {
-            tileInfo.highlighted = false;
-            tileInfo.hidden = true;
-          } else {
-            tileInfo.highlighted = false;
-            tileInfo.hidden = false;
-          }
-        }) 
-        drawColorTiles(svg, saliencies, lab_bins, lang_positions, backgroundColor)
-      })
-      .on("mouseout", (event, d) => {
-        saliencies.forEach((tileInfo) => {
-          tileInfo.highlighted = false;
-          tileInfo.hidden = false;
-        }) 
-        drawColorTiles(svg, saliencies, lab_bins, lang_positions, backgroundColor)
-      })
-}
