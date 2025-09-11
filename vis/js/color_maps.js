@@ -41,6 +41,7 @@ $(document).on('ready page:load', function () {
     // make fields in lab_bins_array match what graph expects
     lab_bins_array.forEach(tile => {
       tile.maxpTC = 0.5
+      tile.saliency = -2.5
       tile.binL = tile.l_bin
       tile.binA = tile.a_bin
       tile.binB = tile.b_bin
@@ -50,6 +51,7 @@ $(document).on('ready page:load', function () {
     console.log(language_stats)
 
     let backgroundColor = 'white'
+    let tile_size_type = $("#tile_size").val()
 
     // since bins are unevenly distributed, this makes the L levels
     // spaced evenly on the x axis
@@ -73,28 +75,8 @@ $(document).on('ready page:load', function () {
       
       d3.select('#vis').append("div").attr("id", "lang"+i)
 
-
-
-      const svg = d3.select("#lang"+i).append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-      const textBackground = svg.append("rect")
-      const textBackgroundPadding = 5
-      const text = svg.append("text")
-        .text(language_stat.lang)
-        .attr("x", 20)
-        .attr("y", 25)
-        //var bbox = focus.select("text").node().getBBox();
-      textBackground
-        .attr("fill", "white")
-        .attr("x", 20 - textBackgroundPadding)
-        .attr("y", 25 - textBackgroundPadding - (text.node().getBBox().height + 2*textBackgroundPadding)/2)
-        .attr("width", text.node().getBBox().width + 10)
-        .attr("height", text.node().getBBox().height + 10)
-      let sal = saliencies_by_lang[language_stat.lang]
-
-      drawColorTiles(i, sal)
-
+      const sal = saliencies_by_lang[language_stat.lang]
+      createOrRefreshLang(i, sal)
     }
     
 
@@ -103,11 +85,63 @@ $(document).on('ready page:load', function () {
       const brightness255 = Math.round(255*brightness/100)
       backgroundColor = `rgb(${brightness255}, ${brightness255}, ${brightness255})`
       $("#vis").css("background-color", backgroundColor)
-      for(let i = 0; i < language_stats.length; i++){
-        drawColorTiles(i, saliencies_by_lang[language_stats[i].lang])
-      }
-      
+
+      createOrRefreshAllLangs()
     })
+
+    $("#low-data").change(createOrRefreshAllLangs)
+    $("#ref_bins").change(createOrRefreshAllLangs)
+    $("#tile_size").change(() => {
+      tile_size_type = $("#tile_size").val()
+      createOrRefreshAllLangs()
+    })
+
+    function createOrRefreshAllLangs(){
+      for(let i = 0; i < language_stats.length; i++){
+        createOrRefreshLang(i, saliencies_by_lang[language_stats[i].lang])
+      }
+    }
+
+    function createOrRefreshLang(i, sal){
+      const language_stat = language_stats[i]
+
+      const div = d3.select("#lang"+i)
+      // don't create if language displays if they aren't selected
+      if(language_stat.lang == allColorsName){
+        if(!$("#ref_bins").is(':checked')){
+          div.style("display", "none")
+          return
+        }
+      } else if(!$("#low-data").is(':checked') && language_stat.numBins <= MIN_BINS_DISPLAY){
+        div.style("display", "none")
+        return
+      }
+
+      // show div
+      div.style("display", "")
+
+      let svg = d3.select("#lang"+i+" svg")
+      if(svg.empty()){
+        svg = d3.select("#lang"+i).append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+        const textBackground = svg.append("rect")
+        const textBackgroundPadding = 5
+        const text = svg.append("text")
+          .text(language_stat.lang)
+          .attr("x", 20)
+          .attr("y", 25)
+          //var bbox = focus.select("text").node().getBBox();
+        textBackground
+          .attr("fill", "white")
+          .attr("x", 20 - textBackgroundPadding)
+          .attr("y", 25 - textBackgroundPadding - (text.node().getBBox().height + 2*textBackgroundPadding)/2)
+          .attr("width", text.node().getBBox().width + 10)
+          .attr("height", text.node().getBBox().height + 10)
+      }
+
+      drawColorTiles(i, sal)
+    }
 
     function drawColorTiles(i, saliencies){
       const svg = d3.select("#lang"+i + " svg")
@@ -130,8 +164,8 @@ $(document).on('ready page:load', function () {
 
             return d.avgTermColor
             })
-          .attr("height", (d) => 10*d.maxpTC)
-          .attr("width", (d) => 10*d.maxpTC)
+          .attr("height", getTileSize)
+          .attr("width", getTileSize)
           .on("mouseover", (event, d) => {
             saliencies.forEach((tileInfo) => {
               if(d.commonTerm == tileInfo.commonTerm){
@@ -151,6 +185,19 @@ $(document).on('ready page:load', function () {
             }) 
             drawColorTiles(i, saliencies)
           })
+    }
+
+    function getTileSize(d){
+       if(tile_size_type == "ptc"){
+          // ptc is 0 to 1
+          return 10*d.maxpTC
+        }
+        if(tile_size_type == "sal"){
+          // sal is -5 to 0
+          return (d.saliency + 5)*2
+        }
+        // otherwise uniform:
+        return 5
     }
 
   })

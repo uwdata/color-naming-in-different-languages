@@ -34,8 +34,26 @@
       <p>Each tile represents a 10x10x10 bin in <a href="https://en.wikipedia.org/wiki/CIELAB_color_space" target="_blank">LAB color space</a>. The size of the tile is proportional to the level of agreement on a color name for all colors in that bin.</p>
 
       <div id="controllers">
-          <input type="range" id="background-brightness" name="background-brightness" min="0" max="100" value="100" />
+        <div class="form-check form-check-inline"> 
           <label for="background-brightness">Background Brightness</label>
+          <input class="form-range" type="range" id="background-brightness" name="background-brightness" min="0" max="100" value="100" />
+        </div>
+        <div class="form-check form-check-inline"> 
+          <input class="form-check-input" type="checkbox" name="metric" id="low-data" value="low-data">
+          <label class="form-label" for="low-data">Show low data languages</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="metric" id="ref_bins" value="ref_bins">
+          <label class="form-label" for="ref_bins">Show reference color bins</label> 
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-label" for="tile_size">Tile size</label> 
+          <select class="form-select" type="checkbox" name="metric" id="tile_size" value="tile_size">
+            <option value="uniform">Uniform</option>
+            <option value="ptc" selected>Max P(T|C)</option>
+            <option value="sal">Saliency</option>
+          </select>
+        </div>
       </div>
       
 
