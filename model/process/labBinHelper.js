@@ -40,11 +40,14 @@
 // then evenly distributed around that
 // Even though this makes the bin cover non-existent colors,
 // I want to capture "white" and "black"
-const BIN_L_N = 10 
-const BIN_AB_N = 25 // Must be odd so white/black are centered
+// (note: for edges of a/b, bins will often include non-existent colors anyway)
+// I also want bins to be cubes (this will be 10x10)
+const BIN_L_N = 11
+const BIN_AB_N = 23 // Must be odd so white/black are centered
 const MIN_L = 0
 const MAX_L = 100 // make it a little over 100 to try to get the brightest colors to show
-const MIN_MAX_AB = 107.8601617541481
+//const MIN_MAX_AB = 107.8601617541481
+const MIN_MAX_AB = 110 // round to make BIN_DELTA_AB = 10
 
 const BIN_DELTA_L = (MAX_L - MIN_L) / (BIN_L_N - 1)
 const BIN_DELTA_AB = (MIN_MAX_AB * 2) / (BIN_AB_N - 1)
