@@ -36,7 +36,7 @@ $(document).on('ready page:load', function () {
 
     let backgroundColor = 'white'
         
-    drawColorTiles(svg, saliencies_en, lang_positions, backgroundColor)
+    drawColorTiles(svg, saliencies_en, lab_bins, lang_positions, backgroundColor)
 
 
     $("#background-brightness").on("input", function(){
@@ -44,13 +44,13 @@ $(document).on('ready page:load', function () {
       const brightness255 = Math.round(255*brightness/100)
       backgroundColor = `rgb(${brightness255}, ${brightness255}, ${brightness255})`
       $("#visualization svg").css("background-color", backgroundColor)
-      drawColorTiles(svg, saliencies_en, lang_positions, backgroundColor)
+      drawColorTiles(svg, saliencies_en, lab_bins, lang_positions, backgroundColor)
     })
   })
 });
 });
 
-function drawColorTiles(svg, saliencies, lang_positions, backgroundColor){
+function drawColorTiles(svg, saliencies, lab_bins, lang_positions, backgroundColor){
   svg.selectAll(".tile")
     .data(saliencies)
     .join("rect")
@@ -62,11 +62,36 @@ function drawColorTiles(svg, saliencies, lang_positions, backgroundColor){
         return -d.binB*5 + 100 + lang_positions[d.lang.split(" ")[0]] * 150
       })
       .attr("fill", (d) => {
+        if(d.highlighted){
+          const bin = lab_bins[d.binL][d.binA][d.binB]
+          return `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
+        }
+        if(d.hidden){return backgroundColor}
+
         return d.avgTermColor
-        //return d3.lab(d.lab.split(",")[0], d.lab.split(",")[1], d.lab.split(",")[2]).rgb()
-        //const bin = lab_bins[d.binL][d.binA][d.binB]
-        //return `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
         })
       .attr("height", (d) => 10*d.maxpTC)
       .attr("width", (d) => 10*d.maxpTC)
+      .on("mouseover", (event, d) => {
+        saliencies.forEach((tileInfo) => {
+          if(d.commonTerm == tileInfo.commonTerm && d.lang == tileInfo.lang){
+            tileInfo.highlighted = true;
+            tileInfo.hidden = false;
+          } else if(d.lang == tileInfo.lang) {
+            tileInfo.highlighted = false;
+            tileInfo.hidden = true;
+          } else {
+            tileInfo.highlighted = false;
+            tileInfo.hidden = false;
+          }
+        }) 
+        drawColorTiles(svg, saliencies, lab_bins, lang_positions, backgroundColor)
+      })
+      .on("mouseout", (event, d) => {
+        saliencies.forEach((tileInfo) => {
+          tileInfo.highlighted = false;
+          tileInfo.hidden = false;
+        }) 
+        drawColorTiles(svg, saliencies, lab_bins, lang_positions, backgroundColor)
+      })
 }
