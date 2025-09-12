@@ -4,6 +4,9 @@ $(document).on('ready page:load', function () {
   $.getJSON("../model/full_color_map_saliency_bins.json", function( saliencies ) {
     console.log(saliencies);
 
+    const color_name_unselected = "----"
+
+    /*************** Pre-processing *********************/
     lab_bins_array = []
     for(const [l_bin, l_bin_entries] of Object.entries(lab_bins)){
       for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries)){
@@ -22,6 +25,31 @@ $(document).on('ready page:load', function () {
       saliencies_by_lang[lang] = saliencies.filter(s => s.lang == lang)
     })
 
+    const color_names_by_lang = {}
+    languages.forEach(lang => {
+      const color_names_counts = {}
+      const color_name_avg_term_colors = {}
+      saliencies_by_lang[lang].map(s => ({colorName: s.commonTerm, avgTermColor: s.avgTermColor}))
+          .forEach(colorData => {
+            if(!(colorData.colorName in color_names_counts)){
+              color_names_counts[colorData.colorName] = 0
+              color_name_avg_term_colors[colorData.colorName] = colorData.avgTermColor
+            }
+            color_names_counts[colorData.colorName]++
+          })
+      color_names_by_lang[lang] = []
+      for(const [colorName, colorCount] of Object.entries(color_names_counts)){
+        color_names_by_lang[lang].push({
+          colorName: colorName,
+          avgTermColor: color_name_avg_term_colors[colorName],
+          count: colorCount
+        })
+      }
+      color_names_by_lang[lang].sort((a, b) => b.count - a.count)
+      color_names_by_lang[lang].unshift(
+        {colorName: color_name_unselected, avgTermColor: "white",count: 0})
+    })
+
     const MIN_BINS_DISPLAY = 700
     const MIN_BINS_HIDE = 300
     let language_stats = languages
@@ -29,7 +57,6 @@ $(document).on('ready page:load', function () {
         return {lang: lang, numBins: saliencies_by_lang[lang].length}
       })
       
-    console.log(language_stats)
 
     language_stats = language_stats
       .filter(lang_stat => lang_stat.numBins > MIN_BINS_HIDE)
@@ -48,7 +75,11 @@ $(document).on('ready page:load', function () {
       tile.avgTermColor = `rgb(${tile.representative_rgb.r},${tile.representative_rgb.g},${tile.representative_rgb.b})`
     })
 
+    const lang_color_selections = language_stats.map(a => ({selection_type: "none"}))
+
     console.log(language_stats)
+
+    /*************** Create Display *********************/
 
     let backgroundColor = 'white'
     let tile_size_type = $("#tile_size").val()
@@ -66,44 +97,25 @@ $(document).on('ready page:load', function () {
       <div class="row" id="vis" 
         style="min-width:${width}px; max-width:${width}px;"></div>`)
 
-
-
-
+    // add space for each language
     for(let i = 0; i < language_stats.length; i++){
       const language_stat = language_stats[i]
 
       
       d3.select('#vis').append("div").attr("id", "lang"+i)
 
-      const sal = saliencies_by_lang[language_stat.lang]
-      createOrRefreshLang(i, sal)
+      createOrRefreshLang(i)
     }
-    
-
-    $("#background-brightness").on("input", function(){
-      const brightness = $(this).val() 
-      const brightness255 = Math.round(255*brightness/100)
-      backgroundColor = `rgb(${brightness255}, ${brightness255}, ${brightness255})`
-      $("#vis").css("background-color", backgroundColor)
-
-      createOrRefreshAllLangs()
-    })
-
-    $("#low-data").change(createOrRefreshAllLangs)
-    $("#ref_bins").change(createOrRefreshAllLangs)
-    $("#tile_size").change(() => {
-      tile_size_type = $("#tile_size").val()
-      createOrRefreshAllLangs()
-    })
 
     function createOrRefreshAllLangs(){
       for(let i = 0; i < language_stats.length; i++){
-        createOrRefreshLang(i, saliencies_by_lang[language_stats[i].lang])
+        createOrRefreshLang(i)
       }
     }
 
-    function createOrRefreshLang(i, sal){
+    function createOrRefreshLang(i){
       const language_stat = language_stats[i]
+      const sal = saliencies_by_lang[language_stat.lang]
 
       const div = d3.select("#lang"+i)
       // don't create if language displays if they aren't selected
@@ -122,6 +134,29 @@ $(document).on('ready page:load', function () {
 
       let svg = d3.select("#lang"+i+" svg")
       if(svg.empty()){
+        // first add the color name dropdown:
+        if(language_stat.lang != allColorsName){
+          $("#lang"+i).append(`
+            <div class="form-check form-check-inline justify-content-center small" style="width:100%;margin-top:10px;"> 
+              <label class="form-label" for="selected_color_${i}" style="margin-bottom: 0px">Selected Color</label>
+              <select class="form-select" type="checkbox" name="metric" id="selected_color_${i}" value="selected_color_${i}">
+              </select>
+            </div>
+            `)
+
+          $(`#selected_color_${i}`).change(function() {
+            const selection = lang_color_selections[i]
+            if(this.value == color_name_unselected){
+              selection.selection_type = "none"
+              selection.color_name = ""
+            }else{
+              selection.selection_type = "select"
+              selection.color_name = this.value
+            }
+            createOrRefreshLang(i)
+          })
+        }
+
         svg = d3.select("#lang"+i).append("svg")
               .attr("width", width + margin.left + margin.right)
               .attr("height", height + margin.top + margin.bottom)
@@ -140,6 +175,28 @@ $(document).on('ready page:load', function () {
           .attr("height", text.node().getBBox().height + 10)
       }
 
+      if(language_stat.lang != allColorsName){
+      d3.select("#selected_color_"+i)
+        .selectAll("option")
+        .data(color_names_by_lang[language_stat.lang])
+        .join("option")
+          .attr("value", (d) => d.colorName)
+          .text((d) => d.colorName)
+          .property('selected', (d) => {
+            const selection = lang_color_selections[i]
+            if(selection.selection_type == "none"){
+              if(d.colorName == color_name_unselected){
+                return true
+              }
+              return false
+            }
+            if(d.colorName == selection.color_name){
+              return true
+            }
+            return false
+          });
+      }
+
       drawColorTiles(i, sal)
     }
 
@@ -156,34 +213,48 @@ $(document).on('ready page:load', function () {
             return -d.binB*5 + 55
           })
           .attr("fill", (d) => {
-            if(d.highlighted){
-              const bin = lab_bins[d.binL][d.binA][d.binB]
-              return `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
+            const selection = lang_color_selections[i]
+            if(selection.selection_type == "select" || selection.selection_type == "hover"){
+              if(d.commonTerm == selection.color_name){
+                const bin = lab_bins[d.binL][d.binA][d.binB]
+                return `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
+              } else {
+                return backgroundColor
+              }
             }
-            if(d.hidden){return backgroundColor}
 
             return d.avgTermColor
             })
           .attr("height", getTileSize)
           .attr("width", getTileSize)
           .on("mouseover", (event, d) => {
-            saliencies.forEach((tileInfo) => {
-              if(d.commonTerm == tileInfo.commonTerm){
-                tileInfo.highlighted = true;
-                tileInfo.hidden = false;
-              } else {
-                tileInfo.highlighted = false;
-                tileInfo.hidden = true;
-              }
-            }) 
-            drawColorTiles(i, saliencies)
+            const selection = lang_color_selections[i]
+            if(selection.selection_type != "select"){
+              selection.selection_type = "hover"
+              selection.color_name = d.commonTerm
+              createOrRefreshLang(i)
+            }
           })
           .on("mouseout", (event, d) => {
-            saliencies.forEach((tileInfo) => {
-              tileInfo.highlighted = false;
-              tileInfo.hidden = false;
-            }) 
-            drawColorTiles(i, saliencies)
+            const selection = lang_color_selections[i]
+            if(selection.selection_type == "hover"){
+              selection.selection_type = "none"
+              selection.color_name = ""
+              createOrRefreshLang(i)
+            }
+          })
+          .on("click", (event, d) => {
+            event.stopPropagation() // don't let svg get click and unselect it
+            const selection = lang_color_selections[i]
+            selection.selection_type = "select"
+            selection.color_name = d.commonTerm
+            createOrRefreshLang(i)
+          })
+      svg.on("click", (event, d) => {
+            const selection = lang_color_selections[i]
+            selection.selection_type = "none"
+            selection.color_name = ""
+            createOrRefreshLang(i)
           })
     }
 
@@ -199,6 +270,24 @@ $(document).on('ready page:load', function () {
         // otherwise uniform:
         return 5
     }
+
+    /********* jquery event listeners */
+
+    $("#background-brightness").on("input", function(){
+      const brightness = $(this).val() 
+      const brightness255 = Math.round(255*brightness/100)
+      backgroundColor = `rgb(${brightness255}, ${brightness255}, ${brightness255})`
+      $("#vis").css("background-color", backgroundColor)
+
+      createOrRefreshAllLangs()
+    })
+
+    $("#low-data").change(createOrRefreshAllLangs)
+    $("#ref_bins").change(createOrRefreshAllLangs)
+    $("#tile_size").change(() => {
+      tile_size_type = $("#tile_size").val()
+      createOrRefreshAllLangs()
+    })
 
   })
   });
