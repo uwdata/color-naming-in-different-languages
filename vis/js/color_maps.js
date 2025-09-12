@@ -47,7 +47,7 @@ $(document).on('ready page:load', function () {
       }
       color_names_by_lang[lang].sort((a, b) => b.count - a.count)
       color_names_by_lang[lang].unshift(
-        {colorName: color_name_unselected, avgTermColor: "white",count: 0})
+        {colorName: color_name_unselected, avgTermColor: "rgba(255, 255, 255, 0)",count: 0})
     })
 
     const MIN_BINS_DISPLAY = 700
@@ -134,15 +134,40 @@ $(document).on('ready page:load', function () {
 
       let svg = d3.select("#lang"+i+" svg")
       if(svg.empty()){
+
         // first add the color name dropdown:
         if(language_stat.lang != allColorsName){
           $("#lang"+i).append(`
             <div class="form-check form-check-inline justify-content-center small" style="width:100%;margin-top:10px;"> 
               <label class="form-label" for="selected_color_${i}" style="margin-bottom: 0px">Selected Color</label>
-              <select class="form-select" type="checkbox" name="metric" id="selected_color_${i}" value="selected_color_${i}">
+              <select class="form-select" type="checkbox" name="metric" id="selected_color_${i}" value="selected_color_${i}" style="width:150px">
+              ${color_names_by_lang[language_stat.lang].map((colorInfo) =>{
+                return `<option value="${colorInfo.colorName}" data-commonColorName="${colorInfo.colorName}"
+                  style='background-color:${colorInfo.avgTermColor}'>
+                 ${colorInfo.colorName}
+                </option>`
+              })}
               </select>
             </div>
             `)
+
+          // format the color dropdown as a jquery select2 box
+          function formatColorOpt (colorOpt) {
+            if (!colorOpt.id) { //handles loading
+              return colorOpt.text;
+            }        
+            var $colorOpt = $(`<span class="small">
+              <span style="background-color: ${colorOpt.element.style.backgroundColor};
+                padding-right: 20px;margin-right:5px;"></span>
+              ${colorOpt.element.attributes["data-commonColorName"].value}</span>`
+            );
+            return $colorOpt;
+          };
+          $(`#selected_color_${i}`).select2({
+            templateResult: formatColorOpt,
+            templateSelection: formatColorOpt,
+            minimumResultsForSearch: Infinity // disable text search
+          });
 
           $(`#selected_color_${i}`).change(function() {
             const selection = lang_color_selections[i]
@@ -175,37 +200,14 @@ $(document).on('ready page:load', function () {
           .attr("height", text.node().getBBox().height + 10)
       }
 
-      if(language_stat.lang != allColorsName){
-        d3.select("#selected_color_"+i)
-          .selectAll("option")
-          .data(color_names_by_lang[language_stat.lang])
-          .join("option")
-            .attr("value", (d) => d.colorName)
-            .html((d) => {
-              let text = d.colorName
-              // NOTE: to do something like this, I need to use jquery select2 or something (see color translator)
-              // if(d.colorName != color_name_unselected){
-              //   text = `
-              //   <span style="background-color:${d.avgTermColor};padding-right: 10px;margin-right:5px;"></span>
-              //   ${d.colorName}
-              //   `
-              // }
-              return text
-            })
-            //<span style="background-color:rgb(81, 190, 122);padding-right: 20px;margin-right:5px;"></span>
-            .property('selected', (d) => {
-              const selection = lang_color_selections[i]
-              if(selection.selection_type == "none"){
-                if(d.colorName == color_name_unselected){
-                  return true
-                }
-                return false
-              }
-              if(d.colorName == selection.color_name){
-                return true
-              }
-              return false
-            });
+      // make sure selection in dropdown is up to date:
+      const selection = lang_color_selections[i]
+      if(selection.selection_type == "none"){
+        $(`#selected_color_${i}`).val(color_name_unselected)
+        $(`#selected_color_${i}`).trigger('change.select2')
+      } else {
+        $(`#selected_color_${i}`).val(selection.color_name)
+        $(`#selected_color_${i}`).trigger('change.select2')
       }
 
       drawColorTiles(i, sal)
