@@ -42,13 +42,12 @@ var arNameReplacingRules = [[/احمر/, "أحمر"], [/اخضر/, "أخضر"], 
 
 var elNameReplacingRules = [[/μοβ/,"μωβ"]];
 
-module.exports = function refine(colorNames, rgbSet = "line"){
+module.exports = function refine(colorNames){
 
   //only use data from "line" color naming, exclude data from full RGB cube colors
   var colorNames = colorNames.filter(cn => {
     cn.name = cn.name.toString().trim().toLowerCase();
-    return  (rgbSet !== "all" ? cn.rgbSet === rgbSet : true)
-            && cn.name !== "";
+    return cn.name !== "";
   });
 
   colorNames.forEach(cn => {
