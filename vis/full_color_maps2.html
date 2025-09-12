@@ -22,9 +22,32 @@
   <link href="css/select2.min.css" rel="stylesheet" />
   <script src="js/select2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-    <script src="js/d3.v7.min.js"></script>
+
+  <script src="js/jquery-ui.min.js"></script>
+  <link href="css/jquery-ui.min.css" rel="stylesheet" />
+  <script>
+  $( function() {
+    $( document ).tooltip({
+      track: true, 
+      show: false, hide:false,
+      classes: {
+        "ui-tooltip": "small"
+      }
+    });
+  } );
+  </script>
+  <style>
+    .ui-tooltip-content {
+      font-size:10pt;
+      white-space: pre-line;
+      font-family:Calibri;
+    }
+  </style>
+
+
+  <script src="js/d3.v7.min.js"></script>
 	
-    <script type="text/javascript" src="js/color_maps.js"></script>
+  <script type="text/javascript" src="js/color_maps.js"></script>
 	
 	<script src="../addNavBar.js"></script>
   </head>

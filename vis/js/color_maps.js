@@ -1,4 +1,3 @@
-
 $(document).on('ready page:load', function () {
   $.getJSON("../model/lab_bins.json", function( lab_bins ) {
   $.getJSON("../model/full_color_map_saliency_bins.json", function( saliencies ) {
@@ -75,7 +74,8 @@ $(document).on('ready page:load', function () {
       tile.avgTermColor = `rgb(${tile.representative_rgb.r},${tile.representative_rgb.g},${tile.representative_rgb.b})`
     })
 
-    const lang_color_selections = language_stats.map(a => ({selection_type: "none"}))
+    const lang_color_selections = language_stats.map(() => ({selection_type: "none"}))
+    const lang_tile_info = language_stats.map(() => ({}))
 
     console.log(language_stats)
 
@@ -200,6 +200,17 @@ $(document).on('ready page:load', function () {
           .attr("height", text.node().getBBox().height + 10)
       }
 
+      // add color tile info to bottom right corner
+      // const color_tile_info = svg.select('.color_tile_info')
+      //   .data(lang_tile_info[i])
+      //   .join('g')
+      //     .attr("class", "color_tile_info")
+      //     .attr("x", width - 100)
+      //     .attr("y", height - 100)
+
+      // color_tile_info
+      //   .append("text", d => d.l)
+
       // make sure selection in dropdown is up to date:
       const selection = lang_color_selections[i]
       if(selection.selection_type == "none"){
@@ -240,6 +251,23 @@ $(document).on('ready page:load', function () {
             })
           .attr("height", getTileSize)
           .attr("width", getTileSize)
+          .attr("title", (d) => {
+            const [l,a,b] = [d.binL, d.binA, d.binB]
+            const bin_info = lab_bins[l][a][b]
+            return `
+              ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
+              Bin Center (l, a, b): ${Math.round(bin_info.l_center, 1)}, ${Math.round(bin_info.a_center, 1)}, ${Math.round(bin_info.b_center, 1)}
+              Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
+              ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
+                 ?
+                 `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
+                 : ""
+              }`.trim()
+            d.binA
+            d.commonTerm
+            d.maxpTC
+            d.saliency
+          })
           .on("mouseover", (event, d) => {
             const selection = lang_color_selections[i]
             if(selection.selection_type != "select"){
