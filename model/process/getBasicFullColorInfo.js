@@ -3,7 +3,6 @@
 // npm install csv-write-stream
 
 const fs = require('fs'),
-  refine = require('./refine.js'),
   csv = require("csvtojson"),
   d3 = require('d3'),
   csvWriter = require('csv-write-stream');

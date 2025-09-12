@@ -1,5 +1,4 @@
 const fs = require('fs'),
-  refine = require('./refine.js'),
   colorBins = require('./colorBins.js'),
   csv = require("csvtojson"),
   d3 = require('d3');
@@ -24,8 +23,7 @@ csv()
 
   // 2. Get top terms
   grouped.forEach(g => {
-    let refined = refine(g.values, "line");
-    g.terms = d3.nest().key(v => v.name).entries(refined).sort((a,b) => -a.values.length + b.values.length);
+    g.terms = d3.nest().key(v => v.name).entries(g.values).sort((a,b) => -a.values.length + b.values.length);
 
     let rankLookUp = g.terms.map(t => t.values.length);
     g.topNTerms = g.terms.filter(t => rankLookUp.indexOf(t.values.length) + 1 <= N_TERMS);
