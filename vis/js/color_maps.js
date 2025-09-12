@@ -176,25 +176,36 @@ $(document).on('ready page:load', function () {
       }
 
       if(language_stat.lang != allColorsName){
-      d3.select("#selected_color_"+i)
-        .selectAll("option")
-        .data(color_names_by_lang[language_stat.lang])
-        .join("option")
-          .attr("value", (d) => d.colorName)
-          .text((d) => d.colorName)
-          .property('selected', (d) => {
-            const selection = lang_color_selections[i]
-            if(selection.selection_type == "none"){
-              if(d.colorName == color_name_unselected){
+        d3.select("#selected_color_"+i)
+          .selectAll("option")
+          .data(color_names_by_lang[language_stat.lang])
+          .join("option")
+            .attr("value", (d) => d.colorName)
+            .html((d) => {
+              let text = d.colorName
+              // NOTE: to do something like this, I need to use jquery select2 or something (see color translator)
+              // if(d.colorName != color_name_unselected){
+              //   text = `
+              //   <span style="background-color:${d.avgTermColor};padding-right: 10px;margin-right:5px;"></span>
+              //   ${d.colorName}
+              //   `
+              // }
+              return text
+            })
+            //<span style="background-color:rgb(81, 190, 122);padding-right: 20px;margin-right:5px;"></span>
+            .property('selected', (d) => {
+              const selection = lang_color_selections[i]
+              if(selection.selection_type == "none"){
+                if(d.colorName == color_name_unselected){
+                  return true
+                }
+                return false
+              }
+              if(d.colorName == selection.color_name){
                 return true
               }
               return false
-            }
-            if(d.colorName == selection.color_name){
-              return true
-            }
-            return false
-          });
+            });
       }
 
       drawColorTiles(i, sal)
