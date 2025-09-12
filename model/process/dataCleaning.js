@@ -28,7 +28,20 @@ csv().fromFile(FILE_I)
 	enteredColorNameLookup[cn.colorNameId] = cn.name;
 
   });
-  let cleanedData = refine(colorNames);
+  
+  var colorNames = colorNames.filter(cn => {
+    cn.name = cn.name.toString().trim().toLowerCase();
+    return cn.name !== "";
+  });
+
+  colorNames.forEach(cn => {
+    refine(cn)
+  })
+
+  let cleanedData = colorNames.filter(cn => {
+    cn.name = cn.name.toString().trim().toLowerCase().replace(/[- _]+/g,"");
+    return cn.name !== "";
+  });
 
   cleanedData.forEach(cn => {
 	  cn.entered_name = enteredColorNameLookup[cn.colorNameId];

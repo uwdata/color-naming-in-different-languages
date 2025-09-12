@@ -42,15 +42,7 @@ var arNameReplacingRules = [[/احمر/, "أحمر"], [/اخضر/, "أخضر"], 
 
 var elNameReplacingRules = [[/μοβ/,"μωβ"]];
 
-module.exports = function refine(colorNames){
-
-  //only use data from "line" color naming, exclude data from full RGB cube colors
-  var colorNames = colorNames.filter(cn => {
-    cn.name = cn.name.toString().trim().toLowerCase();
-    return cn.name !== "";
-  });
-
-  colorNames.forEach(cn => {
+module.exports = function refine(cn){
     if (cn.lang0.indexOf("Korean") >= 0) {
       cn.name = cn.name.trim()
         .replace(/색$/,"")
@@ -171,18 +163,10 @@ module.exports = function refine(colorNames){
       cn.name = cn.name.toLowerCase()
       cn.name = cn.name.replace(/[a-zA-Z]/g,"")
     }
-  });
 
-  var newColorNames = colorNames.filter(function(item){
-    return !(item.lang0.indexOf("Portuguese") >= 0 && poExcludedNames.indexOf(item.name) >= 0);
-  });
-
-  newColorNames = newColorNames.filter(cn => {
-    cn.name = cn.name.toString().trim().toLowerCase().replace(/[- _]+/g,"");
-    return cn.name !== "";
-  });
-
-  return newColorNames;
+    if(cn.lang0.indexOf("Portuguese") >= 0 && poExcludedNames.indexOf(cn.name) >= 0){
+      cn.name = ""
+    }
 };
 
 
