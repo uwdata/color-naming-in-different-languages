@@ -42,6 +42,17 @@ csv().fromFile(FILE_I)
 
   colorNames.forEach(cn => {
     refine.refine(cn)
+
+    // try refining again and make sure it doesn't mess it up
+    let oldName = cn.name
+    refine.refine(cn)
+    let newName = cn.name
+    if(oldName != newName){
+      console.log("WARNING: Name changed on repeated refining")
+      console.log("  lang0", cn.lang0)
+      console.log("  colorNameId", cn.colorNameId)
+      console.log("  names: ", oldName, ", ", newName)
+    }
   })
 
   let cleanedData = colorNames.filter(cn => {
