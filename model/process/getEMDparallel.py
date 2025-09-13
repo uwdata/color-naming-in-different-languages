@@ -70,7 +70,7 @@ def main():
 
 
 	print("starting jobs")
-	pool = mp.Pool(processes=2)
+	pool = mp.Pool(processes=4)
 	for lang1 in languages:
 		for lang2 in languages:
 			if(lang2 < lang1):
