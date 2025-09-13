@@ -205,12 +205,7 @@ function  initializeTerms(){
 	allLangs.sort(function(a, b){return colorNames[b].length - colorNames[a].length})
 	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
 	
-	for(i in allLangs){
-		// Note: German should not be used until we do dynamically binned color translation (the uniform bins end up just comparing the hue colors, which leads to inaccurate translations)
-		if(colorNamesAbrv[allLangs[i]] == "de"){
-			continue;
-		}
-		
+	for(i in allLangs){		
 		if(colorNames[allLangs[i]].length >= 10){
 			// set selection from url hash params 
 			let startSelectedStr = "";

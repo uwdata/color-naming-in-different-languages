@@ -11,6 +11,31 @@ const MIN_FULL_COLOR_NAMES = 12;
 const LINE_RGB_SET = "line";
 const FULL_RGB_SET = "full";
 
+let colorNamesAbrv = {
+	"English": "en",
+	'Korean': "ko",
+	"Persian": "fa",
+	"Chinese": "zh",
+	"German": "de",
+	"French": "fr",
+	"Portuguese": "pt",
+	"Spanish": "es",
+	"Swedish": "sv",	
+  "Russian": "ru",
+	"Dutch": "nl",
+	"Polish": "pl",
+	"Finnish": "fi",
+	"Romanian": "ro"
+};
+
+function getLangAbv(lang){
+  const langKey = Object.keys(colorNamesAbrv).find(val => lang.includes(val))
+  const abv = colorNamesAbrv[langKey]
+  if(!abv){
+    console.log("WARNING: abv not found for " + lang)
+  }
+  return abv
+}
 
 // Path or the input csv file
 const FILE_I = "../cleaned_color_names.csv"
@@ -57,6 +82,7 @@ csv().fromFile(FILE_I)
       term.lang = lang.key;
       writer.write({
         lang: term.lang,
+        lang_abv: getLangAbv(term.lang),
         commonName: term.commonName,
         simplifiedName: term.simplifiedName,
         numFullNames: term.numFullNames,

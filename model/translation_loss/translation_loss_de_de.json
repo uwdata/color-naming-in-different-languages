@@ -1,282 +1,8234 @@
 [
-  {}, 
   {
-    "determ2": "orange", 
-    "dist": 15.399673030054863, 
-    "determ": "blau"
-  }, 
+    "determ": "blau",
+    "determ2": "grun",
+    "dist": 147.39762302237767,
+    "determ_refined": "blau",
+    "determ2_refined": "grun"
+  },
   {
-    "determ2": "grün", 
-    "dist": 16.151085664840494, 
-    "determ": "blau"
-  }, 
+    "determ": "blau",
+    "determ2": "lila",
+    "dist": 44.8637927088173,
+    "determ_refined": "blau",
+    "determ2_refined": "lila"
+  },
   {
-    "determ2": "pink", 
-    "dist": 9.142270446289931, 
-    "determ": "blau"
-  }, 
+    "determ": "blau",
+    "determ2": "orange",
+    "dist": 139.97409060864996,
+    "determ_refined": "blau",
+    "determ2_refined": "orange"
+  },
   {
-    "determ2": "rot", 
-    "dist": 14.565997602172619, 
-    "determ": "blau"
-  }, 
+    "determ": "blau",
+    "determ2": "pink",
+    "dist": 77.38180621463529,
+    "determ_refined": "blau",
+    "determ2_refined": "pink"
+  },
   {
-    "determ2": "lila", 
-    "dist": 6.491883058869348, 
-    "determ": "blau"
-  }, 
+    "determ": "blau",
+    "determ2": "rot",
+    "dist": 125.15933802077801,
+    "determ_refined": "blau",
+    "determ2_refined": "rot"
+  },
   {
-    "determ2": "türkis", 
-    "dist": 10.963641136260557, 
-    "determ": "blau"
-  }, 
+    "determ": "blau",
+    "determ2": "turkis",
+    "dist": 104.27784754649231,
+    "determ_refined": "blau",
+    "determ2_refined": "turkis"
+  },
   {
-    "determ2": "hellgrün", 
-    "dist": 16.1096147995661, 
-    "determ": "blau"
-  }, 
+    "determ": "blau",
+    "determ2": "hellblau",
+    "dist": 62.07852018552929,
+    "determ_refined": "blau",
+    "determ2_refined": "hellblau"
+  },
   {
-    "determ2": "violett", 
-    "dist": 5.627131322924396, 
-    "determ": "blau"
-  }, 
+    "determ": "blau",
+    "determ2": "gelb",
+    "dist": 160.3826334595335,
+    "determ_refined": "blau",
+    "determ2_refined": "gelb"
+  },
   {
-    "determ2": "dunkelgrün", 
-    "dist": 11.841911658310183, 
-    "determ": "blau"
-  }, 
-  {}, 
-  {}, 
-  {}, 
+    "determ": "blau",
+    "determ2": "hellgrun",
+    "dist": 151.93936123329178,
+    "determ_refined": "blau",
+    "determ2_refined": "hellgrun"
+  },
   {
-    "determ2": "pink", 
-    "dist": 10.604577331438238, 
-    "determ": "orange"
-  }, 
+    "determ": "blau",
+    "determ2": "dunkelblau",
+    "dist": 28.100348744285625,
+    "determ_refined": "blau",
+    "determ2_refined": "dunkelblau"
+  },
   {
-    "determ2": "rot", 
-    "dist": 4.980382681804393, 
-    "determ": "orange"
-  }, 
-  {}, 
+    "determ": "blau",
+    "determ2": "violett",
+    "dist": 38.73214830971284,
+    "determ_refined": "blau",
+    "determ2_refined": "violett"
+  },
   {
-    "determ2": "türkis", 
-    "dist": 12.156424615999933, 
-    "determ": "orange"
-  }, 
-  {}, 
+    "determ": "blau",
+    "determ2": "braun",
+    "dist": 100.75097783547437,
+    "determ_refined": "blau",
+    "determ2_refined": "braun"
+  },
   {
-    "determ2": "violett", 
-    "dist": 15.047800821540196, 
-    "determ": "orange"
-  }, 
-  {}, 
-  {}, 
+    "determ": "blau",
+    "determ2": "rosa",
+    "dist": 66.9619458877776,
+    "determ_refined": "blau",
+    "determ2_refined": "rosa"
+  },
   {
-    "determ2": "orange", 
-    "dist": 10.550124069318704, 
-    "determ": "grün"
-  }, 
-  {}, 
+    "determ": "blau",
+    "determ2": "dunkelgrun",
+    "dist": 108.12624265290712,
+    "determ_refined": "blau",
+    "determ2_refined": "dunkelgrun"
+  },
   {
-    "determ2": "pink", 
-    "dist": 17.138566708736686, 
-    "determ": "grün"
-  }, 
+    "determ": "blau",
+    "determ2": "magenta",
+    "dist": 74.2440747136915,
+    "determ_refined": "blau",
+    "determ2_refined": "magenta"
+  },
   {
-    "determ2": "rot", 
-    "dist": 14.639622161941915, 
-    "determ": "grün"
-  }, 
+    "determ": "blau",
+    "determ2": "neongrun",
+    "dist": 166.80920709632278,
+    "determ_refined": "blau",
+    "determ2_refined": "neongrun"
+  },
   {
-    "determ2": "lila", 
-    "dist": 19.541797458198623, 
-    "determ": "grün"
-  }, 
+    "determ": "blau",
+    "determ2": "himmelblau",
+    "dist": 44.80240355956177,
+    "determ_refined": "blau",
+    "determ2_refined": "himmelblau"
+  },
   {
-    "determ2": "türkis", 
-    "dist": 6.2859518768032085, 
-    "determ": "grün"
-  }, 
+    "determ": "blau",
+    "determ2": "schwarz",
+    "dist": 85.77398522832493,
+    "determ_refined": "blau",
+    "determ2_refined": "schwarz"
+  },
   {
-    "determ2": "hellgrün", 
-    "dist": 0.848762950030767, 
-    "determ": "grün"
-  }, 
+    "determ": "blau",
+    "determ2": "ocker",
+    "dist": 130.8524948191683,
+    "determ_refined": "blau",
+    "determ2_refined": "ocker"
+  },
   {
-    "determ2": "violett", 
-    "dist": 19.082626581891418, 
-    "determ": "grün"
-  }, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
+    "determ": "blau",
+    "determ2": "grasgrun",
+    "dist": 144.73495060909448,
+    "determ_refined": "blau",
+    "determ2_refined": "grasgrun"
+  },
   {
-    "determ2": "rot", 
-    "dist": 7.238334317857025, 
-    "determ": "pink"
-  }, 
-  {}, 
+    "determ": "blau",
+    "determ2": "gelbgrun",
+    "dist": 156.73905796343092,
+    "determ_refined": "blau",
+    "determ2_refined": "gelbgrun"
+  },
   {
-    "determ2": "türkis", 
-    "dist": 14.496765074424255, 
-    "determ": "pink"
-  }, 
-  {}, 
+    "determ": "blau",
+    "determ2": "grau",
+    "dist": 73.70745981463726,
+    "determ_refined": "blau",
+    "determ2_refined": "grau"
+  },
   {
-    "determ2": "violett", 
-    "dist": 5.574181875094096, 
-    "determ": "pink"
-  }, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
+    "determ": "blau",
+    "determ2": "konigsblau",
+    "dist": 37.775512077199274,
+    "determ_refined": "blau",
+    "determ2_refined": "konigsblau"
+  },
   {
-    "determ2": "türkis", 
-    "dist": 14.811851040919615, 
-    "determ": "rot"
-  }, 
-  {}, 
+    "determ": "blau",
+    "determ2": "flieder",
+    "dist": 43.54565420669408,
+    "determ_refined": "blau",
+    "determ2_refined": "flieder"
+  },
   {
-    "determ2": "violett", 
-    "dist": 12.39673090542051, 
-    "determ": "rot"
-  }, 
-  {}, 
-  {}, 
+    "determ": "blau",
+    "determ2": "giftgrun",
+    "dist": 171.52723084820374,
+    "determ_refined": "blau",
+    "determ2_refined": "giftgrun"
+  },
   {
-    "determ2": "orange", 
-    "dist": 14.966257895808168, 
-    "determ": "lila"
-  }, 
-  {}, 
+    "determ": "blau",
+    "determ2": "hellbraun",
+    "dist": 105.91842785541611,
+    "determ_refined": "blau",
+    "determ2_refined": "hellbraun"
+  },
   {
-    "determ2": "pink", 
-    "dist": 4.970378974144614, 
-    "determ": "lila"
-  }, 
+    "determ": "blau",
+    "determ2": "dunkellila",
+    "dist": 44.692087105185166,
+    "determ_refined": "blau",
+    "determ2_refined": "dunkellila"
+  },
   {
-    "determ2": "rot", 
-    "dist": 12.042743716085138, 
-    "determ": "lila"
-  }, 
-  {}, 
+    "determ": "blau",
+    "determ2": "dunkelrot",
+    "dist": 97.92548660413664,
+    "determ_refined": "blau",
+    "determ2_refined": "dunkelrot"
+  },
   {
-    "determ2": "türkis", 
-    "dist": 15.56197888469504, 
-    "determ": "lila"
-  }, 
-  {}, 
+    "determ": "blau",
+    "determ2": "rotbraun",
+    "dist": 97.15818092268957,
+    "determ_refined": "blau",
+    "determ2_refined": "rotbraun"
+  },
   {
-    "determ2": "violett", 
-    "dist": 1.3830031098446094, 
-    "determ": "lila"
-  }, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
+    "determ": "blau",
+    "determ2": "dunkelbraun",
+    "dist": 92.06184887452706,
+    "determ_refined": "blau",
+    "determ2_refined": "dunkelbraun"
+  },
   {
-    "determ2": "violett", 
-    "dist": 14.924943029840925, 
-    "determ": "türkis"
-  }, 
-  {}, 
-  {}, 
+    "determ": "blau",
+    "determ2": "violet",
+    "dist": 43.23294100005038,
+    "determ_refined": "blau",
+    "determ2_refined": "violet"
+  },
   {
-    "determ2": "orange", 
-    "dist": 10.34853244954112, 
-    "determ": "hellgrün"
-  }, 
-  {}, 
+    "determ": "blau",
+    "determ2": "olivgrun",
+    "dist": 123.42499541444579,
+    "determ_refined": "blau",
+    "determ2_refined": "olivgrun"
+  },
   {
-    "determ2": "pink", 
-    "dist": 16.961598455387335, 
-    "determ": "hellgrün"
-  }, 
+    "determ": "blau",
+    "determ2": "petrol",
+    "dist": 75.22702682994387,
+    "determ_refined": "blau",
+    "determ2_refined": "petrol"
+  },
   {
-    "determ2": "rot", 
-    "dist": 14.435372353802773, 
-    "determ": "hellgrün"
-  }, 
+    "determ": "blau",
+    "determ2": "purpur",
+    "dist": 67.02191140718972,
+    "determ_refined": "blau",
+    "determ2_refined": "purpur"
+  },
   {
-    "determ2": "lila", 
-    "dist": 19.4203940075264, 
-    "determ": "hellgrün"
-  }, 
+    "determ": "blau",
+    "determ2": "blaugrun",
+    "dist": 101.61804498708145,
+    "determ_refined": "blau",
+    "determ2_refined": "blaugrun"
+  },
   {
-    "determ2": "türkis", 
-    "dist": 6.253131449863769, 
-    "determ": "hellgrün"
-  }, 
-  {}, 
+    "determ": "blau",
+    "determ2": "graugrun",
+    "dist": 91.52516438386294,
+    "determ_refined": "blau",
+    "determ2_refined": "graugrun"
+  },
   {
-    "determ2": "violett", 
-    "dist": 18.989779014020094, 
-    "determ": "hellgrün"
-  }, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
+    "determ": "blau",
+    "determ2": "helllila",
+    "dist": 34.72150668090819,
+    "determ_refined": "blau",
+    "determ2_refined": "helllila"
+  },
   {
-    "determ2": "orange", 
-    "dist": 9.206161658353414, 
-    "determ": "dunkelgrün"
-  }, 
+    "determ": "blau",
+    "determ2": "dunkelviolett",
+    "dist": 53.50718219241827,
+    "determ_refined": "blau",
+    "determ2_refined": "dunkelviolett"
+  },
   {
-    "determ2": "grün", 
-    "dist": 6.281489543791858, 
-    "determ": "dunkelgrün"
-  }, 
+    "determ": "blau",
+    "determ2": "weinrot",
+    "dist": 82.24623792002295,
+    "determ_refined": "blau",
+    "determ2_refined": "weinrot"
+  },
   {
-    "determ2": "pink", 
-    "dist": 13.157453815234968, 
-    "determ": "dunkelgrün"
-  }, 
+    "determ": "blau",
+    "determ2": "waldgrun",
+    "dist": 110.22792895220218,
+    "determ_refined": "blau",
+    "determ2_refined": "waldgrun"
+  },
   {
-    "determ2": "rot", 
-    "dist": 11.838588926034504, 
-    "determ": "dunkelgrün"
-  }, 
+    "determ": "blau",
+    "determ2": "blaugrau",
+    "dist": 58.72618616268725,
+    "determ_refined": "blau",
+    "determ2_refined": "blaugrau"
+  },
   {
-    "determ2": "lila", 
-    "dist": 15.11492123826173, 
-    "determ": "dunkelgrün"
-  }, 
+    "determ": "blau",
+    "determ2": "lavendel",
+    "dist": 39.27935517526309,
+    "determ_refined": "blau",
+    "determ2_refined": "lavendel"
+  },
   {
-    "determ2": "türkis", 
-    "dist": 5.99508337779282, 
-    "determ": "dunkelgrün"
-  }, 
+    "determ": "blau",
+    "determ2": "graublau",
+    "dist": 61.273837503591864,
+    "determ_refined": "blau",
+    "determ2_refined": "graublau"
+  },
   {
-    "determ2": "hellgrün", 
-    "dist": 6.456408508475866, 
-    "determ": "dunkelgrün"
-  }, 
+    "determ": "blau",
+    "determ2": "hautfarben",
+    "dist": 93.93578597624166,
+    "determ_refined": "blau",
+    "determ2_refined": "hautfarben"
+  },
   {
-    "determ2": "violett", 
-    "dist": 14.50532998090503, 
-    "determ": "dunkelgrün"
-  }, 
-  {}
+    "determ": "blau",
+    "determ2": "graubraun",
+    "dist": 82.60002758325052,
+    "determ_refined": "blau",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "grun",
+    "determ2": "lila",
+    "dist": 168.08900469122503,
+    "determ_refined": "grun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "grun",
+    "determ2": "orange",
+    "dist": 95.87708721751935,
+    "determ_refined": "grun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "grun",
+    "determ2": "pink",
+    "dist": 159.17806320154767,
+    "determ_refined": "grun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "grun",
+    "determ2": "rot",
+    "dist": 131.32893609055853,
+    "determ_refined": "grun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "grun",
+    "determ2": "turkis",
+    "dist": 54.9568262068202,
+    "determ_refined": "grun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "grun",
+    "determ2": "hellblau",
+    "dist": 93.60729858150485,
+    "determ_refined": "grun",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "grun",
+    "determ2": "hellgrun",
+    "dist": 11.827162031731666,
+    "determ_refined": "grun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "grun",
+    "determ2": "violett",
+    "dist": 154.34226551789578,
+    "determ_refined": "grun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "grun",
+    "determ2": "rosa",
+    "dist": 133.1103717674754,
+    "determ_refined": "grun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "grun",
+    "determ2": "magenta",
+    "dist": 159.93615796534596,
+    "determ_refined": "grun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "grun",
+    "determ2": "neongrun",
+    "dist": 21.47390697338995,
+    "determ_refined": "grun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "grun",
+    "determ2": "himmelblau",
+    "dist": 108.97808321890525,
+    "determ_refined": "grun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "grun",
+    "determ2": "schwarz",
+    "dist": 99.85896375840878,
+    "determ_refined": "grun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "grun",
+    "determ2": "ocker",
+    "dist": 65.03891482901912,
+    "determ_refined": "grun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "grun",
+    "determ2": "konigsblau",
+    "dist": 180.92537248358204,
+    "determ_refined": "grun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "grun",
+    "determ2": "hellbraun",
+    "dist": 76.8619642685463,
+    "determ_refined": "grun",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "grun",
+    "determ2": "rotbraun",
+    "dist": 108.99204032455674,
+    "determ_refined": "grun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "grun",
+    "determ2": "violet",
+    "dist": 170.76470627497457,
+    "determ_refined": "grun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "grun",
+    "determ2": "olivgrun",
+    "dist": 42.467942817833865,
+    "determ_refined": "grun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "grun",
+    "determ2": "petrol",
+    "dist": 78.09737980148103,
+    "determ_refined": "grun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "grun",
+    "determ2": "purpur",
+    "dist": 138.88321908031398,
+    "determ_refined": "grun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "grun",
+    "determ2": "helllila",
+    "dist": 147.3671721740928,
+    "determ_refined": "grun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "grun",
+    "determ2": "weinrot",
+    "dist": 122.96734563142923,
+    "determ_refined": "grun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "grun",
+    "determ2": "waldgrun",
+    "dist": 52.41365763686092,
+    "determ_refined": "grun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "grun",
+    "determ2": "lavendel",
+    "dist": 127.91095757757475,
+    "determ_refined": "grun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "grun",
+    "determ2": "hautfarben",
+    "dist": 83.00556606022712,
+    "determ_refined": "grun",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "lila",
+    "determ2": "orange",
+    "dist": 133.69370878650776,
+    "determ_refined": "lila",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "lila",
+    "determ2": "pink",
+    "dist": 42.95038753487305,
+    "determ_refined": "lila",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "lila",
+    "determ2": "rot",
+    "dist": 104.43680171278318,
+    "determ_refined": "lila",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "lila",
+    "determ2": "turkis",
+    "dist": 133.41605889990618,
+    "determ_refined": "lila",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "lila",
+    "determ2": "violett",
+    "dist": 16.872974698882118,
+    "determ_refined": "lila",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "lila",
+    "determ2": "rosa",
+    "dist": 50.08757589365146,
+    "determ_refined": "lila",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "lila",
+    "determ2": "magenta",
+    "dist": 39.48049342133039,
+    "determ_refined": "lila",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "lila",
+    "determ2": "neongrun",
+    "dist": 187.22203300195002,
+    "determ_refined": "lila",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "lila",
+    "determ2": "schwarz",
+    "dist": 96.7899673610604,
+    "determ_refined": "lila",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "lila",
+    "determ2": "ocker",
+    "dist": 133.9367201577985,
+    "determ_refined": "lila",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "lila",
+    "determ2": "rotbraun",
+    "dist": 87.3710913393182,
+    "determ_refined": "lila",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "lila",
+    "determ2": "violet",
+    "dist": 15.949769883830937,
+    "determ_refined": "lila",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "lila",
+    "determ2": "olivgrun",
+    "dist": 136.57767987208152,
+    "determ_refined": "lila",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "lila",
+    "determ2": "petrol",
+    "dist": 101.08250800103814,
+    "determ_refined": "lila",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "lila",
+    "determ2": "purpur",
+    "dist": 46.60548371604728,
+    "determ_refined": "lila",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "lila",
+    "determ2": "weinrot",
+    "dist": 68.0401489508856,
+    "determ_refined": "lila",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "lila",
+    "determ2": "waldgrun",
+    "dist": 127.81773373706679,
+    "determ_refined": "lila",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "orange",
+    "determ2": "pink",
+    "dist": 103.54525452459002,
+    "determ_refined": "orange",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "orange",
+    "determ2": "rot",
+    "dist": 47.97630585968607,
+    "determ_refined": "orange",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "orange",
+    "determ2": "turkis",
+    "dist": 110.36945201222136,
+    "determ_refined": "orange",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "orange",
+    "determ2": "violett",
+    "dist": 123.24065826500558,
+    "determ_refined": "orange",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "orange",
+    "determ2": "rosa",
+    "dist": 86.52177836136535,
+    "determ_refined": "orange",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "orange",
+    "determ2": "schwarz",
+    "dist": 93.69651025993352,
+    "determ_refined": "orange",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "orange",
+    "determ2": "rotbraun",
+    "dist": 57.07815334465395,
+    "determ_refined": "orange",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "orange",
+    "determ2": "violet",
+    "dist": 139.62834574512695,
+    "determ_refined": "orange",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "orange",
+    "determ2": "petrol",
+    "dist": 99.83389309779925,
+    "determ_refined": "orange",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "orange",
+    "determ2": "purpur",
+    "dist": 93.6649363600307,
+    "determ_refined": "orange",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "orange",
+    "determ2": "weinrot",
+    "dist": 73.43347418471184,
+    "determ_refined": "orange",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "orange",
+    "determ2": "waldgrun",
+    "dist": 81.45856307288206,
+    "determ_refined": "orange",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "pink",
+    "determ2": "rot",
+    "dist": 68.16816740524581,
+    "determ_refined": "pink",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "pink",
+    "determ2": "turkis",
+    "dist": 134.9537609393757,
+    "determ_refined": "pink",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "pink",
+    "determ2": "violett",
+    "dist": 43.34460579546357,
+    "determ_refined": "pink",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "pink",
+    "determ2": "rosa",
+    "dist": 27.595528426664668,
+    "determ_refined": "pink",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "pink",
+    "determ2": "schwarz",
+    "dist": 96.52473544477982,
+    "determ_refined": "pink",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "pink",
+    "determ2": "rotbraun",
+    "dist": 65.59454381572662,
+    "determ_refined": "pink",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "pink",
+    "determ2": "violet",
+    "dist": 51.78783397240737,
+    "determ_refined": "pink",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "pink",
+    "determ2": "purpur",
+    "dist": 34.86222070356573,
+    "determ_refined": "pink",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "pink",
+    "determ2": "weinrot",
+    "dist": 48.04350082926541,
+    "determ_refined": "pink",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "pink",
+    "determ2": "waldgrun",
+    "dist": 122.48504971699838,
+    "determ_refined": "pink",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "rot",
+    "determ2": "turkis",
+    "dist": 131.927714408974,
+    "determ_refined": "rot",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "rot",
+    "determ2": "violett",
+    "dist": 97.27955609964363,
+    "determ_refined": "rot",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "rot",
+    "determ2": "schwarz",
+    "dist": 90.49626752380088,
+    "determ_refined": "rot",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "rot",
+    "determ2": "rotbraun",
+    "dist": 41.739097413403975,
+    "determ_refined": "rot",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "rot",
+    "determ2": "violet",
+    "dist": 110.57377176576757,
+    "determ_refined": "rot",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "rot",
+    "determ2": "weinrot",
+    "dist": 48.64358574506665,
+    "determ_refined": "rot",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "rot",
+    "determ2": "waldgrun",
+    "dist": 102.30213805179869,
+    "determ_refined": "rot",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "turkis",
+    "determ2": "violett",
+    "dist": 120.67723944236718,
+    "determ_refined": "turkis",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "turkis",
+    "determ2": "violet",
+    "dist": 135.30176975387684,
+    "determ_refined": "turkis",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "turkis",
+    "determ2": "weinrot",
+    "dist": 108.15812369072233,
+    "determ_refined": "turkis",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "turkis",
+    "determ2": "waldgrun",
+    "dist": 54.062009922765164,
+    "determ_refined": "turkis",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "lila",
+    "dist": 95.55867766935182,
+    "determ_refined": "hellblau",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "orange",
+    "dist": 118.02403271453805,
+    "determ_refined": "hellblau",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "pink",
+    "dist": 105.90898017721219,
+    "determ_refined": "hellblau",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "rot",
+    "dist": 123.98183535571464,
+    "determ_refined": "hellblau",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "turkis",
+    "dist": 44.00273771182888,
+    "determ_refined": "hellblau",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "hellgrun",
+    "dist": 97.27439295181787,
+    "determ_refined": "hellblau",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "violett",
+    "dist": 84.40297930712221,
+    "determ_refined": "hellblau",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "rosa",
+    "dist": 82.61419444958304,
+    "determ_refined": "hellblau",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "magenta",
+    "dist": 106.03979959681749,
+    "determ_refined": "hellblau",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "neongrun",
+    "dist": 111.40418325009627,
+    "determ_refined": "hellblau",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "himmelblau",
+    "dist": 18.625973706472617,
+    "determ_refined": "hellblau",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "schwarz",
+    "dist": 76.01640651567871,
+    "determ_refined": "hellblau",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "ocker",
+    "dist": 97.44947269351628,
+    "determ_refined": "hellblau",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "konigsblau",
+    "dist": 99.24718779819051,
+    "determ_refined": "hellblau",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "hellbraun",
+    "dist": 80.09269033212153,
+    "determ_refined": "hellblau",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "rotbraun",
+    "dist": 92.29419930871514,
+    "determ_refined": "hellblau",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "violet",
+    "dist": 97.136551728278,
+    "determ_refined": "hellblau",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "olivgrun",
+    "dist": 81.26094690159556,
+    "determ_refined": "hellblau",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "petrol",
+    "dist": 39.75056062499022,
+    "determ_refined": "hellblau",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "purpur",
+    "dist": 90.26733170260904,
+    "determ_refined": "hellblau",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "helllila",
+    "dist": 72.90530843471396,
+    "determ_refined": "hellblau",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "weinrot",
+    "dist": 89.11206645621309,
+    "determ_refined": "hellblau",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "waldgrun",
+    "dist": 70.42740253870313,
+    "determ_refined": "hellblau",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "hellblau",
+    "determ2": "lavendel",
+    "dist": 57.611246668139685,
+    "determ_refined": "hellblau",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "grun",
+    "dist": 58.35836077133426,
+    "determ_refined": "gelb",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "lila",
+    "dist": 167.12295739977117,
+    "determ_refined": "gelb",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "orange",
+    "dist": 54.320139825164624,
+    "determ_refined": "gelb",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "pink",
+    "dist": 144.95527102532367,
+    "determ_refined": "gelb",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "rot",
+    "dist": 100.41646991056808,
+    "determ_refined": "gelb",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "turkis",
+    "dist": 90.94208174892927,
+    "determ_refined": "gelb",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "hellblau",
+    "dist": 117.6411777382315,
+    "determ_refined": "gelb",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "hellgrun",
+    "dist": 53.93586498484315,
+    "determ_refined": "gelb",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "violett",
+    "dist": 155.08358651076566,
+    "determ_refined": "gelb",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "rosa",
+    "dist": 122.15170574137194,
+    "determ_refined": "gelb",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "magenta",
+    "dist": 147.1721399564877,
+    "determ_refined": "gelb",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "neongrun",
+    "dist": 58.1986298132103,
+    "determ_refined": "gelb",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "himmelblau",
+    "dist": 129.12214213615007,
+    "determ_refined": "gelb",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "schwarz",
+    "dist": 111.83055688614826,
+    "determ_refined": "gelb",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "ocker",
+    "dist": 37.22422349410463,
+    "determ_refined": "gelb",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "grasgrun",
+    "dist": 50.461178292470926,
+    "determ_refined": "gelb",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "gelbgrun",
+    "dist": 24.594048528569928,
+    "determ_refined": "gelb",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "grau",
+    "dist": 91.96663659328516,
+    "determ_refined": "gelb",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "konigsblau",
+    "dist": 188.4327400724349,
+    "determ_refined": "gelb",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "giftgrun",
+    "dist": 56.329796489246036,
+    "determ_refined": "gelb",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "hellbraun",
+    "dist": 63.00176498336951,
+    "determ_refined": "gelb",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "rotbraun",
+    "dist": 95.5637121839353,
+    "determ_refined": "gelb",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "violet",
+    "dist": 172.30729785458362,
+    "determ_refined": "gelb",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "olivgrun",
+    "dist": 51.42975802972582,
+    "determ_refined": "gelb",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "petrol",
+    "dist": 102.07542388371944,
+    "determ_refined": "gelb",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "purpur",
+    "dist": 132.07477267533082,
+    "determ_refined": "gelb",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "graugrun",
+    "dist": 78.43102648968717,
+    "determ_refined": "gelb",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "helllila",
+    "dist": 148.62353871391426,
+    "determ_refined": "gelb",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "weinrot",
+    "dist": 112.39508172910861,
+    "determ_refined": "gelb",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "waldgrun",
+    "dist": 75.20924379943023,
+    "determ_refined": "gelb",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "lavendel",
+    "dist": 131.25064018723072,
+    "determ_refined": "gelb",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "graublau",
+    "dist": 105.00193522866152,
+    "determ_refined": "gelb",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "hautfarben",
+    "dist": 72.77337744641324,
+    "determ_refined": "gelb",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "gelb",
+    "determ2": "graubraun",
+    "dist": 86.86299383472557,
+    "determ_refined": "gelb",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "lila",
+    "dist": 172.00382956962162,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "orange",
+    "dist": 95.75772899609609,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "pink",
+    "dist": 161.5438475889719,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "rot",
+    "dist": 132.99192928328478,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "turkis",
+    "dist": 57.82057447070346,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "violett",
+    "dist": 158.6789630880953,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "rosa",
+    "dist": 135.37268646807902,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "magenta",
+    "dist": 162.59759354205048,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "neongrun",
+    "dist": 16.75901305400537,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "himmelblau",
+    "dist": 112.95956768068368,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "schwarz",
+    "dist": 107.45480540706478,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "ocker",
+    "dist": 65.80426937757353,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "konigsblau",
+    "dist": 185.7870830531067,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "rotbraun",
+    "dist": 113.10869988868629,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "violet",
+    "dist": 175.1933951094288,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "olivgrun",
+    "dist": 47.32733611420823,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "petrol",
+    "dist": 84.48396209424472,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "purpur",
+    "dist": 142.91258943848536,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "helllila",
+    "dist": 150.79118280545765,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "weinrot",
+    "dist": 126.93097263271001,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "waldgrun",
+    "dist": 60.278553816564724,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "hellgrun",
+    "determ2": "lavendel",
+    "dist": 131.79710696062025,
+    "determ_refined": "hellgrun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "grun",
+    "dist": 161.82177640041675,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "lila",
+    "dist": 36.087270800382015,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "orange",
+    "dist": 144.36753837009059,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "pink",
+    "dist": 71.26883925336026,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "rot",
+    "dist": 121.69091301669991,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "turkis",
+    "dist": 123.74448309615724,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "hellblau",
+    "dist": 85.68422054722734,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "gelb",
+    "dist": 171.30604774137913,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "hellgrun",
+    "dist": 167.2092832244021,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "violett",
+    "dist": 30.806190392275255,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "rosa",
+    "dist": 69.33796735204253,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "dunkelgrun",
+    "dist": 116.39135492284788,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "dunkelgrun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "magenta",
+    "dist": 66.87046596320997,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "neongrun",
+    "dist": 181.911499320545,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "himmelblau",
+    "dist": 68.97149750782161,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "schwarz",
+    "dist": 83.21446324247647,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "ocker",
+    "dist": 138.27274301583654,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "grasgrun",
+    "dist": 157.62163812231253,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "gelbgrun",
+    "dist": 168.90491271649466,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "grau",
+    "dist": 83.15596670733306,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "konigsblau",
+    "dist": 21.88603110284405,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "flieder",
+    "dist": 50.12624608535594,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "giftgrun",
+    "dist": 186.32044955840306,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "hellbraun",
+    "dist": 112.46517042987185,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "dunkellila",
+    "dist": 33.75399874354415,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "dunkellila"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "dunkelrot",
+    "dist": 91.29590411996706,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "dunkelrot"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "rotbraun",
+    "dist": 93.84650230940962,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "dunkelbraun",
+    "dist": 89.0117604946073,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "dunkelbraun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "violet",
+    "dist": 28.430759728041163,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "olivgrun",
+    "dist": 132.24246576329713,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "petrol",
+    "dist": 86.82328332124435,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "purpur",
+    "dist": 60.1899466434462,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "graugrun",
+    "dist": 102.51029761332693,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "helllila",
+    "dist": 42.199182520882204,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "dunkelviolett",
+    "dist": 44.427661960168656,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "dunkelviolett"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "weinrot",
+    "dist": 78.44243845708722,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "waldgrun",
+    "dist": 118.18089456210707,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "lavendel",
+    "dist": 48.28309740683773,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "graublau",
+    "dist": 75.98993736261576,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "hautfarben",
+    "dist": 106.46765206963305,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "dunkelblau",
+    "determ2": "graubraun",
+    "dist": 87.63483938349992,
+    "determ_refined": "dunkelblau",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "violett",
+    "determ2": "weinrot",
+    "dist": 57.10062085837631,
+    "determ_refined": "violett",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "violett",
+    "determ2": "waldgrun",
+    "dist": 113.29013512678189,
+    "determ_refined": "violett",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "grun",
+    "dist": 83.26014170308173,
+    "determ_refined": "braun",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "lila",
+    "dist": 102.73065592749418,
+    "determ_refined": "braun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "braun",
+    "determ2": "orange",
+    "dist": 50.92929072409297,
+    "determ_refined": "braun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "braun",
+    "determ2": "pink",
+    "dist": 86.41437377245225,
+    "determ_refined": "braun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "braun",
+    "determ2": "rot",
+    "dist": 58.81433023921484,
+    "determ_refined": "braun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "braun",
+    "determ2": "turkis",
+    "dist": 81.99160053230047,
+    "determ_refined": "braun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "braun",
+    "determ2": "hellblau",
+    "dist": 81.41426549035471,
+    "determ_refined": "braun",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "braun",
+    "determ2": "gelb",
+    "dist": 75.4886803445709,
+    "determ_refined": "braun",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "braun",
+    "determ2": "hellgrun",
+    "dist": 87.77744417971824,
+    "determ_refined": "braun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "dunkelblau",
+    "dist": 103.36213397714438,
+    "determ_refined": "braun",
+    "determ2_refined": "dunkelblau"
+  },
+  {
+    "determ": "braun",
+    "determ2": "violett",
+    "dist": 88.92683339998817,
+    "determ_refined": "braun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "braun",
+    "determ2": "rosa",
+    "dist": 64.75343969040922,
+    "determ_refined": "braun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "braun",
+    "determ2": "dunkelgrun",
+    "dist": 48.610884750611156,
+    "determ_refined": "braun",
+    "determ2_refined": "dunkelgrun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "magenta",
+    "dist": 87.01184880986267,
+    "determ_refined": "braun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "braun",
+    "determ2": "neongrun",
+    "dist": 100.68993039468842,
+    "determ_refined": "braun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "himmelblau",
+    "dist": 83.62982156984067,
+    "determ_refined": "braun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "braun",
+    "determ2": "schwarz",
+    "dist": 45.342359108100375,
+    "determ_refined": "braun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "braun",
+    "determ2": "ocker",
+    "dist": 39.997844755629956,
+    "determ_refined": "braun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "braun",
+    "determ2": "grasgrun",
+    "dist": 74.84991449510302,
+    "determ_refined": "braun",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "gelbgrun",
+    "dist": 77.14687969603231,
+    "determ_refined": "braun",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "grau",
+    "dist": 41.117188185187345,
+    "determ_refined": "braun",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "braun",
+    "determ2": "konigsblau",
+    "dist": 122.15144636463046,
+    "determ_refined": "braun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "braun",
+    "determ2": "flieder",
+    "dist": 70.11564274591088,
+    "determ_refined": "braun",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "braun",
+    "determ2": "giftgrun",
+    "dist": 102.84426187758517,
+    "determ_refined": "braun",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "hellbraun",
+    "dist": 22.024326864083047,
+    "determ_refined": "braun",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "dunkellila",
+    "dist": 74.75749984517748,
+    "determ_refined": "braun",
+    "determ2_refined": "dunkellila"
+  },
+  {
+    "determ": "braun",
+    "determ2": "dunkelrot",
+    "dist": 37.45881865908745,
+    "determ_refined": "braun",
+    "determ2_refined": "dunkelrot"
+  },
+  {
+    "determ": "braun",
+    "determ2": "rotbraun",
+    "dist": 27.48040584899557,
+    "determ_refined": "braun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "dunkelbraun",
+    "dist": 28.165198094067794,
+    "determ_refined": "braun",
+    "determ2_refined": "dunkelbraun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "violet",
+    "dist": 105.82222805335705,
+    "determ_refined": "braun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "braun",
+    "determ2": "olivgrun",
+    "dist": 44.209652164161234,
+    "determ_refined": "braun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "petrol",
+    "dist": 55.50574770348101,
+    "determ_refined": "braun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "braun",
+    "determ2": "purpur",
+    "dist": 64.77439415589735,
+    "determ_refined": "braun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "braun",
+    "determ2": "graugrun",
+    "dist": 42.423922989384714,
+    "determ_refined": "braun",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "helllila",
+    "dist": 89.8411113254047,
+    "determ_refined": "braun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "braun",
+    "determ2": "dunkelviolett",
+    "dist": 65.5554620646457,
+    "determ_refined": "braun",
+    "determ2_refined": "dunkelviolett"
+  },
+  {
+    "determ": "braun",
+    "determ2": "weinrot",
+    "dist": 43.845178487196435,
+    "determ_refined": "braun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "braun",
+    "determ2": "waldgrun",
+    "dist": 46.22677527128436,
+    "determ_refined": "braun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "braun",
+    "determ2": "lavendel",
+    "dist": 70.96265355305276,
+    "determ_refined": "braun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "braun",
+    "determ2": "graublau",
+    "dist": 56.016680290761016,
+    "determ_refined": "braun",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "braun",
+    "determ2": "hautfarben",
+    "dist": 46.189687305071736,
+    "determ_refined": "braun",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "braun",
+    "determ2": "graubraun",
+    "dist": 27.818404292517013,
+    "determ_refined": "braun",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "rosa",
+    "determ2": "rot",
+    "dist": 64.00549982861106,
+    "determ_refined": "rosa",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "rosa",
+    "determ2": "turkis",
+    "dist": 108.77642814731875,
+    "determ_refined": "rosa",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "rosa",
+    "determ2": "violett",
+    "dist": 42.344738695738044,
+    "determ_refined": "rosa",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "rosa",
+    "determ2": "schwarz",
+    "dist": 80.03141109749419,
+    "determ_refined": "rosa",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "rosa",
+    "determ2": "rotbraun",
+    "dist": 51.63479515762335,
+    "determ_refined": "rosa",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "rosa",
+    "determ2": "violet",
+    "dist": 58.57709250322191,
+    "determ_refined": "rosa",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "rosa",
+    "determ2": "weinrot",
+    "dist": 37.29222094528756,
+    "determ_refined": "rosa",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "rosa",
+    "determ2": "waldgrun",
+    "dist": 98.58019405946362,
+    "determ_refined": "rosa",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "grun",
+    "dist": 55.399781247749395,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "lila",
+    "dist": 127.83219673900574,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "orange",
+    "dist": 86.43748995707315,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "pink",
+    "dist": 123.96490893305966,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "rot",
+    "dist": 105.54400100940617,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "turkis",
+    "dist": 53.758549925088026,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "hellblau",
+    "dist": 69.13227707788751,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "gelb",
+    "dist": 80.77680746351588,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "hellgrun",
+    "dist": 63.82842827793893,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "violett",
+    "dist": 112.88093524487101,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "rosa",
+    "dist": 100.09613322389674,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "magenta",
+    "dist": 124.02387057002285,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "neongrun",
+    "dist": 74.58923467998504,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "himmelblau",
+    "dist": 77.6430672014899,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "schwarz",
+    "dist": 46.1800232043533,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "ocker",
+    "dist": 60.35525979040289,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "grasgrun",
+    "dist": 49.867605704448806,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "gelbgrun",
+    "dist": 68.88893023225216,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "grau",
+    "dist": 46.137186377217134,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "konigsblau",
+    "dist": 137.14223273298404,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "flieder",
+    "dist": 93.04461364329998,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "giftgrun",
+    "dist": 78.32701294578132,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "hellbraun",
+    "dist": 54.085775433860555,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "dunkellila",
+    "dist": 94.35860493315968,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "dunkellila"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "dunkelrot",
+    "dist": 79.20432973729291,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "dunkelrot"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "rotbraun",
+    "dist": 71.30460622125902,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "violet",
+    "dist": 128.12452462183296,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "olivgrun",
+    "dist": 31.768754521810557,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "petrol",
+    "dist": 36.158236490783864,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "purpur",
+    "dist": 98.68503072212205,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "graugrun",
+    "dist": 29.9190937373563,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "helllila",
+    "dist": 110.9764943799778,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "dunkelviolett",
+    "dist": 83.76589870283509,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "dunkelviolett"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "weinrot",
+    "dist": 83.30703994769922,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "waldgrun",
+    "dist": 12.011451900354363,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "lavendel",
+    "dist": 89.73399242636381,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "graublau",
+    "dist": 55.15711758490023,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "hautfarben",
+    "dist": 67.76835787598006,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "dunkelgrun",
+    "determ2": "graubraun",
+    "dist": 41.45388795035385,
+    "determ_refined": "dunkelgrun",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "orange",
+    "dist": 105.70207354569172,
+    "determ_refined": "magenta",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "pink",
+    "dist": 10.27977467870287,
+    "determ_refined": "magenta",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "rot",
+    "dist": 70.09845938469049,
+    "determ_refined": "magenta",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "turkis",
+    "dist": 135.5982302188624,
+    "determ_refined": "magenta",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "violett",
+    "dist": 39.387128101647605,
+    "determ_refined": "magenta",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "rosa",
+    "dist": 29.716553065118514,
+    "determ_refined": "magenta",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "neongrun",
+    "dist": 177.6990509351599,
+    "determ_refined": "magenta",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "schwarz",
+    "dist": 95.91664015263389,
+    "determ_refined": "magenta",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "ocker",
+    "dist": 113.73633084987506,
+    "determ_refined": "magenta",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "rotbraun",
+    "dist": 66.23964927664667,
+    "determ_refined": "magenta",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "violet",
+    "dist": 47.74229385202465,
+    "determ_refined": "magenta",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "olivgrun",
+    "dist": 125.3877820621703,
+    "determ_refined": "magenta",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "petrol",
+    "dist": 105.70899833855286,
+    "determ_refined": "magenta",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "purpur",
+    "dist": 31.58210542004376,
+    "determ_refined": "magenta",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "weinrot",
+    "dist": 47.89967121003233,
+    "determ_refined": "magenta",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "magenta",
+    "determ2": "waldgrun",
+    "dist": 122.54736905784556,
+    "determ_refined": "magenta",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "orange",
+    "dist": 104.99356410962453,
+    "determ_refined": "neongrun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "pink",
+    "dist": 176.5256301031459,
+    "determ_refined": "neongrun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "rot",
+    "dist": 145.0631603812348,
+    "determ_refined": "neongrun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "turkis",
+    "dist": 70.30952728131608,
+    "determ_refined": "neongrun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "violett",
+    "dist": 173.80275148744153,
+    "determ_refined": "neongrun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "rosa",
+    "dist": 150.5104075156213,
+    "determ_refined": "neongrun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "schwarz",
+    "dist": 119.26121388987038,
+    "determ_refined": "neongrun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "ocker",
+    "dist": 76.45327173734175,
+    "determ_refined": "neongrun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "rotbraun",
+    "dist": 126.16531888963162,
+    "determ_refined": "neongrun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "violet",
+    "dist": 190.27882066111098,
+    "determ_refined": "neongrun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "olivgrun",
+    "dist": 58.532743131254605,
+    "determ_refined": "neongrun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "petrol",
+    "dist": 97.83589970979808,
+    "determ_refined": "neongrun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "purpur",
+    "dist": 157.66082753528192,
+    "determ_refined": "neongrun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "weinrot",
+    "dist": 141.04643612354485,
+    "determ_refined": "neongrun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "neongrun",
+    "determ2": "waldgrun",
+    "dist": 71.15758907362135,
+    "determ_refined": "neongrun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "lila",
+    "dist": 80.12537337485342,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "orange",
+    "dist": 122.51221324740072,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "pink",
+    "dist": 94.98928345430969,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "rot",
+    "dist": 121.98780658024938,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "turkis",
+    "dist": 61.36869004947039,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "violett",
+    "dist": 69.56023380820761,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "rosa",
+    "dist": 74.33114719462286,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "magenta",
+    "dist": 94.46454565380968,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "neongrun",
+    "dist": 127.29048748462984,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "schwarz",
+    "dist": 74.16110066185634,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "ocker",
+    "dist": 105.24465825268058,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "konigsblau",
+    "dist": 81.81056915036956,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "rotbraun",
+    "dist": 90.12469584891323,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "violet",
+    "dist": 80.9780898202283,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "olivgrun",
+    "dist": 91.49248731988814,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "petrol",
+    "dist": 44.43983543843549,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "purpur",
+    "dist": 79.90248566908778,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "weinrot",
+    "dist": 82.86187028950769,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "waldgrun",
+    "dist": 79.17414702893505,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "himmelblau",
+    "determ2": "lavendel",
+    "dist": 45.78741182079043,
+    "determ_refined": "himmelblau",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "schwarz",
+    "determ2": "turkis",
+    "dist": 85.88681299633281,
+    "determ_refined": "schwarz",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "schwarz",
+    "determ2": "violett",
+    "dist": 81.90757263910808,
+    "determ_refined": "schwarz",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "schwarz",
+    "determ2": "violet",
+    "dist": 94.86669253601701,
+    "determ_refined": "schwarz",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "schwarz",
+    "determ2": "weinrot",
+    "dist": 56.52638478945756,
+    "determ_refined": "schwarz",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "schwarz",
+    "determ2": "waldgrun",
+    "dist": 49.15368389096497,
+    "determ_refined": "schwarz",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "orange",
+    "dist": 32.76584796758332,
+    "determ_refined": "ocker",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "pink",
+    "dist": 112.05260266837746,
+    "determ_refined": "ocker",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "rot",
+    "dist": 69.55324426734946,
+    "determ_refined": "ocker",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "turkis",
+    "dist": 82.54205282226694,
+    "determ_refined": "ocker",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "violett",
+    "dist": 121.48951526502891,
+    "determ_refined": "ocker",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "rosa",
+    "dist": 89.8910322898682,
+    "determ_refined": "ocker",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "schwarz",
+    "dist": 80.17502408572743,
+    "determ_refined": "ocker",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "rotbraun",
+    "dist": 59.19934388385593,
+    "determ_refined": "ocker",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "violet",
+    "dist": 138.63313323823024,
+    "determ_refined": "ocker",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "olivgrun",
+    "dist": 34.69448948141324,
+    "determ_refined": "ocker",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "petrol",
+    "dist": 77.38845270732294,
+    "determ_refined": "ocker",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "purpur",
+    "dist": 96.72861045026146,
+    "determ_refined": "ocker",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "weinrot",
+    "dist": 76.37696793450061,
+    "determ_refined": "ocker",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "ocker",
+    "determ2": "waldgrun",
+    "dist": 55.03478463424085,
+    "determ_refined": "ocker",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "grun",
+    "dist": 15.707512527370682,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "lila",
+    "dist": 163.27044523024625,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "orange",
+    "dist": 86.43915278826684,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "pink",
+    "dist": 152.91329690375184,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "rot",
+    "dist": 122.44390915804068,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "turkis",
+    "dist": 57.529864507806984,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "hellblau",
+    "dist": 93.4958510878581,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "hellgrun",
+    "dist": 18.899522857808016,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "violett",
+    "dist": 149.43485103607696,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "rosa",
+    "dist": 127.23722754432492,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "magenta",
+    "dist": 153.80587831893573,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "neongrun",
+    "dist": 27.431222280267335,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "himmelblau",
+    "dist": 107.67280581259742,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "schwarz",
+    "dist": 93.4224288462731,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "ocker",
+    "dist": 55.79094274569718,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "grau",
+    "dist": 77.0400289586579,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "konigsblau",
+    "dist": 177.0543779038702,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "hellbraun",
+    "dist": 68.79289127255721,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "rotbraun",
+    "dist": 100.60925310771748,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "violet",
+    "dist": 165.97987974524867,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "olivgrun",
+    "dist": 33.73992742365107,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "petrol",
+    "dist": 74.70689589724556,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "purpur",
+    "dist": 132.40056362581387,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "graugrun",
+    "dist": 56.66938173707525,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "helllila",
+    "dist": 143.13288756330408,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "weinrot",
+    "dist": 115.48529245375484,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "waldgrun",
+    "dist": 46.124290265325435,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "lavendel",
+    "dist": 123.42474373305878,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "graublau",
+    "dist": 86.87894508433253,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "hautfarben",
+    "dist": 77.64517399630977,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "grasgrun",
+    "determ2": "graubraun",
+    "dist": 75.53869402809023,
+    "determ_refined": "grasgrun",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "blau",
+    "dist": 104.20398047250627,
+    "determ_refined": "beige",
+    "determ2_refined": "blau"
+  },
+  {
+    "determ": "beige",
+    "determ2": "grun",
+    "dist": 64.66916517814255,
+    "determ_refined": "beige",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "lila",
+    "dist": 113.28735027199062,
+    "determ_refined": "beige",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "beige",
+    "determ2": "orange",
+    "dist": 56.60556559909756,
+    "determ_refined": "beige",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "beige",
+    "determ2": "pink",
+    "dist": 98.36636313010376,
+    "determ_refined": "beige",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "beige",
+    "determ2": "rot",
+    "dist": 78.8352376760789,
+    "determ_refined": "beige",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "beige",
+    "determ2": "turkis",
+    "dist": 57.62168694047411,
+    "determ_refined": "beige",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "beige",
+    "determ2": "hellblau",
+    "dist": 66.63737582475886,
+    "determ_refined": "beige",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "beige",
+    "determ2": "gelb",
+    "dist": 57.81923567519593,
+    "determ_refined": "beige",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "beige",
+    "determ2": "hellgrun",
+    "dist": 65.25419883674971,
+    "determ_refined": "beige",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "dunkelblau",
+    "dist": 116.61614145975854,
+    "determ_refined": "beige",
+    "determ2_refined": "dunkelblau"
+  },
+  {
+    "determ": "beige",
+    "determ2": "violett",
+    "dist": 101.03263653974979,
+    "determ_refined": "beige",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "beige",
+    "determ2": "braun",
+    "dist": 40.82095390904056,
+    "determ_refined": "beige",
+    "determ2_refined": "braun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "rosa",
+    "dist": 72.55736008195426,
+    "determ_refined": "beige",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "beige",
+    "determ2": "dunkelgrun",
+    "dist": 54.29327153906897,
+    "determ_refined": "beige",
+    "determ2_refined": "dunkelgrun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "magenta",
+    "dist": 100.0879417682467,
+    "determ_refined": "beige",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "beige",
+    "determ2": "neongrun",
+    "dist": 79.73596236484204,
+    "determ_refined": "beige",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "himmelblau",
+    "dist": 74.94716070115247,
+    "determ_refined": "beige",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "beige",
+    "determ2": "schwarz",
+    "dist": 72.88829736656412,
+    "determ_refined": "beige",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "beige",
+    "determ2": "ocker",
+    "dist": 35.87970507684843,
+    "determ_refined": "beige",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "beige",
+    "determ2": "grasgrun",
+    "dist": 58.45440791433279,
+    "determ_refined": "beige",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "gelbgrun",
+    "dist": 57.60948555531745,
+    "determ_refined": "beige",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "grau",
+    "dist": 37.72698147374464,
+    "determ_refined": "beige",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "beige",
+    "determ2": "konigsblau",
+    "dist": 132.85086972058792,
+    "determ_refined": "beige",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "beige",
+    "determ2": "flieder",
+    "dist": 75.61460852105893,
+    "determ_refined": "beige",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "beige",
+    "determ2": "giftgrun",
+    "dist": 82.41351009637759,
+    "determ_refined": "beige",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "hellbraun",
+    "dist": 27.11386806847407,
+    "determ_refined": "beige",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "dunkellila",
+    "dist": 93.404175092698,
+    "determ_refined": "beige",
+    "determ2_refined": "dunkellila"
+  },
+  {
+    "determ": "beige",
+    "determ2": "dunkelrot",
+    "dist": 69.28903362447906,
+    "determ_refined": "beige",
+    "determ2_refined": "dunkelrot"
+  },
+  {
+    "determ": "beige",
+    "determ2": "rotbraun",
+    "dist": 59.04503031281622,
+    "determ_refined": "beige",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "dunkelbraun",
+    "dist": 61.65867368074942,
+    "determ_refined": "beige",
+    "determ2_refined": "dunkelbraun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "violet",
+    "dist": 118.10094687651257,
+    "determ_refined": "beige",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "beige",
+    "determ2": "olivgrun",
+    "dist": 38.628192492358856,
+    "determ_refined": "beige",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "petrol",
+    "dist": 55.18944769370363,
+    "determ_refined": "beige",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "beige",
+    "determ2": "blassgrun",
+    "dist": 44.280698763039965,
+    "determ_refined": "beige",
+    "determ2_refined": "blassgrun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "purpur",
+    "dist": 84.23966418990662,
+    "determ_refined": "beige",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "beige",
+    "determ2": "blaugrun",
+    "dist": 52.99224510986467,
+    "determ_refined": "beige",
+    "determ2_refined": "blaugrun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "graugrun",
+    "dist": 34.028636666142965,
+    "determ_refined": "beige",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "helllila",
+    "dist": 93.26991088396643,
+    "determ_refined": "beige",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "beige",
+    "determ2": "dunkelviolett",
+    "dist": 86.48907841928816,
+    "determ_refined": "beige",
+    "determ2_refined": "dunkelviolett"
+  },
+  {
+    "determ": "beige",
+    "determ2": "weinrot",
+    "dist": 68.87302446278993,
+    "determ_refined": "beige",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "beige",
+    "determ2": "waldgrun",
+    "dist": 49.45703841532412,
+    "determ_refined": "beige",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "beige",
+    "determ2": "blaugrau",
+    "dist": 53.678754486035665,
+    "determ_refined": "beige",
+    "determ2_refined": "blaugrau"
+  },
+  {
+    "determ": "beige",
+    "determ2": "lavendel",
+    "dist": 75.4099362366732,
+    "determ_refined": "beige",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "beige",
+    "determ2": "graublau",
+    "dist": 50.238155446159446,
+    "determ_refined": "beige",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "beige",
+    "determ2": "hautfarben",
+    "dist": 21.75292410010212,
+    "determ_refined": "beige",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "beige",
+    "determ2": "graubraun",
+    "dist": 39.29715961898236,
+    "determ_refined": "beige",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "grun",
+    "dist": 35.88964362626559,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "lila",
+    "dist": 169.17787634959777,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "orange",
+    "dist": 70.61152762469708,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "pink",
+    "dist": 152.10886789350118,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "rot",
+    "dist": 113.27126291641575,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "turkis",
+    "dist": 75.87755136023442,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "hellblau",
+    "dist": 108.54829530956164,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "hellgrun",
+    "dist": 31.130162084580334,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "violett",
+    "dist": 156.16333420236887,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "rosa",
+    "dist": 127.61690873784147,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "magenta",
+    "dist": 153.939438155875,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "neongrun",
+    "dist": 36.402494192584676,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "himmelblau",
+    "dist": 121.75427966593371,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "schwarz",
+    "dist": 106.70759872205869,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "ocker",
+    "dist": 44.97239168479393,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "grasgrun",
+    "dist": 29.053973901477388,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "grau",
+    "dist": 87.05211448551032,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "konigsblau",
+    "dist": 187.1189142378044,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "giftgrun",
+    "dist": 35.46660034796974,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "hellbraun",
+    "dist": 66.6126065152898,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "rotbraun",
+    "dist": 100.6907019117948,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "violet",
+    "dist": 173.1826005425679,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "olivgrun",
+    "dist": 41.48236571535081,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "petrol",
+    "dist": 92.2904238621417,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "purpur",
+    "dist": 136.16557959296168,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "graugrun",
+    "dist": 69.63377001259401,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "helllila",
+    "dist": 149.42875841771456,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "weinrot",
+    "dist": 117.17121570127021,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "waldgrun",
+    "dist": 63.686439123961655,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "lavendel",
+    "dist": 130.65477756663333,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "graublau",
+    "dist": 98.89328435916889,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "hautfarben",
+    "dist": 75.36468343726443,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "gelbgrun",
+    "determ2": "graubraun",
+    "dist": 83.6250960925847,
+    "determ_refined": "gelbgrun",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "grau",
+    "determ2": "grun",
+    "dist": 82.04214990767348,
+    "determ_refined": "grau",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "grau",
+    "determ2": "lila",
+    "dist": 88.67981703421184,
+    "determ_refined": "grau",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "grau",
+    "determ2": "orange",
+    "dist": 82.30859822689243,
+    "determ_refined": "grau",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "grau",
+    "determ2": "pink",
+    "dist": 87.0093359519745,
+    "determ_refined": "grau",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "grau",
+    "determ2": "rot",
+    "dist": 87.38589954578185,
+    "determ_refined": "grau",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "grau",
+    "determ2": "turkis",
+    "dist": 55.57075134117913,
+    "determ_refined": "grau",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "grau",
+    "determ2": "hellblau",
+    "dist": 44.221411551371595,
+    "determ_refined": "grau",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "grau",
+    "determ2": "hellgrun",
+    "dist": 86.8550484808658,
+    "determ_refined": "grau",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "grau",
+    "determ2": "violett",
+    "dist": 74.49185497508017,
+    "determ_refined": "grau",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "grau",
+    "determ2": "rosa",
+    "dist": 61.60139931305438,
+    "determ_refined": "grau",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "grau",
+    "determ2": "magenta",
+    "dist": 87.86102505586845,
+    "determ_refined": "grau",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "grau",
+    "determ2": "neongrun",
+    "dist": 101.42124058415497,
+    "determ_refined": "grau",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "grau",
+    "determ2": "himmelblau",
+    "dist": 47.3146598648361,
+    "determ_refined": "grau",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "grau",
+    "determ2": "schwarz",
+    "dist": 47.741658480959266,
+    "determ_refined": "grau",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "grau",
+    "determ2": "ocker",
+    "dist": 63.787952137580504,
+    "determ_refined": "grau",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "grau",
+    "determ2": "konigsblau",
+    "dist": 101.80141137937737,
+    "determ_refined": "grau",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "grau",
+    "determ2": "hellbraun",
+    "dist": 42.08083276412851,
+    "determ_refined": "grau",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "grau",
+    "determ2": "rotbraun",
+    "dist": 53.5674907730962,
+    "determ_refined": "grau",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "grau",
+    "determ2": "violet",
+    "dist": 90.5685502960868,
+    "determ_refined": "grau",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "grau",
+    "determ2": "olivgrun",
+    "dist": 52.76254902819286,
+    "determ_refined": "grau",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "grau",
+    "determ2": "petrol",
+    "dist": 27.128949288074608,
+    "determ_refined": "grau",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "grau",
+    "determ2": "purpur",
+    "dist": 66.76830906442216,
+    "determ_refined": "grau",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "grau",
+    "determ2": "graugrun",
+    "dist": 23.239828506055098,
+    "determ_refined": "grau",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "grau",
+    "determ2": "helllila",
+    "dist": 68.52295104002002,
+    "determ_refined": "grau",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "grau",
+    "determ2": "weinrot",
+    "dist": 56.62726794665262,
+    "determ_refined": "grau",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "grau",
+    "determ2": "waldgrun",
+    "dist": 45.560144709497315,
+    "determ_refined": "grau",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "grau",
+    "determ2": "lavendel",
+    "dist": 48.162375751205566,
+    "determ_refined": "grau",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "grau",
+    "determ2": "graublau",
+    "dist": 18.720601683986356,
+    "determ_refined": "grau",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "grau",
+    "determ2": "hautfarben",
+    "dist": 36.32199690556305,
+    "determ_refined": "grau",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "grau",
+    "determ2": "graubraun",
+    "dist": 19.77866004683217,
+    "determ_refined": "grau",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "lila",
+    "dist": 35.40953634729061,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "orange",
+    "dist": 159.69771782268253,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "pink",
+    "dist": 74.89469012176862,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "rot",
+    "dist": 133.09225700592103,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "turkis",
+    "dist": 140.4531854551897,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "violett",
+    "dist": 39.31775991665643,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "rosa",
+    "dist": 79.26819803951237,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "magenta",
+    "dist": 71.41276405968381,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "neongrun",
+    "dist": 200.61899580639295,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "schwarz",
+    "dist": 104.11331657845768,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "ocker",
+    "dist": 155.73251590729504,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "rotbraun",
+    "dist": 109.66339833216021,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "violet",
+    "dist": 28.149659911949556,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "olivgrun",
+    "dist": 151.69261718840843,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "petrol",
+    "dist": 106.55392895656577,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "purpur",
+    "dist": 71.82752757865426,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "weinrot",
+    "dist": 91.60550071353934,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "waldgrun",
+    "dist": 138.71658944288006,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "konigsblau",
+    "determ2": "lavendel",
+    "dist": 59.6569208861737,
+    "determ_refined": "konigsblau",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "grun",
+    "dist": 130.0133841654679,
+    "determ_refined": "flieder",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "lila",
+    "dist": 40.33002096402725,
+    "determ_refined": "flieder",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "orange",
+    "dist": 103.77263500675483,
+    "determ_refined": "flieder",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "pink",
+    "dist": 46.42410318644581,
+    "determ_refined": "flieder",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "rot",
+    "dist": 86.8099020851008,
+    "determ_refined": "flieder",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "turkis",
+    "dist": 96.92700703463198,
+    "determ_refined": "flieder",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "hellblau",
+    "dist": 63.60242140253931,
+    "determ_refined": "flieder",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "gelb",
+    "dist": 130.855879881228,
+    "determ_refined": "flieder",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "hellgrun",
+    "dist": 133.67334230885797,
+    "determ_refined": "flieder",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "violett",
+    "dist": 29.608946943093,
+    "determ_refined": "flieder",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "rosa",
+    "dist": 30.029086985010256,
+    "determ_refined": "flieder",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "magenta",
+    "dist": 45.808261865600805,
+    "determ_refined": "flieder",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "neongrun",
+    "dist": 148.92261871989655,
+    "determ_refined": "flieder",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "himmelblau",
+    "dist": 52.358251024237035,
+    "determ_refined": "flieder",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "schwarz",
+    "dist": 71.39989904324739,
+    "determ_refined": "flieder",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "ocker",
+    "dist": 98.91564656798471,
+    "determ_refined": "flieder",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "grasgrun",
+    "dist": 125.3719983675731,
+    "determ_refined": "flieder",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "gelbgrun",
+    "dist": 131.5283854605027,
+    "determ_refined": "flieder",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "grau",
+    "dist": 51.64917472804839,
+    "determ_refined": "flieder",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "konigsblau",
+    "dist": 61.45198222423779,
+    "determ_refined": "flieder",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "giftgrun",
+    "dist": 152.78943161395856,
+    "determ_refined": "flieder",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "hellbraun",
+    "dist": 73.20178422702494,
+    "determ_refined": "flieder",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "rotbraun",
+    "dist": 62.38544409927366,
+    "determ_refined": "flieder",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "violet",
+    "dist": 45.41570844929066,
+    "determ_refined": "flieder",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "olivgrun",
+    "dist": 99.86306133156258,
+    "determ_refined": "flieder",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "petrol",
+    "dist": 67.15969995287072,
+    "determ_refined": "flieder",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "purpur",
+    "dist": 36.62475608329121,
+    "determ_refined": "flieder",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "graugrun",
+    "dist": 72.71768071413184,
+    "determ_refined": "flieder",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "helllila",
+    "dist": 28.669874360760467,
+    "determ_refined": "flieder",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "weinrot",
+    "dist": 48.61463256504463,
+    "determ_refined": "flieder",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "waldgrun",
+    "dist": 92.79263491766,
+    "determ_refined": "flieder",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "lavendel",
+    "dist": 18.670629160830984,
+    "determ_refined": "flieder",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "graublau",
+    "dist": 47.9038183534117,
+    "determ_refined": "flieder",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "hautfarben",
+    "dist": 62.309579049762846,
+    "determ_refined": "flieder",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "flieder",
+    "determ2": "graubraun",
+    "dist": 57.736097766343065,
+    "determ_refined": "flieder",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "grun",
+    "dist": 26.373582808089203,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "lila",
+    "dist": 191.0204012729941,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "orange",
+    "dist": 104.55669774836501,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "pink",
+    "dist": 179.2576302204666,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "rot",
+    "dist": 145.83779643956692,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "turkis",
+    "dist": 76.08320144940085,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "hellblau",
+    "dist": 116.6213318664934,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "hellgrun",
+    "dist": 20.741177300210364,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "violett",
+    "dist": 177.6883906827062,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "rosa",
+    "dist": 153.43254480912353,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "magenta",
+    "dist": 180.53964811935168,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "neongrun",
+    "dist": 8.760512128979865,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "himmelblau",
+    "dist": 132.3235719615805,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "schwarz",
+    "dist": 122.60553331140052,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "ocker",
+    "dist": 77.06534387559672,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "grasgrun",
+    "dist": 30.39593204383138,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "grau",
+    "dist": 105.40218524383226,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "konigsblau",
+    "dist": 204.98358853376723,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "hellbraun",
+    "dist": 94.11188106890528,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "rotbraun",
+    "dist": 128.10479357941793,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "violet",
+    "dist": 194.19378137989287,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "olivgrun",
+    "dist": 61.01803865662538,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "petrol",
+    "dist": 102.56269345392779,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "purpur",
+    "dist": 160.68153579295202,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "graugrun",
+    "dist": 84.98580952075615,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "helllila",
+    "dist": 169.9913587203457,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "weinrot",
+    "dist": 143.54995250269585,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "waldgrun",
+    "dist": 74.69586577406366,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "lavendel",
+    "dist": 150.8293810462386,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "graublau",
+    "dist": 114.02665905158054,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "hautfarben",
+    "dist": 100.47169401932537,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "giftgrun",
+    "determ2": "graubraun",
+    "dist": 104.45337278716818,
+    "determ_refined": "giftgrun",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "lila",
+    "dist": 108.16491002168081,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "orange",
+    "dist": 42.14510036884022,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "pink",
+    "dist": 88.88047109342475,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "rot",
+    "dist": 59.24447573463861,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "turkis",
+    "dist": 76.56826482608929,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "hellgrun",
+    "dist": 79.18437349267657,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "violett",
+    "dist": 95.37991504010544,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "rosa",
+    "dist": 65.71424090880718,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "magenta",
+    "dist": 90.0893208833836,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "neongrun",
+    "dist": 92.27923186936104,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "himmelblau",
+    "dist": 84.46490263828503,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "schwarz",
+    "dist": 61.21502960006812,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "ocker",
+    "dist": 28.959939822722994,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "konigsblau",
+    "dist": 129.4566864058324,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "rotbraun",
+    "dist": 38.10448108703701,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "violet",
+    "dist": 112.45348178879667,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "olivgrun",
+    "dist": 39.99348695922201,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "petrol",
+    "dist": 59.25871417973746,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "purpur",
+    "dist": 71.7337839346423,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "helllila",
+    "dist": 92.68663774887013,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "weinrot",
+    "dist": 52.55460244367392,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "waldgrun",
+    "dist": 49.49826403229406,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "hellbraun",
+    "determ2": "lavendel",
+    "dist": 74.08782260608625,
+    "determ_refined": "hellbraun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "grun",
+    "dist": 140.9012892202289,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "lila",
+    "dist": 40.64620072318476,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "orange",
+    "dist": 115.64506360079588,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "pink",
+    "dist": 55.51300271953245,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "rot",
+    "dist": 93.00117704158032,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "turkis",
+    "dist": 110.7835239361866,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "hellblau",
+    "dist": 78.68889797081485,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "gelb",
+    "dist": 145.48917721774012,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "hellgrun",
+    "dist": 146.27375573589532,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "violett",
+    "dist": 27.65665658368136,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "rosa",
+    "dist": 49.58456055795195,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "magenta",
+    "dist": 52.49795465792811,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "neongrun",
+    "dist": 160.85626025500204,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "himmelblau",
+    "dist": 65.38266843385392,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "schwarz",
+    "dist": 58.80412975858966,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "ocker",
+    "dist": 110.88080959595509,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "grasgrun",
+    "dist": 135.5630964439357,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "gelbgrun",
+    "dist": 144.5480044526579,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "grau",
+    "dist": 62.96728349221106,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "konigsblau",
+    "dist": 51.16095650771719,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "flieder",
+    "dist": 35.20453637768048,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "giftgrun",
+    "dist": 164.73387654621718,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "hellbraun",
+    "dist": 85.09317013108875,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "dunkelrot",
+    "dist": 60.102076400114434,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "dunkelrot"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "rotbraun",
+    "dist": 62.97283220346212,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "violet",
+    "dist": 37.626620102495714,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "olivgrun",
+    "dist": 107.53330910015498,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "petrol",
+    "dist": 70.61744450317413,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "purpur",
+    "dist": 33.88958919886305,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "graugrun",
+    "dist": 81.64610226558862,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "helllila",
+    "dist": 42.71817291854497,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "dunkelviolett",
+    "dist": 19.755500279386283,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "dunkelviolett"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "weinrot",
+    "dist": 48.935286566899826,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "waldgrun",
+    "dist": 95.50287299964624,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "lavendel",
+    "dist": 34.397307879914635,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "graublau",
+    "dist": 60.94476668490257,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "hautfarben",
+    "dist": 84.19071343989737,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "dunkellila",
+    "determ2": "graubraun",
+    "dist": 62.448874270736965,
+    "determ_refined": "dunkellila",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "grun",
+    "dist": 118.17824233818237,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "lila",
+    "dist": 84.15042141811783,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "orange",
+    "dist": 62.72253140271262,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "pink",
+    "dist": 62.169596592066185,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "rot",
+    "dist": 39.55479117325228,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "turkis",
+    "dist": 111.28252941100102,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "hellblau",
+    "dist": 98.67382486795991,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "gelb",
+    "dist": 105.11696790444351,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "hellgrun",
+    "dist": 122.59960258359021,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "violett",
+    "dist": 73.2688663262542,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "rosa",
+    "dist": 53.27519242915761,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "magenta",
+    "dist": 61.48710834964534,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "neongrun",
+    "dist": 135.7720162216799,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "himmelblau",
+    "dist": 94.95781407958907,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "schwarz",
+    "dist": 53.782120589000435,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "ocker",
+    "dist": 68.86469968010135,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "grasgrun",
+    "dist": 109.89193139854477,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "gelbgrun",
+    "dist": 111.04193934406909,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "grau",
+    "dist": 60.56530388508061,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "konigsblau",
+    "dist": 107.13570758446338,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "flieder",
+    "dist": 63.63464190341841,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "giftgrun",
+    "dist": 137.67857019121124,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "hellbraun",
+    "dist": 48.608382444271165,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "rotbraun",
+    "dist": 18.848513685462365,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "violet",
+    "dist": 86.71595487812706,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "olivgrun",
+    "dist": 79.84531247745427,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "petrol",
+    "dist": 76.90574404153631,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "purpur",
+    "dist": 40.8713943116352,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "graugrun",
+    "dist": 71.70827292825317,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "helllila",
+    "dist": 82.39064674688385,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "dunkelviolett",
+    "dist": 53.08731316914698,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "dunkelviolett"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "weinrot",
+    "dist": 24.286580521491917,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "waldgrun",
+    "dist": 77.62075615325354,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "lavendel",
+    "dist": 67.24543981898829,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "graublau",
+    "dist": 70.72045417589354,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "hautfarben",
+    "dist": 65.96366626679381,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "dunkelrot",
+    "determ2": "graubraun",
+    "dist": 48.37954711554052,
+    "determ_refined": "dunkelrot",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "rotbraun",
+    "determ2": "turkis",
+    "dist": 102.42844893892344,
+    "determ_refined": "rotbraun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "rotbraun",
+    "determ2": "violett",
+    "dist": 75.3598123373227,
+    "determ_refined": "rotbraun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "rotbraun",
+    "determ2": "schwarz",
+    "dist": 50.89681804968693,
+    "determ_refined": "rotbraun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "rotbraun",
+    "determ2": "violet",
+    "dist": 90.33195623599201,
+    "determ_refined": "rotbraun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "rotbraun",
+    "determ2": "weinrot",
+    "dist": 24.44766584629224,
+    "determ_refined": "rotbraun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "rotbraun",
+    "determ2": "waldgrun",
+    "dist": 69.56322108086303,
+    "determ_refined": "rotbraun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "grun",
+    "dist": 97.2720242582676,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "lila",
+    "dist": 94.81850607737518,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "orange",
+    "dist": 74.62691337839219,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "pink",
+    "dist": 85.85950346425177,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "rot",
+    "dist": 70.57546215189966,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "turkis",
+    "dist": 89.04615337093396,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "hellblau",
+    "dist": 81.50737692279408,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "gelb",
+    "dist": 98.96300674864324,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "hellgrun",
+    "dist": 103.80449726126297,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "violett",
+    "dist": 80.45817312252213,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "rosa",
+    "dist": 69.35288802524411,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "dunkelgrun",
+    "dist": 49.09962797164579,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "dunkelgrun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "magenta",
+    "dist": 85.82710860980872,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "neongrun",
+    "dist": 115.9099016640089,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "himmelblau",
+    "dist": 80.24569544329077,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "schwarz",
+    "dist": 22.163256841599896,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "ocker",
+    "dist": 64.92608172735335,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "grasgrun",
+    "dist": 89.6012763489923,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "gelbgrun",
+    "dist": 97.62688964672154,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "grau",
+    "dist": 44.220038207831955,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "konigsblau",
+    "dist": 108.73520235879388,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "flieder",
+    "dist": 67.93251807360545,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "giftgrun",
+    "dist": 118.54895542905545,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "hellbraun",
+    "dist": 44.756209201929664,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "dunkellila",
+    "dist": 59.861935430362344,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "dunkellila"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "dunkelrot",
+    "dist": 36.99652212474562,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "dunkelrot"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "rotbraun",
+    "dist": 31.582925210629277,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "violet",
+    "dist": 94.76175503962081,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "olivgrun",
+    "dist": 59.22477451031478,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "petrol",
+    "dist": 50.174823223429144,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "purpur",
+    "dist": 59.85344240251537,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "graugrun",
+    "dist": 49.07142463910828,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "helllila",
+    "dist": 87.20094279078708,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "dunkelviolett",
+    "dist": 48.727355233226646,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "dunkelviolett"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "weinrot",
+    "dist": 42.92196766483986,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "waldgrun",
+    "dist": 49.66783630351343,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "lavendel",
+    "dist": 66.55664170777423,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "graublau",
+    "dist": 54.692733151931385,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "hautfarben",
+    "dist": 63.606775596292444,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "dunkelbraun",
+    "determ2": "graubraun",
+    "dist": 29.463439374087343,
+    "determ_refined": "dunkelbraun",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "violet",
+    "determ2": "violett",
+    "dist": 20.850753128903463,
+    "determ_refined": "violet",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "violet",
+    "determ2": "weinrot",
+    "dist": 71.382707882168,
+    "determ_refined": "violet",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "violet",
+    "determ2": "waldgrun",
+    "dist": 128.76023870234897,
+    "determ_refined": "violet",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "orange",
+    "dist": 64.28993977873631,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "pink",
+    "dist": 124.3480550887357,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "rot",
+    "dist": 94.25751731541635,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "turkis",
+    "dist": 58.753182377994804,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "violett",
+    "dist": 122.41179018445341,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "rosa",
+    "dist": 99.81253667765723,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "schwarz",
+    "dist": 66.40077815703293,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "rotbraun",
+    "dist": 69.30925904699578,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "violet",
+    "dist": 139.01334111787975,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "petrol",
+    "dist": 55.5571584022477,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "purpur",
+    "dist": 103.68605602117354,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "weinrot",
+    "dist": 84.90934324800449,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "olivgrun",
+    "determ2": "waldgrun",
+    "dist": 26.75100265512034,
+    "determ_refined": "olivgrun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "petrol",
+    "determ2": "pink",
+    "dist": 105.6009087130117,
+    "determ_refined": "petrol",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "petrol",
+    "determ2": "rot",
+    "dist": 107.40215083167888,
+    "determ_refined": "petrol",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "petrol",
+    "determ2": "turkis",
+    "dist": 46.491723957346565,
+    "determ_refined": "petrol",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "petrol",
+    "determ2": "violett",
+    "dist": 86.53470642282082,
+    "determ_refined": "petrol",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "petrol",
+    "determ2": "rosa",
+    "dist": 82.01595392908739,
+    "determ_refined": "petrol",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "petrol",
+    "determ2": "schwarz",
+    "dist": 43.37356447441215,
+    "determ_refined": "petrol",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "petrol",
+    "determ2": "rotbraun",
+    "dist": 69.95275046224691,
+    "determ_refined": "petrol",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "petrol",
+    "determ2": "violet",
+    "dist": 100.71025661506052,
+    "determ_refined": "petrol",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "petrol",
+    "determ2": "purpur",
+    "dist": 82.64251191045322,
+    "determ_refined": "petrol",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "petrol",
+    "determ2": "weinrot",
+    "dist": 73.68838138993348,
+    "determ_refined": "petrol",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "petrol",
+    "determ2": "waldgrun",
+    "dist": 38.07910189328846,
+    "determ_refined": "petrol",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "blau",
+    "dist": 122.71040864150613,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "blau"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "grun",
+    "dist": 30.284854311169752,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "lila",
+    "dist": 143.99642954925966,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "orange",
+    "dist": 86.91448202632235,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "pink",
+    "dist": 137.17553376603425,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "rot",
+    "dist": 117.4217886634056,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "turkis",
+    "dist": 35.117775421755624,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "hellblau",
+    "dist": 69.31306438630622,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "gelb",
+    "dist": 61.35417077330338,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "hellgrun",
+    "dist": 32.446143647276386,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "dunkelblau",
+    "dist": 138.39504474820197,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "dunkelblau"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "violett",
+    "dist": 130.60430126163914,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "braun",
+    "dist": 68.16052003611954,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "braun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "rosa",
+    "dist": 110.69694721984564,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "dunkelgrun",
+    "dist": 44.829354547997006,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "dunkelgrun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "magenta",
+    "dist": 138.53819602511825,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "neongrun",
+    "dist": 45.295795030604566,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "himmelblau",
+    "dist": 84.21183179435715,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "schwarz",
+    "dist": 83.87443933020931,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "ocker",
+    "dist": 57.06478987532167,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "grasgrun",
+    "dist": 30.050341170687556,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "gelbgrun",
+    "dist": 45.17028373981669,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "grau",
+    "dist": 58.11073259252876,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "konigsblau",
+    "dist": 156.5196537616455,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "flieder",
+    "dist": 105.73344001387109,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "giftgrun",
+    "dist": 49.71176598282647,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "hellbraun",
+    "dist": 59.76030537459506,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "dunkellila",
+    "dist": 118.84827266756552,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "dunkellila"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "dunkelrot",
+    "dist": 102.38967109266387,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "dunkelrot"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "rotbraun",
+    "dist": 92.20731928838794,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "dunkelbraun",
+    "dist": 81.39249689245253,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "dunkelbraun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "violet",
+    "dist": 146.64947986005737,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "olivgrun",
+    "dist": 34.662712779676596,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "petrol",
+    "dist": 57.17773835754086,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "purpur",
+    "dist": 118.59206300873129,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "blaugrun",
+    "dist": 29.187099649286562,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "blaugrun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "graugrun",
+    "dist": 39.04772894855305,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "helllila",
+    "dist": 122.2898038306641,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "dunkelviolett",
+    "dist": 110.41586555243867,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "dunkelviolett"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "weinrot",
+    "dist": 103.94423410066699,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "waldgrun",
+    "dist": 42.603743921728295,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "blaugrau",
+    "dist": 69.71279278446642,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "blaugrau"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "lavendel",
+    "dist": 102.9394664343997,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "graublau",
+    "dist": 65.8097140919271,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "hautfarben",
+    "dist": 59.875419978231044,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "blassgrun",
+    "determ2": "graubraun",
+    "dist": 60.95951545895525,
+    "determ_refined": "blassgrun",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "purpur",
+    "determ2": "rot",
+    "dist": 63.983248696806555,
+    "determ_refined": "purpur",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "purpur",
+    "determ2": "turkis",
+    "dist": 117.10627771727427,
+    "determ_refined": "purpur",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "purpur",
+    "determ2": "violett",
+    "dist": 37.80120287348116,
+    "determ_refined": "purpur",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "purpur",
+    "determ2": "rosa",
+    "dist": 31.001265478722058,
+    "determ_refined": "purpur",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "purpur",
+    "determ2": "schwarz",
+    "dist": 68.62355137139488,
+    "determ_refined": "purpur",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "purpur",
+    "determ2": "rotbraun",
+    "dist": 46.914476850925446,
+    "determ_refined": "purpur",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "purpur",
+    "determ2": "violet",
+    "dist": 50.0711163564638,
+    "determ_refined": "purpur",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "purpur",
+    "determ2": "weinrot",
+    "dist": 30.097143450586167,
+    "determ_refined": "purpur",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "purpur",
+    "determ2": "waldgrun",
+    "dist": 97.48345859975908,
+    "determ_refined": "purpur",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "grun",
+    "dist": 49.66366122679088,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "lila",
+    "dist": 128.19978459243728,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "orange",
+    "dist": 100.02576940366765,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "pink",
+    "dist": 128.56239615521554,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "rot",
+    "dist": 120.37486374714196,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "turkis",
+    "dist": 24.703501825878025,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "hellblau",
+    "dist": 48.79978865358158,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "gelb",
+    "dist": 85.6039854700925,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "hellgrun",
+    "dist": 55.7937095094252,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "dunkelblau",
+    "dist": 117.05662925547315,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "dunkelblau"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "violett",
+    "dist": 114.24108668193949,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "braun",
+    "dist": 66.32622432432073,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "braun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "rosa",
+    "dist": 102.6405831792057,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "dunkelgrun",
+    "dist": 33.903699666819705,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "dunkelgrun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "magenta",
+    "dist": 128.8197286275855,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "neongrun",
+    "dist": 68.65037858565407,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "himmelblau",
+    "dist": 62.816455892662795,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "schwarz",
+    "dist": 67.4945789488658,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "ocker",
+    "dist": 72.05687122901426,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "grasgrun",
+    "dist": 50.07611190553937,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "gelbgrun",
+    "dist": 70.86727931656569,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "grau",
+    "dist": 44.93467891477969,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "konigsblau",
+    "dist": 135.8497040738783,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "flieder",
+    "dist": 91.46361816409583,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "giftgrun",
+    "dist": 74.0598689140862,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "hellbraun",
+    "dist": 65.17661256867879,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "dunkellila",
+    "dist": 100.52156199346426,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "dunkellila"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "dunkelrot",
+    "dist": 95.80199879142947,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "dunkelrot"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "rotbraun",
+    "dist": 88.13255558195858,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "dunkelbraun",
+    "dist": 71.15178167551575,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "dunkelbraun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "violet",
+    "dist": 129.18842981214527,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "olivgrun",
+    "dist": 46.05800771712199,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "petrol",
+    "dist": 32.948654812715226,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "purpur",
+    "dist": 106.2751935823418,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "graugrun",
+    "dist": 29.73295633069713,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "helllila",
+    "dist": 106.95508919694652,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "dunkelviolett",
+    "dist": 92.41806012681636,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "dunkelviolett"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "weinrot",
+    "dist": 95.30031685472012,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "waldgrun",
+    "dist": 35.048597162806814,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "lavendel",
+    "dist": 87.20237410105582,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "graublau",
+    "dist": 47.26425252547178,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "hautfarben",
+    "dist": 64.31447899812727,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "blaugrun",
+    "determ2": "graubraun",
+    "dist": 51.34143057898491,
+    "determ_refined": "blaugrun",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "grun",
+    "dist": 61.95022465676252,
+    "determ_refined": "graugrun",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "lila",
+    "dist": 109.84286898980896,
+    "determ_refined": "graugrun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "orange",
+    "dist": 79.72978444226636,
+    "determ_refined": "graugrun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "pink",
+    "dist": 106.06050848932414,
+    "determ_refined": "graugrun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "rot",
+    "dist": 95.54924300968344,
+    "determ_refined": "graugrun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "turkis",
+    "dist": 43.55037269026817,
+    "determ_refined": "graugrun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "hellblau",
+    "dist": 50.386460804154595,
+    "determ_refined": "graugrun",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "hellgrun",
+    "dist": 67.3605597911169,
+    "determ_refined": "graugrun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "violett",
+    "dist": 95.62706673212524,
+    "determ_refined": "graugrun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "rosa",
+    "dist": 80.25723689280242,
+    "determ_refined": "graugrun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "magenta",
+    "dist": 106.80647267538941,
+    "determ_refined": "graugrun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "neongrun",
+    "dist": 81.11579515414276,
+    "determ_refined": "graugrun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "himmelblau",
+    "dist": 58.897620355584834,
+    "determ_refined": "graugrun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "schwarz",
+    "dist": 50.763043029619894,
+    "determ_refined": "graugrun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "ocker",
+    "dist": 55.298253184435815,
+    "determ_refined": "graugrun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "konigsblau",
+    "dist": 121.79188942752144,
+    "determ_refined": "graugrun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "hellbraun",
+    "dist": 41.451423574691596,
+    "determ_refined": "graugrun",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "rotbraun",
+    "dist": 62.870710438350656,
+    "determ_refined": "graugrun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "violet",
+    "dist": 111.5173840823737,
+    "determ_refined": "graugrun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "olivgrun",
+    "dist": 34.6401287777585,
+    "determ_refined": "graugrun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "petrol",
+    "dist": 26.269778461482414,
+    "determ_refined": "graugrun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "purpur",
+    "dist": 84.75922367397675,
+    "determ_refined": "graugrun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "helllila",
+    "dist": 89.71640218280142,
+    "determ_refined": "graugrun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "weinrot",
+    "dist": 71.21734018465331,
+    "determ_refined": "graugrun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "waldgrun",
+    "dist": 28.1362424475827,
+    "determ_refined": "graugrun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "lavendel",
+    "dist": 69.32194066643198,
+    "determ_refined": "graugrun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "graugrun",
+    "determ2": "hautfarben",
+    "dist": 42.67004953661364,
+    "determ_refined": "graugrun",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "lila",
+    "dist": 27.910669102122604,
+    "determ_refined": "helllila",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "orange",
+    "dist": 121.30128068398739,
+    "determ_refined": "helllila",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "pink",
+    "dist": 50.05356010226704,
+    "determ_refined": "helllila",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "rot",
+    "dist": 102.30217002572036,
+    "determ_refined": "helllila",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "turkis",
+    "dist": 110.78070695661044,
+    "determ_refined": "helllila",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "violett",
+    "dist": 23.58743633237257,
+    "determ_refined": "helllila",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "rosa",
+    "dist": 41.50326521645347,
+    "determ_refined": "helllila",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "magenta",
+    "dist": 46.16272619855882,
+    "determ_refined": "helllila",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "neongrun",
+    "dist": 166.08935737612646,
+    "determ_refined": "helllila",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "himmelblau",
+    "dist": 58.77358821009735,
+    "determ_refined": "helllila",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "schwarz",
+    "dist": 88.58238677558666,
+    "determ_refined": "helllila",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "ocker",
+    "dist": 117.80475101034992,
+    "determ_refined": "helllila",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "konigsblau",
+    "dist": 48.5941538383095,
+    "determ_refined": "helllila",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "rotbraun",
+    "dist": 81.94289714730213,
+    "determ_refined": "helllila",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "violet",
+    "dist": 33.66127530537305,
+    "determ_refined": "helllila",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "olivgrun",
+    "dist": 118.47526644957951,
+    "determ_refined": "helllila",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "petrol",
+    "dist": 83.18284451067092,
+    "determ_refined": "helllila",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "purpur",
+    "dist": 48.68590980716818,
+    "determ_refined": "helllila",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "weinrot",
+    "dist": 64.97447628324717,
+    "determ_refined": "helllila",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "waldgrun",
+    "dist": 111.26949715883055,
+    "determ_refined": "helllila",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "helllila",
+    "determ2": "lavendel",
+    "dist": 29.741974398273225,
+    "determ_refined": "helllila",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "blau",
+    "dist": 67.22603279549762,
+    "determ_refined": "altrosa",
+    "determ2_refined": "blau"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "grun",
+    "dist": 108.65954267396555,
+    "determ_refined": "altrosa",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "lila",
+    "dist": 64.56795904811592,
+    "determ_refined": "altrosa",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "orange",
+    "dist": 77.28832495782764,
+    "determ_refined": "altrosa",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "pink",
+    "dist": 54.52432600049455,
+    "determ_refined": "altrosa",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "rot",
+    "dist": 65.82469665405003,
+    "determ_refined": "altrosa",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "turkis",
+    "dist": 85.38248783644237,
+    "determ_refined": "altrosa",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "hellblau",
+    "dist": 63.97081683236466,
+    "determ_refined": "altrosa",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "gelb",
+    "dist": 104.75164745509075,
+    "determ_refined": "altrosa",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "hellgrun",
+    "dist": 112.2545525995153,
+    "determ_refined": "altrosa",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "dunkelblau",
+    "dist": 71.39521810978687,
+    "determ_refined": "altrosa",
+    "determ2_refined": "dunkelblau"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "violett",
+    "dist": 51.91838098599766,
+    "determ_refined": "altrosa",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "braun",
+    "dist": 43.39282691057084,
+    "determ_refined": "altrosa",
+    "determ2_refined": "braun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "rosa",
+    "dist": 31.284877158992895,
+    "determ_refined": "altrosa",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "dunkelgrun",
+    "dist": 72.86111530796111,
+    "determ_refined": "altrosa",
+    "determ2_refined": "dunkelgrun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "magenta",
+    "dist": 55.526668285679904,
+    "determ_refined": "altrosa",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "neongrun",
+    "dist": 127.21602905639816,
+    "determ_refined": "altrosa",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "himmelblau",
+    "dist": 59.945992552859,
+    "determ_refined": "altrosa",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "schwarz",
+    "dist": 56.32637894462385,
+    "determ_refined": "altrosa",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "ocker",
+    "dist": 71.63304080586947,
+    "determ_refined": "altrosa",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "grasgrun",
+    "dist": 102.71889334752744,
+    "determ_refined": "altrosa",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "beige",
+    "dist": 52.176806552816345,
+    "determ_refined": "altrosa",
+    "determ2_refined": "beige"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "gelbgrun",
+    "dist": 106.5824119962896,
+    "determ_refined": "altrosa",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "grau",
+    "dist": 34.369790332823335,
+    "determ_refined": "altrosa",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "konigsblau",
+    "dist": 85.8898736057354,
+    "determ_refined": "altrosa",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "flieder",
+    "dist": 30.426556846782297,
+    "determ_refined": "altrosa",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "giftgrun",
+    "dist": 130.4515419762002,
+    "determ_refined": "altrosa",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "hellbraun",
+    "dist": 46.13439928435368,
+    "determ_refined": "altrosa",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "dunkellila",
+    "dist": 46.453766136349245,
+    "determ_refined": "altrosa",
+    "determ2_refined": "dunkellila"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "dunkelrot",
+    "dist": 43.4696439944214,
+    "determ_refined": "altrosa",
+    "determ2_refined": "dunkelrot"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "rotbraun",
+    "dist": 37.69117466632462,
+    "determ_refined": "altrosa",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "dunkelbraun",
+    "dist": 46.373291718524584,
+    "determ_refined": "altrosa",
+    "determ2_refined": "dunkelbraun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "violet",
+    "dist": 68.47351256729038,
+    "determ_refined": "altrosa",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "olivgrun",
+    "dist": 75.03669186211965,
+    "determ_refined": "altrosa",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "petrol",
+    "dist": 55.450932143375105,
+    "determ_refined": "altrosa",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "blassgrun",
+    "dist": 85.89377378666913,
+    "determ_refined": "altrosa",
+    "determ2_refined": "blassgrun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "purpur",
+    "dist": 38.08535709706609,
+    "determ_refined": "altrosa",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "blaugrun",
+    "dist": 76.24759334526881,
+    "determ_refined": "altrosa",
+    "determ2_refined": "blaugrun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "graugrun",
+    "dist": 52.82721118816931,
+    "determ_refined": "altrosa",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "helllila",
+    "dist": 51.64186707106813,
+    "determ_refined": "altrosa",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "dunkelviolett",
+    "dist": 42.54984551739204,
+    "determ_refined": "altrosa",
+    "determ2_refined": "dunkelviolett"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "weinrot",
+    "dist": 31.80978085133557,
+    "determ_refined": "altrosa",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "waldgrun",
+    "dist": 71.5691583397556,
+    "determ_refined": "altrosa",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "blaugrau",
+    "dist": 38.55236147804881,
+    "determ_refined": "altrosa",
+    "determ2_refined": "blaugrau"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "lavendel",
+    "dist": 32.66010086782527,
+    "determ_refined": "altrosa",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "graublau",
+    "dist": 39.74739940343059,
+    "determ_refined": "altrosa",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "hautfarben",
+    "dist": 40.77439886214725,
+    "determ_refined": "altrosa",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "altrosa",
+    "determ2": "graubraun",
+    "dist": 34.61288359006152,
+    "determ_refined": "altrosa",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "grun",
+    "dist": 131.69587146902302,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "lila",
+    "dist": 52.64969712567171,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "orange",
+    "dist": 108.2387375848501,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "pink",
+    "dist": 60.60584237533275,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "rot",
+    "dist": 87.5752519587164,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "turkis",
+    "dist": 104.55875360209116,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "hellblau",
+    "dist": 75.21338533806882,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "gelb",
+    "dist": 137.0622850193644,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "hellgrun",
+    "dist": 137.34976040719184,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "violett",
+    "dist": 39.421508204592186,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "rosa",
+    "dist": 52.09134303900306,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "magenta",
+    "dist": 58.67246682980811,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "neongrun",
+    "dist": 151.63828801158476,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "himmelblau",
+    "dist": 63.76501158703102,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "schwarz",
+    "dist": 46.77014139328862,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "ocker",
+    "dist": 102.44900363911384,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "grasgrun",
+    "dist": 126.03814573464385,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "gelbgrun",
+    "dist": 135.68294709837707,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "grau",
+    "dist": 56.50119290416277,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "konigsblau",
+    "dist": 62.182972361760235,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "flieder",
+    "dist": 40.047122954615205,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "giftgrun",
+    "dist": 155.32137326804155,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "hellbraun",
+    "dist": 76.8273381596731,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "rotbraun",
+    "dist": 54.73461762571411,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "violet",
+    "dist": 50.64252627455452,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "olivgrun",
+    "dist": 97.89706128913149,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "petrol",
+    "dist": 62.69408088771987,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "purpur",
+    "dist": 36.020195453871835,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "graugrun",
+    "dist": 73.47105233329837,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "helllila",
+    "dist": 52.30136300676297,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "weinrot",
+    "dist": 42.37947968464283,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "waldgrun",
+    "dist": 84.96207416221853,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "lavendel",
+    "dist": 37.82670449358583,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "graublau",
+    "dist": 56.01214499936851,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "hautfarben",
+    "dist": 79.09014218330388,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "dunkelviolett",
+    "determ2": "graubraun",
+    "dist": 54.309737612894224,
+    "determ_refined": "dunkelviolett",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "waldgrun",
+    "determ2": "weinrot",
+    "dist": 82.22578861405202,
+    "determ_refined": "waldgrun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "grun",
+    "dist": 93.88395725715442,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "lila",
+    "dist": 79.96576302224587,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "orange",
+    "dist": 98.50181073066463,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "pink",
+    "dist": 85.79830468524823,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "rot",
+    "dist": 98.58852089295448,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "turkis",
+    "dist": 57.36635447478731,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "hellblau",
+    "dist": 33.23775249001817,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "gelb",
+    "dist": 108.67666086393277,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "gelb"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "hellgrun",
+    "dist": 98.73191494061273,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "dunkelblau",
+    "dist": 71.37151607587163,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "dunkelblau"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "violett",
+    "dist": 66.43914125744632,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "braun",
+    "dist": 56.60554225583244,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "braun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "rosa",
+    "dist": 62.63511224738434,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "dunkelgrun",
+    "dist": 56.7914631504018,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "dunkelgrun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "magenta",
+    "dist": 86.25679757775724,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "neongrun",
+    "dist": 113.29258488281538,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "himmelblau",
+    "dist": 33.223775115733616,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "schwarz",
+    "dist": 51.5811791634467,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "ocker",
+    "dist": 81.17421045550964,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "grasgrun",
+    "dist": 90.3237754191091,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "grasgrun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "gelbgrun",
+    "dist": 102.73840555282375,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "gelbgrun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "grau",
+    "dist": 20.518502818440666,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "grau"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "konigsblau",
+    "dist": 88.50288851168598,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "flieder",
+    "dist": 45.091806581438235,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "flieder"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "giftgrun",
+    "dist": 117.8455902805032,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "giftgrun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "hellbraun",
+    "dist": 58.40456245659002,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "dunkellila",
+    "dist": 56.59102917188419,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "dunkellila"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "dunkelrot",
+    "dist": 69.48849474895242,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "dunkelrot"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "rotbraun",
+    "dist": 64.02104481897412,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "dunkelbraun",
+    "dist": 53.76833548621614,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "dunkelbraun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "violet",
+    "dist": 80.81746748070431,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "olivgrun",
+    "dist": 68.62232463063117,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "petrol",
+    "dist": 26.848855881659556,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "purpur",
+    "dist": 66.15419288563922,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "blaugrun",
+    "dist": 49.73084323886073,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "blaugrun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "graugrun",
+    "dist": 36.0232540797845,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "helllila",
+    "dist": 60.82217564455745,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "dunkelviolett",
+    "dist": 51.57056465672025,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "dunkelviolett"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "weinrot",
+    "dist": 61.947793130083376,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "waldgrun",
+    "dist": 57.204839379590084,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "lavendel",
+    "dist": 40.33746861799952,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "graublau",
+    "dist": 12.675371735345259,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "graublau"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "hautfarben",
+    "dist": 48.88352012620303,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "blaugrau",
+    "determ2": "graubraun",
+    "dist": 33.56211285862107,
+    "determ_refined": "blaugrau",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "lila",
+    "dist": 44.244515674759874,
+    "determ_refined": "lavendel",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "orange",
+    "dist": 106.74821703357398,
+    "determ_refined": "lavendel",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "pink",
+    "dist": 54.736709636684346,
+    "determ_refined": "lavendel",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "rot",
+    "dist": 91.46298462094231,
+    "determ_refined": "lavendel",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "turkis",
+    "dist": 92.46560781341333,
+    "determ_refined": "lavendel",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "violett",
+    "dist": 32.99945008322623,
+    "determ_refined": "lavendel",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "rosa",
+    "dist": 37.88086764263217,
+    "determ_refined": "lavendel",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "magenta",
+    "dist": 54.490428126320076,
+    "determ_refined": "lavendel",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "neongrun",
+    "dist": 146.89908582851967,
+    "determ_refined": "lavendel",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "schwarz",
+    "dist": 68.17065151732746,
+    "determ_refined": "lavendel",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "ocker",
+    "dist": 99.85423376755394,
+    "determ_refined": "lavendel",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "rotbraun",
+    "dist": 64.72315011795902,
+    "determ_refined": "lavendel",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "violet",
+    "dist": 46.911901670644575,
+    "determ_refined": "lavendel",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "olivgrun",
+    "dist": 98.02753356498604,
+    "determ_refined": "lavendel",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "petrol",
+    "dist": 62.040174968217954,
+    "determ_refined": "lavendel",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "purpur",
+    "dist": 42.66112316295412,
+    "determ_refined": "lavendel",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "weinrot",
+    "dist": 50.69349594132151,
+    "determ_refined": "lavendel",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "lavendel",
+    "determ2": "waldgrun",
+    "dist": 89.92470200847609,
+    "determ_refined": "lavendel",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "grun",
+    "dist": 90.4525930950045,
+    "determ_refined": "graublau",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "lila",
+    "dist": 83.23539713917603,
+    "determ_refined": "graublau",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "orange",
+    "dist": 96.3810859679783,
+    "determ_refined": "graublau",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "pink",
+    "dist": 87.7498561769566,
+    "determ_refined": "graublau",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "rot",
+    "dist": 98.28533341705939,
+    "determ_refined": "graublau",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "turkis",
+    "dist": 53.65295206769535,
+    "determ_refined": "graublau",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "hellblau",
+    "dist": 32.05323862495221,
+    "determ_refined": "graublau",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "hellgrun",
+    "dist": 95.01223328821006,
+    "determ_refined": "graublau",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "violett",
+    "dist": 69.97027976502409,
+    "determ_refined": "graublau",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "rosa",
+    "dist": 63.5097714357399,
+    "determ_refined": "graublau",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "magenta",
+    "dist": 88.4096843759057,
+    "determ_refined": "graublau",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "neongrun",
+    "dist": 109.53385848256481,
+    "determ_refined": "graublau",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "himmelblau",
+    "dist": 32.28578489348448,
+    "determ_refined": "graublau",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "schwarz",
+    "dist": 53.45323071944423,
+    "determ_refined": "graublau",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "ocker",
+    "dist": 78.60651108859265,
+    "determ_refined": "graublau",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "konigsblau",
+    "dist": 92.43778584264498,
+    "determ_refined": "graublau",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "hellbraun",
+    "dist": 56.33998842826606,
+    "determ_refined": "graublau",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "rotbraun",
+    "dist": 64.58671459218253,
+    "determ_refined": "graublau",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "violet",
+    "dist": 84.69706067813381,
+    "determ_refined": "graublau",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "olivgrun",
+    "dist": 65.33687605235306,
+    "determ_refined": "graublau",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "petrol",
+    "dist": 25.924522525231595,
+    "determ_refined": "graublau",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "purpur",
+    "dist": 68.75051236943251,
+    "determ_refined": "graublau",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "graugrun",
+    "dist": 33.570685480388526,
+    "determ_refined": "graublau",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "helllila",
+    "dist": 61.65545938819491,
+    "determ_refined": "graublau",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "weinrot",
+    "dist": 63.2289853955604,
+    "determ_refined": "graublau",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "waldgrun",
+    "dist": 55.24596699392801,
+    "determ_refined": "graublau",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "lavendel",
+    "dist": 41.84215624356923,
+    "determ_refined": "graublau",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "hautfarben",
+    "dist": 46.13212318885373,
+    "determ_refined": "graublau",
+    "determ2_refined": "hautfarben"
+  },
+  {
+    "determ": "graublau",
+    "determ2": "graubraun",
+    "dist": 32.17259112324837,
+    "determ_refined": "graublau",
+    "determ2_refined": "graubraun"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "lila",
+    "dist": 99.11154391776641,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "orange",
+    "dist": 61.1180431693963,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "pink",
+    "dist": 82.89729464663576,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "rot",
+    "dist": 73.3929369946108,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "turkis",
+    "dist": 66.48961120442935,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "hellblau",
+    "dist": 63.874485776855984,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "hellgrun",
+    "dist": 83.37100379557195,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "violett",
+    "dist": 87.90749555548601,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "rosa",
+    "dist": 57.22107664358318,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "magenta",
+    "dist": 85.36060365185884,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "neongrun",
+    "dist": 97.73653190334029,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "himmelblau",
+    "dist": 68.84245993011953,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "schwarz",
+    "dist": 75.93154095979907,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "ocker",
+    "dist": 48.80491222222992,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "konigsblau",
+    "dist": 120.32335207686947,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "hellbraun",
+    "dist": 33.25671555302615,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "rotbraun",
+    "dist": 55.61031837785186,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "violet",
+    "dist": 104.8106159754689,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "olivgrun",
+    "dist": 55.72816592976264,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "petrol",
+    "dist": 58.904726868659225,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "purpur",
+    "dist": 73.82918351302007,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "helllila",
+    "dist": 78.43266097266287,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "weinrot",
+    "dist": 60.63275172697868,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "waldgrun",
+    "dist": 63.54882885325113,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "hautfarben",
+    "determ2": "lavendel",
+    "dist": 62.11140100497422,
+    "determ_refined": "hautfarben",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "grun",
+    "dist": 82.35762911770277,
+    "determ_refined": "graubraun",
+    "determ2_refined": "grun"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "lila",
+    "dist": 92.35140496352918,
+    "determ_refined": "graubraun",
+    "determ2_refined": "lila"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "orange",
+    "dist": 71.66740736696995,
+    "determ_refined": "graubraun",
+    "determ2_refined": "orange"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "pink",
+    "dist": 85.72965845578115,
+    "determ_refined": "graubraun",
+    "determ2_refined": "pink"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "rot",
+    "dist": 76.49174649674347,
+    "determ_refined": "graubraun",
+    "determ2_refined": "rot"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "turkis",
+    "dist": 66.13860240334499,
+    "determ_refined": "graubraun",
+    "determ2_refined": "turkis"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "hellblau",
+    "dist": 59.419308583298815,
+    "determ_refined": "graubraun",
+    "determ2_refined": "hellblau"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "hellgrun",
+    "dist": 87.58488665910004,
+    "determ_refined": "graubraun",
+    "determ2_refined": "hellgrun"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "violett",
+    "dist": 77.81380300868581,
+    "determ_refined": "graubraun",
+    "determ2_refined": "violett"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "rosa",
+    "dist": 61.915954814699205,
+    "determ_refined": "graubraun",
+    "determ2_refined": "rosa"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "magenta",
+    "dist": 86.44995660972394,
+    "determ_refined": "graubraun",
+    "determ2_refined": "magenta"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "neongrun",
+    "dist": 101.24592719346371,
+    "determ_refined": "graubraun",
+    "determ2_refined": "neongrun"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "himmelblau",
+    "dist": 61.10265252823737,
+    "determ_refined": "graubraun",
+    "determ2_refined": "himmelblau"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "schwarz",
+    "dist": 37.11853752659241,
+    "determ_refined": "graubraun",
+    "determ2_refined": "schwarz"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "ocker",
+    "dist": 55.435622246995464,
+    "determ_refined": "graubraun",
+    "determ2_refined": "ocker"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "konigsblau",
+    "dist": 107.10483140866266,
+    "determ_refined": "graubraun",
+    "determ2_refined": "konigsblau"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "hellbraun",
+    "dist": 32.54271346333097,
+    "determ_refined": "graubraun",
+    "determ2_refined": "hellbraun"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "rotbraun",
+    "dist": 40.51343936891529,
+    "determ_refined": "graubraun",
+    "determ2_refined": "rotbraun"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "violet",
+    "dist": 93.93764942593754,
+    "determ_refined": "graubraun",
+    "determ2_refined": "violet"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "olivgrun",
+    "dist": 46.882604712492466,
+    "determ_refined": "graubraun",
+    "determ2_refined": "olivgrun"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "petrol",
+    "dist": 34.10747571466798,
+    "determ_refined": "graubraun",
+    "determ2_refined": "petrol"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "purpur",
+    "dist": 62.83296902231962,
+    "determ_refined": "graubraun",
+    "determ2_refined": "purpur"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "graugrun",
+    "dist": 26.451954787804876,
+    "determ_refined": "graubraun",
+    "determ2_refined": "graugrun"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "helllila",
+    "dist": 76.10793612204803,
+    "determ_refined": "graubraun",
+    "determ2_refined": "helllila"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "weinrot",
+    "dist": 47.73864675556196,
+    "determ_refined": "graubraun",
+    "determ2_refined": "weinrot"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "waldgrun",
+    "dist": 40.676486668883605,
+    "determ_refined": "graubraun",
+    "determ2_refined": "waldgrun"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "lavendel",
+    "dist": 55.14840497006921,
+    "determ_refined": "graubraun",
+    "determ2_refined": "lavendel"
+  },
+  {
+    "determ": "graubraun",
+    "determ2": "hautfarben",
+    "dist": 41.10646580520614,
+    "determ_refined": "graubraun",
+    "determ2_refined": "hautfarben"
+  }
 ]

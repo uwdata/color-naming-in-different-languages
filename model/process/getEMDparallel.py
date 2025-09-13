@@ -1,11 +1,20 @@
 import json
+import os
 import sys, traceback
 from pyemd import emd
 import numpy as np
 import multiprocessing as mp
 import itertools
 
-
+print()
+print("************************")
+print()
+print("NOTE: This is very slow!")
+print()
+print("To recalculate all translations, ",
+      "delete all files in the translation_loss directory, ",
+      "then when this program runs, it will skip files already created")
+print()
 
 def job(lang1_lang2_terms):
 	returnval = {}
@@ -35,7 +44,16 @@ def job(lang1_lang2_terms):
 	return returnval
 
 def main():
-	languages = ["sv", "es", "ko", "en", "fa", "zh",  "pt", "fr",  "de"];
+	# get languages (based on what is in the temp directory)
+	fnames = os.listdir("temp")
+	languages = []
+	for fname in fnames:
+		if(fname.startswith("fullColorNames_")):
+			lang = fname.replace("fullColorNames_", "").replace(".json", "")
+			languages.append(lang)
+
+	print(languages)
+
 	ColorNames = {}
 
 	for lang in languages:
@@ -59,6 +77,11 @@ def main():
 				continue
 			#lang1 = sys.argv[1]
 			#lang2 = sys.argv[2]
+
+			if(os.path.isfile("../translation_loss/translation_loss_"+lang1+"_"+lang2+".json")):
+				print("Translation file: "+lang1+"_"+lang2+" already exists, skipping...")
+				continue
+
 			print("computing translations " + lang1 + "_" + lang2)
 
 			pairs = list(itertools.product(ColorNames[lang1], ColorNames[lang2]))

@@ -8,12 +8,17 @@ const trLossFiles = fs.readdirSync("../translation_loss");
 
 csv().fromFile(FILE_I)
   .then((colorNames)=>{
-    function findSimplifiedTerm(query){
-      return colorNames.find(d => d.commonName === query).simplifiedName;
+    function findSimplifiedTerm(query, lang_abv){
+      const matchColor = colorNames.find(d => d.simplifiedName  === query && d.lang_abv == lang_abv)
+      return matchColor.simplifiedName;
     }
 
     trLossFiles.forEach(f => {
       trLosses = JSON.parse(fs.readFileSync("../translation_loss/"+f));
+      let langAbvs = f.replace(".json","")
+        .split("_")
+        .slice(2,4)
+
       let langs = f.replace(".json","")
         .split("_")
         .slice(2,4)
@@ -24,8 +29,8 @@ csv().fromFile(FILE_I)
 
       trLosses = trLosses.filter(l => l.dist);
       trLosses.forEach(l => {
-        l[langs[0]+"_refined"] = findSimplifiedTerm(l[langs[0]]);
-        l[langs[1]+"_refined"] = findSimplifiedTerm(l[langs[1]]);
+        l[langs[0]+"_refined"] = findSimplifiedTerm(l[langs[0]], langAbvs[0]);
+        l[langs[1]+"_refined"] = findSimplifiedTerm(l[langs[1]], langAbvs[1]);
       });
       fs.writeFileSync("../translation_loss/"+f, JSON.stringify(trLosses, null, 2));
     });
