@@ -25,9 +25,15 @@ csv().fromFile(FILE_I)
     cn.lab_a = lab.a;
     cn.lab_b = lab.b;
 
-	enteredColorNameLookup[cn.colorNameId] = cn.name;
+	  enteredColorNameLookup[cn.colorNameId] = cn.name;
 
   });
+
+  // standardize entered name (e.g., trim, lowcase)
+  colorNames.forEach(cn => {
+    cn.name = refine.standardize_entered(cn)
+    cn.standardized_entered_name = cn.name
+  })
   
   var colorNames = colorNames.filter(cn => {
     cn.name = cn.name.toString().trim().toLowerCase();
@@ -35,7 +41,7 @@ csv().fromFile(FILE_I)
   });
 
   colorNames.forEach(cn => {
-    refine(cn)
+    refine.refine(cn)
   })
 
   let cleanedData = colorNames.filter(cn => {

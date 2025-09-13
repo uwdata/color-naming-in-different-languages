@@ -42,7 +42,22 @@ var arNameReplacingRules = [[/احمر/, "أحمر"], [/اخضر/, "أخضر"], 
 
 var elNameReplacingRules = [[/μοβ/,"μωβ"]];
 
-module.exports = function refine(cn){
+function standardize_entered(cn){
+  let name = cn.name.replace(/\s*-\s*/, " ")
+  name = name.toString().trim().toLowerCase()
+
+  if (cn.lang0.indexOf("Korean") >= 0) {
+      name = name.trim()
+        .replace(/색$/,"")
+  } else if (cn.lang0.indexOf("Chinese") >= 0) {
+    name = name.trim()
+        .replace(/色$/,"")
+  }
+
+  return name
+}
+
+function refine(cn){
     if (cn.lang0.indexOf("Korean") >= 0) {
       cn.name = cn.name.trim()
         .replace(/색$/,"")
@@ -179,3 +194,8 @@ function replaceByArray(string, array){
   });
   return string;
 }
+
+module.exports = {
+  "refine": refine,
+  "standardize_entered": standardize_entered
+};

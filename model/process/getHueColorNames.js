@@ -61,7 +61,7 @@ csv()
 
       //find most common name for term
       let commonName = d3.nest()
-                .key(t => t.entered_name)
+                .key(t => t.standardized_entered_name)
                 .entries(term.values)
                 .sort((a,b) => -a.values.length + b.values.length)[0].key;
       mapped.commonNames.push(commonName)
