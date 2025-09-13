@@ -35,7 +35,7 @@ csv().fromFile(FILE_I)
         term.numFullNames = term.values.filter(entry => entry.rgbSet == FULL_RGB_SET).length
         term.simplifiedName = term.key;
         term.commonName = d3.nest()
-          .key(t => t.entered_name)
+          .key(t => t.standardized_entered_name)
           .entries(term.values)
           .sort((a,b) => -a.values.length + b.values.length)[0].key;
       })
