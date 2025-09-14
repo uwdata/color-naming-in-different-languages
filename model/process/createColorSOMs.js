@@ -118,12 +118,8 @@ function createSOMs(colorInfo, namingData){
  
 function createSOM(colorName, LABdata, size){
 
-
 	
-
-	
-	
-	let minNeighborhoodSize = 1.5;
+	let minNeighborhoodSize = size * .75; // 1.5 for size 2, 3 for size 4
 	let numExcluded;
 	
 	let bestRatio = 1;
@@ -380,7 +376,7 @@ function testDist(neurons1, neurons2){
 }
 
 function orientNeurons(neurons, rotateTimes, flip){
-	newNeurons = neurons;
+	let newNeurons = neurons;
 	for(i = 0; i < rotateTimes; i++){
 		newNeurons = rotateNeurons(newNeurons);
 	}
