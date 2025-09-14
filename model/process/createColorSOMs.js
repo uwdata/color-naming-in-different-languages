@@ -45,7 +45,11 @@ function createSOMs(colorInfo, namingData){
 			colorNames[langAbv] = [];
 		}
 		colorNames[langAbv].push(color.simplifiedName);
-		commonColorNameLookup[color.simplifiedName] = color.commonName;
+
+		if(!commonColorNameLookup[langAbv]){
+			commonColorNameLookup[langAbv] = [];
+		}
+		commonColorNameLookup[langAbv][color.simplifiedName] = color.commonName;
 	});
 	
 	//en, fa, ko, zh
@@ -85,7 +89,7 @@ function createSOMs(colorInfo, namingData){
 			let thisColorInfo = {};
 			console.log("color:", colorName);
 			
-			thisColorInfo["commonColorName"] = commonColorNameLookup[colorName];
+			thisColorInfo["commonColorName"] = commonColorNameLookup[lang][colorName];
 			thisColorInfo["numRecords"] = thisColorData.length;
 			
 			thisColorInfo["colorNodes4"] = createSOM(colorName, LABdata, 2);
