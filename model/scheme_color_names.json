@@ -587,7 +587,7 @@
     "pTC": 0.024539877300613498,
     "binNum": 3,
     "rgb": "rgb(53, 95, 141)",
-    "pCT": 0.06779661016949153
+    "pCT": 0.0625
   },
   {
     "scheme": "viridis",
@@ -983,11 +983,11 @@
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "turquoise",
-    "cnt": 14,
-    "pTC": 0.06666666666666667,
+    "cnt": 15,
+    "pTC": 0.07142857142857142,
     "binNum": 4,
     "rgb": "rgb(42, 120, 142)",
-    "pCT": 0.23728813559322035
+    "pCT": 0.234375
   },
   {
     "scheme": "viridis",
@@ -1312,16 +1312,6 @@
   {
     "scheme": "viridis",
     "lang": "English (English)",
-    "term": "torquoise",
-    "cnt": 1,
-    "pTC": 0.004761904761904762,
-    "binNum": 4,
-    "rgb": "rgb(42, 120, 142)",
-    "pCT": 1
-  },
-  {
-    "scheme": "viridis",
-    "lang": "English (English)",
     "term": "idk",
     "cnt": 1,
     "pTC": 0.004761904761904762,
@@ -1373,11 +1363,11 @@
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "turquoise",
-    "cnt": 22,
-    "pTC": 0.14666666666666667,
+    "cnt": 24,
+    "pTC": 0.16,
     "binNum": 5,
     "rgb": "rgb(33, 145, 140)",
-    "pCT": 0.3728813559322034
+    "pCT": 0.375
   },
   {
     "scheme": "viridis",
@@ -1602,16 +1592,6 @@
   {
     "scheme": "viridis",
     "lang": "English (English)",
-    "term": "turquiose",
-    "cnt": 1,
-    "pTC": 0.006666666666666667,
-    "binNum": 5,
-    "rgb": "rgb(33, 145, 140)",
-    "pCT": 1
-  },
-  {
-    "scheme": "viridis",
-    "lang": "English (English)",
     "term": "darkcyan",
     "cnt": 1,
     "pTC": 0.006666666666666667,
@@ -1648,16 +1628,6 @@
     "binNum": 5,
     "rgb": "rgb(33, 145, 140)",
     "pCT": 0.2
-  },
-  {
-    "scheme": "viridis",
-    "lang": "English (English)",
-    "term": "turquise",
-    "cnt": 1,
-    "pTC": 0.006666666666666667,
-    "binNum": 5,
-    "rgb": "rgb(33, 145, 140)",
-    "pCT": 0.5
   },
   {
     "scheme": "viridis",
@@ -1713,11 +1683,11 @@
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "turquoise",
-    "cnt": 16,
-    "pTC": 0.06866952789699571,
+    "cnt": 17,
+    "pTC": 0.07296137339055794,
     "binNum": 6,
     "rgb": "rgb(34, 168, 132)",
-    "pCT": 0.2711864406779661
+    "pCT": 0.265625
   },
   {
     "scheme": "viridis",
@@ -2042,16 +2012,6 @@
   {
     "scheme": "viridis",
     "lang": "English (English)",
-    "term": "turquise",
-    "cnt": 1,
-    "pTC": 0.004291845493562232,
-    "binNum": 6,
-    "rgb": "rgb(34, 168, 132)",
-    "pCT": 0.5
-  },
-  {
-    "scheme": "viridis",
-    "lang": "English (English)",
     "term": "coolgreen",
     "cnt": 1,
     "pTC": 0.004291845493562232,
@@ -2103,11 +2063,11 @@
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "turquoise",
-    "cnt": 2,
-    "pTC": 0.012987012987012988,
+    "cnt": 3,
+    "pTC": 0.01948051948051948,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
-    "pCT": 0.03389830508474576
+    "pCT": 0.046875
   },
   {
     "scheme": "viridis",
@@ -2342,16 +2302,6 @@
   {
     "scheme": "viridis",
     "lang": "English (English)",
-    "term": "turqouise",
-    "cnt": 1,
-    "pTC": 0.006493506493506494,
-    "binNum": 7,
-    "rgb": "rgb(68, 191, 112)",
-    "pCT": 1
-  },
-  {
-    "scheme": "viridis",
-    "lang": "English (English)",
     "term": "softgreen",
     "cnt": 1,
     "pTC": 0.006493506493506494,
@@ -2447,7 +2397,7 @@
     "pTC": 0.00819672131147541,
     "binNum": 8,
     "rgb": "rgb(122, 209, 81)",
-    "pCT": 0.01694915254237288
+    "pCT": 0.015625
   },
   {
     "scheme": "viridis",
@@ -2667,7 +2617,7 @@
     "pTC": 0.13013698630136986,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
-    "pCT": 0.02679830747531735
+    "pCT": 0.026499302649930265
   },
   {
     "scheme": "viridis",
@@ -2983,11 +2933,11 @@
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "yellow",
-    "cnt": 690,
-    "pTC": 0.7718120805369127,
+    "cnt": 698,
+    "pTC": 0.7807606263982103,
     "binNum": 10,
     "rgb": "rgb(253, 231, 37)",
-    "pCT": 0.9732016925246827
+    "pCT": 0.9735006973500697
   },
   {
     "scheme": "viridis",
@@ -3202,16 +3152,6 @@
   {
     "scheme": "viridis",
     "lang": "English (English)",
-    "term": "yello",
-    "cnt": 8,
-    "pTC": 0.008948545861297539,
-    "binNum": 10,
-    "rgb": "rgb(253, 231, 37)",
-    "pCT": 1
-  },
-  {
-    "scheme": "viridis",
-    "lang": "English (English)",
     "term": "swampgreen",
     "cnt": 1,
     "pTC": 0.0011185682326621924,
@@ -3302,7 +3242,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 1,
     "pTC": 0.5,
     "binNum": 0,
@@ -3312,7 +3252,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진보라",
+    "term": "진보라색",
     "cnt": 1,
     "pTC": 0.5,
     "binNum": 0,
@@ -3322,7 +3262,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "남",
+    "term": "남색",
     "cnt": 4,
     "pTC": 0.36363636363636365,
     "binNum": 1,
@@ -3332,7 +3272,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "군청",
+    "term": "군청색",
     "cnt": 3,
     "pTC": 0.2727272727272727,
     "binNum": 1,
@@ -3342,7 +3282,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "남보라",
+    "term": "남보라색",
     "cnt": 3,
     "pTC": 0.2727272727272727,
     "binNum": 1,
@@ -3352,7 +3292,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "네이비",
+    "term": "네이비색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 1,
@@ -3362,7 +3302,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "파랑",
+    "term": "파랑색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 2,
@@ -3372,7 +3312,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "남",
+    "term": "남색",
     "cnt": 5,
     "pTC": 0.625,
     "binNum": 2,
@@ -3382,7 +3322,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "군청",
+    "term": "군청색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 2,
@@ -3392,7 +3332,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "네이비",
+    "term": "네이비색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 2,
@@ -3402,7 +3342,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청록",
+    "term": "청록색",
     "cnt": 3,
     "pTC": 0.2727272727272727,
     "binNum": 3,
@@ -3412,7 +3352,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "파란",
+    "term": "파란색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 3,
@@ -3422,7 +3362,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "남",
+    "term": "남색",
     "cnt": 2,
     "pTC": 0.18181818181818182,
     "binNum": 3,
@@ -3432,7 +3372,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "군청",
+    "term": "군청색",
     "cnt": 2,
     "pTC": 0.18181818181818182,
     "binNum": 3,
@@ -3442,7 +3382,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청",
+    "term": "청색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 3,
@@ -3452,7 +3392,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "짙은파랑",
+    "term": "짙은파랑색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 3,
@@ -3462,7 +3402,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "곤",
+    "term": "곤색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 3,
@@ -3472,7 +3412,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청록",
+    "term": "청록색",
     "cnt": 9,
     "pTC": 0.5625,
     "binNum": 4,
@@ -3482,7 +3422,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "옥",
+    "term": "옥색",
     "cnt": 1,
     "pTC": 0.0625,
     "binNum": 4,
@@ -3492,7 +3432,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진녹",
+    "term": "진녹색",
     "cnt": 1,
     "pTC": 0.0625,
     "binNum": 4,
@@ -3502,7 +3442,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "짙은하늘",
+    "term": "짙은하늘색",
     "cnt": 1,
     "pTC": 0.0625,
     "binNum": 4,
@@ -3512,7 +3452,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청녹",
+    "term": "청녹색",
     "cnt": 1,
     "pTC": 0.0625,
     "binNum": 4,
@@ -3522,7 +3462,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진청",
+    "term": "진청색",
     "cnt": 1,
     "pTC": 0.0625,
     "binNum": 4,
@@ -3532,7 +3472,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청회",
+    "term": "청회색",
     "cnt": 1,
     "pTC": 0.0625,
     "binNum": 4,
@@ -3542,7 +3482,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "네이비",
+    "term": "네이비색",
     "cnt": 1,
     "pTC": 0.0625,
     "binNum": 4,
@@ -3552,7 +3492,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "초록",
+    "term": "초록색",
     "cnt": 1,
     "pTC": 0.1,
     "binNum": 5,
@@ -3562,7 +3502,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청록",
+    "term": "청록색",
     "cnt": 6,
     "pTC": 0.6,
     "binNum": 5,
@@ -3572,7 +3512,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청",
+    "term": "청색",
     "cnt": 1,
     "pTC": 0.1,
     "binNum": 5,
@@ -3582,7 +3522,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "짙은하늘",
+    "term": "짙은하늘색",
     "cnt": 1,
     "pTC": 0.1,
     "binNum": 5,
@@ -3592,7 +3532,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청녹",
+    "term": "청녹색",
     "cnt": 1,
     "pTC": 0.1,
     "binNum": 5,
@@ -3602,7 +3542,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "연두",
+    "term": "연두색",
     "cnt": 1,
     "pTC": 0.045454545454545456,
     "binNum": 6,
@@ -3612,7 +3552,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "초록",
+    "term": "초록색",
     "cnt": 6,
     "pTC": 0.2727272727272727,
     "binNum": 6,
@@ -3622,7 +3562,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청록",
+    "term": "청록색",
     "cnt": 7,
     "pTC": 0.3181818181818182,
     "binNum": 6,
@@ -3632,7 +3572,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "녹",
+    "term": "녹색",
     "cnt": 1,
     "pTC": 0.045454545454545456,
     "binNum": 6,
@@ -3642,7 +3582,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "에메랄드",
+    "term": "에메랄드색",
     "cnt": 2,
     "pTC": 0.09090909090909091,
     "binNum": 6,
@@ -3652,7 +3592,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "옥",
+    "term": "옥색",
     "cnt": 1,
     "pTC": 0.045454545454545456,
     "binNum": 6,
@@ -3662,7 +3602,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진녹",
+    "term": "진녹색",
     "cnt": 1,
     "pTC": 0.045454545454545456,
     "binNum": 6,
@@ -3672,7 +3612,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청녹",
+    "term": "청녹색",
     "cnt": 1,
     "pTC": 0.045454545454545456,
     "binNum": 6,
@@ -3682,7 +3622,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "밝은초록",
+    "term": "밝은초록색",
     "cnt": 1,
     "pTC": 0.045454545454545456,
     "binNum": 6,
@@ -3692,7 +3632,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "연청록",
+    "term": "연청록색",
     "cnt": 1,
     "pTC": 0.045454545454545456,
     "binNum": 6,
@@ -3702,7 +3642,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "연두",
+    "term": "연두색",
     "cnt": 2,
     "pTC": 0.16666666666666666,
     "binNum": 7,
@@ -3712,7 +3652,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "초록",
+    "term": "초록색",
     "cnt": 3,
     "pTC": 0.25,
     "binNum": 7,
@@ -3722,7 +3662,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청록",
+    "term": "청록색",
     "cnt": 2,
     "pTC": 0.16666666666666666,
     "binNum": 7,
@@ -3732,7 +3672,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "녹",
+    "term": "녹색",
     "cnt": 1,
     "pTC": 0.08333333333333333,
     "binNum": 7,
@@ -3742,7 +3682,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "풀",
+    "term": "풀색",
     "cnt": 1,
     "pTC": 0.08333333333333333,
     "binNum": 7,
@@ -3752,7 +3692,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "옥",
+    "term": "옥색",
     "cnt": 1,
     "pTC": 0.08333333333333333,
     "binNum": 7,
@@ -3762,7 +3702,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "연초록",
+    "term": "연초록색",
     "cnt": 1,
     "pTC": 0.08333333333333333,
     "binNum": 7,
@@ -3772,7 +3712,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진한연두",
+    "term": "진한연두색",
     "cnt": 1,
     "pTC": 0.08333333333333333,
     "binNum": 7,
@@ -3782,7 +3722,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "연두",
+    "term": "연두색",
     "cnt": 8,
     "pTC": 0.6666666666666666,
     "binNum": 8,
@@ -3792,7 +3732,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "초록",
+    "term": "초록색",
     "cnt": 2,
     "pTC": 0.16666666666666666,
     "binNum": 8,
@@ -3802,7 +3742,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "연녹",
+    "term": "연녹색",
     "cnt": 1,
     "pTC": 0.08333333333333333,
     "binNum": 8,
@@ -3812,7 +3752,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "형광녹",
+    "term": "형광녹색",
     "cnt": 1,
     "pTC": 0.08333333333333333,
     "binNum": 8,
@@ -3822,7 +3762,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "연두",
+    "term": "연두색",
     "cnt": 6,
     "pTC": 0.42857142857142855,
     "binNum": 9,
@@ -3832,7 +3772,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "풀",
+    "term": "풀색",
     "cnt": 2,
     "pTC": 0.14285714285714285,
     "binNum": 9,
@@ -3842,7 +3782,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "노란",
+    "term": "노란색",
     "cnt": 1,
     "pTC": 0.07142857142857142,
     "binNum": 9,
@@ -3852,7 +3792,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "연녹",
+    "term": "연녹색",
     "cnt": 1,
     "pTC": 0.07142857142857142,
     "binNum": 9,
@@ -3862,7 +3802,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "올리브",
+    "term": "올리브색",
     "cnt": 2,
     "pTC": 0.14285714285714285,
     "binNum": 9,
@@ -3872,7 +3812,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "연초록",
+    "term": "연초록색",
     "cnt": 1,
     "pTC": 0.07142857142857142,
     "binNum": 9,
@@ -3882,7 +3822,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "밝은연두",
+    "term": "밝은연두색",
     "cnt": 1,
     "pTC": 0.07142857142857142,
     "binNum": 9,
@@ -3892,7 +3832,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "주황",
+    "term": "주황색",
     "cnt": 1,
     "pTC": 0.02040816326530612,
     "binNum": 10,
@@ -3902,7 +3842,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "황토",
+    "term": "황토색",
     "cnt": 1,
     "pTC": 0.02040816326530612,
     "binNum": 10,
@@ -3912,7 +3852,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "노랑",
+    "term": "노랑색",
     "cnt": 29,
     "pTC": 0.5918367346938775,
     "binNum": 10,
@@ -3922,7 +3862,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "노란",
+    "term": "노란색",
     "cnt": 14,
     "pTC": 0.2857142857142857,
     "binNum": 10,
@@ -3932,7 +3872,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "개나리",
+    "term": "개나리색",
     "cnt": 3,
     "pTC": 0.061224489795918366,
     "binNum": 10,
@@ -3942,7 +3882,7 @@
   {
     "scheme": "viridis",
     "lang": "Korean (한국어, 조선어)",
-    "term": "황록",
+    "term": "황록색",
     "cnt": 1,
     "pTC": 0.02040816326530612,
     "binNum": 10,
@@ -4027,7 +3967,7 @@
     "pTC": 0.04411764705882353,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
-    "pCT": 0.02564102564102564
+    "pCT": 0.02553191489361702
   },
   {
     "scheme": "magma",
@@ -4247,7 +4187,7 @@
     "pTC": 0.23163841807909605,
     "binNum": 2,
     "rgb": "rgb(59, 15, 112)",
-    "pCT": 0.1752136752136752
+    "pCT": 0.17446808510638298
   },
   {
     "scheme": "magma",
@@ -4484,17 +4424,17 @@
     "lang": "English (English)",
     "term": "purple",
     "cnt": 103,
-    "pTC": 0.5659340659340659,
+    "pTC": 0.569060773480663,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
-    "pCT": 0.44017094017094016
+    "pCT": 0.43829787234042555
   },
   {
     "scheme": "magma",
     "lang": "English (English)",
     "term": "violet",
     "cnt": 17,
-    "pTC": 0.09340659340659341,
+    "pTC": 0.09392265193370165,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.4722222222222222
@@ -4504,7 +4444,7 @@
     "lang": "English (English)",
     "term": "maroon",
     "cnt": 1,
-    "pTC": 0.005494505494505495,
+    "pTC": 0.0055248618784530384,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.058823529411764705
@@ -4514,7 +4454,7 @@
     "lang": "English (English)",
     "term": "darkpurple",
     "cnt": 21,
-    "pTC": 0.11538461538461539,
+    "pTC": 0.11602209944751381,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.3888888888888889
@@ -4524,7 +4464,7 @@
     "lang": "English (English)",
     "term": "indigo",
     "cnt": 2,
-    "pTC": 0.01098901098901099,
+    "pTC": 0.011049723756906077,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.08695652173913043
@@ -4534,7 +4474,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 6,
-    "pTC": 0.03296703296703297,
+    "pTC": 0.03314917127071823,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.375
@@ -4544,7 +4484,7 @@
     "lang": "English (English)",
     "term": "royalpurple",
     "cnt": 6,
-    "pTC": 0.03296703296703297,
+    "pTC": 0.03314917127071823,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.35294117647058826
@@ -4554,7 +4494,7 @@
     "lang": "English (English)",
     "term": "neonpurple",
     "cnt": 1,
-    "pTC": 0.005494505494505495,
+    "pTC": 0.0055248618784530384,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 1
@@ -4564,7 +4504,7 @@
     "lang": "English (English)",
     "term": "eggplant",
     "cnt": 5,
-    "pTC": 0.027472527472527472,
+    "pTC": 0.027624309392265192,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.7142857142857143
@@ -4574,7 +4514,7 @@
     "lang": "English (English)",
     "term": "lavendar",
     "cnt": 1,
-    "pTC": 0.005494505494505495,
+    "pTC": 0.0055248618784530384,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 1
@@ -4584,7 +4524,7 @@
     "lang": "English (English)",
     "term": "deeppurple",
     "cnt": 3,
-    "pTC": 0.016483516483516484,
+    "pTC": 0.016574585635359115,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.42857142857142855
@@ -4594,7 +4534,7 @@
     "lang": "English (English)",
     "term": "darkmagenta",
     "cnt": 1,
-    "pTC": 0.005494505494505495,
+    "pTC": 0.0055248618784530384,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.09090909090909091
@@ -4604,7 +4544,7 @@
     "lang": "English (English)",
     "term": "grape",
     "cnt": 1,
-    "pTC": 0.005494505494505495,
+    "pTC": 0.0055248618784530384,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.2
@@ -4612,19 +4552,9 @@
   {
     "scheme": "magma",
     "lang": "English (English)",
-    "term": "a",
-    "cnt": 1,
-    "pTC": 0.005494505494505495,
-    "binNum": 3,
-    "rgb": "rgb(100, 26, 128)",
-    "pCT": 1
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
     "term": "redpurple",
     "cnt": 3,
-    "pTC": 0.016483516483516484,
+    "pTC": 0.016574585635359115,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.3333333333333333
@@ -4634,7 +4564,7 @@
     "lang": "English (English)",
     "term": "aubergine",
     "cnt": 2,
-    "pTC": 0.01098901098901099,
+    "pTC": 0.011049723756906077,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 1
@@ -4644,7 +4574,7 @@
     "lang": "English (English)",
     "term": "midnightpurple",
     "cnt": 1,
-    "pTC": 0.005494505494505495,
+    "pTC": 0.0055248618784530384,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.3333333333333333
@@ -4654,7 +4584,7 @@
     "lang": "English (English)",
     "term": "eggplantpurple",
     "cnt": 2,
-    "pTC": 0.01098901098901099,
+    "pTC": 0.011049723756906077,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.6666666666666666
@@ -4664,7 +4594,7 @@
     "lang": "English (English)",
     "term": "purplered",
     "cnt": 1,
-    "pTC": 0.005494505494505495,
+    "pTC": 0.0055248618784530384,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 1
@@ -4674,7 +4604,7 @@
     "lang": "English (English)",
     "term": "brightviolet",
     "cnt": 1,
-    "pTC": 0.005494505494505495,
+    "pTC": 0.0055248618784530384,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 1
@@ -4684,7 +4614,7 @@
     "lang": "English (English)",
     "term": "darkindigo",
     "cnt": 1,
-    "pTC": 0.005494505494505495,
+    "pTC": 0.0055248618784530384,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.5
@@ -4694,7 +4624,7 @@
     "lang": "English (English)",
     "term": "verydarkpurple",
     "cnt": 1,
-    "pTC": 0.005494505494505495,
+    "pTC": 0.0055248618784530384,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.5
@@ -4704,7 +4634,7 @@
     "lang": "English (English)",
     "term": "darkplum",
     "cnt": 1,
-    "pTC": 0.005494505494505495,
+    "pTC": 0.0055248618784530384,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 1
@@ -4713,11 +4643,11 @@
     "scheme": "magma",
     "lang": "English (English)",
     "term": "purple",
-    "cnt": 66,
-    "pTC": 0.55,
+    "cnt": 67,
+    "pTC": 0.5583333333333333,
     "binNum": 4,
     "rgb": "rgb(140, 41, 129)",
-    "pCT": 0.28205128205128205
+    "pCT": 0.2851063829787234
   },
   {
     "scheme": "magma",
@@ -4743,21 +4673,11 @@
     "scheme": "magma",
     "lang": "English (English)",
     "term": "fuchsia",
-    "cnt": 3,
-    "pTC": 0.025,
+    "cnt": 4,
+    "pTC": 0.03333333333333333,
     "binNum": 4,
     "rgb": "rgb(140, 41, 129)",
-    "pCT": 0.17647058823529413
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
-    "term": "lavender",
-    "cnt": 1,
-    "pTC": 0.008333333333333333,
-    "binNum": 4,
-    "rgb": "rgb(140, 41, 129)",
-    "pCT": 0.5
+    "pCT": 0.2
   },
   {
     "scheme": "magma",
@@ -4768,6 +4688,16 @@
     "binNum": 4,
     "rgb": "rgb(140, 41, 129)",
     "pCT": 0.11764705882352941
+  },
+  {
+    "scheme": "magma",
+    "lang": "English (English)",
+    "term": "lavender",
+    "cnt": 1,
+    "pTC": 0.008333333333333333,
+    "binNum": 4,
+    "rgb": "rgb(140, 41, 129)",
+    "pCT": 0.5
   },
   {
     "scheme": "magma",
@@ -4828,16 +4758,6 @@
     "binNum": 4,
     "rgb": "rgb(140, 41, 129)",
     "pCT": 0.2
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
-    "term": "fushia",
-    "cnt": 1,
-    "pTC": 0.008333333333333333,
-    "binNum": 4,
-    "rgb": "rgb(140, 41, 129)",
-    "pCT": 0.5
   },
   {
     "scheme": "magma",
@@ -4942,22 +4862,12 @@
   {
     "scheme": "magma",
     "lang": "English (English)",
-    "term": "pruple",
-    "cnt": 1,
-    "pTC": 0.008333333333333333,
-    "binNum": 4,
-    "rgb": "rgb(140, 41, 129)",
-    "pCT": 1
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
     "term": "purple",
     "cnt": 18,
     "pTC": 0.08530805687203792,
     "binNum": 5,
     "rgb": "rgb(183, 55, 121)",
-    "pCT": 0.07692307692307693
+    "pCT": 0.07659574468085106
   },
   {
     "scheme": "magma",
@@ -5003,11 +4913,11 @@
     "scheme": "magma",
     "lang": "English (English)",
     "term": "fuchsia",
-    "cnt": 13,
-    "pTC": 0.061611374407582936,
+    "cnt": 14,
+    "pTC": 0.06635071090047394,
     "binNum": 5,
     "rgb": "rgb(183, 55, 121)",
-    "pCT": 0.7647058823529411
+    "pCT": 0.7
   },
   {
     "scheme": "magma",
@@ -5022,22 +4932,22 @@
   {
     "scheme": "magma",
     "lang": "English (English)",
-    "term": "lavender",
-    "cnt": 1,
-    "pTC": 0.004739336492890996,
-    "binNum": 5,
-    "rgb": "rgb(183, 55, 121)",
-    "pCT": 0.5
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
     "term": "maroon",
     "cnt": 12,
     "pTC": 0.05687203791469194,
     "binNum": 5,
     "rgb": "rgb(183, 55, 121)",
     "pCT": 0.7058823529411765
+  },
+  {
+    "scheme": "magma",
+    "lang": "English (English)",
+    "term": "lavender",
+    "cnt": 1,
+    "pTC": 0.004739336492890996,
+    "binNum": 5,
+    "rgb": "rgb(183, 55, 121)",
+    "pCT": 0.5
   },
   {
     "scheme": "magma",
@@ -5128,16 +5038,6 @@
     "binNum": 5,
     "rgb": "rgb(183, 55, 121)",
     "pCT": 0.2
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
-    "term": "fushia",
-    "cnt": 1,
-    "pTC": 0.004739336492890996,
-    "binNum": 5,
-    "rgb": "rgb(183, 55, 121)",
-    "pCT": 0.5
   },
   {
     "scheme": "magma",
@@ -5282,22 +5182,22 @@
   {
     "scheme": "magma",
     "lang": "English (English)",
-    "term": "redishpink",
-    "cnt": 1,
-    "pTC": 0.004739336492890996,
-    "binNum": 5,
-    "rgb": "rgb(183, 55, 121)",
-    "pCT": 0.5
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
     "term": "darkfuchsia",
     "cnt": 1,
     "pTC": 0.004739336492890996,
     "binNum": 5,
     "rgb": "rgb(183, 55, 121)",
     "pCT": 1
+  },
+  {
+    "scheme": "magma",
+    "lang": "English (English)",
+    "term": "redishpink",
+    "cnt": 1,
+    "pTC": 0.004739336492890996,
+    "binNum": 5,
+    "rgb": "rgb(183, 55, 121)",
+    "pCT": 0.5
   },
   {
     "scheme": "magma",
@@ -5352,22 +5252,22 @@
   {
     "scheme": "magma",
     "lang": "English (English)",
+    "term": "fuchsia",
+    "cnt": 2,
+    "pTC": 0.017699115044247787,
+    "binNum": 6,
+    "rgb": "rgb(222, 73, 104)",
+    "pCT": 0.1
+  },
+  {
+    "scheme": "magma",
+    "lang": "English (English)",
     "term": "hotpink",
     "cnt": 7,
     "pTC": 0.061946902654867256,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
-    "term": "fuchsia",
-    "cnt": 1,
-    "pTC": 0.008849557522123894,
-    "binNum": 6,
-    "rgb": "rgb(222, 73, 104)",
-    "pCT": 0.058823529411764705
   },
   {
     "scheme": "magma",
@@ -5525,16 +5425,6 @@
     "term": "pinkred",
     "cnt": 6,
     "pTC": 0.05309734513274336,
-    "binNum": 6,
-    "rgb": "rgb(222, 73, 104)",
-    "pCT": 1
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
-    "term": "fusia",
-    "cnt": 1,
-    "pTC": 0.008849557522123894,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6332,7 +6222,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "검정",
+    "term": "검정색",
     "cnt": 6,
     "pTC": 0.6,
     "binNum": 0,
@@ -6342,7 +6232,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "검은",
+    "term": "검은색",
     "cnt": 3,
     "pTC": 0.3,
     "binNum": 0,
@@ -6352,7 +6242,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진초록",
+    "term": "진초록색",
     "cnt": 1,
     "pTC": 0.1,
     "binNum": 0,
@@ -6362,7 +6252,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "남",
+    "term": "남색",
     "cnt": 6,
     "pTC": 0.35294117647058826,
     "binNum": 1,
@@ -6372,7 +6262,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "검정",
+    "term": "검정색",
     "cnt": 3,
     "pTC": 0.17647058823529413,
     "binNum": 1,
@@ -6382,7 +6272,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "군청",
+    "term": "군청색",
     "cnt": 2,
     "pTC": 0.11764705882352941,
     "binNum": 1,
@@ -6392,7 +6282,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "검은",
+    "term": "검은색",
     "cnt": 3,
     "pTC": 0.17647058823529413,
     "binNum": 1,
@@ -6402,7 +6292,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "곤",
+    "term": "곤색",
     "cnt": 1,
     "pTC": 0.058823529411764705,
     "binNum": 1,
@@ -6412,7 +6302,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "짙은남",
+    "term": "짙은남색",
     "cnt": 2,
     "pTC": 0.11764705882352941,
     "binNum": 1,
@@ -6422,7 +6312,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 4,
     "pTC": 0.4444444444444444,
     "binNum": 2,
@@ -6432,7 +6322,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "남",
+    "term": "남색",
     "cnt": 3,
     "pTC": 0.3333333333333333,
     "binNum": 2,
@@ -6442,7 +6332,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "군청",
+    "term": "군청색",
     "cnt": 1,
     "pTC": 0.1111111111111111,
     "binNum": 2,
@@ -6452,7 +6342,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "어두운보라",
+    "term": "어두운보라색",
     "cnt": 1,
     "pTC": 0.1111111111111111,
     "binNum": 2,
@@ -6462,7 +6352,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 10,
     "pTC": 0.6666666666666666,
     "binNum": 3,
@@ -6472,7 +6362,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자주",
+    "term": "자주색",
     "cnt": 1,
     "pTC": 0.06666666666666667,
     "binNum": 3,
@@ -6482,7 +6372,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "군청",
+    "term": "군청색",
     "cnt": 1,
     "pTC": 0.06666666666666667,
     "binNum": 3,
@@ -6492,7 +6382,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진보라",
+    "term": "진보라색",
     "cnt": 1,
     "pTC": 0.06666666666666667,
     "binNum": 3,
@@ -6502,7 +6392,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "바이올렛",
+    "term": "바이올렛색",
     "cnt": 1,
     "pTC": 0.06666666666666667,
     "binNum": 3,
@@ -6512,7 +6402,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "어두운보라",
+    "term": "어두운보라색",
     "cnt": 1,
     "pTC": 0.06666666666666667,
     "binNum": 3,
@@ -6522,7 +6412,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 1,
     "pTC": 0.1111111111111111,
     "binNum": 4,
@@ -6532,7 +6422,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자주",
+    "term": "자주색",
     "cnt": 1,
     "pTC": 0.1111111111111111,
     "binNum": 4,
@@ -6542,7 +6432,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진분홍",
+    "term": "진분홍색",
     "cnt": 1,
     "pTC": 0.1111111111111111,
     "binNum": 4,
@@ -6552,7 +6442,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진보라",
+    "term": "진보라색",
     "cnt": 2,
     "pTC": 0.2222222222222222,
     "binNum": 4,
@@ -6562,7 +6452,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "밝은보라",
+    "term": "밝은보라색",
     "cnt": 2,
     "pTC": 0.2222222222222222,
     "binNum": 4,
@@ -6572,7 +6462,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "짙은보라",
+    "term": "짙은보라색",
     "cnt": 1,
     "pTC": 0.1111111111111111,
     "binNum": 4,
@@ -6582,7 +6472,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "적보라",
+    "term": "적보라색",
     "cnt": 1,
     "pTC": 0.1111111111111111,
     "binNum": 4,
@@ -6592,7 +6482,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자주",
+    "term": "자주색",
     "cnt": 5,
     "pTC": 0.625,
     "binNum": 5,
@@ -6602,7 +6492,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "빨강",
+    "term": "빨강색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 5,
@@ -6612,7 +6502,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진분홍",
+    "term": "진분홍색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 5,
@@ -6622,7 +6512,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "핫핑크",
+    "term": "핫핑크색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 5,
@@ -6632,7 +6522,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자주",
+    "term": "자주색",
     "cnt": 1,
     "pTC": 0.16666666666666666,
     "binNum": 6,
@@ -6642,7 +6532,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "빨강",
+    "term": "빨강색",
     "cnt": 1,
     "pTC": 0.16666666666666666,
     "binNum": 6,
@@ -6652,7 +6542,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "다홍",
+    "term": "다홍색",
     "cnt": 2,
     "pTC": 0.3333333333333333,
     "binNum": 6,
@@ -6662,7 +6552,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "버건디",
+    "term": "버건디색",
     "cnt": 1,
     "pTC": 0.16666666666666666,
     "binNum": 6,
@@ -6672,7 +6562,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "선홍",
+    "term": "선홍색",
     "cnt": 1,
     "pTC": 0.16666666666666666,
     "binNum": 6,
@@ -6682,7 +6572,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "주황",
+    "term": "주황색",
     "cnt": 5,
     "pTC": 0.625,
     "binNum": 7,
@@ -6692,7 +6582,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "다홍",
+    "term": "다홍색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 7,
@@ -6702,7 +6592,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "감",
+    "term": "감색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 7,
@@ -6712,7 +6602,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "선홍",
+    "term": "선홍색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 7,
@@ -6722,7 +6612,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "주황",
+    "term": "주황색",
     "cnt": 3,
     "pTC": 0.5,
     "binNum": 8,
@@ -6732,7 +6622,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "살구",
+    "term": "살구색",
     "cnt": 2,
     "pTC": 0.3333333333333333,
     "binNum": 8,
@@ -6742,7 +6632,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "귤",
+    "term": "귤색",
     "cnt": 1,
     "pTC": 0.16666666666666666,
     "binNum": 8,
@@ -6752,7 +6642,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "개나리",
+    "term": "개나리색",
     "cnt": 1,
     "pTC": 1,
     "binNum": 9,
@@ -6762,7 +6652,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "베이지",
+    "term": "베이지색",
     "cnt": 2,
     "pTC": 0.4,
     "binNum": 10,
@@ -6772,7 +6662,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "상아",
+    "term": "상아색",
     "cnt": 2,
     "pTC": 0.4,
     "binNum": 10,
@@ -6782,7 +6672,7 @@
   {
     "scheme": "magma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "레몬",
+    "term": "레몬색",
     "cnt": 1,
     "pTC": 0.2,
     "binNum": 10,
@@ -6867,7 +6757,7 @@
     "pTC": 0.04411764705882353,
     "binNum": 1,
     "rgb": "rgb(22, 11, 57)",
-    "pCT": 0.0379746835443038
+    "pCT": 0.03773584905660377
   },
   {
     "scheme": "inferno",
@@ -7074,7 +6964,7 @@
     "lang": "English (English)",
     "term": "blue",
     "cnt": 1,
-    "pTC": 0.006134969325153374,
+    "pTC": 0.006172839506172839,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.1
@@ -7084,17 +6974,17 @@
     "lang": "English (English)",
     "term": "purple",
     "cnt": 54,
-    "pTC": 0.3312883435582822,
+    "pTC": 0.3333333333333333,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
-    "pCT": 0.34177215189873417
+    "pCT": 0.33962264150943394
   },
   {
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "red",
     "cnt": 1,
-    "pTC": 0.006134969325153374,
+    "pTC": 0.006172839506172839,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.0196078431372549
@@ -7104,7 +6994,7 @@
     "lang": "English (English)",
     "term": "darkblue",
     "cnt": 3,
-    "pTC": 0.018404907975460124,
+    "pTC": 0.018518518518518517,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.13636363636363635
@@ -7114,7 +7004,7 @@
     "lang": "English (English)",
     "term": "violet",
     "cnt": 12,
-    "pTC": 0.0736196319018405,
+    "pTC": 0.07407407407407407,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.5
@@ -7124,7 +7014,7 @@
     "lang": "English (English)",
     "term": "gray",
     "cnt": 2,
-    "pTC": 0.012269938650306749,
+    "pTC": 0.012345679012345678,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 1
@@ -7134,7 +7024,7 @@
     "lang": "English (English)",
     "term": "black",
     "cnt": 1,
-    "pTC": 0.006134969325153374,
+    "pTC": 0.006172839506172839,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.00980392156862745
@@ -7144,7 +7034,7 @@
     "lang": "English (English)",
     "term": "navyblue",
     "cnt": 5,
-    "pTC": 0.03067484662576687,
+    "pTC": 0.030864197530864196,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.15151515151515152
@@ -7154,7 +7044,7 @@
     "lang": "English (English)",
     "term": "darkpurple",
     "cnt": 40,
-    "pTC": 0.24539877300613497,
+    "pTC": 0.24691358024691357,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.6153846153846154
@@ -7164,7 +7054,7 @@
     "lang": "English (English)",
     "term": "indigo",
     "cnt": 10,
-    "pTC": 0.06134969325153374,
+    "pTC": 0.06172839506172839,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.5
@@ -7174,7 +7064,7 @@
     "lang": "English (English)",
     "term": "lilac",
     "cnt": 1,
-    "pTC": 0.006134969325153374,
+    "pTC": 0.006172839506172839,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 1
@@ -7184,7 +7074,7 @@
     "lang": "English (English)",
     "term": "navy",
     "cnt": 2,
-    "pTC": 0.012269938650306749,
+    "pTC": 0.012345679012345678,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.07407407407407407
@@ -7194,7 +7084,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 3,
-    "pTC": 0.018404907975460124,
+    "pTC": 0.018518518518518517,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.14285714285714285
@@ -7204,7 +7094,7 @@
     "lang": "English (English)",
     "term": "royalpurple",
     "cnt": 4,
-    "pTC": 0.024539877300613498,
+    "pTC": 0.024691358024691357,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.6666666666666666
@@ -7214,7 +7104,7 @@
     "lang": "English (English)",
     "term": "bluepurple",
     "cnt": 1,
-    "pTC": 0.006134969325153374,
+    "pTC": 0.006172839506172839,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 1
@@ -7224,7 +7114,7 @@
     "lang": "English (English)",
     "term": "eggplant",
     "cnt": 4,
-    "pTC": 0.024539877300613498,
+    "pTC": 0.024691358024691357,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.4
@@ -7234,7 +7124,7 @@
     "lang": "English (English)",
     "term": "deeppurple",
     "cnt": 9,
-    "pTC": 0.05521472392638037,
+    "pTC": 0.05555555555555555,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.8181818181818182
@@ -7244,7 +7134,7 @@
     "lang": "English (English)",
     "term": "grape",
     "cnt": 1,
-    "pTC": 0.006134969325153374,
+    "pTC": 0.006172839506172839,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.2
@@ -7252,19 +7142,9 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
-    "term": "a",
-    "cnt": 1,
-    "pTC": 0.006134969325153374,
-    "binNum": 2,
-    "rgb": "rgb(66, 10, 104)",
-    "pCT": 1
-  },
-  {
-    "scheme": "inferno",
-    "lang": "English (English)",
     "term": "darkviolet",
     "cnt": 4,
-    "pTC": 0.024539877300613498,
+    "pTC": 0.024691358024691357,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.8
@@ -7274,7 +7154,7 @@
     "lang": "English (English)",
     "term": "violetpurple",
     "cnt": 1,
-    "pTC": 0.006134969325153374,
+    "pTC": 0.006172839506172839,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 1
@@ -7284,7 +7164,7 @@
     "lang": "English (English)",
     "term": "deepviolet",
     "cnt": 1,
-    "pTC": 0.006134969325153374,
+    "pTC": 0.006172839506172839,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 1
@@ -7294,7 +7174,7 @@
     "lang": "English (English)",
     "term": "verydarkpurple",
     "cnt": 1,
-    "pTC": 0.006134969325153374,
+    "pTC": 0.006172839506172839,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 0.5
@@ -7304,7 +7184,7 @@
     "lang": "English (English)",
     "term": "darkplum",
     "cnt": 1,
-    "pTC": 0.006134969325153374,
+    "pTC": 0.006172839506172839,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
     "pCT": 1
@@ -7317,7 +7197,7 @@
     "pTC": 0.4591194968553459,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
-    "pCT": 0.4620253164556962
+    "pCT": 0.4591194968553459
   },
   {
     "scheme": "inferno",
@@ -7372,22 +7252,22 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
-    "term": "lavender",
-    "cnt": 1,
-    "pTC": 0.006289308176100629,
-    "binNum": 3,
-    "rgb": "rgb(106, 23, 110)",
-    "pCT": 1
-  },
-  {
-    "scheme": "inferno",
-    "lang": "English (English)",
     "term": "maroon",
     "cnt": 5,
     "pTC": 0.031446540880503145,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.1388888888888889
+  },
+  {
+    "scheme": "inferno",
+    "lang": "English (English)",
+    "term": "lavender",
+    "cnt": 1,
+    "pTC": 0.006289308176100629,
+    "binNum": 3,
+    "rgb": "rgb(106, 23, 110)",
+    "pCT": 1
   },
   {
     "scheme": "inferno",
@@ -7603,11 +7483,11 @@
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "purple",
-    "cnt": 21,
-    "pTC": 0.17355371900826447,
+    "cnt": 22,
+    "pTC": 0.18181818181818182,
     "binNum": 4,
     "rgb": "rgb(147, 38, 103)",
-    "pCT": 0.13291139240506328
+    "pCT": 0.13836477987421383
   },
   {
     "scheme": "inferno",
@@ -7652,22 +7532,22 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
-    "term": "hotpink",
-    "cnt": 1,
-    "pTC": 0.008264462809917356,
-    "binNum": 4,
-    "rgb": "rgb(147, 38, 103)",
-    "pCT": 1
-  },
-  {
-    "scheme": "inferno",
-    "lang": "English (English)",
     "term": "fuchsia",
     "cnt": 4,
     "pTC": 0.03305785123966942,
     "binNum": 4,
     "rgb": "rgb(147, 38, 103)",
     "pCT": 0.6666666666666666
+  },
+  {
+    "scheme": "inferno",
+    "lang": "English (English)",
+    "term": "hotpink",
+    "cnt": 1,
+    "pTC": 0.008264462809917356,
+    "binNum": 4,
+    "rgb": "rgb(147, 38, 103)",
+    "pCT": 1
   },
   {
     "scheme": "inferno",
@@ -7912,16 +7792,6 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
-    "term": "pruple",
-    "cnt": 1,
-    "pTC": 0.008264462809917356,
-    "binNum": 4,
-    "rgb": "rgb(147, 38, 103)",
-    "pCT": 1
-  },
-  {
-    "scheme": "inferno",
-    "lang": "English (English)",
     "term": "darkfuchsia",
     "cnt": 1,
     "pTC": 0.008264462809917356,
@@ -7937,7 +7807,7 @@
     "pTC": 0.034482758620689655,
     "binNum": 5,
     "rgb": "rgb(188, 55, 84)",
-    "pCT": 0.02531645569620253
+    "pCT": 0.025157232704402517
   },
   {
     "scheme": "inferno",
@@ -9172,7 +9042,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "검정",
+    "term": "검정색",
     "cnt": 6,
     "pTC": 0.6,
     "binNum": 0,
@@ -9182,7 +9052,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "검은",
+    "term": "검은색",
     "cnt": 3,
     "pTC": 0.3,
     "binNum": 0,
@@ -9192,7 +9062,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진초록",
+    "term": "진초록색",
     "cnt": 1,
     "pTC": 0.1,
     "binNum": 0,
@@ -9202,7 +9072,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "남",
+    "term": "남색",
     "cnt": 6,
     "pTC": 0.35294117647058826,
     "binNum": 1,
@@ -9212,7 +9082,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "검정",
+    "term": "검정색",
     "cnt": 3,
     "pTC": 0.17647058823529413,
     "binNum": 1,
@@ -9222,7 +9092,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "군청",
+    "term": "군청색",
     "cnt": 2,
     "pTC": 0.11764705882352941,
     "binNum": 1,
@@ -9232,7 +9102,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "검은",
+    "term": "검은색",
     "cnt": 3,
     "pTC": 0.17647058823529413,
     "binNum": 1,
@@ -9242,7 +9112,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "곤",
+    "term": "곤색",
     "cnt": 1,
     "pTC": 0.058823529411764705,
     "binNum": 1,
@@ -9252,7 +9122,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "짙은남",
+    "term": "짙은남색",
     "cnt": 2,
     "pTC": 0.11764705882352941,
     "binNum": 1,
@@ -9262,7 +9132,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 12,
     "pTC": 0.8,
     "binNum": 2,
@@ -9272,7 +9142,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진보라",
+    "term": "진보라색",
     "cnt": 2,
     "pTC": 0.13333333333333333,
     "binNum": 2,
@@ -9282,7 +9152,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "짙은보라",
+    "term": "짙은보라색",
     "cnt": 1,
     "pTC": 0.06666666666666667,
     "binNum": 2,
@@ -9292,7 +9162,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 9,
     "pTC": 0.47368421052631576,
     "binNum": 3,
@@ -9302,7 +9172,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자주",
+    "term": "자주색",
     "cnt": 6,
     "pTC": 0.3157894736842105,
     "binNum": 3,
@@ -9312,7 +9182,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진보라",
+    "term": "진보라색",
     "cnt": 2,
     "pTC": 0.10526315789473684,
     "binNum": 3,
@@ -9322,7 +9192,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "짙은보라",
+    "term": "짙은보라색",
     "cnt": 1,
     "pTC": 0.05263157894736842,
     "binNum": 3,
@@ -9332,7 +9202,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "짙은자주",
+    "term": "짙은자주색",
     "cnt": 1,
     "pTC": 0.05263157894736842,
     "binNum": 3,
@@ -9342,7 +9212,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 4,
@@ -9352,7 +9222,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자주",
+    "term": "자주색",
     "cnt": 7,
     "pTC": 0.6363636363636364,
     "binNum": 4,
@@ -9362,7 +9232,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "다홍",
+    "term": "다홍색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 4,
@@ -9372,7 +9242,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자홍",
+    "term": "자홍색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 4,
@@ -9382,7 +9252,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "와인",
+    "term": "와인색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 4,
@@ -9392,7 +9262,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자주",
+    "term": "자주색",
     "cnt": 5,
     "pTC": 0.45454545454545453,
     "binNum": 5,
@@ -9402,7 +9272,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "다홍",
+    "term": "다홍색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 5,
@@ -9412,7 +9282,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "빨간",
+    "term": "빨간색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 5,
@@ -9422,7 +9292,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "벽돌",
+    "term": "벽돌색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 5,
@@ -9432,7 +9302,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "붉은",
+    "term": "붉은색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 5,
@@ -9442,7 +9312,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "적",
+    "term": "적색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 5,
@@ -9452,7 +9322,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "버건디",
+    "term": "버건디색",
     "cnt": 1,
     "pTC": 0.09090909090909091,
     "binNum": 5,
@@ -9462,7 +9332,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "주황",
+    "term": "주황색",
     "cnt": 2,
     "pTC": 0.25,
     "binNum": 6,
@@ -9472,7 +9342,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "빨강",
+    "term": "빨강색",
     "cnt": 2,
     "pTC": 0.25,
     "binNum": 6,
@@ -9482,7 +9352,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "빨간",
+    "term": "빨간색",
     "cnt": 2,
     "pTC": 0.25,
     "binNum": 6,
@@ -9492,7 +9362,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "벽돌",
+    "term": "벽돌색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 6,
@@ -9502,7 +9372,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "버건디",
+    "term": "버건디색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 6,
@@ -9512,7 +9382,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "주황",
+    "term": "주황색",
     "cnt": 6,
     "pTC": 1,
     "binNum": 7,
@@ -9522,7 +9392,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "갈",
+    "term": "갈색",
     "cnt": 1,
     "pTC": 0.3333333333333333,
     "binNum": 8,
@@ -9532,7 +9402,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "주황",
+    "term": "주황색",
     "cnt": 2,
     "pTC": 0.6666666666666666,
     "binNum": 8,
@@ -9542,7 +9412,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "노랑",
+    "term": "노랑색",
     "cnt": 3,
     "pTC": 0.375,
     "binNum": 9,
@@ -9552,7 +9422,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "노란",
+    "term": "노란색",
     "cnt": 2,
     "pTC": 0.25,
     "binNum": 9,
@@ -9562,7 +9432,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "겨자",
+    "term": "겨자색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 9,
@@ -9572,7 +9442,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "개나리",
+    "term": "개나리색",
     "cnt": 2,
     "pTC": 0.25,
     "binNum": 9,
@@ -9582,7 +9452,7 @@
   {
     "scheme": "inferno",
     "lang": "Korean (한국어, 조선어)",
-    "term": "레몬",
+    "term": "레몬색",
     "cnt": 1,
     "pTC": 1,
     "binNum": 10,
@@ -9607,7 +9477,7 @@
     "pTC": 0.16393442622950818,
     "binNum": 0,
     "rgb": "rgb(13, 8, 135)",
-    "pCT": 0.10471204188481675
+    "pCT": 0.10443864229765012
   },
   {
     "scheme": "plasma",
@@ -9667,7 +9537,7 @@
     "pTC": 0.05737704918032787,
     "binNum": 0,
     "rgb": "rgb(13, 8, 135)",
-    "pCT": 0.28
+    "pCT": 0.27450980392156865
   },
   {
     "scheme": "plasma",
@@ -9867,7 +9737,7 @@
     "pTC": 0.16666666666666666,
     "binNum": 1,
     "rgb": "rgb(65, 4, 157)",
-    "pCT": 0.03926701570680628
+    "pCT": 0.0391644908616188
   },
   {
     "scheme": "plasma",
@@ -9927,7 +9797,7 @@
     "pTC": 0.05555555555555555,
     "binNum": 1,
     "rgb": "rgb(65, 4, 157)",
-    "pCT": 0.1
+    "pCT": 0.09803921568627451
   },
   {
     "scheme": "plasma",
@@ -10087,7 +9957,7 @@
     "pTC": 0.6187845303867403,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
-    "pCT": 0.2931937172774869
+    "pCT": 0.2924281984334204
   },
   {
     "scheme": "plasma",
@@ -10137,7 +10007,7 @@
     "pTC": 0.09392265193370165,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
-    "pCT": 0.34
+    "pCT": 0.3333333333333333
   },
   {
     "scheme": "plasma",
@@ -10277,7 +10147,7 @@
     "pTC": 0.592741935483871,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
-    "pCT": 0.38481675392670156
+    "pCT": 0.3838120104438642
   },
   {
     "scheme": "plasma",
@@ -10313,11 +10183,11 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "fuchsia",
-    "cnt": 7,
-    "pTC": 0.028225806451612902,
+    "cnt": 11,
+    "pTC": 0.04435483870967742,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
-    "pCT": 0.2413793103448276
+    "pCT": 0.3142857142857143
   },
   {
     "scheme": "plasma",
@@ -10327,7 +10197,7 @@
     "pTC": 0.03225806451612903,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
-    "pCT": 0.16
+    "pCT": 0.1568627450980392
   },
   {
     "scheme": "plasma",
@@ -10422,16 +10292,6 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "fushia",
-    "cnt": 2,
-    "pTC": 0.008064516129032258,
-    "binNum": 3,
-    "rgb": "rgb(143, 13, 164)",
-    "pCT": 0.5
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "pinkpurple",
     "cnt": 1,
     "pTC": 0.004032258064516129,
@@ -10492,16 +10352,6 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "fusia",
-    "cnt": 1,
-    "pTC": 0.004032258064516129,
-    "binNum": 3,
-    "rgb": "rgb(143, 13, 164)",
-    "pCT": 1
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "reddishpurple",
     "cnt": 1,
     "pTC": 0.004032258064516129,
@@ -10542,29 +10392,19 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "fucsia",
-    "cnt": 1,
-    "pTC": 0.004032258064516129,
-    "binNum": 3,
-    "rgb": "rgb(143, 13, 164)",
-    "pCT": 1
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "purple",
-    "cnt": 68,
-    "pTC": 0.3417085427135678,
+    "cnt": 69,
+    "pTC": 0.345,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
-    "pCT": 0.17801047120418848
+    "pCT": 0.1801566579634465
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "pink",
     "cnt": 3,
-    "pTC": 0.01507537688442211,
+    "pTC": 0.015,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.05084745762711865
@@ -10574,7 +10414,7 @@
     "lang": "English (English)",
     "term": "magenta",
     "cnt": 38,
-    "pTC": 0.19095477386934673,
+    "pTC": 0.19,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.4935064935064935
@@ -10584,17 +10424,7 @@
     "lang": "English (English)",
     "term": "violet",
     "cnt": 14,
-    "pTC": 0.07035175879396985,
-    "binNum": 4,
-    "rgb": "rgb(177, 42, 144)",
-    "pCT": 0.2222222222222222
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
-    "term": "hotpink",
-    "cnt": 2,
-    "pTC": 0.010050251256281407,
+    "pTC": 0.07,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.2222222222222222
@@ -10603,18 +10433,28 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "fuchsia",
-    "cnt": 15,
-    "pTC": 0.07537688442211055,
+    "cnt": 17,
+    "pTC": 0.085,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
-    "pCT": 0.5172413793103449
+    "pCT": 0.4857142857142857
+  },
+  {
+    "scheme": "plasma",
+    "lang": "English (English)",
+    "term": "hotpink",
+    "cnt": 2,
+    "pTC": 0.01,
+    "binNum": 4,
+    "rgb": "rgb(177, 42, 144)",
+    "pCT": 0.2222222222222222
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "maroon",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.3333333333333333
@@ -10623,18 +10463,18 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "darkpurple",
-    "cnt": 6,
-    "pTC": 0.03015075376884422,
+    "cnt": 7,
+    "pTC": 0.035,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
-    "pCT": 0.12
+    "pCT": 0.13725490196078433
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "indigo",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.024390243902439025
@@ -10644,7 +10484,7 @@
     "lang": "English (English)",
     "term": "mauve",
     "cnt": 6,
-    "pTC": 0.03015075376884422,
+    "pTC": 0.03,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5454545454545454
@@ -10654,7 +10494,7 @@
     "lang": "English (English)",
     "term": "darkpink",
     "cnt": 2,
-    "pTC": 0.010050251256281407,
+    "pTC": 0.01,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.125
@@ -10664,7 +10504,7 @@
     "lang": "English (English)",
     "term": "burgundy",
     "cnt": 2,
-    "pTC": 0.010050251256281407,
+    "pTC": 0.01,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -10674,7 +10514,7 @@
     "lang": "English (English)",
     "term": "lightpink",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -10684,7 +10524,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 5,
-    "pTC": 0.02512562814070352,
+    "pTC": 0.025,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.625
@@ -10694,7 +10534,7 @@
     "lang": "English (English)",
     "term": "royalpurple",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.03125
@@ -10704,7 +10544,7 @@
     "lang": "English (English)",
     "term": "neonpurple",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -10714,7 +10554,7 @@
     "lang": "English (English)",
     "term": "eggplant",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.2
@@ -10722,19 +10562,9 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "fushia",
-    "cnt": 2,
-    "pTC": 0.010050251256281407,
-    "binNum": 4,
-    "rgb": "rgb(177, 42, 144)",
-    "pCT": 0.5
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "pinkpurple",
     "cnt": 6,
-    "pTC": 0.03015075376884422,
+    "pTC": 0.03,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.8571428571428571
@@ -10744,7 +10574,7 @@
     "lang": "English (English)",
     "term": "scarlet",
     "cnt": 2,
-    "pTC": 0.010050251256281407,
+    "pTC": 0.01,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -10754,7 +10584,7 @@
     "lang": "English (English)",
     "term": "deeppurple",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.09090909090909091
@@ -10764,7 +10594,7 @@
     "lang": "English (English)",
     "term": "raspberry",
     "cnt": 2,
-    "pTC": 0.010050251256281407,
+    "pTC": 0.01,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.3333333333333333
@@ -10774,7 +10604,7 @@
     "lang": "English (English)",
     "term": "darkmagenta",
     "cnt": 2,
-    "pTC": 0.010050251256281407,
+    "pTC": 0.01,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -10784,7 +10614,7 @@
     "lang": "English (English)",
     "term": "grape",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.14285714285714285
@@ -10794,7 +10624,7 @@
     "lang": "English (English)",
     "term": "pinkishpurple",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -10804,7 +10634,7 @@
     "lang": "English (English)",
     "term": "redviolet",
     "cnt": 2,
-    "pTC": 0.010050251256281407,
+    "pTC": 0.01,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -10814,7 +10644,7 @@
     "lang": "English (English)",
     "term": "redpurple",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -10824,7 +10654,7 @@
     "lang": "English (English)",
     "term": "berry",
     "cnt": 3,
-    "pTC": 0.01507537688442211,
+    "pTC": 0.015,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -10834,7 +10664,7 @@
     "lang": "English (English)",
     "term": "reddishpurple",
     "cnt": 2,
-    "pTC": 0.010050251256281407,
+    "pTC": 0.01,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.6666666666666666
@@ -10844,7 +10674,7 @@
     "lang": "English (English)",
     "term": "darklavender",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -10854,7 +10684,7 @@
     "lang": "English (English)",
     "term": "mulberry",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -10864,7 +10694,7 @@
     "lang": "English (English)",
     "term": "amethyst",
     "cnt": 2,
-    "pTC": 0.010050251256281407,
+    "pTC": 0.01,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.6666666666666666
@@ -10872,19 +10702,9 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "pruple",
-    "cnt": 1,
-    "pTC": 0.005025125628140704,
-    "binNum": 4,
-    "rgb": "rgb(177, 42, 144)",
-    "pCT": 1
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "darkfuchsia",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -10894,7 +10714,7 @@
     "lang": "English (English)",
     "term": "grapepurple",
     "cnt": 1,
-    "pTC": 0.005025125628140704,
+    "pTC": 0.005,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -10942,22 +10762,22 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
+    "term": "fuchsia",
+    "cnt": 7,
+    "pTC": 0.058333333333333334,
+    "binNum": 5,
+    "rgb": "rgb(204, 71, 120)",
+    "pCT": 0.2
+  },
+  {
+    "scheme": "plasma",
+    "lang": "English (English)",
     "term": "hotpink",
     "cnt": 7,
     "pTC": 0.058333333333333334,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.7777777777777778
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
-    "term": "fuchsia",
-    "cnt": 7,
-    "pTC": 0.058333333333333334,
-    "binNum": 5,
-    "rgb": "rgb(204, 71, 120)",
-    "pCT": 0.2413793103448276
   },
   {
     "scheme": "plasma",
@@ -11102,22 +10922,22 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "mutedpink",
-    "cnt": 1,
-    "pTC": 0.008333333333333333,
-    "binNum": 5,
-    "rgb": "rgb(204, 71, 120)",
-    "pCT": 1
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "darkfuchsia",
     "cnt": 1,
     "pTC": 0.008333333333333333,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.5
+  },
+  {
+    "scheme": "plasma",
+    "lang": "English (English)",
+    "term": "mutedpink",
+    "cnt": 1,
+    "pTC": 0.008333333333333333,
+    "binNum": 5,
+    "rgb": "rgb(204, 71, 120)",
+    "pCT": 1
   },
   {
     "scheme": "plasma",
@@ -11457,7 +11277,7 @@
     "pTC": 0.06735751295336788,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
-    "pCT": 0.027777777777777776
+    "pCT": 0.027426160337552744
   },
   {
     "scheme": "plasma",
@@ -11744,7 +11564,7 @@
     "lang": "English (English)",
     "term": "green",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.3333333333333333
@@ -11754,7 +11574,7 @@
     "lang": "English (English)",
     "term": "orange",
     "cnt": 13,
-    "pTC": 0.04180064308681672,
+    "pTC": 0.041666666666666664,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.07027027027027027
@@ -11763,18 +11583,18 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "yellow",
-    "cnt": 119,
-    "pTC": 0.38263665594855306,
+    "cnt": 121,
+    "pTC": 0.38782051282051283,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
-    "pCT": 0.25427350427350426
+    "pCT": 0.2552742616033755
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "brown",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 1
@@ -11784,7 +11604,7 @@
     "lang": "English (English)",
     "term": "tan",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.5
@@ -11794,7 +11614,7 @@
     "lang": "English (English)",
     "term": "gold",
     "cnt": 38,
-    "pTC": 0.12218649517684887,
+    "pTC": 0.12179487179487179,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.8260869565217391
@@ -11804,7 +11624,7 @@
     "lang": "English (English)",
     "term": "olive",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 1
@@ -11814,7 +11634,7 @@
     "lang": "English (English)",
     "term": "mustard",
     "cnt": 36,
-    "pTC": 0.1157556270096463,
+    "pTC": 0.11538461538461539,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.75
@@ -11824,7 +11644,7 @@
     "lang": "English (English)",
     "term": "mustardyellow",
     "cnt": 20,
-    "pTC": 0.06430868167202572,
+    "pTC": 0.0641025641025641,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.8333333333333334
@@ -11834,7 +11654,7 @@
     "lang": "English (English)",
     "term": "yelloworange",
     "cnt": 7,
-    "pTC": 0.022508038585209004,
+    "pTC": 0.022435897435897436,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.4666666666666667
@@ -11844,7 +11664,7 @@
     "lang": "English (English)",
     "term": "lightorange",
     "cnt": 3,
-    "pTC": 0.00964630225080386,
+    "pTC": 0.009615384615384616,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.42857142857142855
@@ -11854,7 +11674,7 @@
     "lang": "English (English)",
     "term": "darkyellow",
     "cnt": 12,
-    "pTC": 0.03858520900321544,
+    "pTC": 0.038461538461538464,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.631578947368421
@@ -11864,7 +11684,7 @@
     "lang": "English (English)",
     "term": "goldenrod",
     "cnt": 17,
-    "pTC": 0.05466237942122187,
+    "pTC": 0.05448717948717949,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.85
@@ -11874,7 +11694,7 @@
     "lang": "English (English)",
     "term": "tangerine",
     "cnt": 2,
-    "pTC": 0.006430868167202572,
+    "pTC": 0.00641025641025641,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.16666666666666666
@@ -11884,7 +11704,7 @@
     "lang": "English (English)",
     "term": "ochre",
     "cnt": 3,
-    "pTC": 0.00964630225080386,
+    "pTC": 0.009615384615384616,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.6
@@ -11894,7 +11714,7 @@
     "lang": "English (English)",
     "term": "goldenyellow",
     "cnt": 8,
-    "pTC": 0.02572347266881029,
+    "pTC": 0.02564102564102564,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.7272727272727273
@@ -11904,7 +11724,7 @@
     "lang": "English (English)",
     "term": "marigold",
     "cnt": 2,
-    "pTC": 0.006430868167202572,
+    "pTC": 0.00641025641025641,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.4
@@ -11914,7 +11734,7 @@
     "lang": "English (English)",
     "term": "orangeyellow",
     "cnt": 3,
-    "pTC": 0.00964630225080386,
+    "pTC": 0.009615384615384616,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.42857142857142855
@@ -11924,7 +11744,7 @@
     "lang": "English (English)",
     "term": "lemon",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.25
@@ -11932,19 +11752,9 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "yello",
-    "cnt": 2,
-    "pTC": 0.006430868167202572,
-    "binNum": 9,
-    "rgb": "rgb(252, 206, 37)",
-    "pCT": 0.3333333333333333
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "dandelion",
     "cnt": 6,
-    "pTC": 0.01929260450160772,
+    "pTC": 0.019230769230769232,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 1
@@ -11954,7 +11764,7 @@
     "lang": "English (English)",
     "term": "amber",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.3333333333333333
@@ -11964,7 +11774,7 @@
     "lang": "English (English)",
     "term": "dirtyyellow",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.3333333333333333
@@ -11974,7 +11784,7 @@
     "lang": "English (English)",
     "term": "yellowochre",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.5
@@ -11984,7 +11794,7 @@
     "lang": "English (English)",
     "term": "copper",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 1
@@ -11994,7 +11804,7 @@
     "lang": "English (English)",
     "term": "golden",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 1
@@ -12004,7 +11814,7 @@
     "lang": "English (English)",
     "term": "paleorange",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 1
@@ -12014,7 +11824,7 @@
     "lang": "English (English)",
     "term": "caramel",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.5
@@ -12024,7 +11834,7 @@
     "lang": "English (English)",
     "term": "camel",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 1
@@ -12034,7 +11844,7 @@
     "lang": "English (English)",
     "term": "sunfloweryellow",
     "cnt": 3,
-    "pTC": 0.00964630225080386,
+    "pTC": 0.009615384615384616,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.6
@@ -12044,7 +11854,17 @@
     "lang": "English (English)",
     "term": "yellowgold",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
+    "binNum": 9,
+    "rgb": "rgb(252, 206, 37)",
+    "pCT": 1
+  },
+  {
+    "scheme": "plasma",
+    "lang": "English (English)",
+    "term": "dullyellow",
+    "cnt": 1,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 1
@@ -12054,7 +11874,7 @@
     "lang": "English (English)",
     "term": "honey",
     "cnt": 2,
-    "pTC": 0.006430868167202572,
+    "pTC": 0.00641025641025641,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.6666666666666666
@@ -12064,7 +11884,7 @@
     "lang": "English (English)",
     "term": "sandyellow",
     "cnt": 1,
-    "pTC": 0.003215434083601286,
+    "pTC": 0.003205128205128205,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.5
@@ -12083,11 +11903,11 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "yellow",
-    "cnt": 336,
-    "pTC": 0.84,
+    "cnt": 340,
+    "pTC": 0.85,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
-    "pCT": 0.717948717948718
+    "pCT": 0.7172995780590717
   },
   {
     "scheme": "plasma",
@@ -12272,16 +12092,6 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "yello",
-    "cnt": 4,
-    "pTC": 0.01,
-    "binNum": 10,
-    "rgb": "rgb(240, 249, 33)",
-    "pCT": 0.6666666666666666
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "fluorescentgreen",
     "cnt": 1,
     "pTC": 0.0025,
@@ -12332,7 +12142,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 5,
     "pTC": 0.2631578947368421,
     "binNum": 0,
@@ -12342,7 +12152,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자주",
+    "term": "자주색",
     "cnt": 1,
     "pTC": 0.05263157894736842,
     "binNum": 0,
@@ -12352,7 +12162,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "남",
+    "term": "남색",
     "cnt": 6,
     "pTC": 0.3157894736842105,
     "binNum": 0,
@@ -12362,7 +12172,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "군청",
+    "term": "군청색",
     "cnt": 2,
     "pTC": 0.10526315789473684,
     "binNum": 0,
@@ -12372,7 +12182,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진보라",
+    "term": "진보라색",
     "cnt": 1,
     "pTC": 0.05263157894736842,
     "binNum": 0,
@@ -12382,7 +12192,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청",
+    "term": "청색",
     "cnt": 1,
     "pTC": 0.05263157894736842,
     "binNum": 0,
@@ -12392,7 +12202,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청보라",
+    "term": "청보라색",
     "cnt": 1,
     "pTC": 0.05263157894736842,
     "binNum": 0,
@@ -12402,7 +12212,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "곤",
+    "term": "곤색",
     "cnt": 2,
     "pTC": 0.10526315789473684,
     "binNum": 0,
@@ -12412,7 +12222,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "파랑",
+    "term": "파랑색",
     "cnt": 2,
     "pTC": 0.25,
     "binNum": 1,
@@ -12422,7 +12232,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "남",
+    "term": "남색",
     "cnt": 2,
     "pTC": 0.25,
     "binNum": 1,
@@ -12432,7 +12242,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "군청",
+    "term": "군청색",
     "cnt": 2,
     "pTC": 0.25,
     "binNum": 1,
@@ -12442,7 +12252,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진보라",
+    "term": "진보라색",
     "cnt": 2,
     "pTC": 0.25,
     "binNum": 1,
@@ -12452,7 +12262,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 15,
     "pTC": 0.9375,
     "binNum": 2,
@@ -12462,7 +12272,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "청보라",
+    "term": "청보라색",
     "cnt": 1,
     "pTC": 0.0625,
     "binNum": 2,
@@ -12472,7 +12282,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 17,
     "pTC": 0.7727272727272727,
     "binNum": 3,
@@ -12482,7 +12292,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자주",
+    "term": "자주색",
     "cnt": 3,
     "pTC": 0.13636363636363635,
     "binNum": 3,
@@ -12492,7 +12302,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "형광보라",
+    "term": "형광보라색",
     "cnt": 1,
     "pTC": 0.045454545454545456,
     "binNum": 3,
@@ -12502,7 +12312,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "적보라",
+    "term": "적보라색",
     "cnt": 1,
     "pTC": 0.045454545454545456,
     "binNum": 3,
@@ -12512,7 +12322,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 3,
     "pTC": 0.23076923076923078,
     "binNum": 4,
@@ -12522,7 +12332,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자주",
+    "term": "자주색",
     "cnt": 7,
     "pTC": 0.5384615384615384,
     "binNum": 4,
@@ -12532,7 +12342,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "분홍",
+    "term": "분홍색",
     "cnt": 1,
     "pTC": 0.07692307692307693,
     "binNum": 4,
@@ -12542,7 +12352,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진한분홍",
+    "term": "진한분홍색",
     "cnt": 1,
     "pTC": 0.07692307692307693,
     "binNum": 4,
@@ -12552,7 +12362,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "적보라",
+    "term": "적보라색",
     "cnt": 1,
     "pTC": 0.07692307692307693,
     "binNum": 4,
@@ -12562,7 +12372,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "보라",
+    "term": "보라색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 5,
@@ -12572,7 +12382,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자주",
+    "term": "자주색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 5,
@@ -12582,7 +12392,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "다홍",
+    "term": "다홍색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 5,
@@ -12592,7 +12402,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "진분홍",
+    "term": "진분홍색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 5,
@@ -12602,7 +12412,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "핑크",
+    "term": "핑크색",
     "cnt": 2,
     "pTC": 0.25,
     "binNum": 5,
@@ -12612,7 +12422,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "핫핑크",
+    "term": "핫핑크색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 5,
@@ -12622,7 +12432,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "자홍",
+    "term": "자홍색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 5,
@@ -12632,7 +12442,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "주황",
+    "term": "주황색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 6,
@@ -12642,7 +12452,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "빨강",
+    "term": "빨강색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 6,
@@ -12652,7 +12462,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "다홍",
+    "term": "다홍색",
     "cnt": 2,
     "pTC": 0.25,
     "binNum": 6,
@@ -12662,7 +12472,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "살구",
+    "term": "살구색",
     "cnt": 1,
     "pTC": 0.125,
     "binNum": 6,
@@ -12672,7 +12482,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "코랄",
+    "term": "코랄색",
     "cnt": 3,
     "pTC": 0.375,
     "binNum": 6,
@@ -12682,7 +12492,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "주황",
+    "term": "주황색",
     "cnt": 5,
     "pTC": 0.625,
     "binNum": 7,
@@ -12692,7 +12502,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "오렌지",
+    "term": "오렌지색",
     "cnt": 3,
     "pTC": 0.375,
     "binNum": 7,
@@ -12702,7 +12512,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "갈",
+    "term": "갈색",
     "cnt": 1,
     "pTC": 0.03225806451612903,
     "binNum": 8,
@@ -12712,7 +12522,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "주황",
+    "term": "주황색",
     "cnt": 11,
     "pTC": 0.3548387096774194,
     "binNum": 8,
@@ -12722,7 +12532,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "황토",
+    "term": "황토색",
     "cnt": 3,
     "pTC": 0.0967741935483871,
     "binNum": 8,
@@ -12732,7 +12542,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "노랑",
+    "term": "노랑색",
     "cnt": 2,
     "pTC": 0.06451612903225806,
     "binNum": 8,
@@ -12742,7 +12552,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "노란",
+    "term": "노란색",
     "cnt": 2,
     "pTC": 0.06451612903225806,
     "binNum": 8,
@@ -12752,7 +12562,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "고동",
+    "term": "고동색",
     "cnt": 1,
     "pTC": 0.03225806451612903,
     "binNum": 8,
@@ -12762,7 +12572,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "겨자",
+    "term": "겨자색",
     "cnt": 1,
     "pTC": 0.03225806451612903,
     "binNum": 8,
@@ -12772,7 +12582,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "연갈",
+    "term": "연갈색",
     "cnt": 1,
     "pTC": 0.03225806451612903,
     "binNum": 8,
@@ -12782,7 +12592,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "개나리",
+    "term": "개나리색",
     "cnt": 2,
     "pTC": 0.06451612903225806,
     "binNum": 8,
@@ -12792,7 +12602,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "귤",
+    "term": "귤색",
     "cnt": 4,
     "pTC": 0.12903225806451613,
     "binNum": 8,
@@ -12802,7 +12612,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "오렌지",
+    "term": "오렌지색",
     "cnt": 2,
     "pTC": 0.06451612903225806,
     "binNum": 8,
@@ -12812,7 +12622,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "황",
+    "term": "황색",
     "cnt": 1,
     "pTC": 0.03225806451612903,
     "binNum": 8,
@@ -12822,7 +12632,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "주황",
+    "term": "주황색",
     "cnt": 2,
     "pTC": 0.1,
     "binNum": 9,
@@ -12832,7 +12642,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "노랑",
+    "term": "노랑색",
     "cnt": 3,
     "pTC": 0.15,
     "binNum": 9,
@@ -12842,7 +12652,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "노란",
+    "term": "노란색",
     "cnt": 7,
     "pTC": 0.35,
     "binNum": 9,
@@ -12852,7 +12662,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "겨자",
+    "term": "겨자색",
     "cnt": 2,
     "pTC": 0.1,
     "binNum": 9,
@@ -12862,7 +12672,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "개나리",
+    "term": "개나리색",
     "cnt": 5,
     "pTC": 0.25,
     "binNum": 9,
@@ -12872,7 +12682,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "금",
+    "term": "금색",
     "cnt": 1,
     "pTC": 0.05,
     "binNum": 9,
@@ -12882,7 +12692,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "노랑",
+    "term": "노랑색",
     "cnt": 14,
     "pTC": 0.5,
     "binNum": 10,
@@ -12892,7 +12702,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "노란",
+    "term": "노란색",
     "cnt": 9,
     "pTC": 0.32142857142857145,
     "binNum": 10,
@@ -12902,7 +12712,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "겨자",
+    "term": "겨자색",
     "cnt": 1,
     "pTC": 0.03571428571428571,
     "binNum": 10,
@@ -12912,7 +12722,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "라임",
+    "term": "라임색",
     "cnt": 1,
     "pTC": 0.03571428571428571,
     "binNum": 10,
@@ -12922,7 +12732,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "개나리",
+    "term": "개나리색",
     "cnt": 1,
     "pTC": 0.03571428571428571,
     "binNum": 10,
@@ -12932,7 +12742,7 @@
   {
     "scheme": "plasma",
     "lang": "Korean (한국어, 조선어)",
-    "term": "레몬",
+    "term": "레몬색",
     "cnt": 2,
     "pTC": 0.07142857142857142,
     "binNum": 10,
