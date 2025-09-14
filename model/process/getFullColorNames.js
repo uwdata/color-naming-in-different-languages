@@ -1,12 +1,14 @@
 const fs = require('fs'),
   csv = require("csvtojson"),
   d3 = require('d3'),
+  csvWriter = require('csv-write-stream');
   labBinHelper = require('./labBinHelper.js');
 
 const MIN_NperBin = 4;
 const FILE_O = "../full_color_names.json";
 const FILE_O_SALIENCY = "../full_color_map_saliency_bins.json"
-const FILE_O_AVG_COLORS = "../full_color_name_avgs.json"
+//const FILE_O_AVG_COLORS = "../full_color_name_avgs.json"
+const FILE_O_DETAILED_COLORS = "../detailed_full_color_info.csv"
 
 const lab_bins = JSON.parse(fs.readFileSync("../lab_bins.json"))
 const lab_bins_arr = labBinHelper.labBinsToArray(lab_bins)
@@ -124,12 +126,25 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
 
   fs.writeFileSync(FILE_O_SALIENCY, JSON.stringify(saliency))
 
-  // make csv: detailed_color_info.csv
-  //colorInfo.
+  // make csv: detailed_full_color_info.csv
   const avgColorsOutput = getAvgColors(flatten);
 
+  let writer = csvWriter();
+  writer.pipe(fs.createWriteStream(FILE_O_DETAILED_COLORS));
+  avgColorsOutput.forEach(colorDetails => { 
+    basicColorInfo = colorInfo.find((a) => a.lang == colorDetails.lang && a.simplifiedName == colorDetails.name)
+    
+    colorDetails.langAbv = basicColorInfo.lang_abv
+    colorDetails.commonName = commonColorNameLookup[colorDetails.lang][colorDetails.name];
+    
+    [colorDetails.avgL, colorDetails.avgA, colorDetails.avgB] = [colorDetails.avgLAB.l,colorDetails.avgLAB.a, colorDetails.avgLAB.b] 
+    delete colorDetails.avgLAB
 
-  fs.writeFileSync(FILE_O_AVG_COLORS, JSON.stringify(avgColorsOutput))
+    colorDetails.numFullNames = basicColorInfo.numFullNames
+    colorDetails.numLineNames = basicColorInfo.numLineNames
+
+    writer.write(colorDetails)})
+  writer.end();
 
 });
 });

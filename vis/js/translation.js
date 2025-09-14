@@ -70,9 +70,9 @@ $(document).on('ready page:load', function () {
   .then(data => {
   d3.json("../model/full_color_names.json")
   .then(colorNames => {
-  d3.json("../model/full_color_name_avgs.json")
-  .then(colorNameAvgs => {
-    let avgColors = getAvgColors(colorNameAvgs, colorNames);
+  d3.csv("../model/detailed_full_color_info.csv")
+  .then((fullColorDetails)=> {
+    let avgColors = getAvgColors(fullColorDetails, colorNames);
     let translations  = translationByDict.slice();
     translationByDict.slice().forEach(td => {
       let best, minD;
@@ -412,12 +412,12 @@ function getLAB(bin_l, bin_a, bin_b, binSize = 10){
   let offsetBinB = Math.floor(MIN_B/binSize);
   return [bin_l * binSize, (bin_a + offsetBinA) * binSize, (bin_b + offsetBinB) * binSize];
 }
-function getAvgColors(colorNameAvgs, data){
-  colorNameAvgs.forEach(avgInfo => {
-    avgInfo.cnt = avgInfo.binPctCnt,
-    avgInfo.rate = avgInfo.totalColorFraction
+function getAvgColors(fullColorDetails, data){
+  fullColorDetails.forEach(colorDetails => {
+    colorDetails.cnt = colorDetails.binPctCnt,
+    colorDetails.rate = colorDetails.totalColorFraction
   })
-  return colorNameAvgs
+  return fullColorDetails
 }
 
 function defArrowHeads(svg){
