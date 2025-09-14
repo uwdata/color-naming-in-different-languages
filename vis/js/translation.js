@@ -67,45 +67,55 @@ $(document).on('ready page:load', function () {
 
 
   d3.json("../model/translation_loss/translation_loss_en_ko.json")
-    .then(data => {
-    d3.json("../model/full_color_names.json")
-      .then(colorNames => {
+  .then(data => {
+  d3.json("../model/full_color_names.json")
+  .then(colorNames => {
+  d3.json("../model/full_color_name_avgs.json")
+  .then(colorNameAvgs => {
 
-      let avgColors = getAvgColors(colorNames);
-      let translations  = translationByDict.slice();
-      translationByDict.slice().forEach(td => {
-        let best, minD;
-        let translationByColor = {
-          "direction": td.direction,
-          "lang_s": td.lang_s,
-          "lang_t": td.lang_t,
-          "by": "color",
-          "gid": td.gid
-        };
-        td.dist = data.find(d => d.koterm === td.koterm && d.enterm === td.enterm).dist;
-        if (td.lang_s === "ko") {
-          minD = d3.min(data.filter(d => d.koterm === td.koterm), d => d.dist);
-          best = data.find(d => d.dist === minD);
-          translationByColor = Object.assign(translationByColor, {
-            "koterm": td.koterm,
-            "enterm": best.enterm,
-            "dist": minD
-          });
-        } else {
-          minD = d3.min(data.filter(d => d.enterm === td.enterm), d => d.dist);
-          best = data.find(d => d.dist === minD);
-          translationByColor = Object.assign(translationByColor, {
-            "koterm": best.koterm,
-            "enterm": td.enterm,
-            "dist": minD
-          });
-        }
+    let avgColors = getAvgColors(colorNameAvgs, colorNames);
+    let translations  = translationByDict.slice();
+    translationByDict.slice().forEach(td => {
+      let best, minD;
+      let translationByColor = {
+        "direction": td.direction,
+        "lang_s": td.lang_s,
+        "lang_t": td.lang_t,
+        "by": "color",
+        "gid": td.gid
+      };
+      let translateInfo = data.find(d => d.koterm === td.koterm && d.enterm === td.enterm)
+      if(translateInfo){
+        console.log("Found translate info!", translateInfo)
+      }else{
+        console.log("didn't find: ", td)
+        return
+      }
+      td.dist = translateInfo.dist;
+      if (td.lang_s === "ko") {
+        minD = d3.min(data.filter(d => d.koterm === td.koterm), d => d.dist);
+        best = data.find(d => d.dist === minD);
+        translationByColor = Object.assign(translationByColor, {
+          "koterm": td.koterm,
+          "enterm": best.enterm,
+          "dist": minD
+        });
+      } else {
+        minD = d3.min(data.filter(d => d.enterm === td.enterm), d => d.dist);
+        best = data.find(d => d.dist === minD);
+        translationByColor = Object.assign(translationByColor, {
+          "koterm": best.koterm,
+          "enterm": td.enterm,
+          "dist": minD
+        });
+      }
 
-        translations.push(translationByColor);
-      });
-      translations = unique(translations, tr => tr.koterm + tr.enterm + tr.direction + tr.by + tr.gid);
-      draw(translations, avgColors);
+      translations.push(translationByColor);
     });
+    translations = unique(translations, tr => tr.koterm + tr.enterm + tr.direction + tr.by + tr.gid);
+    draw(translations, avgColors);
+  });
+  });
   });
 });
 
@@ -144,6 +154,12 @@ function draw(translations, avgColors){
   terms =  unique(terms, t => t.gid + t.term);
   terms.forEach(t => {
     let avgC = avgColors.find(avgC => avgC.name === t.term && LANG_CODE[t.lang] === avgC.lang);
+    if(avgC){
+      console.log("Found avgC!", avgC)
+    }else{
+      console.log("didn't find: ", t)
+      return
+    }
     t.lab = avgC.avgLABColor;
     t.avgColorCode = avgC.avgColorRGBCode;
     t.soleTarget = translations.filter(tr => {
@@ -409,7 +425,13 @@ function getLAB(bin_l, bin_a, bin_b, binSize = 10){
   let offsetBinB = Math.floor(MIN_B/binSize);
   return [bin_l * binSize, (bin_a + offsetBinA) * binSize, (bin_b + offsetBinB) * binSize];
 }
-function getAvgColors(data){
+function getAvgColors(colorNameAvgs, data){
+  colorNameAvgs.forEach(avgInfo => {
+    avgInfo.cnt = avgInfo.binPctCnt,
+    avgInfo.rate = avgInfo.totalColorFraction
+  })
+  return colorNameAvgs
+  /*
   const TOP_N = 1000;
 
   let avgColors = [];
@@ -438,7 +460,7 @@ function getAvgColors(data){
     });
 
   });
-  return avgColors;
+  return avgColors;*/
 }
 
 function defArrowHeads(svg){

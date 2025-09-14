@@ -6,6 +6,7 @@ const fs = require('fs'),
 const MIN_NperBin = 4;
 const FILE_O = "../full_color_names.json";
 const FILE_O_SALIENCY = "../full_color_map_saliency_bins.json"
+const FILE_O_AVG_COLORS = "../full_color_name_avgs.json"
 
 const lab_bins = JSON.parse(fs.readFileSync("../lab_bins.json"))
 const lab_bins_arr = labBinHelper.labBinsToArray(lab_bins)
@@ -119,10 +120,11 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
       saliency_info.avgTermColor = avgColor.avgColorRGBCode
     }
 
-
   fs.writeFileSync(FILE_O, JSON.stringify(flatten));
 
   fs.writeFileSync(FILE_O_SALIENCY, JSON.stringify(saliency))
+
+  fs.writeFileSync(FILE_O_AVG_COLORS, JSON.stringify(avgColors))
 
 });
 });
@@ -143,6 +145,7 @@ function getAvgColors(data, clusteredTerms){
     if (clusteredTerms) {
       topTerms  = topTerms.filter(g_term => clusteredTerms.indexOf(g_term.key) >= 0);
     }
+    let totalCount = d3.sum(topTerms, g_term => d3.sum(g_term.values, d => d.pTC));
 
     topTerms.forEach(g_term => {
       let cnt = d3.sum(g_term.values, d => d.pTC);
@@ -150,12 +153,16 @@ function getAvgColors(data, clusteredTerms){
       let avgABin = d3.sum(g_term.values, d => d.binA * d.pCT);
       let avgBBin = d3.sum(g_term.values, d => d.binB * d.pCT);
 
+      // Note: lab_from_bins works even if the bins are not whole numbers, as is the case here
       let [avg_l, avg_a, avg_b] = labBinHelper.lab_from_bins(avgLBin, avgABin, avgBBin)
 
       colorTerms.push({
         "lang": g_lang.key,
         "name": g_term.key,
-        "avgColorRGBCode": d3.color(d3.lab(avg_l, avg_a, avg_b)).toString()
+        "avgLAB": {l: avg_l, a: avg_a, b: avg_b},
+        "avgColorRGBCode": d3.color(d3.lab(avg_l, avg_a, avg_b)).toString(),
+        "binPctCnt": cnt,
+        "totalColorFraction": cnt / totalCount
       });
 
     });
