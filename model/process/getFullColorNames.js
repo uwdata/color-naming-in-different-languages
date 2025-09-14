@@ -124,7 +124,12 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
 
   fs.writeFileSync(FILE_O_SALIENCY, JSON.stringify(saliency))
 
-  fs.writeFileSync(FILE_O_AVG_COLORS, JSON.stringify(avgColors))
+  // make csv: detailed_color_info.csv
+  //colorInfo.
+  const avgColorsOutput = getAvgColors(flatten);
+
+
+  fs.writeFileSync(FILE_O_AVG_COLORS, JSON.stringify(avgColorsOutput))
 
 });
 });
