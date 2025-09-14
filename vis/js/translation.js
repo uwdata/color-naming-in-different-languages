@@ -9,52 +9,52 @@ const MIN_L = 0,
       MAX_A = 93.55002493980824,
       MAX_B = 93.38847788323793;
 const translationByDict = [
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "red", "koterm": "빨강", "by": "dict", "gid": 1 },
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "빨강", "enterm": "red", "by": "dict", "gid": 1 },
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "red", "koterm": "빨강색", "by": "dict", "gid": 1 },
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "빨강색", "enterm": "red", "by": "dict", "gid": 1 },
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "brown", "koterm": "갈", "by": "dict", "gid": 2 },
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "갈", "enterm": "brown", "by": "dict", "gid": 2 },
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "brown", "koterm": "갈색", "by": "dict", "gid": 2 },
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "갈색", "enterm": "brown", "by": "dict", "gid": 2 },
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "orange", "koterm": "주황", "by": "dict", "gid": 3},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "주황", "enterm": "orange", "by": "dict", "gid": 3},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "orange", "koterm": "주황색", "by": "dict", "gid": 3},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "주황색", "enterm": "orange", "by": "dict", "gid": 3},
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "yellow", "koterm": "노랑", "by": "dict", "gid": 4},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "노랑", "enterm": "yellow", "by": "dict", "gid": 4},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "yellow", "koterm": "노랑색", "by": "dict", "gid": 4},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "노랑색", "enterm": "yellow", "by": "dict", "gid": 4},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "연두", "enterm": "lightgreen", "by": "dict", "gid":5},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "연두색", "enterm": "lightgreen", "by": "dict", "gid":5},
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "green", "koterm": "녹", "by": "dict" , "gid": 6},
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "green", "koterm": "초록", "by": "dict" , "gid": 6},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "초록", "enterm": "green", "by": "dict" , "gid": 6},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "green", "koterm": "녹색", "by": "dict" , "gid": 6},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "green", "koterm": "초록색", "by": "dict" , "gid": 6},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "초록색", "enterm": "green", "by": "dict" , "gid": 6},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "하늘", "enterm": "skyblue", "by": "dict", "gid":7},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "하늘색", "enterm": "skyblue", "by": "dict", "gid":7},
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "blue", "koterm": "청", "by": "dict", "gid": 8},
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "blue", "koterm": "파랑", "by": "dict", "gid": 8},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "파랑", "enterm": "blue", "by": "dict", "gid": 8},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "blue", "koterm": "청색", "by": "dict", "gid": 8},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "blue", "koterm": "파랑색", "by": "dict", "gid": 8},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "파랑색", "enterm": "blue", "by": "dict", "gid": 8},
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "purple", "koterm": "자주", "by": "dict", "gid": 9},
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "purple", "koterm": "보라", "by": "dict", "gid": 9},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "보라", "enterm": "purple", "by": "dict", "gid": 9},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "purple", "koterm": "자주색", "by": "dict", "gid": 9},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "purple", "koterm": "보라색", "by": "dict", "gid": 9},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "보라색", "enterm": "purple", "by": "dict", "gid": 9},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "자주", "enterm": "purple", "by": "dict", "gid": 10},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "자주색", "enterm": "purple", "by": "dict", "gid": 10},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "연보라", "enterm": "lightpurple", "by": "dict", "gid": 11},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "연보라색", "enterm": "lightpurple", "by": "dict", "gid": 11},
 
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "pink", "koterm": "분홍", "by": "dict", "gid": 12},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "분홍", "enterm": "pink", "by": "dict", "gid": 12},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "pink", "koterm": "분홍색", "by": "dict", "gid": 12},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "분홍색", "enterm": "pink", "by": "dict", "gid": 12},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "남", "enterm": "indigo", "by": "dict", "gid": 13},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "남색", "enterm": "indigo", "by": "dict", "gid": 13},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "청록", "enterm": "turquoise", "by": "dict", "gid": 14},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "청록", "enterm": "teal", "by": "dict", "gid": 14},
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "청록", "enterm": "cyan", "by": "dict", "gid": 14},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "청록색", "enterm": "turquoise", "by": "dict", "gid": 14},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "청록색", "enterm": "teal", "by": "dict", "gid": 14},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "청록색", "enterm": "cyan", "by": "dict", "gid": 14},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "회", "enterm": "gray", "by": "dict", "gid": 15},
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "gray", "koterm": "회", "by": "dict", "gid": 15},
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "회색", "enterm": "gray", "by": "dict", "gid": 15},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "gray", "koterm": "회색", "by": "dict", "gid": 15},
 
-  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "검정", "enterm": "black", "by": "dict", "gid": 16},
-  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "black", "koterm": "검정", "by": "dict", "gid": 16}
+  {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "검정색", "enterm": "black", "by": "dict", "gid": 16},
+  {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "black", "koterm": "검정색", "by": "dict", "gid": 16}
 ];
 //Papago translator
 //Google Translator
