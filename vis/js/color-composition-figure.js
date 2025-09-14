@@ -10,25 +10,9 @@ $(document).on('ready page:load', function () {
       emptyNbin.push(0);
     }
 
-    let langs = Object.keys(data).filter(key => key !== "colorSet").sort((a,b) => - data[a].totalCount + data[b].totalCount);
-    let langsIndex =[
-      "Spanish",
-      "French",
-      "English",
-      "Portuguese",
-      "Romanian",
-      "Dutch",
-      "Polish",
-      "Persian (Farsi)",
-      "Swedish",
-      "Finnish",
-      "German",
-      "Russian",
-      "Chinese",
-      "Korean"
-    ];
+    debugger;
+    let langs = Object.keys(data).filter(key => key !== "colorSet").sort();
     langNum = langs.length;
-    langs =langs.sort((a,b) => langsIndex.findIndex(d => a.indexOf(d) >=0) - langsIndex.findIndex(d => b.indexOf(d) >=0) );
     langs.forEach((lang, i) => {
       $(".container").append('<div class="row" id="vis'+i+'"></div>');
       drawLangSpec('#vis'+i, data, lang, data.colorSet, i);
