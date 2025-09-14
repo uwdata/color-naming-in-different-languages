@@ -10,8 +10,8 @@ var participants_to_exclude = ["8481", "10376", "18992"]
 // var chNameReplacingRules = [[/藍/, "蓝"],[/桃紅/, "桃红"],[/藍/, "蓝"],[/淺藍/, "浅蓝"],[/紅/, "红"],[/亮綠/, "亮绿"],[/黃/, "黄"],[/綠/, "绿"],[/淡藍/, "蓝"],[/荧光绿/, "绿"],[/土黃/, "黄"],[/深藍/, "深蓝"],[/紅/, "红"],[/深藍/, "深蓝"],[/桃紅/, "桃红"],[/天藍/, "天蓝"],[/螢光綠/, "螢光绿"],[/螢光藍/, "螢光蓝"],[/天空藍/, "天空蓝"],[/亮藍/, "亮蓝"],[/淡藍/, "淡蓝"],[/淺綠/, "浅绿"],[/紫紅/, "紫"],[/綠/, "绿"],[/鮮紅/, "鮮红"],[/亮藍/, "亮蓝"],[/粉綠/, "粉绿"],[/淡紅/, "淡红"],[/寶藍/, "宝蓝"],[/淺橙/, "浅橙"],[/藍綠/, "蓝绿"],[/黃綠/, "黄绿"],[/亮墨綠/, "亮墨绿"],[/亮綠/, "亮绿"],[/寶藍/, "宝蓝"],[/正紅/, "正红"],[/天藍/, "天蓝"],[/螢光黃/, "荧光黄"],[/薄荷綠/, "薄荷绿"],[/淡綠/, "淡绿"],[/深黃/, "深黄"],[/深天空藍/, "深天空蓝"],[/淡粉藍/, "淡粉蓝"],[/亮黃/, "亮黄"],[/青綠/, "青绿"],[/橘紅/, "橘红"],[/黃綠/, "黄绿"],[/紫羅蘭/, "紫罗兰"],[/深粉紅/, "深粉红"],[/血紅/, "血红"],[/胭脂紅/, "胭脂红"],[/灰藍/, "灰蓝"],[/翠綠/, "翠绿"],[/粉紅/, "粉红"],[/藍紫/, "蓝紫"],[/亮紅/, "亮红"],[/亮桃紅/, "亮桃红"],[/蒂芬尼綠/, "蒂芬尼绿"],[/大紅/, "大红"],[/淡藍綠/, "淡蓝绿"],[/淺藍/, "浅蓝"],[/深紅/, "深红"],[/淡黃/, "淡黄"],[/鮮紅/, "鲜红"],[/亮深藍/, "亮深蓝"],[/亮紅/, "亮红"],[/粉藍/, "粉蓝"],[/淡粉綠/, "淡粉绿"],[/草綠/, "草绿"],[/螢光綠/, "荧光绿"],[/da hong s q/, "大红"],[/亮粉紅/, "亮粉红"],[/亮天空藍/, "亮天空蓝"],[/淺紅/, "浅红"],[/淺螢光綠/, "浅荧光绿"],[/淡綠/, "淡绿"],[/深綠/, "深绿"],[/深紅/, "深红"],[/藍綠/, "蓝绿"],[/亮藍綠/, "亮蓝绿"],[/粉紅/, "粉红"],[/天空藍/, "天空蓝"],[/橘黃/, "橘黄"],[/青藍/, "青蓝"],[/霧紅/, "雾红"]];
 var chNameReplacingRules = [[/天空蓝/,"天蓝"], [/紫粉/,"粉紫"], [/萤光/,"荧光"], [/红粉/,"粉红"], [/兰/,"蓝"], [/枚红/,"玫红"], [/桔黄/,"橘黄"], [/玫瑰红/,"玫红"], [/紫蓝/,"蓝紫"], [/红紫/,"紫红"], [/绿青/,"青绿"], [/绿黄/,"黄绿"], [/荧光蓝/,"萤光蓝"], [/蓝青/,"青蓝"], [/青色带蓝/,"青蓝"]];
 var chExcludedNames = ["1"]
-var enNameReplacingRules = [[/fuschia/, "fuchsia"], [/fuscia/, "fuchsia"], [/fuscia/, "fuchsia"], [/lavender/, "lavender"], [/lavender/, "lavender"], [/turqoise/, "turquoise"], [/grey/, "gray"]];
-var enExcludedNames = ["w", "y", "b", "asdf"]
+var enNameReplacingRules = [[/turquise/, "turquoise"], [/turqouise/, "turquoise"], [/turquise/, "turquoise"], [/turquiose/, "turquoise"], [/torquoise/, "turquoise"], [/pruple/, "purple"], [/marroon/, "maroon"], [/majenta/, "magenta"], [/yello$/, "yellow"], [/fusha/, "fuchsia"], [/fuchia/, "fuchsia"], [/fucsia/, "fuchsia"], [/fusia/, "fuchsia"], [/fushia/, "fuchsia"], [/fuschia/, "fuchsia"], [/fuscia/, "fuchsia"], [/fuscia/, "fuchsia"], [/lavender/, "lavender"], [/lavender/, "lavender"], [/turqoise/, "turquoise"], [/grey/, "gray"]];
+var enExcludedNames = ["a", "w", "y", "b", "asdf"]
 var poNameReplacingRules = [[/fucsia/, "fúcsia"], [/lilas/, "lilás"], [/turqueza/, "turquesa"], [/laranja escuto/, "laranja escuro"], [/verde mar$/, "verde marinho"], [/azul maringo/, "azul marinho"], [/^verdeado/, "esverdeado"], [/rosa chock$/, "rosa choque"], [/purpura/, "púrpura"], [/limao/, "limão"]];
 var poExcludedNames = ["blue","pink","green","red","orange","yellow","light blue","purple","turquoise","lighter blue","purpel","dark pink","dark yellow","bright green","sea blue","bright pink","light red","gold","yeallow"];
 
@@ -56,10 +56,14 @@ function standardize_entered(cn){
 
   if (cn.lang0.indexOf("Korean") >= 0) {
       name = name.trim()
-        .replace(/색$/,"")
-  } else if (cn.lang0.indexOf("Chinese") >= 0) {
+      if(name.length > 0 && !name.endsWith("색")){
+        name += "색"
+      }
+  } else if (name.length > 0 && cn.lang0.indexOf("Chinese") >= 0) {
     name = name.trim()
-        .replace(/色$/,"")
+    if(!name.endsWith("色")){
+      name += "色"
+    }
   }
 
   return name
