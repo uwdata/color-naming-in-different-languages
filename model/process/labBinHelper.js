@@ -74,9 +74,9 @@ function lab_from_bins(bins_l, bins_a, bins_b){
  */
 function labBinsToArray(lab_bins){
   const labBinsArr = []
-  for(const [l_bin, l_bin_entries] of Object.entries(lab_bins).sort()){
-    for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries).sort()){
-      for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries).sort()){
+  for(const [l_bin, l_bin_entries] of Object.entries(lab_bins).sort((a, b) => b[0] - a[0])){
+    for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries).sort((a, b) => b[0] - a[0]))){
+      for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries).sort((a, b) => b[0] - a[0]))){
         labBinsArr.push(b_bin_entry)
       }
     }

@@ -59,7 +59,7 @@ $(document).on('ready page:load', function () {
 
     language_stats = language_stats
       .filter(lang_stat => lang_stat.numBins > MIN_BINS_HIDE)
-      .sort((a,b) => a.numBins > b.numBins)
+      .sort((a,b) => b.numBins - a.numBins)
 
     const allColorsName = "All Color Bins (Reference)"
     language_stats.unshift({lang: allColorsName, numBins: lab_bins_array.length})
