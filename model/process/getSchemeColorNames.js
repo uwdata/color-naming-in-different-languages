@@ -1,6 +1,6 @@
 const fs = require('fs'),
   d3 = require('d3'),
-  labBinner = require('./labBinner.js');
+  labBinHelper = require('./labBinHelper.js')
 let flatData = JSON.parse(fs.readFileSync("../full_color_names.json"));
 const BIN_NUM = 10;
 const LANG_CODE = {
@@ -31,7 +31,7 @@ schemes.forEach(scheme => {
     let previous = {};
     for (var i = 0; i < (BIN_NUM + 1); i++) {
       let lab = d3.lab(d3.color(scheme.fn(i/BIN_NUM)));
-      let [binL, binA, binB] = labBinner.getLABBinNum(lab.l, lab.a, lab.b);
+      let [binL, binA, binB] = labBinHelper.bins_from_lab({l: lab.l, a: lab.a, b: lab.b})
       let binData = flatData.filter(d => {
         return d.lang === lang &&
           d.binL === binL && d.binA === binA && d.binB === binB;
