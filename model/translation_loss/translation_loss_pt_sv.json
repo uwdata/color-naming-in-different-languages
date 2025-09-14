@@ -1,12 +1,3096 @@
 [
   {
-    "ptterm": "azul", 
-    "svterm": "lila", 
-    "dist": 7.310445758459972
-  }, 
+    "ptterm": "azul",
+    "svterm": "bla",
+    "dist": 11.423049149492627,
+    "ptterm_refined": "azul",
+    "svterm_refined": "bla"
+  },
   {
-    "ptterm": "verde", 
-    "svterm": "lila", 
-    "dist": 19.70076361593036
+    "ptterm": "azul",
+    "svterm": "gron",
+    "dist": 147.64705623601176,
+    "ptterm_refined": "azul",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "lila",
+    "dist": 62.41402748714328,
+    "ptterm_refined": "azul",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "rod",
+    "dist": 129.72187868033814,
+    "ptterm_refined": "azul",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "rosa",
+    "dist": 82.3635182650353,
+    "ptterm_refined": "azul",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "orange",
+    "dist": 135.87903163953618,
+    "ptterm_refined": "azul",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "gul",
+    "dist": 153.98302611886078,
+    "ptterm_refined": "azul",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "turkos",
+    "dist": 89.8657870651148,
+    "ptterm_refined": "azul",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "ljusbla",
+    "dist": 46.13383849387423,
+    "ptterm_refined": "azul",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "morkbla",
+    "dist": 45.960643206226955,
+    "ptterm_refined": "azul",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "limegron",
+    "dist": 158.84431979351848,
+    "ptterm_refined": "azul",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "ljusgron",
+    "dist": 132.212282225713,
+    "ptterm_refined": "azul",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "brun",
+    "dist": 98.63055495535592,
+    "ptterm_refined": "azul",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "morklila",
+    "dist": 49.884081506096855,
+    "ptterm_refined": "azul",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "mintgron",
+    "dist": 109.58288286738131,
+    "ptterm_refined": "azul",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "morkgron",
+    "dist": 101.44647336763586,
+    "ptterm_refined": "azul",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "azul",
+    "svterm": "svart",
+    "dist": 80.48674201491104,
+    "ptterm_refined": "azul",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "bla",
+    "dist": 148.01668559881452,
+    "ptterm_refined": "verde",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "gron",
+    "dist": 13.255048349176032,
+    "ptterm_refined": "verde",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "lila",
+    "dist": 179.48142608806793,
+    "ptterm_refined": "verde",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "rod",
+    "dist": 137.8559023828935,
+    "ptterm_refined": "verde",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "rosa",
+    "dist": 155.59051892412455,
+    "ptterm_refined": "verde",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "orange",
+    "dist": 99.74235228797238,
+    "ptterm_refined": "verde",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "gul",
+    "dist": 59.017453858979465,
+    "ptterm_refined": "verde",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "turkos",
+    "dist": 61.72076381993786,
+    "ptterm_refined": "verde",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "ljusbla",
+    "dist": 100.04494067183728,
+    "ptterm_refined": "verde",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "morkbla",
+    "dist": 177.52092797213956,
+    "ptterm_refined": "verde",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "limegron",
+    "dist": 28.179160504566696,
+    "ptterm_refined": "verde",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "ljusgron",
+    "dist": 17.00069287333815,
+    "ptterm_refined": "verde",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "brun",
+    "dist": 87.27631432478083,
+    "ptterm_refined": "verde",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "morklila",
+    "dist": 146.30903825633328,
+    "ptterm_refined": "verde",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "mintgron",
+    "dist": 37.42043618788966,
+    "ptterm_refined": "verde",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "morkgron",
+    "dist": 51.02069288343801,
+    "ptterm_refined": "verde",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "verde",
+    "svterm": "svart",
+    "dist": 108.43177572109775,
+    "ptterm_refined": "verde",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "bla",
+    "dist": 77.46905637546365,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "gron",
+    "dist": 162.4483343254708,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "lila",
+    "dist": 47.69378866071004,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "rod",
+    "dist": 67.16627185318596,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "rosa",
+    "dist": 9.248705290758137,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "orange",
+    "dist": 95.8894525233389,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "gul",
+    "dist": 139.44062249905875,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "turkos",
+    "dist": 126.5711783803077,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "ljusbla",
+    "dist": 96.73993233164748,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "morkbla",
+    "dist": 74.68845159976807,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "limegron",
+    "dist": 163.9599684816211,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "ljusgron",
+    "dist": 145.11980598941074,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "brun",
+    "dist": 75.62397864593038,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "morklila",
+    "dist": 49.07727676906473,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "mintgron",
+    "dist": 135.2734556730328,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "morkgron",
+    "dist": 119.85418115645186,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "rosa",
+    "svterm": "svart",
+    "dist": 86.99236859917913,
+    "ptterm_refined": "rosa",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "bla",
+    "dist": 45.337305129752096,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "gron",
+    "dist": 177.96895977706268,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "lila",
+    "dist": 17.62577172852355,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "rod",
+    "dist": 109.65134920140353,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "rosa",
+    "dist": 50.193439523250134,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "orange",
+    "dist": 133.70323572992748,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "gul",
+    "dist": 168.84008029879732,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "turkos",
+    "dist": 129.19759441780425,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "ljusbla",
+    "dist": 88.97161242763283,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "morkbla",
+    "dist": 29.963905587006742,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "limegron",
+    "dist": 184.54749283946646,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "ljusgron",
+    "dist": 161.27331552628803,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "brun",
+    "dist": 99.72797867508896,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "morklila",
+    "dist": 30.856006269222856,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "mintgron",
+    "dist": 144.11615878205467,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "morkgron",
+    "dist": 128.03101791490758,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "roxo",
+    "svterm": "svart",
+    "dist": 86.07127046030035,
+    "ptterm_refined": "roxo",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "bla",
+    "dist": 141.06750145494013,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "gron",
+    "dist": 108.436854215833,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "lila",
+    "dist": 138.00533264163303,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "rod",
+    "dist": 46.73496115760339,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "rosa",
+    "dist": 94.77247652751602,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "orange",
+    "dist": 5.290513423728441,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "gul",
+    "dist": 60.47122020938524,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "turkos",
+    "dist": 115.80269179132053,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "ljusbla",
+    "dist": 120.9157147606134,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "morkbla",
+    "dist": 154.21331561160426,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "limegron",
+    "dist": 97.58679574188403,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "ljusgron",
+    "dist": 95.50422260861843,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "brun",
+    "dist": 45.71413850700977,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "morklila",
+    "dist": 114.74050622711871,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "mintgron",
+    "dist": 104.87994574366664,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "morkgron",
+    "dist": 90.04826621140242,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "laranja",
+    "svterm": "svart",
+    "dist": 96.62107399658666,
+    "ptterm_refined": "laranja",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "bla",
+    "dist": 161.17944297297484,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "gron",
+    "dist": 62.50514555770851,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "lila",
+    "dist": 175.64142535804723,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "rod",
+    "dist": 103.43433260943358,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "rosa",
+    "dist": 139.0758800677117,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "orange",
+    "dist": 56.191319890450124,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "gul",
+    "dist": 4.164769154611397,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "turkos",
+    "dist": 96.30146999482886,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "ljusbla",
+    "dist": 122.51409522817846,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "morkbla",
+    "dist": 184.71655913451409,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "limegron",
+    "dist": 45.49472530945674,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "ljusgron",
+    "dist": 54.95018901896108,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "brun",
+    "dist": 74.86449511881084,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "morklila",
+    "dist": 148.20817232425134,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "mintgron",
+    "dist": 76.12431915775753,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "morkgron",
+    "dist": 79.41658854876148,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "amarelo",
+    "svterm": "svart",
+    "dist": 118.07997352137924,
+    "ptterm_refined": "amarelo",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "bla",
+    "dist": 132.0765203468848,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "gron",
+    "dist": 143.48151931885997,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "lila",
+    "dist": 111.53664363195601,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "rod",
+    "dist": 7.159895702711161,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "rosa",
+    "dist": 65.95454469026996,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "orange",
+    "dist": 45.407202108252434,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "gul",
+    "dist": 102.58444758044607,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "turkos",
+    "dist": 136.4461382418457,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "ljusbla",
+    "dist": 127.55460952707344,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "morkbla",
+    "dist": 133.7350730358872,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "limegron",
+    "dist": 136.60393075559818,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "ljusgron",
+    "dist": 128.9630075914413,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "brun",
+    "dist": 54.71837431879477,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "morklila",
+    "dist": 95.78539835075847,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "mintgron",
+    "dist": 131.92892610580543,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "morkgron",
+    "dist": 110.71494592746048,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "vermelho",
+    "svterm": "svart",
+    "dist": 92.46934365016557,
+    "ptterm_refined": "vermelho",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "bla",
+    "dist": 52.27128577146157,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "gron",
+    "dist": 110.20671797376247,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "lila",
+    "dist": 98.36548106138983,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "rod",
+    "dist": 129.35682109278127,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "rosa",
+    "dist": 99.4778747317272,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "orange",
+    "dist": 122.41630320276936,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "gul",
+    "dist": 125.1394049766826,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "turkos",
+    "dist": 48.46387858249312,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "ljusbla",
+    "dist": 8.781138082113095,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "morkbla",
+    "dist": 88.40612402655174,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "limegron",
+    "dist": 123.3860882953453,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "ljusgron",
+    "dist": 95.60520767681192,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "brun",
+    "dist": 86.5273087654727,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "morklila",
+    "dist": 76.62314463471796,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "mintgron",
+    "dist": 70.04705533073319,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "morkgron",
+    "dist": 75.16113632392054,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "azulclaro",
+    "svterm": "svart",
+    "dist": 77.39075402035873,
+    "ptterm_refined": "azulclaro",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "bla",
+    "dist": 149.82068737569014,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "gron",
+    "dist": 14.017392361431913,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "lila",
+    "dist": 181.4843161227758,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "rod",
+    "dist": 140.26428578975822,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "rosa",
+    "dist": 157.13003813561113,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "orange",
+    "dist": 101.18724971652097,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "gul",
+    "dist": 56.87190096467709,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "turkos",
+    "dist": 60.02217944791451,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "ljusbla",
+    "dist": 100.43714497793077,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "morkbla",
+    "dist": 180.25793335116734,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "limegron",
+    "dist": 25.530050279440882,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "ljusgron",
+    "dist": 11.061409732013162,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "brun",
+    "dist": 91.46130167224092,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "morklila",
+    "dist": 149.83165050573103,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "mintgron",
+    "dist": 34.45146738859027,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "morkgron",
+    "dist": 58.356432555307094,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "verdeclaro",
+    "svterm": "svart",
+    "dist": 114.31695004706808,
+    "ptterm_refined": "verdeclaro",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "bla",
+    "dist": 32.039181932806656,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "gron",
+    "dist": 180.82932120257175,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "lila",
+    "dist": 39.7236722174586,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "rod",
+    "dist": 131.47824531004875,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "rosa",
+    "dist": 75.41758903977102,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "orange",
+    "dist": 150.83199839892686,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "gul",
+    "dist": 179.99599150472133,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "turkos",
+    "dist": 126.85192426561856,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "ljusbla",
+    "dist": 84.4865871286678,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "morkbla",
+    "dist": 10.2824463260576,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "limegron",
+    "dist": 190.16689947872794,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "ljusgron",
+    "dist": 165.10582239354133,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "brun",
+    "dist": 111.81277845383234,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "morklila",
+    "dist": 41.05531552691596,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "mintgron",
+    "dist": 144.6400781109779,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "morkgron",
+    "dist": 129.11986051998423,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "azulescuro",
+    "svterm": "svart",
+    "dist": 87.25348423993063,
+    "ptterm_refined": "azulescuro",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "bla",
+    "dist": 41.21261047278692,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "gron",
+    "dist": 151.0235328837019,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "lila",
+    "dist": 42.09072320297809,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "rod",
+    "dist": 96.72899007264644,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "rosa",
+    "dist": 45.39066908528846,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "orange",
+    "dist": 111.68190497188012,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "gul",
+    "dist": 141.8647035281081,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "turkos",
+    "dist": 103.02387176978847,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "ljusbla",
+    "dist": 65.282298286585,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "morkbla",
+    "dist": 51.61333309863203,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "limegron",
+    "dist": 157.22669306179932,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "ljusgron",
+    "dist": 133.9203490617926,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "brun",
+    "dist": 78.89262470432996,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "morklila",
+    "dist": 35.39428410648376,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "mintgron",
+    "dist": 116.95997294584477,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "morkgron",
+    "dist": 104.8528686458121,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "lilas",
+    "svterm": "svart",
+    "dist": 75.25209925010488,
+    "ptterm_refined": "lilas",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "bla",
+    "dist": 100.55832205653853,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "gron",
+    "dist": 98.9561566840888,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "lila",
+    "dist": 109.67329649805616,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "rod",
+    "dist": 67.50752915060563,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "rosa",
+    "dist": 81.1508862281158,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "orange",
+    "dist": 57.053401218971075,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "gul",
+    "dist": 82.60121064401814,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "turkos",
+    "dist": 85.71402149727525,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "ljusbla",
+    "dist": 81.96091718430996,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "morkbla",
+    "dist": 114.1868415445365,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "limegron",
+    "dist": 99.406682245889,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "ljusgron",
+    "dist": 84.12190876878844,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "brun",
+    "dist": 16.217024891024973,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "morklila",
+    "dist": 74.58472023946457,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "mintgron",
+    "dist": 82.12882737105781,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "morkgron",
+    "dist": 51.85305589143786,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "marrom",
+    "svterm": "svart",
+    "dist": 44.254082161997964,
+    "ptterm_refined": "marrom",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "bla",
+    "dist": 119.39891740111143,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "gron",
+    "dist": 45.50204865442063,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "lila",
+    "dist": 158.5008946693471,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "rod",
+    "dist": 141.96719563670544,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "rosa",
+    "dist": 142.90943307913471,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "orange",
+    "dist": 111.91416338475652,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "gul",
+    "dist": 82.73742112186171,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "turkos",
+    "dist": 22.740752207839968,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "ljusbla",
+    "dist": 66.81862492699817,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "morkbla",
+    "dist": 152.32204287279222,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "limegron",
+    "dist": 62.83771799344198,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "ljusgron",
+    "dist": 36.72594844386872,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "brun",
+    "dist": 89.14267962694989,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "morklila",
+    "dist": 128.56211956640126,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "mintgron",
+    "dist": 13.236503172387454,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "morkgron",
+    "dist": 53.769392803461145,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "verdeagua",
+    "svterm": "svart",
+    "dist": 99.23214692282363,
+    "ptterm_refined": "verdeagua",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "bla",
+    "dist": 75.30178151007256,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "gron",
+    "dist": 169.58976500764732,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "lila",
+    "dist": 40.21021908018184,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "rod",
+    "dist": 73.1394804259169,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "rosa",
+    "dist": 15.32353431872477,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "orange",
+    "dist": 104.34304560366411,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "gul",
+    "dist": 148.24550977201807,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "turkos",
+    "dist": 132.52748025789765,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "ljusbla",
+    "dist": 100.4602860288581,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "morkbla",
+    "dist": 68.18008247009838,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "limegron",
+    "dist": 171.87643948557343,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "ljusgron",
+    "dist": 152.46826531694597,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "brun",
+    "dist": 81.56275489647285,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "morklila",
+    "dist": 44.22265175514239,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "mintgron",
+    "dist": 142.09632425353394,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "morkgron",
+    "dist": 124.66798480689498,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "magenta",
+    "svterm": "svart",
+    "dist": 88.48246027423947,
+    "ptterm_refined": "magenta",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "bla",
+    "dist": 96.1764365543611,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "gron",
+    "dist": 69.37884093057507,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "lila",
+    "dist": 137.9611425036037,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "rod",
+    "dist": 137.76696389596594,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "rosa",
+    "dist": 127.39665073777087,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "orange",
+    "dist": 115.50956104946873,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "gul",
+    "dist": 97.55846229706488,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "turkos",
+    "dist": 7.815848258328865,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "ljusbla",
+    "dist": 42.52010909245019,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "morkbla",
+    "dist": 130.47877841433055,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "limegron",
+    "dist": 85.09978273760578,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "ljusgron",
+    "dist": 57.15410803073088,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "brun",
+    "dist": 87.29700423335271,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "morklila",
+    "dist": 111.20515476347623,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "mintgron",
+    "dist": 29.33838732343899,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "morkgron",
+    "dist": 58.207802937687454,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "ciano",
+    "svterm": "svart",
+    "dist": 90.99815826729272,
+    "ptterm_refined": "ciano",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "bla",
+    "dist": 83.14090968170058,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "gron",
+    "dist": 173.92085936972947,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "lila",
+    "dist": 44.45488986638475,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "rod",
+    "dist": 70.21496520737247,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "rosa",
+    "dist": 12.336287828036138,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "orange",
+    "dist": 104.27547160965453,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "gul",
+    "dist": 149.60110601967284,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "turkos",
+    "dist": 137.51701816533182,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "ljusbla",
+    "dist": 106.38483168025817,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "morkbla",
+    "dist": 75.34842693658777,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "limegron",
+    "dist": 175.03861473621058,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "ljusgron",
+    "dist": 156.56367555158337,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "brun",
+    "dist": 85.74944084080691,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "morklila",
+    "dist": 53.28396949706757,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "mintgron",
+    "dist": 146.50625186086796,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "morkgron",
+    "dist": 130.79173799672827,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "rosachoque",
+    "svterm": "svart",
+    "dist": 95.07089276287924,
+    "ptterm_refined": "rosachoque",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "bla",
+    "dist": 172.1235308371195,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "gron",
+    "dist": 28.07592115559645,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "lila",
+    "dist": 198.50409323613857,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "rod",
+    "dist": 141.28387397778027,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "rosa",
+    "dist": 169.03998966293744,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "orange",
+    "dist": 96.43613986196866,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "gul",
+    "dist": 42.407705387689155,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "turkos",
+    "dist": 86.88152533033099,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "ljusbla",
+    "dist": 125.18487555611654,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "morkbla",
+    "dist": 200.45100617187364,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "limegron",
+    "dist": 7.539521467726615,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "ljusgron",
+    "dist": 33.67403565335915,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "brun",
+    "dist": 99.59087193661148,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "morklila",
+    "dist": 167.15107767428677,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "mintgron",
+    "dist": 61.7669274194621,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "morkgron",
+    "dist": 73.79393860057922,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "verdelimao",
+    "svterm": "svart",
+    "dist": 128.94026579140882,
+    "ptterm_refined": "verdelimao",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "bla",
+    "dist": 26.178502420461697,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "gron",
+    "dist": 143.28979474355918,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "lila",
+    "dist": 66.97671051691651,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "rod",
+    "dist": 124.2843941126874,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "rosa",
+    "dist": 81.62622065944201,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "orange",
+    "dist": 130.64930037181267,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "gul",
+    "dist": 149.9940122782407,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "turkos",
+    "dist": 89.8327785888504,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "ljusbla",
+    "dist": 53.193029792357386,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "morkbla",
+    "dist": 48.693526772559046,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "limegron",
+    "dist": 154.32459897191188,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "ljusgron",
+    "dist": 128.05747060419168,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "brun",
+    "dist": 90.91300646182653,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "morklila",
+    "dist": 41.643438495683434,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "mintgron",
+    "dist": 107.22697719937436,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "morkgron",
+    "dist": 92.30786149169336,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "azulmarinho",
+    "svterm": "svart",
+    "dist": 67.31310237989919,
+    "ptterm_refined": "azulmarinho",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "bla",
+    "dist": 52.05632480151723,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "gron",
+    "dist": 182.86311528461124,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "lila",
+    "dist": 12.33515441711643,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "rod",
+    "dist": 108.92828440945227,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "rosa",
+    "dist": 46.80257001603993,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "orange",
+    "dist": 134.9944468157947,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "gul",
+    "dist": 171.5688187615518,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "turkos",
+    "dist": 134.6545471859795,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "ljusbla",
+    "dist": 94.41847902528554,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "morkbla",
+    "dist": 35.975904499391,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "limegron",
+    "dist": 188.76880495789044,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "ljusgron",
+    "dist": 165.98269161274808,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "brun",
+    "dist": 103.60724341883243,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "morklila",
+    "dist": 38.59890353836018,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "mintgron",
+    "dist": 149.29086702966183,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "morkgron",
+    "dist": 134.45679870991228,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "violeta",
+    "svterm": "svart",
+    "dist": 93.59349051470961,
+    "ptterm_refined": "violeta",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "bla",
+    "dist": 80.02295925227372,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "gron",
+    "dist": 91.63212126506075,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "lila",
+    "dist": 102.38964287068936,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "rod",
+    "dist": 91.98537073095586,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "rosa",
+    "dist": 84.93670899354889,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "orange",
+    "dist": 81.23808570217037,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "gul",
+    "dist": 90.96675005624836,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "turkos",
+    "dist": 57.6097322003211,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "ljusbla",
+    "dist": 50.87329259693138,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "morkbla",
+    "dist": 100.91783857529167,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "limegron",
+    "dist": 98.63718711207004,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "ljusgron",
+    "dist": 75.30376155744578,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "brun",
+    "dist": 40.65422963034923,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "morklila",
+    "dist": 68.9517653357628,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "mintgron",
+    "dist": 61.230619086033855,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "morkgron",
+    "dist": 46.42122355970113,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "cinza",
+    "svterm": "svart",
+    "dist": 49.249193802830014,
+    "ptterm_refined": "cinza",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "bla",
+    "dist": 90.88427536275269,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "gron",
+    "dist": 132.00181928986987,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "lila",
+    "dist": 81.83121461886529,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "rod",
+    "dist": 56.88788064264846,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "rosa",
+    "dist": 54.240676452667934,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "orange",
+    "dist": 73.37319424324053,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "gul",
+    "dist": 113.00552390951067,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "turkos",
+    "dist": 107.6401124676607,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "ljusbla",
+    "dist": 89.49140821652422,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "morkbla",
+    "dist": 91.50018555703336,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "limegron",
+    "dist": 133.18576676835858,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "ljusgron",
+    "dist": 116.40787634607523,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "brun",
+    "dist": 38.294642629789514,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "morklila",
+    "dist": 50.791245049172105,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "mintgron",
+    "dist": 109.98303720829774,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "morkgron",
+    "dist": 80.89061666305531,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "vinho",
+    "svterm": "svart",
+    "dist": 44.34259009382788,
+    "ptterm_refined": "vinho",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "bla",
+    "dist": 114.74837069974109,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "gron",
+    "dist": 57.52641841407727,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "lila",
+    "dist": 145.0885532886445,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "rod",
+    "dist": 114.55383149398868,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "rosa",
+    "dist": 125.29078579759954,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "orange",
+    "dist": 87.4714308366508,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "gul",
+    "dist": 74.42686220139613,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "turkos",
+    "dist": 54.724843902142055,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "ljusbla",
+    "dist": 75.11076821643256,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "morkbla",
+    "dist": 139.79126493175667,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "limegron",
+    "dist": 66.5175634592963,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "ljusgron",
+    "dist": 47.49873285494847,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "brun",
+    "dist": 57.02908506035599,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "morklila",
+    "dist": 107.28171738240778,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "mintgron",
+    "dist": 44.1207783063208,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "morkgron",
+    "dist": 18.523234389228104,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "verdeescuro",
+    "svterm": "svart",
+    "dist": 63.84594029216316,
+    "ptterm_refined": "verdeescuro",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "bla",
+    "dist": 109.6708865412087,
+    "ptterm_refined": "bege",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "gron",
+    "dist": 72.81076748429716,
+    "ptterm_refined": "bege",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "lila",
+    "dist": 126.97814162227183,
+    "ptterm_refined": "bege",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "rod",
+    "dist": 84.28691589542744,
+    "ptterm_refined": "bege",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "rosa",
+    "dist": 97.01855946933934,
+    "ptterm_refined": "bege",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "orange",
+    "dist": 56.06057343121808,
+    "ptterm_refined": "bege",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "gul",
+    "dist": 55.33361747164926,
+    "ptterm_refined": "bege",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "turkos",
+    "dist": 62.79513090689502,
+    "ptterm_refined": "bege",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "ljusbla",
+    "dist": 74.41495985780435,
+    "ptterm_refined": "bege",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "morkbla",
+    "dist": 133.90971330922434,
+    "ptterm_refined": "bege",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "limegron",
+    "dist": 72.63246741838024,
+    "ptterm_refined": "bege",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "ljusgron",
+    "dist": 55.5644881293192,
+    "ptterm_refined": "bege",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "brun",
+    "dist": 42.627386106262,
+    "ptterm_refined": "bege",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "morklila",
+    "dist": 99.93639862330656,
+    "ptterm_refined": "bege",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "mintgron",
+    "dist": 54.952362994191695,
+    "ptterm_refined": "bege",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "morkgron",
+    "dist": 55.943370942574916,
+    "ptterm_refined": "bege",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "bege",
+    "svterm": "svart",
+    "dist": 79.26289677839443,
+    "ptterm_refined": "bege",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "bla",
+    "dist": 66.11652586894817,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "gron",
+    "dist": 96.23205089598292,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "lila",
+    "dist": 106.02538743172971,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "rod",
+    "dist": 120.8263533832994,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "rosa",
+    "dist": 99.39906905889865,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "orange",
+    "dist": 109.37747888943375,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "gul",
+    "dist": 108.82244976898016,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "turkos",
+    "dist": 38.06652920053301,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "ljusbla",
+    "dist": 18.29483595815297,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "morkbla",
+    "dist": 100.8981937281286,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "limegron",
+    "dist": 108.0508162802471,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "ljusgron",
+    "dist": 80.61071003314277,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "brun",
+    "dist": 75.73247613521289,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "morklila",
+    "dist": 83.27549228523357,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "mintgron",
+    "dist": 56.980615262538265,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "morkgron",
+    "dist": 66.74579571146849,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "azulbebe",
+    "svterm": "svart",
+    "dist": 76.71585273011073,
+    "ptterm_refined": "azulbebe",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "bla",
+    "dist": 112.25689480130819,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "gron",
+    "dist": 57.998137511757974,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "lila",
+    "dist": 140.43974366720616,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "rod",
+    "dist": 108.62581687075678,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "rosa",
+    "dist": 119.15566159984094,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "orange",
+    "dist": 81.00054810245808,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "gul",
+    "dist": 69.07564335624608,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "turkos",
+    "dist": 52.29303829557747,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "ljusbla",
+    "dist": 72.06087635864839,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "morkbla",
+    "dist": 136.96396093304364,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "limegron",
+    "dist": 65.20761276485655,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "ljusgron",
+    "dist": 45.23066876906583,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "brun",
+    "dist": 51.48265667233801,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "morklila",
+    "dist": 104.12914065107576,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "mintgron",
+    "dist": 42.309886694252945,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "morkgron",
+    "dist": 23.728531217848854,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "verdemusgo",
+    "svterm": "svart",
+    "dist": 64.73116994632876,
+    "ptterm_refined": "verdemusgo",
+    "svterm_refined": "svart"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "bla",
+    "dist": 80.92086244917141,
+    "ptterm_refined": "preto",
+    "svterm_refined": "bla"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "gron",
+    "dist": 120.15379618221097,
+    "ptterm_refined": "preto",
+    "svterm_refined": "gron"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "lila",
+    "dist": 97.04614042367932,
+    "ptterm_refined": "preto",
+    "svterm_refined": "lila"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "rod",
+    "dist": 94.530675642219,
+    "ptterm_refined": "preto",
+    "svterm_refined": "rod"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "rosa",
+    "dist": 86.35428814856952,
+    "ptterm_refined": "preto",
+    "svterm_refined": "rosa"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "orange",
+    "dist": 97.20315719954868,
+    "ptterm_refined": "preto",
+    "svterm_refined": "orange"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "gul",
+    "dist": 119.6401331500494,
+    "ptterm_refined": "preto",
+    "svterm_refined": "gul"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "turkos",
+    "dist": 90.92200235140182,
+    "ptterm_refined": "preto",
+    "svterm_refined": "turkos"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "ljusbla",
+    "dist": 73.92528227861808,
+    "ptterm_refined": "preto",
+    "svterm_refined": "ljusbla"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "morkbla",
+    "dist": 89.49538277636834,
+    "ptterm_refined": "preto",
+    "svterm_refined": "morkbla"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "limegron",
+    "dist": 126.90909225376622,
+    "ptterm_refined": "preto",
+    "svterm_refined": "limegron"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "ljusgron",
+    "dist": 106.96424827277231,
+    "ptterm_refined": "preto",
+    "svterm_refined": "ljusgron"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "brun",
+    "dist": 51.34637229384233,
+    "ptterm_refined": "preto",
+    "svterm_refined": "brun"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "morklila",
+    "dist": 54.982576615711196,
+    "ptterm_refined": "preto",
+    "svterm_refined": "morklila"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "mintgron",
+    "dist": 95.90124869639209,
+    "ptterm_refined": "preto",
+    "svterm_refined": "mintgron"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "morkgron",
+    "dist": 60.058074514484304,
+    "ptterm_refined": "preto",
+    "svterm_refined": "morkgron"
+  },
+  {
+    "ptterm": "preto",
+    "svterm": "svart",
+    "dist": 10.276356638797502,
+    "ptterm_refined": "preto",
+    "svterm_refined": "svart"
   }
 ]

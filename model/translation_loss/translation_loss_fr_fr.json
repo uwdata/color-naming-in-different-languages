@@ -1,67 +1,6932 @@
 [
-  {}, 
   {
-    "frterm": "bleu", 
-    "dist": 14.799002598586785, 
-    "frterm2": "vert"
-  }, 
+    "frterm": "bleu",
+    "frterm2": "vert",
+    "dist": 136.03039335787025,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "vert"
+  },
   {
-    "frterm": "bleu", 
-    "dist": 7.377613545305304, 
-    "frterm2": "violet"
-  }, 
+    "frterm": "bleu",
+    "frterm2": "violet",
+    "dist": 50.93443297285367,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "violet"
+  },
   {
-    "frterm": "bleu", 
-    "dist": 9.37568421043294, 
-    "frterm2": "rose"
-  }, 
+    "frterm": "bleu",
+    "frterm2": "rose",
+    "dist": 73.24860392276707,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "rose"
+  },
   {
-    "frterm": "bleu", 
-    "dist": 6.707180693997538, 
-    "frterm2": "mauve"
-  }, 
-  {}, 
-  {}, 
+    "frterm": "bleu",
+    "frterm2": "orange",
+    "dist": 134.09570716652402,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "orange"
+  },
   {
-    "frterm": "vert", 
-    "dist": 19.45036092011689, 
-    "frterm2": "violet"
-  }, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
+    "frterm": "bleu",
+    "frterm2": "rouge",
+    "dist": 126.08364409027146,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "rouge"
+  },
   {
-    "frterm": "rose", 
-    "dist": 16.70166656137978, 
-    "frterm2": "vert"
-  }, 
+    "frterm": "bleu",
+    "frterm2": "jaune",
+    "dist": 151.9010724745973,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "jaune"
+  },
   {
-    "frterm": "rose", 
-    "dist": 5.18511883824533, 
-    "frterm2": "violet"
-  }, 
-  {}, 
-  {}, 
-  {}, 
+    "frterm": "bleu",
+    "frterm2": "turquoise",
+    "dist": 93.96462942733422,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "turquoise"
+  },
   {
-    "frterm": "mauve", 
-    "dist": 18.883555147678763, 
-    "frterm2": "vert"
-  }, 
+    "frterm": "bleu",
+    "frterm2": "mauve",
+    "dist": 46.1716338006973,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "mauve"
+  },
   {
-    "frterm": "mauve", 
-    "dist": 1.0394899352471962, 
-    "frterm2": "violet"
-  }, 
+    "frterm": "bleu",
+    "frterm2": "fuchsia",
+    "dist": 78.46981561483624,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "fuchsia"
+  },
   {
-    "frterm": "mauve", 
-    "dist": 5.310497268628821, 
-    "frterm2": "rose"
-  }, 
-  {}
+    "frterm": "bleu",
+    "frterm2": "bleuciel",
+    "dist": 49.78975010997068,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "bleuciel"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "marron",
+    "dist": 94.84420000748253,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "bleumarine",
+    "dist": 29.24861143338376,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "bleumarine"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "magenta",
+    "dist": 81.17470856791478,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "vertclair",
+    "dist": 140.91887411834708,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "bleuclair",
+    "dist": 50.86522567501446,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "bleuclair"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "cyan",
+    "dist": 70.66385675921723,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "vertfonce",
+    "dist": 97.76412100379247,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "vertfluo",
+    "dist": 162.22828409735254,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "vertpomme",
+    "dist": 156.45037206263254,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "bleufonce",
+    "dist": 33.16697648338661,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "bleufonce"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "kaki",
+    "dist": 109.50934675911721,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "brun",
+    "dist": 90.77317566188492,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "brun"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "bleuroi",
+    "dist": 35.527739673347185,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "bleuroi"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "noir",
+    "dist": 80.98382998894493,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "gris",
+    "dist": 65.8947517229633,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "indigo",
+    "dist": 34.03616823198316,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "pourpre",
+    "dist": 60.787221253029756,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "vertd'eau",
+    "dist": 110.64021067390472,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "bordeaux",
+    "dist": 91.22709163092678,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "bordeaux"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "bleuturquoise",
+    "dist": 78.75724462728978,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "bleuturquoise"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "violetfonce",
+    "dist": 47.05281951084667,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "ocre",
+    "dist": 119.86004143016339,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "vertpale",
+    "dist": 120.11654454808439,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "jaunemoutarde",
+    "dist": 135.1594177749753,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "lavande",
+    "dist": 37.85273630923642,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "saumon",
+    "dist": 94.30184751146439,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "bleunuit",
+    "dist": 38.386027813833714,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "bleunuit"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "bleugris",
+    "dist": 52.351159153053466,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "bleugris"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "prune",
+    "dist": 63.1423825345007,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "taupe",
+    "dist": 79.54137668130699,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "vertforet",
+    "dist": 102.12274116436802,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "vertkaki",
+    "dist": 109.89401971466592,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "vertsapin",
+    "dist": 94.59572126662623,
+    "frterm_refined": "bleu",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "vert",
+    "frterm2": "violet",
+    "dist": 163.954990233408,
+    "frterm_refined": "vert",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "vert",
+    "frterm2": "vertclair",
+    "dist": 13.646759136609631,
+    "frterm_refined": "vert",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "vert",
+    "frterm2": "vertfonce",
+    "dist": 55.474870634808745,
+    "frterm_refined": "vert",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "vert",
+    "frterm2": "vertfluo",
+    "dist": 27.934100325352706,
+    "frterm_refined": "vert",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "vert",
+    "frterm2": "vertpomme",
+    "dist": 24.775049447048904,
+    "frterm_refined": "vert",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "vert",
+    "frterm2": "vertd'eau",
+    "dist": 34.487818830200275,
+    "frterm_refined": "vert",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "vert",
+    "frterm2": "violetfonce",
+    "dist": 146.35221921099534,
+    "frterm_refined": "vert",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "vert",
+    "frterm2": "vertpale",
+    "dist": 28.540675358193223,
+    "frterm_refined": "vert",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "vert",
+    "frterm2": "vertforet",
+    "dist": 49.0110279009038,
+    "frterm_refined": "vert",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "vert",
+    "frterm2": "vertkaki",
+    "dist": 54.00105636001349,
+    "frterm_refined": "vert",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "vert",
+    "frterm2": "vertsapin",
+    "dist": 56.5259306228934,
+    "frterm_refined": "vert",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "violet",
+    "frterm2": "violetfonce",
+    "dist": 31.31768944915973,
+    "frterm_refined": "violet",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vert",
+    "dist": 143.51039432559418,
+    "frterm_refined": "rose",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "violet",
+    "dist": 43.46340660040908,
+    "frterm_refined": "rose",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "rouge",
+    "dist": 65.2590955342683,
+    "frterm_refined": "rose",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "turquoise",
+    "dist": 121.3948232406678,
+    "frterm_refined": "rose",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vertclair",
+    "dist": 145.9365655885134,
+    "frterm_refined": "rose",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vertfonce",
+    "dist": 108.36487171271267,
+    "frterm_refined": "rose",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vertfluo",
+    "dist": 165.7417408337682,
+    "frterm_refined": "rose",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vertpomme",
+    "dist": 156.91748624509577,
+    "frterm_refined": "rose",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vertd'eau",
+    "dist": 128.66541050077896,
+    "frterm_refined": "rose",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "violetfonce",
+    "dist": 47.561711255855464,
+    "frterm_refined": "rose",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vertpale",
+    "dist": 124.23320369943471,
+    "frterm_refined": "rose",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "saumon",
+    "dist": 56.84555439983459,
+    "frterm_refined": "rose",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "taupe",
+    "dist": 68.15062029977555,
+    "frterm_refined": "rose",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vertforet",
+    "dist": 113.12017955509114,
+    "frterm_refined": "rose",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vertkaki",
+    "dist": 101.46519172539044,
+    "frterm_refined": "rose",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vertsapin",
+    "dist": 107.18318848745277,
+    "frterm_refined": "rose",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "vert",
+    "dist": 97.09571890885402,
+    "frterm_refined": "orange",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "violet",
+    "dist": 129.64779062361765,
+    "frterm_refined": "orange",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "rose",
+    "dist": 90.97971600411721,
+    "frterm_refined": "orange",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "rouge",
+    "dist": 45.60787184654397,
+    "frterm_refined": "orange",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "turquoise",
+    "dist": 111.48616157764293,
+    "frterm_refined": "orange",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "vertclair",
+    "dist": 96.26715858538392,
+    "frterm_refined": "orange",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "vertfonce",
+    "dist": 86.49178775609614,
+    "frterm_refined": "orange",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "vertfluo",
+    "dist": 107.25329806711292,
+    "frterm_refined": "orange",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "vertpomme",
+    "dist": 97.22176637996867,
+    "frterm_refined": "orange",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "pourpre",
+    "dist": 103.02040679138992,
+    "frterm_refined": "orange",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "vertd'eau",
+    "dist": 103.08751939754877,
+    "frterm_refined": "orange",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "violetfonce",
+    "dist": 117.96909578647853,
+    "frterm_refined": "orange",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "vertpale",
+    "dist": 84.66414154875689,
+    "frterm_refined": "orange",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "saumon",
+    "dist": 43.71807592826593,
+    "frterm_refined": "orange",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "prune",
+    "dist": 94.99265448867085,
+    "frterm_refined": "orange",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "taupe",
+    "dist": 64.5620801526998,
+    "frterm_refined": "orange",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "vertforet",
+    "dist": 86.56557882467324,
+    "frterm_refined": "orange",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "vertkaki",
+    "dist": 59.06037557859694,
+    "frterm_refined": "orange",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "orange",
+    "frterm2": "vertsapin",
+    "dist": 88.30601565700833,
+    "frterm_refined": "orange",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "vert",
+    "dist": 131.300623479325,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "violet",
+    "dist": 103.95294006230738,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "turquoise",
+    "dist": 133.5502611060446,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "vertclair",
+    "dist": 132.6791824411243,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "vertfonce",
+    "dist": 105.2136217248223,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "vertfluo",
+    "dist": 146.96908267455,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "vertpomme",
+    "dist": 136.99177990670697,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "vertd'eau",
+    "dist": 130.93873154206568,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "violetfonce",
+    "dist": 95.47429919371265,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "vertpale",
+    "dist": 117.26989761018174,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "saumon",
+    "dist": 47.68436890013406,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "taupe",
+    "dist": 72.4861306934584,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "vertforet",
+    "dist": 108.27960812018021,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "vertkaki",
+    "dist": 85.57035958234405,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "rouge",
+    "frterm2": "vertsapin",
+    "dist": 106.39627221457617,
+    "frterm_refined": "rouge",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "vert",
+    "dist": 57.13978719706796,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "violet",
+    "dist": 164.58660732641454,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "rose",
+    "dist": 131.87738415332714,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "orange",
+    "dist": 56.950615428134256,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "rouge",
+    "dist": 101.04307172907963,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "turquoise",
+    "dist": 90.44953799290955,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "mauve",
+    "dist": 154.9107863663839,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "marron",
+    "dist": 77.66111026484452,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "magenta",
+    "dist": 142.91083834657005,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "vertclair",
+    "dist": 52.06093017849285,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "vertfonce",
+    "dist": 80.07408368102465,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "vertfluo",
+    "dist": 56.2099945682084,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "vertpomme",
+    "dist": 46.902529096596545,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "kaki",
+    "dist": 55.953198955575395,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "noir",
+    "dist": 114.14405647488623,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "pourpre",
+    "dist": 140.54304751928134,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "vertd'eau",
+    "dist": 74.23748464478587,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "violetfonce",
+    "dist": 150.65269140919253,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "ocre",
+    "dist": 43.18113765852981,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "vertpale",
+    "dist": 51.72308207869399,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "jaunemoutarde",
+    "dist": 25.38402971072422,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "lavande",
+    "dist": 129.3089604052814,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "saumon",
+    "dist": 77.09529014974675,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "prune",
+    "dist": 126.98405132660697,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "taupe",
+    "dist": 80.53860077524153,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "vertforet",
+    "dist": 75.52786613550347,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "vertkaki",
+    "dist": 54.69922515869442,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "vertsapin",
+    "dist": 81.86067755293526,
+    "frterm_refined": "jaune",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "vert",
+    "dist": 53.75948158236154,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "violet",
+    "dist": 131.6588430130105,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "vertclair",
+    "dist": 57.25925797061344,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "vertfonce",
+    "dist": 54.207630678515244,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "vertfluo",
+    "dist": 76.35040646547044,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "vertpomme",
+    "dist": 74.14918583639485,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "vertd'eau",
+    "dist": 24.01526716490069,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "violetfonce",
+    "dist": 117.26628768195918,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "vertpale",
+    "dist": 43.34923075092324,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "vertforet",
+    "dist": 49.1478690628257,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "vertkaki",
+    "dist": 64.19180836962381,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "turquoise",
+    "frterm2": "vertsapin",
+    "dist": 48.47395260639833,
+    "frterm_refined": "turquoise",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vert",
+    "dist": 154.8089968302156,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "violet",
+    "dist": 12.355026512568777,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "rose",
+    "dist": 37.219138741410006,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "orange",
+    "dist": 121.10502002002164,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "rouge",
+    "dist": 98.57018161279953,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "turquoise",
+    "dist": 122.83585389619445,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertclair",
+    "dist": 158.72527002299293,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertfonce",
+    "dist": 114.33025376759495,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertfluo",
+    "dist": 179.60484692183317,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertpomme",
+    "dist": 171.96120160977028,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "noir",
+    "dist": 86.45286338484944,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "pourpre",
+    "dist": 30.827134405742676,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertd'eau",
+    "dist": 134.82157628829358,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "violetfonce",
+    "dist": 30.955624937531923,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "ocre",
+    "dist": 115.91974100959169,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertpale",
+    "dist": 136.6671081519136,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "saumon",
+    "dist": 82.17812955185923,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "prune",
+    "dist": 48.338141553885464,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "taupe",
+    "dist": 80.65003987290832,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertforet",
+    "dist": 119.88285961878766,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertkaki",
+    "dist": 116.49126405156724,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertsapin",
+    "dist": 112.33663437865029,
+    "frterm_refined": "mauve",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vert",
+    "dist": 159.98348686746994,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "violet",
+    "dist": 39.24892434626698,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "rose",
+    "dist": 19.047880843898195,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "orange",
+    "dist": 105.94895376621278,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "rouge",
+    "dist": 74.16277480336962,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "jaune",
+    "dist": 148.50969501558274,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "turquoise",
+    "dist": 136.64083575304352,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "mauve",
+    "dist": 37.758906438543,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "marron",
+    "dist": 88.0039176825986,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "magenta",
+    "dist": 12.821907415078664,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertclair",
+    "dist": 162.76396524275745,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertfonce",
+    "dist": 123.70207158344087,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertfluo",
+    "dist": 182.70201586034787,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertpomme",
+    "dist": 173.83614442158375,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "kaki",
+    "dist": 119.49016195851732,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "noir",
+    "dist": 96.82181134011661,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "gris",
+    "dist": 88.65062011645395,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "indigo",
+    "dist": 61.69728764877635,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "pourpre",
+    "dist": 35.02290874865117,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertd'eau",
+    "dist": 144.86866803697257,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "violetfonce",
+    "dist": 49.721044794083504,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "ocre",
+    "dist": 108.95843956031653,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertpale",
+    "dist": 141.138617537519,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "jaunemoutarde",
+    "dist": 127.24847887286961,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "lavande",
+    "dist": 60.871088714280745,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "saumon",
+    "dist": 74.02500459600057,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "prune",
+    "dist": 56.71602752241562,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "taupe",
+    "dist": 84.98423871323088,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertforet",
+    "dist": 128.76379401427235,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertkaki",
+    "dist": 117.97830647887973,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertsapin",
+    "dist": 122.52346485802865,
+    "frterm_refined": "fuchsia",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vert",
+    "dist": 93.86133156842085,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "violet",
+    "dist": 91.1489967083311,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "rose",
+    "dist": 90.57404531717374,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "orange",
+    "dist": 116.91795083388546,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "rouge",
+    "dist": 124.15622614880716,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "jaune",
+    "dist": 117.2951375772332,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "turquoise",
+    "dist": 46.63074778984885,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "mauve",
+    "dist": 83.15841745838568,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "fuchsia",
+    "dist": 103.26562112703792,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "marron",
+    "dist": 80.70637160931108,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleumarine",
+    "dist": 77.23909042548078,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "bleumarine"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "magenta",
+    "dist": 104.00343675274905,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertclair",
+    "dist": 97.84744860924896,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleuclair",
+    "dist": 6.556662936424799,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "bleuclair"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "cyan",
+    "dist": 28.579882832367154,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertfonce",
+    "dist": 68.88752484197813,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertfluo",
+    "dist": 118.78431653154789,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertpomme",
+    "dist": 114.27522568988032,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleufonce",
+    "dist": 81.949333140182,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "bleufonce"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "kaki",
+    "dist": 79.86418342590868,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "brun",
+    "dist": 79.253653147435,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "brun"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleuroi",
+    "dist": 84.24353493069422,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "bleuroi"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "noir",
+    "dist": 76.23048578332937,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "gris",
+    "dist": 41.80448484842803,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "indigo",
+    "dist": 78.54072496134046,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "pourpre",
+    "dist": 86.63243143361169,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertd'eau",
+    "dist": 65.01219386361115,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bordeaux",
+    "dist": 92.92650256092159,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "bordeaux"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleuturquoise",
+    "dist": 31.417212284755536,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "bleuturquoise"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "violetfonce",
+    "dist": 80.35425240715249,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "ocre",
+    "dist": 94.40251917304725,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertpale",
+    "dist": 78.04809365622552,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "jaunemoutarde",
+    "dist": 105.54576003266234,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "lavande",
+    "dist": 47.50388155862939,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "saumon",
+    "dist": 80.79245463203172,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleunuit",
+    "dist": 68.4419620444399,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "bleunuit"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleugris",
+    "dist": 29.2885857397721,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "bleugris"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "prune",
+    "dist": 74.50218394908367,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "taupe",
+    "dist": 59.2252706934465,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertforet",
+    "dist": 69.83409130017358,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertkaki",
+    "dist": 80.53941634085989,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertsapin",
+    "dist": 63.9666723296225,
+    "frterm_refined": "bleuciel",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vert",
+    "dist": 84.39003568576032,
+    "frterm_refined": "marron",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "violet",
+    "dist": 97.90096758920961,
+    "frterm_refined": "marron",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "rose",
+    "dist": 72.4880356817258,
+    "frterm_refined": "marron",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "orange",
+    "dist": 52.15355853695947,
+    "frterm_refined": "marron",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "rouge",
+    "dist": 59.69234684491839,
+    "frterm_refined": "marron",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "turquoise",
+    "dist": 83.20487187243103,
+    "frterm_refined": "marron",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "mauve",
+    "dist": 89.6827174480246,
+    "frterm_refined": "marron",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertclair",
+    "dist": 88.40241960086375,
+    "frterm_refined": "marron",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertfonce",
+    "dist": 47.47805049427242,
+    "frterm_refined": "marron",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertfluo",
+    "dist": 105.42199560594159,
+    "frterm_refined": "marron",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertpomme",
+    "dist": 96.73460411780056,
+    "frterm_refined": "marron",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "noir",
+    "dist": 45.38851653190701,
+    "frterm_refined": "marron",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "pourpre",
+    "dist": 69.66172941043489,
+    "frterm_refined": "marron",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertd'eau",
+    "dist": 81.41340189510125,
+    "frterm_refined": "marron",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "violetfonce",
+    "dist": 78.62341689190983,
+    "frterm_refined": "marron",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "ocre",
+    "dist": 39.41497782425119,
+    "frterm_refined": "marron",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertpale",
+    "dist": 72.64452535815855,
+    "frterm_refined": "marron",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "saumon",
+    "dist": 31.151166366757238,
+    "frterm_refined": "marron",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "prune",
+    "dist": 53.05672654281302,
+    "frterm_refined": "marron",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "taupe",
+    "dist": 27.736365436441012,
+    "frterm_refined": "marron",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertforet",
+    "dist": 51.8704982071911,
+    "frterm_refined": "marron",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertkaki",
+    "dist": 36.58447339934153,
+    "frterm_refined": "marron",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertsapin",
+    "dist": 49.44737434708344,
+    "frterm_refined": "marron",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vert",
+    "dist": 155.71004707613554,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "violet",
+    "dist": 36.6938894157859,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "rose",
+    "dist": 68.66793788933956,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "orange",
+    "dist": 140.8817240196312,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "rouge",
+    "dist": 122.82692330621087,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "jaune",
+    "dist": 167.28756241670214,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "turquoise",
+    "dist": 118.40718063290895,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "mauve",
+    "dist": 37.18956698044881,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "fuchsia",
+    "dist": 69.51833861708282,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "marron",
+    "dist": 98.77507657163532,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "magenta",
+    "dist": 72.66928710663595,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vertclair",
+    "dist": 161.09227341575325,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "cyan",
+    "dist": 96.5849133846295,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vertfonce",
+    "dist": 110.52266757814857,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vertfluo",
+    "dist": 182.0522486502677,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vertpomme",
+    "dist": 175.7630073721748,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "kaki",
+    "dist": 121.24769833344713,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "brun",
+    "dist": 93.56400764228273,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "brun"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "bleuroi",
+    "dist": 19.583948287141006,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "bleuroi"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "noir",
+    "dist": 79.17887737311405,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "gris",
+    "dist": 78.44110974115567,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "indigo",
+    "dist": 25.392240712904375,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "pourpre",
+    "dist": 49.28673396914148,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vertd'eau",
+    "dist": 133.36418911002994,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "bordeaux",
+    "dist": 85.59011043530079,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "bordeaux"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "bleuturquoise",
+    "dist": 103.98382001362717,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "bleuturquoise"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "violetfonce",
+    "dist": 32.20454395460144,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "ocre",
+    "dist": 130.13991192743583,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vertpale",
+    "dist": 140.7311759690716,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "jaunemoutarde",
+    "dist": 147.40260643400325,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "lavande",
+    "dist": 48.16283691485622,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "saumon",
+    "dist": 100.98331150913273,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "bleunuit",
+    "dist": 28.15885135640448,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "bleunuit"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "prune",
+    "dist": 53.61356858726744,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "taupe",
+    "dist": 88.49774317362585,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vertforet",
+    "dist": 116.50277567827371,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vertkaki",
+    "dist": 121.44513260013083,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vertsapin",
+    "dist": 107.88452174995159,
+    "frterm_refined": "bleumarine",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vert",
+    "dist": 156.02584220009737,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "violet",
+    "dist": 44.32427677216951,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "rose",
+    "dist": 19.229706031464573,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "orange",
+    "dist": 98.15477138494312,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "rouge",
+    "dist": 65.58761206454284,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "turquoise",
+    "dist": 135.73291225357303,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "mauve",
+    "dist": 41.580376493541216,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "marron",
+    "dist": 82.47648792971277,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertclair",
+    "dist": 158.66909963654794,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertfonce",
+    "dist": 120.04098079785447,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertfluo",
+    "dist": 178.27124421550891,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertpomme",
+    "dist": 169.28154779765987,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "noir",
+    "dist": 94.11412514569597,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "pourpre",
+    "dist": 33.52089106510114,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertd'eau",
+    "dist": 142.79246128900036,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "violetfonce",
+    "dist": 50.472395404568815,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "ocre",
+    "dist": 102.54882941437072,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertpale",
+    "dist": 137.39331447012566,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "saumon",
+    "dist": 67.51689702509444,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "prune",
+    "dist": 55.44648619598858,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "taupe",
+    "dist": 81.71116588257843,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertforet",
+    "dist": 125.50256587975818,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertkaki",
+    "dist": 113.11652123893174,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertsapin",
+    "dist": 119.65079018250809,
+    "frterm_refined": "magenta",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "vertclair",
+    "frterm2": "violet",
+    "dist": 168.16329253695926,
+    "frterm_refined": "vertclair",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "vertclair",
+    "frterm2": "vertfonce",
+    "dist": 62.53282573500278,
+    "frterm_refined": "vertclair",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "vertclair",
+    "frterm2": "vertfluo",
+    "dist": 22.800412393678716,
+    "frterm_refined": "vertclair",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "vertclair",
+    "frterm2": "vertpomme",
+    "dist": 18.405312909949938,
+    "frterm_refined": "vertclair",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "vertclair",
+    "frterm2": "vertd'eau",
+    "dist": 36.772125939871025,
+    "frterm_refined": "vertclair",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "vertclair",
+    "frterm2": "violetfonce",
+    "dist": 151.4426759221327,
+    "frterm_refined": "vertclair",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "vertclair",
+    "frterm2": "vertpale",
+    "dist": 25.01924839506324,
+    "frterm_refined": "vertclair",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "vertclair",
+    "frterm2": "vertforet",
+    "dist": 55.8581810432574,
+    "frterm_refined": "vertclair",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "vertclair",
+    "frterm2": "vertkaki",
+    "dist": 56.531039992026805,
+    "frterm_refined": "vertclair",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "vertclair",
+    "frterm2": "vertsapin",
+    "dist": 63.36740201244539,
+    "frterm_refined": "vertclair",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "vert",
+    "dist": 94.20119825234441,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "violet",
+    "dist": 91.91475190038823,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "rose",
+    "dist": 91.60568166188705,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "orange",
+    "dist": 117.97594329813785,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "rouge",
+    "dist": 124.95403667383604,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "jaune",
+    "dist": 118.12909965847301,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "turquoise",
+    "dist": 46.679762956007025,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "mauve",
+    "dist": 84.06527074439073,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "fuchsia",
+    "dist": 104.10668734577396,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "marron",
+    "dist": 81.4154060345572,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "bleumarine",
+    "dist": 77.84490729578866,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "bleumarine"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "magenta",
+    "dist": 105.12256244628334,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "vertclair",
+    "dist": 98.24894649132952,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "cyan",
+    "dist": 29.547704477545206,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "vertfonce",
+    "dist": 69.20360204503785,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "vertfluo",
+    "dist": 119.10267277142468,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "vertpomme",
+    "dist": 114.77295839297705,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "bleufonce",
+    "dist": 82.41312253688997,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "bleufonce"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "kaki",
+    "dist": 80.48399221495991,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "brun",
+    "dist": 79.82968730726472,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "brun"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "bleuroi",
+    "dist": 84.57801213311355,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "bleuroi"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "noir",
+    "dist": 76.21605330613073,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "gris",
+    "dist": 42.2461419417477,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "indigo",
+    "dist": 79.98097001548939,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "pourpre",
+    "dist": 87.62808257440534,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "vertd'eau",
+    "dist": 65.19069210906818,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "bordeaux",
+    "dist": 93.44322268259688,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "bordeaux"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "bleuturquoise",
+    "dist": 31.09708085826139,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "bleuturquoise"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "violetfonce",
+    "dist": 81.1257089090183,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "ocre",
+    "dist": 95.17660736147877,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "vertpale",
+    "dist": 78.70290968805152,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "jaunemoutarde",
+    "dist": 106.39623363460882,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "lavande",
+    "dist": 48.44836081672833,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "saumon",
+    "dist": 81.44633972554377,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "bleunuit",
+    "dist": 69.11827536872373,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "bleunuit"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "bleugris",
+    "dist": 29.440688858013797,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "bleugris"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "prune",
+    "dist": 74.7618696169098,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "taupe",
+    "dist": 59.623557532826275,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "vertforet",
+    "dist": 70.1497871503697,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "vertkaki",
+    "dist": 81.03331748423358,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "vertsapin",
+    "dist": 64.04414781612346,
+    "frterm_refined": "bleuclair",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "vert",
+    "dist": 75.36681551771852,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "violet",
+    "dist": 110.16585972805562,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "rose",
+    "dist": 105.64451729559791,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "orange",
+    "dist": 116.60377515970566,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "rouge",
+    "dist": 131.42096780617098,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "jaune",
+    "dist": 106.3036314067178,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "turquoise",
+    "dist": 25.462668755987917,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "mauve",
+    "dist": 101.7046093386293,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "fuchsia",
+    "dist": 119.73360990923543,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "marron",
+    "dist": 84.71851225838934,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "magenta",
+    "dist": 118.98746358493848,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "vertclair",
+    "dist": 79.88886004670415,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "vertfonce",
+    "dist": 63.75077990277038,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "vertfluo",
+    "dist": 99.92144239029125,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "vertpomme",
+    "dist": 96.58504186648398,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "kaki",
+    "dist": 74.91259893980649,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "noir",
+    "dist": 84.15379379689412,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "gris",
+    "dist": 52.86764869355778,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "indigo",
+    "dist": 97.5541313685259,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "pourpre",
+    "dist": 101.72823056621476,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "vertd'eau",
+    "dist": 45.33442702631083,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "violetfonce",
+    "dist": 97.99901266556392,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "ocre",
+    "dist": 91.4544432876624,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "vertpale",
+    "dist": 63.02303893742026,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "jaunemoutarde",
+    "dist": 99.31851401808542,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "lavande",
+    "dist": 66.85684205297169,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "saumon",
+    "dist": 87.58762771943773,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "prune",
+    "dist": 89.70118583051283,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "taupe",
+    "dist": 66.01611480908781,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "vertforet",
+    "dist": 61.465722233988934,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "vertkaki",
+    "dist": 76.1857377427065,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "vertsapin",
+    "dist": 59.264506034960824,
+    "frterm_refined": "cyan",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "vertfonce",
+    "frterm2": "violet",
+    "dist": 122.48561707502236,
+    "frterm_refined": "vertfonce",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "vertfonce",
+    "frterm2": "vertpomme",
+    "dist": 74.36670837720182,
+    "frterm_refined": "vertfonce",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "vertfonce",
+    "frterm2": "violetfonce",
+    "dist": 100.20843950663777,
+    "frterm_refined": "vertfonce",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "vertfonce",
+    "frterm2": "vertpale",
+    "dist": 52.99356202438424,
+    "frterm_refined": "vertfonce",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "vertfonce",
+    "frterm2": "vertforet",
+    "dist": 17.281295144596587,
+    "frterm_refined": "vertfonce",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "vertfonce",
+    "frterm2": "vertkaki",
+    "dist": 34.15448446846301,
+    "frterm_refined": "vertfonce",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "vertfonce",
+    "frterm2": "vertsapin",
+    "dist": 16.69371913321422,
+    "frterm_refined": "vertfonce",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "vertfluo",
+    "frterm2": "violet",
+    "dist": 189.04323882198244,
+    "frterm_refined": "vertfluo",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "vertfluo",
+    "frterm2": "vertfonce",
+    "dist": 79.35960817498562,
+    "frterm_refined": "vertfluo",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "vertfluo",
+    "frterm2": "vertpomme",
+    "dist": 12.229572498622975,
+    "frterm_refined": "vertfluo",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "vertfluo",
+    "frterm2": "violetfonce",
+    "dist": 171.92281211241342,
+    "frterm_refined": "vertfluo",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "vertfluo",
+    "frterm2": "vertpale",
+    "dist": 45.96187239092889,
+    "frterm_refined": "vertfluo",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "vertfluo",
+    "frterm2": "vertforet",
+    "dist": 71.62759064994854,
+    "frterm_refined": "vertfluo",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "vertfluo",
+    "frterm2": "vertkaki",
+    "dist": 72.20380310936855,
+    "frterm_refined": "vertfluo",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "vertfluo",
+    "frterm2": "vertsapin",
+    "dist": 79.80906597040111,
+    "frterm_refined": "vertfluo",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "vertpomme",
+    "frterm2": "violet",
+    "dist": 181.44732705736064,
+    "frterm_refined": "vertpomme",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "vertpomme",
+    "frterm2": "violetfonce",
+    "dist": 164.66551384214804,
+    "frterm_refined": "vertpomme",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "vertpomme",
+    "frterm2": "vertsapin",
+    "dist": 75.72723955032684,
+    "frterm_refined": "vertpomme",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "vert",
+    "dist": 163.81860616443802,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "violet",
+    "dist": 33.70260742656291,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "rose",
+    "dist": 70.27206015814382,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "orange",
+    "dist": 146.97541704349157,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "rouge",
+    "dist": 127.30371450383637,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "jaune",
+    "dist": 174.3456285389052,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "turquoise",
+    "dist": 124.92139730664753,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "mauve",
+    "dist": 36.06768455928484,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "fuchsia",
+    "dist": 69.61356630448665,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "marron",
+    "dist": 107.13391864882672,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "bleumarine",
+    "dist": 13.51683665207148,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "bleumarine"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "magenta",
+    "dist": 73.80618598892717,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "vertclair",
+    "dist": 168.86982588765684,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "cyan",
+    "dist": 102.37836960222563,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "vertfonce",
+    "dist": 119.88039222716262,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "vertfluo",
+    "dist": 189.82826960388203,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "vertpomme",
+    "dist": 183.55188162069797,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "kaki",
+    "dist": 129.8708426502545,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "brun",
+    "dist": 102.1719698858461,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "brun"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "bleuroi",
+    "dist": 10.497822876836565,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "bleuroi"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "noir",
+    "dist": 88.69377173573649,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "gris",
+    "dist": 85.83984560902965,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "indigo",
+    "dist": 22.60395217275688,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "pourpre",
+    "dist": 53.69796265921962,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "vertd'eau",
+    "dist": 140.46408265180202,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "bordeaux",
+    "dist": 92.10982004553664,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "bordeaux"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "bleuturquoise",
+    "dist": 109.92820937795027,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "bleuturquoise"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "violetfonce",
+    "dist": 37.69427706495182,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "ocre",
+    "dist": 137.18536251449478,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "vertpale",
+    "dist": 148.00393173377358,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "jaunemoutarde",
+    "dist": 154.43426109224137,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "lavande",
+    "dist": 50.35080379855279,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "saumon",
+    "dist": 106.5113802192382,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "bleunuit",
+    "dist": 36.531769498621536,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "bleunuit"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "bleugris",
+    "dist": 75.578395355653,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "bleugris"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "prune",
+    "dist": 60.54063836350026,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "taupe",
+    "dist": 95.83184388637449,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "vertforet",
+    "dist": 125.49980245414989,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "vertkaki",
+    "dist": 129.88273524454618,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "vertsapin",
+    "dist": 116.83453559735338,
+    "frterm_refined": "bleufonce",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "vert",
+    "dist": 49.7885280978387,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "violet",
+    "dist": 125.96026836263472,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "rose",
+    "dist": 103.16559503474438,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "orange",
+    "dist": 61.877829308519736,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "rouge",
+    "dist": 87.97651339977924,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "turquoise",
+    "dist": 62.29894892577029,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "mauve",
+    "dist": 117.14705630253427,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "marron",
+    "dist": 37.17913510409453,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "magenta",
+    "dist": 114.700426219545,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "vertclair",
+    "dist": 53.869459470736416,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "vertfonce",
+    "dist": 30.01186628818551,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "vertfluo",
+    "dist": 69.95131137647735,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "vertpomme",
+    "dist": 62.14977631591202,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "noir",
+    "dist": 61.416361666869086,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "pourpre",
+    "dist": 101.01030491827197,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "vertd'eau",
+    "dist": 54.08220298267684,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "violetfonce",
+    "dist": 106.57756351541467,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "ocre",
+    "dist": 36.64111639909595,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "vertpale",
+    "dist": 42.830149254941134,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "lavande",
+    "dist": 90.58416120023489,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "saumon",
+    "dist": 53.49651258772874,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "prune",
+    "dist": 82.04257922076461,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "taupe",
+    "dist": 39.438816353341366,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "vertforet",
+    "dist": 28.8954230772099,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "vertkaki",
+    "dist": 15.22669524148037,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "vertsapin",
+    "dist": 31.57621457811437,
+    "frterm_refined": "kaki",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "vert",
+    "dist": 88.34101372041258,
+    "frterm_refined": "brun",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "violet",
+    "dist": 93.66965656832208,
+    "frterm_refined": "brun",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "rose",
+    "dist": 69.89817139973265,
+    "frterm_refined": "brun",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "orange",
+    "dist": 57.59978170543837,
+    "frterm_refined": "brun",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "rouge",
+    "dist": 61.07246907839517,
+    "frterm_refined": "brun",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "jaune",
+    "dist": 83.9559387843918,
+    "frterm_refined": "brun",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "turquoise",
+    "dist": 84.46217741548503,
+    "frterm_refined": "brun",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "mauve",
+    "dist": 85.50848840808897,
+    "frterm_refined": "brun",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "fuchsia",
+    "dist": 85.45707960821346,
+    "frterm_refined": "brun",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "marron",
+    "dist": 12.379011075291626,
+    "frterm_refined": "brun",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "magenta",
+    "dist": 79.81349325496177,
+    "frterm_refined": "brun",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "vertclair",
+    "dist": 92.59453158703434,
+    "frterm_refined": "brun",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "cyan",
+    "dist": 84.6447908149467,
+    "frterm_refined": "brun",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "vertfonce",
+    "dist": 48.2161364621011,
+    "frterm_refined": "brun",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "vertfluo",
+    "dist": 110.11061099028726,
+    "frterm_refined": "brun",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "vertpomme",
+    "dist": 101.68190903211796,
+    "frterm_refined": "brun",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "kaki",
+    "dist": 41.3230134760015,
+    "frterm_refined": "brun",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "noir",
+    "dist": 40.46603339119358,
+    "frterm_refined": "brun",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "gris",
+    "dist": 40.960479187091224,
+    "frterm_refined": "brun",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "indigo",
+    "dist": 96.58012065415025,
+    "frterm_refined": "brun",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "pourpre",
+    "dist": 65.12226217927679,
+    "frterm_refined": "brun",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "vertd'eau",
+    "dist": 83.90072078273016,
+    "frterm_refined": "brun",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "violetfonce",
+    "dist": 73.28645538359844,
+    "frterm_refined": "brun",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "ocre",
+    "dist": 44.93631576311912,
+    "frterm_refined": "brun",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "vertpale",
+    "dist": 76.48781725596605,
+    "frterm_refined": "brun",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "jaunemoutarde",
+    "dist": 61.96420416644858,
+    "frterm_refined": "brun",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "lavande",
+    "dist": 68.37655377897305,
+    "frterm_refined": "brun",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "saumon",
+    "dist": 32.884798799333275,
+    "frterm_refined": "brun",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "prune",
+    "dist": 47.48624368302023,
+    "frterm_refined": "brun",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "taupe",
+    "dist": 27.6324062118216,
+    "frterm_refined": "brun",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "vertforet",
+    "dist": 53.29323967085814,
+    "frterm_refined": "brun",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "vertkaki",
+    "dist": 40.35777651577473,
+    "frterm_refined": "brun",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "vertsapin",
+    "dist": 50.04216473117528,
+    "frterm_refined": "brun",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "bleu",
+    "dist": 95.89297084695868,
+    "frterm_refined": "beige",
+    "frterm2_refined": "bleu"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "vert",
+    "dist": 68.31931051694788,
+    "frterm_refined": "beige",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "violet",
+    "dist": 107.29045019751176,
+    "frterm_refined": "beige",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "rose",
+    "dist": 79.45673219695128,
+    "frterm_refined": "beige",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "orange",
+    "dist": 53.750589773235056,
+    "frterm_refined": "beige",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "rouge",
+    "dist": 75.27160744625282,
+    "frterm_refined": "beige",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "jaune",
+    "dist": 60.02431402940455,
+    "frterm_refined": "beige",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "turquoise",
+    "dist": 62.40397657654031,
+    "frterm_refined": "beige",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "mauve",
+    "dist": 97.39129724828992,
+    "frterm_refined": "beige",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "fuchsia",
+    "dist": 96.92194691278132,
+    "frterm_refined": "beige",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "bleuciel",
+    "dist": 67.66327099499783,
+    "frterm_refined": "beige",
+    "frterm2_refined": "bleuciel"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "marron",
+    "dist": 40.23232106705329,
+    "frterm_refined": "beige",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "bleumarine",
+    "dist": 109.72015071930564,
+    "frterm_refined": "beige",
+    "frterm2_refined": "bleumarine"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "magenta",
+    "dist": 92.50823210277349,
+    "frterm_refined": "beige",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "vertclair",
+    "dist": 68.86948064897985,
+    "frterm_refined": "beige",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "bleuclair",
+    "dist": 68.56659045614546,
+    "frterm_refined": "beige",
+    "frterm2_refined": "bleuclair"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "cyan",
+    "dist": 67.80647050217708,
+    "frterm_refined": "beige",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "vertfonce",
+    "dist": 54.83081728057623,
+    "frterm_refined": "beige",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "vertfluo",
+    "dist": 88.31189183268854,
+    "frterm_refined": "beige",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "vertpomme",
+    "dist": 79.53201770829568,
+    "frterm_refined": "beige",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "bleufonce",
+    "dist": 116.29239643009811,
+    "frterm_refined": "beige",
+    "frterm2_refined": "bleufonce"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "kaki",
+    "dist": 38.290464828092716,
+    "frterm_refined": "beige",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "brun",
+    "dist": 43.93077062587067,
+    "frterm_refined": "beige",
+    "frterm2_refined": "brun"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "bleuroi",
+    "dist": 120.76879169399508,
+    "frterm_refined": "beige",
+    "frterm2_refined": "bleuroi"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "noir",
+    "dist": 73.38076695215831,
+    "frterm_refined": "beige",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "gris",
+    "dist": 38.223359952908794,
+    "frterm_refined": "beige",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "indigo",
+    "dist": 108.91654575001371,
+    "frterm_refined": "beige",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "pourpre",
+    "dist": 86.46110696728677,
+    "frterm_refined": "beige",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "vertd'eau",
+    "dist": 59.27516796577292,
+    "frterm_refined": "beige",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "bordeaux",
+    "dist": 62.030660074244565,
+    "frterm_refined": "beige",
+    "frterm2_refined": "bordeaux"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "bleuturquoise",
+    "dist": 63.92525296211224,
+    "frterm_refined": "beige",
+    "frterm2_refined": "bleuturquoise"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "violetfonce",
+    "dist": 94.44612566397197,
+    "frterm_refined": "beige",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "ocre",
+    "dist": 31.751771972386106,
+    "frterm_refined": "beige",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "vertpale",
+    "dist": 47.73096588056742,
+    "frterm_refined": "beige",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "jaunemoutarde",
+    "dist": 43.69027073295657,
+    "frterm_refined": "beige",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "lavande",
+    "dist": 70.41227273918166,
+    "frterm_refined": "beige",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "saumon",
+    "dist": 31.88874858941466,
+    "frterm_refined": "beige",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "bleunuit",
+    "dist": 93.85239618956497,
+    "frterm_refined": "beige",
+    "frterm2_refined": "bleunuit"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "bleugris",
+    "dist": 55.413560731386944,
+    "frterm_refined": "beige",
+    "frterm2_refined": "bleugris"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "prune",
+    "dist": 73.80875681066351,
+    "frterm_refined": "beige",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "taupe",
+    "dist": 28.227821854139574,
+    "frterm_refined": "beige",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "vertforet",
+    "dist": 54.77446716369344,
+    "frterm_refined": "beige",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "vertkaki",
+    "dist": 37.68966562750132,
+    "frterm_refined": "beige",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "vertsapin",
+    "dist": 53.09186000527368,
+    "frterm_refined": "beige",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "vert",
+    "dist": 168.66362066251594,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "violet",
+    "dist": 35.37251016025687,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "rose",
+    "dist": 72.9022943494537,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "orange",
+    "dist": 151.8318031660454,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "rouge",
+    "dist": 131.99458257624772,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "jaune",
+    "dist": 179.1383644085145,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "turquoise",
+    "dist": 128.65347441559413,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "mauve",
+    "dist": 38.49592021517787,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "fuchsia",
+    "dist": 71.43949198315242,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "marron",
+    "dist": 113.54762049262673,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "magenta",
+    "dist": 76.55810858648435,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "vertclair",
+    "dist": 173.49825986176572,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "cyan",
+    "dist": 105.5415293870515,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "vertfonce",
+    "dist": 126.08385466970142,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "vertfluo",
+    "dist": 194.596307991347,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "vertpomme",
+    "dist": 188.37515825436114,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "kaki",
+    "dist": 135.9653896198586,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "brun",
+    "dist": 108.63402996486016,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "brun"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "noir",
+    "dist": 96.10638127120055,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "gris",
+    "dist": 91.29700540662542,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "indigo",
+    "dist": 24.924476083751884,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "pourpre",
+    "dist": 58.939601845941056,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "vertd'eau",
+    "dist": 144.57573361243806,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "bordeaux",
+    "dist": 98.08490705217888,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "bordeaux"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "bleuturquoise",
+    "dist": 113.37755510714537,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "bleuturquoise"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "violetfonce",
+    "dist": 43.373920664742464,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "ocre",
+    "dist": 142.22031168157582,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "vertpale",
+    "dist": 152.37207670996338,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "jaunemoutarde",
+    "dist": 159.5765033110377,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "lavande",
+    "dist": 53.0461366459772,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "saumon",
+    "dist": 111.05462253735884,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "prune",
+    "dist": 67.37139742069347,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "taupe",
+    "dist": 101.47843576782846,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "vertforet",
+    "dist": 131.44796413619773,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "vertkaki",
+    "dist": 135.89486943602955,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "vertsapin",
+    "dist": 122.9294107527033,
+    "frterm_refined": "bleuroi",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vert",
+    "dist": 101.9372408930407,
+    "frterm_refined": "noir",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "violet",
+    "dist": 91.8338831156165,
+    "frterm_refined": "noir",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "rose",
+    "dist": 85.73736763106338,
+    "frterm_refined": "noir",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "orange",
+    "dist": 95.1094840984811,
+    "frterm_refined": "noir",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "rouge",
+    "dist": 91.66880374677727,
+    "frterm_refined": "noir",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "turquoise",
+    "dist": 87.47484312488035,
+    "frterm_refined": "noir",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertclair",
+    "dist": 108.75826259134344,
+    "frterm_refined": "noir",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertfonce",
+    "dist": 48.19237760026765,
+    "frterm_refined": "noir",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertfluo",
+    "dist": 125.46877492310692,
+    "frterm_refined": "noir",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertpomme",
+    "dist": 119.46179227159303,
+    "frterm_refined": "noir",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "pourpre",
+    "dist": 68.45310385856409,
+    "frterm_refined": "noir",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertd'eau",
+    "dist": 92.50180270048625,
+    "frterm_refined": "noir",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "violetfonce",
+    "dist": 65.76840328624877,
+    "frterm_refined": "noir",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "ocre",
+    "dist": 80.41739010590486,
+    "frterm_refined": "noir",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertpale",
+    "dist": 95.11269098169338,
+    "frterm_refined": "noir",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "saumon",
+    "dist": 68.19006003635873,
+    "frterm_refined": "noir",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "prune",
+    "dist": 43.202016921643526,
+    "frterm_refined": "noir",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "taupe",
+    "dist": 49.09089271784184,
+    "frterm_refined": "noir",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertforet",
+    "dist": 55.661430298279406,
+    "frterm_refined": "noir",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertkaki",
+    "dist": 62.19883248633223,
+    "frterm_refined": "noir",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertsapin",
+    "dist": 48.79861166795583,
+    "frterm_refined": "noir",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vert",
+    "dist": 80.8727235942894,
+    "frterm_refined": "gris",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "violet",
+    "dist": 85.36132942559487,
+    "frterm_refined": "gris",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "rose",
+    "dist": 72.80294560079098,
+    "frterm_refined": "gris",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "orange",
+    "dist": 83.41186438961795,
+    "frterm_refined": "gris",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "rouge",
+    "dist": 89.89775448466584,
+    "frterm_refined": "gris",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "jaune",
+    "dist": 92.86696275797033,
+    "frterm_refined": "gris",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "turquoise",
+    "dist": 54.229841739788235,
+    "frterm_refined": "gris",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "mauve",
+    "dist": 76.47548867653391,
+    "frterm_refined": "gris",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "marron",
+    "dist": 42.70182193428453,
+    "frterm_refined": "gris",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "magenta",
+    "dist": 87.28195218360086,
+    "frterm_refined": "gris",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertclair",
+    "dist": 85.1697926825798,
+    "frterm_refined": "gris",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertfonce",
+    "dist": 44.64956143742034,
+    "frterm_refined": "gris",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertfluo",
+    "dist": 106.01479865170391,
+    "frterm_refined": "gris",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertpomme",
+    "dist": 99.24975370035828,
+    "frterm_refined": "gris",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "kaki",
+    "dist": 48.423700850910365,
+    "frterm_refined": "gris",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "noir",
+    "dist": 49.72374897193138,
+    "frterm_refined": "gris",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "indigo",
+    "dist": 84.18512926286024,
+    "frterm_refined": "gris",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "pourpre",
+    "dist": 68.7105302458984,
+    "frterm_refined": "gris",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertd'eau",
+    "dist": 61.762483374371556,
+    "frterm_refined": "gris",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "violetfonce",
+    "dist": 69.07299012315865,
+    "frterm_refined": "gris",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "ocre",
+    "dist": 61.7978568477656,
+    "frterm_refined": "gris",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertpale",
+    "dist": 64.51627673641539,
+    "frterm_refined": "gris",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "jaunemoutarde",
+    "dist": 75.75614434476977,
+    "frterm_refined": "gris",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "lavande",
+    "dist": 44.745333861946946,
+    "frterm_refined": "gris",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "saumon",
+    "dist": 46.258882945553125,
+    "frterm_refined": "gris",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "prune",
+    "dist": 50.7272410286205,
+    "frterm_refined": "gris",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "taupe",
+    "dist": 22.6310530559906,
+    "frterm_refined": "gris",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertforet",
+    "dist": 47.90861829155775,
+    "frterm_refined": "gris",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertkaki",
+    "dist": 48.670724141745865,
+    "frterm_refined": "gris",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertsapin",
+    "dist": 41.43616139155266,
+    "frterm_refined": "gris",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "vert",
+    "dist": 156.06804915771414,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "violet",
+    "dist": 30.95225878790428,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "rose",
+    "dist": 61.73237936365762,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "orange",
+    "dist": 137.11870223572575,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "rouge",
+    "dist": 118.8835220975338,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "jaune",
+    "dist": 164.93228834005075,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "turquoise",
+    "dist": 119.88859318879229,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "mauve",
+    "dist": 31.611901859636035,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "marron",
+    "dist": 101.12517094213091,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "magenta",
+    "dist": 65.34218574559483,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "vertclair",
+    "dist": 160.85652031482033,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "vertfonce",
+    "dist": 114.88564059303913,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "vertfluo",
+    "dist": 182.0977614592068,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "vertpomme",
+    "dist": 175.28916077285555,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "kaki",
+    "dist": 123.16085110206846,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "noir",
+    "dist": 89.49052197915482,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "pourpre",
+    "dist": 48.36279694979275,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "vertd'eau",
+    "dist": 134.15047274336294,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "violetfonce",
+    "dist": 37.16161888454614,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "ocre",
+    "dist": 128.99723986531907,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "vertpale",
+    "dist": 139.61100148313525,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "jaunemoutarde",
+    "dist": 145.72139623582873,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "lavande",
+    "dist": 52.61775799540752,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "saumon",
+    "dist": 99.37691143975528,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "prune",
+    "dist": 61.42445113137387,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "taupe",
+    "dist": 92.3136809798424,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "vertforet",
+    "dist": 120.16904977240922,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "vertkaki",
+    "dist": 124.07897593522492,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "vertsapin",
+    "dist": 112.29046752010505,
+    "frterm_refined": "indigo",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "vert",
+    "dist": 142.84439719119356,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "violet",
+    "dist": 33.660658336789176,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "rose",
+    "dist": 32.244930212192735,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "rouge",
+    "dist": 77.66074034068582,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "turquoise",
+    "dist": 119.5803564940866,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "vertclair",
+    "dist": 147.2914060856199,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "vertfonce",
+    "dist": 99.74564397225744,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "vertfluo",
+    "dist": 167.45763307114765,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "vertpomme",
+    "dist": 159.31665666412735,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "vertd'eau",
+    "dist": 128.2968409326844,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "violetfonce",
+    "dist": 24.378450159282625,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "vertpale",
+    "dist": 126.94968609813513,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "saumon",
+    "dist": 67.30321079385736,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "prune",
+    "dist": 30.46049312177338,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "taupe",
+    "dist": 67.77145786131284,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "vertforet",
+    "dist": 106.49097023236172,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "vertkaki",
+    "dist": 100.62103474993188,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "pourpre",
+    "frterm2": "vertsapin",
+    "dist": 99.35760090743464,
+    "frterm_refined": "pourpre",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "vertd'eau",
+    "frterm2": "violet",
+    "dist": 144.01346035906747,
+    "frterm_refined": "vertd'eau",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "vertd'eau",
+    "frterm2": "vertfonce",
+    "dist": 52.022907938989455,
+    "frterm_refined": "vertd'eau",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "vertd'eau",
+    "frterm2": "vertfluo",
+    "dist": 56.19943169062911,
+    "frterm_refined": "vertd'eau",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "vertd'eau",
+    "frterm2": "vertpomme",
+    "dist": 53.728949909674334,
+    "frterm_refined": "vertd'eau",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "vertd'eau",
+    "frterm2": "violetfonce",
+    "dist": 128.3691909450979,
+    "frterm_refined": "vertd'eau",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "vertd'eau",
+    "frterm2": "vertpale",
+    "dist": 26.932915149510126,
+    "frterm_refined": "vertd'eau",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "vertd'eau",
+    "frterm2": "vertforet",
+    "dist": 44.99937134308032,
+    "frterm_refined": "vertd'eau",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "vertd'eau",
+    "frterm2": "vertkaki",
+    "dist": 56.76756777610673,
+    "frterm_refined": "vertd'eau",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "vertd'eau",
+    "frterm2": "vertsapin",
+    "dist": 48.66451825361132,
+    "frterm_refined": "vertd'eau",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "vert",
+    "dist": 117.5959540065242,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "violet",
+    "dist": 75.40824349257487,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "rose",
+    "dist": 48.261287331653485,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "orange",
+    "dist": 63.83662181032048,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "rouge",
+    "dist": 43.075778951676085,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "jaune",
+    "dist": 105.72058102909874,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "turquoise",
+    "dist": 108.63318461231898,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "mauve",
+    "dist": 69.70982583596943,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "fuchsia",
+    "dist": 59.50329870165417,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "marron",
+    "dist": 35.49473270650507,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "magenta",
+    "dist": 53.01354646818822,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "vertclair",
+    "dist": 121.26263984782967,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "cyan",
+    "dist": 103.55067257039288,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "vertfonce",
+    "dist": 77.33575709100681,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "vertfluo",
+    "dist": 138.64860796936,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "vertpomme",
+    "dist": 129.81487311646413,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "kaki",
+    "dist": 70.38176182386273,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "brun",
+    "dist": 32.678708715354475,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "brun"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "noir",
+    "dist": 53.69200149860163,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "gris",
+    "dist": 58.20716050981882,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "indigo",
+    "dist": 86.34715020897757,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "pourpre",
+    "dist": 45.37000282773257,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "vertd'eau",
+    "dist": 110.65929723345769,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "violetfonce",
+    "dist": 59.174558218517305,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "ocre",
+    "dist": 64.0266741849057,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "vertpale",
+    "dist": 103.293322545983,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "jaunemoutarde",
+    "dist": 82.21557270762119,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "lavande",
+    "dist": 65.9955381278577,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "saumon",
+    "dist": 37.480415935103586,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "prune",
+    "dist": 36.5536937126155,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "taupe",
+    "dist": 45.98418631002663,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "vertforet",
+    "dist": 82.83782332581765,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "vertkaki",
+    "dist": 68.98579998850524,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "vertsapin",
+    "dist": 78.09324011196912,
+    "frterm_refined": "bordeaux",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "vert",
+    "dist": 68.40609292169927,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "violet",
+    "dist": 118.34948824541733,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "rose",
+    "dist": 111.86474342948964,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "orange",
+    "dist": 114.66936188301594,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "rouge",
+    "dist": 131.4734700100806,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "jaune",
+    "dist": 100.98265346871223,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "turquoise",
+    "dist": 17.40420694667798,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "mauve",
+    "dist": 109.86837002505523,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "fuchsia",
+    "dist": 126.18064027757663,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "marron",
+    "dist": 82.26712017552721,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "magenta",
+    "dist": 125.90982337127163,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "vertclair",
+    "dist": 72.43758642584547,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "cyan",
+    "dist": 16.18933760480619,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "vertfonce",
+    "dist": 57.57970389695562,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "vertfluo",
+    "dist": 92.08604307325834,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "vertpomme",
+    "dist": 89.31877247106478,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "kaki",
+    "dist": 68.33737381305275,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "brun",
+    "dist": 82.29541357024421,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "brun"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "noir",
+    "dist": 82.08157784834496,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "gris",
+    "dist": 47.84887690442009,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "indigo",
+    "dist": 105.74625735766372,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "pourpre",
+    "dist": 109.23880255584042,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "vertd'eau",
+    "dist": 38.18266741517984,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "bordeaux",
+    "dist": 103.55694281365012,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "bordeaux"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "violetfonce",
+    "dist": 105.21524645142648,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "ocre",
+    "dist": 87.4598872980968,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "vertpale",
+    "dist": 56.579946472466915,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "jaunemoutarde",
+    "dist": 94.06643926723184,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "lavande",
+    "dist": 73.46653761226595,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "saumon",
+    "dist": 85.45064918550153,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "prune",
+    "dist": 92.58543373800632,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "taupe",
+    "dist": 61.89148218090748,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "vertforet",
+    "dist": 54.49006711621141,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "vertkaki",
+    "dist": 69.64696284783184,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "vertsapin",
+    "dist": 51.412860435642706,
+    "frterm_refined": "bleuturquoise",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "vert",
+    "dist": 69.03653842297861,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "violet",
+    "dist": 125.21836057102588,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "rose",
+    "dist": 92.17891344841075,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "orange",
+    "dist": 31.188542414135117,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "rouge",
+    "dist": 64.63948644387007,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "turquoise",
+    "dist": 83.29212210554789,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "vertclair",
+    "dist": 69.52486265696069,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "vertfonce",
+    "dist": 61.58996747199052,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "vertfluo",
+    "dist": 83.7961704521621,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "vertpomme",
+    "dist": 73.96928816658706,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "pourpre",
+    "dist": 99.70364463441975,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "vertd'eau",
+    "dist": 74.24158338032343,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "violetfonce",
+    "dist": 110.89820079984528,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "vertpale",
+    "dist": 56.7985417798971,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "saumon",
+    "dist": 36.93439965019172,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "prune",
+    "dist": 86.98113498480072,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "taupe",
+    "dist": 45.01286854463569,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "vertforet",
+    "dist": 60.82619056304067,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "vertkaki",
+    "dist": 35.12378733069728,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "ocre",
+    "frterm2": "vertsapin",
+    "dist": 62.81636948578283,
+    "frterm_refined": "ocre",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "vertpale",
+    "frterm2": "violet",
+    "dist": 146.33071203487523,
+    "frterm_refined": "vertpale",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "vertpale",
+    "frterm2": "vertpomme",
+    "dist": 38.943814542216934,
+    "frterm_refined": "vertpale",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "vertpale",
+    "frterm2": "violetfonce",
+    "dist": 131.21936992892392,
+    "frterm_refined": "vertpale",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "vertpale",
+    "frterm2": "vertsapin",
+    "dist": 52.20859633490073,
+    "frterm_refined": "vertpale",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "vert",
+    "dist": 63.157560416302836,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "violet",
+    "dist": 143.62915957910778,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "rose",
+    "dist": 110.5088819690811,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "orange",
+    "dist": 37.7978083182755,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "rouge",
+    "dist": 79.1464882148207,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "turquoise",
+    "dist": 86.54890897390052,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "mauve",
+    "dist": 134.16246778977188,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "marron",
+    "dist": 55.612767033052876,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "magenta",
+    "dist": 121.13492093162742,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "vertclair",
+    "dist": 60.70071739622447,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "vertfonce",
+    "dist": 68.09731583139045,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "vertfluo",
+    "dist": 70.54826587178081,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "vertpomme",
+    "dist": 60.871526454520165,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "kaki",
+    "dist": 41.77134438639717,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "noir",
+    "dist": 94.43842958265735,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "pourpre",
+    "dist": 118.42060453045717,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "vertd'eau",
+    "dist": 74.17103264215774,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "violetfonce",
+    "dist": 129.25479956633455,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "ocre",
+    "dist": 21.700477027680787,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "vertpale",
+    "dist": 52.93935588549056,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "lavande",
+    "dist": 110.9464491049782,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "saumon",
+    "dist": 55.46065847691097,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "prune",
+    "dist": 104.96161278455087,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "taupe",
+    "dist": 60.90631130938149,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "vertforet",
+    "dist": 64.96853544626458,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "vertkaki",
+    "dist": 38.631505709807385,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "vertsapin",
+    "dist": 69.18587316670867,
+    "frterm_refined": "jaunemoutarde",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "vert",
+    "dist": 122.6115280313177,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "violet",
+    "dist": 48.47396927106701,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "rose",
+    "dist": 50.05805598629949,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "orange",
+    "dist": 107.20347583032044,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "rouge",
+    "dist": 97.75110566668185,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "turquoise",
+    "dist": 86.64950390980529,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "mauve",
+    "dist": 40.43333064871029,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "marron",
+    "dist": 71.91672532524653,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "magenta",
+    "dist": 62.292999706950994,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "vertclair",
+    "dist": 126.43902397581077,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "vertfonce",
+    "dist": 86.33761500813172,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "vertfluo",
+    "dist": 147.67335829844188,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "vertpomme",
+    "dist": 140.81804267646942,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "noir",
+    "dist": 70.04083600133042,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "pourpre",
+    "dist": 47.6878115790029,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "vertd'eau",
+    "dist": 99.71819031669727,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "violetfonce",
+    "dist": 43.24052361515562,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "ocre",
+    "dist": 94.18480882431261,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "vertpale",
+    "dist": 104.37367737855766,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "saumon",
+    "dist": 64.6843116569995,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "prune",
+    "dist": 43.73369331928799,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "taupe",
+    "dist": 54.50346129048217,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "vertforet",
+    "dist": 90.32190231492679,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "vertkaki",
+    "dist": 89.94768475448167,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "vertsapin",
+    "dist": 83.1349573376996,
+    "frterm_refined": "lavande",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "vert",
+    "dist": 93.76137405150284,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "violet",
+    "dist": 91.52456687982982,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "turquoise",
+    "dist": 87.60357904290504,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "vertclair",
+    "dist": 95.24684388659428,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "vertfonce",
+    "dist": 68.9687693963498,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "vertfluo",
+    "dist": 113.2813841663981,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "vertpomme",
+    "dist": 103.88164293028127,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "vertd'eau",
+    "dist": 86.86376965877885,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "violetfonce",
+    "dist": 80.01047131108882,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "vertpale",
+    "dist": 75.87258903337217,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "taupe",
+    "dist": 29.85673354468186,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "vertforet",
+    "dist": 70.62310797319006,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "vertkaki",
+    "dist": 50.39873368400239,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "saumon",
+    "frterm2": "vertsapin",
+    "dist": 68.18278747612482,
+    "frterm_refined": "saumon",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "vert",
+    "dist": 136.5414021404485,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "violet",
+    "dist": 50.013052432196694,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "rose",
+    "dist": 66.72851836063789,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "orange",
+    "dist": 123.69121421770677,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "rouge",
+    "dist": 109.1602915793895,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "jaune",
+    "dist": 148.72353384852022,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "turquoise",
+    "dist": 103.95453135009342,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "mauve",
+    "dist": 47.13005922054896,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "fuchsia",
+    "dist": 72.46122559624959,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "marron",
+    "dist": 77.9882883736279,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "magenta",
+    "dist": 73.07735242545877,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "vertclair",
+    "dist": 142.2637149474103,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "cyan",
+    "dist": 84.58805677632768,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "vertfonce",
+    "dist": 87.92886945223604,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "vertfluo",
+    "dist": 162.45788700737745,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "vertpomme",
+    "dist": 156.20302697025403,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "kaki",
+    "dist": 99.8331848051241,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "brun",
+    "dist": 72.56392830208752,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "brun"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "bleuroi",
+    "dist": 44.085306219974896,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "bleuroi"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "noir",
+    "dist": 53.47068279209272,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "gris",
+    "dist": 61.30663179934254,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "indigo",
+    "dist": 44.91695824804129,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "pourpre",
+    "dist": 42.67479459968714,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "vertd'eau",
+    "dist": 116.82385887300086,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "bordeaux",
+    "dist": 69.15505581645961,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "bordeaux"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "bleuturquoise",
+    "dist": 91.47120913982232,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "bleuturquoise"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "violetfonce",
+    "dist": 27.434145684964623,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "ocre",
+    "dist": 111.68442275719453,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "vertpale",
+    "dist": 123.15120547192946,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "jaunemoutarde",
+    "dist": 128.5182859735985,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "lavande",
+    "dist": 43.866346385165855,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "saumon",
+    "dist": 85.7481848123323,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "prune",
+    "dist": 36.04941655197828,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "taupe",
+    "dist": 69.8384734749386,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "vertforet",
+    "dist": 94.4306070509087,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "vertkaki",
+    "dist": 100.07732035662819,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "vertsapin",
+    "dist": 85.76603325558523,
+    "frterm_refined": "bleunuit",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "vert",
+    "dist": 89.79797715706242,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "violet",
+    "dist": 82.32321500391582,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "rose",
+    "dist": 78.66869160949848,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "orange",
+    "dist": 100.85542867462429,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "orange"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "rouge",
+    "dist": 104.57641130238537,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "jaune",
+    "dist": 108.48794291216721,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "jaune"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "turquoise",
+    "dist": 52.82652715887005,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "mauve",
+    "dist": 74.52499065504824,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "mauve"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "fuchsia",
+    "dist": 92.26363683810939,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "fuchsia"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "marron",
+    "dist": 58.21475181608366,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "marron"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "bleumarine",
+    "dist": 68.89375236123253,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "bleumarine"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "magenta",
+    "dist": 92.2630792136707,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "magenta"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "vertclair",
+    "dist": 94.9166170816582,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "cyan",
+    "dist": 44.582160169690134,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "cyan"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "vertfonce",
+    "dist": 52.29693201059052,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "vertfluo",
+    "dist": 115.53874625931871,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "vertpomme",
+    "dist": 110.15757069061709,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "kaki",
+    "dist": 63.14754833841646,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "kaki"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "brun",
+    "dist": 55.650326946522355,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "brun"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "bleuroi",
+    "dist": 80.37207063027367,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "bleuroi"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "noir",
+    "dist": 51.01531728819738,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "noir"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "gris",
+    "dist": 20.15095254367163,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "gris"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "indigo",
+    "dist": 76.78244519253671,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "indigo"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "pourpre",
+    "dist": 71.34569561204142,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "pourpre"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "vertd'eau",
+    "dist": 66.37251943737735,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "bordeaux",
+    "dist": 69.78077144657999,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "bordeaux"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "bleuturquoise",
+    "dist": 41.38009765757173,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "bleuturquoise"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "violetfonce",
+    "dist": 66.41869572149437,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "ocre",
+    "dist": 79.1212454913651,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "ocre"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "vertpale",
+    "dist": 75.36756982851404,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "jaunemoutarde",
+    "dist": 92.63975218675004,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "jaunemoutarde"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "lavande",
+    "dist": 40.39439770914321,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "lavande"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "saumon",
+    "dist": 62.713131248646015,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "bleunuit",
+    "dist": 53.06035674988295,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "bleunuit"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "prune",
+    "dist": 52.540814663322216,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "prune"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "taupe",
+    "dist": 38.351440402004336,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "vertforet",
+    "dist": 55.266965271418016,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "vertkaki",
+    "dist": 63.575304139601556,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "vertsapin",
+    "dist": 47.540140286160025,
+    "frterm_refined": "bleugris",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "vert",
+    "dist": 124.97774743610222,
+    "frterm_refined": "prune",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "violet",
+    "dist": 52.75595100961251,
+    "frterm_refined": "prune",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "rose",
+    "dist": 47.56183137761263,
+    "frterm_refined": "prune",
+    "frterm2_refined": "rose"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "rouge",
+    "dist": 76.76222152590505,
+    "frterm_refined": "prune",
+    "frterm2_refined": "rouge"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "turquoise",
+    "dist": 102.04949960528542,
+    "frterm_refined": "prune",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "vertclair",
+    "dist": 129.73925845028435,
+    "frterm_refined": "prune",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "vertfonce",
+    "dist": 77.69845522802947,
+    "frterm_refined": "prune",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "vertfluo",
+    "dist": 149.3694293775344,
+    "frterm_refined": "prune",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "vertpomme",
+    "dist": 141.75431371655534,
+    "frterm_refined": "prune",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "vertd'eau",
+    "dist": 110.11501012070954,
+    "frterm_refined": "prune",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "violetfonce",
+    "dist": 32.05622287666889,
+    "frterm_refined": "prune",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "vertpale",
+    "dist": 110.26574436553219,
+    "frterm_refined": "prune",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "saumon",
+    "dist": 58.51784674971592,
+    "frterm_refined": "prune",
+    "frterm2_refined": "saumon"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "taupe",
+    "dist": 50.47281142699401,
+    "frterm_refined": "prune",
+    "frterm2_refined": "taupe"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "vertforet",
+    "dist": 84.03194900949825,
+    "frterm_refined": "prune",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "vertkaki",
+    "dist": 81.33912819021228,
+    "frterm_refined": "prune",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "prune",
+    "frterm2": "vertsapin",
+    "dist": 76.76978918822499,
+    "frterm_refined": "prune",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "vert",
+    "dist": 79.707683097875,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "vert"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "violet",
+    "dist": 89.77755349659869,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "turquoise",
+    "dist": 64.96195079037724,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "turquoise"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "vertclair",
+    "dist": 83.13522825026995,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "vertclair"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "vertfonce",
+    "dist": 46.480071005209794,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "vertfonce"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "vertfluo",
+    "dist": 102.55732310565078,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "vertfluo"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "vertpomme",
+    "dist": 94.55490379390933,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "vertd'eau",
+    "dist": 67.03593810942749,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "vertd'eau"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "violetfonce",
+    "dist": 73.33954697947853,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "vertpale",
+    "dist": 63.28883337046895,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "vertforet",
+    "dist": 48.384362313437464,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "vertforet"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "vertkaki",
+    "dist": 38.158774120236174,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "taupe",
+    "frterm2": "vertsapin",
+    "dist": 43.9931550727536,
+    "frterm_refined": "taupe",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "vertforet",
+    "frterm2": "violet",
+    "dist": 128.3860439702423,
+    "frterm_refined": "vertforet",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "vertforet",
+    "frterm2": "vertpomme",
+    "dist": 67.30245691758054,
+    "frterm_refined": "vertforet",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "vertforet",
+    "frterm2": "violetfonce",
+    "dist": 106.97653217273665,
+    "frterm_refined": "vertforet",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "vertforet",
+    "frterm2": "vertpale",
+    "dist": 47.34120630695846,
+    "frterm_refined": "vertforet",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "vertforet",
+    "frterm2": "vertkaki",
+    "dist": 31.09885793696005,
+    "frterm_refined": "vertforet",
+    "frterm2_refined": "vertkaki"
+  },
+  {
+    "frterm": "vertforet",
+    "frterm2": "vertsapin",
+    "dist": 14.667712028871488,
+    "frterm_refined": "vertforet",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "vertkaki",
+    "frterm2": "violet",
+    "dist": 125.60827990764298,
+    "frterm_refined": "vertkaki",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "vertkaki",
+    "frterm2": "vertpomme",
+    "dist": 64.40094067126263,
+    "frterm_refined": "vertkaki",
+    "frterm2_refined": "vertpomme"
+  },
+  {
+    "frterm": "vertkaki",
+    "frterm2": "violetfonce",
+    "dist": 106.34166277242308,
+    "frterm_refined": "vertkaki",
+    "frterm2_refined": "violetfonce"
+  },
+  {
+    "frterm": "vertkaki",
+    "frterm2": "vertpale",
+    "dist": 45.506547394123395,
+    "frterm_refined": "vertkaki",
+    "frterm2_refined": "vertpale"
+  },
+  {
+    "frterm": "vertkaki",
+    "frterm2": "vertsapin",
+    "dist": 33.75664851855421,
+    "frterm_refined": "vertkaki",
+    "frterm2_refined": "vertsapin"
+  },
+  {
+    "frterm": "vertsapin",
+    "frterm2": "violet",
+    "dist": 120.55562780632374,
+    "frterm_refined": "vertsapin",
+    "frterm2_refined": "violet"
+  },
+  {
+    "frterm": "vertsapin",
+    "frterm2": "violetfonce",
+    "dist": 99.06241471468383,
+    "frterm_refined": "vertsapin",
+    "frterm2_refined": "violetfonce"
+  }
 ]

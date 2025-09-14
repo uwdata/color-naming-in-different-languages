@@ -1,52 +1,8192 @@
 [
   {
-    "frterm": "bleu", 
-    "ptterm": "azul", 
-    "dist": 0.5254043254819207
-  }, 
+    "frterm": "bleu",
+    "ptterm": "azul",
+    "dist": 5.069401704471501,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "azul"
+  },
   {
-    "frterm": "bleu", 
-    "ptterm": "verde", 
-    "dist": 15.240189887303506
-  }, 
+    "frterm": "bleu",
+    "ptterm": "verde",
+    "dist": 139.27052472216232,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "verde"
+  },
   {
-    "frterm": "vert", 
-    "ptterm": "azul", 
-    "dist": 14.692269060717452
-  }, 
+    "frterm": "bleu",
+    "ptterm": "rosa",
+    "dist": 76.09328320401937,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "rosa"
+  },
   {
-    "frterm": "vert", 
-    "ptterm": "verde", 
-    "dist": 0.6306773349469258
-  }, 
+    "frterm": "bleu",
+    "ptterm": "roxo",
+    "dist": 48.08083888677246,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "roxo"
+  },
   {
-    "frterm": "violet", 
-    "ptterm": "azul", 
-    "dist": 7.37748185869419
-  }, 
+    "frterm": "bleu",
+    "ptterm": "laranja",
+    "dist": 134.67656502918751,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "laranja"
+  },
   {
-    "frterm": "violet", 
-    "ptterm": "verde", 
-    "dist": 19.806474474866178
-  }, 
+    "frterm": "bleu",
+    "ptterm": "amarelo",
+    "dist": 153.24223252217888,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "amarelo"
+  },
   {
-    "frterm": "rose", 
-    "ptterm": "azul", 
-    "dist": 9.357032571719358
-  }, 
+    "frterm": "bleu",
+    "ptterm": "vermelho",
+    "dist": 127.76412522294977,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "vermelho"
+  },
   {
-    "frterm": "rose", 
-    "ptterm": "verde", 
-    "dist": 16.975517559099302
-  }, 
+    "frterm": "bleu",
+    "ptterm": "azulclaro",
+    "dist": 45.003906241075015,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "azulclaro"
+  },
   {
-    "frterm": "mauve", 
-    "ptterm": "azul", 
-    "dist": 6.706557310905724
-  }, 
+    "frterm": "bleu",
+    "ptterm": "verdeclaro",
+    "dist": 141.26910130153394,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "verdeclaro"
+  },
   {
-    "frterm": "mauve", 
-    "ptterm": "verde", 
-    "dist": 19.24580976647787
+    "frterm": "bleu",
+    "ptterm": "azulescuro",
+    "dist": 37.391382795918595,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "lilas",
+    "dist": 38.85143316034031,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "marrom",
+    "dist": 93.41492726457874,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "verdeagua",
+    "dist": 111.05289767161818,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "magenta",
+    "dist": 74.57154126770354,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "ciano",
+    "dist": 88.18243425641444,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "rosachoque",
+    "dist": 82.92100545604715,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "verdelimao",
+    "dist": 163.66411772909836,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "azulmarinho",
+    "dist": 21.556124720986926,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "violeta",
+    "dist": 55.21716738443399,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "cinza",
+    "dist": 72.34496870666992,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "vinho",
+    "dist": 86.14581806726885,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "verdeescuro",
+    "dist": 106.11467111480037,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "bege",
+    "dist": 101.86485531714668,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "azulbebe",
+    "dist": 58.70381044633895,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "verdemusgo",
+    "dist": 103.60824744166847,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "bleu",
+    "ptterm": "preto",
+    "dist": 74.88369063909403,
+    "frterm_refined": "bleu",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "azul",
+    "dist": 134.04161584218326,
+    "frterm_refined": "vert",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "verde",
+    "dist": 6.836301943956229,
+    "frterm_refined": "vert",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "rosa",
+    "dist": 148.5565463845668,
+    "frterm_refined": "vert",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "roxo",
+    "dist": 163.41329845721145,
+    "frterm_refined": "vert",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "laranja",
+    "dist": 98.8048565484961,
+    "frterm_refined": "vert",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "amarelo",
+    "dist": 59.26115463749077,
+    "frterm_refined": "vert",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "vermelho",
+    "dist": 131.53036253381956,
+    "frterm_refined": "vert",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "azulclaro",
+    "dist": 97.98101764441678,
+    "frterm_refined": "vert",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "verdeclaro",
+    "dist": 14.38375579965197,
+    "frterm_refined": "vert",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "azulescuro",
+    "dist": 166.53951738619412,
+    "frterm_refined": "vert",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "lilas",
+    "dist": 136.79679586226774,
+    "frterm_refined": "vert",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "marrom",
+    "dist": 84.65068415503139,
+    "frterm_refined": "vert",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "verdeagua",
+    "dist": 39.08522910090698,
+    "frterm_refined": "vert",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "magenta",
+    "dist": 155.28154593399253,
+    "frterm_refined": "vert",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "ciano",
+    "dist": 60.06303459882174,
+    "frterm_refined": "vert",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "rosachoque",
+    "dist": 160.05092834009434,
+    "frterm_refined": "vert",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "verdelimao",
+    "dist": 34.80037411929596,
+    "frterm_refined": "vert",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "azulmarinho",
+    "dist": 129.02421424599765,
+    "frterm_refined": "vert",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "violeta",
+    "dist": 168.51084245390675,
+    "frterm_refined": "vert",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "cinza",
+    "dist": 77.12301353454066,
+    "frterm_refined": "vert",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "vinho",
+    "dist": 117.46435968847672,
+    "frterm_refined": "vert",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "verdeescuro",
+    "dist": 44.4114854114513,
+    "frterm_refined": "vert",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "bege",
+    "dist": 61.042685655243154,
+    "frterm_refined": "vert",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "azulbebe",
+    "dist": 84.02045413310702,
+    "frterm_refined": "vert",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "verdemusgo",
+    "dist": 44.522319722510005,
+    "frterm_refined": "vert",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "vert",
+    "ptterm": "preto",
+    "dist": 105.75930385151756,
+    "frterm_refined": "vert",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "azul",
+    "dist": 52.2648034388284,
+    "frterm_refined": "violet",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "verde",
+    "dist": 166.95960231836278,
+    "frterm_refined": "violet",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "rosa",
+    "dist": 42.83148224822311,
+    "frterm_refined": "violet",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "roxo",
+    "dist": 9.047300015025566,
+    "frterm_refined": "violet",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "laranja",
+    "dist": 129.3118785933975,
+    "frterm_refined": "violet",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "amarelo",
+    "dist": 165.23850122671706,
+    "frterm_refined": "violet",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "vermelho",
+    "dist": 105.70528513160653,
+    "frterm_refined": "violet",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "azulclaro",
+    "dist": 87.55804448865047,
+    "frterm_refined": "violet",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "verdeclaro",
+    "dist": 169.41168969500785,
+    "frterm_refined": "violet",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "azulescuro",
+    "dist": 33.05634388904402,
+    "frterm_refined": "violet",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "lilas",
+    "dist": 31.76198246841828,
+    "frterm_refined": "violet",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "marrom",
+    "dist": 97.41682526114829,
+    "frterm_refined": "violet",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "verdeagua",
+    "dist": 146.3770041605177,
+    "frterm_refined": "violet",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "magenta",
+    "dist": 36.72015379871604,
+    "frterm_refined": "violet",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "ciano",
+    "dist": 126.36470949767018,
+    "frterm_refined": "violet",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "rosachoque",
+    "dist": 43.724893902346444,
+    "frterm_refined": "violet",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "verdelimao",
+    "dist": 186.85522779679383,
+    "frterm_refined": "violet",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "azulmarinho",
+    "dist": 54.41494490007469,
+    "frterm_refined": "violet",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "violeta",
+    "dist": 12.080182315391614,
+    "frterm_refined": "violet",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "cinza",
+    "dist": 89.57823583871908,
+    "frterm_refined": "violet",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "vinho",
+    "dist": 71.4072291100241,
+    "frterm_refined": "violet",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "verdeescuro",
+    "dist": 131.78702188804976,
+    "frterm_refined": "violet",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "bege",
+    "dist": 116.07040496636998,
+    "frterm_refined": "violet",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "azulbebe",
+    "dist": 95.08025557060323,
+    "frterm_refined": "violet",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "verdemusgo",
+    "dist": 127.34290821825277,
+    "frterm_refined": "violet",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "violet",
+    "ptterm": "preto",
+    "dist": 83.80277679941024,
+    "frterm_refined": "violet",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "azul",
+    "dist": 73.91777091855101,
+    "frterm_refined": "rose",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "verde",
+    "dist": 146.20933796399297,
+    "frterm_refined": "rose",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "rosa",
+    "dist": 8.671214561741294,
+    "frterm_refined": "rose",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "roxo",
+    "dist": 47.2392411746969,
+    "frterm_refined": "rose",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "laranja",
+    "dist": 90.62861125560035,
+    "frterm_refined": "rose",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "amarelo",
+    "dist": 132.19668468582987,
+    "frterm_refined": "rose",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "vermelho",
+    "dist": 66.58019555877426,
+    "frterm_refined": "rose",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "azulclaro",
+    "dist": 89.26693922266381,
+    "frterm_refined": "rose",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "verdeclaro",
+    "dist": 147.80609613474851,
+    "frterm_refined": "rose",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "azulescuro",
+    "dist": 71.20838942923199,
+    "frterm_refined": "rose",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "lilas",
+    "dist": 36.69527005604404,
+    "frterm_refined": "rose",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "marrom",
+    "dist": 73.18201497682591,
+    "frterm_refined": "rose",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "verdeagua",
+    "dist": 132.58111182795807,
+    "frterm_refined": "rose",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "magenta",
+    "dist": 18.321616015743174,
+    "frterm_refined": "rose",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "ciano",
+    "dist": 117.02355375437669,
+    "frterm_refined": "rose",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "rosachoque",
+    "dist": 18.958178619032175,
+    "frterm_refined": "rose",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "verdelimao",
+    "dist": 160.65340041426364,
+    "frterm_refined": "rose",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "azulmarinho",
+    "dist": 73.00068688228724,
+    "frterm_refined": "rose",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "violeta",
+    "dist": 45.70466963901443,
+    "frterm_refined": "rose",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "cinza",
+    "dist": 74.42830132357246,
+    "frterm_refined": "rose",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "vinho",
+    "dist": 49.708520960713514,
+    "frterm_refined": "rose",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "verdeescuro",
+    "dist": 115.72738390475241,
+    "frterm_refined": "rose",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "bege",
+    "dist": 88.12742132085093,
+    "frterm_refined": "rose",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "azulbebe",
+    "dist": 88.93715006289187,
+    "frterm_refined": "rose",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "verdemusgo",
+    "dist": 109.54004982755096,
+    "frterm_refined": "rose",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "rose",
+    "ptterm": "preto",
+    "dist": 78.19099806577161,
+    "frterm_refined": "rose",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "azul",
+    "dist": 133.1940051381432,
+    "frterm_refined": "orange",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "verde",
+    "dist": 98.11249615734533,
+    "frterm_refined": "orange",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "rosa",
+    "dist": 93.82853317499402,
+    "frterm_refined": "orange",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "roxo",
+    "dist": 131.31390201505494,
+    "frterm_refined": "orange",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "laranja",
+    "dist": 4.620090877204822,
+    "frterm_refined": "orange",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "amarelo",
+    "dist": 55.89103852755691,
+    "frterm_refined": "orange",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "vermelho",
+    "dist": 44.58458915185525,
+    "frterm_refined": "orange",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "azulclaro",
+    "dist": 119.57863609453761,
+    "frterm_refined": "orange",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "verdeclaro",
+    "dist": 99.60304952015012,
+    "frterm_refined": "orange",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "azulescuro",
+    "dist": 148.2860795227326,
+    "frterm_refined": "orange",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "lilas",
+    "dist": 109.09257628116511,
+    "frterm_refined": "orange",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "marrom",
+    "dist": 54.68246288168835,
+    "frterm_refined": "orange",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "verdeagua",
+    "dist": 109.69636847439617,
+    "frterm_refined": "orange",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "magenta",
+    "dist": 102.28681604206515,
+    "frterm_refined": "orange",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "ciano",
+    "dist": 112.92751799645424,
+    "frterm_refined": "orange",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "rosachoque",
+    "dist": 102.52258303633317,
+    "frterm_refined": "orange",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "verdelimao",
+    "dist": 95.68233651746435,
+    "frterm_refined": "orange",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "azulmarinho",
+    "dist": 128.1328939894374,
+    "frterm_refined": "orange",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "violeta",
+    "dist": 132.67720064389022,
+    "frterm_refined": "orange",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "cinza",
+    "dist": 78.41623507177822,
+    "frterm_refined": "orange",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "vinho",
+    "dist": 71.45104127259644,
+    "frterm_refined": "orange",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "verdeescuro",
+    "dist": 85.50911257569668,
+    "frterm_refined": "orange",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "bege",
+    "dist": 53.56581437831935,
+    "frterm_refined": "orange",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "azulbebe",
+    "dist": 106.57906304537717,
+    "frterm_refined": "orange",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "verdemusgo",
+    "dist": 78.78052950808824,
+    "frterm_refined": "orange",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "orange",
+    "ptterm": "preto",
+    "dist": 94.9802566489532,
+    "frterm_refined": "orange",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "azul",
+    "dist": 126.18493874319707,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "verde",
+    "dist": 132.8681277938761,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "rosa",
+    "dist": 65.52997209508905,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "roxo",
+    "dist": 106.52276438922951,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "laranja",
+    "dist": 44.22455835890715,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "amarelo",
+    "dist": 100.28573116842956,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "vermelho",
+    "dist": 4.444163861025537,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "azulclaro",
+    "dist": 125.46661639411168,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "verdeclaro",
+    "dist": 135.75454053599285,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "azulescuro",
+    "dist": 127.99862712906781,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "lilas",
+    "dist": 93.7848696285461,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "marrom",
+    "dist": 61.57716018132063,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "verdeagua",
+    "dist": 137.0067234713683,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "magenta",
+    "dist": 71.11520541724477,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "ciano",
+    "dist": 133.32678139569592,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "rosachoque",
+    "dist": 70.10308869083732,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "verdelimao",
+    "dist": 137.26755381983628,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "azulmarinho",
+    "dist": 120.44555903256678,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "violeta",
+    "dist": 106.17408406527674,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "cinza",
+    "dist": 86.43545398434411,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "vinho",
+    "dist": 51.93317686407404,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "verdeescuro",
+    "dist": 108.95614743188962,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "bege",
+    "dist": 79.77851867101874,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "azulbebe",
+    "dist": 116.65384282071126,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "verdemusgo",
+    "dist": 102.96331353888229,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "rouge",
+    "ptterm": "preto",
+    "dist": 89.0386336711988,
+    "frterm_refined": "rouge",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "azul",
+    "dist": 150.222471074148,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "verde",
+    "dist": 56.972017562312296,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "rosa",
+    "dist": 136.1306601488881,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "roxo",
+    "dist": 165.38487192109858,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "laranja",
+    "dist": 58.62050716214116,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "amarelo",
+    "dist": 4.056493423334706,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "vermelho",
+    "dist": 100.22278632629819,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "azulclaro",
+    "dist": 121.50381723235728,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "verdeclaro",
+    "dist": 55.2834116502066,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "azulescuro",
+    "dist": 176.4708978040465,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "lilas",
+    "dist": 138.3063645730656,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "marrom",
+    "dist": 79.53067823363999,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "verdeagua",
+    "dist": 80.08326973603356,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "magenta",
+    "dist": 144.90703334821862,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "ciano",
+    "dist": 94.4215737741316,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "rosachoque",
+    "dist": 146.502737845767,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "verdelimao",
+    "dist": 43.28054085062704,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "azulmarinho",
+    "dist": 146.27676249326979,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "violeta",
+    "dist": 168.1563352788221,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "cinza",
+    "dist": 87.56295121257574,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "vinho",
+    "dist": 109.94220919477083,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "verdeescuro",
+    "dist": 71.65033075355106,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "bege",
+    "dist": 52.0403551489051,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "azulbebe",
+    "dist": 105.2966987706787,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "verdemusgo",
+    "dist": 66.08484296195644,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "jaune",
+    "ptterm": "preto",
+    "dist": 116.50479126136433,
+    "frterm_refined": "jaune",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "azul",
+    "dist": 91.84594228430447,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "verde",
+    "dist": 57.01890047331849,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "rosa",
+    "dist": 127.04765770914254,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "roxo",
+    "dist": 130.29763098605585,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "laranja",
+    "dist": 112.74083654779763,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "amarelo",
+    "dist": 92.68379494830333,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "vermelho",
+    "dist": 134.20617232712408,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "azulclaro",
+    "dist": 51.00980210245851,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "verdeclaro",
+    "dist": 56.147086529206284,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "azulescuro",
+    "dist": 128.36979165210226,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "lilas",
+    "dist": 104.07014350275314,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "marrom",
+    "dist": 82.47002646733335,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "verdeagua",
+    "dist": 18.82548419085274,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "magenta",
+    "dist": 133.01713302237474,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "ciano",
+    "dist": 10.993173504831521,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "rosachoque",
+    "dist": 138.08393968285455,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "verdelimao",
+    "dist": 82.8176484234958,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "azulmarinho",
+    "dist": 90.93891815388643,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "violeta",
+    "dist": 135.79030509033538,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "cinza",
+    "dist": 55.14784393888886,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "vinho",
+    "dist": 105.70093379247582,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "verdeescuro",
+    "dist": 50.013182235941215,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "bege",
+    "dist": 60.07945023626554,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "azulbebe",
+    "dist": 40.225576248735685,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "verdemusgo",
+    "dist": 47.37421240371557,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "turquoise",
+    "ptterm": "preto",
+    "dist": 88.72643831573713,
+    "frterm_refined": "turquoise",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "azul",
+    "dist": 47.29322617554008,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "verde",
+    "dist": 157.7765500632802,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "rosa",
+    "dist": 38.04061298806444,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "roxo",
+    "dist": 14.265637562252111,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "laranja",
+    "dist": 120.87494457290481,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "amarelo",
+    "dist": 155.6087249861973,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "vermelho",
+    "dist": 100.24237152156469,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "azulclaro",
+    "dist": 79.79116254888079,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "verdeclaro",
+    "dist": 159.9635286016478,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "azulescuro",
+    "dist": 36.438437532895776,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "lilas",
+    "dist": 22.875031831638914,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "marrom",
+    "dist": 89.20434255099431,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "verdeagua",
+    "dist": 137.2974249510669,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "magenta",
+    "dist": 33.99357609857632,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "ciano",
+    "dist": 117.47814997588846,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "rosachoque",
+    "dist": 42.123227937738186,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "verdelimao",
+    "dist": 177.29626247342983,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "azulmarinho",
+    "dist": 49.61307013003006,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "violeta",
+    "dist": 18.362394963494573,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "cinza",
+    "dist": 80.52026075307865,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "vinho",
+    "dist": 66.37134652480779,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "verdeescuro",
+    "dist": 123.33102403157577,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "bege",
+    "dist": 106.13083439275674,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "azulbebe",
+    "dist": 86.30235811512858,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "verdemusgo",
+    "dist": 118.64163327969626,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "mauve",
+    "ptterm": "preto",
+    "dist": 78.25316717421036,
+    "frterm_refined": "mauve",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "azul",
+    "dist": 79.432087712989,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "verde",
+    "dist": 162.74509327414012,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "rosa",
+    "dist": 15.112348792210975,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "roxo",
+    "dist": 43.844754221488664,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "laranja",
+    "dist": 105.50645037352565,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "amarelo",
+    "dist": 148.9435949668447,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "vermelho",
+    "dist": 75.71365327846785,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "azulclaro",
+    "dist": 101.11605082343125,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "verdeclaro",
+    "dist": 164.651419263065,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "azulescuro",
+    "dist": 69.18481609854571,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "lilas",
+    "dist": 44.31102907757417,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "marrom",
+    "dist": 88.52540784942057,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "verdeagua",
+    "dist": 148.4725784837616,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "magenta",
+    "dist": 12.934805793811275,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "ciano",
+    "dist": 132.02532541977124,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "rosachoque",
+    "dist": 8.586993712661156,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "verdelimao",
+    "dist": 177.70216751313458,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "azulmarinho",
+    "dist": 79.61153558865836,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "violeta",
+    "dist": 39.701943099205366,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "cinza",
+    "dist": 90.54097683044961,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "vinho",
+    "dist": 60.04411373912733,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "verdeescuro",
+    "dist": 131.46030717758458,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "bege",
+    "dist": 105.37986356285336,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "azulbebe",
+    "dist": 102.90301438691894,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "verdemusgo",
+    "dist": 125.71415031562826,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "fuchsia",
+    "ptterm": "preto",
+    "dist": 89.66884473878493,
+    "frterm_refined": "fuchsia",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "azul",
+    "dist": 48.116413567979464,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "verde",
+    "dist": 97.12805514623071,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "rosa",
+    "dist": 95.73225128368524,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "roxo",
+    "dist": 89.62636928032052,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "laranja",
+    "dist": 117.8995303590826,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "amarelo",
+    "dist": 119.1092893197775,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "vermelho",
+    "dist": 125.3092781956916,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "azulclaro",
+    "dist": 8.814992033233136,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "verdeclaro",
+    "dist": 97.48668599125746,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "azulescuro",
+    "dist": 86.17008475571036,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "lilas",
+    "dist": 65.19328047865392,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "marrom",
+    "dist": 79.67466915359024,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "verdeagua",
+    "dist": 64.41514041565075,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "magenta",
+    "dist": 99.84254054137705,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "ciano",
+    "dist": 40.068814740930726,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "rosachoque",
+    "dist": 105.68889261846584,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "verdelimao",
+    "dist": 122.06608937677554,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "azulmarinho",
+    "dist": 54.648906158364525,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "violeta",
+    "dist": 94.97150051808555,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "cinza",
+    "dist": 48.176874770525686,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "vinho",
+    "dist": 88.20858626165825,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "verdeescuro",
+    "dist": 72.74023355302027,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "bege",
+    "dist": 71.10369511242847,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "azulbebe",
+    "dist": 14.844582647528368,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "verdemusgo",
+    "dist": 69.22867700002227,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "bleuciel",
+    "ptterm": "preto",
+    "dist": 73.24997916912672,
+    "frterm_refined": "bleuciel",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "azul",
+    "dist": 94.3843992093171,
+    "frterm_refined": "marron",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "verde",
+    "dist": 86.39425899321414,
+    "frterm_refined": "marron",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "rosa",
+    "dist": 76.73112804257592,
+    "frterm_refined": "marron",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "roxo",
+    "dist": 98.03786652063776,
+    "frterm_refined": "marron",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "laranja",
+    "dist": 52.293661630816416,
+    "frterm_refined": "marron",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "amarelo",
+    "dist": 77.99532224377145,
+    "frterm_refined": "marron",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "vermelho",
+    "dist": 60.607748129703886,
+    "frterm_refined": "marron",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "azulclaro",
+    "dist": 82.70707233308167,
+    "frterm_refined": "marron",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "verdeclaro",
+    "dist": 90.87274246532284,
+    "frterm_refined": "marron",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "azulescuro",
+    "dist": 108.64016921553599,
+    "frterm_refined": "marron",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "lilas",
+    "dist": 76.95302996821836,
+    "frterm_refined": "marron",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "marrom",
+    "dist": 10.764095221493829,
+    "frterm_refined": "marron",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "verdeagua",
+    "dist": 86.99582068554778,
+    "frterm_refined": "marron",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "magenta",
+    "dist": 82.47670329434837,
+    "frterm_refined": "marron",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "ciano",
+    "dist": 84.4729537438798,
+    "frterm_refined": "marron",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "rosachoque",
+    "dist": 87.35106754498989,
+    "frterm_refined": "marron",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "verdelimao",
+    "dist": 100.20406788394524,
+    "frterm_refined": "marron",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "azulmarinho",
+    "dist": 85.91039013166646,
+    "frterm_refined": "marron",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "violeta",
+    "dist": 102.563099746697,
+    "frterm_refined": "marron",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "cinza",
+    "dist": 37.29581571092998,
+    "frterm_refined": "marron",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "vinho",
+    "dist": 36.66565105617186,
+    "frterm_refined": "marron",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "verdeescuro",
+    "dist": 53.350292155352214,
+    "frterm_refined": "marron",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "bege",
+    "dist": 43.20974368013376,
+    "frterm_refined": "marron",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "azulbebe",
+    "dist": 72.93507917615447,
+    "frterm_refined": "marron",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "verdemusgo",
+    "dist": 48.01672602885364,
+    "frterm_refined": "marron",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "marron",
+    "ptterm": "preto",
+    "dist": 45.0306183830563,
+    "frterm_refined": "marron",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "azul",
+    "dist": 31.027342415692665,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "verde",
+    "dist": 158.83389746164545,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "rosa",
+    "dist": 69.90415906284659,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "roxo",
+    "dist": 32.2236453427919,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "laranja",
+    "dist": 140.80667093517908,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "amarelo",
+    "dist": 168.32906611420134,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "vermelho",
+    "dist": 124.71811889163595,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "azulclaro",
+    "dist": 72.50416064739254,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "verdeclaro",
+    "dist": 161.85145462107172,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "azulescuro",
+    "dist": 17.134376883351347,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "lilas",
+    "dist": 42.534002548581135,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "marrom",
+    "dist": 97.40130629345053,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "verdeagua",
+    "dist": 134.287917762877,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "magenta",
+    "dist": 65.4547298915578,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "ciano",
+    "dist": 113.21427065715292,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "rosachoque",
+    "dist": 74.27153437655723,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "verdelimao",
+    "dist": 182.41428357088554,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "azulmarinho",
+    "dist": 29.53815070763917,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "violeta",
+    "dist": 41.24171421261225,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "cinza",
+    "dist": 83.1868145171051,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "vinho",
+    "dist": 79.58471462188189,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "verdeescuro",
+    "dist": 120.5276414544438,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "bege",
+    "dist": 117.65018946586844,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "azulbebe",
+    "dist": 84.95426178364444,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "verdemusgo",
+    "dist": 118.11379222410368,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "bleumarine",
+    "ptterm": "preto",
+    "dist": 71.9698834446516,
+    "frterm_refined": "bleumarine",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "azul",
+    "dist": 81.78435496757258,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "verde",
+    "dist": 158.74671196631056,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "rosa",
+    "dist": 13.270548642785217,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "roxo",
+    "dist": 48.23990243626368,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "laranja",
+    "dist": 97.51094499455925,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "amarelo",
+    "dist": 143.10689806254317,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "vermelho",
+    "dist": 67.16570470521913,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "azulclaro",
+    "dist": 101.86700631474675,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "verdeclaro",
+    "dist": 160.6848271613663,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "azulescuro",
+    "dist": 73.65589023159029,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "lilas",
+    "dist": 45.78405077852491,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "marrom",
+    "dist": 83.08670864755032,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "verdeagua",
+    "dist": 146.6437583209033,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "magenta",
+    "dist": 12.473880846600386,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "ciano",
+    "dist": 130.8908126618032,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "rosachoque",
+    "dist": 12.06300900807934,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "verdelimao",
+    "dist": 172.90511053709875,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "azulmarinho",
+    "dist": 80.73313866643747,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "violeta",
+    "dist": 45.53676472542144,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "cinza",
+    "dist": 88.64244334957841,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "vinho",
+    "dist": 54.46490906968025,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "verdeescuro",
+    "dist": 127.80664456937129,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "bege",
+    "dist": 101.20155545727356,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "azulbebe",
+    "dist": 103.18852278702974,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "verdemusgo",
+    "dist": 122.21399563657276,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "magenta",
+    "ptterm": "preto",
+    "dist": 87.23921546914781,
+    "frterm_refined": "magenta",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "azul",
+    "dist": 138.87234541842716,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "verde",
+    "dist": 14.141860527418077,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "rosa",
+    "dist": 150.9682069467114,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "roxo",
+    "dist": 167.73791859374722,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "laranja",
+    "dist": 97.94714619128266,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "amarelo",
+    "dist": 54.19303439118189,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "vermelho",
+    "dist": 132.59088072337008,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "azulclaro",
+    "dist": 102.32326813538133,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "verdeclaro",
+    "dist": 7.64868125094564,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "azulescuro",
+    "dist": 171.63458510995403,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "lilas",
+    "dist": 140.43002938285494,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "marrom",
+    "dist": 88.81199318742904,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "verdeagua",
+    "dist": 41.334029457027924,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "magenta",
+    "dist": 158.3342298251619,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "ciano",
+    "dist": 63.352396350901195,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "rosachoque",
+    "dist": 162.41831267320057,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "verdelimao",
+    "dist": 27.400507737031436,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "azulmarinho",
+    "dist": 134.56297348657262,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "violeta",
+    "dist": 172.38033830223802,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "cinza",
+    "dist": 81.4111499060895,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "vinho",
+    "dist": 121.68895688016363,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "verdeescuro",
+    "dist": 51.55318073880991,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "bege",
+    "dist": 60.83154784406549,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "azulbebe",
+    "dist": 87.34642081357039,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "verdemusgo",
+    "dist": 49.99597405084445,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "vertclair",
+    "ptterm": "preto",
+    "dist": 112.19936341044895,
+    "frterm_refined": "vertclair",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "azul",
+    "dist": 49.55474745211979,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "verde",
+    "dist": 97.45824246994623,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "rosa",
+    "dist": 96.86078440312232,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "roxo",
+    "dist": 90.46368761259633,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "laranja",
+    "dist": 118.8126963755753,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "amarelo",
+    "dist": 119.91295916854831,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "vermelho",
+    "dist": 126.09872345157783,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "azulclaro",
+    "dist": 9.447898634653042,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "verdeclaro",
+    "dist": 97.80551180857502,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "azulescuro",
+    "dist": 86.81311091539696,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "lilas",
+    "dist": 66.07240630549917,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "marrom",
+    "dist": 80.37616586320812,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "verdeagua",
+    "dist": 64.5227717148776,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "magenta",
+    "dist": 100.9772765927025,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "ciano",
+    "dist": 40.394564350590095,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "rosachoque",
+    "dist": 106.68010028855063,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "verdelimao",
+    "dist": 122.59634271188672,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "azulmarinho",
+    "dist": 56.71505124172429,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "violeta",
+    "dist": 95.91529538648892,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "cinza",
+    "dist": 48.350478848572976,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "vinho",
+    "dist": 88.60744301745746,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "verdeescuro",
+    "dist": 73.10756744770538,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "bege",
+    "dist": 72.03127217929425,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "azulbebe",
+    "dist": 15.554058436883855,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "verdemusgo",
+    "dist": 69.50663323590747,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "bleuclair",
+    "ptterm": "preto",
+    "dist": 73.24116269935682,
+    "frterm_refined": "bleuclair",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "azul",
+    "dist": 68.59543987604208,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "verde",
+    "dist": 78.5742622075416,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "rosa",
+    "dist": 110.74038814239354,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "roxo",
+    "dist": 108.68210259663446,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "laranja",
+    "dist": 117.88352823595626,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "amarelo",
+    "dist": 108.34581527821555,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "vermelho",
+    "dist": 132.36379122990022,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "azulclaro",
+    "dist": 31.592328551690095,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "verdeclaro",
+    "dist": 79.06285810788825,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "azulescuro",
+    "dist": 106.0482368878883,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "lilas",
+    "dist": 83.51186178272584,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "marrom",
+    "dist": 84.1153810730869,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "verdeagua",
+    "dist": 43.47644496072302,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "magenta",
+    "dist": 115.17204311654837,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "ciano",
+    "dist": 19.52837090291687,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "rosachoque",
+    "dist": 121.61272666446087,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "verdelimao",
+    "dist": 105.22161790034204,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "azulmarinho",
+    "dist": 69.6931050684612,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "violeta",
+    "dist": 114.13395472062263,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "cinza",
+    "dist": 56.42570699825429,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "vinho",
+    "dist": 99.83938640176457,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "verdeescuro",
+    "dist": 63.35737492703334,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "bege",
+    "dist": 67.46908039029712,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "azulbebe",
+    "dist": 28.085182151064057,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "verdemusgo",
+    "dist": 60.38615852895862,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "cyan",
+    "ptterm": "preto",
+    "dist": 83.04512823442886,
+    "frterm_refined": "cyan",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "azul",
+    "dist": 96.3879490146623,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "verde",
+    "dist": 57.85645194123143,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "rosa",
+    "dist": 113.3725580816493,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "roxo",
+    "dist": 121.16948136767842,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "laranja",
+    "dist": 87.61248714870813,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "amarelo",
+    "dist": 81.24255843858916,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "vermelho",
+    "dist": 106.11792332362724,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "azulclaro",
+    "dist": 71.20246837450406,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "verdeclaro",
+    "dist": 64.05501203253296,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "azulescuro",
+    "dist": 122.41538830000141,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "lilas",
+    "dist": 98.56372393274962,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "marrom",
+    "dist": 46.27039787554442,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "verdeagua",
+    "dist": 54.87642803405768,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "magenta",
+    "dist": 118.23283439592174,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "ciano",
+    "dist": 57.60567303191275,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "rosachoque",
+    "dist": 124.45460432227287,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "verdelimao",
+    "dist": 80.93841240350245,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "azulmarinho",
+    "dist": 87.45803879070957,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "violeta",
+    "dist": 127.76637467556661,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "cinza",
+    "dist": 40.546417140241,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "vinho",
+    "dist": 74.33329934570101,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "verdeescuro",
+    "dist": 16.93224971181162,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "bege",
+    "dist": 53.25541652812464,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "azulbebe",
+    "dist": 62.64315835771661,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "verdemusgo",
+    "dist": 22.199924661519717,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "vertfonce",
+    "ptterm": "preto",
+    "dist": 52.73706290042055,
+    "frterm_refined": "vertfonce",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "azul",
+    "dist": 160.24700271603078,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "verde",
+    "dist": 24.492170277779966,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "rosa",
+    "dist": 170.72598475008746,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "roxo",
+    "dist": 188.63427212678224,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "laranja",
+    "dist": 108.86332993915286,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "amarelo",
+    "dist": 57.987515154360835,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "vermelho",
+    "dist": 146.69543378795248,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "azulclaro",
+    "dist": 123.22201522224935,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "verdeclaro",
+    "dist": 22.825925359723477,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "azulescuro",
+    "dist": 192.5932403526976,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "lilas",
+    "dist": 161.45798208488398,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "marrom",
+    "dist": 105.80066162895257,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "verdeagua",
+    "dist": 59.07134921356542,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "magenta",
+    "dist": 178.21261596803876,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "ciano",
+    "dist": 82.76572642066171,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "rosachoque",
+    "dist": 181.96493288471555,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "verdelimao",
+    "dist": 16.218386106543434,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "azulmarinho",
+    "dist": 155.86891844632058,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "violeta",
+    "dist": 193.20611196026002,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "cinza",
+    "dist": 102.02523984661777,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "vinho",
+    "dist": 139.63328192753244,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "verdeescuro",
+    "dist": 67.24923441293225,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "bege",
+    "dist": 79.59373688613805,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "azulbebe",
+    "dist": 108.63692077777591,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "verdemusgo",
+    "dist": 67.27561931625586,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "vertfluo",
+    "ptterm": "preto",
+    "dist": 129.83395202990297,
+    "frterm_refined": "vertfluo",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "azul",
+    "dist": 154.46453392851984,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "verde",
+    "dist": 21.87584087256408,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "rosa",
+    "dist": 161.7993934968306,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "roxo",
+    "dist": 181.19189187711706,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "laranja",
+    "dist": 98.82079677589122,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "amarelo",
+    "dist": 48.86889150271823,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "vermelho",
+    "dist": 136.6956628170246,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "azulclaro",
+    "dist": 118.7358273888751,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "verdeclaro",
+    "dist": 20.219757187017652,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "azulescuro",
+    "dist": 186.2476095728866,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "lilas",
+    "dist": 153.95843176745794,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "marrom",
+    "dist": 97.35662108543266,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "verdeagua",
+    "dist": 57.85403716067673,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "magenta",
+    "dist": 169.48482207466034,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "ciano",
+    "dist": 80.18113495125458,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "rosachoque",
+    "dist": 173.0457453600198,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "verdelimao",
+    "dist": 12.194120559381084,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "azulmarinho",
+    "dist": 149.82323328633223,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "violeta",
+    "dist": 185.62677557382736,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "cinza",
+    "dist": 94.985000485736,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "vinho",
+    "dist": 131.14492567322984,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "verdeescuro",
+    "dist": 62.77295782265874,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "bege",
+    "dist": 70.95728725164022,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "azulbebe",
+    "dist": 103.56267991978284,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "verdemusgo",
+    "dist": 61.74307564108836,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "vertpomme",
+    "ptterm": "preto",
+    "dist": 123.50517478728194,
+    "frterm_refined": "vertpomme",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "azul",
+    "dist": 35.1713831915075,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "verde",
+    "dist": 166.90674134739297,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "rosa",
+    "dist": 71.28540763603463,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "roxo",
+    "dist": 29.614087856343733,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "laranja",
+    "dist": 146.8971245427148,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "amarelo",
+    "dist": 175.3111955473627,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "vermelho",
+    "dist": 129.10702214433564,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "azulclaro",
+    "dist": 77.33431593138617,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "verdeclaro",
+    "dist": 169.5668564302337,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "azulescuro",
+    "dist": 12.462488091787833,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "lilas",
+    "dist": 44.18091342578282,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "marrom",
+    "dist": 105.7881712804975,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "verdeagua",
+    "dist": 141.35975486823372,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "magenta",
+    "dist": 66.34193679609541,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "ciano",
+    "dist": 119.45334656751777,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "rosachoque",
+    "dist": 74.3666524565605,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "verdelimao",
+    "dist": 190.00873899863925,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "azulmarinho",
+    "dist": 38.66247884613173,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "violeta",
+    "dist": 37.30474327342615,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "cinza",
+    "dist": 91.06862197495661,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "vinho",
+    "dist": 85.7197801711443,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "verdeescuro",
+    "dist": 129.5445908341809,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "bege",
+    "dist": 124.17274691829253,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "azulbebe",
+    "dist": 89.87447706061636,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "verdemusgo",
+    "dist": 126.82479470808104,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "bleufonce",
+    "ptterm": "preto",
+    "dist": 81.24136017935882,
+    "frterm_refined": "bleufonce",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "azul",
+    "dist": 108.2484150163079,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "verde",
+    "dist": 51.70290590005563,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "rosa",
+    "dist": 108.03783129606013,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "roxo",
+    "dist": 125.52678196890618,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "laranja",
+    "dist": 63.07617212530188,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "amarelo",
+    "dist": 56.55282487167621,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "vermelho",
+    "dist": 88.43418453576116,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "azulclaro",
+    "dist": 83.36457482177943,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "verdeclaro",
+    "dist": 56.4829793615064,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "azulescuro",
+    "dist": 132.0193853604172,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "lilas",
+    "dist": 101.08657022207808,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "marrom",
+    "dist": 37.16176106382289,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "verdeagua",
+    "dist": 59.49636022656243,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "magenta",
+    "dist": 114.30327236494774,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "ciano",
+    "dist": 66.51094418518329,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "rosachoque",
+    "dist": 118.87405455980982,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "verdelimao",
+    "dist": 66.30694585392564,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "azulmarinho",
+    "dist": 100.72868553990124,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "violeta",
+    "dist": 130.55673371525978,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "cinza",
+    "dist": 42.11877909958468,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "vinho",
+    "dist": 70.8496901680743,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "verdeescuro",
+    "dist": 27.787831286863316,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "bege",
+    "dist": 35.50359343903403,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "azulbebe",
+    "dist": 70.04852356854133,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "verdemusgo",
+    "dist": 22.825285950175303,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "kaki",
+    "ptterm": "preto",
+    "dist": 64.42618201153988,
+    "frterm_refined": "kaki",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "azul",
+    "dist": 90.48212233966207,
+    "frterm_refined": "brun",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "verde",
+    "dist": 90.4597878973493,
+    "frterm_refined": "brun",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "rosa",
+    "dist": 74.25310650723823,
+    "frterm_refined": "brun",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "roxo",
+    "dist": 93.63497223918516,
+    "frterm_refined": "brun",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "laranja",
+    "dist": 57.46634591035337,
+    "frterm_refined": "brun",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "amarelo",
+    "dist": 84.25876681984072,
+    "frterm_refined": "brun",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "vermelho",
+    "dist": 62.136888214721786,
+    "frterm_refined": "brun",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "azulclaro",
+    "dist": 80.79378085557038,
+    "frterm_refined": "brun",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "verdeclaro",
+    "dist": 95.10927019638437,
+    "frterm_refined": "brun",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "azulescuro",
+    "dist": 103.83981762856533,
+    "frterm_refined": "brun",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "lilas",
+    "dist": 72.99900069027967,
+    "frterm_refined": "brun",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "marrom",
+    "dist": 11.521672438718522,
+    "frterm_refined": "brun",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "verdeagua",
+    "dist": 89.16063628813912,
+    "frterm_refined": "brun",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "magenta",
+    "dist": 79.55639738861657,
+    "frterm_refined": "brun",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "ciano",
+    "dist": 85.55865436931876,
+    "frterm_refined": "brun",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "rosachoque",
+    "dist": 84.62394299301747,
+    "frterm_refined": "brun",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "verdelimao",
+    "dist": 105.39398670990226,
+    "frterm_refined": "brun",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "azulmarinho",
+    "dist": 81.05050459897248,
+    "frterm_refined": "brun",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "violeta",
+    "dist": 98.36996087739806,
+    "frterm_refined": "brun",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "cinza",
+    "dist": 36.31463318938825,
+    "frterm_refined": "brun",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "vinho",
+    "dist": 32.09124927310045,
+    "frterm_refined": "brun",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "verdeescuro",
+    "dist": 54.87903243107004,
+    "frterm_refined": "brun",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "bege",
+    "dist": 47.446199168733756,
+    "frterm_refined": "brun",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "azulbebe",
+    "dist": 72.16587759125972,
+    "frterm_refined": "brun",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "verdemusgo",
+    "dist": 50.52363788227358,
+    "frterm_refined": "brun",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "brun",
+    "ptterm": "preto",
+    "dist": 39.437998663060306,
+    "frterm_refined": "brun",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "azul",
+    "dist": 94.71773667737813,
+    "frterm_refined": "beige",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "verde",
+    "dist": 70.81941619979479,
+    "frterm_refined": "beige",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "rosa",
+    "dist": 84.48319002921008,
+    "frterm_refined": "beige",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "roxo",
+    "dist": 107.9055177744402,
+    "frterm_refined": "beige",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "laranja",
+    "dist": 54.85947481477462,
+    "frterm_refined": "beige",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "amarelo",
+    "dist": 60.918779172346404,
+    "frterm_refined": "beige",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "vermelho",
+    "dist": 75.56965333105829,
+    "frterm_refined": "beige",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "azulclaro",
+    "dist": 71.54628028708242,
+    "frterm_refined": "beige",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "verdeclaro",
+    "dist": 70.90659175908385,
+    "frterm_refined": "beige",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "azulescuro",
+    "dist": 118.6159929213675,
+    "frterm_refined": "beige",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "lilas",
+    "dist": 79.96584209390558,
+    "frterm_refined": "beige",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "marrom",
+    "dist": 41.473927266611014,
+    "frterm_refined": "beige",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "verdeagua",
+    "dist": 65.43328687517054,
+    "frterm_refined": "beige",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "magenta",
+    "dist": 92.71658572259325,
+    "frterm_refined": "beige",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "ciano",
+    "dist": 63.18857347858097,
+    "frterm_refined": "beige",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "rosachoque",
+    "dist": 95.74518470970418,
+    "frterm_refined": "beige",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "verdelimao",
+    "dist": 83.3232400392613,
+    "frterm_refined": "beige",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "azulmarinho",
+    "dist": 92.95470920591086,
+    "frterm_refined": "beige",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "violeta",
+    "dist": 111.09819275920124,
+    "frterm_refined": "beige",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "cinza",
+    "dist": 34.58789976325508,
+    "frterm_refined": "beige",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "vinho",
+    "dist": 63.90487983808196,
+    "frterm_refined": "beige",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "verdeescuro",
+    "dist": 54.8974872706673,
+    "frterm_refined": "beige",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "bege",
+    "dist": 15.862251154318779,
+    "frterm_refined": "beige",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "azulbebe",
+    "dist": 56.18541360280925,
+    "frterm_refined": "beige",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "verdemusgo",
+    "dist": 45.415517020374004,
+    "frterm_refined": "beige",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "beige",
+    "ptterm": "preto",
+    "dist": 72.32924162443388,
+    "frterm_refined": "beige",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "azul",
+    "dist": 37.442980910786744,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "verde",
+    "dist": 171.78944162399202,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "rosa",
+    "dist": 73.86487529949738,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "roxo",
+    "dist": 32.00449697271438,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "laranja",
+    "dist": 151.78874936872828,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "amarelo",
+    "dist": 180.14157928472116,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "vermelho",
+    "dist": 133.6524845396203,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "azulclaro",
+    "dist": 79.71892068001948,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "verdeclaro",
+    "dist": 174.15839903255429,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "azulescuro",
+    "dist": 13.796879804922431,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "lilas",
+    "dist": 46.490275323166514,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "marrom",
+    "dist": 112.08507724507973,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "verdeagua",
+    "dist": 145.39884962150037,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "magenta",
+    "dist": 69.04272469465096,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "ciano",
+    "dist": 122.93827180005557,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "rosachoque",
+    "dist": 76.19817340047797,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "verdelimao",
+    "dist": 194.9076685599597,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "azulmarinho",
+    "dist": 43.40492045914093,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "violeta",
+    "dist": 37.91476098146862,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "cinza",
+    "dist": 96.84822057308088,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "vinho",
+    "dist": 92.05477747417558,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "verdeescuro",
+    "dist": 135.47155530383287,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "bege",
+    "dist": 128.65749427590885,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "azulbebe",
+    "dist": 92.51458656145903,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "verdemusgo",
+    "dist": 132.60382026355646,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "bleuroi",
+    "ptterm": "preto",
+    "dist": 88.71464120345314,
+    "frterm_refined": "bleuroi",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "azul",
+    "dist": 81.35692782070109,
+    "frterm_refined": "noir",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "verde",
+    "dist": 104.13002411763578,
+    "frterm_refined": "noir",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "rosa",
+    "dist": 89.90145513850149,
+    "frterm_refined": "noir",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "roxo",
+    "dist": 89.65533739793693,
+    "frterm_refined": "noir",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "laranja",
+    "dist": 95.00820260264456,
+    "frterm_refined": "noir",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "amarelo",
+    "dist": 114.64890386571825,
+    "frterm_refined": "noir",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "vermelho",
+    "dist": 93.25597491991356,
+    "frterm_refined": "noir",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "azulclaro",
+    "dist": 76.11403878855644,
+    "frterm_refined": "noir",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "verdeclaro",
+    "dist": 110.23965305146757,
+    "frterm_refined": "noir",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "azulescuro",
+    "dist": 90.59618502623742,
+    "frterm_refined": "noir",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "lilas",
+    "dist": 77.01058959755298,
+    "frterm_refined": "noir",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "marrom",
+    "dist": 42.4933218649093,
+    "frterm_refined": "noir",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "verdeagua",
+    "dist": 95.46166671495942,
+    "frterm_refined": "noir",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "magenta",
+    "dist": 91.50078274519598,
+    "frterm_refined": "noir",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "ciano",
+    "dist": 88.06336386340755,
+    "frterm_refined": "noir",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "rosachoque",
+    "dist": 98.07745326727627,
+    "frterm_refined": "noir",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "verdelimao",
+    "dist": 124.75041340500502,
+    "frterm_refined": "noir",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "azulmarinho",
+    "dist": 68.95756286461103,
+    "frterm_refined": "noir",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "violeta",
+    "dist": 97.12541619542363,
+    "frterm_refined": "noir",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "cinza",
+    "dist": 47.53758977024866,
+    "frterm_refined": "noir",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "vinho",
+    "dist": 46.39289296819514,
+    "frterm_refined": "noir",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "verdeescuro",
+    "dist": 59.35291209298465,
+    "frterm_refined": "noir",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "bege",
+    "dist": 76.79734997843639,
+    "frterm_refined": "noir",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "azulbebe",
+    "dist": 75.26403954506554,
+    "frterm_refined": "noir",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "verdemusgo",
+    "dist": 60.644924605981714,
+    "frterm_refined": "noir",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "noir",
+    "ptterm": "preto",
+    "dist": 12.835061431219563,
+    "frterm_refined": "noir",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "azul",
+    "dist": 65.24212632003575,
+    "frterm_refined": "gris",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "verde",
+    "dist": 83.68208452132602,
+    "frterm_refined": "gris",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "rosa",
+    "dist": 78.81477496210336,
+    "frterm_refined": "gris",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "roxo",
+    "dist": 84.29711844099866,
+    "frterm_refined": "gris",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "laranja",
+    "dist": 83.80820358796936,
+    "frterm_refined": "gris",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "amarelo",
+    "dist": 94.07570435958961,
+    "frterm_refined": "gris",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "vermelho",
+    "dist": 91.0530638835542,
+    "frterm_refined": "gris",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "azulclaro",
+    "dist": 45.085895178053704,
+    "frterm_refined": "gris",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "verdeclaro",
+    "dist": 86.25287977459018,
+    "frterm_refined": "gris",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "azulescuro",
+    "dist": 88.48620586814921,
+    "frterm_refined": "gris",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "lilas",
+    "dist": 58.348677643202656,
+    "frterm_refined": "gris",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "marrom",
+    "dist": 41.78140259397988,
+    "frterm_refined": "gris",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "verdeagua",
+    "dist": 65.54558482845863,
+    "frterm_refined": "gris",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "magenta",
+    "dist": 84.09259551238807,
+    "frterm_refined": "gris",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "ciano",
+    "dist": 53.93488592181794,
+    "frterm_refined": "gris",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "rosachoque",
+    "dist": 89.60847415446626,
+    "frterm_refined": "gris",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "verdelimao",
+    "dist": 105.5094121895163,
+    "frterm_refined": "gris",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "azulmarinho",
+    "dist": 62.48005765569166,
+    "frterm_refined": "gris",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "violeta",
+    "dist": 89.76779952306538,
+    "frterm_refined": "gris",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "cinza",
+    "dist": 11.929490850359677,
+    "frterm_refined": "gris",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "vinho",
+    "dist": 54.65941293143743,
+    "frterm_refined": "gris",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "verdeescuro",
+    "dist": 50.28685223192188,
+    "frterm_refined": "gris",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "bege",
+    "dist": 44.45861536374023,
+    "frterm_refined": "gris",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "azulbebe",
+    "dist": 34.2199509023343,
+    "frterm_refined": "gris",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "verdemusgo",
+    "dist": 44.99087186790869,
+    "frterm_refined": "gris",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "gris",
+    "ptterm": "preto",
+    "dist": 47.14881407656221,
+    "frterm_refined": "gris",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "azul",
+    "dist": 34.61340728406591,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "verde",
+    "dist": 159.24786522292038,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "rosa",
+    "dist": 62.895756415732535,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "roxo",
+    "dist": 28.342184220307203,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "laranja",
+    "dist": 137.38464874114277,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "amarelo",
+    "dist": 165.92473712301674,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "vermelho",
+    "dist": 120.72797377549738,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "azulclaro",
+    "dist": 74.1953410265814,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "verdeclaro",
+    "dist": 161.76135707457487,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "azulescuro",
+    "dist": 23.886071264204737,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "lilas",
+    "dist": 41.24091906544297,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "marrom",
+    "dist": 99.89219051233846,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "verdeagua",
+    "dist": 135.55705023001997,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "magenta",
+    "dist": 58.20815022942097,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "ciano",
+    "dist": 114.22148699538343,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "rosachoque",
+    "dist": 66.66593477088743,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "verdelimao",
+    "dist": 181.66393833655596,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "azulmarinho",
+    "dist": 37.114286240428214,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "violeta",
+    "dist": 34.581199777888045,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "cinza",
+    "dist": 88.92876681216666,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "vinho",
+    "dist": 82.70994527913399,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "verdeescuro",
+    "dist": 124.34642364739028,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "bege",
+    "dist": 115.5291214276687,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "azulbebe",
+    "dist": 84.39739343339288,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "verdemusgo",
+    "dist": 121.9134144683676,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "indigo",
+    "ptterm": "preto",
+    "dist": 82.22059026366625,
+    "frterm_refined": "indigo",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "azul",
+    "dist": 61.9390667151595,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "verde",
+    "dist": 145.72797880319763,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "rosa",
+    "dist": 32.3665864967975,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "roxo",
+    "dist": 34.746000211931026,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "laranja",
+    "dist": 102.48252088750293,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "amarelo",
+    "dist": 140.99162438531746,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "vermelho",
+    "dist": 79.6334908750591,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "azulclaro",
+    "dist": 84.04713581739811,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "verdeclaro",
+    "dist": 149.02701387858224,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "azulescuro",
+    "dist": 54.40253461122635,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "lilas",
+    "dist": 33.91487439069133,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "marrom",
+    "dist": 69.30245564670858,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "verdeagua",
+    "dist": 131.51103015822684,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "magenta",
+    "dist": 28.32942535921825,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "ciano",
+    "dist": 115.55248882929902,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "rosachoque",
+    "dist": 38.11712340964185,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "verdelimao",
+    "dist": 164.3100535407957,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "azulmarinho",
+    "dist": 54.83150815190752,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "violeta",
+    "dist": 38.48053732149446,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "cinza",
+    "dist": 70.31085241973673,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "vinho",
+    "dist": 40.80129930000551,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "verdeescuro",
+    "dist": 109.32673003803662,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "bege",
+    "dist": 94.76993377715252,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "azulbebe",
+    "dist": 87.76354990143312,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "verdemusgo",
+    "dist": 104.91395220900729,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "pourpre",
+    "ptterm": "preto",
+    "dist": 60.974736958155376,
+    "frterm_refined": "pourpre",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "azul",
+    "dist": 108.54747527460844,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "verde",
+    "dist": 37.30323540955817,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "rosa",
+    "dist": 134.24956305215775,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "roxo",
+    "dist": 142.99336383186744,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "laranja",
+    "dist": 104.55190470515811,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "amarelo",
+    "dist": 76.39710644254406,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "vermelho",
+    "dist": 131.3208244346949,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "azulclaro",
+    "dist": 69.33843163616064,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "verdeclaro",
+    "dist": 35.34126869254403,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "azulescuro",
+    "dist": 143.57784470126768,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "lilas",
+    "dist": 115.99372554505405,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "marrom",
+    "dist": 81.1049521152149,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "verdeagua",
+    "dist": 13.169240902963818,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "magenta",
+    "dist": 141.0331085225633,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "ciano",
+    "dist": 28.78626000118259,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "rosachoque",
+    "dist": 145.58475612587964,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "verdelimao",
+    "dist": 62.821716916670084,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "azulmarinho",
+    "dist": 106.143776475362,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "violeta",
+    "dist": 148.19516576551823,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "cinza",
+    "dist": 60.193091783886395,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "vinho",
+    "dist": 109.00042832539026,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "verdeescuro",
+    "dist": 43.68740129893571,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "bege",
+    "dist": 54.151654568013875,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "azulbebe",
+    "dist": 56.17221355283293,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "verdemusgo",
+    "dist": 41.71448539550376,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "vertd'eau",
+    "ptterm": "preto",
+    "dist": 94.72139731175571,
+    "frterm_refined": "vertd'eau",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "azul",
+    "dist": 91.80607232028049,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "verde",
+    "dist": 119.74546537693202,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "rosa",
+    "dist": 50.73528175186426,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "roxo",
+    "dist": 76.33064503032104,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "laranja",
+    "dist": 63.14329265468211,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "amarelo",
+    "dist": 105.52822016576462,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "vermelho",
+    "dist": 44.94165275403388,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "azulclaro",
+    "dist": 93.42148515422019,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "verdeclaro",
+    "dist": 123.64056767725381,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "azulescuro",
+    "dist": 93.2193284495541,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "lilas",
+    "dist": 64.21135291316729,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "marrom",
+    "dist": 35.46594468653263,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "verdeagua",
+    "dist": 115.78529760446892,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "magenta",
+    "dist": 54.20022158015202,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "ciano",
+    "dist": 107.94900055954876,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "rosachoque",
+    "dist": 57.95692439682539,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "verdelimao",
+    "dist": 132.5670538154936,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "azulmarinho",
+    "dist": 82.77181399242632,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "violeta",
+    "dist": 79.71395754724136,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "cinza",
+    "dist": 55.691529745107076,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "vinho",
+    "dist": 14.07577562418385,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "verdeescuro",
+    "dist": 84.78580614055204,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "bege",
+    "dist": 68.48183761922857,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "azulbebe",
+    "dist": 87.69051098415389,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "verdemusgo",
+    "dist": 80.16361646953814,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "bordeaux",
+    "ptterm": "preto",
+    "dist": 49.876453799791825,
+    "frterm_refined": "bordeaux",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "azul",
+    "dist": 76.68123682103322,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "verde",
+    "dist": 71.5488735754508,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "rosa",
+    "dist": 117.34567246655486,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "roxo",
+    "dist": 116.86814132464023,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "laranja",
+    "dist": 115.7707370613384,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "amarelo",
+    "dist": 103.08266090571996,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "vermelho",
+    "dist": 132.35068618943527,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "azulclaro",
+    "dist": 35.588139131811374,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "verdeclaro",
+    "dist": 71.52811949693081,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "azulescuro",
+    "dist": 113.56286609883882,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "lilas",
+    "dist": 91.36767160496697,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "marrom",
+    "dist": 81.24194573766457,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "verdeagua",
+    "dist": 35.038098617301564,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "magenta",
+    "dist": 122.74283572890567,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "ciano",
+    "dist": 14.157634883137657,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "rosachoque",
+    "dist": 128.06218794738345,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "verdelimao",
+    "dist": 97.78870072849517,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "azulmarinho",
+    "dist": 77.7146900119394,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "violeta",
+    "dist": 122.50315642332578,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "cinza",
+    "dist": 50.80803986164798,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "vinho",
+    "dist": 99.73513609258914,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "verdeescuro",
+    "dist": 56.61503221068675,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "bege",
+    "dist": 63.51381187453393,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "azulbebe",
+    "dist": 27.049844410769165,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "verdemusgo",
+    "dist": 53.40277638475086,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "bleuturquoise",
+    "ptterm": "preto",
+    "dist": 82.05016061481751,
+    "frterm_refined": "bleuturquoise",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "azul",
+    "dist": 48.405874112637676,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "verde",
+    "dist": 149.34659634141485,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "rosa",
+    "dist": 48.43640310670955,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "roxo",
+    "dist": 30.171990037307236,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "laranja",
+    "dist": 117.53369775391182,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "amarelo",
+    "dist": 151.2598072996558,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "vermelho",
+    "dist": 97.43788170494696,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "azulclaro",
+    "dist": 76.90914814646179,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "verdeclaro",
+    "dist": 152.7759911381743,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "azulescuro",
+    "dist": 39.472654934181826,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "lilas",
+    "dist": 33.436948536100566,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "marrom",
+    "dist": 77.59690176488688,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "verdeagua",
+    "dist": 130.84617415576835,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "magenta",
+    "dist": 44.64006756089756,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "ciano",
+    "dist": 112.87216432517681,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "rosachoque",
+    "dist": 53.12393671059271,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "verdelimao",
+    "dist": 170.36269586541712,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "azulmarinho",
+    "dist": 40.04814677961154,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "violeta",
+    "dist": 36.94470385165485,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "cinza",
+    "dist": 72.06319163102228,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "vinho",
+    "dist": 52.92895566902023,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "verdeescuro",
+    "dist": 110.61776899898345,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "bege",
+    "dist": 102.86127747557258,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "azulbebe",
+    "dist": 84.2107874547888,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "verdemusgo",
+    "dist": 107.259403326328,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "violetfonce",
+    "ptterm": "preto",
+    "dist": 57.55100641427868,
+    "frterm_refined": "violetfonce",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "azul",
+    "dist": 118.7454572920053,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "verde",
+    "dist": 70.54313352920761,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "rosa",
+    "dist": 96.38541738525285,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "roxo",
+    "dist": 126.08269496608068,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "laranja",
+    "dist": 32.596275194533035,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "amarelo",
+    "dist": 43.20990223308993,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "vermelho",
+    "dist": 64.55581655529967,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "azulclaro",
+    "dist": 97.78048443823091,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "verdeclaro",
+    "dist": 72.67933017390146,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "azulescuro",
+    "dist": 139.1565286149002,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "lilas",
+    "dist": 100.82960512594724,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "marrom",
+    "dist": 41.656596454708186,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "verdeagua",
+    "dist": 80.90181674223106,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "magenta",
+    "dist": 104.30570171328728,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "ciano",
+    "dist": 85.33621318505071,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "rosachoque",
+    "dist": 106.76259420772962,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "verdelimao",
+    "dist": 74.92011859789686,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "azulmarinho",
+    "dist": 114.10501696483489,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "violeta",
+    "dist": 128.8885401569658,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "cinza",
+    "dist": 56.42028158999224,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "vinho",
+    "dist": 68.36080448416382,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "verdeescuro",
+    "dist": 59.54489547640713,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "bege",
+    "dist": 28.624891296871564,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "azulbebe",
+    "dist": 83.37216646355846,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "verdemusgo",
+    "dist": 51.63076933269515,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "ocre",
+    "ptterm": "preto",
+    "dist": 80.9472110378393,
+    "frterm_refined": "ocre",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "azul",
+    "dist": 118.03409789563491,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "verde",
+    "dist": 31.556218418806772,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "rosa",
+    "dist": 129.3296566103145,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "roxo",
+    "dist": 146.03293506710187,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "laranja",
+    "dist": 86.27427856200548,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "amarelo",
+    "dist": 53.64620787588098,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "vermelho",
+    "dist": 117.34815159777959,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "azulclaro",
+    "dist": 82.69234426532333,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "verdeclaro",
+    "dist": 25.85718649240014,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "azulescuro",
+    "dist": 150.86766097836343,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "lilas",
+    "dist": 118.10720744013956,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "marrom",
+    "dist": 73.15453696202825,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "verdeagua",
+    "dist": 32.504717282113944,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "magenta",
+    "dist": 136.79088684834284,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "ciano",
+    "dist": 47.929808126041394,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "rosachoque",
+    "dist": 140.8068842057961,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "verdelimao",
+    "dist": 45.84015822131253,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "azulmarinho",
+    "dist": 114.58143852442527,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "violeta",
+    "dist": 150.48480944494315,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "cinza",
+    "dist": 61.429965985789174,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "vinho",
+    "dist": 103.66809310516798,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "verdeescuro",
+    "dist": 44.58046979488411,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "bege",
+    "dist": 40.90057539368884,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "azulbebe",
+    "dist": 66.56129363429797,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "verdemusgo",
+    "dist": 38.82505323342069,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "vertpale",
+    "ptterm": "preto",
+    "dist": 97.07374084937953,
+    "frterm_refined": "vertpale",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "azul",
+    "dist": 133.79457425075213,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "verde",
+    "dist": 63.92536464126852,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "rosa",
+    "dist": 114.69784239708349,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "roxo",
+    "dist": 144.34925901160622,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "laranja",
+    "dist": 39.44300228307813,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "amarelo",
+    "dist": 25.117282286556577,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "vermelho",
+    "dist": 78.52025474870949,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "azulclaro",
+    "dist": 109.4376331588856,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "verdeclaro",
+    "dist": 64.07839646944299,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "azulescuro",
+    "dist": 156.4077159379045,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "lilas",
+    "dist": 118.59329664862477,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "marrom",
+    "dist": 57.41215594975014,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "verdeagua",
+    "dist": 80.29642122355342,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "magenta",
+    "dist": 123.1566031296658,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "ciano",
+    "dist": 90.03917584531501,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "rosachoque",
+    "dist": 124.90490096737878,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "verdelimao",
+    "dist": 59.44387107628524,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "azulmarinho",
+    "dist": 129.1290238351829,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "violeta",
+    "dist": 147.19225706363557,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "cinza",
+    "dist": 70.03002817046307,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "vinho",
+    "dist": 86.70171914595461,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "verdeescuro",
+    "dist": 62.552489164583555,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "bege",
+    "dist": 37.23715473810119,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "azulbebe",
+    "dist": 93.77971089505311,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "verdemusgo",
+    "dist": 55.54448340797714,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "ptterm": "preto",
+    "dist": 96.04848937756395,
+    "frterm_refined": "jaunemoutarde",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "azul",
+    "dist": 38.94335108837261,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "verde",
+    "dist": 125.63078319594972,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "rosa",
+    "dist": 54.829361290746796,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "roxo",
+    "dist": 48.30246208950923,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "laranja",
+    "dist": 107.2892128580541,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "amarelo",
+    "dist": 130.33502548882174,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "vermelho",
+    "dist": 99.17836880289444,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "azulclaro",
+    "dist": 45.464570156235396,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "verdeclaro",
+    "dist": 127.29111078424756,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "azulescuro",
+    "dist": 55.05511811309139,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "lilas",
+    "dist": 23.336149926721237,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "marrom",
+    "dist": 70.82178832680242,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "verdeagua",
+    "dist": 101.8835919299235,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "magenta",
+    "dist": 57.33459326695458,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "ciano",
+    "dist": 81.28506034454702,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "rosachoque",
+    "dist": 63.30020396063859,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "verdelimao",
+    "dist": 146.84379988741483,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "azulmarinho",
+    "dist": 44.458965517430144,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "violeta",
+    "dist": 52.73865358187109,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "cinza",
+    "dist": 50.17962143764394,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "vinho",
+    "dist": 61.33720845191477,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "verdeescuro",
+    "dist": 93.50964814894175,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "bege",
+    "dist": 78.43154583509978,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "azulbebe",
+    "dist": 49.92168737770805,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "verdemusgo",
+    "dist": 88.46008578496757,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "lavande",
+    "ptterm": "preto",
+    "dist": 62.95950933975579,
+    "frterm_refined": "lavande",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "azul",
+    "dist": 93.92111460282455,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "verde",
+    "dist": 96.01996553446783,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "rosa",
+    "dist": 61.12697767161925,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "roxo",
+    "dist": 92.93307497171139,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "laranja",
+    "dist": 43.831051607582246,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "amarelo",
+    "dist": 77.36829254380092,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "vermelho",
+    "dist": 48.25985584197203,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "azulclaro",
+    "dist": 83.18873424443385,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "verdeclaro",
+    "dist": 97.69511231346337,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "azulescuro",
+    "dist": 108.74025928395935,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "lilas",
+    "dist": 68.09525367989399,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "marrom",
+    "dist": 33.069733019597926,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "verdeagua",
+    "dist": 92.59998819473238,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "magenta",
+    "dist": 69.29917504618541,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "ciano",
+    "dist": 87.57724536275869,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "rosachoque",
+    "dist": 71.59701334153864,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "verdelimao",
+    "dist": 106.62175759004174,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "azulmarinho",
+    "dist": 91.01674054919974,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "violeta",
+    "dist": 95.07452849428202,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "cinza",
+    "dist": 42.93588382149391,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "vinho",
+    "dist": 41.54687715915984,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "verdeescuro",
+    "dist": 71.81567006146484,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "bege",
+    "dist": 37.990892124818764,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "azulbebe",
+    "dist": 71.74762968879489,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "verdemusgo",
+    "dist": 63.840000251143266,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "saumon",
+    "ptterm": "preto",
+    "dist": 64.9283909400382,
+    "frterm_refined": "saumon",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "azul",
+    "dist": 40.35004789453806,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "verde",
+    "dist": 139.48943101190827,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "rosa",
+    "dist": 69.05580852672838,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "roxo",
+    "dist": 46.50925622763188,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "laranja",
+    "dist": 123.50095416676874,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "amarelo",
+    "dist": 149.5572273710289,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "vermelho",
+    "dist": 110.94224376333563,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "azulclaro",
+    "dist": 64.75938463397316,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "verdeclaro",
+    "dist": 143.1671430675607,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "azulescuro",
+    "dist": 40.31454225963139,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "lilas",
+    "dist": 43.558381538070854,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "marrom",
+    "dist": 76.1927023915898,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "verdeagua",
+    "dist": 118.20339492219277,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "magenta",
+    "dist": 66.59127714950071,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "ciano",
+    "dist": 100.09689000508372,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "rosachoque",
+    "dist": 75.95698572788942,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "verdelimao",
+    "dist": 162.54309462452775,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "azulmarinho",
+    "dist": 30.07442670543978,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "violeta",
+    "dist": 55.17951200571908,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "cinza",
+    "dist": 64.65850355953418,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "vinho",
+    "dist": 61.647623778717765,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "verdeescuro",
+    "dist": 98.52135579594477,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "bege",
+    "dist": 100.81611103778766,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "azulbebe",
+    "dist": 75.02978714590729,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "verdemusgo",
+    "dist": 96.77423856825108,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "bleunuit",
+    "ptterm": "preto",
+    "dist": 47.00855396667207,
+    "frterm_refined": "bleunuit",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "azul",
+    "dist": 51.96577672594581,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "verde",
+    "dist": 92.81697154265471,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "rosa",
+    "dist": 84.33069956363263,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "roxo",
+    "dist": 80.5478711365641,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "laranja",
+    "dist": 101.30822127513025,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "amarelo",
+    "dist": 109.92988889607562,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "vermelho",
+    "dist": 105.80877458758602,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "azulclaro",
+    "dist": 31.572840185727493,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "verdeclaro",
+    "dist": 95.36245918434152,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "azulescuro",
+    "dist": 79.13863708262876,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "lilas",
+    "dist": 57.23051223645829,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "marrom",
+    "dist": 56.57530193459425,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "verdeagua",
+    "dist": 67.58817241651927,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "magenta",
+    "dist": 88.29997590979886,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "ciano",
+    "dist": 50.35849673687508,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "rosachoque",
+    "dist": 94.44533261396404,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "verdelimao",
+    "dist": 117.11146130554955,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "azulmarinho",
+    "dist": 51.423365174414094,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "violeta",
+    "dist": 86.99508623165289,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "cinza",
+    "dist": 26.639118751244006,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "vinho",
+    "dist": 64.17917110042666,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "verdeescuro",
+    "dist": 58.7254037488269,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "bege",
+    "dist": 60.50516261504455,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "azulbebe",
+    "dist": 29.094046864034144,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "verdemusgo",
+    "dist": 55.18417496440735,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "bleugris",
+    "ptterm": "preto",
+    "dist": 47.90677539860221,
+    "frterm_refined": "bleugris",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "azul",
+    "dist": 64.49822756177451,
+    "frterm_refined": "prune",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "verde",
+    "dist": 127.57712650206389,
+    "frterm_refined": "prune",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "rosa",
+    "dist": 51.40895939064811,
+    "frterm_refined": "prune",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "roxo",
+    "dist": 51.837133437139734,
+    "frterm_refined": "prune",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "laranja",
+    "dist": 94.59896339247186,
+    "frterm_refined": "prune",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "amarelo",
+    "dist": 127.46051151514304,
+    "frterm_refined": "prune",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "vermelho",
+    "dist": 78.51674191825455,
+    "frterm_refined": "prune",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "azulclaro",
+    "dist": 73.01276206897275,
+    "frterm_refined": "prune",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "verdeclaro",
+    "dist": 131.2897434133296,
+    "frterm_refined": "prune",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "azulescuro",
+    "dist": 63.224216956220396,
+    "frterm_refined": "prune",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "lilas",
+    "dist": 43.343680650207816,
+    "frterm_refined": "prune",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "marrom",
+    "dist": 51.43978854047581,
+    "frterm_refined": "prune",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "verdeagua",
+    "dist": 113.6407269415899,
+    "frterm_refined": "prune",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "magenta",
+    "dist": 51.96296317956459,
+    "frterm_refined": "prune",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "ciano",
+    "dist": 99.6666600307439,
+    "frterm_refined": "prune",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "rosachoque",
+    "dist": 58.3892440796317,
+    "frterm_refined": "prune",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "verdelimao",
+    "dist": 146.6907631891741,
+    "frterm_refined": "prune",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "azulmarinho",
+    "dist": 54.21324459375894,
+    "frterm_refined": "prune",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "violeta",
+    "dist": 58.34112691244346,
+    "frterm_refined": "prune",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "cinza",
+    "dist": 51.74253425493482,
+    "frterm_refined": "prune",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "vinho",
+    "dist": 29.521340040339087,
+    "frterm_refined": "prune",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "verdeescuro",
+    "dist": 87.7290745637294,
+    "frterm_refined": "prune",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "bege",
+    "dist": 81.23876604971606,
+    "frterm_refined": "prune",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "azulbebe",
+    "dist": 74.44641136225712,
+    "frterm_refined": "prune",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "verdemusgo",
+    "dist": 84.41341686024418,
+    "frterm_refined": "prune",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "prune",
+    "ptterm": "preto",
+    "dist": 36.191485987667136,
+    "frterm_refined": "prune",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "azul",
+    "dist": 79.00380207874979,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "verde",
+    "dist": 82.16425117109058,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "rosa",
+    "dist": 73.8356717055001,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "roxo",
+    "dist": 89.24318834953098,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "laranja",
+    "dist": 64.81049641899006,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "amarelo",
+    "dist": 81.19706077808655,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "vermelho",
+    "dist": 73.38069424924831,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "azulclaro",
+    "dist": 62.002290866626765,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "verdeclaro",
+    "dist": 84.86755472113062,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "azulescuro",
+    "dist": 98.24146809286907,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "lilas",
+    "dist": 64.11421337163014,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "marrom",
+    "dist": 27.04104813629569,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "verdeagua",
+    "dist": 72.37212529734497,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "magenta",
+    "dist": 80.51970848927496,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "ciano",
+    "dist": 65.79048762967156,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "rosachoque",
+    "dist": 84.6368674374122,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "verdelimao",
+    "dist": 99.01402058021272,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "azulmarinho",
+    "dist": 74.45882860392751,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "violeta",
+    "dist": 93.87881273181956,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "cinza",
+    "dist": 18.73466366395437,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "vinho",
+    "dist": 44.44426432277917,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "verdeescuro",
+    "dist": 50.81799303645549,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "bege",
+    "dist": 34.017307076306615,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "azulbebe",
+    "dist": 50.68341574772248,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "verdemusgo",
+    "dist": 44.32797156930098,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "taupe",
+    "ptterm": "preto",
+    "dist": 47.303364049332004,
+    "frterm_refined": "taupe",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "azul",
+    "dist": 100.69337253846305,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "verde",
+    "dist": 51.07683563067151,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "rosa",
+    "dist": 118.38255364546065,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "roxo",
+    "dist": 126.97228103478515,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "laranja",
+    "dist": 87.51521490087295,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "amarelo",
+    "dist": 76.71515401151353,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "vermelho",
+    "dist": 109.02029427210219,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "azulclaro",
+    "dist": 72.5079784099034,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "verdeclaro",
+    "dist": 57.00701417863063,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "azulescuro",
+    "dist": 128.14206151598336,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "lilas",
+    "dist": 103.56142591853816,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "marrom",
+    "dist": 50.837743190620145,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "verdeagua",
+    "dist": 47.854821710478,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "magenta",
+    "dist": 123.7105871491611,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "ciano",
+    "dist": 54.38279942975279,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "rosachoque",
+    "dist": 129.3933473209023,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "verdelimao",
+    "dist": 73.49863694450949,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "azulmarinho",
+    "dist": 92.89313008058681,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "violeta",
+    "dist": 133.36144915890657,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "cinza",
+    "dist": 43.42482040543302,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "vinho",
+    "dist": 80.10629622201401,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "verdeescuro",
+    "dist": 13.401680042344827,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "bege",
+    "dist": 51.344202442217586,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "azulbebe",
+    "dist": 63.20795583927397,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "verdemusgo",
+    "dist": 17.108790323096414,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "vertforet",
+    "ptterm": "preto",
+    "dist": 60.2837866078591,
+    "frterm_refined": "vertforet",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "azul",
+    "dist": 108.67896131814605,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "verde",
+    "dist": 55.69465807132457,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "rosa",
+    "dist": 106.45814260622628,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "roxo",
+    "dist": 125.04741161369428,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "laranja",
+    "dist": 59.982418478931606,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "amarelo",
+    "dist": 55.464215004910166,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "vermelho",
+    "dist": 85.83504278640243,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "azulclaro",
+    "dist": 84.00090000998524,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "verdeclaro",
+    "dist": 59.02101957446867,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "azulescuro",
+    "dist": 131.96243506324305,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "lilas",
+    "dist": 100.18870042811568,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "marrom",
+    "dist": 36.06610121488752,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "verdeagua",
+    "dist": 61.72464453972557,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "magenta",
+    "dist": 113.11608544289493,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "ciano",
+    "dist": 68.79677017229058,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "rosachoque",
+    "dist": 117.27519691976313,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "verdelimao",
+    "dist": 67.47642286822602,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "azulmarinho",
+    "dist": 101.98020533377975,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "violeta",
+    "dist": 130.07418854373705,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "cinza",
+    "dist": 42.631643680506095,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "vinho",
+    "dist": 69.3783911050068,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "verdeescuro",
+    "dist": 31.340134290121508,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "bege",
+    "dist": 33.519075089254656,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "azulbebe",
+    "dist": 70.48357199560826,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "verdemusgo",
+    "dist": 24.08492125715433,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "vertkaki",
+    "ptterm": "preto",
+    "dist": 64.7881588538523,
+    "frterm_refined": "vertkaki",
+    "ptterm_refined": "preto"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "azul",
+    "dist": 93.41707099898571,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "azul"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "verde",
+    "dist": 58.788469830573014,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "verde"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "rosa",
+    "dist": 112.50085719306186,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "rosa"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "roxo",
+    "dist": 119.01066944803199,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "roxo"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "laranja",
+    "dist": 88.99022523166074,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "laranja"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "amarelo",
+    "dist": 83.16510056326554,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "amarelo"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "vermelho",
+    "dist": 107.21940300460702,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "vermelho"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "azulclaro",
+    "dist": 66.76998489005547,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "azulclaro"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "verdeclaro",
+    "dist": 64.26605790306904,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "verdeclaro"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "azulescuro",
+    "dist": 119.51974366207209,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "azulescuro"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "lilas",
+    "dist": 96.36587801743188,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "lilas"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "marrom",
+    "dist": 47.94171277239878,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "marrom"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "verdeagua",
+    "dist": 50.6246292333083,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "verdeagua"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "magenta",
+    "dist": 117.53352899958864,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "magenta"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "ciano",
+    "dist": 53.29564410415863,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "ciano"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "rosachoque",
+    "dist": 123.29846971244697,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "rosachoque"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "verdelimao",
+    "dist": 81.89609264242698,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "verdelimao"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "azulmarinho",
+    "dist": 85.99818398745361,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "azulmarinho"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "violeta",
+    "dist": 125.52384697783019,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "violeta"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "cinza",
+    "dist": 37.38367516332172,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "cinza"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "vinho",
+    "dist": 74.62491002468416,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "vinho"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "verdeescuro",
+    "dist": 17.87753099420853,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "verdeescuro"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "bege",
+    "dist": 51.967237084534204,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "bege"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "azulbebe",
+    "dist": 57.728561734572985,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "azulbebe"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "verdemusgo",
+    "dist": 19.688149773075654,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "verdemusgo"
+  },
+  {
+    "frterm": "vertsapin",
+    "ptterm": "preto",
+    "dist": 52.93108084170122,
+    "frterm_refined": "vertsapin",
+    "ptterm_refined": "preto"
   }
 ]
