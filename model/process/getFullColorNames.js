@@ -5,7 +5,7 @@ const fs = require('fs'),
   labBinHelper = require('./labBinHelper.js');
 
 const MIN_NperBin = 4;
-const FILE_O = "../full_color_names.json";
+const FILE_O = "../full_color_names_binned.json";
 const FILE_O_SALIENCY = "../full_color_map_saliency_bins.json"
 //const FILE_O_AVG_COLORS = "../full_color_name_avgs.json"
 const FILE_O_DETAILED_COLORS = "../detailed_full_color_info.csv"

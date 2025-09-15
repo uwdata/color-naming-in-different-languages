@@ -6,7 +6,7 @@ The files in this directory are used to generate the model files.
 
 ## Binned data and translation loss
 * getFullColorNames.js - takes the pre-processed files and generates binned info on each color name
-* getTranslation.js - creates the distanceMatrix.json file used by getEMDparallel.py to generate the translation_loss files. Depends on the full_color_names.json file
+* getTranslation.js - creates the distanceMatrix.json file used by getEMDparallel.py to generate the translation_loss files. Depends on the full_color_names_binned.json file
 * getEMDparallel.py (_very slow!_) - finds the earth mover distance for color terms, and creates the translation_loss files. Depends on th fullColorNames_ files and the distanceMatrix.json file.
 * getRefinedNamesOnTrLosses.js - appends the refined names on the translation loss files. It is required to update the translation visualization.
 

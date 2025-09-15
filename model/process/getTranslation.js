@@ -3,7 +3,7 @@ const fs = require('fs'),
   labBinHelper = require('./labBinHelper.js');
 
 const lab_bins = JSON.parse(fs.readFileSync("../lab_bins.json"))
-let flatData = JSON.parse(fs.readFileSync("../full_color_names.json"));
+let flatData = JSON.parse(fs.readFileSync("../full_color_names_binned.json"));
 let colorNamesAbrv = {
 	"English": "en",
 	'Korean': "ko",

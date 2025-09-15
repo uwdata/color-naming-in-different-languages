@@ -68,7 +68,7 @@ $(document).on('ready page:load', function () {
 
   d3.json("../model/translation_loss/translation_loss_en_ko.json")
   .then(data => {
-  d3.json("../model/full_color_names.json")
+  d3.json("../model/full_color_names_binned.json")
   .then(colorNames => {
   d3.csv("../model/detailed_full_color_info.csv")
   .then((fullColorDetails)=> {
