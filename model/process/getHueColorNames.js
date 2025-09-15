@@ -5,8 +5,8 @@ const fs = require('fs'),
 //const converter = new Converter({});
 const N_BINS = 36, N_TERMS = 20;
 const MIN_COUNT = 400;
-const O_FILE_NAME = `../hue_color_names_aggregated.json`;
-const O_FILE_NAME_FLATTEN = `../hue_color_names.json`;
+const O_FILE_NAME = `../hue_color_names_binned_aggregated.json`;
+const O_FILE_NAME_FLATTEN = `../hue_color_names_binned.json`;
 
 csv()
 .fromFile("../cleaned_color_names.csv")
