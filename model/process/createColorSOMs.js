@@ -25,7 +25,7 @@ let commonColorNameLookup = {};
   
 csv().fromFile("../cleaned_color_names.csv")
   .then((namingData)=>{
-	  csv().fromFile("../basic_full_color_info.csv")
+	  csv().fromFile("../detailed_full_color_info.csv")
 		.then((colorInfo)=>{
 			console.log(colorInfo);
 			createSOMs(colorInfo, namingData);
@@ -44,12 +44,12 @@ function createSOMs(colorInfo, namingData){
 		if(!colorNames[langAbv]){
 			colorNames[langAbv] = [];
 		}
-		colorNames[langAbv].push(color.simplifiedName);
+		colorNames[langAbv].push(color.name);
 
 		if(!commonColorNameLookup[langAbv]){
 			commonColorNameLookup[langAbv] = [];
 		}
-		commonColorNameLookup[langAbv][color.simplifiedName] = color.commonName;
+		commonColorNameLookup[langAbv][color.name] = color.commonName;
 	});
 	
 	//en, fa, ko, zh
@@ -91,21 +91,23 @@ function createSOMs(colorInfo, namingData){
 			
 			thisColorInfo["commonColorName"] = commonColorNameLookup[lang][colorName];
 			thisColorInfo["numRecords"] = thisColorData.length;
+			thisColorInfo["representativeColor"] = colorInfo.find(c => c.langAbv == lang && c.name == colorName).avgColorRGBCode
 			
 			thisColorInfo["colorNodes4"] = createSOM(colorName, LABdata, 2);
 			thisColorInfo["colorNodes4Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes4"]);
-			thisColorInfo["representativeColor"] = findMostDenseNode(thisColorInfo["colorNodes4"]).rgb;
+			
+			thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes4"]).rgb;
 
 			if(thisColorData.length > 18){
 				thisColorInfo["colorNodes9"] = createSOM(colorName, LABdata, 3);
 				thisColorInfo["colorNodes9Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes9"]);
-				thisColorInfo["representativeColor"] = findMostDenseNode(thisColorInfo["colorNodes9"]).rgb;
+				thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes9"]).rgb;
 			}
 
 			if(thisColorData.length > 200){
 				thisColorInfo["colorNodes16"] = createSOM(colorName, LABdata, 4);
 				thisColorInfo["colorNodes16Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes16"]);
-				thisColorInfo["representativeColor"] = findMostDenseNode(thisColorInfo["colorNodes16"]).rgb;
+				thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes16"]).rgb;
 			}
 
 			outputJSON[lang][colorName] = thisColorInfo;
