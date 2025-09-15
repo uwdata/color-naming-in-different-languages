@@ -271,7 +271,7 @@ function updateTranslation(){
 	window.location.hash = urlParams.toString().replace("?", "");
 	
 
-	$("#startColorInfo").html(generateColorInfoString(term, allColorInfo[currentStartLangAbrv][term]));
+	$("#startColorInfo").html(generateColorInfoString(term, allColorInfo[currentStartLangAbrv][term],currentStartLangAbrv));
 
 	// get key for translation file
 	let lang1 = currentStartLangAbrv;
@@ -309,7 +309,7 @@ function updateTranslation(){
 	$("#results").html("");
 	for(i in matchedTranslations){
 		let matchedName = matchedTranslations[i][currentEndLangKey]
-		$("#results").append(generateColorInfoString(matchedName,  allColorInfo[currentEndLangAbrv][matchedName]));
+		$("#results").append(generateColorInfoString(matchedName,  allColorInfo[currentEndLangAbrv][matchedName], currentEndLangAbrv));
 		$("#results").append("<small>Translation Loss: " + Math.round(matchedTranslations[i].dist * 100) / 100 + "</small><br><br>");
 	}
 
@@ -320,7 +320,7 @@ function updateTranslation(){
 }
 
 
-function generateColorInfoString(name, colorInfo){
+function generateColorInfoString(name, colorInfo, langAbv){
 	let str = "";
 
 	str += "<div style='margin: auto;' >" //onmouseover='nameMouseOver(\""+name+"\");' onmouseleave='nameMouseLeave();'
@@ -373,6 +373,8 @@ function generateColorInfoString(name, colorInfo){
 	str += "Color name appears " + colorInfo.numRecords + " times<br>";
 	if(name == "skin" || name == "flesh" || name == "nude"){
 		str += "<small>Note: We represent the color labels provided by the participants in our study, which includes whatever racial biases they have. This is not meant to be a prescriptive definition of what colors  fit what labels.</small><br>"
+	} else if(langAbv == "en" && name == "fuchsia" && colorInfo.commonColorName != "fuchsia"){
+		str += '<small>Note: English dictionaries say "fuchsia" is the correct spelling, but we show what the majority of our participants typed in, which is a different spelling.</small><br>'
 	}
 	//str += "2x2 excluded: " + Math.round(colorInfo.colorNodes4Excluded*100*100)/100 + "%, 3x3 excluded: "+ Math.round(colorInfo.colorNodes9Excluded*100*100)/100 + "%<br>";
 
