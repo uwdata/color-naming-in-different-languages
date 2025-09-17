@@ -1,127 +1,82 @@
 [
   {
-    "frterm": "bleu", 
-    "esterm": "azul", 
-    "dist": 0.5674317255874755
-  }, 
+    "esterm": "azul",
+    "frterm": "bleu",
+    "dist": 0.5638353637955271
+  },
   {
-    "frterm": "vert", 
-    "esterm": "azul", 
-    "dist": 14.799557752942576
-  }, 
+    "esterm": "azul",
+    "frterm": "vert",
+    "dist": 15.48876362168048
+  },
   {
-    "frterm": "violet", 
-    "esterm": "azul", 
-    "dist": 7.252960522280443
-  }, 
+    "esterm": "azul",
+    "frterm": "violet",
+    "dist": 7.023611812957385
+  },
   {
-    "frterm": "rose", 
-    "esterm": "azul", 
-    "dist": 9.302069537353066
-  }, 
+    "esterm": "azul",
+    "frterm": "rose",
+    "dist": 8.572957878718979
+  },
   {
-    "frterm": "mauve", 
-    "esterm": "azul", 
-    "dist": 6.594685567667849
-  }, 
+    "esterm": "verde",
+    "frterm": "bleu",
+    "dist": 15.504149495818792
+  },
   {
-    "frterm": "bleu", 
-    "esterm": "verde", 
-    "dist": 14.766720623337141
-  }, 
+    "esterm": "verde",
+    "frterm": "vert",
+    "dist": 0.7728679200954571
+  },
   {
-    "frterm": "vert", 
-    "esterm": "verde", 
-    "dist": 0.8039500692127952
-  }, 
+    "esterm": "verde",
+    "frterm": "violet",
+    "dist": 20.30053380157888
+  },
   {
-    "frterm": "violet", 
-    "esterm": "verde", 
-    "dist": 19.282490113269862
-  }, 
+    "esterm": "verde",
+    "frterm": "rose",
+    "dist": 17.318131322003236
+  },
   {
-    "frterm": "rose", 
-    "esterm": "verde", 
-    "dist": 16.464721658352218
-  }, 
+    "esterm": "rosa",
+    "frterm": "bleu",
+    "dist": 8.630758143103602
+  },
   {
-    "frterm": "mauve", 
-    "esterm": "verde", 
-    "dist": 18.71085665394928
-  }, 
+    "esterm": "rosa",
+    "frterm": "vert",
+    "dist": 17.013439410054293
+  },
   {
-    "frterm": "bleu", 
-    "esterm": "rosa", 
-    "dist": 9.391668904905845
-  }, 
+    "esterm": "rosa",
+    "frterm": "violet",
+    "dist": 5.4323423615715996
+  },
   {
-    "frterm": "vert", 
-    "esterm": "rosa", 
-    "dist": 16.126433789638014
-  }, 
+    "esterm": "rosa",
+    "frterm": "rose",
+    "dist": 0.6391596397008545
+  },
   {
-    "frterm": "violet", 
-    "esterm": "rosa", 
-    "dist": 5.801850183759294
-  }, 
+    "esterm": "morado",
+    "frterm": "bleu",
+    "dist": 6.8049876044493764
+  },
   {
-    "frterm": "rose", 
-    "esterm": "rosa", 
-    "dist": 0.8341275548167458
-  }, 
+    "esterm": "morado",
+    "frterm": "vert",
+    "dist": 20.331565219653246
+  },
   {
-    "frterm": "mauve", 
-    "esterm": "rosa", 
-    "dist": 5.79339640855732
-  }, 
+    "esterm": "morado",
+    "frterm": "violet",
+    "dist": 0.9095184603653395
+  },
   {
-    "frterm": "bleu", 
-    "esterm": "morado", 
-    "dist": 7.029965947861885
-  }, 
-  {
-    "frterm": "vert", 
-    "esterm": "morado", 
-    "dist": 19.4115081448842
-  }, 
-  {
-    "frterm": "violet", 
-    "esterm": "morado", 
-    "dist": 0.9118665485564774
-  }, 
-  {
-    "frterm": "rose", 
-    "esterm": "morado", 
-    "dist": 5.681393331512184
-  }, 
-  {
-    "frterm": "mauve", 
-    "esterm": "morado", 
-    "dist": 0.9539179356930243
-  }, 
-  {
-    "frterm": "bleu", 
-    "esterm": "violeta", 
-    "dist": 6.450890612770209
-  }, 
-  {
-    "frterm": "vert", 
-    "esterm": "violeta", 
-    "dist": 18.679893861659504
-  }, 
-  {
-    "frterm": "violet", 
-    "esterm": "violeta", 
-    "dist": 1.4093940714418103
-  }, 
-  {
-    "frterm": "rose", 
-    "esterm": "violeta", 
-    "dist": 5.348858583274791
-  }, 
-  {
-    "frterm": "mauve", 
-    "esterm": "violeta", 
-    "dist": 1.1439270306983502
+    "esterm": "morado",
+    "frterm": "rose",
+    "dist": 5.455343726764301
   }
 ]
