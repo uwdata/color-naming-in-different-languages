@@ -65,9 +65,7 @@ text {
   margin: 10px;
 }
 
-/*.arrow {
-  stroke-width:5;
-  stroke:#000;
-  stroke-dasharray:5, 5;
-}*/
-
+.select2-container .select2-selection {
+    height: 60px;
+    overflow-y: scroll;
+} 

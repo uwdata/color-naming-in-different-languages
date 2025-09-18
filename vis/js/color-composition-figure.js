@@ -10,7 +10,6 @@ $(document).on('ready page:load', function () {
       emptyNbin.push(0);
     }
 
-    debugger;
     let langs = Object.keys(data).filter(key => key !== "colorSet").sort();
     langNum = langs.length;
     langs.forEach((lang, i) => {

@@ -25,10 +25,7 @@ $(document).on('ready page:load', function () {
     $("#selected_langs").select2({
       allowClear: true,
       placeholder: " select languages to display",
-      ///selectionCssClass: " small "
-      //dropdownCssClass: "small"
-      templateResult: formatLangOpt,
-      //templateSelection: formatLangOpt
+      templateResult: formatLangOpt
     });
 
     $("#selected_langs").change(e => {
@@ -116,7 +113,7 @@ $(document).on('ready page:load', function () {
       let toggle = false;
 
       let termDiv = $('<div class="termDiv table-center"></div>');
-      termDiv.append('<div class="main-term" id="'+targetSelector.replace('#','')+'-selected-title" class="text-center">Color Name</div>');
+      termDiv.append('<div class="main-term text-muted" id="'+targetSelector.replace('#','')+'-selected-title" class="text-center">color name</div>');
 
       let termLabel = $(targetSelector).append(termDiv);
       let area = d3.area()
@@ -231,7 +228,8 @@ $(document).on('ready page:load', function () {
             return color = `rgb(${Math.floor(c.r)},${Math.floor(c.g)},${Math.floor(c.b)})`;
           })
 
-        $(targetSelector+"-selected-title").html('Color Name ');
+        $(targetSelector+"-selected-title").html('color name ');
+        $(targetSelector+"-selected-title").addClass("text-muted");
         $('.tr-result').html('');
         $('.google').html('');
       }
@@ -240,13 +238,11 @@ $(document).on('ready page:load', function () {
           .style('stroke-width', function(g,j){
             if (j==i) {
               $(targetSelector+"-selected-title").html(data_common_names[j]);
+              $(targetSelector+"-selected-title").removeClass("text-muted");
             }
             return j==i ? 3 : 1;
           })
       .style('stroke-opacity', function(g,j){
-            if (j==i) {
-              $(targetSelector+"-selected-title").html(data_common_names[j]);
-            }
             return j==i ? 1 : .2;
           })
       .attr('fill', function(g,j){
@@ -261,10 +257,8 @@ $(document).on('ready page:load', function () {
           lab.l = lab.l * .75 
           return lab.rgb()
         }
-        //clicked.attributes"data-color"
       })
       .style('fill-opacity', function(g,j){
-        //console.log("fill i, j", i, j)
             return j==i ? 0 : 1;
           });
 
