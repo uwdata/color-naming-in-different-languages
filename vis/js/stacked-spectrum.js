@@ -125,6 +125,14 @@ $(document).on('ready page:load', function () {
             }
           });
 
+      svg.append("rect")
+          .attr("class", "spacer-rect")
+          .attr("y", height)
+          .attr("x", 0)
+          .attr("width", width)
+          .attr("height", 4)
+          .attr("fill", "white")
+
       let axisTitle = 'Probability of Name, given Color';
       svg.append("g")
           .attr("class", "y axis")
@@ -161,7 +169,6 @@ $(document).on('ready page:load', function () {
       term.append("path")
           .attr("class", "fake-area")
           .attr("d", area)
-          .style("fill", '#fff')
           .attr('opacity', 0)
           .on('mouseover',function(d,i){
             if (!toggle) {
@@ -187,7 +194,15 @@ $(document).on('ready page:load', function () {
       function dehighlight(){
         svg.selectAll('.area')
           .style('stroke-width', "1")
-      .style('stroke-opacity', 1);
+          .style('stroke-opacity', 1)
+          .style('fill-opacity', 1);
+
+        svg.selectAll('.area1')
+          .attr('fill', function(g,j){
+            let c = data_avgColor[j];
+            return color = `rgb(${Math.floor(c.r)},${Math.floor(c.g)},${Math.floor(c.b)})`;
+          })
+
         $(targetSelector+"-selected-title").html('Color Name ');
         $('.tr-result').html('');
         $('.google').html('');
@@ -205,6 +220,24 @@ $(document).on('ready page:load', function () {
               $(targetSelector+"-selected-title").html(data_common_names[j]);
             }
             return j==i ? 1 : .2;
+          })
+      .attr('fill', function(g,j){
+        let c = data_avgColor[j];
+        let color = `rgb(${Math.floor(c.r)},${Math.floor(c.g)},${Math.floor(c.b)})`;
+        if(j==i) {
+          return color
+        }else{
+          let lab = d3.lab(d3.color(color))
+          lab.a = lab.a * .75 
+          lab.b = lab.b * .75 
+          lab.l = lab.l * .75 
+          return lab.rgb()
+        }
+        //clicked.attributes"data-color"
+      })
+      .style('fill-opacity', function(g,j){
+        //console.log("fill i, j", i, j)
+            return j==i ? 0 : 1;
           });
 
 
