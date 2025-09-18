@@ -124,6 +124,11 @@ $(document).on('ready page:load', function () {
       let svg = d3.select(targetSelector).append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
+          .on('click',function(){
+            if (toggle) {
+              toggle = false;
+              dehighlight();
+            }})
         .append("g")
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -143,12 +148,6 @@ $(document).on('ready page:load', function () {
           .attr("width", function(d,i) { return i===(spectrumN-1) ? (x(1)-x(0)) /2 : x(1)-x(0)+1; } )
           .attr("height", height+20 )
           .attr("fill", function(d){ return 'rgb(' + d.rgb.r + ',' + d.rgb.g+',' + d.rgb.b + ')';})
-          .on('click',function(){
-            if (toggle) {
-              toggle = false;
-              dehighlight();
-            }
-          });
 
       svg.append("rect")
           .attr("class", "spacer-rect")
@@ -206,13 +205,8 @@ $(document).on('ready page:load', function () {
             }
           }).
           on('click',function(d,i){
-            if (!toggle) {
-              toggle = true;
-              highlight(d, i, true);
-            }
-            else{
-              toggle = false;
-            }
+            toggle = true;
+            highlight(d, i, true);
             d3.event.stopPropagation();
           });
 
