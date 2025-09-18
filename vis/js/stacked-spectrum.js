@@ -13,8 +13,36 @@ $(document).on('ready page:load', function () {
     let langs = Object.keys(data).filter(key => key !== "colorSet").sort((a,b) => - data[a].totalCount + data[b].totalCount);
     langs =langs.sort();
     langs.forEach((lang, i) => {
+      $("#selected_langs").append(`<option val="${i}" selected >${lang}</option>`)
       $(".container").append('<div class="row" id="vis'+i+'"></div>');
       drawLangSpec('#vis'+i, data, lang, data.colorSet);
+    });
+
+    function formatLangOpt (langOpt) {
+      return $(`<span class="small">${langOpt.text}</span>`)
+    };
+
+    $("#selected_langs").select2({
+      allowClear: true,
+      placeholder: " select languages to display",
+      ///selectionCssClass: " small "
+      //dropdownCssClass: "small"
+      templateResult: formatLangOpt,
+      //templateSelection: formatLangOpt
+    });
+
+    $("#selected_langs").change(e => {
+      let selectedLangs = $("#selected_langs").val()
+      // make sure selectdLangs is at least an empty array
+      selectedLangs = selectedLangs ? selectedLangs : []
+
+      langs.forEach((lang, i) => {
+        if(selectedLangs.includes(lang)){
+          $('#vis'+i).show()
+        }else{
+          $('#vis'+i).hide()
+        }
+      })
     });
   });
 

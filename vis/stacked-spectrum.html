@@ -19,12 +19,20 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 	<script src="js/jquery-1.12.0.min.js"></script>
+  <link href="css/select2.min.css" rel="stylesheet" />
+  <script src="js/select2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
     <script src="bower_components/d3/d3.min.js"></script>
 	
     <script type="text/javascript" src="js/stacked-spectrum.js"></script>
 	
 	<script src="../addNavBar.js"></script>
+  <style>
+    .select2-container .select2-selection {
+        height: 60px;
+        overflow-y: scroll;
+    } 
+  </style>
   </head>
   <body>
 
@@ -32,6 +40,14 @@
 	<h1>Hue Color Comparisons</h1>
 	<p>These visualizations compare how languages name the hue colors (the brightest, most saturated colors: <img src='hue-colors-smallest.png'> ).</p>
 	<p>For each language we show a stacked graph. The bottom shows our hue color bins, and the areas above are divided by color names. The hight of an area above any bin represents what percentage of numbers in that bin were given that color name. The color of each color name area is the average hue color given to that color name.</p>
+  <!-- <div class="form-check justify-content-center" style="width:100%">  -->
+  <div class="form-check justify-content-center align-items-center flex-nowrap">
+    <label class="form-label" for="selected_langs" style="display: block; text-align: center;" >Viewed Languages</label>
+    <div class="small" style="max-width:500px;margin:auto;">
+      <select class="form-select small" multiple="multiple" name ="selected_langs" id="selected_langs" value="selected_langs" style="width:100%"> 
+    </div>
+  </div>
+
 
 
 
