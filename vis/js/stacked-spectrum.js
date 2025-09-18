@@ -205,7 +205,6 @@ $(document).on('ready page:load', function () {
             }
           }).
           on('click',function(d,i){
-            toggle = true;
             highlight(d, i, true);
             d3.event.stopPropagation();
           });
@@ -227,7 +226,23 @@ $(document).on('ready page:load', function () {
         $('.tr-result').html('');
         $('.google').html('');
       }
+
+      let highlighted = ""
       function highlight(d, i, clicked){
+        
+        // if it was clicked toggle a selection 
+        // (or unselect if it was the same one already highlighted)
+        if(clicked){
+          if(toggle && highlighted == i){
+            toggle = false
+            dehighlight()
+            return
+          } else{
+            toggle = true
+          }    
+        }
+
+        highlighted = i
         svg.selectAll('.area1')
           .style('stroke-width', function(g,j){
             if (j==i) {
