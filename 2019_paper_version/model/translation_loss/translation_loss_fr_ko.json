@@ -1,3052 +1,2362 @@
 [
   {
-    "frterm": "bleu", 
-    "dist": 5.371858546004349, 
-    "koterm": "보라"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 2.1959728998722485, 
-    "koterm": "파랑"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 14.307938031076274, 
-    "koterm": "연두"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 5.8102070642075585, 
-    "koterm": "하늘"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 12.490177347752661, 
-    "koterm": "초록"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.741625820409534, 
-    "koterm": "자주"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.616335930416358, 
-    "koterm": "빨강"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.548010090934947, 
-    "koterm": "분홍"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 4.537700553631389, 
-    "koterm": "연보라"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.6589746904584075, 
-    "koterm": "청록"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.987785840068714, 
-    "koterm": "주황"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.705191170633011, 
-    "koterm": "갈"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 4.123205643344659, 
-    "koterm": "남"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 15.432562622478383, 
-    "koterm": "노랑"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 11.85724172327337, 
-    "koterm": "녹"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 12.239751471926066, 
-    "koterm": "황토"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 12.126158108647502, 
-    "koterm": "풀"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.780705103772219, 
-    "koterm": "진분홍"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.516213735705284, 
-    "koterm": "검정"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.647289008387963, 
-    "koterm": "에메랄드"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.536686740740867, 
-    "koterm": "민트"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 12.284603388820658, 
-    "koterm": "다홍"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.451805392701849, 
-    "koterm": "회"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.96793757737205, 
-    "koterm": "핑크"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 3.7017137742717563, 
-    "koterm": "군청"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 5.743619789976512, 
-    "koterm": "진보라"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 15.01621592231404, 
-    "koterm": "형광연두"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.626566174876277, 
-    "koterm": "고동"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 12.303664229425522, 
-    "koterm": "연녹"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.151485332016097, 
-    "koterm": "진녹"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.728262852799583, 
-    "koterm": "카키"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.57336383543394, 
-    "koterm": "옥"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.013835596769697, 
-    "koterm": "핫핑크"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.268632092943896, 
-    "koterm": "살구"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.072536861752948, 
-    "koterm": "연갈"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.2681678382145325, 
-    "koterm": "연분홍"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 11.644395456391555, 
-    "koterm": "올리브"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 14.026688366346919, 
-    "koterm": "겨자"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 11.926294731458675, 
-    "koterm": "연초록"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 2.4557983546673086, 
-    "koterm": "연파랑"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.858044004072172, 
-    "koterm": "베이지"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 6.368713294225233, 
-    "koterm": "형광보라"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.571453789160202, 
-    "koterm": "적갈"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 6.145940458257865, 
-    "koterm": "밝은보라"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 14.872389327947406, 
-    "koterm": "개나리"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 2.3126988154025176, 
-    "koterm": "청"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 15.00644249484182, 
-    "koterm": "라임"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.031733129754546, 
-    "koterm": "마젠타"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 2.8536922999620087, 
-    "koterm": "바다"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 3.6900861315468365, 
-    "koterm": "진파랑"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.169292474559349, 
-    "koterm": "진초록"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 14.968529576041051, 
-    "koterm": "형광초록"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 14.666739471362291, 
-    "koterm": "밝은연두"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.729801248718951, 
-    "koterm": "진연두"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.055601953379062, 
-    "koterm": "짙은녹"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 1.732323679781892, 
-    "koterm": "밝은파랑"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.40741391178026, 
-    "koterm": "상아"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.852277667161275, 
-    "koterm": "연노랑"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.7269196778273095, 
-    "koterm": "형광하늘"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 14.163447194836625, 
-    "koterm": "귤"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.789410235545763, 
-    "koterm": "진홍"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 2.8652382155884832, 
-    "koterm": "코발트블루"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 15.210972301428606, 
-    "koterm": "진노랑"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.826836976825188, 
-    "koterm": "형광녹"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.89287705040532, 
-    "koterm": "자홍"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.120233130643771, 
-    "koterm": "연하늘"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.64439393774562, 
-    "koterm": "벽돌"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 6.121734639925781, 
-    "koterm": "짙은보라"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.0195430058712, 
-    "koterm": "짙은분홍"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 3.687907070388214, 
-    "koterm": "진하늘"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 14.268236817379844, 
-    "koterm": "오렌지"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.930657517812154, 
-    "koterm": "쑥"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.05820970254611, 
-    "koterm": "살"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 12.086534122921945, 
-    "koterm": "진빨강"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 3.3899163769956475, 
-    "koterm": "진청"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.072036274852683, 
-    "koterm": "연청록"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 15.168426668237531, 
-    "koterm": "형광"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 4.243254302098308, 
-    "koterm": "남보라"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.305976999290998, 
-    "koterm": "황록"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.014046815955492, 
-    "koterm": "짙은초록"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.10583144935611, 
-    "koterm": "금"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 12.10598521228078, 
-    "koterm": "황갈"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 4.6169167026718565, 
-    "koterm": "청보라"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.784222235284181, 
-    "koterm": "꽃분홍"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 3.2401262638409083, 
-    "koterm": "짙은파랑"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.737001849591179, 
-    "koterm": "밝은초록"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 4.849921146717253, 
-    "koterm": "짙은하늘"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 5.241172173317984, 
-    "koterm": "곤"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.481142157965325, 
-    "koterm": "진달래"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.186899426562304, 
-    "koterm": "밝은녹"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.224380133900603, 
-    "koterm": "와인"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 14.02685204724747, 
-    "koterm": "레몬"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.76483440244838, 
-    "koterm": "진갈"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 6.067184347416375, 
-    "koterm": "청회"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.915497123608258, 
-    "koterm": "밝은청록"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 12.274835686963549, 
-    "koterm": "연주황"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 6.141790829036335, 
-    "koterm": "연자주"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 4.333547027808923, 
-    "koterm": "바이올렛"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.83095959180913, 
-    "koterm": "자두"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.713733492512961, 
-    "koterm": "감"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.355486932112486, 
-    "koterm": "형광분홍"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.885698407437824, 
-    "koterm": "짙은갈"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 12.11319805739952, 
-    "koterm": "붉은"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.54264459588451, 
-    "koterm": "형광핑크"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.967516813618591, 
-    "koterm": "적"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 5.132829052320338, 
-    "koterm": "소라"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.582797600736278, 
-    "koterm": "검붉은"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.57051655265545, 
-    "koterm": "버건디"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 5.692410947965573, 
-    "koterm": "어두운보라"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.221418725473475, 
-    "koterm": "짙은연두"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 4.217643671200788, 
-    "koterm": "네이비"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 4.488709393822895, 
-    "koterm": "연남"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.375704853001047, 
-    "koterm": "코랄"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.533901483622482, 
-    "koterm": "진회"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.975840897398749, 
-    "koterm": "국방"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.876141194327515, 
-    "koterm": "짙은자주"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 11.840835249017276, 
-    "koterm": "올리브그린"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 6.361639910193566, 
-    "koterm": "적보라"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 12.603790440648131, 
-    "koterm": "녹두"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.588939081060444, 
-    "koterm": "탁한분홍"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.69695237757234, 
-    "koterm": "회갈"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.586658895073587, 
-    "koterm": "아이보리"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 16.870969472154098, 
-    "koterm": "보라"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 16.350351670658092, 
-    "koterm": "파랑"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 1.8056178941866203, 
-    "koterm": "연두"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.376959074391277, 
-    "koterm": "하늘"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 3.235626891093748, 
-    "koterm": "초록"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.34374516238129, 
-    "koterm": "자주"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.959554120786612, 
-    "koterm": "빨강"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 14.481960246189683, 
-    "koterm": "분홍"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.49920166403389, 
-    "koterm": "연보라"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 7.4401913610429595, 
-    "koterm": "청록"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 10.872610221413055, 
-    "koterm": "주황"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 10.298099665719592, 
-    "koterm": "갈"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.21379189636498, 
-    "koterm": "남"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.257622641341752, 
-    "koterm": "노랑"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 4.082174599537567, 
-    "koterm": "녹"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 8.046920788326508, 
-    "koterm": "황토"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 4.481546726709767, 
-    "koterm": "풀"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.367057675690614, 
-    "koterm": "진분홍"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 11.539418748045982, 
-    "koterm": "검정"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 4.381256770427163, 
-    "koterm": "에메랄드"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 5.5448311995171, 
-    "koterm": "민트"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.750283483842514, 
-    "koterm": "다홍"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.049461383993055, 
-    "koterm": "회"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.463902720755192, 
-    "koterm": "핑크"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.386493189045229, 
-    "koterm": "군청"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 14.899758827347904, 
-    "koterm": "진보라"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 1.0430850447622873, 
-    "koterm": "형광연두"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 10.299550639293642, 
-    "koterm": "고동"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 3.341467344104188, 
-    "koterm": "연녹"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 7.108265201760142, 
-    "koterm": "진녹"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.797598701774345, 
-    "koterm": "카키"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 5.420341390041502, 
-    "koterm": "옥"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.956521445294545, 
-    "koterm": "핫핑크"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.045642636169799, 
-    "koterm": "살구"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 8.902598802574035, 
-    "koterm": "연갈"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 11.558648737809236, 
-    "koterm": "연분홍"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.021302367858569, 
-    "koterm": "올리브"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.3781960616653, 
-    "koterm": "겨자"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 3.099132234834983, 
-    "koterm": "연초록"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 12.57216266564338, 
-    "koterm": "연파랑"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 7.618153677782778, 
-    "koterm": "베이지"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 18.54863464884844, 
-    "koterm": "형광보라"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 11.81491165728964, 
-    "koterm": "적갈"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 17.83572353279855, 
-    "koterm": "밝은보라"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 7.164169734597179, 
-    "koterm": "개나리"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.636334718576862, 
-    "koterm": "청"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 3.167496963641674, 
-    "koterm": "라임"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.513020731578417, 
-    "koterm": "마젠타"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 12.698141073122148, 
-    "koterm": "바다"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 17.231776672210582, 
-    "koterm": "진파랑"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.9350574747849505, 
-    "koterm": "진초록"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 1.2130383041523443, 
-    "koterm": "형광초록"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 1.7272233617023498, 
-    "koterm": "밝은연두"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 1.8111152476395795, 
-    "koterm": "진연두"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.969407342778657, 
-    "koterm": "짙은녹"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.442361456812794, 
-    "koterm": "밝은파랑"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.8221174467393935, 
-    "koterm": "상아"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 5.021742524470266, 
-    "koterm": "연노랑"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 7.811768937140364, 
-    "koterm": "형광하늘"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 8.995845244944917, 
-    "koterm": "귤"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 14.664399004666029, 
-    "koterm": "진홍"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 16.5705718294576, 
-    "koterm": "코발트블루"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 7.480104701950791, 
-    "koterm": "진노랑"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 1.6289490085785898, 
-    "koterm": "형광녹"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 14.661598584384915, 
-    "koterm": "자홍"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 8.211876196853305, 
-    "koterm": "연하늘"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 11.577228477802903, 
-    "koterm": "벽돌"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 14.264411320476212, 
-    "koterm": "짙은보라"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 14.722538209661973, 
-    "koterm": "짙은분홍"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 12.069762579550012, 
-    "koterm": "진하늘"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.89734484470254, 
-    "koterm": "오렌지"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.734595042354292, 
-    "koterm": "쑥"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.069333149463478, 
-    "koterm": "살"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.300266900485186, 
-    "koterm": "진빨강"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.094016605933893, 
-    "koterm": "진청"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 5.922136569811654, 
-    "koterm": "연청록"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 2.3120720245817243, 
-    "koterm": "형광"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 16.2937608006497, 
-    "koterm": "남보라"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 4.63896250707517, 
-    "koterm": "황록"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.944819241119384, 
-    "koterm": "짙은초록"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.618463761790382, 
-    "koterm": "금"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 8.686571526527596, 
-    "koterm": "황갈"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 17.736022792287468, 
-    "koterm": "청보라"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.543831699060735, 
-    "koterm": "꽃분홍"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 16.511155618442956, 
-    "koterm": "짙은파랑"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 1.5806228803463498, 
-    "koterm": "밝은초록"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 10.376180332201038, 
-    "koterm": "짙은하늘"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.52872541034846, 
-    "koterm": "곤"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.238689845964085, 
-    "koterm": "진달래"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 2.034249695757984, 
-    "koterm": "밝은녹"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.019456781629415, 
-    "koterm": "와인"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 5.096264706053245, 
-    "koterm": "레몬"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 11.210865401696344, 
-    "koterm": "진갈"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.93360362481688, 
-    "koterm": "청회"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.281200802256637, 
-    "koterm": "밝은청록"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.229757102680637, 
-    "koterm": "연주황"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 14.372069499470905, 
-    "koterm": "연자주"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 16.185908121008445, 
-    "koterm": "바이올렛"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.784568189837355, 
-    "koterm": "자두"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 11.29617997144489, 
-    "koterm": "감"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 17.489425309634548, 
-    "koterm": "형광분홍"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 11.245891720863366, 
-    "koterm": "짙은갈"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.67162075812577, 
-    "koterm": "붉은"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 17.122763000587295, 
-    "koterm": "형광핑크"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 12.625023674689864, 
-    "koterm": "적"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 10.300203890402269, 
-    "koterm": "소라"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 12.61639849023572, 
-    "koterm": "검붉은"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 12.867118381879488, 
-    "koterm": "버건디"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.713311337737979, 
-    "koterm": "어두운보라"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 3.6072571836211873, 
-    "koterm": "짙은연두"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.971779750344881, 
-    "koterm": "네이비"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 12.480075287624922, 
-    "koterm": "연남"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 10.812405511336227, 
-    "koterm": "코랄"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.9119464306147, 
-    "koterm": "진회"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 7.707133921271208, 
-    "koterm": "국방"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.92943011751915, 
-    "koterm": "짙은자주"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.021981826766675, 
-    "koterm": "올리브그린"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 14.65724023340496, 
-    "koterm": "적보라"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 4.986778935444789, 
-    "koterm": "녹두"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 11.270331480608737, 
-    "koterm": "탁한분홍"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.112185874310832, 
-    "koterm": "회갈"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 8.467841372221748, 
-    "koterm": "아이보리"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 3.255828510233284, 
-    "koterm": "보라"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.821055652935587, 
-    "koterm": "파랑"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 18.475735992109055, 
-    "koterm": "연두"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.890676155596525, 
-    "koterm": "하늘"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 17.098302542498217, 
-    "koterm": "초록"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.173103825001546, 
-    "koterm": "자주"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.5420703502173, 
-    "koterm": "빨강"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.806302084972527, 
-    "koterm": "분홍"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.32786452704267, 
-    "koterm": "연보라"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.179134212353976, 
-    "koterm": "청록"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.879024401784143, 
-    "koterm": "주황"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.499303412766364, 
-    "koterm": "갈"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.624877562682547, 
-    "koterm": "남"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 17.655582390390766, 
-    "koterm": "노랑"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 16.316519100615114, 
-    "koterm": "녹"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.760259344631391, 
-    "koterm": "황토"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 15.88874730610854, 
-    "koterm": "풀"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.814501083916951, 
-    "koterm": "진분홍"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.945986570285639, 
-    "koterm": "검정"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 15.879847306565223, 
-    "koterm": "에메랄드"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.805766818073998, 
-    "koterm": "민트"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.374960705926647, 
-    "koterm": "다홍"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.805246751138109, 
-    "koterm": "회"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.101222222961982, 
-    "koterm": "핑크"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.165369627078208, 
-    "koterm": "군청"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.828276654316676, 
-    "koterm": "진보라"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 19.527855606677043, 
-    "koterm": "형광연두"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.151447604706611, 
-    "koterm": "고동"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 16.427361689934795, 
-    "koterm": "연녹"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.141193481195433, 
-    "koterm": "진녹"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.803791513463457, 
-    "koterm": "카키"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 15.000429499593638, 
-    "koterm": "옥"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.454244963916779, 
-    "koterm": "핫핑크"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.745582933192827, 
-    "koterm": "살구"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.682940488608981, 
-    "koterm": "연갈"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 8.426457286204815, 
-    "koterm": "연분홍"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.624658800844545, 
-    "koterm": "올리브"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 16.216861312890995, 
-    "koterm": "겨자"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 16.60943558001265, 
-    "koterm": "연초록"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 8.94156908773051, 
-    "koterm": "연파랑"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 12.499403322110703, 
-    "koterm": "베이지"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 1.9371101465226446, 
-    "koterm": "형광보라"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.324897383839012, 
-    "koterm": "적갈"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 2.144439760406096, 
-    "koterm": "밝은보라"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 16.659290811044233, 
-    "koterm": "개나리"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.0678045820090505, 
-    "koterm": "청"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 18.597935992863867, 
-    "koterm": "라임"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.255881838435945, 
-    "koterm": "마젠타"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 8.59265085360786, 
-    "koterm": "바다"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.159512335002919, 
-    "koterm": "진파랑"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.403461770163819, 
-    "koterm": "진초록"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 19.68147903356161, 
-    "koterm": "형광초록"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 18.842400614605634, 
-    "koterm": "밝은연두"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 18.267695421707536, 
-    "koterm": "진연두"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.858817433025202, 
-    "koterm": "짙은녹"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 8.416246825642917, 
-    "koterm": "밝은파랑"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 12.9356085597335, 
-    "koterm": "상아"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 16.69130597837679, 
-    "koterm": "연노랑"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.706375015951982, 
-    "koterm": "형광하늘"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.973393218780034, 
-    "koterm": "귤"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 7.355883408635883, 
-    "koterm": "진홍"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.444819598750203, 
-    "koterm": "코발트블루"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 16.86875391040477, 
-    "koterm": "진노랑"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 18.783731762717885, 
-    "koterm": "형광녹"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 7.401808788712511, 
-    "koterm": "자홍"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 12.484104835799148, 
-    "koterm": "연하늘"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.426739738749102, 
-    "koterm": "벽돌"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.736306419502169, 
-    "koterm": "짙은보라"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.534515905451593, 
-    "koterm": "짙은분홍"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 9.488849594047664, 
-    "koterm": "진하늘"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.683644236298392, 
-    "koterm": "오렌지"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.609533154159868, 
-    "koterm": "쑥"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.564413215308369, 
-    "koterm": "살"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.499407453023084, 
-    "koterm": "진빨강"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.769351984958356, 
-    "koterm": "진청"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.404352217579193, 
-    "koterm": "연청록"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 19.105623271087662, 
-    "koterm": "형광"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.023632924645628, 
-    "koterm": "남보라"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 16.48431438603514, 
-    "koterm": "황록"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.329096253939927, 
-    "koterm": "짙은초록"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 15.259304420296534, 
-    "koterm": "금"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.357140069253326, 
-    "koterm": "황갈"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 3.840393957656371, 
-    "koterm": "청보라"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.572480906638999, 
-    "koterm": "꽃분홍"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.624829841887751, 
-    "koterm": "짙은파랑"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 18.549529156244912, 
-    "koterm": "밝은초록"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.899285492256409, 
-    "koterm": "짙은하늘"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 8.023534621842964, 
-    "koterm": "곤"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.603499445939749, 
-    "koterm": "진달래"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 17.986852643057745, 
-    "koterm": "밝은녹"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 8.483886346540674, 
-    "koterm": "와인"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 16.770226085239546, 
-    "koterm": "레몬"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.741708451698376, 
-    "koterm": "진갈"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.206354299994238, 
-    "koterm": "청회"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.607041505342506, 
-    "koterm": "밝은청록"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.118724677811263, 
-    "koterm": "연주황"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.463350803900718, 
-    "koterm": "연자주"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 4.10010012747437, 
-    "koterm": "바이올렛"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 8.032319132003394, 
-    "koterm": "자두"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 9.924320666963443, 
-    "koterm": "감"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 3.4363724354673235, 
-    "koterm": "형광분홍"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.931638130749866, 
-    "koterm": "짙은갈"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.162430606828995, 
-    "koterm": "붉은"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 4.004239185242706, 
-    "koterm": "형광핑크"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 9.943032720150832, 
-    "koterm": "적"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.101576238590205, 
-    "koterm": "소라"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 9.79658589157906, 
-    "koterm": "검붉은"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 9.498743457791008, 
-    "koterm": "버건디"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.959099644656189, 
-    "koterm": "어두운보라"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 17.24845273855515, 
-    "koterm": "짙은연두"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 7.606375347254847, 
-    "koterm": "네이비"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 8.354560072292927, 
-    "koterm": "연남"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.00980527012714, 
-    "koterm": "코랄"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.799020175631384, 
-    "koterm": "진회"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.29464239524398, 
-    "koterm": "국방"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.767825325194517, 
-    "koterm": "짙은자주"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.965877840855237, 
-    "koterm": "올리브그린"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.5712667161250335, 
-    "koterm": "적보라"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 15.666349993555507, 
-    "koterm": "녹두"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 8.65161154344199, 
-    "koterm": "탁한분홍"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.024012155491135, 
-    "koterm": "회갈"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.457779240145717, 
-    "koterm": "아이보리"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.0318889493781676, 
-    "koterm": "보라"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.384604339674617, 
-    "koterm": "파랑"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 15.46460990351674, 
-    "koterm": "연두"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.266364810110678, 
-    "koterm": "하늘"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 14.510078968446688, 
-    "koterm": "초록"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 2.685436283209926, 
-    "koterm": "자주"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 6.664345441842375, 
-    "koterm": "빨강"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 2.645223752316718, 
-    "koterm": "분홍"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.852823815115842, 
-    "koterm": "연보라"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.746005011617564, 
-    "koterm": "청록"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.175490938377088, 
-    "koterm": "주황"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 7.850087335530127, 
-    "koterm": "갈"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 7.720125716913164, 
-    "koterm": "남"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 13.636425799040989, 
-    "koterm": "노랑"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 13.739187242694237, 
-    "koterm": "녹"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.814039174263746, 
-    "koterm": "황토"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.933747054786004, 
-    "koterm": "풀"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 1.6480427737388115, 
-    "koterm": "진분홍"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.336372031794623, 
-    "koterm": "검정"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 13.848665006044188, 
-    "koterm": "에메랄드"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.992874878221636, 
-    "koterm": "민트"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.542674821893672, 
-    "koterm": "다홍"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.790960218306239, 
-    "koterm": "회"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 1.848259810904343, 
-    "koterm": "핑크"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 7.5501397247828885, 
-    "koterm": "군청"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.583790767976088, 
-    "koterm": "진보라"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 16.652534490433364, 
-    "koterm": "형광연두"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.126548675032298, 
-    "koterm": "고동"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 13.605196034878032, 
-    "koterm": "연녹"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.79783258841588, 
-    "koterm": "진녹"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 10.841888827846354, 
-    "koterm": "카키"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 13.230808448434969, 
-    "koterm": "옥"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 1.200642213873168, 
-    "koterm": "핫핑크"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.046536214828201, 
-    "koterm": "살구"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.188365969806968, 
-    "koterm": "연갈"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.758473411650283, 
-    "koterm": "연분홍"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.428824424937703, 
-    "koterm": "올리브"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.311353968244799, 
-    "koterm": "겨자"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 14.123726393065533, 
-    "koterm": "연초록"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.570852818216894, 
-    "koterm": "연파랑"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.403591237019247, 
-    "koterm": "베이지"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.4466249562028235, 
-    "koterm": "형광보라"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 6.63837665132195, 
-    "koterm": "적갈"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 4.869372854476775, 
-    "koterm": "밝은보라"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.496197203142717, 
-    "koterm": "개나리"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.166283754295895, 
-    "koterm": "청"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 15.215352304786228, 
-    "koterm": "라임"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 1.898120164765215, 
-    "koterm": "마젠타"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.189848978291279, 
-    "koterm": "바다"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 7.965430878933736, 
-    "koterm": "진파랑"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.160398854811627, 
-    "koterm": "진초록"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 16.920242377575757, 
-    "koterm": "형광초록"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 15.820968840336269, 
-    "koterm": "밝은연두"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 15.509315888142437, 
-    "koterm": "진연두"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.508105828225762, 
-    "koterm": "짙은녹"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.542690847297148, 
-    "koterm": "밝은파랑"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 10.306760661146166, 
-    "koterm": "상아"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 13.09102219007126, 
-    "koterm": "연노랑"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.665493894820285, 
-    "koterm": "형광하늘"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 10.552536321253369, 
-    "koterm": "귤"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 3.0241372759707796, 
-    "koterm": "진홍"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.068370904652912, 
-    "koterm": "코발트블루"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.647977955545288, 
-    "koterm": "진노랑"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 16.244812359549172, 
-    "koterm": "형광녹"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 2.9272220929788046, 
-    "koterm": "자홍"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.256686025883708, 
-    "koterm": "연하늘"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 6.542514967902613, 
-    "koterm": "벽돌"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 6.091765740271285, 
-    "koterm": "짙은보라"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 2.2481681981820953, 
-    "koterm": "짙은분홍"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.838617614842509, 
-    "koterm": "진하늘"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 10.113529335883976, 
-    "koterm": "오렌지"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.10999121703703, 
-    "koterm": "쑥"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.083579275858257, 
-    "koterm": "살"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 6.146933781785888, 
-    "koterm": "진빨강"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.207595518810296, 
-    "koterm": "진청"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.647282932531327, 
-    "koterm": "연청록"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 15.90464650540203, 
-    "koterm": "형광"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 6.805323761455062, 
-    "koterm": "남보라"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 13.049565587193086, 
-    "koterm": "황록"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.14069987543873, 
-    "koterm": "짙은초록"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.450110072302438, 
-    "koterm": "금"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.434275750167892, 
-    "koterm": "황갈"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 6.937667387792495, 
-    "koterm": "청보라"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 1.5496889699455294, 
-    "koterm": "꽃분홍"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.0259080792417, 
-    "koterm": "짙은파랑"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 15.960897049090933, 
-    "koterm": "밝은초록"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 10.519407656146027, 
-    "koterm": "짙은하늘"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 7.9391993436175765, 
-    "koterm": "곤"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 1.9800224087030682, 
-    "koterm": "진달래"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 15.415338835233333, 
-    "koterm": "밝은녹"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.300909847141828, 
-    "koterm": "와인"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 13.117096141401603, 
-    "koterm": "레몬"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 7.785463030193149, 
-    "koterm": "진갈"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.97002133816361, 
-    "koterm": "청회"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 13.14678232129989, 
-    "koterm": "밝은청록"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.84281436481175, 
-    "koterm": "연주황"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 3.9086703093896915, 
-    "koterm": "연자주"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.737052558739957, 
-    "koterm": "바이올렛"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 3.7627472491726714, 
-    "koterm": "자두"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 7.684449640766837, 
-    "koterm": "감"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 2.1489767676082097, 
-    "koterm": "형광분홍"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.064886755373326, 
-    "koterm": "짙은갈"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.565742504291461, 
-    "koterm": "붉은"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 1.5220327371049938, 
-    "koterm": "형광핑크"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.896706056739849, 
-    "koterm": "적"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.228960802579957, 
-    "koterm": "소라"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 6.223055464132143, 
-    "koterm": "검붉은"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.584953712853834, 
-    "koterm": "버건디"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 6.185834261162262, 
-    "koterm": "어두운보라"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 14.245512583497355, 
-    "koterm": "짙은연두"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.042909997613995, 
-    "koterm": "네이비"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.363017560261222, 
-    "koterm": "연남"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 6.221641488606268, 
-    "koterm": "코랄"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.964304339573747, 
-    "koterm": "진회"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 10.787664851748564, 
-    "koterm": "국방"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 4.678035123523682, 
-    "koterm": "짙은자주"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.905676449055926, 
-    "koterm": "올리브그린"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 4.232325284207404, 
-    "koterm": "적보라"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.334618048466886, 
-    "koterm": "녹두"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.847260842914658, 
-    "koterm": "탁한분홍"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.382651312871012, 
-    "koterm": "회갈"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.920058789684022, 
-    "koterm": "아이보리"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 2.6742737822107445, 
-    "koterm": "보라"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.134796009027187, 
-    "koterm": "파랑"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 17.926907739386884, 
-    "koterm": "연두"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 11.171481167209977, 
-    "koterm": "하늘"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 16.484723597635348, 
-    "koterm": "초록"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 4.959882320123231, 
-    "koterm": "자주"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 11.528728945447023, 
-    "koterm": "빨강"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.576024444823993, 
-    "koterm": "분홍"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.657960036186259, 
-    "koterm": "연보라"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 12.466161255086444, 
-    "koterm": "청록"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.674516637802672, 
-    "koterm": "주황"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 11.119960852967184, 
-    "koterm": "갈"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.955619162739693, 
-    "koterm": "남"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 17.266912865832335, 
-    "koterm": "노랑"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 15.70600108692337, 
-    "koterm": "녹"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.37361490217726, 
-    "koterm": "황토"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 15.335845570935648, 
-    "koterm": "풀"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.731805493767872, 
-    "koterm": "진분홍"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.362499131555893, 
-    "koterm": "검정"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 15.225380884396342, 
-    "koterm": "에메랄드"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 14.143468721819994, 
-    "koterm": "민트"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.325977943661933, 
-    "koterm": "다홍"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.1609720357571, 
-    "koterm": "회"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 4.978639356030466, 
-    "koterm": "핑크"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.539224076303899, 
-    "koterm": "군청"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.243848446434274, 
-    "koterm": "진보라"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 18.963005925734148, 
-    "koterm": "형광연두"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.676069293242758, 
-    "koterm": "고동"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 15.87354095302411, 
-    "koterm": "연녹"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.515994081748161, 
-    "koterm": "진녹"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.257721787799348, 
-    "koterm": "카키"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 14.328838487492703, 
-    "koterm": "옥"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.502449873319424, 
-    "koterm": "핫핑크"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 11.350259629684135, 
-    "koterm": "살구"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 11.233431294531204, 
-    "koterm": "연갈"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 7.961900928046793, 
-    "koterm": "연분홍"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 14.113241311073399, 
-    "koterm": "올리브"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 15.810908147596564, 
-    "koterm": "겨자"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 16.00795223690305, 
-    "koterm": "연초록"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 8.208458130936284, 
-    "koterm": "연파랑"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 12.011363306066116, 
-    "koterm": "베이지"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 1.5416250600977737, 
-    "koterm": "형광보라"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.020165474109437, 
-    "koterm": "적갈"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 1.5802609499919587, 
-    "koterm": "밝은보라"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 16.300245979209127, 
-    "koterm": "개나리"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.39597642534364, 
-    "koterm": "청"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 18.099845074976685, 
-    "koterm": "라임"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.071512305438462, 
-    "koterm": "마젠타"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 7.887143572080898, 
-    "koterm": "바다"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 4.5128331384179585, 
-    "koterm": "진파랑"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.765187261165561, 
-    "koterm": "진초록"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 19.089059932973516, 
-    "koterm": "형광초록"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 18.299850450063687, 
-    "koterm": "밝은연두"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 17.681178758287036, 
-    "koterm": "진연두"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.26009242752094, 
-    "koterm": "짙은녹"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 7.697781689119399, 
-    "koterm": "밝은파랑"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 12.428780128954255, 
-    "koterm": "상아"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 16.25119191484503, 
-    "koterm": "연노랑"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 12.987687807936938, 
-    "koterm": "형광하늘"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 14.688167520537476, 
-    "koterm": "귤"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 7.27177489437168, 
-    "koterm": "진홍"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 4.772250235014443, 
-    "koterm": "코발트블루"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 16.531191501425283, 
-    "koterm": "진노랑"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 18.17205942243225, 
-    "koterm": "형광녹"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 7.337068724650598, 
-    "koterm": "자홍"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 11.807457086140607, 
-    "koterm": "연하늘"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.067857290455233, 
-    "koterm": "벽돌"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 6.152679453163727, 
-    "koterm": "짙은보라"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 6.4109811469426425, 
-    "koterm": "짙은분홍"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 8.72564321809764, 
-    "koterm": "진하늘"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 14.454006773407311, 
-    "koterm": "오렌지"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.014803338328248, 
-    "koterm": "쑥"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 11.128357605290867, 
-    "koterm": "살"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.408369801742667, 
-    "koterm": "진빨강"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 6.078398153947164, 
-    "koterm": "진청"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.72951088773171, 
-    "koterm": "연청록"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 18.59951628232591, 
-    "koterm": "형광"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 4.467708329022121, 
-    "koterm": "남보라"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 15.99130046827348, 
-    "koterm": "황록"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.680703288769818, 
-    "koterm": "짙은초록"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 14.829819940479085, 
-    "koterm": "금"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 12.980082009263619, 
-    "koterm": "황갈"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 3.2098418209681276, 
-    "koterm": "청보라"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.537706201315277, 
-    "koterm": "꽃분홍"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 4.993047062145565, 
-    "koterm": "짙은파랑"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 17.950715150743488, 
-    "koterm": "밝은초록"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.15084963513117, 
-    "koterm": "짙은하늘"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 7.365209841596489, 
-    "koterm": "곤"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.545886337095162, 
-    "koterm": "진달래"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 17.377804501050793, 
-    "koterm": "밝은녹"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 8.171849873786174, 
-    "koterm": "와인"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 16.334683968388287, 
-    "koterm": "레몬"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.292259719428795, 
-    "koterm": "진갈"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 9.54569054700838, 
-    "koterm": "청회"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.913925672531844, 
-    "koterm": "밝은청록"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 12.799365914978623, 
-    "koterm": "연주황"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 4.974885436042139, 
-    "koterm": "연자주"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 3.374304671027389, 
-    "koterm": "바이올렛"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 7.895102522441043, 
-    "koterm": "자두"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 9.658212082747962, 
-    "koterm": "감"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 3.565098869177893, 
-    "koterm": "형광분홍"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.51046843937058, 
-    "koterm": "짙은갈"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.099938623113996, 
-    "koterm": "붉은"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 4.143383043621387, 
-    "koterm": "형광핑크"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 9.756415836354988, 
-    "koterm": "적"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 9.372160786272943, 
-    "koterm": "소라"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 9.53374206353374, 
-    "koterm": "검붉은"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 9.301566262908272, 
-    "koterm": "버건디"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 6.313695168240269, 
-    "koterm": "어두운보라"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 16.675122106402526, 
-    "koterm": "짙은연두"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 6.898572462536864, 
-    "koterm": "네이비"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 7.6004781217945085, 
-    "koterm": "연남"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 9.650827464856025, 
-    "koterm": "코랄"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.129582801291837, 
-    "koterm": "진회"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 12.709647635937948, 
-    "koterm": "국방"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 6.438424568139169, 
-    "koterm": "짙은자주"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 14.439996692256603, 
-    "koterm": "올리브그린"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.051761250277248, 
-    "koterm": "적보라"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 15.180211431745596, 
-    "koterm": "녹두"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 8.177142550711222, 
-    "koterm": "탁한분홍"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.477879848372448, 
-    "koterm": "회갈"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.912733476196761, 
-    "koterm": "아이보리"
+    "frterm": "bleu",
+    "koterm": "보라",
+    "dist": 49.91180632195555
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "파랑",
+    "dist": 21.70890379240156
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연두",
+    "dist": 147.85079233132788
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "하늘",
+    "dist": 59.9905819671379
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "초록",
+    "dist": 130.36931371869872
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "자주",
+    "dist": 71.3078469133223
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "빨강",
+    "dist": 128.94616620210445
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "분홍",
+    "dist": 68.90724199000499
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연보라",
+    "dist": 42.19303998448416
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "주황",
+    "dist": 134.80547526462811
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "청록",
+    "dist": 80.06487993345038
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "갈",
+    "dist": 104.28704851216206
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "남",
+    "dist": 40.362100774250315
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "노랑",
+    "dist": 154.61779563679818
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "녹",
+    "dist": 124.29767506635
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "황토",
+    "dist": 120.36463567342948
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "풀",
+    "dist": 123.83100567176739
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진분홍",
+    "dist": 81.20742957306564
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "에메랄드",
+    "dist": 110.67176283623036
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "검정",
+    "dist": 84.80138549159498
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "다홍",
+    "dist": 116.0019835444714
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "민트",
+    "dist": 99.13647670774044
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "핑크",
+    "dist": 72.5497591869245
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "군청",
+    "dist": 35.47438146713408
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "회",
+    "dist": 74.16134380573973
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진보라",
+    "dist": 54.07294726387421
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "형광연두",
+    "dist": 155.6021116951054
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진녹",
+    "dist": 104.94986713376728
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연녹",
+    "dist": 126.3653193195247
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "고동",
+    "dist": 94.70904719807355
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "핫핑크",
+    "dist": 82.77721109661816
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "카키",
+    "dist": 108.37626293344385
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "옥",
+    "dist": 100.47480540342549
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "살구",
+    "dist": 98.63449260735267
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연갈",
+    "dist": 98.77636292016977
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "겨자",
+    "dist": 140.30388127796567
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "올리브",
+    "dist": 117.19839323174219
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연파랑",
+    "dist": 24.554098290960425
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연초록",
+    "dist": 123.46367802679848
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "베이지",
+    "dist": 97.55795471200182
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연분홍",
+    "dist": 69.32045643742572
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "형광보라",
+    "dist": 60.891213762850626
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "적갈",
+    "dist": 100.79740565586465
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "청",
+    "dist": 22.741475225040958
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "밝은보라",
+    "dist": 57.79984181847679
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "라임",
+    "dist": 153.1348249752733
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "개나리",
+    "dist": 147.788844675135
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "마젠타",
+    "dist": 76.12297461769637
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "바다",
+    "dist": 28.165886529790264
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진파랑",
+    "dist": 35.85135093518783
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진초록",
+    "dist": 103.96622282971839
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "형광초록",
+    "dist": 155.11106368220874
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "밝은연두",
+    "dist": 153.5907829088609
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진연두",
+    "dist": 143.38252425363746
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "귤",
+    "dist": 137.3923197637418
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "밝은파랑",
+    "dist": 17.086959449912758
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "형광하늘",
+    "dist": 80.43024592433022
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "짙은녹",
+    "dist": 103.90838969831992
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연노랑",
+    "dist": 139.10445941841712
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "상아",
+    "dist": 94.19019034153837
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "자홍",
+    "dist": 91.57619301145802
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진홍",
+    "dist": 89.959319804543
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연하늘",
+    "dist": 72.99192911417076
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "벽돌",
+    "dist": 102.4624574635331
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "짙은분홍",
+    "dist": 83.92098046728697
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "오렌지",
+    "dist": 137.72987846328968
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진하늘",
+    "dist": 37.10893456421655
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "형광녹",
+    "dist": 143.49354176384463
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "짙은보라",
+    "dist": 57.71021791878501
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진청",
+    "dist": 33.84859190507454
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "살",
+    "dist": 97.83264893403963
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진빨강",
+    "dist": 114.47343210131362
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "남보라",
+    "dist": 41.43205924287485
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연청록",
+    "dist": 92.69278300460361
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "형광",
+    "dist": 155.83962191712487
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "코발트블루",
+    "dist": 27.58604516757841
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "쑥",
+    "dist": 101.65483465624881
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "짙은초록",
+    "dist": 102.90986443424936
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "황록",
+    "dist": 134.58358459164762
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "금",
+    "dist": 130.56579444489404
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "청보라",
+    "dist": 44.73793325219147
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "밝은초록",
+    "dist": 143.40456369183627
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "짙은하늘",
+    "dist": 50.43030508099857
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "꽃분홍",
+    "dist": 82.34790380347542
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "짙은파랑",
+    "dist": 34.72661507437054
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "황갈",
+    "dist": 117.69794828382797
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "밝은녹",
+    "dist": 137.44962546655228
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "와인",
+    "dist": 87.2757045763289
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "레몬",
+    "dist": 142.55517300646855
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진달래",
+    "dist": 80.19800093052307
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "곤",
+    "dist": 48.14837927420662
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진갈",
+    "dist": 94.69111910211713
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "청회",
+    "dist": 59.72630168678562
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "밝은청록",
+    "dist": 94.28864504099988
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "감",
+    "dist": 84.49313990173161
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "형광분홍",
+    "dist": 77.59688652040815
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연주황",
+    "dist": 120.03198840506137
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연자주",
+    "dist": 57.310623299810246
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "자두",
+    "dist": 90.8089792409658
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "짙은갈",
+    "dist": 97.17192484018388
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "바이올렛",
+    "dist": 40.22240787963721
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "붉은",
+    "dist": 115.622390902175
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "소라",
+    "dist": 51.84568065958514
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "형광핑크",
+    "dist": 79.41574390781915
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "코랄",
+    "dist": 90.07351668583527
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "적",
+    "dist": 108.56534147759686
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "검붉은",
+    "dist": 102.05807573700147
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "짙은연두",
+    "dist": 134.4743253945711
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "국방",
+    "dist": 101.44045552202995
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "연남",
+    "dist": 45.96917877581055
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "올리브그린",
+    "dist": 119.48841881053002
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "짙은자주",
+    "dist": 74.90196633547546
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "버건디",
+    "dist": 99.03158947861641
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "아이보리",
+    "dist": 85.08106047832057
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "진회",
+    "dist": 76.85307918092664
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "어두운보라",
+    "dist": 55.30851793890934
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "탁한분홍",
+    "dist": 72.56852330279916
+  },
+  {
+    "frterm": "bleu",
+    "koterm": "적보라",
+    "dist": 58.67373796717699
+  },
+  {
+    "frterm": "vert",
+    "koterm": "보라",
+    "dist": 176.77732107405953
+  },
+  {
+    "frterm": "vert",
+    "koterm": "파랑",
+    "dist": 171.13965353463826
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연두",
+    "dist": 18.72661766648227
+  },
+  {
+    "frterm": "vert",
+    "koterm": "하늘",
+    "dist": 98.62000509229185
+  },
+  {
+    "frterm": "vert",
+    "koterm": "초록",
+    "dist": 32.70727867365932
+  },
+  {
+    "frterm": "vert",
+    "koterm": "자주",
+    "dist": 160.54644087914286
+  },
+  {
+    "frterm": "vert",
+    "koterm": "빨강",
+    "dist": 145.15624000006463
+  },
+  {
+    "frterm": "vert",
+    "koterm": "분홍",
+    "dist": 152.05812868173317
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연보라",
+    "dist": 141.6959824595213
+  },
+  {
+    "frterm": "vert",
+    "koterm": "주황",
+    "dist": 111.59280536547548
+  },
+  {
+    "frterm": "vert",
+    "koterm": "청록",
+    "dist": 77.77263190633886
+  },
+  {
+    "frterm": "vert",
+    "koterm": "갈",
+    "dist": 106.87701939953885
+  },
+  {
+    "frterm": "vert",
+    "koterm": "남",
+    "dist": 159.13123309669905
+  },
+  {
+    "frterm": "vert",
+    "koterm": "노랑",
+    "dist": 62.74479565524415
+  },
+  {
+    "frterm": "vert",
+    "koterm": "녹",
+    "dist": 41.046209696823894
+  },
+  {
+    "frterm": "vert",
+    "koterm": "황토",
+    "dist": 83.40447425611185
+  },
+  {
+    "frterm": "vert",
+    "koterm": "풀",
+    "dist": 46.91361307885951
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진분홍",
+    "dist": 160.923908214319
+  },
+  {
+    "frterm": "vert",
+    "koterm": "에메랄드",
+    "dist": 46.21199931821966
+  },
+  {
+    "frterm": "vert",
+    "koterm": "검정",
+    "dist": 120.19900503639592
+  },
+  {
+    "frterm": "vert",
+    "koterm": "다홍",
+    "dist": 143.63613092009507
+  },
+  {
+    "frterm": "vert",
+    "koterm": "민트",
+    "dist": 58.396890090046014
+  },
+  {
+    "frterm": "vert",
+    "koterm": "핑크",
+    "dist": 162.53918408768573
+  },
+  {
+    "frterm": "vert",
+    "koterm": "군청",
+    "dist": 160.31199392433885
+  },
+  {
+    "frterm": "vert",
+    "koterm": "회",
+    "dist": 95.5416522908556
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진보라",
+    "dist": 155.75067264895853
+  },
+  {
+    "frterm": "vert",
+    "koterm": "형광연두",
+    "dist": 10.290726374609838
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진녹",
+    "dist": 73.21036949095887
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연녹",
+    "dist": 35.749982686372356
+  },
+  {
+    "frterm": "vert",
+    "koterm": "고동",
+    "dist": 107.27514416731708
+  },
+  {
+    "frterm": "vert",
+    "koterm": "핫핑크",
+    "dist": 166.5182745257768
+  },
+  {
+    "frterm": "vert",
+    "koterm": "카키",
+    "dist": 70.87280619983693
+  },
+  {
+    "frterm": "vert",
+    "koterm": "옥",
+    "dist": 56.286083547386035
+  },
+  {
+    "frterm": "vert",
+    "koterm": "살구",
+    "dist": 94.47144592290306
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연갈",
+    "dist": 93.27341138349811
+  },
+  {
+    "frterm": "vert",
+    "koterm": "겨자",
+    "dist": 64.78547247806692
+  },
+  {
+    "frterm": "vert",
+    "koterm": "올리브",
+    "dist": 62.59698320011163
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연파랑",
+    "dist": 132.53586582421056
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연초록",
+    "dist": 33.10387300823496
+  },
+  {
+    "frterm": "vert",
+    "koterm": "베이지",
+    "dist": 79.78892492394364
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연분홍",
+    "dist": 120.9539085250368
+  },
+  {
+    "frterm": "vert",
+    "koterm": "형광보라",
+    "dist": 194.18437778209295
+  },
+  {
+    "frterm": "vert",
+    "koterm": "적갈",
+    "dist": 123.37166074567641
+  },
+  {
+    "frterm": "vert",
+    "koterm": "청",
+    "dist": 163.48182053202575
+  },
+  {
+    "frterm": "vert",
+    "koterm": "밝은보라",
+    "dist": 187.60328026390363
+  },
+  {
+    "frterm": "vert",
+    "koterm": "라임",
+    "dist": 31.50964489017211
+  },
+  {
+    "frterm": "vert",
+    "koterm": "개나리",
+    "dist": 73.76553662990104
+  },
+  {
+    "frterm": "vert",
+    "koterm": "마젠타",
+    "dist": 165.23175759449242
+  },
+  {
+    "frterm": "vert",
+    "koterm": "바다",
+    "dist": 134.13538028661748
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진파랑",
+    "dist": 179.3435085299712
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진초록",
+    "dist": 72.83953228069335
+  },
+  {
+    "frterm": "vert",
+    "koterm": "형광초록",
+    "dist": 12.86660042873414
+  },
+  {
+    "frterm": "vert",
+    "koterm": "밝은연두",
+    "dist": 17.34705597784228
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진연두",
+    "dist": 17.732794907506417
+  },
+  {
+    "frterm": "vert",
+    "koterm": "귤",
+    "dist": 91.87501520433
+  },
+  {
+    "frterm": "vert",
+    "koterm": "밝은파랑",
+    "dist": 140.60123757716923
+  },
+  {
+    "frterm": "vert",
+    "koterm": "형광하늘",
+    "dist": 81.72684784540441
+  },
+  {
+    "frterm": "vert",
+    "koterm": "짙은녹",
+    "dist": 71.7108652754626
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연노랑",
+    "dist": 52.48832253181427
+  },
+  {
+    "frterm": "vert",
+    "koterm": "상아",
+    "dist": 71.65216919554182
+  },
+  {
+    "frterm": "vert",
+    "koterm": "자홍",
+    "dist": 153.2925893618344
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진홍",
+    "dist": 153.98041165182534
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연하늘",
+    "dist": 87.09984655877727
+  },
+  {
+    "frterm": "vert",
+    "koterm": "벽돌",
+    "dist": 120.84799177503494
+  },
+  {
+    "frterm": "vert",
+    "koterm": "짙은분홍",
+    "dist": 154.42177775671686
+  },
+  {
+    "frterm": "vert",
+    "koterm": "오렌지",
+    "dist": 101.3879309663669
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진하늘",
+    "dist": 128.04699481022485
+  },
+  {
+    "frterm": "vert",
+    "koterm": "형광녹",
+    "dist": 17.566234357488963
+  },
+  {
+    "frterm": "vert",
+    "koterm": "짙은보라",
+    "dist": 149.2538176357329
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진청",
+    "dist": 157.54320873957343
+  },
+  {
+    "frterm": "vert",
+    "koterm": "살",
+    "dist": 94.76315650942695
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진빨강",
+    "dist": 138.68631437862683
+  },
+  {
+    "frterm": "vert",
+    "koterm": "남보라",
+    "dist": 169.5135869400076
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연청록",
+    "dist": 63.999833392417685
+  },
+  {
+    "frterm": "vert",
+    "koterm": "형광",
+    "dist": 23.27975030988502
+  },
+  {
+    "frterm": "vert",
+    "koterm": "코발트블루",
+    "dist": 172.33923022336484
+  },
+  {
+    "frterm": "vert",
+    "koterm": "쑥",
+    "dist": 69.23360157877673
+  },
+  {
+    "frterm": "vert",
+    "koterm": "짙은초록",
+    "dist": 72.150630072219
+  },
+  {
+    "frterm": "vert",
+    "koterm": "황록",
+    "dist": 48.60804032640139
+  },
+  {
+    "frterm": "vert",
+    "koterm": "금",
+    "dist": 67.56876986391698
+  },
+  {
+    "frterm": "vert",
+    "koterm": "청보라",
+    "dist": 185.2467466772099
+  },
+  {
+    "frterm": "vert",
+    "koterm": "밝은초록",
+    "dist": 15.791706826298897
+  },
+  {
+    "frterm": "vert",
+    "koterm": "짙은하늘",
+    "dist": 108.76319298296107
+  },
+  {
+    "frterm": "vert",
+    "koterm": "꽃분홍",
+    "dist": 162.67350743486264
+  },
+  {
+    "frterm": "vert",
+    "koterm": "짙은파랑",
+    "dist": 176.89907720503479
+  },
+  {
+    "frterm": "vert",
+    "koterm": "황갈",
+    "dist": 88.98446845581144
+  },
+  {
+    "frterm": "vert",
+    "koterm": "밝은녹",
+    "dist": 21.323545095447283
+  },
+  {
+    "frterm": "vert",
+    "koterm": "와인",
+    "dist": 135.327717491068
+  },
+  {
+    "frterm": "vert",
+    "koterm": "레몬",
+    "dist": 52.32087438048495
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진달래",
+    "dist": 158.80066282719432
+  },
+  {
+    "frterm": "vert",
+    "koterm": "곤",
+    "dist": 143.9598434926928
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진갈",
+    "dist": 118.82965078887197
+  },
+  {
+    "frterm": "vert",
+    "koterm": "청회",
+    "dist": 105.5573051480421
+  },
+  {
+    "frterm": "vert",
+    "koterm": "밝은청록",
+    "dist": 65.14605056141401
+  },
+  {
+    "frterm": "vert",
+    "koterm": "감",
+    "dist": 118.35323096975672
+  },
+  {
+    "frterm": "vert",
+    "koterm": "형광분홍",
+    "dist": 182.97508766534136
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연주황",
+    "dist": 95.69151529123369
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연자주",
+    "dist": 151.48387278371487
+  },
+  {
+    "frterm": "vert",
+    "koterm": "자두",
+    "dist": 144.8702444464938
+  },
+  {
+    "frterm": "vert",
+    "koterm": "짙은갈",
+    "dist": 116.29003563663746
+  },
+  {
+    "frterm": "vert",
+    "koterm": "바이올렛",
+    "dist": 169.8392900958262
+  },
+  {
+    "frterm": "vert",
+    "koterm": "붉은",
+    "dist": 143.0883857911297
+  },
+  {
+    "frterm": "vert",
+    "koterm": "소라",
+    "dist": 109.39330043947501
+  },
+  {
+    "frterm": "vert",
+    "koterm": "형광핑크",
+    "dist": 179.46943713047258
+  },
+  {
+    "frterm": "vert",
+    "koterm": "코랄",
+    "dist": 114.95475942378529
+  },
+  {
+    "frterm": "vert",
+    "koterm": "적",
+    "dist": 131.56175033575502
+  },
+  {
+    "frterm": "vert",
+    "koterm": "검붉은",
+    "dist": 130.3482980206686
+  },
+  {
+    "frterm": "vert",
+    "koterm": "짙은연두",
+    "dist": 37.25866092957628
+  },
+  {
+    "frterm": "vert",
+    "koterm": "국방",
+    "dist": 79.6875414549963
+  },
+  {
+    "frterm": "vert",
+    "koterm": "연남",
+    "dist": 131.78275127189914
+  },
+  {
+    "frterm": "vert",
+    "koterm": "올리브그린",
+    "dist": 63.640720244238096
+  },
+  {
+    "frterm": "vert",
+    "koterm": "짙은자주",
+    "dist": 145.55779718015995
+  },
+  {
+    "frterm": "vert",
+    "koterm": "버건디",
+    "dist": 134.40785068772564
+  },
+  {
+    "frterm": "vert",
+    "koterm": "아이보리",
+    "dist": 88.54274439695301
+  },
+  {
+    "frterm": "vert",
+    "koterm": "진회",
+    "dist": 102.14767982493436
+  },
+  {
+    "frterm": "vert",
+    "koterm": "어두운보라",
+    "dist": 141.9912381188058
+  },
+  {
+    "frterm": "vert",
+    "koterm": "탁한분홍",
+    "dist": 118.78395376160904
+  },
+  {
+    "frterm": "vert",
+    "koterm": "적보라",
+    "dist": 152.8921873303183
+  },
+  {
+    "frterm": "violet",
+    "koterm": "보라",
+    "dist": 33.34500683271834
+  },
+  {
+    "frterm": "violet",
+    "koterm": "파랑",
+    "dist": 55.451491475098685
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연두",
+    "dist": 192.5058808554436
+  },
+  {
+    "frterm": "violet",
+    "koterm": "하늘",
+    "dist": 120.7778027608002
+  },
+  {
+    "frterm": "violet",
+    "koterm": "초록",
+    "dist": 179.03615178755905
+  },
+  {
+    "frterm": "violet",
+    "koterm": "자주",
+    "dist": 52.18594459944291
+  },
+  {
+    "frterm": "violet",
+    "koterm": "빨강",
+    "dist": 113.07538713396194
+  },
+  {
+    "frterm": "violet",
+    "koterm": "분홍",
+    "dist": 58.34205098823411
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연보라",
+    "dist": 65.36652829854899
+  },
+  {
+    "frterm": "violet",
+    "koterm": "주황",
+    "dist": 139.941256492787
+  },
+  {
+    "frterm": "violet",
+    "koterm": "청록",
+    "dist": 136.55709115672775
+  },
+  {
+    "frterm": "violet",
+    "koterm": "갈",
+    "dist": 118.34362040308687
+  },
+  {
+    "frterm": "violet",
+    "koterm": "남",
+    "dist": 66.12841166072569
+  },
+  {
+    "frterm": "violet",
+    "koterm": "노랑",
+    "dist": 182.0340063731682
+  },
+  {
+    "frterm": "violet",
+    "koterm": "녹",
+    "dist": 171.63378964900562
+  },
+  {
+    "frterm": "violet",
+    "koterm": "황토",
+    "dist": 141.27583158696754
+  },
+  {
+    "frterm": "violet",
+    "koterm": "풀",
+    "dist": 165.22269929919466
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진분홍",
+    "dist": 57.58558411943793
+  },
+  {
+    "frterm": "violet",
+    "koterm": "에메랄드",
+    "dist": 164.6693028180129
+  },
+  {
+    "frterm": "violet",
+    "koterm": "검정",
+    "dist": 112.77238044633654
+  },
+  {
+    "frterm": "violet",
+    "koterm": "다홍",
+    "dist": 101.92291497053628
+  },
+  {
+    "frterm": "violet",
+    "koterm": "민트",
+    "dist": 153.45168805571788
+  },
+  {
+    "frterm": "violet",
+    "koterm": "핑크",
+    "dist": 49.98385731150514
+  },
+  {
+    "frterm": "violet",
+    "koterm": "군청",
+    "dist": 62.19558532288414
+  },
+  {
+    "frterm": "violet",
+    "koterm": "회",
+    "dist": 111.65784984993559
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진보라",
+    "dist": 60.09660321606334
+  },
+  {
+    "frterm": "violet",
+    "koterm": "형광연두",
+    "dist": 203.3186079760906
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진녹",
+    "dist": 147.82718926121623
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연녹",
+    "dist": 170.970939677164
+  },
+  {
+    "frterm": "violet",
+    "koterm": "고동",
+    "dist": 115.4107982661222
+  },
+  {
+    "frterm": "violet",
+    "koterm": "핫핑크",
+    "dist": 53.19476352616004
+  },
+  {
+    "frterm": "violet",
+    "koterm": "카키",
+    "dist": 143.3712597292356
+  },
+  {
+    "frterm": "violet",
+    "koterm": "옥",
+    "dist": 155.82044711151275
+  },
+  {
+    "frterm": "violet",
+    "koterm": "살구",
+    "dist": 120.11984701418442
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연갈",
+    "dist": 120.55358359032539
+  },
+  {
+    "frterm": "violet",
+    "koterm": "겨자",
+    "dist": 167.56248586714466
+  },
+  {
+    "frterm": "violet",
+    "koterm": "올리브",
+    "dist": 151.84889028799117
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연파랑",
+    "dist": 88.12312314880401
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연초록",
+    "dist": 172.6033491517934
+  },
+  {
+    "frterm": "violet",
+    "koterm": "베이지",
+    "dist": 129.24151290336343
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연분홍",
+    "dist": 87.0271501562383
+  },
+  {
+    "frterm": "violet",
+    "koterm": "형광보라",
+    "dist": 19.405616507658955
+  },
+  {
+    "frterm": "violet",
+    "koterm": "적갈",
+    "dist": 104.3464031752654
+  },
+  {
+    "frterm": "violet",
+    "koterm": "청",
+    "dist": 59.79114906598263
+  },
+  {
+    "frterm": "violet",
+    "koterm": "밝은보라",
+    "dist": 21.08691981511353
+  },
+  {
+    "frterm": "violet",
+    "koterm": "라임",
+    "dist": 192.92228565214896
+  },
+  {
+    "frterm": "violet",
+    "koterm": "개나리",
+    "dist": 170.63257670527472
+  },
+  {
+    "frterm": "violet",
+    "koterm": "마젠타",
+    "dist": 50.516525642794846
+  },
+  {
+    "frterm": "violet",
+    "koterm": "바다",
+    "dist": 85.32391674789298
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진파랑",
+    "dist": 49.363593682310075
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진초록",
+    "dist": 149.2292428871262
+  },
+  {
+    "frterm": "violet",
+    "koterm": "형광초록",
+    "dist": 204.5291961873981
+  },
+  {
+    "frterm": "violet",
+    "koterm": "밝은연두",
+    "dist": 198.28026492877234
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진연두",
+    "dist": 191.60077807651308
+  },
+  {
+    "frterm": "violet",
+    "koterm": "귤",
+    "dist": 151.7221242743779
+  },
+  {
+    "frterm": "violet",
+    "koterm": "밝은파랑",
+    "dist": 82.0525212732913
+  },
+  {
+    "frterm": "violet",
+    "koterm": "형광하늘",
+    "dist": 140.30293245790202
+  },
+  {
+    "frterm": "violet",
+    "koterm": "짙은녹",
+    "dist": 145.0026337302248
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연노랑",
+    "dist": 171.950656581687
+  },
+  {
+    "frterm": "violet",
+    "koterm": "상아",
+    "dist": 134.43296760389006
+  },
+  {
+    "frterm": "violet",
+    "koterm": "자홍",
+    "dist": 72.58904551563444
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진홍",
+    "dist": 70.9845210997096
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연하늘",
+    "dist": 127.93204351627173
+  },
+  {
+    "frterm": "violet",
+    "koterm": "벽돌",
+    "dist": 106.32033154298465
+  },
+  {
+    "frterm": "violet",
+    "koterm": "짙은분홍",
+    "dist": 64.88019239545903
+  },
+  {
+    "frterm": "violet",
+    "koterm": "오렌지",
+    "dist": 147.95030554226727
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진하늘",
+    "dist": 93.8374657702224
+  },
+  {
+    "frterm": "violet",
+    "koterm": "형광녹",
+    "dist": 194.92145526730243
+  },
+  {
+    "frterm": "violet",
+    "koterm": "짙은보라",
+    "dist": 68.49297062694048
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진청",
+    "dist": 67.23604994243455
+  },
+  {
+    "frterm": "violet",
+    "koterm": "살",
+    "dist": 118.73892755980889
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진빨강",
+    "dist": 104.39630008799645
+  },
+  {
+    "frterm": "violet",
+    "koterm": "남보라",
+    "dist": 51.96349250948228
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연청록",
+    "dist": 147.3251097336915
+  },
+  {
+    "frterm": "violet",
+    "koterm": "형광",
+    "dist": 198.44601999589634
+  },
+  {
+    "frterm": "violet",
+    "koterm": "코발트블루",
+    "dist": 52.21343766490782
+  },
+  {
+    "frterm": "violet",
+    "koterm": "쑥",
+    "dist": 142.84099663902055
+  },
+  {
+    "frterm": "violet",
+    "koterm": "짙은초록",
+    "dist": 148.86537540246547
+  },
+  {
+    "frterm": "violet",
+    "koterm": "황록",
+    "dist": 170.55189716459319
+  },
+  {
+    "frterm": "violet",
+    "koterm": "금",
+    "dist": 157.36435382752092
+  },
+  {
+    "frterm": "violet",
+    "koterm": "청보라",
+    "dist": 37.50225466261189
+  },
+  {
+    "frterm": "violet",
+    "koterm": "밝은초록",
+    "dist": 193.90941973620534
+  },
+  {
+    "frterm": "violet",
+    "koterm": "짙은하늘",
+    "dist": 111.0287071768296
+  },
+  {
+    "frterm": "violet",
+    "koterm": "꽃분홍",
+    "dist": 55.81511346947707
+  },
+  {
+    "frterm": "violet",
+    "koterm": "짙은파랑",
+    "dist": 53.07558786835552
+  },
+  {
+    "frterm": "violet",
+    "koterm": "황갈",
+    "dist": 137.20631053868152
+  },
+  {
+    "frterm": "violet",
+    "koterm": "밝은녹",
+    "dist": 187.6862929119413
+  },
+  {
+    "frterm": "violet",
+    "koterm": "와인",
+    "dist": 86.54127930096102
+  },
+  {
+    "frterm": "violet",
+    "koterm": "레몬",
+    "dist": 174.64971269018352
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진달래",
+    "dist": 58.07053142095249
+  },
+  {
+    "frterm": "violet",
+    "koterm": "곤",
+    "dist": 79.05504418223916
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진갈",
+    "dist": 108.45616104845143
+  },
+  {
+    "frterm": "violet",
+    "koterm": "청회",
+    "dist": 104.86271287174813
+  },
+  {
+    "frterm": "violet",
+    "koterm": "밝은청록",
+    "dist": 152.43086689437774
+  },
+  {
+    "frterm": "violet",
+    "koterm": "감",
+    "dist": 101.80815871867297
+  },
+  {
+    "frterm": "violet",
+    "koterm": "형광분홍",
+    "dist": 32.65282406619456
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연주황",
+    "dist": 134.44464853962276
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연자주",
+    "dist": 55.67608173532271
+  },
+  {
+    "frterm": "violet",
+    "koterm": "자두",
+    "dist": 79.07165516300488
+  },
+  {
+    "frterm": "violet",
+    "koterm": "짙은갈",
+    "dist": 113.02789132125338
+  },
+  {
+    "frterm": "violet",
+    "koterm": "바이올렛",
+    "dist": 41.72726939381891
+  },
+  {
+    "frterm": "violet",
+    "koterm": "붉은",
+    "dist": 101.2761484635224
+  },
+  {
+    "frterm": "violet",
+    "koterm": "소라",
+    "dist": 102.31380517683186
+  },
+  {
+    "frterm": "violet",
+    "koterm": "형광핑크",
+    "dist": 38.43507606435756
+  },
+  {
+    "frterm": "violet",
+    "koterm": "코랄",
+    "dist": 101.32953551330932
+  },
+  {
+    "frterm": "violet",
+    "koterm": "적",
+    "dist": 103.4499196215705
+  },
+  {
+    "frterm": "violet",
+    "koterm": "검붉은",
+    "dist": 101.26614333692496
+  },
+  {
+    "frterm": "violet",
+    "koterm": "짙은연두",
+    "dist": 178.51751997662524
+  },
+  {
+    "frterm": "violet",
+    "koterm": "국방",
+    "dist": 139.0030644021691
+  },
+  {
+    "frterm": "violet",
+    "koterm": "연남",
+    "dist": 83.65760454156737
+  },
+  {
+    "frterm": "violet",
+    "koterm": "올리브그린",
+    "dist": 154.19566603213855
+  },
+  {
+    "frterm": "violet",
+    "koterm": "짙은자주",
+    "dist": 69.80288104815347
+  },
+  {
+    "frterm": "violet",
+    "koterm": "버건디",
+    "dist": 94.97175477178568
+  },
+  {
+    "frterm": "violet",
+    "koterm": "아이보리",
+    "dist": 119.0969764296241
+  },
+  {
+    "frterm": "violet",
+    "koterm": "진회",
+    "dist": 113.94749457485543
+  },
+  {
+    "frterm": "violet",
+    "koterm": "어두운보라",
+    "dist": 73.03178671544782
+  },
+  {
+    "frterm": "violet",
+    "koterm": "탁한분홍",
+    "dist": 88.75940825762699
+  },
+  {
+    "frterm": "violet",
+    "koterm": "적보라",
+    "dist": 57.81652405916326
+  },
+  {
+    "frterm": "rose",
+    "koterm": "보라",
+    "dist": 47.111688319276105
+  },
+  {
+    "frterm": "rose",
+    "koterm": "파랑",
+    "dist": 76.22787444850123
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연두",
+    "dist": 160.86964067830107
+  },
+  {
+    "frterm": "rose",
+    "koterm": "하늘",
+    "dist": 110.00151927797113
+  },
+  {
+    "frterm": "rose",
+    "koterm": "초록",
+    "dist": 151.07791992549582
+  },
+  {
+    "frterm": "rose",
+    "koterm": "자주",
+    "dist": 26.448670303301284
+  },
+  {
+    "frterm": "rose",
+    "koterm": "빨강",
+    "dist": 66.22143551811928
+  },
+  {
+    "frterm": "rose",
+    "koterm": "분홍",
+    "dist": 26.154997489176207
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연보라",
+    "dist": 56.26117540084061
+  },
+  {
+    "frterm": "rose",
+    "koterm": "주황",
+    "dist": 94.17042717181322
+  },
+  {
+    "frterm": "rose",
+    "koterm": "청록",
+    "dist": 118.51717016577153
+  },
+  {
+    "frterm": "rose",
+    "koterm": "갈",
+    "dist": 81.49867642703177
+  },
+  {
+    "frterm": "rose",
+    "koterm": "남",
+    "dist": 71.75027885800216
+  },
+  {
+    "frterm": "rose",
+    "koterm": "노랑",
+    "dist": 142.0440916725396
+  },
+  {
+    "frterm": "rose",
+    "koterm": "녹",
+    "dist": 143.66623585984806
+  },
+  {
+    "frterm": "rose",
+    "koterm": "황토",
+    "dist": 101.80389277489229
+  },
+  {
+    "frterm": "rose",
+    "koterm": "풀",
+    "dist": 134.12129411098647
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진분홍",
+    "dist": 16.336322944727108
+  },
+  {
+    "frterm": "rose",
+    "koterm": "에메랄드",
+    "dist": 141.61103280606696
+  },
+  {
+    "frterm": "rose",
+    "koterm": "검정",
+    "dist": 93.72708433416756
+  },
+  {
+    "frterm": "rose",
+    "koterm": "다홍",
+    "dist": 55.360928103592435
+  },
+  {
+    "frterm": "rose",
+    "koterm": "민트",
+    "dist": 132.2091443568841
+  },
+  {
+    "frterm": "rose",
+    "koterm": "핑크",
+    "dist": 17.987119686243496
+  },
+  {
+    "frterm": "rose",
+    "koterm": "군청",
+    "dist": 70.61421747196566
+  },
+  {
+    "frterm": "rose",
+    "koterm": "회",
+    "dist": 88.77113655899755
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진보라",
+    "dist": 53.72685911492722
+  },
+  {
+    "frterm": "rose",
+    "koterm": "형광연두",
+    "dist": 173.00442043117246
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진녹",
+    "dist": 121.8184551168836
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연녹",
+    "dist": 141.05870157174962
+  },
+  {
+    "frterm": "rose",
+    "koterm": "고동",
+    "dist": 83.75314568255742
+  },
+  {
+    "frterm": "rose",
+    "koterm": "핫핑크",
+    "dist": 12.782538100717401
+  },
+  {
+    "frterm": "rose",
+    "koterm": "카키",
+    "dist": 112.21929205091152
+  },
+  {
+    "frterm": "rose",
+    "koterm": "옥",
+    "dist": 134.74875172229332
+  },
+  {
+    "frterm": "rose",
+    "koterm": "살구",
+    "dist": 83.18800463137529
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연갈",
+    "dist": 84.7301586140857
+  },
+  {
+    "frterm": "rose",
+    "koterm": "겨자",
+    "dist": 128.52478929692168
+  },
+  {
+    "frterm": "rose",
+    "koterm": "올리브",
+    "dist": 118.77746023789419
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연파랑",
+    "dist": 89.01253231973996
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연초록",
+    "dist": 145.47622058197985
+  },
+  {
+    "frterm": "rose",
+    "koterm": "베이지",
+    "dist": 97.32558994649376
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연분홍",
+    "dist": 58.92757653020686
+  },
+  {
+    "frterm": "rose",
+    "koterm": "형광보라",
+    "dist": 51.3656193367788
+  },
+  {
+    "frterm": "rose",
+    "koterm": "적갈",
+    "dist": 67.6023710167195
+  },
+  {
+    "frterm": "rose",
+    "koterm": "청",
+    "dist": 74.96861503798338
+  },
+  {
+    "frterm": "rose",
+    "koterm": "밝은보라",
+    "dist": 46.606020519992775
+  },
+  {
+    "frterm": "rose",
+    "koterm": "라임",
+    "dist": 158.29013996239297
+  },
+  {
+    "frterm": "rose",
+    "koterm": "개나리",
+    "dist": 129.246110780421
+  },
+  {
+    "frterm": "rose",
+    "koterm": "마젠타",
+    "dist": 16.439148925691278
+  },
+  {
+    "frterm": "rose",
+    "koterm": "바다",
+    "dist": 86.34049363039047
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진파랑",
+    "dist": 72.8137680274793
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진초록",
+    "dist": 124.43843600862546
+  },
+  {
+    "frterm": "rose",
+    "koterm": "형광초록",
+    "dist": 175.1573377713339
+  },
+  {
+    "frterm": "rose",
+    "koterm": "밝은연두",
+    "dist": 166.48648122991287
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진연두",
+    "dist": 162.3047936505975
+  },
+  {
+    "frterm": "rose",
+    "koterm": "귤",
+    "dist": 108.47724984193549
+  },
+  {
+    "frterm": "rose",
+    "koterm": "밝은파랑",
+    "dist": 87.73125915378226
+  },
+  {
+    "frterm": "rose",
+    "koterm": "형광하늘",
+    "dist": 125.97539219345303
+  },
+  {
+    "frterm": "rose",
+    "koterm": "짙은녹",
+    "dist": 118.68851975593451
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연노랑",
+    "dist": 135.35701080575825
+  },
+  {
+    "frterm": "rose",
+    "koterm": "상아",
+    "dist": 106.5264102826973
+  },
+  {
+    "frterm": "rose",
+    "koterm": "자홍",
+    "dist": 29.861129991079874
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진홍",
+    "dist": 29.006148024928436
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연하늘",
+    "dist": 112.00888472929748
+  },
+  {
+    "frterm": "rose",
+    "koterm": "벽돌",
+    "dist": 67.57403019845285
+  },
+  {
+    "frterm": "rose",
+    "koterm": "짙은분홍",
+    "dist": 22.781013310315473
+  },
+  {
+    "frterm": "rose",
+    "koterm": "오렌지",
+    "dist": 103.27016573148877
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진하늘",
+    "dist": 92.61706021668363
+  },
+  {
+    "frterm": "rose",
+    "koterm": "형광녹",
+    "dist": 167.26654069325224
+  },
+  {
+    "frterm": "rose",
+    "koterm": "짙은보라",
+    "dist": 58.405695373522555
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진청",
+    "dist": 75.68329436222696
+  },
+  {
+    "frterm": "rose",
+    "koterm": "살",
+    "dist": 83.5140138591876
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진빨강",
+    "dist": 61.900544885377705
+  },
+  {
+    "frterm": "rose",
+    "koterm": "남보라",
+    "dist": 63.56712514630816
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연청록",
+    "dist": 126.7212356312607
+  },
+  {
+    "frterm": "rose",
+    "koterm": "형광",
+    "dist": 165.11612927673326
+  },
+  {
+    "frterm": "rose",
+    "koterm": "코발트블루",
+    "dist": 72.75212591829639
+  },
+  {
+    "frterm": "rose",
+    "koterm": "쑥",
+    "dist": 115.8253789602004
+  },
+  {
+    "frterm": "rose",
+    "koterm": "짙은초록",
+    "dist": 124.4408196894647
+  },
+  {
+    "frterm": "rose",
+    "koterm": "황록",
+    "dist": 135.22301239912673
+  },
+  {
+    "frterm": "rose",
+    "koterm": "금",
+    "dist": 119.40255269015898
+  },
+  {
+    "frterm": "rose",
+    "koterm": "청보라",
+    "dist": 63.76001197003123
+  },
+  {
+    "frterm": "rose",
+    "koterm": "밝은초록",
+    "dist": 166.162908584882
+  },
+  {
+    "frterm": "rose",
+    "koterm": "짙은하늘",
+    "dist": 102.53705602341682
+  },
+  {
+    "frterm": "rose",
+    "koterm": "꽃분홍",
+    "dist": 15.43539305207553
+  },
+  {
+    "frterm": "rose",
+    "koterm": "짙은파랑",
+    "dist": 75.20190607011386
+  },
+  {
+    "frterm": "rose",
+    "koterm": "황갈",
+    "dist": 98.3547273289241
+  },
+  {
+    "frterm": "rose",
+    "koterm": "밝은녹",
+    "dist": 159.75591306692684
+  },
+  {
+    "frterm": "rose",
+    "koterm": "와인",
+    "dist": 54.45964039932272
+  },
+  {
+    "frterm": "rose",
+    "koterm": "레몬",
+    "dist": 137.56244829377385
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진달래",
+    "dist": 19.855965917156833
+  },
+  {
+    "frterm": "rose",
+    "koterm": "곤",
+    "dist": 75.62140574338085
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진갈",
+    "dist": 78.09246716673145
+  },
+  {
+    "frterm": "rose",
+    "koterm": "청회",
+    "dist": 89.33677415704706
+  },
+  {
+    "frterm": "rose",
+    "koterm": "밝은청록",
+    "dist": 134.3631232422564
+  },
+  {
+    "frterm": "rose",
+    "koterm": "감",
+    "dist": 77.87779345252675
+  },
+  {
+    "frterm": "rose",
+    "koterm": "형광분홍",
+    "dist": 20.251776565538236
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연주황",
+    "dist": 92.16820070807488
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연자주",
+    "dist": 36.52263989002468
+  },
+  {
+    "frterm": "rose",
+    "koterm": "자두",
+    "dist": 37.33514218650591
+  },
+  {
+    "frterm": "rose",
+    "koterm": "짙은갈",
+    "dist": 83.1141923829011
+  },
+  {
+    "frterm": "rose",
+    "koterm": "바이올렛",
+    "dist": 53.966918662816425
+  },
+  {
+    "frterm": "rose",
+    "koterm": "붉은",
+    "dist": 56.66440061471609
+  },
+  {
+    "frterm": "rose",
+    "koterm": "소라",
+    "dist": 89.14413084219473
+  },
+  {
+    "frterm": "rose",
+    "koterm": "형광핑크",
+    "dist": 14.677605640838577
+  },
+  {
+    "frterm": "rose",
+    "koterm": "코랄",
+    "dist": 62.44886176836624
+  },
+  {
+    "frterm": "rose",
+    "koterm": "적",
+    "dist": 62.78332254232681
+  },
+  {
+    "frterm": "rose",
+    "koterm": "검붉은",
+    "dist": 65.94918831237362
+  },
+  {
+    "frterm": "rose",
+    "koterm": "짙은연두",
+    "dist": 147.25982840427838
+  },
+  {
+    "frterm": "rose",
+    "koterm": "국방",
+    "dist": 111.78367541646912
+  },
+  {
+    "frterm": "rose",
+    "koterm": "연남",
+    "dist": 78.56884931815316
+  },
+  {
+    "frterm": "rose",
+    "koterm": "올리브그린",
+    "dist": 122.06315071362634
+  },
+  {
+    "frterm": "rose",
+    "koterm": "짙은자주",
+    "dist": 46.593737731728126
+  },
+  {
+    "frterm": "rose",
+    "koterm": "버건디",
+    "dist": 57.086123874213655
+  },
+  {
+    "frterm": "rose",
+    "koterm": "아이보리",
+    "dist": 92.13883797870228
+  },
+  {
+    "frterm": "rose",
+    "koterm": "진회",
+    "dist": 93.1372156598475
+  },
+  {
+    "frterm": "rose",
+    "koterm": "어두운보라",
+    "dist": 60.74745212854062
+  },
+  {
+    "frterm": "rose",
+    "koterm": "탁한분홍",
+    "dist": 59.153637686302154
+  },
+  {
+    "frterm": "rose",
+    "koterm": "적보라",
+    "dist": 41.37133860545833
   }
 ]

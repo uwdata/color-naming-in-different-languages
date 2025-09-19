@@ -93,15 +93,21 @@ function getDistanceMetrix(){
   });
 
   for (let i = 0; i < MSize; i++) {
-    let l_i = Math.floor(i / (nA * nB));
-    let a_i = Math.floor((i % (nA * nB)) / nB);
-    let b_i = (i % (nA * nB)) % nB;
+    let l_i_bin = Math.floor(i / (nA * nB));
+    let a_i_bin = Math.floor((i % (nA * nB)) / nB);
+    let b_i_bin = (i % (nA * nB)) % nB;
+
+    const [l_i, a_i, b_i] = labBinner.getLAB(l_i_bin, a_i_bin, b_i_bin)
+
 
 
     for (let j = 0; j < MSize; j++) {
-      let l_j = Math.floor(j / (nA * nB));
-      let a_j = Math.floor((j % (nA * nB)) / nB);
-      let b_j = (j % (nA * nB)) % nB;
+      let l_j_bin = Math.floor(j / (nA * nB));
+      let a_j_bin = Math.floor((j % (nA * nB)) / nB);
+      let b_j_bin = (j % (nA * nB)) % nB;
+
+      const [l_j, a_j, b_j] = labBinner.getLAB(l_j_bin, a_j_bin, b_j_bin)
+
       distM[i][j] = Math.sqrt(Math.pow(l_i - l_j,2) + Math.pow(a_i - a_j,2) + Math.pow(b_i - b_j,2));
     }
   }

@@ -61,6 +61,44 @@
   <span style="padding-left:20px">Compare how Korean and English color names differ on the Viridis color spectrum ( <img src='vis/viridis-smallest.png'> ) that is sometimes used in visualizations.</span>
 </p>
 
+<h2>Paper Diagrams</h2>
+<p>Here are links to see the actual diagrams from the paper. But note a few difficulties with these diagrams:
+<ul>
+<li>In the translation comparison graph, we made an error in calculating distance (we had measured distance by 10x LAB bins, instead of regular LAB space) 
+  so our distance measure was 10x too small, making us underestimate what changes were noticeable.</li>
+
+<li> Additionally, when we try re-running the processing now, we get slightly different results than the paper
+  probably due to library changes and subtle effects on processing (e.g., CSV file edge cases, handling unusual unicode values) 
+  though we haven't figured out exactly what the differences are.</li>
+</ul>
+</p>
+
+<p>Here are the diagram links:
+<ul>
+  <li>Full color maps:
+    <ul>
+      <li><a href="http://localhost:8000/2019_paper_version/vis/full_color_maps_figure_old.html">Original full color map from paper</a></li>
+      <li><a href="http://localhost:8000/2019_paper_version/vis/full_color_maps_figure.html">Re-processed full color map</a></li>
+    </ul>
+  </li>
+    <li>Hue Color Maps:
+    <ul>
+      <li><a href="http://localhost:8000/2019_paper_version/vis/color-composition-figure.html">Original hue color map from paper</a></li>
+    </ul>
+  </li>
+  <li>English / Korean Translation comparison:
+    <ul>
+      <li><a href="http://localhost:8000/2019_paper_version/vis/en-ko-translation-comparison-old-error.html">The original graph with incorrect distance measure</a></li>
+      <li><a href="http://localhost:8000/2019_paper_version/vis/en-ko-translation-comparison-old-fixed.html">The original graph with corrected distance measure</a></li>
+      <li><a href="http://localhost:8000/2019_paper_version/vis/en-ko-translation-comparison.html">The reprocessed version of the diagram with correct distance measure</a></li>
+    </ul>
+  </li>
+</ul>
+</p>
+
+
+
+
 
 <h2>Dataset</h2>
 <p>We have made our dataset, models, and visualizations <a href="https://github.com/uwdata/color-naming-in-different-languages/">freely available for download</a>. We plan on continuing to update this dataset as we collect more data.</p>

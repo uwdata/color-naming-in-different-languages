@@ -1,67 +1,42 @@
 [
-  {}, 
+  {},
   {
-    "frterm": "bleu", 
-    "dist": 14.799002598586785, 
-    "frterm2": "vert"
-  }, 
+    "frterm": "bleu",
+    "frterm2": "vert",
+    "dist": 154.6475716264195
+  },
   {
-    "frterm": "bleu", 
-    "dist": 7.377613545305304, 
-    "frterm2": "violet"
-  }, 
+    "frterm": "bleu",
+    "frterm2": "violet",
+    "dist": 71.10735001261756
+  },
   {
-    "frterm": "bleu", 
-    "dist": 9.37568421043294, 
-    "frterm2": "rose"
-  }, 
+    "frterm": "bleu",
+    "frterm2": "rose",
+    "dist": 85.91641358895242
+  },
+  {},
+  {},
   {
-    "frterm": "bleu", 
-    "dist": 6.707180693997538, 
-    "frterm2": "mauve"
-  }, 
-  {}, 
-  {}, 
+    "frterm": "vert",
+    "frterm2": "violet",
+    "dist": 203.58429554275173
+  },
+  {},
+  {},
+  {},
+  {},
+  {},
+  {},
   {
-    "frterm": "vert", 
-    "dist": 19.45036092011689, 
-    "frterm2": "violet"
-  }, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
-  {}, 
+    "frterm": "rose",
+    "frterm2": "vert",
+    "dist": 174.1945999377098
+  },
   {
-    "frterm": "rose", 
-    "dist": 16.70166656137978, 
-    "frterm2": "vert"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.18511883824533, 
-    "frterm2": "violet"
-  }, 
-  {}, 
-  {}, 
-  {}, 
-  {
-    "frterm": "mauve", 
-    "dist": 18.883555147678763, 
-    "frterm2": "vert"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 1.0394899352471962, 
-    "frterm2": "violet"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.310497268628821, 
-    "frterm2": "rose"
-  }, 
+    "frterm": "rose",
+    "frterm2": "violet",
+    "dist": 49.618057507169475
+  },
   {}
 ]

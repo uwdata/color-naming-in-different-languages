@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/translation.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/d3/d3.min.js"></script>
+    <script type="text/javascript" src="js/translation-old-error.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+	  <h1>Korean-English Translation Comparisons</h1>
+    <p><strong>Note: This is the 2019 EuroVis version of the site, <a href="../../vis/en-ko-translation-comparison.html">the latest version is here.</a></strong></p>
+
+    <p>This is our the original graph (with an erroneous distance calculation) from our paper <a href="https://idl.uw.edu/papers/multi-lingual-color-names">2019 EuroVis paper</a>.</p> 
+
+    <p>In our paper we made an error in calculating distance (we had measured distance by 10x LAB bins, instead of regular LAB space) 
+      so our distance measure was 10x too small, making us underestimate what changes were noticeable.</p>
+
+    <p> Additionally, when we try re-running the processing now we get slightly different results, than the paper
+      probably due to library changes and subtle effects on processing (e.g., CSV file edge cases, handling unusual unicode values) 
+      though we haven't figured out exactly what the differences are.</p>
+
+    <p>This is the original graph with incorrect distance measure. You can also see:
+      <ul>
+        <li><a href="en-ko-translation-comparison-old-fixed.html">The original graph with corrected distance measure</a></li>
+        <li><a href="en-ko-translation-comparison.html">The reprocessed version of the diagram with correct distance measure </a></li>
+      </ul>
+
+    </p>
+      
+<hr>
+	  <p>This visualization compares how  the translations from online translators compares with our translations based on our data.</p>
+      <div id="vis"></div>
+    </div>
+
+  </body>
+</html>

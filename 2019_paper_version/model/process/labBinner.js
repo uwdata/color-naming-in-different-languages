@@ -1,10 +1,12 @@
 const BIN_SIZE = 10;
 const MIN_L = 0,
-      MIN_A = -79.28728092989567,
+      MIN_A = -84.89223876091079,
       MIN_B = -112.02942991288025,
       MAX_L = 100,
       MAX_A = 93.55002493980824,
       MAX_B = 93.38847788323793;
+
+  
 
 function getLAB(bin_l, bin_a, bin_b, binSize = BIN_SIZE){
   let offsetBinA = Math.floor(MIN_A/binSize);

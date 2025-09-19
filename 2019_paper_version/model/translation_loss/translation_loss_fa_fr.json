@@ -1,1002 +1,802 @@
 [
   {
-    "frterm": "bleu", 
-    "dist": 12.360811575205108, 
-    "faterm": "سبز"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 2.7922252616124315, 
-    "faterm": "سبز"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 16.96453555102838, 
-    "faterm": "سبز"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 14.375795895314837, 
-    "faterm": "سبز"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 16.369186766128685, 
-    "faterm": "سبز"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 5.611273079846573, 
-    "faterm": "بنفش"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 16.989792684176717, 
-    "faterm": "بنفش"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 2.83696044958598, 
-    "faterm": "بنفش"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 4.677924242543771, 
-    "faterm": "بنفش"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 2.284291909597018, 
-    "faterm": "بنفش"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 1.0690395333019391, 
-    "faterm": "آبی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 14.348107834733836, 
-    "faterm": "آبی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 7.235914781010018, 
-    "faterm": "آبی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.806703781122229, 
-    "faterm": "آبی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 6.538695398454942, 
-    "faterm": "آبی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.677777671641714, 
-    "faterm": "قرمز"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 14.021262365640775, 
-    "faterm": "قرمز"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.592224248741182, 
-    "faterm": "قرمز"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 6.683511844951092, 
-    "faterm": "قرمز"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 11.56427561818142, 
-    "faterm": "قرمز"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 8.223821031029475, 
-    "faterm": "صورتی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.374931903346393, 
-    "faterm": "صورتی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.451571267628352, 
-    "faterm": "صورتی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 1.659272050830268, 
-    "faterm": "صورتی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.303281711507059, 
-    "faterm": "صورتی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 14.338162694585478, 
-    "faterm": "نارنجی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 10.849637560474479, 
-    "faterm": "نارنجی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.308932900332202, 
-    "faterm": "نارنجی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.579961121345523, 
-    "faterm": "نارنجی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 14.09691567651873, 
-    "faterm": "نارنجی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 15.716129105012685, 
-    "faterm": "زرد"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 5.975576953056256, 
-    "faterm": "زرد"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 18.098934288791664, 
-    "faterm": "زرد"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 14.11460842551444, 
-    "faterm": "زرد"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 17.700078954132543, 
-    "faterm": "زرد"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.646959771736654, 
-    "faterm": "قهوهآی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.676748249479768, 
-    "faterm": "قهوهآی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.863307811926823, 
-    "faterm": "قهوهآی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.24565718934325, 
-    "faterm": "قهوهآی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 11.457476949226061, 
-    "faterm": "قهوهآی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 5.429822991264089, 
-    "faterm": "آبیآسمانی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.88793526331594, 
-    "faterm": "آبیآسمانی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 11.614318451285545, 
-    "faterm": "آبیآسمانی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.224024762278962, 
-    "faterm": "آبیآسمانی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.89204856569725, 
-    "faterm": "آبیآسمانی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.464495112227588, 
-    "faterm": "سرخابی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.769090234781313, 
-    "faterm": "سرخابی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.02839452986443, 
-    "faterm": "سرخابی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 1.3817309817437566, 
-    "faterm": "سرخابی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 6.041155190303899, 
-    "faterm": "سرخابی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 15.63584468444586, 
-    "faterm": "سبزفسفری"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 1.4216941006341948, 
-    "faterm": "سبزفسفری"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 19.930100161923786, 
-    "faterm": "سبزفسفری"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 16.891815911640922, 
-    "faterm": "سبزفسفری"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 19.381633916218668, 
-    "faterm": "سبزفسفری"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 9.250093923764592, 
-    "faterm": "سبزآبی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 5.884526807374547, 
-    "faterm": "سبزآبی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.915514377398802, 
-    "faterm": "سبزآبی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 13.341812509007234, 
-    "faterm": "سبزآبی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 14.22225927845647, 
-    "faterm": "سبزآبی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 2.949668548634787, 
-    "faterm": "آبینفتی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 16.85566653808265, 
-    "faterm": "آبینفتی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.587063504842162, 
-    "faterm": "آبینفتی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.401049354739392, 
-    "faterm": "آبینفتی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 4.920437884614222, 
-    "faterm": "آبینفتی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.794771611204995, 
-    "faterm": "خردلی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 7.537208660348801, 
-    "faterm": "خردلی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 15.383450074900088, 
-    "faterm": "خردلی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.270509666108879, 
-    "faterm": "خردلی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 15.013667325870271, 
-    "faterm": "خردلی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 14.103863962175014, 
-    "faterm": "سبزروشن"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 1.3157803860888206, 
-    "faterm": "سبزروشن"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 18.559436101733315, 
-    "faterm": "سبزروشن"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 15.732867581249936, 
-    "faterm": "سبزروشن"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 17.997327404053895, 
-    "faterm": "سبزروشن"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.837603102107115, 
-    "faterm": "سبزچمنی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 2.263532673965308, 
-    "faterm": "سبزچمنی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 18.15120898504932, 
-    "faterm": "سبزچمنی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 15.27609519087262, 
-    "faterm": "سبزچمنی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 17.58021285621127, 
-    "faterm": "سبزچمنی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.203906765716708, 
-    "faterm": "سبزلجنی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.604613485249964, 
-    "faterm": "سبزلجنی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.932459219509303, 
-    "faterm": "سبزلجنی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.329068568434948, 
-    "faterm": "سبزلجنی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.360170926187589, 
-    "faterm": "سبزلجنی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 3.2934989885226837, 
-    "faterm": "آبیتیره"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 17.000112555961845, 
-    "faterm": "آبیتیره"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.393894024456442, 
-    "faterm": "آبیتیره"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.152053758781506, 
-    "faterm": "آبیتیره"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 4.751291220507317, 
-    "faterm": "آبیتیره"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 15.770653945977765, 
-    "faterm": "فسفری"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 2.9290598377430874, 
-    "faterm": "فسفری"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 19.470785924845746, 
-    "faterm": "فسفری"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 16.119858835581386, 
-    "faterm": "فسفری"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 18.970730504350172, 
-    "faterm": "فسفری"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.719540756654261, 
-    "faterm": "فیروزهآی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 7.573331005779615, 
-    "faterm": "فیروزهآی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.589869223079665, 
-    "faterm": "فیروزهآی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.454580020499915, 
-    "faterm": "فیروزهآی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 12.88431079335098, 
-    "faterm": "فیروزهآی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.310636969465877, 
-    "faterm": "گلبهی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 11.739327374300501, 
-    "faterm": "گلبهی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.032791593902832, 
-    "faterm": "گلبهی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.6642025243388066, 
-    "faterm": "گلبهی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 9.7979542869291, 
-    "faterm": "گلبهی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.65000659513328, 
-    "faterm": "سبزتیره"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 5.94779461050392, 
-    "faterm": "سبزتیره"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.95130653954851, 
-    "faterm": "سبزتیره"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.54968946508833, 
-    "faterm": "سبزتیره"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 14.332531722973696, 
-    "faterm": "سبزتیره"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 12.565706850498549, 
-    "faterm": "آجری"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 10.645220490040785, 
-    "faterm": "آجری"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 12.705573035526024, 
-    "faterm": "آجری"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.309356701929334, 
-    "faterm": "آجری"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 12.426693087022729, 
-    "faterm": "آجری"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.90203973064183, 
-    "faterm": "زرشکی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.2698893547941, 
-    "faterm": "زرشکی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 9.442731853915516, 
-    "faterm": "زرشکی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.392683168350741, 
-    "faterm": "زرشکی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 9.2973619834042, 
-    "faterm": "زرشکی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.613434369923498, 
-    "faterm": "سبزپستهآی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 2.2244367710518027, 
-    "faterm": "سبزپستهآی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 17.839320772936507, 
-    "faterm": "سبزپستهآی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 14.908878787926609, 
-    "faterm": "سبزپستهآی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 17.279634617476543, 
-    "faterm": "سبزپستهآی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.577533240168047, 
-    "faterm": "آبیفیروزهآی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 7.969547206538276, 
-    "faterm": "آبیفیروزهآی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 13.66416527022265, 
-    "faterm": "آبیفیروزهآی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.70627871632159, 
-    "faterm": "آبیفیروزهآی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 12.934218512726062, 
-    "faterm": "آبیفیروزهآی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 13.075484203914119, 
-    "faterm": "سبزکمرنگ"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 2.8985607712677375, 
-    "faterm": "سبزکمرنگ"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 17.14256428837734, 
-    "faterm": "سبزکمرنگ"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 14.193895359404573, 
-    "faterm": "سبزکمرنگ"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 16.609310667892103, 
-    "faterm": "سبزکمرنگ"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 4.3497308944821995, 
-    "faterm": "سرمهآی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 16.10064071173534, 
-    "faterm": "سرمهآی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 5.89255415575662, 
-    "faterm": "سرمهآی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 7.505761382709024, 
-    "faterm": "سرمهآی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.277026333237318, 
-    "faterm": "سرمهآی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 5.5594359902513615, 
-    "faterm": "آبیکاربنی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 19.738797332679532, 
-    "faterm": "آبیکاربنی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 4.3361465886195685, 
-    "faterm": "آبیکاربنی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.660792577574533, 
-    "faterm": "آبیکاربنی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 3.9708399932866936, 
-    "faterm": "آبیکاربنی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 6.693153144476076, 
-    "faterm": "آرغوانی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.904211929176448, 
-    "faterm": "آرغوانی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 4.288038457262446, 
-    "faterm": "آرغوانی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 3.360827351300959, 
-    "faterm": "آرغوانی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 3.8635299726204146, 
-    "faterm": "آرغوانی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 3.9607203364409336, 
-    "faterm": "سورمهآی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.435811152898674, 
-    "faterm": "سورمهآی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.563013256666755, 
-    "faterm": "سورمهآی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 7.845231610537828, 
-    "faterm": "سورمهآی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.873301609076899, 
-    "faterm": "سورمهآی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.17999071019834, 
-    "faterm": "خاکستری"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.433302543372951, 
-    "faterm": "خاکستری"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.38395910561794, 
-    "faterm": "خاکستری"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.404185781149483, 
-    "faterm": "خاکستری"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 9.741932829697015, 
-    "faterm": "خاکستری"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.537905555329296, 
-    "faterm": "یشمی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.210908179929684, 
-    "faterm": "یشمی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.10907178531144, 
-    "faterm": "یشمی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 11.313054329478328, 
-    "faterm": "یشمی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 13.554302987479009, 
-    "faterm": "یشمی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 5.476086398990192, 
-    "faterm": "یاسی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 13.437843116350576, 
-    "faterm": "یاسی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 6.284350310123691, 
-    "faterm": "یاسی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.178239464144237, 
-    "faterm": "یاسی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 5.667338755908739, 
-    "faterm": "یاسی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 4.22977505165961, 
-    "faterm": "نیلی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 10.866622827663766, 
-    "faterm": "نیلی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.000815929911754, 
-    "faterm": "نیلی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 10.005381526324843, 
-    "faterm": "نیلی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 9.35602379096957, 
-    "faterm": "نیلی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 5.7292638072203665, 
-    "faterm": "بنفشروشن"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.887808606991893, 
-    "faterm": "بنفشروشن"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 3.9543282810394422, 
-    "faterm": "بنفشروشن"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 4.201713982291908, 
-    "faterm": "بنفشروشن"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 3.6024039053808488, 
-    "faterm": "بنفشروشن"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 7.239850871170914, 
-    "faterm": "طوسی"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 9.246253865851976, 
-    "faterm": "طوسی"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 10.805104718610627, 
-    "faterm": "طوسی"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 8.962455235280668, 
-    "faterm": "طوسی"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 10.121867889633485, 
-    "faterm": "طوسی"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.944392078956588, 
-    "faterm": "کرم"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 7.787185330114408, 
-    "faterm": "کرم"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 12.925253444700253, 
-    "faterm": "کرم"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 9.40197485669831, 
-    "faterm": "کرم"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 12.495067219783175, 
-    "faterm": "کرم"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 5.254772030437325, 
-    "faterm": "بنفشتیره"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 15.804622867357683, 
-    "faterm": "بنفشتیره"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 4.945135643791041, 
-    "faterm": "بنفشتیره"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 5.695022262076269, 
-    "faterm": "بنفشتیره"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 4.442999718952152, 
-    "faterm": "بنفشتیره"
-  }, 
-  {
-    "frterm": "bleu", 
-    "dist": 10.551014265916665, 
-    "faterm": "سبزپررنگ"
-  }, 
-  {
-    "frterm": "vert", 
-    "dist": 6.176820364549363, 
-    "faterm": "سبزپررنگ"
-  }, 
-  {
-    "frterm": "violet", 
-    "dist": 14.974891382330688, 
-    "faterm": "سبزپررنگ"
-  }, 
-  {
-    "frterm": "rose", 
-    "dist": 12.678217245692077, 
-    "faterm": "سبزپررنگ"
-  }, 
-  {
-    "frterm": "mauve", 
-    "dist": 14.35545642831733, 
-    "faterm": "سبزپررنگ"
+    "faterm": "سبز",
+    "frterm": "bleu",
+    "dist": 128.55075864486528
+  },
+  {
+    "faterm": "سبز",
+    "frterm": "vert",
+    "dist": 29.40073942106598
+  },
+  {
+    "faterm": "سبز",
+    "frterm": "violet",
+    "dist": 176.94974120534073
+  },
+  {
+    "faterm": "سبز",
+    "frterm": "rose",
+    "dist": 148.83069619112445
+  },
+  {
+    "faterm": "بنفش",
+    "frterm": "bleu",
+    "dist": 51.94049221128737
+  },
+  {
+    "faterm": "بنفش",
+    "frterm": "vert",
+    "dist": 177.82818324059966
+  },
+  {
+    "faterm": "بنفش",
+    "frterm": "violet",
+    "dist": 29.466493450120975
+  },
+  {
+    "faterm": "بنفش",
+    "frterm": "rose",
+    "dist": 43.696548230148345
+  },
+  {
+    "faterm": "آبی",
+    "frterm": "bleu",
+    "dist": 10.2137854064721
+  },
+  {
+    "faterm": "آبی",
+    "frterm": "vert",
+    "dist": 150.3274287474207
+  },
+  {
+    "faterm": "آبی",
+    "frterm": "violet",
+    "dist": 70.96106610074418
+  },
+  {
+    "faterm": "آبی",
+    "frterm": "rose",
+    "dist": 81.28243202847888
+  },
+  {
+    "faterm": "قرمز",
+    "frterm": "bleu",
+    "dist": 128.54326769725057
+  },
+  {
+    "faterm": "قرمز",
+    "frterm": "vert",
+    "dist": 145.61194515564762
+  },
+  {
+    "faterm": "قرمز",
+    "frterm": "violet",
+    "dist": 112.5442224790304
+  },
+  {
+    "faterm": "قرمز",
+    "frterm": "rose",
+    "dist": 65.47818632218686
+  },
+  {
+    "faterm": "صورتی",
+    "frterm": "bleu",
+    "dist": 75.8014874471572
+  },
+  {
+    "faterm": "صورتی",
+    "frterm": "vert",
+    "dist": 161.95049123779538
+  },
+  {
+    "faterm": "صورتی",
+    "frterm": "violet",
+    "dist": 53.27691393153713
+  },
+  {
+    "faterm": "صورتی",
+    "frterm": "rose",
+    "dist": 15.403073872577098
+  },
+  {
+    "faterm": "نارنجی",
+    "frterm": "bleu",
+    "dist": 138.35417623586665
+  },
+  {
+    "faterm": "نارنجی",
+    "frterm": "vert",
+    "dist": 110.83147830455032
+  },
+  {
+    "faterm": "نارنجی",
+    "frterm": "violet",
+    "dist": 144.38973207074906
+  },
+  {
+    "faterm": "نارنجی",
+    "frterm": "rose",
+    "dist": 98.3761228299713
+  },
+  {
+    "faterm": "زرد",
+    "frterm": "bleu",
+    "dist": 157.743278006343
+  },
+  {
+    "faterm": "زرد",
+    "frterm": "vert",
+    "dist": 60.31768158459025
+  },
+  {
+    "faterm": "زرد",
+    "frterm": "violet",
+    "dist": 186.41326115990665
+  },
+  {
+    "faterm": "زرد",
+    "frterm": "rose",
+    "dist": 146.60282901102957
+  },
+  {
+    "faterm": "قهوهآی",
+    "frterm": "bleu",
+    "dist": 103.95839573718898
+  },
+  {
+    "faterm": "قهوهآی",
+    "frterm": "vert",
+    "dist": 100.7876902285173
+  },
+  {
+    "faterm": "قهوهآی",
+    "frterm": "violet",
+    "dist": 122.27363522527756
+  },
+  {
+    "faterm": "قهوهآی",
+    "frterm": "rose",
+    "dist": 85.61384155858086
+  },
+  {
+    "faterm": "آبیآسمانی",
+    "frterm": "bleu",
+    "dist": 56.71605724877103
+  },
+  {
+    "faterm": "آبیآسمانی",
+    "frterm": "vert",
+    "dist": 103.451105615401
+  },
+  {
+    "faterm": "آبیآسمانی",
+    "frterm": "violet",
+    "dist": 117.48683101792504
+  },
+  {
+    "faterm": "آبیآسمانی",
+    "frterm": "rose",
+    "dist": 108.67997469403397
+  },
+  {
+    "faterm": "سرخابی",
+    "frterm": "bleu",
+    "dist": 87.4356388642607
+  },
+  {
+    "faterm": "سرخابی",
+    "frterm": "vert",
+    "dist": 164.754562897448
+  },
+  {
+    "faterm": "سرخابی",
+    "frterm": "violet",
+    "dist": 58.795503959032764
+  },
+  {
+    "faterm": "سرخابی",
+    "frterm": "rose",
+    "dist": 14.073706653035279
+  },
+  {
+    "faterm": "سبزفسفری",
+    "frterm": "bleu",
+    "dist": 162.86233269896763
+  },
+  {
+    "faterm": "سبزفسفری",
+    "frterm": "vert",
+    "dist": 15.028327767819018
+  },
+  {
+    "faterm": "سبزفسفری",
+    "frterm": "violet",
+    "dist": 208.55745158606243
+  },
+  {
+    "faterm": "سبزفسفری",
+    "frterm": "rose",
+    "dist": 176.65140398438925
+  },
+  {
+    "faterm": "سبزآبی",
+    "frterm": "bleu",
+    "dist": 96.7030710943705
+  },
+  {
+    "faterm": "سبزآبی",
+    "frterm": "vert",
+    "dist": 61.54136018610957
+  },
+  {
+    "faterm": "سبزآبی",
+    "frterm": "violet",
+    "dist": 154.12035510539178
+  },
+  {
+    "faterm": "سبزآبی",
+    "frterm": "rose",
+    "dist": 134.92395269896855
+  },
+  {
+    "faterm": "آبینفتی",
+    "frterm": "bleu",
+    "dist": 29.755279599675767
+  },
+  {
+    "faterm": "آبینفتی",
+    "frterm": "vert",
+    "dist": 175.9759296701188
+  },
+  {
+    "faterm": "آبینفتی",
+    "frterm": "violet",
+    "dist": 53.60748351370917
+  },
+  {
+    "faterm": "آبینفتی",
+    "frterm": "rose",
+    "dist": 77.0523113239874
+  },
+  {
+    "faterm": "خردلی",
+    "frterm": "bleu",
+    "dist": 136.60560459861182
+  },
+  {
+    "faterm": "خردلی",
+    "frterm": "vert",
+    "dist": 76.3913604831109
+  },
+  {
+    "faterm": "خردلی",
+    "frterm": "violet",
+    "dist": 158.546466846358
+  },
+  {
+    "faterm": "خردلی",
+    "frterm": "rose",
+    "dist": 117.85785574697623
+  },
+  {
+    "faterm": "سبزروشن",
+    "frterm": "bleu",
+    "dist": 146.38674638703523
+  },
+  {
+    "faterm": "سبزروشن",
+    "frterm": "vert",
+    "dist": 13.420185058388913
+  },
+  {
+    "faterm": "سبزروشن",
+    "frterm": "violet",
+    "dist": 193.54677312079923
+  },
+  {
+    "faterm": "سبزروشن",
+    "frterm": "rose",
+    "dist": 163.58325223717273
+  },
+  {
+    "faterm": "سبزچمنی",
+    "frterm": "bleu",
+    "dist": 142.99898067281595
+  },
+  {
+    "faterm": "سبزچمنی",
+    "frterm": "vert",
+    "dist": 23.684618984748948
+  },
+  {
+    "faterm": "سبزچمنی",
+    "frterm": "violet",
+    "dist": 188.90550083170484
+  },
+  {
+    "faterm": "سبزچمنی",
+    "frterm": "rose",
+    "dist": 158.41442155318936
+  },
+  {
+    "faterm": "سبزلجنی",
+    "frterm": "bleu",
+    "dist": 104.161670631903
+  },
+  {
+    "faterm": "سبزلجنی",
+    "frterm": "vert",
+    "dist": 69.13907680641235
+  },
+  {
+    "faterm": "سبزلجنی",
+    "frterm": "violet",
+    "dist": 144.65882836543827
+  },
+  {
+    "faterm": "سبزلجنی",
+    "frterm": "rose",
+    "dist": 116.41802022692697
+  },
+  {
+    "faterm": "آبیتیره",
+    "frterm": "bleu",
+    "dist": 32.57521729744361
+  },
+  {
+    "faterm": "آبیتیره",
+    "frterm": "vert",
+    "dist": 179.1303634454939
+  },
+  {
+    "faterm": "آبیتیره",
+    "frterm": "violet",
+    "dist": 51.41860419157337
+  },
+  {
+    "faterm": "آبیتیره",
+    "frterm": "rose",
+    "dist": 75.72076541510351
+  },
+  {
+    "faterm": "فسفری",
+    "frterm": "bleu",
+    "dist": 161.7550305451153
+  },
+  {
+    "faterm": "فسفری",
+    "frterm": "vert",
+    "dist": 28.24922177962008
+  },
+  {
+    "faterm": "فسفری",
+    "frterm": "violet",
+    "dist": 202.65652515241018
+  },
+  {
+    "faterm": "فسفری",
+    "frterm": "rose",
+    "dist": 168.3949349501952
+  },
+  {
+    "faterm": "فیروزهآی",
+    "frterm": "bleu",
+    "dist": 80.65797641416682
+  },
+  {
+    "faterm": "فیروزهآی",
+    "frterm": "vert",
+    "dist": 78.82722034902626
+  },
+  {
+    "faterm": "فیروزهآی",
+    "frterm": "violet",
+    "dist": 139.92332571514612
+  },
+  {
+    "faterm": "فیروزهآی",
+    "frterm": "rose",
+    "dist": 124.58269586357616
+  },
+  {
+    "faterm": "آجری",
+    "frterm": "bleu",
+    "dist": 120.5997385382613
+  },
+  {
+    "faterm": "آجری",
+    "frterm": "vert",
+    "dist": 110.73739448307431
+  },
+  {
+    "faterm": "آجری",
+    "frterm": "violet",
+    "dist": 128.0451336528267
+  },
+  {
+    "faterm": "آجری",
+    "frterm": "rose",
+    "dist": 84.6802608113811
+  },
+  {
+    "faterm": "گلبهی",
+    "frterm": "bleu",
+    "dist": 97.46656404472746
+  },
+  {
+    "faterm": "گلبهی",
+    "frterm": "vert",
+    "dist": 124.27430725241548
+  },
+  {
+    "faterm": "گلبهی",
+    "frterm": "violet",
+    "dist": 100.06310232448538
+  },
+  {
+    "faterm": "گلبهی",
+    "frterm": "rose",
+    "dist": 56.965710057673164
+  },
+  {
+    "faterm": "سبزتیره",
+    "frterm": "bleu",
+    "dist": 112.36768088551652
+  },
+  {
+    "faterm": "سبزتیره",
+    "frterm": "vert",
+    "dist": 59.97637090319492
+  },
+  {
+    "faterm": "سبزتیره",
+    "frterm": "violet",
+    "dist": 157.94145866477314
+  },
+  {
+    "faterm": "سبزتیره",
+    "frterm": "rose",
+    "dist": 131.09171620329607
+  },
+  {
+    "faterm": "سبزپستهآی",
+    "frterm": "bleu",
+    "dist": 141.29141138808183
+  },
+  {
+    "faterm": "سبزپستهآی",
+    "frterm": "vert",
+    "dist": 22.914247423994464
+  },
+  {
+    "faterm": "سبزپستهآی",
+    "frterm": "violet",
+    "dist": 186.56157488205926
+  },
+  {
+    "faterm": "سبزپستهآی",
+    "frterm": "rose",
+    "dist": 155.52834913425815
+  },
+  {
+    "faterm": "زرشکی",
+    "frterm": "bleu",
+    "dist": 102.83199526131212
+  },
+  {
+    "faterm": "زرشکی",
+    "frterm": "vert",
+    "dist": 139.14997987685953
+  },
+  {
+    "faterm": "زرشکی",
+    "frterm": "violet",
+    "dist": 93.65672768584423
+  },
+  {
+    "faterm": "زرشکی",
+    "frterm": "rose",
+    "dist": 54.10617903805245
+  },
+  {
+    "faterm": "آبیفیروزهآی",
+    "frterm": "bleu",
+    "dist": 77.01124389400698
+  },
+  {
+    "faterm": "آبیفیروزهآی",
+    "frterm": "vert",
+    "dist": 84.69158004502403
+  },
+  {
+    "faterm": "آبیفیروزهآی",
+    "frterm": "violet",
+    "dist": 137.5001764990705
+  },
+  {
+    "faterm": "آبیفیروزهآی",
+    "frterm": "rose",
+    "dist": 123.87111653603428
+  },
+  {
+    "faterm": "آبیکاربنی",
+    "frterm": "bleu",
+    "dist": 56.84463770530131
+  },
+  {
+    "faterm": "آبیکاربنی",
+    "frterm": "vert",
+    "dist": 206.16885182433873
+  },
+  {
+    "faterm": "آبیکاربنی",
+    "frterm": "violet",
+    "dist": 39.16702218910333
+  },
+  {
+    "faterm": "آبیکاربنی",
+    "frterm": "rose",
+    "dist": 79.6067430631748
+  },
+  {
+    "faterm": "سرمهآی",
+    "frterm": "bleu",
+    "dist": 42.76701314716137
+  },
+  {
+    "faterm": "سرمهآی",
+    "frterm": "vert",
+    "dist": 169.15313570020786
+  },
+  {
+    "faterm": "سرمهآی",
+    "frterm": "violet",
+    "dist": 58.57130275154811
+  },
+  {
+    "faterm": "سرمهآی",
+    "frterm": "rose",
+    "dist": 69.85480176722659
+  },
+  {
+    "faterm": "آرغوانی",
+    "frterm": "bleu",
+    "dist": 61.18722184132629
+  },
+  {
+    "faterm": "آرغوانی",
+    "frterm": "vert",
+    "dist": 164.96364449236512
+  },
+  {
+    "faterm": "آرغوانی",
+    "frterm": "violet",
+    "dist": 45.31917572972077
+  },
+  {
+    "faterm": "آرغوانی",
+    "frterm": "rose",
+    "dist": 31.880623762069742
+  },
+  {
+    "faterm": "سبزکمرنگ",
+    "frterm": "bleu",
+    "dist": 135.18817849772034
+  },
+  {
+    "faterm": "سبزکمرنگ",
+    "frterm": "vert",
+    "dist": 29.376454074364766
+  },
+  {
+    "faterm": "سبزکمرنگ",
+    "frterm": "violet",
+    "dist": 179.40343046105608
+  },
+  {
+    "faterm": "سبزکمرنگ",
+    "frterm": "rose",
+    "dist": 148.53690538377433
+  },
+  {
+    "faterm": "سورمهآی",
+    "frterm": "bleu",
+    "dist": 38.32486162505732
+  },
+  {
+    "faterm": "سورمهآی",
+    "frterm": "vert",
+    "dist": 160.64903913458613
+  },
+  {
+    "faterm": "سورمهآی",
+    "frterm": "violet",
+    "dist": 65.39867214095506
+  },
+  {
+    "faterm": "سورمهآی",
+    "frterm": "rose",
+    "dist": 72.52375268333115
+  },
+  {
+    "faterm": "یاسی",
+    "frterm": "bleu",
+    "dist": 51.578881438333816
+  },
+  {
+    "faterm": "یاسی",
+    "frterm": "vert",
+    "dist": 142.73458718527152
+  },
+  {
+    "faterm": "یاسی",
+    "frterm": "violet",
+    "dist": 63.56820665974368
+  },
+  {
+    "faterm": "یاسی",
+    "frterm": "rose",
+    "dist": 49.107019706346385
+  },
+  {
+    "faterm": "خاکستری",
+    "frterm": "bleu",
+    "dist": 71.2000461980776
+  },
+  {
+    "faterm": "خاکستری",
+    "frterm": "vert",
+    "dist": 99.0302859494888
+  },
+  {
+    "faterm": "خاکستری",
+    "frterm": "violet",
+    "dist": 107.73168789274185
+  },
+  {
+    "faterm": "خاکستری",
+    "frterm": "rose",
+    "dist": 85.30716268671377
+  },
+  {
+    "faterm": "یشمی",
+    "frterm": "bleu",
+    "dist": 106.58638454250627
+  },
+  {
+    "faterm": "یشمی",
+    "frterm": "vert",
+    "dist": 66.20723274951578
+  },
+  {
+    "faterm": "یشمی",
+    "frterm": "violet",
+    "dist": 145.72419212396954
+  },
+  {
+    "faterm": "یشمی",
+    "frterm": "rose",
+    "dist": 115.54345662060413
+  },
+  {
+    "faterm": "نیلی",
+    "frterm": "bleu",
+    "dist": 43.12794962740335
+  },
+  {
+    "faterm": "نیلی",
+    "frterm": "vert",
+    "dist": 114.20861221391499
+  },
+  {
+    "faterm": "نیلی",
+    "frterm": "violet",
+    "dist": 101.36086629510847
+  },
+  {
+    "faterm": "نیلی",
+    "frterm": "rose",
+    "dist": 96.5781742543854
+  },
+  {
+    "faterm": "بنفشروشن",
+    "frterm": "bleu",
+    "dist": 51.298299553816136
+  },
+  {
+    "faterm": "بنفشروشن",
+    "frterm": "vert",
+    "dist": 167.25341696992285
+  },
+  {
+    "faterm": "بنفشروشن",
+    "frterm": "violet",
+    "dist": 40.12617698875265
+  },
+  {
+    "faterm": "بنفشروشن",
+    "frterm": "rose",
+    "dist": 40.48034809814115
+  },
+  {
+    "faterm": "کرم",
+    "frterm": "bleu",
+    "dist": 107.46548592768954
+  },
+  {
+    "faterm": "کرم",
+    "frterm": "vert",
+    "dist": 80.13396400142317
+  },
+  {
+    "faterm": "کرم",
+    "frterm": "violet",
+    "dist": 133.77357480685836
+  },
+  {
+    "faterm": "کرم",
+    "frterm": "rose",
+    "dist": 98.33804687141908
+  },
+  {
+    "faterm": "طوسی",
+    "frterm": "bleu",
+    "dist": 71.61375461920753
+  },
+  {
+    "faterm": "طوسی",
+    "frterm": "vert",
+    "dist": 98.18106460639316
+  },
+  {
+    "faterm": "طوسی",
+    "frterm": "violet",
+    "dist": 111.22523795887619
+  },
+  {
+    "faterm": "طوسی",
+    "frterm": "rose",
+    "dist": 90.1295872357019
+  },
+  {
+    "faterm": "بنفشتیره",
+    "frterm": "bleu",
+    "dist": 49.82029185045442
+  },
+  {
+    "faterm": "بنفشتیره",
+    "frterm": "vert",
+    "dist": 166.44809782381975
+  },
+  {
+    "faterm": "بنفشتیره",
+    "frterm": "violet",
+    "dist": 49.71315628231312
+  },
+  {
+    "faterm": "بنفشتیره",
+    "frterm": "rose",
+    "dist": 54.33047548709146
+  },
+  {
+    "faterm": "سبزپررنگ",
+    "frterm": "bleu",
+    "dist": 109.05539327273438
+  },
+  {
+    "faterm": "سبزپررنگ",
+    "frterm": "vert",
+    "dist": 63.8594444901566
+  },
+  {
+    "faterm": "سبزپررنگ",
+    "frterm": "violet",
+    "dist": 156.5223654659555
+  },
+  {
+    "faterm": "سبزپررنگ",
+    "frterm": "rose",
+    "dist": 131.2161274440261
   }
 ]

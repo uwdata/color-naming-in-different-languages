@@ -29,9 +29,30 @@
 
     <div class="container">
 	  <h1>Korean-English Translation Comparisons</h1>
-    <p><strong>Note: This is the 2019 EuroVis version of the site, <a href="../../vis/en-ko-translation-comparison.html">the updated version is here.</a></strong></p>
-	  <p>This visualization compares how  the translations from online translators compares with our translations based on our data.</p>
-      <div id="vis"></div>
+    <p><strong>Note: This is the 2019 EuroVis version of the site, <a href="../../vis/en-ko-translation-comparison.html">the latest version is here.</a></strong></p>
+
+    <p>This is our attempt at reprocessing the data from our paper <a href="https://idl.uw.edu/papers/multi-lingual-color-names">2019 EuroVis paper</a>.</p> 
+
+    <p>In our paper we made an error in calculating distance (we had measured distance by 10x LAB bins, instead of regular LAB space) 
+      so our distance measure was 10x too small, making us underestimate what changes were noticeable.</p>
+
+    <p> Additionally, when we try re-running the processing now we get slightly different results, than the paper
+      probably due to library changes and subtle effects on processing (e.g., CSV file edge cases, handling unusual unicode values) 
+      though we haven't figured out exactly what the differences are.</p>
+
+    <p>This is the reprocessed version of the diagram with correct distance measure. You can also see:
+      <ul>
+        <li><a href="en-ko-translation-comparison-old-error.html">The original graph with incorrect distance measure</a></li>
+        <li><a href="en-ko-translation-comparison-old-fixed.html">The original graph with corrected distance measure</a></li>
+      </ul>
+
+    </p>
+      
+<hr>
+
+    <p>This visualization compares how  the translations from online translators compares with our translations based on our data.</p>
+    
+    <div id="vis"></div>
 	  <p><br>Popular terms (bold) in English
 and Korean are translated by the probabilistic model (black
 arrows) and online translators (gray dashed arrows). The circles
