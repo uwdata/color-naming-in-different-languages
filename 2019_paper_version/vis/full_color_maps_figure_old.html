@@ -107,14 +107,13 @@
 
   </head>
   <body>
-    <p><strong>Note: This is the 2019 EuroVis version of the site, <a href="../../vis/full_color_maps_figure.html">the latest version is here</a></strong></p>
-
-    <p>This is our attempt at reprocessing the data from our paper <a href="https://idl.uw.edu/papers/multi-lingual-color-names">2019 EuroVis paper</a>.</p> 
-
-    <p> When we try re-running the processing now we get slightly different results, than the paper
+    <p><strong>Note: This is the 2019 EuroVis version of the site, 
+      <a href="../../vis/full_color_maps_figure.html">the latest version is here.</a></strong></p>
+    <p>This uses the processed data used to make the diagram in our <a href="https://idl.uw.edu/papers/multi-lingual-color-names">2019 EuroVis paper</a>.</p> 
+    <p> When we try re-running the processing now we get slightly different results, 
       probably due to library changes and subtle effects on processing (e.g., CSV file edge cases, handling unusual unicode values) 
-      though we haven't figured out exactly what the differences are. We still have the 
-      <a href="full_color_maps_figure_old.html"> old processed version we used in the paper here</a></strong>.</p>
+      though we haven't figured out exactly what the differences are. Our attempt at re-running the old data
+      <a href="full_color_maps_figure.html"> gives this version of the graph</a></strong>.</p>
 
     <div class="visDiv" id="vis0" ></div>
     <div class="visDiv" id="vis1"></div>
@@ -130,7 +129,7 @@
 
   </body>
   <script type="text/javascript">
-    d3.json("../model/full_color_map.vl.json").then(spec =>{
+    d3.json("../model/full_color_map_old.vl.json").then(spec =>{
       delete spec.facet.column;
       spec.spec.layer[0].encoding.opacity = {"value":1.0};
       delete spec.spec.layer[1].selection;
