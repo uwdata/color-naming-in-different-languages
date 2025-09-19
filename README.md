@@ -8,7 +8,7 @@ This repository contains color data, processing, and visualization code from the
 - Color-name judgements that are collected from our 12 minute [color perception survey](http://labinthewild.org/studies/color_perception/) on [LabIntheWild](https://labinthewild.org/)
 - Color naming probabilistic models for _hue colors_ and _full colors_
 - Interactive visualizations
-  - [Color Translator](https://uwdata.github.io/color-naming-in-different-languages/vis/color_compare.html) Finds similar colors in the same language or across languages.
+  - [Color Translator](https://uwdata.github.io/color-naming-in-different-languages/vis/color_translator.html) Finds similar colors in the same language or across languages.
   - [The probabilities of terms for each hue color bin across 14 languages](https://uwdata.github.io/color-naming-in-different-languages/vis/color-composition-figure.html)
   - [Interactive version of the above](https://uwdata.github.io/color-naming-in-different-languages/vis/stacked-spectrum.html)
   - [Maximum Probability Maps for English and Korean color names](https://uwdata.github.io/color-naming-in-different-languages/vis/full_color_maps.html)
@@ -20,7 +20,7 @@ This repository contains color data, processing, and visualization code from the
 Note: The old paper versions of the data and visualizations are in the "2019_paper_version" subfolder, and the visualizations are available here:
 
 - 2019 Paper Interactive visualizations
-  - [Color Translator](https://uwdata.github.io/color-naming-in-different-languages/2019_paper_version/vis/color_compare.html) Finds similar colors in the same language or across languages.
+  - [Color Translator](https://uwdata.github.io/color-naming-in-different-languages/2019_paper_version/vis/color_translator.html) Finds similar colors in the same language or across languages.
   - [The probabilities of terms for each hue color bin across 14 languages](https://uwdata.github.io/color-naming-in-different-languages/2019_paper_version/vis/color-composition-figure.html)
   - [Interactive version of the above](https://uwdata.github.io/color-naming-in-different-languages/2019_paper_version/vis/stacked-spectrum.html)
   - [Maximum Probability Maps for English and Korean color names](https://uwdata.github.io/color-naming-in-different-languages/2019_paper_version/vis/full_color_maps.html)
