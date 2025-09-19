@@ -15,6 +15,9 @@ print("To recalculate all translations, ",
       "delete all files in the translation_loss directory, ",
       "then when this program runs, it will skip files already created")
 print()
+print("TODOs to make this run faster in the future:")
+print("Currently for translating the language with itself, I believe this script does each pair twice (e.g., both 'green' -> 'blue' and 'blue' -> 'green'). We could cut down on time by only calculating that distance once and reusing it.")
+print("Also, to save time, we could make a bin file with larger bins (e.g., 20x20x20 or 40x40x40) and do the larger bin calculation first, and only if the distance is small (and there is enough data for the color term???), use smaller bins for more precision. (This would also be nice as an option on the full color maps)")
 
 def job(lang1_lang2_terms):
 	returnval = {}
