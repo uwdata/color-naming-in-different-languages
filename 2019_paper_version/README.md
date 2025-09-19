@@ -15,7 +15,7 @@ This repository contains supplement material of [the paper](http://idl.cs.washin
   - [The probabilities of viridis colors for some nameable terms](https://uwdata.github.io/color-naming-in-different-languages/vis/viridis.html)
 
 **Note: But note a few difficulties with processing the data:**
-- In our paper we made an error in calculating distance (we had measured distance by 10x LAB bins, instead of regular LAB space) so our distance measure was 10x too small, making us underestimate what changes were noticeable.
+- In our paper we made an error in calculating distance (we had measured distance by 10x LAB bins, instead of regular LAB space) so our distance measure was 10x too small, making us underestimate what changes were noticeable. This does not change our conclusions.
 - Additionally, when we try re-running the processing now we sometimes get slightly different results, than the paper
       probably due to library changes and subtle effects on processing (e.g., CSV file edge cases, handling unusual unicode values) 
       though we haven't figured out exactly what the differences are.
