@@ -2,7 +2,7 @@ const fs = require('fs'),
   csv = require("csvtojson"),
   d3 = require('d3'),
   csvWriter = require('csv-write-stream');
-  labBinHelper = require('./labBinHelper.js');
+  labBinHelper = require('./labBinHelper.js').getLabBins(10);
 
 const MIN_NperBin = 4;
 const FILE_O = "../full_color_names_binned.json";

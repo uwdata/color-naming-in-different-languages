@@ -1,6 +1,6 @@
 const fs = require('fs'),
   d3 = require('d3'),
-  labBinHelper = require('./labBinHelper.js');
+  labBinHelper = require('./labBinHelper.js').getLabBins(10);
 
 const lab_bins = JSON.parse(fs.readFileSync("../lab_bins.json"))
 let flatData = JSON.parse(fs.readFileSync("../full_color_names_binned.json"));

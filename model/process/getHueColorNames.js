@@ -1,5 +1,5 @@
 const fs = require('fs'),
-  colorBins = require('./colorBins.js'),
+  colorBins = require('./hueColorBins.js'),
   csv = require("csvtojson"),
   d3 = require('d3');
 //const converter = new Converter({});
