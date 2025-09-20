@@ -2,14 +2,14 @@ const fs = require('fs'),
   csv = require("csvtojson"),
   d3 = require('d3'),
   csvWriter = require('csv-write-stream');
-  labBinHelper = require('./labBinHelper.js').getLabBins(10);
+  labBinHelper = require('./labBinHelper.js').getLabBins(20/3);
 
 const MIN_NperBin = 4;
-const FILE_O = "../full_color_names_binned.json";
-const FILE_O_SALIENCY = "../full_color_map_saliency_bins.json"
-const FILE_O_DETAILED_COLORS = "../detailed_full_color_info.csv"
+const FILE_O = "../full_color_names_binned_6.67.json";
+const FILE_O_SALIENCY = "../full_color_map_saliency_bins_6.67.json"
+const FILE_O_DETAILED_COLORS = "../detailed_full_color_info_6.67.csv"
 
-const lab_bins = JSON.parse(fs.readFileSync("../lab_bins.json"))
+const lab_bins = JSON.parse(fs.readFileSync("../lab_bins_6.67.json"))
 const lab_bins_arr = labBinHelper.labBinsToArray(lab_bins)
 
 csv().fromFile("../cleaned_color_names.csv").then((colorNames)=> {

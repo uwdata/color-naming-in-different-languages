@@ -1,6 +1,17 @@
+//10
+// const MIN_BINS_DISPLAY = 700
+// const MIN_BINS_HIDE = 300
+
+const MIN_BIN_PERC_DISPLAY = 50
+const MIN_BIN_PERC_HIDE = 23
+
+// // 20
+// const MIN_BINS_DISPLAY = 200
+// const MIN_BINS_HIDE = 10
+
 $(document).on('ready page:load', function () {
-  $.getJSON("../model/lab_bins.json", function( lab_bins ) {
-  $.getJSON("../model/full_color_map_saliency_bins.json", function( saliencies ) {
+  $.getJSON("../model/lab_bins_20.json", function( lab_bins ) {
+  $.getJSON("../model/full_color_map_saliency_bins_20.json", function( saliencies ) {
     console.log(saliencies);
 
     const color_name_unselected = "----"
@@ -49,8 +60,8 @@ $(document).on('ready page:load', function () {
         {colorName: color_name_unselected, avgTermColor: "rgba(255, 255, 255, 0)",count: 0})
     })
 
-    const MIN_BINS_DISPLAY = 700
-    const MIN_BINS_HIDE = 300
+
+
     let language_stats = languages
       .map(lang => {
         return {lang: lang, numBins: saliencies_by_lang[lang].length}
@@ -58,7 +69,7 @@ $(document).on('ready page:load', function () {
       
 
     language_stats = language_stats
-      .filter(lang_stat => lang_stat.numBins > MIN_BINS_HIDE)
+      .filter(lang_stat => (lang_stat.numBins / lab_bins_array.length) * 100  > MIN_BIN_PERC_HIDE)
       .sort((a,b) => b.numBins - a.numBins)
 
     const allColorsName = "All Color Bins (Reference)"
@@ -86,10 +97,14 @@ $(document).on('ready page:load', function () {
 
     // since bins are unevenly distributed, this makes the L levels
     // spaced evenly on the x axis
-    const L_OFFSETS = [0, 50, 110, 185, 270, 365, 465, 575, 675, 770, 820]
+    //const L_OFFSETS = [0, 50, 110, 185, 270, 365, 465, 575, 675, 770, 820]
+    const L_OFFSETS = [0, 50, 110, 185, 270, 365, 465, 575, 675, 770, 820,
+                      920,1020,1120,1220,1320,1420,1520,1620,1720,1820
+    ]
+
     
     //let margin = {top: 30, right: 50, bottom: 30, left: 50},
-    let margin = {top: 0, right: 0, bottom: 0, left: 0},
+    let margin = {top: 100, right: 0, bottom: 0, left: 0},
       width = 870,//$('#vis').width() - margin.left - margin.right,
       height = 125//Math.min(800 - margin.top - margin.bottom, width/4);
         
@@ -124,7 +139,8 @@ $(document).on('ready page:load', function () {
           div.style("display", "none")
           return
         }
-      } else if(!$("#low-data").is(':checked') && language_stat.numBins <= MIN_BINS_DISPLAY){
+      } else if(!$("#low-data").is(':checked') 
+            && (language_stat.numBins / lab_bins_array.length) * 100  <= MIN_BIN_PERC_DISPLAY){
         div.style("display", "none")
         return
       }
@@ -200,16 +216,7 @@ $(document).on('ready page:load', function () {
           .attr("height", text.node().getBBox().height + 10)
       }
 
-      // add color tile info to bottom right corner
-      // const color_tile_info = svg.select('.color_tile_info')
-      //   .data(lang_tile_info[i])
-      //   .join('g')
-      //     .attr("class", "color_tile_info")
-      //     .attr("x", width - 100)
-      //     .attr("y", height - 100)
-
-      // color_tile_info
-      //   .append("text", d => d.l)
+  
 
       // make sure selection in dropdown is up to date:
       const selection = lang_color_selections[i]

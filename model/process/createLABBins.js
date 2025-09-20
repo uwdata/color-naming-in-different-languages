@@ -6,7 +6,8 @@ const fs = require('fs'),
 
 const FILE_O_LAB_BINS = "../lab_bins"
 
-const labBinSizes = [5, 10, 20]
+// Next size would be 20/3 = 6.67, but only English currently has enough data for that 
+const labBinSizes = [20, 10]
 
 // This function is used to find the best RGB
 // color to represent an LAB bin whose center
@@ -161,5 +162,5 @@ for(let labBinSize of labBinSizes){
         }
     }
     console.log("Total bins: ", totalBins)
-    fs.writeFileSync(FILE_O_LAB_BINS+"_"+labBinSize+".json", JSON.stringify(labBinInfo, null, 2));
+    fs.writeFileSync(FILE_O_LAB_BINS+"_"+(Math.round((labBinSize + Number.EPSILON) * 100) / 100)+".json", JSON.stringify(labBinInfo, null, 2));
 }
