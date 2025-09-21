@@ -1,46 +1,122 @@
+const BIN_SIZES = [10, 20]
+
 const MIN_BIN_PERC_DISPLAY = 50
 const MIN_BIN_PERC_HIDE = 23
 
-const BIN_SIZES = [10, 20]
+const TILE_SIZE = {
+  10: 5,
+  20: 15
+}
+
+// this times tiles_size is margin on sides and between L tile sets
+const TILE_SEGMENT_MARGIN_NUM = 3
+
+//let margin = {top: 30, right: 50, bottom: 30, left: 50},
+let margin = {top: 100, right: 0, bottom: 0, left: 0},
+  width = 870,//$('#vis').width() - margin.left - margin.right,
+  height = 125//Math.min(800 - margin.top - margin.bottom, width/4);
+    
+
 const lab_bins = {}
 const lab_bins_arrays = {}
+const l_bin_ab_bounds = {}
+const lab_bin_b_bounds = {}
+const l_bin_x_offsets = {} // since bins are unevenly distributed, these will make the L levels spaced evenly on the x axis
+const l_bin_y_offsets = {} 
+const svg_heights = {}
+const svg_widths = {}
+
 const saliencies = {}
 
+/*************** Pre-processing functions *********************/
+function process_lab_bin_data(bin_data, bin_size){
+  lab_bins[bin_size] = bin_data
+  lab_bins_arrays[bin_size] = []
+  l_bin_ab_bounds[bin_size] = []
 
+  // Make an array version of all the bins, and also find bounds for each level
+  for(const [l_bin_str, l_bin_entries] of Object.entries(lab_bins[bin_size])){
+    l_bin = Number(l_bin_str)
+    l_bin_ab_bounds[bin_size][l_bin] = {}
+    for(const [a_bin_str, a_bin_entries] of Object.entries(l_bin_entries)){
+      a_bin = Number(a_bin_str) 
+      if(!("max_a" in l_bin_ab_bounds[bin_size][l_bin]) || a_bin > l_bin_ab_bounds[bin_size][l_bin].max_a){
+        l_bin_ab_bounds[bin_size][l_bin].max_a = a_bin
+      }
+      if(!("min_a" in l_bin_ab_bounds[bin_size][l_bin]) || a_bin < l_bin_ab_bounds[bin_size][l_bin].min_a){
+        l_bin_ab_bounds[bin_size][l_bin].min_a = a_bin
+      }
+      for(const [b_bin_str, b_bin_entry] of Object.entries(a_bin_entries)){
+        b_bin = Number(b_bin_str) 
+        if(!("max_b" in l_bin_ab_bounds[bin_size][l_bin]) || b_bin > l_bin_ab_bounds[bin_size][l_bin].max_b){
+          l_bin_ab_bounds[bin_size][l_bin].max_b = b_bin
+        }
+        if(!("min_b" in l_bin_ab_bounds[bin_size][l_bin]) || b_bin < l_bin_ab_bounds[bin_size][l_bin].min_b){
+          l_bin_ab_bounds[bin_size][l_bin].min_b = b_bin
+        }
+
+        lab_bins_arrays[bin_size].push(b_bin_entry)
+      }
+    }
+  }
+
+  // figure out b bounds and y offsets and svg heights
+  lab_bin_b_bounds[bin_size] = {}
+  lab_bin_b_bounds[bin_size].min = l_bin_ab_bounds[bin_size]
+                                  .map(bound => bound.min_b)
+                                  .reduce((prev, curr) => Math.min(prev, curr))
+  lab_bin_b_bounds[bin_size].max = l_bin_ab_bounds[bin_size]
+                                  .map(bound => bound.max_b)
+                                  .reduce((prev, curr) => Math.max(prev, curr))
+
+  l_bin_y_offsets[bin_size] = TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size] + lab_bin_b_bounds[bin_size].max * TILE_SIZE[bin_size]
+  svg_heights[bin_size] = l_bin_y_offsets[bin_size] - lab_bin_b_bounds[bin_size].min * TILE_SIZE[bin_size] + TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size]
+
+  // calculate l_bin_x_offsets
+  //since bins are unevenly distributed, these will make the L levels spaced evenly on the x axis
+  let currXOffset = TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size]
+  l_bin_x_offsets[bin_size] = []
+  for(const [l, l_ab_bound] of l_bin_ab_bounds[bin_size].entries()){
+    // adjust for negative direction
+    currXOffset = currXOffset - l_ab_bound.min_a * TILE_SIZE[bin_size]
+
+    l_bin_x_offsets[bin_size][l] = currXOffset
+
+    // adjust for positive direction
+    currXOffset = currXOffset + l_ab_bound.max_a * TILE_SIZE[bin_size] + TILE_SIZE[bin_size] + TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size]
+    
+    // only the last one will be saved at the end, giving us total svg width
+    svg_widths[bin_size] = currXOffset
+  }
+
+
+  console.log("lab_bins_array", bin_size, lab_bins_arrays[bin_size]);
+  console.log("l_bin_ab_bounds", l_bin_ab_bounds[bin_size])
+  console.log("lab_bin_y_bounds", lab_bin_b_bounds[bin_size])
+  console.log("l_bin_y_offsets", l_bin_y_offsets[bin_size])
+  console.log('l_bin_x_offsets', l_bin_x_offsets[bin_size])
+  console.log('svg_heights', svg_heights[bin_size])
+  console.log('svg_widths', svg_widths[bin_size])
+}
+
+/*************** Load page and Data *********************/
+// TODO: The process_lab_bin_data() functions possibly are still running
+// when the $.when "finishes"
 $.when(
   $(document).on('ready page:load', function () {}),
-  $.getJSON("../model/lab_bins_20.json", function( data ) {
-    lab_bins[20] = data
-    lab_bins_arrays[20] = []
-    for(const [l_bin, l_bin_entries] of Object.entries(lab_bins[20])){
-      for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries)){
-        for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries)){
-          lab_bins_arrays[20].push(b_bin_entry)
-        }
-      }
-    }
-    console.log(lab_bins_arrays[20]);
+  $.getJSON(`../model/lab_bins_${BIN_SIZES[0]}.json`, function( data ) {
+    process_lab_bin_data(data, BIN_SIZES[0])
   }),
-  $.getJSON("../model/full_color_map_saliency_bins_20.json", function( data ) {
-    saliencies[20] = data
+  $.getJSON(`../model/full_color_map_saliency_bins_${BIN_SIZES[0]}.json`, function( data ) {
+    saliencies[BIN_SIZES[0]] = data
   }),
-  $.getJSON("../model/lab_bins_10.json", function( data ) {
-    lab_bins[10] = data
-    lab_bins_arrays[10] = []
-    for(const [l_bin, l_bin_entries] of Object.entries(lab_bins[10])){
-      for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries)){
-        for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries)){
-          lab_bins_arrays[10].push(b_bin_entry)
-        }
-      }
-    }
-    console.log(lab_bins_arrays[10]);
+  $.getJSON(`../model/lab_bins_${BIN_SIZES[1]}.json`, function( data ) {
+    process_lab_bin_data(data, BIN_SIZES[1])
   }),
-  $.getJSON("../model/full_color_map_saliency_bins_10.json", function( data ) {
-    saliencies[10] = data
+  $.getJSON(`../model/full_color_map_saliency_bins_${BIN_SIZES[1]}.json`, function( data ) {
+    saliencies[BIN_SIZES[1]] = data
   })
 .then(function() {
-
   let curr_bin_size = BIN_SIZES[1] 
 
   console.log(saliencies[curr_bin_size]);
@@ -116,22 +192,10 @@ $.when(
   let backgroundColor = 'white'
   let tile_size_type = $("#tile_size").val()
 
-  // since bins are unevenly distributed, this makes the L levels
-  // spaced evenly on the x axis
-  //const L_OFFSETS = [0, 50, 110, 185, 270, 365, 465, 575, 675, 770, 820]
-  const L_OFFSETS = [0, 50, 110, 185, 270, 365, 465, 575, 675, 770, 820,
-                    920,1020,1120,1220,1320,1420,1520,1620,1720,1820
-  ]
 
-  
-  //let margin = {top: 30, right: 50, bottom: 30, left: 50},
-  let margin = {top: 100, right: 0, bottom: 0, left: 0},
-    width = 870,//$('#vis').width() - margin.left - margin.right,
-    height = 125//Math.min(800 - margin.top - margin.bottom, width/4);
-      
   $("#main").append(`
     <div class="row" id="vis" 
-      style="min-width:${width}px; max-width:${width}px;"></div>`)
+      style="min-width:${svg_widths[curr_bin_size]}px; max-width:${svg_widths[curr_bin_size]}px;"></div>`)
 
   // add space for each language
   for(let i = 0; i < language_stats.length; i++){
@@ -220,8 +284,8 @@ $.when(
       }
 
       svg = d3.select("#lang"+i).append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
+            .attr("width", svg_widths[curr_bin_size])
+            .attr("height", svg_heights[curr_bin_size])
       const textBackground = svg.append("rect")
       const textBackgroundPadding = 5
       const text = svg.append("text")
@@ -259,10 +323,11 @@ $.when(
       .join("rect")
         .attr("class", "tile")
         .style("stroke", backgroundColor)
-        .style("stroke-width", "1")
-        .attr("x", (d) => d.binA*5 +20 + L_OFFSETS[d.binL] )
+        .style("stroke-width", d => TILE_SIZE[curr_bin_size]/5)
+        //.attr("x", (d) => d.binA*5 +20 + L_OFFSETS[d.binL] )
+        .attr("x", (d) => d.binA*TILE_SIZE[curr_bin_size] +l_bin_x_offsets[curr_bin_size][d.binL] )
         .attr("y", (d) => {
-          return -d.binB*5 + 55
+          return -d.binB*TILE_SIZE[curr_bin_size] + l_bin_y_offsets[curr_bin_size]
         })
         .attr("fill", (d) => {
           const selection = lang_color_selections[i]
@@ -330,14 +395,14 @@ $.when(
   function getTileSize(d){
       if(tile_size_type == "ptc"){
         // ptc is 0 to 1
-        return 10*d.maxpTC
+        return TILE_SIZE[curr_bin_size]*2*d.maxpTC
       }
       if(tile_size_type == "sal"){
         // sal is -5 to 0
-        return (d.saliency + 5)*2
+        return (d.saliency + 5)*2 / 5 * TILE_SIZE[curr_bin_size]
       }
       // otherwise uniform:
-      return 5
+      return TILE_SIZE[curr_bin_size]
   }
 
   /********* jquery event listeners */
