@@ -6,8 +6,7 @@ const fs = require('fs'),
 
 const FILE_O_LAB_BINS = "../lab_bins"
 
-// Next size would be 20/3 = 6.67, but only English currently has enough data for that 
-const labBinSizes = [20, 10]
+const labBinSizes = [20, 10, 20/3]
 
 // This function is used to find the best RGB
 // color to represent an LAB bin whose center

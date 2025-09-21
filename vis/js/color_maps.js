@@ -1,15 +1,18 @@
-const BIN_SIZES = [10, 20]
+const BIN_SIZES = [20, 10, 6.67]
 
 const MIN_BIN_PERC_DISPLAY = 50
 const MIN_BIN_PERC_HIDE = 23
 
 const TILE_SIZE = {
+  20: 15,
   10: 5,
-  20: 15
+  6.67: 3.5
 }
 
 // this times tiles_size is margin on sides and between L tile sets
 const TILE_SEGMENT_MARGIN_NUM = 3
+
+const COLOR_NAME_UNSELECTED = "----"
 
 //let margin = {top: 30, right: 50, bottom: 30, left: 50},
 let margin = {top: 100, right: 0, bottom: 0, left: 0},
@@ -29,6 +32,23 @@ const svg_widths = {}
 const saliencies = {}
 
 /*************** Pre-processing functions *********************/
+async function load_and_process_all_bin_data(){
+  await Promise.all(
+    BIN_SIZES.map(bin_size => load_and_process_bin_data(bin_size))
+  )
+}
+
+async function load_and_process_bin_data(bin_size){
+  await new Promise(resolve => $.getJSON(`../model/lab_bins_${bin_size}.json`, function( data ) {
+    process_lab_bin_data(data, bin_size)
+    resolve()
+  }))
+  await new Promise(resolve => $.getJSON(`../model/full_color_map_saliency_bins_${bin_size}.json`, function( data ) {
+    process_saliency_bin_data(data, bin_size)
+    resolve()
+  }))
+}
+
 function process_lab_bin_data(bin_data, bin_size){
   lab_bins[bin_size] = bin_data
   lab_bins_arrays[bin_size] = []
@@ -89,39 +109,30 @@ function process_lab_bin_data(bin_data, bin_size){
     svg_widths[bin_size] = currXOffset
   }
 
-
   console.log("lab_bins_array", bin_size, lab_bins_arrays[bin_size]);
   console.log("l_bin_ab_bounds", l_bin_ab_bounds[bin_size])
-  console.log("lab_bin_y_bounds", lab_bin_b_bounds[bin_size])
-  console.log("l_bin_y_offsets", l_bin_y_offsets[bin_size])
-  console.log('l_bin_x_offsets', l_bin_x_offsets[bin_size])
-  console.log('svg_heights', svg_heights[bin_size])
-  console.log('svg_widths', svg_widths[bin_size])
 }
+
+function process_saliency_bin_data(saliency_data, bin_size){
+  saliencies[bin_size] = saliency_data
+}
+
+
 
 /*************** Load page and Data *********************/
 // TODO: The process_lab_bin_data() functions possibly are still running
 // when the $.when "finishes"
 $.when(
   $(document).on('ready page:load', function () {}),
-  $.getJSON(`../model/lab_bins_${BIN_SIZES[0]}.json`, function( data ) {
-    process_lab_bin_data(data, BIN_SIZES[0])
-  }),
-  $.getJSON(`../model/full_color_map_saliency_bins_${BIN_SIZES[0]}.json`, function( data ) {
-    saliencies[BIN_SIZES[0]] = data
-  }),
-  $.getJSON(`../model/lab_bins_${BIN_SIZES[1]}.json`, function( data ) {
-    process_lab_bin_data(data, BIN_SIZES[1])
-  }),
-  $.getJSON(`../model/full_color_map_saliency_bins_${BIN_SIZES[1]}.json`, function( data ) {
-    saliencies[BIN_SIZES[1]] = data
-  })
+  load_and_process_all_bin_data()
 .then(function() {
-  let curr_bin_size = BIN_SIZES[1] 
+// TODO: switch to d3 style update on everything, and have process_lab_bin_data, etc. call that update
+  console.log("drawing things")
+  let curr_bin_size = BIN_SIZES[2] 
 
   console.log(saliencies[curr_bin_size]);
 
-  const color_name_unselected = "----"
+
 
   /*************** Pre-processing *********************/
   const languages = [...new Set(saliencies[curr_bin_size].map(s => s.lang))];
@@ -154,7 +165,7 @@ $.when(
     }
     color_names_by_lang[lang].sort((a, b) => b.count - a.count)
     color_names_by_lang[lang].unshift(
-      {colorName: color_name_unselected, avgTermColor: "rgba(255, 255, 255, 0)",count: 0})
+      {colorName: COLOR_NAME_UNSELECTED, avgTermColor: "rgba(255, 255, 255, 0)",count: 0})
   })
 
 
@@ -272,7 +283,7 @@ $.when(
 
         $(`#selected_color_${i}`).change(function() {
           const selection = lang_color_selections[i]
-          if(this.value == color_name_unselected){
+          if(this.value == COLOR_NAME_UNSELECTED){
             selection.selection_type = "none"
             selection.color_name = ""
           }else{
@@ -306,7 +317,7 @@ $.when(
     // make sure selection in dropdown is up to date:
     const selection = lang_color_selections[i]
     if(selection.selection_type == "none"){
-      $(`#selected_color_${i}`).val(color_name_unselected)
+      $(`#selected_color_${i}`).val(COLOR_NAME_UNSELECTED)
       $(`#selected_color_${i}`).trigger('change.select2')
     } else {
       $(`#selected_color_${i}`).val(selection.color_name)
@@ -422,6 +433,5 @@ $.when(
     tile_size_type = $("#tile_size").val()
     createOrRefreshAllLangs()
   })
-
 }))
 
