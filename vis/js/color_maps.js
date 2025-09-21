@@ -54,6 +54,7 @@ async function load_and_process_bin_data(bin_size){
     process_saliency_bin_data(data, bin_size)
     resolve()
   }))
+  updateDisplay()
 }
 
 function process_lab_bin_data(bin_data, bin_size){
@@ -187,240 +188,16 @@ function process_saliency_bin_data(saliency_data, bin_size){
   console.log(language_stats[bin_size])
 }
 
+load_and_process_all_bin_data()
 
+/*************** Tracking the current display options *******************/
+const currSvgSize = [{}]
+let curr_bin_size = BIN_SIZES[0] 
+let backgroundColor = 'white'
+let tile_size_type = 'ptc'
 
 /*************** Load page and Data *********************/
-// TODO: The process_lab_bin_data() functions possibly are still running
-// when the $.when "finishes"
-$.when(
-  $(document).on('ready page:load', function () {}),
-  load_and_process_all_bin_data()
-.then(function() {
-// TODO: switch to d3 style update on everything, and have process_lab_bin_data, etc. call that update
-  console.log("drawing things")
-  let curr_bin_size = BIN_SIZES[0] 
-
-  console.log(saliencies[curr_bin_size]);
-
-
-  /*************** Create Display *********************/
-
-  let backgroundColor = 'white'
-  let tile_size_type = $("#tile_size").val()
-
-
-  $("#main").append(`
-    <div class="row" id="vis" 
-      style="min-width:${svg_widths[curr_bin_size]}px; max-width:${svg_widths[curr_bin_size]}px;"></div>`)
-
-  // add space for each language
-  for(let i = 0; i < language_stats[curr_bin_size].length; i++){
-    const language_stat = language_stats[curr_bin_size][i]
-
-    
-    d3.select('#vis').append("div").attr("id", "lang"+i)
-
-    createOrRefreshLang(i)
-  }
-
-  function createOrRefreshAllLangs(){
-    for(let i = 0; i < language_stats[curr_bin_size].length; i++){
-      createOrRefreshLang(i)
-    }
-  }
-
-  function createOrRefreshLang(i){
-    const language_stat = language_stats[curr_bin_size][i]
-    const sal = saliencies_by_lang[curr_bin_size][language_stat.lang]
-
-    const div = d3.select("#lang"+i)
-    // don't create if language displays if they aren't selected
-    if(language_stat.lang == ALL_COLOR_NAME){
-      if(!$("#ref_bins").is(':checked')){
-        div.style("display", "none")
-        return
-      }
-    } else if(!$("#low-data").is(':checked') 
-          && (language_stat.numBins / lab_bins_arrays[curr_bin_size].length) * 100  <= MIN_BIN_PERC_DISPLAY){
-      div.style("display", "none")
-      return
-    }
-
-    // show div
-    div.style("display", "")
-
-    let svg = d3.select("#lang"+i+" svg")
-    if(svg.empty()){
-
-      // first add the color name dropdown:
-      if(language_stat.lang != ALL_COLOR_NAME){
-        $("#lang"+i).append(`
-          <div class="form-check form-check-inline justify-content-center small" style="width:100%;margin-top:10px;"> 
-            <label class="form-label" for="selected_color_${i}" style="margin-bottom: 0px">Selected Color</label>
-            <select class="form-select" type="checkbox" name="metric" id="selected_color_${i}" value="selected_color_${i}" style="width:150px">
-            ${color_names_by_lang[curr_bin_size][language_stat.lang].map((colorInfo) =>{
-              return `<option value="${colorInfo.colorName}" data-commonColorName="${colorInfo.colorName}"
-                style='background-color:${colorInfo.avgTermColor}'>
-                ${colorInfo.colorName}
-              </option>`
-            })}
-            </select>
-          </div>
-          `)
-
-        // format the color dropdown as a jquery select2 box
-        function formatColorOpt (colorOpt) {
-          if (!colorOpt.id) { //handles loading
-            return colorOpt.text;
-          }        
-          var $colorOpt = $(`<span class="small">
-            <span style="background-color: ${colorOpt.element.style.backgroundColor};
-              padding-right: 20px;margin-right:5px;"></span>
-            ${colorOpt.element.attributes["data-commonColorName"].value}</span>`
-          );
-          return $colorOpt;
-        };
-        $(`#selected_color_${i}`).select2({
-          templateResult: formatColorOpt,
-          templateSelection: formatColorOpt,
-          minimumResultsForSearch: Infinity // disable text search
-        });
-
-        $(`#selected_color_${i}`).change(function() {
-          const selection = lang_color_selections[curr_bin_size][i]
-          if(this.value == COLOR_NAME_UNSELECTED){
-            selection.selection_type = "none"
-            selection.color_name = ""
-          }else{
-            selection.selection_type = "select"
-            selection.color_name = this.value
-          }
-          createOrRefreshLang(i)
-        })
-      }
-
-      svg = d3.select("#lang"+i).append("svg")
-            .attr("width", svg_widths[curr_bin_size])
-            .attr("height", svg_heights[curr_bin_size])
-      const textBackground = svg.append("rect")
-      const textBackgroundPadding = 5
-      const text = svg.append("text")
-        .text(language_stat.lang)
-        .attr("x", 20)
-        .attr("y", 25)
-        //var bbox = focus.select("text").node().getBBox();
-      textBackground
-        .attr("fill", "white")
-        .attr("x", 20 - textBackgroundPadding)
-        .attr("y", 25 - textBackgroundPadding - (text.node().getBBox().height + 2*textBackgroundPadding)/2)
-        .attr("width", text.node().getBBox().width + 10)
-        .attr("height", text.node().getBBox().height + 10)
-    }
-
-
-
-    // make sure selection in dropdown is up to date:
-    const selection = lang_color_selections[curr_bin_size][i]
-    if(selection.selection_type == "none"){
-      $(`#selected_color_${i}`).val(COLOR_NAME_UNSELECTED)
-      $(`#selected_color_${i}`).trigger('change.select2')
-    } else {
-      $(`#selected_color_${i}`).val(selection.color_name)
-      $(`#selected_color_${i}`).trigger('change.select2')
-    }
-
-    drawColorTiles(i, sal)
-  }
-
-  function drawColorTiles(i, saliencies){
-    const svg = d3.select("#lang"+i + " svg")
-    svg.selectAll(".tile")
-      .data(saliencies)
-      .join("rect")
-        .attr("class", "tile")
-        .style("stroke", backgroundColor)
-        .style("stroke-width", d => TILE_SIZE[curr_bin_size]/5)
-        //.attr("x", (d) => d.binA*5 +20 + L_OFFSETS[d.binL] )
-        .attr("x", (d) => d.binA*TILE_SIZE[curr_bin_size] +l_bin_x_offsets[curr_bin_size][d.binL] )
-        .attr("y", (d) => {
-          return -d.binB*TILE_SIZE[curr_bin_size] + l_bin_y_offsets[curr_bin_size]
-        })
-        .attr("fill", (d) => {
-          const selection = lang_color_selections[curr_bin_size][i]
-          if(selection.selection_type == "select" || selection.selection_type == "hover"){
-            if(d.commonTerm == selection.color_name){
-              const bin = lab_bins[curr_bin_size][d.binL][d.binA][d.binB]
-              return `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
-            } else {
-              return backgroundColor
-            }
-          }
-
-          return d.avgTermColor
-          })
-        .attr("height", getTileSize)
-        .attr("width", getTileSize)
-        .attr("title", (d) => {
-          const [l,a,b] = [d.binL, d.binA, d.binB]
-          const bin_info = lab_bins[curr_bin_size][l][a][b]
-          return `
-            ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
-            Bin Center (l, a, b): ${Math.round(bin_info.l_center, 1)}, ${Math.round(bin_info.a_center, 1)}, ${Math.round(bin_info.b_center, 1)}
-            Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
-            ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
-                ?
-                `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
-                : ""
-            }`.trim()
-          d.binA
-          d.commonTerm
-          d.maxpTC
-          d.saliency
-        })
-        .on("mouseover", (event, d) => {
-          const selection = lang_color_selections[curr_bin_size][i]
-          if(selection.selection_type != "select"){
-            selection.selection_type = "hover"
-            selection.color_name = d.commonTerm
-            createOrRefreshLang(i)
-          }
-        })
-        .on("mouseout", (event, d) => {
-          const selection = lang_color_selections[curr_bin_size][i]
-          if(selection.selection_type == "hover"){
-            selection.selection_type = "none"
-            selection.color_name = ""
-            createOrRefreshLang(i)
-          }
-        })
-        .on("click", (event, d) => {
-          event.stopPropagation() // don't let svg get click and unselect it
-          const selection = lang_color_selections[curr_bin_size][i]
-          selection.selection_type = "select"
-          selection.color_name = d.commonTerm
-          createOrRefreshLang(i)
-        })
-    svg.on("click", (event, d) => {
-          const selection = lang_color_selections[curr_bin_size][i]
-          selection.selection_type = "none"
-          selection.color_name = ""
-          createOrRefreshLang(i)
-        })
-  }
-
-  function getTileSize(d){
-      if(tile_size_type == "ptc"){
-        // ptc is 0 to 1
-        return TILE_SIZE[curr_bin_size]*2*d.maxpTC
-      }
-      if(tile_size_type == "sal"){
-        // sal is -5 to 0
-        return (d.saliency + 5)*2 / 5 * TILE_SIZE[curr_bin_size]
-      }
-      // otherwise uniform:
-      return TILE_SIZE[curr_bin_size]
-  }
-
+$(document).on('ready page:load', function () {//})
   /********* jquery event listeners */
 
   $("#background-brightness").on("input", function(){
@@ -438,5 +215,225 @@ $.when(
     tile_size_type = $("#tile_size").val()
     createOrRefreshAllLangs()
   })
-}))
+})
+
+function updateDisplay(){
+  
+  tile_size_type = $("#tile_size").val()
+
+  currSvgSize[0].width = svg_widths[curr_bin_size]
+  currSvgSize[0].height = svg_heights[curr_bin_size]
+
+  d3.select("#main")
+    .selectAll("#vis")
+    .data(currSvgSize)
+    .join("div")
+      .attr("id", "vis")
+      .attr("class", "row")
+      .style("min-width", d => d.width)
+      .style("max-width", d => d.height)
+
+  // add space for each language
+  d3.select('#vis')
+    .selectAll(".lang-map")
+    .data(language_stats[curr_bin_size])
+    .join("div")
+      .attr("class", "lang-map")
+      .attr("id", (d, i) => `lang${i}`)
+
+  createOrRefreshAllLangs()
+}
+
+function createOrRefreshAllLangs(){
+  for(let i = 0; i < language_stats[curr_bin_size].length; i++){
+    createOrRefreshLang(i)
+  }
+}
+
+function createOrRefreshLang(i){
+  const language_stat = language_stats[curr_bin_size][i]
+  const sal = saliencies_by_lang[curr_bin_size][language_stat.lang]
+
+  const div = d3.select("#lang"+i)
+  // don't create if language displays if they aren't selected
+  if(language_stat.lang == ALL_COLOR_NAME){
+    if(!$("#ref_bins").is(':checked')){
+      div.style("display", "none")
+      return
+    }
+  } else if(!$("#low-data").is(':checked') 
+        && (language_stat.numBins / lab_bins_arrays[curr_bin_size].length) * 100  <= MIN_BIN_PERC_DISPLAY){
+    div.style("display", "none")
+    return
+  }
+
+  // show div
+  div.style("display", "")
+
+  let svg = d3.select("#lang"+i+" svg")
+  if(svg.empty()){
+
+    // first add the color name dropdown:
+    if(language_stat.lang != ALL_COLOR_NAME){
+      $("#lang"+i).append(`
+        <div class="form-check form-check-inline justify-content-center small" style="width:100%;margin-top:10px;"> 
+          <label class="form-label" for="selected_color_${i}" style="margin-bottom: 0px">Selected Color</label>
+          <select class="form-select" type="checkbox" name="metric" id="selected_color_${i}" value="selected_color_${i}" style="width:150px">
+          ${color_names_by_lang[curr_bin_size][language_stat.lang].map((colorInfo) =>{
+            return `<option value="${colorInfo.colorName}" data-commonColorName="${colorInfo.colorName}"
+              style='background-color:${colorInfo.avgTermColor}'>
+              ${colorInfo.colorName}
+            </option>`
+          })}
+          </select>
+        </div>
+        `)
+
+      // format the color dropdown as a jquery select2 box
+      function formatColorOpt (colorOpt) {
+        if (!colorOpt.id) { //handles loading
+          return colorOpt.text;
+        }        
+        var $colorOpt = $(`<span class="small">
+          <span style="background-color: ${colorOpt.element.style.backgroundColor};
+            padding-right: 20px;margin-right:5px;"></span>
+          ${colorOpt.element.attributes["data-commonColorName"].value}</span>`
+        );
+        return $colorOpt;
+      };
+      $(`#selected_color_${i}`).select2({
+        templateResult: formatColorOpt,
+        templateSelection: formatColorOpt,
+        minimumResultsForSearch: Infinity // disable text search
+      });
+
+      $(`#selected_color_${i}`).change(function() {
+        const selection = lang_color_selections[curr_bin_size][i]
+        if(this.value == COLOR_NAME_UNSELECTED){
+          selection.selection_type = "none"
+          selection.color_name = ""
+        }else{
+          selection.selection_type = "select"
+          selection.color_name = this.value
+        }
+        createOrRefreshLang(i)
+      })
+    }
+
+    svg = d3.select("#lang"+i).append("svg")
+          .attr("width", currSvgSize[0].width)
+          .attr("height", currSvgSize[0].height)
+    const textBackground = svg.append("rect")
+    const textBackgroundPadding = 5
+    const text = svg.append("text")
+      .text(language_stat.lang)
+      .attr("x", 20)
+      .attr("y", 25)
+    textBackground
+      .attr("fill", "white")
+      .attr("x", 20 - textBackgroundPadding)
+      .attr("y", 25 - textBackgroundPadding - (text.node().getBBox().height + 2*textBackgroundPadding)/2)
+      .attr("width", text.node().getBBox().width + 10)
+      .attr("height", text.node().getBBox().height + 10)
+  }
+
+
+
+  // make sure selection in dropdown is up to date:
+  const selection = lang_color_selections[curr_bin_size][i]
+  if(selection.selection_type == "none"){
+    $(`#selected_color_${i}`).val(COLOR_NAME_UNSELECTED)
+    $(`#selected_color_${i}`).trigger('change.select2')
+  } else {
+    $(`#selected_color_${i}`).val(selection.color_name)
+    $(`#selected_color_${i}`).trigger('change.select2')
+  }
+
+  drawColorTiles(i, sal)
+}
+
+function drawColorTiles(i, saliencies){
+  const svg = d3.select("#lang"+i + " svg")
+  svg.selectAll(".tile")
+    .data(saliencies)
+    .join("rect")
+      .attr("class", "tile")
+      .style("stroke", backgroundColor)
+      .style("stroke-width", d => TILE_SIZE[curr_bin_size]/5)
+      .attr("x", (d) => d.binA*TILE_SIZE[curr_bin_size] +l_bin_x_offsets[curr_bin_size][d.binL] )
+      .attr("y", (d) => {
+        return -d.binB*TILE_SIZE[curr_bin_size] + l_bin_y_offsets[curr_bin_size]
+      })
+      .attr("fill", (d) => {
+        const selection = lang_color_selections[curr_bin_size][i]
+        if(selection.selection_type == "select" || selection.selection_type == "hover"){
+          if(d.commonTerm == selection.color_name){
+            const bin = lab_bins[curr_bin_size][d.binL][d.binA][d.binB]
+            return `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
+          } else {
+            return backgroundColor
+          }
+        }
+
+        return d.avgTermColor
+        })
+      .attr("height", getTileSize)
+      .attr("width", getTileSize)
+      .attr("title", (d) => {
+        const [l,a,b] = [d.binL, d.binA, d.binB]
+        const bin_info = lab_bins[curr_bin_size][l][a][b]
+        return `
+          ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
+          Bin Center (l, a, b): ${Math.round(bin_info.l_center, 1)}, ${Math.round(bin_info.a_center, 1)}, ${Math.round(bin_info.b_center, 1)}
+          Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
+          ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
+              ?
+              `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
+              : ""
+          }`.trim()
+      })
+      .on("mouseover", (event, d) => {
+        const selection = lang_color_selections[curr_bin_size][i]
+        if(selection.selection_type != "select"){
+          selection.selection_type = "hover"
+          selection.color_name = d.commonTerm
+          createOrRefreshLang(i)
+        }
+      })
+      .on("mouseout", (event, d) => {
+        const selection = lang_color_selections[curr_bin_size][i]
+        if(selection.selection_type == "hover"){
+          selection.selection_type = "none"
+          selection.color_name = ""
+          createOrRefreshLang(i)
+        }
+      })
+      .on("click", (event, d) => {
+        event.stopPropagation() // don't let svg get click and unselect it
+        const selection = lang_color_selections[curr_bin_size][i]
+        selection.selection_type = "select"
+        selection.color_name = d.commonTerm
+        createOrRefreshLang(i)
+      })
+  svg.on("click", (event, d) => {
+        const selection = lang_color_selections[curr_bin_size][i]
+        selection.selection_type = "none"
+        selection.color_name = ""
+        createOrRefreshLang(i)
+      })
+}
+
+function getTileSize(d){
+    if(tile_size_type == "ptc"){
+      // ptc is 0 to 1
+      return TILE_SIZE[curr_bin_size]*1.3*Math.sqrt(d.maxpTC)
+      return TILE_SIZE[curr_bin_size]*2*d.maxpTC
+    }
+    if(tile_size_type == "sal"){
+      // sal is -5 to 0
+      return (d.saliency + 5)*2 / 5 * TILE_SIZE[curr_bin_size]
+    }
+    // otherwise uniform:
+    return TILE_SIZE[curr_bin_size]
+}
 
