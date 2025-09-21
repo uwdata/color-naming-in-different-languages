@@ -13,6 +13,7 @@ const TILE_SIZE = {
 const TILE_SEGMENT_MARGIN_NUM = 3
 
 const COLOR_NAME_UNSELECTED = "----"
+const ALL_COLOR_NAME = "All Color Bins (Reference)"
 
 //let margin = {top: 30, right: 50, bottom: 30, left: 50},
 let margin = {top: 100, right: 0, bottom: 0, left: 0},
@@ -30,6 +31,12 @@ const svg_heights = {}
 const svg_widths = {}
 
 const saliencies = {}
+const languages = {}
+const saliencies_by_lang = {}
+const color_names_by_lang = {}
+const language_stats = {}
+const lang_color_selections = {}
+const lang_tile_info = {}
 
 /*************** Pre-processing functions *********************/
 async function load_and_process_all_bin_data(){
@@ -115,6 +122,69 @@ function process_lab_bin_data(bin_data, bin_size){
 
 function process_saliency_bin_data(saliency_data, bin_size){
   saliencies[bin_size] = saliency_data
+
+  languages[bin_size] = [...new Set(saliencies[bin_size].map(s => s.lang))];
+  console.log(languages[bin_size])
+
+  saliencies_by_lang[bin_size] = {};
+  languages[bin_size].forEach(lang => {
+    saliencies_by_lang[bin_size][lang] = saliencies[bin_size].filter(s => s.lang == lang)
+  })
+
+  color_names_by_lang[bin_size] = {}
+  languages[bin_size].forEach(lang => {
+    const color_names_counts = {}
+    const color_name_avg_term_colors = {}
+    saliencies_by_lang[bin_size][lang].map(s => ({colorName: s.commonTerm, avgTermColor: s.avgTermColor}))
+        .forEach(colorData => {
+          if(!(colorData.colorName in color_names_counts)){
+            color_names_counts[colorData.colorName] = 0
+            color_name_avg_term_colors[colorData.colorName] = colorData.avgTermColor
+          }
+          color_names_counts[colorData.colorName]++
+        })
+    color_names_by_lang[bin_size][lang] = []
+    for(const [colorName, colorCount] of Object.entries(color_names_counts)){
+      color_names_by_lang[bin_size][lang].push({
+        colorName: colorName,
+        avgTermColor: color_name_avg_term_colors[colorName],
+        count: colorCount
+      })
+    }
+    color_names_by_lang[bin_size][lang].sort((a, b) => b.count - a.count)
+    color_names_by_lang[bin_size][lang].unshift(
+      {colorName: COLOR_NAME_UNSELECTED, avgTermColor: "rgba(255, 255, 255, 0)",count: 0})
+  })
+
+
+
+  language_stats[bin_size] = languages[bin_size]
+    .map(lang => {
+      return {lang: lang, numBins: saliencies_by_lang[bin_size][lang].length}
+    })
+    
+
+  language_stats[bin_size] = language_stats[bin_size]
+    .filter(lang_stat => (lang_stat.numBins / lab_bins_arrays[bin_size].length) * 100  > MIN_BIN_PERC_HIDE)
+    .sort((a,b) => b.numBins - a.numBins)
+
+  
+  language_stats[bin_size].unshift({lang: ALL_COLOR_NAME, numBins: lab_bins_arrays[bin_size].length})
+  saliencies_by_lang[bin_size][ALL_COLOR_NAME] = lab_bins_arrays[bin_size]
+  // make fields in lab_bins_arrays[curr_bin_size] match what graph expects
+  lab_bins_arrays[bin_size].forEach(tile => {
+    tile.maxpTC = 0.5
+    tile.saliency = -2.5
+    tile.binL = tile.l_bin
+    tile.binA = tile.a_bin
+    tile.binB = tile.b_bin
+    tile.avgTermColor = `rgb(${tile.representative_rgb.r},${tile.representative_rgb.g},${tile.representative_rgb.b})`
+  })
+
+  lang_color_selections[bin_size] = language_stats[bin_size].map(() => ({selection_type: "none"}))
+  lang_tile_info[bin_size] = language_stats[bin_size].map(() => ({}))
+
+  console.log(language_stats[bin_size])
 }
 
 
@@ -128,75 +198,10 @@ $.when(
 .then(function() {
 // TODO: switch to d3 style update on everything, and have process_lab_bin_data, etc. call that update
   console.log("drawing things")
-  let curr_bin_size = BIN_SIZES[2] 
+  let curr_bin_size = BIN_SIZES[0] 
 
   console.log(saliencies[curr_bin_size]);
 
-
-
-  /*************** Pre-processing *********************/
-  const languages = [...new Set(saliencies[curr_bin_size].map(s => s.lang))];
-  console.log(languages)
-
-  const saliencies_by_lang = {};
-  languages.forEach(lang => {
-    saliencies_by_lang[lang] = saliencies[curr_bin_size].filter(s => s.lang == lang)
-  })
-
-  const color_names_by_lang = {}
-  languages.forEach(lang => {
-    const color_names_counts = {}
-    const color_name_avg_term_colors = {}
-    saliencies_by_lang[lang].map(s => ({colorName: s.commonTerm, avgTermColor: s.avgTermColor}))
-        .forEach(colorData => {
-          if(!(colorData.colorName in color_names_counts)){
-            color_names_counts[colorData.colorName] = 0
-            color_name_avg_term_colors[colorData.colorName] = colorData.avgTermColor
-          }
-          color_names_counts[colorData.colorName]++
-        })
-    color_names_by_lang[lang] = []
-    for(const [colorName, colorCount] of Object.entries(color_names_counts)){
-      color_names_by_lang[lang].push({
-        colorName: colorName,
-        avgTermColor: color_name_avg_term_colors[colorName],
-        count: colorCount
-      })
-    }
-    color_names_by_lang[lang].sort((a, b) => b.count - a.count)
-    color_names_by_lang[lang].unshift(
-      {colorName: COLOR_NAME_UNSELECTED, avgTermColor: "rgba(255, 255, 255, 0)",count: 0})
-  })
-
-
-
-  let language_stats = languages
-    .map(lang => {
-      return {lang: lang, numBins: saliencies_by_lang[lang].length}
-    })
-    
-
-  language_stats = language_stats
-    .filter(lang_stat => (lang_stat.numBins / lab_bins_arrays[curr_bin_size].length) * 100  > MIN_BIN_PERC_HIDE)
-    .sort((a,b) => b.numBins - a.numBins)
-
-  const allColorsName = "All Color Bins (Reference)"
-  language_stats.unshift({lang: allColorsName, numBins: lab_bins_arrays[curr_bin_size].length})
-  saliencies_by_lang[allColorsName] = lab_bins_arrays[curr_bin_size]
-  // make fields in lab_bins_arrays[curr_bin_size] match what graph expects
-  lab_bins_arrays[curr_bin_size].forEach(tile => {
-    tile.maxpTC = 0.5
-    tile.saliency = -2.5
-    tile.binL = tile.l_bin
-    tile.binA = tile.a_bin
-    tile.binB = tile.b_bin
-    tile.avgTermColor = `rgb(${tile.representative_rgb.r},${tile.representative_rgb.g},${tile.representative_rgb.b})`
-  })
-
-  const lang_color_selections = language_stats.map(() => ({selection_type: "none"}))
-  const lang_tile_info = language_stats.map(() => ({}))
-
-  console.log(language_stats)
 
   /*************** Create Display *********************/
 
@@ -209,8 +214,8 @@ $.when(
       style="min-width:${svg_widths[curr_bin_size]}px; max-width:${svg_widths[curr_bin_size]}px;"></div>`)
 
   // add space for each language
-  for(let i = 0; i < language_stats.length; i++){
-    const language_stat = language_stats[i]
+  for(let i = 0; i < language_stats[curr_bin_size].length; i++){
+    const language_stat = language_stats[curr_bin_size][i]
 
     
     d3.select('#vis').append("div").attr("id", "lang"+i)
@@ -219,18 +224,18 @@ $.when(
   }
 
   function createOrRefreshAllLangs(){
-    for(let i = 0; i < language_stats.length; i++){
+    for(let i = 0; i < language_stats[curr_bin_size].length; i++){
       createOrRefreshLang(i)
     }
   }
 
   function createOrRefreshLang(i){
-    const language_stat = language_stats[i]
-    const sal = saliencies_by_lang[language_stat.lang]
+    const language_stat = language_stats[curr_bin_size][i]
+    const sal = saliencies_by_lang[curr_bin_size][language_stat.lang]
 
     const div = d3.select("#lang"+i)
     // don't create if language displays if they aren't selected
-    if(language_stat.lang == allColorsName){
+    if(language_stat.lang == ALL_COLOR_NAME){
       if(!$("#ref_bins").is(':checked')){
         div.style("display", "none")
         return
@@ -248,12 +253,12 @@ $.when(
     if(svg.empty()){
 
       // first add the color name dropdown:
-      if(language_stat.lang != allColorsName){
+      if(language_stat.lang != ALL_COLOR_NAME){
         $("#lang"+i).append(`
           <div class="form-check form-check-inline justify-content-center small" style="width:100%;margin-top:10px;"> 
             <label class="form-label" for="selected_color_${i}" style="margin-bottom: 0px">Selected Color</label>
             <select class="form-select" type="checkbox" name="metric" id="selected_color_${i}" value="selected_color_${i}" style="width:150px">
-            ${color_names_by_lang[language_stat.lang].map((colorInfo) =>{
+            ${color_names_by_lang[curr_bin_size][language_stat.lang].map((colorInfo) =>{
               return `<option value="${colorInfo.colorName}" data-commonColorName="${colorInfo.colorName}"
                 style='background-color:${colorInfo.avgTermColor}'>
                 ${colorInfo.colorName}
@@ -282,7 +287,7 @@ $.when(
         });
 
         $(`#selected_color_${i}`).change(function() {
-          const selection = lang_color_selections[i]
+          const selection = lang_color_selections[curr_bin_size][i]
           if(this.value == COLOR_NAME_UNSELECTED){
             selection.selection_type = "none"
             selection.color_name = ""
@@ -315,7 +320,7 @@ $.when(
 
 
     // make sure selection in dropdown is up to date:
-    const selection = lang_color_selections[i]
+    const selection = lang_color_selections[curr_bin_size][i]
     if(selection.selection_type == "none"){
       $(`#selected_color_${i}`).val(COLOR_NAME_UNSELECTED)
       $(`#selected_color_${i}`).trigger('change.select2')
@@ -341,7 +346,7 @@ $.when(
           return -d.binB*TILE_SIZE[curr_bin_size] + l_bin_y_offsets[curr_bin_size]
         })
         .attr("fill", (d) => {
-          const selection = lang_color_selections[i]
+          const selection = lang_color_selections[curr_bin_size][i]
           if(selection.selection_type == "select" || selection.selection_type == "hover"){
             if(d.commonTerm == selection.color_name){
               const bin = lab_bins[curr_bin_size][d.binL][d.binA][d.binB]
@@ -373,7 +378,7 @@ $.when(
           d.saliency
         })
         .on("mouseover", (event, d) => {
-          const selection = lang_color_selections[i]
+          const selection = lang_color_selections[curr_bin_size][i]
           if(selection.selection_type != "select"){
             selection.selection_type = "hover"
             selection.color_name = d.commonTerm
@@ -381,7 +386,7 @@ $.when(
           }
         })
         .on("mouseout", (event, d) => {
-          const selection = lang_color_selections[i]
+          const selection = lang_color_selections[curr_bin_size][i]
           if(selection.selection_type == "hover"){
             selection.selection_type = "none"
             selection.color_name = ""
@@ -390,13 +395,13 @@ $.when(
         })
         .on("click", (event, d) => {
           event.stopPropagation() // don't let svg get click and unselect it
-          const selection = lang_color_selections[i]
+          const selection = lang_color_selections[curr_bin_size][i]
           selection.selection_type = "select"
           selection.color_name = d.commonTerm
           createOrRefreshLang(i)
         })
     svg.on("click", (event, d) => {
-          const selection = lang_color_selections[i]
+          const selection = lang_color_selections[curr_bin_size][i]
           selection.selection_type = "none"
           selection.color_name = ""
           createOrRefreshLang(i)
