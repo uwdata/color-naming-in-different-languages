@@ -21,12 +21,6 @@ const TILE_SEGMENT_MARGIN_NUM = 3
 const COLOR_NAME_UNSELECTED = "----"
 const ALL_COLOR_NAME = "All Color Bins (Reference)"
 
-//let margin = {top: 30, right: 50, bottom: 30, left: 50},
-let margin = {top: 100, right: 0, bottom: 0, left: 0},
-  width = 870,//$('#vis').width() - margin.left - margin.right,
-  height = 125//Math.min(800 - margin.top - margin.bottom, width/4);
-    
-
 const lab_bins = {}
 const lab_bins_arrays = {}
 const l_bin_ab_bounds = {}
@@ -200,7 +194,7 @@ $(document).on('ready page:load', function () {
   for(let bin_size of BIN_SIZES){
     $("#bin_size").append(
       `<option value="${bin_size}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-        ${bin_size} LAB bins
+        ${bin_size} X ${bin_size} X ${bin_size} LAB bins
       </option>`
     )
   }
