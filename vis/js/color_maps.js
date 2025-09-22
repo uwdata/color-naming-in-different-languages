@@ -39,12 +39,6 @@ const lang_color_selections = {}
 const lang_tile_info = {}
 
 /*************** Pre-processing functions *********************/
-async function load_and_process_all_bin_data(){
-  await Promise.all(
-    BIN_SIZES.map(bin_size => load_and_process_bin_data(bin_size))
-  )
-}
-
 async function load_and_process_bin_data(bin_size){
   await new Promise(resolve => $.getJSON(`../model/lab_bins_${bin_size}.json`, function( data ) {
     process_lab_bin_data(data, bin_size)
@@ -188,17 +182,25 @@ function process_saliency_bin_data(saliency_data, bin_size){
   console.log(language_stats[bin_size])
 }
 
-load_and_process_all_bin_data()
-
 /*************** Tracking the current display options *******************/
 const currSvgSize = [{}]
-let curr_bin_size = BIN_SIZES[0] 
+let curr_bin_size = BIN_SIZES[1] 
 let backgroundColor = 'white'
 let tile_size_type = 'ptc'
 
 /*************** Load page and Data *********************/
-$(document).on('ready page:load', function () {//})
+$(document).on('ready page:load', function () {
+  for(let bin_size of BIN_SIZES){
+    $("#bin_size").append(
+      `<option value="${bin_size}" ${bin_size == curr_bin_size ? 'selected' : ''} >
+        ${bin_size} LAB bins
+      </option>`
+    )
+  }
+
   /********* jquery event listeners */
+
+  $("#bin_size").change(updateDisplay)
 
   $("#background-brightness").on("input", function(){
     const brightness = $(this).val() 
@@ -215,11 +217,26 @@ $(document).on('ready page:load', function () {//})
     tile_size_type = $("#tile_size").val()
     createOrRefreshAllLangs()
   })
+  updateDisplay()
 })
 
 function updateDisplay(){
   
   tile_size_type = $("#tile_size").val()
+  curr_bin_size = Number($("#bin_size").val())
+
+  if(!language_stats[curr_bin_size]){
+    d3.select("#main")
+      .append("p")
+      .attr("id", "loading-p")
+      .html("loading...")
+
+    load_and_process_bin_data(curr_bin_size)
+    return
+
+  } else {
+    $("#loading-p").remove()
+  }
 
   currSvgSize[0].width = svg_widths[curr_bin_size]
   currSvgSize[0].height = svg_heights[curr_bin_size]
@@ -271,6 +288,9 @@ function createOrRefreshLang(i){
   div.style("display", "")
 
   let svg = d3.select("#lang"+i+" svg")
+  let textBackground = svg.select(".text-background")
+  let langText = svg.select(".lang-text")
+
   if(svg.empty()){
 
     // first add the color name dropdown:
@@ -321,22 +341,28 @@ function createOrRefreshLang(i){
     }
 
     svg = d3.select("#lang"+i).append("svg")
-          .attr("width", currSvgSize[0].width)
-          .attr("height", currSvgSize[0].height)
-    const textBackground = svg.append("rect")
-    const textBackgroundPadding = 5
-    const text = svg.append("text")
-      .text(language_stat.lang)
-      .attr("x", 20)
-      .attr("y", 25)
-    textBackground
-      .attr("fill", "white")
-      .attr("x", 20 - textBackgroundPadding)
-      .attr("y", 25 - textBackgroundPadding - (text.node().getBBox().height + 2*textBackgroundPadding)/2)
-      .attr("width", text.node().getBBox().width + 10)
-      .attr("height", text.node().getBBox().height + 10)
+
+    textBackground = svg.append("rect")
+            .attr("class", "text-background")
+    
+    langText = svg.append("text")
+      .attr("class", "lang-text")
   }
 
+  svg.attr("width", currSvgSize[0].width)
+    .attr("height", currSvgSize[0].height)
+
+  langText.text(language_stat.lang)
+      .attr("x", 20)
+      .attr("y", 25)
+
+  const textBackgroundPadding = 5
+  textBackground
+    .attr("fill", "white")
+    .attr("x", 20 - textBackgroundPadding)
+    .attr("y", 25 - textBackgroundPadding - (langText.node().getBBox().height + 2*textBackgroundPadding)/2)
+    .attr("width", langText.node().getBBox().width + 10)
+    .attr("height", langText.node().getBBox().height + 10)
 
 
   // make sure selection in dropdown is up to date:
