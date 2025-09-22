@@ -89,7 +89,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <div class="form-check form-check-inline">
+              <div class="form-check">
                 <label class="form-label" for="tile_size">Tile size</label> 
                 <select class="form-select"  id="tile_size" value="tile_size">
                   <option value="uniform">Uniform</option>
@@ -97,9 +97,16 @@
                   <option value="sal">Saliency</option>
                 </select>
               </div>
-              <div class="form-check form-check-inline">
+              <div class="form-check">
                 <label class="form-label" for="bin_size">Bin size</label> 
                 <select class="form-select" id="bin_size" value="bin_size">
+                </select>
+              </div>
+              <div class="form-check">
+                <label class="form-label" for="bin_size_by">Bin size by</label> 
+                <select class="form-select" id="bin_size_by" value="bin_size_by">
+                  <option value="length-width" selected>Length/Width</option>
+                  <option value="area">Area</option>
                 </select>
               </div>
             </div>

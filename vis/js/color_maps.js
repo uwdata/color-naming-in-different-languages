@@ -9,6 +9,12 @@ const TILE_SIZE = {
   6.67: 3.5
 }
 
+const TILE_BORDER_SIZE = {
+  20: 2,
+  10: 1,
+  6.67: .7
+}
+
 // this times tiles_size is margin on sides and between L tile sets
 const TILE_SEGMENT_MARGIN_NUM = 3
 
@@ -187,6 +193,7 @@ const currSvgSize = [{}]
 let curr_bin_size = BIN_SIZES[1] 
 let backgroundColor = 'white'
 let tile_size_type = 'ptc'
+let bin_size_by = "area"
 
 /*************** Load page and Data *********************/
 $(document).on('ready page:load', function () {
@@ -208,6 +215,7 @@ $(document).on('ready page:load', function () {
     backgroundColor = `rgb(${brightness255}, ${brightness255}, ${brightness255})`
 
     d3.select('#vis')
+      .style("background-color", backgroundColor)
       .selectAll(".lang-map")
       .style("background-color", backgroundColor)
 
@@ -216,6 +224,14 @@ $(document).on('ready page:load', function () {
 
   $("#low-data").change(createOrRefreshAllLangs)
   $("#ref_bins").change(createOrRefreshAllLangs)
+
+  bin_size_by = $("#bin_size_by").val()
+  $("#bin_size_by").change(() => {
+    bin_size_by = $("#bin_size_by").val()
+    createOrRefreshAllLangs()
+  })
+
+  tile_size_type = $("#tile_size").val()
   $("#tile_size").change(() => {
     tile_size_type = $("#tile_size").val()
     createOrRefreshAllLangs()
@@ -388,7 +404,7 @@ function drawColorTiles(i, saliencies){
     .join("rect")
       .attr("class", "tile")
       .style("stroke", backgroundColor)
-      .style("stroke-width", d => TILE_SIZE[curr_bin_size]/5)
+      .style("stroke-width", d => TILE_BORDER_SIZE[curr_bin_size])
       .attr("x", (d) => d.binA*TILE_SIZE[curr_bin_size] +l_bin_x_offsets[curr_bin_size][d.binL] )
       .attr("y", (d) => {
         return -d.binB*TILE_SIZE[curr_bin_size] + l_bin_y_offsets[curr_bin_size]
@@ -455,12 +471,20 @@ function drawColorTiles(i, saliencies){
 function getTileSize(d){
     if(tile_size_type == "ptc"){
       // ptc is 0 to 1
-      return TILE_SIZE[curr_bin_size]*1.3*Math.sqrt(d.maxpTC)
-      return TILE_SIZE[curr_bin_size]*2*d.maxpTC
+      if(bin_size_by == "length-width"){
+        return TILE_SIZE[curr_bin_size]*1.9*d.maxpTC
+      } else {
+        return TILE_SIZE[curr_bin_size]*1.5*Math.sqrt(d.maxpTC)
+      }
     }
     if(tile_size_type == "sal"){
-      // sal is -5 to 0
-      return (d.saliency + 5)*2 / 5 * TILE_SIZE[curr_bin_size]
+      let min_sal = -6
+      let sal_ratio = (d.saliency - min_sal) / -min_sal 
+      if(bin_size_by == "length-width"){
+        return TILE_SIZE[curr_bin_size]*1.8*sal_ratio
+      } else {
+        return TILE_SIZE[curr_bin_size]*1.3*Math.sqrt(sal_ratio)
+      }
     }
     // otherwise uniform:
     return TILE_SIZE[curr_bin_size]
