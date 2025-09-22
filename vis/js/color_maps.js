@@ -194,7 +194,7 @@ $(document).on('ready page:load', function () {
   for(let bin_size of BIN_SIZES){
     $("#bin_size").append(
       `<option value="${bin_size}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-        ${bin_size} X ${bin_size} X ${bin_size} LAB bins
+        ${bin_size} x ${bin_size} x ${bin_size}
       </option>`
     )
   }

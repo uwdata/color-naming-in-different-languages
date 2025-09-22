@@ -64,7 +64,7 @@
       <div id="controllers">
         <div class="form-check form-check-inline"> 
           <label class="form-label" for="background-brightness">Background Brightness 
-              <span title="Note: When users labeled color tiles, the tiles had a black border and were against a white background, which may bias answers and make them more likely to say black and less likely to say white.">*</span>
+              <span title='Note: When users labeled color tiles, the tiles had a thin black border against a white background, which may bias answers. They were perhaps more likely to label a color "black" and less likely to label a color "white."'>*</span>
           </label>
           <input class="form-range" type="range" id="background-brightness" name="background-brightness" min="0" max="100" value="100" />
         </div>
@@ -95,7 +95,7 @@
                 <label class="form-label" for="tile_size">Tile size
                   <span title='Uniform: All tiles are the same size
                   Max P(T|C): the most likely color name ("Max") in the bin, what is the probability a color in the bin has that name ("P(T|C)")
-                  Saliency: The negative entropy: saliency(c)= H(P(Tc))'>*</span>
+                  Saliency: The negative entropy based on the percentage of each color name given to colors in the bin: saliency(C)= -H(P(T|C))'>*</span>
                 </label> 
                 <select class="form-select"  id="tile_size" value="tile_size">
                   <option value="uniform">Uniform</option>
@@ -104,7 +104,7 @@
                 </select>
               </div>
               <div class="form-check">
-                <label class="form-label" for="bin_size">Bin size</label> 
+                <label class="form-label" for="bin_size">LAB bin size</label> 
                 <select class="form-select" id="bin_size" value="bin_size">
                 </select>
               </div>
