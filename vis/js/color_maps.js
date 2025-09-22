@@ -206,7 +206,10 @@ $(document).on('ready page:load', function () {
     const brightness = $(this).val() 
     const brightness255 = Math.round(255*brightness/100)
     backgroundColor = `rgb(${brightness255}, ${brightness255}, ${brightness255})`
-    $("#vis").css("background-color", backgroundColor)
+
+    d3.select('#vis')
+      .selectAll(".lang-map")
+      .style("background-color", backgroundColor)
 
     createOrRefreshAllLangs()
   })
