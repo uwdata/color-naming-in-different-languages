@@ -4,10 +4,12 @@
 // I want to capture "white" and "black"
 // (note: for edges of a/b, bins will often include non-existent colors anyway)
 // I also want bins to be cubes (e.g., 10x10x10)
-  const MIN_L = 0
-  const MAX_L = 100 
-  //const MIN_MAX_AB = 107.8601617541481 //(max a or b value for any RGB value)
-  const MIN_MAX_AB = 110 // round to make BIN_DELTA_AB = 10
+const MIN_L = 0
+const MAX_L = 100 
+//const MIN_MAX_AB = 107.8601617541481 //(max a or b value for any RGB value)
+const MIN_MAX_AB = 110 // round to make BIN_DELTA_AB = 10
+
+const LAB_BIN_SIZES = [20, 10, 20/3]
 
 function getLabBins(binSize = 10){
 

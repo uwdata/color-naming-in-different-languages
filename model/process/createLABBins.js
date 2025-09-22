@@ -6,7 +6,7 @@ const fs = require('fs'),
 
 const FILE_O_LAB_BINS = "../lab_bins"
 
-const labBinSizes = [20, 10, 20/3]
+const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 
 // This function is used to find the best RGB
 // color to represent an LAB bin whose center
@@ -30,7 +30,7 @@ function findClosestRGBToLAB(lab, rgbs){
     return closest_rgb
 }
 
-for(let labBinSize of labBinSizes){
+for(let labBinSize of LAB_BIN_SIZES){
     labBinHelper = labBinHelperLib.getLabBins(labBinSize)
 
     const BIN_L_N = labBinHelper.BIN_L_N,
