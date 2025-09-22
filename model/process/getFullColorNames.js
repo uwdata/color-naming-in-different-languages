@@ -2,14 +2,14 @@ const fs = require('fs'),
   csv = require("csvtojson"),
   d3 = require('d3'),
   csvWriter = require('csv-write-stream');
-  labBinHelper = require('./labBinHelper.js').getLabBins(20/3);
+  labBinHelper = require('./labBinHelper.js').getLabBins(10);
 
 const MIN_NperBin = 4;
-const FILE_O = "../full_color_names_binned_6.67.json";
-const FILE_O_SALIENCY = "../full_color_map_saliency_bins_6.67.json"
-const FILE_O_DETAILED_COLORS = "../detailed_full_color_info_6.67.csv"
+const FILE_O = "../full_color_names_binned.json";
+const FILE_O_SALIENCY = "../full_color_map_saliency_bins_10.json"
+const FILE_O_DETAILED_COLORS = "../detailed_full_color_info.csv"
 
-const lab_bins = JSON.parse(fs.readFileSync("../lab_bins_6.67.json"))
+const lab_bins = JSON.parse(fs.readFileSync("../lab_bins_10.json"))
 const lab_bins_arr = labBinHelper.labBinsToArray(lab_bins)
 
 csv().fromFile("../cleaned_color_names.csv").then((colorNames)=> {
@@ -22,15 +22,13 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
 		commonColorNameLookup[ci.lang][ci.simplifiedName] = ci.commonName;
 	});
 
-  let grouped = d3.nest()
-    .key(d => d.lang0)
-    .entries(colorNames)
+  let grouped = d3.groups(colorNames, d => d.lang0)
+     .map(a => {return {key: a[0], values: a[1]}})
     .sort((a,b) =>  - a.values.length + b.values.length);
 
   grouped.forEach(g => {
-    g.terms = d3.nest()
-                .key(v => v.name)
-                .entries(g.values)
+    g.terms = d3.groups(g.values, v => v.name)
+                .map(a => {return {key: a[0], values: a[1]}})
                 .sort((a,b) => -a.values.length + b.values.length);
 
     g.terms = g.terms.filter(g_term => commonColorNameLookup[g.key] && commonColorNameLookup[g.key][g_term.key]);
@@ -158,11 +156,12 @@ function entropy(arr){
 
 function getAvgColors(data, clusteredTerms){
   let colorTerms = [];
-  let grouped = d3.nest().key(d => d.lang).key(d => d.term).entries(data);
+  let grouped = d3.groups(data, d => d.lang, d => d.term).map(a => {return {key: a[0], values: a[1].map(b => {return{key: b[0], values: b[1]}}) }})
   grouped.forEach(g_lang => {
     let topTerms  = g_lang.values;
     if (clusteredTerms) {
-      topTerms  = topTerms.filter(g_term => clusteredTerms.indexOf(g_term.key) >= 0);
+      topTerms  = topTerms.filter(
+        g_term => clusteredTerms.indexOf(g_term.key) >= 0);
     }
     let totalCount = d3.sum(topTerms, g_term => d3.sum(g_term.values, d => d.pTC));
 
@@ -192,8 +191,7 @@ function getAvgColors(data, clusteredTerms){
 
 function unique(arr, accessor) {
   accessor = !accessor ? (d) => { return d; } : accessor;
-  return d3.nest()
-    .key(accessor)
-    .entries(arr)
+  return d3.groups(arr, accessor)
+    .map(a => {return {key: a[0], values: a[1]}})
     .map(d => d.values[0]);
 }

@@ -96,6 +96,9 @@ for(let labBinSize of LAB_BIN_SIZES){
             let lab = d3.lab(d3.color(`rgb(${r}, ${g}, ${b})`));
             let [l_bin, a_bin, b_bin] = labBinHelper.bins_from_lab(lab)
             let bin = labBinInfo[l_bin][a_bin][b_bin]
+            if(!bin){
+                throw new Error(`Bin doesn't exist for rgb(${r}, ${g}, ${b}) and lab ${[lab.l, lab.a, lab.b]} ${[l_bin, a_bin, b_bin]}`)
+            }
             if(lab.l < bin.l_min || lab.l > bin.l_max){
                 throw new Error("L out of range " + lab + " " + bin)
             }

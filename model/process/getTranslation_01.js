@@ -27,7 +27,7 @@ if (!fs.existsSync("temp/")){
 }
 convertToMatrices();
 fs.writeFileSync("temp/distanceMatrix.json", JSON.stringify(getDistanceMatrix()));
-console.log("Please run getEMD.py on python 2 to transition_loss.json.");
+console.log("Please run getTranslation_02_EMDparallel.py on python 2 to generate transition_loss json files.");
 
 
 
@@ -54,10 +54,8 @@ function flattenCluster(cluster, acc){
 
 function convertToMatrices(){
 
-  let grouped = d3.nest()
-    .key(d => d.lang)
-    .key(d => d.term)
-    .entries(flatData);
+  let grouped = d3.groups(flatData, d => d.lang, d => d.term)
+    .map(a => {return {key: a[0], values: a[1].map(b => {return{key: b[0], values: b[1]}}) }})
 
   grouped.forEach(g_lang => {
     let terms = [];
@@ -111,11 +109,5 @@ function getDistanceMatrix(){
   return distM;
 }
 
-// function convertTo1D(arr){
-//   return arr.reduce((acc, curr) => {
-//     acc = acc.concat(curr);
-//     return acc;
-//   }, []);
-// }
 
 

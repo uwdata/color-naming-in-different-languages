@@ -16,14 +16,16 @@ csv()
   colorNames = colorNames.filter(cn => cn.participantId !== 0);
 
   // 1. Get top languages
-  let grouped = d3.nest()
-    .key(d => d.lang0)
-    .entries(colorNames)
+  let grouped = d3.groups(colorNames, d => d.lang0)
+    .map(a => {return {key: a[0], values: a[1]}})
     .sort((a,b) =>  - a.values.length + b.values.length)
+    
 
   // 2. Get top terms
-  grouped.forEach(g => {
-    g.terms = d3.nest().key(v => v.name).entries(g.values).sort((a,b) => -a.values.length + b.values.length);
+  grouped.forEach((g) => {
+    g.terms = d3.groups(g.values, v => v.name)
+      .map(a => {return {key: a[0], values: a[1]}})
+      .sort((a,b) => -a.values.length + b.values.length);
 
     let rankLookUp = g.terms.map(t => t.values.length);
     g.topNTerms = g.terms.filter(t => rankLookUp.indexOf(t.values.length) + 1 <= N_TERMS);
@@ -35,6 +37,7 @@ csv()
 
     //Print out the terms
     console.log(`Lang : ${g.key}`);
+
     console.log(`Terms : ${JSON.stringify(g.topNTerms.map(subg => subg.key))}`);
 
   });
@@ -60,10 +63,10 @@ csv()
       mapped.terms.push(term.key);
 
       //find most common name for term
-      let commonName = d3.nest()
-                .key(t => t.standardized_entered_name)
-                .entries(term.values)
-                .sort((a,b) => -a.values.length + b.values.length)[0].key;
+      let commonName = d3.groups(term.values, t => t.standardized_entered_name)
+          .map(a => {return {key: a[0], values: a[1]}})
+          .sort((a,b) => -a.values.length + b.values.length)[0]
+          .key
       mapped.commonNames.push(commonName)
       
       let colorNameCnt = new Array(N_BINS).fill(0);

@@ -6,8 +6,8 @@
 // I also want bins to be cubes (e.g., 10x10x10)
 const MIN_L = 0
 const MAX_L = 100 
-//const MIN_MAX_AB = 107.8601617541481 //(max a or b value for any RGB value)
-const MIN_MAX_AB = 110 // round to make BIN_DELTA_AB = 10
+// ~110 is (max abs() a or b value for any RGB value)
+const MIN_MAX_AB = 111 
 
 const LAB_BIN_SIZES = [20, 10, 20/3]
 
@@ -78,5 +78,8 @@ function getLabBins(binSize = 10){
 
 }
 
-module.exports = {getLabBins: getLabBins};
+module.exports = {
+  getLabBins: getLabBins,
+  LAB_BIN_SIZES: LAB_BIN_SIZES
+};
 

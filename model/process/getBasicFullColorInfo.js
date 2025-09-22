@@ -44,24 +44,21 @@ const FILE_O = "../basic_full_color_info.csv"; // Path for the output
 csv().fromFile(FILE_I)
   .then((colorNames)=>{
 
-   let grouped = d3.nest()
-    .key(d => d.lang0)
-    .entries(colorNames)
+   let grouped = d3.groups(colorNames, d => d.lang0)
+    .map(a => {return {key: a[0], values: a[1]}})
     .sort((a,b) =>  - a.values.length + b.values.length);
 
     grouped.forEach(g => {
-      g.terms = d3.nest()
-                  .key(v => v.name)
-                  .entries(g.values)
+      g.terms = d3.groups(g.values, v => v.name)
+                  .map(a => {return {key: a[0], values: a[1]}})
                   .sort((a,b) => -a.values.length + b.values.length);
 
       g.terms.forEach(term => {
         term.numLineNames = term.values.filter(entry => entry.rgbSet == LINE_RGB_SET).length
         term.numFullNames = term.values.filter(entry => entry.rgbSet == FULL_RGB_SET).length
         term.simplifiedName = term.key;
-        term.commonName = d3.nest()
-          .key(t => t.standardized_entered_name)
-          .entries(term.values)
+        term.commonName = d3.groups(term.values,t => t.standardized_entered_name)
+          .map(a => {return {key: a[0], values: a[1]}})
           .sort((a,b) => -a.values.length + b.values.length)[0].key;
       })
 
