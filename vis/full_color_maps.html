@@ -74,18 +74,39 @@
           <input class="form-check-input" type="checkbox" name="metric" id="ref_bins" value="ref_bins">
           <label class="form-label" for="ref_bins">Show reference color bins</label> 
         </div>
-        <div class="form-check form-check-inline">
-          <label class="form-label" for="tile_size">Tile size</label> 
-          <select class="form-select"  id="tile_size" value="tile_size">
-            <option value="uniform">Uniform</option>
-            <option value="ptc" selected>Max P(T|C)</option>
-            <option value="sal">Saliency</option>
-          </select>
-        </div>
-        <div class="form-check form-check-inline">
-          <label class="form-label" for="bin_size">Bin size</label> 
-          <select class="form-select" id="bin_size" value="bin_size">
-          </select>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#advanced_settings_modal">
+          Advanced Settings
+        </button>
+      </div>
+
+      <div class="modal" id="advanced_settings_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Advanced Settings</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-check form-check-inline">
+                <label class="form-label" for="tile_size">Tile size</label> 
+                <select class="form-select"  id="tile_size" value="tile_size">
+                  <option value="uniform">Uniform</option>
+                  <option value="ptc" selected>Max P(T|C)</option>
+                  <option value="sal">Saliency</option>
+                </select>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-label" for="bin_size">Bin size</label> 
+                <select class="form-select" id="bin_size" value="bin_size">
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
         </div>
       </div>
       
