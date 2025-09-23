@@ -30,28 +30,6 @@ fs.writeFileSync("temp/distanceMatrix.json", JSON.stringify(getDistanceMatrix())
 console.log("Please run getTranslation_02_EMDparallel.py on python 2 to generate transition_loss json files.");
 
 
-
-function eucDist(d1, d2){
-  let v1 = d1.values;
-  let v2 = d2.values;
-  let accessor = (d) => { return d.dist; };
-  return Math.sqrt(v1.reduce((acc, v1_i, i) => {
-    acc += (accessor(v1_i) - accessor(v2[i])) * (accessor(v1_i) - accessor(v2[i]));
-    return acc;
-  }, 0));
-}
-
-function flattenCluster(cluster, acc){
-  if (cluster.left) {
-
-    acc = flattenCluster(cluster.left, acc);
-    acc = flattenCluster(cluster.right, acc);
-  } else {
-    acc.push(cluster.value);
-  }
-  return acc;
-}
-
 function convertToMatrices(){
 
   let grouped = d3.groups(flatData, d => d.lang, d => d.term)

@@ -2,18 +2,31 @@ const fs = require('fs'),
   csv = require("csvtojson"),
   d3 = require('d3'),
   csvWriter = require('csv-write-stream');
-  labBinHelper = require('./labBinHelper.js').getLabBins(10);
+  labBinHelperLib = require('./labBinHelper');
+ 
+
+const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
+
+// the size to use to make hte detailed full color info file
+const DETAILED_FULL_COLOR_INFO_BIN_SIZE = labBinHelperLib.LAB_BIN_SIZES[1] 
 
 const MIN_NperBin = 4;
-const FILE_O = "../full_color_names_binned.json";
-const FILE_O_SALIENCY = "../full_color_map_saliency_bins_10.json"
+const FILE_O = "../full_color_names_binned";
+const FILE_O_SALIENCY = "../full_color_map_saliency_bins"
 const FILE_O_DETAILED_COLORS = "../detailed_full_color_info.csv"
-
-const lab_bins = JSON.parse(fs.readFileSync("../lab_bins_10.json"))
-const lab_bins_arr = labBinHelper.labBinsToArray(lab_bins)
 
 csv().fromFile("../cleaned_color_names.csv").then((colorNames)=> {
 csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
+for(let labBinSize of LAB_BIN_SIZES){
+  console.log("calculating full colors for bin size " + labBinSize)
+
+  const labBinHelper = labBinHelperLib.getLabBins(labBinSize);
+
+  const lab_bins = JSON.parse(fs.readFileSync(`../lab_bins_${(Math.round((labBinSize + Number.EPSILON) * 100) / 100)}.json`))
+  const lab_bins_arr = labBinHelper.labBinsToArray(lab_bins)
+
+  
+
   commonColorNameLookup = {};
   colorInfo.forEach(ci => {
 		if(!commonColorNameLookup[ci.lang]){
@@ -111,7 +124,7 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
 
   });
 
-    const avgColors = getAvgColors(flatten, unique(saliency.map(d => d.majorTerm)));
+    const avgColors = getAvgColors(flatten, labBinHelper, unique(saliency.map(d => d.majorTerm)));
 
     for(let i = 0; i < saliency.length; i++){
       const saliency_info = saliency[i]
@@ -119,30 +132,33 @@ csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
       saliency_info.avgTermColor = avgColor.avgColorRGBCode
     }
 
-  fs.writeFileSync(FILE_O, JSON.stringify(flatten));
+  fs.writeFileSync(FILE_O + "_"+(Math.round((labBinSize + Number.EPSILON) * 100) / 100)+".json", JSON.stringify(flatten));
 
-  fs.writeFileSync(FILE_O_SALIENCY, JSON.stringify(saliency))
+  fs.writeFileSync(FILE_O_SALIENCY + "_"+(Math.round((labBinSize + Number.EPSILON) * 100) / 100)+".json", JSON.stringify(saliency))
 
   // make csv: detailed_full_color_info.csv
-  const avgColorsOutput = getAvgColors(flatten);
+  if(labBinSize == DETAILED_FULL_COLOR_INFO_BIN_SIZE){
+    const avgColorsOutput = getAvgColors(flatten, labBinHelper);
 
-  let writer = csvWriter();
-  writer.pipe(fs.createWriteStream(FILE_O_DETAILED_COLORS));
-  avgColorsOutput.forEach(colorDetails => { 
-    basicColorInfo = colorInfo.find((a) => a.lang == colorDetails.lang && a.simplifiedName == colorDetails.name)
-    
-    colorDetails.langAbv = basicColorInfo.lang_abv
-    colorDetails.commonName = commonColorNameLookup[colorDetails.lang][colorDetails.name];
-    
-    [colorDetails.avgL, colorDetails.avgA, colorDetails.avgB] = [colorDetails.avgLAB.l,colorDetails.avgLAB.a, colorDetails.avgLAB.b] 
-    delete colorDetails.avgLAB
+    let writer = csvWriter();
+    writer.pipe(fs.createWriteStream(FILE_O_DETAILED_COLORS));
+    avgColorsOutput.forEach(colorDetails => { 
+      basicColorInfo = colorInfo.find((a) => a.lang == colorDetails.lang && a.simplifiedName == colorDetails.name)
+      
+      colorDetails.langAbv = basicColorInfo.lang_abv
+      colorDetails.commonName = commonColorNameLookup[colorDetails.lang][colorDetails.name];
+      
+      [colorDetails.avgL, colorDetails.avgA, colorDetails.avgB] = [colorDetails.avgLAB.l,colorDetails.avgLAB.a, colorDetails.avgLAB.b] 
+      delete colorDetails.avgLAB
 
-    colorDetails.numFullNames = basicColorInfo.numFullNames
-    colorDetails.numLineNames = basicColorInfo.numLineNames
+      colorDetails.numFullNames = basicColorInfo.numFullNames
+      colorDetails.numLineNames = basicColorInfo.numLineNames
 
-    writer.write(colorDetails)})
-  writer.end();
+      writer.write(colorDetails)})
+    writer.end();
+  }
 
+}
 });
 });
 
@@ -154,7 +170,7 @@ function entropy(arr){
 }
 
 
-function getAvgColors(data, clusteredTerms){
+function getAvgColors(data, labBinHelper, clusteredTerms){
   let colorTerms = [];
   let grouped = d3.groups(data, d => d.lang, d => d.term).map(a => {return {key: a[0], values: a[1].map(b => {return{key: b[0], values: b[1]}}) }})
   grouped.forEach(g_lang => {
