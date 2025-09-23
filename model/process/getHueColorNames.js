@@ -114,6 +114,7 @@ csv()
 
 
   result.colorSet = bin.map(function(index, i, array){
+    // get the midpoint hue color in the bin to represent the bin
     return colorBins.colorSet[Math.round(i===0 ? index/2 : (index + array[i-1]) / 2)];
   });
 

@@ -5,10 +5,10 @@ let genBin = function(Nbin){
 
   //find binning points
   let binEndPoints = [];
-  let endPoint = colorSet[colorSet.length-1].cummulative_dist + colorSet[colorSet.length-1].neighbor_dist;
+  let endPoint = colorSet[colorSet.length-1].cumulative_dist + colorSet[colorSet.length-1].next_dist;
   let binIndex = 1;
   for (let j = 0; j < colorSet.length; j++) {
-    if (colorSet[j].cummulative_dist >= endPoint/Nbin*binIndex ) {
+    if (colorSet[j].cumulative_dist >= endPoint/Nbin*binIndex ) {
       binEndPoints.push(j);
       binIndex += 1;
     };
