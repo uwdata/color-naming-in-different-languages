@@ -30,6 +30,67 @@ function findClosestRGBToLAB(lab, rgbs){
     return closest_rgb
 }
 
+// 
+function getHueColorRatio(bin){
+    LAB_DELTA = .2
+
+    let numHueColors = 0
+    let numNonHueColors = 0
+    let numOtherBinColors = 0
+
+    // note: we'll go an extra 10% into each other bin
+    // since lab values from other bins can map to rgb
+    // values in this bin
+    let l_extra = (bin.l_max - bin.l_min) / 10
+    let a_extra = (bin.a_max - bin.a_min) / 10
+    let b_extra = (bin.b_max - bin.b_min) / 10
+
+    for(let l = bin.l_min - l_extra; l <= bin.l_max + l_extra; l += LAB_DELTA){
+        for(let a = bin.a_min - a_extra; a <= bin.a_max + a_extra; a += LAB_DELTA){
+            for(let b = bin.b_min - b_extra; b <= bin.b_max + b_extra; b += LAB_DELTA){
+                const rgb = d3.lab(l,a,b).rgb()
+                const rounded_rgb = {r: Math.round(rgb.r), g: Math.round(rgb.g), b: Math.round(rgb.b)}
+
+                //check if rgb is valid
+                if(Math.max(rounded_rgb.r, rounded_rgb.g, rounded_rgb.b) > 255 || Math.min(rounded_rgb.r, rounded_rgb.g, rounded_rgb.b) < 0){
+                    //console.log("invalid color, ", rounded_rgb, "from lab", [l,a,b])
+                } else{ // valid rgb
+                    // back-convert to LAB and make sure still in bin (since rgb's can span bins)
+                    let back_lab = d3.lab(d3.rgb(rounded_rgb.r, rounded_rgb.g, rounded_rgb.b))
+                    if(back_lab.l < bin.l_min || back_lab.l > bin.l_max ||
+                       back_lab.a < bin.a_min || back_lab.a > bin.a_max ||
+                       back_lab.b < bin.b_min || back_lab.b > bin.b_max
+                    ){
+                        //console.log("color in other bin, ", rounded_rgb, "from lab", [l,a,b])
+                        numOtherBinColors++
+                    } else {
+
+                        //check if rgb is hue color (at least one 255, at least one 0)
+                        if(Math.max(rounded_rgb.r, rounded_rgb.g, rounded_rgb.b) == 255 && Math.min(rounded_rgb.r, rounded_rgb.g, rounded_rgb.b) == 0){
+                            //console.log("hue color ", rounded_rgb, "from lab", [l,a,b])
+                            numHueColors++
+                        } else{
+                            //console.log("non-hue color ", rounded_rgb, "from lab", [l,a,b])
+                            numNonHueColors++
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    bin.lab_hue_color_ratio_est = numHueColors / (numHueColors + numNonHueColors)
+
+    console.log("bin hue ratio calculated", {
+        numHueColors: numHueColors,
+        numNonHueColors: numNonHueColors,
+        hueColorRatio: bin.lab_hue_color_ratio_est,
+        numOtherBinColors: numOtherBinColors
+        //estimate_lab_delta: LAB_DELTA
+    } )
+
+}
+
 for(let labBinSize of LAB_BIN_SIZES){
     labBinHelper = labBinHelperLib.getLabBins(labBinSize)
 
@@ -90,27 +151,27 @@ for(let labBinSize of LAB_BIN_SIZES){
     //Find out which bins contain rgb colors
     console.log("Placing rgb colors")
     for(r = 0; r <=255; r++){
-    r % 20 == 0 ? console.log("r", r): ""
-    for(g = 0; g <= 255; g++){
-        for(b = 0; b <= 255; b++){
-            let lab = d3.lab(d3.color(`rgb(${r}, ${g}, ${b})`));
-            let [l_bin, a_bin, b_bin] = labBinHelper.bins_from_lab(lab)
-            let bin = labBinInfo[l_bin][a_bin][b_bin]
-            if(!bin){
-                throw new Error(`Bin doesn't exist for rgb(${r}, ${g}, ${b}) and lab ${[lab.l, lab.a, lab.b]} ${[l_bin, a_bin, b_bin]}`)
+        r % 20 == 0 ? console.log("r", r): ""
+        for(g = 0; g <= 255; g++){
+            for(b = 0; b <= 255; b++){
+                let lab = d3.lab(d3.color(`rgb(${r}, ${g}, ${b})`));
+                let [l_bin, a_bin, b_bin] = labBinHelper.bins_from_lab(lab)
+                let bin = labBinInfo[l_bin][a_bin][b_bin]
+                if(!bin){
+                    throw new Error(`Bin doesn't exist for rgb(${r}, ${g}, ${b}) and lab ${[lab.l, lab.a, lab.b]} ${[l_bin, a_bin, b_bin]}`)
+                }
+                if(lab.l < bin.l_min || lab.l > bin.l_max){
+                    throw new Error("L out of range " + lab + " " + bin)
+                }
+                if(lab.a < bin.a_min || lab.a > bin.a_max){
+                    throw new Error("A out of range " + lab + " " + bin)
+                }
+                if(lab.b < bin.b_min || lab.b > bin.b_max){
+                    throw new Error("B out of range " + lab + " " + bin)
+                }
+                bin.rgbs.push(d3.rgb(r,g,b));
             }
-            if(lab.l < bin.l_min || lab.l > bin.l_max){
-                throw new Error("L out of range " + lab + " " + bin)
-            }
-            if(lab.a < bin.a_min || lab.a > bin.a_max){
-                throw new Error("A out of range " + lab + " " + bin)
-            }
-            if(lab.b < bin.b_min || lab.b > bin.b_max){
-                throw new Error("B out of range " + lab + " " + bin)
-            }
-            bin.rgbs.push(d3.rgb(r,g,b));
         }
-    }
     }
 
 
@@ -141,6 +202,7 @@ for(let labBinSize of LAB_BIN_SIZES){
                         }
                         bin_info.representative_lab = d3.lab(d3.color(`rgb(${closest_rgb.r}, ${closest_rgb.g}, ${closest_rgb.b})`))
                     }
+                    bin_info.num_rgbs = bin_info.rgbs.length
                     delete bin_info.rgbs
                 }
             }
@@ -152,6 +214,16 @@ for(let labBinSize of LAB_BIN_SIZES){
             delete labBinInfo[l_bin]
         }
     }
+
+    console.log("calculating hue color ratio per bin")
+    for(const [l_bin, l_bin_entries] of Object.entries(labBinInfo).sort((a, b) => b[0] - a[0])){
+        for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries).sort((a, b) => b[0] - a[0])){
+            for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries).sort((a, b) => b[0] - a[0])){
+                getHueColorRatio(b_bin_entry)
+            }
+        }
+    }
+    
 
     // write out the bin info
     // count size of labBins (just for curiosity)

@@ -80,6 +80,9 @@ function getLabBins(binSize = 10){
 
 module.exports = {
   getLabBins: getLabBins,
-  LAB_BIN_SIZES: LAB_BIN_SIZES
+  LAB_BIN_SIZES: LAB_BIN_SIZES,
+  MIN_L: MIN_L,
+  MAX_L: MAX_L,
+  MIN_MAX_AB: MIN_MAX_AB
 };
 
