@@ -8,6 +8,10 @@ const FILE_O_LAB_BINS = "../lab_bins"
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 
+//const HUE_RATIO_LAB_DELTA = .05 // NOTE This makes it very slow
+const HUE_RATIO_LAB_DELTA = .5 // For speed purposes (gives less accurate bin info)
+
+
 // This function is used to find the best RGB
 // color to represent an LAB bin whose center
 // is not in RGB space
@@ -32,7 +36,14 @@ function findClosestRGBToLAB(lab, rgbs){
 
 // 
 function getHueColorRatio(bin){
-    LAB_DELTA = .2
+    // if no hue colors map to this bin, skip bin:
+    let hueColorCount = bin.hueColorCount
+    delete bin.hueColorCount
+    if(hueColorCount == 0){
+        //console.log("skipping bin", bin.hueColorCount)
+        bin.lab_hue_color_ratio_est = 0
+        return
+    }
 
     let numHueColors = 0
     let numNonHueColors = 0
@@ -40,14 +51,14 @@ function getHueColorRatio(bin){
 
     // note: we'll go an extra 10% into each other bin
     // since lab values from other bins can map to rgb
-    // values in this bin
+    // values in this bin (is this enough? I don't know)
     let l_extra = (bin.l_max - bin.l_min) / 10
     let a_extra = (bin.a_max - bin.a_min) / 10
     let b_extra = (bin.b_max - bin.b_min) / 10
 
-    for(let l = bin.l_min - l_extra; l <= bin.l_max + l_extra; l += LAB_DELTA){
-        for(let a = bin.a_min - a_extra; a <= bin.a_max + a_extra; a += LAB_DELTA){
-            for(let b = bin.b_min - b_extra; b <= bin.b_max + b_extra; b += LAB_DELTA){
+    for(let l = bin.l_min - l_extra; l <= bin.l_max + l_extra; l += HUE_RATIO_LAB_DELTA){
+        for(let a = bin.a_min - a_extra; a <= bin.a_max + a_extra; a += HUE_RATIO_LAB_DELTA){
+            for(let b = bin.b_min - b_extra; b <= bin.b_max + b_extra; b += HUE_RATIO_LAB_DELTA){
                 const rgb = d3.lab(l,a,b).rgb()
                 const rounded_rgb = {r: Math.round(rgb.r), g: Math.round(rgb.g), b: Math.round(rgb.b)}
 
@@ -86,7 +97,6 @@ function getHueColorRatio(bin){
         numNonHueColors: numNonHueColors,
         hueColorRatio: bin.lab_hue_color_ratio_est,
         numOtherBinColors: numOtherBinColors
-        //estimate_lab_delta: LAB_DELTA
     } )
 
 }
@@ -170,6 +180,14 @@ for(let labBinSize of LAB_BIN_SIZES){
                     throw new Error("B out of range " + lab + " " + bin)
                 }
                 bin.rgbs.push(d3.rgb(r,g,b));
+                // if hue color add to count
+                if(!("hueColorCount" in bin)){
+                    bin.hueColorCount = 0
+                }
+
+                if(Math.max(r, g, b) == 255 && Math.min(r, g, b) == 0){
+                    bin.hueColorCount++
+                }
             }
         }
     }
