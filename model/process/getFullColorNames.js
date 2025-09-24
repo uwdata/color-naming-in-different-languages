@@ -35,30 +35,30 @@ for(let labBinSize of LAB_BIN_SIZES){
 		commonColorNameLookup[ci.lang][ci.simplifiedName] = ci.commonName;
 	});
 
-  let grouped = d3.groups(colorNames, d => d.lang0)
+  let grouped_lang = d3.groups(colorNames, d => d.lang0)
      .map(a => {return {key: a[0], values: a[1]}})
     .sort((a,b) =>  - a.values.length + b.values.length);
 
-  grouped.forEach(g => {
-    g.terms = d3.groups(g.values, v => v.name)
+  grouped_lang.forEach(langData => {
+    langData.terms = d3.groups(langData.values, v => v.name)
                 .map(a => {return {key: a[0], values: a[1]}})
                 .sort((a,b) => -a.values.length + b.values.length);
 
-    g.terms = g.terms.filter(g_term => commonColorNameLookup[g.key] && commonColorNameLookup[g.key][g_term.key]);
+    langData.terms = langData.terms.filter(g_term => commonColorNameLookup[langData.key] && commonColorNameLookup[langData.key][g_term.key]);
   });
 
-  grouped = grouped.filter(g => g.terms.length > 0);
+  grouped_lang = grouped_lang.filter(g => g.terms.length > 0);
 
 
   let flatten = [], saliency = [];
 
-  grouped.forEach(group => {
-    console.log("Start : " + group.key);
+  grouped_lang.forEach(langData => {
+    console.log("Start : " + langData.key);
 
     let bufFlatten = [];
 
     let gColorNameCnt = labBinHelper.createLABNumBins(lab_bins);
-    group.terms.forEach(term => {
+    langData.terms.forEach(term => {
       let colorNameCnt = labBinHelper.createLABNumBins(lab_bins);
       term.values.forEach(response => {
         let responseLab = d3.lab(d3.rgb(response.r, response.g, response.b));
@@ -76,9 +76,9 @@ for(let labBinSize of LAB_BIN_SIZES){
         if (colorNameCnt[l][a][b] !== 0) {
 
           bufFlatten.push({
-            "lang": group.key,
+            "lang": langData.key,
             "term": term.key,
-            "commonTerm": commonColorNameLookup[group.key][term.key],
+            "commonTerm": commonColorNameLookup[langData.key][term.key],
             "binL": l,
             "binA": a,
             "binB": b,
@@ -103,34 +103,30 @@ for(let labBinSize of LAB_BIN_SIZES){
       if (gColorNameCnt[l][a][b] >= MIN_NperBin) {
         let maxpTC = d3.max(bufFlatten.filter(d => d.binL === l && d.binA === a && d.binB === b), d => d.pTC);
         const rep_lab = lab_bins[l][a][b].representative_lab
+        const majorTerm = bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term
+        const basicColorInfo = colorInfo.find((a) => a.lang == langData.key && a.simplifiedName == majorTerm)
+        
         bufSaliency.push({
-          "lang": group.key,
+          "lang": langData.key,
           "binL": l,
           "binA": a,
           "binB": b,
           "lab": [rep_lab.l, rep_lab.a, rep_lab.b].join(","),
           "saliency": -entropy(bufFlatten.filter(d => d.binL === l && d.binA === a && d.binB === b).map(d => d.pTC)),
           "maxpTC": maxpTC,
-          "majorTerm": bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term,
-          "commonTerm": commonColorNameLookup[group.key][bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term]
+          "majorTerm": majorTerm,
+          "commonTerm": commonColorNameLookup[langData.key][majorTerm],
+          "avgTermColor": basicColorInfo.avgColorRGBCode
         });
       }
     }
     
-    console.log("End : " + group.key);
+    console.log("End : " + langData.key);
     saliency = saliency.concat(bufSaliency);
     flatten = flatten.concat(bufFlatten);
 
 
   });
-
-    const avgColors = getAvgColors(flatten, labBinHelper, unique(saliency.map(d => d.majorTerm)));
-
-    for(let i = 0; i < saliency.length; i++){
-      const saliency_info = saliency[i]
-      const avgColor = avgColors.find(d => d.lang === saliency_info.lang && d.name === saliency_info.majorTerm)
-      saliency_info.avgTermColor = avgColor.avgColorRGBCode
-    }
 
   fs.writeFileSync(FILE_O + "_"+(Math.round((labBinSize + Number.EPSILON) * 100) / 100)+".json", JSON.stringify(flatten));
 
