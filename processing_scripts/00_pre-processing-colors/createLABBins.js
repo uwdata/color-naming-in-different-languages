@@ -2,7 +2,7 @@ const fs = require('fs'),
   csv = require("csvtojson"),
   Converter = require("csvtojson").Converter,
   d3 = require('d3')
-  labBinHelperLib = require('./labBinHelper');
+  labBinHelperLib = require('../utils/labBinHelper');
 
 const FILE_O_LAB_BINS = "../lab_bins"
 

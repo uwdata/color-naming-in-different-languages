@@ -25,7 +25,7 @@ let commonColorNameLookup = {};
   
 csv().fromFile("../cleaned_color_names.csv")
   .then((namingData)=>{
-	  csv().fromFile("../detailed_full_color_info.csv")
+	  csv().fromFile("../basic_full_color_info.csv")
 		.then((colorInfo)=>{
 			console.log(colorInfo);
 			createSOMs(colorInfo, namingData);

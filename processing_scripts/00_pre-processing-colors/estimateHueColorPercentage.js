@@ -1,6 +1,6 @@
 const fs = require('fs'),
   d3 = require('d3')
-  labBinHelperLib = require('./labBinHelper');
+  labBinHelperLib = require('../utils/labBinHelper');
 
 // estimate the ratio of LAB colors that are Hue colors (1 or 2 of r,g, or b at 255, 1 at 0)
 
