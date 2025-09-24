@@ -28,7 +28,7 @@ let colorNamesAbrv = {
 	"Romanian": "ro"
 };
 
-const HUE_COLOR_RATIO = JSON.parse(fs.readFileSync("./lab_hue_color_ratio.json")).hueColorRatio;
+const HUE_COLOR_RATIO = JSON.parse(fs.readFileSync("../../model/color_info_pre_naming/lab_hue_color_ratio.json")).hueColorRatio;
 
 function getLangAbv(lang){
   const langKey = Object.keys(colorNamesAbrv).find(val => lang.includes(val))
@@ -40,9 +40,9 @@ function getLangAbv(lang){
 }
 
 // Path or the input csv file
-const FILE_I = "../cleaned_color_names.csv"
-const FILE_BASIC_COLOR_O = "../basic_full_color_info.csv"; // Path for the output
-const FILE_LANG_O = "../lang_info.csv"; // Path for the output
+const FILE_I = "../../model/cleaned_color_names.csv"
+const FILE_BASIC_COLOR_O = "../../model/full_colors_info.csv"; // Path for the output
+const FILE_LANG_O = "../../model/lang_info.csv"; // Path for the output
 
 let langDataWriter = csvWriter();
 langDataWriter.pipe(fs.createWriteStream(FILE_LANG_O));

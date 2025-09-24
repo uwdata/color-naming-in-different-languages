@@ -10,7 +10,7 @@ const fs = require('fs'),
 
 // Path or the input csv file
 const FILE_I = "../../raw/color_perception_table_color_names.csv"
-const FILE_O = "../cleaned_color_names.csv"; // Path for the output
+const FILE_O = "../../model/cleaned_color_names.csv"; // Path for the output
 
 csv().fromFile(FILE_I)
   .then((colorNames)=>{

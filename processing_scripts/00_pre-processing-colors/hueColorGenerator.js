@@ -67,4 +67,4 @@ for(let i = 0; i < hueColors.length; i++){
 }
 
 console.log(hueColors)
-fs.writeFileSync("hue_colors.json", JSON.stringify(hueColors, null, 2));
+fs.writeFileSync("../../model/color_info_pre_naming/hue_colors.json", JSON.stringify(hueColors, null, 2));

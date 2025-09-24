@@ -1,14 +1,12 @@
 const fs = require('fs'),
-  csv = require("csvtojson"),
-  Converter = require("csvtojson").Converter,
   d3 = require('d3')
   labBinHelperLib = require('../utils/labBinHelper');
 
-const FILE_O_LAB_BINS = "../lab_bins"
+const FILE_O_LAB_BINS = "../../model/color_info_pre_naming/lab_bins"
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 
-//const HUE_RATIO_LAB_DELTA = .05 // NOTE This makes it very slow
+//const HUE_RATIO_LAB_DELTA = .05 // NOTE: This makes it very slow (and more accurate)
 const HUE_RATIO_LAB_DELTA = .5 // For speed purposes (gives less accurate bin info)
 
 

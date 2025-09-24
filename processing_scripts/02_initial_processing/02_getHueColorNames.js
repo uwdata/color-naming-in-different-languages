@@ -1,15 +1,15 @@
 const fs = require('fs'),
-  colorBins = require('./hueColorBins.js'),
+  colorBins = require('../utils/hueColorBins.js'),
   csv = require("csvtojson"),
   d3 = require('d3');
 //const converter = new Converter({});
 const N_BINS = 36, N_TERMS = 20;
 const MIN_COUNT = 400;
-const O_FILE_NAME = `../hue_color_names_binned_aggregated.json`;
-const O_FILE_NAME_FLATTEN = `../hue_color_names_binned.json`;
+const O_FILE_NAME = `../../model/binned_hue_colors/hue_color_names_binned_aggregated.json`;
+const O_FILE_NAME_FLATTEN = `../../model/binned_hue_colors/hue_color_names_binned.json`;
 
 csv()
-.fromFile("../cleaned_color_names.csv")
+.fromFile("../../model/cleaned_color_names.csv")
 .then((colorNames)=>{
   //There is a possible priming effect for studies with version 1.1.4, but we'll ignore that for now
   colorNames = colorNames.filter(cn => cn.rgbSet === "line");

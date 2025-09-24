@@ -43,4 +43,4 @@ const output = {
 } 
 
 console.log(output)
-fs.writeFileSync("lab_hue_color_ratio.json", JSON.stringify(output, null, 2));
+fs.writeFileSync("../../model/color_info_pre_naming/lab_hue_color_ratio.json", JSON.stringify(output, null, 2));

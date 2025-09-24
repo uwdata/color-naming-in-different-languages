@@ -1,7 +1,7 @@
 const fs = require('fs'),
   csv = require("csvtojson"),
   d3 = require('d3'),
-  labBinHelperLib = require('./utils/labBinHelper');
+  labBinHelperLib = require('../utils/labBinHelper');
  
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
