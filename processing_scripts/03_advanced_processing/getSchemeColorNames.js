@@ -1,7 +1,7 @@
 const fs = require('fs'),
   d3 = require('d3'),
-  labBinHelper = require('./labBinHelper.js').getLabBins(10)
-let flatData = JSON.parse(fs.readFileSync("../full_color_names_binned.json"));
+  labBinHelper = require('../utils/labBinHelper.js').getLabBins(10)
+let flatData = JSON.parse(fs.readFileSync("../../model/binned_full_colors/full_color_names_binned_10.json"));
 const BIN_NUM = 10;
 const LANG_CODE = {
   'English (English)' : "en",
@@ -58,4 +58,4 @@ schemes.forEach(scheme => {
 });
 
 
-fs.writeFileSync("../scheme_color_names.json", JSON.stringify(result, null, 2));
+fs.writeFileSync("../../model/scheme_color_names.json", JSON.stringify(result, null, 2));

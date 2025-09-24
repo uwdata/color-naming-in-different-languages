@@ -68,11 +68,11 @@ $(document).on('ready page:load', function () {
 
   d3.json("../model/translation_loss/translation_loss_en_ko.json")
   .then(data => {
-  d3.json("../model/full_color_names_binned.json")
+  d3.json("../model/binned_full_colors/full_color_names_binned_10.json")
   .then(colorNames => {
-  d3.csv("../model/detailed_full_color_info.csv")
+  d3.csv("../model/full_colors_info.csv")
   .then((fullColorDetails)=> {
-    let avgColors = getAvgColors(fullColorDetails, colorNames);
+    //let avgColors = getAvgColors(fullColorDetails, colorNames);
     let translations  = translationByDict.slice();
     translationByDict.slice().forEach(td => {
       let best, minD;
@@ -106,7 +106,7 @@ $(document).on('ready page:load', function () {
       translations.push(translationByColor);
     });
     translations = unique(translations, tr => tr.koterm + tr.enterm + tr.direction + tr.by + tr.gid);
-    draw(translations, avgColors);
+    draw(translations, fullColorDetails);
   });
   });
   });
@@ -115,7 +115,7 @@ $(document).on('ready page:load', function () {
 const gray = "#555";
 const targetSelector = "#vis";
 
-function draw(translations, avgColors){
+function draw(translations, fullColorDetails){
 
   //Extract terms and check each of them if it is a basic term.
   let basicTerms = translationByDict.map(d => {
@@ -146,7 +146,7 @@ function draw(translations, avgColors){
   let terms = basicTerms.concat(otherTerms).sort((a,b) => -a.basic +b.basic).sort((a,b) => a.gid - b.gid);
   terms =  unique(terms, t => t.gid + t.term);
   terms.forEach(t => {
-    let avgC = avgColors.find(avgC => avgC.name === t.term && LANG_CODE[t.lang] === avgC.lang);
+    let avgC = fullColorDetails.find(avgC => avgC.simplifiedName === t.term && LANG_CODE[t.lang] === avgC.lang);
     t.lab = avgC.avgLABColor;
     t.avgColorCode = avgC.avgColorRGBCode;
     t.soleTarget = translations.filter(tr => {
@@ -412,13 +412,13 @@ function getLAB(bin_l, bin_a, bin_b, binSize = 10){
   let offsetBinB = Math.floor(MIN_B/binSize);
   return [bin_l * binSize, (bin_a + offsetBinA) * binSize, (bin_b + offsetBinB) * binSize];
 }
-function getAvgColors(fullColorDetails, data){
-  fullColorDetails.forEach(colorDetails => {
-    colorDetails.cnt = colorDetails.binPctCnt,
-    colorDetails.rate = colorDetails.totalColorFraction
-  })
-  return fullColorDetails
-}
+// function getAvgColors(fullColorDetails, data){
+//   fullColorDetails.forEach(colorDetails => {
+//     colorDetails.cnt = colorDetails.binPctCnt,
+//     colorDetails.rate = colorDetails.totalColorFraction
+//   })
+//   return fullColorDetails
+// }
 
 function defArrowHeads(svg){
   let defs = svg.append("svg:defs");

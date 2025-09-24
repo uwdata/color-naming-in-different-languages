@@ -7,18 +7,18 @@ const fs = require('fs'),
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 
 const MIN_NperBin = 4;
-const FILE_O = "../full_color_names_binned";
-const FILE_O_SALIENCY = "../full_color_map_saliency_bins"
+const FILE_O = "../../model/binned_full_colors/full_color_names_binned";
+const FILE_O_SALIENCY = "../../model/binned_full_colors/full_color_map_saliency_bins"
 
-csv().fromFile("../cleaned_color_names.csv").then((colorNames)=> {
-csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
-csv().fromFile("../lang_info.csv").then((lang_info)=> {
+csv().fromFile("../../model/cleaned_color_names.csv").then((colorNames)=> {
+csv().fromFile("../../model/full_colors_info.csv").then((colorInfo)=> {
+csv().fromFile("../../model/lang_info.csv").then((lang_info)=> {
 for(let labBinSize of LAB_BIN_SIZES){
   console.log("calculating full colors for bin size " + labBinSize)
 
   const labBinHelper = labBinHelperLib.getLabBins(labBinSize);
 
-  const lab_bins = JSON.parse(fs.readFileSync(`../lab_bins_${(Math.round((labBinSize + Number.EPSILON) * 100) / 100)}.json`))
+  const lab_bins = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/lab_bins_${(Math.round((labBinSize + Number.EPSILON) * 100) / 100)}.json`))
   const lab_bins_arr = labBinHelper.labBinsToArray(lab_bins)
 
   

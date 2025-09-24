@@ -40,11 +40,11 @@ const lang_tile_info = {}
 
 /*************** Pre-processing functions *********************/
 async function load_and_process_bin_data(bin_size){
-  await new Promise(resolve => $.getJSON(`../model/lab_bins_${bin_size}.json`, function( data ) {
+  await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/lab_bins_${bin_size}.json`, function( data ) {
     process_lab_bin_data(data, bin_size)
     resolve()
   }))
-  await new Promise(resolve => $.getJSON(`../model/full_color_map_saliency_bins_${bin_size}.json`, function( data ) {
+  await new Promise(resolve => $.getJSON(`../model/binned_full_colors/full_color_map_saliency_bins_${bin_size}.json`, function( data ) {
     process_saliency_bin_data(data, bin_size)
     resolve()
   }))

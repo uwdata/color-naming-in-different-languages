@@ -1,4 +1,4 @@
-var SOM = require('./SOM');
+var SOM = require('../utils/SOM');
 
 const fs = require('fs'),
   d3 = require('d3'),
