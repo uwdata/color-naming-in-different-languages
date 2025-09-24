@@ -1,22 +1,18 @@
 const fs = require('fs'),
   csv = require("csvtojson"),
   d3 = require('d3'),
-  csvWriter = require('csv-write-stream');
   labBinHelperLib = require('./labBinHelper');
  
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 
-// the size to use to make hte detailed full color info file
-const DETAILED_FULL_COLOR_INFO_BIN_SIZE = labBinHelperLib.LAB_BIN_SIZES[1] 
-
 const MIN_NperBin = 4;
 const FILE_O = "../full_color_names_binned";
 const FILE_O_SALIENCY = "../full_color_map_saliency_bins"
-const FILE_O_DETAILED_COLORS = "../detailed_full_color_info.csv"
 
 csv().fromFile("../cleaned_color_names.csv").then((colorNames)=> {
 csv().fromFile("../basic_full_color_info.csv").then((colorInfo)=> {
+csv().fromFile("../lang_info.csv").then((lang_info)=> {
 for(let labBinSize of LAB_BIN_SIZES){
   console.log("calculating full colors for bin size " + labBinSize)
 
@@ -57,24 +53,81 @@ for(let labBinSize of LAB_BIN_SIZES){
 
     let bufFlatten = [];
 
-    let gColorNameCnt = labBinHelper.createLABNumBins(lab_bins);
+    let langBinColorNameCnt = labBinHelper.createLABNumBins(lab_bins);
+    let langBinColorHueNameCnt = labBinHelper.createLABNumBins(lab_bins);
+    let langBinColorNonHueNameCnt = labBinHelper.createLABNumBins(lab_bins);
     langData.terms.forEach(term => {
-      let colorNameCnt = labBinHelper.createLABNumBins(lab_bins);
+      term.binColorNameCnt = labBinHelper.createLABNumBins(lab_bins)
+      term.binHueNameCnt = labBinHelper.createLABNumBins(lab_bins)
+      term.binNonHueNameCnt = labBinHelper.createLABNumBins(lab_bins)
+
+      term.totalHueNameCnt = 0
+      term.totalNonHueNameCnt = 0
+
       term.values.forEach(response => {
         let responseLab = d3.lab(d3.rgb(response.r, response.g, response.b));
         let [l, a, b] = labBinHelper.bins_from_lab({l: responseLab.l, a: responseLab.a, b: responseLab.b});
-        colorNameCnt[l][a][b] += 1;
-        gColorNameCnt[l][a][b] += 1;
+        term.binColorNameCnt[l][a][b] += 1;
+        langBinColorNameCnt[l][a][b] += 1;
+        // check if hue color or non-hue color and calculate scaled counts
+        if(Math.max(response.r, response.g, response.b) == 255 && Math.min(response.r, response.g, response.b) == 0){
+          term.binHueNameCnt[l][a][b] += 1
+          langBinColorHueNameCnt[l][a][b] += 1
+          term.totalHueNameCnt += 1
+        } else {
+          term.binNonHueNameCnt[l][a][b] += 1
+          langBinColorNonHueNameCnt[l][a][b] += 1
+          term.totalNonHueNameCnt += 1
+        }
       });
+    });
 
+    // go through each term and bin for term to calculate 
+    // corrected term count
+
+    let langBinColorCorrectedCnt = labBinHelper.createLABNumBins(lab_bins);
+    langData.terms.forEach(term => {
+       term.correctedBinCnt = labBinHelper.createLABNumBins(lab_bins)
+       for(let i = 0; i < lab_bins_arr.length; i++){
+        const thisBin = lab_bins_arr[i]
+
+        const l = thisBin.l_bin,
+              a = thisBin.a_bin,
+              b = thisBin.b_bin
+        if (term.binColorNameCnt[l][a][b] !== 0) {
+          const bin_hue_correction_multiplier = (langBinColorHueNameCnt[l][a][b] +  langBinColorNonHueNameCnt[l][a][b]) * lab_bins[l][a][b].lab_hue_color_ratio_est / langBinColorHueNameCnt[l][a][b]
+          const bin_non_hue_correction_multiplier = (langBinColorHueNameCnt[l][a][b] +  langBinColorNonHueNameCnt[l][a][b]) * (1-lab_bins[l][a][b].lab_hue_color_ratio_est) / langBinColorNonHueNameCnt[l][a][b]
+          term.correctedBinCnt[l][a][b] = 
+            (term.binHueNameCnt[l][a][b] > 0 ? term.binHueNameCnt[l][a][b] * bin_hue_correction_multiplier : 0)
+             + (term.binNonHueNameCnt[l][a][b] > 0 ? term.binNonHueNameCnt[l][a][b] * bin_non_hue_correction_multiplier : 0)
+          langBinColorCorrectedCnt[l][a][b] += term.correctedBinCnt[l][a][b]
+        }
+      }
+    })
+
+    // we now have terms corrected cnt per bin
+    // and language corrected count per bin
+
+    // find P of term given Color now can be done by comparing
+    // total bin corrected count vs term corrected count
+    const global_hue_correction_multiplier = lang_info.find(d => d.lang == langData.key).hue_correction_multiplier
+    const global_non_hue_correction_multiplier = lang_info.find(d => d.lang == langData.key).non_hue_correction_multiplier
+    langData.terms.forEach(term => {
+      if(term.key == "pink"){
+        debugger
+      }
       for(let i = 0; i < lab_bins_arr.length; i++){
         const thisBin = lab_bins_arr[i]
 
         const l = thisBin.l_bin,
               a = thisBin.a_bin,
               b = thisBin.b_bin
-        if (colorNameCnt[l][a][b] !== 0) {
+        
+        if(l == 6 && a == 9 && b == -1){
+          debugger
+        }
 
+        if (term.binColorNameCnt[l][a][b] !== 0) {
           bufFlatten.push({
             "lang": langData.key,
             "term": term.key,
@@ -82,17 +135,17 @@ for(let labBinSize of LAB_BIN_SIZES){
             "binL": l,
             "binA": a,
             "binB": b,
-            "cnt": colorNameCnt[l][a][b],
-            "pCT": colorNameCnt[l][a][b] / term.values.length
+            "cnt": term.binColorNameCnt[l][a][b],
+            "correctedCnt": term.correctedBinCnt[l][a][b],
+            "pCT": (term.binHueNameCnt[l][a][b]*global_hue_correction_multiplier + term.binNonHueNameCnt[l][a][b]*global_non_hue_correction_multiplier)
+              / (term.totalHueNameCnt*global_hue_correction_multiplier + term.totalNonHueNameCnt*global_non_hue_correction_multiplier),// corrected count for this term *in this bin* / global corrected count for this term 
+            "pTC": term.correctedBinCnt[l][a][b] / langBinColorCorrectedCnt[l][a][b]
           });
         }
       }
-    });
+    })
 
 
-    bufFlatten.forEach( d => {
-      d.pTC = d.cnt / gColorNameCnt[d.binL][d.binA][d.binB];
-    });
     let bufSaliency = [];
     for(let i = 0; i < lab_bins_arr.length; i++){
       const thisBin = lab_bins_arr[i]
@@ -100,12 +153,12 @@ for(let labBinSize of LAB_BIN_SIZES){
       const l = thisBin.l_bin,
             a = thisBin.a_bin,
             b = thisBin.b_bin
-      if (gColorNameCnt[l][a][b] >= MIN_NperBin) {
+      if (langBinColorNameCnt[l][a][b] >= MIN_NperBin) {
         let maxpTC = d3.max(bufFlatten.filter(d => d.binL === l && d.binA === a && d.binB === b), d => d.pTC);
         const rep_lab = lab_bins[l][a][b].representative_lab
         const majorTerm = bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term
         const basicColorInfo = colorInfo.find((a) => a.lang == langData.key && a.simplifiedName == majorTerm)
-        
+
         bufSaliency.push({
           "lang": langData.key,
           "binL": l,
@@ -131,30 +184,8 @@ for(let labBinSize of LAB_BIN_SIZES){
   fs.writeFileSync(FILE_O + "_"+(Math.round((labBinSize + Number.EPSILON) * 100) / 100)+".json", JSON.stringify(flatten));
 
   fs.writeFileSync(FILE_O_SALIENCY + "_"+(Math.round((labBinSize + Number.EPSILON) * 100) / 100)+".json", JSON.stringify(saliency))
-
-  // make csv: detailed_full_color_info.csv
-  if(labBinSize == DETAILED_FULL_COLOR_INFO_BIN_SIZE){
-    const avgColorsOutput = getAvgColors(flatten, labBinHelper);
-
-    let writer = csvWriter();
-    writer.pipe(fs.createWriteStream(FILE_O_DETAILED_COLORS));
-    avgColorsOutput.forEach(colorDetails => { 
-      basicColorInfo = colorInfo.find((a) => a.lang == colorDetails.lang && a.simplifiedName == colorDetails.name)
-      
-      colorDetails.langAbv = basicColorInfo.lang_abv
-      colorDetails.commonName = commonColorNameLookup[colorDetails.lang][colorDetails.name];
-      
-      [colorDetails.avgL, colorDetails.avgA, colorDetails.avgB] = [colorDetails.avgLAB.l,colorDetails.avgLAB.a, colorDetails.avgLAB.b] 
-      delete colorDetails.avgLAB
-
-      colorDetails.numFullNames = basicColorInfo.numFullNames
-      colorDetails.numLineNames = basicColorInfo.numLineNames
-
-      writer.write(colorDetails)})
-    writer.end();
-  }
-
 }
+});
 });
 });
 
@@ -163,47 +194,4 @@ function entropy(arr){
     acc += curr === 0 ? 0 : -1 * curr * Math.log2(curr);
     return acc;
   }, 0);
-}
-
-
-function getAvgColors(data, labBinHelper, clusteredTerms){
-  let colorTerms = [];
-  let grouped = d3.groups(data, d => d.lang, d => d.term).map(a => {return {key: a[0], values: a[1].map(b => {return{key: b[0], values: b[1]}}) }})
-  grouped.forEach(g_lang => {
-    let topTerms  = g_lang.values;
-    if (clusteredTerms) {
-      topTerms  = topTerms.filter(
-        g_term => clusteredTerms.indexOf(g_term.key) >= 0);
-    }
-    let totalCount = d3.sum(topTerms, g_term => d3.sum(g_term.values, d => d.pTC));
-
-    topTerms.forEach(g_term => {
-      let cnt = d3.sum(g_term.values, d => d.pTC);
-      let avgLBin = d3.sum(g_term.values, d => d.binL * d.pCT);
-      let avgABin = d3.sum(g_term.values, d => d.binA * d.pCT);
-      let avgBBin = d3.sum(g_term.values, d => d.binB * d.pCT);
-
-      // Note: lab_from_bins works even if the bins are not whole numbers, as is the case here
-      let [avg_l, avg_a, avg_b] = labBinHelper.lab_from_bins(avgLBin, avgABin, avgBBin)
-
-      colorTerms.push({
-        "lang": g_lang.key,
-        "name": g_term.key,
-        "avgLAB": {l: avg_l, a: avg_a, b: avg_b},
-        "avgColorRGBCode": d3.color(d3.lab(avg_l, avg_a, avg_b)).toString(),
-        "binPctCnt": cnt,
-        "totalColorFraction": cnt / totalCount
-      });
-
-    });
-
-  });
-  return colorTerms;
-}
-
-function unique(arr, accessor) {
-  accessor = !accessor ? (d) => { return d; } : accessor;
-  return d3.groups(arr, accessor)
-    .map(a => {return {key: a[0], values: a[1]}})
-    .map(d => d.values[0]);
 }

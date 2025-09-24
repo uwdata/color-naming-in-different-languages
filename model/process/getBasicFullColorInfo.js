@@ -69,9 +69,10 @@ csv().fromFile(FILE_I)
       lang.numLineNames += term.numLineNames
       term.numFullNames = term.values.filter(entry => entry.rgbSet == FULL_RGB_SET).length
       lang.numFullNames += term.numFullNames
-      lang.numHueColorNames += term.values.filter(c => 
-        Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0).length
-      lang.numNonHueColorNames += term.values.filter(c => !(Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0)).length
+      term.numHueColorNames = term.values.filter(c => Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0).length
+      lang.numHueColorNames += term.numHueColorNames
+      term.numNonHueColorNames = term.values.filter(c => !(Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0)).length
+      lang.numNonHueColorNames += term.numNonHueColorNames
 
       term.simplifiedName = term.key;
       term.commonName = d3.groups(term.values,t => t.standardized_entered_name)
@@ -126,6 +127,8 @@ csv().fromFile(FILE_I)
         commonName: term.commonName,
         simplifiedName: term.simplifiedName,
         avgColorRGBCode: term.avgColorRGBCode,
+        totalColorFraction: (term.numHueColorNames * hue_correction_multiplier + term.numNonHueColorNames * non_hue_correction_multiplier) 
+          / (lang.numHueColorNames * hue_correction_multiplier + lang.numNonHueColorNames * non_hue_correction_multiplier),
         avgL: term.avgL,
         avgA: term.avgA,
         avgB: term.avgB,
