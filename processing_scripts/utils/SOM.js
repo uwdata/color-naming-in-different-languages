@@ -1,5 +1,13 @@
 //Code for Self-Organizing Maps
 
+// if a datapoint has an extra value, it is an adjustment value
+function adjustValue(dims, newData, value){
+	if(newData.length > dims) { 
+		return value * newData[dims]
+	}
+	return value
+}
+
 //constructor for Neuron
 function neuron(dims) {
 	//properties
@@ -17,6 +25,8 @@ function neuron(dims) {
 	};
 	
 	this.updateWeights = function(newWeights, fraction){
+		// if extra value on new weight, it is an optional weight correction
+		fraction = adjustValue(this.weights.length, newWeights, fraction)
 		for(var i = 0; i < this.weights.length; i++){
 			this.weights[i] = this.weights[i] * (1-fraction) + newWeights[i]*fraction;
 		}
@@ -213,19 +223,21 @@ function som(width, height, dims) {
 			}
 		}
 		
+		let adjustedDatasetLength = 0;
 		let numExcluded = 0;
 		for(var i = 0; i < datasetWeights.length; i++){
+			adjustedDatasetLength += adjustValue(this.dims, datasetWeights[i], 1);
 			var bmuCoords = this.findBMU(datasetWeights[i]);
 			if(limit_range && this.neurons[bmuCoords.x][bmuCoords.y].calcDistance(datasetWeights[i]) > maxRange){
-				numExcluded++;
+				numExcluded += adjustValue(this.dims, datasetWeights[i], 1);
 			} else{
-				this.neurons[bmuCoords.x][bmuCoords.y][densityName]++;
+				this.neurons[bmuCoords.x][bmuCoords.y][densityName] += adjustValue(this.dims, datasetWeights[i], 1);;
 			}
 		}
 		
 		for(var i = 0; i < this.neurons.length; i++){
 			for(var j = 0; j < this.neurons[i].length; j++){
-				this.neurons[i][j][densityName] /= datasetWeights.length;
+				this.neurons[i][j][densityName] /= adjustedDatasetLength;
 			}
 		}
 		

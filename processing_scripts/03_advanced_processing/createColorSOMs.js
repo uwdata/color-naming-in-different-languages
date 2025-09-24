@@ -4,6 +4,9 @@ const fs = require('fs'),
   d3 = require('d3'),
   csv=require("csvtojson");;
 
+const SOM_TRAIN_ITERATIONS = 20000
+//const SOM_TRAIN_ITERATIONS = 100
+
 let colorNamesAbrv = {
 	"English": "en",
 	'Korean': "ko",
@@ -24,16 +27,19 @@ let colorNamesAbrv = {
 let commonColorNameLookup = {};
   
 csv().fromFile("../../model/cleaned_color_names.csv")
-  .then((namingData)=>{
-	  csv().fromFile("../../model/full_colors_info.csv")
-		.then((colorInfo)=>{
-			console.log(colorInfo);
-			createSOMs(colorInfo, namingData);
-	 });
-  });
+.then((namingData)=>{
+csv().fromFile("../../model/full_colors_info.csv")
+.then((colorInfo)=>{
+csv().fromFile("../../model/lang_info.csv")
+.then((lang_info)=> {
+		console.log(colorInfo);
+		createSOMs(colorInfo, namingData, lang_info);
+});
+});
+});
  
 
-function createSOMs(colorInfo, namingData){
+function createSOMs(colorInfo, namingData, lang_info){
 	let colorNames = {};
 	colorInfo.forEach(color => {
 		let langAbv = colorNamesAbrv[color.lang.split("(")[0].trim()];
@@ -44,12 +50,13 @@ function createSOMs(colorInfo, namingData){
 		if(!colorNames[langAbv]){
 			colorNames[langAbv] = [];
 		}
-		colorNames[langAbv].push(color.name);
+
+		colorNames[langAbv].push(color.simplifiedName);
 
 		if(!commonColorNameLookup[langAbv]){
 			commonColorNameLookup[langAbv] = [];
 		}
-		commonColorNameLookup[langAbv][color.name] = color.commonName;
+		commonColorNameLookup[langAbv][color.simplifiedName] = color.commonName;
 	});
 	
 	//en, fa, ko, zh
@@ -67,18 +74,39 @@ function createSOMs(colorInfo, namingData){
 			
 			let thisColorData = namingData.filter(function(item){
 				return lang == colorNamesAbrv[item.lang0.split("(")[0].trim()] && 
-						item.name == colorName &&
-						item.rgbSet == "full";}); // only include full colors, since those are proportionally spaced
+						item.name == colorName
+			}); 
+
+			const numFullData = thisColorData.filter(d => d.rgbSet == "full").length
+			const numLineData = thisColorData.filter(d => d.rgbSet == "line").length
+
 			console.log(thisColorData.length);
 			if(thisColorData.length == 0){
 				console.log("Color name had no data", colorName, lang, i);
 				continue
 			}
+
+			const hue_correction_multiplier = lang_info.find(d => d.langAbv == lang).hue_correction_multiplier
+    		const non_hue_correction_multiplier = lang_info.find(d => d.langAbv == lang).non_hue_correction_multiplier
+
+			// adjust corrections so largest is 1:
+			const adj_hue_corr = hue_correction_multiplier / Math.max(hue_correction_multiplier, non_hue_correction_multiplier)
+			const adj_non_hue_corr = non_hue_correction_multiplier / Math.max(hue_correction_multiplier, non_hue_correction_multiplier)
 			
 			var LABdata = [];
 			for(var j in thisColorData){
-				labColor = RGBtoLAB(thisColorData[j].r,thisColorData[j].g,thisColorData[j].b);
-				LABdata.push([labColor.l, labColor.a, labColor.b]);
+				const c = thisColorData[j]
+				let weightCorrection = 0
+				// if hue color
+				if( Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0){
+					weightCorrection = adj_hue_corr
+				} else {
+					weightCorrection = adj_non_hue_corr
+				}
+				//c => Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0
+				labColor = RGBtoLAB(c.r,c.g,c.b);
+
+				LABdata.push([labColor.l, labColor.a, labColor.b, weightCorrection]);
 			}
 			
 			LABdata.sort(function() {
@@ -91,20 +119,23 @@ function createSOMs(colorInfo, namingData){
 			
 			thisColorInfo["commonColorName"] = commonColorNameLookup[lang][colorName];
 			thisColorInfo["numRecords"] = thisColorData.length;
-			thisColorInfo["representativeColor"] = colorInfo.find(c => c.langAbv == lang && c.name == colorName).avgColorRGBCode
+			thisColorInfo["numFullData"] = numFullData;
+			thisColorInfo["numLineData"] = numLineData;
+			thisColorInfo["totalColorFraction"] = colorInfo.find(c => c.lang_abv == lang && c.simplifiedName == colorName).totalColorFraction;
+			thisColorInfo["representativeColor"] = colorInfo.find(c => c.lang_abv == lang && c.simplifiedName == colorName).avgColorRGBCode
 			
 			thisColorInfo["colorNodes4"] = createSOM(colorName, LABdata, 2);
 			thisColorInfo["colorNodes4Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes4"]);
 			
 			thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes4"]).rgb;
 
-			if(thisColorData.length > 18){
+			if(numFullData > 18){
 				thisColorInfo["colorNodes9"] = createSOM(colorName, LABdata, 3);
 				thisColorInfo["colorNodes9Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes9"]);
 				thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes9"]).rgb;
 			}
 
-			if(thisColorData.length > 200){
+			if(numFullData > 200){
 				thisColorInfo["colorNodes16"] = createSOM(colorName, LABdata, 4);
 				thisColorInfo["colorNodes16Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes16"]);
 				thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes16"]).rgb;
@@ -139,7 +170,7 @@ function createSOM(colorName, LABdata, size){
 			break;
 		}
 		
-		som.train(LABdata, 10000, minNeighborhoodSize);
+		som.train(LABdata, SOM_TRAIN_ITERATIONS, minNeighborhoodSize);
 		
 		numExcluded = som.findDensity(LABdata, "PCgN", true);
 		
