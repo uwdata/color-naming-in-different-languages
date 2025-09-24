@@ -23,9 +23,9 @@ let colorNamesAbrv = {
 
 let commonColorNameLookup = {};
   
-csv().fromFile("../cleaned_color_names.csv")
+csv().fromFile("../../model/cleaned_color_names.csv")
   .then((namingData)=>{
-	  csv().fromFile("../basic_full_color_info.csv")
+	  csv().fromFile("../../model/full_colors_info.csv")
 		.then((colorInfo)=>{
 			console.log(colorInfo);
 			createSOMs(colorInfo, namingData);
@@ -115,7 +115,7 @@ function createSOMs(colorInfo, namingData){
 			
 		}
 	});
-	fs.writeFileSync("../colorSOM.json", JSON.stringify(outputJSON));
+	fs.writeFileSync("../../model/colorSOMPatches.json", JSON.stringify(outputJSON));
 }	
  
 function createSOM(colorName, LABdata, size){
