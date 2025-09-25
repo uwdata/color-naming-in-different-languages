@@ -5,98 +5,158 @@ from pyemd import emd
 import numpy as np
 import multiprocessing as mp
 import itertools
+import psutil
+import signal
+import time
+import random
 
 print()
-print("************************")
+print("starting thread")
 print()
-print("NOTE: This is very slow!")
-print()
-print("To recalculate all translations, ",
-      "delete all files in the translation_loss directory, ",
-      "then when this program runs, it will skip files already created")
-print()
-print("TODOs to make this run faster in the future:")
-print("Currently for translating the language with itself, I believe this script does each pair twice (e.g., both 'green' -> 'blue' and 'blue' -> 'green'). We could cut down on time by only calculating that distance once and reusing it.")
-print("Also, to save time, we could make a bin file with larger bins (e.g., 20x20x20 or 40x40x40) and do the larger bin calculation first, and only if the distance is small (and there is enough data for the color term???), use smaller bins for more precision. (This would also be nice as an option on the full color maps)")
+
+def init_worker():
+	signal.signal(signal.SIGINT, signal.SIG_IGN)
 
 def job(lang1_lang2_terms):
+
 	returnval = {}
 	try:
 		lang1 = lang1_lang2_terms[0]
 		lang2 = lang1_lang2_terms[1]
 		terms = lang1_lang2_terms[2]
-		distance_matrix = lang1_lang2_terms[3]
+		distance_matrices = lang1_lang2_terms[3]
 		lang1Term = terms[0]
 		lang2Term = terms[1]
-		print(lang1Term["term"].encode("utf-8"), lang2Term["term"].encode("utf-8"))
-		if(lang1 != lang2 or lang1Term["term"] < lang2Term["term"]):
-			returnval[lang1+"term"] = lang1Term["term"]
+
+		default_bin = '20'
+		high_res_bin = '10'
+
+		print(lang1Term[default_bin]["term"], lang2Term[default_bin]["term"])
+		if(lang1 != lang2 or lang1Term[default_bin]["term"] < lang2Term[default_bin]["term"]):
+			returnval[lang1+"term"] = lang1Term[default_bin]["term"]
 			if(lang1 == lang2):
-				returnval[lang2+"term2"] =lang2Term["term"]
+				returnval[lang2+"term2"] =lang2Term[default_bin]["term"]
 			else:
-				returnval[lang2+"term"] =lang2Term["term"]
-			returnval["dist"] = emd(np.array(lang1Term["labPct"]),
-						  np.array(lang2Term["labPct"]),
-						  distance_matrix)
-	except:
+				returnval[lang2+"term"] =lang2Term[default_bin]["term"]
+			
+			# Do default size 20 bin check
+			returnval["dist"] = emd(np.array(lang1Term[default_bin]["labPct"]),
+						  np.array(lang2Term[default_bin]["labPct"]),
+						  distance_matrices[default_bin])
+			
+			# if low distance and we have high res bin data, calculate more accurate
+			if(returnval["dist"] < 60 
+	  				and high_res_bin in lang1Term and high_res_bin in lang2Term):
+				print("dist small enough, and data available for highres bin")
+				returnval["dist"] = emd(np.array(lang1Term[high_res_bin]["labPct"]),
+						  np.array(lang2Term[high_res_bin]["labPct"]),
+						  distance_matrices[high_res_bin])
+			elif(returnval["dist"] == 0):
+				print("Unexpected error: distance was 0 and high res not available for " +
+		  				lang1Term[default_bin]["term"], lang2Term[default_bin]["term"])
+				raise Exception("Unexpected error: distance was 0 and high res not available")
+			
+
+	except Exception as err:
+		print("error from thread" + mp.current_process().name)
 		print("Unexpected error:", sys.exc_info()[0])
 		print('-'*60)
 		traceback.print_exc(file=sys.stdout)
 		print('-'*60)
-		raise
+		p = psutil.Process(os.getppid())
+		p.send_signal(signal.CTRL_C_EVENT)
+
+		raise err
 	return returnval
 
 def main():
-	# get languages (based on what is in the temp directory)
-	fnames = os.listdir("temp")
-	languages = []
-	for fname in fnames:
-		if(fname.startswith("fullColorNames_")):
-			lang = fname.replace("fullColorNames_", "").replace(".json", "")
-			languages.append(lang)
+	try:
+		print()
+		print("************************")
+		print()
+		print("NOTE: This is very slow!")
+		print()
+		print("To recalculate all translations, ",
+			"delete all files in the translation_loss directory, ",
+			"then when this program runs, it will skip files already created")
+		print()
 
-	print(languages)
-
-	ColorNames = {}
-
-	for lang in languages:
-		print("loading language" + lang)
-		ColorNames[lang] = []
-		with open('temp/fullColorNames_'+lang+'.json', 'r', encoding="utf-8") as color_names_f:
-			ColorNames[lang]=json.loads(color_names_f.read())
+		pool = mp.Pool(processes=4, initializer=init_worker)
 
 
-	print("loading distance matrix")
-	distance_matrix = []
-	with open('temp/distanceMatrix.json', 'r') as distance_matrix_f:
-		distance_matrix=np.array(json.loads(distance_matrix_f.read()))
+		#make sure target folder exists
+		if(not os.path.isdir("../../model/translation_loss")):
+			os.mkdir("../../model/translation_loss")
+
+		# get languages (based on what is in the temp directory)
+		fnames = os.listdir("temp")
+		languages = []
+		for fname in fnames:
+			if(fname.startswith("fullColorNames_")):
+				lang = fname.replace("fullColorNames_", "").replace(".json", "").split("_")[0]
+				languages.append(lang)
+
+		print(languages)
+
+		ColorNames = {}
+
+		for lang in languages:
+			print("loading language" + lang)
+			ColorNames[lang] = []
+			colorNamesWithBins = {}
+			for bin_size in ['10', '20']:
+				fname = 'temp/fullColorNames_'+lang+'_'+bin_size+'.json'
+				if(os.path.isfile(fname)):
+					binColorNames = []
+					with open(fname, 'r', encoding="utf-8") as color_names_f:
+						binColorNames=json.loads(color_names_f.read())
+
+					for colorInfo in binColorNames:
+						if(colorInfo["term"] not in colorNamesWithBins):
+							colorNamesWithBins[colorInfo["term"]] = {}
+						colorNamesWithBins[colorInfo["term"]][bin_size] = colorInfo
+			for term, binnedInfo in colorNamesWithBins.items():
+				ColorNames[lang].append(binnedInfo)
 
 
-	print("starting jobs")
-	pool = mp.Pool(processes=4)
-	for lang1 in languages:
-		for lang2 in languages:
-			if(lang2 < lang1):
-				continue
-			#lang1 = sys.argv[1]
-			#lang2 = sys.argv[2]
-
-			if(os.path.isfile("../translation_loss/translation_loss_"+lang1+"_"+lang2+".json")):
-				print("Translation file: "+lang1+"_"+lang2+" already exists, skipping...")
-				continue
-
-			print("computing translations " + lang1 + "_" + lang2)
-
-			pairs = list(itertools.product(ColorNames[lang1], ColorNames[lang2]))
-			pairs = list(map(lambda x: [lang1, lang2, x, distance_matrix], pairs))
-
-			# core_num = mp.cpu_count() -> 8
-			emdDistances = pool.map(job, pairs)
+		print("loading distance matrix")
+		distance_matrices = {}
+		for bin_size in ['10', '20']:
+			with open('temp/distanceMatrix_'+bin_size+'.json', 'r') as distance_matrix_f:
+				distance_matrices[bin_size]=np.array(json.loads(distance_matrix_f.read()))
 
 
-			with open("../translation_loss/translation_loss_"+lang1+"_"+lang2+".json", "wb") as text_file:
-				text_file.write(json.dumps(emdDistances, indent = 2, ensure_ascii=False).encode('utf-8'))
+		print("starting jobs")
+		for lang1 in languages:
+			for lang2 in languages:
+				if(lang2 < lang1):
+					continue
 
+
+
+				if(os.path.isfile("../../model/translation_loss/translation_loss_"+lang1+"_"+lang2+".json")):
+					print("Translation file: "+lang1+"_"+lang2+" already exists, skipping...")
+					continue
+
+				print("computing translations " + lang1 + "_" + lang2)
+
+				pairs = list(itertools.product(ColorNames[lang1], ColorNames[lang2]))
+				pairs = list(map(lambda x: [lang1, lang2, x, distance_matrices], pairs))
+
+				emdDistances = pool.map_async(job, pairs)
+				# use async map and sleep to be ready to hear interrupts
+				while not emdDistances.ready():
+					time.sleep(1)
+
+
+				# filter out empty entries (no need to calculate distance for the pair, such as a word and itself)
+				emdDistances = [x for x in emdDistances if 'dist' in x]
+
+				with open("../../model/translation_loss/translation_loss_"+lang1+"_"+lang2+".json", "wb") as text_file:
+					text_file.write(json.dumps(emdDistances, indent = 2, ensure_ascii=False).encode('utf-8'))
+	except Exception as err:
+		pool.terminate()
+		raise err
 
 if __name__ == '__main__':
 	# freeze_support() here if program needs to be frozen
