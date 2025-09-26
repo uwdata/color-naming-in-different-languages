@@ -20,7 +20,7 @@
 	<script src="js/jquery-1.12.0.min.js"></script>
   <link href="css/select2.min.css" rel="stylesheet" />
   <script src="js/select2.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
 
   <script src="js/jquery-ui.min.js"></script>
   <link href="css/jquery-ui.min.css" rel="stylesheet" />
@@ -66,7 +66,7 @@
           <label class="form-label" for="background-brightness">Background Brightness 
               <span title='Note: When users labeled color tiles, the tiles had a thin black border against a white background, which may bias answers. They were perhaps more likely to label a color "black" and less likely to label a color "white."'>*</span>
           </label>
-          <input class="form-range" type="range" id="background-brightness" name="background-brightness" min="0" max="100" value="100" />
+          <input class="" type="range" id="background-brightness" name="background-brightness" min="0" max="100" value="100" />
         </div>
         <div class="form-check form-check-inline"> 
           <input class="form-check-input" type="checkbox" name="metric" id="low-data" value="low-data">
@@ -76,7 +76,7 @@
           <input class="form-check-input" type="checkbox" name="metric" id="ref_bins" value="ref_bins">
           <label class="form-label" for="ref_bins">Show reference color bins</label> 
         </div>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#advanced_settings_modal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#advanced_settings_modal">
           Advanced Settings
         </button>
       </div>
@@ -86,9 +86,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Advanced Settings</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="form-check">
@@ -97,7 +95,7 @@
                   Max P(T|C): the most likely color name ("Max") in the bin, what is the probability a color in the bin has that name ("P(T|C)")
                   Saliency: The negative entropy based on the percentage of each color name given to colors in the bin: saliency(C)= -H(P(T|C))'>*</span>
                 </label> 
-                <select class="form-select"  id="tile_size" value="tile_size">
+                <select class="form-select w-auto d-inline-block"  id="tile_size" value="tile_size">
                   <option value="uniform">Uniform</option>
                   <option value="ptc" selected>Max P(T|C)</option>
                   <option value="sal">Saliency</option>
@@ -105,23 +103,23 @@
               </div>
               <div class="form-check">
                 <label class="form-label" for="bin_size">LAB bin size</label> 
-                <select class="form-select" id="bin_size" value="bin_size">
+                <select class="form-select w-auto d-inline-block" id="bin_size" value="bin_size">
                 </select>
               </div>
               <div class="form-check">
                 <label class="form-label" for="bin_size_by">Bin size by</label> 
-                <select class="form-select" id="bin_size_by" value="bin_size_by">
+                <select class="form-select w-auto d-inline-block" id="bin_size_by" value="bin_size_by">
                   <option value="length-width" selected>Length/Width</option>
                   <option value="area">Area</option>
                 </select>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="metric" id="additional_tooltip" value="additional_tooltip">
-                <label class="form-label" for="additional_tooltip">Show additional info on tooltip</label> 
+                <label class="form-check-label" for="additional_tooltip">Show additional info on tooltip</label> 
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>

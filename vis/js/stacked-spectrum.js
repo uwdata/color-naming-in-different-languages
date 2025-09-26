@@ -112,7 +112,7 @@ $(document).on('ready page:load', function () {
 
       let toggle = false;
 
-      let termDiv = $('<div class="termDiv table-center"></div>');
+      let termDiv = $('<div class="termDiv text-center"></div>');
       termDiv.append('<div class="main-term text-muted" id="'+targetSelector.replace('#','')+'-selected-title" class="text-center">color name</div>');
 
       let termLabel = $(targetSelector).append(termDiv);

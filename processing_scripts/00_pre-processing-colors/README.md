@@ -10,7 +10,7 @@ Data Outputs:
 
 
 ## estimateHueColorPercentage.js
-This script estimates what percentage of LAB space is hue colors vs. non-hue colors. This is used for rebalancing the naming data since some of the data is collected specifically from the hue colors.
+This script estimates what percentage of LAB space is RGB hue colors vs. RGB non-hue colors. This is used for rebalancing the naming data since some of the data is collected specifically from the hue colors.
 
 Data Outputs:
 - model/color_info_pre_naming/lab_hue_color_ratio.json

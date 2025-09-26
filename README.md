@@ -1,4 +1,15 @@
 # Many Languages, Many Colors Dataset
+
+This is the data page for [The Many Languages, Many Colors Project](https://uwdata.github.io/color-naming-in-different-languages).
+
+## Data page organization
+This project is divided up as follows:
+
+- The "raw" directory contains the raw color naming data
+- the "processing_scripts" directory contains the code we that takes the raw data and calculates information about color naming.
+- the "model" directory contains the various models and calculations about color naming
+- this directory and the "vis" directory contains the code of [The Many Languages, Many Colors Project](https://uwdata.github.io/color-naming-in-different-languages) page and all the visualizations of the color naming data
+
 ## Color Naming Data, Models, Translations, and Visualizations
 
 Official Website is located at [https://uwdata.github.io/color-naming-in-different-languages](https://uwdata.github.io/color-naming-in-different-languages)
@@ -16,7 +27,7 @@ This repository contains color data, processing, and visualization code from the
   - [The probabilities of viridis colors for some nameable terms](https://uwdata.github.io/color-naming-in-different-languages/vis/viridis.html)
 
 
-## Paper Data (from prior to our updates)
+## 2019 EuroVis Paper Data (from prior to our updates)
 Note: The old paper versions of the data and visualizations are in the "2019_paper_version" subfolder, and the visualizations are available here:
 
 - 2019 Paper Interactive visualizations
