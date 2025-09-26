@@ -170,6 +170,15 @@ for(let labBinSize of LAB_BIN_SIZES){
         const majorTerm = bufFlatten.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term
         const basicColorInfo = colorInfo.find((a) => a.lang == langData.key && a.simplifiedName == majorTerm)
 
+        const topTerms = bufFlatten.filter(d => d.binL === l && d.binA === a && d.binB === b)
+                          .sort((a, b) => b.pTC - a.pTC)
+                          .slice(0, 4)
+                          .map(d => {return {
+                            term: d.term, 
+                            commonTerm: commonColorNameLookup[langData.key][d.term], 
+                            pTC: d.pTC
+                          }})
+
         bufSaliency.push({
           "lang": langData.key,
           "langAbv": lang_info.find(d => d.lang == langData.key).langAbv,
@@ -181,7 +190,8 @@ for(let labBinSize of LAB_BIN_SIZES){
           "maxpTC": maxpTC,
           "majorTerm": majorTerm,
           "commonTerm": commonColorNameLookup[langData.key][majorTerm],
-          "avgTermColor": basicColorInfo.avgColorRGBCode
+          "avgTermColor": basicColorInfo.avgColorRGBCode,
+          "topTerms": topTerms
         });
       }
     }

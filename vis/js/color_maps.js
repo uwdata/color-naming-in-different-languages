@@ -9,6 +9,12 @@ const TILE_SIZE = {
   6.67: 3.5
 }
 
+const TILE_MAX_SIZE_MULTIPLIER = {
+  20: 1.2,
+  10: 1.9,
+  6.67: 1.9
+}
+
 const TILE_BORDER_SIZE = {
   20: 2,
   10: 1,
@@ -166,8 +172,10 @@ function process_saliency_bin_data(saliency_data, bin_size){
   
   language_stats[bin_size].unshift({lang: ALL_COLOR_NAME, numBins: lab_bins_arrays[bin_size].length})
   saliencies_by_lang[bin_size][ALL_COLOR_NAME] = lab_bins_arrays[bin_size]
-  // make fields in lab_bins_arrays[curr_bin_size] match what graph expects
+  
+  // mark lang as ALL_COLOR_NAME so it can be handled specially
   lab_bins_arrays[bin_size].forEach(tile => {
+    tile.lang = ALL_COLOR_NAME,
     tile.maxpTC = 0.5
     tile.saliency = -2.5
     tile.binL = tile.l_bin
@@ -188,6 +196,7 @@ let curr_bin_size = BIN_SIZES[1]
 let backgroundColor = 'white'
 let tile_size_type = 'ptc'
 let bin_size_by = "area"
+let additional_tooltip_info = false
 
 /*************** Load page and Data *********************/
 $(document).on('ready page:load', function () {
@@ -230,6 +239,12 @@ $(document).on('ready page:load', function () {
     tile_size_type = $("#tile_size").val()
     createOrRefreshAllLangs()
   })
+
+  $("#additional_tooltip").change(() => {
+    additional_tooltip_info = $("#additional_tooltip").val()
+    //createOrRefreshAllLangs()
+  })
+
   updateDisplay()
 })
 
@@ -421,7 +436,7 @@ function drawColorTiles(i, saliencies){
       .attr("title", (d) => {
         const [l,a,b] = [d.binL, d.binA, d.binB]
         const bin_info = lab_bins[curr_bin_size][l][a][b]
-        return `
+        let info = `
           ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
           Bin Center (l, a, b): ${Math.round(bin_info.l_center, 1)}, ${Math.round(bin_info.a_center, 1)}, ${Math.round(bin_info.b_center, 1)}
           Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
@@ -430,6 +445,16 @@ function drawColorTiles(i, saliencies){
               `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
               : ""
           }`.trim()
+        if(additional_tooltip_info){
+          info = `${info}
+          Saliency: ${(-d.saliency).toPrecision(3)}
+          Top Terms:`
+          for(const topTerm of d.topTerms){
+            const topTermPerc = topTerm.pTC != 1 ? (100*topTerm.pTC).toPrecision(2) : 100
+            info+="\n  - " + topTerm.commonTerm + " (" + topTermPerc + "%)"
+          }
+        }
+        return info
       })
       .on("mouseover", (event, d) => {
         const selection = lang_color_selections[curr_bin_size][i]
@@ -463,21 +488,25 @@ function drawColorTiles(i, saliencies){
 }
 
 function getTileSize(d){
+    if(d.lang === ALL_COLOR_NAME){
+      return TILE_SIZE[curr_bin_size]
+    }
     if(tile_size_type == "ptc"){
       // ptc is 0 to 1
       if(bin_size_by == "length-width"){
-        return TILE_SIZE[curr_bin_size]*1.9*d.maxpTC
+        return TILE_SIZE[curr_bin_size]*TILE_MAX_SIZE_MULTIPLIER[curr_bin_size]*d.maxpTC
       } else {
-        return TILE_SIZE[curr_bin_size]*1.5*Math.sqrt(d.maxpTC)
+        return TILE_SIZE[curr_bin_size]*Math.sqrt(TILE_MAX_SIZE_MULTIPLIER[curr_bin_size]*d.maxpTC)
       }
     }
     if(tile_size_type == "sal"){
-      let min_sal = -6
-      let sal_ratio = (d.saliency - min_sal) / -min_sal 
+      const min_sal = -6
+      const sal_ratio = (d.saliency - min_sal) / -min_sal 
+      const sal_smaller = 0.8
       if(bin_size_by == "length-width"){
-        return TILE_SIZE[curr_bin_size]*1.8*sal_ratio
+        return sal_smaller*TILE_SIZE[curr_bin_size]*TILE_MAX_SIZE_MULTIPLIER[curr_bin_size]*sal_ratio
       } else {
-        return TILE_SIZE[curr_bin_size]*1.3*Math.sqrt(sal_ratio)
+        return sal_smaller*TILE_SIZE[curr_bin_size]*Math.sqrt(TILE_MAX_SIZE_MULTIPLIER[curr_bin_size]*sal_ratio)
       }
     }
     // otherwise uniform:
