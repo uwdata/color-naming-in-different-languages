@@ -182,6 +182,7 @@ function process_saliency_bin_data(saliency_data, bin_size){
     tile.binA = tile.a_bin
     tile.binB = tile.b_bin
     tile.avgTermColor = `rgb(${tile.representative_rgb.r},${tile.representative_rgb.g},${tile.representative_rgb.b})`
+    tile.topTerms = []
   })
 
   lang_color_selections[bin_size] = language_stats[bin_size].map(() => ({selection_type: "none"}))
@@ -447,11 +448,13 @@ function drawColorTiles(i, saliencies){
           }`.trim()
         if(additional_tooltip_info){
           info = `${info}
-          Saliency: ${(-d.saliency).toPrecision(3)}
-          Top Terms:`
-          for(const topTerm of d.topTerms){
-            const topTermPerc = topTerm.pTC != 1 ? (100*topTerm.pTC).toPrecision(2) : 100
-            info+="\n  - " + topTerm.commonTerm + " (" + topTermPerc + "%)"
+          Saliency: ${(-d.saliency).toPrecision(3)}`
+          if(d.topTerms.length > 0){
+            info +="\nTop Terms:"
+            for(const topTerm of d.topTerms){
+              const topTermPerc = topTerm.pTC != 1 ? (100*topTerm.pTC).toPrecision(2) : 100
+              info+="\n  - " + topTerm.commonTerm + " (" + topTermPerc + "%)"
+            }
           }
         }
         return info
