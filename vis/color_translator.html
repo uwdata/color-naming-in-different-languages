@@ -12,6 +12,23 @@
 
 <script src="js/jquery-1.12.0.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
+
+<script src="js/jquery-ui.min.js"></script>
+<link href="css/jquery-ui.min.css" rel="stylesheet" />
+<script>
+$( function() {
+$( document ).tooltip({
+	track: true, 
+	show: false, hide:false,
+	classes: {
+	"ui-tooltip": "small"
+	}
+});
+} );
+</script>
+
+
+
 <script src="js/d3.min.js"></script>
 <link href="css/select2.min.css" rel="stylesheet" />
 <script src="js/select2.min.js"></script>
@@ -348,7 +365,15 @@ function updateTranslation(){
 		//window.location.hash = urlParams.toString().replace("?", "");
 
 		$("#results").append(generateColorInfoString(matchedName,  allColorInfo[currentEndLangAbrv][matchedName], currentEndLangAbrv, termLink));
-		$("#results").append("<small>Translation Loss: " + Math.round(matchedTranslations[i].dist * 100) / 100 + "</small><br><br>");
+		// convert distance to JND (LAB 2.3) -  SHARMA G.: Digital Color Imaging Handbook. CRC press,2002
+		const JNDs = matchedTranslations[i].dist / 2.3
+
+		const roundedJNDs = JNDs.toPrecision(3)
+
+		$("#results").append(`<small>Calculated<span 
+					title='Noticeable Difference is calculated as the name-color distribution distance in LAB color space, and then uses the estimated "Just Noticeable Difference" value of 2.3 (SHARMA G.: Digital Color Imaging Handbook. CRC press, 2002)'>*</span>
+					Noticeable Difference: 
+			 ${roundedJNDs}</small><br><br>`);
 	}
 
 	if(drawComparisonMap){
@@ -409,7 +434,8 @@ function generateColorInfoString(name, colorInfo, langAbv, termLink){
 	
 	str += "<div style='clear:both'>";
 
-	str += "This name represents " + (colorInfo.totalColorFraction*100).toPrecision(2) + "% of color names in this language.<br>";
+	str += `This name represents ${(colorInfo.totalColorFraction*100).toPrecision(2)}% of color names in this language.<span 
+					title='This name was entered ${colorInfo.numFullData} times when we showed colors from the whole color spectrum, and was entered ${colorInfo.numLineData} times when we only showed colors from the full hue color line.'>*</span><br>`;
 	if(name == "skin" || name == "flesh" || name == "nude"){
 		str += "<small>Note: We represent the color labels provided by the participants in our study, which includes whatever racial biases they have. This is not meant to be a prescriptive definition of what colors  fit what labels.</small><br>"
 	} else if(langAbv == "en" && name == "fuchsia" && colorInfo.commonColorName != "fuchsia"){
