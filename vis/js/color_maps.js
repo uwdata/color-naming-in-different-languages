@@ -270,6 +270,10 @@ function updateDisplay(){
   currSvgSize[0].width = svg_widths[curr_bin_size]
   currSvgSize[0].height = svg_heights[curr_bin_size]
 
+  $(".lang-map").each(function() {
+    this.style["min-width"] = svg_widths[curr_bin_size] + 5 + "px"
+  })
+
   d3.select("#main")
     .selectAll("#vis")
     .data(currSvgSize)
@@ -286,6 +290,7 @@ function updateDisplay(){
     .join("div")
       .attr("class", "lang-map")
       .attr("id", (d, i) => `lang${i}`)
+      .style("min-width", svg_widths[curr_bin_size] + 5 +"px")
 
   createOrRefreshAllLangs()
 }
