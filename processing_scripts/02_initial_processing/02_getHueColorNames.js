@@ -12,8 +12,10 @@ csv()
 .fromFile("../../model/cleaned_color_names.csv")
 .then((colorNames)=>{
   //There is a possible priming effect for studies with version 1.1.4, but we'll ignore that for now
+  // We also won't remove participants who got assigned id of 0 due to a bug (as we had previously done)
+  //colorNames = colorNames.filter(cn => cn.participantId != 0);
   colorNames = colorNames.filter(cn => cn.rgbSet === "line");
-  colorNames = colorNames.filter(cn => cn.participantId !== 0);
+
 
   // 1. Get top languages
   let grouped = d3.groups(colorNames, d => d.lang0)
