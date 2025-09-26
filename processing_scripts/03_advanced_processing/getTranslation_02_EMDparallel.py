@@ -9,6 +9,10 @@ import psutil
 import signal
 import time
 
+DEFAULT_BIN = '20'
+HIGH_RES_BIN = '10'
+HIGH_RES_DIST = 60 
+
 print()
 print("starting thread")
 print()
@@ -17,7 +21,7 @@ def init_worker():
 	signal.signal(signal.SIGINT, signal.SIG_IGN)
 
 def job(lang1_lang2_terms):
-
+	global DEFAULT_BIN, HIGH_RES_BIN, HIGH_RES_DIST
 	returnval = {}
 	try:
 		lang1 = lang1_lang2_terms[0]
@@ -27,32 +31,31 @@ def job(lang1_lang2_terms):
 		lang1Term = terms[0]
 		lang2Term = terms[1]
 
-		default_bin = '20'
-		high_res_bin = '10'
 
-		print(lang1Term[default_bin]["term"], lang2Term[default_bin]["term"])
-		if(lang1 != lang2 or lang1Term[default_bin]["term"] < lang2Term[default_bin]["term"]):
-			returnval[lang1+"term"] = lang1Term[default_bin]["term"]
+
+		print(lang1Term[DEFAULT_BIN]["term"], lang2Term[DEFAULT_BIN]["term"])
+		if(lang1 != lang2 or lang1Term[DEFAULT_BIN]["term"] < lang2Term[DEFAULT_BIN]["term"]):
+			returnval[lang1+"term"] = lang1Term[DEFAULT_BIN]["term"]
 			if(lang1 == lang2):
-				returnval[lang2+"term2"] =lang2Term[default_bin]["term"]
+				returnval[lang2+"term2"] =lang2Term[DEFAULT_BIN]["term"]
 			else:
-				returnval[lang2+"term"] =lang2Term[default_bin]["term"]
+				returnval[lang2+"term"] =lang2Term[DEFAULT_BIN]["term"]
 			
 			# Do default size 20 bin check
-			returnval["dist"] = emd(np.array(lang1Term[default_bin]["labPct"]),
-						  np.array(lang2Term[default_bin]["labPct"]),
-						  distance_matrices[default_bin])
+			returnval["dist"] = emd(np.array(lang1Term[DEFAULT_BIN]["labPct"]),
+						  np.array(lang2Term[DEFAULT_BIN]["labPct"]),
+						  distance_matrices[DEFAULT_BIN])
 			
 			# if low distance and we have high res bin data, calculate more accurate
-			if(returnval["dist"] < 60 
-	  				and high_res_bin in lang1Term and high_res_bin in lang2Term):
+			if(returnval["dist"] < HIGH_RES_DIST
+	  				and HIGH_RES_BIN in lang1Term and HIGH_RES_BIN in lang2Term):
 				print("  --- dist small enough ("+str(returnval["dist"])+"), and data available for highres bin")
-				returnval["dist"] = emd(np.array(lang1Term[high_res_bin]["labPct"]),
-						  np.array(lang2Term[high_res_bin]["labPct"]),
-						  distance_matrices[high_res_bin])
+				returnval["dist"] = emd(np.array(lang1Term[HIGH_RES_BIN]["labPct"]),
+						  np.array(lang2Term[HIGH_RES_BIN]["labPct"]),
+						  distance_matrices[HIGH_RES_BIN])
 			elif(returnval["dist"] == 0):
 				print("Unexpected error: distance was 0 and high res not available for " +
-		  				lang1Term[default_bin]["term"], lang2Term[default_bin]["term"])
+		  				lang1Term[DEFAULT_BIN]["term"], lang2Term[DEFAULT_BIN]["term"])
 				raise Exception("Unexpected error: distance was 0 and high res not available")
 			
 

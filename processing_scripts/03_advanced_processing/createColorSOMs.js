@@ -4,6 +4,8 @@ const fs = require('fs'),
   d3 = require('d3'),
   csv=require("csvtojson");;
 
+MIN_NAMES_FOR_9_SOM = 19
+MIN_NAMES_FOR_16_SOM = 201
 const SOM_TRAIN_ITERATIONS = 20000
 //const SOM_TRAIN_ITERATIONS = 100
 
@@ -129,13 +131,13 @@ function createSOMs(colorInfo, namingData, lang_info){
 			
 			thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes4"]).rgb;
 
-			if(numFullData > 18){
+			if(numFullData >= MIN_NAMES_FOR_9_SOM){
 				thisColorInfo["colorNodes9"] = createSOM(colorName, LABdata, 3);
 				thisColorInfo["colorNodes9Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes9"]);
 				thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes9"]).rgb;
 			}
 
-			if(numFullData > 200){
+			if(numFullData > MIN_NAMES_FOR_16_SOM){
 				thisColorInfo["colorNodes16"] = createSOM(colorName, LABdata, 4);
 				thisColorInfo["colorNodes16Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes16"]);
 				thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes16"]).rgb;
