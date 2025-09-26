@@ -8,7 +8,6 @@ import itertools
 import psutil
 import signal
 import time
-import random
 
 print()
 print("starting thread")
@@ -47,7 +46,7 @@ def job(lang1_lang2_terms):
 			# if low distance and we have high res bin data, calculate more accurate
 			if(returnval["dist"] < 60 
 	  				and high_res_bin in lang1Term and high_res_bin in lang2Term):
-				print("dist small enough, and data available for highres bin")
+				print("  --- dist small enough ("+str(returnval["dist"])+"), and data available for highres bin")
 				returnval["dist"] = emd(np.array(lang1Term[high_res_bin]["labPct"]),
 						  np.array(lang2Term[high_res_bin]["labPct"]),
 						  distance_matrices[high_res_bin])
@@ -94,7 +93,8 @@ def main():
 		for fname in fnames:
 			if(fname.startswith("fullColorNames_")):
 				lang = fname.replace("fullColorNames_", "").replace(".json", "").split("_")[0]
-				languages.append(lang)
+				if(lang not in languages):
+					languages.append(lang)
 
 		print(languages)
 
@@ -143,10 +143,12 @@ def main():
 				pairs = list(itertools.product(ColorNames[lang1], ColorNames[lang2]))
 				pairs = list(map(lambda x: [lang1, lang2, x, distance_matrices], pairs))
 
-				emdDistances = pool.map_async(job, pairs)
+				emdDistances_async = pool.map_async(job, pairs)
 				# use async map and sleep to be ready to hear interrupts
-				while not emdDistances.ready():
+				while not emdDistances_async.ready():
 					time.sleep(1)
+
+				emdDistances = emdDistances_async.get()
 
 
 				# filter out empty entries (no need to calculate distance for the pair, such as a word and itself)
