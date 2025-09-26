@@ -1,24 +1,34 @@
 const fs = require('fs'),
   csv = require("csvtojson"),
+  csvWriter = require('csv-write-stream'),
   d3 = require('d3'),
   labBinHelperLib = require('../utils/labBinHelper');
  
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
+const LAB_BIN_SIZE_ABVS = labBinHelperLib.LAB_BIN_SIZE_ABVS
 
+// Number of colors in a bin we require to output data for that bin
 const MIN_NperBin = 4;
+
+
 const FILE_O = "../../model/binned_full_colors/full_color_names_binned";
 const FILE_O_SALIENCY = "../../model/binned_full_colors/full_color_map_saliency_bins"
+const FILE_LANG_BIN_O = "../../model/binned_full_colors/full_color_lang_bin_info.csv"
+
 
 csv().fromFile("../../model/cleaned_color_names.csv").then((colorNames)=> {
 csv().fromFile("../../model/full_colors_info.csv").then((colorInfo)=> {
 csv().fromFile("../../model/lang_info.csv").then((lang_info)=> {
+
+const lang_bin_info = {}
+
 for(let labBinSize of LAB_BIN_SIZES){
   console.log("calculating full colors for bin size " + labBinSize)
 
   const labBinHelper = labBinHelperLib.getLabBins(labBinSize);
 
-  const lab_bins = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/lab_bins_${(Math.round((labBinSize + Number.EPSILON) * 100) / 100)}.json`))
+  const lab_bins = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/lab_bins_${LAB_BIN_SIZE_ABVS[labBinSize]}.json`))
   const lab_bins_arr = labBinHelper.labBinsToArray(lab_bins)
 
   
@@ -50,6 +60,13 @@ for(let labBinSize of LAB_BIN_SIZES){
 
   grouped_lang.forEach(langData => {
     console.log("Start : " + langData.key);
+
+    if(!(langData.key in lang_bin_info)){
+      lang_bin_info[langData.key] = {
+        lang: langData.key,
+        langAbv: lang_info.find(d => d.lang == langData.key).langAbv
+      }
+    }
 
     let bufFlatten = [];
 
@@ -113,9 +130,6 @@ for(let labBinSize of LAB_BIN_SIZES){
     const global_hue_correction_multiplier = lang_info.find(d => d.lang == langData.key).hue_correction_multiplier
     const global_non_hue_correction_multiplier = lang_info.find(d => d.lang == langData.key).non_hue_correction_multiplier
     langData.terms.forEach(term => {
-      if(term.key == "pink"){
-        debugger
-      }
       for(let i = 0; i < lab_bins_arr.length; i++){
         const thisBin = lab_bins_arr[i]
 
@@ -123,13 +137,10 @@ for(let labBinSize of LAB_BIN_SIZES){
               a = thisBin.a_bin,
               b = thisBin.b_bin
         
-        if(l == 6 && a == 9 && b == -1){
-          debugger
-        }
-
         if (term.binColorNameCnt[l][a][b] !== 0) {
           bufFlatten.push({
             "lang": langData.key,
+            "langAbv": lang_info.find(d => d.lang == langData.key).langAbv,
             "term": term.key,
             "commonTerm": commonColorNameLookup[langData.key][term.key],
             "binL": l,
@@ -161,6 +172,7 @@ for(let labBinSize of LAB_BIN_SIZES){
 
         bufSaliency.push({
           "lang": langData.key,
+          "langAbv": lang_info.find(d => d.lang == langData.key).langAbv,
           "binL": l,
           "binA": a,
           "binB": b,
@@ -178,13 +190,22 @@ for(let labBinSize of LAB_BIN_SIZES){
     saliency = saliency.concat(bufSaliency);
     flatten = flatten.concat(bufFlatten);
 
-
+    lang_bin_info[langData.key][`num_bins_${LAB_BIN_SIZE_ABVS[labBinSize]}`] = bufSaliency.length
+    lang_bin_info[langData.key][`fraction_bins_${LAB_BIN_SIZE_ABVS[labBinSize]}`] = bufSaliency.length / lab_bins_arr.length
   });
 
-  fs.writeFileSync(FILE_O + "_"+(Math.round((labBinSize + Number.EPSILON) * 100) / 100)+".json", JSON.stringify(flatten));
+  fs.writeFileSync(FILE_O + "_"+LAB_BIN_SIZE_ABVS[labBinSize]+".json", JSON.stringify(flatten));
 
-  fs.writeFileSync(FILE_O_SALIENCY + "_"+(Math.round((labBinSize + Number.EPSILON) * 100) / 100)+".json", JSON.stringify(saliency))
+  fs.writeFileSync(FILE_O_SALIENCY + "_"+LAB_BIN_SIZE_ABVS[labBinSize]+".json", JSON.stringify(saliency))
 }
+
+let langBinInfoWriter = csvWriter();
+langBinInfoWriter.pipe(fs.createWriteStream(FILE_LANG_BIN_O));
+for(const [lang, lang_bin_info_entry] of Object.entries(lang_bin_info)){
+  langBinInfoWriter.write(lang_bin_info_entry)
+}
+langBinInfoWriter.end();
+
 });
 });
 });

@@ -5,6 +5,7 @@ const fs = require('fs'),
 const FILE_O_LAB_BINS = "../../model/color_info_pre_naming/lab_bins"
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
+const LAB_BIN_SIZE_ABVS = labBinHelperLib.LAB_BIN_SIZE_ABVS
 
 //const HUE_RATIO_LAB_DELTA = .05 // NOTE: This makes it very slow (and more accurate)
 const HUE_RATIO_LAB_DELTA = .5 // For speed purposes (gives less accurate bin info)
@@ -252,5 +253,5 @@ for(let labBinSize of LAB_BIN_SIZES){
         }
     }
     console.log("Total bins: ", totalBins)
-    fs.writeFileSync(FILE_O_LAB_BINS+"_"+(Math.round((labBinSize + Number.EPSILON) * 100) / 100)+".json", JSON.stringify(labBinInfo, null, 2));
+    fs.writeFileSync(FILE_O_LAB_BINS+"_"+LAB_BIN_SIZE_ABVS[labBinSize]+".json", JSON.stringify(labBinInfo, null, 2));
 }

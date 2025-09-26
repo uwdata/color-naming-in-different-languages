@@ -10,6 +10,10 @@ const MAX_L = 100
 const MIN_MAX_AB = 111 
 
 const LAB_BIN_SIZES = [20, 10, 20/3]
+const LAB_BIN_SIZE_ABVS = {}
+for(const bin_size of LAB_BIN_SIZES){
+  LAB_BIN_SIZE_ABVS[bin_size] = Math.round((bin_size + Number.EPSILON) * 100) / 100
+}
 
 function getLabBins(binSize = 10){
 
@@ -81,6 +85,7 @@ function getLabBins(binSize = 10){
 module.exports = {
   getLabBins: getLabBins,
   LAB_BIN_SIZES: LAB_BIN_SIZES,
+  LAB_BIN_SIZE_ABVS: LAB_BIN_SIZE_ABVS,
   MIN_L: MIN_L,
   MAX_L: MAX_L,
   MIN_MAX_AB: MIN_MAX_AB
