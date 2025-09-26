@@ -446,15 +446,13 @@ function drawColorTiles(i, saliencies){
               `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
               : ""
           }`.trim()
-        if(additional_tooltip_info){
+        if(additional_tooltip_info && d.lang != ALL_COLOR_NAME){
           info = `${info}
-          Saliency: ${(-d.saliency).toPrecision(3)}`
-          if(d.topTerms.length > 0){
-            info +="\nTop Terms:"
-            for(const topTerm of d.topTerms){
-              const topTermPerc = topTerm.pTC != 1 ? (100*topTerm.pTC).toPrecision(2) : 100
-              info+="\n  - " + topTerm.commonTerm + " (" + topTermPerc + "%)"
-            }
+          Saliency: ${(-d.saliency).toPrecision(3)}
+          Top Terms:`
+          for(const topTerm of d.topTerms){
+            const topTermPerc = topTerm.pTC != 1 ? (100*topTerm.pTC).toPrecision(2) : 100
+            info+="\n  - " + topTerm.commonTerm + " (" + topTermPerc + "%)"
           }
         }
         return info
