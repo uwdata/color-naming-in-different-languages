@@ -30,7 +30,7 @@ Created by:
 Fields:
 - lang: The language name (long form, e.g., "Korean (한국어, 조선어)")
 - langAbv: The 2 letter language abbreviation (for where we have it). E.g., "ko"
-- numLineNames: The number of names collected when we asking only to name rgb hue color line (max(r,g,b) == 255, min(r,g,b) == 0)
+- numLineNames: The number of names collected when we asking only to name rgb hue color line (max(r,g,b) == 255, min(r,g,b) == 0) ![The hue colors](../vis/hue-colors-smallest.png)
 - numFullNames: The number of names collected when asking to name colors chosen from the whole rgb color space
 - numHueColorNames: The number of color names that are rgb hue colors (regardless of of what color set was being asked)
 - numNonHueColorNames: The number of color names that are rgb hue colors (regardless of of what color set was being asked, though theoretically, this should only be "full" color names)
@@ -65,6 +65,8 @@ Created by:
 
 The "binned_hue_colors/" folder has datasets from our binning the rgb hue line dataset (bins based on LAB color space distances).
 
+![The hue colors](../vis/hue-colors-small.png)
+
 ## Binned Full Colors
 
 The "binned_full_colors/" folder has datasets from our binning all the color names given in LAB color space.
@@ -79,6 +81,7 @@ The "translation_loss/" folder has datasets comparing the distribution of all pa
 
 The "colorSOMPatches.json" file has Self-Organizing maps for each color term that are a 2D representation of the distribution of colors for that term. The 2D SOMs are of possible sizes 4 (2x2), 9 (3x3), and 16(4x4), with the larger ones only being made if there is sufficient data.
 
+See [Color Translator](https://idl.uw.edu/color-naming-in-different-languages/vis/color_translator.html)
 ![A screenshot of the color translator with 2D grids of colors representing different terms](../vis/color-translator-small.png)
 
 Fields:
@@ -100,6 +103,8 @@ Created By:
 
 ## Scheme Color Data
 "scheme_color_names.json" contains information on the distribution of color names along common color palettes used in scientific visualization. (For now only English and Korean)
+
+See [Korean-English Viridis Color Spectrum](https://idl.uw.edu/color-naming-in-different-languages/vis/viridis.html)
 
 Fields:
 - lang : Language (long version)

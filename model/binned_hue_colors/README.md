@@ -2,7 +2,11 @@
 
 This folder has datasets from our binning the rgb hue line data (bins based on evenly spaced LAB color distances).
 
-Note: RGB Hue colors are defined as colors with max(r,g,b) == 255, min(r,g,b) == 0.
+*Note: RGB Hue colors are defined as colors with max(r,g,b) == 255, min(r,g,b) == 0.*
+
+See [Hue Color Comparisons](https://idl.uw.edu/color-naming-in-different-languages/vis/stacked-spectrum.html)
+![A screenshot of the hue color comparisons showing how blue is divided in Russian, Chinese, and Korean](../../vis/stacked-small.png)
+
 
 ## Hue Color Names Binned
 The "hue_color_names_binned.json" file contains information about how the color names fit in the hue color bins. 
