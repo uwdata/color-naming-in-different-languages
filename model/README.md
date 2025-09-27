@@ -54,7 +54,7 @@ Fields:
 - avgColorRGBCode: The average rgb color for this term (balancing in LAB space and for the expected rgb hue color ratio)
 - avgL, avgA, avgB: The average LAB color for this term (balancing in LAB space and for the expected rgb hue color ratio)
 - numFullNames: The number of times this name was given when we were asking only to name rgb hue color line (max(r,g,b) == 255, min(r,g,b) == 0)
-- numLineNames: when we were aking to name colors chosen from the whole rgb color space
+- numLineNames: The number of times this name was given when we were asking to name colors chosen from the whole rgb color space
 
 
 Created by:
@@ -74,6 +74,29 @@ The "binned_full_colors/" folder has datasets from our binning all the color nam
 
 The "translation_loss/" folder has datasets comparing the distribution of all pairs of color terms in two languages, calculating the LAB distance to signify the "translation loss" of going from one term to another.
 
+
+## Color SOM Patches
+
+The "colorSOMPatches.json" file has Self-Organizing maps for each color term that are a 2D representation of the distribution of colors for that term. The 2D SOMs are of possible sizes 4 (2x2), 9 (3x3), and 16(4x4), with the larger ones only being made if there is sufficient data.
+
+![A screenshot of the color translator with 2D grids of colors representing different terms](../vis/color-translator-small.png)
+
+Fields:
+
+- For each Language (2 letter abbreviation), for each term in that language (simplifiedName):
+  - CommonColorName: The commonName for that color term
+  - numRecords: The number of color name data points for that term
+  - numLineData The number of times this name was given when we were asking only to name rgb hue color line (max(r,g,b) == 255, min(r,g,b) == 0)
+  - numFullData: The number of times this name was given when we were asking to name colors chosen from the whole rgb color space
+  - totalColorFraction: The total fraction of color names for this language are this color term (balancing in LAB space and for the expected rgb hue color ratio)
+  - representativeColor: The average rgb color for this term (balancing in LAB space and for the expected rgb hue color ratio)
+  - colorNodes4/colorNodes9/colorNodes16: a 2D array of color nodes, each with:
+    - lab: an object with the l, a, and b coordinates for this node
+    - rgb: a string of the rgb color for this node
+    - PCgN: Probability of a color term (C) given this SOM node (N) (P(C|N)) (note: we should rename this a pTN)
+
+Created By:
+- processing_scripts/03_advanced_processing/createColorSOMs.js
 
 ## Scheme Color Data
 "scheme_color_names.json" contains information on the distribution of color names along common color palettes used in scientific visualization. (For now only English and Korean)
