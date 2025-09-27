@@ -1,10 +1,9 @@
 # Model
 
-
 This folder contains the calculations and models we made about colors and color names.
 
 ## Color Calculations (without color names)
-The "color_info_pre_naming" has data color spaces and color bins that will be used in later steps once we have color names.
+The "color_info_pre_naming/" folder has data color spaces and color bins that will be used in later steps once we have color names.
 
 Created by:
 - The scripts in: 00_pre-processing-colors
@@ -26,40 +25,75 @@ Created by:
 
 ## Language Info
 
-TODO
+"lang_info.csv" contains information about the color naming data from each language.
+
+Fields:
+- lang: The language name (long form, e.g., "Korean (한국어, 조선어)")
+- langAbv: The 2 letter language abbreviation (for where we have it). E.g., "ko"
+- numLineNames: The number of names collected when we asking only to name rgb hue color line (max(r,g,b) == 255, min(r,g,b) == 0)
+- numFullNames: The number of names collected when asking to name colors chosen from the whole rgb color space
+- numHueColorNames: The number of color names that are rgb hue colors (regardless of of what color set was being asked)
+- numNonHueColorNames: The number of color names that are rgb hue colors (regardless of of what color set was being asked, though theoretically, this should only be "full" color names)
+- numFilteredTerms: The number of color names kept for a language (after filtering out those that didn't have sufficient data)
+- hue_correction_multiplier: a multiplier for the language to rebalance the rgb hue colors based on how many we expect in an even distribution in LAB color space
+- non_hue_correction_multiplier: a multiplier for the language to rebalance the rgb non-hue colors based on how many we expect in an even distribution in LAB color space
+
+Created by:
+- processing_scripts/02_initial_processing/01_getBasicFullColorInfo.js
 
 ## Full Colors Info
 
+"full_colors_info.csv" contains information about color terms in different languages.
 
-TODO
+Fields:
+- lang: The language of the color term (long form)
+- lang_abv: Two letter abbreviation of the language
+- simplifiedName: the simplified matching "name" from cleaned_color_names.csv used to group color terms
+- commonName: For the color term, the most common "standardized_entered_name" used for it
+- totalColorFraction: The total fraction of color names for this language are this color term (balancing in LAB space and for the expected rgb hue color ratio)
+- avgColorRGBCode: The average rgb color for this term (balancing in LAB space and for the expected rgb hue color ratio)
+- avgL, avgA, avgB: The average LAB color for this term (balancing in LAB space and for the expected rgb hue color ratio)
+- numFullNames: The number of times this name was given when we were asking only to name rgb hue color line (max(r,g,b) == 255, min(r,g,b) == 0)
+- numLineNames: when we were aking to name colors chosen from the whole rgb color space
+
+
+Created by:
+- processing_scripts/02_initial_processing/01_getBasicFullColorInfo.js
+
 
 ## Binned Hue Colors
 
-TODO
+The "binned_hue_colors/" folder has datasets from our binning the rgb hue line dataset (bins based on LAB color space distances).
 
 ## Binned Full Colors
 
-TODO:
+The "binned_full_colors/" folder has datasets from our binning all the color names given in LAB color space.
 
-Each color naming model is a JSON array of color-name pairs. Each pair has the below properties:
-
-- lang : Language
-- binNum/binL/binA/binB : Index of Color Bin
-- term : Color name
-- cnt : Count
-- pCT : Probability of a color (c) given a term (t) (P(c|t))
-- pTC : Probability of a term (t) given a color (c) (P(t|c))
-- schema : (for scheme_color_model only) Schema
 
 ## Translation loss
 
-TODO
-
-`translation_loss` is also an array having the translation losses between the top 100 English and Korean color name for full colors. 'dist' property indicate the distance (loss) between the English term (enTerm) and the Korean term (koTerm).
+The "translation_loss/" folder has datasets comparing the distribution of all pairs of color terms in two languages, calculating the LAB distance to signify the "translation loss" of going from one term to another.
 
 
 ## Scheme Color Data
+"scheme_color_names.json" contains information on the distribution of color names along common color palettes used in scientific visualization. (For now only English and Korean)
 
-TODO
+Fields:
+- lang : Language (long version)
+- binNum/binL/binA/binB : Index of Color Bin
+- term : the simplified matching color name ("name" from cleaned_color_names.csv)
+- cnt : The number of color names given to that bin
+- pCT : Probability of a color (c) given a term (t) (P(c|t))
+- pTC : Probability of a term (t) given a color (c) (P(t|c))
+- rgb : The rgb value for the LAB bin
+- schema : Color palette being modeled (e.g, "viridis")
 
-Note: We represent the color labels provided by the participants in our study, which includes whatever racial biases they have (e.g., the color "skin"). This is not meant to be a prescriptive definition of what colors  fit what labels.
+Created by:
+- processing_scripts/03_advanced_processing/getSchemeColorNames.js
+
+
+## Disclaimer
+
+Note: We represent the color labels provided by the participants in our study, which may include misspellings, but also whatever racial biases they have (e.g., the color "skin"). This is not meant to be a prescriptive definition of what colors  fit what labels.
+
+
