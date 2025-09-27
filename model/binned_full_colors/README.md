@@ -1,6 +1,8 @@
 TODO...
 
 
+See [Full Color Maps](https://idl.uw.edu/color-naming-in-different-languages/vis/full_color_maps.html)
+![A screenshot of the full colors in different languages, with groups of binned colors and different levels of brightness](../../vis/color-maps-small.png)
 
 Each color naming model is a JSON array of color-name pairs. Each pair has the below properties:
 

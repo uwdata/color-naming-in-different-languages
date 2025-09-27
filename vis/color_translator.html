@@ -370,8 +370,8 @@ function updateTranslation(){
 
 		const roundedJNDs = JNDs.toPrecision(3)
 
-		$("#results").append(`<small>Calculated<span 
-					title='Noticeable Difference is calculated as the name-color distribution distance in LAB color space, and then uses the estimated "Just Noticeable Difference" value of 2.3 (SHARMA G.: Digital Color Imaging Handbook. CRC press, 2002)'>*</span>
+		$("#results").append(`<small>Estimated<span 
+					title='Noticeable Difference is calculated as the name-color distribution distance in LAB color space, and then adjusts by the estimated "Just Noticeable Difference" value of 2.3 LAB distance (SHARMA G.: Digital Color Imaging Handbook. CRC press, 2002)'>*</span>
 					Noticeable Difference: 
 			 ${roundedJNDs}</small><br><br>`);
 	}
