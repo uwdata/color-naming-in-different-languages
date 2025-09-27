@@ -113,7 +113,7 @@ $(document).on('ready page:load', function () {
       let toggle = false;
 
       let termDiv = $('<div class="termDiv text-center"></div>');
-      termDiv.append('<div class="main-term text-muted" id="'+targetSelector.replace('#','')+'-selected-title" class="text-center">color name</div>');
+      termDiv.append('<div class="main-term"><p class="mb-0">&nbsp;<span class="text-muted fs-4" id="'+targetSelector.replace('#','')+'-selected-title" class="text-center">color name</span>&nbsp;</p></div>');
 
       let termLabel = $(targetSelector).append(termDiv);
       let area = d3.area()
@@ -223,6 +223,7 @@ $(document).on('ready page:load', function () {
 
         $(targetSelector+"-selected-title").html('color name ');
         $(targetSelector+"-selected-title").addClass("text-muted");
+        $(targetSelector+"-selected-title").addClass("fs-4");
         $('.tr-result').html('');
         $('.google').html('');
       }
@@ -248,6 +249,7 @@ $(document).on('ready page:load', function () {
             if (j==i) {
               $(targetSelector+"-selected-title").html(data_common_names[j]);
               $(targetSelector+"-selected-title").removeClass("text-muted");
+              $(targetSelector+"-selected-title").removeClass("fs-4");
             }
             return j==i ? 3 : 1;
           })
