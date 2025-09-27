@@ -106,8 +106,8 @@ Fields:
 - binNum/binL/binA/binB : Index of Color Bin
 - term : the simplified matching color name ("name" from cleaned_color_names.csv)
 - cnt : The number of color names given to that bin
-- pCT : Probability of a color (c) given a term (t) (P(c|t))
-- pTC : Probability of a term (t) given a color (c) (P(t|c))
+- pCT : Probability of this color bin (c) given this term (t) (P(c|t))
+- pTC : Probability of this term (t) given this color bin (c) (P(t|c))
 - rgb : The rgb value for the LAB bin
 - schema : Color palette being modeled (e.g, "viridis")
 
