@@ -37,13 +37,37 @@
   <div class="container">
 	<h1>Korean-English Viridis Color Spectrum</h1>
 	<p>This visualization shows how color names in Korean and English map onto the Viridis color spectrum  ( <img src='viridis-smallest.png'> ) used in visualizations. You can see that the range of Viridis colors referred to by the name "green" doesn't line up with any Korean color name.</p>
-    <div id="vis-viridis"></div>
+    <div class="form-check form-check-inline"> 
+      <input class="form-check-input" type="checkbox" name="metric" id="blur" value="blur">
+      <label class="form-label" for="blur">
+        Blur pass on tiles
+        <span title='When blur is on, a small gaussian blur is run on all 3x3x3 grids of tiles to smooth out the naming data.'>*</span>
+      </label>
+    </div>
     <p>
-      Labels next each y-axis mean the corresponding term and the number of records forming the distribution. We note that "파랑" only have 1 record.
+      Labels next each y-axis mean the corresponding term and the number of records forming the distribution.
     </p>
+    <div id="vis-viridis"></div>
   </div>
   </body>
    <script type="text/javascript">
+    const NO_BLUR = "no-blur"
+    const BLUR = "blur"
+
+    const fullBinData = {}
+
+    d3.json("../model/scheme_color_names.json").then(data => {
+      fullBinData[NO_BLUR] = data
+      updateDrawing()
+    })
+    d3.json("../model/scheme_color_names_blur.json").then(data => {
+      fullBinData[BLUR] = data
+      updateDrawing()
+    })
+
+    $("#blur").prop("checked", true)
+    $("#blur").change(updateDrawing)
+
     const xDomain = [-1, 1];
     const subSpec = {
 
@@ -87,83 +111,95 @@
       },
       "config":{"view":{"stroke": "transparent"}}
     };
-    // const rootPath = window.location.pathname.split('/').slice(0,-1).join("/");
-    d3.json("../model/scheme_color_names.json").then(data => {
+
+    function updateDrawing(){
+      let data
+      if($("#blur").prop('checked')){
+        if(BLUR in fullBinData){
+          data = fullBinData[BLUR]
+        } else {
+          return
+        }
+      } else {
+        if(NO_BLUR in fullBinData){
+          data = fullBinData[NO_BLUR]
+        }else{
+          return 
+        }
+      }
 
       draw(
-        "viridis",
-        [
-          {"term": ""},
-          {"term": "보라색"},
-          {"term": "purple"},
-          {"term": "남색"},
-          {"term": "파랑색"},
-          {"term": "blue"},
-          {"term": "청록색"},
-          {"term": "teal"},
-          {"term": "녹색"},
-          {"term": "초록색"},// which is the second best translation  of "green". The best was "녹", but it only contains 3 records and its distribution is super similar to 초록.
-          {"term": "green"},
-          {"term": "연두색"},
-          {"term": "lightgreen"},
-          {"term": "노랑색"},
-          {"term": "yellow"}
-        ],
-        "#vis-viridis"
-      );
+          data,
+          "viridis",
+          [
+            {"term": ""},
+            {"term": "보라색"},
+            {"term": "purple"},
+            {"term": "남색"},
+            {"term": "파랑색"},
+            {"term": "blue"},
+            {"term": "청록색"},
+            {"term": "teal"},
+            {"term": "녹색"},
+            {"term": "초록색"},// which is the second best translation  of "green". The best was "녹", but it only contains 3 records and its distribution is super similar to 초록.
+            {"term": "green"},
+            {"term": "연두색"},
+            {"term": "lightgreen"},
+            {"term": "노랑색"},
+            {"term": "yellow"}
+          ],
+          "#vis-viridis"
+      )
+    }
 
-
-
-
-      function draw(scheme, pairs, target){
-        let drawingData = data.filter(d => d.scheme === scheme);
-        let topWords = d3.nest()
-          .key(d => d.lang)
-          .key(d => d.term)
-          .rollup(values => {
-          return {
-            "totalpTC": d3.sum(values, v=>v.pTC),
-            "totalCnt": d3.sum(values, v=>v.cnt)
-          };
-        }).entries(drawingData);
-
-        topWords.forEach(langTerm => langTerm.values.sort((a,b) => b.value.totalpTC - a.value.totalpTC));
-        console.log(topWords[0]);
-        console.log(topWords[1]);
-        console.log(d3.sum(topWords[1].values, v => v.value.totalCnt));
-        let getCount = (term) => {
-          return topWords[0].values.concat(topWords[1].values).find(d=>d.key === term).value.totalCnt;
+    function draw(data, scheme, pairs, target){
+      let drawingData = data.filter(d => d.scheme === scheme);
+      let topWords = d3.nest()
+        .key(d => d.lang)
+        .key(d => d.term)
+        .rollup(values => {
+        return {
+          "totalpTC": d3.sum(values, v=>v.pTC),
+          "totalCnt": +d3.sum(values, v=>v.cnt).toFixed(1)
         };
-        let workingSpec = copy(spec);
-        pairs.forEach(p => {
-          let s = copy(subSpec);
-          if (p.term) {
-            s.transform.push({"filter": `datum.term === '${p.term}'`});
-            s.transform.push({"filter": `datum.scheme === '${scheme}'`});
-            s.encoding.y.axis.title = `${p.term} (${getCount(p.term)})`;
-          } else {
-            s.encoding.y = { "value": 10 };
-            s.encoding.x.axis = null;
-            s.height = 20;
-            s.title = "Color Bins";
-          }
+      }).entries(drawingData);
 
-          let colors = unique(drawingData.map(d => d.rgb));
-          s.encoding.color.scale.domain = colors;
-          s.encoding.color.scale.range = colors;
-          // s.encoding.y.axis.title = false;
-          workingSpec.vconcat.push(s);
-        });
-        workingSpec.data.values = drawingData;
-        vegaEmbed(target, workingSpec, {"renderer":"svg"}).then(result => {
-          let doms = document.getElementsByClassName("mark-rule role-axis-domain");
-          for (var i = 0; i < doms.length; i++) {
-            doms[i].firstChild.style.stroke = "none";
-          }
+      topWords.forEach(langTerm => langTerm.values.sort((a,b) => b.value.totalpTC - a.value.totalpTC));
+      console.log(topWords[0]);
+      console.log(topWords[1]);
+      console.log(d3.sum(topWords[1].values, v => v.value.totalCnt));
+      let getCount = (term) => {
+        return topWords[0].values.concat(topWords[1].values).find(d=>d.key === term).value.totalCnt;
+      };
+      let workingSpec = copy(spec);
+      pairs.forEach(p => {
+        let s = copy(subSpec);
+        if (p.term) {
+          s.transform.push({"filter": `datum.term === '${p.term}'`});
+          s.transform.push({"filter": `datum.scheme === '${scheme}'`});
+          s.encoding.y.axis.title = `${p.term} (${getCount(p.term)})`;
+        } else {
+          s.encoding.y = { "value": 10 };
+          s.encoding.x.axis = null;
+          s.height = 20;
+          s.title = "Color Bins";
+        }
 
-        });
-      }
-    });
+        let colors = unique(drawingData.map(d => d.rgb));
+        s.encoding.color.scale.domain = colors;
+        s.encoding.color.scale.range = colors;
+        // s.encoding.y.axis.title = false;
+        workingSpec.vconcat.push(s);
+      });
+      workingSpec.data.values = drawingData;
+      vegaEmbed(target, workingSpec, {"renderer":"svg"}).then(result => {
+        let doms = document.getElementsByClassName("mark-rule role-axis-domain");
+        for (var i = 0; i < doms.length; i++) {
+          doms[i].firstChild.style.stroke = "none";
+        }
+
+      });
+    }
 
     function copy(o){
       return JSON.parse(JSON.stringify(o));
