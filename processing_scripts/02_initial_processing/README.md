@@ -35,6 +35,8 @@ Constants:
 This script processes all color names in the full color space, producing binned data for each language.
 
 Data outputs:
+- model/binned_full_colors/full_color_lang_bin_info.json
+- model/binned_full_colors/full_color_lang_bin_blur_info.json
 - model/binned_full_colors/full_color_names_binned_*.json
 - model/binned_full_colors/full_color_map_saliency_bins*.json
 

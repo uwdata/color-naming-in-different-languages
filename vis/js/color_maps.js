@@ -24,6 +24,9 @@ const TILE_BORDER_SIZE = {
 // this times tiles_size is margin on sides and between L tile sets
 const TILE_SEGMENT_MARGIN_NUM = 3
 
+const NO_BLUR = "no-blur"
+const BLUR = "blur"
+
 const COLOR_NAME_UNSELECTED = "----"
 const ALL_COLOR_NAME = "All Color Bins (Reference)"
 
@@ -51,7 +54,11 @@ async function load_and_process_bin_data(bin_size){
     resolve()
   }))
   await new Promise(resolve => $.getJSON(`../model/binned_full_colors/full_color_map_saliency_bins_${bin_size}.json`, function( data ) {
-    process_saliency_bin_data(data, bin_size)
+    process_saliency_bin_data(data, bin_size, NO_BLUR)
+    resolve()
+  }))
+  await new Promise(resolve => $.getJSON(`../model/binned_full_colors/full_color_map_saliency_bins_blur_${bin_size}.json`, function( data ) {
+    process_saliency_bin_data(data, bin_size, BLUR)
     resolve()
   }))
   updateDisplay()
@@ -121,22 +128,35 @@ function process_lab_bin_data(bin_data, bin_size){
   console.log("l_bin_ab_bounds", l_bin_ab_bounds[bin_size])
 }
 
-function process_saliency_bin_data(saliency_data, bin_size){
-  saliencies[bin_size] = saliency_data
+function process_saliency_bin_data(saliency_data, bin_size, blur){
+  if(!(bin_size in saliencies)){
+    saliencies[bin_size] = {}
+  }
+  saliencies[bin_size][blur] = saliency_data
 
-  languages[bin_size] = [...new Set(saliencies[bin_size].map(s => s.lang))];
-  console.log(languages[bin_size])
 
-  saliencies_by_lang[bin_size] = {};
-  languages[bin_size].forEach(lang => {
-    saliencies_by_lang[bin_size][lang] = saliencies[bin_size].filter(s => s.lang == lang)
+  if(!(bin_size in languages)){
+    languages[bin_size] = {}
+  }
+  languages[bin_size][blur] = [...new Set(saliencies[bin_size][blur].map(s => s.lang))];
+  console.log(languages[bin_size][blur])
+
+  if(!(bin_size in saliencies_by_lang)){
+    saliencies_by_lang[bin_size] = {}
+  }
+  saliencies_by_lang[bin_size][blur] = {};
+  languages[bin_size][blur].forEach(lang => {
+    saliencies_by_lang[bin_size][blur][lang] = saliencies[bin_size][blur].filter(s => s.lang == lang)
   })
 
-  color_names_by_lang[bin_size] = {}
-  languages[bin_size].forEach(lang => {
+  if(!(bin_size in color_names_by_lang)){
+    color_names_by_lang[bin_size] = {}
+  }
+  color_names_by_lang[bin_size][blur] = {}
+  languages[bin_size][blur].forEach(lang => {
     const color_names_counts = {}
     const color_name_avg_term_colors = {}
-    saliencies_by_lang[bin_size][lang].map(s => ({colorName: s.commonTerm, avgTermColor: s.avgTermColor}))
+    saliencies_by_lang[bin_size][blur][lang].map(s => ({colorName: s.commonTerm, avgTermColor: s.avgTermColor}))
         .forEach(colorData => {
           if(!(colorData.colorName in color_names_counts)){
             color_names_counts[colorData.colorName] = 0
@@ -144,36 +164,38 @@ function process_saliency_bin_data(saliency_data, bin_size){
           }
           color_names_counts[colorData.colorName]++
         })
-    color_names_by_lang[bin_size][lang] = []
+    color_names_by_lang[bin_size][blur][lang] = []
     for(const [colorName, colorCount] of Object.entries(color_names_counts)){
-      color_names_by_lang[bin_size][lang].push({
+      color_names_by_lang[bin_size][blur][lang].push({
         colorName: colorName,
         avgTermColor: color_name_avg_term_colors[colorName],
         count: colorCount
       })
     }
-    color_names_by_lang[bin_size][lang].sort((a, b) => b.count - a.count)
-    color_names_by_lang[bin_size][lang].unshift(
+    color_names_by_lang[bin_size][blur][lang].sort((a, b) => b.count - a.count)
+    color_names_by_lang[bin_size][blur][lang].unshift(
       {colorName: COLOR_NAME_UNSELECTED, avgTermColor: "rgba(255, 255, 255, 0)",count: 0})
   })
 
 
-
-  language_stats[bin_size] = languages[bin_size]
+  if(!(bin_size in language_stats)){
+    language_stats[bin_size] = {}
+  }
+  language_stats[bin_size][blur] = languages[bin_size][blur]
     .map(lang => {
-      return {lang: lang, numBins: saliencies_by_lang[bin_size][lang].length}
+      return {lang: lang, numBins: saliencies_by_lang[bin_size][blur][lang].length}
     })
     
 
-  language_stats[bin_size] = language_stats[bin_size]
+  language_stats[bin_size][blur] = language_stats[bin_size][blur]
     .filter(lang_stat => (lang_stat.numBins / lab_bins_arrays[bin_size].length) * 100  > MIN_BIN_PERC_HIDE)
     .sort((a,b) => b.numBins - a.numBins)
 
   
-  language_stats[bin_size].unshift({lang: ALL_COLOR_NAME, numBins: lab_bins_arrays[bin_size].length})
-  saliencies_by_lang[bin_size][ALL_COLOR_NAME] = lab_bins_arrays[bin_size]
+  language_stats[bin_size][blur].unshift({lang: ALL_COLOR_NAME, numBins: lab_bins_arrays[bin_size].length})
+  saliencies_by_lang[bin_size][blur][ALL_COLOR_NAME] = lab_bins_arrays[bin_size]
   
-  // mark lang as ALL_COLOR_NAME so it can be handled specially
+  // mark lang as ALL_COLOR_NAME so it can be handled 
   lab_bins_arrays[bin_size].forEach(tile => {
     tile.lang = ALL_COLOR_NAME,
     tile.maxpTC = 0.5
@@ -185,14 +207,21 @@ function process_saliency_bin_data(saliency_data, bin_size){
     tile.topTerms = []
   })
 
-  lang_color_selections[bin_size] = language_stats[bin_size].map(() => ({selection_type: "none"}))
-  lang_tile_info[bin_size] = language_stats[bin_size].map(() => ({}))
+  if(!(bin_size in lang_color_selections)){
+    lang_color_selections[bin_size] = {}
+  }
+  lang_color_selections[bin_size][blur] = language_stats[bin_size][blur].map(() => ({selection_type: "none"}))
+  if(!(bin_size in lang_tile_info)){
+    lang_tile_info[bin_size] = {}
+  }
+  lang_tile_info[bin_size][blur] = language_stats[bin_size][blur].map(() => ({}))
 
-  console.log(language_stats[bin_size])
+  console.log(language_stats[bin_size][blur])
 }
 
 /*************** Tracking the current display options *******************/
 const currSvgSize = [{}]
+let curr_blur = BLUR
 let curr_bin_size = BIN_SIZES[1] 
 let backgroundColor = 'white'
 let tile_size_type = 'ptc'
@@ -229,6 +258,20 @@ $(document).on('ready page:load', function () {
   $("#low-data").change(createOrRefreshAllLangs)
   $("#ref_bins").change(createOrRefreshAllLangs)
 
+  if(curr_blur == BLUR){
+    $("#blur").prop('checked', true);
+  }else{
+    $("#blur").prop('checked', false);
+  }
+  $("#blur").change(() => {
+    if($("#blur").prop('checked')){
+      curr_blur = BLUR
+    }else{
+      curr_blur = NO_BLUR
+    }
+    createOrRefreshAllLangs()
+  })
+
   bin_size_by = $("#bin_size_by").val()
   $("#bin_size_by").change(() => {
     bin_size_by = $("#bin_size_by").val()
@@ -254,7 +297,7 @@ function updateDisplay(){
   tile_size_type = $("#tile_size").val()
   curr_bin_size = Number($("#bin_size").val())
 
-  if(!language_stats[curr_bin_size]){
+  if(!language_stats[curr_bin_size] || !language_stats[curr_bin_size][curr_blur]){
     d3.select("#main")
       .append("p")
       .attr("id", "loading-p")
@@ -286,7 +329,7 @@ function updateDisplay(){
   // add space for each language
   d3.select('#vis')
     .selectAll(".lang-map")
-    .data(language_stats[curr_bin_size])
+    .data(language_stats[curr_bin_size][curr_blur])
     .join("div")
       .attr("class", "lang-map")
       .attr("id", (d, i) => `lang${i}`)
@@ -296,14 +339,14 @@ function updateDisplay(){
 }
 
 function createOrRefreshAllLangs(){
-  for(let i = 0; i < language_stats[curr_bin_size].length; i++){
+  for(let i = 0; i < language_stats[curr_bin_size][curr_blur].length; i++){
     createOrRefreshLang(i)
   }
 }
 
 function createOrRefreshLang(i){
-  const language_stat = language_stats[curr_bin_size][i]
-  const sal = saliencies_by_lang[curr_bin_size][language_stat.lang]
+  const language_stat = language_stats[curr_bin_size][curr_blur][i]
+  const sal = saliencies_by_lang[curr_bin_size][curr_blur][language_stat.lang]
 
   const div = d3.select("#lang"+i)
   // don't create if language displays if they aren't selected
@@ -333,7 +376,7 @@ function createOrRefreshLang(i){
         <div class="form-check form-check-inline justify-content-center small" style="width:100%;margin-top:10px;"> 
           <label class="form-label" for="selected_color_${i}" style="margin-bottom: 0px">Selected Color</label>
           <select class="form-select" type="checkbox" name="metric" id="selected_color_${i}" value="selected_color_${i}" style="width:150px">
-          ${color_names_by_lang[curr_bin_size][language_stat.lang].map((colorInfo) =>{
+          ${color_names_by_lang[curr_bin_size][curr_blur][language_stat.lang].map((colorInfo) =>{
             return `<option value="${colorInfo.colorName}" data-commonColorName="${colorInfo.colorName}"
               style='background-color:${colorInfo.avgTermColor}'>
               ${colorInfo.colorName}
@@ -362,7 +405,7 @@ function createOrRefreshLang(i){
       });
 
       $(`#selected_color_${i}`).change(function() {
-        const selection = lang_color_selections[curr_bin_size][i]
+        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
         if(this.value == COLOR_NAME_UNSELECTED){
           selection.selection_type = "none"
           selection.color_name = ""
@@ -400,7 +443,7 @@ function createOrRefreshLang(i){
 
 
   // make sure selection in dropdown is up to date:
-  const selection = lang_color_selections[curr_bin_size][i]
+  const selection = lang_color_selections[curr_bin_size][curr_blur][i]
   if(selection.selection_type == "none"){
     $(`#selected_color_${i}`).val(COLOR_NAME_UNSELECTED)
     $(`#selected_color_${i}`).trigger('change.select2')
@@ -425,7 +468,7 @@ function drawColorTiles(i, saliencies){
         return -d.binB*TILE_SIZE[curr_bin_size] + l_bin_y_offsets[curr_bin_size]
       })
       .attr("fill", (d) => {
-        const selection = lang_color_selections[curr_bin_size][i]
+        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
         if(selection.selection_type == "select" || selection.selection_type == "hover"){
           if(d.commonTerm == selection.color_name){
             const bin = lab_bins[curr_bin_size][d.binL][d.binA][d.binB]
@@ -463,7 +506,7 @@ function drawColorTiles(i, saliencies){
         return info
       })
       .on("mouseover", (event, d) => {
-        const selection = lang_color_selections[curr_bin_size][i]
+        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
         if(selection.selection_type != "select"){
           selection.selection_type = "hover"
           selection.color_name = d.commonTerm
@@ -471,7 +514,7 @@ function drawColorTiles(i, saliencies){
         }
       })
       .on("mouseout", (event, d) => {
-        const selection = lang_color_selections[curr_bin_size][i]
+        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
         if(selection.selection_type == "hover"){
           selection.selection_type = "none"
           selection.color_name = ""
@@ -480,13 +523,13 @@ function drawColorTiles(i, saliencies){
       })
       .on("click", (event, d) => {
         event.stopPropagation() // don't let svg get click and unselect it
-        const selection = lang_color_selections[curr_bin_size][i]
+        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
         selection.selection_type = "select"
         selection.color_name = d.commonTerm
         createOrRefreshLang(i)
       })
   svg.on("click", (event, d) => {
-        const selection = lang_color_selections[curr_bin_size][i]
+        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
         selection.selection_type = "none"
         selection.color_name = ""
         createOrRefreshLang(i)

@@ -5,8 +5,11 @@ This folder has datasets from our binning all the color names given in LAB color
 See [Full Color Maps](https://idl.uw.edu/color-naming-in-different-languages/vis/full_color_maps.html)
 ![A screenshot of the full colors in different languages, with groups of binned colors and different levels of brightness](../../vis/color-maps-small.png)
 
+## Blur / No-Blur
+For each file of binned data, there is also a blurred version, where a small gaussian blur was run on all 3x3x3 grids of tiles to smooth out the naming data.
+
 ## Full Color Language Bin Info
-The "full_color_lang_bin_info.csv" file has statistics on our binning of languages into our different LAB bin sizes.
+The "full_color_lang_bin_info.csv" and "full_color_lang_bin_blur_info.csv" file have statistics on our binning of languages into our different LAB bin sizes.
 
 Fields:
 - **lang:** The language of the color term (long form)
