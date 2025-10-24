@@ -223,6 +223,7 @@ function refreshPage(){
 
       let termLabel = $(targetSelector).append(termDiv);
       let area = d3.area()
+          //.interpolate("monotone")
           .x((d, i) => x(i))
           .y0((d, i) => y(d.y0))
           .y1((d, i) => y(d.y1));
@@ -296,23 +297,27 @@ function refreshPage(){
           .style("opacity", 1)
 
 
+      const pathIndex = d3.local(); 
       term.append("path")
           .attr("class", "fake-area")
           .attr("d", area)
           .attr('opacity', 0)
-          .on('mouseover',function(d,i){
+          .each(function(d, i) {
+            pathIndex.set(d, i);
+          })
+          .on("mouseover", function(e,d,i){
             if (!toggle) {
-              highlight(d, i);
+              highlight(d, pathIndex.get(d));
             }
           })
           .on('mouseout', function(d){
             if (!toggle) {
               dehighlight();
             }
-          }).
-          on('click',function(d,i){
-            highlight(d, i, true);
-            d3.event.stopPropagation();
+          })
+          .on("click", function(e,d,i){
+            highlight(d, pathIndex.get(d), true);
+            e.stopPropagation();
           });
 
       function dehighlight(){
