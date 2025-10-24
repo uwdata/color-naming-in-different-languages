@@ -103,7 +103,7 @@ csv()
               for(let i = -2; i <= 2; i++){
                 const blurFraction = Math.pow(2, - BLUR_EXPONENT * Math.abs(i))
                 termNameCnt += blurFraction
-                colorNameCnt[colorBins.binNum(response, bin) + i % n_bins] 
+                colorNameCnt[(colorBins.binNum(response, bin) + i) % n_bins] 
                     += blurFraction
               }
             }
