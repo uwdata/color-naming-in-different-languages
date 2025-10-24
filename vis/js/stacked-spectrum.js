@@ -1,47 +1,153 @@
-$(document).on('ready page:load', function () {
-  let Nbin, emptyNbin;
-  let rootPath = window.location.pathname.split('/').slice(0,-1).join("/");
+N_BIN_OPTIONS = [36, 72]
+const NO_BLUR = "no-blur"
+const BLUR = "blur"
 
-  $.getJSON("../model/binned_hue_colors/hue_color_names_binned_aggregated.json", function( data ) {
+const colorData = {}
+const langIds = {}
+const langsByIds = {}
+let langIdCount = 0
+let data_blur = BLUR
+let num_bins = N_BIN_OPTIONS[1]
+let isDrawn = false
 
+const escapeHTML = str => String(str).replace(/[&<>'"]/g, 
+  tag => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+  }[tag]));
+
+
+$(document).on('ready page:load', async function () {
+  for(const blur of [NO_BLUR, BLUR]){
+    colorData[blur] = {}
+    let blur_text = ""
+    if(blur == BLUR){
+      blur_text = "_blur"
+    }
+    for(const n_bins of N_BIN_OPTIONS){
+      $.getJSON(`../model/binned_hue_colors/hue_color_names_binned_${n_bins}${blur_text}_aggregated.json`,
+        function( data ) {
+          colorData[blur][n_bins] = data
+          refreshPage();
+        })
+    }
+  }
+
+  $("#blur").prop("checked", data_blur == BLUR)
+  $("#blur").change(refreshPage)
+
+  for(const n_bins of N_BIN_OPTIONS){
+    $("#num_bins").append(`<option val="${n_bins}" selected >${n_bins}</option>`)
+  }
+  $("#num_bins").val(num_bins)
+  $("#num_bins").change(refreshPage)
+
+  function formatLangOpt (langOpt) {
+    return $(`<span class="small">${escapeHTML(langOpt.text)}</span>`)
+  };
+
+  $("#selected_langs").select2({
+    allowClear: true,
+    placeholder: " select languages to display",
+    templateResult: formatLangOpt
+  });
+
+  $("#selected_langs").change(e => {
+    let selectedLangs = $("#selected_langs").val()
+    // make sure selectdLangs is at least an empty array
+    selectedLangs = selectedLangs ? selectedLangs : []
+
+    $("#selected_langs").children().each((index, option)=> {
+      console.log(
+        "option.selected",
+        option.selected,
+        "option.val",
+        option.value)
+      if(option.selected){
+        $('#vis'+option.value).show()
+      } else {
+        $('#vis'+option.value).hide()
+      }
+    })
+  });
+})
+
+
+
+function refreshPage(){
+    let Nbin, emptyNbin;
+
+    const old_blur = data_blur
+    data_blur = $("#blur").prop("checked") ? BLUR : NO_BLUR
+    const old_n_bins = num_bins
+    num_bins = $("#num_bins").val()
+
+    let data = colorData[data_blur][num_bins]
+
+    // if no data yet, do nothing
+    if(!data){
+      return
+    }
+
+    // if no change and already drawn, do nothing
+    if(isDrawn && old_blur == data_blur && old_n_bins == num_bins){
+      return 
+    }
+
+    $("#charts_area").empty()
+    isDrawn = true
+
+    //let data = await d3.json("../model/binned_hue_colors/hue_color_names_binned_72_blur_aggregated.json")
     Nbin = data.colorSet.length;
     emptyNbin = [];
     for (let i = 0; i < Nbin; i++) {
       emptyNbin.push(0);
     }
 
-    let langs = Object.keys(data).filter(key => key !== "colorSet").sort((a,b) => - data[a].totalCount + data[b].totalCount);
+    // make sure we have an ID for all languages
+    let langs = Object.keys(data).filter(key => key !== "colorSet")
+    for(let lang of langs){
+      if(!(lang in langIds)){
+        langIds[lang] = langIdCount
+        langsByIds[langIdCount] = lang
+        langIdCount++
+      }
+    }
+
+    // check if all languages are selected
+    //   so we can keep all selected when updating languages
+    let allLangsSelected = true
+    for(let option of $("#selected_langs").children()){
+      if(!option.selected){
+        allLangsSelected = false
+      }
+    }
+
     langs =langs.sort();
-    langs.forEach((lang, i) => {
-      $("#selected_langs").append(`<option val="${i}" selected >${lang}</option>`)
-      $(".container").append('<div class="row" id="vis'+i+'"></div>');
-      drawLangSpec('#vis'+i, data, lang, data.colorSet);
+
+    // get all selected languages
+    const formerLangSelected = $('#selected_langs').select2('data').map(o => o.id)
+
+    // clear all options so we can re-add the new set
+    $('#selected_langs').empty()
+
+    // insert back all language options and draw the graph
+    langs.forEach((lang) => {
+      const langNum = langIds[lang]
+      let thisLangSelected = allLangsSelected
+      if(formerLangSelected.includes(String(langNum))){
+        thisLangSelected = true
+      }
+      $("#selected_langs").append(new Option(lang, langNum, true, thisLangSelected))
+      $("#charts_area").append('<div class="row" id="vis'+langNum+'"></div>');
+      drawLangSpec('#vis'+langNum, data, lang, data.colorSet);
+      if(!thisLangSelected){
+        $('#vis'+langNum).hide()
+      }
     });
-
-    function formatLangOpt (langOpt) {
-      return $(`<span class="small">${langOpt.text}</span>`)
-    };
-
-    $("#selected_langs").select2({
-      allowClear: true,
-      placeholder: " select languages to display",
-      templateResult: formatLangOpt
-    });
-
-    $("#selected_langs").change(e => {
-      let selectedLangs = $("#selected_langs").val()
-      // make sure selectdLangs is at least an empty array
-      selectedLangs = selectedLangs ? selectedLangs : []
-
-      langs.forEach((lang, i) => {
-        if(selectedLangs.includes(lang)){
-          $('#vis'+i).show()
-        }else{
-          $('#vis'+i).hide()
-        }
-      })
-    });
-  });
 
 
 
@@ -247,7 +353,7 @@ $(document).on('ready page:load', function () {
         svg.selectAll('.area1')
           .style('stroke-width', function(g,j){
             if (j==i) {
-              $(targetSelector+"-selected-title").html(data_common_names[j]);
+              $(targetSelector+"-selected-title").text(data_common_names[j]);
               $(targetSelector+"-selected-title").removeClass("text-muted");
               $(targetSelector+"-selected-title").removeClass("fs-4");
             }
@@ -322,10 +428,9 @@ $(document).on('ready page:load', function () {
 
     }
   }
+}
 
 
-
-});
 function meanIndex(arr){
   let acc = arr.reduce((acc, cnt, i) => {
     acc.cnt += cnt;
