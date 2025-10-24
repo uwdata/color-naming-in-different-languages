@@ -223,10 +223,10 @@ function refreshPage(){
 
       let termLabel = $(targetSelector).append(termDiv);
       let area = d3.area()
-          //.interpolate("monotone")
           .x((d, i) => x(i))
           .y0((d, i) => y(d.y0))
-          .y1((d, i) => y(d.y1));
+          .y1((d, i) => y(d.y1))
+          .curve(d3.curveBasis);;
 
       let svg = d3.select(targetSelector).append("svg")
           .attr("width", width + margin.left + margin.right)
