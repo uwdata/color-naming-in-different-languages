@@ -9,6 +9,7 @@ let langIdCount = 0
 let data_blur = BLUR
 let num_bins = N_BIN_OPTIONS[1]
 let isDrawn = false
+let formerLangSelected = []
 
 const escapeHTML = str => String(str).replace(/[&<>'"]/g, 
   tag => ({
@@ -61,11 +62,6 @@ $(document).on('ready page:load', async function () {
     selectedLangs = selectedLangs ? selectedLangs : []
 
     $("#selected_langs").children().each((index, option)=> {
-      console.log(
-        "option.selected",
-        option.selected,
-        "option.val",
-        option.value)
       if(option.selected){
         $('#vis'+option.value).show()
       } else {
@@ -123,13 +119,26 @@ function refreshPage(){
     for(let option of $("#selected_langs").children()){
       if(!option.selected){
         allLangsSelected = false
+        // remove deselected languages from formerLangSelected
+        const index = formerLangSelected.indexOf(option.value);
+        if (index > -1) { // only splice array when item is found
+          formerLangSelected.splice(index, 1); // 2nd parameter means remove one item only
+        }
       }
     }
 
     langs =langs.sort();
 
     // get all selected languages
-    const formerLangSelected = $('#selected_langs').select2('data').map(o => o.id)
+    const currLangSelected = $('#selected_langs').select2('data').map(o => o.id)
+    // merge with formerLangSelected
+    for(let langSelected of currLangSelected){
+      if(!formerLangSelected.includes(langSelected)){
+        formerLangSelected.push(langSelected)
+      }
+    }
+
+
 
     // clear all options so we can re-add the new set
     $('#selected_langs').empty()
