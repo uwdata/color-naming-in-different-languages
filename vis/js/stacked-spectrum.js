@@ -167,7 +167,7 @@ function refreshPage(){
     let data_colors = colorSet;
     let data_color_counts = emptyNbin.slice();
     let data_line = data[lang].colorNameCount;
-    let data_avgColor = data[lang].avgColor.slice();
+    let data_avgColor = data[lang].avgHueColor.slice();
     let stacked_area = [];
     let stacked_terms = [];
     let stacked_common_names = []

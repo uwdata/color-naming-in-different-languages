@@ -1,29 +1,38 @@
 const fs = require('fs'),
   colorBins = require('../utils/hueColorBins.js'),
   csv = require("csvtojson"),
+  csvWriter = require('csv-write-stream'),
   d3 = require('d3');
-//const converter = new Converter({});
 
 
-
-N_BIN_OPTIONS = [36, 72]
+N_BIN_OPTIONS = [72, 36]
 
 // fraction of colors needed to include this color
 MIN_COLOR_FRACTION = .005 
 
+MIN_ENTRIES_PER_TERM = 8 // make sure each term is named a minimum number of times to count it
+
 // Restrict languages to those that have a minimum number of terms per bin
 //  (note: blur allows more languages to be included)
-MIN_TERMS_PER_BIN = 16 
+MIN_TERMS_PER_BIN = 15
+
+
 const NO_BLUR = "no-blur"
 const BLUR = "blur"
 const BLUR_EXPONENT = 1.5
 
+const I_FILE = "../../model/cleaned_color_names.csv"
 const O_FILE_NAME = `../../model/binned_hue_colors/hue_color_names_binned_`;
 const O_AGGREGATE = `aggregated`;
+const O_HUE_SUMMARY_FILE = `../../model/hue_colors_info.csv`;
+
+
 
 csv()
-.fromFile("../../model/cleaned_color_names.csv")
+.fromFile(I_FILE)
 .then((colorNames)=>{
+  hue_colors_info = []
+
   for(const blur of [NO_BLUR, BLUR]){
     for(const n_bins of N_BIN_OPTIONS){
       console.log("Calculating bins", n_bins, blur)
@@ -76,7 +85,7 @@ csv()
           'terms': [],
           'commonNames': [],
           'totalCount' : 0,
-          'avgColor': []
+          'avgHueColor': []
         }
         if(blur == BLUR){
           mapped.totalCountBlur = 0
@@ -93,7 +102,11 @@ csv()
           
           let colorNameCnt = new Array(n_bins).fill(0);
           let termNameCnt = 0
-          let [l, a, b] = [0, 0, 0];
+          let [x_hue_angle, y_hue_angle] = [0, 0]
+
+          // make sure all values are actually hue colors (some got mislabeled)
+          term.values = term.values.filter((response) => Math.max(response.r, response.g, response.b) == 255 && Math.min(response.r, response.g, response.b) == 0)
+
           term.values.forEach(response => {
             if(blur == NO_BLUR){
               colorNameCnt[colorBins.binNum(response, bin)] += 1;
@@ -107,23 +120,26 @@ csv()
                     += blurFraction
               }
             }
-            let lab = d3.lab(d3.color(`rgb(${[response.r, response.g, response.b].map(Math.floor).join(",")})`));
-            l += lab.l;
-            a += lab.a;
-            b += lab.b;
+            const colorHueRatio = colorBins.getHueColorRatio(response)
+            x_hue_angle += Math.cos(colorHueRatio * 2*Math.PI),
+            y_hue_angle += Math.sin(colorHueRatio * 2*Math.PI)
           });
-          let avgLABColor = d3.lab(l/term.values.length, a/term.values.length, b/term.values.length);
-          let avgRGBColor = d3.color(avgLABColor);
-          mapped.avgColor.push({
-            "r": avgRGBColor.r, "g": avgRGBColor.g, "b": avgRGBColor.b
-          });
-          mapped.colorNameCount.push(colorNameCnt);
+          let angle = Math.atan(y_hue_angle / x_hue_angle)
+          if(x_hue_angle < 0){
+            angle += Math.PI 
+          } else if (y_hue_angle < 0){
+            angle += 2 * Math.PI
+          } 
+          const avgHueColor = colorBins.getHueColorFromRatio(angle / (2*Math.PI))
+          mapped.avgHueColor.push(
+            d3.rgb(avgHueColor.r, avgHueColor.g, avgHueColor.b)
+          );
+          mapped.colorNameCount.push(term.values.length);
           mapped.totalCount += term.values.length
           if(blur == BLUR){
             mapped.totalCountBlur += termNameCnt
           }
-          //totalTermPCT = d3.sum(colorNameCnt) / termNameCnt
-          if(mapped.totalCount > 10 ){
+          if(mapped.totalCount > MIN_ENTRIES_PER_TERM ){
             for (var i = 0; i < n_bins; i++) {
               bufFlatten.push({
                 "lang": lang.key,
@@ -162,7 +178,28 @@ csv()
         return colorBins.colorSet[Math.round(i===0 ? index/2 : (index + array[i-1]) / 2)];
       });
 
+
+      // fill in the hue_colors_info
+      for(const [lang, colorData] of Object.entries(result)){
+        if(lang != "colorSet"){
+          for(const [i, term] of colorData.terms.entries()){
+            // check if lang term already in hue_colors_info
+            if(hue_colors_info.filter(d => d.lang == lang && d.term == term).length < 1){
+              hue_colors_info.push({
+                lang: lang,
+                term: term,
+                commonName: colorData.terms[i],
+                avgHueColor: colorData.avgHueColor[i],
+                cnt: colorData.colorNameCount[i]
+              })
+            }
+          }
+        }
+      }
+      
+
       // Export the data
+
 
       let blur_text = ""
       if(blur == BLUR){
@@ -172,5 +209,17 @@ csv()
       fs.writeFileSync(`${O_FILE_NAME}${n_bins}${blur_text}.json`, JSON.stringify(flatten, null, 2));
     }
   }
+
+  // export overall color info
+  let hueColorWriter = csvWriter();
+  hueColorWriter.pipe(fs.createWriteStream(O_HUE_SUMMARY_FILE));
+  for(const [lang, hue_color_data_row] of Object.entries(hue_colors_info)){
+    hueColorWriter.write(hue_color_data_row)
+  }
+  hueColorWriter.end();
 });
 
+
+function getAverageHueColor(){
+
+}
