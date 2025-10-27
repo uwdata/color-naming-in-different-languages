@@ -5,16 +5,16 @@ const fs = require('fs'),
   d3 = require('d3');
 
 
-N_BIN_OPTIONS = [72, 36]
+const N_BIN_OPTIONS = [72, 36]
 
 // fraction of colors needed to include this color
-MIN_COLOR_FRACTION = .005 
+const MIN_COLOR_FRACTION = .002 
 
-MIN_ENTRIES_PER_TERM = 8 // make sure each term is named a minimum number of times to count it
+const MIN_ENTRIES_PER_TERM = 8 // make sure each term is named a minimum number of times to count it
 
-// Restrict languages to those that have a minimum number of terms per bin
-//  (note: blur allows more languages to be included)
-MIN_TERMS_PER_BIN = 15
+// Restrict languages to those that have an average minimum number of terms per bin
+//  (note: blur allows more languages to be included since entries get double counted)
+const MIN_TERMS_PER_BIN = 15
 
 
 const NO_BLUR = "no-blur"
@@ -56,7 +56,9 @@ csv()
 
         let rankLookUp = lang.terms.map(t => t.values.length);
         //lang.topNTerms = lang.terms.filter(t => rankLookUp.indexOf(t.values.length) + 1 <= N_TERMS);
-        lang.topNTerms = lang.terms.filter(t => t.values.length / lang.values.length > MIN_COLOR_FRACTION);
+        lang.topNTerms = lang.terms
+          .filter(t => t.values.length >= MIN_ENTRIES_PER_TERM)
+          .filter(t => t.values.length / lang.values.length > MIN_COLOR_FRACTION);
 
         lang.terms.forEach(t => {
           t.rank = rankLookUp.indexOf(t.values.length) + 1;
@@ -81,6 +83,7 @@ csv()
         let bufFlatten = [];
         let terms = [];
         let mapped = {
+          'colorNameBinCounts': [],
           'colorNameCount': [],
           'terms': [],
           'commonNames': [],
@@ -94,10 +97,7 @@ csv()
           mapped.terms.push(term.key);
 
           //find most common name for term
-          let commonName = d3.groups(term.values, t => t.standardized_entered_name)
-              .map(a => {return {key: a[0], values: a[1]}})
-              .sort((a,b) => -a.values.length + b.values.length)[0]
-              .key
+          let commonName = term.values[0].standardized_entered_name
           mapped.commonNames.push(commonName)
           
           let colorNameCnt = new Array(n_bins).fill(0);
@@ -134,28 +134,27 @@ csv()
           mapped.avgHueColor.push(
             d3.rgb(avgHueColor.r, avgHueColor.g, avgHueColor.b)
           );
+          mapped.colorNameBinCounts.push(colorNameCnt);
           mapped.colorNameCount.push(term.values.length);
           mapped.totalCount += term.values.length
           if(blur == BLUR){
             mapped.totalCountBlur += termNameCnt
           }
-          if(mapped.totalCount > MIN_ENTRIES_PER_TERM ){
-            for (var i = 0; i < n_bins; i++) {
-              bufFlatten.push({
-                "lang": lang.key,
-                "term": term.key,
-                "commonName": commonName,
-                "rank": term.rank,
-                "binNum": i,
-                "cnt": colorNameCnt[i],
-                "pCT": colorNameCnt[i] / termNameCnt
-              });
-            }
-            terms.push({
+          for (var i = 0; i < n_bins; i++) {
+            bufFlatten.push({
+              "lang": lang.key,
               "term": term.key,
-              "modeBinNum": colorNameCnt.indexOf(d3.max(colorNameCnt))
+              "commonName": commonName,
+              "rank": term.rank,
+              "binNum": i,
+              "cnt": colorNameCnt[i],
+              "pCT": colorNameCnt[i] / termNameCnt
             });
           }
+          terms.push({
+            "term": term.key,
+            "modeBinNum": colorNameCnt.indexOf(d3.max(colorNameCnt))
+          });
         });
         terms.sort((a,b) => a.modeBinNum - b.modeBinNum);
         bufFlatten.forEach( d => {
@@ -188,7 +187,7 @@ csv()
               hue_colors_info.push({
                 lang: lang,
                 term: term,
-                commonName: colorData.terms[i],
+                commonName: colorData.commonNames[i],
                 avgHueColor: colorData.avgHueColor[i],
                 cnt: colorData.colorNameCount[i]
               })

@@ -8,6 +8,7 @@ const langsByIds = {}
 let langIdCount = 0
 let data_blur = BLUR
 let num_bins = N_BIN_OPTIONS[1]
+let numTerms = 20
 let isDrawn = false
 let formerLangSelected = []
 
@@ -46,6 +47,9 @@ $(document).on('ready page:load', async function () {
   $("#num_bins").val(num_bins)
   $("#num_bins").change(refreshPage)
 
+  $("#max_terms").val(20)
+  $("#max_terms").change(refreshPage)
+
   function formatLangOpt (langOpt) {
     return $(`<span class="small">${escapeHTML(langOpt.text)}</span>`)
   };
@@ -81,6 +85,9 @@ function refreshPage(){
     const old_n_bins = num_bins
     num_bins = $("#num_bins").val()
 
+    const old_numTerms = numTerms
+    numTerms = $("#max_terms").val()
+
     let data = colorData[data_blur][num_bins]
 
     // if no data yet, do nothing
@@ -89,7 +96,9 @@ function refreshPage(){
     }
 
     // if no change and already drawn, do nothing
-    if(isDrawn && old_blur == data_blur && old_n_bins == num_bins){
+    if(isDrawn && old_blur == data_blur 
+      && old_n_bins == num_bins &&
+      old_numTerms == numTerms){
       return 
     }
 
@@ -159,15 +168,15 @@ function refreshPage(){
     });
 
 
-
+  
   function drawLangSpec(targetSelector, data, lang, colorSet){
-
-    let data_terms = data[lang].terms;
-    let data_common_names = data[lang].commonNames;
+    
+    let data_terms = data[lang].terms.slice(0, numTerms);
+    let data_common_names = data[lang].commonNames.slice(0, numTerms);
     let data_colors = colorSet;
     let data_color_counts = emptyNbin.slice();
-    let data_line = data[lang].colorNameCount;
-    let data_avgColor = data[lang].avgHueColor.slice();
+    let data_line = data[lang].colorNameBinCounts.slice(0, numTerms);
+    let data_avgColor = data[lang].avgHueColor.slice().slice(0, numTerms);
     let stacked_area = [];
     let stacked_terms = [];
     let stacked_common_names = []
