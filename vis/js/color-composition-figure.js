@@ -3,7 +3,7 @@ $(document).on('ready page:load', function () {
   let Nbin, emptyNbin;
   let rootPath = window.location.pathname.split('/').slice(0,-1).join("/");
   let langNum;
-  $.getJSON("../model/binned_hue_colors/hue_color_names_binned_aggregated.json", function( data ) {
+  $.getJSON("../model/binned_hue_colors/hue_color_names_binned_72_blur_aggregated.json", function( data ) {
     Nbin = data.colorSet.length;
     emptyNbin = [];
     for (let i = 0; i < Nbin; i++) {
@@ -25,8 +25,8 @@ $(document).on('ready page:load', function () {
     let data_terms = data[lang].terms;
     let data_colors = colorSet;
     let data_color_counts = emptyNbin.slice();
-    let data_line = data[lang].colorNameCount;
-    let data_avgColor = data[lang].avgColor.slice();
+    let data_line = data[lang].colorNameBinCounts;
+    let data_avgColor = data[lang].avgHueColor.slice();
     let stacked_area = [];
     let stacked_terms = [];
 
