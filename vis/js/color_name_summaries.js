@@ -26,6 +26,9 @@ const table =  d3.select("#data_view")
     .html("")
     .append("table")
 
+table.append("thead")
+table.append("tbody")
+
 
 updateColorSet()
 
@@ -56,13 +59,14 @@ function updateTableData(){
     if(!selected_lang){
         return
     }
-    table.selectAll("th")
+    table.select("thead").selectAll("th")
         .data(Object.keys(allNamesByLang[selected_lang][0]))
         .join("th")
         .text(d => d)
 
     const nameData = allNamesByLang[selected_lang]
     const rows = table
+        .select("tbody")
         .selectAll("tr")
         .data(Object.entries(nameData))
         .join("tr")
