@@ -1,6 +1,12 @@
-N_BIN_OPTIONS = [36, 72]
+const N_BIN_OPTIONS = [36, 72]
 const NO_BLUR = "no-blur"
 const BLUR = "blur"
+
+// extend start and end of plot
+// Repeating 20% times more (13% at start, 7% at end) to make it start 
+// with the full arc of red in most languages, and have a little repeat
+const START_ADDITION = .13
+const END_ADDITION = .07
 
 const colorData = {}
 const langIds = {}
@@ -176,6 +182,7 @@ function refreshPage(){
     let data_colors = colorSet;
     let data_color_counts = emptyNbin.slice();
     let data_line = data[lang].colorNameBinCounts.slice(0, numTerms);
+    const original_data_line = data_line
     let data_avgColor = data[lang].avgHueColor.slice().slice(0, numTerms);
     let stacked_area = [];
     let stacked_terms = [];
@@ -194,22 +201,24 @@ function refreshPage(){
 
 
     function extendTail(){
-      //Repeating 20% times more (13% at start, 7% at end) to make it start 
-	  // with the full arc of red in most languages, and have a little repeat
+      //Repeating START_ADDITION to make it start 
+	    // with the full arc of red in most languages, and have a little repeat
+      const START_ADDITION_END_LOCATION = 1 - START_ADDITION
+
       data_line = data_line.map(function(colorCount){
-		let beforeExtra = colorCount.slice().splice(.87*Math.round(colorCount.length));
-		let afterExtra = colorCount.slice().splice(0,.07*Math.round(colorCount.length));
+		let beforeExtra = colorCount.slice().splice(START_ADDITION_END_LOCATION*Math.round(colorCount.length));
+		let afterExtra = colorCount.slice().splice(0,END_ADDITION*Math.round(colorCount.length));
         return beforeExtra.concat(colorCount.concat(afterExtra));
       });
 
       stacked_area = stacked_area.map(function(colorCount){
-		let beforeExtra = colorCount.slice().splice(.87*Math.round(colorCount.length));
-		let afterExtra = colorCount.slice().splice(0,.07*Math.round(colorCount.length));
+		let beforeExtra = colorCount.slice().splice(START_ADDITION_END_LOCATION*Math.round(colorCount.length));
+		let afterExtra = colorCount.slice().splice(0,END_ADDITION*Math.round(colorCount.length));
         return beforeExtra.concat(colorCount.concat(afterExtra));
       });
 
-	  let beforeExtra = data_colors.slice().splice(.87*Math.round(data_colors.length));
-	  let afterExtra = data_colors.slice().splice(0,.07*Math.round(data_colors.length));
+	  let beforeExtra = data_colors.slice().splice(START_ADDITION_END_LOCATION*Math.round(data_colors.length));
+	  let afterExtra = data_colors.slice().splice(0,END_ADDITION*Math.round(data_colors.length));
       data_colors = beforeExtra.concat(data_colors.concat(afterExtra));
     }
     function drawing(){
@@ -436,10 +445,13 @@ function refreshPage(){
 
     function stackedArea(){
       //Sort the terms by mean(binNum)
-      stacked_area = data_line.slice().sort((a, b) => meanIndex(a) - meanIndex(b));
-      stacked_terms = data_terms.slice().sort((a, b) => meanIndex(data_line[data_terms.indexOf(a)]) - meanIndex(data_line[data_terms.indexOf(b)]));
-      stacked_common_names = data_common_names.slice().sort((a, b) => meanIndex(data_line[data_common_names.indexOf(a)]) - meanIndex(data_line[data_common_names.indexOf(b)]));
-      data_avgColor = data_avgColor.slice().sort((a, b) => meanIndex(data_line[data_avgColor.indexOf(a)]) - meanIndex(data_line[data_avgColor.indexOf(b)]));
+      // TODO: re-arrange data so it doesn't need to be sorted repeatedly
+      // TODO: Use avgHueColor to figure out what the average bin is
+      stacked_area = data_line.slice().sort((a, b) => meanIndexOffset(original_data_line[data_line.indexOf(a)]) - meanIndexOffset(original_data_line[data_line.indexOf(b)]));
+      stacked_terms = data_terms.slice().sort((a, b) => meanIndexOffset(original_data_line[data_terms.indexOf(a)]) - meanIndexOffset(original_data_line[data_terms.indexOf(b)]));
+      stacked_common_names = data_common_names.slice().sort((a, b) => meanIndexOffset(original_data_line[data_common_names.indexOf(a)]) - meanIndexOffset(original_data_line[data_common_names.indexOf(b)]));
+      console.log("common names arranged", stacked_common_names)
+      data_avgColor = data_avgColor.slice().sort((a, b) => meanIndexOffset(original_data_line[data_avgColor.indexOf(a)]) - meanIndexOffset(original_data_line[data_avgColor.indexOf(b)]));
       let acc = new Array(data_colors.length).fill(0);
       stacked_area = stacked_area.map(line => {
         let area = acc.slice().map((v, i) => {
@@ -453,12 +465,31 @@ function refreshPage(){
   }
 }
 
+// offset by the START_ADDITION
+function meanIndexOffset(arr){
+  let x_sum = 0
+  let y_sum = 0
+  for([i, val] of arr.entries()){
+    const i_fraction = i / (arr.length + 1) // + 1 since the last one shouldn't be 100% (2*Pi)
+    x_sum += val * Math.cos(i_fraction * 2 * Math.PI)
+    y_sum += val * Math.sin(i_fraction * 2 * Math.PI)
+  }
+  let avg_angle = Math.atan2(y_sum, x_sum)
 
-function meanIndex(arr){
-  let acc = arr.reduce((acc, cnt, i) => {
-    acc.cnt += cnt;
-    acc.sum += cnt * i;
-    return acc;
-  }, {sum: 0, cnt: 0});
-  return acc.sum / acc.cnt;
+  //correct for START_ADDITION by shifting everything right by about that fraction
+  // (trying to guess about where "red" colors start)
+  avg_angle += START_ADDITION * 2 * Math.PI * .75
+
+  if(avg_angle >= 2 * Math.PI){
+    avg_angle -= 2 * Math.PI
+  }
+  if(avg_angle < 0){
+    avg_angle += 2 * Math.PI
+  }
+
+  const avg_fraction = avg_angle / (2 * Math.PI)
+
+  const avg_i = Math.round(avg_fraction * arr.length)
+
+  return avg_i
 }

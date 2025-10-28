@@ -18,8 +18,6 @@ let genBin = function(Nbin){
   return binEndPoints;
 }
 
-var binN = process.argv[2] || 36;
-
 
 let binNum = function(response, binEndPoints){
   for (var i = 0; i < colorSet.length; i++) {
