@@ -446,12 +446,25 @@ function refreshPage(){
     function stackedArea(){
       //Sort the terms by mean(binNum)
       // TODO: re-arrange data so it doesn't need to be sorted repeatedly
-      // TODO: Use avgHueColor to figure out what the average bin is
-      stacked_area = data_line.slice().sort((a, b) => meanIndexOffset(original_data_line[data_line.indexOf(a)]) - meanIndexOffset(original_data_line[data_line.indexOf(b)]));
-      stacked_terms = data_terms.slice().sort((a, b) => meanIndexOffset(original_data_line[data_terms.indexOf(a)]) - meanIndexOffset(original_data_line[data_terms.indexOf(b)]));
-      stacked_common_names = data_common_names.slice().sort((a, b) => meanIndexOffset(original_data_line[data_common_names.indexOf(a)]) - meanIndexOffset(original_data_line[data_common_names.indexOf(b)]));
-      console.log("common names arranged", stacked_common_names)
-      data_avgColor = data_avgColor.slice().sort((a, b) => meanIndexOffset(original_data_line[data_avgColor.indexOf(a)]) - meanIndexOffset(original_data_line[data_avgColor.indexOf(b)]));
+      function colorIndexSort(sourceArr, a, b){
+        const comp1 = indexOfColorOffset(data_avgColor[sourceArr.indexOf(a)], data.colorSet) - 
+        indexOfColorOffset(data_avgColor[sourceArr.indexOf(b)], data.colorSet)
+        if(comp1 != 0){
+          return comp1
+        }
+        const comp2 = meanIndexOffset(original_data_line[sourceArr.indexOf(a)]) - meanIndexOffset(original_data_line[sourceArr.indexOf(b)])
+        if(comp2 != 0){
+          return comp2
+        }
+        const comp3 = data_common_names[sourceArr.indexOf(a)].localeCompare(data_common_names[sourceArr.indexOf(b)])
+        return comp3
+      }
+
+      stacked_area = data_line.slice().sort((a, b) => colorIndexSort(data_line, a, b));
+      stacked_terms = data_terms.slice().sort((a, b) => colorIndexSort(data_terms, a, b));
+      stacked_common_names = data_common_names.slice().sort((a, b) => colorIndexSort(data_common_names, a, b));
+      data_avgColor = data_avgColor.slice().sort((a, b) =>  colorIndexSort(data_avgColor, a, b));
+      
       let acc = new Array(data_colors.length).fill(0);
       stacked_area = stacked_area.map(line => {
         let area = acc.slice().map((v, i) => {
@@ -463,6 +476,30 @@ function refreshPage(){
 
     }
   }
+}
+
+// offset by the START_ADDITION
+function indexOfColorOffset(color, colorSet, colorName){
+  let min_dist_sq = 100000000000
+  let min_i = 0
+  for(const [i, c] of colorSet.entries()){
+    const dist_sq = Math.pow(color.r - c.rgb.r, 2) +
+                    Math.pow(color.g - c.rgb.g, 2) +
+                    Math.pow(color.b - c.rgb.b, 2) 
+    if(dist_sq < min_dist_sq){
+      min_dist_sq = dist_sq
+      min_i = i
+    }
+  }
+
+  // offset by the START_ADDITION
+  //correct for START_ADDITION by shifting everything right by about that fraction
+  // (trying to guess about where "red" colors start)
+  const corrected_i = Math.round(
+      min_i + START_ADDITION * colorSet.length * .6
+  ) % colorSet.length
+
+  return corrected_i 
 }
 
 // offset by the START_ADDITION
@@ -478,7 +515,7 @@ function meanIndexOffset(arr){
 
   //correct for START_ADDITION by shifting everything right by about that fraction
   // (trying to guess about where "red" colors start)
-  avg_angle += START_ADDITION * 2 * Math.PI * .75
+  avg_angle += START_ADDITION * 2 * Math.PI * .6
 
   if(avg_angle >= 2 * Math.PI){
     avg_angle -= 2 * Math.PI
@@ -489,7 +526,7 @@ function meanIndexOffset(arr){
 
   const avg_fraction = avg_angle / (2 * Math.PI)
 
-  const avg_i = Math.round(avg_fraction * arr.length)
+  const avg_i = avg_fraction * arr.length
 
   return avg_i
 }
