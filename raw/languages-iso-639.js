@@ -2405,3 +2405,7 @@ var languages_iso_639 = [
     "": 0
   }
 ]
+
+module.exports = {
+  "languages_iso_639": languages_iso_639
+}

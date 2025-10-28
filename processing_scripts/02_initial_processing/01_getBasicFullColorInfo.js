@@ -5,35 +5,24 @@
 const fs = require('fs'),
   csv = require("csvtojson"),
   d3 = require('d3'),
-  csvWriter = require('csv-write-stream');
+  csvWriter = require('csv-write-stream'),
+  languages_iso_639 = require("../../raw/languages-iso-639.js").languages_iso_639
 
 const MIN_FULL_COLOR_NAMES = 12;
 const LINE_RGB_SET = "line";
 const FULL_RGB_SET = "full";
 
-let colorNamesAbrv = {
-	"English": "en",
-	'Korean': "ko",
-	"Persian": "fa",
-	"Chinese": "zh",
-	"German": "de",
-	"French": "fr",
-	"Portuguese": "pt",
-	"Spanish": "es",
-	"Swedish": "sv",	
-  "Russian": "ru",
-	"Dutch": "nl",
-	"Polish": "pl",
-	"Finnish": "fi",
-	"Romanian": "ro"
-};
-
 const HUE_COLOR_RATIO = JSON.parse(fs.readFileSync("../../model/color_info_pre_naming/lab_hue_color_ratio.json")).hueColorRatio;
 
+
+
 function getLangAbv(lang){
-  const langKey = Object.keys(colorNamesAbrv).find(val => lang.includes(val))
-  const abv = colorNamesAbrv[langKey]
-  if(!abv){
+  lang_data = languages_iso_639.find(l => `${l["Language name"]} (${l["Native name"]})` == lang)
+  //const langKey = Object.keys(colorNamesAbrv).find(val => lang.includes(val))
+  let abv
+  if(lang_data){
+    abv = lang_data["639‑1"]
+  } else{
     console.log("WARNING: abv not found for " + lang)
   }
   return abv
