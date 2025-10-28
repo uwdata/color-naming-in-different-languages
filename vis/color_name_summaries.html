@@ -47,9 +47,21 @@
 	<h1>Color Name Viewer</h1>
 	<p>This page lets you see the color names in different languages</p>
 
-  
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="color_set" id="full_colors" checked>
+    <label class="form-check-label" for="full_colors">
+      Full Colors
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="color_set" id="hue_colors" >
+    <label class="form-check-label" for="hue_colors">
+      Hue Colors
+    </label>
+  </div>
 
-  <div class="form-check justify-content-center align-items-center flex-nowrap">
+
+  <div class="form-check form-check-inline justify-content-center align-items-center flex-nowrap">
     <label class="form-label" for="selected_langs" style="display: block; text-align: center;" >Language</label>
     <div class="small" style="max-width:500px;margin:auto;">
       <select class="form-select small" name ="selected_langs" id="selected_langs" value="selected_langs" style="width:100%">
