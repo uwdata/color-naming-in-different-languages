@@ -11,7 +11,20 @@ import time
 
 DEFAULT_BIN = '20'
 HIGH_RES_BIN = '10'
-HIGH_RES_DIST = 60 
+
+# Just-noticeable distance is 2.3, and for high-res data, there are normally
+# several closets matches under 30
+# Difference in distance measure when switching to high res 
+#    is normally around +0 to +3 distance
+HIGH_RES_DIST = 35
+
+NUM_PROCESSES = 8
+
+# We will us the blur version of the files
+# because we think that the smoothed out data will be
+# a more accurate representation of the distributions
+# (and also the blurred versions tend to include more bins)
+BLUR_TEXT = "_blur"
 
 print()
 print("starting thread")
@@ -49,15 +62,17 @@ def job(lang1_lang2_terms):
 			# if low distance and we have high res bin data, calculate more accurate
 			if(returnval["dist"] < HIGH_RES_DIST
 	  				and HIGH_RES_BIN in lang1Term and HIGH_RES_BIN in lang2Term):
-				print("  --- dist small enough ("+str(returnval["dist"])+"), and data available for highres bin")
+				print("  --- dist small enough ("+str(returnval["dist"])+"), highres bins exist:", lang1Term[DEFAULT_BIN]["term"], lang2Term[DEFAULT_BIN]["term"])
+				prevDist = returnval["dist"]
 				returnval["dist"] = emd(np.array(lang1Term[HIGH_RES_BIN]["labPct"]),
 						  np.array(lang2Term[HIGH_RES_BIN]["labPct"]),
 						  distance_matrices[HIGH_RES_BIN])
+				print("  ----- new high res dist ("+str(returnval["dist"])+") instead of ("+str(prevDist)+") for ", lang1Term[DEFAULT_BIN]["term"], lang2Term[DEFAULT_BIN]["term"])
 			elif(returnval["dist"] == 0):
 				print("Unexpected error: distance was 0 and high res not available for " +
 		  				lang1Term[DEFAULT_BIN]["term"], lang2Term[DEFAULT_BIN]["term"])
 				raise Exception("Unexpected error: distance was 0 and high res not available")
-			
+			# TODO: Round to like 4 significant digits to not waste file space
 
 	except Exception as err:
 		print("error from thread" + mp.current_process().name)
@@ -83,7 +98,7 @@ def main():
 			"then when this program runs, it will skip files already created")
 		print()
 
-		pool = mp.Pool(processes=4, initializer=init_worker)
+		pool = mp.Pool(processes=NUM_PROCESSES, initializer=init_worker)
 
 
 		#make sure target folder exists
@@ -108,7 +123,7 @@ def main():
 			ColorNames[lang] = []
 			colorNamesWithBins = {}
 			for bin_size in ['10', '20']:
-				fname = 'temp/fullColorNames_'+lang+'_'+bin_size+'.json'
+				fname = 'temp/fullColorNames_'+lang+BLUR_TEXT+'_'+bin_size+'.json'
 				if(os.path.isfile(fname)):
 					binColorNames = []
 					with open(fname, 'r', encoding="utf-8") as color_names_f:

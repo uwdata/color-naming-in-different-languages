@@ -3,11 +3,11 @@
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "purple",
-    "cnt": 3,
-    "pTC": 0.25,
+    "cnt": 4,
+    "pTC": 0.3333333333333333,
     "binNum": 0,
     "rgb": "rgb(68, 1, 84)",
-    "pCT": 0.08571428571428572
+    "pCT": 0.1111111111111111
   },
   {
     "scheme": "viridis",
@@ -72,16 +72,6 @@
   {
     "scheme": "viridis",
     "lang": "English (English)",
-    "term": "puple",
-    "cnt": 1,
-    "pTC": 0.08333333333333333,
-    "binNum": 0,
-    "rgb": "rgb(68, 1, 84)",
-    "pCT": 1
-  },
-  {
-    "scheme": "viridis",
-    "lang": "English (English)",
     "term": "blue",
     "cnt": 2,
     "pTC": 0.01818181818181818,
@@ -97,7 +87,7 @@
     "pTC": 0.2545454545454545,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
-    "pCT": 0.8
+    "pCT": 0.7777777777777778
   },
   {
     "scheme": "viridis",
@@ -327,7 +317,7 @@
     "pTC": 0.020134228187919462,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
-    "pCT": 0.08571428571428572
+    "pCT": 0.08333333333333333
   },
   {
     "scheme": "viridis",
@@ -537,7 +527,7 @@
     "pTC": 0.010101010101010102,
     "binNum": 3,
     "rgb": "rgb(53, 95, 141)",
-    "pCT": 0.02857142857142857
+    "pCT": 0.027777777777777776
   },
   {
     "scheme": "viridis",
@@ -4432,22 +4422,22 @@
   {
     "scheme": "magma",
     "lang": "English (English)",
-    "term": "maroon",
-    "cnt": 2,
-    "pTC": 0.014388489208633094,
-    "binNum": 4,
-    "rgb": "rgb(140, 41, 129)",
-    "pCT": 0.125
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
     "term": "lavender",
     "cnt": 1,
     "pTC": 0.007194244604316547,
     "binNum": 4,
     "rgb": "rgb(140, 41, 129)",
     "pCT": 0.5
+  },
+  {
+    "scheme": "magma",
+    "lang": "English (English)",
+    "term": "maroon",
+    "cnt": 2,
+    "pTC": 0.014388489208633094,
+    "binNum": 4,
+    "rgb": "rgb(140, 41, 129)",
+    "pCT": 0.125
   },
   {
     "scheme": "magma",
@@ -4507,7 +4497,7 @@
     "pTC": 0.007194244604316547,
     "binNum": 4,
     "rgb": "rgb(140, 41, 129)",
-    "pCT": 0.5
+    "pCT": 0.25
   },
   {
     "scheme": "magma",
@@ -4732,6 +4722,16 @@
   {
     "scheme": "magma",
     "lang": "English (English)",
+    "term": "lavender",
+    "cnt": 1,
+    "pTC": 0.00425531914893617,
+    "binNum": 5,
+    "rgb": "rgb(183, 55, 121)",
+    "pCT": 0.5
+  },
+  {
+    "scheme": "magma",
+    "lang": "English (English)",
     "term": "cyan",
     "cnt": 1,
     "pTC": 0.00425531914893617,
@@ -4748,16 +4748,6 @@
     "binNum": 5,
     "rgb": "rgb(183, 55, 121)",
     "pCT": 0.6875
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
-    "term": "lavender",
-    "cnt": 1,
-    "pTC": 0.00425531914893617,
-    "binNum": 5,
-    "rgb": "rgb(183, 55, 121)",
-    "pCT": 0.5
   },
   {
     "scheme": "magma",
@@ -4803,8 +4793,8 @@
     "scheme": "magma",
     "lang": "English (English)",
     "term": "burgundy",
-    "cnt": 1,
-    "pTC": 0.00425531914893617,
+    "cnt": 2,
+    "pTC": 0.00851063829787234,
     "binNum": 5,
     "rgb": "rgb(183, 55, 121)",
     "pCT": 0.5
@@ -4908,16 +4898,6 @@
     "binNum": 5,
     "rgb": "rgb(183, 55, 121)",
     "pCT": 0.6
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
-    "term": "burgandy",
-    "cnt": 1,
-    "pTC": 0.00425531914893617,
-    "binNum": 5,
-    "rgb": "rgb(183, 55, 121)",
-    "pCT": 1
   },
   {
     "scheme": "magma",
@@ -5118,6 +5098,16 @@
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.2
+  },
+  {
+    "scheme": "magma",
+    "lang": "English (English)",
+    "term": "burgundy",
+    "cnt": 1,
+    "pTC": 0.007936507936507936,
+    "binNum": 6,
+    "rgb": "rgb(222, 73, 104)",
+    "pCT": 0.25
   },
   {
     "scheme": "magma",
@@ -5342,16 +5332,6 @@
   {
     "scheme": "magma",
     "lang": "English (English)",
-    "term": "burgendy",
-    "cnt": 1,
-    "pTC": 0.007936507936507936,
-    "binNum": 6,
-    "rgb": "rgb(222, 73, 104)",
-    "pCT": 1
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
     "term": "darksalmon",
     "cnt": 1,
     "pTC": 0.007936507936507936,
@@ -5382,22 +5362,22 @@
   {
     "scheme": "magma",
     "lang": "English (English)",
-    "term": "coralpink",
-    "cnt": 1,
-    "pTC": 0.007936507936507936,
-    "binNum": 6,
-    "rgb": "rgb(222, 73, 104)",
-    "pCT": 0.5
-  },
-  {
-    "scheme": "magma",
-    "lang": "English (English)",
     "term": "scarletred",
     "cnt": 1,
     "pTC": 0.007936507936507936,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
+  },
+  {
+    "scheme": "magma",
+    "lang": "English (English)",
+    "term": "coralpink",
+    "cnt": 1,
+    "pTC": 0.007936507936507936,
+    "binNum": 6,
+    "rgb": "rgb(222, 73, 104)",
+    "pCT": 0.5
   },
   {
     "scheme": "magma",
@@ -7313,8 +7293,8 @@
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "burgundy",
-    "cnt": 3,
-    "pTC": 0.02459016393442623,
+    "cnt": 4,
+    "pTC": 0.03278688524590164,
     "binNum": 4,
     "rgb": "rgb(147, 38, 103)",
     "pCT": 0.3333333333333333
@@ -7418,16 +7398,6 @@
     "binNum": 4,
     "rgb": "rgb(147, 38, 103)",
     "pCT": 1
-  },
-  {
-    "scheme": "inferno",
-    "lang": "English (English)",
-    "term": "burgandy",
-    "cnt": 1,
-    "pTC": 0.00819672131147541,
-    "binNum": 4,
-    "rgb": "rgb(147, 38, 103)",
-    "pCT": 0.5
   },
   {
     "scheme": "inferno",
@@ -7592,22 +7562,22 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
+    "term": "burgundy",
+    "cnt": 7,
+    "pTC": 0.0673076923076923,
+    "binNum": 5,
+    "rgb": "rgb(188, 55, 84)",
+    "pCT": 0.5833333333333334
+  },
+  {
+    "scheme": "inferno",
+    "lang": "English (English)",
     "term": "salmon",
     "cnt": 1,
     "pTC": 0.009615384615384616,
     "binNum": 5,
     "rgb": "rgb(188, 55, 84)",
     "pCT": 0.3333333333333333
-  },
-  {
-    "scheme": "inferno",
-    "lang": "English (English)",
-    "term": "burgundy",
-    "cnt": 6,
-    "pTC": 0.057692307692307696,
-    "binNum": 5,
-    "rgb": "rgb(188, 55, 84)",
-    "pCT": 0.6666666666666666
   },
   {
     "scheme": "inferno",
@@ -7657,7 +7627,7 @@
     "pTC": 0.009615384615384616,
     "binNum": 5,
     "rgb": "rgb(188, 55, 84)",
-    "pCT": 0.5
+    "pCT": 0.3333333333333333
   },
   {
     "scheme": "inferno",
@@ -7678,16 +7648,6 @@
     "binNum": 5,
     "rgb": "rgb(188, 55, 84)",
     "pCT": 0.25
-  },
-  {
-    "scheme": "inferno",
-    "lang": "English (English)",
-    "term": "burgandy",
-    "cnt": 1,
-    "pTC": 0.009615384615384616,
-    "binNum": 5,
-    "rgb": "rgb(188, 55, 84)",
-    "pCT": 0.5
   },
   {
     "scheme": "inferno",
@@ -7842,6 +7802,16 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
+    "term": "burgundy",
+    "cnt": 1,
+    "pTC": 0.011627906976744186,
+    "binNum": 6,
+    "rgb": "rgb(221, 81, 58)",
+    "pCT": 0.08333333333333333
+  },
+  {
+    "scheme": "inferno",
+    "lang": "English (English)",
     "term": "salmon",
     "cnt": 2,
     "pTC": 0.023255813953488372,
@@ -7912,9 +7882,9 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
-    "term": "rust",
-    "cnt": 6,
-    "pTC": 0.06976744186046512,
+    "term": "scarlet",
+    "cnt": 2,
+    "pTC": 0.023255813953488372,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.6666666666666666
@@ -7922,12 +7892,12 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
-    "term": "scarlet",
-    "cnt": 1,
-    "pTC": 0.011627906976744186,
+    "term": "rust",
+    "cnt": 6,
+    "pTC": 0.06976744186046512,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
-    "pCT": 0.5
+    "pCT": 0.6666666666666666
   },
   {
     "scheme": "inferno",
@@ -8023,26 +7993,6 @@
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "reddishorange",
-    "cnt": 1,
-    "pTC": 0.011627906976744186,
-    "binNum": 6,
-    "rgb": "rgb(221, 81, 58)",
-    "pCT": 1
-  },
-  {
-    "scheme": "inferno",
-    "lang": "English (English)",
-    "term": "scarlett",
-    "cnt": 1,
-    "pTC": 0.011627906976744186,
-    "binNum": 6,
-    "rgb": "rgb(221, 81, 58)",
-    "pCT": 1
-  },
-  {
-    "scheme": "inferno",
-    "lang": "English (English)",
-    "term": "burgendy",
     "cnt": 1,
     "pTC": 0.011627906976744186,
     "binNum": 6,
@@ -11353,8 +11303,8 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "chartreuse",
-    "cnt": 6,
-    "pTC": 0.039473684210526314,
+    "cnt": 7,
+    "pTC": 0.046052631578947366,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 1
@@ -11468,16 +11418,6 @@
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.5
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
-    "term": "chartruese",
-    "cnt": 1,
-    "pTC": 0.006578947368421052,
-    "binNum": 10,
-    "rgb": "rgb(240, 249, 33)",
-    "pCT": 1
   },
   {
     "scheme": "plasma",
