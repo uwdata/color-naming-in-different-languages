@@ -1,24 +1,31 @@
-const BIN_SIZES = [20, 10, 6.67]
+//const BIN_SIZES = [20, 10, 6.67]
+const BIN_SIZES = [10, 20, 30]
+
 
 const MIN_BIN_PERC_DISPLAY = 50
 const MIN_BIN_PERC_HIDE = 23
 
+// const TILE_SIZE = {
+//   20: 30,
+//   10: 10,
+//   6.67: 7
+// }
 const TILE_SIZE = {
-  20: 15,
-  10: 5,
-  6.67: 3.5
+  10: 10,
+  20: 5,
+  30: 4
 }
 
 const TILE_MAX_SIZE_MULTIPLIER = {
-  20: 1.2,
-  10: 1.9,
-  6.67: 1.9
+  10: 1.7,
+  20: 1.9,
+  30: 1.9
 }
 
 const TILE_BORDER_SIZE = {
-  20: 2,
-  10: 1,
-  6.67: .7
+  10: 2,
+  20: 1,
+  30: 1
 }
 
 // this times tiles_size is margin on sides and between L tile sets
@@ -487,8 +494,9 @@ function drawColorTiles(i, saliencies){
         const bin_info = lab_bins[curr_bin_size][l][a][b]
         let info = `
           ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
-          Bin Center (l, a, b): ${Math.round(bin_info.l_center, 1)}, ${Math.round(bin_info.a_center, 1)}, ${Math.round(bin_info.b_center, 1)}
+          Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
           Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
+          Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
           ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
               ?
               `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 

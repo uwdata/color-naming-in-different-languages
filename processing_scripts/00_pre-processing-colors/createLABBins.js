@@ -1,5 +1,6 @@
 const fs = require('fs'),
-  d3 = require('d3')
+  d3 = require('d3'),
+  oklab = require('../../raw/oklab.js'),
   labBinHelperLib = require('../utils/labBinHelper');
 
 const FILE_O_LAB_BINS = "../../model/color_info_pre_naming/lab_bins"
@@ -7,8 +8,11 @@ const FILE_O_LAB_BINS = "../../model/color_info_pre_naming/lab_bins"
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 const LAB_BIN_SIZE_ABVS = labBinHelperLib.LAB_BIN_SIZE_ABVS
 
-//const HUE_RATIO_LAB_DELTA = .05 // NOTE: This makes it very slow (and more accurate)
-const HUE_RATIO_LAB_DELTA = .5 // For speed purposes (gives less accurate bin info)
+//const HUE_RATIO_LAB_N = 2000 // NOTE: This makes it very slow (and more accurate)
+//const HUE_RATIO_LAB_N = 200 // For speed purposes (gives less accurate bin info)
+const HUE_RATIO_LAB_N = 200
+
+const HUE_RATIO_LAB_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / HUE_RATIO_LAB_N 
 
 
 // This function is used to find the best RGB
@@ -19,7 +23,7 @@ function findClosestRGBToLAB(lab, rgbs){
     let closest_rgb
     for(let i = 0; i < rgbs.length; i++){
         const rgb = rgbs[i]
-        const rgb_lab = d3.lab(rgb)
+        const rgb_lab = oklab.rgbToOklab(rgb)
         const dist = Math.sqrt(
             (rgb_lab.l - lab.l)**2 +
             (rgb_lab.a - lab.a)**2 +
@@ -34,19 +38,25 @@ function findClosestRGBToLAB(lab, rgbs){
 }
 
 // 
-function getHueColorRatio(bin){
+function getValidRgbAndHueColorRatio(bin){
     // if no hue colors map to this bin, skip bin:
     let hueColorCount = bin.hueColorCount
     delete bin.hueColorCount
-    if(hueColorCount == 0){
-        //console.log("skipping bin", bin.hueColorCount)
-        bin.lab_hue_color_ratio_est = 0
-        return
-    }
+
+    // This was before when we just wanted
+    // hue color count, but now if we are calculating valid_rgb_ratio
+    // Then we need to run this for every bin
+
+    // if(hueColorCount == 0){
+    //     //console.log("skipping bin with count", hueColorCount)
+    //     bin.lab_hue_color_ratio_est = 0
+    //     return
+    // }
 
     let numHueColors = 0
     let numNonHueColors = 0
     let numOtherBinColors = 0
+    let numNonValidRGB = 0
 
     // note: we'll go an extra 10% into each other bin
     // since lab values from other bins can map to rgb
@@ -56,31 +66,43 @@ function getHueColorRatio(bin){
     let b_extra = (bin.b_max - bin.b_min) / 10
 
     for(let l = bin.l_min - l_extra; l <= bin.l_max + l_extra; l += HUE_RATIO_LAB_DELTA){
+        console.log(" - calculating bin properties at l", l)
         for(let a = bin.a_min - a_extra; a <= bin.a_max + a_extra; a += HUE_RATIO_LAB_DELTA){
             for(let b = bin.b_min - b_extra; b <= bin.b_max + b_extra; b += HUE_RATIO_LAB_DELTA){
-                const rgb = d3.lab(l,a,b).rgb()
-                const rounded_rgb = {r: Math.round(rgb.r), g: Math.round(rgb.g), b: Math.round(rgb.b)}
+                const rgb = oklab.oklabToValidRGB({l: l, a: a, b: b})
+                
 
                 //check if rgb is valid
-                if(Math.max(rounded_rgb.r, rounded_rgb.g, rounded_rgb.b) > 255 || Math.min(rounded_rgb.r, rounded_rgb.g, rounded_rgb.b) < 0){
-                    //console.log("invalid color, ", rounded_rgb, "from lab", [l,a,b])
+                if(rgb.clipped){
+                    // only count this as a non-rgb in th bin
+                    // if it l,a,b was in the bin
+                    // Note: since rgb's can span bins, this effectively
+                    // makes bin sizes not quite all equal 
+                    if(l >= bin.l_min && l <= bin.l_max &&
+                        a >= bin.a_min && a <= bin.a_max &&
+                        b >= bin.b_min && b <= bin.b_max
+                    ){
+                        numNonValidRGB++
+                    }
+                    
+                    //console.log("invalid color, ", rgb, "from lab", [l,a,b])
                 } else{ // valid rgb
                     // back-convert to LAB and make sure still in bin (since rgb's can span bins)
-                    let back_lab = d3.lab(d3.rgb(rounded_rgb.r, rounded_rgb.g, rounded_rgb.b))
+                    let back_lab = oklab.rgbToOklab(rgb)
                     if(back_lab.l < bin.l_min || back_lab.l > bin.l_max ||
                        back_lab.a < bin.a_min || back_lab.a > bin.a_max ||
                        back_lab.b < bin.b_min || back_lab.b > bin.b_max
                     ){
-                        //console.log("color in other bin, ", rounded_rgb, "from lab", [l,a,b])
+                        //console.log("color in other bin, ", rgb, "from lab", [l,a,b])
                         numOtherBinColors++
                     } else {
 
                         //check if rgb is hue color (at least one 255, at least one 0)
-                        if(Math.max(rounded_rgb.r, rounded_rgb.g, rounded_rgb.b) == 255 && Math.min(rounded_rgb.r, rounded_rgb.g, rounded_rgb.b) == 0){
-                            //console.log("hue color ", rounded_rgb, "from lab", [l,a,b])
+                        if(Math.max(rgb.r, rgb.g, rgb.b) == 255 && Math.min(rgb.r, rgb.g, rgb.b) == 0){
+                            //console.log("hue color ", rgb, "from lab", [l,a,b])
                             numHueColors++
                         } else{
-                            //console.log("non-hue color ", rounded_rgb, "from lab", [l,a,b])
+                            //console.log("non-hue color ", rgb, "from lab", [l,a,b])
                             numNonHueColors++
                         }
                     }
@@ -89,13 +111,22 @@ function getHueColorRatio(bin){
         }
     }
 
+    if(numHueColors + numNonHueColors == 0){
+        console.log("no rgb colors found in this bin")
+        console.log("  - numOtherBinColors", numOtherBinColors)
+        console.log("  - numNonValidRGB", numNonValidRGB)
+    }
+
     bin.lab_hue_color_ratio_est = numHueColors / (numHueColors + numNonHueColors)
+    bin.valid_rgb_ratio = (numHueColors + numNonHueColors) / (numNonValidRGB + numHueColors + numNonHueColors)
 
     console.log("bin hue ratio calculated", {
         numHueColors: numHueColors,
         numNonHueColors: numNonHueColors,
         hueColorRatio: bin.lab_hue_color_ratio_est,
-        numOtherBinColors: numOtherBinColors
+        numOtherBinColors: numOtherBinColors,
+        numNonValidRGB: numNonValidRGB,
+        valid_rgb_ratio: bin.valid_rgb_ratio
     } )
 
 }
@@ -124,7 +155,7 @@ for(let labBinSize of LAB_BIN_SIZES){
                 const b_bin_max = b_bin_center + labBinSize/2
 
                 //calculate center color:
-                let centerRGB = d3.lab(l_bin_center, a_bin_center, b_bin_center).rgb()
+                let centerRGB = oklab.oklabToRGB({l: l_bin_center, a: a_bin_center, b: b_bin_center})
                 let binInfo = {
                     l_bin: l_bin,
                     a_bin: a_bin,
@@ -158,12 +189,35 @@ for(let labBinSize of LAB_BIN_SIZES){
     }
 
     //Find out which bins contain rgb colors
+    // Also calculate min/max of each l,a,b
     console.log("Placing rgb colors")
+    const max_mins_lab_vals = {}
+    function updateMaxMins(vals){
+        for(const [key, val] of Object.entries(vals)){
+            if(!((key+"min") in max_mins_lab_vals)){
+                max_mins_lab_vals[key+"min"] = val
+            }
+            if(!((key+"max") in max_mins_lab_vals)){
+                max_mins_lab_vals[key+"max"] = val
+            }
+            if(val < max_mins_lab_vals[key+"min"]){
+                max_mins_lab_vals[key+"min"] = val
+            }
+            if(val > max_mins_lab_vals[key+"max"]){
+                max_mins_lab_vals[key+"max"] = val
+            }
+        }
+    }
+
+
     for(r = 0; r <=255; r++){
         r % 20 == 0 ? console.log("r", r): ""
         for(g = 0; g <= 255; g++){
             for(b = 0; b <= 255; b++){
-                let lab = d3.lab(d3.color(`rgb(${r}, ${g}, ${b})`));
+                let lab = oklab.rgbToOklab({r: r, g: g, b: b});
+                // update max and min lab values
+                updateMaxMins(lab)
+
                 let [l_bin, a_bin, b_bin] = labBinHelper.bins_from_lab(lab)
                 let bin = labBinInfo[l_bin][a_bin][b_bin]
                 if(!bin){
@@ -191,6 +245,8 @@ for(let labBinSize of LAB_BIN_SIZES){
         }
     }
 
+    console.log("LAB Mins and Maxes", max_mins_lab_vals)
+
 
     // fill in center/representative RGB info for bin
     // and delete bins that had no RGB colors in them
@@ -210,14 +266,14 @@ for(let labBinSize of LAB_BIN_SIZES){
                         center_rgb.b > 255 || center_rgb.b < 0
                     ){
                         //console.log("out of range rgb center", center_rgb, bin_info)
-                        const center_lab = d3.lab(bin_info.l_center, bin_info.a_center, bin_info.b_center)
+                        const center_lab = {l: bin_info.l_center, a: bin_info.a_center, b: bin_info.b_center}
                         const closest_rgb = findClosestRGBToLAB(center_lab, bin_info.rgbs)
                         bin_info.representative_rgb = {
                             r: closest_rgb.r,
                             g: closest_rgb.g,
-                            b: closest_rgb.b,
+                            b: closest_rgb.b
                         }
-                        bin_info.representative_lab = d3.lab(d3.color(`rgb(${closest_rgb.r}, ${closest_rgb.g}, ${closest_rgb.b})`))
+                        bin_info.representative_lab = oklab.rgbToOklab({r: closest_rgb.r, g: closest_rgb.g,b: closest_rgb.b})
                     }
                     bin_info.num_rgbs = bin_info.rgbs.length
                     delete bin_info.rgbs
@@ -236,7 +292,7 @@ for(let labBinSize of LAB_BIN_SIZES){
     for(const [l_bin, l_bin_entries] of Object.entries(labBinInfo).sort((a, b) => b[0] - a[0])){
         for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries).sort((a, b) => b[0] - a[0])){
             for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries).sort((a, b) => b[0] - a[0])){
-                getHueColorRatio(b_bin_entry)
+                getValidRgbAndHueColorRatio(b_bin_entry)
             }
         }
     }
@@ -244,6 +300,7 @@ for(let labBinSize of LAB_BIN_SIZES){
 
     // write out the bin info
     // count size of labBins (just for curiosity)
+    // TODO: redo this as one loop, track starting labBin (and end one if different when back-converting rgb)
     let totalBins = 0
     for (const [l, l_bin] of Object.entries(labBinInfo)) {
         for (const [a, a_bin] of Object.entries(l_bin)) {
@@ -253,5 +310,5 @@ for(let labBinSize of LAB_BIN_SIZES){
         }
     }
     console.log("Total bins: ", totalBins)
-    fs.writeFileSync(FILE_O_LAB_BINS+"_"+LAB_BIN_SIZE_ABVS[labBinSize]+".json", JSON.stringify(labBinInfo, null, 2));
+    fs.writeFileSync(FILE_O_LAB_BINS+"_"+(LAB_BIN_SIZE_ABVS[labBinSize])+".json", JSON.stringify(labBinInfo, null, 2));
 }

@@ -3,6 +3,7 @@ const fs = require('fs'),
   csvWriter = require('csv-write-stream'),
   zlib = require('zlib'),
   d3 = require('d3'),
+  oklab = require('../../raw/oklab.js'),
   labBinHelperLib = require('../utils/labBinHelper');
  
 
@@ -89,7 +90,7 @@ for(let labBinSize of LAB_BIN_SIZES){
       term.totalNonHueNameCnt = 0
 
       term.values.forEach(response => {
-        let responseLab = d3.lab(d3.rgb(response.r, response.g, response.b));
+        let responseLab = oklab.rgbToOklab({r: response.r, g: response.g, b: response.b});
         let [l, a, b] = labBinHelper.bins_from_lab({l: responseLab.l, a: responseLab.a, b: responseLab.b});
         term.binColorNameCnt[l][a][b] += 1;
         langBinColorNameCnt[l][a][b] += 1;

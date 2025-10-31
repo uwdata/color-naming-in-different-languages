@@ -1,18 +1,29 @@
-// should be 1 bin centered at L=1 a,b=0, and 1 L=100, a,b=0
+// Note: range of OKLAB values for all rgb colors is:
+// l-min: 0,
+// l-max: 0.9999999934735462,
+// a-min: -0.23388757418790818,
+// a-max: 0.27621639742350523,
+// b-min: -0.3115281476783751,
+// b-max: 0.19856975465179516
+
+// should be 1 bin centered at L=1 a,b=0, and 1 L=1, a,b=0
 // then evenly distributed around that
 // Even though this makes the bin cover non-existent colors,
 // I want to capture "white" and "black"
 // (note: for edges of a/b, bins will often include non-existent colors anyway)
 // I also want bins to be cubes (e.g., 10x10x10)
 const MIN_L = 0
-const MAX_L = 100 
-// ~110 is (max abs() a or b value for any RGB value)
-const MIN_MAX_AB = 111 
+const MAX_L = 1 
+// 0.3115281476783751 is the max abs() a or b value for any RGB value
+// we go past this just ot be on the safe side
+const MIN_MAX_AB = 0.5
 
-const LAB_BIN_SIZES = [20, 10, 20/3]
+//const LAB_BIN_SIZES = [20 / 100, 10 / 100, 20/3 / 100]
+//const LAB_BIN_SIZES = [.1, .05, .025]
+const LAB_BIN_SIZES = [1/10, 1/20, 1/30]
 const LAB_BIN_SIZE_ABVS = {}
 for(const bin_size of LAB_BIN_SIZES){
-  LAB_BIN_SIZE_ABVS[bin_size] = Math.round((bin_size + Number.EPSILON) * 100) / 100
+  LAB_BIN_SIZE_ABVS[bin_size] = Math.round(1/bin_size)
 }
 
 function getLabBins(binSize = 10){
