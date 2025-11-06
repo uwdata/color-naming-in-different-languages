@@ -1,5 +1,6 @@
 const fs = require('fs'),
   colorBins = require('../utils/hueColorBins.js'),
+  languages_iso_639 = require("../../raw/languages-iso-639.js").languages_iso_639,
   csv = require("csvtojson"),
   csvWriter = require('csv-write-stream'),
   d3 = require('d3');
@@ -143,7 +144,7 @@ csv()
           for (var i = 0; i < n_bins; i++) {
             bufFlatten.push({
               "lang": lang.key,
-              "term": term.key,
+              "simplifiedName": term.key,
               "commonName": commonName,
               "rank": term.rank,
               "binNum": i,
@@ -152,13 +153,13 @@ csv()
             });
           }
           terms.push({
-            "term": term.key,
+            "simplifiedName": term.key,
             "modeBinNum": colorNameCnt.indexOf(d3.max(colorNameCnt))
           });
         });
         terms.sort((a,b) => a.modeBinNum - b.modeBinNum);
         bufFlatten.forEach( d => {
-          d.termSubID = terms.findIndex(t => t.term === d.term);
+          d.termSubID = terms.findIndex(t => t.simplifiedName === d.simplifiedName);
           d.pTC = d.cnt / d3.sum(bufFlatten.filter(d2 => d2.binNum === d.binNum), x => x.cnt);
         });
 
@@ -180,13 +181,20 @@ csv()
 
       // fill in the hue_colors_info
       for(const [lang, colorData] of Object.entries(result)){
+        let lang_abv 
+        const langMatch = languages_iso_639.find(l => `${l["Language name"]} (${l["Native name"]})` == lang)
+        if(langMatch){
+          lang_abv = langMatch["639‑1"]
+        }
+
         if(lang != "colorSet"){
-          for(const [i, term] of colorData.terms.entries()){
+          for(const [i, simplifiedName] of colorData.terms.entries()){
             // check if lang term already in hue_colors_info
-            if(hue_colors_info.filter(d => d.lang == lang && d.term == term).length < 1){
+            if(hue_colors_info.filter(d => d.lang == lang && d.simplifiedName == simplifiedName).length < 1){
               hue_colors_info.push({
                 lang: lang,
-                term: term,
+                lang_abv: lang_abv,
+                simplifiedName: simplifiedName,
                 commonName: colorData.commonNames[i],
                 avgHueColor: colorData.avgHueColor[i],
                 cnt: colorData.colorNameCount[i]
@@ -217,8 +225,3 @@ csv()
   }
   hueColorWriter.end();
 });
-
-
-function getAverageHueColor(){
-
-}
