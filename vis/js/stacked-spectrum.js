@@ -3,10 +3,10 @@ const NO_BLUR = "no-blur"
 const BLUR = "blur"
 
 // extend start and end of plot
-// Repeating 20% times more (13% at start, 7% at end) to make it start 
+// Repeating 20% times more (10% at start, 10% at end) to make it start 
 // with the full arc of red in most languages, and have a little repeat
-const START_ADDITION = .13
-const END_ADDITION = .07
+const START_ADDITION = .1
+const END_ADDITION = .1
 
 const colorData = {}
 const langIds = {}
@@ -496,7 +496,7 @@ function indexOfColorOffset(color, colorSet, colorName){
   //correct for START_ADDITION by shifting everything right by about that fraction
   // (trying to guess about where "red" colors start)
   const corrected_i = Math.round(
-      min_i + START_ADDITION * colorSet.length * .6
+      min_i + START_ADDITION * colorSet.length * .3
   ) % colorSet.length
 
   return corrected_i 

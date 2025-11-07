@@ -3,10 +3,10 @@
 These scripts are to calculate things about colors and color spaces before considering any color naming.
 
 ## hueColorGenerator.js
-This script generates an LAB uniformly spaced color ring of the hue colors (RGBs with at least one 0 and one 255). We use this in picking colors for our "line" data in our study, and for displaying the hue color data.
+This script generates an OKLAB uniformly spaced color ring of the hue colors (RGBs with at least one 0 and one [255 or 1]). We use this in picking colors for our "line" data in our study, and for displaying the hue color data.
 
 Data Outputs:
-- model/color_info_pre_naming/hue_colors.json
+- model/color_info_pre_naming/hue_colors_*.json
 
 
 ## estimateHueColorPercentage.js

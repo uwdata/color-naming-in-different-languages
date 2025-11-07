@@ -1,6 +1,6 @@
 const fs = require('fs');
 const colorSet = JSON.parse(
-  fs.readFileSync('../../model/color_info_pre_naming/hue_colors.json'));
+  fs.readFileSync('../../model/color_info_pre_naming/hue_colors_rgb.json'));
 
 let genBin = function(Nbin){
 

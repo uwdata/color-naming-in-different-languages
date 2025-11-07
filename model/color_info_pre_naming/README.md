@@ -5,7 +5,7 @@ In order to calculate color distances and generate color bins, we use the [LAB c
 *Note: [D3's conversion between RGB and LAB has changed several times over the years](https://github.com/d3/d3-color/commits/main/src/lab.js), and we have updated to the latest version, but previous data collection and data calculations were made with older versions of LAB/RGB conversion.*
 
 ## Hue Colors
-"hue_colors.json" contains each rgb hue color (max(r,g,b) == 255 && min(r,g,b) == 0) lined up in order (red, orange, yellow,..., purple, red), with LAB distance calculations between each one. Used both for collecting color names and displaying hue colors.
+"hue_colors_*.json" files contains each hue color in each color space (max(r,g,b) == [255 or 1] && min(r,g,b) == 0) lined up in order (red, orange, yellow,..., purple, red), with OKLAB distance calculations between each one. Used both for collecting color names and displaying hue colors.
 
 ![The hue colors](../../vis/hue-colors-small.png)
 
