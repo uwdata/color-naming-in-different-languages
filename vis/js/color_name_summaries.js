@@ -65,6 +65,8 @@ function updateTableData(){
         .text(d => d)
 
     const nameData = allNamesByLang[selected_lang]
+        //.sort((a, b) => a.simplifiedName.localeCompare(b.simplifiedName))
+
     const rows = table
         .select("tbody")
         .selectAll("tr")

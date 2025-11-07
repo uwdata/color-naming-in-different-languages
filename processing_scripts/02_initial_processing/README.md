@@ -20,6 +20,7 @@ Constants:
 This script bins all the data from users we showed line data (hue colors)
 
 Data outputs:
+- model/hue_colors_info.csv
 - model/binned_hue_colors/hue_color_names_binned_aggregated.json
 - model/binned_hue_colors/hue_color_names_binned.json
 

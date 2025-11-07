@@ -41,6 +41,23 @@ Fields:
 Created by:
 - processing_scripts/02_initial_processing/01_getBasicFullColorInfo.js
 
+## Hue Colors Info
+
+"hue_colors_info.csv" contains information about hue color terms in different languages.
+
+Fields:
+- **lang:** The language of the color term (long form)
+- **lang_abv:** Two letter abbreviation of the language
+- **simplifiedName:** the simplified matching "name" from cleaned_color_names.csv used to group color terms
+- **commonName:** For the color term, the most common "standardized_entered_name" used for it
+- **avgColorHueColor:** The average rgb hue color for this term (treating the hue color line as a circle, and finding the average point on that circle)
+- **cnt:** The number of times this name was given when we were asking to name colors chosen from the hue rgb line
+
+
+Created by:
+- processing_scripts/02_initial_processing/02_getHueColorNames.js
+
+
 ## Full Colors Info
 
 "full_colors_info.csv" contains information about color terms in different languages.
