@@ -1,32 +1,53 @@
-//const BIN_SIZES = [20, 10, 6.67]
-const BIN_SIZES = [10, 20, 30]
+class BinSize {
+  constructor(options) {
+    this.l = options.l;
+    this.ab = options.ab;
+    this.tileSize = options.tileSize;
+    this.tileMaxSizeMultiplier = options.tileMaxSizeMultiplier;
+    this.tileBorderSize = options.tileBorderSize;
+    this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
+  }
 
+  toString() {
+    return this.abv
+  }
+}
+
+const LAB_BIN_SIZES = [ 
+  new BinSize({
+    l: 1/5, ab: 1/20, // rectangle
+    tileSize: 15,
+    tileMaxSizeMultiplier: 1.5,
+    tileBorderSize: 2
+  }), 
+  new BinSize({
+    l: 1/10, ab: 1/40, // rectangle
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }), 
+  new BinSize({
+    l: 1/15, ab: 1/60, // rectangle
+    tileSize: 4,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }), 
+  new BinSize({
+    l: 1/20, ab: 1/20,  // cube
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    l: 1/40, ab: 1/40, // cube
+    tileSize: 2,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 0.5
+  }), 
+]
 
 const MIN_BIN_PERC_DISPLAY = 50
 const MIN_BIN_PERC_HIDE = 23
-
-// const TILE_SIZE = {
-//   20: 30,
-//   10: 10,
-//   6.67: 7
-// }
-const TILE_SIZE = {
-  10: 10,
-  20: 5,
-  30: 4
-}
-
-const TILE_MAX_SIZE_MULTIPLIER = {
-  10: 1.7,
-  20: 1.9,
-  30: 1.9
-}
-
-const TILE_BORDER_SIZE = {
-  10: 2,
-  20: 1,
-  30: 1
-}
 
 // this times tiles_size is margin on sides and between L tile sets
 const TILE_SEGMENT_MARGIN_NUM = 3
@@ -111,21 +132,26 @@ function process_lab_bin_data(bin_data, bin_size){
                                   .map(bound => bound.max_b)
                                   .reduce((prev, curr) => Math.max(prev, curr))
 
-  l_bin_y_offsets[bin_size] = TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size] + lab_bin_b_bounds[bin_size].max * TILE_SIZE[bin_size]
-  svg_heights[bin_size] = l_bin_y_offsets[bin_size] - lab_bin_b_bounds[bin_size].min * TILE_SIZE[bin_size] + TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size]
+  l_bin_y_offsets[bin_size] = TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize + lab_bin_b_bounds[bin_size].max * bin_size.tileSize
+  svg_heights[bin_size] = l_bin_y_offsets[bin_size] - lab_bin_b_bounds[bin_size].min * bin_size.tileSize + TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
 
+  // make sure height is at least 100
+  if(svg_heights[bin_size] < 100){
+    l_bin_y_offsets[bin_size] += (100 - svg_heights[bin_size]) * 0.75
+    svg_heights[bin_size] = 100
+  }
   // calculate l_bin_x_offsets
   //since bins are unevenly distributed, these will make the L levels spaced evenly on the x axis
-  let currXOffset = TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size]
+  let currXOffset = TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
   l_bin_x_offsets[bin_size] = []
   for(const [l, l_ab_bound] of l_bin_ab_bounds[bin_size].entries()){
     // adjust for negative direction
-    currXOffset = currXOffset - l_ab_bound.min_a * TILE_SIZE[bin_size]
+    currXOffset = currXOffset - l_ab_bound.min_a * bin_size.tileSize
 
     l_bin_x_offsets[bin_size][l] = currXOffset
 
     // adjust for positive direction
-    currXOffset = currXOffset + l_ab_bound.max_a * TILE_SIZE[bin_size] + TILE_SIZE[bin_size] + TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size]
+    currXOffset = currXOffset + l_ab_bound.max_a * bin_size.tileSize + bin_size.tileSize + TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
     
     // only the last one will be saved at the end, giving us total svg width
     svg_widths[bin_size] = currXOffset
@@ -229,7 +255,7 @@ function process_saliency_bin_data(saliency_data, bin_size, blur){
 /*************** Tracking the current display options *******************/
 const currSvgSize = [{}]
 let curr_blur = BLUR
-let curr_bin_size = BIN_SIZES[1] 
+let curr_bin_size = LAB_BIN_SIZES[1] 
 let backgroundColor = 'white'
 let tile_size_type = 'ptc'
 let bin_size_by = "area"
@@ -237,10 +263,10 @@ let additional_tooltip_info = false
 
 /*************** Load page and Data *********************/
 $(document).on('ready page:load', function () {
-  for(let bin_size of BIN_SIZES){
+  for(let bin_size of LAB_BIN_SIZES){
     $("#bin_size").append(
       `<option value="${bin_size}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-        ${bin_size} x ${bin_size} x ${bin_size}
+        ${bin_size.l == bin_size.ab ? "Cube" : "Box"}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1}
       </option>`
     )
   }
@@ -302,7 +328,9 @@ $(document).on('ready page:load', function () {
 function updateDisplay(){
   
   tile_size_type = $("#tile_size").val()
-  curr_bin_size = Number($("#bin_size").val())
+  curr_bin_size = $("#bin_size").val()
+
+  curr_bin_size = LAB_BIN_SIZES.find((bin) => bin.abv == curr_bin_size)
 
   if(!language_stats[curr_bin_size] || !language_stats[curr_bin_size][curr_blur]){
     d3.select("#main")
@@ -469,10 +497,10 @@ function drawColorTiles(i, saliencies){
     .join("rect")
       .attr("class", "tile")
       .style("stroke", backgroundColor)
-      .style("stroke-width", d => TILE_BORDER_SIZE[curr_bin_size])
-      .attr("x", (d) => d.binA*TILE_SIZE[curr_bin_size] +l_bin_x_offsets[curr_bin_size][d.binL] )
+      .style("stroke-width", d => curr_bin_size.tileBorderSize)
+      .attr("x", (d) => d.binA*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.binL] )
       .attr("y", (d) => {
-        return -d.binB*TILE_SIZE[curr_bin_size] + l_bin_y_offsets[curr_bin_size]
+        return -d.binB*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
       })
       .attr("fill", (d) => {
         const selection = lang_color_selections[curr_bin_size][curr_blur][i]
@@ -496,12 +524,12 @@ function drawColorTiles(i, saliencies){
           ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
           Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
           Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
-          Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
           ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
               ?
               `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
               : ""
           }`.trim()
+          //          Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
         if(additional_tooltip_info && d.lang != ALL_COLOR_NAME){
           info = `${info}
           Saliency: ${(-d.saliency).toPrecision(3)}
@@ -546,14 +574,14 @@ function drawColorTiles(i, saliencies){
 
 function getTileSize(d){
     if(d.lang === ALL_COLOR_NAME){
-      return TILE_SIZE[curr_bin_size]
+      return curr_bin_size.tileSize
     }
     if(tile_size_type == "ptc"){
       // ptc is 0 to 1
       if(bin_size_by == "length-width"){
-        return TILE_SIZE[curr_bin_size]*TILE_MAX_SIZE_MULTIPLIER[curr_bin_size]*d.maxpTC
+        return curr_bin_size.tileSize*curr_bin_size.tileMaxSizeMultiplier*d.maxpTC
       } else {
-        return TILE_SIZE[curr_bin_size]*Math.sqrt(TILE_MAX_SIZE_MULTIPLIER[curr_bin_size]*d.maxpTC)
+        return curr_bin_size.tileSize*Math.sqrt(curr_bin_size.tileMaxSizeMultiplier*d.maxpTC)
       }
     }
     if(tile_size_type == "sal"){
@@ -561,12 +589,12 @@ function getTileSize(d){
       const sal_ratio = (d.saliency - min_sal) / -min_sal 
       const sal_smaller = 0.8
       if(bin_size_by == "length-width"){
-        return sal_smaller*TILE_SIZE[curr_bin_size]*TILE_MAX_SIZE_MULTIPLIER[curr_bin_size]*sal_ratio
+        return sal_smaller*curr_bin_size.tileSize*curr_bin_size.tileMaxSizeMultiplier*sal_ratio
       } else {
-        return sal_smaller*TILE_SIZE[curr_bin_size]*Math.sqrt(TILE_MAX_SIZE_MULTIPLIER[curr_bin_size]*sal_ratio)
+        return sal_smaller*curr_bin_size.tileSize*Math.sqrt(curr_bin_size.tileMaxSizeMultiplier*sal_ratio)
       }
     }
     // otherwise uniform:
-    return TILE_SIZE[curr_bin_size]
+    return curr_bin_size.tileSize
 }
 

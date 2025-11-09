@@ -52,7 +52,7 @@ const LAB_BIN_SIZE_ABVS = labBinHelperLib.LAB_BIN_SIZE_ABVS
 
 //const HUE_RATIO_LAB_N = 2000 // NOTE: This makes it very slow (and more accurate)
 //const HUE_RATIO_LAB_N = 200 // For speed purposes (gives less accurate bin info)
-const HUE_RATIO_LAB_N = 200
+const HUE_RATIO_LAB_N = 400
 
 const HUE_RATIO_LAB_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / HUE_RATIO_LAB_N 
 
@@ -184,9 +184,9 @@ for(let labBinSize of LAB_BIN_SIZES){
     console.log("Creating Bins, size", labBinSize)
     const labBinInfo = {}
     for(let l_bin = 0; l_bin < BIN_L_N; l_bin++){
-        const l_bin_center = MIN_L + l_bin * labBinSize
-        const l_bin_min = l_bin_center - labBinSize/2
-        const l_bin_max = l_bin_center + labBinSize/2
+        const l_bin_center = MIN_L + l_bin * labBinSize*2
+        const l_bin_min = l_bin_center - labBinSize*2/2
+        const l_bin_max = l_bin_center + labBinSize*2/2
         for(let a_bin = -(BIN_AB_N-1)/2; a_bin <= (BIN_AB_N-1)/2; a_bin ++){
             const a_bin_center = a_bin * labBinSize
             const a_bin_min = a_bin_center - labBinSize/2

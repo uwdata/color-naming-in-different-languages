@@ -1,26 +1,54 @@
-const BIN_SIZES = [10, 20, 30]
+class BinSize {
+  constructor(options) {
+    this.l = options.l;
+    this.ab = options.ab;
+    this.tileSize = options.tileSize;
+    this.tileMaxSizeMultiplier = options.tileMaxSizeMultiplier;
+    this.tileBorderSize = options.tileBorderSize;
+    this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
+  }
+
+  toString() {
+    return this.abv
+  }
+}
+
+const LAB_BIN_SIZES = [ 
+  new BinSize({
+    l: 1/5, ab: 1/20, // rectangle
+    tileSize: 10,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 2
+  }), 
+  new BinSize({
+    l: 1/10, ab: 1/40, // rectangle
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }), 
+  new BinSize({
+    l: 1/15, ab: 1/60, // rectangle
+    tileSize: 4,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }), 
+  new BinSize({
+    l: 1/20, ab: 1/20,  // cube
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    l: 1/40, ab: 1/40, // cube
+    tileSize: 2,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 0.5
+  }), 
+]
 
 
 const MIN_BIN_PERC_DISPLAY = 50
 const MIN_BIN_PERC_HIDE = 23
-
-const TILE_SIZE = {
-  10: 10,
-  20: 5,
-  30: 4
-}
-
-const TILE_MAX_SIZE_MULTIPLIER = {
-  10: 1.7,
-  20: 1.9,
-  30: 1.9
-}
-
-const TILE_BORDER_SIZE = {
-  10: 2,
-  20: 1,
-  30: 1
-}
 
 // this times tiles_size is margin on sides and between L tile sets
 const TILE_SEGMENT_MARGIN_NUM = 3
@@ -50,7 +78,7 @@ const lang_tile_info = {}
 
 /*************** Pre-processing functions *********************/
 async function load_and_process_bin_data(bin_size){
-  await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/lab_p3_bins_${bin_size}.json`, function( data ) {
+  await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/lab_bins_${bin_size}.json`, function( data ) {
     process_lab_bin_data(data, bin_size)
     resolve()
   }))
@@ -97,21 +125,21 @@ function process_lab_bin_data(bin_data, bin_size){
                                   .map(bound => bound.max_b)
                                   .reduce((prev, curr) => Math.max(prev, curr))
 
-  l_bin_y_offsets[bin_size] = TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size] + lab_bin_b_bounds[bin_size].max * TILE_SIZE[bin_size]
-  svg_heights[bin_size] = l_bin_y_offsets[bin_size] - lab_bin_b_bounds[bin_size].min * TILE_SIZE[bin_size] + TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size]
+  l_bin_y_offsets[bin_size] = TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize + lab_bin_b_bounds[bin_size].max * bin_size.tileSize
+  svg_heights[bin_size] = l_bin_y_offsets[bin_size] - lab_bin_b_bounds[bin_size].min * bin_size.tileSize + TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
 
   // calculate l_bin_x_offsets
   //since bins are unevenly distributed, these will make the L levels spaced evenly on the x axis
-  let currXOffset = TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size]
+  let currXOffset = TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
   l_bin_x_offsets[bin_size] = []
   for(const [l, l_ab_bound] of l_bin_ab_bounds[bin_size].entries()){
     // adjust for negative direction
-    currXOffset = currXOffset - l_ab_bound.min_a * TILE_SIZE[bin_size]
+    currXOffset = currXOffset - l_ab_bound.min_a * bin_size.tileSize
 
     l_bin_x_offsets[bin_size][l] = currXOffset
 
     // adjust for positive direction
-    currXOffset = currXOffset + l_ab_bound.max_a * TILE_SIZE[bin_size] + TILE_SIZE[bin_size] + TILE_SEGMENT_MARGIN_NUM * TILE_SIZE[bin_size]
+    currXOffset = currXOffset + l_ab_bound.max_a * bin_size.tileSize + bin_size.tileSize + TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
     
     // only the last one will be saved at the end, giving us total svg width
     svg_widths[bin_size] = currXOffset
@@ -176,7 +204,7 @@ function process_saliency_bin_data(saliency_data, bin_size, blur){
 /*************** Tracking the current display options *******************/
 const currSvgSize = [{}]
 let curr_blur = BLUR
-let curr_bin_size = BIN_SIZES[1] 
+let curr_bin_size = LAB_BIN_SIZES[1] 
 let backgroundColor = 'white'
 let tile_size_type = 'ptc'
 let bin_size_by = "area"
@@ -184,10 +212,10 @@ let additional_tooltip_info = false
 
 /*************** Load page and Data *********************/
 $(document).on('ready page:load', function () {
-  for(let bin_size of BIN_SIZES){
+  for(let bin_size of LAB_BIN_SIZES){
     $("#bin_size").append(
-      `<option value="${bin_size}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-        ${bin_size} x ${bin_size} x ${bin_size}
+      `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
+        ${bin_size.l == bin_size.ab ? "Cube" : "Box"}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1}
       </option>`
     )
   }
@@ -236,7 +264,9 @@ $(document).on('ready page:load', function () {
 function updateDisplay(){
   
   tile_size_type = $("#tile_size").val()
-  curr_bin_size = Number($("#bin_size").val())
+  curr_bin_size = $("#bin_size").val()
+
+  curr_bin_size = LAB_BIN_SIZES.find((bin) => bin.abv == curr_bin_size)
 
   lab_bins_arrays[bin_size]
   if(!lab_bins_arrays[curr_bin_size]){
@@ -245,7 +275,6 @@ function updateDisplay(){
       .attr("id", "loading-p")
       .html("loading...")
 
-    debugger
     load_and_process_bin_data(curr_bin_size)
     return
 
@@ -320,10 +349,10 @@ function drawColorTiles(saliencies){
     .join("rect")
       .attr("class", "tile")
       .style("stroke", backgroundColor)
-      .style("stroke-width", d => TILE_BORDER_SIZE[curr_bin_size])
-      .attr("x", (d) => d.a_bin*TILE_SIZE[curr_bin_size] +l_bin_x_offsets[curr_bin_size][d.l_bin] )
+      .style("stroke-width", d => curr_bin_size.tileBorderSize)
+      .attr("x", (d) => d.a_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.l_bin])
       .attr("y", (d) => {
-        return -d.b_bin*TILE_SIZE[curr_bin_size] + l_bin_y_offsets[curr_bin_size]
+        return -d.b_bin*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
       })
       .attr("fill", (d) => {
             const bin = lab_bins[curr_bin_size][d.l_bin][d.a_bin][d.b_bin]
@@ -357,6 +386,6 @@ function drawColorTiles(saliencies){
 }
 
 function getTileSize(d){
-      return TILE_SIZE[curr_bin_size]
+      return curr_bin_size.tileSize
 }
 

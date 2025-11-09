@@ -8,7 +8,6 @@ const fs = require('fs'),
  
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
-const LAB_BIN_SIZE_ABVS = labBinHelperLib.LAB_BIN_SIZE_ABVS
 
 // Number of colors in a bin we require to output data for that bin
 const MIN_NperBin = 4;
@@ -33,7 +32,7 @@ for(let labBinSize of LAB_BIN_SIZES){
 
   const labBinHelper = labBinHelperLib.getLabBins(labBinSize);
 
-  const lab_bins = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/lab_bins_${LAB_BIN_SIZE_ABVS[labBinSize]}.json`))
+  const lab_bins = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/lab_bins_${labBinSize}.json`))
   const lab_bins_arr = labBinHelper.labBinsToArray(lab_bins)
 
   
@@ -303,23 +302,23 @@ for(let labBinSize of LAB_BIN_SIZES){
     saliencyBlur = saliencyBlur.concat(bufSaliencyBlur);
     flattenBlur = flattenBlur.concat(langTermBinsBlurBuff);
 
-    lang_bin_info[langData.key][`num_bins_${LAB_BIN_SIZE_ABVS[labBinSize]}`] = bufSaliency.length
-    lang_bin_info[langData.key][`fraction_bins_${LAB_BIN_SIZE_ABVS[labBinSize]}`] = bufSaliency.length / lab_bins_arr.length
-    lang_bin_blur_info[langData.key][`num_bins_${LAB_BIN_SIZE_ABVS[labBinSize]}`] = bufSaliencyBlur.length
-    lang_bin_blur_info[langData.key][`fraction_bins_${LAB_BIN_SIZE_ABVS[labBinSize]}`] = bufSaliencyBlur.length / lab_bins_arr.length
+    lang_bin_info[langData.key][`num_bins_${labBinSize}`] = bufSaliency.length
+    lang_bin_info[langData.key][`fraction_bins_${labBinSize}`] = bufSaliency.length / lab_bins_arr.length
+    lang_bin_blur_info[langData.key][`num_bins_${labBinSize}`] = bufSaliencyBlur.length
+    lang_bin_blur_info[langData.key][`fraction_bins_${labBinSize}`] = bufSaliencyBlur.length / lab_bins_arr.length
     
   });
 
-  fs.writeFileSync(FILE_O + "_"+LAB_BIN_SIZE_ABVS[labBinSize]+".json", JSON.stringify(flatten));
+  fs.writeFileSync(FILE_O + "_"+labBinSize+".json", JSON.stringify(flatten));
   
   // gzip these files since they are getting very large
   fs.writeFileSync(
-    FILE_O + "_blur_"+LAB_BIN_SIZE_ABVS[labBinSize]+".json.gz", 
+    FILE_O + "_blur_"+labBinSize+".json.gz", 
     zlib.gzipSync(Buffer.from(JSON.stringify(flattenBlur), 'utf-8')))
 
 
-  fs.writeFileSync(FILE_O_SALIENCY + "_"+LAB_BIN_SIZE_ABVS[labBinSize]+".json", JSON.stringify(saliency))
-  fs.writeFileSync(FILE_O_SALIENCY + "_blur_"+LAB_BIN_SIZE_ABVS[labBinSize]+".json", JSON.stringify(saliencyBlur))
+  fs.writeFileSync(FILE_O_SALIENCY + "_"+labBinSize+".json", JSON.stringify(saliency))
+  fs.writeFileSync(FILE_O_SALIENCY + "_blur_"+labBinSize+".json", JSON.stringify(saliencyBlur))
 }
 
 let langBinInfoWriter = csvWriter();

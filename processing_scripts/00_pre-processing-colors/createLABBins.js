@@ -6,7 +6,7 @@ const fs = require('fs'),
 const FILE_O_LAB_BINS = "../../model/color_info_pre_naming/lab_bins"
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
-const LAB_BIN_SIZE_ABVS = labBinHelperLib.LAB_BIN_SIZE_ABVS
+//const LAB_BIN_SIZE_ABVS = labBinHelperLib.LAB_BIN_SIZE_ABVS
 
 //const HUE_RATIO_LAB_N = 2000 // NOTE: This makes it very slow (and more accurate)
 //const HUE_RATIO_LAB_N = 200 // For speed purposes (gives less accurate bin info)
@@ -66,7 +66,7 @@ function getValidRgbAndHueColorRatio(bin){
     let b_extra = (bin.b_max - bin.b_min) / 10
 
     for(let l = bin.l_min - l_extra; l <= bin.l_max + l_extra; l += HUE_RATIO_LAB_DELTA){
-        console.log(" - calculating bin properties at l", l)
+        //console.log(" - calculating bin properties at l", l)
         for(let a = bin.a_min - a_extra; a <= bin.a_max + a_extra; a += HUE_RATIO_LAB_DELTA){
             for(let b = bin.b_min - b_extra; b <= bin.b_max + b_extra; b += HUE_RATIO_LAB_DELTA){
                 const rgb = oklab.oklabToValidRGB({l: l, a: a, b: b})
@@ -132,7 +132,7 @@ function getValidRgbAndHueColorRatio(bin){
 }
 
 for(let labBinSize of LAB_BIN_SIZES){
-    labBinHelper = labBinHelperLib.getLabBins(labBinSize)
+    const labBinHelper = labBinHelperLib.getLabBins(labBinSize)
 
     const BIN_L_N = labBinHelper.BIN_L_N,
     BIN_AB_N = labBinHelper.BIN_AB_N,
@@ -142,17 +142,17 @@ for(let labBinSize of LAB_BIN_SIZES){
     console.log("Creating Bins, size", labBinSize)
     const labBinInfo = {}
     for(let l_bin = 0; l_bin < BIN_L_N; l_bin++){
-        const l_bin_center = MIN_L + l_bin * labBinSize
-        const l_bin_min = l_bin_center - labBinSize/2
-        const l_bin_max = l_bin_center + labBinSize/2
+        const l_bin_center = MIN_L + l_bin * labBinSize.l
+        const l_bin_min = l_bin_center - labBinSize.l/2
+        const l_bin_max = l_bin_center + labBinSize.l/2
         for(let a_bin = -(BIN_AB_N-1)/2; a_bin <= (BIN_AB_N-1)/2; a_bin ++){
-            const a_bin_center = a_bin * labBinSize
-            const a_bin_min = a_bin_center - labBinSize/2
-            const a_bin_max = a_bin_center + labBinSize/2
+            const a_bin_center = a_bin * labBinSize.ab
+            const a_bin_min = a_bin_center - labBinSize.ab/2
+            const a_bin_max = a_bin_center + labBinSize.ab/2
             for(let b_bin = -(BIN_AB_N-1)/2; b_bin <= (BIN_AB_N-1)/2; b_bin ++){
-                const b_bin_center = b_bin * labBinSize
-                const b_bin_min = b_bin_center - labBinSize/2
-                const b_bin_max = b_bin_center + labBinSize/2
+                const b_bin_center = b_bin * labBinSize.ab
+                const b_bin_min = b_bin_center - labBinSize.ab/2
+                const b_bin_max = b_bin_center + labBinSize.ab/2
 
                 //calculate center color:
                 let centerRGB = oklab.oklabToRGB({l: l_bin_center, a: a_bin_center, b: b_bin_center})
@@ -310,5 +310,5 @@ for(let labBinSize of LAB_BIN_SIZES){
         }
     }
     console.log("Total bins: ", totalBins)
-    fs.writeFileSync(FILE_O_LAB_BINS+"_"+(LAB_BIN_SIZE_ABVS[labBinSize])+".json", JSON.stringify(labBinInfo, null, 2));
+    fs.writeFileSync(FILE_O_LAB_BINS+"_"+(labBinSize)+".json", JSON.stringify(labBinInfo, null, 2));
 }
