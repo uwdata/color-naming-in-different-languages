@@ -26,80 +26,80 @@ class BinSize {
 
 
 const LAB_BIN_SIZES = [ 
+  // new BinSize({
+  //   type: "box",
+  //   l: 1/5, ab: 1/20, 
+  //   tileSize: 10,
+  //   tileMaxSizeMultiplier: 1.7,
+  //   tileBorderSize: 2
+  // }), 
+  // new BinSize({
+  //   type: "box",
+  //   l: 1/10, ab: 1/40, 
+  //   tileSize: 5,
+  //   tileMaxSizeMultiplier: 1.7,
+  //   tileBorderSize: 1
+  // }), 
+  // new BinSize({
+  //   type: "box",
+  //   l: 1/15, ab: 1/60,
+  //   tileSize: 4,
+  //   tileMaxSizeMultiplier: 1.7,
+  //   tileBorderSize: 1
+  // }), 
+  // new BinSize({
+  //   type: "cube",
+  //   l: 1/10,
+  //   tileSize: 10,
+  //   tileMaxSizeMultiplier: 1.7,
+  //   tileBorderSize: 2
+  // }),
+  // new BinSize({
+  //   type: "cube",
+  //   l: 1/20,
+  //   tileSize: 5,
+  //   tileMaxSizeMultiplier: 1.7,
+  //   tileBorderSize: 1
+  // }),
+  // new BinSize({
+  //   type: "cube",
+  //   l: 1/40,
+  //   tileSize: 2,
+  //   tileMaxSizeMultiplier: 1.7,
+  //   tileBorderSize: 0.5
+  // }), 
   new BinSize({
-    type: "box",
-    l: 1/5, ab: 1/20, 
-    tileSize: 10,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 2
-  }), 
-  new BinSize({
-    type: "box",
-    l: 1/10, ab: 1/40, 
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
-  }), 
-  new BinSize({
-    type: "box",
-    l: 1/15, ab: 1/60,
-    tileSize: 4,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
-  }), 
-  new BinSize({
-    type: "cube",
+    type: "ring",
     l: 1/10,
     tileSize: 10,
     tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 2
-  }),
-  new BinSize({
-    type: "cube",
-    l: 1/20,
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
-  }),
-  new BinSize({
-    type: "cube",
-    l: 1/40,
-    tileSize: 2,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 0.5
-  }), 
-  new BinSize({
-    type: "ring",
-    l: 1/10,
-    tileSize: 10,
-    tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 1
     //start_angle: 0 // assume 0 for now
   }), 
-  new BinSize({
-    type: "ring",
-    l: 1/20,
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
-    //start_angle: 0 // assume 0 for now
-  }), 
-  new BinSize({
-    type: "ring",
-    l: 1/40,
-    tileSize: 4,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
-    //start_angle: 0 // assume 0 for now
-  }),
-    new BinSize({
-    type: "ring",
-    l: 1/60,
-    tileSize: 4,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
-    //start_angle: 0 // assume 0 for now
-  })
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/20,
+  //   tileSize: 5,
+  //   tileMaxSizeMultiplier: 1.7,
+  //   tileBorderSize: 1
+  //   //start_angle: 0 // assume 0 for now
+  // }), 
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/40,
+  //   tileSize: 4,
+  //   tileMaxSizeMultiplier: 1.7,
+  //   tileBorderSize: 1
+  //   //start_angle: 0 // assume 0 for now
+  // }),
+  //   new BinSize({
+  //   type: "ring",
+  //   l: 1/60,
+  //   tileSize: 4,
+  //   tileMaxSizeMultiplier: 1.7,
+  //   tileBorderSize: 1
+  //   //start_angle: 0 // assume 0 for now
+  // })
 ]
 
 
@@ -466,8 +466,15 @@ function updateDisplay(){
       .attr("class", "lang-map")
       .attr("id", `lang`)
       .style("min-width", svg_widths[curr_bin_size] + 5 +"px")
+  
+  d3.select('#vis')
+    .append("div")
+      .attr("class", "lang-map")
+      .attr("id", `rings`)
+      .style("min-width", svg_widths[curr_bin_size] + 5 +"px")
 
   createOrRefreshTiles()
+  createOrRefreshRingTiles()
 }
 
 
@@ -563,3 +570,121 @@ function getTileSize(d){
       return curr_bin_size.tileSize
 }
 
+
+
+function createOrRefreshRingTiles(){
+
+  const div = d3.select("#rings")
+ 
+
+  // show div
+  div.style("display", "")
+
+  let svg = d3.select("#rings"+" svg")
+  let textBackground = svg.select(".text-background")
+  let langText = svg.select(".lang-text")
+
+  if(svg.empty()){
+
+    svg = d3.select("#rings").append("svg")
+
+    textBackground = svg.append("rect")
+            .attr("class", "text-background")
+    
+    langText = svg.append("text")
+      .attr("class", "lang-text")
+  }
+
+  svg.attr("width", currSvgSize[0].width)
+    .attr("height", currSvgSize[0].height)
+
+  langText.text("All Color Bins")
+      .attr("x", 20)
+      .attr("y", 25)
+
+  drawColorRingTiles(lab_bins_arrays[curr_bin_size])
+}
+
+function drawColorRingTiles(saliencies){
+  const svg = d3.select("#rings" + " svg")
+  svg.selectAll(".tile")
+    .data(saliencies)
+    .join("path")
+      .attr("class", "tile")
+      .style("stroke", d => {
+        let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
+        return `oklch(${bin.l_center} ${bin.c_center} ${bin.h_center})`
+      })
+      .attr("d", d => {
+        let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
+        const levelCenterX = bin.l_bin * 100
+        const levelCenterY = 50
+        const binRadius = bin.c_center*curr_bin_size.tileSize
+        const binStartDeltaX = binRadius * Math.cos(bin.h_min / 360 * 2 * Math.PI) * curr_bin_size.tileSize 
+        const binStartX = levelCenterX + binStartDeltaX
+        const binEndDeltaX = binRadius * Math.cos(bin.h_max / 360 * 2 * Math.PI) * curr_bin_size.tileSize 
+        const binEndX = levelCenterX  + binEndDeltaX
+        const binStartDeltaY = binRadius* Math.sin(bin.h_min / 360 * 2 * Math.PI) * curr_bin_size.tileSize 
+        const binStartY = levelCenterY + binStartDeltaY
+        const binEndDeltaY = binRadius* Math.sin(bin.h_max / 360 * 2 * Math.PI) * curr_bin_size.tileSize 
+        const binEndY = levelCenterY + binEndDeltaY
+
+        //let binX = d.h_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.c_bin]
+        
+        return `
+        M ${binStartX} ${binStartY} 
+        A ${binRadius*binRadius*curr_bin_size.tileSize} ${binRadius*binRadius*curr_bin_size.tileSize} 0 0 1 ${binEndX} ${binEndY}
+        `
+      }) // A rx ry x-axis-rotation large-arc-flag sweep-flag x y
+      .style("stroke-width", curr_bin_size.tileSize)//d => curr_bin_size.tileBorderSize)
+      // .attr("x", (d) => 
+      //     curr_bin_size.type == "ring" ? 
+      //       d.h_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.c_bin]
+      //       //d.h_bin*curr_bin_size.tileSize +150*d.c_bin
+      //       :
+      //       d.a_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.l_bin])
+      // .attr("y", (d) => {
+      //   return curr_bin_size.type == "ring" ?
+      //   -d.l_bin*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
+      //   //-d.l_bin*curr_bin_size.tileSize +300//+ l_bin_y_offsets[curr_bin_size]
+      //   :
+      //   -d.b_bin*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
+      // })
+      .attr("fill", "rgba(0,0,0,0)")
+      // .attr("fill", (d) => {
+      //       let bin = curr_bin_size.type == "ring" ? lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin] : lab_bins[curr_bin_size][d.l_bin][d.a_bin][d.b_bin]
+
+      //       return curr_bin_size.type == "ring" ?
+      //         `oklch(${bin.l_center} ${bin.c_center} ${bin.h_center})`
+      //        :
+      //        `oklab(${bin.l_center} ${bin.a_center} ${bin.b_center})`
+      //       //
+      //       // if(bin.representative_p3){
+      //       //   //return `color(display-p3 ${bin.representative_p3.r} ${bin.representative_p3.g} ${bin.representative_p3.b})`
+      //       // }else{
+      //       //   return `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
+      //       // }
+      //   })
+      // .attr("height", getTileSize)
+      // .attr("width", getTileSize)
+      // .attr("title", (d) => {
+      //   const [l,a,b] = curr_bin_size.type == "ring" ? [d.l_bin, d.c_bin, d.h_bin]: [d.l_bin, d.a_bin, d.b_bin]
+      //   const bin_info = lab_bins[curr_bin_size][l][a][b]
+      //   let info = `
+      //     ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
+      //     Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
+      //     Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
+      //     Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
+      //     ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
+      //         ?
+      //         `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
+      //         : ""
+      //     }`.trim()
+
+      //   return info
+      // })
+}
+
+function getRingTileSize(d){
+      return curr_bin_size.tileSize
+}

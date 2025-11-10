@@ -37,7 +37,7 @@
 // so the number of segments in each ring should be 2n+1:
 //    1, 3, 5, 7, 9, ...
 
-// TODO: L axis bins are centered at 0, ... 1 
+// L axis bins are centered at 0, ... 1 
 // c bins range from [0-cBinSize], [cBinSize-2*cBinSize], [cBinSize-3*cBinSize], etc.
 //   though the center of the first bin should be 0, so centers are:
 //      0, 1.5*cBinSize, 2.5*cBinSize, etc.
@@ -68,7 +68,7 @@ class BinSize {
       this.ab = options.ab;
       this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
     } else if(this.type == "ring") {
-      this.c = options.l;
+      this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
       //this.start_angle = options.start_angle ? start_angle : 0; //assume 0 for now
       this.abv = "ring_" + options.l.toPrecision(2) / 1
     }
@@ -81,9 +81,9 @@ class BinSize {
 }
 
 const LAB_BIN_SIZES = [ 
-  // new BinSize({
-  //   type: "cube",
-  //   l: 1/20}), 
+  new BinSize({
+    type: "cube",
+    l: 1/10}), 
   // new BinSize({
   //   type: "cube",
   //   l: 1/40}),
@@ -104,21 +104,26 @@ const LAB_BIN_SIZES = [
   //   l: 1/10, //TOO small
   //   //start_angle: 0 // assume 0 for now
   // }),
-  // new BinSize({
-  //   type: "ring",
-  //   l: 1/20,
-  //   //start_angle: 0 // assume 0 for now
-  // }),
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    //start_angle: 0 // assume 0 for now
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/20,
+    //start_angle: 0 // assume 0 for now
+  }),
   // new BinSize({
   //   type: "ring",
   //   l: 1/40,
   //   //start_angle: 0 // assume 0 for now
   // }),
-  new BinSize({
-    type: "ring",
-    l: 1/60,
-    //start_angle: 0 // assume 0 for now
-  })
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/60,
+  //   //start_angle: 0 // assume 0 for now
+  // })
 ]
 
 function getLabBins(binSizeInfo){
