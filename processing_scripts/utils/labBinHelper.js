@@ -1,3 +1,7 @@
+// Note: range of OKLAB values for all color space should be 
+// l: 0-1
+// a/b: -0.4, 0.4
+
 // Note: range of OKLAB values for all rgb colors is:
 // l-min: 0,
 // l-max: 0.9999999934735462,
@@ -6,9 +10,9 @@
 // b-min: -0.3115281476783751,
 // b-max: 0.19856975465179516
 
-// for all color space should be 
-// l: 0-1
-// a/b: -0.4, 0.4
+// -----------------
+// Cube / Rectangle
+// -----------------
 
 // should be 1 bin centered at L=1 a,b=0, and 1 L=1, a,b=0
 // then evenly distributed around that
@@ -16,18 +20,59 @@
 // I want to capture "white" and "black"
 // (note: for edges of a/b, bins will often include non-existent colors anyway)
 // I also want bins to be all the same size. Best is cubes (e.g., 10x10x10)
-// though for visualization, other bin sizes might be better
+// though for visualization, different size for L than for a/b is  better
+
+
+// -----------------
+// Oklch ring segment bins
+// -----------------
+// if we do uniform radius circles (r), the area of
+// the first ring [0] (middle circle) is pi*r^2
+// the second ring [1] is pi*(2r)^2 - pi*r^2 = 3 * pi*r^2
+// the third ring [2] is pi*(3r)^2 - pi*(2r)^2 = 5 * pi*r^2
+// the nth ring is pi*(n*r)^2 - pi*((n-1)*r)^2 
+//                = (n^2 - (n-1)^2) * pi*r^2 
+//                = (n^2 - (n^2 - 2n + 1)) * pi*r^2
+//                = (2n - 1) * pi * r^2
+// so the number of segments in each ring should be 2n+1:
+//    1, 3, 5, 7, 9, ...
+
+// TODO: L axis bins are centered at 0, ... 1 
+// c bins range from [0-cBinSize], [cBinSize-2*cBinSize], [cBinSize-3*cBinSize], etc.
+//   though the center of the first bin should be 0, so centers are:
+//      0, 1.5*cBinSize, 2.5*cBinSize, etc.
+// h bin range from [0-hBinSize], [cBinSize-2*cBinSize], ... [ - 360]
+//   note: hBinSize depends on what c level
+
+
 const MIN_L = 0
 const MAX_L = 1 
 // 0.4 should be the max abs() a or b value for any visible color value
 // we go past this just ot be on the safe side
 const MIN_MAX_AB = 0.5
 
+const MIN_C = 0
+const MAX_C = MIN_MAX_AB
+const MIN_H = 0
+const MAX_H = 360
+
+
 class BinSize {
   constructor(options) {
     this.l = options.l;
-    this.ab = options.ab;
-    this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
+    this.type = options.type;
+    if(this.type == "cube"){
+      this.ab = this.l
+      this.abv = options.l.toPrecision(2) / 1
+    } else if(this.type == "box") {
+      this.ab = options.ab;
+      this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
+    } else if(this.type == "ring") {
+      this.c = options.l;
+      //this.start_angle = options.start_angle ? start_angle : 0; //assume 0 for now
+      this.abv = "ring_" + options.l.toPrecision(2) / 1
+    }
+    
   }
 
   toString() {
@@ -36,11 +81,44 @@ class BinSize {
 }
 
 const LAB_BIN_SIZES = [ 
-  new BinSize({l: 1/20, ab: 1/20}), // cube
-  new BinSize({l: 1/40, ab: 1/40}), // cube
-  new BinSize({l: 1/5, ab: 1/20}), // rectangle
-  new BinSize({l: 1/10, ab: 1/40}), // rectangle
-  new BinSize({l: 1/15, ab: 1/60}), // rectangle
+  // new BinSize({
+  //   type: "cube",
+  //   l: 1/20}), 
+  // new BinSize({
+  //   type: "cube",
+  //   l: 1/40}),
+  // new BinSize({
+  //   type: "box",
+  //   l: 1/5, 
+  //   ab: 1/20}),
+  // new BinSize({
+  //   type: "box",
+  //   l: 1/10, 
+  //   ab: 1/40}), 
+  // new BinSize({
+  //   type: "box",
+  //   l: 1/15, 
+  //   ab: 1/60}),
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/10, //TOO small
+  //   //start_angle: 0 // assume 0 for now
+  // }),
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/20,
+  //   //start_angle: 0 // assume 0 for now
+  // }),
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/40,
+  //   //start_angle: 0 // assume 0 for now
+  // }),
+  new BinSize({
+    type: "ring",
+    l: 1/60,
+    //start_angle: 0 // assume 0 for now
+  })
 ]
 
 function getLabBins(binSizeInfo){
@@ -49,63 +127,153 @@ function getLabBins(binSizeInfo){
   if(BIN_L_N != Math.floor(BIN_L_N)){
     throw new Error("Error: Bin size must be evenly divisible by 100 to make bins line up with 0 and 100")
   }
-  const BIN_AB_N_MIN = Math.ceil((MIN_MAX_AB * 2) / binSizeInfo.ab) // ceil to make a whole number big enough, 
-  // make sure odd so white/gray/black line is centered
-  const BIN_AB_N = BIN_AB_N_MIN % 2 == 0 ? BIN_AB_N_MIN + 1 : BIN_AB_N_MIN
 
-  function bins_from_lab(lab){
-      const l_bin = Math.round(lab.l / binSizeInfo.l)
-      const a_bin = Math.round(lab.a / binSizeInfo.ab)
-      const b_bin = Math.round(lab.b / binSizeInfo.ab)
-      return [l_bin, a_bin, b_bin]
-  }
+  if(binSizeInfo.type == "cube" || binSizeInfo.type == "box"){
+    const BIN_AB_N_MIN = Math.ceil((MIN_MAX_AB * 2) / binSizeInfo.ab) // ceil to make a whole number big enough, 
+    // make sure odd so white/gray/black line is centered
+    const BIN_AB_N = BIN_AB_N_MIN % 2 == 0 ? BIN_AB_N_MIN + 1 : BIN_AB_N_MIN
 
-  function lab_from_bins(bins_l, bins_a, bins_b){
-    const l = binSizeInfo.l * bins_l
-    const a = binSizeInfo.ab * bins_a
-    const b = binSizeInfo.ab * bins_b
-    return[l, a, b]
-  }
+    function bins_from_lab(lab){
+        const l_bin = Math.round(lab.l / binSizeInfo.l)
+        const a_bin = Math.round(lab.a / binSizeInfo.ab)
+        const b_bin = Math.round(lab.b / binSizeInfo.ab)
+        return [l_bin, a_bin, b_bin]
+    }
 
-  /**
-   * 
-   * @param {lab bin info (as nested objects referenced like lab_bins[l][a][b])} lab_bins 
-   * @returns an array of the lab bin info objects as a single array (sorted, so it is deterministic)
-   */
-  function labBinsToArray(lab_bins){
-    const labBinsArr = []
-    for(const [l_bin, l_bin_entries] of Object.entries(lab_bins).sort((a, b) => b[0] - a[0])){
-      for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries).sort((a, b) => b[0] - a[0])){
-        for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries).sort((a, b) => b[0] - a[0])){
-          labBinsArr.push(b_bin_entry)
+    function lab_from_bins(bins_l, bins_a, bins_b){
+      const l = binSizeInfo.l * bins_l
+      const a = binSizeInfo.ab * bins_a
+      const b = binSizeInfo.ab * bins_b
+      return[l, a, b]
+    }
+
+    /**
+     * 
+     * @param {lab bin info (as nested objects referenced like lab_bins[l][a][b])} lab_bins 
+     * @returns an array of the lab bin info objects as a single array (sorted, so it is deterministic)
+     */
+    function labBinsToArray(lab_bins){
+      const labBinsArr = []
+      for(const [l_bin, l_bin_entries] of Object.entries(lab_bins).sort((a, b) => b[0] - a[0])){
+        for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries).sort((a, b) => b[0] - a[0])){
+          for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries).sort((a, b) => b[0] - a[0])){
+            labBinsArr.push(b_bin_entry)
+          }
         }
       }
+      return labBinsArr;
     }
-    return labBinsArr;
-  }
 
-  function createLABNumBins(lab_bins_example_struct){
-    const newBins = {}
-    for(const [l_bin, l_bin_entries] of Object.entries(lab_bins_example_struct)){
-      newBins[l_bin] = {}
-      for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries)){
-        newBins[l_bin][a_bin] = {}
-        for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries)){
-          newBins[l_bin][a_bin][b_bin] = 0
+    function createLABNumBins(lab_bins_example_struct){
+      const newBins = {}
+      for(const [l_bin, l_bin_entries] of Object.entries(lab_bins_example_struct)){
+        newBins[l_bin] = {}
+        for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries)){
+          newBins[l_bin][a_bin] = {}
+          for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries)){
+            newBins[l_bin][a_bin][b_bin] = 0
+          }
         }
       }
+      return newBins;
     }
-    return newBins;
-  }
 
-  return {
-    "BIN_L_N": BIN_L_N,
-    "BIN_AB_N": BIN_AB_N,
-    "MIN_L": MIN_L,
-    "bins_from_lab": bins_from_lab,
-    "lab_from_bins": lab_from_bins,
-    "createLABNumBins": createLABNumBins,
-    "labBinsToArray": labBinsToArray
+    return {
+      "BIN_L_N": BIN_L_N,
+      "BIN_AB_N": BIN_AB_N,
+      "MIN_L": MIN_L,
+      "bins_from_lab": bins_from_lab,
+      "lab_from_bins": lab_from_bins,
+      "createLABNumBins": createLABNumBins,
+      "labBinsToArray": labBinsToArray
+    }
+  } else if(binSizeInfo.type == "ring") {
+    const BIN_C_N = Math.ceil((MAX_C * 2) / binSizeInfo.c) // ceil to make a whole number big enough, 
+
+    function hueToRange(h){
+      if(isNaN(h)){
+        return 0
+      }
+      while(h < 0){
+        h += 360
+      }
+      while(h > 360){
+        h -= 360
+      }
+      return h
+    }
+
+
+    function bins_from_lch(lch){
+        const l_bin = Math.round(lch.l / binSizeInfo.l)
+
+        const c_bin = Math.floor(lch.c / binSizeInfo.c)
+
+        const hue_bin_num = 2*c_bin + 1 // number of hue bins is 2*c_bin + 1 (math above)
+        const hue_bin_size = MAX_H / hue_bin_num
+        const h_bin = Math.floor(hueToRange(lch.h) / hue_bin_size)
+
+        return [l_bin, c_bin, h_bin]
+    }
+
+    function lch_from_bins(bins_l, bins_c, bins_h){
+      // bins_l is midpoint
+      const l = binSizeInfo.l * bins_l
+      
+      // bins_c is start point (so mid is half way through bin), except 0, which is centered at 0
+      const c = bins_c == 0 ? 0: binSizeInfo.c * (bins_c + 0.5) 
+
+      const hue_bin_num = 2*c_bin + 1 // number of hue bins is 2*c_bin + 1 (math above)
+      const hue_bin_size = MAX_H / hue_bin_num
+      const h = hue_bin_size * (bins_h + 0.5)
+
+      return[l, c, h]
+    }
+
+    /**
+     * 
+     * @param {lab bin info (as nested objects referenced like lab_bins[l][c][h])} lch_bins 
+     * @returns an array of the lch bin info objects as a single array (sorted, so it is deterministic)
+     */
+    function lchBinsToArray(lch_bins){
+      const labBinsArr = []
+      for(const [l_bin, l_bin_entries] of Object.entries(lch_bins).sort((a, b) => b[0] - a[0])){
+        for(const [c_bin, c_bin_entries] of Object.entries(l_bin_entries).sort((a, b) => b[0] - a[0])){
+          for(const [h_bin, h_bin_entry] of Object.entries(c_bin_entries).sort((a, b) => b[0] - a[0])){
+            labBinsArr.push(h_bin_entry)
+          }
+        }
+      }
+      return labBinsArr;
+    }
+
+    function createLCHNumBins(lch_bins_example_struct){
+      const newBins = {}
+      for(const [l_bin, l_bin_entries] of Object.entries(lch_bins_example_struct)){
+        newBins[l_bin] = {}
+        for(const [c_bin, c_bin_entries] of Object.entries(l_bin_entries)){
+          newBins[l_bin][c_bin] = {}
+          for(const [h_bin, h_bin_entry] of Object.entries(c_bin_entries)){
+            newBins[l_bin][c_bin][h_bin] = 0
+          }
+        }
+      }
+      return newBins;
+    }
+
+    return {
+      "BIN_L_N": BIN_L_N,
+      "BIN_C_N": BIN_C_N,
+      "MIN_L": MIN_L,
+      "MAX_H": MAX_H,
+      "bins_from_lch": bins_from_lch,
+      "lch_from_bins": lch_from_bins,
+      "createLABNumBins": createLCHNumBins,
+      "labBinsToArray": lchBinsToArray
+    }
+  } else {
+    console.log("unexpected bin type", binSizeInfo)
+    throw new Error("unexpected bin type", binSizeInfo)
   }
 
 }
@@ -113,9 +281,12 @@ function getLabBins(binSizeInfo){
 module.exports = {
   getLabBins: getLabBins,
   LAB_BIN_SIZES: LAB_BIN_SIZES,
-  //LAB_BIN_SIZE_ABVS: LAB_BIN_SIZE_ABVS,
   MIN_L: MIN_L,
   MAX_L: MAX_L,
-  MIN_MAX_AB: MIN_MAX_AB
+  MIN_MAX_AB: MIN_MAX_AB,
+  MIN_C: MIN_C,
+  MAX_C: MAX_C,
+  MIN_H: MIN_H,
+  MAX_H: MAX_H
 };
 

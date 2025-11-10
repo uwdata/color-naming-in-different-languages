@@ -1,8 +1,8 @@
 {
   "dependencies": {
+    "colorjs.io": "^0.5.2",
     "csv-write-stream": "^2.0.0",
     "csvtojson": "^2.0.10",
-    "culori": "^4.0.2",
     "d3": "^7.9.0",
     "fs": "^0.0.1-security",
     "zlib": "^1.0.5"

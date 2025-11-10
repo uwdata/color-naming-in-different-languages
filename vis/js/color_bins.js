@@ -1,11 +1,22 @@
 class BinSize {
   constructor(options) {
     this.l = options.l;
-    this.ab = options.ab;
-    this.tileSize = options.tileSize;
-    this.tileMaxSizeMultiplier = options.tileMaxSizeMultiplier;
-    this.tileBorderSize = options.tileBorderSize;
-    this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
+    this.type = options.type;
+    if(this.type == "cube"){
+      this.ab = this.l
+      this.abv = options.l.toPrecision(2) / 1
+    } else if(this.type == "box") {
+      this.ab = options.ab;
+      this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
+    } else if(this.type == "ring") {
+      this.c = options.l;
+      //this.start_angle = options.start_angle ? start_angle : 0; //assume 0 for now
+      this.abv = "ring_" + options.l.toPrecision(2) / 1
+    }
+
+    this.tileSize = options.tileSize
+    this.tileMaxSizeMultiplier = options.tileMaxSizeMultiplier
+    this.tileBorderSize = options.tileBorderSize    
   }
 
   toString() {
@@ -13,37 +24,75 @@ class BinSize {
   }
 }
 
+
 const LAB_BIN_SIZES = [ 
   new BinSize({
-    l: 1/5, ab: 1/20, // rectangle
+    type: "box",
+    l: 1/5, ab: 1/20, 
     tileSize: 10,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 2
   }), 
   new BinSize({
-    l: 1/10, ab: 1/40, // rectangle
+    type: "box",
+    l: 1/10, ab: 1/40, 
     tileSize: 5,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 1
   }), 
   new BinSize({
-    l: 1/15, ab: 1/60, // rectangle
+    type: "box",
+    l: 1/15, ab: 1/60,
     tileSize: 4,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 1
   }), 
   new BinSize({
-    l: 1/20, ab: 1/20,  // cube
+    type: "cube",
+    l: 1/20,
     tileSize: 5,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 1
   }),
   new BinSize({
-    l: 1/40, ab: 1/40, // cube
+    type: "cube",
+    l: 1/40,
     tileSize: 2,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 0.5
   }), 
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    tileSize: 10,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+    //start_angle: 0 // assume 0 for now
+  }), 
+  new BinSize({
+    type: "ring",
+    l: 1/20,
+    tileSize: 10,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+    //start_angle: 0 // assume 0 for now
+  }), 
+  new BinSize({
+    type: "ring",
+    l: 1/40,
+    tileSize: 4,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+    //start_angle: 0 // assume 0 for now
+  }),
+    new BinSize({
+    type: "ring",
+    l: 1/60,
+    tileSize: 4,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+    //start_angle: 0 // assume 0 for now
+  })
 ]
 
 
@@ -86,63 +135,164 @@ async function load_and_process_bin_data(bin_size){
 }
 
 function process_lab_bin_data(bin_data, bin_size){
-  lab_bins[bin_size] = bin_data
-  lab_bins_arrays[bin_size] = []
-  l_bin_ab_bounds[bin_size] = []
+  if(bin_size.type == "ring"){// okLCH
+    // Was L: split, a: x, b: y
+    // Now C: split, H: x, L: y
+    // so L-> C, a-> H, b->L
+      // minL0, maxL bin_data.length
+    // actually will be L/H (C is the new L, which is always len L)
+    lab_bins[bin_size] = bin_data
+    lab_bins_arrays[bin_size] = []
+    l_bin_ab_bounds[bin_size] = [] 
 
-  // Make an array version of all the bins, and also find bounds for each level
-  for(const [l_bin_str, l_bin_entries] of Object.entries(lab_bins[bin_size])){
-    l_bin = Number(l_bin_str)
-    l_bin_ab_bounds[bin_size][l_bin] = {}
-    for(const [a_bin_str, a_bin_entries] of Object.entries(l_bin_entries)){
-      a_bin = Number(a_bin_str) 
-      if(!("max_a" in l_bin_ab_bounds[bin_size][l_bin]) || a_bin > l_bin_ab_bounds[bin_size][l_bin].max_a){
-        l_bin_ab_bounds[bin_size][l_bin].max_a = a_bin
-      }
-      if(!("min_a" in l_bin_ab_bounds[bin_size][l_bin]) || a_bin < l_bin_ab_bounds[bin_size][l_bin].min_a){
-        l_bin_ab_bounds[bin_size][l_bin].min_a = a_bin
-      }
-      for(const [b_bin_str, b_bin_entry] of Object.entries(a_bin_entries)){
-        b_bin = Number(b_bin_str) 
-        if(!("max_b" in l_bin_ab_bounds[bin_size][l_bin]) || b_bin > l_bin_ab_bounds[bin_size][l_bin].max_b){
-          l_bin_ab_bounds[bin_size][l_bin].max_b = b_bin
-        }
-        if(!("min_b" in l_bin_ab_bounds[bin_size][l_bin]) || b_bin < l_bin_ab_bounds[bin_size][l_bin].min_b){
-          l_bin_ab_bounds[bin_size][l_bin].min_b = b_bin
-        }
+    // I need a bounds for each C division
+    const c_values = new Set()
 
-        lab_bins_arrays[bin_size].push(b_bin_entry)
+
+    // Make an array version of all the bins, and also find bounds for each level
+    for(const [l_bin_str, l_bin_entries] of Object.entries(lab_bins[bin_size])){
+      l_bin = Number(l_bin_str)
+      l_bin_ab_bounds[bin_size][l_bin] = {}
+      for(const [a_bin_str, a_bin_entries] of Object.entries(l_bin_entries)){
+        a_bin = Number(a_bin_str) 
+        if(!("max_a" in l_bin_ab_bounds[bin_size][l_bin]) || a_bin > l_bin_ab_bounds[bin_size][l_bin].max_a){
+          l_bin_ab_bounds[bin_size][l_bin].max_a = a_bin
+        }
+        if(!("min_a" in l_bin_ab_bounds[bin_size][l_bin]) || a_bin < l_bin_ab_bounds[bin_size][l_bin].min_a){
+          l_bin_ab_bounds[bin_size][l_bin].min_a = a_bin
+        }
+        c_values.add(a_bin)
+        for(const [b_bin_str, b_bin_entry] of Object.entries(a_bin_entries)){
+          b_bin = Number(b_bin_str) 
+          if(!("max_b" in l_bin_ab_bounds[bin_size][l_bin]) || b_bin > l_bin_ab_bounds[bin_size][l_bin].max_b){
+            l_bin_ab_bounds[bin_size][l_bin].max_b = b_bin
+          }
+          if(!("min_b" in l_bin_ab_bounds[bin_size][l_bin]) || b_bin < l_bin_ab_bounds[bin_size][l_bin].min_b){
+            l_bin_ab_bounds[bin_size][l_bin].min_b = b_bin
+          }
+
+          lab_bins_arrays[bin_size].push(b_bin_entry)
+        }
       }
     }
-  }
 
-  // figure out b bounds and y offsets and svg heights
-  lab_bin_b_bounds[bin_size] = {}
-  lab_bin_b_bounds[bin_size].min = l_bin_ab_bounds[bin_size]
-                                  .map(bound => bound.min_b)
-                                  .reduce((prev, curr) => Math.min(prev, curr))
-  lab_bin_b_bounds[bin_size].max = l_bin_ab_bounds[bin_size]
-                                  .map(bound => bound.max_b)
-                                  .reduce((prev, curr) => Math.max(prev, curr))
+    l_bin_ab_bounds[bin_size] = []
+    for(const c_bin of c_values){
+      const levelEntries = lab_bins_arrays[bin_size].filter(d => d.c_bin == c_bin)
+      l_bin_ab_bounds[bin_size][c_bin] = []
+      for(const levelEntry of levelEntries){
+        l_bin_ab_bounds[bin_size][c_bin].b_min = 0
+        l_bin_ab_bounds[bin_size][c_bin].b_max = Math.max(...Object.keys(bin_data).map(d => parseInt(d))) // L is the new b
 
-  l_bin_y_offsets[bin_size] = TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize + lab_bin_b_bounds[bin_size].max * bin_size.tileSize
-  svg_heights[bin_size] = l_bin_y_offsets[bin_size] - lab_bin_b_bounds[bin_size].min * bin_size.tileSize + TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
+        const h_bin = levelEntry.h_bin // h is the new A
+        if(!("max_a" in l_bin_ab_bounds[bin_size][c_bin]) || h_bin > l_bin_ab_bounds[bin_size][c_bin].max_a){
+          l_bin_ab_bounds[bin_size][c_bin].max_a = h_bin
+        }
+        if(!("min_a" in l_bin_ab_bounds[bin_size][c_bin]) || h_bin < l_bin_ab_bounds[bin_size][c_bin].min_a){
+          l_bin_ab_bounds[bin_size][c_bin].min_a = h_bin
+        }
+        l_bin_ab_bounds[bin_size][c_bin]
+      }
+    }
 
-  // calculate l_bin_x_offsets
-  //since bins are unevenly distributed, these will make the L levels spaced evenly on the x axis
-  let currXOffset = TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
-  l_bin_x_offsets[bin_size] = []
-  for(const [l, l_ab_bound] of l_bin_ab_bounds[bin_size].entries()){
-    // adjust for negative direction
-    currXOffset = currXOffset - l_ab_bound.min_a * bin_size.tileSize
 
-    l_bin_x_offsets[bin_size][l] = currXOffset
+    // figure out b bounds and y offsets and svg heights
+    lab_bin_b_bounds[bin_size] = {}
+    lab_bin_b_bounds[bin_size].min = 0 // b is now L
+    // l_bin_ab_bounds[bin_size]
+    //                                 .map(bound => bound.min_b)
+    //                                 .reduce((prev, curr) => Math.min(prev, curr))
+    lab_bin_b_bounds[bin_size].max = Math.max(...Object.keys(bin_data).map(d => parseInt(d)))
+      // l_bin_ab_bounds[bin_size]
+      //                               .map(bound => bound.max_b)
+      //                               .reduce((prev, curr) => Math.max(prev, curr))
 
-    // adjust for positive direction
-    currXOffset = currXOffset + l_ab_bound.max_a * bin_size.tileSize + bin_size.tileSize + TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
-    
-    // only the last one will be saved at the end, giving us total svg width
-    svg_widths[bin_size] = currXOffset
+    l_bin_y_offsets[bin_size] = TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize + lab_bin_b_bounds[bin_size].max * bin_size.tileSize
+    svg_heights[bin_size] = l_bin_y_offsets[bin_size] - lab_bin_b_bounds[bin_size].min * bin_size.tileSize + TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
+
+    // calculate l_bin_x_offsets
+    //since bins are unevenly distributed, these will make the L levels spaced evenly on the x axis
+    let currXOffset = TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
+    l_bin_x_offsets[bin_size] = []
+    for(const [l, l_ab_bound] of l_bin_ab_bounds[bin_size].entries()){
+      // adjust for negative direction
+      if(!l_ab_bound){
+        continue;
+      }
+      currXOffset = currXOffset - l_ab_bound.min_a * bin_size.tileSize
+
+      l_bin_x_offsets[bin_size][l] = currXOffset
+
+      // adjust for positive direction
+      currXOffset = currXOffset + l_ab_bound.max_a * bin_size.tileSize + bin_size.tileSize + TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
+      
+      // only the last one will be saved at the end, giving us total svg width
+      svg_widths[bin_size] = currXOffset
+    }
+
+  } else {
+    lab_bins[bin_size] = bin_data
+    lab_bins_arrays[bin_size] = []
+    l_bin_ab_bounds[bin_size] = []
+
+    // Make an array version of all the bins, and also find bounds for each level
+    for(const [l_bin_str, l_bin_entries] of Object.entries(lab_bins[bin_size])){
+      l_bin = Number(l_bin_str)
+      l_bin_ab_bounds[bin_size][l_bin] = {}
+      for(const [a_bin_str, a_bin_entries] of Object.entries(l_bin_entries)){
+        a_bin = Number(a_bin_str) 
+        if(!("max_a" in l_bin_ab_bounds[bin_size][l_bin]) || a_bin > l_bin_ab_bounds[bin_size][l_bin].max_a){
+          l_bin_ab_bounds[bin_size][l_bin].max_a = a_bin
+        }
+        if(!("min_a" in l_bin_ab_bounds[bin_size][l_bin]) || a_bin < l_bin_ab_bounds[bin_size][l_bin].min_a){
+          l_bin_ab_bounds[bin_size][l_bin].min_a = a_bin
+        }
+        for(const [b_bin_str, b_bin_entry] of Object.entries(a_bin_entries)){
+          b_bin = Number(b_bin_str) 
+          if(!("max_b" in l_bin_ab_bounds[bin_size][l_bin]) || b_bin > l_bin_ab_bounds[bin_size][l_bin].max_b){
+            l_bin_ab_bounds[bin_size][l_bin].max_b = b_bin
+          }
+          if(!("min_b" in l_bin_ab_bounds[bin_size][l_bin]) || b_bin < l_bin_ab_bounds[bin_size][l_bin].min_b){
+            l_bin_ab_bounds[bin_size][l_bin].min_b = b_bin
+          }
+
+          lab_bins_arrays[bin_size].push(b_bin_entry)
+        }
+      }
+    }
+
+    // figure out b bounds and y offsets and svg heights
+    lab_bin_b_bounds[bin_size] = {}
+    lab_bin_b_bounds[bin_size].min = l_bin_ab_bounds[bin_size]
+                                    .map(bound => bound.min_b)
+                                    .reduce((prev, curr) => Math.min(prev, curr))
+    lab_bin_b_bounds[bin_size].max = l_bin_ab_bounds[bin_size]
+                                    .map(bound => bound.max_b)
+                                    .reduce((prev, curr) => Math.max(prev, curr))
+
+    l_bin_y_offsets[bin_size] = TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize + lab_bin_b_bounds[bin_size].max * bin_size.tileSize
+    svg_heights[bin_size] = l_bin_y_offsets[bin_size] - lab_bin_b_bounds[bin_size].min * bin_size.tileSize + TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
+
+    // calculate l_bin_x_offsets
+    //since bins are unevenly distributed, these will make the L levels spaced evenly on the x axis
+    let currXOffset = TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
+    l_bin_x_offsets[bin_size] = []
+    for(const [l, l_ab_bound] of l_bin_ab_bounds[bin_size].entries()){
+      // adjust for negative direction
+      if(!l_ab_bound){
+        continue;
+      }
+      currXOffset = currXOffset - l_ab_bound.min_a * bin_size.tileSize
+
+      l_bin_x_offsets[bin_size][l] = currXOffset
+
+      // adjust for positive direction
+      currXOffset = currXOffset + l_ab_bound.max_a * bin_size.tileSize + bin_size.tileSize + TILE_SEGMENT_MARGIN_NUM * bin_size.tileSize
+      
+      // only the last one will be saved at the end, giving us total svg width
+      svg_widths[bin_size] = currXOffset
+    }
+
   }
 
   console.log("lab_bins_array", bin_size, lab_bins_arrays[bin_size]);
@@ -183,8 +333,8 @@ function process_saliency_bin_data(saliency_data, bin_size, blur){
     tile.maxpTC = 0.5
     tile.saliency = -2.5
     tile.binL = tile.l_bin
-    tile.binA = tile.a_bin
-    tile.binB = tile.b_bin
+    tile.binA = bin_size.type == "ring" ? tile.c_bin : tile.a_bin
+    tile.binB = bin_size.type == "ring" ? tile.h_bin : tile.b_bin
     tile.avgTermColor = `rgb(${tile.representative_rgb.r},${tile.representative_rgb.g},${tile.representative_rgb.b})`
     tile.topTerms = []
   })
@@ -215,7 +365,12 @@ $(document).on('ready page:load', function () {
   for(let bin_size of LAB_BIN_SIZES){
     $("#bin_size").append(
       `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-        ${bin_size.l == bin_size.ab ? "Cube" : "Box"}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1}
+        ${(bin_size.type == "cube" || bin_size.type == "box") ?
+          `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1}`
+          :
+          `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1}`
+        }
+      
       </option>`
     )
   }
@@ -350,14 +505,26 @@ function drawColorTiles(saliencies){
       .attr("class", "tile")
       .style("stroke", backgroundColor)
       .style("stroke-width", d => curr_bin_size.tileBorderSize)
-      .attr("x", (d) => d.a_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.l_bin])
+      .attr("x", (d) => 
+          curr_bin_size.type == "ring" ? 
+            d.h_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.c_bin]
+            //d.h_bin*curr_bin_size.tileSize +150*d.c_bin
+            :
+            d.a_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.l_bin])
       .attr("y", (d) => {
-        return -d.b_bin*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
+        return curr_bin_size.type == "ring" ?
+        -d.l_bin*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
+        //-d.l_bin*curr_bin_size.tileSize +300//+ l_bin_y_offsets[curr_bin_size]
+        :
+        -d.b_bin*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
       })
       .attr("fill", (d) => {
-            const bin = lab_bins[curr_bin_size][d.l_bin][d.a_bin][d.b_bin]
+            let bin = curr_bin_size.type == "ring" ? lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin] : lab_bins[curr_bin_size][d.l_bin][d.a_bin][d.b_bin]
 
-            return `oklab(${bin.l_center} ${bin.a_center} ${bin.b_center})`
+            return curr_bin_size.type == "ring" ?
+              `oklch(${bin.l_center} ${bin.c_center} ${bin.h_center})`
+             :
+             `oklab(${bin.l_center} ${bin.a_center} ${bin.b_center})`
             //
             // if(bin.representative_p3){
             //   //return `color(display-p3 ${bin.representative_p3.r} ${bin.representative_p3.g} ${bin.representative_p3.b})`
@@ -368,7 +535,7 @@ function drawColorTiles(saliencies){
       .attr("height", getTileSize)
       .attr("width", getTileSize)
       .attr("title", (d) => {
-        const [l,a,b] = [d.l_bin, d.a_bin, d.b_bin]
+        const [l,a,b] = curr_bin_size.type == "ring" ? [d.l_bin, d.c_bin, d.h_bin]: [d.l_bin, d.a_bin, d.b_bin]
         const bin_info = lab_bins[curr_bin_size][l][a][b]
         let info = `
           ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}

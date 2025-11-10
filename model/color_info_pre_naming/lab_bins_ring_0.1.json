@@ -1,0 +1,2530 @@
+{
+  "0": {
+    "0": {
+      "0": {
+        "l_bin": 0,
+        "h_bin": 0,
+        "c_bin": 0,
+        "l_center": 0,
+        "l_min": -0.05,
+        "l_max": 0.05,
+        "c_center": 0,
+        "c_min": 0,
+        "c_max": 0.1,
+        "h_center": 180,
+        "h_min": 0,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 0,
+          "g": 0,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0,
+          "c": 0,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 0,
+          "a": 0,
+          "b": 0
+        },
+        "num_rgbs": 7
+      }
+    }
+  },
+  "1": {
+    "0": {
+      "0": {
+        "l_bin": 1,
+        "h_bin": 0,
+        "c_bin": 0,
+        "l_center": 0.1,
+        "l_min": 0.05,
+        "l_max": 0.15000000000000002,
+        "c_center": 0,
+        "c_min": 0,
+        "c_max": 0.1,
+        "h_center": 180,
+        "h_min": 0,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 3,
+          "g": 3,
+          "b": 3
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 3,
+          "g": 3,
+          "b": 3
+        },
+        "representative_lch": {
+          "l": 0.1,
+          "c": 0,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 0.1,
+          "a": 0,
+          "b": 0
+        },
+        "num_rgbs": 9251
+      }
+    },
+    "1": {
+      "2": {
+        "l_bin": 1,
+        "h_bin": 2,
+        "c_bin": 1,
+        "l_center": 0.1,
+        "l_min": 0.05,
+        "l_max": 0.15000000000000002,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 300,
+        "h_min": 240,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 16,
+          "g": -15,
+          "b": 48
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 1,
+          "g": 0,
+          "b": 52
+        },
+        "representative_lch": {
+          "l": 0.1,
+          "c": 0.15000000000000002,
+          "h": 300
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.1482163158453554,
+            -0.007149820622987163,
+            -0.10057989867775738
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 5
+      }
+    }
+  },
+  "2": {
+    "0": {
+      "0": {
+        "l_bin": 2,
+        "h_bin": 0,
+        "c_bin": 0,
+        "l_center": 0.2,
+        "l_min": 0.15000000000000002,
+        "l_max": 0.25,
+        "c_center": 0,
+        "c_min": 0,
+        "c_max": 0.1,
+        "h_center": 180,
+        "h_min": 0,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 22,
+          "g": 22,
+          "b": 22
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 22,
+          "g": 22,
+          "b": 22
+        },
+        "representative_lch": {
+          "l": 0.2,
+          "c": 0,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 0.2,
+          "a": 0,
+          "b": 0
+        },
+        "num_rgbs": 125399
+      }
+    },
+    "1": {
+      "0": {
+        "l_bin": 2,
+        "h_bin": 0,
+        "c_bin": 1,
+        "l_center": 0.2,
+        "l_min": 0.15000000000000002,
+        "l_max": 0.25,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 60,
+        "h_min": 0,
+        "h_max": 120,
+        "center_rgb": {
+          "r": 63,
+          "g": -17,
+          "b": -14
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 69,
+          "g": 0,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0.2,
+          "c": 0.15000000000000002,
+          "h": 60
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.2451668628372484,
+            0.08779122883792219,
+            0.04913300974167037
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 27
+      },
+      "2": {
+        "l_bin": 2,
+        "h_bin": 2,
+        "c_bin": 1,
+        "l_center": 0.2,
+        "l_min": 0.15000000000000002,
+        "l_max": 0.25,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 300,
+        "h_min": 240,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 36,
+          "g": -17,
+          "b": 77
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 34,
+          "g": 0,
+          "b": 73
+        },
+        "representative_lch": {
+          "l": 0.2,
+          "c": 0.15000000000000002,
+          "h": 300
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.21797448431057675,
+            0.052221884191255175,
+            -0.10691719286498177
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 33038
+      }
+    }
+  },
+  "3": {
+    "0": {
+      "0": {
+        "l_bin": 3,
+        "h_bin": 0,
+        "c_bin": 0,
+        "l_center": 0.30000000000000004,
+        "l_min": 0.25000000000000006,
+        "l_max": 0.35000000000000003,
+        "c_center": 0,
+        "c_min": 0,
+        "c_max": 0.1,
+        "h_center": 180,
+        "h_min": 0,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 46,
+          "g": 46,
+          "b": 46
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 46,
+          "g": 46,
+          "b": 46
+        },
+        "representative_lch": {
+          "l": 0.30000000000000004,
+          "c": 0,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 0.30000000000000004,
+          "a": 0,
+          "b": 0
+        },
+        "num_rgbs": 305948
+      }
+    },
+    "1": {
+      "0": {
+        "l_bin": 3,
+        "h_bin": 0,
+        "c_bin": 1,
+        "l_center": 0.30000000000000004,
+        "l_min": 0.25000000000000006,
+        "l_max": 0.35000000000000003,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 60,
+        "h_min": 0,
+        "h_max": 120,
+        "center_rgb": {
+          "r": 94,
+          "g": 3,
+          "b": -30
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 89,
+          "g": 24,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0.30000000000000004,
+          "c": 0.15000000000000002,
+          "h": 60
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.31374958731921276,
+            0.07849137471153443,
+            0.06326054356810482
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 39387
+      },
+      "1": {
+        "l_bin": 3,
+        "h_bin": 1,
+        "c_bin": 1,
+        "l_center": 0.30000000000000004,
+        "l_min": 0.25000000000000006,
+        "l_max": 0.35000000000000003,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 180,
+        "h_min": 120,
+        "h_max": 240,
+        "center_rgb": {
+          "r": -57,
+          "g": 66,
+          "b": 49
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 0,
+          "g": 61,
+          "b": 8
+        },
+        "representative_lch": {
+          "l": 0.30000000000000004,
+          "c": 0.15000000000000002,
+          "h": 180
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.3126907845324301,
+            -0.0813686097011681,
+            0.05817991044153015
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 3420
+      },
+      "2": {
+        "l_bin": 3,
+        "h_bin": 2,
+        "c_bin": 1,
+        "l_center": 0.30000000000000004,
+        "l_min": 0.25000000000000006,
+        "l_max": 0.35000000000000003,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 300,
+        "h_min": 240,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 60,
+          "g": 8,
+          "b": 107
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 60,
+          "g": 8,
+          "b": 107
+        },
+        "representative_lch": {
+          "l": 0.30000000000000004,
+          "c": 0.15000000000000002,
+          "h": 300
+        },
+        "representative_lab": {
+          "l": 0.30000000000000004,
+          "a": 0.07500000000000002,
+          "b": -0.1299038105676658
+        },
+        "num_rgbs": 265661
+      }
+    },
+    "2": {
+      "3": {
+        "l_bin": 3,
+        "h_bin": 3,
+        "c_bin": 2,
+        "l_center": 0.30000000000000004,
+        "l_min": 0.25000000000000006,
+        "l_max": 0.35000000000000003,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 252,
+        "h_min": 216,
+        "h_max": 288,
+        "center_rgb": {
+          "r": -34,
+          "g": -13,
+          "b": 164
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 0,
+          "g": 0,
+          "b": 159
+        },
+        "representative_lch": {
+          "l": 0.30000000000000004,
+          "c": 0.25,
+          "h": 252
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.3175444961375011,
+            -0.0228013739679937,
+            -0.21885188529732502
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 25648
+      },
+      "4": {
+        "l_bin": 3,
+        "h_bin": 4,
+        "c_bin": 2,
+        "l_center": 0.30000000000000004,
+        "l_min": 0.25000000000000006,
+        "l_max": 0.35000000000000003,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 324,
+        "h_min": 288,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 96,
+          "g": -46,
+          "b": 112
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 63,
+          "g": 0,
+          "b": 153
+        },
+        "representative_lch": {
+          "l": 0.30000000000000004,
+          "c": 0.25,
+          "h": 324
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.3493945842683435,
+            0.061920895378198004,
+            -0.19036011848800993
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 1
+      }
+    }
+  },
+  "4": {
+    "0": {
+      "0": {
+        "l_bin": 4,
+        "h_bin": 0,
+        "c_bin": 0,
+        "l_center": 0.4,
+        "l_min": 0.35000000000000003,
+        "l_max": 0.45,
+        "c_center": 0,
+        "c_min": 0,
+        "c_max": 0.1,
+        "h_center": 180,
+        "h_min": 0,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 72,
+          "g": 72,
+          "b": 72
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 72,
+          "g": 72,
+          "b": 72
+        },
+        "representative_lch": {
+          "l": 0.4,
+          "c": 0,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 0.4,
+          "a": 0,
+          "b": 0
+        },
+        "num_rgbs": 478069
+      }
+    },
+    "1": {
+      "0": {
+        "l_bin": 4,
+        "h_bin": 0,
+        "c_bin": 1,
+        "l_center": 0.4,
+        "l_min": 0.35000000000000003,
+        "l_max": 0.45,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 60,
+        "h_min": 0,
+        "h_max": 120,
+        "center_rgb": {
+          "r": 125,
+          "g": 41,
+          "b": -39
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 120,
+          "g": 51,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0.4,
+          "c": 0.15000000000000002,
+          "h": 60
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.4095523229903802,
+            0.07350903421468458,
+            0.08289848723346502
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 181823
+      },
+      "1": {
+        "l_bin": 4,
+        "h_bin": 1,
+        "c_bin": 1,
+        "l_center": 0.4,
+        "l_min": 0.35000000000000003,
+        "l_max": 0.45,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 180,
+        "h_min": 120,
+        "h_max": 240,
+        "center_rgb": {
+          "r": -70,
+          "g": 95,
+          "b": 75
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 0,
+          "g": 92,
+          "b": 53
+        },
+        "representative_lch": {
+          "l": 0.4,
+          "c": 0.15000000000000002,
+          "h": 180
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.41766466957788406,
+            -0.09189511916817097,
+            0.03968893659666228
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 66340
+      },
+      "2": {
+        "l_bin": 4,
+        "h_bin": 2,
+        "c_bin": 1,
+        "l_center": 0.4,
+        "l_min": 0.35000000000000003,
+        "l_max": 0.45,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 300,
+        "h_min": 240,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 86,
+          "g": 44,
+          "b": 139
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 86,
+          "g": 44,
+          "b": 139
+        },
+        "representative_lch": {
+          "l": 0.4,
+          "c": 0.15000000000000002,
+          "h": 300
+        },
+        "representative_lab": {
+          "l": 0.4,
+          "a": 0.07500000000000002,
+          "b": -0.1299038105676658
+        },
+        "num_rgbs": 505177
+      }
+    },
+    "2": {
+      "3": {
+        "l_bin": 4,
+        "h_bin": 3,
+        "c_bin": 2,
+        "l_center": 0.4,
+        "l_min": 0.35000000000000003,
+        "l_max": 0.45,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 252,
+        "h_min": 216,
+        "h_max": 288,
+        "center_rgb": {
+          "r": -53,
+          "g": 51,
+          "b": 199
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 0,
+          "g": 37,
+          "b": 199
+        },
+        "representative_lch": {
+          "l": 0.4,
+          "c": 0.25,
+          "h": 252
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.40172711900901803,
+            -0.024739963863825654,
+            -0.24059226875684447
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 291862
+      },
+      "4": {
+        "l_bin": 4,
+        "h_bin": 4,
+        "c_bin": 2,
+        "l_center": 0.4,
+        "l_min": 0.35000000000000003,
+        "l_max": 0.45,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 324,
+        "h_min": 288,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 128,
+          "g": -44,
+          "b": 144
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 123,
+          "g": 0,
+          "b": 142
+        },
+        "representative_lch": {
+          "l": 0.4,
+          "c": 0.25,
+          "h": 324
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.42254267036059606,
+            0.1566675813846209,
+            -0.12717003450485254
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 65500
+      }
+    },
+    "3": {
+      "5": {
+        "l_bin": 4,
+        "h_bin": 5,
+        "c_bin": 3,
+        "l_center": 0.4,
+        "l_min": 0.35000000000000003,
+        "l_max": 0.45,
+        "c_center": 0.35000000000000003,
+        "c_min": 0.30000000000000004,
+        "c_max": 0.4,
+        "h_center": 282.8571428571429,
+        "h_min": 257.14285714285717,
+        "h_max": 308.57142857142856,
+        "center_rgb": {
+          "r": 83,
+          "g": -75,
+          "b": 248
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 35,
+          "g": 0,
+          "b": 247
+        },
+        "representative_lch": {
+          "l": 0.4,
+          "c": 0.35000000000000003,
+          "h": 282.8571428571429
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.44907325802640025,
+            -0.011491955497653472,
+            -0.29996576404628256
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 2659
+      }
+    }
+  },
+  "5": {
+    "0": {
+      "0": {
+        "l_bin": 5,
+        "h_bin": 0,
+        "c_bin": 0,
+        "l_center": 0.5,
+        "l_min": 0.45,
+        "l_max": 0.55,
+        "c_center": 0,
+        "c_min": 0,
+        "c_max": 0.1,
+        "h_center": 180,
+        "h_min": 0,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 99,
+          "g": 99,
+          "b": 99
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 99,
+          "g": 99,
+          "b": 99
+        },
+        "representative_lch": {
+          "l": 0.5,
+          "c": 0,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 0.5,
+          "a": 0,
+          "b": 0
+        },
+        "num_rgbs": 602743
+      }
+    },
+    "1": {
+      "0": {
+        "l_bin": 5,
+        "h_bin": 0,
+        "c_bin": 1,
+        "l_center": 0.5,
+        "l_min": 0.45,
+        "l_max": 0.55,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 60,
+        "h_min": 0,
+        "h_max": 120,
+        "center_rgb": {
+          "r": 158,
+          "g": 71,
+          "b": -40
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 154,
+          "g": 76,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0.5,
+          "c": 0.15000000000000002,
+          "h": 60
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.5044401788263077,
+            0.07464112961460939,
+            0.10227970943534415
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 411013
+      },
+      "1": {
+        "l_bin": 5,
+        "h_bin": 1,
+        "c_bin": 1,
+        "l_center": 0.5,
+        "l_min": 0.45,
+        "l_max": 0.55,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 180,
+        "h_min": 120,
+        "h_max": 240,
+        "center_rgb": {
+          "r": -77,
+          "g": 125,
+          "b": 102
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 0,
+          "g": 120,
+          "b": 91
+        },
+        "representative_lch": {
+          "l": 0.5,
+          "c": 0.15000000000000002,
+          "h": 180
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.5088205087355243,
+            -0.100316507383549,
+            0.02027010463719159
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 237957
+      },
+      "2": {
+        "l_bin": 5,
+        "h_bin": 2,
+        "c_bin": 1,
+        "l_center": 0.5,
+        "l_min": 0.45,
+        "l_max": 0.55,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 300,
+        "h_min": 240,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 114,
+          "g": 74,
+          "b": 171
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 114,
+          "g": 74,
+          "b": 171
+        },
+        "representative_lch": {
+          "l": 0.5,
+          "c": 0.15000000000000002,
+          "h": 300
+        },
+        "representative_lab": {
+          "l": 0.5,
+          "a": 0.07500000000000002,
+          "b": -0.1299038105676658
+        },
+        "num_rgbs": 605112
+      }
+    },
+    "2": {
+      "0": {
+        "l_bin": 5,
+        "h_bin": 0,
+        "c_bin": 2,
+        "l_center": 0.5,
+        "l_min": 0.45,
+        "l_max": 0.55,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 36,
+        "h_min": 0,
+        "h_max": 72,
+        "center_rgb": {
+          "r": 203,
+          "g": -48,
+          "b": -49
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 196,
+          "g": 0,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0.5,
+          "c": 0.25,
+          "h": 36
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.5151236117690963,
+            0.1844594100413107,
+            0.10323407144960267
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 67866
+      },
+      "3": {
+        "l_bin": 5,
+        "h_bin": 3,
+        "c_bin": 2,
+        "l_center": 0.5,
+        "l_min": 0.45,
+        "l_max": 0.55,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 252,
+        "h_min": 216,
+        "h_max": 288,
+        "center_rgb": {
+          "r": -64,
+          "g": 88,
+          "b": 234
+        },
+        "hueColorCount": 100,
+        "representative_rgb": {
+          "r": 0,
+          "g": 81,
+          "b": 232
+        },
+        "representative_lch": {
+          "l": 0.5,
+          "c": 0.25,
+          "h": 252
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.5041608427809797,
+            -0.03213114959640889,
+            -0.23462586244166578
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 360776
+      },
+      "4": {
+        "l_bin": 5,
+        "h_bin": 4,
+        "c_bin": 2,
+        "l_center": 0.5,
+        "l_min": 0.45,
+        "l_max": 0.55,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 324,
+        "h_min": 288,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 161,
+          "g": -24,
+          "b": 176
+        },
+        "hueColorCount": 35,
+        "representative_rgb": {
+          "r": 160,
+          "g": 0,
+          "b": 176
+        },
+        "representative_lch": {
+          "l": 0.5,
+          "c": 0.25,
+          "h": 324
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.5058691233475956,
+            0.19135827021868274,
+            -0.14251326530729974
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 418896
+      }
+    },
+    "3": {
+      "5": {
+        "l_bin": 5,
+        "h_bin": 5,
+        "c_bin": 3,
+        "l_center": 0.5,
+        "l_min": 0.45,
+        "l_max": 0.55,
+        "c_center": 0.35000000000000003,
+        "c_min": 0.30000000000000004,
+        "c_max": 0.4,
+        "h_center": 282.8571428571429,
+        "h_min": 257.14285714285717,
+        "h_max": 308.57142857142856,
+        "center_rgb": {
+          "r": 101,
+          "g": -60,
+          "b": 286
+        },
+        "hueColorCount": 104,
+        "representative_rgb": {
+          "r": 66,
+          "g": 0,
+          "b": 255
+        },
+        "representative_lch": {
+          "l": 0.5,
+          "c": 0.35000000000000003,
+          "h": 282.8571428571429
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.4751095034335604,
+            0.02297179986998482,
+            -0.29917090533200463
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 8174
+      }
+    }
+  },
+  "6": {
+    "0": {
+      "0": {
+        "l_bin": 6,
+        "h_bin": 0,
+        "c_bin": 0,
+        "l_center": 0.6000000000000001,
+        "l_min": 0.55,
+        "l_max": 0.6500000000000001,
+        "c_center": 0,
+        "c_min": 0,
+        "c_max": 0.1,
+        "h_center": 180,
+        "h_min": 0,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 128,
+          "g": 128,
+          "b": 128
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 128,
+          "g": 128,
+          "b": 128
+        },
+        "representative_lch": {
+          "l": 0.6000000000000001,
+          "c": 0,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 0.6000000000000001,
+          "a": 0,
+          "b": 0
+        },
+        "num_rgbs": 639337
+      }
+    },
+    "1": {
+      "0": {
+        "l_bin": 6,
+        "h_bin": 0,
+        "c_bin": 1,
+        "l_center": 0.6000000000000001,
+        "l_min": 0.55,
+        "l_max": 0.6500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 60,
+        "h_min": 0,
+        "h_max": 120,
+        "center_rgb": {
+          "r": 191,
+          "g": 102,
+          "b": -25
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 190,
+          "g": 103,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0.6000000000000001,
+          "c": 0.15000000000000002,
+          "h": 60
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.6019368140554692,
+            0.07513779572711404,
+            0.12220028714646308
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 546395
+      },
+      "1": {
+        "l_bin": 6,
+        "h_bin": 1,
+        "c_bin": 1,
+        "l_center": 0.6000000000000001,
+        "l_min": 0.55,
+        "l_max": 0.6500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 180,
+        "h_min": 120,
+        "h_max": 240,
+        "center_rgb": {
+          "r": -78,
+          "g": 156,
+          "b": 132
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 0,
+          "g": 152,
+          "b": 124
+        },
+        "representative_lch": {
+          "l": 0.6000000000000001,
+          "c": 0.15000000000000002,
+          "h": 180
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.6061198056687604,
+            -0.11509612425935667,
+            0.013120426992441592
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 551794
+      },
+      "2": {
+        "l_bin": 6,
+        "h_bin": 2,
+        "c_bin": 1,
+        "l_center": 0.6000000000000001,
+        "l_min": 0.55,
+        "l_max": 0.6500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 300,
+        "h_min": 240,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 143,
+          "g": 104,
+          "b": 203
+        },
+        "hueColorCount": 7,
+        "representative_rgb": {
+          "r": 143,
+          "g": 104,
+          "b": 203
+        },
+        "representative_lch": {
+          "l": 0.6000000000000001,
+          "c": 0.15000000000000002,
+          "h": 300
+        },
+        "representative_lab": {
+          "l": 0.6000000000000001,
+          "a": 0.07500000000000002,
+          "b": -0.1299038105676658
+        },
+        "num_rgbs": 647696
+      }
+    },
+    "2": {
+      "0": {
+        "l_bin": 6,
+        "h_bin": 0,
+        "c_bin": 2,
+        "l_center": 0.6000000000000001,
+        "l_min": 0.55,
+        "l_max": 0.6500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 36,
+        "h_min": 0,
+        "h_max": 72,
+        "center_rgb": {
+          "r": 240,
+          "g": 11,
+          "b": -47
+        },
+        "hueColorCount": 192,
+        "representative_rgb": {
+          "r": 238,
+          "g": 33,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0.6000000000000001,
+          "c": 0.25,
+          "h": 36
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.6055059952029485,
+            0.2019638487753869,
+            0.12151694563153997
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 386133
+      },
+      "1": {
+        "l_bin": 6,
+        "h_bin": 1,
+        "c_bin": 2,
+        "l_center": 0.6000000000000001,
+        "l_min": 0.55,
+        "l_max": 0.6500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 108,
+        "h_min": 72,
+        "h_max": 144,
+        "center_rgb": {
+          "r": 147,
+          "g": 132,
+          "b": -90
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 62,
+          "g": 166,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0.6000000000000001,
+          "c": 0.25,
+          "h": 108
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.6387204870880915,
+            -0.1503033402964601,
+            0.1320965039099889
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 25429
+      },
+      "2": {
+        "l_bin": 6,
+        "h_bin": 2,
+        "c_bin": 2,
+        "l_center": 0.6000000000000001,
+        "l_min": 0.55,
+        "l_max": 0.6500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 180,
+        "h_min": 144,
+        "h_max": 216,
+        "center_rgb": {
+          "r": -136,
+          "g": 170,
+          "b": 134
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 0,
+          "g": 165,
+          "b": 39
+        },
+        "representative_lch": {
+          "l": 0.6000000000000001,
+          "c": 0.25,
+          "h": 180
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.6270743854057482,
+            -0.16296764308867306,
+            0.11621514460367055
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 1403
+      },
+      "3": {
+        "l_bin": 6,
+        "h_bin": 3,
+        "c_bin": 2,
+        "l_center": 0.6000000000000001,
+        "l_min": 0.55,
+        "l_max": 0.6500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 252,
+        "h_min": 216,
+        "h_max": 288,
+        "center_rgb": {
+          "r": -68,
+          "g": 122,
+          "b": 269
+        },
+        "hueColorCount": 43,
+        "representative_rgb": {
+          "r": 0,
+          "g": 118,
+          "b": 255
+        },
+        "representative_lch": {
+          "l": 0.6000000000000001,
+          "c": 0.25,
+          "h": 252
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.5946388261878228,
+            -0.04537471946837057,
+            -0.217659861100024
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 82593
+      },
+      "4": {
+        "l_bin": 6,
+        "h_bin": 4,
+        "c_bin": 2,
+        "l_center": 0.6000000000000001,
+        "l_min": 0.55,
+        "l_max": 0.6500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 324,
+        "h_min": 288,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 195,
+          "g": 47,
+          "b": 209
+        },
+        "hueColorCount": 40,
+        "representative_rgb": {
+          "r": 195,
+          "g": 47,
+          "b": 209
+        },
+        "representative_lch": {
+          "l": 0.6000000000000001,
+          "c": 0.25,
+          "h": 324
+        },
+        "representative_lab": {
+          "l": 0.6000000000000001,
+          "a": 0.20225424859373684,
+          "b": -0.14694631307311834
+        },
+        "num_rgbs": 680194
+      }
+    },
+    "3": {
+      "6": {
+        "l_bin": 6,
+        "h_bin": 6,
+        "c_bin": 3,
+        "l_center": 0.6000000000000001,
+        "l_min": 0.55,
+        "l_max": 0.6500000000000001,
+        "c_center": 0.35000000000000003,
+        "c_min": 0.30000000000000004,
+        "c_max": 0.4,
+        "h_center": 334.2857142857143,
+        "h_min": 308.57142857142856,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 234,
+          "g": -78,
+          "b": 209
+        },
+        "hueColorCount": 43,
+        "representative_rgb": {
+          "r": 228,
+          "g": 0,
+          "b": 234
+        },
+        "representative_lch": {
+          "l": 0.6000000000000001,
+          "c": 0.35000000000000003,
+          "h": 334.2857142857143
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.6483831586634742,
+            0.2516002860103512,
+            -0.16365171563545755
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 6288
+      }
+    }
+  },
+  "7": {
+    "0": {
+      "0": {
+        "l_bin": 7,
+        "h_bin": 0,
+        "c_bin": 0,
+        "l_center": 0.7000000000000001,
+        "l_min": 0.65,
+        "l_max": 0.7500000000000001,
+        "c_center": 0,
+        "c_min": 0,
+        "c_max": 0.1,
+        "h_center": 180,
+        "h_min": 0,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 158,
+          "g": 158,
+          "b": 158
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 158,
+          "g": 158,
+          "b": 158
+        },
+        "representative_lch": {
+          "l": 0.7000000000000001,
+          "c": 0,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 0.7000000000000001,
+          "a": 0,
+          "b": 0
+        },
+        "num_rgbs": 658725
+      }
+    },
+    "1": {
+      "0": {
+        "l_bin": 7,
+        "h_bin": 0,
+        "c_bin": 1,
+        "l_center": 0.7000000000000001,
+        "l_min": 0.65,
+        "l_max": 0.7500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 60,
+        "h_min": 0,
+        "h_max": 120,
+        "center_rgb": {
+          "r": 225,
+          "g": 133,
+          "b": 40
+        },
+        "hueColorCount": 32,
+        "representative_rgb": {
+          "r": 225,
+          "g": 133,
+          "b": 40
+        },
+        "representative_lch": {
+          "l": 0.7000000000000001,
+          "c": 0.15000000000000002,
+          "h": 60
+        },
+        "representative_lab": {
+          "l": 0.7000000000000001,
+          "a": 0.07500000000000002,
+          "b": 0.1299038105676658
+        },
+        "num_rgbs": 666937
+      },
+      "1": {
+        "l_bin": 7,
+        "h_bin": 1,
+        "c_bin": 1,
+        "l_center": 0.7000000000000001,
+        "l_min": 0.65,
+        "l_max": 0.7500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 180,
+        "h_min": 120,
+        "h_max": 240,
+        "center_rgb": {
+          "r": -68,
+          "g": 188,
+          "b": 162
+        },
+        "hueColorCount": 14,
+        "representative_rgb": {
+          "r": 0,
+          "g": 185,
+          "b": 157
+        },
+        "representative_lch": {
+          "l": 0.7000000000000001,
+          "c": 0.15000000000000002,
+          "h": 180
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.7023269985376357,
+            -0.13039580570327702,
+            0.007651896061583452
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 839730
+      },
+      "2": {
+        "l_bin": 7,
+        "h_bin": 2,
+        "c_bin": 1,
+        "l_center": 0.7000000000000001,
+        "l_min": 0.65,
+        "l_max": 0.7500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 300,
+        "h_min": 240,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 173,
+          "g": 135,
+          "b": 237
+        },
+        "hueColorCount": 30,
+        "representative_rgb": {
+          "r": 173,
+          "g": 135,
+          "b": 237
+        },
+        "representative_lch": {
+          "l": 0.7000000000000001,
+          "c": 0.15000000000000002,
+          "h": 300
+        },
+        "representative_lab": {
+          "l": 0.7000000000000001,
+          "a": 0.07500000000000002,
+          "b": -0.1299038105676658
+        },
+        "num_rgbs": 508951
+      }
+    },
+    "2": {
+      "0": {
+        "l_bin": 7,
+        "h_bin": 0,
+        "c_bin": 2,
+        "l_center": 0.7000000000000001,
+        "l_min": 0.65,
+        "l_max": 0.7500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 36,
+        "h_min": 0,
+        "h_max": 72,
+        "center_rgb": {
+          "r": 278,
+          "g": 71,
+          "b": -25
+        },
+        "hueColorCount": 51,
+        "representative_rgb": {
+          "r": 255,
+          "g": 81,
+          "b": 10
+        },
+        "representative_lch": {
+          "l": 0.7000000000000001,
+          "c": 0.25,
+          "h": 36
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.6718978058105952,
+            0.1748752870262855,
+            0.133356091985243
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 60190
+      },
+      "1": {
+        "l_bin": 7,
+        "h_bin": 1,
+        "c_bin": 2,
+        "l_center": 0.7000000000000001,
+        "l_min": 0.65,
+        "l_max": 0.7500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 108,
+        "h_min": 72,
+        "h_max": 144,
+        "center_rgb": {
+          "r": 177,
+          "g": 164,
+          "b": -100
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 122,
+          "g": 192,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0.7000000000000001,
+          "c": 0.25,
+          "h": 108
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.7326474554288734,
+            -0.13107069209462846,
+            0.15109674022608494
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 184904
+      },
+      "2": {
+        "l_bin": 7,
+        "h_bin": 2,
+        "c_bin": 2,
+        "l_center": 0.7000000000000001,
+        "l_min": 0.65,
+        "l_max": 0.7500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 180,
+        "h_min": 144,
+        "h_max": 216,
+        "center_rgb": {
+          "r": -148,
+          "g": 203,
+          "b": 164
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 0,
+          "g": 200,
+          "b": 93
+        },
+        "representative_lch": {
+          "l": 0.7000000000000001,
+          "c": 0.25,
+          "h": 180
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.7278833001379315,
+            -0.1735300608852689,
+            0.10006787715422999
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 53164
+      },
+      "4": {
+        "l_bin": 7,
+        "h_bin": 4,
+        "c_bin": 2,
+        "l_center": 0.7000000000000001,
+        "l_min": 0.65,
+        "l_max": 0.7500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 324,
+        "h_min": 288,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 229,
+          "g": 86,
+          "b": 243
+        },
+        "hueColorCount": 74,
+        "representative_rgb": {
+          "r": 229,
+          "g": 86,
+          "b": 243
+        },
+        "representative_lch": {
+          "l": 0.7000000000000001,
+          "c": 0.25,
+          "h": 324
+        },
+        "representative_lab": {
+          "l": 0.7000000000000001,
+          "a": 0.20225424859373684,
+          "b": -0.14694631307311834
+        },
+        "num_rgbs": 325655
+      }
+    },
+    "3": {
+      "6": {
+        "l_bin": 7,
+        "h_bin": 6,
+        "c_bin": 3,
+        "l_center": 0.7000000000000001,
+        "l_min": 0.65,
+        "l_max": 0.7500000000000001,
+        "c_center": 0.35000000000000003,
+        "c_min": 0.30000000000000004,
+        "c_max": 0.4,
+        "h_center": 334.2857142857143,
+        "h_min": 308.57142857142856,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 272,
+          "g": -61,
+          "b": 243
+        },
+        "hueColorCount": 73,
+        "representative_rgb": {
+          "r": 255,
+          "g": 0,
+          "b": 243
+        },
+        "representative_lch": {
+          "l": 0.7000000000000001,
+          "c": 0.35000000000000003,
+          "h": 334.2857142857143
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.6947773787151704,
+            0.2755751738398848,
+            -0.1528645288791617
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 27642
+      }
+    }
+  },
+  "8": {
+    "0": {
+      "0": {
+        "l_bin": 8,
+        "h_bin": 0,
+        "c_bin": 0,
+        "l_center": 0.8,
+        "l_min": 0.75,
+        "l_max": 0.8500000000000001,
+        "c_center": 0,
+        "c_min": 0,
+        "c_max": 0.1,
+        "h_center": 180,
+        "h_min": 0,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 190,
+          "g": 190,
+          "b": 190
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 190,
+          "g": 190,
+          "b": 190
+        },
+        "representative_lch": {
+          "l": 0.8,
+          "c": 0,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 0.8,
+          "a": 0,
+          "b": 0
+        },
+        "num_rgbs": 687477
+      }
+    },
+    "1": {
+      "0": {
+        "l_bin": 8,
+        "h_bin": 0,
+        "c_bin": 1,
+        "l_center": 0.8,
+        "l_min": 0.75,
+        "l_max": 0.8500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 60,
+        "h_min": 0,
+        "h_max": 120,
+        "center_rgb": {
+          "r": 259,
+          "g": 164,
+          "b": 78
+        },
+        "hueColorCount": 57,
+        "representative_rgb": {
+          "r": 255,
+          "g": 165,
+          "b": 80
+        },
+        "representative_lch": {
+          "l": 0.8,
+          "c": 0.15000000000000002,
+          "h": 60
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.7966572013225773,
+            0.06977683272409874,
+            0.12761860795855096
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 498387
+      },
+      "1": {
+        "l_bin": 8,
+        "h_bin": 1,
+        "c_bin": 1,
+        "l_center": 0.8,
+        "l_min": 0.75,
+        "l_max": 0.8500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 180,
+        "h_min": 120,
+        "h_max": 240,
+        "center_rgb": {
+          "r": -34,
+          "g": 220,
+          "b": 193
+        },
+        "hueColorCount": 43,
+        "representative_rgb": {
+          "r": 0,
+          "g": 220,
+          "b": 192
+        },
+        "representative_lch": {
+          "l": 0.8,
+          "c": 0.15000000000000002,
+          "h": 180
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.8009340770744923,
+            -0.14617286591503786,
+            0.0022225364391372793
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 951187
+      },
+      "2": {
+        "l_bin": 8,
+        "h_bin": 2,
+        "c_bin": 1,
+        "l_center": 0.8,
+        "l_min": 0.75,
+        "l_max": 0.8500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 300,
+        "h_min": 240,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 205,
+          "g": 166,
+          "b": 271
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 206,
+          "g": 164,
+          "b": 255
+        },
+        "representative_lch": {
+          "l": 0.8,
+          "c": 0.15000000000000002,
+          "h": 300
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.7898717260878084,
+            0.07571968926653044,
+            -0.10915521176309839
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 165118
+      }
+    },
+    "2": {
+      "1": {
+        "l_bin": 8,
+        "h_bin": 1,
+        "c_bin": 2,
+        "l_center": 0.8,
+        "l_min": 0.75,
+        "l_max": 0.8500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 108,
+        "h_min": 72,
+        "h_max": 144,
+        "center_rgb": {
+          "r": 208,
+          "g": 197,
+          "b": -104
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 176,
+          "g": 216,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0.8,
+          "c": 0.25,
+          "h": 108
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.823562499995109,
+            -0.10638990364224343,
+            0.16942169104988064
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 434948
+      },
+      "2": {
+        "l_bin": 8,
+        "h_bin": 2,
+        "c_bin": 2,
+        "l_center": 0.8,
+        "l_min": 0.75,
+        "l_max": 0.8500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 180,
+        "h_min": 144,
+        "h_max": 216,
+        "center_rgb": {
+          "r": -156,
+          "g": 237,
+          "b": 196
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 0,
+          "g": 232,
+          "b": 137
+        },
+        "representative_lch": {
+          "l": 0.8,
+          "c": 0.25,
+          "h": 180
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.818168414881477,
+            -0.18220310419677604,
+            0.08288083368670207
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 183598
+      },
+      "4": {
+        "l_bin": 8,
+        "h_bin": 4,
+        "c_bin": 2,
+        "l_center": 0.8,
+        "l_min": 0.75,
+        "l_max": 0.8500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 324,
+        "h_min": 288,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 264,
+          "g": 120,
+          "b": 278
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 255,
+          "g": 119,
+          "b": 255
+        },
+        "representative_lch": {
+          "l": 0.8,
+          "c": 0.25,
+          "h": 324
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.7758426121845275,
+            0.19199179638717195,
+            -0.12234201066106465
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 8934
+      }
+    }
+  },
+  "9": {
+    "0": {
+      "0": {
+        "l_bin": 9,
+        "h_bin": 0,
+        "c_bin": 0,
+        "l_center": 0.9,
+        "l_min": 0.85,
+        "l_max": 0.9500000000000001,
+        "c_center": 0,
+        "c_min": 0,
+        "c_max": 0.1,
+        "h_center": 180,
+        "h_min": 0,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 222,
+          "g": 222,
+          "b": 222
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 222,
+          "g": 222,
+          "b": 222
+        },
+        "representative_lch": {
+          "l": 0.9,
+          "c": 0,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 0.9,
+          "a": 0,
+          "b": 0
+        },
+        "num_rgbs": 468864
+      }
+    },
+    "1": {
+      "0": {
+        "l_bin": 9,
+        "h_bin": 0,
+        "c_bin": 1,
+        "l_center": 0.9,
+        "l_min": 0.85,
+        "l_max": 0.9500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 60,
+        "h_min": 0,
+        "h_max": 120,
+        "center_rgb": {
+          "r": 294,
+          "g": 197,
+          "b": 112
+        },
+        "hueColorCount": 45,
+        "representative_rgb": {
+          "r": 255,
+          "g": 202,
+          "b": 125
+        },
+        "representative_lch": {
+          "l": 0.9,
+          "c": 0.15000000000000002,
+          "h": 60
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.8698356238837076,
+            0.02773126921224367,
+            0.10884962483871474
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 302511
+      },
+      "1": {
+        "l_bin": 9,
+        "h_bin": 1,
+        "c_bin": 1,
+        "l_center": 0.9,
+        "l_min": 0.85,
+        "l_max": 0.9500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 180,
+        "h_min": 120,
+        "h_max": 240,
+        "center_rgb": {
+          "r": 67,
+          "g": 254,
+          "b": 226
+        },
+        "hueColorCount": 109,
+        "representative_rgb": {
+          "r": 67,
+          "g": 254,
+          "b": 226
+        },
+        "representative_lch": {
+          "l": 0.9,
+          "c": 0.15000000000000002,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 0.9,
+          "a": -0.15000000000000002,
+          "b": 1.83697019872103e-17
+        },
+        "num_rgbs": 568373
+      },
+      "2": {
+        "l_bin": 9,
+        "h_bin": 2,
+        "c_bin": 1,
+        "l_center": 0.9,
+        "l_min": 0.85,
+        "l_max": 0.9500000000000001,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 300,
+        "h_min": 240,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 237,
+          "g": 198,
+          "b": 307
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 241,
+          "g": 190,
+          "b": 255
+        },
+        "representative_lch": {
+          "l": 0.9,
+          "c": 0.15000000000000002,
+          "h": 300
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.8675727551961385,
+            0.07776553768653427,
+            -0.06787626258731416
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 4065
+      }
+    },
+    "2": {
+      "1": {
+        "l_bin": 9,
+        "h_bin": 1,
+        "c_bin": 2,
+        "l_center": 0.9,
+        "l_min": 0.85,
+        "l_max": 0.9500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 108,
+        "h_min": 72,
+        "h_max": 144,
+        "center_rgb": {
+          "r": 241,
+          "g": 230,
+          "b": -103
+        },
+        "hueColorCount": 293,
+        "representative_rgb": {
+          "r": 228,
+          "g": 238,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 0.9,
+          "c": 0.25,
+          "h": 108
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.910729247815789,
+            -0.07871535240388589,
+            0.1869463878250749
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 326117
+      },
+      "2": {
+        "l_bin": 9,
+        "h_bin": 2,
+        "c_bin": 2,
+        "l_center": 0.9,
+        "l_min": 0.85,
+        "l_max": 0.9500000000000001,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 180,
+        "h_min": 144,
+        "h_max": 216,
+        "center_rgb": {
+          "r": -161,
+          "g": 272,
+          "b": 228
+        },
+        "hueColorCount": 113,
+        "representative_rgb": {
+          "r": 0,
+          "g": 255,
+          "b": 169
+        },
+        "representative_lch": {
+          "l": 0.9,
+          "c": 0.25,
+          "h": 180
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.882225530908375,
+            -0.18778557469666007,
+            0.06884705712839978
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 90702
+      }
+    }
+  },
+  "10": {
+    "0": {
+      "0": {
+        "l_bin": 10,
+        "h_bin": 0,
+        "c_bin": 0,
+        "l_center": 1,
+        "l_min": 0.95,
+        "l_max": 1.05,
+        "c_center": 0,
+        "c_min": 0,
+        "c_max": 0.1,
+        "h_center": 180,
+        "h_min": 0,
+        "h_max": 360,
+        "center_rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 255
+        },
+        "representative_lch": {
+          "l": 1,
+          "c": 0,
+          "h": 180
+        },
+        "representative_lab": {
+          "l": 1,
+          "a": 0,
+          "b": 0
+        },
+        "num_rgbs": 50509
+      }
+    },
+    "1": {
+      "0": {
+        "l_bin": 10,
+        "h_bin": 0,
+        "c_bin": 1,
+        "l_center": 1,
+        "l_min": 0.95,
+        "l_max": 1.05,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 60,
+        "h_min": 0,
+        "h_max": 120,
+        "center_rgb": {
+          "r": 330,
+          "g": 230,
+          "b": 146
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 255,
+          "g": 241,
+          "b": 161
+        },
+        "representative_lch": {
+          "l": 1,
+          "c": 0.15000000000000002,
+          "h": 60
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.9514644483127396,
+            -0.01664410496921248,
+            0.09940974012840254
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 23266
+      },
+      "1": {
+        "l_bin": 10,
+        "h_bin": 1,
+        "c_bin": 1,
+        "l_center": 1,
+        "l_min": 0.95,
+        "l_max": 1.05,
+        "c_center": 0.15000000000000002,
+        "c_min": 0.1,
+        "c_max": 0.2,
+        "h_center": 180,
+        "h_min": 120,
+        "h_max": 240,
+        "center_rgb": {
+          "r": 113,
+          "g": 288,
+          "b": 259
+        },
+        "hueColorCount": 0,
+        "representative_rgb": {
+          "r": 207,
+          "g": 255,
+          "b": 188
+        },
+        "representative_lch": {
+          "l": 1,
+          "c": 0.15000000000000002,
+          "h": 180
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.9501288140599946,
+            -0.07370751486796528,
+            0.06881884913602188
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 2117
+      }
+    },
+    "2": {
+      "1": {
+        "l_bin": 10,
+        "h_bin": 1,
+        "c_bin": 2,
+        "l_center": 1,
+        "l_min": 0.95,
+        "l_max": 1.05,
+        "c_center": 0.25,
+        "c_min": 0.2,
+        "c_max": 0.30000000000000004,
+        "h_center": 108,
+        "h_min": 72,
+        "h_max": 144,
+        "center_rgb": {
+          "r": 274,
+          "g": 265,
+          "b": -92
+        },
+        "hueColorCount": 32,
+        "representative_rgb": {
+          "r": 255,
+          "g": 255,
+          "b": 0
+        },
+        "representative_lch": {
+          "l": 1,
+          "c": 0.25,
+          "h": 108
+        },
+        "representative_lab": {
+          "spaceId": "oklab",
+          "coords": [
+            0.9679827267927991,
+            -0.07136908291823663,
+            0.19856971763168096
+          ],
+          "alpha": 1
+        },
+        "num_rgbs": 6124
+      }
+    }
+  }
+}
