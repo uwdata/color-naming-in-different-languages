@@ -517,13 +517,13 @@ function drawColorTiles(saliencies){
             d.h_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.c_bin]
             //d.h_bin*curr_bin_size.tileSize +150*d.c_bin
             :
-            d.a_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.l_bin])
+            -d.b_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.l_bin])
       .attr("y", (d) => {
         return curr_bin_size.type == "ring" ?
         -d.l_bin*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
         //-d.l_bin*curr_bin_size.tileSize +300//+ l_bin_y_offsets[curr_bin_size]
         :
-        -d.b_bin*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
+        -d.a_bin*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
       })
       .attr("fill", (d) => {
             let bin = curr_bin_size.type == "ring" ? lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin] : lab_bins[curr_bin_size][d.l_bin][d.a_bin][d.b_bin]

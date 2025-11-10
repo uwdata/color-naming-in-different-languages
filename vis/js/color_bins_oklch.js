@@ -660,10 +660,10 @@ function drawColorRingTiles(saliencies){
         const levelCenterX = 30 + (Object.keys(lab_bins[curr_bin_size]).length - 1 - bin.l_bin) * 100
         const levelCenterY = 70
         const binRadius = bin.c_center/curr_bin_size.c*curr_bin_size.tileSize *.5
-        const startAngleMargin = bin.h_min + 8 / bin.c_center * curr_bin_size.c 
-          + 90 // rotate 90 degrees
-        const endAngleMargin = bin.h_max - 8 / bin.c_center * curr_bin_size.c
-          + 90 // rotate 90 degrees
+        const endAngleMargin = -(bin.h_min + 8 / bin.c_center * curr_bin_size.c)
+          - 90 // rotate 90 degrees
+        const startAngleMargin = -(bin.h_max - 8 / bin.c_center * curr_bin_size.c)
+          - 90 // rotate 90 degrees
         const binStartDeltaX = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
         const binStartX = levelCenterX + binStartDeltaX
         const binEndDeltaX = binRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
