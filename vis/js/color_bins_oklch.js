@@ -464,17 +464,20 @@ function updateDisplay(){
   d3.select('#vis')
     .append("div")
       .attr("class", "lang-map")
-      .attr("id", `lang`)
-      .style("min-width", svg_widths[curr_bin_size] + 5 +"px")
-  
-  d3.select('#vis')
-    .append("div")
-      .attr("class", "lang-map")
       .attr("id", `rings`)
       .style("min-width", svg_widths[curr_bin_size] + 5 +"px")
 
-  createOrRefreshTiles()
+  d3.select('#vis')
+    .append("div")
+      .attr("class", "lang-map")
+      .attr("id", `lang`)
+      .style("min-width", svg_widths[curr_bin_size] + 5 +"px")
+  
+
+
   createOrRefreshRingTiles()
+  createOrRefreshTiles()
+
 }
 
 
@@ -606,9 +609,46 @@ function createOrRefreshRingTiles(){
 }
 
 function drawColorRingTiles(saliencies){
+
+  
   const svg = d3.select("#rings" + " svg")
+
   svg.selectAll(".tile")
-    .data(saliencies)
+    .data(saliencies.filter(d => d.c_bin == 0))
+    .join("circle")
+      .attr("class", "circle-tile")
+      .attr("cx", d =>  30 + (Object.keys(lab_bins[curr_bin_size]).length - 1 - d.l_bin) * 100)
+      .attr("cy", d =>  70)
+      .attr("r",  d => {
+        let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
+        const binRadius = bin.c_max/curr_bin_size.c*curr_bin_size.tileSize *.5 - 1
+        return binRadius
+      })
+      .attr("fill", d => {
+        let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
+        return `oklch(${bin.l_center} ${bin.c_center} ${bin.h_center})`
+      })
+      .attr("title", (d) => {
+        const [l,a,b] = curr_bin_size.type == "ring" ? [d.l_bin, d.c_bin, d.h_bin]: [d.l_bin, d.a_bin, d.b_bin]
+        const bin_info = lab_bins[curr_bin_size][l][a][b]
+        let info = `
+          ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
+          Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
+          Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
+          Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
+          ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
+              ?
+              `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
+              : ""
+          }`.trim()
+
+        return info
+      })
+      
+
+
+  svg.selectAll(".tile")
+    .data(saliencies.filter(d => d.c_bin != 0))
     .join("path")
       .attr("class", "tile")
       .style("stroke", d => {
@@ -617,26 +657,30 @@ function drawColorRingTiles(saliencies){
       })
       .attr("d", d => {
         let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
-        const levelCenterX = bin.l_bin * 100
-        const levelCenterY = 50
-        const binRadius = bin.c_center*curr_bin_size.tileSize
-        const binStartDeltaX = binRadius * Math.cos(bin.h_min / 360 * 2 * Math.PI) * curr_bin_size.tileSize 
+        const levelCenterX = 30 + (Object.keys(lab_bins[curr_bin_size]).length - 1 - bin.l_bin) * 100
+        const levelCenterY = 70
+        const binRadius = bin.c_center/curr_bin_size.c*curr_bin_size.tileSize *.5
+        const startAngleMargin = bin.h_min + 8 / bin.c_center * curr_bin_size.c 
+          + 90 // rotate 90 degrees
+        const endAngleMargin = bin.h_max - 8 / bin.c_center * curr_bin_size.c
+          + 90 // rotate 90 degrees
+        const binStartDeltaX = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
         const binStartX = levelCenterX + binStartDeltaX
-        const binEndDeltaX = binRadius * Math.cos(bin.h_max / 360 * 2 * Math.PI) * curr_bin_size.tileSize 
+        const binEndDeltaX = binRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
         const binEndX = levelCenterX  + binEndDeltaX
-        const binStartDeltaY = binRadius* Math.sin(bin.h_min / 360 * 2 * Math.PI) * curr_bin_size.tileSize 
+        const binStartDeltaY = binRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI)
         const binStartY = levelCenterY + binStartDeltaY
-        const binEndDeltaY = binRadius* Math.sin(bin.h_max / 360 * 2 * Math.PI) * curr_bin_size.tileSize 
+        const binEndDeltaY = binRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)  
         const binEndY = levelCenterY + binEndDeltaY
 
         //let binX = d.h_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.c_bin]
         
         return `
         M ${binStartX} ${binStartY} 
-        A ${binRadius*binRadius*curr_bin_size.tileSize} ${binRadius*binRadius*curr_bin_size.tileSize} 0 0 1 ${binEndX} ${binEndY}
+        A ${binRadius} ${binRadius} 0 0 1 ${binEndX} ${binEndY}
         `
       }) // A rx ry x-axis-rotation large-arc-flag sweep-flag x y
-      .style("stroke-width", curr_bin_size.tileSize)//d => curr_bin_size.tileBorderSize)
+      .style("stroke-width", curr_bin_size.tileSize *.5 - 1)//d => curr_bin_size.tileBorderSize)
       // .attr("x", (d) => 
       //     curr_bin_size.type == "ring" ? 
       //       d.h_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.c_bin]
@@ -667,24 +711,21 @@ function drawColorRingTiles(saliencies){
       //   })
       // .attr("height", getTileSize)
       // .attr("width", getTileSize)
-      // .attr("title", (d) => {
-      //   const [l,a,b] = curr_bin_size.type == "ring" ? [d.l_bin, d.c_bin, d.h_bin]: [d.l_bin, d.a_bin, d.b_bin]
-      //   const bin_info = lab_bins[curr_bin_size][l][a][b]
-      //   let info = `
-      //     ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
-      //     Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
-      //     Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
-      //     Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
-      //     ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
-      //         ?
-      //         `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
-      //         : ""
-      //     }`.trim()
+      .attr("title", (d) => {
+        const [l,a,b] = curr_bin_size.type == "ring" ? [d.l_bin, d.c_bin, d.h_bin]: [d.l_bin, d.a_bin, d.b_bin]
+        const bin_info = lab_bins[curr_bin_size][l][a][b]
+        let info = `
+          ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
+          Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
+          Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
+          Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
+          ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
+              ?
+              `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
+              : ""
+          }`.trim()
 
-      //   return info
-      // })
+        return info
+      })
 }
 
-function getRingTileSize(d){
-      return curr_bin_size.tileSize
-}
