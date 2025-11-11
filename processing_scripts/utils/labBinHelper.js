@@ -64,13 +64,16 @@ class BinSize {
     if(this.type == "cube"){
       this.ab = this.l
       this.abv = options.l.toPrecision(2) / 1
+      this.dims = ["l", "a", "b"]
     } else if(this.type == "box") {
       this.ab = options.ab;
       this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
+      this.dims = ["l", "a", "b"]
     } else if(this.type == "ring") {
       this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
       //this.start_angle = options.start_angle ? start_angle : 0; //assume 0 for now
       this.abv = "ring_" + options.l.toPrecision(2) / 1
+      this.dims = ["l", "c", "h"]
     }
     
   }
@@ -84,26 +87,21 @@ const LAB_BIN_SIZES = [
   new BinSize({
     type: "cube",
     l: 1/10}), 
-  // new BinSize({
-  //   type: "cube",
-  //   l: 1/40}),
-  // new BinSize({
-  //   type: "box",
-  //   l: 1/5, 
-  //   ab: 1/20}),
-  // new BinSize({
-  //   type: "box",
-  //   l: 1/10, 
-  //   ab: 1/40}), 
-  // new BinSize({
-  //   type: "box",
-  //   l: 1/15, 
-  //   ab: 1/60}),
-  // new BinSize({
-  //   type: "ring",
-  //   l: 1/10, //TOO small
-  //   //start_angle: 0 // assume 0 for now
-  // }),
+  new BinSize({
+    type: "cube",
+    l: 1/40}),
+  new BinSize({
+    type: "box",
+    l: 1/5, 
+    ab: 1/20}),
+  new BinSize({
+    type: "box",
+    l: 1/10, 
+    ab: 1/40}), 
+  new BinSize({
+    type: "box",
+    l: 1/15, 
+    ab: 1/60}),
   new BinSize({
     type: "ring",
     l: 1/10,
@@ -114,16 +112,16 @@ const LAB_BIN_SIZES = [
     l: 1/20,
     //start_angle: 0 // assume 0 for now
   }),
-  // new BinSize({
-  //   type: "ring",
-  //   l: 1/40,
-  //   //start_angle: 0 // assume 0 for now
-  // }),
-  // new BinSize({
-  //   type: "ring",
-  //   l: 1/60,
-  //   //start_angle: 0 // assume 0 for now
-  // })
+  new BinSize({
+    type: "ring",
+    l: 1/40,
+    //start_angle: 0 // assume 0 for now
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/60,
+    //start_angle: 0 // assume 0 for now
+  })
 ]
 
 function getLabBins(binSizeInfo){

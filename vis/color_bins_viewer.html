@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Full Color Maps - Color Naming in Different Language</title>
+    <meta name="og:description" content="Compare color distributions across the full color map in different languages.">
+    <meta name="og:image" content="color-maps-small.png">
+	
+	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script src="js/jquery-1.12.0.min.js"></script>
+  <link href="css/select2.min.css" rel="stylesheet" />
+  <script src="js/select2.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+
+  <script src="js/jquery-ui.min.js"></script>
+  <link href="css/jquery-ui.min.css" rel="stylesheet" />
+  <script>
+  $( function() {
+    $( document ).tooltip({
+      track: true, 
+      show: false, hide:false,
+      classes: {
+        "ui-tooltip": "small"
+      }
+    });
+  } );
+  </script>
+  <style>
+    .ui-tooltip-content {
+      font-size:10pt;
+      white-space: pre-line;
+      font-family:Calibri;
+    }
+
+    .form-label{
+      padding-right:5px;
+    }
+  </style>
+
+
+  <script src="js/d3.v7.min.js"></script>
+	
+  <script type="text/javascript" src="js/color_bins_viewer.js"></script>
+	
+	<script src="../addNavBar.js"></script>
+  </head>
+  <body>
+
+    <div class="container" id="main">
+	    <h1>Full Color Maps</h1>
+      <p>These visualizations represent how languages divide up the whole color spectrum.
+        <!-- 
+        For some reason, i need a tagged image with full gamut for wider gamut to display,
+        so I use a 1 px thumbnail of this image
+        https://commons.wikimedia.org/wiki/File:Bt.2020_RGB_color_cube.png -->
+        <img src="./Bt.2020_RGB_color_cube.png" />
+      </p>
+      <p>Each tile represents a uniform cube bin in <a href="https://en.wikipedia.org/wiki/CIELAB_color_space" target="_blank">LAB color space</a>. The size of each tile is proportional to the level of agreement on a color name for all colors in that bin.</p>
+
+      <div id="controllers">
+        <div class="form-check form-check-inline"> 
+          <label class="form-label" for="background-brightness">Background Brightness 
+              <span title='Note: When users labeled color tiles, the tiles had a thin black border against a white background, which may bias answers. They were perhaps more likely to label a color "black" and less likely to label a color "white."'>*</span>
+          </label>
+          <input class="" type="range" id="background-brightness" name="background-brightness" min="0" max="100" value="100" />
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-label" for="bin_size">LAB bin size</label> 
+          <select class="form-select w-auto d-inline-block small" id="bin_size" value="bin_size">
+          </select>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name="metric" id="ref_bins" value="ref_bins">
+          <label class="form-label" for="ref_bins">Show reference color bins</label> 
+        </div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#advanced_settings_modal">
+          Advanced Settings
+        </button>
+      </div>
+
+      <div class="modal" id="advanced_settings_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Advanced Settings</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="form-check">
+                <label class="form-label" for="tile_size">Tile size
+                  <span title='Uniform: All tiles are the same size
+                  Max P(T|C): the most likely color name ("Max") in the bin, what is the probability a color in the bin has that name ("P(T|C)")
+                  Saliency: The negative entropy based on the percentage of each color name given to colors in the bin: saliency(C)= -H(P(T|C))'>*</span>
+                </label> 
+                <select class="form-select w-auto d-inline-block"  id="tile_size" value="tile_size">
+                  <option value="uniform">Uniform</option>
+                  <option value="ptc" selected>Max P(T|C)</option>
+                  <option value="sal">Saliency</option>
+                </select>
+              </div>
+
+              <div class="form-check">
+                <label class="form-label" for="bin_size_by">Bin size by</label> 
+                <select class="form-select w-auto d-inline-block" id="bin_size_by" value="bin_size_by">
+                  <option value="length-width" selected>Length/Width</option>
+                  <option value="area">Area</option>
+                </select>
+              </div>
+              <div class="form-check"> 
+                <input class="form-check-input" type="checkbox" name="metric" id="low-data" value="low-data">
+                <label class="form-label" for="low-data">Show low data languages</label>
+              </div>
+              <div class="form-check"> 
+                <input class="form-check-input" type="checkbox" name="metric" id="blur" value="blur">
+                <label class="form-label" for="blur">
+                  Blur pass on tiles
+                  <span title='When blur is on, a small gaussian blur is run on all 3x3x3 grids of tiles to smooth out the naming data.'>*</span>
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="metric" id="additional_tooltip" value="additional_tooltip">
+                <label class="form-check-label" for="additional_tooltip">Show additional info on tooltip</label> 
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+
+  </body>
+</html>
