@@ -1,9 +1,7 @@
 // Note: Storing all the colors takes a lot of space
 // to increase Nodejs space:
-// windows:
-//  Set NODE_OPTIONS="--max-old-space-size=16384"
-// linux/mac:
-//  export NODE_OPTIONS="--max-old-space-size=16384"
+//
+// node --max-old-space-size=32768 .\01_createLABBins.js
 
 import fs from 'fs'
 import Color from "colorjs.io";
@@ -31,8 +29,8 @@ for(const colorSpace of COLOR_SPACES){
     color_cache[colorSpace].oklabColor = []
     color_cache[colorSpace].oklchColor = []
 
-    //const color_step =1  3 or 15
-    const color_step = 3
+    //const color_step = 1, 3, 5, or 15 (to make it get to 255)
+    const color_step = 1
     for(let r = 0; r <=255; r+=color_step){
         r % 20 == 0 ? console.log("r", r, "space", colorSpace): ""
         for(let g = 0; g <= 255; g+=color_step){
