@@ -1,23 +1,20 @@
 import fs from 'fs'
-import * as d3 from 'd3'
-import { rec2020, toGamut } from 'culori'
+import Color from "colorjs.io";
 
 const GAMUTS = {
-    rgb: {
-        colorString: (r,g,b) => `rgb(${r},${g},${b})`,
-        correctVal: (val) => val
+    srgb: {
+        correctVal: (val) => val,
+        fileNameAbv: "rgb"
     },
     p3: {
-        colorString: (r,g,b) => `color(display-p3 ${r/255} ${g/255} ${b/255})`,
-        correctVal: (val) => val / 255
+        correctVal: (val) => val / 255,
+        fileNameAbv: "p3"
     },
     rec2020: {
-        colorString: (r,g,b) => `color(rec2020 ${r/255} ${g/255} ${b/255})`,
-        correctVal: (val) => val / 255
+        correctVal: (val) => val / 255,
+        fileNameAbv: "rec2020"
     }
 }
-
-//toGamut('oklab')(`color(display-p3 ${r/255} ${g/255} ${b/255})`)
 
 for(const [gamutName, gamutInfo] of Object.entries(GAMUTS)){
 
@@ -27,10 +24,10 @@ for(const [gamutName, gamutInfo] of Object.entries(GAMUTS)){
     let g = 0
     let b = 0
     let cumulative_distance = 0
-    let lastLab = toGamut('oklab')(gamutInfo.colorString(r,g,b))//d3.lab(d3.color(`rgb(${r},${g},${b})`))
+    let lastLab = (new Color({space: gamutName, coords: [r/255, g/255, b/255]})).to('oklab')
 
     function addColorInfo(){
-        const lab = toGamut('oklab')(gamutInfo.colorString(r,g,b))
+        const lab = (new Color({space: gamutName, coords: [r/255, g/255, b/255]})).to('oklab')
         const dist = Math.sqrt((lab.l - lastLab.l)**2 + (lab.a - lastLab.a)**2 + (lab.b - lastLab.b)**2)
         cumulative_distance += dist
         hueColors.push({
@@ -49,6 +46,8 @@ for(const [gamutName, gamutInfo] of Object.entries(GAMUTS)){
         lastLab = lab
     }
 
+    // We'll assume that 256 levels of r,g,b are 
+    // sufficient for our needs in the higher gamut color spaces
     //r 255
     // g - 0 - 255
     for(g = 0; g < 255; g++){
@@ -87,5 +86,5 @@ for(const [gamutName, gamutInfo] of Object.entries(GAMUTS)){
     }
 
     console.log(hueColors)
-    fs.writeFileSync(`../../model/color_info_pre_naming/hue_colors_${gamutName}.json`, JSON.stringify(hueColors, null, 2));
+    fs.writeFileSync(`../../model/color_info_pre_naming/hue_colors_${gamutInfo.fileNameAbv}.json`, JSON.stringify(hueColors, null, 2));
 }
