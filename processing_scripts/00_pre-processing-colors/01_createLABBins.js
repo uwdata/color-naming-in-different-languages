@@ -279,7 +279,7 @@ for(let labBinSize of LAB_BIN_SIZES){
                 delete binInfo.representative_srgb
 
                 binInfo.representative_rgb_in_bin = binInfo.representative_srgb_in_bin
-                delete binInfo.representative_rgb_in_bin
+                delete binInfo.representative_srgb_in_bin
 
                 binInfo.num_rgb = binInfo.num_srgb
                 delete binInfo.num_srgb
