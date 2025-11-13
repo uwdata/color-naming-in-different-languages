@@ -1,3 +1,5 @@
+import Color from "colorjs.io";
+
 // Note: range of OKLAB values for all color space should be 
 // l: 0-1
 // a/b: -0.4, 0.4
@@ -181,6 +183,40 @@ function getLabBins(binSizeInfo){
       return newBins;
     }
 
+    function createLabBinInfo(l_bin, a_bin, b_bin){
+      const l_bin_center = MIN_L + l_bin * binSizeInfo.l
+      const l_bin_min = l_bin_center - binSizeInfo.l/2
+      const l_bin_max = l_bin_center + binSizeInfo.l/2
+
+      const a_bin_center = a_bin * binSizeInfo.ab
+      const a_bin_min = a_bin_center - binSizeInfo.ab/2
+      const a_bin_max = a_bin_center + binSizeInfo.ab/2
+
+      const b_bin_center = b_bin * binSizeInfo.ab
+      const b_bin_min = b_bin_center - binSizeInfo.ab/2
+      const b_bin_max = b_bin_center + binSizeInfo.ab/2
+
+      //calculate center color:
+      let centerOKLAB = (new Color({space: "oklab", coords: [l_bin_center, a_bin_center, b_bin_center]}))
+
+      let binInfo = {
+          l_bin: l_bin,
+          a_bin: a_bin,
+          b_bin: b_bin,
+          l_center: l_bin_center,
+          l_min: l_bin_min,
+          l_max: l_bin_max,
+          a_center: a_bin_center,
+          a_min: a_bin_min,
+          a_max: a_bin_max,
+          b_center: b_bin_center,
+          b_min: b_bin_min,
+          b_max: b_bin_max,
+          center_lab: centerOKLAB
+      }
+      return binInfo
+    }
+
     return {
       "BIN_L_N": BIN_L_N,
       "BIN_AB_N": BIN_AB_N,
@@ -188,7 +224,8 @@ function getLabBins(binSizeInfo){
       "bins_from_lab": bins_from_lab,
       "lab_from_bins": lab_from_bins,
       "createLABNumBins": createLABNumBins,
-      "labBinsToArray": labBinsToArray
+      "labBinsToArray": labBinsToArray,
+      "createLabBinInfo": createLabBinInfo
     }
   } else if(binSizeInfo.type == "ring") {
     const BIN_C_N = Math.ceil((MAX_C * 2) / binSizeInfo.c) // ceil to make a whole number big enough, 
@@ -264,6 +301,44 @@ function getLabBins(binSizeInfo){
       return newBins;
     }
 
+    function createLchBinInfo(l_bin, c_bin, h_bin){
+      const l_bin_center = MIN_L + l_bin * binSizeInfo.l
+      const l_bin_min = l_bin_center - binSizeInfo.l/2
+      const l_bin_max = l_bin_center + binSizeInfo.l/2
+
+      const c_bin_min = c_bin * binSizeInfo.c
+      const c_bin_max = (c_bin + 1) * binSizeInfo.c
+      const c_bin_center = c_bin == 0 ? 0 : (c_bin_min + c_bin_max) / 2
+
+      const hue_bin_num = 2*c_bin + 1 // number of hue bins is 2*c_bin + 1 (math in labBinHelper)
+      const hue_bin_size = MAX_H / hue_bin_num
+
+      const h_bin_min = h_bin * hue_bin_size
+      const h_bin_max = (h_bin + 1) * hue_bin_size
+      const h_bin_center = (h_bin_min + h_bin_max) / 2
+
+      //calculate center color:
+      let centerOKLCH = (new Color({space: "oklch", coords: [l_bin_center, c_bin_center, h_bin_center]}))
+      let centerOKLAB = centerOKLCH.to("oklab")
+      let binInfo = {
+          l_bin: l_bin,
+          h_bin: h_bin,
+          c_bin: c_bin,
+          l_center: l_bin_center,
+          l_min: l_bin_min,
+          l_max: l_bin_max,
+          c_center: c_bin_center,
+          c_min: c_bin_min,
+          c_max: c_bin_max,
+          h_center: h_bin_center,
+          h_min: h_bin_min,
+          h_max: h_bin_max,
+          center_lch: centerOKLCH,
+          center_lab: centerOKLAB,
+      }
+      return binInfo
+    }
+
     return {
       "BIN_L_N": BIN_L_N,
       "BIN_C_N": BIN_C_N,
@@ -272,7 +347,8 @@ function getLabBins(binSizeInfo){
       "bins_from_lch": bins_from_lch,
       "lch_from_bins": lch_from_bins,
       "createLABNumBins": createLCHNumBins,
-      "labBinsToArray": lchBinsToArray
+      "labBinsToArray": lchBinsToArray,
+      "createLchBinInfo": createLchBinInfo
     }
   } else {
     console.log("unexpected bin type", binSizeInfo)
@@ -281,15 +357,9 @@ function getLabBins(binSizeInfo){
 
 }
 
-module.exports = {
-  getLabBins: getLabBins,
-  LAB_BIN_SIZES: LAB_BIN_SIZES,
-  MIN_L: MIN_L,
-  MAX_L: MAX_L,
-  MIN_MAX_AB: MIN_MAX_AB,
-  MIN_C: MIN_C,
-  MAX_C: MAX_C,
-  MIN_H: MIN_H,
-  MAX_H: MAX_H
+export { 
+  getLabBins,
+  LAB_BIN_SIZES, 
+  MIN_L, MAX_L, MIN_MAX_AB, MIN_C, MAX_C, MIN_H, MAX_H
 };
 

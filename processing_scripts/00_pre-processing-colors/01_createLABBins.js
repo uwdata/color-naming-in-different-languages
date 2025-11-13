@@ -5,7 +5,7 @@
 
 import fs from 'fs'
 import Color from "colorjs.io";
-import labBinHelperLib from '../utils/labBinHelper.js'
+import * as labBinHelperLib from '../utils/labBinHelper.js'
 
 
 const FILE_O_LAB_BINS = "../../model/color_info_pre_naming/oklab_bins"
@@ -98,39 +98,14 @@ for(let labBinSize of LAB_BIN_SIZES){
         const BIN_AB_N = labBinHelper.BIN_AB_N
 
         for(let l_bin = 0; l_bin < BIN_L_N; l_bin++){
-            const l_bin_center = MIN_L + l_bin * labBinSize.l
-            const l_bin_min = l_bin_center - labBinSize.l/2
-            const l_bin_max = l_bin_center + labBinSize.l/2
             for(let a_bin = -(BIN_AB_N-1)/2; a_bin <= (BIN_AB_N-1)/2; a_bin ++){
-                const a_bin_center = a_bin * labBinSize.ab
-                const a_bin_min = a_bin_center - labBinSize.ab/2
-                const a_bin_max = a_bin_center + labBinSize.ab/2
                 for(let b_bin = -(BIN_AB_N-1)/2; b_bin <= (BIN_AB_N-1)/2; b_bin ++){
-                    const b_bin_center = b_bin * labBinSize.ab
-                    const b_bin_min = b_bin_center - labBinSize.ab/2
-                    const b_bin_max = b_bin_center + labBinSize.ab/2
 
-                    //calculate center color:
-                    let centerOKLAB = (new Color({space: "oklab", coords: [l_bin_center, a_bin_center, b_bin_center]}))
+                    const binInfo = labBinHelper.createLabBinInfo(l_bin, a_bin, b_bin)
 
-                    let binInfo = {
-                        l_bin: l_bin,
-                        a_bin: a_bin,
-                        b_bin: b_bin,
-                        l_center: l_bin_center,
-                        l_min: l_bin_min,
-                        l_max: l_bin_max,
-                        a_center: a_bin_center,
-                        a_min: a_bin_min,
-                        a_max: a_bin_max,
-                        b_center: b_bin_center,
-                        b_min: b_bin_min,
-                        b_max: b_bin_max,
-                        center_lab: centerOKLAB
-                    }
                     for(const colorSpace of COLOR_SPACES){
                         binInfo[colorSpace + "s"] = []
-                        binInfo["center_"+colorSpace] = centerOKLAB.to(colorSpace)
+                        binInfo["center_"+colorSpace] = binInfo.center_lab.to(colorSpace)
                     }
                     if(!labBinInfo[l_bin]){
                         labBinInfo[l_bin] = {}
@@ -144,48 +119,19 @@ for(let labBinSize of LAB_BIN_SIZES){
             }
         }
     }  else if(labBinSize.type == "ring") {
-        const BIN_C_N = labBinHelper.BIN_C_N,
-            MAX_H = labBinHelper.MAX_H
+        const BIN_C_N = labBinHelper.BIN_C_N
 
         for(let l_bin = 0; l_bin < BIN_L_N; l_bin++){
-            const l_bin_center = MIN_L + l_bin * labBinSize.l
-            const l_bin_min = l_bin_center - labBinSize.l/2
-            const l_bin_max = l_bin_center + labBinSize.l/2
             for(let c_bin = 0; c_bin <= BIN_C_N; c_bin ++){
-                const c_bin_min = c_bin * labBinSize.c
-                const c_bin_max = (c_bin + 1) * labBinSize.c
-                const c_bin_center = c_bin == 0 ? 0 : (c_bin_min + c_bin_max) / 2
 
                 const hue_bin_num = 2*c_bin + 1 // number of hue bins is 2*c_bin + 1 (math in labBinHelper)
-                const hue_bin_size = MAX_H / hue_bin_num
                 for(let h_bin = 0; h_bin < hue_bin_num; h_bin ++){
-                    
-                    const h_bin_min = h_bin * hue_bin_size
-                    const h_bin_max = (h_bin + 1) * hue_bin_size
-                    const h_bin_center = (h_bin_min + h_bin_max) / 2
 
-                    //calculate center color:
-                    let centerOKLCH = (new Color({space: "oklch", coords: [l_bin_center, c_bin_center, h_bin_center]}))
-                    let centerOKLAB = centerOKLCH.to("oklab")
-                    let binInfo = {
-                        l_bin: l_bin,
-                        h_bin: h_bin,
-                        c_bin: c_bin,
-                        l_center: l_bin_center,
-                        l_min: l_bin_min,
-                        l_max: l_bin_max,
-                        c_center: c_bin_center,
-                        c_min: c_bin_min,
-                        c_max: c_bin_max,
-                        h_center: h_bin_center,
-                        h_min: h_bin_min,
-                        h_max: h_bin_max,
-                        center_lch: centerOKLCH,
-                        center_lab: centerOKLAB,
-                    }
+                    const binInfo = labBinHelper.createLchBinInfo(l_bin, c_bin, h_bin)
+                    
                     for(const colorSpace of COLOR_SPACES){
                         binInfo[colorSpace + "s"] = []
-                        binInfo["center_"+colorSpace] = centerOKLCH.to(colorSpace)
+                        binInfo["center_"+colorSpace] = binInfo.center_lch.to(colorSpace)
                     }
 
                     if(!labBinInfo[l_bin]){
