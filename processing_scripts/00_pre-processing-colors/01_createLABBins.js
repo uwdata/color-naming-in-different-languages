@@ -8,7 +8,7 @@ import Color from "colorjs.io";
 import labBinHelperLib from '../utils/labBinHelper.js'
 
 
-const FILE_O_LAB_BINS = "../../model/color_info_pre_naming/lab_bins"
+const FILE_O_LAB_BINS = "../../model/color_info_pre_naming/oklab_bins"
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 
@@ -246,8 +246,10 @@ for(let labBinSize of LAB_BIN_SIZES){
         }
     }
 
-    // fill in center/representative RGB info for bin
-    // and delete bins that had no RGB colors in them
+    // fill in center/representative color info for bin
+    // and delete bins that had no colors in them
+    // TODO: Make sure all corners and middles are not in any color space
+    //    Also, keep neighbors? 
     console.log("Calculating bin RGB representative colors and removing empty bins")
     
     const filteredBinInfo = []
@@ -310,18 +312,7 @@ for(let labBinSize of LAB_BIN_SIZES){
 
         filteredBinInfo.push(bin_info)
     }
-
-
-    // console.log("calculating hue color ratio per bin")
-    // for(const [l_bin, l_bin_entries] of Object.entries(labBinInfo).sort((a, b) => b[0] - a[0])){
-    //     for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries).sort((a, b) => b[0] - a[0])){
-    //         for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries).sort((a, b) => b[0] - a[0])){
-    //             getValidRgbAndHueColorRatio(b_bin_entry)
-    //         }
-    //     }
-    // }
     
-
 
     // clean up Color() objects and turn them into just json data:
     for(const binInfo of filteredBinInfo){
