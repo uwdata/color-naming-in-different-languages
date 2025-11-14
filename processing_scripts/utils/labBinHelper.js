@@ -118,11 +118,6 @@ const LAB_BIN_SIZES = [
     type: "ring",
     l: 1/40,
     //start_angle: 0 // assume 0 for now
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/60,
-    //start_angle: 0 // assume 0 for now
   })
 ]
 

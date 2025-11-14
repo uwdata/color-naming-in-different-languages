@@ -30,7 +30,8 @@ for(const colorSpace of COLOR_SPACES){
     color_cache[colorSpace].oklchColor = []
 
     //const color_step = 1, 3, 5, or 15 (to make it get to 255)
-    const color_step = 1
+    // color_step 1 is 2^24 ~16 Million colors (all SRGB colors, some of other color spaces)
+    const color_step = 15
     for(let r = 0; r <=255; r+=color_step){
         r % 20 == 0 ? console.log("r", r, "space", colorSpace): ""
         for(let g = 0; g <= 255; g+=color_step){
@@ -87,8 +88,7 @@ function findClosestColorToLAB(lab, colors){
 
 for(let labBinSize of LAB_BIN_SIZES){
     const labBinHelper = labBinHelperLib.getLabBins(labBinSize)
-    const BIN_L_N = labBinHelper.BIN_L_N,
-        MIN_L = labBinHelper.MIN_L
+    const BIN_L_N = labBinHelper.BIN_L_N
 
     // Create Bins
     console.log("Creating Bins, size", labBinSize)
@@ -194,8 +194,6 @@ for(let labBinSize of LAB_BIN_SIZES){
 
     // fill in center/representative color info for bin
     // and delete bins that had no colors in them
-    // TODO: Make sure all corners and middles are not in any color space
-    //    Also, keep neighbors? 
     console.log("Calculating bin RGB representative colors and removing empty bins")
     
     const filteredBinInfo = []
@@ -206,9 +204,6 @@ for(let labBinSize of LAB_BIN_SIZES){
             if(bin_info[colorSpace+"s"].length > 0){
                 anyColorsPresent = true
             }
-        }
-        if(!anyColorsPresent){
-            continue
         }
 
         bin_info.representative_lab = bin_info.center_lab
@@ -254,6 +249,64 @@ for(let labBinSize of LAB_BIN_SIZES){
             if(labBinSize.type == "ring"){
                 bin_info.representative_lch = alternateRepresentativeLch
             }
+
+            // if center not in any gamut and no colors present, try
+            // all edges and centers
+            if(!anyColorsPresent){
+                // check the corners and middles of the bins to see if they are in any color space
+                const binDims = labBinSize.dims
+                const dimVals = {0: [], 1: [], 2: []}
+                const centerLab = bin_info.center_lab
+                for(const side of ["_center", "_min", "_max"]){
+                    dimVals[0].push(bin_info[binDims[0]+side])
+                    dimVals[1].push(bin_info[binDims[1]+side])
+                    dimVals[2].push(bin_info[binDims[2]+side])
+                }
+                // check if any edge or center of the bin is in gamut and find the closest of those
+                let closestEdgeColor = false
+                let closestEdgeDist = 100000000
+                for(const dimVal0 of dimVals[0]){
+                    for(const dimVal1 of dimVals[1]){
+                        for(const dimVal2 of dimVals[2]){
+                            const testColor = new Color({
+                                space: labBinSize.type == "ring" ? "oklch" : "oklab", 
+                                coords: [dimVal0, dimVal1, dimVal2]
+                            })
+                            for(const colorSpace of COLOR_SPACES){
+                                if(testColor.to(colorSpace).inGamut()){
+                                    const dist = Math.sqrt(
+                                        (testColor.l - centerLab.l)**2 +
+                                        (testColor.a - centerLab.a)**2 +
+                                        (testColor.b - centerLab.b)**2
+                                    )
+                                    if(dist < closestEdgeDist){
+                                        closestEdgeColor = testColor
+                                        closestEdgeDist = dist
+                                    }
+                                }
+                            } 
+                        }
+                    }   
+                }
+
+                // if still no color in range, we don't need this bin, so continue
+                if(!closestEdgeColor){
+                    continue
+                }
+                console.log(`In our extra edge check, we found a color ${closestEdgeColor} in bin ${[bin_info[binDims[0]+"_bin"], bin_info[binDims[1]+"_bin"], bin_info[binDims[2]+"_bin"]]}, so we are keeping the bin!`)
+                // if closest edge in range, then set the representative colors
+                bin_info.representative_lab = closestEdgeColor.to("oklab")
+                if(labBinSize.type == "ring"){
+                    bin_info.representative_lch = closestEdgeColor.to("oklch")
+                }
+                for(const colorSpace of COLOR_SPACES){
+                    const newRepColor = closestEdgeColor.to(colorSpace)
+                    if(newRepColor.inGamut()){
+                        bin_info["representative_"+colorSpace] = newRepColor
+                        bin_info["representative_"+colorSpace+"_in_bin"] = true // Note this is weird with rgb rounding
+                    }
+                }
+            }
         }
 
         filteredBinInfo.push(bin_info)
@@ -281,22 +334,47 @@ for(let labBinSize of LAB_BIN_SIZES){
                 binInfo.representative_rgb_in_bin = binInfo.representative_srgb_in_bin
                 delete binInfo.representative_srgb_in_bin
 
+                if(JSON.stringify(binInfo.center_rgb) == JSON.stringify(binInfo.representative_rgb)){
+                    delete binInfo.representative_rgb
+                    delete binInfo.representative_rgb_in_bin
+                }
+
                 binInfo.num_rgb = binInfo.num_srgb
                 delete binInfo.num_srgb
 
             } else{
                 binInfo["center_"+colorSpace] = {r: binInfo["center_"+colorSpace].r, g: binInfo["center_"+colorSpace].g, b: binInfo["center_"+colorSpace].b}
                 binInfo["representative_"+colorSpace] = {r: binInfo["representative_"+colorSpace].r, g: binInfo["representative_"+colorSpace].g, b: binInfo["representative_"+colorSpace].b}
+
+                if(JSON.stringify(binInfo["center_"+colorSpace]) == JSON.stringify(binInfo["representative_"+colorSpace])){
+                    delete binInfo["representative_"+colorSpace]
+                    delete binInfo["representative_"+colorSpace+"_in_bin"]
+                }
             }
         }
         binInfo.center_lab = {l: binInfo.center_lab.l, a: binInfo.center_lab.a, b: binInfo.center_lab.b}
         binInfo.representative_lab = {l: binInfo.representative_lab.l, a: binInfo.representative_lab.a, b: binInfo.representative_lab.b}
+        if(JSON.stringify(binInfo.center_lab) == JSON.stringify(binInfo.representative_lab)){
+            delete binInfo.representative_lab
+        }
+        
         if(labBinSize.type == "ring"){
             binInfo.center_lch = {l: binInfo.center_lch.l, c: binInfo.center_lch.c, h: binInfo.center_lch.h}
             binInfo.representative_lch = {l: binInfo.representative_lch.l, c: binInfo.representative_lch.c, h: binInfo.representative_lch.h}
+            if(JSON.stringify(binInfo.center_lch) == JSON.stringify(binInfo.representative_lch)){
+                delete binInfo.representative_lch
+            }
         }
     }
 
+    // sort bins by dim1,dim2,dim3
+    const [dim1, dim2, dim3] = labBinSize.dims
+    // filteredBinInfo.sort((a, b) =>  
+    //     +(a[dim1+"_bin"] > b[dim1+"_bin"]) || +(a[dim1+"_bin"] === b[dim1+"_bin"]) - 1 ||
+    //     +(a[dim2+"_bin"] > b[dim2+"_bin"]) || +(a[dim2+"_bin"] === b[dim2+"_bin"]) - 1 ||
+    //     +(a[dim3+"_bin"] > b[dim3+"_bin"]) || +(a[dim3+"_bin"] === b[dim3+"_bin"]) - 1
+    
+    // )
 
     console.log("Total bins: ", filteredBinInfo.length)
     fs.writeFileSync(FILE_O_LAB_BINS+"_"+(labBinSize)+".json", JSON.stringify(filteredBinInfo, null, 2));
