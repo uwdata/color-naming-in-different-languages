@@ -24,6 +24,18 @@ function LabDistance(color1, color2){
     )
 }
 
+function binSetHasAllRatios(bins){
+    for(const bin of bins){
+        for(const colorSpace in COLOR_SPACES){
+            const colorSpacePercName = "ratio_bin_in_gamut_" + (colorSpace == "srgb" ? "rgb" : colorSpace)
+            if(!(colorSpacePercName in bin)){
+                return false
+            }
+        }
+    }
+    return true
+}
+
 
 // load all the color bin files
 //  and find the min/max of all dimensions of bins
@@ -31,10 +43,16 @@ let min_l
 let max_l
 let max_ab
 
-const labBinSets = []
+const labBinSetsForProcessing = []
 for(const binSize of LAB_BIN_SIZES){
     const bins = JSON.parse(fs.readFileSync(FILE_IO_LAB_BINS+"_"+(binSize)+".json"));
-    labBinSets.push({
+    
+    if(binSetHasAllRatios(bins)){
+        console.log("skipping binsize " + binSize + " since it already has all ratios")
+        continue
+    }
+    
+    labBinSetsForProcessing.push({
         binSize: binSize,
         bins: bins,
         labBinHelper: labBinHelperLib.getLabBins(binSize)
@@ -108,53 +126,27 @@ function fillInMissingBinFields(bin, thisColor, thisColorSpace){
         bin["center_"+colorSpace] = bin.center_lab.to(colorSpace)
     }
 
-    // TODO: refigure out representative colors
-    const thisColorSpaceFieldName = thisColorSpace == "srgb" ? "rgb" : thisColorSpace
+    // TODO: refigure out representative colors for all color spaces
     bin["representative_"+thisColor] = thisColor
     // The color we are creating this bin for exists (though there are weird cases due to rounding, particularly of srgb)
     bin["representative_"+thisColor+"_in_bin"] = true 
 }
 
-//TODO: representative color
 
-for(const [colorSpace_i, colorSpace] of COLOR_SPACES.entries()){
-    const colorSpacePercName = "ratio_bin_in_gamut_" + colorSpaceFieldName
-    // see which, if any bins, don't have values already for this color space ratio
-    const binSetsForThisColorSpace = []
-    
-    for(const labBinSet of labBinSets){
-        for(const bin of labBinSet.bins){
-            if(!(colorSpacePercName in bin)){
-                binSetsForThisColorSpace.push(labBinSet)
-                break
+// Loop through Oklab values
+for(let l = min_l; l <= max_l; l += HUE_RATIO_LAB_DELTA){
+    console.log(" - calculating bin properties at l", l)
+    for(let a = -max_ab; a <= max_ab; a += HUE_RATIO_LAB_DELTA){
+        for(let b = -max_ab; b <= max_ab; b += HUE_RATIO_LAB_DELTA){
+            const testColor = new Color({space: "oklab", coords: [l, a, b]})
+            
+            const isColorInGamuts = {}
+            for(const colorSpace of COLOR_SPACES){
+                 isColorInGamuts[colorSpace] = testColor.inGamut(colorSpace)
             }
-        }
-    }
 
-    // remove representative_colors that are the same as center colors:
-    for(const labBinSet of labBinSets){
-        for(const bin of labBinSet.bins){
-            if(JSON.stringify(bin.center_lab) == JSON.stringify(bin.representative_lab)){
-                delete bin.representative_lab
-            }
-            for(const tmpColorSpace of COLOR_SPACES){
-                const tmpColorSpaceAbv = tmpColorSpace == "srgb"? rgb : tmpColorSpace
-                if(JSON.stringify(bin["center_"+tmpColorSpaceAbv]) == JSON.stringify(bin["representative_"+tmpColorSpaceAbv])){
-                    delete bin["representative_"+tmpColorSpaceAbv]
-                }
-            }
-        }
-    }
-
-    console.log("calculating percentage for space ", colorSpace, " and for ", binSetsForThisColorSpace.length, "bin sets")
-
-    // Loop through Oklab values
-    for(let l = min_l; l <= max_l; l += HUE_RATIO_LAB_DELTA){
-        console.log(" - calculating bin properties at l", l)
-        for(let a = -max_ab; a <= max_ab; a += HUE_RATIO_LAB_DELTA){
-            for(let b = -max_ab; b <= max_ab; b += HUE_RATIO_LAB_DELTA){
-                const testColor = new Color({space: "oklab", coords: [l, a, b]})
-                const isColorInGamut = testColor.inGamut(colorSpace)
+            // TODO: Continue work here
+            for(const binSet of labBinSetsForProcessing){
 
                 //find what bins this color is in (if any)
                 for(const binSet of binSetsForThisColorSpace){
@@ -221,8 +213,9 @@ for(const [colorSpace_i, colorSpace] of COLOR_SPACES.entries()){
             }
         }
     }
+}
 
-
+for(const labBinSet of labBinSetsForProcessing){
     // calculate percentage for each bin:
     for(const binSet of binSetsForThisColorSpace){
         for(const bin of binSet.bins){
@@ -241,66 +234,88 @@ for(const [colorSpace_i, colorSpace] of COLOR_SPACES.entries()){
         }
     }
 
+
+
+
     // simplify colors and fix fields
     //  - make colors just values
     //  - get rid of representative colors if they are the same as the center color
-    for(const labBinSet of binSetsForThisColorSpace){
-        for(const bin of labBinSet.bins){
-            delete bin.numTestColors
-            delete bin["numTestColors_"+colorSpace]
-            if(bin.isNewBin){
-                console.log("test")
-            }
-            delete bin.isNewBin
-            delete bin.center_is_representative
-            delete bin.rep_lab_dist
+    for(const bin of labBinSet.bins){
+        delete bin.numTestColors
+        delete bin["numTestColors_"+colorSpace]
+        if(bin.isNewBin){
+            console.log("test")
+        }
+        delete bin.isNewBin
+        delete bin.center_is_representative
+        delete bin.rep_lab_dist
 
-            // simplify color names
-            bin.center_lab = {l: bin.center_lab.l, a: bin.center_lab.a, b: bin.center_lab.b}
-            if("center_lch" in bin){
-                bin.center_lch = {l: bin.center_lch.l, c: bin.center_lch.c, h: bin.center_lch.h}
-            }
-            if("representative_lab" in bin){
-                bin.representative_lab = {l: bin.representative_lab.l, a: bin.representative_lab.a, b: bin.representative_lab.b}
-            }
-            for(const tmpColorSpace of COLOR_SPACES){
-                if(tmpColorSpace == "srgb"){
-                    if("center_srgb" in bin){
-                        bin["center_rgb"] = {
-                            r: Math.round(255*bin["center_srgb"].r), 
-                            g: Math.round(255*bin["center_srgb"].g), 
-                            b: Math.round(255*bin["center_srgb"].b)}
-                        }
-                    if("representative_srgb" in bin){
-                        bin["representative_rgb"] = {
-                            r: Math.round(255*bin["representative_srgb"].r), 
-                            g: Math.round(255*bin["representative_srgb"].g), 
-                            b: Math.round(255*bin["representative_srgb"].b)}
+        // simplify color names
+        bin.center_lab = {l: bin.center_lab.l, a: bin.center_lab.a, b: bin.center_lab.b}
+        if("center_lch" in bin){
+            bin.center_lch = {l: bin.center_lch.l, c: bin.center_lch.c, h: bin.center_lch.h}
+        }
+        if("representative_lab" in bin){
+            bin.representative_lab = {l: bin.representative_lab.l, a: bin.representative_lab.a, b: bin.representative_lab.b}
+        }
+        for(const tmpColorSpace of COLOR_SPACES){
+            if(tmpColorSpace == "srgb"){
+                if("center_srgb" in bin){
+                    bin["center_rgb"] = {
+                        r: Math.round(255*bin["center_srgb"].r), 
+                        g: Math.round(255*bin["center_srgb"].g), 
+                        b: Math.round(255*bin["center_srgb"].b)}
                     }
-                } else {
-                    bin["center_"+tmpColorSpace] = {r: bin["center_"+tmpColorSpace].r, g: bin["center_"+tmpColorSpace].g, b: bin["center_"+tmpColorSpace].b}
-                    if("representative_"+tmpColorSpace in bin){
-                        bin["representative_"+tmpColorSpace] = {r: bin["representative_"+tmpColorSpace].r, g: bin["representative_"+tmpColorSpace].g, b: bin["representative_"+tmpColorSpace].b}
-                    }
+                if("representative_srgb" in bin){
+                    bin["representative_rgb"] = {
+                        r: Math.round(255*bin["representative_srgb"].r), 
+                        g: Math.round(255*bin["representative_srgb"].g), 
+                        b: Math.round(255*bin["representative_srgb"].b)}
+                }
+            } else {
+                bin["center_"+tmpColorSpace] = {r: bin["center_"+tmpColorSpace].r, g: bin["center_"+tmpColorSpace].g, b: bin["center_"+tmpColorSpace].b}
+                if("representative_"+tmpColorSpace in bin){
+                    bin["representative_"+tmpColorSpace] = {r: bin["representative_"+tmpColorSpace].r, g: bin["representative_"+tmpColorSpace].g, b: bin["representative_"+tmpColorSpace].b}
                 }
             }
         }
-        // remove "representative_" values if they are the same as the center values
-
     }
+    // remove "representative_" values if they are the same as the center values
 
-    // write the current version of the lab bin file
+
+
+    // sort bins by dim1,dim2,dim3
+    // const [dim1, dim2, dim3] = labBinSet.binSize.dims
+    // labBinSet.bins.sort((a, b) =>  
+    //     +(a[dim1+"_bin"] > b[dim1+"_bin"]) || +(a[dim1+"_bin"] === b[dim1+"_bin"]) - 1 ||
+    //     +(a[dim2+"_bin"] > b[dim2+"_bin"]) || +(a[dim2+"_bin"] === b[dim2+"_bin"]) - 1 ||
+    //     +(a[dim3+"_bin"] > b[dim3+"_bin"]) || +(a[dim3+"_bin"] === b[dim3+"_bin"]) - 1
+    // )
+
+    console.log(`Total bins ${labBinSet.binSize}: `, labBinSet.bins.length)
+    fs.writeFileSync(FILE_IO_LAB_BINS+"_"+(labBinSet.binSize)+"-test.json", JSON.stringify(labBinSet.bins, null, 2));
+}
+for(const [colorSpace_i, colorSpace] of COLOR_SPACES.entries()){
+    const colorSpacePercName = "ratio_bin_in_gamut_" + (colorSpace == "srgb" ? "rgb" : colorSpace)
+    // see which, if any bins, don't have values already for this color space ratio
+    const binSetsForThisColorSpace = []
+
+    // for representative colors, find current distance, so we can see if we find closer-to-center color
     for(const labBinSet of binSetsForThisColorSpace){
-        // sort bins by dim1,dim2,dim3
-        // const [dim1, dim2, dim3] = labBinSet.binSize.dims
-        // labBinSet.bins.sort((a, b) =>  
-        //     +(a[dim1+"_bin"] > b[dim1+"_bin"]) || +(a[dim1+"_bin"] === b[dim1+"_bin"]) - 1 ||
-        //     +(a[dim2+"_bin"] > b[dim2+"_bin"]) || +(a[dim2+"_bin"] === b[dim2+"_bin"]) - 1 ||
-        //     +(a[dim3+"_bin"] > b[dim3+"_bin"]) || +(a[dim3+"_bin"] === b[dim3+"_bin"]) - 1
-        
-        // )
-        console.log(`Total bins ${labBinSet.binSize}: `, labBinSet.bins.length)
-        fs.writeFileSync(FILE_IO_LAB_BINS+"_"+(labBinSet.binSize)+"-test.json", JSON.stringify(labBinSet.bins, null, 2));
+        for(const bin of labBinSet.bins){
+            if("representative_lab" in bin){
+                bin.representative_lab_dist = LabDistance(bin.representative_lab, bin.center_lab)
+            }
+            // if("representative_lch" in bin){
+            //     bin.representative_lab_dist = LabDistance(bin.representative_lab, bin.center_lab)
+            // }
+        }
+    
     }
+
+    console.log("calculating percentage for space ", colorSpace, " and for ", binSetsForThisColorSpace.length, "bin sets")
+
+
+    
 }
 
