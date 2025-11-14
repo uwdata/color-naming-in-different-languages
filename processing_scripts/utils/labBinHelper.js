@@ -223,7 +223,7 @@ function getLabBins(binSizeInfo){
       "createLabBinInfo": createLabBinInfo
     }
   } else if(binSizeInfo.type == "ring") {
-    const BIN_C_N = Math.ceil((MAX_C * 2) / binSizeInfo.c) // ceil to make a whole number big enough, 
+    const BIN_C_N = Math.ceil(MAX_C / binSizeInfo.c) // ceil to make a whole number big enough, 
 
     function hueToRange(h){
       if(isNaN(h)){
