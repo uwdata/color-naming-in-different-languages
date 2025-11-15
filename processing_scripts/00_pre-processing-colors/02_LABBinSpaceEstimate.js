@@ -373,7 +373,7 @@ for(const binSet of labBinSetsForProcessing){
     )
 
     console.log(`Total bins ${binSet.binSize}: `, binSet.bins.length)
-    fs.writeFileSync(FILE_IO_LAB_BINS+"_"+(binSet.binSize)+"-test.json", JSON.stringify(binSet.bins, null, 2));
+    fs.writeFileSync(FILE_IO_LAB_BINS+"_"+(binSet.binSize)+".json", JSON.stringify(binSet.bins, null, 2));
 }
 
 
