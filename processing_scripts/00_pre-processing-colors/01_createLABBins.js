@@ -31,7 +31,7 @@ for(const colorSpace of COLOR_SPACES){
 
     //const color_step = 1, 3, 5, or 15 (to make it get to 255)
     // color_step 1 is 2^24 ~16 Million colors (all SRGB colors, some of other color spaces)
-    const color_step = 15
+    const color_step = 5
     for(let r = 0; r <=255; r+=color_step){
         r % 20 == 0 ? console.log("r", r, "space", colorSpace): ""
         for(let g = 0; g <= 255; g+=color_step){
@@ -369,12 +369,12 @@ for(let labBinSize of LAB_BIN_SIZES){
 
     // sort bins by dim1,dim2,dim3
     const [dim1, dim2, dim3] = labBinSize.dims
-    // filteredBinInfo.sort((a, b) =>  
-    //     +(a[dim1+"_bin"] > b[dim1+"_bin"]) || +(a[dim1+"_bin"] === b[dim1+"_bin"]) - 1 ||
-    //     +(a[dim2+"_bin"] > b[dim2+"_bin"]) || +(a[dim2+"_bin"] === b[dim2+"_bin"]) - 1 ||
-    //     +(a[dim3+"_bin"] > b[dim3+"_bin"]) || +(a[dim3+"_bin"] === b[dim3+"_bin"]) - 1
+    filteredBinInfo.sort((a, b) =>  
+        +(a[dim1+"_bin"] > b[dim1+"_bin"]) || +(a[dim1+"_bin"] === b[dim1+"_bin"]) - 1 ||
+        +(a[dim2+"_bin"] > b[dim2+"_bin"]) || +(a[dim2+"_bin"] === b[dim2+"_bin"]) - 1 ||
+        +(a[dim3+"_bin"] > b[dim3+"_bin"]) || +(a[dim3+"_bin"] === b[dim3+"_bin"]) - 1
     
-    // )
+    )
 
     console.log("Total bins: ", filteredBinInfo.length)
     fs.writeFileSync(FILE_O_LAB_BINS+"_"+(labBinSize)+".json", JSON.stringify(filteredBinInfo, null, 2));
