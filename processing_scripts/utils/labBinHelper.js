@@ -28,15 +28,29 @@ import Color from "colorjs.io";
 // -----------------
 // Oklch ring segment bins
 // -----------------
-// if we do uniform radius circles (r), the area of
+// if we do uniform radius circles, but make start circle r=1
+// (so radius = r), but consider it's full width d=2r, and make
+// each level after that another 2r out
+// the first ring [0] (middle circle) is pi*r^2
+// the second ring [1] is pi*(3r)^2 - pi*r^2 = 8 * pi*r^2
+// the third ring [2] is pi*(5r)^2 - pi*(3r)^2 = 16 * pi*r^2
+// the nth ring is size: pi*((2*n+1)*r)^2 - pi*((2*(n-1) +1)*r)^2 
+//                = ((2*n+1)^2 - (2*(n-1) +1)^2) * pi*r^2 
+//                = ((2*n+1)^2 - (2*n-1)^2) * pi*r^2 
+//                = ( 4n^2 + 4n + 1 - 4n^2 + 4n - 1) * pi*r^2
+//                = (8n) * pi*r^2      ?????????????
+// so the number of segments in each ring (for equal size) should be 8n:
+//    (level 0: 1), 8, 16, 24, 32, ...
+
+// if we do uniform radius circles (r), each level r, the area of
 // the first ring [0] (middle circle) is pi*r^2
 // the second ring [1] is pi*(2r)^2 - pi*r^2 = 3 * pi*r^2
 // the third ring [2] is pi*(3r)^2 - pi*(2r)^2 = 5 * pi*r^2
-// the nth ring is pi*(n*r)^2 - pi*((n-1)*r)^2 
+// the nth ring is size: pi*(n*r)^2 - pi*((n-1)*r)^2 
 //                = (n^2 - (n-1)^2) * pi*r^2 
 //                = (n^2 - (n^2 - 2n + 1)) * pi*r^2
 //                = (2n - 1) * pi * r^2
-// so the number of segments in each ring should be 2n+1:
+// so the number of segments in each ring (for equal size) should be 2n+1:
 //    1, 3, 5, 7, 9, ...
 
 // L axis bins are centered at 0, ... 1 
