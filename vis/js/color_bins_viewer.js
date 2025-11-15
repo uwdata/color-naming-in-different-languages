@@ -14,9 +14,16 @@ class BinSize {
       this.abv = "ring_" + options.l.toPrecision(2) / 1
     }
 
-    this.tileSize = options.tileSize
-    this.tileMaxSizeMultiplier = options.tileMaxSizeMultiplier
-    this.tileBorderSize = options.tileBorderSize    
+    // copy over any other values
+    for(const [key, val] in Object.entries(options)){
+      if(!(key in this)){
+        this[key] = val
+      }
+    }
+
+    // this.tileSize = options.tileSize
+    // this.tileMaxSizeMultiplier = options.tileMaxSizeMultiplier
+    // this.tileBorderSize = options.tileBorderSize    
   }
 
   toString() {
@@ -92,14 +99,14 @@ const LAB_BIN_SIZES = [
     tileBorderSize: 1
     //start_angle: 0 // assume 0 for now
   }),
-    new BinSize({
-    type: "ring",
-    l: 1/60,
-    tileSize: 4,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
-    //start_angle: 0 // assume 0 for now
-  })
+  //   new BinSize({
+  //   type: "ring",
+  //   l: 1/60,
+  //   tileSize: 4,
+  //   tileMaxSizeMultiplier: 1.7,
+  //   tileBorderSize: 1
+  //   //start_angle: 0 // assume 0 for now
+  // })
 ]
 
 
@@ -134,7 +141,7 @@ const lang_tile_info = {}
 
 /*************** Pre-processing functions *********************/
 async function load_and_process_bin_data(bin_size){
-  await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/lab_bins_rec2020_${bin_size}.json`, function( data ) {
+  await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/oklab_bins_${bin_size}.json`, function( data ) {
     process_lab_bin_data(data, bin_size)
     resolve()
   }))

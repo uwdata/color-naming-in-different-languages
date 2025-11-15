@@ -86,10 +86,23 @@ class BinSize {
       this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
       this.dims = ["l", "a", "b"]
     } else if(this.type == "ring") {
+      if(h_divs in options){
+        this.h_divs = 3
+      }else{
+        this.h_divs = 8
+      }
+      
       this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
       //this.start_angle = options.start_angle ? start_angle : 0; //assume 0 for now
-      this.abv = "ring_" + options.l.toPrecision(2) / 1
+      this.abv = "ring_" + (options.l.toPrecision(2) / 1) + "_h" +this.h_divs
       this.dims = ["l", "c", "h"]
+    }
+
+    // copy over any other values
+    for(const [key, val] in Object.entries(options)){
+      if(!(key in this)){
+        this[key] = val
+      }
     }
     
   }
