@@ -41,6 +41,14 @@ import Color from "colorjs.io";
 //                = (8n) * pi*r^2      ?????????????
 // so the number of segments in each ring (for equal size) should be 8n:
 //    (level 0: 1), 8, 16, 24, 32, ...
+//
+// L axis bins are centered at 0, ... 1 
+//    we'll make cBinSize = 2*r (diameter of middle, delta radius extra layers)
+// c bins range from [0 - 0.5*cBinSize], [0.5*cBinSize - 1.5 * cBinSize], [1.5*cBinSize-2.5*cBinSize], etc.
+//   though the center of the first bin should be 0, so centers are:
+//      0, 1*cBinSize, 2*cBinSize, etc.
+// h bin range from [0-hBinSize], [hBinSize-2*hBinSize], ... [ - 360]
+//   note: hBinSize depends on what c level (0->1, rest->8*cn)
 
 // if we do uniform radius circles (r), each level r, the area of
 // the first ring [0] (middle circle) is pi*r^2
@@ -52,13 +60,13 @@ import Color from "colorjs.io";
 //                = (2n - 1) * pi * r^2
 // so the number of segments in each ring (for equal size) should be 2n+1:
 //    1, 3, 5, 7, 9, ...
-
+//
 // L axis bins are centered at 0, ... 1 
-// c bins range from [0-cBinSize], [cBinSize-2*cBinSize], [cBinSize-3*cBinSize], etc.
+// c bins range from [0-cBinSize], [cBinSize-2*cBinSize], [2*cBinSize-3*cBinSize], etc.
 //   though the center of the first bin should be 0, so centers are:
 //      0, 1.5*cBinSize, 2.5*cBinSize, etc.
-// h bin range from [0-hBinSize], [cBinSize-2*cBinSize], ... [ - 360]
-//   note: hBinSize depends on what c level
+// h bin range from [0-hBinSize], [hBinSize-2*hBinSize], ... [ - 360]
+//   note: hBinSize depends on what c level (2n+1)
 
 
 const MIN_L = 0
@@ -86,13 +94,16 @@ class BinSize {
       this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
       this.dims = ["l", "a", "b"]
     } else if(this.type == "ring") {
-      if(h_divs in options){
+      if("h_divs" in options && options.h_divs == 3){
         this.h_divs = 3
+        this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
       }else{
         this.h_divs = 8
+        this.c = options.l; // should it be diameter of center 1 * L (slightly smaller than a 1x1x1 box)
+        // note: after center ring, the radius change width will also be L
       }
       
-      this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
+      
       //this.start_angle = options.start_angle ? start_angle : 0; //assume 0 for now
       this.abv = "ring_" + (options.l.toPrecision(2) / 1) + "_h" +this.h_divs
       this.dims = ["l", "c", "h"]
@@ -134,16 +145,37 @@ const LAB_BIN_SIZES = [
   new BinSize({
     type: "ring",
     l: 1/10,
+    h_divs: 3
     //start_angle: 0 // assume 0 for now
   }),
   new BinSize({
     type: "ring",
     l: 1/20,
+    h_divs: 3
     //start_angle: 0 // assume 0 for now
   }),
   new BinSize({
     type: "ring",
     l: 1/40,
+    h_divs: 3
+    //start_angle: 0 // assume 0 for now
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    h_divs: 8
+    //start_angle: 0 // assume 0 for now
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/20,
+    h_divs: 8
+    //start_angle: 0 // assume 0 for now
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/40,
+    h_divs: 8
     //start_angle: 0 // assume 0 for now
   })
 ]
@@ -250,7 +282,18 @@ function getLabBins(binSizeInfo){
       "createLabBinInfo": createLabBinInfo
     }
   } else if(binSizeInfo.type == "ring") {
-    const BIN_C_N = Math.ceil(MAX_C / binSizeInfo.c) // ceil to make a whole number big enough, 
+    // ceil to make a whole number big enough, 
+    const BIN_C_N = binSizeInfo.h_divs == 3 ?
+        Math.ceil(MAX_C / binSizeInfo.c) 
+      :
+        Math.ceil(MAX_C / binSizeInfo.c + 0.5) //max_c = cBinSize * (N-0.5) -> n = max_c/cBinSize + 0.5
+
+    
+    function getHueBinNum(c_bin){
+      return binSizeInfo.h_divs == 3 ?
+            2*c_bin + 1 // number of hue bins is 2*c_bin + 1 (math above)
+          : (c_bin==0 ? 1 : 8*c_bin) //h_divs == 8
+    }
 
     function hueToRange(h){
       if(isNaN(h)){
@@ -269,9 +312,13 @@ function getLabBins(binSizeInfo){
     function bins_from_lch(lch){
         const l_bin = Math.round(lch.l / binSizeInfo.l)
 
-        const c_bin = Math.floor(lch.c / binSizeInfo.c)
+        const c_bin = binSizeInfo.h_divs == 3 ?
+          Math.floor(lch.c / binSizeInfo.c) // h_divs == 3
+          :
+          Math.floor(lch.c / binSizeInfo.c + 0.5) // h_divs == 8
 
-        const hue_bin_num = 2*c_bin + 1 // number of hue bins is 2*c_bin + 1 (math above)
+        const hue_bin_num = getHueBinNum(c_bin)
+
         const hue_bin_size = MAX_H / hue_bin_num
         const h_bin = Math.floor(hueToRange(lch.h) / hue_bin_size)
 
@@ -281,11 +328,14 @@ function getLabBins(binSizeInfo){
     function lch_from_bins(bins_l, bins_c, bins_h){
       // bins_l is midpoint
       const l = binSizeInfo.l * bins_l
-      
-      // bins_c is start point (so mid is half way through bin), except 0, which is centered at 0
-      const c = bins_c == 0 ? 0: binSizeInfo.c * (bins_c + 0.5) 
 
-      const hue_bin_num = 2*c_bin + 1 // number of hue bins is 2*c_bin + 1 (math above)
+      const c = binSizeInfo.h_divs == 3 ?
+          (bins_c == 0 ? 0: binSizeInfo.c * (bins_c + 0.5)) // bins_c is start point (so mid is half way through bin), except 0, which is centered at 0
+        :
+           binSizeInfo.c * bins_c
+
+      const hue_bin_num = getHueBinNum(c_bin)
+
       const hue_bin_size = MAX_H / hue_bin_num
       const h = hue_bin_size * (bins_h + 0.5)
 
@@ -328,11 +378,20 @@ function getLabBins(binSizeInfo){
       const l_bin_min = l_bin_center - binSizeInfo.l/2
       const l_bin_max = l_bin_center + binSizeInfo.l/2
 
-      const c_bin_min = c_bin * binSizeInfo.c
-      const c_bin_max = (c_bin + 1) * binSizeInfo.c
-      const c_bin_center = c_bin == 0 ? 0 : (c_bin_min + c_bin_max) / 2
 
-      const hue_bin_num = 2*c_bin + 1 // number of hue bins is 2*c_bin + 1 (math in labBinHelper)
+      let c_bin_min, c_bin_max, c_bin_center
+      if(binSizeInfo.h_divs == 3){
+        c_bin_min = c_bin * binSizeInfo.c
+        c_bin_max = (c_bin + 1) * binSizeInfo.c
+        c_bin_center = c_bin == 0 ? 0 : (c_bin_min + c_bin_max) / 2
+      }else{ // h_divs == 8
+        c_bin_min = c_bin == 0 ? 0 : (c_bin - 0.5) * binSizeInfo.c 
+        c_bin_max = (c_bin + 0.5) * binSizeInfo.c
+        c_bin_center = c_bin * binSizeInfo.c
+      }
+
+      const hue_bin_num = getHueBinNum(c_bin)
+
       const hue_bin_size = MAX_H / hue_bin_num
 
       const h_bin_min = h_bin * hue_bin_size
@@ -366,6 +425,7 @@ function getLabBins(binSizeInfo){
       "BIN_C_N": BIN_C_N,
       "MIN_L": MIN_L,
       "MAX_H": MAX_H,
+      "getHueBinNum": getHueBinNum,
       "bins_from_lch": bins_from_lch,
       "lch_from_bins": lch_from_bins,
       "createLABNumBins": createLCHNumBins,

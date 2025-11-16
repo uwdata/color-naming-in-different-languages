@@ -31,7 +31,7 @@ for(const colorSpace of COLOR_SPACES){
 
     //const color_step = 1, 3, 5, or 15 (to make it get to 255)
     // color_step 1 is 2^24 ~16 Million colors (all SRGB colors, some of other color spaces)
-    const color_step = 5
+    const color_step = 1
     for(let r = 0; r <=255; r+=color_step){
         r % 20 == 0 ? console.log("r", r, "space", colorSpace): ""
         for(let g = 0; g <= 255; g+=color_step){
@@ -124,7 +124,7 @@ for(let labBinSize of LAB_BIN_SIZES){
         for(let l_bin = 0; l_bin < BIN_L_N; l_bin++){
             for(let c_bin = 0; c_bin <= BIN_C_N; c_bin ++){
 
-                const hue_bin_num = 2*c_bin + 1 // number of hue bins is 2*c_bin + 1 (math in labBinHelper)
+                const hue_bin_num = labBinHelper.getHueBinNum(c_bin)
                 for(let h_bin = 0; h_bin < hue_bin_num; h_bin ++){
 
                     const binInfo = labBinHelper.createLchBinInfo(l_bin, c_bin, h_bin)
@@ -167,11 +167,14 @@ for(let labBinSize of LAB_BIN_SIZES){
             const bin = labBinInfo[bin_dim_1][bin_dim_2][bin_dim_3]
             
             if(!bin){
-                throw new Error(`Bin doesn't exist for rgb(${r}, ${g}, ${b}) and lab ${[lab.l, lab.a, lab.b]} ${[l_bin, a_bin, b_bin]}`)
+                throw new Error(`Bin doesn't exist for rgb(${newColor.sourceColor.r}, ${newColor.sourceColor.g}, ${newColor.sourceColor.b}) and ${[bin_dim_1, bin_dim_2, bin_dim_3]}`)
             }
             for(const dim of labBinSize.dims){
                 if(okColor[dim] < bin[dim+"_min"] || okColor[dim] > bin[dim+"_max"]){
-                    throw new Error(`${dim} out of range ${okColor} for bin: ${bin}`)
+                    console.log("Error: ", dim, " out of range ", okColor, " for bin: ",bin )
+                    console.log("okColor[dim] < bin[dim+'_min']", okColor[dim],  bin[dim+'_min'])
+                    console.log("okColor[dim] > bin[dim+'_max']", okColor[dim],  bin[dim+'_max'])
+                    throw new Error(`${dim} out of range ${okColor +""} for bin: ${bin +""}`)
                 }
             }
 
