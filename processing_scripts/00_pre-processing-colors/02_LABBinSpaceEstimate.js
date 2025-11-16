@@ -351,8 +351,14 @@ for(const binSet of labBinSetsForProcessing){
                     delete bin.representative_rgb_in_bin
                 }
             } else {
+                if(bin["center_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
+                    bin["center_"+colorSpace] = bin["center_"+colorSpace].toGamut()
+                }
                 bin["center_"+colorSpace] = {r: bin["center_"+colorSpace].r, g: bin["center_"+colorSpace].g, b: bin["center_"+colorSpace].b}
                 if("representative_"+colorSpace in bin){
+                    if(bin["representative_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
+                        bin["representative_"+colorSpace] = bin["representative_"+colorSpace].toGamut()
+                    }
                     bin["representative_"+colorSpace] = {r: bin["representative_"+colorSpace].r, g: bin["representative_"+colorSpace].g, b: bin["representative_"+colorSpace].b}
                 }
                 if(JSON.stringify(bin["center_"+colorSpace]) == JSON.stringify(bin["representative_"+colorSpace])){

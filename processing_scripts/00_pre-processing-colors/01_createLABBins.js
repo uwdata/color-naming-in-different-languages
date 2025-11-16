@@ -346,7 +346,14 @@ for(let labBinSize of LAB_BIN_SIZES){
                 delete binInfo.num_srgb
 
             } else{
+                if(binInfo["center_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
+                    binInfo["center_"+colorSpace] = binInfo["center_"+colorSpace].toGamut()
+                }
                 binInfo["center_"+colorSpace] = {r: binInfo["center_"+colorSpace].r, g: binInfo["center_"+colorSpace].g, b: binInfo["center_"+colorSpace].b}
+                
+                if("inGamut" in binInfo["representative_"+colorSpace] && binInfo["representative_"+colorSpace].inGamut()){// if in gamut, round to gamut value
+                    binInfo["representative_"+colorSpace] = binInfo["representative_"+colorSpace].toGamut()
+                }
                 binInfo["representative_"+colorSpace] = {r: binInfo["representative_"+colorSpace].r, g: binInfo["representative_"+colorSpace].g, b: binInfo["representative_"+colorSpace].b}
 
                 if(JSON.stringify(binInfo["center_"+colorSpace]) == JSON.stringify(binInfo["representative_"+colorSpace])){

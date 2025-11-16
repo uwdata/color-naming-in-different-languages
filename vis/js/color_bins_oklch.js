@@ -4,25 +4,38 @@ class BinSize {
     this.type = options.type;
     if(this.type == "cube"){
       this.ab = this.l
-      this.abv = options.l.toPrecision(2) / 1
+      this.abv = this.l.toPrecision(2) / 1
       this.dims = ["l", "a", "b"]
     } else if(this.type == "box") {
       this.ab = options.ab;
-      this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
+      this.abv = this.l.toPrecision(2) / 1 + "_" + this.ab.toPrecision(2) / 1
       this.dims = ["l", "a", "b"]
     } else if(this.type == "ring") {
       if("h_divs" in options && options.h_divs == 3){
         this.h_divs = 3
-        this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
-      }else{
+        if("c" in options){
+          this.c = options.c
+        }else{
+          this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
+        }
+      }else if(!("h_divs" in options) || options.h_divs == 8){ //default value, or already 8
         this.h_divs = 8
-        this.c = options.l; // should it be diameter of center 1 * L (slightly smaller than a 1x1x1 box)
-        // note: after center ring, the radius change width will also be L
+        if("c" in options){
+          this.c = options.c
+        }else{
+          this.c = options.l; // should it be diameter of center 1 * L (slightly smaller than a 1x1x1 box)
+          // note: after center ring, the radius change width will also be L
+        }
+      } else{
+        throw new Error("h_divs must be 3 or 8, but was: " + options.h_divs)
       }
       
+      const c_abv = (this.h_divs == 3 && this.c == this.l/2) || (this.h_divs == 8 && this.c == this.l) ?
+            "" :
+            "_"+(this.c.toPrecision(2) / 1)
       
-      //this.start_angle = options.start_angle ? start_angle : 0; //assume 0 for now
-      this.abv = "ring_" + (options.l.toPrecision(2) / 1) + "_h" +this.h_divs
+      this.abv = "ring_" + (this.l.toPrecision(2) / 1) + c_abv + "_h" +this.h_divs
+      
       this.dims = ["l", "c", "h"]
     }
 
@@ -132,6 +145,60 @@ const LAB_BIN_SIZES = [
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 0.5
   }),
+  new BinSize({
+    type: "ring",
+    l: 1/5,
+    c: 1/40, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
+    h_divs: 3,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    c: 1/80, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
+    h_divs: 3,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/15,
+    c: 1/120, // for h_divs 3, c should be 1/2 l, but to make it a box 4x taller, we do 1/8th l
+    h_divs: 3,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/5,
+    c: 1/20, // for h_divs 3, c should be = l, but we make it 1/4th
+    h_divs: 8,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    c: 1/40, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
+    h_divs: 8,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/15,
+    c: 1/60, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
+    h_divs: 8,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  })
 ]
 
 
@@ -171,6 +238,9 @@ async function load_and_process_bin_data(bin_size){
     const newData = {}
     const [dim1, dim2, dim3] = bin_size.dims
     for(const bin of data){
+      // if(bin.num_p3 == 0 && bin.num_rgb == 0){
+      //   continue
+      // }
       const dim1_bin = bin[dim1+"_bin"]
       const dim2_bin = bin[dim2+"_bin"]
       const dim3_bin = bin[dim3+"_bin"]
@@ -419,13 +489,17 @@ let additional_tooltip_info = false
 
 /*************** Load page and Data *********************/
 $(document).on('ready page:load', function () {
-  for(let bin_size of LAB_BIN_SIZES){
+  for(const bin_size of LAB_BIN_SIZES){
+    if(bin_size == undefined){
+      console.log("bin size undefined????")
+      continue
+    }
     $("#bin_size").append(
       `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
         ${(bin_size.type == "cube" || bin_size.type == "box") ?
           `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1}`
           :
-          `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} h${bin_size.h_divs}`
+          `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.c.toPrecision(2) / 1} h${bin_size.h_divs}`
         }
       
       </option>`
