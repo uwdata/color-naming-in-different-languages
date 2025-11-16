@@ -90,8 +90,7 @@ const LAB_BIN_SIZES = [
     h_divs: 8,
     tileSize: 10,
     tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
-    //start_angle: 0 // assume 0 for now
+    tileBorderSize: 2
   }), 
   new BinSize({
     type: "ring",
@@ -100,24 +99,39 @@ const LAB_BIN_SIZES = [
     h_divs: 8,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 1
-    //start_angle: 0 // assume 0 for now
   }), 
   new BinSize({
     type: "ring",
     l: 1/40,
     tileSize: 4,
+    h_divs: 8,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 1
-    //start_angle: 0 // assume 0 for now
   }),
-  //   new BinSize({
-  //   type: "ring",
-  //   l: 1/60,
-  //   tileSize: 4,
-  //   tileMaxSizeMultiplier: 1.7,
-  //   tileBorderSize: 1
-  //   //start_angle: 0 // assume 0 for now
-  // })
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    h_divs: 3,
+    tileSize: 10,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }), 
+  new BinSize({
+    type: "ring",
+    l: 1/20,
+    tileSize: 5,
+    h_divs: 3,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 0.5
+  }), 
+  new BinSize({
+    type: "ring",
+    l: 1/40,
+    h_divs: 3,
+    tileSize: 4,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 0.5
+  }),
 ]
 
 
@@ -649,7 +663,7 @@ function drawColorRingTiles(saliencies){
   
   const svg = d3.select("#rings" + " svg")
 
-  svg.selectAll(".tile")
+  svg.selectAll(".circle-tile")
     .data(saliencies.filter(d => d.c_bin == 0))
     .join("circle")
       .attr("class", "circle-tile")
@@ -657,7 +671,7 @@ function drawColorRingTiles(saliencies){
       .attr("cy", d =>  70)
       .attr("r",  d => {
         let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
-        const binRadius = bin.c_max/curr_bin_size.c*curr_bin_size.tileSize - 1
+        const binRadius = bin.c_max/curr_bin_size.c*curr_bin_size.tileSize * (curr_bin_size.h_divs == 3 ? 0.5 : 1) - 0.5 * curr_bin_size.tileBorderSize
         return binRadius
       })
       .attr("fill", d => {
@@ -695,10 +709,10 @@ function drawColorRingTiles(saliencies){
         let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
         const levelCenterX = 30 + (Object.keys(lab_bins[curr_bin_size]).length - 1 - bin.l_bin) * 100
         const levelCenterY = 70
-        const binRadius = bin.c_center/curr_bin_size.c*curr_bin_size.tileSize 
-        const endAngleMargin = -(bin.h_min + 6 / bin.c_center * curr_bin_size.c)
+        const binRadius = bin.c_center/curr_bin_size.c*curr_bin_size.tileSize * (curr_bin_size.h_divs == 3 ? 0.5 : 1)
+        const endAngleMargin = -(bin.h_min + (curr_bin_size.h_divs == 3 ? 8 : 5) / bin.c_center * curr_bin_size.c)
           - 90 // rotate 90 degrees
-        const startAngleMargin = -(bin.h_max - 6 / bin.c_center * curr_bin_size.c)
+        const startAngleMargin = -(bin.h_max - (curr_bin_size.h_divs == 3 ? 8 : 5) / bin.c_center * curr_bin_size.c)
           - 90 // rotate 90 degrees
         const binStartDeltaX = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
         const binStartX = levelCenterX + binStartDeltaX
@@ -716,7 +730,7 @@ function drawColorRingTiles(saliencies){
         A ${binRadius} ${binRadius} 0 0 1 ${binEndX} ${binEndY}
         `
       }) // A rx ry x-axis-rotation large-arc-flag sweep-flag x y
-      .style("stroke-width", curr_bin_size.tileSize - 1)//d => curr_bin_size.tileBorderSize)
+      .style("stroke-width", curr_bin_size.tileSize * (curr_bin_size.h_divs == 3 ? 0.5 : 1) - 1 * curr_bin_size.tileBorderSize)//d => curr_bin_size.tileBorderSize)
       // .attr("x", (d) => 
       //     curr_bin_size.type == "ring" ? 
       //       d.h_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.c_bin]
