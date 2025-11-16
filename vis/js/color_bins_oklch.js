@@ -5,25 +5,34 @@ class BinSize {
     if(this.type == "cube"){
       this.ab = this.l
       this.abv = options.l.toPrecision(2) / 1
+      this.dims = ["l", "a", "b"]
     } else if(this.type == "box") {
       this.ab = options.ab;
       this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
+      this.dims = ["l", "a", "b"]
     } else if(this.type == "ring") {
-      this.c = options.l/2;
+      if("h_divs" in options && options.h_divs == 3){
+        this.h_divs = 3
+        this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
+      }else{
+        this.h_divs = 8
+        this.c = options.l; // should it be diameter of center 1 * L (slightly smaller than a 1x1x1 box)
+        // note: after center ring, the radius change width will also be L
+      }
+      
+      
       //this.start_angle = options.start_angle ? start_angle : 0; //assume 0 for now
-      this.abv = "ring_" + options.l.toPrecision(2) / 1
+      this.abv = "ring_" + (options.l.toPrecision(2) / 1) + "_h" +this.h_divs
+      this.dims = ["l", "c", "h"]
     }
 
     // copy over any other values
-    for(const [key, val] in Object.entries(options)){
+    for(const [key, val] of Object.entries(options)){
       if(!(key in this)){
         this[key] = val
       }
     }
-
-    this.tileSize = options.tileSize
-    this.tileMaxSizeMultiplier = options.tileMaxSizeMultiplier
-    this.tileBorderSize = options.tileBorderSize    
+    
   }
 
   toString() {
@@ -78,27 +87,29 @@ const LAB_BIN_SIZES = [
   new BinSize({
     type: "ring",
     l: 1/10,
+    h_divs: 8,
     tileSize: 10,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 1
     //start_angle: 0 // assume 0 for now
   }), 
-  // new BinSize({
-  //   type: "ring",
-  //   l: 1/20,
-  //   tileSize: 5,
-  //   tileMaxSizeMultiplier: 1.7,
-  //   tileBorderSize: 1
-  //   //start_angle: 0 // assume 0 for now
-  // }), 
-  // new BinSize({
-  //   type: "ring",
-  //   l: 1/40,
-  //   tileSize: 4,
-  //   tileMaxSizeMultiplier: 1.7,
-  //   tileBorderSize: 1
-  //   //start_angle: 0 // assume 0 for now
-  // }),
+  new BinSize({
+    type: "ring",
+    l: 1/20,
+    tileSize: 5,
+    h_divs: 8,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+    //start_angle: 0 // assume 0 for now
+  }), 
+  new BinSize({
+    type: "ring",
+    l: 1/40,
+    tileSize: 4,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+    //start_angle: 0 // assume 0 for now
+  }),
   //   new BinSize({
   //   type: "ring",
   //   l: 1/60,
@@ -142,7 +153,25 @@ const lang_tile_info = {}
 /*************** Pre-processing functions *********************/
 async function load_and_process_bin_data(bin_size){
   await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/oklab_bins_${bin_size}.json`, function( data ) {
-    process_lab_bin_data(data, bin_size)
+    //temporarily turn data back into old format:
+    const newData = {}
+    const [dim1, dim2, dim3] = bin_size.dims
+    for(const bin of data){
+      const dim1_bin = bin[dim1+"_bin"]
+      const dim2_bin = bin[dim2+"_bin"]
+      const dim3_bin = bin[dim3+"_bin"]
+
+      if(!(dim1_bin in newData)){
+        newData[dim1_bin] = {}
+      }
+
+      if(!(dim2_bin in newData[dim1_bin])){
+        newData[dim1_bin][dim2_bin] = {}
+      }
+
+      newData[dim1_bin][dim2_bin][dim3_bin] = bin
+    }
+    process_lab_bin_data(newData, bin_size)
     resolve()
   }))
   updateDisplay()
@@ -382,7 +411,7 @@ $(document).on('ready page:load', function () {
         ${(bin_size.type == "cube" || bin_size.type == "box") ?
           `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1}`
           :
-          `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1}`
+          `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} h${bin_size.h_divs}`
         }
       
       </option>`
@@ -566,7 +595,7 @@ function drawColorTiles(saliencies){
           Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
           Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
           Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
-          ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
+          ${("representative_rgb" in bin_info)
               ?
               `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
               : ""
@@ -628,7 +657,7 @@ function drawColorRingTiles(saliencies){
       .attr("cy", d =>  70)
       .attr("r",  d => {
         let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
-        const binRadius = bin.c_max/curr_bin_size.c*curr_bin_size.tileSize *.5 - 1
+        const binRadius = bin.c_max/curr_bin_size.c*curr_bin_size.tileSize - 1
         return binRadius
       })
       .attr("fill", d => {
@@ -643,7 +672,7 @@ function drawColorRingTiles(saliencies){
           Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
           Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
           Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
-          ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
+          ${("representative_rgb" in bin_info)
               ?
               `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
               : ""
@@ -666,10 +695,10 @@ function drawColorRingTiles(saliencies){
         let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
         const levelCenterX = 30 + (Object.keys(lab_bins[curr_bin_size]).length - 1 - bin.l_bin) * 100
         const levelCenterY = 70
-        const binRadius = bin.c_center/curr_bin_size.c*curr_bin_size.tileSize *.5
-        const endAngleMargin = -(bin.h_min + 8 / bin.c_center * curr_bin_size.c)
+        const binRadius = bin.c_center/curr_bin_size.c*curr_bin_size.tileSize 
+        const endAngleMargin = -(bin.h_min + 6 / bin.c_center * curr_bin_size.c)
           - 90 // rotate 90 degrees
-        const startAngleMargin = -(bin.h_max - 8 / bin.c_center * curr_bin_size.c)
+        const startAngleMargin = -(bin.h_max - 6 / bin.c_center * curr_bin_size.c)
           - 90 // rotate 90 degrees
         const binStartDeltaX = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
         const binStartX = levelCenterX + binStartDeltaX
@@ -687,7 +716,7 @@ function drawColorRingTiles(saliencies){
         A ${binRadius} ${binRadius} 0 0 1 ${binEndX} ${binEndY}
         `
       }) // A rx ry x-axis-rotation large-arc-flag sweep-flag x y
-      .style("stroke-width", curr_bin_size.tileSize *.5 - 1)//d => curr_bin_size.tileBorderSize)
+      .style("stroke-width", curr_bin_size.tileSize - 1)//d => curr_bin_size.tileBorderSize)
       // .attr("x", (d) => 
       //     curr_bin_size.type == "ring" ? 
       //       d.h_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.c_bin]
@@ -726,7 +755,7 @@ function drawColorRingTiles(saliencies){
           Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
           Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
           Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
-          ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
+          ${("representative_rgb" in bin_info)
               ?
               `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
               : ""

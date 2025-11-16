@@ -110,7 +110,7 @@ class BinSize {
     }
 
     // copy over any other values
-    for(const [key, val] in Object.entries(options)){
+    for(const [key, val] of Object.entries(options)){
       if(!(key in this)){
         this[key] = val
       }
