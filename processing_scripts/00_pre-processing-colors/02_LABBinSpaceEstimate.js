@@ -1,3 +1,7 @@
+// not sure if this needs extra RAM, but just in case:
+// node --max-old-space-size=32768 .\02_LABBinSpaceEstimate.js
+
+
 import fs from 'fs'
 import Color from "colorjs.io";
 import * as labBinHelperLib from '../utils/labBinHelper.js'
@@ -6,9 +10,10 @@ const FILE_IO_LAB_BINS = "../../model/color_info_pre_naming/oklab_bins"
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 
-//const HUE_RATIO_LAB_N = 2000 // NOTE: This makes it very slow (and more accurate)
-//const HUE_RATIO_LAB_N = 200 // For speed purposes (gives less accurate bin info)
-const LAB_N_SAMPLES = 40
+//const HUE_RATIO_LAB_N = 500 // NOTE: This makes it very slow (and more accurate)
+//const HUE_RATIO_LAB_N = 50 // For speed purposes (gives less accurate bin info)
+//const HUE_RATIO_LAB_N = 20 // Very fast, not accurate (for test run)
+const LAB_N_SAMPLES = 200
 
 const LAB_SAMPLE_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / LAB_N_SAMPLES 
 
@@ -170,7 +175,7 @@ function getUndefinedBinCount(binSet, bin){
 
 // Loop through Oklab value grid to estimate ratios
 for(let l = min_l; l <= max_l; l += LAB_SAMPLE_DELTA){
-    console.log(" - calculating bin properties at l", l)
+    console.log(" - calculating bin properties at l", "fraction", (l - min_l) / (max_l - min_l))
     for(let a = -max_ab; a <= max_ab; a += LAB_SAMPLE_DELTA){
         for(let b = -max_ab; b <= max_ab; b += LAB_SAMPLE_DELTA){
             const testColor = new Color({space: "oklab", coords: [l, a, b]})
@@ -286,6 +291,7 @@ for(const binSet of labBinSetsForProcessing){
 
     // calculate percentage for each bin:
     for(const bin of binSet.bins){
+        bin["gamut_ratio_sample_lab_delta"] = LAB_SAMPLE_DELTA
         for(const colorSpace of COLOR_SPACES){
             bin["ratio_bin_in_gamut_" + (colorSpace == "srgb" ? "rgb" : colorSpace)] = 
                 bin["numTestColors_"+colorSpace] / bin.numTestColors
@@ -351,11 +357,17 @@ for(const binSet of labBinSetsForProcessing){
                     delete bin.representative_rgb_in_bin
                 }
             } else {
+                if(!("inGamut" in bin["center_"+colorSpace])){
+                    bin["center_"+colorSpace] = new Color({space: colorSpace, coords: [bin["center_"+colorSpace].r, bin["center_"+colorSpace].b, bin["center_"+colorSpace].g]})
+                }
                 if(bin["center_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
                     bin["center_"+colorSpace] = bin["center_"+colorSpace].toGamut()
                 }
                 bin["center_"+colorSpace] = {r: bin["center_"+colorSpace].r, g: bin["center_"+colorSpace].g, b: bin["center_"+colorSpace].b}
                 if("representative_"+colorSpace in bin){
+                    if(!("inGamut" in bin["representative_"+colorSpace])){
+                        bin["representative_"+colorSpace] = new Color({space: colorSpace, coords: [bin["representative_"+colorSpace].r, bin["representative_"+colorSpace].b, bin["representative_"+colorSpace].g]})
+                    }
                     if(bin["representative_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
                         bin["representative_"+colorSpace] = bin["representative_"+colorSpace].toGamut()
                     }
