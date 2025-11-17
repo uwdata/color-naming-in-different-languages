@@ -1,10 +1,10 @@
-const fs = require('fs'),
-  colorBins = require('../utils/hueColorBins.js'),
-  languages_iso_639 = require("../../raw/languages-iso-639.js").languages_iso_639,
-  csv = require("csvtojson"),
-  csvWriter = require('csv-write-stream'),
-  d3 = require('d3');
-
+// TODO: This currently assumes only srgb data. It will need to be adapted for p3 and rec2020
+import fs from 'fs'
+import csv from 'csvtojson';
+import * as d3 from 'd3'
+import csvWriter from 'csv-write-stream'
+import {languages_iso_639} from "../../raw/languages-iso-639.js"
+import colorBins from '../utils/hueColorBins.js'
 
 const N_BIN_OPTIONS = [72, 36]
 
@@ -32,7 +32,7 @@ const O_HUE_SUMMARY_FILE = `../../model/hue_colors_info.csv`;
 csv()
 .fromFile(I_FILE)
 .then((colorNames)=>{
-  hue_colors_info = []
+  const hue_colors_info = []
 
   for(const blur of [NO_BLUR, BLUR]){
     for(const n_bins of N_BIN_OPTIONS){
@@ -56,7 +56,7 @@ csv()
           .sort((a,b) => -a.values.length + b.values.length);
 
         let rankLookUp = lang.terms.map(t => t.values.length);
-        //lang.topNTerms = lang.terms.filter(t => rankLookUp.indexOf(t.values.length) + 1 <= N_TERMS);
+        
         lang.topNTerms = lang.terms
           .filter(t => t.values.length >= MIN_ENTRIES_PER_TERM)
           .filter(t => t.values.length / lang.values.length > MIN_COLOR_FRACTION);
