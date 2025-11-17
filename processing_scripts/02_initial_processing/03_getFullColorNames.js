@@ -1,10 +1,19 @@
-const fs = require('fs'),
-  csv = require("csvtojson"),
-  csvWriter = require('csv-write-stream'),
-  zlib = require('zlib'),
-  d3 = require('d3'),
-  oklab = require('../../raw/oklab.js'),
-  labBinHelperLib = require('../utils/labBinHelper');
+import fs from 'fs'
+import Color from "colorjs.io";
+import csv from 'csvtojson';
+import * as d3 from 'd3'
+import csvWriter from 'csv-write-stream'
+import zlib from 'zlib'
+import * as labBinHelperLib from '../utils/labBinHelper.js'
+
+
+// const fs = require('fs'),
+//   csv = require("csvtojson"),
+//   csvWriter = require('csv-write-stream'),
+//   zlib = require('zlib'),
+//   d3 = require('d3'),
+//   oklab = require('../../raw/oklab.js'),
+//   labBinHelperLib = require('../utils/labBinHelper');
  
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
@@ -32,12 +41,18 @@ for(let labBinSize of LAB_BIN_SIZES){
 
   const labBinHelper = labBinHelperLib.getLabBins(labBinSize);
 
-  const lab_bins = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/lab_bins_${labBinSize}.json`))
-  const lab_bins_arr = labBinHelper.labBinsToArray(lab_bins)
+  const [dim1, dim2, dim3] = labBinSize.dims
 
+  const [dim1BinName, dim2BinName, dim3BinName] = labBinSize.dims.map(d => "bin"+d.toUpperCase())
+
+  // TODO: When we have full gamut data, remove the filter
+  const lab_bins_arr = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/oklab_bins_${labBinSize}.json`))
+    .filter(bin => bin.num_rgb > 0 || bin.ratio_bin_in_gamut_rgb > 0)  // filter for only the rgb bins while we only have rgb data
+
+  const lab_bins = labBinHelper.binsArrayToNested(lab_bins_arr)
   
 
-  commonColorNameLookup = {};
+  const commonColorNameLookup = {};
   colorInfo.forEach(ci => {
 		if(!commonColorNameLookup[ci.lang]){
       commonColorNameLookup[ci.lang] = [];
@@ -78,65 +93,34 @@ for(let labBinSize of LAB_BIN_SIZES){
     }
 
     let langBinColorNameCnt = labBinHelper.createLABNumBins(lab_bins);
-    let langBinColorHueNameCnt = labBinHelper.createLABNumBins(lab_bins);
-    let langBinColorNonHueNameCnt = labBinHelper.createLABNumBins(lab_bins);
     langData.terms.forEach(term => {
       term.binColorNameCnt = labBinHelper.createLABNumBins(lab_bins)
-      term.binHueNameCnt = labBinHelper.createLABNumBins(lab_bins)
-      term.binNonHueNameCnt = labBinHelper.createLABNumBins(lab_bins)
-
-      term.totalHueNameCnt = 0
-      term.totalNonHueNameCnt = 0
+      term.totalColorNameCnt = 0
+      
 
       term.values.forEach(response => {
-        let responseLab = oklab.rgbToOklab({r: response.r, g: response.g, b: response.b});
-        let [l, a, b] = labBinHelper.bins_from_lab({l: responseLab.l, a: responseLab.a, b: responseLab.b});
-        term.binColorNameCnt[l][a][b] += 1;
-        langBinColorNameCnt[l][a][b] += 1;
-        // check if hue color or non-hue color and calculate scaled counts
-        if(Math.max(response.r, response.g, response.b) == 255 && Math.min(response.r, response.g, response.b) == 0){
-          term.binHueNameCnt[l][a][b] += 1
-          langBinColorHueNameCnt[l][a][b] += 1
-          term.totalHueNameCnt += 1
+        const responseColor = new Color({
+                space: "srgb", coords: [response.r/255, response.g/255, response.b/255]
+              })
+        
+        let dim1Bin, dim2Bin, dim3Bin
+        if(labBinSize.type == "ring"){
+          const responseOklch = responseColor.to("oklch");
+          [dim1Bin, dim2Bin, dim3Bin] = labBinHelper.bins_from_lch({l: responseOklch.l, c: responseOklch.c, h: responseOklch.h})
         } else {
-          term.binNonHueNameCnt[l][a][b] += 1
-          langBinColorNonHueNameCnt[l][a][b] += 1
-          term.totalNonHueNameCnt += 1
+          const responseOklab = responseColor.to("oklab");
+          [dim1Bin, dim2Bin, dim3Bin] = labBinHelper.bins_from_lab({l: responseOklab.l, a: responseOklab.a, b: responseOklab.b}) 
         }
+
+        term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] += 1;
+        langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin] += 1;
+        term.totalColorNameCnt += 1
       });
     });
 
-    // go through each term and bin for term to calculate 
-    // corrected term count
+   
 
-    let langBinColorCorrectedCnt = labBinHelper.createLABNumBins(lab_bins);
-    langData.terms.forEach(term => {
-       term.correctedBinCnt = labBinHelper.createLABNumBins(lab_bins)
-       for(let i = 0; i < lab_bins_arr.length; i++){
-        const thisBin = lab_bins_arr[i]
-
-        const l = thisBin.l_bin,
-              a = thisBin.a_bin,
-              b = thisBin.b_bin
-        if (term.binColorNameCnt[l][a][b] !== 0) {
-          const bin_hue_correction_multiplier = (langBinColorHueNameCnt[l][a][b] +  langBinColorNonHueNameCnt[l][a][b]) * lab_bins[l][a][b].lab_hue_color_ratio_est / langBinColorHueNameCnt[l][a][b]
-          const bin_non_hue_correction_multiplier = (langBinColorHueNameCnt[l][a][b] +  langBinColorNonHueNameCnt[l][a][b]) * (1-lab_bins[l][a][b].lab_hue_color_ratio_est) / langBinColorNonHueNameCnt[l][a][b]
-          term.correctedBinCnt[l][a][b] = 
-            (term.binHueNameCnt[l][a][b] > 0 ? term.binHueNameCnt[l][a][b] * bin_hue_correction_multiplier : 0)
-             + (term.binNonHueNameCnt[l][a][b] > 0 ? term.binNonHueNameCnt[l][a][b] * bin_non_hue_correction_multiplier : 0)
-          langBinColorCorrectedCnt[l][a][b] += term.correctedBinCnt[l][a][b]
-        }
-      }
-    })
-
-    // we now have terms corrected cnt per bin
-    // and language corrected count per bin
-
-    // find P of term given Color now can be done by comparing
-    // total bin corrected count vs term corrected count
-    const global_hue_correction_multiplier = lang_info.find(d => d.lang == langData.key).hue_correction_multiplier
-    const global_non_hue_correction_multiplier = lang_info.find(d => d.lang == langData.key).non_hue_correction_multiplier
-
+    // find P of term given Color
     langData.terms.forEach(term => {
        term.binPCT = labBinHelper.createLABNumBins(lab_bins)
        term.binPTC = labBinHelper.createLABNumBins(lab_bins)
@@ -144,39 +128,36 @@ for(let labBinSize of LAB_BIN_SIZES){
        for(let i = 0; i < lab_bins_arr.length; i++){
           const thisBin = lab_bins_arr[i]
 
-          const l = thisBin.l_bin,
-                a = thisBin.a_bin,
-                b = thisBin.b_bin
+          const dim1Bin = thisBin[dim1 + "_bin"],
+                dim2Bin = thisBin[dim2 + "_bin"],
+                dim3Bin = thisBin[dim3 + "_bin"]
             
-          term.binPCT[l][a][b] = (term.binHueNameCnt[l][a][b]*global_hue_correction_multiplier + term.binNonHueNameCnt[l][a][b]*global_non_hue_correction_multiplier)
-              / (term.totalHueNameCnt*global_hue_correction_multiplier + term.totalNonHueNameCnt*global_non_hue_correction_multiplier)// corrected count for this term *in this bin* / global corrected count for this term
+          term.binPCT[dim1Bin][dim2Bin][dim3Bin] = term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] / term.totalColorNameCnt
           
-          if(langBinColorCorrectedCnt[l][a][b] == 0 && term.correctedBinCnt[l][a][b] == 0){
-            term.binPTC[l][a][b] = 0
+          if(langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin] == 0 && term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] == 0){
+            term.binPTC[dim1Bin][dim2Bin][dim3Bin] = 0
           } else {
-            term.binPTC[l][a][b] = term.correctedBinCnt[l][a][b] / langBinColorCorrectedCnt[l][a][b]
+            term.binPTC[dim1Bin][dim2Bin][dim3Bin] = term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] / langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin]
           }
        }
     })
 
-    // Blur the pCT, pTC, and correctedBinCnt values
+    // Blur the pCT, pTC, values
     langData.terms.forEach(term => {
        term.binColorNameCntBlur = labBinHelper.createLABNumBins(lab_bins)
-       term.correctedBinCntBlur = labBinHelper.createLABNumBins(lab_bins)
        term.binPCTBlur = labBinHelper.createLABNumBins(lab_bins)
        term.binPTCBlur = labBinHelper.createLABNumBins(lab_bins)
 
        for(let i = 0; i < lab_bins_arr.length; i++){
           const thisBin = lab_bins_arr[i]
 
-          const l = thisBin.l_bin,
-                a = thisBin.a_bin,
-                b = thisBin.b_bin
+          const dim1Bin = thisBin[dim1 + "_bin"],
+                dim2Bin = thisBin[dim2 + "_bin"],
+                dim3Bin = thisBin[dim3 + "_bin"]
             
-          term.binColorNameCntBlur[l][a][b] = getFieldBlur(term, l, a, b, "binColorNameCnt")
-          term.correctedBinCntBlur[l][a][b] = getFieldBlur(term, l, a, b, "correctedBinCnt")
-          term.binPCTBlur[l][a][b] = getFieldBlur(term, l, a, b, "binPCT")
-          term.binPTCBlur[l][a][b] = getFieldBlur(term, l, a, b, "binPTC")
+          term.binColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] = getFieldBlur(term, dim1Bin, dim2Bin, dim3Bin, "binColorNameCnt")
+          term.binPCTBlur[dim1Bin][dim2Bin][dim3Bin] = getFieldBlur(term, dim1Bin, dim2Bin, dim3Bin, "binPCT")
+          term.binPTCBlur[dim1Bin][dim2Bin][dim3Bin] = getFieldBlur(term, dim1Bin, dim2Bin, dim3Bin, "binPTC")
        }
     })
 
@@ -187,38 +168,36 @@ for(let labBinSize of LAB_BIN_SIZES){
       for(let i = 0; i < lab_bins_arr.length; i++){
         const thisBin = lab_bins_arr[i]
 
-        const l = thisBin.l_bin,
-              a = thisBin.a_bin,
-              b = thisBin.b_bin
+        const dim1Bin = thisBin[dim1 + "_bin"],
+              dim2Bin = thisBin[dim2 + "_bin"],
+              dim3Bin = thisBin[dim3 + "_bin"]
 
-        if (term.binColorNameCnt[l][a][b] !== 0) {
+        if (term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] !== 0) {
           langTermBinsBuff.push({
             "lang": langData.key,
             "langAbv": lang_info.find(d => d.lang == langData.key).langAbv,
             "term": term.key,
             "commonTerm": commonColorNameLookup[langData.key][term.key],
-            "binL": l,
-            "binA": a,
-            "binB": b,
-            "cnt": term.binColorNameCnt[l][a][b],
-            "correctedCnt": term.correctedBinCnt[l][a][b],
-            "pCT": term.binPCT[l][a][b],
-            "pTC": term.binPTC[l][a][b]
+            [dim1BinName]: dim1Bin,
+            [dim2BinName]: dim2Bin,
+            [dim3BinName]: dim3Bin,
+            "cnt": term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin],
+            "pCT": term.binPCT[dim1Bin][dim2Bin][dim3Bin],
+            "pTC": term.binPTC[dim1Bin][dim2Bin][dim3Bin]
           });
         }
-        if (term.binColorNameCntBlur[l][a][b] !== 0) {
+        if (term.binColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] !== 0) {
           langTermBinsBlurBuff.push({
             "lang": langData.key,
             "langAbv": lang_info.find(d => d.lang == langData.key).langAbv,
             "term": term.key,
             "commonTerm": commonColorNameLookup[langData.key][term.key],
-            "binL": l,
-            "binA": a,
-            "binB": b,
-            "cnt": term.binColorNameCntBlur[l][a][b],
-            "correctedCnt": term.correctedBinCntBlur[l][a][b],
-            "pCT": term.binPCTBlur[l][a][b],
-            "pTC": term.binPTCBlur[l][a][b]
+            [dim1BinName]: dim1Bin,
+            [dim2BinName]: dim2Bin,
+            [dim3BinName]: dim3Bin,
+            "cnt": term.binColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin],
+            "pCT": term.binPCTBlur[dim1Bin][dim2Bin][dim3Bin],
+            "pTC": term.binPTCBlur[dim1Bin][dim2Bin][dim3Bin]
           });
         }
       }
@@ -230,16 +209,20 @@ for(let labBinSize of LAB_BIN_SIZES){
     for(let i = 0; i < lab_bins_arr.length; i++){
       const thisBin = lab_bins_arr[i]
 
-      const l = thisBin.l_bin,
-            a = thisBin.a_bin,
-            b = thisBin.b_bin
-      if (langBinColorNameCnt[l][a][b] >= MIN_NperBin) {
-        let maxpTC = d3.max(langTermBinsBuff.filter(d => d.binL === l && d.binA === a && d.binB === b), d => d.pTC);
-        const rep_lab = lab_bins[l][a][b].representative_lab
-        const majorTerm = langTermBinsBuff.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term
+      const dim1Bin = thisBin[dim1 + "_bin"],
+            dim2Bin = thisBin[dim2 + "_bin"],
+            dim3Bin = thisBin[dim3 + "_bin"]
+      if (langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin] >= MIN_NperBin) {
+        let maxpTC = d3.max(langTermBinsBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin), d => d.pTC);
+        const rep_lab = "representative_lab" in lab_bins[dim1Bin][dim2Bin][dim3Bin] ? 
+            lab_bins[dim1Bin][dim2Bin][dim3Bin].representative_lab
+          :
+            lab_bins[dim1Bin][dim2Bin][dim3Bin].center_lab
+        
+        const majorTerm = langTermBinsBuff.find(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin && d.pTC === maxpTC ).term
         const basicColorInfo = colorInfo.find((a) => a.lang == langData.key && a.simplifiedName == majorTerm)
 
-        const topTerms = langTermBinsBuff.filter(d => d.binL === l && d.binA === a && d.binB === b)
+        const topTerms = langTermBinsBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin)
                           .sort((a, b) => b.pTC - a.pTC)
                           .slice(0, 4)
                           .map(d => {return {
@@ -251,11 +234,11 @@ for(let labBinSize of LAB_BIN_SIZES){
         bufSaliency.push({
           "lang": langData.key,
           "langAbv": lang_info.find(d => d.lang == langData.key).langAbv,
-          "binL": l,
-          "binA": a,
-          "binB": b,
-          "lab": [rep_lab.l, rep_lab.a, rep_lab.b].join(","),
-          "saliency": -entropy(langTermBinsBuff.filter(d => d.binL === l && d.binA === a && d.binB === b).map(d => d.pTC)),
+          [dim1BinName]: dim1Bin,
+          [dim2BinName]: dim2Bin,
+          [dim3BinName]: dim3Bin,
+          "lab": [rep_lab[dim1], rep_lab[dim2], rep_lab[dim3]].join(","),
+          "saliency": -entropy(langTermBinsBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin).map(d => d.pTC)),
           "maxpTC": maxpTC,
           "majorTerm": majorTerm,
           "commonTerm": commonColorNameLookup[langData.key][majorTerm],
@@ -264,13 +247,20 @@ for(let labBinSize of LAB_BIN_SIZES){
         });
       }
       // blurred version
-      if (getBlurContribution(langBinColorNameCnt,l,a,b) >= MIN_NperBin) {
-        let maxpTC = d3.max(langTermBinsBlurBuff.filter(d => d.binL === l && d.binA === a && d.binB === b), d => d.pTC);
-        const rep_lab = lab_bins[l][a][b].representative_lab
-        const majorTerm = langTermBinsBlurBuff.find(d => d.binL === l && d.binA === a && d.binB === b && d.pTC === maxpTC ).term
+      if (getBlurContribution(langBinColorNameCnt,dim1Bin,dim2Bin,dim3Bin) >= MIN_NperBin) {
+        let maxpTC = d3.max(langTermBinsBlurBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin), d => d.pTC);
+        const rep_lab = "representative_lab" in lab_bins[dim1Bin][dim2Bin][dim3Bin] ? 
+            lab_bins[dim1Bin][dim2Bin][dim3Bin].representative_lab
+          :
+            lab_bins[dim1Bin][dim2Bin][dim3Bin].center_lab
+
+        if(!langTermBinsBlurBuff.find(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin && d.pTC === maxpTC )){
+          console.log("Error!")
+        }
+        const majorTerm = langTermBinsBlurBuff.find(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin && d.pTC === maxpTC ).term
         const basicColorInfo = colorInfo.find((a) => a.lang == langData.key && a.simplifiedName == majorTerm)
 
-        const topTerms = langTermBinsBlurBuff.filter(d => d.binL === l && d.binA === a && d.binB === b)
+        const topTerms = langTermBinsBlurBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin)
                           .sort((a, b) => b.pTC - a.pTC)
                           .slice(0, 4)
                           .map(d => {return {
@@ -282,11 +272,11 @@ for(let labBinSize of LAB_BIN_SIZES){
         bufSaliencyBlur.push({
           "lang": langData.key,
           "langAbv": lang_info.find(d => d.lang == langData.key).langAbv,
-          "binL": l,
-          "binA": a,
-          "binB": b,
-          "lab": [rep_lab.l, rep_lab.a, rep_lab.b].join(","),
-          "saliency": -entropy(langTermBinsBlurBuff.filter(d => d.binL === l && d.binA === a && d.binB === b).map(d => d.pTC)),
+          [dim1BinName]: dim1Bin,
+          [dim2BinName]: dim2Bin,
+          [dim3BinName]: dim3Bin,
+          "lab": [rep_lab.dim1, rep_lab.dim2, rep_lab.dim3].join(","),
+          "saliency": -entropy(langTermBinsBlurBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin).map(d => d.pTC)),
           "maxpTC": maxpTC,
           "majorTerm": majorTerm,
           "commonTerm": commonColorNameLookup[langData.key][majorTerm],
@@ -350,6 +340,13 @@ function entropy(arr){
 
 // Guassian blur truncated to a 3x3x3 grid
 // NOTE: we make sure the center node is weight 1
+
+//TODO: This currently assumes bins are uniform cubes
+//    and makes center node weight 1, one dimension off, 1/8th
+// For rectangular bins, the blur should be different by dimension
+// and for the ring bins, figuring out the neighboring bins
+//   isn't straightforward, and the distances will vary
+
 const blurWeights = {}
 for(let i of [-1,0,1]){
   blurWeights[i] = {}
@@ -361,7 +358,7 @@ for(let i of [-1,0,1]){
   }
 }
 
-function getBlur(binInfo, l_bin, a_bin, b_bin){
+function getBlur(binInfo, dim1Bin, dim2Bin, dim3Bin){
   let sumOfWeights = 0
   let weightedSum = 0
   
@@ -371,12 +368,12 @@ function getBlur(binInfo, l_bin, a_bin, b_bin){
       j = parseInt(j)
       for(let k of Object.keys(blurWeights[i][j])){
         k = parseInt(k)
-        if((l_bin + i) in binInfo &&
-           (a_bin + j) in binInfo[l_bin + i] &&
-           (b_bin + k) in binInfo[l_bin + i][a_bin + j]
+        if((dim1Bin + i) in binInfo &&
+           (dim2Bin + j) in binInfo[dim1Bin + i] &&
+           (dim3Bin + k) in binInfo[dim1Bin + i][dim2Bin + j]
         ){
           sumOfWeights += blurWeights[i][j][k]
-          weightedSum += binInfo[l_bin + i][a_bin + j][b_bin + k] * 
+          weightedSum += binInfo[dim1Bin + i][dim2Bin + j][dim3Bin + k] * 
                           blurWeights[i][j][k] 
         }
       }
@@ -389,7 +386,7 @@ function getBlur(binInfo, l_bin, a_bin, b_bin){
 }
 
 // assumes the center node is weight 1
-function getBlurContribution(binInfo, l_bin, a_bin, b_bin){
+function getBlurContribution(binInfo, dim1Bin, dim2Bin, dim3Bin){
   let weightedSum = 0
   
   for(let i of Object.keys(blurWeights)){
@@ -398,11 +395,11 @@ function getBlurContribution(binInfo, l_bin, a_bin, b_bin){
       j = parseInt(j)
       for(let k of Object.keys(blurWeights[i][j])){
         k = parseInt(k)
-        if((l_bin + i) in binInfo &&
-           (a_bin + j) in binInfo[l_bin + i] &&
-           (b_bin + k) in binInfo[l_bin + i][a_bin + j]
+        if((dim1Bin + i) in binInfo &&
+           (dim2Bin + j) in binInfo[dim1Bin + i] &&
+           (dim3Bin + k) in binInfo[dim1Bin + i][dim2Bin + j]
         ){
-          weightedSum += binInfo[l_bin + i][a_bin + j][b_bin + k] * 
+          weightedSum += binInfo[dim1Bin + i][dim2Bin + j][dim3Bin + k] * 
                           blurWeights[i][j][k] 
         }
       }
@@ -414,7 +411,7 @@ function getBlurContribution(binInfo, l_bin, a_bin, b_bin){
   return weightedSum
 }
 
-function getFieldBlur(termInfo, l_bin, a_bin, b_bin, field){
+function getFieldBlur(termInfo, dim1Bin, dim2Bin, dim3Bin, field){
   const fieldInfo = termInfo[field]
-  return getBlur(fieldInfo, l_bin, a_bin, b_bin)
+  return getBlur(fieldInfo, dim1Bin, dim2Bin, dim3Bin)
 }
