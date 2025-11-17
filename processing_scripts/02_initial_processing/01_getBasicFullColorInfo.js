@@ -1,24 +1,16 @@
-// Need to install 'csvtojson' and 'csv-write-stream'
-// npm install csvtojson
-// npm install csv-write-stream
-
-const fs = require('fs'),
-  csv = require("csvtojson"),
-  d3 = require('d3'),
-  csvWriter = require('csv-write-stream'),
-  languages_iso_639 = require("../../raw/languages-iso-639.js").languages_iso_639
+import fs from 'fs'
+import Color from "colorjs.io";
+import csv from 'csvtojson';
+import * as d3 from 'd3'
+import csvWriter from 'csv-write-stream'
+import {languages_iso_639} from "../../raw/languages-iso-639.js"
 
 const MIN_FULL_COLOR_NAMES = 12;
 const LINE_RGB_SET = "line";
 const FULL_RGB_SET = "full";
 
-const HUE_COLOR_RATIO = JSON.parse(fs.readFileSync("../../model/color_info_pre_naming/lab_hue_color_ratio.json")).hueColorRatio;
-
-
-
 function getLangAbv(lang){
-  lang_data = languages_iso_639.find(l => `${l["Language name"]} (${l["Native name"]})` == lang)
-  //const langKey = Object.keys(colorNamesAbrv).find(val => lang.includes(val))
+  const lang_data = languages_iso_639.find(l => `${l["Language name"]} (${l["Native name"]})` == lang)
   let abv
   if(lang_data){
     abv = lang_data["639‑1"]
@@ -48,20 +40,14 @@ csv().fromFile(FILE_I)
                 .map(a => {return {key: a[0], values: a[1]}})
                 .sort((a,b) => -a.values.length + b.values.length);
 
-    lang.numLineNames = 0
+    lang.numLineNames = 0 // count line info just for the lang_info summary
     lang.numFullNames = 0
-    lang.numHueColorNames = 0
-    lang.numNonHueColorNames = 0
 
     lang.terms.forEach(term => {
       term.numLineNames = term.values.filter(entry => entry.rgbSet == LINE_RGB_SET).length
       lang.numLineNames += term.numLineNames
       term.numFullNames = term.values.filter(entry => entry.rgbSet == FULL_RGB_SET).length
       lang.numFullNames += term.numFullNames
-      term.numHueColorNames = term.values.filter(c => Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0).length
-      lang.numHueColorNames += term.numHueColorNames
-      term.numNonHueColorNames = term.values.filter(c => !(Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0)).length
-      lang.numNonHueColorNames += term.numNonHueColorNames
 
       term.simplifiedName = term.key;
       term.commonName = d3.groups(term.values,t => t.standardized_entered_name)
@@ -81,29 +67,20 @@ csv().fromFile(FILE_I)
   basicColorWriter.pipe(fs.createWriteStream(FILE_BASIC_COLOR_O));
 
   grouped_lang.forEach(lang => {
-    const hue_correction_multiplier = (lang.numHueColorNames +  lang.numNonHueColorNames) * HUE_COLOR_RATIO / lang.numHueColorNames
-    const non_hue_correction_multiplier = (lang.numHueColorNames +  lang.numNonHueColorNames) * (1-HUE_COLOR_RATIO) / lang.numNonHueColorNames
-
-    lang.hue_correction_multiplier = hue_correction_multiplier
-    lang.non_hue_correction_multiplier = non_hue_correction_multiplier
 
     langDataWriter.write({
       lang: lang.key,
       langAbv: getLangAbv(lang.key),
       numLineNames: lang.numLineNames,
       numFullNames: lang.numFullNames,
-      numHueColorNames: lang.numHueColorNames,
-      numNonHueColorNames: lang.numNonHueColorNames,
-      numFilteredTerms: lang.terms.length,
-      hue_correction_multiplier: hue_correction_multiplier,
-      non_hue_correction_multiplier: non_hue_correction_multiplier
+      numColorTerms: lang.terms.length,
     })
 
     lang.terms.forEach(term => {
-      const avgLab = getAverageLABColor(term.values, lang)
-      const avgRgb = avgLab.rgb()
-      //const lab 
-      term.avgColorRGBCode = `rgb(${Math.round(avgRgb.r)},${Math.round(avgRgb.g)},${Math.round(avgRgb.b)})`
+      const avgLab = getAverageLABColor(term.values)
+      const avgSrgb = avgLab.to("srgb")
+
+      term.avgColorRGBCode = `rgb(${Math.round(255*avgSrgb.r)},${Math.round(255*avgSrgb.g)},${Math.round(255*avgSrgb.b)})`
       term.avgL = avgLab.l
       term.avgA = avgLab.a
       term.avgB = avgLab.b
@@ -116,8 +93,7 @@ csv().fromFile(FILE_I)
         commonName: term.commonName,
         simplifiedName: term.simplifiedName,
         avgColorRGBCode: term.avgColorRGBCode,
-        totalColorFraction: (term.numHueColorNames * hue_correction_multiplier + term.numNonHueColorNames * non_hue_correction_multiplier) 
-          / (lang.numHueColorNames * hue_correction_multiplier + lang.numNonHueColorNames * non_hue_correction_multiplier),
+        totalColorFraction: term.numFullNames / lang.numFullNames,
         avgL: term.avgL,
         avgA: term.avgA,
         avgB: term.avgB,
@@ -133,61 +109,25 @@ csv().fromFile(FILE_I)
 
 
 
-function getAverageLABColor(colorEntries, lang){
-  const hueNames = colorEntries.filter(c => 
-    Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0)
-    .map(c => d3.lab(d3.rgb(c.r,c.g,c.b)))
-  const nonHueNames = colorEntries.filter(c => 
-    ! (Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0))
-    .map(c => d3.lab(d3.rgb(c.r,c.g,c.b)))
-
-  const numHueNames = hueNames.length
-  const numNonHueNames = nonHueNames.length
-  
-
-  const hueSumLab = d3.lab(
-    hueNames.map(c => c.l).reduce((a, b) => a + Number(b), 0),
-    hueNames.map(c => c.a).reduce((a, b) => a + Number(b), 0),
-    hueNames.map(c => c.b).reduce((a, b) => a + Number(b), 0),
-  )
-
-  const nonHueSumLab = d3.lab(
-    nonHueNames.map(c => c.l).reduce((a, b) => a + Number(b), 0),
-    nonHueNames.map(c => c.a).reduce((a, b) => a + Number(b), 0),
-    nonHueNames.map(c => c.b).reduce((a, b) => a + Number(b), 0),
-  )
-
-  // if only hue or non-hue names are present, then just return that one
-  if(numHueNames == 0){
-    const nonHueAvgLab = d3.lab(
-      nonHueSumLab.l / numNonHueNames,
-      nonHueSumLab.a / numNonHueNames,
-      nonHueSumLab.b / numNonHueNames)
-
-    return nonHueAvgLab
-  } 
-  if(numNonHueNames == 0){
-    const hueAvgLab = d3.lab(
-      hueSumLab.l / numHueNames,
-      hueSumLab.a / numHueNames,
-      hueSumLab.b / numHueNames)
-    return hueAvgLab
+function getAverageLABColor(colorEntries){
+  let l_sum = 0
+  let a_sum = 0
+  let b_sum = 0
+  for(const colorEntry of colorEntries){
+    const color = new Color({
+        space: "srgb", coords: [colorEntry.r/255, colorEntry.g/255, colorEntry.b/255]
+      }).to("oklab")
+    
+    l_sum += color.l
+    a_sum += color.a
+    b_sum += color.b
   }
 
-  // if both hue and non-hue names are present, find avg by using their
-  // sums and totals together
-  // while correcting for the expected ratio of hue colors (in a random sample of LAB space)
-
-    // then for average, apply these to counts
-  const combinedAvgLab = d3.lab(
-    (hueSumLab.l * lang.hue_correction_multiplier  + nonHueSumLab.l * lang.non_hue_correction_multiplier)
-      / (numHueNames * lang.hue_correction_multiplier + numNonHueNames * lang.non_hue_correction_multiplier),
-    (hueSumLab.a * lang.hue_correction_multiplier  + nonHueSumLab.a * lang.non_hue_correction_multiplier)
-      / (numHueNames * lang.hue_correction_multiplier + numNonHueNames * lang.non_hue_correction_multiplier),
-    (hueSumLab.b * lang.hue_correction_multiplier  + nonHueSumLab.b * lang.non_hue_correction_multiplier)
-      / (numHueNames * lang.hue_correction_multiplier + numNonHueNames * lang.non_hue_correction_multiplier),
-  )
-
-  return combinedAvgLab
+  return new Color({
+    space: "oklab", coords: [
+      l_sum / colorEntries.length,
+      a_sum / colorEntries.length,
+      b_sum / colorEntries.length,
+    ]})
 }
 
