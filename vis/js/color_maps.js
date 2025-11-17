@@ -1,11 +1,52 @@
+
 class BinSize {
   constructor(options) {
     this.l = options.l;
-    this.ab = options.ab;
-    this.tileSize = options.tileSize;
-    this.tileMaxSizeMultiplier = options.tileMaxSizeMultiplier;
-    this.tileBorderSize = options.tileBorderSize;
-    this.abv = options.l.toPrecision(2) / 1 + "_" + options.ab.toPrecision(2) / 1
+    this.type = options.type;
+    if(this.type == "cube"){
+      this.ab = this.l
+      this.abv = this.l.toPrecision(2) / 1
+      this.dims = ["l", "a", "b"]
+    } else if(this.type == "box") {
+      this.ab = options.ab;
+      this.abv = this.l.toPrecision(2) / 1 + "_" + this.ab.toPrecision(2) / 1
+      this.dims = ["l", "a", "b"]
+    } else if(this.type == "ring") {
+      if("h_divs" in options && options.h_divs == 3){
+        this.h_divs = 3
+        if("c" in options){
+          this.c = options.c
+        }else{
+          this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
+        }
+      }else if(!("h_divs" in options) || options.h_divs == 8){ //default value, or already 8
+        this.h_divs = 8
+        if("c" in options){
+          this.c = options.c
+        }else{
+          this.c = options.l; // should it be diameter of center 1 * L (slightly smaller than a 1x1x1 box)
+          // note: after center ring, the radius change width will also be L
+        }
+      } else{
+        throw new Error("h_divs must be 3 or 8, but was: " + options.h_divs)
+      }
+      
+      const c_abv = (this.h_divs == 3 && this.c == this.l/2) || (this.h_divs == 8 && this.c == this.l) ?
+            "" :
+            "_"+(this.c.toPrecision(2) / 1)
+      
+      this.abv = "ring_" + (this.l.toPrecision(2) / 1) + c_abv + "_h" +this.h_divs
+      
+      this.dims = ["l", "c", "h"]
+    }
+
+    // copy over any other values
+    for(const [key, val] of Object.entries(options)){
+      if(!(key in this)){
+        this[key] = val
+      }
+    }
+    
   }
 
   toString() {
@@ -13,37 +54,184 @@ class BinSize {
   }
 }
 
+// const LAB_BIN_SIZES = [ 
+//   new BinSize({
+//     l: 1/5, ab: 1/20, // rectangle
+//     tileSize: 15,
+//     tileMaxSizeMultiplier: 1.5,
+//     tileBorderSize: 2
+//   }), 
+//   new BinSize({
+//     l: 1/10, ab: 1/40, // rectangle
+//     tileSize: 5,
+//     tileMaxSizeMultiplier: 1.7,
+//     tileBorderSize: 1
+//   }), 
+//   new BinSize({
+//     l: 1/15, ab: 1/60, // rectangle
+//     tileSize: 4,
+//     tileMaxSizeMultiplier: 1.7,
+//     tileBorderSize: 1
+//   }), 
+//   new BinSize({
+//     l: 1/20, ab: 1/20,  // cube
+//     tileSize: 5,
+//     tileMaxSizeMultiplier: 1.7,
+//     tileBorderSize: 1
+//   }),
+//   new BinSize({
+//     l: 1/40, ab: 1/40, // cube
+//     tileSize: 2,
+//     tileMaxSizeMultiplier: 1.7,
+//     tileBorderSize: 0.5
+//   }), 
+// ]
+
 const LAB_BIN_SIZES = [ 
   new BinSize({
-    l: 1/5, ab: 1/20, // rectangle
-    tileSize: 15,
-    tileMaxSizeMultiplier: 1.5,
+    type: "box",
+    l: 1/5, ab: 1/20, 
+    tileSize: 10,
+    tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 2
   }), 
   new BinSize({
-    l: 1/10, ab: 1/40, // rectangle
+    type: "box",
+    l: 1/10, ab: 1/40, 
     tileSize: 5,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 1
   }), 
   new BinSize({
-    l: 1/15, ab: 1/60, // rectangle
+    type: "box",
+    l: 1/15, ab: 1/60,
     tileSize: 4,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 1
   }), 
   new BinSize({
-    l: 1/20, ab: 1/20,  // cube
+    type: "cube",
+    l: 1/10,
+    tileSize: 10,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 2
+  }),
+  new BinSize({
+    type: "cube",
+    l: 1/20,
     tileSize: 5,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 1
   }),
   new BinSize({
-    l: 1/40, ab: 1/40, // cube
+    type: "cube",
+    l: 1/40,
     tileSize: 2,
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 0.5
   }), 
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    h_divs: 3,
+    tileSize: 10,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }), 
+  new BinSize({
+    type: "ring",
+    l: 1/20,
+    h_divs: 3,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }), 
+  new BinSize({
+    type: "ring",
+    l: 1/40,
+    h_divs: 3,
+    tileSize: 4,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    h_divs: 8,
+    tileSize: 10,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }), 
+  new BinSize({
+    type: "ring",
+    l: 1/20,
+    h_divs: 8,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }), 
+  new BinSize({
+    type: "ring",
+    l: 1/40,
+    h_divs: 8,
+    tileSize: 4,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/5,
+    c: 1/40, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
+    h_divs: 3,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    c: 1/80, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
+    h_divs: 3,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/15,
+    c: 1/120, // for h_divs 3, c should be 1/2 l, but to make it a box 4x taller, we do 1/8th l
+    h_divs: 3,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/5,
+    c: 1/20, // for h_divs 3, c should be = l, but we make it 1/4th
+    h_divs: 8,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    c: 1/40, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
+    h_divs: 8,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/15,
+    c: 1/60, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
+    h_divs: 8,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  })
 ]
 
 const MIN_BIN_PERC_DISPLAY = 50
@@ -77,8 +265,30 @@ const lang_tile_info = {}
 
 /*************** Pre-processing functions *********************/
 async function load_and_process_bin_data(bin_size){
-  await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/lab_bins_${bin_size}.json`, function( data ) {
-    process_lab_bin_data(data, bin_size)
+  await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/oklab_bins_${bin_size}.json`, function( data ) {
+    //temporarily turn data back into old format:
+    const newData = {}
+    const [dim1, dim2, dim3] = bin_size.dims
+    for(const bin of data){
+      // filter for only rgb bins
+      if(bin.num_rgb == 0 && bin.ratio_bin_in_gamut_rgb == 0){
+        continue
+      }
+      const dim1_bin = bin[dim1+"_bin"]
+      const dim2_bin = bin[dim2+"_bin"]
+      const dim3_bin = bin[dim3+"_bin"]
+
+      if(!(dim1_bin in newData)){
+        newData[dim1_bin] = {}
+      }
+
+      if(!(dim2_bin in newData[dim1_bin])){
+        newData[dim1_bin][dim2_bin] = {}
+      }
+
+      newData[dim1_bin][dim2_bin][dim3_bin] = bin
+    }
+    process_lab_bin_data(newData, bin_size)
     resolve()
   }))
   await new Promise(resolve => $.getJSON(`../model/binned_full_colors/full_color_map_saliency_bins_${bin_size}.json`, function( data ) {
@@ -236,7 +446,11 @@ function process_saliency_bin_data(saliency_data, bin_size, blur){
     tile.binL = tile.l_bin
     tile.binA = tile.a_bin
     tile.binB = tile.b_bin
-    tile.avgTermColor = `rgb(${tile.representative_rgb.r},${tile.representative_rgb.g},${tile.representative_rgb.b})`
+    tile.avgTermColor = "representative_rgb" in tile ? 
+        `rgb(${tile.representative_rgb.r},${tile.representative_rgb.g},${tile.representative_rgb.b})` 
+      :
+        `rgb(${tile.center_rgb.r},${tile.center_rgb.g},${tile.center_rgb.b})` 
+
     tile.topTerms = []
   })
 
@@ -266,7 +480,11 @@ $(document).on('ready page:load', function () {
   for(let bin_size of LAB_BIN_SIZES){
     $("#bin_size").append(
       `<option value="${bin_size}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-        ${bin_size.l == bin_size.ab ? "Cube" : "Box"}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1}
+        ${(bin_size.type == "cube" || bin_size.type == "box") ?
+          `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1}`
+          :
+          `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} h${bin_size.h_divs}`
+        }
       </option>`
     )
   }
@@ -507,7 +725,10 @@ function drawColorTiles(i, saliencies){
         if(selection.selection_type == "select" || selection.selection_type == "hover"){
           if(d.commonTerm == selection.color_name){
             const bin = lab_bins[curr_bin_size][d.binL][d.binA][d.binB]
-            return `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
+            return "representative_rgb" in bin ? 
+                `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
+              :
+                 `rgb(${bin.center_rgb.r},${bin.center_rgb.g},${bin.center_rgb.b})`
           } else {
             return backgroundColor
           }
@@ -524,7 +745,7 @@ function drawColorTiles(i, saliencies){
           ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
           Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
           Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
-          ${(bin_info.center_rgb.r != bin_info.representative_rgb.r && bin_info.center_rgb.g != bin_info.representative_rgb.g &&  bin_info.center_rgb.b != bin_info.representative_rgb.b)
+          ${("representative_rgb" in bin_info)
               ?
               `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
               : ""

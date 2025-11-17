@@ -223,12 +223,37 @@ const LAB_BIN_SIZES = [
   })
 ]
 
+
+
 function getLabBins(binSizeInfo){
 
   const BIN_L_N = (MAX_L - MIN_L) / binSizeInfo.l + 1 // +1 so the bin centers are at 0 and at 100
   if(BIN_L_N != Math.floor(BIN_L_N)){
     throw new Error("Error: Bin size must be evenly divisible by 100 to make bins line up with 0 and 100")
   }
+
+
+  function binsArrayToNested(labBinArray){
+    const nestedData = {}
+    const [dim1, dim2, dim3] = binSizeInfo.dims
+    for(const bin of labBinArray){
+      const dim1_bin = bin[dim1+"_bin"]
+      const dim2_bin = bin[dim2+"_bin"]
+      const dim3_bin = bin[dim3+"_bin"]
+
+      if(!(dim1_bin in nestedData)){
+        nestedData[dim1_bin] = {}
+      }
+
+      if(!(dim2_bin in nestedData[dim1_bin])){
+        nestedData[dim1_bin][dim2_bin] = {}
+      }
+
+      nestedData[dim1_bin][dim2_bin][dim3_bin] = bin
+    }
+    return nestedData
+  }
+
 
   if(binSizeInfo.type == "cube" || binSizeInfo.type == "box"){
     const BIN_AB_N_MIN = Math.ceil((MIN_MAX_AB * 2) / binSizeInfo.ab) // ceil to make a whole number big enough, 
@@ -322,6 +347,7 @@ function getLabBins(binSizeInfo){
       "lab_from_bins": lab_from_bins,
       "createLABNumBins": createLABNumBins,
       "labBinsToArray": labBinsToArray,
+      "binsArrayToNested": binsArrayToNested,
       "createLabBinInfo": createLabBinInfo
     }
   } else if(binSizeInfo.type == "ring") {
@@ -473,6 +499,7 @@ function getLabBins(binSizeInfo){
       "lch_from_bins": lch_from_bins,
       "createLABNumBins": createLCHNumBins,
       "labBinsToArray": lchBinsToArray,
+      "binsArrayToNested": binsArrayToNested,
       "createLchBinInfo": createLchBinInfo
     }
   } else {

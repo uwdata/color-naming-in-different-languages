@@ -1,3 +1,9 @@
+// TODO: make animated SVG between LAB and LCH space using:
+// https://css-tricks.com/guide-svg-animations-smil/
+//  - <animate> values, keytimes, keysplines, and path C (Cubic Bézier curve)
+//   to go from curve to lines, etc.
+// to export maybe
+
 class BinSize {
   constructor(options) {
     this.l = options.l;
