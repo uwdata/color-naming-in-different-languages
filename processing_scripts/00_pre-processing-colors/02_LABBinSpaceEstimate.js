@@ -1,6 +1,10 @@
 // not sure if this needs extra RAM, but just in case:
 // node --max-old-space-size=32768 .\02_LABBinSpaceEstimate.js
 
+// TODO: Make this check the gamut_ratio_sample_lab_delta and
+// only do color conversions for colors in bins that have a 
+// lower (or no gamut_ratio_sample_lab_delta) and have neighbors
+// that aren't all empty or all full
 
 import fs from 'fs'
 import Color from "colorjs.io";
