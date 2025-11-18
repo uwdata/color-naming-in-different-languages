@@ -38,8 +38,12 @@ for(let labBinSize of LAB_BIN_SIZES){
   const [dim1BinName, dim2BinName, dim3BinName] = labBinSize.dims.map(d => "bin"+d.toUpperCase())
 
   // TODO: When we have full gamut data, remove the filter
-  const lab_bins_arr = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/oklab_bins_${labBinSize}.json`))
-    .filter(bin => bin.num_rgb > 0)  // filter for only the rgb bins while we only have rgb data
+  const lab_bins_arr_full = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/oklab_bins_${labBinSize}.json`))
+    
+
+  const lab_bins_arr = lab_bins_arr_full.filter(bin => bin.num_rgb > 0)  // filter for only the rgb bins while we only have rgb data
+
+  console.log("for only rgb data, reducing ", lab_bins_arr_full.length, " bins down to", lab_bins_arr.length, "bins")
 
   const lab_bins = labBinHelper.binsArrayToNested(lab_bins_arr)
 
@@ -358,7 +362,8 @@ function entropy(arr){
 function getBlurWeights(binSize){
   if(binSize.type == "cube"){
     const blurWeights = {}
-    //let totalFinalWeight = 0
+    let totalBlurWeights = 0
+    let totalBlurNeighbors = 0
     for(let i of [-1,0,1]){
       blurWeights[i] = {}
       for(let j of [-1,0,1]){
@@ -367,12 +372,13 @@ function getBlurWeights(binSize){
           const dist = Math.sqrt(i*i + j*j + k*k)
           if(dist < 2){ // always true in this case
             blurWeights[i][j][k] = Math.pow(2, (-3 * dist))
-            //totalFinalWeight+= blurWeights[i][j][k]
+            totalBlurWeights+= blurWeights[i][j][k]
+            totalBlurNeighbors++
           }
         }
       }
     }
-    //console.log("totalFinalWeight cube:" + totalFinalWeight)
+    console.log("cube, totalBlurNeighbors", totalBlurNeighbors, "totalBlurWeights", totalBlurWeights)
     //    2.6021164865590976
     return blurWeights
   }
@@ -385,7 +391,8 @@ function getBlurWeights(binSize){
     }
 
     const blurWeights = {}
-    //let totalFinalWeight = 0
+    let totalBlurWeights = 0
+    let totalBlurNeighbors = 0
     for(let i of [-1,0,1]){
       blurWeights[i] = {}
       const i_dist =  i*binSize.l/base_dist
@@ -397,12 +404,13 @@ function getBlurWeights(binSize){
           const dist = Math.sqrt(i_dist*i_dist + j_dist*j_dist + k_dist*k_dist)
           if(dist <= 2.5){ // always true in this case
             blurWeights[i][j][k] = Math.pow(2, (-2.5 * dist))
-            //totalFinalWeight+= blurWeights[i][j][k]
+            totalBlurWeights+= blurWeights[i][j][k]
+            totalBlurNeighbors++
           }
         }
       }
     }
-    //console.log("totalFinalWeight box:" + totalFinalWeight)
+    console.log("box, totalBlurNeighbors", totalBlurNeighbors, "totalBlurWeights", totalBlurWeights)
     //    2.343
     return blurWeights
   }
@@ -438,6 +446,9 @@ function getBlurWeightsForBins(binSize, bins){
 
   const [dim1, dim2, dim3] = binSize.dims
 
+  let sumTotalBlurWeights = 0
+  let sumTotalBlurNeighbors = 0
+
   for(const bin of bins){
     const bin_dim_1 = bin[dim1+"_bin"]
     const bin_dim_2 = bin[dim2+"_bin"]
@@ -456,8 +467,8 @@ function getBlurWeightsForBins(binSize, bins){
     const [thisCenterL, thisCenterA, thisCenterB] = [bin.center_lab.l, bin.center_lab.a, bin.center_lab.b]
 
     const binBlurWeights = blurWeights[bin_dim_1][bin_dim_2][bin_dim_3]
-    // let totalFinalBinWeight = 0
-    // let totalNumBinsCompareBlur = 0
+    let totalBlurWeights = 0
+    let totalBlurNeighbors = 0
 
     // find all bins less than dist 2 base_dist away
     for(const compareBin of bins){
@@ -478,15 +489,22 @@ function getBlurWeightsForBins(binSize, bins){
         }
         if(!(k in binBlurWeights[i][j])){
           binBlurWeights[i][j][k] = Math.pow(2, (exp_mult * dist))
-          // totalFinalBinWeight += binBlurWeights[i][j][k]
-          // totalNumBinsCompareBlur++
+          totalBlurWeights += binBlurWeights[i][j][k]
+          totalBlurNeighbors++
         }
       }
     }
+
+    sumTotalBlurWeights += totalBlurWeights
+    sumTotalBlurNeighbors += totalBlurNeighbors
+
+
     // console.log("blur for bin ", bin_dim_1, bin_dim_2, bin_dim_3,
     //   " is ", totalNumBinsCompareBlur, " bins total weight ", totalFinalBinWeight)
     //console.log(binBlurWeights)
   }
+
+  console.log("ring, avgTotalBlurNeighbors", sumTotalBlurNeighbors/bins.length, "avgTotalBlurWeights", sumTotalBlurWeights/bins.length)
   return blurWeights
 }
 
