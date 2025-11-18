@@ -31,7 +31,7 @@ var frNameReplacingRules = [[/fushia/, "fuchsia"], [/fuschia/, "fuchsia"],[/bleu
 var itExcludeNames = ["blue"];
 var itNameReplacingRules = [[/arancio$/, "arancione"], [/fuxia/, "fucsia"]];
 
-var ruNameReplacingRules = [[/жлтый/, "желтый"], [/зелный/, "зеленый"]];
+var ruNameReplacingRules = [[/cene/, "синий"],[/cenya/, "синий"],[/djelatoi/, "золотой"],[/krasne/, "красный"],[/roseve/, "розовый"],[/sholte/, "желтый"],[/xolte/, "желтый"],[/zelone/, "зеленый"],[/celone/, "зеленый"],[/arangeve/, "оранжевый"],[/жлтый/, "желтый"], [/зелный/, "зеленый"]];
 
 var plNameReplacingRules = [["zolty", "żółty"], ["rozowy", "różowy"], [/pomaranczowy/, "pomarańczowy"], [/blekitny/, "błękitny"], [/ciemny/, "ciemno"], [/jasny/, "jasno"]];
 var plExcludedNames =["pink", "blue"];
@@ -186,9 +186,10 @@ function refine(cn){
     } else if (cn.lang0.indexOf("Russian") >= 0) {
       cn.name = cn.name.toLowerCase()
             .replace(/\s*$/,"").replace(/^\s*/,"")
-            .replace(/-+/g," ").replace(/[^а-яА-Я]/ig, '')
+            .replace(/-+/g," ")
             .replace(/\s+/g," ");
       cn.name = (replaceByArray(cn.name, ruNameReplacingRules));
+      cn.name = cn.name.replace(/[^а-яА-Я]/ig, '')
     } else if (cn.lang0.indexOf("Arabic") >= 0) {
       cn.name = cn.name.toLowerCase()
             .replace(/\s*$/,"").replace(/^\s*/,"")

@@ -98,7 +98,11 @@ csv()
           mapped.terms.push(term.key);
 
           //find most common name for term
-          let commonName = term.values[0].standardized_entered_name
+          let commonName = d3.groups(
+            lang.values.filter(v => v.name == term.key),
+            t => t.standardized_entered_name)
+                  .map(a => {return {key: a[0], values: a[1]}})
+                  .sort((a,b) => -a.values.length + b.values.length)[0].key;
           mapped.commonNames.push(commonName)
           
           let colorNameCnt = new Array(n_bins).fill(0);
