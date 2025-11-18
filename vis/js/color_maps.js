@@ -444,8 +444,14 @@ function process_saliency_bin_data(saliency_data, bin_size, blur){
     tile.maxpTC = 0.5
     tile.saliency = -2.5
     tile.binL = tile.l_bin
-    tile.binA = tile.a_bin
-    tile.binB = tile.b_bin
+    if("a_bin" in tile){
+      tile.binA = tile.a_bin 
+      tile.binB = tile.a_bin
+    } else {
+      tile.binC = tile.c_bin
+      tile.binH = tile.h_bin
+    }
+    
     tile.avgTermColor = "representative_rgb" in tile ? 
         `rgb(${tile.representative_rgb.r},${tile.representative_rgb.g},${tile.representative_rgb.b})` 
       :
@@ -563,7 +569,11 @@ function updateDisplay(){
     $("#loading-p").remove()
   }
 
-  currSvgSize[0].width = svg_widths[curr_bin_size]
+  // tmp hack
+  const language_stat = language_stats[curr_bin_size][curr_blur][0]
+  currSvgSize[0].width = "binA" in saliencies_by_lang[curr_bin_size][curr_blur][language_stat.lang][0] ? 
+    svg_widths[curr_bin_size] :
+    1200
   currSvgSize[0].height = svg_heights[curr_bin_size]
 
   $(".lang-map").each(function() {
@@ -716,15 +726,18 @@ function drawColorTiles(i, saliencies){
       .attr("class", "tile")
       .style("stroke", backgroundColor)
       .style("stroke-width", d => curr_bin_size.tileBorderSize)
-      .attr("x", (d) => d.binA*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.binL] )
+      .attr("x", (d) => (("binA" in d ? d.binA : d.binH)*curr_bin_size.tileSize +("binA" in d ? l_bin_x_offsets[curr_bin_size][ d.binL] : 200 * d.binC)))
       .attr("y", (d) => {
-        return -d.binB*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
+        return -("binB" in d ? d.binB : d.binL)*curr_bin_size.tileSize + l_bin_y_offsets[curr_bin_size]
       })
       .attr("fill", (d) => {
         const selection = lang_color_selections[curr_bin_size][curr_blur][i]
         if(selection.selection_type == "select" || selection.selection_type == "hover"){
           if(d.commonTerm == selection.color_name){
-            const bin = lab_bins[curr_bin_size][d.binL][d.binA][d.binB]
+            const bin = "binA" in d ? 
+              lab_bins[curr_bin_size][d.binL][d.binA][d.binB]
+              :
+              lab_bins[curr_bin_size][d.binL][d.binC][d.binH]
             return "representative_rgb" in bin ? 
                 `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
               :
@@ -739,7 +752,10 @@ function drawColorTiles(i, saliencies){
       .attr("height", getTileSize)
       .attr("width", getTileSize)
       .attr("title", (d) => {
-        const [l,a,b] = [d.binL, d.binA, d.binB]
+        const [l,a,b] = "binA" in d ?
+          [d.binL, d.binA, d.binB]
+          :
+          [d.binL, d.binC, d.binH]
         const bin_info = lab_bins[curr_bin_size][l][a][b]
         let info = `
           ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
