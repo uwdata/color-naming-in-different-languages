@@ -1,91 +1,5 @@
 
-class BinSize {
-  constructor(options) {
-    this.l = options.l;
-    this.type = options.type;
-    if(this.type == "cube"){
-      this.ab = this.l
-      this.abv = this.l.toPrecision(2) / 1
-      this.dims = ["l", "a", "b"]
-    } else if(this.type == "box") {
-      this.ab = options.ab;
-      this.abv = this.l.toPrecision(2) / 1 + "_" + this.ab.toPrecision(2) / 1
-      this.dims = ["l", "a", "b"]
-    } else if(this.type == "ring") {
-      if("h_divs" in options && options.h_divs == 3){
-        this.h_divs = 3
-        if("c" in options){
-          this.c = options.c
-        }else{
-          this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
-        }
-      }else if(!("h_divs" in options) || options.h_divs == 8){ //default value, or already 8
-        this.h_divs = 8
-        if("c" in options){
-          this.c = options.c
-        }else{
-          this.c = options.l; // should it be diameter of center 1 * L (slightly smaller than a 1x1x1 box)
-          // note: after center ring, the radius change width will also be L
-        }
-      } else{
-        throw new Error("h_divs must be 3 or 8, but was: " + options.h_divs)
-      }
-      
-      const c_abv = (this.h_divs == 3 && this.c == this.l/2) || (this.h_divs == 8 && this.c == this.l) ?
-            "" :
-            "_"+(this.c.toPrecision(2) / 1)
-      
-      this.abv = "ring_" + (this.l.toPrecision(2) / 1) + c_abv + "_h" +this.h_divs
-      
-      this.dims = ["l", "c", "h"]
-    }
-
-    // copy over any other values
-    for(const [key, val] of Object.entries(options)){
-      if(!(key in this)){
-        this[key] = val
-      }
-    }
-    
-  }
-
-  toString() {
-    return this.abv
-  }
-}
-
-// const LAB_BIN_SIZES = [ 
-//   new BinSize({
-//     l: 1/5, ab: 1/20, // rectangle
-//     tileSize: 15,
-//     tileMaxSizeMultiplier: 1.5,
-//     tileBorderSize: 2
-//   }), 
-//   new BinSize({
-//     l: 1/10, ab: 1/40, // rectangle
-//     tileSize: 5,
-//     tileMaxSizeMultiplier: 1.7,
-//     tileBorderSize: 1
-//   }), 
-//   new BinSize({
-//     l: 1/15, ab: 1/60, // rectangle
-//     tileSize: 4,
-//     tileMaxSizeMultiplier: 1.7,
-//     tileBorderSize: 1
-//   }), 
-//   new BinSize({
-//     l: 1/20, ab: 1/20,  // cube
-//     tileSize: 5,
-//     tileMaxSizeMultiplier: 1.7,
-//     tileBorderSize: 1
-//   }),
-//   new BinSize({
-//     l: 1/40, ab: 1/40, // cube
-//     tileSize: 2,
-//     tileMaxSizeMultiplier: 1.7,
-//     tileBorderSize: 0.5
-//   }), 
-// ]
+import BinSize from "../../shared_files/binSize.js";
 
 const LAB_BIN_SIZES = [ 
   new BinSize({
@@ -309,10 +223,10 @@ function process_lab_bin_data(bin_data, bin_size){
 
   // Make an array version of all the bins, and also find bounds for each level
   for(const [l_bin_str, l_bin_entries] of Object.entries(lab_bins[bin_size])){
-    l_bin = Number(l_bin_str)
+    const l_bin = Number(l_bin_str)
     l_bin_ab_bounds[bin_size][l_bin] = {}
     for(const [a_bin_str, a_bin_entries] of Object.entries(l_bin_entries)){
-      a_bin = Number(a_bin_str) 
+      const a_bin = Number(a_bin_str) 
       if(!("max_a" in l_bin_ab_bounds[bin_size][l_bin]) || a_bin > l_bin_ab_bounds[bin_size][l_bin].max_a){
         l_bin_ab_bounds[bin_size][l_bin].max_a = a_bin
       }
@@ -320,7 +234,7 @@ function process_lab_bin_data(bin_data, bin_size){
         l_bin_ab_bounds[bin_size][l_bin].min_a = a_bin
       }
       for(const [b_bin_str, b_bin_entry] of Object.entries(a_bin_entries)){
-        b_bin = Number(b_bin_str) 
+        const b_bin = Number(b_bin_str) 
         if(!("max_b" in l_bin_ab_bounds[bin_size][l_bin]) || b_bin > l_bin_ab_bounds[bin_size][l_bin].max_b){
           l_bin_ab_bounds[bin_size][l_bin].max_b = b_bin
         }
