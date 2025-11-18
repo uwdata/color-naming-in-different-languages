@@ -5,15 +5,6 @@ import * as d3 from 'd3'
 import csvWriter from 'csv-write-stream'
 import zlib from 'zlib'
 import * as labBinHelperLib from '../utils/labBinHelper.js'
-
-
-// const fs = require('fs'),
-//   csv = require("csvtojson"),
-//   csvWriter = require('csv-write-stream'),
-//   zlib = require('zlib'),
-//   d3 = require('d3'),
-//   oklab = require('../../raw/oklab.js'),
-//   labBinHelperLib = require('../utils/labBinHelper');
  
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
@@ -40,6 +31,7 @@ for(let labBinSize of LAB_BIN_SIZES){
   console.log("calculating full colors for bin size " + labBinSize)
 
   const labBinHelper = labBinHelperLib.getLabBins(labBinSize);
+  
 
   const [dim1, dim2, dim3] = labBinSize.dims
 
@@ -47,9 +39,20 @@ for(let labBinSize of LAB_BIN_SIZES){
 
   // TODO: When we have full gamut data, remove the filter
   const lab_bins_arr = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/oklab_bins_${labBinSize}.json`))
-    .filter(bin => bin.num_rgb > 0 || bin.ratio_bin_in_gamut_rgb > 0)  // filter for only the rgb bins while we only have rgb data
+    .filter(bin => bin.num_rgb > 0)  // filter for only the rgb bins while we only have rgb data
 
   const lab_bins = labBinHelper.binsArrayToNested(lab_bins_arr)
+
+
+  let blurWeights
+  let areBlurWeightsRelativePosition
+  if(labBinSize.type == "ring"){
+    blurWeights = getBlurWeightsForBins(labBinSize, lab_bins_arr)
+    areBlurWeightsRelativePosition = false
+  } else {
+    blurWeights = getBlurWeights(labBinSize)
+    areBlurWeightsRelativePosition = true
+  }
   
 
   const commonColorNameLookup = {};
@@ -154,10 +157,14 @@ for(let labBinSize of LAB_BIN_SIZES){
           const dim1Bin = thisBin[dim1 + "_bin"],
                 dim2Bin = thisBin[dim2 + "_bin"],
                 dim3Bin = thisBin[dim3 + "_bin"]
-            
-          term.binColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] = getFieldBlur(term, dim1Bin, dim2Bin, dim3Bin, "binColorNameCnt")
-          term.binPCTBlur[dim1Bin][dim2Bin][dim3Bin] = getFieldBlur(term, dim1Bin, dim2Bin, dim3Bin, "binPCT")
-          term.binPTCBlur[dim1Bin][dim2Bin][dim3Bin] = getFieldBlur(term, dim1Bin, dim2Bin, dim3Bin, "binPTC")
+          
+          const thisBlurWeights = labBinSize.type == "ring" ? 
+              blurWeights[dim1Bin][dim2Bin][dim3Bin]
+            :
+              blurWeights
+          term.binColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] = getFieldBlur(thisBlurWeights, areBlurWeightsRelativePosition, term, dim1Bin, dim2Bin, dim3Bin, "binColorNameCnt")
+          term.binPCTBlur[dim1Bin][dim2Bin][dim3Bin] = getFieldBlur(thisBlurWeights, areBlurWeightsRelativePosition, term, dim1Bin, dim2Bin, dim3Bin, "binPCT")
+          term.binPTCBlur[dim1Bin][dim2Bin][dim3Bin] = getFieldBlur(thisBlurWeights, areBlurWeightsRelativePosition, term, dim1Bin, dim2Bin, dim3Bin, "binPTC")
        }
     })
 
@@ -247,7 +254,11 @@ for(let labBinSize of LAB_BIN_SIZES){
         });
       }
       // blurred version
-      if (getBlurContribution(langBinColorNameCnt,dim1Bin,dim2Bin,dim3Bin) >= MIN_NperBin) {
+      const thisBlurWeights = labBinSize.type == "ring" ? 
+          blurWeights[dim1Bin][dim2Bin][dim3Bin]
+        :
+          blurWeights
+      if (getBlurContribution(thisBlurWeights, areBlurWeightsRelativePosition, langBinColorNameCnt,dim1Bin,dim2Bin,dim3Bin) >= MIN_NperBin) {
         let maxpTC = d3.max(langTermBinsBlurBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin), d => d.pTC);
         const rep_lab = "representative_lab" in lab_bins[dim1Bin][dim2Bin][dim3Bin] ? 
             lab_bins[dim1Bin][dim2Bin][dim3Bin].representative_lab
@@ -338,42 +349,167 @@ function entropy(arr){
 }
 
 
-// Guassian blur truncated to a 3x3x3 grid
+// We use a Guassian blur (truncated by distance to make it run faster, and output files to be smaller)
 // NOTE: we make sure the center node is weight 1
+// We also arbitrarily aim for a sum of blur weights to be about 2.5 
+//      (1 from center, 1.5 from neighbors)
+// because that is about what our first attempt was, and it worked pretty well
 
-//TODO: This currently assumes bins are uniform cubes
-//    and makes center node weight 1, one dimension off, 1/8th
-// For rectangular bins, the blur should be different by dimension
-// and for the ring bins, figuring out the neighboring bins
-//   isn't straightforward, and the distances will vary
-
-const blurWeights = {}
-for(let i of [-1,0,1]){
-  blurWeights[i] = {}
-  for(let j of [-1,0,1]){
-    blurWeights[i][j] = {}
-    for(let k of [-1,0,1]){
-      blurWeights[i][j][k] = Math.pow(2, (-3 * Math.sqrt(i*i + j*j + k*k)))
+function getBlurWeights(binSize){
+  if(binSize.type == "cube"){
+    const blurWeights = {}
+    //let totalFinalWeight = 0
+    for(let i of [-1,0,1]){
+      blurWeights[i] = {}
+      for(let j of [-1,0,1]){
+        blurWeights[i][j] = {}
+        for(let k of [-1,0,1]){
+          const dist = Math.sqrt(i*i + j*j + k*k)
+          if(dist < 2){ // always true in this case
+            blurWeights[i][j][k] = Math.pow(2, (-3 * dist))
+            //totalFinalWeight+= blurWeights[i][j][k]
+          }
+        }
+      }
     }
+    //console.log("totalFinalWeight cube:" + totalFinalWeight)
+    //    2.6021164865590976
+    return blurWeights
   }
+  if(binSize.type == "box"){
+    let base_dist
+    if(binSize.l > binSize.ab){
+      base_dist = binSize.ab
+    } else {
+      throw new Error("Error, we expected a different dimension box, the code below would need to be modified")
+    }
+
+    const blurWeights = {}
+    //let totalFinalWeight = 0
+    for(let i of [-1,0,1]){
+      blurWeights[i] = {}
+      const i_dist =  i*binSize.l/base_dist
+      for(let j of [-2,-1,0,1,2]){
+        blurWeights[i][j] = {}
+        const j_dist =  j*binSize.ab/base_dist
+        for(let k of [-2,-1,0,1,2]){
+          const k_dist =  k*binSize.ab/base_dist
+          const dist = Math.sqrt(i_dist*i_dist + j_dist*j_dist + k_dist*k_dist)
+          if(dist <= 2.5){ // always true in this case
+            blurWeights[i][j][k] = Math.pow(2, (-2.5 * dist))
+            //totalFinalWeight+= blurWeights[i][j][k]
+          }
+        }
+      }
+    }
+    //console.log("totalFinalWeight box:" + totalFinalWeight)
+    //    2.343
+    return blurWeights
+  }
+  if(binSize.type == "ring"){
+    throw new Error("Use getBlurWeightsForBins() function for 'ring' bins")
+  }
+  throw new Error("unexpected binSize type " + binSize.type)
 }
 
-function getBlur(binInfo, dim1Bin, dim2Bin, dim3Bin){
+
+function getBlurWeightsForBins(binSize, bins){
+  let blurWeights = {}
+
+  let base_dist
+  if(!("c" in binSize)){
+    throw new Error("We expected ring bin size with c value")
+  }
+
+  let exp_mult
+  if(binSize.l > binSize.c){
+    base_dist = (binSize.l + binSize.c) / 2
+    if(binSize.h_divs == 8){
+       base_dist = (binSize.l + 3*binSize.c) / 4
+      exp_mult = -4
+    } else {
+      base_dist = (binSize.l + 3*binSize.c) / 4
+      exp_mult = -2
+    }
+  } else {
+    base_dist = binSize.l
+    exp_mult = -3.5
+  }
+
+  const [dim1, dim2, dim3] = binSize.dims
+
+  for(const bin of bins){
+    const bin_dim_1 = bin[dim1+"_bin"]
+    const bin_dim_2 = bin[dim2+"_bin"]
+    const bin_dim_3 = bin[dim3+"_bin"]
+
+    if(!(bin_dim_1 in blurWeights)){
+      blurWeights[bin_dim_1] = {}
+    }
+    if(!(bin_dim_2 in blurWeights[bin_dim_1])){
+      blurWeights[bin_dim_1][bin_dim_2] = {}
+    }
+    if(!(bin_dim_3 in blurWeights[bin_dim_1][bin_dim_2])){
+      blurWeights[bin_dim_1][bin_dim_2][bin_dim_3] = {}
+    }
+
+    const [thisCenterL, thisCenterA, thisCenterB] = [bin.center_lab.l, bin.center_lab.a, bin.center_lab.b]
+
+    const binBlurWeights = blurWeights[bin_dim_1][bin_dim_2][bin_dim_3]
+    // let totalFinalBinWeight = 0
+    // let totalNumBinsCompareBlur = 0
+
+    // find all bins less than dist 2 base_dist away
+    for(const compareBin of bins){
+      const [compareCenterL, compareCenterA, compareCenterB] = [compareBin.center_lab.l, compareBin.center_lab.a, compareBin.center_lab.b]
+      const lDelta = (compareCenterL - thisCenterL) / base_dist
+      const aDelta = (compareCenterA - thisCenterA) / base_dist
+      const bDelta = (compareCenterB - thisCenterB) / base_dist
+      const dist = Math.sqrt(lDelta*lDelta + aDelta*aDelta + bDelta*bDelta)
+      if(dist < 1.8){ // then we keep the weight
+        const i = compareBin[dim1+"_bin"]
+        const j = compareBin[dim2+"_bin"]
+        const k = compareBin[dim3+"_bin"]
+        if(!(i in binBlurWeights)){
+          binBlurWeights[i] = {}
+        }
+        if(!(j in binBlurWeights[i])){
+          binBlurWeights[i][j] = {}
+        }
+        if(!(k in binBlurWeights[i][j])){
+          binBlurWeights[i][j][k] = Math.pow(2, (exp_mult * dist))
+          // totalFinalBinWeight += binBlurWeights[i][j][k]
+          // totalNumBinsCompareBlur++
+        }
+      }
+    }
+    // console.log("blur for bin ", bin_dim_1, bin_dim_2, bin_dim_3,
+    //   " is ", totalNumBinsCompareBlur, " bins total weight ", totalFinalBinWeight)
+    //console.log(binBlurWeights)
+  }
+  return blurWeights
+}
+
+
+function getBlur(blurWeights, areBlurWeightsRelativePosition, binInfo, dim1Bin, dim2Bin, dim3Bin){
   let sumOfWeights = 0
   let weightedSum = 0
   
   for(let i of Object.keys(blurWeights)){
     i = parseInt(i)
+    const i_bin = areBlurWeightsRelativePosition ? dim1Bin + i : i
     for(let j of Object.keys(blurWeights[i])){
       j = parseInt(j)
+      const j_bin = areBlurWeightsRelativePosition ? dim2Bin + j : j
       for(let k of Object.keys(blurWeights[i][j])){
         k = parseInt(k)
-        if((dim1Bin + i) in binInfo &&
-           (dim2Bin + j) in binInfo[dim1Bin + i] &&
-           (dim3Bin + k) in binInfo[dim1Bin + i][dim2Bin + j]
+        const k_bin = areBlurWeightsRelativePosition ? dim3Bin + k : k
+        if((i_bin) in binInfo &&
+           (j_bin) in binInfo[i_bin] &&
+           (k_bin) in binInfo[i_bin][j_bin]
         ){
           sumOfWeights += blurWeights[i][j][k]
-          weightedSum += binInfo[dim1Bin + i][dim2Bin + j][dim3Bin + k] * 
+          weightedSum += binInfo[i_bin][j_bin][k_bin] * 
                           blurWeights[i][j][k] 
         }
       }
@@ -386,20 +522,23 @@ function getBlur(binInfo, dim1Bin, dim2Bin, dim3Bin){
 }
 
 // assumes the center node is weight 1
-function getBlurContribution(binInfo, dim1Bin, dim2Bin, dim3Bin){
+function getBlurContribution(blurWeights, areBlurWeightsRelativePosition, binInfo, dim1Bin, dim2Bin, dim3Bin){
   let weightedSum = 0
   
   for(let i of Object.keys(blurWeights)){
     i = parseInt(i)
+    const i_bin = areBlurWeightsRelativePosition ? dim1Bin + i : i
     for(let j of Object.keys(blurWeights[i])){
       j = parseInt(j)
+      const j_bin = areBlurWeightsRelativePosition ? dim2Bin + j : j
       for(let k of Object.keys(blurWeights[i][j])){
         k = parseInt(k)
-        if((dim1Bin + i) in binInfo &&
-           (dim2Bin + j) in binInfo[dim1Bin + i] &&
-           (dim3Bin + k) in binInfo[dim1Bin + i][dim2Bin + j]
+        const k_bin = areBlurWeightsRelativePosition ? dim3Bin + k : k
+        if((i_bin) in binInfo &&
+           (j_bin) in binInfo[i_bin] &&
+           (k_bin) in binInfo[i_bin][j_bin]
         ){
-          weightedSum += binInfo[dim1Bin + i][dim2Bin + j][dim3Bin + k] * 
+          weightedSum += binInfo[i_bin][j_bin][k_bin] * 
                           blurWeights[i][j][k] 
         }
       }
@@ -411,7 +550,7 @@ function getBlurContribution(binInfo, dim1Bin, dim2Bin, dim3Bin){
   return weightedSum
 }
 
-function getFieldBlur(termInfo, dim1Bin, dim2Bin, dim3Bin, field){
+function getFieldBlur(blurWeights, areBlurWeightsRelativePosition, termInfo, dim1Bin, dim2Bin, dim3Bin, field){
   const fieldInfo = termInfo[field]
-  return getBlur(fieldInfo, dim1Bin, dim2Bin, dim3Bin)
+  return getBlur(blurWeights, areBlurWeightsRelativePosition, fieldInfo, dim1Bin, dim2Bin, dim3Bin)
 }

@@ -271,7 +271,7 @@ async function load_and_process_bin_data(bin_size){
     const [dim1, dim2, dim3] = bin_size.dims
     for(const bin of data){
       // filter for only rgb bins
-      if(bin.num_rgb == 0 && bin.ratio_bin_in_gamut_rgb == 0){
+      if(bin.num_rgb == 0){
         continue
       }
       const dim1_bin = bin[dim1+"_bin"]
