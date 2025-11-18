@@ -1,5 +1,5 @@
 
-require("../../raw/languages-iso-639.js");
+require("../../shared_files/languages-iso-639.js");
 
 require('./tongwen_table_t2s.js'); //import chineseT2STable object
 

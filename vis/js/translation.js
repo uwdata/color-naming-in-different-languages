@@ -68,11 +68,8 @@ $(document).on('ready page:load', function () {
 
   d3.json("../model/translation_loss/translation_loss_en_ko.json")
   .then(data => {
-  d3.json("../model/binned_full_colors/full_color_names_binned_10.json")
-  .then(colorNames => {
   d3.csv("../model/full_colors_info.csv")
   .then((fullColorDetails)=> {
-    //let avgColors = getAvgColors(fullColorDetails, colorNames);
     let translations  = translationByDict.slice();
     translationByDict.slice().forEach(td => {
       let best, minD;
@@ -107,7 +104,6 @@ $(document).on('ready page:load', function () {
     });
     translations = unique(translations, tr => tr.koterm + tr.enterm + tr.direction + tr.by + tr.gid);
     draw(translations, fullColorDetails);
-  });
   });
   });
 });

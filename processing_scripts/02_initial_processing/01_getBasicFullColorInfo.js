@@ -3,7 +3,7 @@ import Color from "colorjs.io";
 import csv from 'csvtojson';
 import * as d3 from 'd3'
 import csvWriter from 'csv-write-stream'
-import {languages_iso_639} from "../../raw/languages-iso-639.js"
+import {languages_iso_639} from "../../shared_files/languages-iso-639.js"
 
 const MIN_FULL_COLOR_NAMES = 12;
 const LINE_RGB_SET = "line";
