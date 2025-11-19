@@ -193,8 +193,6 @@ class FullColorBinView {
                 .attr("height", tileSize)
                 .attr("width", tileSize)
                 .attr("title", (d) => {
-                    // const [l,a,b] = curr_bin_size.type == "ring" ? [d.l_bin, d.c_bin, d.h_bin]: [d.l_bin, d.a_bin, d.b_bin]
-                    // const bin_info = lab_bins[curr_bin_size][l][a][b]
                     let info = `
                     ${thisView.bin_size.type == "ring" ?
                         `Bin Center (l, c, h): ${Math.round(d.center_lch.l *10000, 1)/10000}, ${Math.round(d.center_lch.c*10000, 1)/10000}, ${Math.round(d.center_lch.h*10000, 1)/10000}` 
@@ -220,15 +218,13 @@ class FullColorBinView {
                     .data(this.bin_array.filter(d => d.c_bin == 0))
                     .join("circle")
                     .attr("class", "circle-tile")
-                    .attr("cx", d =>  30 + (thisView["l_nums"].length - 1 - d.l_bin) * 100)
+                    .attr("cx", d =>  30 + (d.l_bin) * 100)
                     .attr("cy", d =>  70)
                     .attr("r",  d => {
-                        //let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
                         const binRadius = d.c_max/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1) - 0.5 * tileBorderSize
                         return binRadius
                     })
                     .attr("fill", d => {
-                        //let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
                         return `oklch(${d.l_center} ${d.c_center} ${d.h_center})`
                     })
                     // .attr("title", (d) => {
@@ -255,12 +251,10 @@ class FullColorBinView {
                     .join("path")
                     .attr("class", "arc-tile")
                     .style("stroke", d => {
-                        //let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
                         return `oklch(${d.l_center} ${d.c_center} ${d.h_center})`
                     })
                     .attr("d", d => {
-                        //let bin = lab_bins[curr_bin_size][d.l_bin][d.c_bin][d.h_bin]
-                        const levelCenterX = 30 + (thisView["l_nums"].length - 1 - d.l_bin) * 100
+                        const levelCenterX = 30 + (d.l_bin) * 100
                         const levelCenterY = 70
                         const binRadius = d.c_center/thisView.bin_size.c*thisView.bin_size.tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1)
                         const endAngleMargin = -(d.h_min + (thisView.bin_size.h_divs == 3 ? 8 : 5) / d.c_center * thisView.bin_size.c)
@@ -276,8 +270,6 @@ class FullColorBinView {
                         const binEndDeltaY = binRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)  
                         const binEndY = levelCenterY + binEndDeltaY
 
-                        //let binX = d.h_bin*curr_bin_size.tileSize +l_bin_x_offsets[curr_bin_size][d.c_bin]
-                        
                         return `
                         M ${binStartX} ${binStartY} 
                         A ${binRadius} ${binRadius} 0 0 1 ${binEndX} ${binEndY}

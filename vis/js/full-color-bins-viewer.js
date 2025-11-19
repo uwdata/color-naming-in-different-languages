@@ -152,6 +152,7 @@ const LAB_BIN_SIZES = [
 
 
 const labBinViews = {}
+const labBinArcViews = {}
 
 /*************** Pre-processing functions *********************/
 async function load_and_process_bin_data(bin_size){
@@ -159,19 +160,33 @@ async function load_and_process_bin_data(bin_size){
     const binView = new FullColorBinView({
       bin_size: bin_size,
       bin_array: data,
-      // x_dim: bin_size.type == "ring" ? "h" : "a",
-      // y_dim: bin_size.type == "ring" ? "l" : "b",
-      // split_dim: bin_size.type == "ring" ? "c" : "l",
-      x_dim: bin_size.type == "ring" ? "a" : "a",
-      y_dim: bin_size.type == "ring" ? "b" : "b",
-      split_dim: bin_size.type == "ring" ? "l" : "l",
+      x_dim: bin_size.type == "ring" ? "h" : "a",
+      y_dim: bin_size.type == "ring" ? "l" : "b",
+      split_dim: bin_size.type == "ring" ? "c" : "l",
     })
+
 
     binView.setDisplayOffsets(binView.getDisplayOffsets())
 
     console.log("binView.display_offset", binView.display_offsets)
 
     labBinViews[bin_size] = binView
+
+    if(bin_size.type == "ring"){
+      const binArcView = new FullColorBinView({
+        bin_size: bin_size,
+        bin_array: data,
+        x_dim: "a",
+        y_dim: "b",
+        split_dim: "l",
+      })
+
+      binArcView.setDisplayOffsets(binArcView.getDisplayOffsets())
+
+      console.log("labBinArcViews.display_offset", binArcView.display_offsets)
+
+      labBinArcViews[bin_size] = binArcView
+    }
     
     resolve()
   }))
@@ -259,7 +274,7 @@ function updateDisplay(){
   d3.select('#vis')
     .append("div")
       .attr("class", "bin-map")
-      .attr("id", `lang`)
+      .attr("id", `bin-view`)
       .style("min-width", currSvgSize[0].width + 5 +"px")
 
   createOrRefreshTiles()
@@ -268,19 +283,18 @@ function updateDisplay(){
 
 function createOrRefreshTiles(){
 
-  const div = d3.select("#lang")
- 
+  const div = d3.select("#bin-view")
 
   // show div
   div.style("display", "")
 
-  let svg = d3.select("#lang"+" svg")
+  let svg = d3.select("#bin-view"+" svg")
   let textBackground = svg.select(".text-background")
   let langText = svg.select(".lang-text")
 
   if(svg.empty()){
 
-    svg = d3.select("#lang").append("svg")
+    svg = d3.select("#bin-view").append("svg")
 
     textBackground = svg.append("rect")
             .attr("class", "text-background")
@@ -290,12 +304,42 @@ function createOrRefreshTiles(){
   }
 
   svg.attr("width", currSvgSize[0].width)
-    .attr("height", currSvgSize[0].height)
+    .attr("height", currSvgSize[0].height )
+
+  let squareBins = svg.select("#square-bins")
+  if(squareBins.empty()){
+    squareBins = svg.append("g")
+      .attr("id", "square-bins")
+  }
+  squareBins.attr("width", currSvgSize[0].width)
+    .attr("height", currSvgSize[0].height )
+
+  if(curr_bin_size.type == "ring"){
+    // move square bins down to make space for rings
+    squareBins.attr("transform", `translate(0,${currSvgSize[0].height})`)
+    
+    svg.attr("height", svg.attr("height") * 2)
+    
+
+    let arcBins = svg.select("#arc-bins")
+    if(arcBins.empty()){
+      arcBins = svg.append("g")
+        .attr("id", "arc-bins")
+    }
+    arcBins.attr("width", currSvgSize[0].width)
+      .attr("height", currSvgSize[0].height)
+
+    labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, backgroundColor)
+  } else {
+    svg.select("#arc-bins").remove()
+    squareBins.attr("transform", `translate(0,0)`)
+  }
+
 
   langText.text("All Color Bins")
       .attr("x", 20)
       .attr("y", 25)
 
-  labBinViews[curr_bin_size].createOrUpdateColorTiles(svg, backgroundColor)
+  labBinViews[curr_bin_size].createOrUpdateColorTiles(squareBins, backgroundColor)
 }
 
