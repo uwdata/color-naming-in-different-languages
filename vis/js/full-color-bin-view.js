@@ -106,30 +106,30 @@ class FullColorBinView {
     }
 
     getDisplayOffsets(){
-        const y_bin_offset = this[this.y_dim + "_max_bin"] + this.TILE_SEGMENT_MARGIN_NUM
-        const y_bin_height =  y_bin_offset - this[this.y_dim + "_min_bin"] + this.TILE_SEGMENT_MARGIN_NUM
+        const y_offset_in_bins = this[this.y_dim + "_max_bin"] + this.TILE_SEGMENT_MARGIN_NUM
+        const y_height_in_bins =  y_offset_in_bins - this[this.y_dim + "_min_bin"] + this.TILE_SEGMENT_MARGIN_NUM
 
-        const x_bin_offsets = {}
+        const x_offsets_in_bins = {}
         let currXBinOffset = this.TILE_SEGMENT_MARGIN_NUM 
-        let x_bin_width
+        let x_width_in_bins
 
         for(const [split_bin, ranges] of Object.entries(this.splitLevelRanges)){
             currXBinOffset = currXBinOffset - ranges[this.x_dim].min
 
-            x_bin_offsets[split_bin] = currXBinOffset
+            x_offsets_in_bins[split_bin] = currXBinOffset
 
             // adjust for positive direction
             currXBinOffset = currXBinOffset + ranges[this.x_dim].max + this.TILE_SEGMENT_MARGIN_NUM 
             
             // only the last one will be saved at the end, giving us total svg width
-            x_bin_width = currXBinOffset
+            x_width_in_bins = currXBinOffset
         }
 
         return {
-            y_bin_offset: y_bin_offset,
-            y_bin_height: y_bin_height,
-            x_bin_offsets: x_bin_offsets,
-            x_bin_width: x_bin_width
+            y_offset_in_bins: y_offset_in_bins,
+            y_height_in_bins: y_height_in_bins,
+            x_offsets_in_bins: x_offsets_in_bins,
+            x_width_in_bins: x_width_in_bins
         }
     }
 
@@ -139,10 +139,11 @@ class FullColorBinView {
 
 
     createOrUpdateColorTiles(parentElement, backgroundColor){
+        const thisView = this;
         const displayWidth = parentElement.attr("width")
         // todo: calculate
-        const tileSize = displayWidth / this.display_offsets.x_bin_width
-        const tileBorderSize = displayWidth / this.display_offsets.x_bin_width / 5
+        const tileSize = displayWidth / this.display_offsets.x_width_in_bins
+        const tileBorderSize = displayWidth / this.display_offsets.x_width_in_bins / 5
 
         const [dim1, dim2, dim3] = this.bin_size.dims
 
@@ -154,7 +155,7 @@ class FullColorBinView {
             .style("stroke-width", d => tileBorderSize)
             .attr("x", (d) => {
                 const x =  tileSize * 
-                    (d[this.x_dim + "_bin"] + this.display_offsets.x_bin_offsets[d[this.split_dim + "_bin"]])
+                    (d[this.x_dim + "_bin"] + this.display_offsets.x_offsets_in_bins[d[this.split_dim + "_bin"]])
                 if(isNaN(x)){
                     console.log("x is NAN")
                     debugger
@@ -164,7 +165,7 @@ class FullColorBinView {
 
             .attr("y", (d) => 
                 tileSize * 
-                (-d[this.y_dim + "_bin"] + this.display_offsets.y_bin_offset)
+                (-d[this.y_dim + "_bin"] + this.display_offsets.y_offset_in_bins)
             )
             .attr("fill", (d) => {
                     return this.bin_size.type == "ring" ?
@@ -174,22 +175,24 @@ class FullColorBinView {
                 })
             .attr("height", tileSize)
             .attr("width", tileSize)
-            // .attr("title", (d) => {
-            //     const [l,a,b] = curr_bin_size.type == "ring" ? [d.l_bin, d.c_bin, d.h_bin]: [d.l_bin, d.a_bin, d.b_bin]
-            //     const bin_info = lab_bins[curr_bin_size][l][a][b]
-            //     let info = `
-            //     ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
-            //     Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
-            //     Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
-            //     Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
-            //     ${("representative_rgb" in bin_info)
-            //         ?
-            //         `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
-            //         : ""
-            //     }`.trim()
+            .attr("title", (d) => {
+                // const [l,a,b] = curr_bin_size.type == "ring" ? [d.l_bin, d.c_bin, d.h_bin]: [d.l_bin, d.a_bin, d.b_bin]
+                // const bin_info = lab_bins[curr_bin_size][l][a][b]
+                let info = `
+                ${thisView.bin_size.type == "ring" ?
+                     `Bin Center (l, c, h): ${Math.round(d.center_lch.l *10000, 1)/10000}, ${Math.round(d.center_lch.c*10000, 1)/10000}, ${Math.round(d.center_lch.h*10000, 1)/10000}` 
+                    :""}
+                Bin Center (l, a, b): ${Math.round(d.center_lab.l *10000, 1)/10000}, ${Math.round(d.center_lab.a*10000, 1)/10000}, ${Math.round(d.center_lab.b*10000, 1)/10000}
+                Bin Center (r, g, b): ${Math.round(d.center_rgb.r, 1)}, ${Math.round(d.center_rgb.g, 1)}, ${Math.round(d.center_rgb.b, 1)}
+                Bin percent valid rgb: ${d.ratio_bin_in_gamut_rgb * 100}
+                ${("representative_rgb" in d)
+                    ?
+                    `Example RGB in tile (r, g, b): ${d.representative_rgb.r}, ${d.representative_rgb.g}, ${d.representative_rgb.b}}` 
+                    : ""
+                }`.trim()
 
-            //     return info
-            // })
+                return info
+            })
     }
 }
 
