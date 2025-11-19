@@ -159,9 +159,12 @@ async function load_and_process_bin_data(bin_size){
     const binView = new FullColorBinView({
       bin_size: bin_size,
       bin_array: data,
-      x_dim: bin_size.type == "ring" ? "h" : "a",
-      y_dim: bin_size.type == "ring" ? "l" : "b",
-      split_dim: bin_size.type == "ring" ? "c" : "l",
+      // x_dim: bin_size.type == "ring" ? "h" : "a",
+      // y_dim: bin_size.type == "ring" ? "l" : "b",
+      // split_dim: bin_size.type == "ring" ? "c" : "l",
+      x_dim: bin_size.type == "ring" ? "a" : "a",
+      y_dim: bin_size.type == "ring" ? "b" : "b",
+      split_dim: bin_size.type == "ring" ? "l" : "l",
     })
 
     binView.setDisplayOffsets(binView.getDisplayOffsets())
@@ -185,12 +188,9 @@ $(document).on('ready page:load', function () {
   for(let bin_size of LAB_BIN_SIZES){
     $("#bin_size").append(
       `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-        ${(bin_size.type == "cube" || bin_size.type == "box") ?
-          `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1}`
-          :
-          `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} h${bin_size.h_divs}`
+        ${
+        bin_size.display_name
         }
-      
       </option>`
     )
   }
