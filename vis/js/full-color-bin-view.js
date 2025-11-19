@@ -139,9 +139,10 @@ class FullColorBinView {
 
 
     createOrUpdateColorTiles(parentElement, backgroundColor){
+        const displayWidth = parentElement.attr("width")
         // todo: calculate
-        const tileBorderSize = 1
-        const tileSize = 5
+        const tileSize = displayWidth / this.display_offsets.x_bin_width
+        const tileBorderSize = displayWidth / this.display_offsets.x_bin_width / 5
 
         const [dim1, dim2, dim3] = this.bin_size.dims
 

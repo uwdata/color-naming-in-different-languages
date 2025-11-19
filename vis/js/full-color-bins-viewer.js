@@ -32,13 +32,13 @@ const LAB_BIN_SIZES = [
     tileMaxSizeMultiplier: 1.7,
     tileBorderSize: 2
   }),
-  // new BinSize({
-  //   type: "cube",
-  //   l: 1/20,
-  //   tileSize: 5,
-  //   tileMaxSizeMultiplier: 1.7,
-  //   tileBorderSize: 1
-  // }),
+  new BinSize({
+    type: "cube",
+    l: 1/20,
+    tileSize: 5,
+    tileMaxSizeMultiplier: 1.7,
+    tileBorderSize: 1
+  }),
   new BinSize({
     type: "cube",
     l: 1/40,
@@ -235,8 +235,16 @@ function updateDisplay(){
   }
 
   // TODO: detect (whatever we did in stacked-spectrum)
-  currSvgSize[0].width = 1000
-  currSvgSize[0].height = 200
+  // currSvgSize[0].width = 1000
+  // currSvgSize[0].height = 200
+
+  // let margin = {top: 30, right: 50, bottom: 30, left: 50},
+  // width = $(targetSelector).width() - margin.left - margin.right,
+  // height = Math.min(200 - margin.top - margin.bottom, width/4);
+
+  currSvgSize[0].width = $("#main").width()
+  currSvgSize[0].height =  currSvgSize[0].width * labBinViews[curr_bin_size].display_offsets.y_bin_height /  labBinViews[curr_bin_size].display_offsets.x_bin_width
+
 
   $(".bin-map").each(function() {
     this.style["min-width"] = currSvgSize[0].width + 5 + "px"
