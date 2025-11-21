@@ -344,7 +344,6 @@ class FullColorBinView {
                         `Example RGB in tile (r, g, b): ${d.representative_rgb.r}, ${d.representative_rgb.g}, ${d.representative_rgb.b}}` 
                         : ""
                     }`.trim()
-
                     return info
                 })
             } else {
@@ -366,22 +365,19 @@ class FullColorBinView {
                     .attr("fill", d => {
                         return `oklch(${d.l_center} ${d.c_center} ${d.h_center})`
                     })
-                    // .attr("title", (d) => {
-                    //     const [l,a,b] = curr_bin_size.type == "ring" ? [d.l_bin, d.c_bin, d.h_bin]: [d.l_bin, d.a_bin, d.b_bin]
-                    //     const bin_info = lab_bins[curr_bin_size][l][a][b]
-                    //     let info = `
-                    //     ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
-                    //     Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
-                    //     Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
-                    //     Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
-                    //     ${("representative_rgb" in bin_info)
-                    //         ?
-                    //         `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
-                    //         : ""
-                    //     }`.trim()
-
-                    //     return info
-                    // })
+                    .attr("title", (d) => {
+                        let info = `
+                        Bin Center (l, c, h): ${Math.round(d.center_lch.l *10000, 1)/10000}, ${Math.round(d.center_lch.c*10000, 1)/10000}, ${Math.round(d.center_lch.h*10000, 1)/10000}
+                        Bin Center (l, a, b): ${Math.round(d.center_lab.l *10000, 1)/10000}, ${Math.round(d.center_lab.a*10000, 1)/10000}, ${Math.round(d.center_lab.b*10000, 1)/10000}
+                        Bin Center (r, g, b): ${Math.round(d.center_rgb.r, 1)}, ${Math.round(d.center_rgb.g, 1)}, ${Math.round(d.center_rgb.b, 1)}
+                        Bin percent valid rgb: ${d.ratio_bin_in_gamut_rgb * 100}
+                        ${("representative_rgb" in d)
+                            ?
+                            `Example RGB in tile (r, g, b): ${d.representative_rgb.r}, ${d.representative_rgb.g}, ${d.representative_rgb.b}}` 
+                            : ""
+                        }`.trim()
+                        return info
+                    })
                     
 
 
@@ -414,22 +410,19 @@ class FullColorBinView {
                     }) // A rx ry x-axis-rotation large-arc-flag sweep-flag x y
                     .style("stroke-width", tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1) - 1 * tileBorderSize)//d => curr_bin_size.tileBorderSize)
                     .attr("fill", "rgba(0,0,0,0)")
-                    // .attr("title", (d) => {
-                    //     const [l,a,b] = curr_bin_size.type == "ring" ? [d.l_bin, d.c_bin, d.h_bin]: [d.l_bin, d.a_bin, d.b_bin]
-                    //     const bin_info = lab_bins[curr_bin_size][l][a][b]
-                    //     let info = `
-                    //     ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
-                    //     Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
-                    //     Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
-                    //     Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
-                    //     ${("representative_rgb" in bin_info)
-                    //         ?
-                    //         `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
-                    //         : ""
-                    //     }`.trim()
-
-                    //     return info
-                    // })
+                    .attr("title", (d) => {
+                        let info = `
+                        Bin Center (l, c, h): ${Math.round(d.center_lch.l *10000, 1)/10000}, ${Math.round(d.center_lch.c*10000, 1)/10000}, ${Math.round(d.center_lch.h*10000, 1)/10000}
+                        Bin Center (l, a, b): ${Math.round(d.center_lab.l *10000, 1)/10000}, ${Math.round(d.center_lab.a*10000, 1)/10000}, ${Math.round(d.center_lab.b*10000, 1)/10000}
+                        Bin Center (r, g, b): ${Math.round(d.center_rgb.r, 1)}, ${Math.round(d.center_rgb.g, 1)}, ${Math.round(d.center_rgb.b, 1)}
+                        Bin percent valid rgb: ${d.ratio_bin_in_gamut_rgb * 100}
+                        ${("representative_rgb" in d)
+                            ?
+                            `Example RGB in tile (r, g, b): ${d.representative_rgb.r}, ${d.representative_rgb.g}, ${d.representative_rgb.b}}` 
+                            : ""
+                        }`.trim()
+                        return info
+                    })
             }
     }
 }

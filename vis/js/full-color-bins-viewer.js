@@ -340,9 +340,9 @@ function createOrRefreshTiles(){
   }
 
 
-  langText.text("All Color Bins")
-      .attr("x", 20)
-      .attr("y", 25)
+  // langText.text("All Color Bins")
+  //     .attr("x", 20)
+  //     .attr("y", 25)
 
   labBinViews[curr_bin_size].createOrUpdateColorTiles(squareBins, backgroundColor)
 }
