@@ -455,10 +455,10 @@ class FullColorBinView {
                     circleTiles.on("mouseover", options.mouseover)
                 }
                 if("mouseout" in options){
-                    circleTiles.on("mouseout", options.mouseover)
+                    circleTiles.on("mouseout", options.mouseout)
                 }
                 if("click" in options){
-                    circleTiles.on("click", options.mouseover)
+                    circleTiles.on("click", options.click)
                 }
 
 
@@ -519,10 +519,10 @@ class FullColorBinView {
                     arcTiles.on("mouseover", options.mouseover)
                 }
                 if("mouseout" in options){
-                    arcTiles.on("mouseout", options.mouseover)
+                    arcTiles.on("mouseout", options.mouseout)
                 }
                 if("click" in options){
-                    arcTiles.on("click", options.mouseover)
+                    arcTiles.on("click", options.click)
                 }
             }
     }
