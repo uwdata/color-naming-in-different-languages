@@ -5,148 +5,102 @@ import FullColorBinView from "./full-color-bin-view.js";
 const LAB_BIN_SIZES = [ 
   new BinSize({
     type: "box",
-    l: 1/5, ab: 1/20, 
-    tileSize: 10,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 2
+    l: 1/5, ab: 1/20,
+    simpleName: "LAB Boxes: Low-res",
   }), 
   new BinSize({
     type: "box",
     l: 1/10, ab: 1/40, 
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    simpleName: "LAB Boxes: Medium-res",
   }), 
   new BinSize({
     type: "box",
     l: 1/15, ab: 1/60,
-    tileSize: 4,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    simpleName: "LAB Boxes: High-res",
   }), 
   new BinSize({
     type: "cube",
     l: 1/10,
-    tileSize: 10,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 2
+    simpleName: "LAB Cubes: Low-res",
+    defaultHidden: true,
   }),
   new BinSize({
     type: "cube",
     l: 1/20,
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    simpleName: "LAB Cubes: Medium-res",
+    defaultHidden: true,
   }),
   new BinSize({
     type: "cube",
     l: 1/40,
-    tileSize: 2,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 0.5
+    simpleName: "LAB Cubes: High-res",
+    defaultHidden: true,
   }), 
   new BinSize({
     type: "ring",
-    l: 1/10,
-    h_divs: 3,
-    tileSize: 10,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    l: 1/5, c: 1/20, h_divs: 8,
+    simpleName: "LCH Arcs: Low-res",
+    displayLABArcs: true
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/10, c: 1/40, h_divs: 8,
+    simpleName: "LCH Arcs: Medium-res",
+    displayLABArcs: true
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/15, c: 1/60, h_divs: 8,
+    simpleName: "LCH Arcs: High-res",
+    displayLABArcs: true
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/10, h_divs: 8,
+    simpleName: "LCH Bins: High-res",
   }), 
   new BinSize({
     type: "ring",
-    l: 1/20,
-    h_divs: 3,
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    l: 1/20, h_divs: 8,
+    simpleName: "LCH Bins: Medium-res",
   }), 
   new BinSize({
     type: "ring",
-    l: 1/40,
-    h_divs: 3,
-    tileSize: 4,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    l: 1/40, h_divs: 8,
+    simpleName: "LCH Bins: High-res",
   }),
   new BinSize({
     type: "ring",
-    l: 1/10,
-    h_divs: 8,
-    tileSize: 10,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    l: 1/10, h_divs: 3,
+    defaultHidden: true,
   }), 
   new BinSize({
     type: "ring",
-    l: 1/20,
-    h_divs: 8,
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    l: 1/20, h_divs: 3,
+    defaultHidden: true,
   }), 
   new BinSize({
     type: "ring",
-    l: 1/40,
-    h_divs: 8,
-    tileSize: 4,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    l: 1/40, h_divs: 3,
+    defaultHidden: true,
   }),
   new BinSize({
     type: "ring",
-    l: 1/5,
-    c: 1/40, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
-    h_divs: 3,
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    l: 1/5, c: 1/40, h_divs: 3,
+    defaultHidden: true,
   }),
   new BinSize({
     type: "ring",
-    l: 1/10,
-    c: 1/80, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
-    h_divs: 3,
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    l: 1/10, c: 1/80, h_divs: 3,
+    defaultHidden: true,
   }),
   new BinSize({
     type: "ring",
-    l: 1/15,
-    c: 1/120, // for h_divs 3, c should be 1/2 l, but to make it a box 4x taller, we do 1/8th l
-    h_divs: 3,
-    tileSize: 5,
+    l: 1/15, c: 1/120,  h_divs: 3,
     tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
+    defaultHidden: true,
   }),
-  new BinSize({
-    type: "ring",
-    l: 1/5,
-    c: 1/20, // for h_divs 3, c should be = l, but we make it 1/4th
-    h_divs: 8,
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/10,
-    c: 1/40, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
-    h_divs: 8,
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/15,
-    c: 1/60, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
-    h_divs: 8,
-    tileSize: 5,
-    tileMaxSizeMultiplier: 1.7,
-    tileBorderSize: 1
-  })
+  
 ]
 
 const MIN_BIN_PERC_DISPLAY = 50
@@ -308,11 +262,13 @@ let additional_tooltip_info = false
 /*************** Load page and Data *********************/
 $(document).on('ready page:load', function () {
   for(let bin_size of LAB_BIN_SIZES){
-    $("#bin_size").append(
-      `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-        ${bin_size.display_name}
-      </option>`
-    )
+    if(!bin_size.defaultHidden){
+      $("#bin_size").append(
+        `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
+          ${bin_size.simpleName}
+        </option>`
+      )
+    }
   }
 
   /********* jquery event listeners */
@@ -389,8 +345,14 @@ function updateDisplay(){
     $("#loading-p").remove()
   }
 
+  let binView = labBinViews[curr_bin_size]
+  if(curr_bin_size.displayLABArcs){
+    binView = labBinArcViews[curr_bin_size]
+  }
+
+  //TODO: have maximum for height too
   currSvgSize[0].width = $("#main").width()
-  currSvgSize[0].height =  currSvgSize[0].width * labBinViews[curr_bin_size].display_offsets.y_height_in_bins /  labBinViews[curr_bin_size].display_offsets.x_width_in_bins
+  currSvgSize[0].height =  currSvgSize[0].width * binView.display_offsets.y_height_in_bins /  binView.display_offsets.x_width_in_bins
 
   // const language_stat = language_stats[curr_bin_size][curr_blur][0]
   // currSvgSize[0].width = "binA" in saliencies_by_lang[curr_bin_size][curr_blur][language_stat.lang][0] ? 
@@ -438,6 +400,11 @@ function createOrRefreshAllLangs(){
 function createOrRefreshLang(i){
   const div = d3.select("#lang"+i)
 
+  let binView = labBinViews[curr_bin_size]
+  if(curr_bin_size.displayLABArcs){
+    binView = labBinArcViews[curr_bin_size]
+  }
+
   if(i == -1){ //reference bins
     if(!$("#ref_bins").is(':checked')){
       div.style("display", "none")
@@ -447,7 +414,7 @@ function createOrRefreshLang(i){
     const language_stat = language_stats[curr_bin_size][curr_blur][i]
     // don't create if language displays if they aren't selected
     if(!$("#low-data").is(':checked') 
-          && (language_stat.numBins / labBinViews[curr_bin_size].bin_array.length) * 100  <= MIN_BIN_PERC_DISPLAY){
+          && (language_stat.numBins / binView.bin_array.length) * 100  <= MIN_BIN_PERC_DISPLAY){
       div.style("display", "none")
       return
     }
@@ -557,7 +524,7 @@ function createOrRefreshLang(i){
     .attr("height", langText.node().getBBox().height + 10)
 
   if(i == -1){ // color reference
-    labBinViews[curr_bin_size].createOrUpdateColorTiles(svg, {
+    binView.createOrUpdateColorTiles(svg, {
       backgroundColor: backgroundColor,
     })
     langText.text("All Color Bins (Reference)")
@@ -568,7 +535,7 @@ function createOrRefreshLang(i){
     const language_stat = language_stats[curr_bin_size][curr_blur][i]
     const sal = saliencies_by_lang[curr_bin_size][curr_blur][language_stat.lang]
 
-    labBinViews[curr_bin_size].createOrUpdateColorTiles(svg, {
+    binView.createOrUpdateColorTiles(svg, {
       backgroundColor: backgroundColor,
       binsToDisplay: sal,
       getTileScale: getTileScale,
@@ -652,14 +619,14 @@ function createOrRefreshLang(i){
 //       })
 
 
-
+const tileMaxSizeMultiplier = 1.7
 function getTileScale(d){
     if(tile_size_type == "ptc"){
       // ptc is 0 to 1
       if(bin_size_by == "length-width"){
-        return curr_bin_size.tileMaxSizeMultiplier*d.maxpTC
+        return tileMaxSizeMultiplier*d.maxpTC
       } else {
-        return Math.sqrt(curr_bin_size.tileMaxSizeMultiplier*d.maxpTC)
+        return Math.sqrt(tileMaxSizeMultiplier*d.maxpTC)
       }
     }
     if(tile_size_type == "sal"){
@@ -667,9 +634,9 @@ function getTileScale(d){
       const sal_ratio = (d.saliency - min_sal) / -min_sal 
       const sal_smaller = 0.8
       if(bin_size_by == "length-width"){
-        return sal_smaller*curr_bin_size.tileMaxSizeMultiplier*sal_ratio
+        return sal_smaller*tileMaxSizeMultiplier*sal_ratio
       } else {
-        return sal_smaller*Math.sqrt(curr_bin_size.tileMaxSizeMultiplier*sal_ratio)
+        return sal_smaller*Math.sqrt(tileMaxSizeMultiplier*sal_ratio)
       }
     }
     // otherwise uniform:
