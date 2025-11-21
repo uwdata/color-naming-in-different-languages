@@ -257,17 +257,23 @@ let tile_size_type = 'ptc'
 let bin_size_by = "area"
 let additional_tooltip_info = false
 
-/*************** Load page and Data *********************/
-$(document).on('ready page:load', function () {
+function setBinOptions(){
+  const additional_bins_info = $("#additional_bins").is(':checked')
+  $("#bin_size").empty()
   for(let bin_size of LAB_BIN_SIZES){
-    if(!bin_size.defaultHidden){
+    if(!bin_size.defaultHidden || additional_bins_info){
       $("#bin_size").append(
         `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-          ${bin_size.simpleName}
+          ${bin_size.simpleName ? bin_size.simpleName : bin_size.display_name}
         </option>`
       )
     }
   }
+}
+
+/*************** Load page and Data *********************/
+$(document).on('ready page:load', function () {
+  setBinOptions()
 
   /********* jquery event listeners */
 
@@ -317,7 +323,10 @@ $(document).on('ready page:load', function () {
 
   $("#additional_tooltip").change(() => {
     additional_tooltip_info = $("#additional_tooltip").val()
-    //createOrRefreshAllLangs()
+  })
+
+  $("#additional_bins").change(() => {
+    setBinOptions()
   })
 
   updateDisplay()
