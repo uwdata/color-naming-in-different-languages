@@ -396,18 +396,16 @@ class FullColorBinView {
                         const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[d[thisView.split_dim + "_bin"]] 
                         const levelCenterY =  tileSize* this.display_offsets.y_offset_in_bins
                         const binRadius = d.c_center/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1)
-                        const endAngleMargin = -(d.h_min + (thisView.bin_size.h_divs == 3 ? 8 : 5) / d.c_center * thisView.bin_size.c)
-                        - 90 // rotate 90 degrees
-                        const startAngleMargin = -(d.h_max - (thisView.bin_size.h_divs == 3 ? 8 : 5) / d.c_center * thisView.bin_size.c)
-                        - 90 // rotate 90 degrees
+                        const endAngleMargin = (d.h_min + (thisView.bin_size.h_divs == 3 ? 8 : 5) / d.c_center * thisView.bin_size.c)
+                        const startAngleMargin = (d.h_max - (thisView.bin_size.h_divs == 3 ? 8 : 5) / d.c_center * thisView.bin_size.c)
                         const binStartDeltaX = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
                         const binStartX = levelCenterX + binStartDeltaX
                         const binEndDeltaX = binRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
                         const binEndX = levelCenterX  + binEndDeltaX
                         const binStartDeltaY = binRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI)
-                        const binStartY = levelCenterY + binStartDeltaY
+                        const binStartY = levelCenterY - binStartDeltaY // minus to correct for display y axis has + go down
                         const binEndDeltaY = binRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)  
-                        const binEndY = levelCenterY + binEndDeltaY
+                        const binEndY = levelCenterY - binEndDeltaY
 
                         return `
                         M ${binStartX} ${binStartY} 
