@@ -37,11 +37,17 @@ class FullColorBinView {
 
         // check if the bin dims match the display dims in a way which means we are displaying ring arcs
         const areRingArcs = [this.x_dim, this.y_dim].includes("a") && [dim1, dim2, dim3].includes("h")
-        // TODO: ????
+        // for the c-radius we need to correct for whether it is a 3 or 8 h division
+        const arcCToABRadiusCorrection = (this.bin_size.h_divs == 3 ? 0.5 : 1) / this.bin_size.c
 
         this[dim1 + "_nums"] = []
         this[dim2 + "_nums"] = []
         this[dim3 + "_nums"] = []
+        if(areRingArcs){
+            this[this.x_dim + "_nums"] = []
+            this[this.y_dim + "_nums"] = []
+            this[this.split_dim + "_nums"] = [] // probably duplicates shared "l" in lab/lch 
+        }
         this.splitDimNums = {}
 
         for(const bin of this.bin_array){
@@ -59,6 +65,33 @@ class FullColorBinView {
             if(!this[dim3 + "_nums"].includes(dim3_bin)){
                 this[dim3 + "_nums"].push(dim3_bin)
             }
+            if(areRingArcs){
+                const a_bin_center = arcCToABRadiusCorrection * bin.c_center * Math.cos(bin.h_center / 360 * 2* Math.PI)
+                const b_bin_center = arcCToABRadiusCorrection * bin.c_center * Math.sin(bin.h_center / 360 * 2* Math.PI)
+                let dim_x_bin, dim_y_bin
+                if(this.x_dim == "a"){
+                    dim_x_bin = a_bin_center
+                    dim_y_bin = b_bin_center
+                } else {
+                    dim_x_bin = b_bin_center
+                    dim_y_bin = b_bin_center
+                }
+                //const dim_x_bin = 
+                //const dim_y_bin = bin[this.y_dim + "_bin"]
+                const dim_split_bin = bin[this.split_dim + "_bin"] // probably duplicates shared "l" in lab/lch 
+
+
+                if(!this[this.x_dim + "_nums"].includes(dim_x_bin)){
+                    this[this.x_dim + "_nums"].push(dim_x_bin)
+                }
+                if(!this[this.y_dim + "_nums"].includes(dim_y_bin)){
+                    this[this.y_dim + "_nums"].push(dim_y_bin)
+                }
+                // probably duplicates shared "l" in lab/lch 
+                if(!this[this.split_dim + "_nums"].includes(dim_split_bin)){
+                    this[this.split_dim + "_nums"].push(dim_split_bin)
+                }
+            }
 
             // track the range of bin numbers in each level
             const splitDimBinNum = bin[this.split_dim + "_bin"]
@@ -67,15 +100,113 @@ class FullColorBinView {
                     [this.x_dim]: [],
                     [this.y_dim]: []
                 }
+                if(areRingArcs){
+                    this.splitDimNums[splitDimBinNum].h = []
+                    this.splitDimNums[splitDimBinNum].c = []
+                }
             }
-            const xDimNum = bin[this.x_dim + "_bin"]
-            if(!(this.splitDimNums[splitDimBinNum][this.x_dim].includes(xDimNum))){
-                this.splitDimNums[splitDimBinNum][this.x_dim].push(xDimNum)
-            }
-            const yDimNum = bin[this.y_dim + "_bin"]
-            if(!(this.splitDimNums[splitDimBinNum][this.y_dim].includes(yDimNum))){
-                this.splitDimNums[splitDimBinNum][this.y_dim].push(yDimNum)
-            }                       
+            
+            if(!areRingArcs){ // normal square bins:
+                const xDimNum = bin[this.x_dim + "_bin"]
+                if(!(this.splitDimNums[splitDimBinNum][this.x_dim].includes(xDimNum))){
+                    this.splitDimNums[splitDimBinNum][this.x_dim].push(xDimNum)
+                }
+                const yDimNum = bin[this.y_dim + "_bin"]
+                if(!(this.splitDimNums[splitDimBinNum][this.y_dim].includes(yDimNum))){
+                    this.splitDimNums[splitDimBinNum][this.y_dim].push(yDimNum)
+                } 
+            } else { // arc bins
+                // TODO: We want need the a and b in "bin" dimensions
+
+
+                // we assume split_dim is l, x/y dims are a/b, and that we have c/h data
+                if(this.split_dim !== "l" || ![this.x_dim, this.y_dim].includes("a") ||
+                   ![this.x_dim, this.y_dim].includes("b") || !("c_bin" in bin) || !("h_bin" in bin)){
+                    throw new Error("Arc bin detected, but not expected dimensions of x/y dims: a/b, split dim: l, and bin c/h data")
+                }
+
+                // track c and h nums
+                if(!(this.splitDimNums[splitDimBinNum].c.includes(bin.c_bin))){
+                    this.splitDimNums[splitDimBinNum].c.push(bin.c_bin)
+                }
+                if(!(this.splitDimNums[splitDimBinNum].h.includes(bin.h_num))){
+                    this.splitDimNums[splitDimBinNum].h.push(bin.h_num)
+                } 
+
+                // for each arc, consider the center line of the arc in the c
+                // direction, and calculate the max x/y values of that center line
+                if(bin.c_center == 0){ // bin at center is a circle at x/y 0
+                    const xDimNum = 0
+                    const yDimNum = 0
+                    if(!(this.splitDimNums[splitDimBinNum][this.x_dim].includes(xDimNum))){
+                        this.splitDimNums[splitDimBinNum][this.x_dim].push(xDimNum)
+                    }
+                    if(!(this.splitDimNums[splitDimBinNum][this.y_dim].includes(yDimNum))){
+                        this.splitDimNums[splitDimBinNum][this.y_dim].push(yDimNum)
+                    } 
+                } else { // arc, not a circle at the center
+                    // sine starts goes 0 -> 1 -> 0 -> -1
+                    // cosine goes 1 -> 0 -> -1 -> 0
+                    // a goes with cosine, b goes with sine
+
+                    let a_min, b_min, a_max, b_max
+                    
+                    // a max (h 0 degrees, a+ / b0)
+                    // if h overlaps with 0, then max a is just "c"
+                    if(bin.h_min > bin.h_max || [0,360].includes(bin.h_min) || [0,360].includes(bin.h_max)){
+                        a_max = arcCToABRadiusCorrection * bin.c_center
+                    } else{
+                        a_max = arcCToABRadiusCorrection * bin.c_center * Math.max(
+                            Math.cos(bin.h_min / 360 * 2* Math.PI),
+                            Math.cos(bin.h_max / 360 * 2* Math.PI)
+                        )
+                    }
+
+                    // b max (90 degrees is b+ / a0)
+                    if(bin.h_min <= 90 && bin.h_max >= 90){
+                        b_max = arcCToABRadiusCorrection * bin.c_center
+                    } else{
+                        b_max = arcCToABRadiusCorrection * bin.c_center * Math.max(
+                            Math.sin(bin.h_min / 360 * 2* Math.PI),
+                            Math.sin(bin.h_max / 360 * 2* Math.PI)
+                        )
+                    }
+                    
+                    // a min (180 degrees is a- / b0)
+                    if(bin.h_min <= 180 && bin.h_max >= 180){
+                        a_min = arcCToABRadiusCorrection * -bin.c_center
+                    } else{
+                        a_min = arcCToABRadiusCorrection * bin.c_center * Math.min(
+                            Math.cos(bin.h_min / 360 * 2* Math.PI),
+                            Math.cos(bin.h_max / 360 * 2* Math.PI)
+                        )
+                    }
+
+                    // b min 270 degrees is b- / a0
+                    if(bin.h_min <= 270 && bin.h_max >= 270){
+                        b_min = arcCToABRadiusCorrection * -bin.c_center
+                    } else{
+                        b_min = arcCToABRadiusCorrection * bin.c_center * Math.max(
+                            Math.sin(bin.h_min / 360 * 2* Math.PI),
+                            Math.sin(bin.h_max / 360 * 2* Math.PI)
+                        )
+                    }
+
+                    // update a/b values with mins and maxes
+                    if(!(this.splitDimNums[splitDimBinNum].a.includes(a_min))){
+                        this.splitDimNums[splitDimBinNum].a.push(a_min)
+                    }
+                    if(!(this.splitDimNums[splitDimBinNum].a.includes(a_max))){
+                        this.splitDimNums[splitDimBinNum].a.push(a_max)
+                    }
+                    if(!(this.splitDimNums[splitDimBinNum].b.includes(b_min))){
+                        this.splitDimNums[splitDimBinNum].b.push(b_min)
+                    }
+                    if(!(this.splitDimNums[splitDimBinNum].b.includes(b_max))){
+                        this.splitDimNums[splitDimBinNum].b.push(b_max)
+                    }
+                }
+            }            
         }
         this[dim1 + "_nums"].sort((a,b) => a - b)
         this[dim2 + "_nums"].sort((a,b) => a - b)
@@ -89,6 +220,14 @@ class FullColorBinView {
 
         this[dim3 + "_min_bin"] = Math.min(... this[dim3 + "_nums"])
         this[dim3 + "_max_bin"] = Math.max(... this[dim3 + "_nums"])
+
+        if(areRingArcs){
+            this[this.x_dim + "_min_bin"] = Math.min(... this[this.x_dim + "_nums"])
+            this[this.x_dim + "_max_bin"] = Math.max(... this[this.x_dim + "_nums"])
+
+            this[this.y_dim + "_min_bin"] = Math.min(... this[this.y_dim + "_nums"])
+            this[this.y_dim + "_max_bin"] = Math.max(... this[this.y_dim + "_nums"])
+        }
 
         // calculate min/max of split values
         this.splitLevelRanges = {}
@@ -172,7 +311,7 @@ class FullColorBinView {
                 .style("stroke-width", d => tileBorderSize)
                 .attr("x", (d) => {
                     const x =  tileSize * 
-                        (d[this.x_dim + "_bin"] + this.display_offsets.x_offsets_in_bins[d[this.split_dim + "_bin"]])
+                        (d[thisView.x_dim + "_bin"] + thisView.display_offsets.x_offsets_in_bins[d[thisView.split_dim + "_bin"]])
                     if(isNaN(x)){
                         console.log("x is NAN")
                         debugger
@@ -182,10 +321,10 @@ class FullColorBinView {
 
                 .attr("y", (d) => 
                     tileSize * 
-                    (-d[this.y_dim + "_bin"] + this.display_offsets.y_offset_in_bins)
+                    (-d[thisView.y_dim + "_bin"] + thisView.display_offsets.y_offset_in_bins)
                 )
                 .attr("fill", (d) => {
-                        return this.bin_size.type == "ring" ?
+                        return thisView.bin_size.type == "ring" ?
                         `oklch(${d.l_center} ${d.c_center} ${d.h_center})`
                         :
                         `oklab(${d.l_center} ${d.a_center} ${d.b_center})`
@@ -218,8 +357,8 @@ class FullColorBinView {
                     .data(this.bin_array.filter(d => d.c_bin == 0))
                     .join("circle")
                     .attr("class", "circle-tile")
-                    .attr("cx", d =>  30 + (d.l_bin) * 100)
-                    .attr("cy", d =>  70)
+                    .attr("cx", d =>  tileSize* thisView.display_offsets.x_offsets_in_bins[d[thisView.split_dim + "_bin"]])
+                    .attr("cy", d =>  tileSize* thisView.display_offsets.y_offset_in_bins)
                     .attr("r",  d => {
                         const binRadius = d.c_max/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1) - 0.5 * tileBorderSize
                         return binRadius
@@ -254,9 +393,9 @@ class FullColorBinView {
                         return `oklch(${d.l_center} ${d.c_center} ${d.h_center})`
                     })
                     .attr("d", d => {
-                        const levelCenterX = 30 + (d.l_bin) * 100
-                        const levelCenterY = 70
-                        const binRadius = d.c_center/thisView.bin_size.c*thisView.bin_size.tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1)
+                        const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[d[thisView.split_dim + "_bin"]] 
+                        const levelCenterY =  tileSize* this.display_offsets.y_offset_in_bins
+                        const binRadius = d.c_center/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1)
                         const endAngleMargin = -(d.h_min + (thisView.bin_size.h_divs == 3 ? 8 : 5) / d.c_center * thisView.bin_size.c)
                         - 90 // rotate 90 degrees
                         const startAngleMargin = -(d.h_max - (thisView.bin_size.h_divs == 3 ? 8 : 5) / d.c_center * thisView.bin_size.c)

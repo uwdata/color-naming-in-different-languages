@@ -315,10 +315,14 @@ function createOrRefreshTiles(){
     .attr("height", currSvgSize[0].height )
 
   if(curr_bin_size.type == "ring"){
+    //calculate rings height:
+    const ringsHeight =  currSvgSize[0].width * labBinArcViews[curr_bin_size].display_offsets.y_height_in_bins /  labBinArcViews[curr_bin_size].display_offsets.x_width_in_bins
+
+
     // move square bins down to make space for rings
-    squareBins.attr("transform", `translate(0,${currSvgSize[0].height})`)
+    squareBins.attr("transform", `translate(0,${ringsHeight})`)
     
-    svg.attr("height", svg.attr("height") * 2)
+    svg.attr("height", currSvgSize[0].height + ringsHeight)
     
 
     let arcBins = svg.select("#arc-bins")
@@ -327,7 +331,7 @@ function createOrRefreshTiles(){
         .attr("id", "arc-bins")
     }
     arcBins.attr("width", currSvgSize[0].width)
-      .attr("height", currSvgSize[0].height)
+      .attr("height", ringsHeight)
 
     labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, backgroundColor)
   } else {
