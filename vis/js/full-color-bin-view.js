@@ -398,7 +398,7 @@ class FullColorBinView {
                     .join("rect")
 
                 const circleTiles = parentElement.selectAll(".circle-tile")
-                    .data(binsToDisplay.filter(d => d.c_bin == 0))
+                    .data(binsToDisplay.filter(d => ("binC" in d && d.binC == 0) || d.c_bin == 0))
                     .join("circle")
                     .attr("class", "circle-tile")
                     .attr("cx", d => {
@@ -442,7 +442,7 @@ class FullColorBinView {
 
 
                 const arcTiles = parentElement.selectAll(".arc-tile")
-                    .data(binsToDisplay.filter(d => d.c_bin != 0))
+                    .data(binsToDisplay.filter(d => ("binC" in d && d.binC != 0) || d.c_bin != 0))
                     .join("path")
                     .attr("class", "arc-tile")
                     .style("stroke", d => {
@@ -451,7 +451,7 @@ class FullColorBinView {
                     })
                     .attr("d", d => {
                         const bin = thisView.getBinInfo(d)
-                        const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[d[thisView.split_dim + "_bin"]] 
+                        const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]] 
                         const levelCenterY =   tileSize* this.display_offsets.y_offset_in_bins
                         const binRadius = bin.c_center/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1)
                         // TODO: shrink beginning / end based on  getTileScale(d)
