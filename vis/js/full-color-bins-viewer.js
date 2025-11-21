@@ -203,9 +203,7 @@ $(document).on('ready page:load', function () {
   for(let bin_size of LAB_BIN_SIZES){
     $("#bin_size").append(
       `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-        ${
-        bin_size.display_name
-        }
+        ${bin_size.display_name}
       </option>`
     )
   }
@@ -333,7 +331,7 @@ function createOrRefreshTiles(){
     arcBins.attr("width", currSvgSize[0].width)
       .attr("height", ringsHeight)
 
-    labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, backgroundColor)
+    labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, {backgroundColor: backgroundColor})
   } else {
     svg.select("#arc-bins").remove()
     squareBins.attr("transform", `translate(0,0)`)
@@ -344,6 +342,6 @@ function createOrRefreshTiles(){
   //     .attr("x", 20)
   //     .attr("y", 25)
 
-  labBinViews[curr_bin_size].createOrUpdateColorTiles(squareBins, backgroundColor)
+  labBinViews[curr_bin_size].createOrUpdateColorTiles(squareBins, {backgroundColor: backgroundColor})
 }
 

@@ -32,6 +32,22 @@ class FullColorBinView {
         return nestedData
     }
 
+    getBinInfo(bin){
+        if(("bin" + this.bin_size.dims[0].toUpperCase()) in bin){ // if data bin
+            return this.nested_bins[
+                    bin["bin" + this.bin_size.dims[0].toUpperCase()]
+                ][
+                    bin["bin" + this.bin_size.dims[1].toUpperCase()]
+                ][
+                    bin["bin" + this.bin_size.dims[2].toUpperCase()]
+                ]
+        }
+        if(!bin){
+            debugger;
+        }
+        return bin
+    }
+
     findDimBounds(){
         const [dim1, dim2, dim3] = this.bin_size.dims
 
@@ -281,13 +297,27 @@ class FullColorBinView {
     }
 
 
-    createOrUpdateColorTiles(parentElement, backgroundColor){
+    createOrUpdateColorTiles(parentElement, options){
+        const backgroundColor = options.backgroundColor || "white"
+        const binsToDisplay = "binsToDisplay" in options ? options.binsToDisplay : this.bin_array
+        const getTileScale = "getTileScale" in options ? options.getTileScale : () => 1
+        
+        const getTileColor = "getTileColor" in options ? options.getTileColor : 
+            (d, bin) => {
+                return thisView.bin_size.type == "ring" ?
+                    `oklch(${bin.l_center} ${bin.c_center} ${bin.h_center})`
+                    :
+                    `oklab(${bin.l_center} ${bin.a_center} ${bin.b_center})`
+            }
+
+
         const thisView = this;
         const displayWidth = parentElement.attr("width")
         
         // TODO: remove the fallback values when I fix the other calculations
         const tileSize = displayWidth / this.display_offsets.x_width_in_bins || 5
         const tileBorderSize = displayWidth / this.display_offsets.x_width_in_bins / 5 || 1
+
 
         const [dim1, dim2, dim3] = this.bin_size.dims
 
@@ -303,15 +333,20 @@ class FullColorBinView {
                 .data([])
                 .join("path")
 
-            parentElement.selectAll(".tile")
-                .data(this.bin_array)
+            let tiles = parentElement.selectAll(".tile")
+                .data(binsToDisplay)
                 .join("rect")
                 .attr("class", "tile")
                 .style("stroke", backgroundColor)
                 .style("stroke-width", d => tileBorderSize)
                 .attr("x", (d) => {
+                    const bin = thisView.getBinInfo(d)
+                    if(!bin){
+                        debugger
+                        const test = thisView.getBinInfo(d)
+                    }
                     const x =  tileSize * 
-                        (d[thisView.x_dim + "_bin"] + thisView.display_offsets.x_offsets_in_bins[d[thisView.split_dim + "_bin"]])
+                        (bin[thisView.x_dim + "_bin"] + thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]])
                     if(isNaN(x)){
                         console.log("x is NAN")
                         debugger
@@ -319,81 +354,110 @@ class FullColorBinView {
                     return x
                     })
 
-                .attr("y", (d) => 
-                    tileSize * 
-                    (-d[thisView.y_dim + "_bin"] + thisView.display_offsets.y_offset_in_bins)
-                )
+                .attr("y", (d) => {
+                    const bin = thisView.getBinInfo(d)
+                    return tileSize * 
+                        (-bin[thisView.y_dim + "_bin"] + thisView.display_offsets.y_offset_in_bins)
+                })
                 .attr("fill", (d) => {
-                        return thisView.bin_size.type == "ring" ?
-                        `oklch(${d.l_center} ${d.c_center} ${d.h_center})`
-                        :
-                        `oklab(${d.l_center} ${d.a_center} ${d.b_center})`
-                    })
-                .attr("height", tileSize)
-                .attr("width", tileSize)
+                    const bin = thisView.getBinInfo(d)
+                    return getTileColor(d, bin)
+                })
+                .attr("height", d => tileSize * getTileScale(d))
+                .attr("width", d => tileSize * getTileScale(d))
                 .attr("title", (d) => {
+                    const bin = thisView.getBinInfo(d)
                     let info = `
                     ${thisView.bin_size.type == "ring" ?
-                        `Bin Center (l, c, h): ${Math.round(d.center_lch.l *10000, 1)/10000}, ${Math.round(d.center_lch.c*10000, 1)/10000}, ${Math.round(d.center_lch.h*10000, 1)/10000}` 
+                        `Bin Center (l, c, h): ${Math.round(bin.center_lch.l *10000, 1)/10000}, ${Math.round(bin.center_lch.c*10000, 1)/10000}, ${Math.round(bin.center_lch.h*10000, 1)/10000}` 
                         :""}
-                    Bin Center (l, a, b): ${Math.round(d.center_lab.l *10000, 1)/10000}, ${Math.round(d.center_lab.a*10000, 1)/10000}, ${Math.round(d.center_lab.b*10000, 1)/10000}
-                    Bin Center (r, g, b): ${Math.round(d.center_rgb.r, 1)}, ${Math.round(d.center_rgb.g, 1)}, ${Math.round(d.center_rgb.b, 1)}
-                    Bin percent valid rgb: ${d.ratio_bin_in_gamut_rgb * 100}
+                    Bin Center (l, a, b): ${Math.round(bin.center_lab.l *10000, 1)/10000}, ${Math.round(bin.center_lab.a*10000, 1)/10000}, ${Math.round(bin.center_lab.b*10000, 1)/10000}
+                    Bin Center (r, g, b): ${Math.round(bin.center_rgb.r, 1)}, ${Math.round(bin.center_rgb.g, 1)}, ${Math.round(bin.center_rgb.b, 1)}
+                    Bin percent valid rgb: ${bin.ratio_bin_in_gamut_rgb * 100}
                     ${("representative_rgb" in d)
                         ?
-                        `Example RGB in tile (r, g, b): ${d.representative_rgb.r}, ${d.representative_rgb.g}, ${d.representative_rgb.b}}` 
+                        `Example RGB in tile (r, g, b): ${bin.representative_rgb.r}, ${bin.representative_rgb.g}, ${bin.representative_rgb.b}}` 
                         : ""
                     }`.trim()
                     return info
                 })
+
+                if("mouseover" in options){
+                    tiles.on("mouseover", options.mouseover)
+                }
+                if("mouseout" in options){
+                    tiles.on("mouseout", options.mouseout)
+                }
+                if("click" in options){
+                    tiles.on("click", options.click)
+                }
             } else {
                 // clear any old square tiles
                 parentElement.selectAll(".tile")
                     .data([])
                     .join("rect")
 
-                parentElement.selectAll(".circle-tile")
-                    .data(this.bin_array.filter(d => d.c_bin == 0))
+                const circleTiles = parentElement.selectAll(".circle-tile")
+                    .data(binsToDisplay.filter(d => d.c_bin == 0))
                     .join("circle")
                     .attr("class", "circle-tile")
-                    .attr("cx", d =>  tileSize* thisView.display_offsets.x_offsets_in_bins[d[thisView.split_dim + "_bin"]])
-                    .attr("cy", d =>  tileSize* thisView.display_offsets.y_offset_in_bins)
+                    .attr("cx", d => {
+                        const bin = thisView.getBinInfo(d)
+                        return tileSize* thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]]
+                    })
+                    .attr("cy", d => tileSize* thisView.display_offsets.y_offset_in_bins)
                     .attr("r",  d => {
-                        const binRadius = d.c_max/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1) - 0.5 * tileBorderSize
+                        const bin = thisView.getBinInfo(d)
+                        const binRadius = getTileScale(d) * bin.c_max/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1) - 0.5 * tileBorderSize
                         return binRadius
                     })
                     .attr("fill", d => {
-                        return `oklch(${d.l_center} ${d.c_center} ${d.h_center})`
+                        const bin = thisView.getBinInfo(d)
+                        return getTileColor(d, bin)
                     })
                     .attr("title", (d) => {
+                        const bin = thisView.getBinInfo(d)
                         let info = `
-                        Bin Center (l, c, h): ${Math.round(d.center_lch.l *10000, 1)/10000}, ${Math.round(d.center_lch.c*10000, 1)/10000}, ${Math.round(d.center_lch.h*10000, 1)/10000}
-                        Bin Center (l, a, b): ${Math.round(d.center_lab.l *10000, 1)/10000}, ${Math.round(d.center_lab.a*10000, 1)/10000}, ${Math.round(d.center_lab.b*10000, 1)/10000}
-                        Bin Center (r, g, b): ${Math.round(d.center_rgb.r, 1)}, ${Math.round(d.center_rgb.g, 1)}, ${Math.round(d.center_rgb.b, 1)}
-                        Bin percent valid rgb: ${d.ratio_bin_in_gamut_rgb * 100}
+                        Bin Center (l, c, h): ${Math.round(bin.center_lch.l *10000, 1)/10000}, ${Math.round(bin.center_lch.c*10000, 1)/10000}, ${Math.round(bin.center_lch.h*10000, 1)/10000}
+                        Bin Center (l, a, b): ${Math.round(bin.center_lab.l *10000, 1)/10000}, ${Math.round(bin.center_lab.a*10000, 1)/10000}, ${Math.round(bin.center_lab.b*10000, 1)/10000}
+                        Bin Center (r, g, b): ${Math.round(bin.center_rgb.r, 1)}, ${Math.round(bin.center_rgb.g, 1)}, ${Math.round(bin.center_rgb.b, 1)}
+                        Bin percent valid rgb: ${bin.ratio_bin_in_gamut_rgb * 100}
                         ${("representative_rgb" in d)
                             ?
-                            `Example RGB in tile (r, g, b): ${d.representative_rgb.r}, ${d.representative_rgb.g}, ${d.representative_rgb.b}}` 
+                            `Example RGB in tile (r, g, b): ${bin.representative_rgb.r}, ${bin.representative_rgb.g}, ${bin.representative_rgb.b}}` 
                             : ""
                         }`.trim()
                         return info
                     })
-                    
+
+                if("mouseover" in options){
+                    circleTiles.on("mouseover", options.mouseover)
+                }
+                if("mouseout" in options){
+                    circleTiles.on("mouseout", options.mouseover)
+                }
+                if("click" in options){
+                    circleTiles.on("click", options.mouseover)
+                }
 
 
-                parentElement.selectAll(".arc-tile")
-                    .data(this.bin_array.filter(d => d.c_bin != 0))
+                const arcTiles = parentElement.selectAll(".arc-tile")
+                    .data(binsToDisplay.filter(d => d.c_bin != 0))
                     .join("path")
                     .attr("class", "arc-tile")
                     .style("stroke", d => {
-                        return `oklch(${d.l_center} ${d.c_center} ${d.h_center})`
+                        const bin = thisView.getBinInfo(d)
+                        return getTileColor(d, bin)
                     })
                     .attr("d", d => {
+                        const bin = thisView.getBinInfo(d)
                         const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[d[thisView.split_dim + "_bin"]] 
-                        const levelCenterY =  tileSize* this.display_offsets.y_offset_in_bins
-                        const binRadius = d.c_center/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1)
-                        const endAngleMargin = (d.h_min + (thisView.bin_size.h_divs == 3 ? 8 : 5) / d.c_center * thisView.bin_size.c)
-                        const startAngleMargin = (d.h_max - (thisView.bin_size.h_divs == 3 ? 8 : 5) / d.c_center * thisView.bin_size.c)
+                        const levelCenterY =   tileSize* this.display_offsets.y_offset_in_bins
+                        const binRadius = bin.c_center/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1)
+                        // TODO: shrink beginning / end based on  getTileScale(d)
+                        //    Also, make subtraction be based on tileBorderSize
+                        const endAngleMargin = (bin.h_min + (thisView.bin_size.h_divs == 3 ? 8 : 5) / bin.c_center * thisView.bin_size.c)
+                        const startAngleMargin = (bin.h_max - (thisView.bin_size.h_divs == 3 ? 8 : 5) / bin.c_center * thisView.bin_size.c)
                         const binStartDeltaX = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
                         const binStartX = levelCenterX + binStartDeltaX
                         const binEndDeltaX = binRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
@@ -408,21 +472,31 @@ class FullColorBinView {
                         A ${binRadius} ${binRadius} 0 0 1 ${binEndX} ${binEndY}
                         `
                     }) // A rx ry x-axis-rotation large-arc-flag sweep-flag x y
-                    .style("stroke-width", tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1) - 1 * tileBorderSize)//d => curr_bin_size.tileBorderSize)
+                    .style("stroke-width", (d) => getTileScale(d)*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1) - 1 * tileBorderSize)//d => curr_bin_size.tileBorderSize)
                     .attr("fill", "rgba(0,0,0,0)")
                     .attr("title", (d) => {
+                        const bin = thisView.getBinInfo(d)
                         let info = `
-                        Bin Center (l, c, h): ${Math.round(d.center_lch.l *10000, 1)/10000}, ${Math.round(d.center_lch.c*10000, 1)/10000}, ${Math.round(d.center_lch.h*10000, 1)/10000}
-                        Bin Center (l, a, b): ${Math.round(d.center_lab.l *10000, 1)/10000}, ${Math.round(d.center_lab.a*10000, 1)/10000}, ${Math.round(d.center_lab.b*10000, 1)/10000}
-                        Bin Center (r, g, b): ${Math.round(d.center_rgb.r, 1)}, ${Math.round(d.center_rgb.g, 1)}, ${Math.round(d.center_rgb.b, 1)}
-                        Bin percent valid rgb: ${d.ratio_bin_in_gamut_rgb * 100}
+                        Bin Center (l, c, h): ${Math.round(bin.center_lch.l *10000, 1)/10000}, ${Math.round(bin.center_lch.c*10000, 1)/10000}, ${Math.round(bin.center_lch.h*10000, 1)/10000}
+                        Bin Center (l, a, b): ${Math.round(bin.center_lab.l *10000, 1)/10000}, ${Math.round(bin.center_lab.a*10000, 1)/10000}, ${Math.round(bin.center_lab.b*10000, 1)/10000}
+                        Bin Center (r, g, b): ${Math.round(bin.center_rgb.r, 1)}, ${Math.round(bin.center_rgb.g, 1)}, ${Math.round(bin.center_rgb.b, 1)}
+                        Bin percent valid rgb: ${bin.ratio_bin_in_gamut_rgb * 100}
                         ${("representative_rgb" in d)
                             ?
-                            `Example RGB in tile (r, g, b): ${d.representative_rgb.r}, ${d.representative_rgb.g}, ${d.representative_rgb.b}}` 
+                            `Example RGB in tile (r, g, b): ${bin.representative_rgb.r}, ${bin.representative_rgb.g}, ${bin.representative_rgb.b}}` 
                             : ""
                         }`.trim()
                         return info
                     })
+                if("mouseover" in options){
+                    arcTiles.on("mouseover", options.mouseover)
+                }
+                if("mouseout" in options){
+                    arcTiles.on("mouseout", options.mouseover)
+                }
+                if("click" in options){
+                    arcTiles.on("click", options.mouseover)
+                }
             }
     }
 }
