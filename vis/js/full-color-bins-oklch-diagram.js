@@ -1,113 +1,97 @@
+// TODO: make animated SVG between LAB and LCH space using:
+// https://css-tricks.com/guide-svg-animations-smil/
+//  - <animate> values, keytimes, keysplines, and path C (Cubic Bézier curve)
+//   to go from curve to lines, etc.
+// to export maybe
 
 import BinSize from "../../shared_files/binSize.js";
 import FullColorBinView from "./full-color-bin-view.js";
 
-
 const LAB_BIN_SIZES = [ 
-  new BinSize({
-    type: "box",
-    l: 1/5, ab: 1/20,
-    simpleName: "LAB Boxes: Low-res",
-  }), 
-  new BinSize({
-    type: "box",
-    l: 1/10, ab: 1/40, 
-    simpleName: "LAB Boxes: Medium-res",
-  }), 
-  new BinSize({
-    type: "box",
-    l: 1/15, ab: 1/60,
-    simpleName: "LAB Boxes: High-res",
-  }), 
-  new BinSize({
+   new BinSize({
     type: "cube",
     l: 1/10,
-    simpleName: "LAB Cubes: Low-res",
-    defaultHidden: true,
   }),
   new BinSize({
     type: "cube",
     l: 1/20,
-    simpleName: "LAB Cubes: Medium-res",
-    defaultHidden: true,
   }),
   new BinSize({
     type: "cube",
     l: 1/40,
-    simpleName: "LAB Cubes: High-res",
-    defaultHidden: true,
   }), 
   new BinSize({
     type: "ring",
-    l: 1/5, c: 1/20, h_divs: 8,
-    simpleName: "LCH Arcs: Low-res",
-    displayLABArcs: true
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/10, c: 1/40, h_divs: 8,
-    simpleName: "LCH Arcs: Medium-res",
-    displayLABArcs: true
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/15, c: 1/60, h_divs: 8,
-    simpleName: "LCH Arcs: High-res",
-    displayLABArcs: true
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/10, h_divs: 8,
-    simpleName: "LCH Bins: Low-res",
+    l: 1/10,
+    h_divs: 8,
   }), 
   new BinSize({
     type: "ring",
-    l: 1/20, h_divs: 8,
-    simpleName: "LCH Bins: Medium-res",
+    l: 1/20,
+    h_divs: 8,
   }), 
   new BinSize({
     type: "ring",
-    l: 1/40, h_divs: 8,
-    simpleName: "LCH Bins: High-res",
+    l: 1/40,
+    h_divs: 8,
   }),
   new BinSize({
     type: "ring",
-    l: 1/10, h_divs: 3,
-    defaultHidden: true,
+    l: 1/10,
+    h_divs: 3,
   }), 
   new BinSize({
     type: "ring",
-    l: 1/20, h_divs: 3,
-    defaultHidden: true,
+    l: 1/20,
+    h_divs: 3,
   }), 
   new BinSize({
     type: "ring",
-    l: 1/40, h_divs: 3,
-    defaultHidden: true,
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/5, c: 1/40, h_divs: 3,
-    defaultHidden: true,
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/10, c: 1/80, h_divs: 3,
-    defaultHidden: true,
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/15, c: 1/120,  h_divs: 3,
-    defaultHidden: true,
+    l: 1/40,
+    h_divs: 3,
   }),
 ]
 
+
+const MIN_BIN_PERC_DISPLAY = 50
+const MIN_BIN_PERC_HIDE = 23
+
+// this times tiles_size is margin on sides and between L tile sets
+const TILE_SEGMENT_MARGIN_NUM = 3
+
+const NO_BLUR = "no-blur"
+const BLUR = "blur"
+
+const COLOR_NAME_UNSELECTED = "----"
+const ALL_COLOR_NAME = "All Color Bins (Reference)"
+
+const lab_bins = {}
+const lab_bins_arrays = {}
+const l_bin_ab_bounds = {}
+const lab_bin_b_bounds = {}
+const l_bin_x_offsets = {} // since bins are unevenly distributed, these will make the L levels spaced evenly on the x axis
+const l_bin_y_offsets = {} 
+const svg_heights = {}
+const svg_widths = {}
+
+const saliencies = {}
+const languages = {}
+const saliencies_by_lang = {}
+const color_names_by_lang = {}
+const language_stats = {}
+const lang_color_selections = {}
+const lang_tile_info = {}
 
 const labBinViews = {}
 const labBinArcViews = {}
 
 /*************** Pre-processing functions *********************/
+function cubeEquivalentBinSize(bin_size){
+  return LAB_BIN_SIZES.find(b => b.l == bin_size.l)
+}
+
 async function load_and_process_bin_data(bin_size){
+
   await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/oklab_bins_${bin_size}.json`, function( data ) {
     const binView = new FullColorBinView({
       bin_size: bin_size,
@@ -149,15 +133,29 @@ async function load_and_process_bin_data(bin_size){
 const currSvgSize = [{}]
 let curr_bin_size = LAB_BIN_SIZES[1] 
 let backgroundColor = 'white'
+let tile_size_type = 'ptc'
+let bin_size_by = "area"
+let additional_tooltip_info = false
 
 /*************** Load page and Data *********************/
 $(document).on('ready page:load', function () {
-  for(let bin_size of LAB_BIN_SIZES){
-    $("#bin_size").append(
-      `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-        ${bin_size.display_name}
-      </option>`
-    )
+  for(const bin_size of LAB_BIN_SIZES){
+    if(bin_size == undefined){
+      console.log("bin size undefined????")
+      continue
+    }
+    if(bin_size.type == "ring"){
+      $("#bin_size").append(
+        `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
+          ${(bin_size.type == "cube" || bin_size.type == "box") ?
+            `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1} x ${bin_size.ab.toPrecision(2) / 1}`
+            :
+            `${bin_size.type}: ${bin_size.l.toPrecision(2) / 1} x ${bin_size.c.toPrecision(2) / 1} h${bin_size.h_divs}`
+          }
+        
+        </option>`
+      )
+    }
   }
 
   /********* jquery event listeners */
@@ -171,12 +169,32 @@ $(document).on('ready page:load', function () {
 
     d3.select('#vis')
       .style("background-color", backgroundColor)
-      .selectAll(".bin-map")
+      .selectAll(".lang-map")
       .style("background-color", backgroundColor)
 
     createOrRefreshTiles()
   })
 
+  $("#low-data").change(createOrRefreshTiles)
+  $("#ref_bins").change(createOrRefreshTiles)
+
+
+  bin_size_by = $("#bin_size_by").val()
+  $("#bin_size_by").change(() => {
+    bin_size_by = $("#bin_size_by").val()
+    createOrRefreshTiles()
+  })
+
+  tile_size_type = $("#tile_size").val()
+  $("#tile_size").change(() => {
+    tile_size_type = $("#tile_size").val()
+    createOrRefreshTiles()
+  })
+
+  $("#additional_tooltip").change(() => {
+    additional_tooltip_info = $("#additional_tooltip").val()
+    //createOrRefreshTiles()
+  })
 
   updateDisplay()
 })
@@ -194,6 +212,9 @@ function updateDisplay(){
       .html("loading...")
 
     load_and_process_bin_data(curr_bin_size)
+    if(curr_bin_size.type == "ring"){
+      load_and_process_bin_data(cubeEquivalentBinSize(curr_bin_size))
+    }
     return
   } else {
     $("#loading-p").remove()
@@ -264,30 +285,46 @@ function createOrRefreshTiles(){
   squareBins.attr("width", currSvgSize[0].width)
     .attr("height", currSvgSize[0].height )
 
-  if(curr_bin_size.type == "ring"){
-    //calculate rings height:
-    const ringsHeight =  currSvgSize[0].width * labBinArcViews[curr_bin_size].display_offsets.y_height_in_bins /  labBinArcViews[curr_bin_size].display_offsets.x_width_in_bins
 
+  const cubeBinSize = cubeEquivalentBinSize(curr_bin_size)
+  let extraCubeBinHeight = 0
+  if(cubeBinSize in labBinViews){
+      extraCubeBinHeight =  currSvgSize[0].width * labBinViews[cubeBinSize].display_offsets.y_height_in_bins /  labBinViews[cubeBinSize].display_offsets.x_width_in_bins
 
-    // move square bins down to make space for rings
-    squareBins.attr("transform", `translate(0,${ringsHeight})`)
-    
-    svg.attr("height", currSvgSize[0].height + ringsHeight)
-    
-
-    let arcBins = svg.select("#arc-bins")
-    if(arcBins.empty()){
-      arcBins = svg.append("g")
-        .attr("id", "arc-bins")
+    let cubeBins = svg.select("#cube-bins")
+    if(cubeBins.empty()){
+      cubeBins = svg.append("g")
+        .attr("id", "cube-bins")
     }
-    arcBins.attr("width", currSvgSize[0].width)
-      .attr("height", ringsHeight)
+    cubeBins.attr("width", currSvgSize[0].width)
+      .attr("height", extraCubeBinHeight)
 
-    labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, {backgroundColor: backgroundColor})
-  } else {
-    svg.select("#arc-bins").remove()
-    squareBins.attr("transform", `translate(0,0)`)
+    labBinViews[cubeBinSize].createOrUpdateColorTiles(cubeBins, {backgroundColor: backgroundColor})
+  
   }
+
+  //calculate rings height:
+  const ringsHeight =  currSvgSize[0].width * labBinArcViews[curr_bin_size].display_offsets.y_height_in_bins /  labBinArcViews[curr_bin_size].display_offsets.x_width_in_bins
+
+
+  // move square bins down to make space for rings
+  squareBins.attr("transform", `translate(0,${ringsHeight + extraCubeBinHeight})`)
+  
+  svg.attr("height", currSvgSize[0].height + ringsHeight + extraCubeBinHeight)
+  
+
+  let arcBins = svg.select("#arc-bins")
+  if(arcBins.empty()){
+    arcBins = svg.append("g")
+      .attr("id", "arc-bins")
+  }
+  arcBins.attr("width", currSvgSize[0].width)
+    .attr("height", ringsHeight)
+  arcBins.attr("transform", `translate(0,${extraCubeBinHeight})`)
+  
+
+  labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, {backgroundColor: backgroundColor})
+  
 
 
   // langText.text("All Color Bins")

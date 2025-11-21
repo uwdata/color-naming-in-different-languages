@@ -57,7 +57,7 @@ const LAB_BIN_SIZES = [
   new BinSize({
     type: "ring",
     l: 1/10, h_divs: 8,
-    simpleName: "LCH Bins: High-res",
+    simpleName: "LCH Bins: Low-res",
   }), 
   new BinSize({
     type: "ring",
@@ -97,10 +97,8 @@ const LAB_BIN_SIZES = [
   new BinSize({
     type: "ring",
     l: 1/15, c: 1/120,  h_divs: 3,
-    tileMaxSizeMultiplier: 1.7,
     defaultHidden: true,
   }),
-  
 ]
 
 const MIN_BIN_PERC_DISPLAY = 50
