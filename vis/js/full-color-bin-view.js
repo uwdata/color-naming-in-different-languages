@@ -454,10 +454,17 @@ class FullColorBinView {
                         const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]] 
                         const levelCenterY =   tileSize* this.display_offsets.y_offset_in_bins
                         const binRadius = bin.c_center/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1)
-                        // TODO: shrink beginning / end based on  getTileScale(d)
-                        //    Also, make subtraction be based on tileBorderSize
-                        const endAngleMargin = (bin.h_min + (thisView.bin_size.h_divs == 3 ? 8 : 5) / bin.c_center * thisView.bin_size.c)
-                        const startAngleMargin = (bin.h_max - (thisView.bin_size.h_divs == 3 ? 8 : 5) / bin.c_center * thisView.bin_size.c)
+
+                        const halfAngle = (bin.h_max - bin.h_center) 
+                        // TODO: what is the right math here?
+                        const angleMargin = (thisView.bin_size.h_divs == 3 ? 2 : 1) * thisView.bin_size.c / bin.c_center * 3
+                        console.log("halfAngle", halfAngle, "angleMargin", angleMargin)
+                        const halfAngleWithMargin = halfAngle - angleMargin
+                        const halfAngleScaled = getTileScale(d) * halfAngleWithMargin
+                        const endAngleMargin = (bin.h_center - halfAngleScaled)
+                            //(bin.h_min + (thisView.bin_size.h_divs == 3 ? 8 : 5) / bin.c_center * thisView.bin_size.c)
+                        const startAngleMargin = (bin.h_center + halfAngleScaled)
+                            // (bin.h_max - (thisView.bin_size.h_divs == 3 ? 8 : 5) / bin.c_center * thisView.bin_size.c)
                         const binStartDeltaX = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
                         const binStartX = levelCenterX + binStartDeltaX
                         const binEndDeltaX = binRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
