@@ -53,35 +53,6 @@ const LAB_BIN_SIZES = [
 ]
 
 
-const MIN_BIN_PERC_DISPLAY = 50
-const MIN_BIN_PERC_HIDE = 23
-
-// this times tiles_size is margin on sides and between L tile sets
-const TILE_SEGMENT_MARGIN_NUM = 3
-
-const NO_BLUR = "no-blur"
-const BLUR = "blur"
-
-const COLOR_NAME_UNSELECTED = "----"
-const ALL_COLOR_NAME = "All Color Bins (Reference)"
-
-const lab_bins = {}
-const lab_bins_arrays = {}
-const l_bin_ab_bounds = {}
-const lab_bin_b_bounds = {}
-const l_bin_x_offsets = {} // since bins are unevenly distributed, these will make the L levels spaced evenly on the x axis
-const l_bin_y_offsets = {} 
-const svg_heights = {}
-const svg_widths = {}
-
-const saliencies = {}
-const languages = {}
-const saliencies_by_lang = {}
-const color_names_by_lang = {}
-const language_stats = {}
-const lang_color_selections = {}
-const lang_tile_info = {}
-
 const labBinViews = {}
 const labBinArcViews = {}
 
@@ -114,7 +85,7 @@ async function load_and_process_bin_data(bin_size){
         bin_array: data,
         x_dim: "a",
         y_dim: "b",
-        split_dim: "l",
+        split_dim: "l"
       })
 
       binArcView.setDisplayOffsets(binArcView.getDisplayOffsets())
@@ -266,6 +237,7 @@ function createOrRefreshTiles(){
   if(svg.empty()){
 
     svg = d3.select("#bin-view").append("svg")
+    svg.attr("xmlns", "http://www.w3.org/2000/svg")
 
     textBackground = svg.append("rect")
             .attr("class", "text-background")
@@ -299,8 +271,15 @@ function createOrRefreshTiles(){
     cubeBins.attr("width", currSvgSize[0].width)
       .attr("height", extraCubeBinHeight)
 
-    labBinViews[cubeBinSize].createOrUpdateColorTiles(cubeBins, {backgroundColor: backgroundColor})
+    labBinViews[cubeBinSize].createOrUpdateColorTiles(cubeBins, {
+      backgroundColor: backgroundColor,
+      no_border: true,
+      outline_levels: true
+    })
   
+    addLabel(cubeBins, "Oklab cube bins in l,a,b space")
+    
+
   }
 
   //calculate rings height:
@@ -323,14 +302,56 @@ function createOrRefreshTiles(){
   arcBins.attr("transform", `translate(0,${extraCubeBinHeight})`)
   
 
-  labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, {backgroundColor: backgroundColor})
+  labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, {
+    backgroundColor: backgroundColor,
+    no_border: true,
+    outline_levels: true
+  })
   
+  addLabel(arcBins, "Oklch bins in l,a,b space")
 
 
   // langText.text("All Color Bins")
   //     .attr("x", 20)
   //     .attr("y", 25)
 
-  labBinViews[curr_bin_size].createOrUpdateColorTiles(squareBins, {backgroundColor: backgroundColor})
+  labBinViews[curr_bin_size].createOrUpdateColorTiles(squareBins, {
+    backgroundColor: backgroundColor,
+    no_border: true,
+    outline_levels: true
+  })
+
+  addLabel(squareBins, "Oklch bins in l,c,h space")
+
 }
 
+
+
+function addLabel(parentElement, text){
+  let textBackground = parentElement.select("#text-background")
+  if(textBackground.empty()){
+    textBackground = parentElement.append("rect")
+          .attr("id", "text-background")
+  }
+
+  let binsLabel = parentElement.select("#bins-label")
+  if(binsLabel.empty()){
+    binsLabel = parentElement.append("text")
+    .attr("id", "bins-label")
+  }
+  binsLabel
+    .text(text)
+    .attr("x", 20)
+    .attr("y", 25)
+
+
+
+  const textBackgroundPadding = 5
+  textBackground
+    .attr("fill", "white")
+    .attr("x", 20 - textBackgroundPadding)
+    .attr("y", 25 - textBackgroundPadding - (binsLabel.node().getBBox().height + 2*textBackgroundPadding)/2)
+    .attr("width", binsLabel.node().getBBox().width + 10)
+    .attr("height", binsLabel.node().getBBox().height + 10)
+
+}

@@ -323,6 +323,33 @@ class FullColorBinView {
 
         const [dim1, dim2, dim3] = this.bin_size.dims
 
+         if(options.outline_levels){
+            parentElement.selectAll(".level-outline")
+                .data(Object.entries(thisView.display_offsets.x_offsets_in_bins))
+                .join("line")
+                    .attr("class", "level-outline")
+                    .attr("x1", (d) => 
+                        tileSize*
+                        (d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + 0.5 + thisView.TILE_SEGMENT_MARGIN_NUM / 2 )
+
+                    )
+                    .attr("y1", (d) => tileSize * 
+                        (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_max_bin"] )
+                    )
+                    .attr("x2", (d) => 
+                        tileSize*
+                        (d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + 0.5 + thisView.TILE_SEGMENT_MARGIN_NUM / 2)
+                    )
+                    .attr("y2", (d)=> 
+                        tileSize * 
+                        // TODO: I don't know why I have to add one to make it line up
+                        (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_min_bin"]  + 1)  )
+                    .style("stroke", "oklch(70% 0 0 / .5)")
+                    .style("stroke-width", 2)
+                    .style("display", (d) => 
+                        d[0] ==  ""+thisView[thisView.split_dim+"_max_bin"] ? "none" : "") 
+        }
+
         const areRingArcs = [this.x_dim, this.y_dim].includes("a") && [dim1, dim2, dim3].includes("h")
 
         if(!areRingArcs){ // regular square bins
@@ -339,20 +366,12 @@ class FullColorBinView {
                 .data(binsToDisplay)
                 .join("rect")
                 .attr("class", "tile")
-                .style("stroke", backgroundColor)
-                .style("stroke-width", d => tileBorderSize)
+                .style("stroke", options.no_border ? "" : backgroundColor)
+                .style("stroke-width", d => options.no_border ? "" :  tileBorderSize)
                 .attr("x", (d) => {
                     const bin = thisView.getBinInfo(d)
-                    if(!bin){
-                        debugger
-                        const test = thisView.getBinInfo(d)
-                    }
                     const x =  tileSize * 
                         (bin[thisView.x_dim + "_bin"] + thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]])
-                    if(isNaN(x)){
-                        console.log("x is NAN")
-                        debugger
-                    }
                     return x
                     })
 
