@@ -54,7 +54,7 @@ class FullColorBinView {
         // check if the bin dims match the display dims in a way which means we are displaying ring arcs
         const areRingArcs = [this.x_dim, this.y_dim].includes("a") && [dim1, dim2, dim3].includes("h")
         // for the c-radius we need to correct for whether it is a 3 or 8 h division
-        const arcCToABRadiusCorrection = (this.bin_size.h_divs == 3 ? 0.5 : 1) / this.bin_size.c
+        const arcCToABRadiusCorrection = this.bin_size.c_ring_width_ratio / this.bin_size.c
 
         this[dim1 + "_nums"] = []
         this[dim2 + "_nums"] = []
@@ -315,8 +315,10 @@ class FullColorBinView {
         const displayWidth = parentElement.attr("width")
         
         // TODO: remove the fallback values when I fix the other calculations
-        const tileSize = displayWidth / this.display_offsets.x_width_in_bins || 5
-        const tileBorderSize = displayWidth / this.display_offsets.x_width_in_bins / 5 || 1
+        const tileSizeInBins = 1
+        const tileBorderSizeInBins = 1/5
+        const tileSize = tileSizeInBins * displayWidth / this.display_offsets.x_width_in_bins
+        const tileBorderSize = tileBorderSizeInBins* tileSize
 
 
         const [dim1, dim2, dim3] = this.bin_size.dims
@@ -408,7 +410,7 @@ class FullColorBinView {
                     .attr("cy", d => tileSize* thisView.display_offsets.y_offset_in_bins)
                     .attr("r",  d => {
                         const bin = thisView.getBinInfo(d)
-                        const binRadius = getTileScale(d) * bin.c_max/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1) - 0.5 * tileBorderSize
+                        const binRadius = getTileScale(d) * (bin.c_max/thisView.bin_size.c - 0.5 * tileBorderSizeInBins)*tileSize * thisView.bin_size.c_ring_width_ratio 
                         return binRadius
                     })
                     .attr("fill", d => {
@@ -442,7 +444,7 @@ class FullColorBinView {
 
 
                 const arcTiles = parentElement.selectAll(".arc-tile")
-                    .data(binsToDisplay.filter(d => ("binC" in d && d.binC != 0) || d.c_bin != 0))
+                    .data(binsToDisplay.filter(d => !(("binC" in d && d.binC == 0) || d.c_bin == 0)))
                     .join("path")
                     .attr("class", "arc-tile")
                     .style("stroke", d => {
@@ -453,18 +455,15 @@ class FullColorBinView {
                         const bin = thisView.getBinInfo(d)
                         const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]] 
                         const levelCenterY =   tileSize* this.display_offsets.y_offset_in_bins
-                        const binRadius = bin.c_center/thisView.bin_size.c*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1)
+                        const binRadius = bin.c_center/thisView.bin_size.c*tileSize * thisView.bin_size.c_ring_width_ratio
 
                         const halfAngle = (bin.h_max - bin.h_center) 
-                        // TODO: what is the right math here?
-                        const angleMargin = (thisView.bin_size.h_divs == 3 ? 2 : 1) * thisView.bin_size.c / bin.c_center * 3
-                        console.log("halfAngle", halfAngle, "angleMargin", angleMargin)
+                        const angleMargin = 0.5 * tileBorderSizeInBins * 360 / (2 * Math.PI * (bin.c_center * thisView.bin_size.c_ring_width_ratio / thisView.bin_size.c))
                         const halfAngleWithMargin = halfAngle - angleMargin
                         const halfAngleScaled = getTileScale(d) * halfAngleWithMargin
                         const endAngleMargin = (bin.h_center - halfAngleScaled)
-                            //(bin.h_min + (thisView.bin_size.h_divs == 3 ? 8 : 5) / bin.c_center * thisView.bin_size.c)
                         const startAngleMargin = (bin.h_center + halfAngleScaled)
-                            // (bin.h_max - (thisView.bin_size.h_divs == 3 ? 8 : 5) / bin.c_center * thisView.bin_size.c)
+                            
                         const binStartDeltaX = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
                         const binStartX = levelCenterX + binStartDeltaX
                         const binEndDeltaX = binRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
@@ -479,7 +478,9 @@ class FullColorBinView {
                         A ${binRadius} ${binRadius} 0 0 1 ${binEndX} ${binEndY}
                         `
                     }) // A rx ry x-axis-rotation large-arc-flag sweep-flag x y
-                    .style("stroke-width", (d) => getTileScale(d)*tileSize * (thisView.bin_size.h_divs == 3 ? 0.5 : 1) - 1 * tileBorderSize)//d => curr_bin_size.tileBorderSize)
+                    .style("stroke-width", (d) => 
+                        getTileScale(d)* tileSize * (thisView.bin_size.c_ring_width_ratio - tileBorderSizeInBins) 
+                    )
                     .attr("fill", "rgba(0,0,0,0)")
                     .attr("title", (d) => {
                         const bin = thisView.getBinInfo(d)

@@ -24,6 +24,7 @@ class BinSize {
         }else{
           this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
         }
+        this.c_ring_width_ratio = 0.5
       }else if(!("h_divs" in options) || options.h_divs == 8){ //default value, or already 8
         this.h_divs = 8
         if("c" in options){
@@ -32,6 +33,7 @@ class BinSize {
           this.c = options.l; // should it be diameter of center 1 * L (slightly smaller than a 1x1x1 box)
           // note: after center ring, the radius change width will also be L
         }
+        this.c_ring_width_ratio = 1
       } else{
         throw new Error("h_divs must be 3 or 8, but was: " + options.h_divs)
       }

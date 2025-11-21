@@ -541,27 +541,33 @@ function createOrRefreshLang(i){
       getTileScale: getTileScale,
       getTileColor: getTileColor,
       mouseover: (event, d) => {
-        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
-        if(selection.selection_type != "select"){
-          selection.selection_type = "hover"
-          selection.color_name = d.commonTerm
-          createOrRefreshLang(i)
+        if(curr_bin_size in lang_color_selections && curr_blur in lang_color_selections[curr_bin_size]){
+          const selection = lang_color_selections[curr_bin_size][curr_blur][i]
+          if(selection.selection_type != "select"){
+            selection.selection_type = "hover"
+            selection.color_name = d.commonTerm
+            createOrRefreshLang(i)
+          }
         }
       },
       mouseout: (event, d) => {
-        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
-        if(selection.selection_type == "hover"){
-          selection.selection_type = "none"
-          selection.color_name = ""
-          createOrRefreshLang(i)
+        if(curr_bin_size in lang_color_selections && curr_blur in lang_color_selections[curr_bin_size]){
+          const selection = lang_color_selections[curr_bin_size][curr_blur][i]
+          if(selection.selection_type == "hover"){
+            selection.selection_type = "none"
+            selection.color_name = ""
+            createOrRefreshLang(i)
+          }
         }
       },
       click: (event, d) => {
         event.stopPropagation() // don't let svg get click and unselect it
-        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
-        selection.selection_type = "select"
-        selection.color_name = d.commonTerm
-        createOrRefreshLang(i)
+        if(curr_bin_size in lang_color_selections && curr_blur in lang_color_selections[curr_bin_size]){
+          const selection = lang_color_selections[curr_bin_size][curr_blur][i]
+          selection.selection_type = "select"
+          selection.color_name = d.commonTerm
+          createOrRefreshLang(i)
+        }
       }
     })
 
