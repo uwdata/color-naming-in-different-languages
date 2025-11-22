@@ -16,14 +16,14 @@ const HIGH_RES_BIN =  new BinSize({type: "cube", l: 1/20})
 const NO_BLUR = "no-blur"
 const BLUR = "blur"
 
-const MIN_FRACTION_BIN_HIGH_RES = 0.7
+const MIN_FRACTION_BIN_HIGH_RES = 0.8
 
 for(const blur of [NO_BLUR, BLUR]){
   let blur_text = ""
   if(blur == BLUR){
     blur_text = "_blur"
   }
-  csv().fromFile(`../../model/binned_full_colors/full_color_lang_bin${blur_text}_info.csv`)
+  csv({flatKeys: true}).fromFile(`../../model/binned_full_colors/full_color_lang_bin${blur_text}_info.csv`)
   .then((lang_bin_info)=> {
 
 
@@ -33,7 +33,7 @@ for(const blur of [NO_BLUR, BLUR]){
 
       let lab_bins = JSON.parse(
         fs.readFileSync(`../../model/color_info_pre_naming/oklab_bins_${BIN_SIZE.abv}.json`))
-      
+      lab_bins = lab_bins.filter((b) => b.num_rgb > 0)
       console.log("number of bins: ", lab_bins.length)
       const nested_lab_bins = labBinHelper.binsArrayToNested(lab_bins)
       let flatData
@@ -65,10 +65,15 @@ for(const blur of [NO_BLUR, BLUR]){
           // high res bin if there is too low a fraction of bins (from not enough data)
           const langBinRatio = lang_bin_info
               .find(d=> d.lang == g_lang.key)
-              [`fraction_bins_${HIGH_RES_BIN}`]
+              [`fraction_bins_${HIGH_RES_BIN.abv}`]
+
+          if(langBinRatio === undefined){
+            throw new Error("Couldn't find lang info for " + g_lang.key +", " + HIGH_RES_BIN.abv)
+          }
+          
           if(langBinRatio < MIN_FRACTION_BIN_HIGH_RES
             && BIN_SIZE == HIGH_RES_BIN){
-              console.log(`skipping size ${HIGH_RES_BIN} bins for lang ${g_lang.key} since it only has ${langBinRatio*100}% of bins`)
+              console.log(`skipping size ${HIGH_RES_BIN.abv} bins for lang ${g_lang.key} since it only has ${langBinRatio*100}% of bins`)
               return
           }
 

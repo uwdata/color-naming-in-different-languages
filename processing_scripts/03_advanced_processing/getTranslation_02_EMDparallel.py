@@ -9,16 +9,16 @@ import psutil
 import signal
 import time
 
-DEFAULT_BIN = '20'
-HIGH_RES_BIN = '10'
+DEFAULT_BIN = '0.1'
+HIGH_RES_BIN = '0.05'
 
-# Just-noticeable distance is 2.3, and for high-res data, there are normally
-# several closets matches under 30
+# Just-noticeable distance is .02 in OKLAB, and for high-res data, there are normally
+# several closets matches under .20
 # Difference in distance measure when switching to high res 
-#    is normally around +0 to +3 distance
-HIGH_RES_DIST = 35
+#    is normally around +0 to +.01 distance
+HIGH_RES_DIST = .20
 
-NUM_PROCESSES = 8
+NUM_PROCESSES = 6
 
 # We will us the blur version of the files
 # because we think that the smoothed out data will be
@@ -119,10 +119,10 @@ def main():
 		ColorNames = {}
 
 		for lang in languages:
-			print("loading language" + lang)
+			print("loading language " + lang)
 			ColorNames[lang] = []
 			colorNamesWithBins = {}
-			for bin_size in ['10', '20']:
+			for bin_size in [DEFAULT_BIN, HIGH_RES_BIN]:
 				fname = 'temp/fullColorNames_'+lang+BLUR_TEXT+'_'+bin_size+'.json'
 				if(os.path.isfile(fname)):
 					binColorNames = []
@@ -139,7 +139,7 @@ def main():
 
 		print("loading distance matrix")
 		distance_matrices = {}
-		for bin_size in ['10', '20']:
+		for bin_size in [DEFAULT_BIN, HIGH_RES_BIN]:
 			with open('temp/distanceMatrix_'+bin_size+'.json', 'r') as distance_matrix_f:
 				distance_matrices[bin_size]=np.array(json.loads(distance_matrix_f.read()))
 
