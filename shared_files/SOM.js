@@ -186,7 +186,7 @@ function som(width, height, dims) {
 			var neighborNodes = this.findNeighborhoodRing(bmuCoords, i);
             for(var nodeIndex in neighborNodes) {
 				let node = neighborNodes[nodeIndex]
-				nodeDist = Math.sqrt(Math.pow(node.coordinates.x - bmuCoords.x, 2) + Math.pow(node.coordinates.y - bmuCoords.y, 2));
+				const nodeDist = Math.sqrt(Math.pow(node.coordinates.x - bmuCoords.x, 2) + Math.pow(node.coordinates.y - bmuCoords.y, 2));
 				var alpha = (.5*Math.pow(2, - iterationFraction *6.0 ) * Math.pow(2, - nodeDist*nodeDist / neighborhoodSize / neighborhoodSize));
                 node.updateWeights(trainWeight, alpha)
 			}
@@ -248,8 +248,4 @@ function som(width, height, dims) {
 	
 }
 
-try{ // make work in nodejs or in browser
-	module.exports = som;
-} catch(e){
-	
-}
+export default som

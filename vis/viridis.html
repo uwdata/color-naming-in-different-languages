@@ -169,7 +169,8 @@
       console.log(topWords[1]);
       console.log(d3.sum(topWords[1].values, v => v.value.totalCnt));
       let getCount = (term) => {
-        return topWords[0].values.concat(topWords[1].values).find(d=>d.key === term).value.totalCnt;
+        const termInfo = topWords[0].values.concat(topWords[1].values).find(d=>d.key === term)
+        return termInfo ? termInfo.value.totalCnt : 0;
       };
       let workingSpec = copy(spec);
       pairs.forEach(p => {

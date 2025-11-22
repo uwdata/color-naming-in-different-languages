@@ -1,10 +1,17 @@
-const fs = require('fs'),
-  d3 = require('d3'),
-  csv=require("csvtojson"),
-  zlib = require('zlib');
+// Note: to increase Nodejs space:
+//
+// node --max-old-space-size=32768 .\01_createLABBins.js
 
-const LOW_RES_BIN = 20
-const HIGH_RES_BIN = 10
+
+import fs from 'fs'
+import * as d3 from 'd3'
+import zlib from 'zlib'
+import csv from 'csvtojson';
+import * as labBinHelperLib from '../utils/labBinHelper.js'
+import BinSize from "../../shared_files/binSize.js";
+
+const LOW_RES_BIN = new BinSize({ type: "cube", l: 1/10})
+const HIGH_RES_BIN =  new BinSize({type: "cube", l: 1/20})
 
 const NO_BLUR = "no-blur"
 const BLUR = "blur"
@@ -22,29 +29,32 @@ for(const blur of [NO_BLUR, BLUR]){
 
     for(const BIN_SIZE of [HIGH_RES_BIN, LOW_RES_BIN]){
 
-      const labBinHelper = require('../utils/labBinHelper.js').getLabBins(BIN_SIZE);
+      const labBinHelper = labBinHelperLib.getLabBins(BIN_SIZE);
 
-      const lab_bins = JSON.parse(
-        fs.readFileSync(`../../model/color_info_pre_naming/lab_bins_${BIN_SIZE}.json`))
+      let lab_bins = JSON.parse(
+        fs.readFileSync(`../../model/color_info_pre_naming/oklab_bins_${BIN_SIZE.abv}.json`))
+      
+      console.log("number of bins: ", lab_bins.length)
+      const nested_lab_bins = labBinHelper.binsArrayToNested(lab_bins)
       let flatData
       if(blur == BLUR){
         flatData = JSON.parse(
           zlib.unzipSync(
-            fs.readFileSync(`../../model/binned_full_colors/full_color_names_binned${blur_text}_${BIN_SIZE}.json.gz`)));
+            fs.readFileSync(`../../model/binned_full_colors/full_color_names_binned${blur_text}_${BIN_SIZE.abv}.json.gz`)));
       } else {
         flatData = JSON.parse(
-          fs.readFileSync(`../../model/binned_full_colors/full_color_names_binned${blur_text}_${BIN_SIZE}.json`));
+          fs.readFileSync(`../../model/binned_full_colors/full_color_names_binned${blur_text}_${BIN_SIZE.abv}.json`));
       }
 
       // 1.
       if (!fs.existsSync("temp/")){
           fs.mkdirSync("temp/");
       }
-      convertToMatrices(flatData, labBinHelper, lab_bins, lang_bin_info);
-      fs.writeFileSync(`temp/distanceMatrix_${BIN_SIZE}.json`, JSON.stringify(getDistanceMatrix(labBinHelper, lab_bins)));
+      convertToMatrices(flatData, labBinHelper, nested_lab_bins, lang_bin_info);
+      fs.writeFileSync(`temp/distanceMatrix_${BIN_SIZE.abv}.json`, JSON.stringify(getDistanceMatrix(labBinHelper, nested_lab_bins)));
       console.log("Please run getTranslation_02_EMDparallel.py on python 2 to generate transition_loss json files.");
 
-      function convertToMatrices(flatData, labBinHelper, lab_bins, lang_bin_info){
+      function convertToMatrices(flatData, labBinHelper, nested_lab_bins, lang_bin_info){
 
         let grouped = d3.groups(flatData, d => d.lang, d => d.term)
           .map(a => {return {key: a[0], values: a[1].map(b => {return{key: b[0], values: b[1]}}) }})
@@ -67,7 +77,7 @@ for(const blur of [NO_BLUR, BLUR]){
           g_lang.values = g_lang.values.sort((a,b) => d3.sum(b.values, d => d.cnt) - d3.sum(a.values, d => d.cnt));
           
           g_lang.values.forEach(g_term => {
-            let labPct = labBinHelper.createLABNumBins(lab_bins);
+            let labPct = labBinHelper.createLABNumBins(nested_lab_bins);
             g_term.values.forEach(d => {
               labPct[d.binL][d.binA][d.binB] = d.pCT;
             });
@@ -80,7 +90,7 @@ for(const blur of [NO_BLUR, BLUR]){
             });
           });
           const langAbv = lang_bin_info.find(d=> d.lang == g_lang.key).langAbv
-          fs.writeFileSync(`temp/fullColorNames_${langAbv}${blur_text}_${BIN_SIZE}.json`, JSON.stringify(terms, null, 2));
+          fs.writeFileSync(`temp/fullColorNames_${langAbv}${blur_text}_${BIN_SIZE.abv}.json`, JSON.stringify(terms, null, 2));
         });
       }
 
@@ -94,7 +104,7 @@ for(const blur of [NO_BLUR, BLUR]){
 
 function getDistanceMatrix(labBinHelper, lab_bins){
   const labBinArr = labBinHelper.labBinsToArray(lab_bins)
-  MSize = labBinArr.length
+  const MSize = labBinArr.length
   let distM = new Array(MSize).fill(0);
   distM = distM.map(d => {
     return new Array(MSize).fill(0);

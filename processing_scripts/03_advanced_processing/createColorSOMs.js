@@ -1,11 +1,17 @@
-var SOM = require('../../shared_files/SOM');
+import fs from 'fs'
+import Color from "colorjs.io";
+import csv from 'csvtojson';
+import som from '../../shared_files/SOM.js'
 
-const fs = require('fs'),
-  d3 = require('d3'),
-  csv=require("csvtojson");;
+console.log(som)
 
-MIN_NAMES_FOR_9_SOM = 19
-MIN_NAMES_FOR_16_SOM = 201
+const SOM = som
+console.log(SOM)
+
+// throw new Error("test")
+
+const MIN_NAMES_FOR_9_SOM = 19
+const MIN_NAMES_FOR_16_SOM = 201
 const SOM_TRAIN_ITERATIONS = 20000
 //const SOM_TRAIN_ITERATIONS = 100
 
@@ -68,7 +74,7 @@ function createSOMs(colorInfo, namingData, lang_info){
 	
 	//let colorNames = ["연두", "초록", "green", "armygreen", "mint", "blue", "하늘", "파랑", "aqua", "cyan", "red", "magenta", "purple", "pink", "white", "cream", "black", "gray", "pastel", "neon"];
 	
-	outputJSON = {};
+	const outputJSON = {};
 	Object.keys(colorNames).forEach(lang => {
 		outputJSON[lang] = {};
 		for(var i in colorNames[lang]){
@@ -76,39 +82,24 @@ function createSOMs(colorInfo, namingData, lang_info){
 			
 			let thisColorData = namingData.filter(function(item){
 				return lang == colorNamesAbrv[item.lang0.split("(")[0].trim()] && 
-						item.name == colorName
+						item.name == colorName &&
+						item.rgbSet == "full"
 			}); 
 
-			const numFullData = thisColorData.filter(d => d.rgbSet == "full").length
-			const numLineData = thisColorData.filter(d => d.rgbSet == "line").length
-
 			console.log(thisColorData.length);
+
 			if(thisColorData.length == 0){
 				console.log("Color name had no data", colorName, lang, i);
 				continue
 			}
 
-			const hue_correction_multiplier = lang_info.find(d => d.langAbv == lang).hue_correction_multiplier
-    		const non_hue_correction_multiplier = lang_info.find(d => d.langAbv == lang).non_hue_correction_multiplier
-
-			// adjust corrections so largest is 1:
-			const adj_hue_corr = hue_correction_multiplier / Math.max(hue_correction_multiplier, non_hue_correction_multiplier)
-			const adj_non_hue_corr = non_hue_correction_multiplier / Math.max(hue_correction_multiplier, non_hue_correction_multiplier)
-			
 			var LABdata = [];
 			for(var j in thisColorData){
 				const c = thisColorData[j]
-				let weightCorrection = 0
-				// if hue color
-				if( Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0){
-					weightCorrection = adj_hue_corr
-				} else {
-					weightCorrection = adj_non_hue_corr
-				}
-				//c => Math.max(c.r, c.g, c.b) == 255 && Math.min(c.r, c.g, c.b) == 0
-				labColor = RGBtoLAB(c.r,c.g,c.b);
+				
+				const oklabColor = RGBtoLAB(c.r,c.g,c.b);
 
-				LABdata.push([labColor.l, labColor.a, labColor.b, weightCorrection]);
+				LABdata.push([oklabColor.l, oklabColor.a, oklabColor.b]);
 			}
 			
 			LABdata.sort(function() {
@@ -121,8 +112,6 @@ function createSOMs(colorInfo, namingData, lang_info){
 			
 			thisColorInfo["commonColorName"] = commonColorNameLookup[lang][colorName];
 			thisColorInfo["numRecords"] = thisColorData.length;
-			thisColorInfo["numFullData"] = numFullData;
-			thisColorInfo["numLineData"] = numLineData;
 			thisColorInfo["totalColorFraction"] = colorInfo.find(c => c.lang_abv == lang && c.simplifiedName == colorName).totalColorFraction;
 			thisColorInfo["representativeColor"] = colorInfo.find(c => c.lang_abv == lang && c.simplifiedName == colorName).avgColorRGBCode
 			
@@ -131,13 +120,13 @@ function createSOMs(colorInfo, namingData, lang_info){
 			
 			thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes4"]).rgb;
 
-			if(numFullData >= MIN_NAMES_FOR_9_SOM){
+			if(thisColorData.length >= MIN_NAMES_FOR_9_SOM){
 				thisColorInfo["colorNodes9"] = createSOM(colorName, LABdata, 3);
 				thisColorInfo["colorNodes9Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes9"]);
 				thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes9"]).rgb;
 			}
 
-			if(numFullData > MIN_NAMES_FOR_16_SOM){
+			if(thisColorData.length > MIN_NAMES_FOR_16_SOM){
 				thisColorInfo["colorNodes16"] = createSOM(colorName, LABdata, 4);
 				thisColorInfo["colorNodes16Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes16"]);
 				thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes16"]).rgb;
@@ -215,16 +204,16 @@ function createSOM(colorName, LABdata, size){
 		let heightNodeArray = [];
 		for(let j = 0; j < size; j++){
 			let weights = neurons[i][j].weights;
-			var labColor = d3.lab(weights[0], weights[1], weights[2]);
-			let rgb = labColor.rgb();
+			var oklabColor = new Color({space: "oklab", coords: [weights[0], weights[1], weights[2]]})
+			let srgb = oklabColor.to("srgb");
 			
 			heightNodeArray.push({
 				lab: {
-					l: labColor.l,
-					a: labColor.a,
-					b: labColor.b
+					l: oklabColor.l,
+					a: oklabColor.a,
+					b: oklabColor.b
 				},
-				rgb: rgb.toString(),
+				rgb:  `rgb(${Math.round(255*srgb.r)},${Math.round(255*srgb.g)},${Math.round(255*srgb.b)})`,
 				PCgN: neurons[i][j].PCgN
 			});
 			
@@ -399,7 +388,7 @@ function bestOrientation(neurons, size){
 
 function testDist(neurons1, neurons2){
 	//calcDistance
-	totalDist = 0;
+	let totalDist = 0;
 	for(let i = 0; i < neurons1.length; i++){
 		for(let j = 0; j < neurons1[i].length; j++){
 			let thisDist = neurons1[i][j].calcDistance(neurons2[i][j].weights);
@@ -412,7 +401,7 @@ function testDist(neurons1, neurons2){
 
 function orientNeurons(neurons, rotateTimes, flip){
 	let newNeurons = neurons;
-	for(i = 0; i < rotateTimes; i++){
+	for(let i = 0; i < rotateTimes; i++){
 		newNeurons = rotateNeurons(newNeurons);
 	}
 	if(flip){
@@ -426,7 +415,7 @@ function rotateNeurons(neurons){
 	//copy into new array
 	let widthArray = [];
 	for(let i = 0; i < neurons[0].length; i++){
-		heightArray = [];
+		const heightArray = [];
 		for(let j = 0; j < neurons.length; j++){
 			heightArray.push(neurons[j][neurons.length - i - 1]);
 		}
@@ -440,7 +429,7 @@ function flipNeurons(neurons){
 	//copy into new array
 	let widthArray = [];
 	for(let i = 0; i < neurons.length; i++){
-		heightArray = [];
+		const heightArray = [];
 		for(let j = 0; j < neurons[i].length; j++){
 			heightArray.push(neurons[neurons.length - i - 1][j]);
 		}
@@ -453,7 +442,7 @@ function flipNeurons(neurons){
 
 
 function RGBtoLAB(r,g,b){
-	var labColor = d3.lab("rgb("+r+","+g+","+b+")");
+	var labColor = new Color({space: "srgb", coords: [r/255, g/255, b/255]}).to("oklab")
 	return labColor;
 }
  
