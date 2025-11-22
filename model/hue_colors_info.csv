@@ -1,4 +1,5 @@
 lang,lang_abv,simplifiedName,commonName,avgHueColor,cnt
+<<<<<<< HEAD
 English (English),en,blue,blue,"rgb(0, 126, 255)",6320
 English (English),en,orange,orange,"rgb(255, 136, 0)",2932
 English (English),en,red,red,"rgb(255, 0, 38)",2822
@@ -30,6 +31,39 @@ English (English),en,yelloworange,yellow/orange,"rgb(255, 183, 0)",224
 English (English),en,mint,mint,"rgb(0, 255, 168)",221
 English (English),en,darkpink,dark pink,"rgb(255, 0, 129)",213
 English (English),en,brightgreen,bright green,"rgb(0, 255, 57)",213
+=======
+English (English),en,blue,blue,"rgb(0, 121, 255)",6320
+English (English),en,orange,orange,"rgb(255, 135, 0)",2932
+English (English),en,red,red,"rgb(255, 0, 39)",2822
+English (English),en,green,green,"rgb(0, 255, 72)",2820
+English (English),en,yellow,yellow,"rgb(255, 243, 0)",2600
+English (English),en,pink,pink,"rgb(255, 0, 164)",2395
+English (English),en,purple,purple,"rgb(192, 0, 255)",2315
+English (English),en,magenta,magenta,"rgb(255, 0, 190)",1427
+English (English),en,lightblue,light blue,"rgb(0, 197, 255)",1323
+English (English),en,limegreen,lime green,"rgb(102, 255, 0)",1076
+English (English),en,skyblue,sky blue,"rgb(0, 191, 255)",1011
+English (English),en,teal,teal,"rgb(0, 255, 224)",809
+English (English),en,turquoise,turquoise,"rgb(0, 255, 242)",796
+English (English),en,fuchsia,fuschia,"rgb(255, 0, 192)",769
+English (English),en,hotpink,hot pink,"rgb(255, 0, 153)",707
+English (English),en,cyan,cyan,"rgb(0, 251, 255)",617
+English (English),en,darkblue,dark blue,"rgb(0, 58, 255)",604
+English (English),en,royalblue,royal blue,"rgb(0, 57, 255)",601
+English (English),en,aqua,aqua,"rgb(0, 255, 245)",509
+English (English),en,neongreen,neon green,"rgb(26, 255, 0)",483
+English (English),en,lightgreen,light green,"rgb(0, 255, 73)",475
+English (English),en,yellowgreen,yellow green,"rgb(175, 255, 0)",405
+English (English),en,violet,violet,"rgb(193, 0, 255)",370
+English (English),en,lime,lime,"rgb(130, 255, 0)",346
+English (English),en,redorange,red orange,"rgb(255, 74, 0)",300
+English (English),en,mintgreen,mint green,"rgb(0, 255, 158)",299
+English (English),en,gold,gold,"rgb(255, 201, 0)",278
+English (English),en,yelloworange,yellow orange,"rgb(255, 183, 0)",224
+English (English),en,mint,mint,"rgb(0, 255, 167)",221
+English (English),en,darkpink,dark pink,"rgb(255, 0, 126)",213
+English (English),en,brightgreen,bright green,"rgb(0, 255, 59)",213
+>>>>>>> origin/master
 English (English),en,seafoamgreen,seafoam green,"rgb(0, 255, 171)",209
 English (English),en,babyblue,baby blue,"rgb(0, 211, 255)",208
 English (English),en,chartreuse,chartreuse,"rgb(181, 255, 0)",191
@@ -58,6 +92,7 @@ English (English),en,rose,rose,"rgb(255, 0, 113)",105
 "Korean (한국어, 조선어)",ko,빨강색,빨강색,"rgb(255, 0, 39)",127
 "Korean (한국어, 조선어)",ko,파란색,파란색,"rgb(0, 93, 255)",117
 "Korean (한국어, 조선어)",ko,노랑색,노랑색,"rgb(255, 237, 0)",90
+<<<<<<< HEAD
 "Korean (한국어, 조선어)",ko,자주색,자주색,"rgb(255, 0, 201)",85
 "Korean (한국어, 조선어)",ko,분홍색,분홍색,"rgb(255, 0, 190)",82
 "Korean (한국어, 조선어)",ko,초록색,초록색,"rgb(0, 255, 83)",57
@@ -73,9 +108,27 @@ English (English),en,rose,rose,"rgb(255, 0, 113)",105
 "Korean (한국어, 조선어)",ko,민트색,민트색,"rgb(0, 255, 191)",28
 "Korean (한국어, 조선어)",ko,옥색,옥색,"rgb(0, 255, 195)",27
 "Korean (한국어, 조선어)",ko,연파랑색,연파랑색,"rgb(0, 179, 255)",26
+=======
+"Korean (한국어, 조선어)",ko,자주색,자주색,"rgb(255, 0, 197)",85
+"Korean (한국어, 조선어)",ko,분홍색,분홍색,"rgb(255, 0, 189)",82
+"Korean (한국어, 조선어)",ko,초록색,초록색,"rgb(0, 255, 81)",57
+"Korean (한국어, 조선어)",ko,빨간색,빨간색,"rgb(255, 0, 48)",54
+"Korean (한국어, 조선어)",ko,노란색,노란색,"rgb(255, 239, 0)",49
+"Korean (한국어, 조선어)",ko,다홍색,다홍색,"rgb(255, 0, 59)",49
+"Korean (한국어, 조선어)",ko,에메랄드색,에메랄드색,"rgb(0, 255, 172)",42
+"Korean (한국어, 조선어)",ko,형광연두색,형광연두색,"rgb(0, 255, 21)",42
+"Korean (한국어, 조선어)",ko,청록색,청록색,"rgb(0, 255, 215)",38
+"Korean (한국어, 조선어)",ko,진분홍색,진분홍색,"rgb(255, 0, 153)",37
+"Korean (한국어, 조선어)",ko,핑크색,핑크색,"rgb(255, 0, 188)",32
+"Korean (한국어, 조선어)",ko,핫핑크색,핫핑크색,"rgb(255, 0, 157)",32
+"Korean (한국어, 조선어)",ko,민트색,민트색,"rgb(0, 255, 190)",28
+"Korean (한국어, 조선어)",ko,옥색,옥색,"rgb(0, 255, 194)",27
+"Korean (한국어, 조선어)",ko,연파랑색,연파랑색,"rgb(0, 177, 255)",26
+>>>>>>> origin/master
 "Korean (한국어, 조선어)",ko,개나리색,개나리색,"rgb(255, 212, 0)",25
 "Korean (한국어, 조선어)",ko,오렌지색,오렌지색,"rgb(255, 150, 0)",21
 "Korean (한국어, 조선어)",ko,귤색,귤색,"rgb(255, 174, 0)",21
+<<<<<<< HEAD
 "Korean (한국어, 조선어)",ko,라임색,라임색,"rgb(167, 255, 0)",21
 "Korean (한국어, 조선어)",ko,남색,남색,"rgb(0, 40, 255)",19
 "Korean (한국어, 조선어)",ko,마젠타색,마젠타색,"rgb(255, 0, 184)",18
@@ -125,11 +178,63 @@ German (Deutsch),de,neongrun,neongrün,"rgb(0, 255, 7)",36
 German (Deutsch),de,rosa,rosa,"rgb(255, 0, 171)",32
 German (Deutsch),de,violett,violett,"rgb(184, 0, 255)",29
 German (Deutsch),de,konigsblau,königs blau,"rgb(0, 56, 255)",19
+=======
+"Korean (한국어, 조선어)",ko,라임색,라임색,"rgb(163, 255, 0)",21
+"Korean (한국어, 조선어)",ko,남색,남색,"rgb(0, 53, 255)",19
+"Korean (한국어, 조선어)",ko,마젠타색,마젠타색,"rgb(255, 0, 180)",18
+"Korean (한국어, 조선어)",ko,밝은파랑색,밝은파랑색,"rgb(0, 163, 255)",17
+"Korean (한국어, 조선어)",ko,연초록색,연초록색,"rgb(0, 255, 119)",17
+"Korean (한국어, 조선어)",ko,진홍색,진홍색,"rgb(255, 0, 133)",17
+"Korean (한국어, 조선어)",ko,바다색,바다색,"rgb(0, 150, 255)",17
+"Korean (한국어, 조선어)",ko,주홍색,주홍색,"rgb(255, 38, 0)",13
+"Korean (한국어, 조선어)",ko,자홍색,자홍색,"rgb(255, 0, 125)",12
+"Korean (한국어, 조선어)",ko,짙은파랑색,짙은 파랑색,"rgb(0, 47, 255)",12
+"Korean (한국어, 조선어)",ko,진노랑색,진노랑색,"rgb(255, 201, 0)",12
+"Korean (한국어, 조선어)",ko,녹색,녹색,"rgb(0, 255, 61)",12
+"Korean (한국어, 조선어)",ko,형광하늘색,형광 하늘색,"rgb(0, 246, 255)",12
+"Korean (한국어, 조선어)",ko,밝은연두색,밝은연두색,"rgb(36, 255, 0)",12
+"Korean (한국어, 조선어)",ko,짙은분홍색,짙은분홍색,"rgb(255, 0, 155)",12
+"Korean (한국어, 조선어)",ko,진파랑색,진파랑색,"rgb(0, 45, 255)",11
+"Korean (한국어, 조선어)",ko,군청색,군청색,"rgb(0, 68, 255)",11
+"Korean (한국어, 조선어)",ko,짙은하늘색,짙은하늘색,"rgb(0, 166, 255)",11
+"Korean (한국어, 조선어)",ko,청색,청색,"rgb(0, 77, 255)",11
+"Korean (한국어, 조선어)",ko,형광초록색,형광초록색,"rgb(0, 255, 79)",10
+"Korean (한국어, 조선어)",ko,진한연두색,진한연두색,"rgb(0, 255, 98)",10
+"Korean (한국어, 조선어)",ko,진한하늘색,진한하늘색,"rgb(0, 172, 255)",10
+"Korean (한국어, 조선어)",ko,연노랑색,연노랑색,"rgb(227, 255, 0)",9
+"Korean (한국어, 조선어)",ko,밝은초록색,밝은 초록색,"rgb(0, 255, 95)",8
+"Korean (한국어, 조선어)",ko,진하늘색,진하늘색,"rgb(0, 168, 255)",8
+"Korean (한국어, 조선어)",ko,연하늘색,연하늘색,"rgb(0, 253, 255)",8
+"Korean (한국어, 조선어)",ko,진한분홍색,진한분홍색,"rgb(255, 0, 141)",8
+"Korean (한국어, 조선어)",ko,연보라색,연보라색,"rgb(232, 0, 255)",8
+"Korean (한국어, 조선어)",ko,밝은하늘색,밝은 하늘색,"rgb(0, 243, 255)",8
+"Korean (한국어, 조선어)",ko,연한파란색,연한파란색,"rgb(0, 138, 255)",8
+"Korean (한국어, 조선어)",ko,형광색,형광색,"rgb(0, 255, 19)",8
+"Korean (한국어, 조선어)",ko,형광핑크색,형광 핑크색,"rgb(255, 0, 211)",8
+German (Deutsch),de,blau,blau,"rgb(0, 116, 255)",298
+German (Deutsch),de,orange,orange,"rgb(255, 141, 0)",208
+German (Deutsch),de,pink,pink,"rgb(255, 0, 171)",178
+German (Deutsch),de,grun,grün,"rgb(0, 255, 63)",178
+German (Deutsch),de,rot,rot,"rgb(255, 0, 40)",172
+German (Deutsch),de,lila,lila,"rgb(217, 0, 255)",145
+German (Deutsch),de,turkis,türkis,"rgb(0, 255, 226)",139
+German (Deutsch),de,gelb,gelb,"rgb(255, 239, 0)",136
+German (Deutsch),de,hellblau,hellblau,"rgb(0, 205, 255)",127
+German (Deutsch),de,hellgrun,hellgrün,"rgb(0, 255, 50)",84
+German (Deutsch),de,dunkelblau,dunkelblau,"rgb(0, 56, 255)",67
+German (Deutsch),de,magenta,magenta,"rgb(255, 0, 171)",57
+German (Deutsch),de,himmelblau,himmelblau,"rgb(0, 171, 255)",37
+German (Deutsch),de,neongrun,neongrün,"rgb(0, 255, 36)",36
+German (Deutsch),de,rosa,rosa,"rgb(255, 0, 169)",32
+German (Deutsch),de,violett,violett,"rgb(191, 0, 255)",29
+German (Deutsch),de,konigsblau,königsblau,"rgb(0, 58, 255)",19
+>>>>>>> origin/master
 German (Deutsch),de,gelbgrun,gelbgrün,"rgb(196, 255, 0)",18
 German (Deutsch),de,mittelblau,mittelblau,"rgb(0, 129, 255)",17
 German (Deutsch),de,giftgrun,giftgrün,"rgb(102, 255, 0)",16
 German (Deutsch),de,dunkelorange,dunkelorange,"rgb(255, 109, 0)",15
 German (Deutsch),de,dunkelgelb,dunkelgelb,"rgb(255, 205, 0)",12
+<<<<<<< HEAD
 German (Deutsch),de,grungelb,grün gelb,"rgb(188, 255, 0)",11
 German (Deutsch),de,marineblau,marineblau,"rgb(0, 59, 255)",11
 German (Deutsch),de,mint,mint,"rgb(0, 255, 195)",9
@@ -164,6 +269,42 @@ Spanish (español),es,aguamarina,aguamarina,"rgb(0, 255, 237)",23
 Spanish (español),es,azulrey,azul rey,"rgb(0, 70, 255)",21
 Spanish (español),es,verdeagua,verde agua,"rgb(0, 255, 173)",19
 Spanish (español),es,lila,lila,"rgb(227, 0, 255)",18
+=======
+German (Deutsch),de,grungelb,grüngelb,"rgb(187, 255, 0)",11
+German (Deutsch),de,marineblau,marineblau,"rgb(0, 61, 255)",11
+German (Deutsch),de,mint,mint,"rgb(0, 255, 194)",9
+German (Deutsch),de,turkisgrun,türkisgrün,"rgb(0, 255, 169)",9
+German (Deutsch),de,neonblau,neonblau,"rgb(0, 211, 255)",9
+German (Deutsch),de,fuchsia,fuchsia,"rgb(255, 0, 147)",9
+German (Deutsch),de,violet,violet,"rgb(156, 0, 255)",9
+German (Deutsch),de,rotorange,rot orange,"rgb(255, 75, 0)",8
+German (Deutsch),de,grasgrun,grasgrün,"rgb(107, 255, 0)",8
+German (Deutsch),de,turkies,türkies,"rgb(0, 255, 208)",8
+Spanish (español),es,azul,azul,"rgb(0, 125, 255)",313
+Spanish (español),es,verde,verde,"rgb(0, 255, 62)",204
+Spanish (español),es,naranja,naranja,"rgb(255, 133, 0)",164
+Spanish (español),es,amarillo,amarillo,"rgb(255, 242, 0)",155
+Spanish (español),es,rojo,rojo,"rgb(255, 0, 35)",147
+Spanish (español),es,rosa,rosa,"rgb(255, 0, 164)",106
+Spanish (español),es,fucsia,fucsia,"rgb(255, 0, 176)",94
+Spanish (español),es,morado,morado,"rgb(188, 0, 255)",93
+Spanish (español),es,magenta,magenta,"rgb(255, 0, 180)",76
+Spanish (español),es,celeste,celeste,"rgb(0, 214, 255)",70
+Spanish (español),es,turquesa,turquesa,"rgb(0, 255, 233)",54
+Spanish (español),es,cyan,cian,"rgb(0, 241, 255)",53
+Spanish (español),es,azulclaro,azul claro,"rgb(0, 172, 255)",47
+Spanish (español),es,violeta,violeta,"rgb(208, 0, 255)",42
+Spanish (español),es,azulcielo,azul cielo,"rgb(0, 194, 255)",28
+Spanish (español),es,purpura,púrpura,"rgb(200, 0, 255)",26
+Spanish (español),es,azulmarino,azul marino,"rgb(0, 66, 255)",25
+Spanish (español),es,azuloscuro,azul oscuro,"rgb(0, 62, 255)",25
+Spanish (español),es,verdeclaro,verde claro,"rgb(0, 255, 48)",24
+Spanish (español),es,verdelimon,verde limon,"rgb(147, 255, 0)",24
+Spanish (español),es,aguamarina,aguamarina,"rgb(0, 255, 229)",23
+Spanish (español),es,azulrey,azul rey,"rgb(0, 69, 255)",21
+Spanish (español),es,verdeagua,verde agua,"rgb(0, 255, 172)",19
+Spanish (español),es,lila,lila,"rgb(239, 0, 255)",18
+>>>>>>> origin/master
 Spanish (español),es,anaranjado,anaranjado,"rgb(255, 144, 0)",16
 Spanish (español),es,azulelectrico,azul eléctrico,"rgb(0, 70, 255)",14
 Spanish (español),es,verdelima,verde lima,"rgb(157, 255, 0)",14
@@ -172,6 +313,7 @@ Spanish (español),es,aqua,aqua,"rgb(0, 255, 219)",12
 Spanish (español),es,naranjaoscuro,naranja oscuro,"rgb(255, 96, 0)",12
 Spanish (español),es,azulturquesa,azul turquesa,"rgb(0, 255, 252)",10
 Spanish (español),es,mostaza,mostaza,"rgb(255, 188, 0)",10
+<<<<<<< HEAD
 Spanish (español),es,rosaoscuro,rosado oscuro,"rgb(255, 0, 131)",10
 Spanish (español),es,verdementa,verde menta,"rgb(0, 255, 153)",9
 Spanish (español),es,azulceleste,azul celeste,"rgb(0, 182, 255)",8
@@ -196,6 +338,32 @@ Spanish (español),es,azulceleste,azul celeste,"rgb(0, 182, 255)",8
 "French (français, langue française)",fr,vertfluo,vert fluo,"rgb(98, 255, 0)",17
 "French (français, langue française)",fr,vertd'eau,vert d'eau,"rgb(0, 255, 176)",16
 "French (français, langue française)",fr,bleuroi,bleu roi,"rgb(0, 75, 255)",15
+=======
+Spanish (español),es,rosaoscuro,rosado oscuro,"rgb(255, 0, 130)",10
+Spanish (español),es,verdementa,verde menta,"rgb(0, 255, 152)",9
+Spanish (español),es,azulceleste,azul celeste,"rgb(0, 180, 255)",8
+"French (français, langue française)",fr,bleu,bleu,"rgb(0, 131, 255)",300
+"French (français, langue française)",fr,vert,vert,"rgb(0, 255, 77)",210
+"French (français, langue française)",fr,orange,orange,"rgb(255, 136, 0)",165
+"French (français, langue française)",fr,jaune,jaune,"rgb(255, 237, 0)",132
+"French (français, langue française)",fr,rouge,rouge,"rgb(255, 0, 40)",131
+"French (français, langue française)",fr,violet,violet,"rgb(216, 0, 255)",129
+"French (français, langue française)",fr,rose,rose,"rgb(255, 0, 171)",110
+"French (français, langue française)",fr,turquoise,turquoise,"rgb(0, 255, 225)",61
+"French (français, langue française)",fr,fuchsia,fushia,"rgb(255, 0, 182)",61
+"French (français, langue française)",fr,bleuciel,bleu ciel,"rgb(0, 195, 255)",52
+"French (français, langue française)",fr,magenta,magenta,"rgb(255, 0, 156)",44
+"French (français, langue française)",fr,bleuclair,bleu clair,"rgb(0, 200, 255)",38
+"French (français, langue française)",fr,cyan,cyan,"rgb(0, 239, 255)",36
+"French (français, langue française)",fr,bleumarine,bleu marine,"rgb(0, 80, 255)",36
+"French (français, langue française)",fr,mauve,mauve,"rgb(203, 0, 255)",34
+"French (français, langue française)",fr,vertpomme,vert pomme,"rgb(99, 255, 0)",23
+"French (français, langue française)",fr,vertclair,vert clair,"rgb(0, 255, 48)",22
+"French (français, langue française)",fr,bleufonce,bleu foncé,"rgb(0, 81, 255)",19
+"French (français, langue française)",fr,vertfluo,vert fluo,"rgb(92, 255, 0)",17
+"French (français, langue française)",fr,vertd'eau,vert d'eau,"rgb(0, 255, 175)",16
+"French (français, langue française)",fr,bleuroi,bleu roi,"rgb(0, 77, 255)",15
+>>>>>>> origin/master
 "French (français, langue française)",fr,bleuroyal,bleu royal,"rgb(0, 63, 255)",14
 "French (français, langue française)",fr,bleuturquoise,bleu turquoise,"rgb(0, 240, 255)",14
 "French (français, langue française)",fr,rosefuchsia,rose fushia,"rgb(255, 0, 176)",14
@@ -206,15 +374,23 @@ Spanish (español),es,azulceleste,azul celeste,"rgb(0, 182, 255)",8
 "French (français, langue française)",fr,indigo,indigo,"rgb(0, 63, 255)",11
 "French (français, langue française)",fr,jaunefluo,jaune fluo,"rgb(220, 255, 0)",10
 "French (français, langue française)",fr,jaunevert,jaune vert,"rgb(196, 255, 0)",10
+<<<<<<< HEAD
 "French (français, langue française)",fr,pourpre,pourpre,"rgb(255, 0, 241)",10
 "French (français, langue française)",fr,vertneon,vert néon,"rgb(0, 255, 64)",10
 "French (français, langue française)",fr,jauneorange,jaune orange,"rgb(255, 198, 0)",9
 "French (français, langue française)",fr,rougerose,rouge rose,"rgb(255, 0, 89)",9
+=======
+"French (français, langue française)",fr,pourpre,pourpre,"rgb(255, 0, 216)",10
+"French (français, langue française)",fr,vertneon,vert néon,"rgb(0, 255, 62)",10
+"French (français, langue française)",fr,jauneorange,jaune orangé,"rgb(255, 198, 0)",9
+"French (français, langue française)",fr,rougerose,rouge rose,"rgb(255, 0, 88)",9
+>>>>>>> origin/master
 "French (français, langue française)",fr,orangefonce,orange foncé,"rgb(255, 97, 0)",9
 "French (français, langue française)",fr,bleuvert,bleu vert,"rgb(0, 255, 204)",8
 Italian (italiano),it,azzurro,azzurro,"rgb(0, 202, 255)",172
 Italian (italiano),it,blu,blu,"rgb(0, 83, 255)",168
 Italian (italiano),it,arancione,arancione,"rgb(255, 137, 0)",137
+<<<<<<< HEAD
 Italian (italiano),it,rosso,rosso,"rgb(255, 0, 37)",130
 Italian (italiano),it,verde,verde,"rgb(0, 255, 51)",130
 Italian (italiano),it,fucsia,fucsia,"rgb(255, 0, 186)",120
@@ -223,6 +399,16 @@ Italian (italiano),it,giallo,giallo,"rgb(255, 241, 0)",102
 Italian (italiano),it,verdeacqua,verdeacqua,"rgb(0, 255, 183)",75
 Italian (italiano),it,magenta,magenta,"rgb(255, 0, 159)",72
 Italian (italiano),it,verdechiaro,verde chiaro,"rgb(0, 255, 11)",39
+=======
+Italian (italiano),it,rosso,rosso,"rgb(255, 0, 38)",130
+Italian (italiano),it,verde,verde,"rgb(0, 255, 58)",130
+Italian (italiano),it,fucsia,fucsia,"rgb(255, 0, 183)",120
+Italian (italiano),it,viola,viola,"rgb(195, 0, 255)",119
+Italian (italiano),it,giallo,giallo,"rgb(255, 242, 0)",102
+Italian (italiano),it,verdeacqua,verde acqua,"rgb(0, 255, 182)",75
+Italian (italiano),it,magenta,magenta,"rgb(255, 0, 155)",72
+Italian (italiano),it,verdechiaro,verde chiaro,"rgb(0, 255, 37)",39
+>>>>>>> origin/master
 Italian (italiano),it,celeste,celeste,"rgb(0, 217, 255)",34
 Italian (italiano),it,ciano,ciano,"rgb(0, 227, 255)",34
 Italian (italiano),it,violetto,violetto,"rgb(237, 0, 255)",24
@@ -253,6 +439,7 @@ Italian (italiano),it,fuchsia,fuchsia,"rgb(255, 0, 206)",8
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,紫,紫色,"rgb(184, 0, 255)",72
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,红,红色,"rgb(255, 0, 48)",71
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,深蓝,深蓝色,"rgb(0, 65, 255)",69
+<<<<<<< HEAD
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,绿,綠色,"rgb(0, 255, 73)",58
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,橙,橙色,"rgb(255, 129, 0)",47
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,草绿,草绿色,"rgb(93, 255, 0)",36
@@ -295,6 +482,50 @@ Italian (italiano),it,fuchsia,fuchsia,"rgb(255, 0, 206)",8
 Swedish (svenska),sv,bla,blå,"rgb(0, 128, 255)",243
 Swedish (svenska),sv,gron,grön,"rgb(0, 255, 74)",160
 Swedish (svenska),sv,rod,röd,"rgb(255, 0, 43)",121
+=======
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,绿,绿色,"rgb(0, 255, 76)",58
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,橙,橙色,"rgb(255, 129, 0)",47
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,草绿,草绿色,"rgb(80, 255, 0)",36
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,青,青色,"rgb(0, 255, 229)",33
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,黄绿,黄绿色,"rgb(168, 255, 0)",34
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,浅蓝,浅蓝色,"rgb(0, 182, 255)",34
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,玫红,玫红色,"rgb(255, 0, 158)",31
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,粉,粉色,"rgb(255, 0, 187)",31
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,淡蓝,淡蓝色,"rgb(0, 197, 255)",30
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,土黄,土黄色,"rgb(255, 198, 0)",29
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,蓝绿,蓝绿色,"rgb(0, 255, 200)",27
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,紫红,紫红色,"rgb(255, 0, 205)",26
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,橘,橘色,"rgb(255, 123, 0)",26
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,桃红,桃紅色,"rgb(255, 0, 140)",25
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,粉红,粉红色,"rgb(255, 0, 144)",22
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,青绿,青绿色,"rgb(0, 255, 122)",22
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,大红,大红色,"rgb(255, 0, 49)",21
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,橘红,橘红色,"rgb(255, 89, 0)",20
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,荧光绿,荧光绿色,"rgb(0, 255, 109)",19
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,粉紫,粉紫色,"rgb(255, 0, 220)",19
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,亮绿,亮綠色,"rgb(0, 255, 32)",17
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,浅绿,浅绿色,"rgb(0, 255, 105)",16
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,橘黄,橘黄色,"rgb(255, 157, 0)",15
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,湖蓝,湖蓝色,"rgb(0, 177, 255)",14
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,宝蓝,宝蓝色,"rgb(0, 88, 255)",14
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,亮蓝,亮藍色,"rgb(0, 197, 255)",14
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,橙黄,橙黄色,"rgb(255, 171, 0)",12
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,海蓝,海蓝色,"rgb(0, 130, 255)",11
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,深黄,深黄色,"rgb(255, 182, 0)",11
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,亮紫,亮紫色,"rgb(255, 0, 243)",10
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,翠绿,翠绿色,"rgb(0, 255, 91)",10
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,青蓝,青蓝色,"rgb(0, 255, 229)",10
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,蓝紫,蓝紫色,"rgb(118, 0, 255)",9
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,深粉,深粉色,"rgb(255, 0, 183)",9
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,橙红,橙红色,"rgb(255, 85, 0)",9
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,正红,正红色,"rgb(255, 0, 38)",8
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,淡绿,淡绿色,"rgb(0, 255, 115)",8
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,靛蓝,靛蓝色,"rgb(0, 66, 255)",8
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,品红,品红色,"rgb(255, 0, 119)",7
+Swedish (svenska),sv,bla,blå,"rgb(0, 123, 255)",243
+Swedish (svenska),sv,gron,grön,"rgb(0, 255, 75)",160
+Swedish (svenska),sv,rod,röd,"rgb(255, 0, 44)",121
+>>>>>>> origin/master
 Swedish (svenska),sv,orange,orange,"rgb(255, 137, 0)",109
 Swedish (svenska),sv,lila,lila,"rgb(208, 0, 255)",108
 Swedish (svenska),sv,gul,gul,"rgb(255, 240, 0)",102
@@ -314,6 +545,7 @@ Portuguese (português),pt,azul,azul,"rgb(0, 136, 255)",223
 Portuguese (português),pt,verde,verde,"rgb(0, 255, 57)",128
 Portuguese (português),pt,rosa,rosa,"rgb(255, 0, 171)",101
 Portuguese (português),pt,laranja,laranja,"rgb(255, 131, 0)",100
+<<<<<<< HEAD
 Portuguese (português),pt,amarelo,amarelo,"rgb(255, 236, 0)",96
 Portuguese (português),pt,vermelho,vermelho,"rgb(255, 0, 37)",76
 Portuguese (português),pt,roxo,roxo,"rgb(172, 0, 255)",64
@@ -376,6 +608,70 @@ Russian (Русский),ru,мятныи,мятный,"rgb(0, 255, 184)",11
 Russian (Русский),ru,яркорозовыи,ярко розовый,"rgb(255, 0, 177)",11
 Russian (Русский),ru,желтозеленыи,желто зеленый,"rgb(163, 255, 0)",10
 Russian (Русский),ru,лазурныи,лазурный,"rgb(0, 182, 255)",9
+=======
+Portuguese (português),pt,amarelo,amarelo,"rgb(255, 237, 0)",96
+Portuguese (português),pt,vermelho,vermelho,"rgb(255, 0, 38)",76
+Portuguese (português),pt,roxo,roxo,"rgb(178, 0, 255)",64
+Portuguese (português),pt,azulclaro,azul claro,"rgb(0, 191, 255)",60
+Portuguese (português),pt,azulescuro,azul escuro,"rgb(0, 55, 255)",34
+Portuguese (português),pt,verdeclaro,verde claro,"rgb(0, 255, 84)",31
+Portuguese (português),pt,ciano,ciano,"rgb(0, 255, 245)",30
+Portuguese (português),pt,verdeagua,verde água,"rgb(0, 255, 201)",28
+Portuguese (português),pt,rosachoque,rosa choque,"rgb(255, 0, 177)",26
+Portuguese (português),pt,magenta,magenta,"rgb(255, 0, 178)",25
+Portuguese (português),pt,verdelimao,verde limão,"rgb(156, 255, 0)",23
+Portuguese (português),pt,violeta,violeta,"rgb(211, 0, 255)",17
+Portuguese (português),pt,azulpiscina,azul piscina,"rgb(0, 249, 255)",16
+Portuguese (português),pt,azulmarinho,azul marinho,"rgb(0, 141, 255)",15
+Portuguese (português),pt,turquesa,turquesa,"rgb(0, 224, 255)",13
+Portuguese (português),pt,fucsia,fúcsia,"rgb(255, 0, 194)",9
+Portuguese (português),pt,azulceleste,azul celeste,"rgb(0, 161, 255)",9
+Portuguese (português),pt,azulceu,azul céu,"rgb(0, 170, 255)",8
+"Polish (język polski, polszczyzna)",pl,niebieski,niebieski,"rgb(0, 135, 255)",215
+"Polish (język polski, polszczyzna)",pl,zielony,zielony,"rgb(0, 255, 56)",149
+"Polish (język polski, polszczyzna)",pl,rozowy,różowy,"rgb(255, 0, 175)",112
+"Polish (język polski, polszczyzna)",pl,pomaranczowy,pomarańczowy,"rgb(255, 133, 0)",109
+"Polish (język polski, polszczyzna)",pl,czerwony,czerwony,"rgb(255, 0, 43)",91
+"Polish (język polski, polszczyzna)",pl,zołty,żółty,"rgb(255, 236, 0)",90
+"Polish (język polski, polszczyzna)",pl,fioletowy,fioletowy,"rgb(197, 0, 255)",83
+"Polish (język polski, polszczyzna)",pl,błekitny,błękitny,"rgb(0, 190, 255)",51
+"Polish (język polski, polszczyzna)",pl,turkusowy,turkusowy,"rgb(0, 255, 243)",38
+"Polish (język polski, polszczyzna)",pl,ciemnoniebieski,ciemnoniebieski,"rgb(0, 65, 255)",36
+"Polish (język polski, polszczyzna)",pl,jasnoniebieski,jasnoniebieski,"rgb(0, 196, 255)",31
+"Polish (język polski, polszczyzna)",pl,fuksja,fuksja,"rgb(255, 0, 211)",22
+"Polish (język polski, polszczyzna)",pl,jasnozielony,jasnozielony,"rgb(121, 255, 0)",21
+"Polish (język polski, polszczyzna)",pl,seledynowy,seledynowy,"rgb(0, 255, 94)",19
+"Polish (język polski, polszczyzna)",pl,granatowy,granatowy,"rgb(0, 44, 255)",17
+"Polish (język polski, polszczyzna)",pl,malinowy,malinowy,"rgb(255, 0, 95)",16
+"Polish (język polski, polszczyzna)",pl,morski,morski,"rgb(0, 255, 240)",13
+"Polish (język polski, polszczyzna)",pl,limonkowy,limonkowy,"rgb(101, 255, 0)",13
+"Polish (język polski, polszczyzna)",pl,magenta,magenta,"rgb(255, 0, 158)",11
+"Polish (język polski, polszczyzna)",pl,jasnopomaranczowy,jasny pomarańczowy,"rgb(255, 168, 0)",9
+Russian (Русский),ru,синии,синий,"rgb(0, 89, 255)",136
+Russian (Русский),ru,голубои,голубой,"rgb(0, 192, 255)",109
+Russian (Русский),ru,оранжевыи,оранжевый,"rgb(255, 137, 0)",80
+Russian (Русский),ru,желтыи,желтый,"rgb(255, 246, 0)",74
+Russian (Русский),ru,красныи,красный,"rgb(255, 0, 38)",73
+Russian (Русский),ru,зеленыи,зеленый,"rgb(0, 255, 67)",70
+Russian (Русский),ru,розовыи,розовый,"rgb(255, 0, 178)",65
+Russian (Русский),ru,фиолетовыи,фиолетовый,"rgb(206, 0, 255)",54
+Russian (Русский),ru,бирюзовыи,бирюзовый,"rgb(0, 255, 209)",45
+Russian (Русский),ru,салатовыи,салатовый,"rgb(101, 255, 0)",41
+Russian (Русский),ru,малиновыи,малиновый,"rgb(255, 0, 108)",25
+Russian (Русский),ru,фуксия,фуксия,"rgb(255, 0, 192)",22
+Russian (Русский),ru,темносинии,темно синий,"rgb(0, 25, 255)",20
+Russian (Русский),ru,сиреневыи,сиреневый,"rgb(235, 0, 255)",17
+Russian (Русский),ru,светлоголубои,светло голубой,"rgb(0, 240, 255)",15
+Russian (Русский),ru,темноголубои,темно голубой,"rgb(0, 139, 255)",15
+Russian (Русский),ru,пурпурныи,пурпурный,"rgb(255, 0, 233)",15
+Russian (Русский),ru,светлосинии,светло синий,"rgb(0, 145, 255)",14
+Russian (Русский),ru,светлозеленыи,светло зеленый,"rgb(0, 255, 48)",13
+Russian (Русский),ru,алыи,алый,"rgb(255, 0, 45)",13
+Russian (Русский),ru,мятныи,мятный,"rgb(0, 255, 183)",11
+Russian (Русский),ru,яркорозовыи,ярко розовый,"rgb(255, 0, 176)",11
+Russian (Русский),ru,желтозеленыи,желто зеленый,"rgb(161, 255, 0)",10
+Russian (Русский),ru,лазурныи,лазурный,"rgb(0, 179, 255)",9
+>>>>>>> origin/master
 Russian (Русский),ru,темнооранжевыи,темно оранжевый,"rgb(255, 96, 0)",9
 Russian (Русский),ru,лимонныи,лимонный,"rgb(209, 255, 0)",8
 Russian (Русский),ru,яркозеленыи,ярко зеленый,"rgb(14, 255, 0)",8
@@ -385,6 +681,7 @@ Persian (Farsi) (فارسی),fa,بنفش,بنفش,"rgb(188, 0, 255)",78
 Persian (Farsi) (فارسی),fa,سبز,سبز,"rgb(0, 255, 105)",77
 Persian (Farsi) (فارسی),fa,قرمز,قرمز,"rgb(255, 0, 39)",72
 Persian (Farsi) (فارسی),fa,نارنجی,نارنجی,"rgb(255, 135, 0)",62
+<<<<<<< HEAD
 Persian (Farsi) (فارسی),fa,صورتی,صورتی,"rgb(255, 0, 178)",51
 Persian (Farsi) (فارسی),fa,زرد,زرد,"rgb(255, 242, 0)",50
 Persian (Farsi) (فارسی),fa,ابیاسمانی,آبی آسمانی,"rgb(0, 204, 255)",30
@@ -449,11 +746,78 @@ Turkish (Türkçe),tr,acikyesil,acik yesil,"rgb(54, 255, 0)",13
 Turkish (Türkçe),tr,eflatun,eflatun,"rgb(255, 0, 217)",11
 Turkish (Türkçe),tr,fusya,fusya,"rgb(255, 0, 183)",9
 "Finnish (suomi, suomen kieli)",fi,sininen,sininen,"rgb(0, 118, 255)",110
+=======
+Persian (Farsi) (فارسی),fa,صورتی,صورتی,"rgb(255, 0, 176)",51
+Persian (Farsi) (فارسی),fa,زرد,زرد,"rgb(255, 243, 0)",50
+Persian (Farsi) (فارسی),fa,ابیاسمانی,ابی اسمانی,"rgb(0, 203, 255)",30
+Persian (Farsi) (فارسی),fa,سرخابی,سرخابی,"rgb(255, 0, 155)",27
+Persian (Farsi) (فارسی),fa,سبزفسفری,سبز فسفری,"rgb(0, 255, 12)",22
+Persian (Farsi) (فارسی),fa,ابیروشن,آبی روشن,"rgb(0, 203, 255)",20
+Persian (Farsi) (فارسی),fa,سبزروشن,سبز روشن,"rgb(0, 255, 61)",18
+Persian (Farsi) (فارسی),fa,سبزابی,سبز آبی,"rgb(0, 255, 204)",17
+Persian (Farsi) (فارسی),fa,ابینفتی,آبی نفتی,"rgb(0, 64, 255)",17
+Persian (Farsi) (فارسی),fa,خردلی,خردلی,"rgb(255, 193, 0)",13
+Persian (Farsi) (فارسی),fa,ابیتیره,ابی تیره,"rgb(0, 68, 255)",12
+Persian (Farsi) (فارسی),fa,ابیکمرنگ,آبی کم رنگ,"rgb(0, 190, 255)",11
+Persian (Farsi) (فارسی),fa,فسفری,فسفری,"rgb(195, 255, 0)",10
+Persian (Farsi) (فارسی),fa,ابیفیروزهای,ابی فیروزه ای,"rgb(0, 247, 255)",10
+Persian (Farsi) (فارسی),fa,ابیکاربنی,آبی کاربنی,"rgb(0, 48, 255)",10
+Persian (Farsi) (فارسی),fa,فیروزهای,فیروزه ای,"rgb(0, 251, 255)",8
+Persian (Farsi) (فارسی),fa,ابیپررنگ,ابی پررنگ,"rgb(0, 67, 255)",8
+Danish (dansk),da,bla,blå,"rgb(0, 115, 255)",105
+Danish (dansk),da,orange,orange,"rgb(255, 141, 0)",89
+Danish (dansk),da,grøn,grøn,"rgb(0, 255, 69)",76
+Danish (dansk),da,rød,rød,"rgb(255, 0, 47)",73
+Danish (dansk),da,pink,pink,"rgb(255, 0, 178)",73
+Danish (dansk),da,gul,gul,"rgb(255, 238, 0)",65
+Danish (dansk),da,lilla,lilla,"rgb(204, 0, 255)",63
+Danish (dansk),da,turkis,turkis,"rgb(0, 255, 242)",61
+Danish (dansk),da,lysebla,lyseblå,"rgb(0, 196, 255)",50
+Danish (dansk),da,mørkebla,mørkeblå,"rgb(0, 56, 255)",34
+Danish (dansk),da,lysegrøn,lysegrøn,"rgb(0, 255, 46)",22
+Danish (dansk),da,lyserød,lyserød,"rgb(255, 0, 179)",17
+Danish (dansk),da,neongrøn,neongrøn,"rgb(145, 255, 0)",10
+Danish (dansk),da,limegrøn,limegrøn,"rgb(104, 255, 0)",8
+Danish (dansk),da,turkisgrøn,turkisgrøn,"rgb(0, 255, 152)",8
+Greek (modern) (ελληνικά),el,μπλε,μπλε,"rgb(0, 90, 255)",120
+Greek (modern) (ελληνικά),el,γαλαζιο,γαλάζιο,"rgb(0, 199, 255)",81
+Greek (modern) (ελληνικά),el,πορτοκαλι,πορτοκαλί,"rgb(255, 137, 0)",77
+Greek (modern) (ελληνικά),el,πρασινο,πράσινο,"rgb(0, 255, 64)",66
+Greek (modern) (ελληνικά),el,κοκκινο,κόκκινο,"rgb(255, 0, 45)",65
+Greek (modern) (ελληνικά),el,φουξια,φούξια,"rgb(255, 0, 183)",56
+Greek (modern) (ελληνικά),el,μωβ,μωβ,"rgb(187, 0, 255)",51
+Greek (modern) (ελληνικά),el,κιτρινο,κίτρινο,"rgb(255, 237, 0)",46
+Greek (modern) (ελληνικά),el,λαχανι,λαχανί,"rgb(0, 255, 7)",40
+Greek (modern) (ελληνικά),el,ροζ,ροζ,"rgb(255, 0, 173)",37
+Greek (modern) (ελληνικά),el,τιρκουαζ,τιρκουάζ,"rgb(0, 255, 221)",34
+Greek (modern) (ελληνικά),el,ανοιχτοπρασινο,ανοιχτό πράσινο,"rgb(0, 255, 4)",17
+Greek (modern) (ελληνικά),el,θαλασσι,θαλασσί,"rgb(0, 213, 255)",10
+Greek (modern) (ελληνικά),el,μουσταρδι,μουσταρδί,"rgb(255, 194, 0)",10
+Greek (modern) (ελληνικά),el,τυρκουαζ,τυρκουάζ,"rgb(0, 255, 241)",9
+Greek (modern) (ελληνικά),el,κυανο,κυανό,"rgb(0, 238, 255)",8
+Turkish (Türkçe),tr,mavi,mavi,"rgb(0, 148, 255)",116
+Turkish (Türkçe),tr,yesil,yeşil,"rgb(0, 255, 60)",85
+Turkish (Türkçe),tr,turuncu,turuncu,"rgb(255, 134, 0)",69
+Turkish (Türkçe),tr,sari,sarı,"rgb(255, 239, 0)",60
+Turkish (Türkçe),tr,pembe,pembe,"rgb(255, 0, 158)",60
+Turkish (Türkçe),tr,mor,mor,"rgb(211, 0, 255)",56
+Turkish (Türkçe),tr,kirmizi,kırmızı,"rgb(255, 0, 44)",54
+Turkish (Türkçe),tr,lacivert,lacivert,"rgb(0, 57, 255)",44
+Turkish (Türkçe),tr,turkuaz,turkuaz,"rgb(0, 255, 240)",41
+Turkish (Türkçe),tr,acikmavi,açık mavi,"rgb(0, 209, 255)",19
+Turkish (Türkçe),tr,koyumavi,koyu mavi,"rgb(0, 77, 255)",14
+Turkish (Türkçe),tr,fistikyesili,fıstık yeşili,"rgb(16, 255, 0)",13
+Turkish (Türkçe),tr,acikyesil,açık yeşil,"rgb(0, 255, 19)",13
+Turkish (Türkçe),tr,eflatun,eflatun,"rgb(255, 0, 207)",11
+Turkish (Türkçe),tr,fusya,fuşya,"rgb(255, 0, 181)",9
+"Finnish (suomi, suomen kieli)",fi,sininen,sininen,"rgb(0, 114, 255)",110
+>>>>>>> origin/master
 "Finnish (suomi, suomen kieli)",fi,oranssi,oranssi,"rgb(255, 136, 0)",71
 "Finnish (suomi, suomen kieli)",fi,vihrea,vihreä,"rgb(0, 255, 36)",63
 "Finnish (suomi, suomen kieli)",fi,punainen,punainen,"rgb(255, 0, 43)",55
 "Finnish (suomi, suomen kieli)",fi,turkoosi,turkoosi,"rgb(0, 255, 231)",49
 "Finnish (suomi, suomen kieli)",fi,keltainen,keltainen,"rgb(255, 237, 0)",48
+<<<<<<< HEAD
 "Finnish (suomi, suomen kieli)",fi,violetti,violetti,"rgb(214, 0, 255)",46
 "Finnish (suomi, suomen kieli)",fi,pinkki,pinkki,"rgb(255, 0, 159)",43
 "Finnish (suomi, suomen kieli)",fi,vaaleansininen,vaalean sininen,"rgb(0, 222, 255)",43
@@ -470,6 +834,24 @@ Romanian (limba română),ro,verde,verde,"rgb(0, 255, 67)",97
 Romanian (limba română),ro,rosu,rosu,"rgb(255, 0, 41)",64
 Romanian (limba română),ro,galben,galben,"rgb(255, 237, 0)",60
 Romanian (limba română),ro,roz,roz,"rgb(255, 0, 180)",59
+=======
+"Finnish (suomi, suomen kieli)",fi,violetti,violetti,"rgb(228, 0, 255)",46
+"Finnish (suomi, suomen kieli)",fi,pinkki,pinkki,"rgb(255, 0, 156)",43
+"Finnish (suomi, suomen kieli)",fi,vaaleansininen,vaaleansininen,"rgb(0, 223, 255)",43
+"Finnish (suomi, suomen kieli)",fi,tummansininen,tummansininen,"rgb(0, 58, 255)",21
+"Finnish (suomi, suomen kieli)",fi,liila,liila,"rgb(236, 0, 255)",17
+"Finnish (suomi, suomen kieli)",fi,vaaleanvihrea,vaaleanvihreä,"rgb(36, 255, 0)",14
+"Finnish (suomi, suomen kieli)",fi,taivaansininen,taivaansininen,"rgb(0, 189, 255)",13
+"Finnish (suomi, suomen kieli)",fi,magenta,magenta,"rgb(255, 0, 219)",12
+"Finnish (suomi, suomen kieli)",fi,lime,lime,"rgb(150, 255, 0)",10
+"Finnish (suomi, suomen kieli)",fi,syaani,syaani,"rgb(0, 200, 255)",10
+"Finnish (suomi, suomen kieli)",fi,kirkkaanvihrea,kirkkaanvihreä,"rgb(0, 255, 55)",8
+Romanian (limba română),ro,albastru,albastru,"rgb(0, 122, 255)",133
+Romanian (limba română),ro,verde,verde,"rgb(0, 255, 70)",97
+Romanian (limba română),ro,rosu,rosu,"rgb(255, 0, 42)",64
+Romanian (limba română),ro,galben,galben,"rgb(255, 238, 0)",60
+Romanian (limba română),ro,roz,roz,"rgb(255, 0, 178)",59
+>>>>>>> origin/master
 Romanian (limba română),ro,portocaliu,portocaliu,"rgb(255, 137, 0)",55
 Romanian (limba română),ro,mov,mov,"rgb(214, 0, 255)",48
 Romanian (limba română),ro,bleu,bleu,"rgb(0, 207, 255)",25
@@ -485,6 +867,7 @@ Romanian (limba română),ro,bleumarin,bleumarin,"rgb(0, 88, 255)",8
 Arabic (العربية),ar,أزرق,أزرق,"rgb(0, 126, 255)",126
 Arabic (العربية),ar,أخضر,أخضر,"rgb(0, 255, 58)",78
 Arabic (العربية),ar,برتقالي,برتقالي,"rgb(255, 132, 0)",63
+<<<<<<< HEAD
 Arabic (العربية),ar,أصفر,أصفر,"rgb(255, 237, 0)",55
 Arabic (العربية),ar,بنفسجي,بنفسجي,"rgb(196, 0, 255)",51
 Arabic (العربية),ar,أحمر,أحمر,"rgb(255, 0, 32)",50
@@ -504,6 +887,27 @@ Hungarian (magyar),hu,kek,kék,"rgb(0, 127, 255)",112
 Hungarian (magyar),hu,zold,zöld,"rgb(0, 255, 52)",56
 Hungarian (magyar),hu,lila,lila,"rgb(209, 0, 255)",49
 Hungarian (magyar),hu,piros,piros,"rgb(255, 0, 42)",48
+=======
+Arabic (العربية),ar,أصفر,اصفر,"rgb(255, 238, 0)",55
+Arabic (العربية),ar,بنفسجي,بنفسجي,"rgb(202, 0, 255)",51
+Arabic (العربية),ar,أحمر,أحمر,"rgb(255, 0, 35)",50
+Arabic (العربية),ar,فوشي,فوشي,"rgb(255, 0, 162)",38
+Arabic (العربية),ar,سماوي,سماوي,"rgb(0, 216, 255)",36
+Arabic (العربية),ar,وردي,وردي,"rgb(255, 0, 160)",28
+Arabic (العربية),ar,أزرقفاتح,ازرق فاتح,"rgb(0, 194, 255)",26
+Arabic (العربية),ar,زهري,زهري,"rgb(255, 0, 168)",25
+Arabic (العربية),ar,أزرقسماوي,أزرق سماوي,"rgb(0, 175, 255)",12
+Arabic (العربية),ar,أخضرفاتح,أخضر فاتح,"rgb(0, 255, 59)",12
+Arabic (العربية),ar,نيلي,نيلي,"rgb(0, 64, 255)",11
+Arabic (العربية),ar,فسفوري,فسفوري,"rgb(133, 255, 0)",9
+Arabic (العربية),ar,أزرقغامق,أزرق غامق,"rgb(0, 53, 255)",8
+Arabic (العربية),ar,فستقي,فستقي,"rgb(0, 255, 95)",8
+Arabic (العربية),ar,تركواز,تركواز,"rgb(0, 255, 194)",8
+Hungarian (magyar),hu,kek,kék,"rgb(0, 122, 255)",112
+Hungarian (magyar),hu,zold,zöld,"rgb(0, 255, 57)",56
+Hungarian (magyar),hu,lila,lila,"rgb(218, 0, 255)",49
+Hungarian (magyar),hu,piros,piros,"rgb(255, 0, 44)",48
+>>>>>>> origin/master
 Hungarian (magyar),hu,narancssarga,narancssárga,"rgb(255, 144, 0)",37
 Hungarian (magyar),hu,sarga,sárga,"rgb(255, 240, 0)",37
 Hungarian (magyar),hu,magenta,magenta,"rgb(255, 0, 166)",25
@@ -524,6 +928,7 @@ Hungarian (magyar),hu,kiralykek,királykék,"rgb(0, 32, 255)",9
 "Dutch (Nederlands, Vlaams)",nl,groen,groen,"rgb(0, 255, 72)",75
 "Dutch (Nederlands, Vlaams)",nl,paars,paars,"rgb(208, 0, 255)",59
 "Dutch (Nederlands, Vlaams)",nl,oranje,oranje,"rgb(255, 145, 0)",58
+<<<<<<< HEAD
 "Dutch (Nederlands, Vlaams)",nl,rood,rood,"rgb(255, 0, 41)",52
 "Dutch (Nederlands, Vlaams)",nl,roze,roze,"rgb(255, 0, 171)",38
 "Dutch (Nederlands, Vlaams)",nl,geel,geel,"rgb(255, 242, 0)",33
@@ -538,6 +943,22 @@ Vietnamese (Tiếng Việt),vi,xanhduong,xanh duơng,"rgb(0, 128, 255)",38
 Vietnamese (Tiếng Việt),vi,vang,vàng,"rgb(255, 233, 0)",33
 Vietnamese (Tiếng Việt),vi,tim,tím,"rgb(173, 0, 255)",32
 Vietnamese (Tiếng Việt),vi,xanhdatroi,xanh da trời,"rgb(0, 193, 255)",27
+=======
+"Dutch (Nederlands, Vlaams)",nl,rood,rood,"rgb(255, 0, 44)",52
+"Dutch (Nederlands, Vlaams)",nl,roze,roze,"rgb(255, 0, 169)",38
+"Dutch (Nederlands, Vlaams)",nl,geel,geel,"rgb(255, 243, 0)",33
+"Dutch (Nederlands, Vlaams)",nl,lichtblauw,lichtblauw,"rgb(0, 216, 255)",30
+"Dutch (Nederlands, Vlaams)",nl,donkerblauw,donkerblauw,"rgb(0, 43, 255)",25
+"Dutch (Nederlands, Vlaams)",nl,turquoise,turquoise,"rgb(0, 255, 255)",17
+"Dutch (Nederlands, Vlaams)",nl,lichtgroen,lichtgroen,"rgb(0, 255, 63)",16
+"Dutch (Nederlands, Vlaams)",nl,magenta,magenta,"rgb(255, 0, 210)",13
+"Dutch (Nederlands, Vlaams)",nl,donkerroze,donkerroze,"rgb(255, 0, 154)",8
+Vietnamese (Tiếng Việt),vi,hong,hồng,"rgb(255, 0, 185)",48
+Vietnamese (Tiếng Việt),vi,xanhduong,xanh dương,"rgb(0, 123, 255)",38
+Vietnamese (Tiếng Việt),vi,vang,vàng,"rgb(255, 234, 0)",33
+Vietnamese (Tiếng Việt),vi,tim,tím,"rgb(177, 0, 255)",32
+Vietnamese (Tiếng Việt),vi,xanhdatroi,xanh da trời,"rgb(0, 192, 255)",27
+>>>>>>> origin/master
 Vietnamese (Tiếng Việt),vi,cam,cam,"rgb(255, 124, 0)",26
 Vietnamese (Tiếng Việt),vi,đo,đỏ,"rgb(255, 0, 43)",25
 Vietnamese (Tiếng Việt),vi,xanhngoc,xanh ngọc,"rgb(0, 255, 243)",24
@@ -619,6 +1040,7 @@ Lithuanian (lietuvių kalba),lt,zalsva,žalsva,"rgb(0, 255, 162)",16
 Lithuanian (lietuvių kalba),lt,purpurine,purpurinė,"rgb(255, 0, 176)",13
 Catalan (català),ca,blau,blau,"rgb(0, 145, 255)",46
 Catalan (català),ca,taronja,taronja,"rgb(255, 132, 0)",27
+<<<<<<< HEAD
 Catalan (català),ca,groc,groc,"rgb(255, 235, 0)",27
 Catalan (català),ca,verd,verd,"rgb(0, 255, 74)",26
 Catalan (català),ca,vermell,vermell,"rgb(255, 0, 23)",22
@@ -632,3 +1054,18 @@ Catalan (català),ca,blaumari,blau mari,"rgb(0, 57, 255)",10
 Catalan (català),ca,turquesa,turquesa,"rgb(0, 255, 237)",10
 Catalan (català),ca,blaufosc,blau fosc,"rgb(0, 82, 255)",10
 Catalan (català),ca,blauclar,blau clar,"rgb(0, 203, 255)",9
+=======
+Catalan (català),ca,groc,groc,"rgb(255, 236, 0)",27
+Catalan (català),ca,verd,verd,"rgb(0, 255, 75)",26
+Catalan (català),ca,vermell,vermell,"rgb(255, 0, 34)",22
+Catalan (català),ca,blaucel,blau cel,"rgb(0, 199, 255)",21
+Catalan (català),ca,fucsia,fucsia,"rgb(255, 0, 176)",17
+Catalan (català),ca,lila,lila,"rgb(178, 0, 255)",17
+Catalan (català),ca,rosa,rosa,"rgb(255, 0, 168)",17
+Catalan (català),ca,verdllima,verd llima,"rgb(0, 255, 19)",13
+Catalan (català),ca,magenta,magenta,"rgb(255, 0, 158)",12
+Catalan (català),ca,blaumari,blau marí,"rgb(0, 56, 255)",10
+Catalan (català),ca,turquesa,turquesa,"rgb(0, 255, 232)",10
+Catalan (català),ca,blaufosc,blau fosc,"rgb(0, 79, 255)",10
+Catalan (català),ca,blauclar,blau clar,"rgb(0, 202, 255)",9
+>>>>>>> origin/master

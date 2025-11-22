@@ -50,7 +50,9 @@ csv().fromFile(FILE_I)
       lang.numFullNames += term.numFullNames
 
       term.simplifiedName = term.key;
-      term.commonName = d3.groups(term.values,t => t.standardized_entered_name)
+      term.commonName = d3.groups(
+        lang.values.filter(v => v.name == term.key)
+        ,t => t.standardized_entered_name)
         .map(a => {return {key: a[0], values: a[1]}})
         .sort((a,b) => -a.values.length + b.values.length)[0].key;
     })
