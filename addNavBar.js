@@ -28,9 +28,9 @@ $( document ).ready(function() {
 	         Visualizations
 	        </a>
 	        <ul class="dropdown-menu">
-	          <li><a class="dropdown-item" href="${visPath}color_translator.html"><img src="imgs/translator-tiny.png" style="max-height:20px; max-width:50px" /> Color Translator</a></li>
-	          <li><a class="dropdown-item" href="${visPath}stacked-spectrum.html"><img src="imgs/hue-tiny.png" style="max-height:20px; max-width:50px" /> Hue Color Comparisons</a></li>
-	          <li><a class="dropdown-item" href="${visPath}full_color_maps.html"><img src="imgs/full-color-tiny.png" style="max-height:20px; max-width:50px" /> Full Color Maps</a></li>
+	          <li><a class="dropdown-item" href="${visPath}color_translator.html"><img src="${visPath}imgs/translator-tiny.png" style="max-height:20px; max-width:50px" /> Color Translator</a></li>
+	          <li><a class="dropdown-item" href="${visPath}stacked-spectrum.html"><img src="${visPath}imgs/hue-tiny.png" style="max-height:20px; max-width:50px" /> Hue Color Comparisons</a></li>
+	          <li><a class="dropdown-item" href="${visPath}full_color_maps.html"><img src="${visPath}imgs/full-color-tiny.png" style="max-height:20px; max-width:50px" /> Full Color Maps</a></li>
 	          <li><a class="dropdown-item" href="${visPath}en-ko-translation-comparison.html">Korean-English Translation Comparison</a></li>
 	          <li><a class="dropdown-item" href="${visPath}viridis.html">Korean-English Viridis Color Spectrum</a></li>
 			  <li><a class="dropdown-item" href="${visPath}color-name-summaries.html">Color Name Summaries</a></li>
