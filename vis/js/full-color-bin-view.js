@@ -316,7 +316,7 @@ class FullColorBinView {
         
         // TODO: remove the fallback values when I fix the other calculations
         const tileSizeInBins = 1
-        const tileBorderSizeInBins = 1/5
+        const tileBorderSizeInBins = 1/10
         const tileSize = tileSizeInBins * displayWidth / this.display_offsets.x_width_in_bins
         const tileBorderSize = tileBorderSizeInBins* tileSize
 
@@ -328,26 +328,18 @@ class FullColorBinView {
                 .data(Object.entries(thisView.display_offsets.x_offsets_in_bins))
                 .join("line")
                     .attr("class", "level-outline")
-                    .attr("x1", (d) => 
-                        tileSize*
-                        (d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + 0.5 + thisView.TILE_SEGMENT_MARGIN_NUM / 2 )
-
-                    )
-                    .attr("y1", (d) => tileSize * 
-                        (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_max_bin"] )
-                    )
-                    .attr("x2", (d) => 
-                        tileSize*
-                        (d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + 0.5 + thisView.TILE_SEGMENT_MARGIN_NUM / 2)
-                    )
-                    .attr("y2", (d)=> 
-                        tileSize * 
-                        // TODO: I don't know why I have to add one to make it line up
-                        (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_min_bin"]  + 1)  )
+                    .attr("x1", (d) => tileSize*(d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + 0.5 + thisView.TILE_SEGMENT_MARGIN_NUM / 2 ))
+                    .attr("y1", (d) => tileSize *  (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_max_bin"] ))
+                    .attr("x2", (d) => tileSize*(d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + 0.5 + thisView.TILE_SEGMENT_MARGIN_NUM / 2))
+                    // TODO: I don't know why I have to add one to y2 make it line up
+                    .attr("y2", (d)=> tileSize * (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_min_bin"]  + 1)  )
                     .style("stroke", "oklch(70% 0 0 / .5)")
                     .style("stroke-width", 2)
-                    .style("display", (d) => 
-                        d[0] ==  ""+thisView[thisView.split_dim+"_max_bin"] ? "none" : "") 
+                    .style("display", (d) => d[0] ==  ""+thisView[thisView.split_dim+"_max_bin"] ? "none" : "") 
+        } else {
+            parentElement.selectAll(".level-outline")
+                .data([])
+                .join("line")
         }
 
         const areRingArcs = [this.x_dim, this.y_dim].includes("a") && [dim1, dim2, dim3].includes("h")
@@ -384,8 +376,8 @@ class FullColorBinView {
                     const bin = thisView.getBinInfo(d)
                     return getTileColor(d, bin)
                 })
-                .attr("height", d => tileSize * getTileScale(d))
-                .attr("width", d => tileSize * getTileScale(d))
+                .attr("height", d => tileSize * getTileScale(d) - tileBorderSize)
+                .attr("width", d => tileSize * getTileScale(d) - tileBorderSize)
                 .attr("title", (d) => {
                     const bin = thisView.getBinInfo(d)
                     if("getTileTitleText" in options){
@@ -472,41 +464,24 @@ class FullColorBinView {
                     .data(binsToDisplay.filter(d => !(("binC" in d && d.binC == 0) || d.c_bin == 0)))
                     .join("path")
                     .attr("class", "arc-tile")
-                    .style("stroke", d => {
-                        const bin = thisView.getBinInfo(d)
-                        return getTileColor(d, bin)
-                    })
+                    .style("stroke", d => 
+                        options.no_border ? getTileColor(d, thisView.getBinInfo(d))
+                        :
+                        backgroundColor
+                    )
                     .attr("d", d => {
-                        const bin = thisView.getBinInfo(d)
-                        const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]] 
-                        const levelCenterY =   tileSize* this.display_offsets.y_offset_in_bins
-                        const binRadius = bin.c_center/thisView.bin_size.c*tileSize * thisView.bin_size.c_ring_width_ratio
-
-                        const halfAngle = (bin.h_max - bin.h_center) 
-                        const angleMargin = 0.5 * tileBorderSizeInBins * 360 / (2 * Math.PI * (bin.c_center * thisView.bin_size.c_ring_width_ratio / thisView.bin_size.c))
-                        const halfAngleWithMargin = halfAngle - angleMargin
-                        const halfAngleScaled = getTileScale(d) * halfAngleWithMargin
-                        const endAngleMargin = (bin.h_center - halfAngleScaled)
-                        const startAngleMargin = (bin.h_center + halfAngleScaled)
-                            
-                        const binStartDeltaX = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
-                        const binStartX = levelCenterX + binStartDeltaX
-                        const binEndDeltaX = binRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
-                        const binEndX = levelCenterX  + binEndDeltaX
-                        const binStartDeltaY = binRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI)
-                        const binStartY = levelCenterY - binStartDeltaY // minus to correct for display y axis has + go down
-                        const binEndDeltaY = binRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)  
-                        const binEndY = levelCenterY - binEndDeltaY
-
-                        return `
-                        M ${binStartX} ${binStartY} 
-                        A ${binRadius} ${binRadius} 0 0 1 ${binEndX} ${binEndY}
-                        `
+                        return options.no_border ?
+                        getArcPath(d, thisView, tileSize, tileBorderSizeInBins, getTileScale)
+                        :
+                        getArcPathArea(d, thisView, tileSize, tileBorderSizeInBins, getTileScale)
                     }) // A rx ry x-axis-rotation large-arc-flag sweep-flag x y
                     .style("stroke-width", (d) => 
-                        getTileScale(d)* tileSize * (thisView.bin_size.c_ring_width_ratio - tileBorderSizeInBins) 
+                        options.no_border ? 
+                            getTileScale(d)* tileSize * (thisView.bin_size.c_ring_width_ratio - tileBorderSizeInBins) 
+                        :
+                            tileBorderSize/2
                     )
-                    .attr("fill", "rgba(0,0,0,0)")
+                    .attr("fill", (d) => options.no_border ? "rgba(0,0,0,0)" : getTileColor(d, thisView.getBinInfo(d)) )
                     .attr("title", (d) => {
                         const bin = thisView.getBinInfo(d)
                         if("getTileTitleText" in options){
@@ -535,6 +510,79 @@ class FullColorBinView {
                 }
             }
     }
+}
+
+
+function getArcPath(d, thisView, tileSize, tileBorderSizeInBins, getTileScale){
+    const bin = thisView.getBinInfo(d)
+    const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]] 
+    const levelCenterY =   tileSize* thisView.display_offsets.y_offset_in_bins
+    const binRadius = bin.c_center/thisView.bin_size.c*tileSize * thisView.bin_size.c_ring_width_ratio
+
+    const halfAngle = (bin.h_max - bin.h_center) 
+    const angleMargin = 0.5 * tileBorderSizeInBins * 360 / (2 * Math.PI * (bin.c_center * thisView.bin_size.c_ring_width_ratio / thisView.bin_size.c))
+    const halfAngleWithMargin = halfAngle - angleMargin
+    const halfAngleScaled = getTileScale(d) * halfAngleWithMargin
+    const endAngleMargin = (bin.h_center - halfAngleScaled)
+    const startAngleMargin = (bin.h_center + halfAngleScaled)
+        
+    const binStartDeltaX = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
+    const binStartX = levelCenterX + binStartDeltaX
+    const binEndDeltaX = binRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
+    const binEndX = levelCenterX  + binEndDeltaX
+    const binStartDeltaY = binRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI)
+    const binStartY = levelCenterY - binStartDeltaY // minus to correct for display y axis has + go down
+    const binEndDeltaY = binRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)  
+    const binEndY = levelCenterY - binEndDeltaY
+
+    return `
+    M ${binStartX} ${binStartY} 
+    A ${binRadius} ${binRadius} 0 0 1 ${binEndX} ${binEndY}
+    `
+}
+
+function getArcPathArea(d, thisView, tileSize, tileBorderSizeInBins, getTileScale){
+    const bin = thisView.getBinInfo(d)
+    const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]] 
+    const levelCenterY =   tileSize* thisView.display_offsets.y_offset_in_bins
+    // const binInnerRadius = bin.c_min/thisView.bin_size.c*tileSize * thisView.bin_size.c_ring_width_ratio
+    // const binOuterRadius = bin.c_max/thisView.bin_size.c*tileSize * thisView.bin_size.c_ring_width_ratio
+
+
+    const binCenterRadius = bin.c_center/thisView.bin_size.c*tileSize * thisView.bin_size.c_ring_width_ratio
+
+    
+    const binRadialWidth = getTileScale(d) * getTileScale(d)* tileSize * (thisView.bin_size.c_ring_width_ratio - tileBorderSizeInBins)
+    
+    const binInnerRadius = binCenterRadius - binRadialWidth / 2
+    const binOuterRadius = binCenterRadius + binRadialWidth / 2
+
+    const halfAngle = (bin.h_max - bin.h_center) 
+    const angleMargin = 0.5 * tileBorderSizeInBins * 360 / (2 * Math.PI * (bin.c_center * thisView.bin_size.c_ring_width_ratio / thisView.bin_size.c))
+    const halfAngleWithMargin = halfAngle - angleMargin
+    const halfAngleScaled = getTileScale(d) * halfAngleWithMargin
+    const endAngleMargin = (bin.h_center - halfAngleScaled)
+    const startAngleMargin = (bin.h_center + halfAngleScaled)
+        
+
+    const binInnerStartX = levelCenterX + binInnerRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
+    const binInnerEndX = levelCenterX + binInnerRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
+    const binInnerStartY = levelCenterY - binInnerRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI)
+    const binInnerEndY = levelCenterY - binInnerRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)  
+
+    const binOuterStartX = levelCenterX + binOuterRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
+    const binOuterEndX = levelCenterX + binOuterRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
+    const binOuterStartY = levelCenterY - binOuterRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI)
+    const binOuterEndY = levelCenterY - binOuterRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI) 
+
+    // do inner startX, startY -> inn
+    return `
+    M ${binInnerStartX} ${binInnerStartY} 
+    A ${binInnerRadius} ${binInnerRadius} 0 0 1 ${binInnerEndX} ${binInnerEndY}
+    L ${binOuterEndX} ${binOuterEndY}
+    A ${binOuterRadius} ${binOuterRadius} 0 0 0 ${binOuterStartX} ${binOuterStartY}
+    L ${binInnerStartX} ${binInnerStartY}
+    `
 }
 
 

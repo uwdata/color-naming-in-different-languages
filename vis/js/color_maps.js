@@ -545,6 +545,7 @@ function createOrRefreshLang(i){
     binView.createOrUpdateColorTiles(svg, {
       backgroundColor: backgroundColor,
       binsToDisplay: sal,
+      outline_levels: !(curr_bin_size.displayLABArcs || "ab" in curr_bin_size),
       getTileScale: getTileScale,
       getTileColor: getTileColor,
       getTileTitleText: getTileTitleText,
