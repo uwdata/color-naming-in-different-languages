@@ -367,13 +367,13 @@ function updateTranslation(){
 		//window.location.hash = urlParams.toString().replace("?", "");
 
 		$("#results").append(generateColorInfoString(matchedName,  allColorInfo[currentEndLangAbrv][matchedName], currentEndLangAbrv, termLink));
-		// convert distance to JND (LAB 2.3) -  SHARMA G.: Digital Color Imaging Handbook. CRC press,2002
-		const JNDs = matchedTranslations[i].dist / 2.3
+		// convert distance to 0.02 (expected Just noticeable distance in oklab)
+		const JNDs = matchedTranslations[i].dist / 0.02
 
 		const roundedJNDs = JNDs.toPrecision(3)
 
 		$("#results").append(`<small>Estimated<span 
-					title='Noticeable Difference is calculated as the name-color distribution distance in LAB color space, and then adjusts by the estimated "Just Noticeable Difference" value of 2.3 LAB distance (SHARMA G.: Digital Color Imaging Handbook. CRC press, 2002)'>*</span>
+					title='Noticeable Difference is calculated as the name-color distribution distance in Oklab color space, where "Just Noticeable Difference" is expected to be 0.02'>*</span>
 					Noticeable Difference: 
 			 ${roundedJNDs}</small><br><br>`);
 	}
@@ -437,7 +437,7 @@ function generateColorInfoString(name, colorInfo, langAbv, termLink){
 	str += "<div style='clear:both'>";
 
 	str += `This name represents ${(colorInfo.totalColorFraction*100).toPrecision(2)}% of color names in this language.<span 
-					title='This name was entered ${colorInfo.numFullData} times when we showed colors from the whole color spectrum, and was entered ${colorInfo.numLineData} times when we only showed colors from the full hue color line.'>*</span><br>`;
+					title='This name was entered ${colorInfo.numRecords.toLocaleString()} times when we showed colors from the whole color spectrum'>*</span><br>`;
 	if(name == "skin" || name == "flesh" || name == "nude"){
 		str += "<small>Note: We represent the color labels provided by the participants in our study, which includes whatever racial biases they have. This is not meant to be a prescriptive definition of what colors  fit what labels.</small><br>"
 	} else if(langAbv == "en" && name == "fuchsia" && colorInfo.commonColorName != "fuchsia"){

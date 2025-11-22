@@ -388,6 +388,9 @@ class FullColorBinView {
                 .attr("width", d => tileSize * getTileScale(d))
                 .attr("title", (d) => {
                     const bin = thisView.getBinInfo(d)
+                    if("getTileTitleText" in options){
+                        return options.getTileTitleText(d, bin)
+                    }
                     let info = `
                     ${thisView.bin_size.type == "ring" ?
                         `Bin Center (l, c, h): ${Math.round(bin.center_lch.l *10000, 1)/10000}, ${Math.round(bin.center_lch.c*10000, 1)/10000}, ${Math.round(bin.center_lch.h*10000, 1)/10000}` 
@@ -438,6 +441,9 @@ class FullColorBinView {
                     })
                     .attr("title", (d) => {
                         const bin = thisView.getBinInfo(d)
+                        if("getTileTitleText" in options){
+                            return options.getTileTitleText(d, bin)
+                        }
                         let info = `
                         Bin Center (l, c, h): ${Math.round(bin.center_lch.l *10000, 1)/10000}, ${Math.round(bin.center_lch.c*10000, 1)/10000}, ${Math.round(bin.center_lch.h*10000, 1)/10000}
                         Bin Center (l, a, b): ${Math.round(bin.center_lab.l *10000, 1)/10000}, ${Math.round(bin.center_lab.a*10000, 1)/10000}, ${Math.round(bin.center_lab.b*10000, 1)/10000}
@@ -503,6 +509,9 @@ class FullColorBinView {
                     .attr("fill", "rgba(0,0,0,0)")
                     .attr("title", (d) => {
                         const bin = thisView.getBinInfo(d)
+                        if("getTileTitleText" in options){
+                            return options.getTileTitleText(d, bin)
+                        }
                         let info = `
                         Bin Center (l, c, h): ${Math.round(bin.center_lch.l *10000, 1)/10000}, ${Math.round(bin.center_lch.c*10000, 1)/10000}, ${Math.round(bin.center_lch.h*10000, 1)/10000}
                         Bin Center (l, a, b): ${Math.round(bin.center_lab.l *10000, 1)/10000}, ${Math.round(bin.center_lab.a*10000, 1)/10000}, ${Math.round(bin.center_lab.b*10000, 1)/10000}

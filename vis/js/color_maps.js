@@ -547,6 +547,7 @@ function createOrRefreshLang(i){
       binsToDisplay: sal,
       getTileScale: getTileScale,
       getTileColor: getTileColor,
+      getTileTitleText: getTileTitleText,
       mouseover: (event, d) => {
         if(curr_bin_size in lang_color_selections && curr_blur in lang_color_selections[curr_bin_size]){
           const selection = lang_color_selections[curr_bin_size][curr_blur][i]
@@ -603,33 +604,33 @@ function createOrRefreshLang(i){
     })
 }
 
-//       .attr("title", (d) => {
-//         const [l,a,b] = "binA" in d ?
-//           [d.binL, d.binA, d.binB]
-//           :
-//           [d.binL, d.binC, d.binH]
-//         const bin_info = lab_bins[curr_bin_size][l][a][b]
-//         let info = `
-//           ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
-//           Bin Center (l, a, b): ${Math.round(bin_info.l_center *100, 1)/100}, ${Math.round(bin_info.a_center*100, 1)/100}, ${Math.round(bin_info.b_center*100, 1)/100}
-//           Bin Center (r, g, b): ${Math.round(bin_info.center_rgb.r, 1)}, ${Math.round(bin_info.center_rgb.g, 1)}, ${Math.round(bin_info.center_rgb.b, 1)}
-//           ${("representative_rgb" in bin_info)
-//               ?
-//               `Example RGB in tile (r, g, b): ${Math.round(bin_info.representative_rgb.r, 1)}, ${Math.round(bin_info.representative_rgb.g, 1)}, ${Math.round(bin_info.representative_rgb.b, 1)}` 
-//               : ""
-//           }`.trim()
-//           //          Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
-//         if(additional_tooltip_info && d.lang != ALL_COLOR_NAME){
-//           info = `${info}
-//           Saliency: ${(-d.saliency).toPrecision(3)}
-//           Top Terms:`
-//           for(const topTerm of d.topTerms){
-//             const topTermPerc = topTerm.pTC != 1 ? (100*topTerm.pTC).toPrecision(2) : 100
-//             info+="\n  - " + topTerm.commonTerm + " (" + topTermPerc + "%)"
-//           }
-//         }
-//         return info
-//       })
+function getTileTitleText(d, bin){
+  let lchVal = ""
+  if("c_center" in bin){
+    lchVal = `Bin Center (l, h, c): ${bin.l_center.toPrecision(3)/1}, ${bin.h_center.toPrecision(3)/1}, ${bin.c_center.toPrecision(3)/1}
+    `
+  }
+  let info = `
+    ${d.commonTerm ? `Max Prob. Term: ${d.commonTerm}` : ""}
+    ${lchVal}Bin Center (l, a, b): ${bin.center_lab.l.toPrecision(3)/1}, ${bin.center_lab.a.toPrecision(3)/1}, ${bin.center_lab.b.toPrecision(3)/1}
+    Bin Center (r, g, b): ${Math.round(bin.center_rgb.r, 1)}, ${Math.round(bin.center_rgb.g, 1)}, ${Math.round(bin.center_rgb.b, 1)}
+    ${("representative_rgb" in bin)
+        ?
+        `Example RGB in tile (r, g, b): ${Math.round(bin.representative_rgb.r, 1)}, ${Math.round(bin.representative_rgb.g, 1)}, ${Math.round(bin.representative_rgb.b, 1)}` 
+        : ""
+    }`.trim()
+    //          Bin fraction valid rgb: ${bin_info.valid_rgb_ratio}
+  if(additional_tooltip_info){
+    info = `${info}
+    Saliency: ${(-d.saliency).toPrecision(3)}
+    Top Terms:`
+    for(const topTerm of d.topTerms){
+      const topTermPerc = topTerm.pTC != 1 ? (100*topTerm.pTC).toPrecision(2) : 100
+      info+="\n  - " + topTerm.commonTerm + " (" + topTermPerc + "%)"
+    }
+  }
+  return info
+}
 
 
 const tileMaxSizeMultiplier = 1.7
