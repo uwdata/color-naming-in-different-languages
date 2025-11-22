@@ -316,7 +316,7 @@ class FullColorBinView {
         
         // TODO: remove the fallback values when I fix the other calculations
         const tileSizeInBins = 1
-        const tileBorderSizeInBins = 1/10
+        const tileBorderSizeInBins = 1/8
         const tileSize = tileSizeInBins * displayWidth / this.display_offsets.x_width_in_bins
         const tileBorderSize = tileBorderSizeInBins* tileSize
 
@@ -359,7 +359,7 @@ class FullColorBinView {
                 .join("rect")
                 .attr("class", "tile")
                 .style("stroke", options.no_border ? "" : backgroundColor)
-                .style("stroke-width", d => options.no_border ? "" :  tileBorderSize)
+                .style("stroke-width", d => options.no_border ? "" :  tileBorderSize/2)
                 .attr("x", (d) => {
                     const bin = thisView.getBinInfo(d)
                     const x =  tileSize * 
@@ -376,8 +376,8 @@ class FullColorBinView {
                     const bin = thisView.getBinInfo(d)
                     return getTileColor(d, bin)
                 })
-                .attr("height", d => tileSize * getTileScale(d) - tileBorderSize)
-                .attr("width", d => tileSize * getTileScale(d) - tileBorderSize)
+                .attr("height", d => (tileSize - tileBorderSize) * getTileScale(d))
+                .attr("width", d => (tileSize - tileBorderSize) * getTileScale(d))
                 .attr("title", (d) => {
                     const bin = thisView.getBinInfo(d)
                     if("getTileTitleText" in options){

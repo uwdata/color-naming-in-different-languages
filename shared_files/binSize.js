@@ -10,11 +10,13 @@ class BinSize {
       this.ab = this.l
       this.abv = this.l.toPrecision(2) / 1
       this.dims = ["l", "a", "b"]
-      this.display_name = `Oklab Cubes: l: ${this.l.toPrecision(2) / 1} x a: ${this.ab.toPrecision(2) / 1} x b: ${this.ab.toPrecision(2) / 1}`
+      this.display_category ="Oklab Cubes",
+      this.display_name = `${this.display_category}: l: ${this.l.toPrecision(2) / 1} x a: ${this.ab.toPrecision(2) / 1} x b: ${this.ab.toPrecision(2) / 1}`
     } else if(this.type == "box") {
       this.ab = options.ab;
       this.abv = this.l.toPrecision(2) / 1 + "_" + this.ab.toPrecision(2) / 1
-      this.display_name = `Oklab Boxes: l: ${this.l.toPrecision(2) / 1} x a: ${this.ab.toPrecision(2) / 1} x b: ${this.ab.toPrecision(2) / 1}`
+      this.display_category ="Oklab Boxes",
+      this.display_name = `${this.display_category}: l: ${this.l.toPrecision(2) / 1} x a: ${this.ab.toPrecision(2) / 1} x b: ${this.ab.toPrecision(2) / 1}`
       this.dims = ["l", "a", "b"]
     } else if(this.type == "ring") {
       if("h_divs" in options && options.h_divs == 3){
@@ -44,7 +46,8 @@ class BinSize {
       
       this.abv = "ring_" + (this.l.toPrecision(2) / 1) + c_abv + "_h" +this.h_divs
 
-      this.display_name = `Oklch Rings: l: ${this.l.toPrecision(2) / 1} x c: ${this.c.toPrecision(2) / 1} x h-initial: ${this.h_divs.toPrecision(2) / 1}`
+      this.display_category ="Oklch Arcs",
+      this.display_name = `${this.display_category}: l: ${this.l.toPrecision(2) / 1} x c: ${this.c.toPrecision(2) / 1} x h-initial: ${this.h_divs.toPrecision(2) / 1}`
 
       
       this.dims = ["l", "c", "h"]

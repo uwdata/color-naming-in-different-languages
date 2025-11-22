@@ -58,46 +58,55 @@ const LAB_BIN_SIZES = [
     type: "ring",
     l: 1/10, h_divs: 8,
     simpleName: "LCH Bins: Low-res",
+    altDisplayCategory: "LCH Bins",
   }), 
   new BinSize({
     type: "ring",
     l: 1/20, h_divs: 8,
     simpleName: "LCH Bins: Medium-res",
+    altDisplayCategory: "LCH Bins",
   }), 
   new BinSize({
     type: "ring",
     l: 1/40, h_divs: 8,
     simpleName: "LCH Bins: High-res",
+    altDisplayCategory: "LCH Bins",
   }),
   new BinSize({
     type: "ring",
     l: 1/10, h_divs: 3,
     defaultHidden: true,
+    altDisplayCategory: "LCH Bins - h3",
   }), 
   new BinSize({
     type: "ring",
     l: 1/20, h_divs: 3,
     defaultHidden: true,
+    altDisplayCategory: "LCH Bins - h3",
   }), 
   new BinSize({
     type: "ring",
     l: 1/40, h_divs: 3,
     defaultHidden: true,
+    altDisplayCategory: "LCH Bins - h3",
   }),
   new BinSize({
     type: "ring",
     l: 1/5, c: 1/40, h_divs: 3,
     defaultHidden: true,
+    altDisplayCategory: "LCH Bins - h3",
   }),
   new BinSize({
     type: "ring",
     l: 1/10, c: 1/80, h_divs: 3,
     defaultHidden: true,
+    altDisplayCategory: "LCH Bins - h3",
   }),
   new BinSize({
     type: "ring",
     l: 1/15, c: 1/120,  h_divs: 3,
     defaultHidden: true,
+    altDisplayCategory: "LCH Bins - h3",
   }),
 ]
 
@@ -251,7 +260,7 @@ function process_saliency_bin_data(saliency_data, bin_size, blur){
 /*************** Tracking the current display options *******************/
 const currSvgSize = [{}]
 let curr_blur = BLUR
-let curr_bin_size = LAB_BIN_SIZES[1] 
+let curr_bin_size = LAB_BIN_SIZES.find(s => s.simpleName == "LCH Arcs: Medium-res")
 let backgroundColor = 'white'
 let tile_size_type = 'ptc'
 let bin_size_by = "area"
@@ -260,15 +269,28 @@ let additional_tooltip_info = false
 function setBinOptions(){
   const additional_bins_info = $("#additional_bins").is(':checked')
   $("#bin_size").empty()
+  let optHtmlStr = ""
+  let lastCategory = ""
   for(let bin_size of LAB_BIN_SIZES){
     if(!bin_size.defaultHidden || additional_bins_info){
-      $("#bin_size").append(
+      const thisCategory = "altDisplayCategory" in bin_size ? bin_size.altDisplayCategory : bin_size.display_category
+      if(thisCategory !== lastCategory){
+        if(lastCategory !== ""){
+          optHtmlStr += "</optgroup>"
+        }
+        optHtmlStr += `<optgroup label="${thisCategory}">`
+        lastCategory = thisCategory
+      }
+      optHtmlStr +=
         `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
           ${bin_size.simpleName ? bin_size.simpleName : bin_size.display_name}
         </option>`
-      )
     }
   }
+  if(lastCategory !== ""){
+    optHtmlStr += "</optgroup>"
+  }
+  $("#bin_size").append(optHtmlStr)
 }
 
 /*************** Load page and Data *********************/
