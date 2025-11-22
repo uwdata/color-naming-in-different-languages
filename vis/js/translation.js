@@ -303,8 +303,8 @@ function draw(translations, fullColorDetails){
     // let jndColor = "#E45756";
     let jndColor = "#333";
     let jnds = [
-      {"lang_t": "ko", "dist": 2.3},
-      {"lang_t": "en", "dist": 2.3}
+      {"lang_t": "ko", "dist": 0.02},
+      {"lang_t": "en", "dist": 0.02}
     ];
     let xPos = jnd => {
       return barX(jnd) + (jnd.lang_t === "ko" ? barWidth(jnd.dist) : 0);
