@@ -152,13 +152,27 @@ let backgroundColor = 'white'
 
 /*************** Load page and Data *********************/
 $(document).on('ready page:load', function () {
+  $("#bin_size").empty()
+  let optHtmlStr = ""
+  let lastCategory = ""
   for(let bin_size of LAB_BIN_SIZES){
-    $("#bin_size").append(
-      `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-        ${bin_size.display_name}
-      </option>`
-    )
+      const thisCategory = "altDisplayCategory" in bin_size ? bin_size.altDisplayCategory : bin_size.display_category
+      if(thisCategory !== lastCategory){
+        if(lastCategory !== ""){
+          optHtmlStr += "</optgroup>"
+        }
+        optHtmlStr += `<optgroup label="${thisCategory}">`
+        lastCategory = thisCategory
+      }
+      optHtmlStr +=
+        `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
+          ${bin_size.simpleName ? bin_size.simpleName : bin_size.display_name}
+        </option>`
   }
+  if(lastCategory !== ""){
+    optHtmlStr += "</optgroup>"
+  }
+  $("#bin_size").append(optHtmlStr)
 
   /********* jquery event listeners */
 
@@ -186,6 +200,15 @@ function updateDisplay(){
   curr_bin_size = $("#bin_size").val()
 
   curr_bin_size = LAB_BIN_SIZES.find((bin) => bin.abv == curr_bin_size)
+
+  d3.select("#main")
+    .selectAll("#bin-description")
+    .data([curr_bin_size])
+    .join("p")
+    .attr("id", "bin-description")
+    .html((bin_size) => bin_size.simpleName ? 
+      `<strong>${bin_size.simpleName}</strong> <br> ${bin_size.display_name}` : 
+      `<strong>${bin_size.display_name}</strong>`)
 
   if(!(curr_bin_size in labBinViews)){
     d3.select("#main")

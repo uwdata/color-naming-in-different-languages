@@ -67,12 +67,11 @@
         https://commons.wikimedia.org/wiki/File:Bt.2020_RGB_color_cube.png -->
         <img src="imgs/Bt.2020_RGB_color_cube.png" />
       </p>
-      <p>Each tile represents a uniform cube bin in <a href="https://en.wikipedia.org/wiki/CIELAB_color_space" target="_blank">LAB color space</a>. The size of each tile is proportional to the level of agreement on a color name for all colors in that bin.</p>
+      <p>Each tile represents a equal volume bin in the perceptually uniform <a href="https://en.wikipedia.org/wiki/Oklab_color_space" target="_blank">Oklab / Oklch color spaces</a>. The bins shown are all bins that contain any HDR high-gamut P3 or Rec. 2020 colors.</p>
 
       <div id="controllers">
         <div class="form-check form-check-inline"> 
           <label class="form-label" for="background-brightness">Background Brightness 
-              <span title='Note: When users labeled color tiles, the tiles had a thin black border against a white background, which may bias answers. They were perhaps more likely to label a color "black" and less likely to label a color "white."'>*</span>
           </label>
           <input class="" type="range" id="background-brightness" name="background-brightness" min="0" max="100" value="100" />
         </div>
