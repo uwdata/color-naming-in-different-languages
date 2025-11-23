@@ -472,12 +472,28 @@ function createOrRefreshLang(i){
   let svg = d3.select("#lang"+i+" svg")
 
   if(svg.empty()){
-
-    // first add the color name dropdown:
+    $("#lang"+i).append(`<div class="container text-center" style="margin-top:10px;">
+      <div class="row row-cols-auto lang-header"></div>
+    </div>`)
+    let langLabel = "All Color Bins (Reference)"
     if(i != -1){
       const language_stat = language_stats[curr_bin_size][curr_blur][i]
-      $("#lang"+i).append(`
-        <div class="form-check form-check-inline justify-content-center small" style="width:100%;margin-top:10px;"> 
+      langLabel = language_stat.lang
+    }
+
+
+    // first add the language label
+    $("#lang"+i + " .lang-header").append(`
+        <div class="col">
+          <strong class="lang-label">${langLabel}</strong> 
+        </div>
+        `)
+
+    // then add the color name dropdown:
+    if(i != -1){
+      const language_stat = language_stats[curr_bin_size][curr_blur][i]
+      $("#lang"+i + " .lang-header").append(`
+        <div class="form-check form-check-inline justify-content-center small col"> 
           <label class="form-label" for="selected_color_${i}" style="margin-bottom: 0px">Selected Color</label>
           <select class="form-select" type="checkbox" name="metric" id="selected_color_${i}" value="selected_color_${i}" style="width:150px">
           ${color_names_by_lang[curr_bin_size][curr_blur][language_stat.lang].map((colorInfo) =>{
@@ -522,14 +538,18 @@ function createOrRefreshLang(i){
     }
 
     svg = d3.select("#lang"+i).append("svg")
-
-
   }
 
   svg.attr("width", currSvgSize[0].width)
     .attr("height", currSvgSize[0].height)
  
-
+  // change color of lang label
+  let labelColor = "black"
+  if(d3.lab(d3.color(backgroundColor)).l < 50){
+    labelColor = "white"
+  }
+  $("#lang"+i + " .lang-label").css("color", labelColor)
+  $("#lang"+i + " .form-label").css("color", labelColor)
 
   if(i != -1){
     // make sure selection in dropdown is up to date:
@@ -548,35 +568,37 @@ function createOrRefreshLang(i){
 
   for(const [thisBin_i, thisBinView] of binViews.entries()){
     let textBackground = svg.select(".text-background"+thisBin_i)
-    let langText = svg.select(".lang-text"+thisBin_i)
+    let binSetText = svg.select(".bin-text"+thisBin_i)
 
-    if(langText.empty()){
+    if(binSetText.empty()){
       textBackground = svg.append("rect")
         .attr("class", "text-background"+thisBin_i)
     
-      langText = svg.append("text")
-        .attr("class", "lang-text"+thisBin_i)
+      binSetText = svg.append("text")
+        .attr("class", "bin-text"+thisBin_i)
     }
 
-    let langLabel = "All Color Bins (Reference)"
-    if(i != -1){
-      const language_stat = language_stats[curr_bin_size][curr_blur][i]
-      langLabel = language_stat.lang
+    let binLabel = ""
+    if(binViews.length > 1){
+      binLabel =  "c" in thisBinView.bin_size && [thisBinView.x_dim, thisBinView.y_dim].includes("h") ?
+        "Oklch view" 
+        :
+        "Oklab view"
     }
 
-    langText.text(langLabel)
+    binSetText.text(binLabel)
         .attr("x", 20)
-        .attr("y", 25 + extraHeightOffset)
+        .attr("y", binLabel ? 25 + extraHeightOffset: 0)
 
     const textBackgroundPadding = 5
     textBackground
       .attr("fill", "white")
       .attr("x", 20 - textBackgroundPadding)
-      .attr("y", 25 + extraHeightOffset - textBackgroundPadding - (langText.node().getBBox().height + 2*textBackgroundPadding)/2)
-      .attr("width", langText.node().getBBox().width + 10)
-      .attr("height", langText.node().getBBox().height + 10)
+      .attr("y", binLabel ? 25 + extraHeightOffset - textBackgroundPadding - (binSetText.node().getBBox().height + 2*textBackgroundPadding)/2 : 0)
+      .attr("width", binSetText.node().getBBox().width + 10)
+      .attr("height", binLabel ? binSetText.node().getBBox().height + 10 : 0)
 
-    const langTextTotalHeight = textBackground.node().getBBox().height + 10
+    const binTextTotalHeight = binLabel ? textBackground.node().getBBox().height + 10 : 0
 
 
     let binGroup = svg.select(".bin-group" + thisBin_i)
@@ -665,8 +687,8 @@ function createOrRefreshLang(i){
       })
     }
 
-    binGroup.attr("transform", `translate(0,${langTextTotalHeight - displayInfo.verticalMargin + extraHeightOffset})`)
-    svg.attr("height", thisBinGroupHeight + langTextTotalHeight - displayInfo.verticalMargin + extraHeightOffset)
+    binGroup.attr("transform", `translate(0,${binTextTotalHeight - displayInfo.verticalMargin + extraHeightOffset})`)
+    svg.attr("height", thisBinGroupHeight + binTextTotalHeight - displayInfo.verticalMargin + extraHeightOffset)
     extraHeightOffset += parseFloat(binGroup.attr("height"))
   }
 }
