@@ -166,7 +166,7 @@ $(document).on('ready page:load', function () {
       }
       optHtmlStr +=
         `<option value="${bin_size.abv}" ${bin_size == curr_bin_size ? 'selected' : ''} >
-          ${bin_size.simpleName ? bin_size.simpleName : bin_size.display_name}
+          ${bin_size.simpleName ? `${bin_size.simpleName} (${bin_size.abv})` : `${bin_size.display_name} (${bin_size.abv})`}
         </option>`
   }
   if(lastCategory !== ""){
@@ -221,10 +221,6 @@ function updateDisplay(){
   } else {
     $("#loading-p").remove()
   }
-
-  // let margin = {top: 30, right: 50, bottom: 30, left: 50},
-  // width = $(targetSelector).width() - margin.left - margin.right,
-  // height = Math.min(200 - margin.top - margin.bottom, width/4);
 
   currSvgSize[0].width = $("#main").width()
   currSvgSize[0].height =  currSvgSize[0].width * labBinViews[curr_bin_size].display_offsets.y_height_in_bins /  labBinViews[curr_bin_size].display_offsets.x_width_in_bins
@@ -306,17 +302,37 @@ function createOrRefreshTiles(){
     arcBins.attr("width", currSvgSize[0].width)
       .attr("height", ringsHeight)
 
-    labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, {backgroundColor: backgroundColor})
+    labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, {
+      backgroundColor: backgroundColor,
+      getTileTitleText: getTileTitleText
+    })
   } else {
     svg.select("#arc-bins").remove()
     squareBins.attr("transform", `translate(0,0)`)
   }
 
+  labBinViews[curr_bin_size].createOrUpdateColorTiles(squareBins, {
+    backgroundColor: backgroundColor,
+    getTileTitleText: getTileTitleText
+  })
+}
 
-  // langText.text("All Color Bins")
-  //     .attr("x", 20)
-  //     .attr("y", 25)
 
-  labBinViews[curr_bin_size].createOrUpdateColorTiles(squareBins, {backgroundColor: backgroundColor})
+
+function getTileTitleText(d, bin){
+  let info = `
+    ${curr_bin_size.type == "ring" ?
+        `Bin Number: l: ${bin.l_bin}, c: ${bin.c_bin}, h: ${bin.h_bin}
+        Bin Center (l, c, h): ${Math.round(bin.center_lch.l *10000, 1)/10000}, ${Math.round(bin.center_lch.c*10000, 1)/10000}, ${Math.round(bin.center_lch.h*10000, 1)/10000}` 
+        :`Bin Number: l: ${bin.l_bin}, a: ${bin.a_bin}, b: ${bin.b_bin}`}
+    Bin Center (l, a, b): ${Math.round(bin.center_lab.l *10000, 1)/10000}, ${Math.round(bin.center_lab.a*10000, 1)/10000}, ${Math.round(bin.center_lab.b*10000, 1)/10000}
+    Bin Center (r, g, b): ${Math.round(bin.center_rgb.r, 1)}, ${Math.round(bin.center_rgb.g, 1)}, ${Math.round(bin.center_rgb.b, 1)}
+    Bin percent valid rgb: ${bin.ratio_bin_in_gamut_rgb * 100}
+    ${("representative_rgb" in d)
+        ?
+        `Example RGB in tile (r, g, b): ${bin.representative_rgb.r}, ${bin.representative_rgb.g}, ${bin.representative_rgb.b}}` 
+        : ""
+    }`.trim()
+  return info
 }
 
