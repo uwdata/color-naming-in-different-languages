@@ -316,6 +316,7 @@ $(document).on('ready page:load', function () {
 
   $("#low-data").change(createOrRefreshAllLangs)
   $("#ref_bins").change(createOrRefreshAllLangs)
+  $("#both_lch_views").change(createOrRefreshAllLangs)
 
   if(curr_blur == BLUR){
     $("#blur").prop('checked', true);
@@ -441,6 +442,14 @@ function createOrRefreshLang(i){
     binView = labBinArcViews[curr_bin_size]
   }
 
+  let secondBinView
+  if($("#both_lch_views").is(':checked') && curr_bin_size.type == "ring"){
+    binView = labBinArcViews[curr_bin_size]
+    secondBinView = labBinViews[curr_bin_size]
+  }
+
+
+
   if(i == -1){ //reference bins
     if(!$("#ref_bins").is(':checked')){
       div.style("display", "none")
@@ -461,8 +470,6 @@ function createOrRefreshLang(i){
   div.style("display", "")
 
   let svg = d3.select("#lang"+i+" svg")
-  let textBackground = svg.select(".text-background")
-  let langText = svg.select(".lang-text")
 
   if(svg.empty()){
 
@@ -516,11 +523,7 @@ function createOrRefreshLang(i){
 
     svg = d3.select("#lang"+i).append("svg")
 
-    textBackground = svg.append("rect")
-            .attr("class", "text-background")
-    
-    langText = svg.append("text")
-      .attr("class", "lang-text")
+
   }
 
   svg.attr("width", currSvgSize[0].width)
@@ -540,113 +543,132 @@ function createOrRefreshLang(i){
     }
   }
 
+  const binViews = secondBinView ? [binView, secondBinView] : [binView]
+  let extraHeightOffset = 0
 
-  let langLabel = "All Color Bins (Reference)"
-  if(i != -1){
-     const language_stat = language_stats[curr_bin_size][curr_blur][i]
-     langLabel = language_stat.lang
-  }
+  for(const [thisBin_i, thisBinView] of binViews.entries()){
+    let textBackground = svg.select(".text-background"+thisBin_i)
+    let langText = svg.select(".lang-text"+thisBin_i)
 
-  langText.text(langLabel)
-      .attr("x", 20)
-      .attr("y", 25)
+    if(langText.empty()){
+      textBackground = svg.append("rect")
+        .attr("class", "text-background"+thisBin_i)
+    
+      langText = svg.append("text")
+        .attr("class", "lang-text"+thisBin_i)
+    }
 
-  const textBackgroundPadding = 5
-  textBackground
-    .attr("fill", "white")
-    .attr("x", 20 - textBackgroundPadding)
-    .attr("y", 25 - textBackgroundPadding - (langText.node().getBBox().height + 2*textBackgroundPadding)/2)
-    .attr("width", langText.node().getBBox().width + 10)
-    .attr("height", langText.node().getBBox().height + 10)
+    let langLabel = "All Color Bins (Reference)"
+    if(i != -1){
+      const language_stat = language_stats[curr_bin_size][curr_blur][i]
+      langLabel = language_stat.lang
+    }
 
-  const langTextTotalHeight = textBackground.node().getBBox().y + textBackground.node().getBBox().height + 5
+    langText.text(langLabel)
+        .attr("x", 20)
+        .attr("y", 25 + extraHeightOffset)
 
-  let binGroup = svg.select(".bin-group")
-  if(binGroup.empty()){
-    binGroup = svg.append("g")
-      .attr("class", "bin-group")
-      
-  }
-  binGroup.attr("width", currSvgSize[0].width)
-          .attr("height", currSvgSize[0].height)
+    const textBackgroundPadding = 5
+    textBackground
+      .attr("fill", "white")
+      .attr("x", 20 - textBackgroundPadding)
+      .attr("y", 25 + extraHeightOffset - textBackgroundPadding - (langText.node().getBBox().height + 2*textBackgroundPadding)/2)
+      .attr("width", langText.node().getBBox().width + 10)
+      .attr("height", langText.node().getBBox().height + 10)
+
+    const langTextTotalHeight = textBackground.node().getBBox().height + 10
 
 
-  let displayInfo
-  if(i == -1){ // color reference
-    displayInfo = binView.createOrUpdateColorTiles(binGroup, {
-      backgroundColor: backgroundColor,
-      outline_levels: !(curr_bin_size.displayLABArcs || "ab" in curr_bin_size)
-    })
-  } else { // language color bin display
-    const language_stat = language_stats[curr_bin_size][curr_blur][i]
-    const sal = saliencies_by_lang[curr_bin_size][curr_blur][language_stat.lang]
+    let binGroup = svg.select(".bin-group" + thisBin_i)
+    if(binGroup.empty()){
+      binGroup = svg.append("g")
+        .attr("class", "bin-group" + thisBin_i)
+        
+    }
 
-    displayInfo = binView.createOrUpdateColorTiles(binGroup, {
-      backgroundColor: backgroundColor,
-      binsToDisplay: sal,
-      outline_levels: !(curr_bin_size.displayLABArcs || "ab" in curr_bin_size),
-      getTileScale: getTileScale,
-      getTileColor: getTileColor,
-      getTileTitleText: getTileTitleText,
-      mouseover: (event, d) => {
-        if(curr_bin_size in lang_color_selections && curr_blur in lang_color_selections[curr_bin_size]){
-          const selection = lang_color_selections[curr_bin_size][curr_blur][i]
-          if(selection.selection_type != "select"){
-            selection.selection_type = "hover"
+    const thisBinGroupHeight =  currSvgSize[0].width * thisBinView.display_offsets.y_height_in_bins /  thisBinView.display_offsets.x_width_in_bins
+
+    binGroup.attr("width", currSvgSize[0].width)
+            .attr("height", thisBinGroupHeight)
+
+
+    let displayInfo
+    if(i == -1){ // color reference
+      displayInfo = thisBinView.createOrUpdateColorTiles(binGroup, {
+        backgroundColor: backgroundColor,
+        outline_levels: "c" in thisBinView.bin_size && [thisBinView.x_dim, thisBinView.y_dim].includes("h")
+      })
+    } else { // language color bin display
+      const language_stat = language_stats[curr_bin_size][curr_blur][i]
+      const sal = saliencies_by_lang[curr_bin_size][curr_blur][language_stat.lang]
+
+      displayInfo = thisBinView.createOrUpdateColorTiles(binGroup, {
+        backgroundColor: backgroundColor,
+        binsToDisplay: sal,
+        outline_levels: "c" in thisBinView.bin_size && [thisBinView.x_dim, thisBinView.y_dim].includes("h"),
+        getTileScale: getTileScale,
+        getTileColor: getTileColor,
+        getTileTitleText: getTileTitleText,
+        mouseover: (event, d) => {
+          if(curr_bin_size in lang_color_selections && curr_blur in lang_color_selections[curr_bin_size]){
+            const selection = lang_color_selections[curr_bin_size][curr_blur][i]
+            if(selection.selection_type != "select"){
+              selection.selection_type = "hover"
+              selection.color_name = d.commonTerm
+              createOrRefreshLang(i)
+            }
+          }
+        },
+        mouseout: (event, d) => {
+          if(curr_bin_size in lang_color_selections && curr_blur in lang_color_selections[curr_bin_size]){
+            const selection = lang_color_selections[curr_bin_size][curr_blur][i]
+            if(selection.selection_type == "hover"){
+              selection.selection_type = "none"
+              selection.color_name = ""
+              createOrRefreshLang(i)
+            }
+          }
+        },
+        click: (event, d) => {
+          event.stopPropagation() // don't let svg get click and unselect it
+          if(curr_bin_size in lang_color_selections && curr_blur in lang_color_selections[curr_bin_size]){
+            const selection = lang_color_selections[curr_bin_size][curr_blur][i]
+            selection.selection_type = "select"
             selection.color_name = d.commonTerm
             createOrRefreshLang(i)
           }
         }
-      },
-      mouseout: (event, d) => {
-        if(curr_bin_size in lang_color_selections && curr_blur in lang_color_selections[curr_bin_size]){
-          const selection = lang_color_selections[curr_bin_size][curr_blur][i]
-          if(selection.selection_type == "hover"){
-            selection.selection_type = "none"
-            selection.color_name = ""
-            createOrRefreshLang(i)
+      })
+
+
+
+      function getTileColor(d, bin){
+        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
+        if(selection.selection_type == "select" || selection.selection_type == "hover"){
+          if(d.commonTerm == selection.color_name){
+            return "representative_rgb" in bin ? 
+                `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
+              :
+                `rgb(${bin.center_rgb.r},${bin.center_rgb.g},${bin.center_rgb.b})`
+          } else {
+            return backgroundColor
           }
         }
-      },
-      click: (event, d) => {
-        event.stopPropagation() // don't let svg get click and unselect it
-        if(curr_bin_size in lang_color_selections && curr_blur in lang_color_selections[curr_bin_size]){
-          const selection = lang_color_selections[curr_bin_size][curr_blur][i]
-          selection.selection_type = "select"
-          selection.color_name = d.commonTerm
-          createOrRefreshLang(i)
-        }
+
+        return d.avgTermColor
       }
-    })
-
-
-
-    function getTileColor(d, bin){
-      const selection = lang_color_selections[curr_bin_size][curr_blur][i]
-      if(selection.selection_type == "select" || selection.selection_type == "hover"){
-        if(d.commonTerm == selection.color_name){
-          return "representative_rgb" in bin ? 
-              `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
-            :
-              `rgb(${bin.center_rgb.r},${bin.center_rgb.g},${bin.center_rgb.b})`
-        } else {
-          return backgroundColor
-        }
-      }
-
-      return d.avgTermColor
+      svg.on("click", (event, d) => {
+        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
+        selection.selection_type = "none"
+        selection.color_name = ""
+        createOrRefreshLang(i)
+      })
     }
-    svg.on("click", (event, d) => {
-      const selection = lang_color_selections[curr_bin_size][curr_blur][i]
-      selection.selection_type = "none"
-      selection.color_name = ""
-      createOrRefreshLang(i)
-    })
+
+    binGroup.attr("transform", `translate(0,${langTextTotalHeight - displayInfo.verticalMargin + extraHeightOffset})`)
+    svg.attr("height", thisBinGroupHeight + langTextTotalHeight - displayInfo.verticalMargin + extraHeightOffset)
+    extraHeightOffset += parseFloat(binGroup.attr("height"))
   }
-
-  binGroup.attr("transform", `translate(0,${langTextTotalHeight - displayInfo.verticalMargin})`)
-  svg.attr("height", currSvgSize[0].height + langTextTotalHeight - displayInfo.verticalMargin)
-
 }
 
 function getTileTitleText(d, bin){
