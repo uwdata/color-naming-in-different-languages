@@ -24,9 +24,10 @@
   <link href="css-lib/select2.min.css" rel="stylesheet" />
   <script src="js-lib/select2.min.js"></script>
 	<script src="js-lib/bootstrap.bundle.min.js"></script>
-    <script src="js-lib/d3.v7.min.js"></script>
+  <script src="js-lib/d3.v7.min.js"></script>
+  <script src="js-lib/color.global.js"></script>
 	
-    <script type="text/javascript" src="js/color-name-summaries.js"></script>
+  <script type="text/javascript" src="js/color-name-summaries.js"></script>
 	
 	<script src="../addNavBar.js"></script>
 
@@ -67,6 +68,15 @@
       <select class="form-select small" name ="selected_langs" id="selected_langs" value="selected_langs" style="width:100%">
         </select> 
     </div>
+  </div>
+
+   <div class="form-check form-check-inline justify-content-center align-items-center flex-nowrap">
+    <label class="form-label" for="sort_by" style="display: block; text-align: center;" >Sort By</label>
+    <select class="form-select" name ="sort_by" id="sort_by" value="sort_by" style="width:100%">
+      <option value="count" selected>Count</option>
+      <option value="name">Name</option>
+      <option value="hue">Hue</option>
+    </select> 
   </div>
 
   <div id="data_view">Loading...</div>

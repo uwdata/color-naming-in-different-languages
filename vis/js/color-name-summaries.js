@@ -21,6 +21,10 @@ $("input:radio[name=color_set]").change(e => {
     updateColorSet()
 })
 
+$("#sort_by").change(e => { 
+    updateTableData()
+})
+
 let allNamesByLang
 const table =  d3.select("#data_view")
     .html("")
@@ -59,12 +63,38 @@ function updateTableData(){
     if(!selected_lang){
         return
     }
+    
+
     table.select("thead").selectAll("th")
         .data(Object.keys(allNamesByLang[selected_lang][0]))
         .join("th")
         .text(d => d)
 
-    const nameData = allNamesByLang[selected_lang]
+    let nameData = allNamesByLang[selected_lang]
+
+    const sort_by = $("#sort_by").val()
+    if(sort_by == "count"){
+        if("totalColorFraction" in nameData[0]){
+            nameData = nameData.sort((a, b) => b.totalColorFraction - a.totalColorFraction)
+        } else {
+            nameData = nameData.sort((a, b) => b.cnt - a.cnt)
+        }
+        
+    } else if(sort_by == "name"){
+        nameData = nameData.sort((a, b) => a.commonName.localeCompare(b.commonName))
+    } else if(sort_by == "hue"){
+        nameData = nameData.sort((a, b) => {
+            let a_h, b_h
+            if("avgL" in a){
+                a_h = new Color({space: "oklab", coords: [a.avgL, a.avgA, a.avgB]}).to("oklch").h
+                b_h = new Color({space: "oklab", coords: [b.avgL, b.avgA, b.avgB]}).to("oklch").h
+            } else {
+                a_h = new Color(a.avgHueColor).to("oklch").h
+                b_h = new Color(b.avgHueColor).to("oklch").h
+            }
+            return a_h - b_h
+        })
+    }
         //.sort((a, b) => a.simplifiedName.localeCompare(b.simplifiedName))
 
     const rows = table
