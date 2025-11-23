@@ -552,19 +552,29 @@ function createOrRefreshLang(i){
     .attr("width", langText.node().getBBox().width + 10)
     .attr("height", langText.node().getBBox().height + 10)
 
+  const langTextTotalHeight = textBackground.node().getBBox().y + textBackground.node().getBBox().height + 5
+
+  let binGroup = svg.select(".bin-group")
+  if(binGroup.empty()){
+    binGroup = svg.append("g")
+      .attr("class", "bin-group")
+      
+  }
+  binGroup.attr("width", currSvgSize[0].width)
+          .attr("height", currSvgSize[0].height)
+
+
+  let displayInfo
   if(i == -1){ // color reference
-    binView.createOrUpdateColorTiles(svg, {
+    displayInfo = binView.createOrUpdateColorTiles(binGroup, {
       backgroundColor: backgroundColor,
+      outline_levels: !(curr_bin_size.displayLABArcs || "ab" in curr_bin_size)
     })
-    langText.text("All Color Bins (Reference)")
-      .attr("x", 20)
-      .attr("y", 25)
-    return
-  } else {
+  } else { // language color bin display
     const language_stat = language_stats[curr_bin_size][curr_blur][i]
     const sal = saliencies_by_lang[curr_bin_size][curr_blur][language_stat.lang]
 
-    binView.createOrUpdateColorTiles(svg, {
+    displayInfo = binView.createOrUpdateColorTiles(binGroup, {
       backgroundColor: backgroundColor,
       binsToDisplay: sal,
       outline_levels: !(curr_bin_size.displayLABArcs || "ab" in curr_bin_size),
@@ -602,6 +612,8 @@ function createOrRefreshLang(i){
       }
     })
 
+
+
     function getTileColor(d, bin){
       const selection = lang_color_selections[curr_bin_size][curr_blur][i]
       if(selection.selection_type == "select" || selection.selection_type == "hover"){
@@ -617,14 +629,17 @@ function createOrRefreshLang(i){
 
       return d.avgTermColor
     }
-  }
-
-  svg.on("click", (event, d) => {
+    svg.on("click", (event, d) => {
       const selection = lang_color_selections[curr_bin_size][curr_blur][i]
       selection.selection_type = "none"
       selection.color_name = ""
       createOrRefreshLang(i)
     })
+  }
+
+  binGroup.attr("transform", `translate(0,${langTextTotalHeight - displayInfo.verticalMargin})`)
+  svg.attr("height", currSvgSize[0].height + langTextTotalHeight - displayInfo.verticalMargin)
+
 }
 
 function getTileTitleText(d, bin){
