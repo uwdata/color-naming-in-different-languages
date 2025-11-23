@@ -357,7 +357,12 @@ $(document).on('ready page:load', function () {
 function updateDisplay(){
   
   tile_size_type = $("#tile_size").val()
-  curr_bin_size = $("#bin_size").val()
+  const newBinSize =  $("#bin_size").val()
+
+  if(newBinSize !== curr_bin_size){ 
+    $('.ui-tooltip').remove(); // hack to clear ui tooltips that aren't disappearing correctly
+  }
+  curr_bin_size = newBinSize
 
   curr_bin_size = LAB_BIN_SIZES.find((bin) => bin.abv == curr_bin_size)
 
@@ -372,6 +377,8 @@ function updateDisplay(){
 
   } else {
     $("#loading-p").remove()
+
+    $('.ui-tooltip').remove(); // hack to clear ui tooltips that aren't disappearing correctly
   }
 
   let binView = labBinViews[curr_bin_size]
