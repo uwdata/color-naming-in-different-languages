@@ -551,6 +551,10 @@ function createOrRefreshLang(i){
   $("#lang"+i + " .lang-label").css("color", labelColor)
   $("#lang"+i + " .form-label").css("color", labelColor)
 
+  // TODO: figure out how to to make the select2 dark themed
+  //$("#lang"+i + ` .selected_color_${i}`).attr("data-bs-theme", labelColor == "black"? "light" : "dark")
+
+
   if(i != -1){
     // make sure selection in dropdown is up to date:
     const selection = lang_color_selections[curr_bin_size][curr_blur][i]
@@ -563,20 +567,33 @@ function createOrRefreshLang(i){
     }
   }
 
-  const binViews = secondBinView ? [binView, secondBinView] : [binView]
+  const binViews = secondBinView ? [binView, secondBinView] : [binView, false]
   let extraHeightOffset = 0
 
+
+
   for(const [thisBin_i, thisBinView] of binViews.entries()){
-    let textBackground = svg.select(".text-background"+thisBin_i)
+
     let binSetText = svg.select(".bin-text"+thisBin_i)
+    let binGroup = svg.select(".bin-group" + thisBin_i)
+
+
+    if(!thisBinView){
+      binSetText.remove()
+      binGroup.remove()
+      return
+    }
 
     if(binSetText.empty()){
-      textBackground = svg.append("rect")
-        .attr("class", "text-background"+thisBin_i)
-    
       binSetText = svg.append("text")
         .attr("class", "bin-text"+thisBin_i)
     }
+
+    if(binGroup.empty()){
+      binGroup = svg.append("g")
+        .attr("class", "bin-group" + thisBin_i) 
+    }
+
 
     let binLabel = ""
     if(binViews.length > 1){
@@ -589,24 +606,11 @@ function createOrRefreshLang(i){
     binSetText.text(binLabel)
         .attr("x", 20)
         .attr("y", binLabel ? 25 + extraHeightOffset: 0)
-
-    const textBackgroundPadding = 5
-    textBackground
-      .attr("fill", "white")
-      .attr("x", 20 - textBackgroundPadding)
-      .attr("y", binLabel ? 25 + extraHeightOffset - textBackgroundPadding - (binSetText.node().getBBox().height + 2*textBackgroundPadding)/2 : 0)
-      .attr("width", binSetText.node().getBBox().width + 10)
-      .attr("height", binLabel ? binSetText.node().getBBox().height + 10 : 0)
-
-    const binTextTotalHeight = binLabel ? textBackground.node().getBBox().height + 10 : 0
+        .style("fill", labelColor)
 
 
-    let binGroup = svg.select(".bin-group" + thisBin_i)
-    if(binGroup.empty()){
-      binGroup = svg.append("g")
-        .attr("class", "bin-group" + thisBin_i)
-        
-    }
+    const binTextTotalHeight = binLabel ? binSetText.node().getBBox().height + 10 : 0
+
 
     const thisBinGroupHeight =  currSvgSize[0].width * thisBinView.display_offsets.y_height_in_bins /  thisBinView.display_offsets.x_width_in_bins
 

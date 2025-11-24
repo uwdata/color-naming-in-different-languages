@@ -265,8 +265,11 @@ class FullColorBinView {
     }
 
     getDisplayOffsets(){
-        const y_offset_in_bins = this[this.y_dim + "_max_bin"] + this.TILE_SEGMENT_MARGIN_NUM
-        const y_height_in_bins =  y_offset_in_bins - this[this.y_dim + "_min_bin"] + this.TILE_SEGMENT_MARGIN_NUM
+        // for now only assume l is used for y scale
+        const y_scale = this.y_dim == "l" ? this.bin_size.l_scale : 1
+
+        const y_offset_in_bins = (this[this.y_dim + "_max_bin"] +1/2) * y_scale + this.TILE_SEGMENT_MARGIN_NUM
+        const y_height_in_bins =  y_offset_in_bins - (this[this.y_dim + "_min_bin"] -1/2) * y_scale + this.TILE_SEGMENT_MARGIN_NUM
 
         const x_offsets_in_bins = {}
         let currXBinOffset = this.TILE_SEGMENT_MARGIN_NUM 
@@ -298,6 +301,9 @@ class FullColorBinView {
 
 
     createOrUpdateColorTiles(parentElement, options){
+        // for now only assume l is used for y scale
+        const y_scale = this.y_dim == "l" ? this.bin_size.l_scale : 1
+
         const backgroundColor = options.backgroundColor || "white"
         const binsToDisplay = "binsToDisplay" in options ? options.binsToDisplay : this.bin_array
         const getTileScale = "getTileScale" in options ? options.getTileScale : () => 1
@@ -329,10 +335,10 @@ class FullColorBinView {
                 .join("line")
                     .attr("class", "level-outline")
                     .attr("x1", (d) => tileSize*(d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + 0.5 + thisView.TILE_SEGMENT_MARGIN_NUM / 2 ))
-                    .attr("y1", (d) => tileSize *  (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_max_bin"] ))
+                    .attr("y1", (d) => tileSize * (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_max_bin"] * y_scale ))
                     .attr("x2", (d) => tileSize*(d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + 0.5 + thisView.TILE_SEGMENT_MARGIN_NUM / 2))
                     // TODO: I don't know why I have to add one to y2 make it line up
-                    .attr("y2", (d)=> tileSize * (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_min_bin"]  + 1)  )
+                    .attr("y2", (d)=> tileSize * (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_min_bin"] * y_scale + 1)  )
                     .style("stroke", "oklch(70% 0 0 / .5)")
                     .style("stroke-width", 2)
                     .style("display", (d) => d[0] ==  ""+thisView[thisView.split_dim+"_max_bin"] ? "none" : "") 
@@ -344,7 +350,7 @@ class FullColorBinView {
 
         const areRingArcs = [this.x_dim, this.y_dim].includes("a") && [dim1, dim2, dim3].includes("h")
 
-        if(!areRingArcs){ // regular square bins
+        if(!areRingArcs){ // regular square or rectangle bins
 
             // clear any old arc or circle tiles
             parentElement.selectAll(".arc-tile")
@@ -363,20 +369,24 @@ class FullColorBinView {
                 .attr("x", (d) => {
                     const bin = thisView.getBinInfo(d)
                     const x =  tileSize * 
-                        (bin[thisView.x_dim + "_bin"] + thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]])
+                        (bin[thisView.x_dim + "_bin"] // relative position
+                            - getTileScale(d) / 2  // minus width/2 for centering
+                            + thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]]) // general y position
                     return x
                     })
 
                 .attr("y", (d) => {
                     const bin = thisView.getBinInfo(d)
-                    return tileSize * 
-                        (-bin[thisView.y_dim + "_bin"] + thisView.display_offsets.y_offset_in_bins)
+                    return tileSize *
+                        (-bin[thisView.y_dim + "_bin"] * y_scale // relative position
+                             - (y_scale) * getTileScale(d) / 2 // minus height/2 for centering
+                             + thisView.display_offsets.y_offset_in_bins) // general y position
                 })
                 .attr("fill", (d) => {
                     const bin = thisView.getBinInfo(d)
                     return getTileColor(d, bin)
                 })
-                .attr("height", d => (tileSize - tileBorderSize) * getTileScale(d))
+                .attr("height", d => (tileSize * y_scale - tileBorderSize) * getTileScale(d))
                 .attr("width", d => (tileSize - tileBorderSize) * getTileScale(d))
                 .attr("title", (d) => {
                     const bin = thisView.getBinInfo(d)

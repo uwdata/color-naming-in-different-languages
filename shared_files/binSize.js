@@ -8,12 +8,14 @@ class BinSize {
     this.type = options.type;
     if(this.type == "cube"){
       this.ab = this.l
+      this.l_scale = 1 // cube l is same as ab
       this.abv = this.l.toPrecision(2) / 1
       this.dims = ["l", "a", "b"]
       this.display_category ="Oklab Cubes",
       this.display_name = `${this.display_category}: l: ${this.l.toPrecision(2) / 1} x a: ${this.ab.toPrecision(2) / 1} x b: ${this.ab.toPrecision(2) / 1}`
     } else if(this.type == "box") {
       this.ab = options.ab;
+      this.l_scale = this.l / this.ab
       this.abv = this.l.toPrecision(2) / 1 + "_" + this.ab.toPrecision(2) / 1
       this.display_category ="Oklab Boxes",
       this.display_name = `${this.display_category}: l: ${this.l.toPrecision(2) / 1} x a: ${this.ab.toPrecision(2) / 1} x b: ${this.ab.toPrecision(2) / 1}`
@@ -26,6 +28,7 @@ class BinSize {
         }else{
           this.c = options.l/2; // should it be diameter 1 * L (slightly smaller than a 1x1x1 box)
         }
+        this.l_scale = this.l / (this.c * 2) // expect c * 2 diameter to match l
         this.c_ring_width_ratio = 0.5
       }else if(!("h_divs" in options) || options.h_divs == 8){ //default value, or already 8
         this.h_divs = 8
@@ -35,6 +38,7 @@ class BinSize {
           this.c = options.l; // should it be diameter of center 1 * L (slightly smaller than a 1x1x1 box)
           // note: after center ring, the radius change width will also be L
         }
+        this.l_scale = this.l / this.c // expect c diameter to match l
         this.c_ring_width_ratio = 1
       } else{
         throw new Error("h_divs must be 3 or 8, but was: " + options.h_divs)
