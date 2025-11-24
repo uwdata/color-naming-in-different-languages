@@ -9,7 +9,7 @@ class BinSize {
     if(this.type == "cube"){
       this.ab = this.l
       this.l_scale = 1 // cube l is same as ab
-      this.abv = this.l.toPrecision(2) / 1
+      this.abv = "" + this.l.toPrecision(2) / 1
       this.dims = ["l", "a", "b"]
       this.display_category ="Oklab Cubes",
       this.display_name = `${this.display_category}: l: ${this.l.toPrecision(2) / 1} x a: ${this.ab.toPrecision(2) / 1} x b: ${this.ab.toPrecision(2) / 1}`

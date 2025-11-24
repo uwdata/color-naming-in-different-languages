@@ -1,3 +1,6 @@
+// TODO: add download data links to page
+// https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
+
 const escapeHTML = str => String(str).replace(/[&<>'"]/g, 
   tag => ({
       '&': '&amp;',
