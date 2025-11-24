@@ -410,18 +410,16 @@ function updateDisplay(){
       .style("min-width", d => d.width)
       .style("max-width", d => d.height)
 
-  // add space for color reference
-  d3.select('#vis')
-    .append("div")
-    .attr("id", `lang${-1}`)
-    .style("min-width", currSvgSize[0].width + 5 +"px")
+  // add an extra index (-1) for the reference bins
+  const langIndices = [-1, ...language_stats[curr_bin_size][curr_blur].map((d, i) => i)]
+
   // add space for each language
   d3.select('#vis')
     .selectAll(".lang-map")
-    .data(language_stats[curr_bin_size][curr_blur])
+    .data(langIndices)
     .join("div")
       .attr("class", "lang-map")
-      .attr("id", (d, i) => `lang${i}`)
+      .attr("id", (i) => "lang"+i + "_" + curr_bin_size.abv.replaceAll(".", "__") + "_" + curr_blur)
       .style("min-width", currSvgSize[0].width + 5 +"px")
 
   createOrRefreshAllLangs()
@@ -435,7 +433,8 @@ function createOrRefreshAllLangs(){
 }
 
 function createOrRefreshLang(i){
-  const div = d3.select("#lang"+i)
+  const lang_id_str = "lang"+i + "_" + curr_bin_size.abv.replaceAll(".", "__") + "_" + curr_blur
+  const div = d3.select("#"+lang_id_str)
 
   let binView = labBinViews[curr_bin_size]
   if(curr_bin_size.displayLABArcs){
@@ -447,8 +446,6 @@ function createOrRefreshLang(i){
     binView = labBinArcViews[curr_bin_size]
     secondBinView = labBinViews[curr_bin_size]
   }
-
-
 
   if(i == -1){ //reference bins
     if(!$("#ref_bins").is(':checked')){
@@ -468,40 +465,27 @@ function createOrRefreshLang(i){
 
   // show div
   div.style("display", "")
-
-  let svg = d3.select("#lang"+i+" svg")
+  let svg = d3.select("#"+lang_id_str+" svg")
 
   if(svg.empty()){
-    $("#lang"+i).append(`<div class="container text-center" style="margin-top:10px;">
+    $("#"+lang_id_str).append(`<div class="container text-center" style="margin-top:10px;">
       <div class="row row-cols-auto lang-header"></div>
     </div>`)
-    let langLabel = "All Color Bins (Reference)"
-    if(i != -1){
-      const language_stat = language_stats[curr_bin_size][curr_blur][i]
-      langLabel = language_stat.lang
-    }
 
 
     // first add the language label
-    $("#lang"+i + " .lang-header").append(`
+    $("#"+lang_id_str + " .lang-header").append(`
         <div class="col">
-          <strong class="lang-label">${langLabel}</strong> 
+          <strong class="lang-label"></strong> 
         </div>
         `)
 
     // then add the color name dropdown:
     if(i != -1){
-      const language_stat = language_stats[curr_bin_size][curr_blur][i]
-      $("#lang"+i + " .lang-header").append(`
+      $("#"+lang_id_str + " .lang-header").append(`
         <div class="form-check form-check-inline justify-content-center small col"> 
           <label class="form-label" for="selected_color_${i}" style="margin-bottom: 0px">Selected Color</label>
           <select class="form-select" type="checkbox" name="metric" id="selected_color_${i}" value="selected_color_${i}" style="width:150px">
-          ${color_names_by_lang[curr_bin_size][curr_blur][language_stat.lang].map((colorInfo) =>{
-            return `<option value="${colorInfo.colorName}" data-commonColorName="${colorInfo.colorName}"
-              style='background-color:${colorInfo.avgTermColor}'>
-              ${colorInfo.colorName}
-            </option>`
-          })}
           </select>
         </div>
         `)
@@ -518,26 +502,46 @@ function createOrRefreshLang(i){
         );
         return $colorOpt;
       };
-      $(`#selected_color_${i}`).select2({
+      $(`#${lang_id_str} #selected_color_${i}`).select2({
         templateResult: formatColorOpt,
         templateSelection: formatColorOpt,
         minimumResultsForSearch: Infinity // disable text search
       });
-
-      $(`#selected_color_${i}`).change(function() {
-        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
-        if(this.value == COLOR_NAME_UNSELECTED){
-          selection.selection_type = "none"
-          selection.color_name = ""
-        }else{
-          selection.selection_type = "select"
-          selection.color_name = this.value
-        }
-        createOrRefreshLang(i)
-      })
     }
 
-    svg = d3.select("#lang"+i).append("svg")
+    let langLabel = "All Color Bins (Reference)"
+    if(i != -1){
+      const language_stat = language_stats[curr_bin_size][curr_blur][i]
+      langLabel = language_stat.lang
+    }
+    $("#"+lang_id_str + " .lang-label").text(langLabel)
+
+   
+    if(i != -1){
+      $(`#${lang_id_str} #selected_color_${i} option`).remove()
+      const language_stat = language_stats[curr_bin_size][curr_blur][i]
+      const newOptions = color_names_by_lang[curr_bin_size][curr_blur][language_stat.lang].map((colorInfo) =>{
+        return `<option value="${colorInfo.colorName}" data-commonColorName="${colorInfo.colorName}"
+          style='background-color:${colorInfo.avgTermColor}'>
+          ${colorInfo.colorName}
+        </option>`
+      })
+       $(`#${lang_id_str} #selected_color_${i}`).append(newOptions).trigger('change');
+    }   
+
+    $(`#${lang_id_str} #selected_color_${i}`).change(function() {
+      const selection = lang_color_selections[curr_bin_size][curr_blur][i]
+      if(this.value == COLOR_NAME_UNSELECTED){
+        selection.selection_type = "none"
+        selection.color_name = ""
+      }else{
+        selection.selection_type = "select"
+        selection.color_name = this.value
+      }
+      createOrRefreshLang(i)
+    })
+
+    svg = d3.select("#"+lang_id_str).append("svg")
   }
 
   svg.attr("width", currSvgSize[0].width)
@@ -548,22 +552,22 @@ function createOrRefreshLang(i){
   if(d3.lab(d3.color(backgroundColor)).l < 50){
     labelColor = "white"
   }
-  $("#lang"+i + " .lang-label").css("color", labelColor)
-  $("#lang"+i + " .form-label").css("color", labelColor)
+  $("#"+lang_id_str + " .lang-label").css("color", labelColor)
+  $("#"+lang_id_str + " .form-label").css("color", labelColor)
 
   // TODO: figure out how to to make the select2 dark themed
-  //$("#lang"+i + ` .selected_color_${i}`).attr("data-bs-theme", labelColor == "black"? "light" : "dark")
+  //$("#"+lang_id_str+ ` .selected_color_${i}`).attr("data-bs-theme", labelColor == "black"? "light" : "dark")
 
 
   if(i != -1){
     // make sure selection in dropdown is up to date:
     const selection = lang_color_selections[curr_bin_size][curr_blur][i]
     if(selection.selection_type == "none"){
-      $(`#selected_color_${i}`).val(COLOR_NAME_UNSELECTED)
-      $(`#selected_color_${i}`).trigger('change.select2')
+      $(`#${lang_id_str} #selected_color_${i}`).val(COLOR_NAME_UNSELECTED)
+      $(`#${lang_id_str} #selected_color_${i}`).trigger('change.select2')
     } else {
-      $(`#selected_color_${i}`).val(selection.color_name)
-      $(`#selected_color_${i}`).trigger('change.select2')
+      $(`#${lang_id_str} #selected_color_${i}`).val(selection.color_name)
+      $(`#${lang_id_str} #selected_color_${i}`).trigger('change.select2')
     }
   }
 
