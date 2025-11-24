@@ -596,7 +596,7 @@ function createOrRefreshLang(i){
 
 
     let binLabel = ""
-    if(binViews.length > 1){
+    if(secondBinView){
       binLabel =  "c" in thisBinView.bin_size && [thisBinView.x_dim, thisBinView.y_dim].includes("h") ?
         "Oklch view" 
         :

@@ -334,13 +334,12 @@ class FullColorBinView {
                 .data(Object.entries(thisView.display_offsets.x_offsets_in_bins))
                 .join("line")
                     .attr("class", "level-outline")
-                    .attr("x1", (d) => tileSize*(d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + 0.5 + thisView.TILE_SEGMENT_MARGIN_NUM / 2 ))
-                    .attr("y1", (d) => tileSize * (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_max_bin"] * y_scale ))
-                    .attr("x2", (d) => tileSize*(d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + 0.5 + thisView.TILE_SEGMENT_MARGIN_NUM / 2))
-                    // TODO: I don't know why I have to add one to y2 make it line up
-                    .attr("y2", (d)=> tileSize * (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_min_bin"] * y_scale + 1)  )
+                    .attr("x1", (d) => tileSize*(d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + thisView.TILE_SEGMENT_MARGIN_NUM / 2 ))
+                    .attr("y1", (d) => tileSize * (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_max_bin"] * y_scale - 0.5))
+                    .attr("x2", (d) => tileSize*(d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + thisView.TILE_SEGMENT_MARGIN_NUM / 2))
+                    .attr("y2", (d)=> tileSize * (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_min_bin"] * y_scale + 0.5)  )
                     .style("stroke", "oklch(70% 0 0 / .5)")
-                    .style("stroke-width", 2)
+                    .style("stroke-width", tileBorderSize*2)
                     .style("display", (d) => d[0] ==  ""+thisView[thisView.split_dim+"_max_bin"] ? "none" : "") 
         } else {
             parentElement.selectAll(".level-outline")
