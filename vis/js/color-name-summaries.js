@@ -1,5 +1,3 @@
-// TODO: add download data links to page
-// https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
 
 const escapeHTML = str => String(str).replace(/[&<>'"]/g, 
   tag => ({
@@ -28,6 +26,23 @@ $("#sort_by").change(e => {
     updateTableData()
 })
 
+let currentDataset
+let currentDatasetColorSet
+let currentDatasetLangAbv
+$("#download_language_subset_button").click(e => {
+    const csvContent = "data:text/csv;charset=utf-8," + d3.csvFormat(currentDataset)
+    
+    // based on:
+    // https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
+    var encodedUri = encodeURI(csvContent);
+    var link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `${currentDatasetColorSet}_summaries_${currentDatasetLangAbv}.csv`);
+    document.body.appendChild(link); // Required for FF
+
+    link.click();
+})
+
 let allNamesByLang
 const table =  d3.select("#data_view")
     .html("")
@@ -42,8 +57,12 @@ updateColorSet()
 function updateColorSet(){
     const color_set_val = $('#full_colors').prop("checked") ? "full_colors" : "hue_colors"
     let color_set = fullColorNames
+    currentDatasetColorSet = "full_color"
+    $("#source-data-link").attr("href", "https://github.com/uwdata/color-naming-in-different-languages/blob/master/model/full_colors_info.csv")
     if(color_set_val == "hue_colors"){
         color_set = hueColorNames
+        currentDatasetColorSet = "hue_color"
+        $("#source-data-link").attr("href", "https://github.com/uwdata/color-naming-in-different-languages/blob/master/model/hue_colors_info.csv")
     }
 
     allNamesByLang = Object.groupBy(color_set, ({lang}) => lang)
@@ -66,12 +85,17 @@ function updateTableData(){
     if(!selected_lang){
         return
     }
+
+    
     
 
     table.select("thead").selectAll("th")
         .data(Object.keys(allNamesByLang[selected_lang][0]))
         .join("th")
         .text(d => d)
+
+
+    currentDatasetLangAbv = allNamesByLang[selected_lang][0].lang_abv
 
     let nameData = allNamesByLang[selected_lang]
 
@@ -98,7 +122,8 @@ function updateTableData(){
             return a_h - b_h
         })
     }
-        //.sort((a, b) => a.simplifiedName.localeCompare(b.simplifiedName))
+
+    currentDataset = nameData
 
     const rows = table
         .select("tbody")
