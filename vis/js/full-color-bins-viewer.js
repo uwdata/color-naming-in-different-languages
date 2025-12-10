@@ -105,6 +105,7 @@ const LAB_BIN_SIZES = [
 
 const labBinViews = {}
 const labBinArcViews = {}
+const labBin3DViews = {}
 
 /*************** Pre-processing functions *********************/
 async function load_and_process_bin_data(bin_size){
@@ -123,6 +124,17 @@ async function load_and_process_bin_data(bin_size){
     console.log("binView.display_offset", binView.display_offsets)
 
     labBinViews[bin_size] = binView
+
+    const bin3dViews = new FullColorBinView({
+      bin_size: bin_size,
+      bin_array: data,
+      x_dim: "a",
+      y_dim: "b",
+      z_dim: "l",
+    })
+
+    labBin3DViews[bin_size] = bin3dViews
+    bin3dViews.setDisplayOffsets(binView.getDisplayOffsets())
 
     if(bin_size.type == "ring"){
       const binArcView = new FullColorBinView({
@@ -283,6 +295,14 @@ function createOrRefreshTiles(){
   squareBins.attr("width", currSvgSize[0].width)
     .attr("height", currSvgSize[0].height )
 
+  let bins3d = svg.select("#three-d-bins")
+  if(bins3d.empty()){
+    bins3d = svg.append("g")
+      .attr("id", "three-d-bins")
+  }
+  bins3d.attr("width", currSvgSize[0].width)
+    .attr("height", currSvgSize[0].height )
+
   if(curr_bin_size.type == "ring"){
     //calculate rings height:
     const ringsHeight =  currSvgSize[0].width * labBinArcViews[curr_bin_size].display_offsets.y_height_in_bins /  labBinArcViews[curr_bin_size].display_offsets.x_width_in_bins
@@ -314,6 +334,10 @@ function createOrRefreshTiles(){
   labBinViews[curr_bin_size].createOrUpdateColorTiles(squareBins, {
     backgroundColor: backgroundColor,
     getTileTitleText: getTileTitleText
+  })
+
+  labBin3DViews[curr_bin_size].createOrUpdateColorTiles(bins3d, {
+    backgroundColor: backgroundColor
   })
 }
 

@@ -4,9 +4,20 @@ class FullColorBinView {
         this.bin_size = options.bin_size
         this.bin_array = options.bin_array
         this.nested_bins = this.binsArrayToNested(this.bin_array)
-        this.x_dim = options.x_dim,
-        this.y_dim = options.y_dim,
+        this.x_dim = options.x_dim
+        this.y_dim = options.y_dim
         this.split_dim = options.split_dim
+        this.z_dim = options.z_dim
+
+        if(this.z_dim){ // if z_dim (isometric view), need to sort
+            this.bin_array.sort((a, b) => {
+                const z_scale = this.z_dim == "l" ? this.bin_size.l_scale : 1
+                let a_val = - a[this.x_dim + "_bin"] - a[this.y_dim + "_bin"] + z_scale* a[this.z_dim + "_bin"] 
+                let b_val = - b[this.x_dim + "_bin"] - b[this.y_dim + "_bin"] + z_scale* b[this.z_dim + "_bin"]
+                return a_val < b_val ? -1 : (a_val == b_val ? 0 : 1)
+            })
+        }
+
         this.findDimBounds()
     }
 
@@ -303,6 +314,7 @@ class FullColorBinView {
     createOrUpdateColorTiles(parentElement, options){
         // for now only assume l is used for y scale
         const y_scale = this.y_dim == "l" ? this.bin_size.l_scale : 1
+        const z_scale = this.z_dim == "l" ? this.bin_size.l_scale : 1
 
         const backgroundColor = options.backgroundColor || "white"
         const binsToDisplay = "binsToDisplay" in options ? options.binsToDisplay : this.bin_array
@@ -320,7 +332,6 @@ class FullColorBinView {
         const thisView = this;
         const displayWidth = parentElement.attr("width")
         
-        // TODO: remove the fallback values when I fix the other calculations
         const tileSizeInBins = 1
         const tileBorderSizeInBins = 1/8
         const tileSize = tileSizeInBins * displayWidth / this.display_offsets.x_width_in_bins
@@ -349,7 +360,7 @@ class FullColorBinView {
 
         const areRingArcs = [this.x_dim, this.y_dim].includes("a") && [dim1, dim2, dim3].includes("h")
 
-        if(!areRingArcs){ // regular square or rectangle bins
+        if(!areRingArcs && this.split_dim){ // regular square or rectangle bins, split along an axis
 
             // clear any old arc or circle tiles
             parentElement.selectAll(".arc-tile")
@@ -364,7 +375,7 @@ class FullColorBinView {
                 .join("rect")
                 .attr("class", "tile")
                 .style("stroke", options.no_border ? "" : backgroundColor)
-                .style("stroke-width", d => options.no_border ? "" :  tileBorderSize/2)
+                .style("stroke-width", options.no_border ? "" :  tileBorderSize/2)
                 .attr("x", (d) => {
                     const bin = thisView.getBinInfo(d)
                     const x =  tileSize * 
@@ -381,6 +392,133 @@ class FullColorBinView {
                              - (y_scale) * getTileScale(d) / 2 // minus height/2 for centering
                              + thisView.display_offsets.y_offset_in_bins) // general y position
                 })
+                .attr("fill", (d) => {
+                    const bin = thisView.getBinInfo(d)
+                    return getTileColor(d, bin)
+                })
+                .attr("height", d => (tileSize * y_scale - tileBorderSize) * getTileScale(d))
+                .attr("width", d => (tileSize - tileBorderSize) * getTileScale(d))
+                .attr("title", (d) => {
+                    const bin = thisView.getBinInfo(d)
+                    if("getTileTitleText" in options){
+                        return options.getTileTitleText(d, bin)
+                    }
+                    let info = `
+                    ${thisView.bin_size.type == "ring" ?
+                        `Bin Center (l, c, h): ${Math.round(bin.center_lch.l *10000, 1)/10000}, ${Math.round(bin.center_lch.c*10000, 1)/10000}, ${Math.round(bin.center_lch.h*10000, 1)/10000}` 
+                        :""}
+                    Bin Center (l, a, b): ${Math.round(bin.center_lab.l *10000, 1)/10000}, ${Math.round(bin.center_lab.a*10000, 1)/10000}, ${Math.round(bin.center_lab.b*10000, 1)/10000}
+                    Bin Center (r, g, b): ${Math.round(bin.center_rgb.r, 1)}, ${Math.round(bin.center_rgb.g, 1)}, ${Math.round(bin.center_rgb.b, 1)}
+                    Bin percent valid rgb: ${bin.ratio_bin_in_gamut_rgb * 100}
+                    ${("representative_rgb" in d)
+                        ?
+                        `Example RGB in tile (r, g, b): ${bin.representative_rgb.r}, ${bin.representative_rgb.g}, ${bin.representative_rgb.b}}` 
+                        : ""
+                    }`.trim()
+                    return info
+                })
+
+                if("mouseover" in options){
+                    tiles.on("mouseover", options.mouseover)
+                }
+                if("mouseout" in options){
+                    tiles.on("mouseout", options.mouseout)
+                }
+                if("click" in options){
+                    tiles.on("click", options.click)
+                }
+        } else if(!areRingArcs && this.z_dim){ // isomorphic square or rectangle bins
+            // clear any old arc or circle tiles
+            parentElement.selectAll(".arc-tile")
+                .data([])
+                .join("path")
+            parentElement.selectAll(".circle-tile")
+                .data([])
+                .join("path")
+
+            let tiles = parentElement.selectAll(".tile")
+                .data(binsToDisplay)
+                //.join("rect")
+                .join("path")
+                .attr("class", "tile")
+                .style("stroke", options.no_border ? "" : backgroundColor)
+                .style("stroke-width", options.no_border ? "" :  tileBorderSize/2)
+                .attr("d", d => {
+                    const bin = thisView.getBinInfo(d)
+                    const x_angle = 30
+                    const y_angle = 150
+                    const center_x = //bin[thisView.x_dim + "_bin"] // relative position
+                        Math.cos(x_angle / 360 * 2 * Math.PI) * bin[thisView.x_dim + "_bin"] +
+                        Math.cos(y_angle / 360 * 2 * Math.PI) * bin[thisView.y_dim + "_bin"]
+                        - getTileScale(d) / 2 // minus width/2 for centering
+                        +30
+                    const center_y = //-bin[thisView.y_dim + "_bin"] * z_scale // relative position
+                            - bin[thisView.z_dim + "_bin"] * z_scale
+                            - bin[thisView.x_dim + "_bin"] * Math.sin(x_angle / 360 * 2 * Math.PI) 
+                            - bin[thisView.y_dim + "_bin"] * Math.sin(y_angle / 360 * 2 * Math.PI) 
+                             - (z_scale) * getTileScale(d) / 2 // minus height/2 for centering
+                            // - z_scale * bin[thisView.z_dim + "_bin"] // move up z axis
+                             //+ thisView.display_offsets.y_offset_in_bins) // general y position
+                             +30
+                     
+                    const l_min_y = ((z_scale) * getTileScale(d) / 2);
+                    const l_max_y = -((z_scale) * getTileScale(d) / 2);
+                    const a_min_x =  Math.cos(x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const a_max_x =  -Math.cos(x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const a_min_y =  Math.sin(x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const a_max_y =  -Math.sin(x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_min_x =  Math.cos(y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_max_x =  -Math.cos(y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_min_y =  Math.sin(y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_max_y =  -Math.sin(y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    
+                    return `
+                        M ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} 
+                        L ${tileSize*(center_x +  a_max_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_max_y)} 
+                        L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
+                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_min_y)}
+                        L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)}
+
+                        M ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} 
+                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_min_y)}
+                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_min_y)}
+                        L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_max_y)}
+                        L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)}
+
+                        M ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
+                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_min_y)} 
+                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_min_y)} 
+                        L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_max_y + b_min_y)} 
+                        L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
+                         `
+                    // return `
+                    //     M ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} 
+                    //     L ${tileSize*(center_x +  a_max_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_max_y)} 
+                    //     L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
+                    //     L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_max_y + b_min_y)} 
+                    //     L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_min_y)} 
+                    //     L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_max_y)} 
+                    //     L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} `
+                })
+                // .attr("x", (d) => {
+                //     const bin = thisView.getBinInfo(d)
+                //     const x =  tileSize * 
+                //         (bin[thisView.x_dim + "_bin"] // relative position
+                //             - getTileScale(d) / 2  // minus width/2 for centering
+                //         ) + 100
+                //            // + thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]]) // general y position
+                //     return x
+                //     })
+
+                // .attr("y", (d) => {
+                //     const bin = thisView.getBinInfo(d)
+                //     return tileSize *
+                //         (-bin[thisView.y_dim + "_bin"] * y_scale // relative position
+                //              - (y_scale) * getTileScale(d) / 2 // minus height/2 for centering
+                //              - y_scale * bin[thisView.z_dim + "_bin"] // move up y axis
+                //              + thisView.display_offsets.y_offset_in_bins) // general y position
+                //              +100
+                // })
                 .attr("fill", (d) => {
                     const bin = thisView.getBinInfo(d)
                     return getTileColor(d, bin)

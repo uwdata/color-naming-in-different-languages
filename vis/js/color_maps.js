@@ -130,6 +130,7 @@ const lang_tile_info = {}
 
 const labBinViews = {}
 const labBinArcViews = {}
+const labBin3DViews = {}
 
 /*************** Pre-processing functions *********************/
 async function load_and_process_bin_data(bin_size){
@@ -151,6 +152,17 @@ async function load_and_process_bin_data(bin_size){
     console.log("binView.display_offset", binView.display_offsets)
 
     labBinViews[bin_size] = binView
+
+    const bin3dViews = new FullColorBinView({
+      bin_size: bin_size,
+      bin_array: data,
+      x_dim: "a",
+      y_dim: "b",
+      z_dim: "l",
+    })
+
+    labBin3DViews[bin_size] = bin3dViews
+    bin3dViews.setDisplayOffsets(binView.getDisplayOffsets())
 
     if(bin_size.type == "ring"){
       const binArcView = new FullColorBinView({
@@ -441,6 +453,8 @@ function createOrRefreshLang(i){
     binView = labBinArcViews[curr_bin_size]
   }
 
+  let bin3dView = labBin3DViews[curr_bin_size]
+
   let secondBinView
   if($("#both_lch_views").is(':checked') && curr_bin_size.type == "ring"){
     binView = labBinArcViews[curr_bin_size]
@@ -571,7 +585,7 @@ function createOrRefreshLang(i){
     }
   }
 
-  const binViews = secondBinView ? [binView, secondBinView] : [binView, false]
+  const binViews = secondBinView ? [binView, bin3dView, secondBinView] : [binView, bin3dView, false]
   let extraHeightOffset = 0
 
 
