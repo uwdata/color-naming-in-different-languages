@@ -1,3 +1,7 @@
+const isometric_x_angle = 30
+const isometric_y_angle = 150
+
+
 class FullColorBinView {
     constructor(options) {
         this.TILE_SEGMENT_MARGIN_NUM = 3 // 3 tiles worth between each "level"
@@ -10,11 +14,21 @@ class FullColorBinView {
         this.z_dim = options.z_dim
 
         if(this.z_dim){ // if z_dim (isometric view), need to sort
+            // make shallow copy of bin_array
+            this.bin_array = [...this.bin_array]
             this.bin_array.sort((a, b) => {
                 const z_scale = this.z_dim == "l" ? this.bin_size.l_scale : 1
                 let a_val = - a[this.x_dim + "_bin"] - a[this.y_dim + "_bin"] + z_scale* a[this.z_dim + "_bin"] 
                 let b_val = - b[this.x_dim + "_bin"] - b[this.y_dim + "_bin"] + z_scale* b[this.z_dim + "_bin"]
-                return a_val < b_val ? -1 : (a_val == b_val ? 0 : 1)
+                //return a_val - b_val
+                return a[this.z_dim + "_bin"] != b[this.z_dim + "_bin"] ? 
+                    a[this.z_dim + "_bin"] - b[this.z_dim + "_bin"] :
+                    a_val - b_val
+
+                // return a[this.z_dim + "_bin"] < b[this.z_dim + "_bin"] ? -1 : 
+                //     ( a[this.z_dim + "_bin"] > b[this.z_dim + "_bin"] ? 1 :
+                //         (a_val - b_val)
+                //     )
             })
         }
 
@@ -276,33 +290,46 @@ class FullColorBinView {
     }
 
     getDisplayOffsets(){
-        // for now only assume l is used for y scale
-        const y_scale = this.y_dim == "l" ? this.bin_size.l_scale : 1
+        if(this.split_dim){
+            // for now only assume l is used for y scale
+            const y_scale = this.y_dim == "l" ? this.bin_size.l_scale : 1
 
-        const y_offset_in_bins = (this[this.y_dim + "_max_bin"] +1/2) * y_scale + this.TILE_SEGMENT_MARGIN_NUM
-        const y_height_in_bins =  y_offset_in_bins - (this[this.y_dim + "_min_bin"] -1/2) * y_scale + this.TILE_SEGMENT_MARGIN_NUM
+            const y_offset_in_bins = (this[this.y_dim + "_max_bin"] +1/2) * y_scale + this.TILE_SEGMENT_MARGIN_NUM
+            const y_height_in_bins =  y_offset_in_bins - (this[this.y_dim + "_min_bin"] -1/2) * y_scale + this.TILE_SEGMENT_MARGIN_NUM
 
-        const x_offsets_in_bins = {}
-        let currXBinOffset = this.TILE_SEGMENT_MARGIN_NUM 
-        let x_width_in_bins
+            const x_offsets_in_bins = {}
+            let currXBinOffset = this.TILE_SEGMENT_MARGIN_NUM 
+            let x_width_in_bins
 
-        for(const [split_bin, ranges] of Object.entries(this.splitLevelRanges)){
-            currXBinOffset = currXBinOffset - ranges[this.x_dim].min
+            for(const [split_bin, ranges] of Object.entries(this.splitLevelRanges)){
+                currXBinOffset = currXBinOffset - ranges[this.x_dim].min
 
-            x_offsets_in_bins[split_bin] = currXBinOffset
+                x_offsets_in_bins[split_bin] = currXBinOffset
 
-            // adjust for positive direction
-            currXBinOffset = currXBinOffset + ranges[this.x_dim].max + this.TILE_SEGMENT_MARGIN_NUM 
-            
-            // only the last one will be saved at the end, giving us total svg width
-            x_width_in_bins = currXBinOffset
-        }
+                // adjust for positive direction
+                currXBinOffset = currXBinOffset + ranges[this.x_dim].max + this.TILE_SEGMENT_MARGIN_NUM 
+                
+                // only the last one will be saved at the end, giving us total svg width
+                x_width_in_bins = currXBinOffset
+            }
 
-        return {
-            y_offset_in_bins: y_offset_in_bins,
-            y_height_in_bins: y_height_in_bins,
-            x_offsets_in_bins: x_offsets_in_bins,
-            x_width_in_bins: x_width_in_bins
+            return {
+                y_offset_in_bins: y_offset_in_bins,
+                y_height_in_bins: y_height_in_bins,
+                x_offsets_in_bins: x_offsets_in_bins,
+                x_width_in_bins: x_width_in_bins
+            }
+        }else {
+            const z_scale = this.z_dim == "l" ? this.bin_size.l_scale : 1
+            for(const bin in this.bin_array){
+
+            }
+            return {
+                y_offset_in_bins: y_offset_in_bins,
+                y_height_in_bins: y_height_in_bins,
+                x_offset_in_bins: x_offset_in_bins,
+                x_width_in_bins: x_width_in_bins
+            }
         }
     }
 
@@ -327,6 +354,10 @@ class FullColorBinView {
                     :
                     `oklab(${bin.l_center} ${bin.a_center} ${bin.b_center})`
             }
+
+        const getTileVisibleDisplay = "getTileVisible" in options ? 
+            (d) => options.getTileVisible(d) ? undefined : "none"
+            : undefined
 
 
         const thisView = this;
@@ -374,6 +405,7 @@ class FullColorBinView {
                 .data(binsToDisplay)
                 .join("rect")
                 .attr("class", "tile")
+                .style("display", getTileVisibleDisplay)
                 .style("stroke", options.no_border ? "" : backgroundColor)
                 .style("stroke-width", options.no_border ? "" :  tileBorderSize/2)
                 .attr("x", (d) => {
@@ -441,36 +473,29 @@ class FullColorBinView {
                 //.join("rect")
                 .join("path")
                 .attr("class", "tile")
+                .style("display", getTileVisibleDisplay)
                 .style("stroke", options.no_border ? "" : backgroundColor)
                 .style("stroke-width", options.no_border ? "" :  tileBorderSize/2)
+                .attr("fill", (d) => {
+                    const bin = thisView.getBinInfo(d)
+                    return getTileColor(d, bin)
+                })
                 .attr("d", d => {
                     const bin = thisView.getBinInfo(d)
-                    const x_angle = 30
-                    const y_angle = 150
-                    const center_x = //bin[thisView.x_dim + "_bin"] // relative position
-                        Math.cos(x_angle / 360 * 2 * Math.PI) * bin[thisView.x_dim + "_bin"] +
-                        Math.cos(y_angle / 360 * 2 * Math.PI) * bin[thisView.y_dim + "_bin"]
-                        - getTileScale(d) / 2 // minus width/2 for centering
-                        +30
-                    const center_y = //-bin[thisView.y_dim + "_bin"] * z_scale // relative position
-                            - bin[thisView.z_dim + "_bin"] * z_scale
-                            - bin[thisView.x_dim + "_bin"] * Math.sin(x_angle / 360 * 2 * Math.PI) 
-                            - bin[thisView.y_dim + "_bin"] * Math.sin(y_angle / 360 * 2 * Math.PI) 
-                             - (z_scale) * getTileScale(d) / 2 // minus height/2 for centering
-                            // - z_scale * bin[thisView.z_dim + "_bin"] // move up z axis
-                             //+ thisView.display_offsets.y_offset_in_bins) // general y position
-                             +30
+                    
+                    const [raw_center_x, raw_center_y] = getIsometricBinPosition(thisView, bin, getTileScale(d))
+                    const [center_x, center_y] = [raw_center_x + 30, raw_center_y  + 30 ]
                      
                     const l_min_y = ((z_scale) * getTileScale(d) / 2);
                     const l_max_y = -((z_scale) * getTileScale(d) / 2);
-                    const a_min_x =  Math.cos(x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const a_max_x =  -Math.cos(x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const a_min_y =  Math.sin(x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const a_max_y =  -Math.sin(x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const b_min_x =  Math.cos(y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const b_max_x =  -Math.cos(y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const b_min_y =  Math.sin(y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const b_max_y =  -Math.sin(y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const a_min_x =  Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const a_max_x =  -Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const a_min_y =  Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const a_max_y =  -Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_min_x =  Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_max_x =  -Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_min_y =  Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_max_y =  -Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
                     
                     return `
                         M ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} 
@@ -491,40 +516,8 @@ class FullColorBinView {
                         L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_max_y + b_min_y)} 
                         L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
                          `
-                    // return `
-                    //     M ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} 
-                    //     L ${tileSize*(center_x +  a_max_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_max_y)} 
-                    //     L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
-                    //     L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_max_y + b_min_y)} 
-                    //     L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_min_y)} 
-                    //     L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_max_y)} 
-                    //     L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} `
                 })
-                // .attr("x", (d) => {
-                //     const bin = thisView.getBinInfo(d)
-                //     const x =  tileSize * 
-                //         (bin[thisView.x_dim + "_bin"] // relative position
-                //             - getTileScale(d) / 2  // minus width/2 for centering
-                //         ) + 100
-                //            // + thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]]) // general y position
-                //     return x
-                //     })
 
-                // .attr("y", (d) => {
-                //     const bin = thisView.getBinInfo(d)
-                //     return tileSize *
-                //         (-bin[thisView.y_dim + "_bin"] * y_scale // relative position
-                //              - (y_scale) * getTileScale(d) / 2 // minus height/2 for centering
-                //              - y_scale * bin[thisView.z_dim + "_bin"] // move up y axis
-                //              + thisView.display_offsets.y_offset_in_bins) // general y position
-                //              +100
-                // })
-                .attr("fill", (d) => {
-                    const bin = thisView.getBinInfo(d)
-                    return getTileColor(d, bin)
-                })
-                .attr("height", d => (tileSize * y_scale - tileBorderSize) * getTileScale(d))
-                .attr("width", d => (tileSize - tileBorderSize) * getTileScale(d))
                 .attr("title", (d) => {
                     const bin = thisView.getBinInfo(d)
                     if("getTileTitleText" in options){
@@ -564,6 +557,7 @@ class FullColorBinView {
                 .data(binsToDisplay.filter(d => ("binC" in d && d.binC == 0) || d.c_bin == 0))
                 .join("circle")
                 .attr("class", "circle-tile")
+                .style("display", getTileVisibleDisplay)
                 .attr("cx", d => {
                     const bin = thisView.getBinInfo(d)
                     return tileSize* thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]]
@@ -611,6 +605,7 @@ class FullColorBinView {
                 .data(binsToDisplay.filter(d => !(("binC" in d && d.binC == 0) || d.c_bin == 0)))
                 .join("path")
                 .attr("class", "arc-tile")
+                .style("display", getTileVisibleDisplay)
                 .style("stroke", d => 
                     options.no_border ? getTileColor(d, thisView.getBinInfo(d))
                     :
@@ -734,6 +729,24 @@ function getArcPathArea(d, thisView, tileSize, tileBorderSizeInBins, getTileScal
     A ${binOuterRadius} ${binOuterRadius} 0 0 0 ${binOuterStartX} ${binOuterStartY}
     L ${binInnerStartX} ${binInnerStartY}
     `
+}
+
+
+function getIsometricBinPosition(binView, bin, tileScale){
+    const z_scale = binView.z_dim == "l" ? binView.bin_size.l_scale : 1
+    const center_x = //bin[thisView.x_dim + "_bin"] // relative position
+        Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * bin[binView.x_dim + "_bin"] +
+        Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * bin[binView.y_dim + "_bin"]
+        - tileScale / 2 // minus width/2 for centering
+        +30
+    const center_y = //-bin[thisView.y_dim + "_bin"] * z_scale // relative position
+            - bin[binView.z_dim + "_bin"] * z_scale
+            - bin[binView.x_dim + "_bin"] * Math.sin(isometric_x_angle / 360 * 2 * Math.PI) 
+            - bin[binView.y_dim + "_bin"] * Math.sin(isometric_y_angle / 360 * 2 * Math.PI) 
+                - (z_scale) * tileScale / 2 // minus height/2 for centering
+                +30
+
+    return [center_x, center_y]
 }
 
 

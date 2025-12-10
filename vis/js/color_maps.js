@@ -652,6 +652,7 @@ function createOrRefreshLang(i){
         outline_levels: "c" in thisBinView.bin_size && [thisBinView.x_dim, thisBinView.y_dim].includes("h"),
         getTileScale: getTileScale,
         getTileColor: getTileColor,
+        getTileVisible: getTileVisible,
         getTileTitleText: getTileTitleText,
         mouseover: (event, d) => {
           if(curr_bin_size in lang_color_selections && curr_blur in lang_color_selections[curr_bin_size]){
@@ -694,13 +695,23 @@ function createOrRefreshLang(i){
                 `rgb(${bin.representative_rgb.r},${bin.representative_rgb.g},${bin.representative_rgb.b})`
               :
                 `rgb(${bin.center_rgb.r},${bin.center_rgb.g},${bin.center_rgb.b})`
-          } else {
-            return backgroundColor
           }
         }
-
         return d.avgTermColor
       }
+
+      function getTileVisible(d){
+        const selection = lang_color_selections[curr_bin_size][curr_blur][i]
+        if(selection.selection_type == "select" || selection.selection_type == "hover"){
+          if(d.commonTerm == selection.color_name){
+            return true
+          } else {
+            return false
+          }
+        }
+        return true
+      }
+
       svg.on("click", (event, d) => {
         const selection = lang_color_selections[curr_bin_size][curr_blur][i]
         selection.selection_type = "none"
