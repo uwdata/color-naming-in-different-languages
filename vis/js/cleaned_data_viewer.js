@@ -133,7 +133,7 @@ function updateTableData(){
                 return `<ul>
                 ${d[1]
                     .map(a => 
-                        $("<li></li>").text(a[0]).prop('outerHTML'))
+                        $("<li></li>").text(`${a[0]} (${a[1].length})`).prop('outerHTML'))
                     .join("")}
                 </ul>`
                 // table_list.selectAll("li")
