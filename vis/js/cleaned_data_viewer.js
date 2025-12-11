@@ -40,20 +40,36 @@ for(let [lang, langData] of Object.entries(allNamesByLang)){
         ({name}) => name)
 
     groupedNamesByLang[lang] = Object.entries(groupedTerm).map(gTerm => {
-        const commonName = d3.groups(
+        const termGroup = d3.groups(
                 gTerm[1], 
                     t => t.standardized_entered_name)
+        
+        const commonName = termGroup
                 .map(a => {
                     return {key: a[0], values: a[1]}})
                 .sort((a,b) => -a.values.length + b.values.length)[0]
                 .key
         
-        const standardized_entered_name_count = d3.groups(
-                gTerm[1], 
-                    t => t.standardized_entered_name).length
+        const standardized_entered_name_count = termGroup.length
+
+        let color_sample = []
+        if(gTerm[1].length < 10){
+            color_sample = gTerm[1].map(a => {return {r: a.r, g: a.g, b: a.b}})
+        }else{
+            // TODO: randomly sample instead of just choosing first 9
+            const rand_is = []
+            while(rand_is.length < 10){
+                const rand_i = Math.floor(Math.random() * gTerm[1].length)
+                if(!rand_is.includes(rand_i)){
+                    rand_is.push(rand_i)
+                }
+            }
+            color_sample = rand_is.map(i => {return {r: gTerm[1][i].r, g: gTerm[1][i].g, b: gTerm[1][i].b}})
+        }
         return {
             "Common Name": commonName,
             "simplified name": gTerm[1][0].name,
+            "Color Sample": color_sample,
             "data count": gTerm[1].length,
             "standardized name count": standardized_entered_name_count,
             expand: "+"
@@ -112,8 +128,19 @@ function updateTableData(){
         .data(d => Object.entries(d[1]))
         .join("td")
         .attr("class", (d) => d[0] == "expand" ? "expand" : undefined)
-        .text(d => {
-            return d[1]
+        .html(d => {
+            if(d[0] != "Color Sample"){
+                return $('<span />').text(d[1]).html()
+            } else {
+                const size = 10
+                return `
+                <div class="d-flex flex-row">
+                ${d[1].map(
+                    c => `<div style="background-color:${d3.rgb(c.r, c.g, c.b)};height:${size}px;width:${size}px"></div>`).join("")
+                }
+                </div>
+                `
+            }
         })
         .on("click", expandCommonName)
 
