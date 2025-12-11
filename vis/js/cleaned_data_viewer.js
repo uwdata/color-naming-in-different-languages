@@ -71,8 +71,8 @@ for(let [lang, langData] of Object.entries(allNamesByLang)){
             "simplified name": gTerm[1][0].name,
             "Color Sample": color_sample,
             "data count": gTerm[1].length,
-            "standardized name count": standardized_entered_name_count,
-            expand: "+"
+            "Standardized Names": termGroup,
+            //expand: "+"
         }
     })
 }
@@ -95,7 +95,7 @@ table.selectAll("th")
         .data(Object.keys(groupedNamesByLang[selected_lang][0]))
         .join("th")
         .text(d => d)
-        .style("max-width", (d) => d == "standardized name count" ? "120px" : undefined)
+        //.style("max-width", (d) => d == "standardized names" ? "120px" : undefined)
 
 updateTableData();
 
@@ -129,9 +129,18 @@ function updateTableData(){
         .join("td")
         .attr("class", (d) => d[0] == "expand" ? "expand" : undefined)
         .html(d => {
-            if(d[0] != "Color Sample"){
-                return $('<span />').text(d[1]).html()
-            } else {
+            if(d[0] == "Standardized Names"){
+                return `<ul>
+                ${d[1]
+                    .map(a => 
+                        $("<li></li>").text(a[0]).prop('outerHTML'))
+                    .join("")}
+                </ul>`
+                // table_list.selectAll("li")
+                // .data(simplifiedNameEntries)
+                // .join("li")
+                // .text((d) => `${d[0]} (${d[1].length})`)
+            }else if(d[0] == "Color Sample") {
                 const size = 10
                 return `
                 <div class="d-flex flex-row">
@@ -140,43 +149,45 @@ function updateTableData(){
                 }
                 </div>
                 `
+            } else {
+                return $('<span />').text(d[1]).prop('outerHTML')
             }
         })
-        .on("click", expandCommonName)
+        //.on("click", expandCommonName)
 
 
-    function expandCommonName(event, d){
-        console.log(event, d)
-        if(d[0] == "expand"){
-            const parent_id = event.currentTarget.parentNode.id
-            const name_i = parseInt(parent_id.split("name_")[1])
-            const simplified_name = nameData[name_i]["simplified name"]
-            console.log(simplified_name)
-            const simplifiedNameData = Object.groupBy(
-                allNamesByLang[selected_lang]
-                    .filter(d => 
-                        d.name == simplified_name
-                    ),  ({standardized_entered_name}) => standardized_entered_name)
-            console.log(simplifiedNameData)
+    // function expandCommonName(event, d){
+    //     console.log(event, d)
+    //     if(d[0] == "expand"){
+    //         const parent_id = event.currentTarget.parentNode.id
+    //         const name_i = parseInt(parent_id.split("name_")[1])
+    //         const simplified_name = nameData[name_i]["simplified name"]
+    //         console.log(simplified_name)
+    //         const simplifiedNameData = Object.groupBy(
+    //             allNamesByLang[selected_lang]
+    //                 .filter(d => 
+    //                     d.name == simplified_name
+    //                 ),  ({standardized_entered_name}) => standardized_entered_name)
+    //         console.log(simplifiedNameData)
             
-            let table_list = d3.select("tr#"+parent_id + " .expand ul")
-            if(table_list.empty()){
-                d3.select("tr#"+parent_id + " .expand").append("p").text("Standardized entered names:")
-                table_list = d3.select("tr#"+parent_id + " .expand").append("ul")
-            }
+    //         let table_list = d3.select("tr#"+parent_id + " .expand ul")
+    //         if(table_list.empty()){
+    //             d3.select("tr#"+parent_id + " .expand").append("p").text("Standardized entered names:")
+    //             table_list = d3.select("tr#"+parent_id + " .expand").append("ul")
+    //         }
 
-            let simplifiedNameEntries = Object.entries(simplifiedNameData)
-                .sort((a, b) => b[1].length - a[1].length )
+    //         let simplifiedNameEntries = Object.entries(simplifiedNameData)
+    //             .sort((a, b) => b[1].length - a[1].length )
             
-            table_list.selectAll("li")
-                .data(simplifiedNameEntries)
-                .join("li")
-                .text((d) => `${d[0]} (${d[1].length})`)
+    //         table_list.selectAll("li")
+    //             .data(simplifiedNameEntries)
+    //             .join("li")
+    //             .text((d) => `${d[0]} (${d[1].length})`)
 
             
-        }
+    //     }
         
-    }
+    // }
 
 
     
