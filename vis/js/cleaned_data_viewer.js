@@ -155,18 +155,37 @@ function updateTableData(){
         .on("click", showStandardizedNameInfo)
 
     function showStandardizedNameInfo(event,){
-        console.log("showStandardizedNameInfo", event)
         event.preventDefault()
         const name_standardized_i = event.target.dataset.nameStandardizedI
-        console.log(name_standardized_i)
         const name_i = $(event.target).parents("tr")[0].dataset.nameI
-        console.log(name_i)
 
-        const standardized_name_data = nameData[name_i][STANDARDIZED_NAME_COL][name_standardized_i][1]
-        console.log(standardized_name_data)
+        const standardized_name_entry = nameData[name_i][STANDARDIZED_NAME_COL][name_standardized_i]
+        const standardized_name = standardized_name_entry[0]
+        const standardized_name_data = standardized_name_entry[1]
 
         // the display modal with data
         $('#standardized-name-modal').modal('show');
+
+        $('#standardized-name-modal .modal-title').text("Color Summary: " + standardized_name);
+
+        $('#standardized-name-modal button.download').unbind("click")
+        $('#standardized-name-modal button.download').on("click", () => {
+            const csvContent = "data:text/csv;charset=utf-8," + d3.csvFormat(standardized_name_data)
+
+            // based on:
+            // https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
+            var encodedUri = encodeURI(csvContent);
+            $("#tmp-downloader").remove()
+            var link = document.createElement("a");
+            link.setAttribute("id", "tmp-downloader");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `${standardized_name}_cleaned_data.csv`);
+            document.body.appendChild(link); // Required for FF
+
+            link.click();
+        });
+
+
         const standardized_modal_body = d3.select('#standardized-name-modal .modal-body')
         
         const rowSort = [
