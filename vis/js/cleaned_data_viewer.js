@@ -1,3 +1,5 @@
+const STANDARDIZED_NAME_COL = "Standardized Names"
+
 $(document).on('ready page:load', async () => {
 
 const cleanedColorNames = await d3.csv("../model/cleaned_color_names.csv");
@@ -27,11 +29,7 @@ $("#min_name_count").change(e => {
     updateTableData()
 })
 
-// nested groups: 
-// First: name
-// second: 
 
-// group by name?
 const groupedNamesByLang = {}
 for(let [lang, langData] of Object.entries(allNamesByLang)){
     console.log(lang)
@@ -72,7 +70,6 @@ for(let [lang, langData] of Object.entries(allNamesByLang)){
             "Color Sample": color_sample,
             "data count": gTerm[1].length,
             "Standardized Names": termGroup,
-            //expand: "+"
         }
     })
 }
@@ -95,7 +92,7 @@ table.selectAll("th")
         .data(Object.keys(groupedNamesByLang[selected_lang][0]))
         .join("th")
         .text(d => d)
-        //.style("max-width", (d) => d == "standardized names" ? "120px" : undefined)
+        //.style("max-width", (d) => d == STANDARDIZED_NAME_COL ? "120px" : undefined)
 
 updateTableData();
 
@@ -121,25 +118,25 @@ function updateTableData(){
         .data(Object.entries(nameData))
         .join("tr")
             .attr("test2", "test2")
-            .attr("id", (d) => 
-                "name_" + d[0])
+            .attr("data-name-i", d => d[0])
     
     const tds = rows.selectAll("td")
-        .data(d => Object.entries(d[1]))
+        .data(d => Object.entries(d[1]).map((a, a_i) => {
+            a[2] = a_i
+            return a
+        }))
         .join("td")
         .attr("class", (d) => d[0] == "expand" ? "expand" : undefined)
-        .html(d => {
-            if(d[0] == "Standardized Names"){
+        .html((d, i) => {
+            if(d[0] == STANDARDIZED_NAME_COL){
                 return `<ul>
                 ${d[1]
-                    .map(a => 
-                        $("<li></li>").text(`${a[0]} (${a[1].length})`).prop('outerHTML'))
+                    .map((a, a_i) => 
+                        $("<li></li>").append(
+                            $(`<a href="#" data-name-standardized-i=${a_i}></a>`).text(`${a[0]} (${a[1].length})`)
+                        ).prop('outerHTML'))
                     .join("")}
                 </ul>`
-                // table_list.selectAll("li")
-                // .data(simplifiedNameEntries)
-                // .join("li")
-                // .text((d) => `${d[0]} (${d[1].length})`)
             }else if(d[0] == "Color Sample") {
                 const size = 10
                 return `
@@ -153,6 +150,46 @@ function updateTableData(){
                 return $('<span />').text(d[1]).prop('outerHTML')
             }
         })
+
+    tds.selectAll("td a")
+        .on("click", showStandardizedNameInfo)
+
+    function showStandardizedNameInfo(event,){
+        console.log("showStandardizedNameInfo", event)
+        event.preventDefault()
+        const name_standardized_i = event.target.dataset.nameStandardizedI
+        console.log(name_standardized_i)
+        const name_i = $(event.target).parents("tr")[0].dataset.nameI
+        console.log(name_i)
+
+        const standardized_name_data = nameData[name_i][STANDARDIZED_NAME_COL][name_standardized_i][1]
+        console.log(standardized_name_data)
+
+        // the display modal with data
+        $('#standardized-name-modal').modal('show');
+        const standardized_modal_body = d3.select('#standardized-name-modal .modal-body')
+        standardized_modal_body
+            .selectAll("th")
+            .data(Object.keys(standardized_name_data[0]))
+            .join("th")
+            .text(d => d)
+
+        const rows = standardized_modal_body
+        .selectAll("tr")
+        .data(Object.entries(standardized_name_data))
+        .join("tr")
+            .attr("test2", "test2")
+    
+        rows.selectAll("td")
+            .data(d => 
+                // TODO: Sort columns and add color preview column
+                Object.entries(d[1]))
+            .join("td")
+            .text(d => d[1])
+        }
+
+        // TODO: When participant id pressed, show data for participant
+    
         //.on("click", expandCommonName)
 
 
