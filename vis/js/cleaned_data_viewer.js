@@ -168,9 +168,17 @@ function updateTableData(){
         // the display modal with data
         $('#standardized-name-modal').modal('show');
         const standardized_modal_body = d3.select('#standardized-name-modal .modal-body')
+        
+        const rowSort = [
+            "entered_name", "standardized_entered_name", "name",
+            "lang0", "participantId", "colorNameId", "rgbSet",
+            "studyVersion", "locale", "phaseNum", "trialNum","tileNum",
+            "r", "g", "b", "lab_l", "lab_a", "lab_b"
+        ]
+        
         standardized_modal_body
             .selectAll("th")
-            .data(Object.keys(standardized_name_data[0]))
+            .data(["Color", ...Object.keys(standardized_name_data[0]).sort((a, b) => rowSort.indexOf(a) - rowSort.indexOf(b))])
             .join("th")
             .text(d => d)
 
@@ -180,12 +188,27 @@ function updateTableData(){
         .join("tr")
             .attr("test2", "test2")
     
+
         rows.selectAll("td")
-            .data(d => 
-                // TODO: Sort columns and add color preview column
-                Object.entries(d[1]))
+            .data(d => {
+                const sortedEntries =  Object.entries(d[1])
+                    .sort((a, b) => rowSort.indexOf(a[0]) - rowSort.indexOf(b[0]))
+                sortedEntries.unshift(["Color", d3.rgb(
+                    sortedEntries.find(a => a[0] == "r")[1],
+                    sortedEntries.find(a => a[0] == "g")[1],
+                    sortedEntries.find(a => a[0] == "b")[1]
+                )])
+                return sortedEntries
+            })
             .join("td")
-            .text(d => d[1])
+            .html(d => {
+                if(d[0] == "Color") {
+                    return `<div 
+                        style="background-color:${d[1]};height:20px;width:50px;border:solid black 1px"></div>`
+                } else {
+                    return $('<span />').text(d[1]).prop('outerHTML')
+                }
+            })
         }
 
         // TODO: When participant id pressed, show data for participant
