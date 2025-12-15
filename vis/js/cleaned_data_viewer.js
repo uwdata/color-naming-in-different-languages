@@ -118,7 +118,7 @@ function updateTableData(){
     const datasetShown = $("input[name='cleaned-or-deleted']:checked").val()
     console.log("datasetShown", datasetShown)
     if(datasetShown == "removed"){
-        showRawData(allRemovedNamesByLang[selected_lang], table)
+        showRawData(allRemovedNamesByLang[selected_lang], table, true, cleanedColorNames, removedColorData)
         $("#filter_lang_note").hide()
         $("#min_name_count_div").hide()
         return
@@ -192,7 +192,7 @@ function updateTableData(){
     tds.selectAll("td a")
         .on("click", showStandardizedNameInfo)
 
-    function showStandardizedNameInfo(event,){
+    function showStandardizedNameInfo(event){
         event.preventDefault()
         const name_standardized_i = event.target.dataset.nameStandardizedI
         const name_i = $(event.target).parents("tr")[0].dataset.nameI
@@ -226,54 +226,21 @@ function updateTableData(){
 
         const standardized_modal_body = d3.select('#standardized-name-modal .modal-body')
         
-        showRawData(standardized_name_data, standardized_modal_body)
-    }
-
-    // function expandCommonName(event, d){
-    //     console.log(event, d)
-    //     if(d[0] == "expand"){
-    //         const parent_id = event.currentTarget.parentNode.id
-    //         const name_i = parseInt(parent_id.split("name_")[1])
-    //         const simplified_name = nameData[name_i]["simplified name"]
-    //         console.log(simplified_name)
-    //         const simplifiedNameData = Object.groupBy(
-    //             allNamesByLang[selected_lang]
-    //                 .filter(d => 
-    //                     d.name == simplified_name
-    //                 ),  ({standardized_entered_name}) => standardized_entered_name)
-    //         console.log(simplifiedNameData)
-            
-    //         let table_list = d3.select("tr#"+parent_id + " .expand ul")
-    //         if(table_list.empty()){
-    //             d3.select("tr#"+parent_id + " .expand").append("p").text("Standardized entered names:")
-    //             table_list = d3.select("tr#"+parent_id + " .expand").append("ul")
-    //         }
-
-    //         let simplifiedNameEntries = Object.entries(simplifiedNameData)
-    //             .sort((a, b) => b[1].length - a[1].length )
-            
-    //         table_list.selectAll("li")
-    //             .data(simplifiedNameEntries)
-    //             .join("li")
-    //             .text((d) => `${d[0]} (${d[1].length})`)
-
-            
-    //     }
-        
-    // }
-
-
-    
+        showRawData(standardized_name_data, standardized_modal_body, true, cleanedColorNames, removedColorData)
+    }    
 }
 
 })
 
 
-function showRawData(dataset, tableElement){
-    if(!dataset){
+function showRawData(dataset, tableElement, linkToParticipantInfo, cleanedColorNames, removedColorData){
+    if(!dataset || dataset.length == 0){
         tableElement.text("No data")
         return
     }
+    
+    $(tableElement.node()).empty()
+
     tableElement
         .selectAll("th")
         .data(["Color", ...Object.keys(dataset[0]).sort((a, b) => rawDataRowSort.indexOf(a) - rawDataRowSort.indexOf(b))])
@@ -287,7 +254,7 @@ function showRawData(dataset, tableElement){
         .attr("test2", "test2")
 
 
-    rows.selectAll("td")
+    const tds = rows.selectAll("td")
         .data(d => {
             const sortedEntries =  Object.entries(d[1])
                 .sort((a, b) => rawDataRowSort.indexOf(a[0]) - rawDataRowSort.indexOf(b[0]))
@@ -303,15 +270,44 @@ function showRawData(dataset, tableElement){
             if(d[0] == "Color") {
                 return `<div 
                     style="background-color:${d[1]};height:20px;width:50px;border:solid black 1px"></div>`
-            } else {
+            } else if(d[0] == "participantId" && linkToParticipantInfo) {
+                if(d[1] == "0"){
+                    return "0 (survey error)"
+                } 
+                const link = $('<a href="#" />').text(d[1])
+                link.attr("data-participant-id", d[1])
+                return link.prop('outerHTML')
+            }else {
                 return $('<span />').text(d[1]).prop('outerHTML')
             }
         })
 
-    // TODO: When participant id pressed, show data for participant
+    function showParticipantInfo(e){
+        console.log("show participant info")
+        e.preventDefault()
 
-    //.on("click", expandCommonName)
+        const participantId =  e.target.dataset.participantId
+
+        $("#participant-info-modal").modal("show")
+
+        $("#participant-info-modal .modal-title").text("Participant Info: " + participantId)
+
+        const cleanedTable = d3.select('#participant-info-modal .modal-body .cleaned-data table')
+        const removeTable = d3.select('#participant-info-modal .modal-body .removed-data table')
+
+         showRawData(cleanedColorNames.filter(a => a.participantId == participantId), 
+            cleanedTable, false, cleanedColorNames, removedColorData)
+         showRawData(removedColorData.filter(a => a.participantId == participantId), 
+            removeTable, false, cleanedColorNames, removedColorData)
+
+    }
+
+    tds.selectAll("td a")
+        .on("click", showParticipantInfo)
 }
+
+
+
 
 
 
