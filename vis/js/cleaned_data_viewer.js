@@ -1,23 +1,48 @@
 const STANDARDIZED_NAME_COL = "Standardized Names"
 
+const rawDataRowSort = [
+    "entered_name", "standardized_entered_name", "name",
+    "lang0", "participantId", "colorNameId", "rgbSet",
+    "studyVersion", "locale", "phaseNum", "trialNum","tileNum",
+    "r", "g", "b", "lab_l", "lab_a", "lab_b"
+]
+
 $(document).on('ready page:load', async () => {
 
-const cleanedColorNames = await d3.csv("../model/cleaned_color_names.csv");
+let cleanedColorNames, removedColorData
+
+await Promise.all([
+    d3.csv("../model/cleaned_color_names.csv").then(data => {
+        cleanedColorNames = data
+    }),
+    d3.csv("../model/removed_color_data.csv").then(data => {
+        removedColorData = data
+    })
+])
 console.log(cleanedColorNames[0]);
+console.log(removedColorData[0]);
 
 const allNamesByLang = Object.groupBy(cleanedColorNames, ({lang0}) => lang0)
+const allRemovedNamesByLang = Object.groupBy(removedColorData, ({lang0}) => lang0)
 
-console.log(Object.keys(allNamesByLang))
+const allLangs = Array.from(new Set([
+                    ...Object.keys(allNamesByLang), 
+                    ...Object.keys(allRemovedNamesByLang)]))
+                .sort()
+console.log(Object.keys(allLangs))
 
 //let selected_lang = "English (English)"
-let selected_lang = Object.keys(allNamesByLang).find(a => a.startsWith("Greek"))
+let selected_lang = allLangs.find(a => a.startsWith("Greek"))
 
 $("#selected_langs").empty()
 
-const languagesSorted = Object.keys(allNamesByLang).sort()
-for(lang of languagesSorted){
+for(lang of allLangs){
     let selected_lang_temp = lang.startsWith("Greek")
-    $("#selected_langs").append(new Option(`${lang} (${allNamesByLang[lang].length.toLocaleString()})`, lang, true, selected_lang_temp))
+    $("#selected_langs").append(new Option(
+        `${lang} ‎(${ // Note LTR character here to make arrows show 
+            allNamesByLang[lang] ? allNamesByLang[lang].length.toLocaleString() : 0} - ${
+            allRemovedNamesByLang[lang] ? allRemovedNamesByLang[lang].length.toLocaleString() : 0})`, 
+        lang, true, selected_lang_temp))
     selected_lang_temp = false
 }
 
@@ -26,6 +51,14 @@ $("#selected_langs").change(e => {
 })
 
 $("#min_name_count").change(e => { 
+    updateTableData()
+})
+
+$("#selected_langs").change(e => { 
+    updateTableData()
+})
+
+$("input[name='cleaned-or-deleted']").change(e => {
     updateTableData()
 })
 
@@ -48,8 +81,6 @@ for(let [lang, langData] of Object.entries(allNamesByLang)){
                 .sort((a,b) => -a.values.length + b.values.length)[0]
                 .key
         
-        const standardized_entered_name_count = termGroup.length
-
         const color_sample = getColorSample(gTerm[1], 9)
         
         return {
@@ -76,16 +107,30 @@ $("#data_view").empty()
 const table = d3.select("#data_view")
     .append("table")
 
-table.selectAll("th")
-        .data(Object.keys(groupedNamesByLang[selected_lang][0]))
-        .join("th")
-        .text(d => d)
-        //.style("max-width", (d) => d == STANDARDIZED_NAME_COL ? "120px" : undefined)
 
 updateTableData();
 
 function updateTableData(){
+    $(table.node()).empty()
+
     const selected_lang = $("#selected_langs").val()
+
+    const datasetShown = $("input[name='cleaned-or-deleted']:checked").val()
+    console.log("datasetShown", datasetShown)
+    if(datasetShown == "removed"){
+        showRawData(allRemovedNamesByLang[selected_lang], table)
+        $("#filter_lang_note").hide()
+        $("#min_name_count_div").hide()
+        return
+    }
+    $("#filter_lang_note").show()
+    $("#min_name_count_div").show()
+    
+    table.selectAll("th")
+        .data(Object.keys(groupedNamesByLang[selected_lang][0]))
+        .join("th")
+        .text(d => d)
+   
 
     let nameData = groupedNamesByLang[selected_lang]
 
@@ -181,52 +226,8 @@ function updateTableData(){
 
         const standardized_modal_body = d3.select('#standardized-name-modal .modal-body')
         
-        const rowSort = [
-            "entered_name", "standardized_entered_name", "name",
-            "lang0", "participantId", "colorNameId", "rgbSet",
-            "studyVersion", "locale", "phaseNum", "trialNum","tileNum",
-            "r", "g", "b", "lab_l", "lab_a", "lab_b"
-        ]
-        
-        standardized_modal_body
-            .selectAll("th")
-            .data(["Color", ...Object.keys(standardized_name_data[0]).sort((a, b) => rowSort.indexOf(a) - rowSort.indexOf(b))])
-            .join("th")
-            .text(d => d)
-
-        const rows = standardized_modal_body
-        .selectAll("tr")
-        .data(Object.entries(standardized_name_data))
-        .join("tr")
-            .attr("test2", "test2")
-    
-
-        rows.selectAll("td")
-            .data(d => {
-                const sortedEntries =  Object.entries(d[1])
-                    .sort((a, b) => rowSort.indexOf(a[0]) - rowSort.indexOf(b[0]))
-                sortedEntries.unshift(["Color", d3.rgb(
-                    sortedEntries.find(a => a[0] == "r")[1],
-                    sortedEntries.find(a => a[0] == "g")[1],
-                    sortedEntries.find(a => a[0] == "b")[1]
-                )])
-                return sortedEntries
-            })
-            .join("td")
-            .html(d => {
-                if(d[0] == "Color") {
-                    return `<div 
-                        style="background-color:${d[1]};height:20px;width:50px;border:solid black 1px"></div>`
-                } else {
-                    return $('<span />').text(d[1]).prop('outerHTML')
-                }
-            })
-        }
-
-        // TODO: When participant id pressed, show data for participant
-    
-        //.on("click", expandCommonName)
-
+        showRawData(standardized_name_data, standardized_modal_body)
+    }
 
     // function expandCommonName(event, d){
     //     console.log(event, d)
@@ -268,6 +269,49 @@ function updateTableData(){
 })
 
 
+function showRawData(dataset, tableElement){
+    if(!dataset){
+        tableElement.text("No data")
+        return
+    }
+    tableElement
+        .selectAll("th")
+        .data(["Color", ...Object.keys(dataset[0]).sort((a, b) => rawDataRowSort.indexOf(a) - rawDataRowSort.indexOf(b))])
+        .join("th")
+        .text(d => d)
+
+    const rows = tableElement
+    .selectAll("tr")
+    .data(Object.entries(dataset))
+    .join("tr")
+        .attr("test2", "test2")
+
+
+    rows.selectAll("td")
+        .data(d => {
+            const sortedEntries =  Object.entries(d[1])
+                .sort((a, b) => rawDataRowSort.indexOf(a[0]) - rawDataRowSort.indexOf(b[0]))
+            sortedEntries.unshift(["Color", d3.rgb(
+                sortedEntries.find(a => a[0] == "r")[1],
+                sortedEntries.find(a => a[0] == "g")[1],
+                sortedEntries.find(a => a[0] == "b")[1]
+            )])
+            return sortedEntries
+        })
+        .join("td")
+        .html(d => {
+            if(d[0] == "Color") {
+                return `<div 
+                    style="background-color:${d[1]};height:20px;width:50px;border:solid black 1px"></div>`
+            } else {
+                return $('<span />').text(d[1]).prop('outerHTML')
+            }
+        })
+
+    // TODO: When participant id pressed, show data for participant
+
+    //.on("click", expandCommonName)
+}
 
 
 

@@ -60,7 +60,14 @@
             <select class="form-select small" multiple="multiple" name ="selected_langs" id="selected_langs" value="selected_langs" style="width:100%"></select>
           </div>
         </div>
-        <div class="form-check form-check-inline"> 
+        <div class="form-check form-check-inline">
+          <input type="radio" class="btn-check" value="cleaned" name="cleaned-or-deleted" id="cleaned-data" autocomplete="off" checked>
+          <label class="btn btn-outline-primary" for="cleaned-data">Cleaned Data</label>
+
+          <input type="radio" class="btn-check" value="removed" name="cleaned-or-deleted" id="removed-data" autocomplete="off">
+          <label class="btn btn-outline-primary" for="removed-data">Removed Data</label>
+        </div>
+        <div id="min_name_count_div" class="form-check form-check-inline"> 
           <label class="form-label" for="min_name_count">Minimum data count 
           </label>
           <input type="number" id="min_name_count" name="min_name_count" min="1" value="2" />
