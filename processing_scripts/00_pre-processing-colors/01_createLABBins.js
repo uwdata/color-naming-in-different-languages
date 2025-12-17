@@ -248,7 +248,8 @@ for(let labBinSize of LAB_BIN_SIZES){
                 ){
                     anyCenterInThisBin = true
                 } else {
-                    bin_info["center_" + colorSpace + "_in_other_bin"] = true
+                    const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
+                    bin_info["center_" + colorSpaceFieldName + "_in_other_bin"] = true
                 }
             } else{
                 //console.log("out of range rgb center", center_rgb, bin_info)
