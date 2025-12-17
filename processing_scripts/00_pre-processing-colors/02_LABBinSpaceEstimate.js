@@ -10,11 +10,15 @@ import fs from 'fs'
 
 import Color from "colorjs.io";
 // Note: Since colorjs.io doesn't round rgb values to 0-255 integers like I 
-// am assuming, do it myself
+// am assuming, do it myself. Similar with rounding other gamuts
 function toColorSpace(color, colorSpace){
     color = color.to(colorSpace)
     if(colorSpace == "srgb"){
         return new Color(colorSpace, color.coords.map(c => Math.round(c*255)/255))
+    } else {
+        if(color.to(colorSpace).inGamut()){ // if in gamut, round to gamut value
+            return color.toGamut()
+        }
     }
     return color
 }
@@ -25,10 +29,10 @@ const FILE_IO_LAB_BINS = "../../model/color_info_pre_naming/oklab_bins"
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 
-//const HUE_RATIO_LAB_N = 500 // NOTE: This makes it very slow (and more accurate)
-//const HUE_RATIO_LAB_N = 50 // For speed purposes (gives less accurate bin info)
-//const HUE_RATIO_LAB_N = 20 // Very fast, not accurate (for test run)
-const LAB_N_SAMPLES = 500
+// const HUE_RATIO_LAB_N = 1000 // NOTE: This makes it very slow (and more accurate)
+//const HUE_RATIO_LAB_N = 200 // ok enough
+//const HUE_RATIO_LAB_N = 50 // For speed / test purposes (gives less accurate bin info)
+const LAB_N_SAMPLES = 200//500
 
 const LAB_SAMPLE_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / LAB_N_SAMPLES 
 
@@ -37,6 +41,9 @@ const LAB_SAMPLE_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / LAB_N
 const COLOR_SPACES = ['srgb', 'p3', "rec2020"]
 
 function LabDistance(color1, color2){
+    if(!("l" in color1) || !("l" in color2)){
+        throw new Error("LabDistance has not LAB colors")
+    }
     return Math.sqrt(
     (color1.l - color2.l)**2 +
     (color1.a - color2.a)**2 +
@@ -132,6 +139,7 @@ function fillInMissingBinFields(bin, binSet, thisColor, testColorInColorSpaces, 
     let isBinCenterInAnyGamut = false
     let isBinCenterInThisBin = false
     for(const colorSpace of COLOR_SPACES){
+        const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
         if(bin.center_lab.inGamut(colorSpace)){
             isBinCenterInAnyGamut = true
         }
@@ -148,7 +156,7 @@ function fillInMissingBinFields(bin, binSet, thisColor, testColorInColorSpaces, 
         ){
             isBinCenterInThisBin = true
         } else {
-            bin["center_" + colorSpace + "_in_other_bin"] = true
+            bin["center_" + colorSpaceFieldName + "_in_other_bin"] = true
         }
     }
     if(!isBinCenterInAnyGamut){
@@ -301,7 +309,7 @@ for(let l = min_l; l <= max_l; l += LAB_SAMPLE_DELTA){
                         const thisDist = LabDistance(testColor, bin.center_lab)
 
                         if("representative_lab" in bin){
-                            if(!"rep_lab_dist" in bin){
+                            if(!("rep_lab_dist" in bin)){
                                 bin.rep_lab_dist = LabDistance(bin.representative_lab, bin.center_lab)
                             }
                             if(thisDist < bin.rep_lab_dist){
@@ -314,9 +322,15 @@ for(let l = min_l; l <= max_l; l += LAB_SAMPLE_DELTA){
                             
                             if(isColorInGamuts[colorSpace] &&
                                         ("representative_"+colorSpaceFieldName) in bin){
+                                if(colorSpace != "srgb" && bin.l_bin == 0 && bin.a_bin == 1 && bin.b_bin == 0){
+                                    console.log("test")
+                                }
 
-                                if(!("rep_lab_dist_"+colorSpaceFieldName) in bin){
-                                    bin["rep_lab_dist_"+colorSpaceFieldName] = LabDistance(bin["representative_"+colorSpaceFieldName], bin.center_lab)
+                                if(!(("rep_lab_dist_"+colorSpaceFieldName) in bin)){
+                                    bin["rep_lab_dist_"+colorSpaceFieldName] = LabDistance(
+                                        new Color(colorSpace, [bin["representative_"+colorSpaceFieldName].r, bin["representative_"+colorSpaceFieldName].g, bin["representative_"+colorSpaceFieldName].b])
+                                            .to("oklab"),
+                                        bin.center_lab)
                                 }
 
                                 // check if bin for this color is this bin
@@ -390,6 +404,9 @@ for(const binSet of labBinSetsForProcessing){
     //  - make colors just values
     //  - get rid of representative colors if they are the same as the center color
     for(const bin of binSet.bins){
+        if(bin.l_bin == 0 && bin.a_bin == 1 && bin.b_bin == 0){
+            console.log("test")
+        }
         delete bin.numTestColors
         for(const colorSpace of COLOR_SPACES){
              const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
@@ -416,7 +433,7 @@ for(const binSet of labBinSetsForProcessing){
         }
         for(const colorSpace of COLOR_SPACES){
             const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
-            delete bin["rep_lab_dist"+colorSpaceFieldName]
+            delete bin["rep_lab_dist_"+colorSpaceFieldName]
             if(colorSpace == "srgb"){
                 // Note: "inGamut" check is a way to tell if it is a color that needs converting, or just an object with r,g,b
                 if("center_rgb" in bin && "inGamut" in bin["center_rgb"]){
@@ -443,17 +460,17 @@ for(const binSet of labBinSetsForProcessing){
                 if(!("inGamut" in bin["center_"+colorSpace])){
                     bin["center_"+colorSpace] = new Color({space: colorSpace, coords: [bin["center_"+colorSpace].r, bin["center_"+colorSpace].g, bin["center_"+colorSpace].b]})
                 }
-                if(bin["center_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
-                    bin["center_"+colorSpace] = bin["center_"+colorSpace].toGamut()
-                }
+                // if(bin["center_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
+                //     bin["center_"+colorSpace] = bin["center_"+colorSpace].toGamut()
+                // }
                 bin["center_"+colorSpace] = {r: bin["center_"+colorSpace].r, g: bin["center_"+colorSpace].g, b: bin["center_"+colorSpace].b}
                 if("representative_"+colorSpace in bin){
                     if(!("inGamut" in bin["representative_"+colorSpace])){
                         bin["representative_"+colorSpace] = new Color({space: colorSpace, coords: [bin["representative_"+colorSpace].r, bin["representative_"+colorSpace].g, bin["representative_"+colorSpace].b]})
                     }
-                    if(bin["representative_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
-                        bin["representative_"+colorSpace] = bin["representative_"+colorSpace].toGamut()
-                    }
+                    // if(bin["representative_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
+                    //     bin["representative_"+colorSpace] = bin["representative_"+colorSpace].toGamut()
+                    // }
                     bin["representative_"+colorSpace] = {r: bin["representative_"+colorSpace].r, g: bin["representative_"+colorSpace].g, b: bin["representative_"+colorSpace].b}
                 }
 

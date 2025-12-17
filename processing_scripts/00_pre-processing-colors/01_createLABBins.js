@@ -7,11 +7,15 @@ import fs from 'fs'
 import Color from "colorjs.io";
 
 // Note: Since colorjs.io doesn't round rgb values to 0-255 integers like I 
-// am assuming, do it myself
+// am assuming, do it myself. Similar with rounding other gamuts
 function toColorSpace(color, colorSpace){
     color = color.to(colorSpace)
     if(colorSpace == "srgb"){
         return new Color(colorSpace, color.coords.map(c => Math.round(c*255)/255))
+    } else {
+        if(color.to(colorSpace).inGamut()){ // if in gamut, round to gamut value
+            return color.toGamut()
+        }
     }
     return color
 }

@@ -75,7 +75,9 @@
       "b": 0
     },
     "center_rgb_in_other_bin": true,
+    "center_p3_in_other_bin": true,
     "num_p3": 1,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -232,7 +234,9 @@
       "b": 0
     },
     "center_rgb_in_other_bin": true,
+    "center_p3_in_other_bin": true,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -275,7 +279,9 @@
       "b": 0
     },
     "center_rgb_in_other_bin": true,
+    "center_p3_in_other_bin": true,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -326,6 +332,7 @@
     "representative_p3_from_bin": true,
     "representative_p3_in_this_bin": true,
     "num_p3": 4,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 1,
     "center_rgb": {
       "r": 0,
@@ -376,6 +383,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -418,7 +426,9 @@
       "b": 0.000005364734477669329
     },
     "center_rgb_in_other_bin": true,
+    "center_p3_in_other_bin": true,
     "num_p3": 1,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -469,6 +479,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -633,6 +644,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -1025,6 +1037,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -1075,6 +1088,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,

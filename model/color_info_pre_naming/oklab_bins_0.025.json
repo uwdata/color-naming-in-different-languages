@@ -676,7 +676,7 @@
       "b": 0.00012856458698682748
     },
     "representative_rec2020_from_bin": true,
-    "representative_rec2020_in_this_bin": true,
+    "representative_rec2020_in_this_bin": false,
     "num_rec2020": 0,
     "center_rgb": {
       "r": -1,
@@ -1345,6 +1345,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -1382,7 +1383,9 @@
       "b": 0
     },
     "center_rgb_in_other_bin": true,
+    "center_p3_in_other_bin": true,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -1658,6 +1661,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -1970,6 +1974,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -2007,7 +2012,9 @@
       "b": 0
     },
     "center_rgb_in_other_bin": true,
+    "center_p3_in_other_bin": true,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -2283,6 +2290,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -2328,6 +2336,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -4569,6 +4578,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -4896,6 +4906,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -4993,6 +5004,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
@@ -5305,6 +5317,7 @@
     "representative_p3_from_bin": false,
     "representative_p3_in_this_bin": false,
     "num_p3": 0,
+    "center_rec2020_in_other_bin": true,
     "num_rec2020": 0,
     "center_rgb": {
       "r": 0,
