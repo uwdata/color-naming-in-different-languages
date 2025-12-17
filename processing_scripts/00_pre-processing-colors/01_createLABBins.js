@@ -5,6 +5,17 @@
 
 import fs from 'fs'
 import Color from "colorjs.io";
+
+// Note: Since colorjs.io doesn't round rgb values to 0-255 integers like I 
+// am assuming, do it myself
+function toColorSpace(color, colorSpace){
+    color = color.to(colorSpace)
+    if(colorSpace == "srgb"){
+        return new Color(colorSpace, color.coords.map(c => Math.round(c*255)/255))
+    }
+    return color
+}
+
 import * as labBinHelperLib from '../utils/labBinHelper.js'
 
 
@@ -105,7 +116,7 @@ for(let labBinSize of LAB_BIN_SIZES){
 
                     for(const colorSpace of COLOR_SPACES){
                         binInfo[colorSpace + "s"] = []
-                        binInfo["center_"+colorSpace] = binInfo.center_lab.to(colorSpace)
+                        binInfo["center_"+colorSpace] = toColorSpace(binInfo.center_lab, colorSpace)
                     }
                     if(!labBinInfo[l_bin]){
                         labBinInfo[l_bin] = {}
@@ -131,7 +142,7 @@ for(let labBinSize of LAB_BIN_SIZES){
                     
                     for(const colorSpace of COLOR_SPACES){
                         binInfo[colorSpace + "s"] = []
-                        binInfo["center_"+colorSpace] = binInfo.center_lch.to(colorSpace)
+                        binInfo["center_"+colorSpace] = toColorSpace(binInfo.center_lch, colorSpace)
                     }
 
                     if(!labBinInfo[l_bin]){
@@ -249,7 +260,7 @@ for(let labBinSize of LAB_BIN_SIZES){
                 }else{
                     bin_info["representative_"+colorSpace+"_from_bin"] = false
                     bin_info["representative_"+colorSpace+"_in_this_bin"] = false
-                    const closest_color_source = bin_info.center_lab.to(colorSpace).toGamut()
+                    const closest_color_source = toColorSpace(bin_info.center_lab, colorSpace).toGamut()
                     closest_color = {
                         sourceColor: closest_color_source,
                         oklabColor: closest_color_source.to("oklab"),
@@ -300,7 +311,7 @@ for(let labBinSize of LAB_BIN_SIZES){
                                     coords: [dimVal0, dimVal1, dimVal2]
                                 })
                             
-                                if(testColor.to(colorSpace).inGamut()){
+                                if(toColorSpace(testColor, colorSpace).inGamut()){
                                     const dist = Math.sqrt(
                                         (testColor.l - centerLab.l)**2 +
                                         (testColor.a - centerLab.a)**2 +
@@ -314,7 +325,7 @@ for(let labBinSize of LAB_BIN_SIZES){
                                     }
 
                                     // check if bin for this color is this bin
-                                    const thisColorInThisSpace = testColor.to(colorSpace)
+                                    const thisColorInThisSpace = toColorSpace(testColor, colorSpace)
                                     let thisColorInThisBin = false
                                     const [bin_dim_1, bin_dim_2, bin_dim_3] = 
                                         labBinSize.type == "ring" ? 
@@ -340,7 +351,7 @@ for(let labBinSize of LAB_BIN_SIZES){
                         }
                     }  
                     if(closestThisSpaceEdgeColor){
-                        const newRepColor = closestThisSpaceEdgeColor.to(colorSpace)
+                        const newRepColor = toColorSpace(closestThisSpaceEdgeColor, colorSpace)
                         bin_info["representative_"+colorSpace] = newRepColor
                         bin_info["representative_"+colorSpace+"_from_bin"] = true 
                         bin_info["representative_"+colorSpace+"_in_this_bin"] = closestThisSpaceInThisBin

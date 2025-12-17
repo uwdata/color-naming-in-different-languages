@@ -7,7 +7,18 @@
 // that aren't all empty or all full
 
 import fs from 'fs'
+
 import Color from "colorjs.io";
+// Note: Since colorjs.io doesn't round rgb values to 0-255 integers like I 
+// am assuming, do it myself
+function toColorSpace(color, colorSpace){
+    color = color.to(colorSpace)
+    if(colorSpace == "srgb"){
+        return new Color(colorSpace, color.coords.map(c => Math.round(c*255)/255))
+    }
+    return color
+}
+
 import * as labBinHelperLib from '../utils/labBinHelper.js'
 
 const FILE_IO_LAB_BINS = "../../model/color_info_pre_naming/oklab_bins"
@@ -128,8 +139,8 @@ function fillInMissingBinFields(bin, binSet, thisColor, testColorInColorSpaces, 
         // check if bin for this color is this bin
         const [bin_dim_1, bin_dim_2, bin_dim_3] = 
             binSet.binSize.type == "ring" ? 
-                binSet.labBinHelper.bins_from_lch(bin.center_lab.to(colorSpace).to("oklch")) : 
-                binSet.labBinHelper.bins_from_lab(bin.center_lab.to(colorSpace).to("oklab"))
+                binSet.labBinHelper.bins_from_lch(toColorSpace(bin.center_lab, colorSpace).to("oklch")) : 
+                binSet.labBinHelper.bins_from_lab(toColorSpace(bin.center_lab, colorSpace).to("oklab"))
     
         if(bin[binSet.binSize.dims[0] + "_bin"] == bin_dim_1 && 
             bin[binSet.binSize.dims[1] + "_bin"] == bin_dim_2 && 
@@ -148,7 +159,7 @@ function fillInMissingBinFields(bin, binSet, thisColor, testColorInColorSpaces, 
     for(const colorSpace of COLOR_SPACES){
         const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
         bin["num_"+colorSpaceFieldName] = 0 // no colors were found in this bin of the ~16 million tried
-        bin["center_"+colorSpaceFieldName] = bin.center_lab.to(colorSpace)
+        bin["center_"+colorSpaceFieldName] = toColorSpace(bin.center_lab, colorSpace)
 
         if(!bin["center_"+colorSpaceFieldName].inGamut()){
             if(isColorInGamuts[colorSpace]){
@@ -219,7 +230,7 @@ for(let l = min_l; l <= max_l; l += LAB_SAMPLE_DELTA){
             const isColorInGamuts = {}
             let isColorInAnyGamut = false
             for(const colorSpace of COLOR_SPACES){
-                testColorInColorSpaces[colorSpace] = testColor.to(colorSpace)
+                testColorInColorSpaces[colorSpace] = toColorSpace(testColor, colorSpace)
                 isColorInGamuts[colorSpace] = testColorInColorSpaces[colorSpace].inGamut()
                 if(isColorInGamuts[colorSpace]){
                     isColorInAnyGamut = true
@@ -309,7 +320,7 @@ for(let l = min_l; l <= max_l; l += LAB_SAMPLE_DELTA){
                                 }
 
                                 // check if bin for this color is this bin
-                                const thisColorInThisSpace = testColor.to(colorSpace)
+                                const thisColorInThisSpace = toColorSpace(testColor, colorSpace)
                                 let thisColorInThisBin = false
                                 const [bin_dim_1, bin_dim_2, bin_dim_3] = 
                                     binSet.binSize.type == "ring" ? 
@@ -367,7 +378,7 @@ for(const binSet of labBinSetsForProcessing){
             const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
             // if representative_ color marked as needed but isn't there
             if(("representative_"+colorSpaceFieldName) in bin && bin["representative_"+colorSpaceFieldName] == "NEEDED"){
-                bin["representative_"+colorSpaceFieldName] = bin.center_lab.to(colorSpace).toGamut()
+                bin["representative_"+colorSpaceFieldName] = toColorSpace(bin.center_lab, colorSpace).toGamut()
                 bin["representative_"+colorSpaceFieldName+"_from_bin"] = false
                 bin["representative_"+colorSpaceFieldName+"_in_this_bin"] = false
             }
