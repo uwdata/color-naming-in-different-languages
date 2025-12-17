@@ -17,7 +17,7 @@ const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 //const HUE_RATIO_LAB_N = 500 // NOTE: This makes it very slow (and more accurate)
 //const HUE_RATIO_LAB_N = 50 // For speed purposes (gives less accurate bin info)
 //const HUE_RATIO_LAB_N = 20 // Very fast, not accurate (for test run)
-const LAB_N_SAMPLES = 200
+const LAB_N_SAMPLES = 500
 
 const LAB_SAMPLE_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / LAB_N_SAMPLES 
 
@@ -404,6 +404,8 @@ for(const binSet of labBinSetsForProcessing){
             }
         }
         for(const colorSpace of COLOR_SPACES){
+            const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
+            delete bin["rep_lab_dist"+colorSpaceFieldName]
             if(colorSpace == "srgb"){
                 // Note: "inGamut" check is a way to tell if it is a color that needs converting, or just an object with r,g,b
                 if("center_rgb" in bin && "inGamut" in bin["center_rgb"]){
@@ -417,7 +419,6 @@ for(const binSet of labBinSetsForProcessing){
                         r: Math.round(255*bin["representative_rgb"].r), 
                         g: Math.round(255*bin["representative_rgb"].g), 
                         b: Math.round(255*bin["representative_rgb"].b)}
-                    delete bin.representative_rgb
                 }
 
                 // The representative value might round to being the same as the center
