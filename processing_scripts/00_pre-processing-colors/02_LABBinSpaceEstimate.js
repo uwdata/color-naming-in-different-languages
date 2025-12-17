@@ -17,7 +17,7 @@ const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 //const HUE_RATIO_LAB_N = 500 // NOTE: This makes it very slow (and more accurate)
 //const HUE_RATIO_LAB_N = 50 // For speed purposes (gives less accurate bin info)
 //const HUE_RATIO_LAB_N = 20 // Very fast, not accurate (for test run)
-const LAB_N_SAMPLES = 20
+const LAB_N_SAMPLES = 200
 
 const LAB_SAMPLE_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / LAB_N_SAMPLES 
 
@@ -405,14 +405,14 @@ for(const binSet of labBinSetsForProcessing){
         }
         for(const colorSpace of COLOR_SPACES){
             if(colorSpace == "srgb"){
-                // Note: "inGamut" check is a way to tell if it is a color that needs converting, or just an object
+                // Note: "inGamut" check is a way to tell if it is a color that needs converting, or just an object with r,g,b
                 if("center_rgb" in bin && "inGamut" in bin["center_rgb"]){
                     bin["center_rgb"] = {
                         r: Math.round(255*bin["center_rgb"].r), 
                         g: Math.round(255*bin["center_rgb"].g), 
                         b: Math.round(255*bin["center_rgb"].b)}
                     }
-                if("representative_rgb" in bin && "inGamut" in bin["center_rgb"]){
+                if("representative_rgb" in bin && "inGamut" in bin["representative_rgb"]){
                     bin["representative_rgb"] = {
                         r: Math.round(255*bin["representative_rgb"].r), 
                         g: Math.round(255*bin["representative_rgb"].g), 
@@ -420,12 +420,13 @@ for(const binSet of labBinSetsForProcessing){
                     delete bin.representative_rgb
                 }
 
-                // TODO: Check if representative rgb not in this bin, in which case keep it
-                if(JSON.stringify(bin.center_rgb) == JSON.stringify(bin.representative_rgb)){
-                    delete bin.representative_rgb
-                    delete bin.representative_rgb_from_bin
-                    delete bin.representative_in_this_bin
-                }
+                // The representative value might round to being the same as the center
+                // but that means the center was technically not in gamut (e.g., small negative)
+                // if(JSON.stringify(bin.center_rgb) == JSON.stringify(bin.representative_rgb)){
+                //     delete bin.representative_rgb
+                //     delete bin.representative_rgb_from_bin
+                //     delete bin.representative_in_this_bin
+                // }
             } else {
                 if(!("inGamut" in bin["center_"+colorSpace])){
                     bin["center_"+colorSpace] = new Color({space: colorSpace, coords: [bin["center_"+colorSpace].r, bin["center_"+colorSpace].g, bin["center_"+colorSpace].b]})
@@ -444,11 +445,13 @@ for(const binSet of labBinSetsForProcessing){
                     bin["representative_"+colorSpace] = {r: bin["representative_"+colorSpace].r, g: bin["representative_"+colorSpace].g, b: bin["representative_"+colorSpace].b}
                 }
 
-                if(JSON.stringify(bin["center_"+colorSpace]) == JSON.stringify(bin["representative_"+colorSpace])){
-                    delete bin["representative_"+colorSpace]
-                    delete bin["representative_"+colorSpace+"_from_bin"]
-                    delete bin["representative_"+colorSpace+"_in_this_bin"]
-                }
+                // The representative value might round to being the same as the center
+                // but that means the center was technically not in gamut (e.g., small negative)
+                // if(JSON.stringify(bin["center_"+colorSpace]) == JSON.stringify(bin["representative_"+colorSpace])){
+                //     delete bin["representative_"+colorSpace]
+                //     delete bin["representative_"+colorSpace+"_from_bin"]
+                //     delete bin["representative_"+colorSpace+"_in_this_bin"]
+                // }
             }
         }
     }
