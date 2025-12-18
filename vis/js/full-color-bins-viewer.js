@@ -103,12 +103,16 @@ const LAB_BIN_SIZES = [
 ]
 
 
+const labBinDataSets = {}
 const labBinViews = {}
 const labBinArcViews = {}
 
 /*************** Pre-processing functions *********************/
 async function load_and_process_bin_data(bin_size){
   await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/oklab_bins_${bin_size}.json`, function( data ) {
+    
+    labBinDataSets[bin_size] = data
+
     const binView = new FullColorBinView({
       bin_size: bin_size,
       bin_array: data,
@@ -148,6 +152,7 @@ async function load_and_process_bin_data(bin_size){
 /*************** Tracking the current display options *******************/
 const currSvgSize = [{}]
 let curr_bin_size = LAB_BIN_SIZES[1] 
+let curr_color_gamut
 let backgroundColor = 'white'
 
 /*************** Load page and Data *********************/
@@ -178,6 +183,11 @@ $(document).on('ready page:load', function () {
 
   $("#bin_size").change(updateDisplay)
 
+  curr_color_gamut = $("input[name='color-gamut']:checked").val()
+  $("input[name='color-gamut']").change(e => {
+    updateDisplay()
+  })
+
   $("#background-brightness").on("input", function(){
     const brightness = $(this).val() 
     const brightness255 = Math.round(255*brightness/100)
@@ -195,8 +205,9 @@ $(document).on('ready page:load', function () {
   updateDisplay()
 })
 
+
 function updateDisplay(){
-  
+
   curr_bin_size = $("#bin_size").val()
 
   curr_bin_size = LAB_BIN_SIZES.find((bin) => bin.abv == curr_bin_size)
@@ -220,6 +231,17 @@ function updateDisplay(){
     return
   } else {
     $("#loading-p").remove()
+  }
+
+  curr_color_gamut = $("input[name='color-gamut']:checked").val()
+  const gamutFilteredBins = labBinDataSets[curr_bin_size].filter(b => {
+    return b["num_" + curr_color_gamut] > 0
+  })
+  labBinViews[curr_bin_size].setBinArray(gamutFilteredBins)
+  labBinViews[curr_bin_size].setDisplayOffsets(labBinViews[curr_bin_size].getDisplayOffsets())
+  if(labBinArcViews[curr_bin_size]){
+    labBinArcViews[curr_bin_size].setBinArray(gamutFilteredBins)
+    labBinArcViews[curr_bin_size].setDisplayOffsets(labBinArcViews[curr_bin_size].getDisplayOffsets())
   }
 
   currSvgSize[0].width = $("#main").width()

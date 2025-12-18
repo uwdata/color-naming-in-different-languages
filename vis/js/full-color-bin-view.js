@@ -10,6 +10,11 @@ class FullColorBinView {
         this.findDimBounds()
     }
 
+    setBinArray(bin_array){
+        this.bin_array = bin_array
+        this.nested_bins = this.binsArrayToNested(this.bin_array)
+    }
+
 
     binsArrayToNested(labBinArray) {
         const nestedData = {}
