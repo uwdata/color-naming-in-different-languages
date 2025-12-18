@@ -547,7 +547,7 @@ class FullColorBinView {
                 if("click" in options){
                     tiles.on("click", options.click)
                 }
-        } else {
+        } else if(areRingArcs && this.split_dim){ // ring arcs split along the split_dim axis
             // clear any old square tiles
             parentElement.selectAll(".tile")
                 .data([])
@@ -650,6 +650,98 @@ class FullColorBinView {
             if("click" in options){
                 arcTiles.on("click", options.click)
             }
+        } else { // isomorphic arc bins
+
+            // TODO: This code is currently the isomorphic cube code
+            // it will need to be updated to do isomorphic ring bins
+
+            // clear any old circle or arc tiles
+            parentElement.selectAll(".arc-tile")
+                .data([])
+                .join("path")
+            parentElement.selectAll(".circle-tile")
+                .data([])
+                .join("path")
+
+
+            let tiles = parentElement.selectAll(".tile")
+                .data(binsToDisplay)
+                .join("path")
+                .attr("class", "tile")
+                .style("display", getTileVisibleDisplay)
+                .style("stroke", options.no_border ? "" : backgroundColor)
+                .style("stroke-width", options.no_border ? "" :  tileBorderSize/2)
+                .attr("fill", (d) => {
+                    const bin = thisView.getBinInfo(d)
+                    return getTileColor(d, bin)
+                })
+                .attr("d", d => {
+                    const bin = thisView.getBinInfo(d)
+                    
+                    const [raw_center_x, raw_center_y] = getIsometricBinPosition(thisView, bin, getTileScale(d))
+                    const [center_x, center_y] = [raw_center_x + 30, raw_center_y  + 30 ]
+                     
+                    const l_min_y = ((z_scale) * getTileScale(d) / 2);
+                    const l_max_y = -((z_scale) * getTileScale(d) / 2);
+                    const a_min_x =  Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const a_max_x =  -Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const a_min_y =  Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const a_max_y =  -Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_min_x =  Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_max_x =  -Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_min_y =  Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    const b_max_y =  -Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
+                    
+                    return `
+                        M ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} 
+                        L ${tileSize*(center_x +  a_max_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_max_y)} 
+                        L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
+                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_min_y)}
+                        L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)}
+
+                        M ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} 
+                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_min_y)}
+                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_min_y)}
+                        L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_max_y)}
+                        L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)}
+
+                        M ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
+                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_min_y)} 
+                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_min_y)} 
+                        L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_max_y + b_min_y)} 
+                        L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
+                         `
+                })
+
+                .attr("title", (d) => {
+                    const bin = thisView.getBinInfo(d)
+                    if("getTileTitleText" in options){
+                        return options.getTileTitleText(d, bin)
+                    }
+                    let info = `
+                    ${thisView.bin_size.type == "ring" ?
+                        `Bin Center (l, c, h): ${Math.round(bin.center_lch.l *10000, 1)/10000}, ${Math.round(bin.center_lch.c*10000, 1)/10000}, ${Math.round(bin.center_lch.h*10000, 1)/10000}` 
+                        :""}
+                    Bin Center (l, a, b): ${Math.round(bin.center_lab.l *10000, 1)/10000}, ${Math.round(bin.center_lab.a*10000, 1)/10000}, ${Math.round(bin.center_lab.b*10000, 1)/10000}
+                    Bin Center (r, g, b): ${Math.round(bin.center_rgb.r, 1)}, ${Math.round(bin.center_rgb.g, 1)}, ${Math.round(bin.center_rgb.b, 1)}
+                    Bin percent valid rgb: ${bin.ratio_bin_in_gamut_rgb * 100}
+                    ${("representative_rgb" in d)
+                        ?
+                        `Example RGB in tile (r, g, b): ${bin.representative_rgb.r}, ${bin.representative_rgb.g}, ${bin.representative_rgb.b}}` 
+                        : ""
+                    }`.trim()
+                    return info
+                })
+
+                if("mouseover" in options){
+                    tiles.on("mouseover", options.mouseover)
+                }
+                if("mouseout" in options){
+                    tiles.on("mouseout", options.mouseout)
+                }
+                if("click" in options){
+                    tiles.on("click", options.click)
+                }
         }
         return{
             tileSize: tileSize,

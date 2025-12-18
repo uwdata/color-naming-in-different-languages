@@ -328,6 +328,7 @@ function createOrRefreshTiles(){
 
 
 function addLabel(parentElement, text){
+  return
   let textBackground = parentElement.select("#text-background")
   if(textBackground.empty()){
     textBackground = parentElement.append("rect")
