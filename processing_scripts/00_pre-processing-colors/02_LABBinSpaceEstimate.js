@@ -32,7 +32,7 @@ const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 // const HUE_RATIO_LAB_N = 1000 // NOTE: This makes it very slow (and more accurate)
 //const HUE_RATIO_LAB_N = 200 // ok enough
 //const HUE_RATIO_LAB_N = 50 // For speed / test purposes (gives less accurate bin info)
-const LAB_N_SAMPLES = 200//500
+const LAB_N_SAMPLES = 500
 
 const LAB_SAMPLE_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / LAB_N_SAMPLES 
 
@@ -322,9 +322,6 @@ for(let l = min_l; l <= max_l; l += LAB_SAMPLE_DELTA){
                             
                             if(isColorInGamuts[colorSpace] &&
                                         ("representative_"+colorSpaceFieldName) in bin){
-                                if(colorSpace != "srgb" && bin.l_bin == 0 && bin.a_bin == 1 && bin.b_bin == 0){
-                                    console.log("test")
-                                }
 
                                 if(!(("rep_lab_dist_"+colorSpaceFieldName) in bin)){
                                     bin["rep_lab_dist_"+colorSpaceFieldName] = LabDistance(
@@ -404,9 +401,6 @@ for(const binSet of labBinSetsForProcessing){
     //  - make colors just values
     //  - get rid of representative colors if they are the same as the center color
     for(const bin of binSet.bins){
-        if(bin.l_bin == 0 && bin.a_bin == 1 && bin.b_bin == 0){
-            console.log("test")
-        }
         delete bin.numTestColors
         for(const colorSpace of COLOR_SPACES){
              const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
