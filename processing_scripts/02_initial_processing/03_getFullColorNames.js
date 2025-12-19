@@ -107,9 +107,17 @@ for(let labBinSize of LAB_BIN_SIZES){
       
 
       term.values.forEach(response => {
-        const responseColor = new Color({
-                space: "srgb", coords: [response.r/255, response.g/255, response.b/255]
-              })
+        let responseColor
+        if(response.colorSpace == "rgb"){
+          responseColor = new Color({
+            space: "srgb", coords: [response.r/255, response.g/255, response.b/255]
+          })
+        } else {
+          responseColor = new Color({
+            space: response.colorSpace, coords: [response.r, response.g, response.b]
+          })
+          .to("srgb").toGamut() // For now we reduce all color spaces to rgb until we have enough data to estimate transformation
+        }
         
         let dim1Bin, dim2Bin, dim3Bin
         if(labBinSize.type == "ring"){

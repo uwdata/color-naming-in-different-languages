@@ -2,9 +2,9 @@ const STANDARDIZED_NAME_COL = "Standardized Names"
 
 const rawDataRowSort = [
     "entered_name", "standardized_entered_name", "name",
-    "lang0", "participantId", "colorNameId", "rgbSet",
-    "studyVersion", "locale", "phaseNum", "trialNum","tileNum",
-    "colorSpace", "r", "g", "b"
+    "lang0", "participantId", "rgbSet",
+    "studyVersion", "locale", "phaseNum", "trialNum","tileNum", "background",
+    "colorSpace", "r", "g", "b", 
 ]
 
 $(document).on('ready page:load', async () => {
@@ -170,7 +170,7 @@ function updateTableData(){
                         .append(
                             $(`<a href="#" data-name-standardized-i=${a_i}></a>`).text(`${a[0]} (${a[1].length})`)
                         ).append(
-                            getColorSample(a[1], 3).map(c => `&nbsp<span style="background-color:${d3.rgb(c.r, c.g, c.b)};">&nbsp &nbsp</span>`).join("")
+                            getColorSample(a[1], 3).map(c => `&nbsp<span style="background-color:${c};">&nbsp &nbsp</span>`).join("")
                         )
                         .prop('outerHTML'))
                     .join("")}
@@ -180,7 +180,7 @@ function updateTableData(){
                 return `
                 <div class="d-flex flex-row">
                 ${d[1].map(
-                    c => `<div style="background-color:${d3.rgb(c.r, c.g, c.b)};height:${size}px;width:${size}px"></div>`).join("")
+                    c => `<div style="background-color:${c};height:${size}px;width:${size}px"></div>`).join("")
                 }
                 </div>
                 `
@@ -258,7 +258,8 @@ function showRawData(dataset, tableElement, linkToParticipantInfo, cleanedColorN
         .data(d => {
             const sortedEntries =  Object.entries(d[1])
                 .sort((a, b) => rawDataRowSort.indexOf(a[0]) - rawDataRowSort.indexOf(b[0]))
-            sortedEntries.unshift(["Color", d3.rgb(
+            sortedEntries.unshift(["Color", getColorString(
+                sortedEntries.find(a => a[0] == "colorSpace")[1],
                 sortedEntries.find(a => a[0] == "r")[1],
                 sortedEntries.find(a => a[0] == "g")[1],
                 sortedEntries.find(a => a[0] == "b")[1]
@@ -309,12 +310,23 @@ function showRawData(dataset, tableElement, linkToParticipantInfo, cleanedColorN
 
 
 
-
+function getColorString(colorSpace, r, g, b){
+    console.log("getColorString", colorSpace, r, g, b)
+    if(colorSpace == "rgb"){
+        return `rgb(${r},${g},${b})`
+    }
+    if(colorSpace == "p3"){
+        return `color(display-p3 ${r} ${g} ${b})`
+    }
+    if(colorSpace == "rec2020"){
+        return `color(rec2020 ${r} ${g} ${b})`
+    }
+}
 
 function getColorSample(dataRows, maxColors){
     let color_sample = []
     if(dataRows.length <= maxColors){
-        color_sample = dataRows.map(a => {return {r: a.r, g: a.g, b: a.b}})
+        color_sample = dataRows.map(a => getColorString(a.colorSpace, a.r, a.g, a.b))
     }else{
         // TODO: randomly sample instead of just choosing first 9
         const rand_is = []
@@ -324,7 +336,7 @@ function getColorSample(dataRows, maxColors){
                 rand_is.push(rand_i)
             }
         }
-        color_sample = rand_is.map(i => {return {r: dataRows[i].r, g: dataRows[i].g, b: dataRows[i].b}})
+        color_sample = rand_is.map(i => getColorString(dataRows[i].colorSpace, dataRows[i].r, dataRows[i].g, dataRows[i].b))
     }
     return color_sample
 }

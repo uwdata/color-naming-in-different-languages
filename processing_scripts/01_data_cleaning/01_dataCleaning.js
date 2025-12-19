@@ -26,10 +26,10 @@ csv().fromFile(FILE_I)
 
   const enteredColorNameLookup = {}
 
-  colorNames.forEach(cn => {
-	  enteredColorNameLookup[cn.colorNameId] = cn.name;
-
-  });
+  for(const [cn_i, cn] of colorNames.entries()){
+    cn.cn_i = cn_i
+    enteredColorNameLookup[cn.cn_i] = cn.name;
+  }
 
   // standardize entered name (e.g., trim, lowcase)
   colorNames.forEach(cn => {
@@ -52,13 +52,13 @@ csv().fromFile(FILE_I)
     if(oldName != newName){
       console.log("WARNING: Name changed on repeated refining")
       console.log("  lang0", cn.lang0)
-      console.log("  colorNameId", cn.colorNameId)
+      console.log("  colorName row", cn.cn_i)
       console.log("  names: ", oldName, ", ", newName)
     }
   })
 
   colorNames.forEach(cn => {
-	  cn.entered_name = enteredColorNameLookup[cn.colorNameId];
+	  cn.entered_name = enteredColorNameLookup[cn.cn_i];
   });
 
   let cleanedData = colorNames.filter(cn => {
@@ -71,6 +71,7 @@ csv().fromFile(FILE_I)
   cleanedWriter.pipe(fs.createWriteStream(FILE_O));
 
   cleanedData.forEach(d => {
+    delete d.cn_i
     cleanedWriter.write(d);
   });
 
@@ -86,6 +87,7 @@ csv().fromFile(FILE_I)
   removedWriter.pipe(fs.createWriteStream(FILE_REMOVED_O));
 
   removedData.forEach(d => {
+    delete d.cn_i
     removedWriter.write(d);
   });
 

@@ -116,9 +116,18 @@ function getAverageLABColor(colorEntries){
   let a_sum = 0
   let b_sum = 0
   for(const colorEntry of colorEntries){
-    const color = new Color({
-        space: "srgb", coords: [colorEntry.r/255, colorEntry.g/255, colorEntry.b/255]
-      }).to("oklab")
+    let color
+    if(colorEntry.colorSpace == "rgb"){
+      color = new Color({
+          space: "srgb", coords: [colorEntry.r/255, colorEntry.g/255, colorEntry.b/255]
+        }).to("oklab")
+      } else {
+        color = new Color({
+          space: colorEntry.colorSpace, coords: [colorEntry.r, colorEntry.g, colorEntry.b]
+        })
+        .to("srgb").toGamut() // For now we reduce all color spaces to rgb until we have enough data to estimate transformation
+        .to("oklab")
+      }
     
     l_sum += color.l
     a_sum += color.a
