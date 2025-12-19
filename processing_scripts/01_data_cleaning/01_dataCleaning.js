@@ -9,7 +9,7 @@ const fs = require('fs'),
   csvWriter = require('csv-write-stream');
 
 // Path or the input csv file
-const FILE_I = "../../raw/color_perception_table_color_names.csv"
+const FILE_I = "../../raw/color_names.csv"
 const FILE_O = "../../model/cleaned_color_names.csv"; // Path for the output
 const FILE_REMOVED_O = "../../model/removed_color_data.csv"; // Path for the output
 
@@ -28,11 +28,6 @@ csv().fromFile(FILE_I)
   enteredColorNameLookup = {}
 
   colorNames.forEach(cn => {
-    let lab = d3.lab(d3.color(`rgb(${cn.r}, ${cn.g}, ${cn.b})`));
-    cn.lab_l = lab.l;
-    cn.lab_a = lab.a;
-    cn.lab_b = lab.b;
-
 	  enteredColorNameLookup[cn.colorNameId] = cn.name;
 
   });

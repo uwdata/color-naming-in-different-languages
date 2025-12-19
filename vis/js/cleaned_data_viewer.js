@@ -4,7 +4,7 @@ const rawDataRowSort = [
     "entered_name", "standardized_entered_name", "name",
     "lang0", "participantId", "colorNameId", "rgbSet",
     "studyVersion", "locale", "phaseNum", "trialNum","tileNum",
-    "r", "g", "b", "lab_l", "lab_a", "lab_b"
+    "colorSpace", "r", "g", "b"
 ]
 
 $(document).on('ready page:load', async () => {
