@@ -1,4 +1,4 @@
-chineseT2STable = {
+const chineseT2STable = {
 "¯" :"ˉ",
 "‥":"¨" ,
 "‧":"·" ,
@@ -2900,3 +2900,5 @@ chineseT2STable = {
 "﹪":"％",
 "﹫":"＠"
 };
+
+export default chineseT2STable

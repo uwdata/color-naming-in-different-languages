@@ -2,11 +2,10 @@
 // npm install csvtojson
 // npm install csv-write-stream
 
-const fs = require('fs'),
-  refine = require('./refine.js'),
-  csv = require("csvtojson"),
-  d3 = require('d3'),
-  csvWriter = require('csv-write-stream');
+import fs from "fs";
+import csv from 'csvtojson';
+import csvWriter from 'csv-write-stream'
+import * as refine from "./refine.js"
 
 // Path or the input csv file
 const FILE_I = "../../raw/color_names.csv"
@@ -25,7 +24,7 @@ csv().fromFile(FILE_I)
   //colorNames = colorNames.filter(cn => cn.participantId !== 0);
   //colorNames = colorNames.filter(cn => !(cn.lang0=="Korean (한국어, 조선어)" && cn.studyVersion === "1.1.4" && cn.rgbSet === "line")); //There is a priming effect for that set.
 
-  enteredColorNameLookup = {}
+  const enteredColorNameLookup = {}
 
   colorNames.forEach(cn => {
 	  enteredColorNameLookup[cn.colorNameId] = cn.name;

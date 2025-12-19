@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs'
 const colorSet = JSON.parse(
   fs.readFileSync('../../model/color_info_pre_naming/hue_colors_rgb.json'));
 
@@ -59,10 +59,10 @@ function getHueColorFromRatio(ratio){
   throw new Error("Error, hue color not found for ratio value: ", color)
 }
 
-module.exports = {
-  "genBin": genBin,
-  "binNum": binNum,
-  "getHueColorRatio": getHueColorRatio,
-  "getHueColorFromRatio": getHueColorFromRatio,
-  "colorSet": colorSet
+export default {
+  genBin,
+  binNum,
+  getHueColorRatio,
+  getHueColorFromRatio,
+  colorSet
 }
