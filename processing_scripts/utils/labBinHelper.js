@@ -108,32 +108,50 @@ const LAB_BIN_SIZES = [
   new BinSize({
     type: "ring",
     l: 1/10,
-    h_divs: 3
+    h_divs: 8
   }),
   new BinSize({
     type: "ring",
     l: 1/20,
-    h_divs: 3
+    h_divs: 8
   }),
   new BinSize({
     type: "ring",
     l: 1/40,
-    h_divs: 3
+    h_divs: 8
+  }),
+   new BinSize({
+    type: "ring",
+    l: 1/5,
+    c: 1/20, // for h_divs 3, c should be = l, but we make it 1/4th
+    h_divs: 8
   }),
   new BinSize({
     type: "ring",
     l: 1/10,
+    c: 1/40, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
     h_divs: 8
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/15,
+    c: 1/60, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
+    h_divs: 8
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    h_divs: 3
   }),
   new BinSize({
     type: "ring",
     l: 1/20,
-    h_divs: 8
+    h_divs: 3
   }),
   new BinSize({
     type: "ring",
     l: 1/40,
-    h_divs: 8
+    h_divs: 3
   }),
   new BinSize({
     type: "ring",
@@ -152,24 +170,6 @@ const LAB_BIN_SIZES = [
     l: 1/15,
     c: 1/120, // for h_divs 3, c should be 1/2 l, but to make it a box 4x taller, we do 1/8th l
     h_divs: 3
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/5,
-    c: 1/20, // for h_divs 3, c should be = l, but we make it 1/4th
-    h_divs: 8
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/10,
-    c: 1/40, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
-    h_divs: 8
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/15,
-    c: 1/60, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
-    h_divs: 8
   })
 ]
 

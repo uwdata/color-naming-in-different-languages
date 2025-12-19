@@ -64,6 +64,10 @@ function cubeEquivalentBinSize(bin_size){
 async function load_and_process_bin_data(bin_size){
 
   await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/oklab_bins_${bin_size}.json`, function( data ) {
+    
+    data = bin_size.filterBinsByGamut(data, "rec2020") // assume rec2020 for now
+    
+    
     const binView = new FullColorBinView({
       bin_size: bin_size,
       bin_array: data,

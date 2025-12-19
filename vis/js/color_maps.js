@@ -58,56 +58,56 @@ const LAB_BIN_SIZES = [
     type: "ring",
     l: 1/10, h_divs: 8,
     simpleName: "LCH Bins: Low-res",
-    altDisplayCategory: "LCH Bins",
+    altDisplayCategory: "Oklch Bins",
   }), 
   new BinSize({
     type: "ring",
     l: 1/20, h_divs: 8,
     simpleName: "LCH Bins: Medium-res",
-    altDisplayCategory: "LCH Bins",
+    altDisplayCategory: "Oklch Bins",
   }), 
   new BinSize({
     type: "ring",
     l: 1/40, h_divs: 8,
     simpleName: "LCH Bins: High-res",
-    altDisplayCategory: "LCH Bins",
+    altDisplayCategory: "Oklch Bins",
   }),
-  new BinSize({
-    type: "ring",
-    l: 1/10, h_divs: 3,
-    defaultHidden: true,
-    altDisplayCategory: "LCH Bins - h3",
-  }), 
-  new BinSize({
-    type: "ring",
-    l: 1/20, h_divs: 3,
-    defaultHidden: true,
-    altDisplayCategory: "LCH Bins - h3",
-  }), 
-  new BinSize({
-    type: "ring",
-    l: 1/40, h_divs: 3,
-    defaultHidden: true,
-    altDisplayCategory: "LCH Bins - h3",
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/5, c: 1/40, h_divs: 3,
-    defaultHidden: true,
-    altDisplayCategory: "LCH Bins - h3",
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/10, c: 1/80, h_divs: 3,
-    defaultHidden: true,
-    altDisplayCategory: "LCH Bins - h3",
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/15, c: 1/120,  h_divs: 3,
-    defaultHidden: true,
-    altDisplayCategory: "LCH Bins - h3",
-  }),
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/10, h_divs: 3,
+  //   defaultHidden: true,
+  //   altDisplayCategory: "LCH Bins - h3",
+  // }), 
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/20, h_divs: 3,
+  //   defaultHidden: true,
+  //   altDisplayCategory: "LCH Bins - h3",
+  // }), 
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/40, h_divs: 3,
+  //   defaultHidden: true,
+  //   altDisplayCategory: "LCH Bins - h3",
+  // }),
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/5, c: 1/40, h_divs: 3,
+  //   defaultHidden: true,
+  //   altDisplayCategory: "LCH Bins - h3",
+  // }),
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/10, c: 1/80, h_divs: 3,
+  //   defaultHidden: true,
+  //   altDisplayCategory: "LCH Bins - h3",
+  // }),
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/15, c: 1/120,  h_divs: 3,
+  //   defaultHidden: true,
+  //   altDisplayCategory: "LCH Bins - h3",
+  // }),
 ]
 
 const MIN_BIN_PERC_DISPLAY = 50
@@ -135,7 +135,7 @@ const labBinArcViews = {}
 async function load_and_process_bin_data(bin_size){
    await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/oklab_bins_${bin_size}.json`, function( data ) {
     
-    data = data.filter(d => d.num_rgb > 0)
+    data = bin_size.filterBinsByGamut(data, "rgb") // assume rgb given current data
     
     const binView = new FullColorBinView({
       bin_size: bin_size,
