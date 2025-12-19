@@ -234,9 +234,8 @@ function updateDisplay(){
   }
 
   curr_color_gamut = $("input[name='color-gamut']:checked").val()
-  const gamutFilteredBins = labBinDataSets[curr_bin_size].filter(b => {
-    return b["num_" + curr_color_gamut] > 0
-  })
+  const gamutFilteredBins = curr_bin_size.filterBinsByGamut(labBinDataSets[curr_bin_size], curr_color_gamut)
+  
   labBinViews[curr_bin_size].setBinArray(gamutFilteredBins)
   labBinViews[curr_bin_size].setDisplayOffsets(labBinViews[curr_bin_size].getDisplayOffsets())
   if(labBinArcViews[curr_bin_size]){

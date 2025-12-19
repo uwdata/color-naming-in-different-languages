@@ -66,6 +66,45 @@ class BinSize {
     
   }
 
+  // I don't think binSize is really the place to put this function
+  // but it is a convenient shared location for now
+  filterBinsByGamut(binArray, colorSpace){
+    colorSpace = colorSpace == "srgb" ? "rgb" : colorSpace
+    return binArray.filter(b => {
+      // if there are colors that mapped into this bin, then keep
+      if(b["num_" + colorSpace] > 0 || b[`representative_${colorSpace}_in_this_bin`]){
+        return true
+      }
+
+      // if no representative color, and center value maps into this bin, then keep
+      if(!("representative_"+colorSpace in b) && !b[`center_${colorSpace}_in_other_bin`]){
+        return true
+      }
+
+      // one additional exception: L between 0-1, and c or a,b=0
+      if(b.l_center >= 0 && b.l_center <= 1){
+        if(this.type == "ring"){
+          if(b.c_center == 0){
+            return true
+          }
+        } else {
+          if(b.a_center == 0 && b.b_center == 0){
+            return true
+          }
+        }
+      }
+
+      // otherwise, get rid of it, even if ratio bin in gamut is > 0
+      //    (b["ratio_bin_in_gamut_"+colorSpace] > 0 )
+      // since these are bins with no colors in them due to rounding errors
+
+      // Note: There are still sometimes internal-looking bins that are getting
+      // removed due to rounding?
+
+      return false
+    })
+  }
+
   toString() {
     return this.abv
   }

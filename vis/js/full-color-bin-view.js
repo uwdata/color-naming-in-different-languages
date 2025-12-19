@@ -13,6 +13,7 @@ class FullColorBinView {
     setBinArray(bin_array){
         this.bin_array = bin_array
         this.nested_bins = this.binsArrayToNested(this.bin_array)
+        this.findDimBounds()
     }
 
 
