@@ -2,14 +2,13 @@
 // npm install csvtojson
 // npm install csv-write-stream
 
-const fs = require('fs'),
-  refine = require('./refine.js'),
-  csv = require("csvtojson"),
-  d3 = require('d3'),
-  csvWriter = require('csv-write-stream');
+import fs from "fs";
+import csv from 'csvtojson';
+import csvWriter from 'csv-write-stream'
+import * as refine from "./refine.js"
 
 // Path or the input csv file
-const FILE_I = "../../raw/color_perception_table_color_names.csv"
+const FILE_I = "../../raw/color_names.csv"
 const FILE_O = "../../model/cleaned_color_names.csv"; // Path for the output
 const FILE_REMOVED_O = "../../model/removed_color_data.csv"; // Path for the output
 
@@ -25,17 +24,12 @@ csv().fromFile(FILE_I)
   //colorNames = colorNames.filter(cn => cn.participantId !== 0);
   //colorNames = colorNames.filter(cn => !(cn.lang0=="Korean (한국어, 조선어)" && cn.studyVersion === "1.1.4" && cn.rgbSet === "line")); //There is a priming effect for that set.
 
-  enteredColorNameLookup = {}
+  const enteredColorNameLookup = {}
 
-  colorNames.forEach(cn => {
-    let lab = d3.lab(d3.color(`rgb(${cn.r}, ${cn.g}, ${cn.b})`));
-    cn.lab_l = lab.l;
-    cn.lab_a = lab.a;
-    cn.lab_b = lab.b;
-
-	  enteredColorNameLookup[cn.colorNameId] = cn.name;
-
-  });
+  for(const [cn_i, cn] of colorNames.entries()){
+    cn.cn_i = cn_i
+    enteredColorNameLookup[cn.cn_i] = cn.name;
+  }
 
   // standardize entered name (e.g., trim, lowcase)
   colorNames.forEach(cn => {
@@ -58,13 +52,13 @@ csv().fromFile(FILE_I)
     if(oldName != newName){
       console.log("WARNING: Name changed on repeated refining")
       console.log("  lang0", cn.lang0)
-      console.log("  colorNameId", cn.colorNameId)
+      console.log("  colorName row", cn.cn_i)
       console.log("  names: ", oldName, ", ", newName)
     }
   })
 
   colorNames.forEach(cn => {
-	  cn.entered_name = enteredColorNameLookup[cn.colorNameId];
+	  cn.entered_name = enteredColorNameLookup[cn.cn_i];
   });
 
   let cleanedData = colorNames.filter(cn => {
@@ -77,6 +71,7 @@ csv().fromFile(FILE_I)
   cleanedWriter.pipe(fs.createWriteStream(FILE_O));
 
   cleanedData.forEach(d => {
+    delete d.cn_i
     cleanedWriter.write(d);
   });
 
@@ -92,6 +87,7 @@ csv().fromFile(FILE_I)
   removedWriter.pipe(fs.createWriteStream(FILE_REMOVED_O));
 
   removedData.forEach(d => {
+    delete d.cn_i
     removedWriter.write(d);
   });
 

@@ -7,17 +7,32 @@
 // that aren't all empty or all full
 
 import fs from 'fs'
+
 import Color from "colorjs.io";
+// Note: Since colorjs.io doesn't round rgb values to 0-255 integers like I 
+// am assuming, do it myself. Similar with rounding other gamuts
+function toColorSpace(color, colorSpace){
+    color = color.to(colorSpace)
+    if(colorSpace == "srgb"){
+        return new Color(colorSpace, color.coords.map(c => Math.round(c*255)/255))
+    } else {
+        if(color.to(colorSpace).inGamut()){ // if in gamut, round to gamut value
+            return color.toGamut()
+        }
+    }
+    return color
+}
+
 import * as labBinHelperLib from '../utils/labBinHelper.js'
 
 const FILE_IO_LAB_BINS = "../../model/color_info_pre_naming/oklab_bins"
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 
-//const HUE_RATIO_LAB_N = 500 // NOTE: This makes it very slow (and more accurate)
-//const HUE_RATIO_LAB_N = 50 // For speed purposes (gives less accurate bin info)
-//const HUE_RATIO_LAB_N = 20 // Very fast, not accurate (for test run)
-const LAB_N_SAMPLES = 200
+// const HUE_RATIO_LAB_N = 1000 // NOTE: This makes it very slow (and more accurate)
+//const HUE_RATIO_LAB_N = 200 // ok enough
+//const HUE_RATIO_LAB_N = 50 // For speed / test purposes (gives less accurate bin info)
+const LAB_N_SAMPLES = 500
 
 const LAB_SAMPLE_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / LAB_N_SAMPLES 
 
@@ -26,6 +41,9 @@ const LAB_SAMPLE_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / LAB_N
 const COLOR_SPACES = ['srgb', 'p3', "rec2020"]
 
 function LabDistance(color1, color2){
+    if(!("l" in color1) || !("l" in color2)){
+        throw new Error("LabDistance has not LAB colors")
+    }
     return Math.sqrt(
     (color1.l - color2.l)**2 +
     (color1.a - color2.a)**2 +
@@ -119,9 +137,26 @@ function fillInMissingBinFields(bin, binSet, thisColor, testColorInColorSpaces, 
     bin.numTestColors = getUndefinedBinCount(binSet, bin)
     // check if center of bin is in any gamut:
     let isBinCenterInAnyGamut = false
+    let isBinCenterInThisBin = false
     for(const colorSpace of COLOR_SPACES){
+        const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
         if(bin.center_lab.inGamut(colorSpace)){
             isBinCenterInAnyGamut = true
+        }
+
+        // check if bin for this color is this bin
+        const [bin_dim_1, bin_dim_2, bin_dim_3] = 
+            binSet.binSize.type == "ring" ? 
+                binSet.labBinHelper.bins_from_lch(toColorSpace(bin.center_lab, colorSpace).to("oklch")) : 
+                binSet.labBinHelper.bins_from_lab(toColorSpace(bin.center_lab, colorSpace).to("oklab"))
+    
+        if(bin[binSet.binSize.dims[0] + "_bin"] == bin_dim_1 && 
+            bin[binSet.binSize.dims[1] + "_bin"] == bin_dim_2 && 
+            bin[binSet.binSize.dims[2] + "_bin"] == bin_dim_3 
+        ){
+            isBinCenterInThisBin = true
+        } else {
+            bin["center_" + colorSpaceFieldName + "_in_other_bin"] = true
         }
     }
     if(!isBinCenterInAnyGamut){
@@ -132,15 +167,31 @@ function fillInMissingBinFields(bin, binSet, thisColor, testColorInColorSpaces, 
     for(const colorSpace of COLOR_SPACES){
         const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
         bin["num_"+colorSpaceFieldName] = 0 // no colors were found in this bin of the ~16 million tried
-        bin["center_"+colorSpace] = bin.center_lab.to(colorSpace)
+        bin["center_"+colorSpaceFieldName] = toColorSpace(bin.center_lab, colorSpace)
 
-        if(!bin["center_"+colorSpace].inGamut()){
+        if(!bin["center_"+colorSpaceFieldName].inGamut()){
             if(isColorInGamuts[colorSpace]){
-                bin["representative_"+colorSpace] = testColorInColorSpaces[colorSpace]
-                bin["representative_"+colorSpace+"_in_bin"] = true 
-                bin["rep_lab_dist_"+colorSpace] = LabDistance(thisColor, bin.center_lab)
+                bin["representative_"+colorSpaceFieldName] = testColorInColorSpaces[colorSpace]
+                bin["representative_"+colorSpaceFieldName+"_from_bin"] = true 
+                bin["rep_lab_dist_"+colorSpaceFieldName] = LabDistance(thisColor, bin.center_lab)
+
+                // check if bin for this color is this bin
+                const [bin_dim_1, bin_dim_2, bin_dim_3] = 
+                    binSet.binSize.type == "ring" ? 
+                        binSet.labBinHelper.bins_from_lch(testColorInColorSpaces[colorSpace].to("oklch")) : 
+                        binSet.labBinHelper.bins_from_lab(testColorInColorSpaces[colorSpace].to("oklab"))
+            
+                if(bin[binSet.binSize.dims[0] + "_bin"] == bin_dim_1 && 
+                    bin[binSet.binSize.dims[1] + "_bin"] == bin_dim_2 && 
+                    bin[binSet.binSize.dims[2] + "_bin"] == bin_dim_3 
+                ){
+                    bin["representative_"+colorSpaceFieldName+"_in_this_bin"] = true
+                } else {
+                    bin["representative_"+colorSpaceFieldName+"_in_this_bin"] = false
+                }
+
             } else {
-                bin["representative_"+colorSpace] = "NEEDED" //mark this as needing to be fixed
+                bin["representative_"+colorSpaceFieldName] = "NEEDED" //mark this as needing to be fixed
             }
         }
     }
@@ -187,7 +238,7 @@ for(let l = min_l; l <= max_l; l += LAB_SAMPLE_DELTA){
             const isColorInGamuts = {}
             let isColorInAnyGamut = false
             for(const colorSpace of COLOR_SPACES){
-                testColorInColorSpaces[colorSpace] = testColor.to(colorSpace)
+                testColorInColorSpaces[colorSpace] = toColorSpace(testColor, colorSpace)
                 isColorInGamuts[colorSpace] = testColorInColorSpaces[colorSpace].inGamut()
                 if(isColorInGamuts[colorSpace]){
                     isColorInAnyGamut = true
@@ -230,52 +281,81 @@ for(let l = min_l; l <= max_l; l += LAB_SAMPLE_DELTA){
                         addUndefinedBinCount(binSet, l_bin, a_bin, b_bin)
                     }
                 }
-                //TODO: if bin, update value based on if in gamut or not
+                // if bin, update value based on if in gamut or not
                 // if bin was found, update values
                 if(bin !== undefined){
                     if(!("numTestColors" in bin)){
                         bin.numTestColors = 0
                     }
                     for(const colorSpace of COLOR_SPACES){
-                        if(!(("numTestColors_"+colorSpace) in bin)){
-                            bin["numTestColors_"+colorSpace] = 0
+                        const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
+                        if(!(("numTestColors_"+colorSpaceFieldName) in bin)){
+                            bin["numTestColors_"+colorSpaceFieldName] = 0
                         }
                     }
 
                     bin.numTestColors += 1
 
                     for(const colorSpace of COLOR_SPACES){
+                        const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
                         if(isColorInGamuts[colorSpace]){
-                            bin["numTestColors_"+colorSpace] += 1
+                            bin["numTestColors_"+colorSpaceFieldName] += 1
                         }
                     }
 
                     // If it is a new bin, try to find a representative color (or a better one)
-                    //bin["rep_lab_dist_"+colorSpace] = LabDistance(thisColor, bin.center_lab)
-                    if(bin.isNewBin){
+                    // if bin has a representative color, see if this is a better one
+                    if(isColorInAnyGamut){
                         const thisDist = LabDistance(testColor, bin.center_lab)
 
                         if("representative_lab" in bin){
-                            if(!"rep_lab_dist" in bin){
-                                bin.rep_lab_dist = thisDist
+                            if(!("rep_lab_dist" in bin)){
+                                bin.rep_lab_dist = LabDistance(bin.representative_lab, bin.center_lab)
                             }
                             if(thisDist < bin.rep_lab_dist){
                                 bin.representative_lab = testColor
                                 bin.rep_lab_dist = thisDist
                             }
                         }
-
                         for(const colorSpace of COLOR_SPACES){
-                            if(isColorInGamuts[colorSpace]){
-                                if(("representative_"+colorSpace) in bin){
-                                    if(!("rep_lab_dist_"+colorSpace) in bin){
-                                        bin["rep_lab_dist_"+colorSpace] = thisDist
-                                    }
-                                    if(thisDist < bin["rep_lab_dist_"+colorSpace]){
-                                        bin["representative_"+colorSpace] = testColor.to(colorSpace)
-                                        bin["rep_lab_dist_"+colorSpace] = thisDist
-                                        bin["representative_"+colorSpace+"_in_bin"] = true
-                                    }
+                            const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
+                            
+                            if(isColorInGamuts[colorSpace] &&
+                                        ("representative_"+colorSpaceFieldName) in bin){
+
+                                if(!(("rep_lab_dist_"+colorSpaceFieldName) in bin)){
+                                    bin["rep_lab_dist_"+colorSpaceFieldName] = LabDistance(
+                                        new Color(colorSpace, [bin["representative_"+colorSpaceFieldName].r, bin["representative_"+colorSpaceFieldName].g, bin["representative_"+colorSpaceFieldName].b])
+                                            .to("oklab"),
+                                        bin.center_lab)
+                                }
+
+                                // check if bin for this color is this bin
+                                const thisColorInThisSpace = toColorSpace(testColor, colorSpace)
+                                let thisColorInThisBin = false
+                                const [bin_dim_1, bin_dim_2, bin_dim_3] = 
+                                    binSet.binSize.type == "ring" ? 
+                                        binSet.labBinHelper.bins_from_lch(thisColorInThisSpace.to("oklch")) : 
+                                        binSet.labBinHelper.bins_from_lab(thisColorInThisSpace.to("oklab"))
+                            
+                                if(bin[binSet.binSize.dims[0] + "_bin"] == bin_dim_1 && 
+                                    bin[binSet.binSize.dims[1] + "_bin"] == bin_dim_2 && 
+                                    bin[binSet.binSize.dims[2] + "_bin"] == bin_dim_3 
+                                ){
+                                    thisColorInThisBin = true
+                                }
+
+                                if(thisColorInThisBin && !bin["representative_"+colorSpaceFieldName+"_in_this_bin"]){
+                                    bin["representative_"+colorSpaceFieldName] = thisColorInThisSpace
+                                    bin["rep_lab_dist_"+colorSpaceFieldName] = thisDist
+                                    bin["representative_"+colorSpaceFieldName+"_from_bin"] = true 
+                                    bin["representative_"+colorSpaceFieldName+"_in_this_bin"] = true
+
+                                } else if(thisDist < bin["rep_lab_dist_"+colorSpaceFieldName]){
+                                    bin["representative_"+colorSpaceFieldName] = thisColorInThisSpace
+                                    bin["rep_lab_dist_"+colorSpaceFieldName] = thisDist
+                                    bin["representative_"+colorSpaceFieldName+"_from_bin"] = true 
+                                    bin["representative_"+colorSpaceFieldName+"_in_this_bin"] = thisColorInThisBin
                                 }
                             }
                         }
@@ -297,19 +377,23 @@ for(const binSet of labBinSetsForProcessing){
     for(const bin of binSet.bins){
         bin["gamut_ratio_sample_lab_delta"] = LAB_SAMPLE_DELTA
         for(const colorSpace of COLOR_SPACES){
-            bin["ratio_bin_in_gamut_" + (colorSpace == "srgb" ? "rgb" : colorSpace)] = 
-                bin["numTestColors_"+colorSpace] / bin.numTestColors
+            const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
+            bin["ratio_bin_in_gamut_" + colorSpaceFieldName] = 
+                bin["numTestColors_"+colorSpaceFieldName] / bin.numTestColors
         }
     }
 
     // make sure new bins that need them have representative colors
     for(const bin of binSet.bins){
-        for(const colorSpace of COLOR_SPACES)
+        for(const colorSpace of COLOR_SPACES){
+            const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
             // if representative_ color marked as needed but isn't there
-            if(("representative_"+colorSpace) in bin && bin["representative_"+colorSpace] == "NEEDED"){
-                bin["representative_"+colorSpace] = bin.center_lab.to(colorSpace).toGamut()
-                bin["representative_"+colorSpace+"_in_bin"] = false
+            if(("representative_"+colorSpaceFieldName) in bin && bin["representative_"+colorSpaceFieldName] == "NEEDED"){
+                bin["representative_"+colorSpaceFieldName] = toColorSpace(bin.center_lab, colorSpace).toGamut()
+                bin["representative_"+colorSpaceFieldName+"_from_bin"] = false
+                bin["representative_"+colorSpaceFieldName+"_in_this_bin"] = false
             }
+        }
     }
 
 
@@ -319,7 +403,8 @@ for(const binSet of labBinSetsForProcessing){
     for(const bin of binSet.bins){
         delete bin.numTestColors
         for(const colorSpace of COLOR_SPACES){
-            delete bin["numTestColors_"+colorSpace]
+             const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
+            delete bin["numTestColors_"+colorSpaceFieldName]
         }
 
         delete bin.isNewBin
@@ -341,46 +426,55 @@ for(const binSet of labBinSetsForProcessing){
             }
         }
         for(const colorSpace of COLOR_SPACES){
+            const colorSpaceFieldName = colorSpace == "srgb" ? "rgb" : colorSpace
+            delete bin["rep_lab_dist_"+colorSpaceFieldName]
             if(colorSpace == "srgb"){
-                if("center_srgb" in bin){
+                // Note: "inGamut" check is a way to tell if it is a color that needs converting, or just an object with r,g,b
+                if("center_rgb" in bin && "inGamut" in bin["center_rgb"]){
                     bin["center_rgb"] = {
-                        r: Math.round(255*bin["center_srgb"].r), 
-                        g: Math.round(255*bin["center_srgb"].g), 
-                        b: Math.round(255*bin["center_srgb"].b)}
+                        r: Math.round(255*bin["center_rgb"].r), 
+                        g: Math.round(255*bin["center_rgb"].g), 
+                        b: Math.round(255*bin["center_rgb"].b)}
                     }
-                    delete bin.center_srgb
-                if("representative_srgb" in bin){
+                if("representative_rgb" in bin && "inGamut" in bin["representative_rgb"]){
                     bin["representative_rgb"] = {
-                        r: Math.round(255*bin["representative_srgb"].r), 
-                        g: Math.round(255*bin["representative_srgb"].g), 
-                        b: Math.round(255*bin["representative_srgb"].b)}
-                    delete bin.representative_srgb
+                        r: Math.round(255*bin["representative_rgb"].r), 
+                        g: Math.round(255*bin["representative_rgb"].g), 
+                        b: Math.round(255*bin["representative_rgb"].b)}
                 }
-                if(JSON.stringify(bin.center_rgb) == JSON.stringify(bin.representative_rgb)){
-                    delete bin.representative_rgb
-                    delete bin.representative_rgb_in_bin
-                }
+
+                // The representative value might round to being the same as the center
+                // but that means the center was technically not in gamut (e.g., small negative)
+                // if(JSON.stringify(bin.center_rgb) == JSON.stringify(bin.representative_rgb)){
+                //     delete bin.representative_rgb
+                //     delete bin.representative_rgb_from_bin
+                //     delete bin.representative_in_this_bin
+                // }
             } else {
                 if(!("inGamut" in bin["center_"+colorSpace])){
-                    bin["center_"+colorSpace] = new Color({space: colorSpace, coords: [bin["center_"+colorSpace].r, bin["center_"+colorSpace].b, bin["center_"+colorSpace].g]})
+                    bin["center_"+colorSpace] = new Color({space: colorSpace, coords: [bin["center_"+colorSpace].r, bin["center_"+colorSpace].g, bin["center_"+colorSpace].b]})
                 }
-                if(bin["center_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
-                    bin["center_"+colorSpace] = bin["center_"+colorSpace].toGamut()
-                }
+                // if(bin["center_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
+                //     bin["center_"+colorSpace] = bin["center_"+colorSpace].toGamut()
+                // }
                 bin["center_"+colorSpace] = {r: bin["center_"+colorSpace].r, g: bin["center_"+colorSpace].g, b: bin["center_"+colorSpace].b}
                 if("representative_"+colorSpace in bin){
                     if(!("inGamut" in bin["representative_"+colorSpace])){
-                        bin["representative_"+colorSpace] = new Color({space: colorSpace, coords: [bin["representative_"+colorSpace].r, bin["representative_"+colorSpace].b, bin["representative_"+colorSpace].g]})
+                        bin["representative_"+colorSpace] = new Color({space: colorSpace, coords: [bin["representative_"+colorSpace].r, bin["representative_"+colorSpace].g, bin["representative_"+colorSpace].b]})
                     }
-                    if(bin["representative_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
-                        bin["representative_"+colorSpace] = bin["representative_"+colorSpace].toGamut()
-                    }
+                    // if(bin["representative_"+colorSpace].inGamut()){ // if in gamut, round to gamut value
+                    //     bin["representative_"+colorSpace] = bin["representative_"+colorSpace].toGamut()
+                    // }
                     bin["representative_"+colorSpace] = {r: bin["representative_"+colorSpace].r, g: bin["representative_"+colorSpace].g, b: bin["representative_"+colorSpace].b}
                 }
-                if(JSON.stringify(bin["center_"+colorSpace]) == JSON.stringify(bin["representative_"+colorSpace])){
-                    delete bin["representative_"+colorSpace]
-                    delete bin["representative_"+colorSpace+"_in_bin"]
-                }
+
+                // The representative value might round to being the same as the center
+                // but that means the center was technically not in gamut (e.g., small negative)
+                // if(JSON.stringify(bin["center_"+colorSpace]) == JSON.stringify(bin["representative_"+colorSpace])){
+                //     delete bin["representative_"+colorSpace]
+                //     delete bin["representative_"+colorSpace+"_from_bin"]
+                //     delete bin["representative_"+colorSpace+"_in_this_bin"]
+                // }
             }
         }
     }

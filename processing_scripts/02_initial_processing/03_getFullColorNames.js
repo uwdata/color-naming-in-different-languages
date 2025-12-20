@@ -8,6 +8,7 @@ import * as labBinHelperLib from '../utils/labBinHelper.js'
  
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
+  .filter(binSize => !(binSize.h_divs == 3)) // don't bother with the ring bins with h_divs of 3 as I don't think they look that good
 
 // Number of colors in a bin we require to output data for that bin
 const MIN_NperBin = 4;
@@ -41,7 +42,7 @@ for(let labBinSize of LAB_BIN_SIZES){
   const lab_bins_arr_full = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/oklab_bins_${labBinSize}.json`))
     
 
-  const lab_bins_arr = lab_bins_arr_full.filter(bin => bin.num_rgb > 0)  // filter for only the rgb bins while we only have rgb data
+  const lab_bins_arr = labBinSize.filterBinsByGamut(lab_bins_arr_full, "rgb") // filter for only the rgb bins while we only have rgb data
 
   console.log("for only rgb data, reducing ", lab_bins_arr_full.length, " bins down to", lab_bins_arr.length, "bins")
 
@@ -106,9 +107,17 @@ for(let labBinSize of LAB_BIN_SIZES){
       
 
       term.values.forEach(response => {
-        const responseColor = new Color({
-                space: "srgb", coords: [response.r/255, response.g/255, response.b/255]
-              })
+        let responseColor
+        if(response.colorSpace == "rgb"){
+          responseColor = new Color({
+            space: "srgb", coords: [response.r/255, response.g/255, response.b/255]
+          })
+        } else {
+          responseColor = new Color({
+            space: response.colorSpace, coords: [response.r, response.g, response.b]
+          })
+          .to("srgb").toGamut() // For now we reduce all color spaces to rgb until we have enough data to estimate transformation
+        }
         
         let dim1Bin, dim2Bin, dim3Bin
         if(labBinSize.type == "ring"){

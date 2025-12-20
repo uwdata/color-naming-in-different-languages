@@ -10,7 +10,7 @@ Data Outputs:
 - model/removed_color_data.csv
 
 Data Inputs:
-- raw/color_perception_table_color_names.csv
+- raw/color_names.csv
 
 ## refine.js
 This file has our data cleaning rules 

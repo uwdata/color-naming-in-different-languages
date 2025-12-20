@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "dependencies": {
+    "csv-write-stream": "^2.0.0",
+    "csvtojson": "^2.0.14",
+    "fs": "^0.0.1-security",
+    "json5": "^2.2.3"
+  }
+}
