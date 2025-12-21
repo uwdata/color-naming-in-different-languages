@@ -1,6 +1,9 @@
 const isometric_x_angle = 30
 const isometric_y_angle = 150
 
+// isometric radius distortions:
+const isometric_y_radius = Math.sqrt(0.5) // 0.7071067811865475 
+const isometric_x_radius = Math.sqrt(1.5) // 1.224744871391589
 
 class FullColorBinView {
     constructor(options) {
@@ -167,10 +170,10 @@ class FullColorBinView {
 
 
                 // we assume split_dim is l, x/y dims are a/b, and that we have c/h data
-                if(this.split_dim !== "l" || ![this.x_dim, this.y_dim].includes("a") ||
-                   ![this.x_dim, this.y_dim].includes("b") || !("c_bin" in bin) || !("h_bin" in bin)){
-                    throw new Error("Arc bin detected, but not expected dimensions of x/y dims: a/b, split dim: l, and bin c/h data")
-                }
+                // if(this.split_dim !== "l" || ![this.x_dim, this.y_dim].includes("a") ||
+                //    ![this.x_dim, this.y_dim].includes("b") || !("c_bin" in bin) || !("h_bin" in bin)){
+                //     throw new Error("Arc bin detected, but not expected dimensions of x/y dims: a/b, split dim: l, and bin c/h data")
+                // }
 
                 // track c and h nums
                 if(!(this.splitDimNums[splitDimBinNum].c.includes(bin.c_bin))){
@@ -465,7 +468,7 @@ class FullColorBinView {
                 if("click" in options){
                     tiles.on("click", options.click)
                 }
-        } else if(!areRingArcs && this.z_dim){ // isomorphic square or rectangle bins
+        } else if(!areRingArcs && this.z_dim){ // isometric square or rectangle bins
             // clear any old arc or circle tiles
             parentElement.selectAll(".arc-tile")
                 .data([])
@@ -488,9 +491,11 @@ class FullColorBinView {
                 })
                 .attr("d", d => {
                     const bin = thisView.getBinInfo(d)
+
+                    const tileScale = getTileScale(d)
                     
-                    const [raw_center_x, raw_center_y] = getIsometricBinPosition(thisView, bin, getTileScale(d))
-                    const [center_x, center_y] = [raw_center_x + 30, raw_center_y  + 30 ]
+                    const [raw_center_x, raw_center_y] = getIsometricBinPosition(thisView, bin, tileScale)
+                    const [center_x, center_y] = [raw_center_x -  (z_scale) * tileScale / 2 + 30, raw_center_y - (z_scale) * tileScale / 2 + 30 ]
                      
                     const l_min_y = ((z_scale) * getTileScale(d) / 2);
                     const l_max_y = -((z_scale) * getTileScale(d) / 2);
@@ -656,10 +661,7 @@ class FullColorBinView {
             if("click" in options){
                 arcTiles.on("click", options.click)
             }
-        } else { // isomorphic arc bins
-
-            // TODO: This code is currently the isomorphic cube code
-            // it will need to be updated to do isomorphic ring bins
+        } else { // isometric arc bins
 
             // clear any old circle or arc tiles
             parentElement.selectAll(".arc-tile")
@@ -682,41 +684,7 @@ class FullColorBinView {
                     return getTileColor(d, bin)
                 })
                 .attr("d", d => {
-                    const bin = thisView.getBinInfo(d)
-                    
-                    const [raw_center_x, raw_center_y] = getIsometricBinPosition(thisView, bin, getTileScale(d))
-                    const [center_x, center_y] = [raw_center_x + 30, raw_center_y  + 30 ]
-                     
-                    const l_min_y = ((z_scale) * getTileScale(d) / 2);
-                    const l_max_y = -((z_scale) * getTileScale(d) / 2);
-                    const a_min_x =  Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const a_max_x =  -Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const a_min_y =  Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const a_max_y =  -Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const b_min_x =  Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const b_max_x =  -Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const b_min_y =  Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    const b_max_y =  -Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2
-                    
-                    return `
-                        M ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} 
-                        L ${tileSize*(center_x +  a_max_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_max_y)} 
-                        L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
-                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_min_y)}
-                        L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)}
-
-                        M ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} 
-                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_min_y)}
-                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_min_y)}
-                        L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_max_y)}
-                        L ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)}
-
-                        M ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
-                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_min_y)} 
-                        L ${tileSize*(center_x +  a_min_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_min_y + b_min_y)} 
-                        L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_min_y + a_max_y + b_min_y)} 
-                        L ${tileSize*(center_x +  a_max_x + b_min_x)} ${tileSize*(center_y +l_max_y + a_max_y + b_min_y)} 
-                         `
+                    return getIsometricArcBinPath(d, thisView, tileSize, tileBorderSizeInBins, getTileScale)
                 })
 
                 .attr("title", (d) => {
@@ -789,9 +757,6 @@ function getArcPathArea(d, thisView, tileSize, tileBorderSizeInBins, getTileScal
     const bin = thisView.getBinInfo(d)
     const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]] 
     const levelCenterY =   tileSize* thisView.display_offsets.y_offset_in_bins
-    // const binInnerRadius = bin.c_min/thisView.bin_size.c*tileSize * thisView.bin_size.c_ring_width_ratio
-    // const binOuterRadius = bin.c_max/thisView.bin_size.c*tileSize * thisView.bin_size.c_ring_width_ratio
-
 
     const binCenterRadius = bin.c_center/thisView.bin_size.c*tileSize * thisView.bin_size.c_ring_width_ratio
 
@@ -829,19 +794,159 @@ function getArcPathArea(d, thisView, tileSize, tileBorderSizeInBins, getTileScal
     `
 }
 
+function getIsometricArcBinPath(d, binView, tileSize, tileBorderSizeInBins, getTileScale){
+    const bin = binView.getBinInfo(d)
+
+    const tileScale = getTileScale(d)
+    const z_scale = binView.z_dim == "l" ? binView.bin_size.l_scale : 1
+
+    //const [raw_center_x, raw_center_y] = getIsometricBinPosition(thisView, bin, getTileScale(d))
+    const [center_x, center_y] = [
+        //raw_center_x + 30, 
+        100, // x always same center 
+        - bin[binView.z_dim + "_bin"] * z_scale * tileSize + 200 // assumes z_dim is L
+        //raw_center_y * tileScale + 30 
+        ]
+
+    const l_min_y = ((z_scale) * tileScale / 2);
+    const l_max_y = -((z_scale) * tileScale / 2);
+
+    const binCenterRadius = bin.c_center/binView.bin_size.c*tileSize * binView.bin_size.c_ring_width_ratio
+
+    
+    const binRadialWidth = tileScale * tileScale* tileSize * (binView.bin_size.c_ring_width_ratio - tileBorderSizeInBins)
+    
+    if(("binC" in bin && bin.binC == 0) || bin.c_bin == 0){
+
+        const binRadius = tileScale * (bin.c_max/binView.bin_size.c - 0.5 * tileBorderSizeInBins)*tileSize * binView.bin_size.c_ring_width_ratio 
+
+        return `
+            M ${center_x - isometric_x_radius * binRadius} ${center_y + l_max_y*tileSize} 
+            A ${isometric_x_radius * binRadius} ${isometric_y_radius * binRadius} 0 0 1 ${center_x + isometric_x_radius * binRadius} ${center_y + l_max_y*tileSize}
+            A ${isometric_x_radius * binRadius} ${isometric_y_radius * binRadius} 0 0 1 ${center_x - isometric_x_radius * binRadius} ${center_y + l_max_y*tileSize}
+
+            M ${center_x - isometric_x_radius * binRadius} ${center_y + l_max_y*tileSize} 
+            A ${isometric_x_radius * binRadius} ${isometric_y_radius * binRadius} 0 0 0 ${center_x + isometric_x_radius * binRadius} ${center_y + l_max_y*tileSize}
+            L ${center_x + isometric_x_radius * binRadius} ${center_y + l_min_y*tileSize}
+            A ${isometric_x_radius * binRadius} ${isometric_y_radius * binRadius} 0 0 1 ${center_x - isometric_x_radius * binRadius} ${center_y + l_min_y*tileSize}
+            L ${center_x - isometric_x_radius * binRadius} ${center_y + l_max_y*tileSize}
+            `
+
+    }
+
+    const binInnerRadius = binCenterRadius - binRadialWidth / 2
+    const binOuterRadius = binCenterRadius + binRadialWidth / 2
+
+    const halfAngle = (bin.h_max - bin.h_center) 
+    const angleMargin = 0.5 * tileBorderSizeInBins * 360 / (2 * Math.PI * (bin.c_center * binView.bin_size.c_ring_width_ratio / binView.bin_size.c))
+    const halfAngleWithMargin = halfAngle - angleMargin
+    const halfAngleScaled = getTileScale(d) * halfAngleWithMargin
+    const endAngleMargin = (bin.h_center - halfAngleScaled)
+    const startAngleMargin = (bin.h_center + halfAngleScaled)
+        
+
+    const binInnerStartX = binInnerRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI)  
+    const binInnerEndX = binInnerRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
+    const binInnerStartY = binInnerRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI)
+    const binInnerEndY = binInnerRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)  
+
+    const binOuterStartX = binOuterRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
+    const binOuterEndX = binOuterRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
+    const binOuterStartY = binOuterRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI)
+    const binOuterEndY = binOuterRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI) 
+
+
+    // Now convert to isometric X and Y
+    const isoBinInnerStartX =  
+        binInnerStartX * Math.cos(isometric_x_angle / 360 * 2 * Math.PI) +
+        binInnerStartY * Math.cos(isometric_y_angle / 360 * 2 * Math.PI)
+    const isoBinInnerStartY = 
+        binInnerStartX * - Math.sin(isometric_x_angle / 360 * 2 * Math.PI) +
+        binInnerStartY * - Math.sin(isometric_x_angle / 360 * 2 * Math.PI) 
+
+    const isoBinInnerEndX = 
+        binInnerEndX * Math.cos(isometric_x_angle / 360 * 2 * Math.PI) +
+        binInnerEndY * Math.cos(isometric_y_angle / 360 * 2 * Math.PI)
+    const isoBinInnerEndY = 
+        binInnerEndX * - Math.sin(isometric_x_angle / 360 * 2 * Math.PI) +
+        binInnerEndY * - Math.sin(isometric_x_angle / 360 * 2 * Math.PI) 
+
+    const isoBinOuterStartX =  
+        binOuterStartX * Math.cos(isometric_x_angle / 360 * 2 * Math.PI) +
+        binOuterStartY * Math.cos(isometric_y_angle / 360 * 2 * Math.PI)
+    const isoBinOuterStartY = 
+        binOuterStartX * - Math.sin(isometric_x_angle / 360 * 2 * Math.PI) +
+        binOuterStartY * - Math.sin(isometric_x_angle / 360 * 2 * Math.PI) 
+
+    const isoBinOuterEndX = 
+        binOuterEndX * Math.cos(isometric_x_angle / 360 * 2 * Math.PI) +
+        binOuterEndY * Math.cos(isometric_y_angle / 360 * 2 * Math.PI)
+    const isoBinOuterEndY = 
+        binOuterEndX * - Math.sin(isometric_x_angle / 360 * 2 * Math.PI) +
+        binOuterEndY * - Math.sin(isometric_x_angle / 360 * 2 * Math.PI) 
+
+    // TODO: for each of the possible 4 sides, figure out if it should be displayed, and then display it
+    // sides:
+    //  innerStart -> innerEnd
+    //  innerEnd -> outerEnd
+    //  outerEnd -> outerStart
+    //  outersStart -> innerStart
+    return `
+        M ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize  + isoBinInnerStartY} 
+        A ${isometric_x_radius * binInnerRadius} ${isometric_x_radius * binInnerRadius} 0 0 1 ${center_x + isoBinInnerEndX} ${center_y + l_max_y*tileSize + isoBinInnerEndY}
+        L ${center_x + isoBinOuterEndX} ${center_y + l_max_y*tileSize + isoBinOuterEndY}
+        A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 0 ${center_x + isoBinOuterStartX} ${center_y + l_max_y*tileSize + isoBinOuterStartY}
+        L ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize + isoBinInnerStartY}
+        ${ // innerStart -> innerEnd edge
+            true ? 
+            "":
+            ""
+        }
+        ${ // innerEnd -> outerEnd edge
+            true ? 
+            "":
+            ""
+        }
+        ${ // outerEnd -> outerStart edge
+            true ? 
+            "":
+            ""
+        }
+        ${ // outersStart -> innerStart edge
+            true ? 
+            "":
+            ""
+        }
+    `
+}
+
 
 function getIsometricBinPosition(binView, bin, tileScale){
     const z_scale = binView.z_dim == "l" ? binView.bin_size.l_scale : 1
+    let bin_lab_dims = {
+        l_bin: bin.l_bin,
+        a_bin: bin.a_bin,
+        b_bin: bin.b_bin
+    }
+    if("c_bin" in bin){
+        bin_lab_dims.l_bin = bin.l_center
+        if(bin.c_bin == 0){
+            bin_lab_dims.a_bin = 0
+            bin_lab_dims.b_bin = 0
+        } else {
+            bin_lab_dims.a_bin = bin.c_center * Math.cos(bin.h_center / 360 * 2 * Math.PI)
+            bin_lab_dims.b_bin = bin.c_center * Math.sin(bin.h_center / 360 * 2 * Math.PI)
+        }
+    }
+
     const center_x = //bin[thisView.x_dim + "_bin"] // relative position
-        Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * bin[binView.x_dim + "_bin"] +
-        Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * bin[binView.y_dim + "_bin"]
-        - tileScale / 2 // minus width/2 for centering
+        Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * bin_lab_dims[binView.x_dim + "_bin"] +
+        Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * bin_lab_dims[binView.y_dim + "_bin"]
         +30
     const center_y = //-bin[thisView.y_dim + "_bin"] * z_scale // relative position
-            - bin[binView.z_dim + "_bin"] * z_scale
-            - bin[binView.x_dim + "_bin"] * Math.sin(isometric_x_angle / 360 * 2 * Math.PI) 
-            - bin[binView.y_dim + "_bin"] * Math.sin(isometric_y_angle / 360 * 2 * Math.PI) 
-                - (z_scale) * tileScale / 2 // minus height/2 for centering
+            - bin_lab_dims[binView.z_dim + "_bin"] * z_scale
+            - bin_lab_dims[binView.x_dim + "_bin"] * Math.sin(isometric_x_angle / 360 * 2 * Math.PI) 
+            - bin_lab_dims[binView.y_dim + "_bin"] * Math.sin(isometric_y_angle / 360 * 2 * Math.PI) 
                 +30
 
     return [center_x, center_y]
