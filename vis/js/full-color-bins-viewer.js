@@ -250,6 +250,8 @@ function updateDisplay(){
   
   labBinViews[curr_bin_size].setBinArray(gamutFilteredBins)
   labBinViews[curr_bin_size].setDisplayOffsets(labBinViews[curr_bin_size].getDisplayOffsets())
+  labBin3DViews[curr_bin_size].setBinArray(gamutFilteredBins)
+  labBin3DViews[curr_bin_size].setDisplayOffsets(labBinViews[curr_bin_size].getDisplayOffsets())
   if(labBinArcViews[curr_bin_size]){
     labBinArcViews[curr_bin_size].setBinArray(gamutFilteredBins)
     labBinArcViews[curr_bin_size].setDisplayOffsets(labBinArcViews[curr_bin_size].getDisplayOffsets())

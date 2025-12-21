@@ -17,30 +17,60 @@ class FullColorBinView {
         this.z_dim = options.z_dim
 
         if(this.z_dim){ // if z_dim (isometric view), need to sort
-            // make shallow copy of bin_array
-            this.bin_array = [...this.bin_array]
-            this.bin_array.sort((a, b) => {
-                const z_scale = this.z_dim == "l" ? this.bin_size.l_scale : 1
-                let a_val = - a[this.x_dim + "_bin"] - a[this.y_dim + "_bin"] + z_scale* a[this.z_dim + "_bin"] 
-                let b_val = - b[this.x_dim + "_bin"] - b[this.y_dim + "_bin"] + z_scale* b[this.z_dim + "_bin"]
-                //return a_val - b_val
-                return a[this.z_dim + "_bin"] != b[this.z_dim + "_bin"] ? 
-                    a[this.z_dim + "_bin"] - b[this.z_dim + "_bin"] :
-                    a_val - b_val
-
-                // return a[this.z_dim + "_bin"] < b[this.z_dim + "_bin"] ? -1 : 
-                //     ( a[this.z_dim + "_bin"] > b[this.z_dim + "_bin"] ? 1 :
-                //         (a_val - b_val)
-                //     )
-            })
+            this.isoSortBins()
         }
 
         this.findDimBounds()
     }
 
+    isoSortBins(){
+        this.bin_array = [...this.bin_array]
+        this.bin_array.sort((a, b) => {
+            const z_scale = this.z_dim == "l" ? this.bin_size.l_scale : 1
+
+            const a_bin_dims = {
+                l_bin: a.l_bin,
+                a_bin: a.a_bin,
+                b_bin: a.b_bin
+            }
+            const b_bin_dims = {
+                l_bin: b.l_bin,
+                a_bin: b.a_bin,
+                b_bin: b.b_bin
+            }
+            if("c_bin" in a){
+                a_bin_dims.l_bin = a.l_center
+                b_bin_dims.l_bin = b.l_center
+                if(a.c_bin == 0){
+                    a_bin_dims.a_bin = 0
+                    a_bin_dims.b_bin = 0
+                } else {
+                    a_bin_dims.a_bin = a.c_center * Math.cos(a.h_center / 360 * 2 * Math.PI)
+                    a_bin_dims.b_bin = a.c_center * Math.sin(a.h_center / 360 * 2 * Math.PI)
+                }
+                if(b.c_bin == 0){
+                    b_bin_dims.a_bin = 0
+                    b_bin_dims.b_bin = 0
+                } else {
+                    b_bin_dims.a_bin = b.c_center * Math.cos(b.h_center / 360 * 2 * Math.PI)
+                    b_bin_dims.b_bin = b.c_center * Math.sin(b.h_center / 360 * 2 * Math.PI)
+                }
+            }
+
+            let a_val = - a_bin_dims[this.x_dim + "_bin"] - a_bin_dims[this.y_dim + "_bin"] + z_scale* a_bin_dims[this.z_dim + "_bin"] 
+            let b_val = - b_bin_dims[this.x_dim + "_bin"] - b_bin_dims[this.y_dim + "_bin"] + z_scale* b_bin_dims[this.z_dim + "_bin"]
+            return a_bin_dims[this.z_dim + "_bin"] != b_bin_dims[this.z_dim + "_bin"] ? 
+                a_bin_dims[this.z_dim + "_bin"] - b_bin_dims[this.z_dim + "_bin"] :
+                a_val - b_val
+        })
+    }
+
     setBinArray(bin_array){
         this.bin_array = bin_array
         this.nested_bins = this.binsArrayToNested(this.bin_array)
+        if(this.z_dim){ // if z_dim (isometric view), need to sort
+            this.isoSortBins()
+        }
         this.findDimBounds()
     }
 
@@ -804,7 +834,7 @@ function getIsometricArcBinPath(d, binView, tileSize, tileBorderSizeInBins, getT
     const [center_x, center_y] = [
         //raw_center_x + 30, 
         100, // x always same center 
-        - bin[binView.z_dim + "_bin"] * z_scale * tileSize + 200 // assumes z_dim is L
+        - bin[binView.z_dim + "_bin"] * z_scale * tileSize + 250 // assumes z_dim is L
         //raw_center_y * tileScale + 30 
         ]
 
@@ -898,30 +928,54 @@ function getIsometricArcBinPath(d, binView, tileSize, tileBorderSizeInBins, getT
         A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 0 ${center_x + isoBinOuterStartX} ${center_y + l_max_y*tileSize + isoBinOuterStartY}
         L ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize + isoBinInnerStartY}
         ${ // innerStart -> innerEnd edge
-            true ? 
-            "":
+            isoBinInnerStartX < isoBinInnerEndX ? 
+            `
+                M ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize  + isoBinInnerStartY} 
+                A ${isometric_x_radius * binInnerRadius} ${isometric_x_radius * binInnerRadius} 0 0 1 ${center_x + isoBinInnerEndX} ${center_y + l_max_y*tileSize + isoBinInnerEndY}
+                L ${center_x + isoBinInnerEndX} ${center_y + l_min_y*tileSize + isoBinInnerEndY}
+                A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 0 ${center_x + isoBinInnerStartX} ${center_y + l_min_y*tileSize + isoBinInnerStartY}
+                L ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize + isoBinInnerStartY}
+            `:
             ""
         }
         ${ // innerEnd -> outerEnd edge
-            true ? 
-            "":
+            isoBinInnerEndX < isoBinOuterEndX ? 
+            `
+                M ${center_x + isoBinInnerEndX} ${center_y + l_max_y*tileSize + isoBinInnerEndY} 
+                L ${center_x + isoBinOuterEndX} ${center_y + l_max_y*tileSize + isoBinOuterEndY}
+                L ${center_x + isoBinOuterEndX} ${center_y + l_min_y*tileSize + isoBinOuterEndY}
+                L ${center_x + isoBinInnerEndX} ${center_y + l_min_y*tileSize + isoBinInnerEndY}
+                L ${center_x + isoBinInnerEndX} ${center_y + l_max_y*tileSize + isoBinInnerEndY}
+            `:
             ""
         }
         ${ // outerEnd -> outerStart edge
-            true ? 
-            "":
+            isoBinOuterEndX < isoBinOuterStartX ? 
+            `
+                M ${center_x + isoBinOuterStartX} ${center_y + l_max_y*tileSize  + isoBinOuterStartY} 
+                A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 1 ${center_x + isoBinOuterEndX} ${center_y + l_max_y*tileSize + isoBinOuterEndY}
+                L ${center_x + isoBinOuterEndX} ${center_y + l_min_y*tileSize + isoBinOuterEndY}
+                A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 0 ${center_x + isoBinOuterStartX} ${center_y + l_min_y*tileSize + isoBinOuterStartY}
+                L ${center_x + isoBinOuterStartX} ${center_y + l_max_y*tileSize + isoBinOuterStartY}
+            `:
             ""
         }
         ${ // outersStart -> innerStart edge
-            true ? 
-            "":
+             isoBinOuterStartX < isoBinInnerStartX ? 
+            `
+                M ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize + isoBinInnerStartY} 
+                L ${center_x + isoBinOuterStartX} ${center_y + l_max_y*tileSize + isoBinOuterStartY}
+                L ${center_x + isoBinOuterStartX} ${center_y + l_min_y*tileSize + isoBinOuterStartY}
+                L ${center_x + isoBinInnerStartX} ${center_y + l_min_y*tileSize + isoBinInnerStartY}
+                L ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize + isoBinInnerStartY}
+            `:
             ""
         }
     `
 }
 
 
-function getIsometricBinPosition(binView, bin, tileScale){
+function getIsometricBinPosition(binView, bin){
     const z_scale = binView.z_dim == "l" ? binView.bin_size.l_scale : 1
     let bin_lab_dims = {
         l_bin: bin.l_bin,
