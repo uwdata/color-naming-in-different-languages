@@ -167,6 +167,23 @@ let curr_bin_size = LAB_BIN_SIZES[1]
 let curr_color_gamut
 let backgroundColor = 'white'
 
+function getTileColor (d, bin) {
+  if(curr_color_gamut == "srgb"){
+    if("representative_rgb" in bin){
+      return `rgb(${bin.representative_rgb.r}, ${bin.representative_rgb.g}, ${bin.representative_rgb.b})`
+    } else {
+      return `rgb(${bin.center_rgb.r}, ${bin.center_rgb.g}, ${bin.center_rgb.b})`
+    }
+  } else {
+    const color_name = curr_color_gamut == "p3" ? "display-p3" : "rec2020"
+    if("representative_"+curr_color_gamut in bin){
+      return `color(${color_name} ${bin["representative_"+curr_color_gamut].r} ${bin["representative_"+curr_color_gamut].g} ${bin["representative_"+curr_color_gamut].b})`
+    } else {
+      return `color(${color_name} ${bin["center_"+curr_color_gamut].r} ${bin["center_"+curr_color_gamut].g} ${bin["center_"+curr_color_gamut].b})`
+    }
+  }
+}
+
 /*************** Load page and Data *********************/
 $(document).on('ready page:load', function () {
   $("#bin_size").empty()
@@ -299,6 +316,7 @@ function createOrRefreshTiles(){
   if(svg.empty()){
 
     svg = d3.select("#bin-view").append("svg")
+    svg.attr("xmlns", "http://www.w3.org/2000/svg")
 
     textBackground = svg.append("rect")
             .attr("class", "text-background")
@@ -347,7 +365,8 @@ function createOrRefreshTiles(){
 
     labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, {
       backgroundColor: backgroundColor,
-      getTileTitleText: getTileTitleText
+      getTileTitleText: getTileTitleText,
+      getTileColor: getTileColor
     })
   } else {
     svg.select("#arc-bins").remove()
@@ -356,11 +375,13 @@ function createOrRefreshTiles(){
 
   labBinViews[curr_bin_size].createOrUpdateColorTiles(squareBins, {
     backgroundColor: backgroundColor,
-    getTileTitleText: getTileTitleText
+    getTileTitleText: getTileTitleText,
+    getTileColor: getTileColor
   })
 
   labBin3DViews[curr_bin_size].createOrUpdateColorTiles(bins3d, {
-    backgroundColor: backgroundColor
+    backgroundColor: backgroundColor,
+    getTileColor: getTileColor
   })
 }
 

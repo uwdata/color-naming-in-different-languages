@@ -52,7 +52,7 @@ const LAB_BIN_SIZES = [
   }),
 ]
 
-
+const labBinDataSets = {}
 const labBinViews = {}
 const labBinArcViews = {}
 
@@ -64,8 +64,9 @@ function cubeEquivalentBinSize(bin_size){
 async function load_and_process_bin_data(bin_size){
 
   await new Promise(resolve => $.getJSON(`../model/color_info_pre_naming/oklab_bins_${bin_size}.json`, function( data ) {
-    
-    data = bin_size.filterBinsByGamut(data, "rec2020") // assume rec2020 for now
+    labBinDataSets[bin_size] = data
+
+    //data = bin_size.filterBinsByGamut(data, "rec2020") // assume rec2020 for now
     
     
     const binView = new FullColorBinView({
@@ -73,7 +74,7 @@ async function load_and_process_bin_data(bin_size){
       bin_array: data,
       x_dim: bin_size.type == "ring" ? "h" : "b",
       y_dim: bin_size.type == "ring" ? "l" : "-a",
-      split_dim: bin_size.type == "ring" ? "c" : "l",
+      split_dim: bin_size.type == "ring" ? "c" : "l"
     })
 
 
@@ -110,7 +111,25 @@ let curr_bin_size = LAB_BIN_SIZES[1]
 let backgroundColor = 'white'
 let tile_size_type = 'ptc'
 let bin_size_by = "area"
+let curr_color_gamut
 let additional_tooltip_info = false
+
+function getTileColor (d, bin) {
+  if(curr_color_gamut == "srgb"){
+    if("representative_rgb" in bin){
+      return `rgb(${bin.representative_rgb.r}, ${bin.representative_rgb.g}, ${bin.representative_rgb.b})`
+    } else {
+      return `rgb(${bin.center_rgb.r}, ${bin.center_rgb.g}, ${bin.center_rgb.b})`
+    }
+  } else {
+    const color_name = curr_color_gamut == "p3" ? "display-p3" : "rec2020"
+    if("representative_"+curr_color_gamut in bin){
+      return `color(${color_name} ${bin["representative_"+curr_color_gamut].r} ${bin["representative_"+curr_color_gamut].g} ${bin["representative_"+curr_color_gamut].b})`
+    } else {
+      return `color(${color_name} ${bin["center_"+curr_color_gamut].r} ${bin["center_"+curr_color_gamut].g} ${bin["center_"+curr_color_gamut].b})`
+    }
+  }
+}
 
 /*************** Load page and Data *********************/
 $(document).on('ready page:load', function () {
@@ -136,6 +155,11 @@ $(document).on('ready page:load', function () {
   /********* jquery event listeners */
 
   $("#bin_size").change(updateDisplay)
+
+  curr_color_gamut = $("input[name='color-gamut']:checked").val()
+  $("input[name='color-gamut']").change(e => {
+    updateDisplay()
+  })
 
   $("#background-brightness").on("input", function(){
     const brightness = $(this).val() 
@@ -193,6 +217,23 @@ function updateDisplay(){
     return
   } else {
     $("#loading-p").remove()
+  }
+
+  curr_color_gamut = $("input[name='color-gamut']:checked").val()
+  const gamutFilteredBins = curr_bin_size.filterBinsByGamut(labBinDataSets[curr_bin_size], curr_color_gamut)
+  
+  
+  labBinViews[curr_bin_size].setBinArray(gamutFilteredBins)
+  labBinViews[curr_bin_size].setDisplayOffsets(labBinViews[curr_bin_size].getDisplayOffsets())
+
+  // const cubeBinSize = cubeEquivalentBinSize(curr_bin_size)
+  // if(labBinViews[cubeBinSize]){
+  //   labBinViews[cubeBinSize].setBinArray(gamutFilteredBins)
+  //   labBinViews[cubeBinSize].setDisplayOffsets(labBinViews[cubeBinSize].getDisplayOffsets())
+  // }
+  if(labBinArcViews[curr_bin_size]){
+    labBinArcViews[curr_bin_size].setBinArray(gamutFilteredBins)
+    labBinArcViews[curr_bin_size].setDisplayOffsets(labBinArcViews[curr_bin_size].getDisplayOffsets())
   }
 
   // let margin = {top: 30, right: 50, bottom: 30, left: 50},
@@ -265,6 +306,12 @@ function createOrRefreshTiles(){
   const cubeBinSize = cubeEquivalentBinSize(curr_bin_size)
   let extraCubeBinHeight = 0
   if(cubeBinSize in labBinViews){
+      curr_color_gamut = $("input[name='color-gamut']:checked").val()
+      const gamutFilteredBins = curr_bin_size.filterBinsByGamut(labBinDataSets[cubeBinSize], curr_color_gamut)
+
+      labBinViews[cubeBinSize].setBinArray(gamutFilteredBins)
+      labBinViews[cubeBinSize].setDisplayOffsets(labBinViews[cubeBinSize].getDisplayOffsets())
+
       extraCubeBinHeight =  currSvgSize[0].width * labBinViews[cubeBinSize].display_offsets.y_height_in_bins /  labBinViews[cubeBinSize].display_offsets.x_width_in_bins
 
     let cubeBins = svg.select("#cube-bins")
@@ -278,7 +325,8 @@ function createOrRefreshTiles(){
     labBinViews[cubeBinSize].createOrUpdateColorTiles(cubeBins, {
       backgroundColor: backgroundColor,
       no_border: true,
-      outline_levels: true
+      outline_levels: true,
+      getTileColor: getTileColor
     })
   
     addLabel(cubeBins, "Oklab cube bins in l,a,b space")
@@ -309,7 +357,8 @@ function createOrRefreshTiles(){
   labBinArcViews[curr_bin_size].createOrUpdateColorTiles(arcBins, {
     backgroundColor: backgroundColor,
     no_border: true,
-    outline_levels: true
+    outline_levels: true,
+    getTileColor: getTileColor
   })
   
   addLabel(arcBins, "Oklch bins in l,a,b space")
@@ -322,7 +371,8 @@ function createOrRefreshTiles(){
   labBinViews[curr_bin_size].createOrUpdateColorTiles(squareBins, {
     backgroundColor: backgroundColor,
     no_border: true,
-    outline_levels: true
+    outline_levels: true,
+    getTileColor: getTileColor
   })
 
   addLabel(squareBins, "Oklch bins in l,c,h space")

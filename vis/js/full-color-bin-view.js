@@ -539,7 +539,11 @@ class FullColorBinView {
                     const tileScale = getTileScale(d)
                     
                     const [raw_center_x, raw_center_y] = getIsometricBinPosition(thisView, bin, tileScale)
-                    const [center_x, center_y] = [raw_center_x -  (z_scale) * tileScale / 2 + 30, raw_center_y - (z_scale) * tileScale / 2 + 30 ]
+                    const [center_x, center_y] = [
+                        raw_center_x -  (z_scale) * tileScale / 2 
+                            +150 / tileSize ,
+                         raw_center_y - (z_scale) * tileScale / 2 
+                            +250 / tileSize]
                      
 
                     console.log("TODO: Generalize to use x_dim and y_dim")
@@ -1049,14 +1053,14 @@ function getIsometricBinPosition(binView, bin){
     const center_x = //bin[thisView.x_dim + "_bin"] // relative position
         Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * bin_lab_dims[binView.x_dim + "_bin"] +
         Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * bin_lab_dims[binView.y_dim + "_bin"]
-        +30
+        //+30
     const center_y = //-bin[thisView.y_dim + "_bin"] * z_scale // relative position
             - bin_lab_dims[binView.z_dim + "_bin"] * z_scale
             -  bin_lab_dims[binView.x_dim + "_bin"] * Math.sin(isometric_x_angle / 360 * 2 * Math.PI) 
             -  bin_lab_dims[binView.y_dim + "_bin"] * Math.sin(isometric_y_angle / 360 * 2 * Math.PI) 
             // - binView.x_dim_direction * bin_lab_dims[binView.x_dim + "_bin"] * Math.sin(isometric_x_angle / 360 * 2 * Math.PI) 
             // - binView.y_dim_direction * bin_lab_dims[binView.y_dim + "_bin"] * Math.sin(isometric_y_angle / 360 * 2 * Math.PI) 
-                +30
+               // +30
 
     return [center_x, center_y]
 }
