@@ -1,6 +1,20 @@
+import fs from "fs";
+import csv from 'csvtojson';
 
 import chineseT2STable from './tongwen_table_t2s.js'
-import csv from 'csvtojson';
+
+// load language color rules
+const lang_rules = {}
+
+const lang_rule_files = fs.readdirSync('./lang_rules', {withFileTypes: true})
+  .filter(f => !f.isDirectory())
+  .map(f => f.name)
+  .filter(f => f.endsWith("_rules.js"))
+
+for(const lang_rule_file_name of lang_rule_files){
+  const lang = lang_rule_file_name.split("_rules.js")[0]
+  lang_rules[lang] = (await import('./lang_rules/'+lang_rule_file_name)).default
+}
 
 
 // exclude some participants because they entered the wrong language or they entered nonsense
@@ -15,9 +29,6 @@ var enNameReplacingRules = [[/scarlett/, "scarlet"], [/robinseggblue/, "robinegg
 var enExcludedNames = ["a", "w", "y", "b", "asdf"]
 var poNameReplacingRules = [[/fucsia/, "fúcsia"], [/lilas/, "lilás"], [/turqueza/, "turquesa"], [/laranja escuto/, "laranja escuro"], [/verde mar$/, "verde marinho"], [/azul maringo/, "azul marinho"], [/^verdeado/, "esverdeado"], [/rosa chock$/, "rosa choque"], [/purpura/, "púrpura"], [/limao/, "limão"]];
 var poExcludedNames = ["blue","pink","green","red","orange","yellow","light blue","purple","turquoise","lighter blue","purpel","dark pink","dark yellow","bright green","sea blue","bright pink","light red","gold","yeallow"];
-
-var esExcludeNames = ["blue", "orange", "pink", "green","purple","yellow","red", "light blue", "dark blue", "teal" ];
-var esNameReplacingRules = [[/rosado/, "rosa"], [/cian/, "cyan"], [/limon/, "limón"], [/fuxia/, "fucsia"], [/acuamarina/, "aguamarina"], [/purpura/, "púrpura"]];
 
 var deExcludeNames = ["blue", "cyan", "green", "red", "yellow"];
 var deNameReplacingRules = [[/gruen/, "grün"]];
@@ -110,8 +121,9 @@ function refine(cn){
 
     } else if (cn.lang0.indexOf("Spanish") >= 0) {
       cn.name = cn.name.toLowerCase().replace(/\s*$/,"").replace(/^\s*/,"").replace(/-+/g," ");
-      cn.name = (replaceByArray(cn.name, esNameReplacingRules));
-      if (esExcludeNames.indexOf(cn.name) >= 0 ) {
+      
+      cn.name = (replaceByArray(cn.name, lang_rules["es"].nameReplacingRules));
+      if (lang_rules["es"].excludeNames.indexOf(cn.name) >= 0 ) {
         cn.name = "";
       }
     } else if (cn.lang0.indexOf("Deutsch") >= 0) {
