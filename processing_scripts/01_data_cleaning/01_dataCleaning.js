@@ -12,6 +12,51 @@ const FILE_I = "../../raw/color_names.csv"
 const FILE_O = "../../model/cleaned_color_names.csv"; // Path for the output
 const FILE_REMOVED_O = "../../model/removed_color_data.csv"; // Path for the output
 
+const csvColumnOrder = [
+  "participantId",
+  "lang0Abv",
+  "lang0",
+  "name",
+  "standardized_entered_name",
+  "entered_name",
+  "colorSpace", "r", "g", "b",
+  "trialNum", "tileNum",
+  "rgbSet",
+  "background",
+  "locale",
+  "studyVersion"
+]
+
+const csvDeletedColumnOrder = [
+  "participantId",
+  "lang0Abv",
+  "lang0",
+  "standardized_entered_name",
+  "entered_name",
+  "colorSpace", "r", "g", "b",
+  "trialNum", "tileNum",
+  "rgbSet",
+  "background",
+  "locale",
+  "studyVersion"
+]
+
+import {languages_iso_639} from "../../shared_files/languages-iso-639.js"
+const missingLangs = []
+function getLangAbv(lang){
+  const lang_data = languages_iso_639.find(l => `${l["Language name"]} (${l["Native name"]})` == lang)
+  let abv
+  if(lang_data){
+    abv = lang_data["639‑1"]
+  } else{
+    if(!(missingLangs.includes(lang))){
+      console.log("WARNING: abv not found for " + lang)
+      missingLangs.push(lang)
+    }
+  }
+  return abv
+}
+
 
 csv().fromFile(FILE_I)
   .then((colorNames)=>{
@@ -37,13 +82,20 @@ csv().fromFile(FILE_I)
     cn.standardized_entered_name = cn.name
   })
   
+  // Remove all blank color names (don't even bother to report these as "deleted")
   var colorNames = colorNames.filter(cn => {
     cn.name = cn.name.toString().trim().toLowerCase();
     return cn.name !== "";
   });
 
+  // Add language abbreviation to each color name
+  for(const colorName of colorNames){
+    colorName.lang0Abv = getLangAbv(colorName.lang0)
+  }
+  
+
   colorNames.forEach(cn => {
-    refine.refine(cn)
+     refine.refine(cn)
 
     // try refining again and make sure it doesn't mess it up
     let oldName = cn.name
@@ -67,7 +119,7 @@ csv().fromFile(FILE_I)
   });
 
   console.log("writing file");
-  let cleanedWriter = csvWriter();
+  let cleanedWriter = csvWriter({headers: csvColumnOrder});
   cleanedWriter.pipe(fs.createWriteStream(FILE_O));
 
   cleanedData.forEach(d => {
@@ -83,7 +135,7 @@ csv().fromFile(FILE_I)
     return cn.name == "";
   });
   console.log("writing removed data file");
-  let removedWriter = csvWriter();
+  let removedWriter = csvWriter({headers: csvDeletedColumnOrder});
   removedWriter.pipe(fs.createWriteStream(FILE_REMOVED_O));
 
   removedData.forEach(d => {

@@ -1,5 +1,4 @@
 
-import {languages_iso_639} from "../../shared_files/languages-iso-639.js"
 import chineseT2STable from './tongwen_table_t2s.js'
 
 
