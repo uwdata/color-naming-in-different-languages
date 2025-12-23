@@ -25,18 +25,14 @@ function standardize_entered(cn){
   let name = cn.name.replace(/\s*-\s*/, " ")
   name = name.toString().trim().toLowerCase()
 
-  if (cn.lang0.indexOf("Korean") >= 0) {
-      name = name.trim()
-      if(name.length > 0 && !name.endsWith("색")){
-        name += "색"
+  if(lang_rules[cn.lang0Abv]){
+    const standardizedEnd = lang_rules[cn.lang0Abv].standardizedEnd
+    if(standardizedEnd){
+      if(name.length > 0 && !name.endsWith(standardizedEnd)){
+          name += standardizedEnd
       }
-  } else if (name.length > 0 && cn.lang0.indexOf("Chinese") >= 0) {
-    name = name.trim()
-    if(!name.endsWith("色")){
-      name += "色"
     }
   }
-
   return name
 }
 

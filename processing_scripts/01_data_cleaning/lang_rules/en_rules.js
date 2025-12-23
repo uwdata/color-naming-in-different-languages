@@ -1,4 +1,4 @@
-// Spanish (español)
+// English (English)
 
 const excludeNames = [
     // nonsense entries:
@@ -55,7 +55,7 @@ const nameReplacingRules = [
     [/turquiose/, "turquoise"],
     [/torquoise/, "turquoise"],
     [/turqoise/, "turquoise"],
-    
+
     [/yello$/, "yellow"]
 ];
 

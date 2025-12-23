@@ -76,6 +76,11 @@ csv().fromFile(FILE_I)
     enteredColorNameLookup[cn.cn_i] = cn.name;
   }
 
+  // Add language abbreviation to each color name
+  for(const colorName of colorNames){
+    colorName.lang0Abv = getLangAbv(colorName.lang0)
+  }
+
   // standardize entered name (e.g., trim, lowcase)
   colorNames.forEach(cn => {
     cn.name = refine.standardize_entered(cn)
@@ -87,13 +92,7 @@ csv().fromFile(FILE_I)
     cn.name = cn.name.toString().trim().toLowerCase();
     return cn.name !== "";
   });
-
-  // Add language abbreviation to each color name
-  for(const colorName of colorNames){
-    colorName.lang0Abv = getLangAbv(colorName.lang0)
-  }
   
-
   colorNames.forEach(cn => {
      refine.refine(cn)
 

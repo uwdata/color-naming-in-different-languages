@@ -1,9 +1,12 @@
 // Chinese (中文 (Zhōngwén), 汉语, 漢語)
 
+const standardizedEnd = "色"
+
 const excludeNames = [
     // nonsense names
     "1"
 ];
+
 const nameReplacingRules = [
     [/天空蓝/, "天蓝"],
     [/桔黄/, "橘黄"],
@@ -23,6 +26,7 @@ const nameReplacingRules = [
 ];
 
 export default {
+    standardizedEnd: standardizedEnd,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules
 }
