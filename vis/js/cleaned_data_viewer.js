@@ -1,8 +1,8 @@
 const STANDARDIZED_NAME_COL = "Standardized Names"
 
 const rawDataRowSort = [
-    "entered_name", "standardized_entered_name", "name",
-    "lang0", "participantId", "rgbSet",
+    "reason_excluded", "entered_name", "standardized_entered_name", "name",
+    "lang0", "lang0Abv", "participantId", "rgbSet",
     "studyVersion", "locale", "phaseNum", "trialNum","tileNum", "background",
     "colorSpace", "r", "g", "b", 
 ]

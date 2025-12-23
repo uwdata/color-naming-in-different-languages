@@ -45,6 +45,7 @@ function refine(cn){
     // remove participants with ids specifically marked for removal
     if(participants_to_exclude.includes(String(cn.participantId))){
       cn.name = ""
+      cn.reason_excluded = "participant id"
       return
     }
 
@@ -72,6 +73,7 @@ function refine(cn){
       }
       if("excludeNames" in langRules && langRules.excludeNames.indexOf(cn.name) >= 0 ) {
         cn.name = "";
+        cn.reason_excluded = "excluded name"
       }
       if("forbiddenCharacters" in langRules){
         cn.name = cn.name.replace(langRules.forbiddenCharacters,"")
@@ -79,6 +81,9 @@ function refine(cn){
           .replace(/\s*$/,"") // trim white space
           .replace(/^\s*/,"")
           .replace(/\s+/g," ")
+        if(cn.name == ""){
+          cn.reason_excluded = "forbidden characters"
+        }
       }
       // TODO: Remove this when forbidden characters are removed outright
       if("nameReplacingRules" in langRules){

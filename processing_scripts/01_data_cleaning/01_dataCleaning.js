@@ -28,6 +28,7 @@ const csvColumnOrder = [
 ]
 
 const csvDeletedColumnOrder = [
+  "reason_excluded",
   "participantId",
   "lang0Abv",
   "lang0",
