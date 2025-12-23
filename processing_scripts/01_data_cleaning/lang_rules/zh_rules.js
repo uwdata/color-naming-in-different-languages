@@ -1,10 +1,18 @@
 // Chinese (中文 (Zhōngwén), 汉语, 漢語)
 
+import chineseT2STable from './zh_tongwen_table_t2s.js'
+
 const standardizedEnd = "色"
+
+const convertScript = (str) => 
+  str.split('').map(function(c){ 
+    return !!chineseT2STable[c] ? chineseT2STable[c] : c; }).join('')
+
+const forbiddenCharacters = /[a-zA-Z]/g
 
 const excludeNames = [
     // nonsense names
-    "1"
+    "1色"
 ];
 
 const nameReplacingRules = [
@@ -27,6 +35,8 @@ const nameReplacingRules = [
 
 export default {
     standardizedEnd: standardizedEnd,
+    convertScript: convertScript,
+    forbiddenCharacters: forbiddenCharacters,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules
 }

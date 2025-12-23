@@ -1,8 +1,6 @@
 import fs from "fs";
 import csv from 'csvtojson';
 
-import chineseT2STable from './tongwen_table_t2s.js'
-
 // load language color rules
 const lang_rules = {}
 
@@ -55,65 +53,19 @@ function refine(cn){
     cn.name = cn.name.toLowerCase()
       .normalize("NFD").replace(/\p{Diacritic}/gu, "")
 
-    // per language refine
-    if (cn.lang0.indexOf("Korean") >= 0) {
-      cn.name = cn.name.trim()
-        .replace(/색$/,"")
-        .replace(/\s*/g,"")
-        .replace(/[a-zA-Z]/g,"")
-        .replace(/파란/,"파랑")
-        .replace(/노란/,"노랑")
-        .replace(/빨간/,"빨강")
-        .replace(/검은/,"검정")
-        .replace(/연한/,"연")
-        .replace(/진한/,"진")
-        .replace(/청녹/,"청록");
-
-    } else if (cn.lang0.indexOf("English") >= 0) {
-      cn.name = cn.name.toString().toLowerCase()
-        .replace(/\s*$/,"")
-        .replace(/^\s*/,"")
-        .replace(/-+/g," ")
-        .replace(/[^a-zA-Z]/ig, '')
-        .replace(/\s+/g," ");
-      cn.name = (replaceByArray(cn.name, lang_rules["en"].nameReplacingRules));
-
-      if (lang_rules["en"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
-    }else if (cn.lang0.indexOf("Chinese") >= 0) {
-      cn.name = cn.name
-                  .replace(/色$/,"")
-                  .replace(/[a-zA-Z]/g,"")
-                  .replace(/\s*/g,"")
-
-      cn.name = convertChinenseT2S(cn.name);
-      cn.name = (replaceByArray(cn.name, lang_rules["zh"].nameReplacingRules));
-
-      if (lang_rules["zh"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
-
-    } else if (cn.lang0.indexOf("Persian") >= 0) {
-      cn.name = cn.name.toLowerCase()
-            .replace(/\s*$/,"").replace(/^\s*/,"")
-            .replace(/-+/g," ").replace(/[^\u0600-\u06FF ]/ig, '');
-
-      cn.name = cn.name.split(" ")
-        .map(n => 
-          n.replace(/\u064A$/,"ی")) // "ي" -> "ی"
-        .join(" ");
-
-      cn.name = cn.name.replace(/\u0653/g,"") // "آ" -> "ا"
-
-
-    } else if(cn.lang0Abv in lang_rules){
+    if(cn.lang0Abv in lang_rules){
       const langRules = lang_rules[cn.lang0Abv]
       cn.name = cn.name
         .toLowerCase() // (did we already do this? duplicate? ) // TODO: start with standardized name
         .replace(/\s*$/,"") // trim white space
         .replace(/^\s*/,"")
-        .replace(/-+/g," "); // turn dashes into spaces
+        .replace(/-+/g," ")
+        .replace(/\s+/g," ")
+        ; // turn dashes into spaces
+
+      if("convertScript" in langRules){
+        cn.name = langRules.convertScript(cn.name)
+      }
 
       if("nameReplacingRules" in langRules){
         cn.name = replaceByArray(cn.name, langRules.nameReplacingRules)
@@ -123,25 +75,40 @@ function refine(cn){
       }
       if("forbiddenCharacters" in langRules){
         cn.name = cn.name.replace(langRules.forbiddenCharacters,"")
+          // TODO: ban words outright
+          .replace(/\s*$/,"") // trim white space
+          .replace(/^\s*/,"")
+          .replace(/\s+/g," ")
+      }
+      // TODO: Remove this when forbidden characters are removed outright
+      if("nameReplacingRules" in langRules){
+        cn.name = replaceByArray(cn.name, langRules.nameReplacingRules)
+      }
+
+      if("additionalReplacementRule" in langRules){
+        cn.name = langRules.additionalReplacementRule(cn.name)
+      }
+
+      // tmp rules to match previous output
+      if(cn.lang0Abv == "zh"){
+        cn.name = cn.name
+                  .replace(/色$/,"")
       }
     }
 
     // re-do some steps in case replacements messed up things
     
-    // remove all extra spaces (except in Arabic and Persian)
-    if(!cn.lang0.indexOf("Persian") >= 0 && !cn.lang0.indexOf("Arabic") >= 0){
+    // remove all extra spaces (except where spaces are more needed, like in Arabic and Persian)
+    if(!(cn.lang0Abv in lang_rules) || !lang_rules[cn.lang0Abv].keepSpaces){
       cn.name = cn.name.replace(/\s*/,"")
     }
     
-    // ensure diacritics removed
+    // ensure diacritics removed (in case replacement rules introduced them)
     cn.name = cn.name.trim().toLowerCase()
       .normalize("NFD").replace(/\p{Diacritic}/gu, "")
 };
 
 
-function convertChinenseT2S(str){
-  return str.split('').map(function(c){ return !!chineseT2STable[c] ? chineseT2STable[c] : c; }).join('');
-}
 function replaceByArray(string, array){
   array.forEach(function(pattern){
     string = string.replace(pattern[0],pattern[1]);

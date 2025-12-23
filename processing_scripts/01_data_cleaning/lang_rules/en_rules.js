@@ -1,5 +1,8 @@
 // English (English)
 
+
+const forbiddenCharacters = /[^a-zA-Z]/ig
+
 const excludeNames = [
     // nonsense entries:
     "a", "w", "y", "b", "asdf"
@@ -47,6 +50,7 @@ const nameReplacingRules = [
     [/pruple/, "purple"],
 
     [/robinseggblue/, "robineggblue"],
+    
     [/scarlett/, "scarlet"],
 
     [/turquise/, "turquoise"],
@@ -60,6 +64,7 @@ const nameReplacingRules = [
 ];
 
 export default {
+    forbiddenCharacters: forbiddenCharacters,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules
 }

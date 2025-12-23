@@ -2,6 +2,8 @@
 
 const forbiddenCharacters = /[^\u0600-\u06FF]/ig
 
+const keepSpaces = true
+
 const excludeNames = [
 
 ];
@@ -19,5 +21,6 @@ const nameReplacingRules = [
 export default {
     forbiddenCharacters: forbiddenCharacters,
     excludeNames: excludeNames,
-    nameReplacingRules: nameReplacingRules
+    nameReplacingRules: nameReplacingRules,
+    keepSpaces: keepSpaces
 }
