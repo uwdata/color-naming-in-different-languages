@@ -5,8 +5,11 @@
 // const isometric_x_angle = 300
 // const isometric_y_angle = 240
 
-const isometric_x_angle = 330
-const isometric_y_angle = 210
+// const isometric_x_angle = 330
+// const isometric_y_angle = 210
+
+const isometric_x_angle = 210
+const isometric_y_angle = 330
 
 
 // isometric radius distortions:
@@ -1006,7 +1009,8 @@ function getIsometricArcBinPath(d, binView, tileSize, tileBorderSizeInBins, getT
         binOuterEndX * - Math.sin(isometric_x_angle / 360 * 2 * Math.PI) +
         binOuterEndY * - Math.sin(isometric_x_angle / 360 * 2 * Math.PI) 
 
-    // TODO: for each of the possible 4 sides, figure out if it should be displayed, and then display it
+    
+    // for each of the possible 4 sides, figure out if it should be displayed, and then display it
     // sides:
     //  innerStart -> innerEnd
     //  innerEnd -> outerEnd
@@ -1014,23 +1018,23 @@ function getIsometricArcBinPath(d, binView, tileSize, tileBorderSizeInBins, getT
     //  outersStart -> innerStart
     return `
         M ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize  + isoBinInnerStartY} 
-        A ${isometric_x_radius * binInnerRadius} ${isometric_x_radius * binInnerRadius} 0 0 1 ${center_x + isoBinInnerEndX} ${center_y + l_max_y*tileSize + isoBinInnerEndY}
+        A ${isometric_x_radius * binInnerRadius} ${isometric_x_radius * binInnerRadius} 0 0 0 ${center_x + isoBinInnerEndX} ${center_y + l_max_y*tileSize + isoBinInnerEndY}
         L ${center_x + isoBinOuterEndX} ${center_y + l_max_y*tileSize + isoBinOuterEndY}
-        A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 0 ${center_x + isoBinOuterStartX} ${center_y + l_max_y*tileSize + isoBinOuterStartY}
+        A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 1 ${center_x + isoBinOuterStartX} ${center_y + l_max_y*tileSize + isoBinOuterStartY}
         L ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize + isoBinInnerStartY}
         ${ // innerStart -> innerEnd edge
-            isoBinInnerStartX < isoBinInnerEndX ? 
+            isoBinInnerStartX > isoBinInnerEndX ? 
             `
                 M ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize  + isoBinInnerStartY} 
-                A ${isometric_x_radius * binInnerRadius} ${isometric_x_radius * binInnerRadius} 0 0 1 ${center_x + isoBinInnerEndX} ${center_y + l_max_y*tileSize + isoBinInnerEndY}
+                A ${isometric_x_radius * binInnerRadius} ${isometric_x_radius * binInnerRadius} 0 0 0 ${center_x + isoBinInnerEndX} ${center_y + l_max_y*tileSize + isoBinInnerEndY}
                 L ${center_x + isoBinInnerEndX} ${center_y + l_min_y*tileSize + isoBinInnerEndY}
-                A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 0 ${center_x + isoBinInnerStartX} ${center_y + l_min_y*tileSize + isoBinInnerStartY}
+                A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 1 ${center_x + isoBinInnerStartX} ${center_y + l_min_y*tileSize + isoBinInnerStartY}
                 L ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize + isoBinInnerStartY}
             `:
             ""
         }
         ${ // innerEnd -> outerEnd edge
-            isoBinInnerEndX < isoBinOuterEndX ? 
+            isoBinInnerEndX > isoBinOuterEndX ? 
             `
                 M ${center_x + isoBinInnerEndX} ${center_y + l_max_y*tileSize + isoBinInnerEndY} 
                 L ${center_x + isoBinOuterEndX} ${center_y + l_max_y*tileSize + isoBinOuterEndY}
@@ -1041,18 +1045,18 @@ function getIsometricArcBinPath(d, binView, tileSize, tileBorderSizeInBins, getT
             ""
         }
         ${ // outerEnd -> outerStart edge
-            isoBinOuterEndX < isoBinOuterStartX ? 
+            isoBinOuterEndX > isoBinOuterStartX ? 
             `
                 M ${center_x + isoBinOuterStartX} ${center_y + l_max_y*tileSize  + isoBinOuterStartY} 
-                A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 1 ${center_x + isoBinOuterEndX} ${center_y + l_max_y*tileSize + isoBinOuterEndY}
+                A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 0 ${center_x + isoBinOuterEndX} ${center_y + l_max_y*tileSize + isoBinOuterEndY}
                 L ${center_x + isoBinOuterEndX} ${center_y + l_min_y*tileSize + isoBinOuterEndY}
-                A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 0 ${center_x + isoBinOuterStartX} ${center_y + l_min_y*tileSize + isoBinOuterStartY}
+                A ${isometric_x_radius * binOuterRadius} ${isometric_x_radius * binOuterRadius} 0 0 1 ${center_x + isoBinOuterStartX} ${center_y + l_min_y*tileSize + isoBinOuterStartY}
                 L ${center_x + isoBinOuterStartX} ${center_y + l_max_y*tileSize + isoBinOuterStartY}
             `:
             ""
         }
         ${ // outersStart -> innerStart edge
-             isoBinOuterStartX < isoBinInnerStartX ? 
+             isoBinOuterStartX > isoBinInnerStartX ? 
             `
                 M ${center_x + isoBinInnerStartX} ${center_y + l_max_y*tileSize + isoBinInnerStartY} 
                 L ${center_x + isoBinOuterStartX} ${center_y + l_max_y*tileSize + isoBinOuterStartY}
