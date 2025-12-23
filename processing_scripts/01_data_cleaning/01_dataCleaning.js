@@ -29,7 +29,7 @@ const csvColumnOrder = [
   "background",
   "locale",
   "studyVersion",
-  //"originalLang0Abv"
+  "originalLang0Abv"
 ]
 
 const csvDeletedColumnOrder = [
@@ -45,7 +45,7 @@ const csvDeletedColumnOrder = [
   "background",
   "locale",
   "studyVersion",
-  //"originalLang0Abv"
+  "originalLang0Abv"
 ]
 
 import {languages_iso_639} from "../../shared_files/languages-iso-639.js"
