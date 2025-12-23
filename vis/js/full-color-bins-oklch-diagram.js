@@ -72,7 +72,7 @@ async function load_and_process_bin_data(bin_size){
     const binView = new FullColorBinView({
       bin_size: bin_size,
       bin_array: data,
-      x_dim: bin_size.type == "ring" ? "h" : "b",
+      x_dim: bin_size.type == "ring" ? "h" : "-b",
       y_dim: bin_size.type == "ring" ? "l" : "-a",
       split_dim: bin_size.type == "ring" ? "c" : "l"
     })
@@ -88,7 +88,7 @@ async function load_and_process_bin_data(bin_size){
       const binArcView = new FullColorBinView({
         bin_size: bin_size,
         bin_array: data,
-        x_dim: "b",
+        x_dim: "-b",
         y_dim: "-a",
         split_dim: "l"
       })

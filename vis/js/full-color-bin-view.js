@@ -347,20 +347,33 @@ class FullColorBinView {
             // for now only assume l is used for y scale
             const y_scale = this.y_dim == "l" ? this.bin_size.l_scale : 1
 
-            const y_offset_in_bins = (this[this.y_dim + "_max_bin"] +1/2) * y_scale + this.TILE_SEGMENT_MARGIN_NUM
-            const y_height_in_bins =  y_offset_in_bins - (this[this.y_dim + "_min_bin"] -1/2) * y_scale + this.TILE_SEGMENT_MARGIN_NUM
+            const y_offset_in_bins = 
+                (
+                    this[this.y_dim + (this.y_dim_direction > 0 ? "_max_bin" : "_min_bin")] * this.y_dim_direction  
+                    +1/2
+                ) * y_scale 
+                + this.TILE_SEGMENT_MARGIN_NUM
+            const y_height_in_bins =  y_offset_in_bins - 
+                (
+                    this[this.y_dim + (this.y_dim_direction > 0 ? "_min_bin" : "_max_bin")] * this.y_dim_direction  
+                    -1/2
+                ) * y_scale 
+                + this.TILE_SEGMENT_MARGIN_NUM
 
             const x_offsets_in_bins = {}
             let currXBinOffset = this.TILE_SEGMENT_MARGIN_NUM 
             let x_width_in_bins
 
             for(const [split_bin, ranges] of Object.entries(this.splitLevelRanges)){
-                currXBinOffset = currXBinOffset - ranges[this.x_dim].min
+                currXBinOffset = currXBinOffset 
+                    - ranges[this.x_dim][this.x_dim_direction > 0 ? "min" : "max"] * this.x_dim_direction
 
                 x_offsets_in_bins[split_bin] = currXBinOffset
 
                 // adjust for positive direction
-                currXBinOffset = currXBinOffset + ranges[this.x_dim].max + this.TILE_SEGMENT_MARGIN_NUM 
+                currXBinOffset = currXBinOffset 
+                    + ranges[this.x_dim][this.x_dim_direction > 0 ? "max" : "min"] * this.x_dim_direction
+                    + this.TILE_SEGMENT_MARGIN_NUM 
                 
                 // only the last one will be saved at the end, giving us total svg width
                 x_width_in_bins = currXBinOffset
@@ -429,10 +442,30 @@ class FullColorBinView {
                 .data(Object.entries(thisView.display_offsets.x_offsets_in_bins))
                 .join("line")
                     .attr("class", "level-outline")
-                    .attr("x1", (d) => tileSize*(d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + thisView.TILE_SEGMENT_MARGIN_NUM / 2 ))
-                    .attr("y1", (d) => tileSize * (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_max_bin"] * y_scale - 0.5))
-                    .attr("x2", (d) => tileSize*(d[1] + thisView.splitLevelRanges[d[0]][thisView.x_dim].max + thisView.TILE_SEGMENT_MARGIN_NUM / 2))
-                    .attr("y2", (d)=> tileSize * (thisView.display_offsets.y_offset_in_bins - thisView[thisView.y_dim + "_min_bin"] * y_scale + 0.5)  )
+                    .attr("x1", (d) => 
+                        tileSize * (
+                            d[1] 
+                            + thisView.splitLevelRanges[d[0]][thisView.x_dim][thisView.x_dim_direction > 0 ? "max" : "min"] * this.x_dim_direction
+                            + thisView.TILE_SEGMENT_MARGIN_NUM / 2 
+                        ))
+                    .attr("y1", (d) => 
+                        tileSize * (
+                            thisView.display_offsets.y_offset_in_bins 
+                            - thisView[thisView.y_dim + (thisView.y_dim_direction > 0 ? "_max_bin" : "_min_bin")] * thisView.y_dim_direction * y_scale 
+                            - 0.5
+                        ))
+                    .attr("x2", (d) => 
+                        tileSize * (
+                            d[1] 
+                            + thisView.splitLevelRanges[d[0]][thisView.x_dim][thisView.x_dim_direction > 0 ? "max" : "min"] * this.x_dim_direction 
+                            + thisView.TILE_SEGMENT_MARGIN_NUM / 2
+                        ))
+                    .attr("y2", (d)=> 
+                        tileSize * (
+                            thisView.display_offsets.y_offset_in_bins 
+                            - thisView[thisView.y_dim + (thisView.y_dim_direction > 0 ? "_min_bin" : "_max_bin")] * thisView.y_dim_direction * y_scale 
+                            + 0.5
+                        ))
                     .style("stroke", "oklch(70% 0 0 / .5)")
                     .style("stroke-width", tileBorderSize*2)
                     .style("display", (d) => d[0] ==  ""+thisView[thisView.split_dim+"_max_bin"] ? "none" : "") 
@@ -815,25 +848,23 @@ function getArcPath(d, thisView, tileSize, tileBorderSizeInBins, getTileScale){
     const endAngleMargin = (bin.h_center - halfAngleScaled)
     const startAngleMargin = (bin.h_center + halfAngleScaled)
         
-    const binStartDeltaX = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
-    const binStartX = levelCenterX + binStartDeltaX
-    const binEndDeltaX = binRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
-    const binEndX = levelCenterX  + binEndDeltaX
-    const binStartDeltaY = binRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI)
-    const binStartY = levelCenterY - binStartDeltaY // minus to correct for display y axis has + go down
-    const binEndDeltaY = binRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)  
-    const binEndY = levelCenterY - binEndDeltaY 
+    const binStartDeltaA = binRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI) 
+    const binEndDeltaA = binRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI)
+    const binStartDeltaB = binRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI)
+    const binEndDeltaB = binRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)  
 
     const binPoints = {
-        binStart_a: binStartDeltaX,
-        binEnd_a: binEndDeltaX,
-        binStart_b: binStartDeltaY,
-        binEnd_b: binEndDeltaY,
+        binStart_a: binStartDeltaA,
+        binEnd_a: binEndDeltaA,
+        binStart_b: binStartDeltaB,
+        binEnd_b: binEndDeltaB,
     }
 
+    const arcDirection = thisView.x_dim_direction * thisView.y_dim_direction > 0 ? 0 : 1
+
     return `
-    M ${levelCenterX + binPoints["binStart_"+thisView.x_dim]} ${levelCenterY + binPoints["binStart_"+thisView.y_dim]} 
-    A ${binRadius} ${binRadius} 0 0 1 ${levelCenterX + binPoints["binEnd_"+thisView.x_dim]} ${levelCenterY + binPoints["binEnd_"+thisView.y_dim]}
+    M ${levelCenterX + thisView.x_dim_direction * binPoints["binStart_"+thisView.x_dim]} ${levelCenterY + - thisView.y_dim_direction * binPoints["binStart_"+thisView.y_dim]} 
+    A ${binRadius} ${binRadius} 0 0 ${arcDirection} ${levelCenterX + thisView.x_dim_direction * binPoints["binEnd_"+thisView.x_dim]} ${levelCenterY + - thisView.y_dim_direction * binPoints["binEnd_"+thisView.y_dim]}
     `
 }
 
@@ -861,26 +892,26 @@ function getArcPathArea(d, thisView, tileSize, tileBorderSizeInBins, getTileScal
     const binPoints = {
         binInnerStart_a: binInnerRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI),
         binInnerEnd_a: binInnerRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI),
-        binInnerStart_b: - binInnerRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI),
-        binInnerEnd_b: - binInnerRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI),  
+        binInnerStart_b: binInnerRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI),
+        binInnerEnd_b: binInnerRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI),  
 
         binOuterStart_a: binOuterRadius * Math.cos(startAngleMargin / 360 * 2 * Math.PI),
         binOuterEnd_a:  binOuterRadius * Math.cos(endAngleMargin / 360 * 2 * Math.PI),
-        binOuterStart_b: - binOuterRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI),
-        binOuterEnd_b: - binOuterRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)
+        binOuterStart_b: binOuterRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI),
+        binOuterEnd_b: binOuterRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)
 
     }
 
-    const arcDirection1 = thisView.x_dim_direction * thisView.y_dim_direction > 0 ? 1 : 0
-    const arcDirection2 = thisView.x_dim_direction * thisView.y_dim_direction > 0 ? 0 : 1
+    const arcDirection1 = thisView.x_dim_direction * thisView.y_dim_direction > 0 ? 0 : 1
+    const arcDirection2 = thisView.x_dim_direction * thisView.y_dim_direction > 0 ? 1 : 0
     
     // do inner startX, startY -> inn
     return `
-    M ${levelCenterX + binPoints["binInnerStart_"+thisView.x_dim]} ${levelCenterY + binPoints["binInnerStart_"+thisView.y_dim]} 
-    A ${binInnerRadius} ${binInnerRadius} 0 0 ${arcDirection1} ${levelCenterX + binPoints["binInnerEnd_"+thisView.x_dim]} ${levelCenterY + binPoints["binInnerEnd_"+thisView.y_dim]}
-    L ${levelCenterX + binPoints["binOuterEnd_"+thisView.x_dim]} ${levelCenterY + binPoints["binOuterEnd_"+thisView.y_dim]}
-    A ${binOuterRadius} ${binOuterRadius} 0 0 ${arcDirection2} ${levelCenterX + binPoints["binOuterStart_"+thisView.x_dim]} ${levelCenterY + binPoints["binOuterStart_"+thisView.y_dim]}
-    L ${levelCenterX + binPoints["binInnerStart_"+thisView.x_dim]} ${levelCenterY + binPoints["binInnerStart_"+thisView.y_dim]} 
+    M ${levelCenterX + thisView.x_dim_direction * binPoints["binInnerStart_"+thisView.x_dim]} ${levelCenterY + - thisView.y_dim_direction * binPoints["binInnerStart_"+thisView.y_dim]} 
+    A ${binInnerRadius} ${binInnerRadius} 0 0 ${arcDirection1} ${levelCenterX + thisView.x_dim_direction * binPoints["binInnerEnd_"+thisView.x_dim]} ${levelCenterY + - thisView.y_dim_direction * binPoints["binInnerEnd_"+thisView.y_dim]}
+    L ${levelCenterX + thisView.x_dim_direction * binPoints["binOuterEnd_"+thisView.x_dim]} ${levelCenterY + - thisView.y_dim_direction * binPoints["binOuterEnd_"+thisView.y_dim]}
+    A ${binOuterRadius} ${binOuterRadius} 0 0 ${arcDirection2} ${levelCenterX + thisView.x_dim_direction * binPoints["binOuterStart_"+thisView.x_dim]} ${levelCenterY + - thisView.y_dim_direction * binPoints["binOuterStart_"+thisView.y_dim]}
+    L ${levelCenterX + thisView.x_dim_direction * binPoints["binInnerStart_"+thisView.x_dim]} ${levelCenterY + thisView.y_dim_direction * - binPoints["binInnerStart_"+thisView.y_dim]} 
     `
 }
 
