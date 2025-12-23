@@ -1,6 +1,10 @@
 import fs from "fs";
 import csv from 'csvtojson';
 
+// load participants to exclude because they entered the wrong language or they entered nonsense
+const participants_to_exclude = (await csv().fromFile("participants_to_exclude.csv"))
+                                .map(a => a.participantId)
+
 // load language color rules
 const lang_rules = {}
 
@@ -14,10 +18,6 @@ for(const lang_rule_file_name of lang_rule_files){
   lang_rules[lang] = (await import('./lang_rules/'+lang_rule_file_name)).default
 }
 
-
-// load participants to exclude because they entered the wrong language or they entered nonsense
-const participants_to_exclude = (await csv().fromFile("participants_to_exclude.csv"))
-                                .map(a => a.participantId)
 
 // standardize the entered names (these will be chosen between for display)
 //    do things trim ending white space and making all lowercase,

@@ -7,6 +7,10 @@ import csv from 'csvtojson';
 import csvWriter from 'csv-write-stream'
 import * as refine from "./refine.js"
 
+
+import participantLangChanges from "./participant_lang_changes.js"
+
+
 // Path or the input csv file
 const FILE_I = "../../raw/color_names.csv"
 const FILE_O = "../../model/cleaned_color_names.csv"; // Path for the output
@@ -24,7 +28,8 @@ const csvColumnOrder = [
   "rgbSet",
   "background",
   "locale",
-  "studyVersion"
+  "studyVersion",
+  //"originalLang0Abv"
 ]
 
 const csvDeletedColumnOrder = [
@@ -39,7 +44,8 @@ const csvDeletedColumnOrder = [
   "rgbSet",
   "background",
   "locale",
-  "studyVersion"
+  "studyVersion",
+  //"originalLang0Abv"
 ]
 
 import {languages_iso_639} from "../../shared_files/languages-iso-639.js"
@@ -80,6 +86,15 @@ csv().fromFile(FILE_I)
   // Add language abbreviation to each color name
   for(const colorName of colorNames){
     colorName.lang0Abv = getLangAbv(colorName.lang0)
+  }
+
+  for(const [cn_i, cn] of colorNames.entries()){
+    if(cn.participantId in participantLangChanges){
+      cn.originalLang0Abv = cn.lang0Abv
+      cn.lang0Abv = participantLangChanges[cn.participantId]
+      const lang = languages_iso_639.find(l => l["639‑1"] == cn.lang0Abv)
+      cn.lang0 = `${lang["Language name"]} (${lang["Native name"]})`
+    }
   }
 
   // standardize entered name (e.g., trim, lowcase)
