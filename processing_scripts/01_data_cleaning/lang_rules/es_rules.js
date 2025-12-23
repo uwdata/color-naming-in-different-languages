@@ -1,3 +1,4 @@
+// Spanish (español)
 
 const excludeNames = [
     // English color names:
