@@ -165,6 +165,7 @@ async function load_and_process_bin_data(bin_size){
 const currSvgSize = [{}]
 let curr_bin_size = LAB_BIN_SIZES[1] 
 let curr_color_gamut
+let curr_show_3d
 let backgroundColor = 'white'
 
 function getTileColor (d, bin) {
@@ -217,6 +218,15 @@ $(document).on('ready page:load', function () {
     updateDisplay()
   })
 
+  curr_show_3d = $("#show-3d").is(':checked')
+  $("#show-3d").change(e => {
+    updateDisplay()
+  })
+  
+
+  const brightness = $("#background-brightness").val() 
+  const brightness255 = Math.round(255*brightness/100)
+  backgroundColor = `rgb(${brightness255}, ${brightness255}, ${brightness255})`
   $("#background-brightness").on("input", function(){
     const brightness = $(this).val() 
     const brightness255 = Math.round(255*brightness/100)
@@ -238,6 +248,7 @@ $(document).on('ready page:load', function () {
 function updateDisplay(){
 
   curr_bin_size = $("#bin_size").val()
+  curr_show_3d = $("#show-3d").is(':checked')
 
   curr_bin_size = LAB_BIN_SIZES.find((bin) => bin.abv == curr_bin_size)
 
@@ -267,8 +278,10 @@ function updateDisplay(){
   
   labBinViews[curr_bin_size].setBinArray(gamutFilteredBins)
   labBinViews[curr_bin_size].setDisplayOffsets(labBinViews[curr_bin_size].getDisplayOffsets())
-  labBin3DViews[curr_bin_size].setBinArray(gamutFilteredBins)
-  labBin3DViews[curr_bin_size].setDisplayOffsets(labBinViews[curr_bin_size].getDisplayOffsets())
+  if(curr_show_3d){
+    labBin3DViews[curr_bin_size].setBinArray(gamutFilteredBins)
+    labBin3DViews[curr_bin_size].setDisplayOffsets(labBinViews[curr_bin_size].getDisplayOffsets())
+  }
   if(labBinArcViews[curr_bin_size]){
     labBinArcViews[curr_bin_size].setBinArray(gamutFilteredBins)
     labBinArcViews[curr_bin_size].setDisplayOffsets(labBinArcViews[curr_bin_size].getDisplayOffsets())
@@ -337,12 +350,14 @@ function createOrRefreshTiles(){
     .attr("height", currSvgSize[0].height )
 
   let bins3d = svg.select("#three-d-bins")
-  if(bins3d.empty()){
-    bins3d = svg.append("g")
-      .attr("id", "three-d-bins")
+  if(curr_show_3d){
+    if(bins3d.empty()){
+      bins3d = svg.append("g")
+        .attr("id", "three-d-bins")
+    }
+    bins3d.attr("width", currSvgSize[0].width)
+      .attr("height", currSvgSize[0].height )
   }
-  bins3d.attr("width", currSvgSize[0].width)
-    .attr("height", currSvgSize[0].height )
 
   if(curr_bin_size.type == "ring"){
     //calculate rings height:
@@ -379,13 +394,16 @@ function createOrRefreshTiles(){
     getTileColor: getTileColor
   })
 
-  labBin3DViews[curr_bin_size].createOrUpdateColorTiles(bins3d, {
-    backgroundColor: backgroundColor,
-    getTileColor: getTileColor
-  })
+  if(curr_show_3d){
+    labBin3DViews[curr_bin_size].createOrUpdateColorTiles(bins3d, {
+      backgroundColor: backgroundColor,
+      getTileColor: getTileColor
+    })
+  } else {
+    svg.select("#three-d-bins").remove()
+  }
+
 }
-
-
 
 function getTileTitleText(d, bin){
   let info = `

@@ -585,7 +585,8 @@ function createOrRefreshLang(i){
     }
   }
 
-  const binViews = secondBinView ? [binView, bin3dView, secondBinView] : [binView, bin3dView, false]
+  //const binViews = secondBinView ? [binView, bin3dView, secondBinView] : [binView, bin3dView, false]
+  const binViews = secondBinView ? [binView, secondBinView] : [binView, false]
   let extraHeightOffset = 0
 
 

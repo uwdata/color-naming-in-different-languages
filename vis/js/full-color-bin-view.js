@@ -822,7 +822,7 @@ function getArcPath(d, thisView, tileSize, tileBorderSizeInBins, getTileScale){
     const binStartDeltaY = binRadius* Math.sin(startAngleMargin / 360 * 2 * Math.PI)
     const binStartY = levelCenterY - binStartDeltaY // minus to correct for display y axis has + go down
     const binEndDeltaY = binRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)  
-    const binEndY = levelCenterY - binEndDeltaY
+    const binEndY = levelCenterY - binEndDeltaY 
 
     const binPoints = {
         binStart_a: binStartDeltaX,
@@ -870,13 +870,16 @@ function getArcPathArea(d, thisView, tileSize, tileBorderSizeInBins, getTileScal
         binOuterEnd_b: - binOuterRadius* Math.sin(endAngleMargin / 360 * 2 * Math.PI)
 
     }
+
+    const arcDirection1 = thisView.x_dim_direction * thisView.y_dim_direction > 0 ? 1 : 0
+    const arcDirection2 = thisView.x_dim_direction * thisView.y_dim_direction > 0 ? 0 : 1
     
     // do inner startX, startY -> inn
     return `
     M ${levelCenterX + binPoints["binInnerStart_"+thisView.x_dim]} ${levelCenterY + binPoints["binInnerStart_"+thisView.y_dim]} 
-    A ${binInnerRadius} ${binInnerRadius} 0 0 0 ${levelCenterX + binPoints["binInnerEnd_"+thisView.x_dim]} ${levelCenterY + binPoints["binInnerEnd_"+thisView.y_dim]}
+    A ${binInnerRadius} ${binInnerRadius} 0 0 ${arcDirection1} ${levelCenterX + binPoints["binInnerEnd_"+thisView.x_dim]} ${levelCenterY + binPoints["binInnerEnd_"+thisView.y_dim]}
     L ${levelCenterX + binPoints["binOuterEnd_"+thisView.x_dim]} ${levelCenterY + binPoints["binOuterEnd_"+thisView.y_dim]}
-    A ${binOuterRadius} ${binOuterRadius} 0 0 1 ${levelCenterX + binPoints["binOuterStart_"+thisView.x_dim]} ${levelCenterY + binPoints["binOuterStart_"+thisView.y_dim]}
+    A ${binOuterRadius} ${binOuterRadius} 0 0 ${arcDirection2} ${levelCenterX + binPoints["binOuterStart_"+thisView.x_dim]} ${levelCenterY + binPoints["binOuterStart_"+thisView.y_dim]}
     L ${levelCenterX + binPoints["binInnerStart_"+thisView.x_dim]} ${levelCenterY + binPoints["binInnerStart_"+thisView.y_dim]} 
     `
 }
