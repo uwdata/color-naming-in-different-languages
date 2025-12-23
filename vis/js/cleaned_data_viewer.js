@@ -311,7 +311,6 @@ function showRawData(dataset, tableElement, linkToParticipantInfo, cleanedColorN
 
 
 function getColorString(colorSpace, r, g, b){
-    console.log("getColorString", colorSpace, r, g, b)
     if(colorSpace == "rgb"){
         return `rgb(${r},${g},${b})`
     }
