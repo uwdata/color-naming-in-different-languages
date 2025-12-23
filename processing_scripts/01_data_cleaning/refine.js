@@ -17,10 +17,14 @@ for(const lang_rule_file_name of lang_rule_files){
 }
 
 
-// exclude some participants because they entered the wrong language or they entered nonsense
+// load participants to exclude because they entered the wrong language or they entered nonsense
 const participants_to_exclude = (await csv().fromFile("participants_to_exclude.csv"))
                                 .map(a => a.participantId)
 
+// standardize the entered names (these will be chosen between for display)
+//    do things trim ending white space and making all lowercase,
+//    and in some languages (e.g., Korean, Chinese) add a standardized ending,
+//    so display name will be consistent with those characteristics
 function standardize_entered(cn){
   let name = cn.name.replace(/\s*-\s*/, " ")
   name = name.toString().trim().toLowerCase()
@@ -36,8 +40,11 @@ function standardize_entered(cn){
   return name
 }
 
+
+// For a given color name, clean it up for matching or remove it
 function refine(cn){
 
+    // remove participants with ids specifically marked for removal
     if(participants_to_exclude.includes(String(cn.participantId))){
       cn.name = ""
       return
@@ -74,38 +81,6 @@ function refine(cn){
       if (lang_rules["en"].excludeNames.indexOf(cn.name) >= 0 ) {
         cn.name = "";
       }
-
-    } else if (cn.lang0.indexOf("Spanish") >= 0) {
-      cn.name = cn.name.toLowerCase().replace(/\s*$/,"").replace(/^\s*/,"").replace(/-+/g," ");
-      
-      cn.name = (replaceByArray(cn.name, lang_rules["es"].nameReplacingRules));
-      if (lang_rules["es"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
-    } else if (cn.lang0.indexOf("Deutsch") >= 0) {
-      cn.name = cn.name.toLowerCase().replace(/\s*$/,"").replace(/^\s*/,"").replace(/-+/g," ");
-      cn.name = (replaceByArray(cn.name, lang_rules["de"].nameReplacingRules));
-      if (lang_rules["de"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
-    } else if (cn.lang0.indexOf("French") >= 0) {
-      cn.name = cn.name.toLowerCase().replace(/\s*$/,"").replace(/^\s*/,"").replace(/-+/g," ");
-      cn.name = (replaceByArray(cn.name, lang_rules["fr"].nameReplacingRules));
-      if (lang_rules["fr"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
-
-    } else if (cn.lang0.indexOf("Italian") >= 0) {
-      cn.name = cn.name.toLowerCase().replace(/\s*$/,"").replace(/^\s*/,"").replace(/-+/g," ");
-      cn.name = (replaceByArray(cn.name, lang_rules["it"].nameReplacingRules));
-      if (lang_rules["it"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
-    } else if (cn.lang0.indexOf("Swedish") >= 0) {
-      cn.name = cn.name.toLowerCase().replace(/\s*$/,"").replace(/^\s*/,"").replace(/-+/g," ");
-      if (lang_rules["sv"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
     }else if (cn.lang0.indexOf("Chinese") >= 0) {
       cn.name = cn.name
                   .replace(/色$/,"")
@@ -116,36 +91,6 @@ function refine(cn){
       cn.name = (replaceByArray(cn.name, lang_rules["zh"].nameReplacingRules));
 
       if (lang_rules["zh"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
-    } else if (cn.lang0.indexOf("Portuguese") >= 0) {
-      cn.name = cn.name.toLowerCase().replace(/\s*$/,"").replace(/^\s*/,"").replace(/-+/g," ");
-      cn.name = (replaceByArray(cn.name, lang_rules["pt"].nameReplacingRules));
-      if(lang_rules["pt"].excludeNames.indexOf(cn.name) >= 0){
-        cn.name = ""
-      }
-    } else if (cn.lang0.indexOf("Polish") >= 0) {
-      cn.name = cn.name.toLowerCase().replace(/\s*$/,"").replace(/^\s*/,"").replace(/-+/g," ");
-      cn.name = (replaceByArray(cn.name, lang_rules["pl"].nameReplacingRules));
-      if (lang_rules["pl"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
-    } else if (cn.lang0.indexOf("Danish") >= 0) {
-      cn.name = cn.name.toLowerCase().replace(/\s*$/,"").replace(/^\s*/,"").replace(/-+/g," ");
-      cn.name = (replaceByArray(cn.name, lang_rules["da"].nameReplacingRules));
-      if (lang_rules["da"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
-    } else if (cn.lang0.indexOf("Dutch") >= 0) {
-      cn.name = cn.name.toLowerCase().replace(/\s*$/,"").replace(/^\s*/,"").replace(/-+/g," ");
-      if (lang_rules["nl"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
-    } else if (cn.lang0.indexOf("Romanian") >= 0) {
-      cn.name = cn.name.toLowerCase().replace(/\s*$/,"").replace(/^\s*/,"").replace(/-+/g," ");
-      cn.name = (replaceByArray(cn.name, lang_rules["ro"].nameReplacingRules));
-
-      if (lang_rules["ro"].excludeNames.indexOf(cn.name) >= 0 ) {
         cn.name = "";
       }
     } else if (cn.lang0.indexOf("Russian") >= 0) {
@@ -172,8 +117,6 @@ function refine(cn){
         .join(" ");
 
       cn.name = cn.name.replace(/\u0653/g,"") // "آ" -> "ا"
-    }else if (cn.lang0.indexOf("Finnish") >= 0) {
-      cn.name = (replaceByArray(cn.name, lang_rules["fi"].nameReplacingRules));
     }else if (cn.lang0.indexOf("Greek") >= 0){
       cn.name = (replaceByArray(cn.name, lang_rules["el"].nameReplacingRules));
       cn.name = cn.name.replace(/[a-zA-Z]/g,"")
@@ -182,24 +125,34 @@ function refine(cn){
       cn.name = cn.name.replace(/[a-zA-Z]/g,"")
     }else if (cn.lang0.indexOf("Turkish") >= 0 ){
       cn.name = cn.name.replace(/ı/g, "i")
-    }else if (cn.lang0.indexOf("Abkhaz") >= 0 ){
-      if (lang_rules["ab"].excludeNames.indexOf(cn.name) >= 0 ) {
-        cn.name = "";
-      }
     }else if (cn.lang0.startsWith("Bulgarian")) {
       cn.name = cn.name.replace(/[a-zA-Z]/g,"")
     }else if (cn.lang0.startsWith("Thai")) {
       cn.name = cn.name.replace(/[a-zA-Z]/g,"")
+      
+    } else if(cn.lang0Abv in lang_rules){
+      const langRules = lang_rules[cn.lang0Abv]
+      cn.name = cn.name
+        .toLowerCase() // (duplicate? done??)
+        .replace(/\s*$/,"") // trim white space
+        .replace(/^\s*/,"")
+        .replace(/-+/g," "); // turn dashes into spaces
+      if("nameReplacingRules" in langRules){
+        cn.name = replaceByArray(cn.name, langRules.nameReplacingRules)
+      }
+      if("excludeNames" in langRules && langRules.excludeNames.indexOf(cn.name) >= 0 ) {
+        cn.name = "";
+      }
     }
 
-    // re-do some steps in case replacments messed up things
+    // re-do some steps in case replacements messed up things
     
     // remove all extra spaces (except in Arabic and Persian)
     if(!cn.lang0.indexOf("Persian") >= 0 && !cn.lang0.indexOf("Arabic") >= 0){
       cn.name = cn.name.replace(/\s*/,"")
     }
     
-    // remove diacritics
+    // ensure diacritics removed
     cn.name = cn.name.trim().toLowerCase()
       .normalize("NFD").replace(/\p{Diacritic}/gu, "")
 };
