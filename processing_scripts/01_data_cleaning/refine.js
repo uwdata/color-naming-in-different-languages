@@ -94,10 +94,11 @@ function refine(cn){
         cn.name = langRules.additionalReplacementRule(cn.name)
       }
 
-      // tmp rules to match previous output
-      if(cn.lang0Abv == "zh"){
-        cn.name = cn.name
-                  .replace(/色$/,"")
+      // remove standardized end (though doesn't work for Korean for some reason???)
+      if("standardizedEnd" in langRules){
+        if(cn.name.endsWith(langRules.standardizedEnd)){
+          cn.name = cn.name.slice(0, cn.name.length - 1)
+        }
       }
     }
 
