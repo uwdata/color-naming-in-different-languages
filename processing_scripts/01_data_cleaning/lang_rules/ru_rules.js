@@ -1,8 +1,11 @@
 // Russian (Русский),фиолетовыи,фиолетовый,фиолетовый
 
+const forbiddenCharacters = /[^а-яА-Я]/ig
+
 const excludeNames = [
 
 ];
+
 const nameReplacingRules = [
     [/sholte/, "желтый"],
     [/xolte/, "желтый"],
@@ -23,6 +26,7 @@ const nameReplacingRules = [
 ];
 
 export default {
+    forbiddenCharacters: forbiddenCharacters,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules
 }

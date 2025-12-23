@@ -1,13 +1,12 @@
-// Greek (modern) (ελληνικά)
+// Thai (ไทย),นำเงินออน,น้ำเงินอ่อน,น้ำเงินอ่อน
 
 const forbiddenCharacters = /[a-zA-Z]/g
 
 const excludeNames = [
 
 ];
-
 const nameReplacingRules = [
-    [/μοβ/,"μωβ"]
+
 ];
 
 export default {

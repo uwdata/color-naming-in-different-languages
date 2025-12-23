@@ -1,17 +1,13 @@
-// Greek (modern) (ελληνικά)
-
-const forbiddenCharacters = /[a-zA-Z]/g
+// Turkish (Türkçe)
 
 const excludeNames = [
 
 ];
-
 const nameReplacingRules = [
-    [/μοβ/,"μωβ"]
+    [/ı/g, "i"]
 ];
 
 export default {
-    forbiddenCharacters: forbiddenCharacters,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules
 }

@@ -93,19 +93,7 @@ function refine(cn){
       if (lang_rules["zh"].excludeNames.indexOf(cn.name) >= 0 ) {
         cn.name = "";
       }
-    } else if (cn.lang0.indexOf("Russian") >= 0) {
-      cn.name = cn.name.toLowerCase()
-            .replace(/\s*$/,"").replace(/^\s*/,"")
-            .replace(/-+/g," ")
-            .replace(/\s+/g," ");
-      cn.name = (replaceByArray(cn.name, lang_rules["ru"].nameReplacingRules));
-      cn.name = cn.name.replace(/[^а-яА-Я]/ig, '')
-    } else if (cn.lang0.indexOf("Arabic") >= 0) {
-      cn.name = cn.name.toLowerCase()
-            .replace(/\s*$/,"").replace(/^\s*/,"")
-            .replace(/-+/g," ").replace(/[^\u0600-\u06FF]/ig, '')
-            .replace(/\s+/g," ");
-      cn.name = (replaceByArray(cn.name, lang_rules["ar"].nameReplacingRules));
+
     } else if (cn.lang0.indexOf("Persian") >= 0) {
       cn.name = cn.name.toLowerCase()
             .replace(/\s*$/,"").replace(/^\s*/,"")
@@ -117,31 +105,24 @@ function refine(cn){
         .join(" ");
 
       cn.name = cn.name.replace(/\u0653/g,"") // "آ" -> "ا"
-    }else if (cn.lang0.indexOf("Greek") >= 0){
-      cn.name = (replaceByArray(cn.name, lang_rules["el"].nameReplacingRules));
-      cn.name = cn.name.replace(/[a-zA-Z]/g,"")
-    }else if (cn.lang0.indexOf("Hebrew") >= 0){
-      cn.name = cn.name.toLowerCase()
-      cn.name = cn.name.replace(/[a-zA-Z]/g,"")
-    }else if (cn.lang0.indexOf("Turkish") >= 0 ){
-      cn.name = cn.name.replace(/ı/g, "i")
-    }else if (cn.lang0.startsWith("Bulgarian")) {
-      cn.name = cn.name.replace(/[a-zA-Z]/g,"")
-    }else if (cn.lang0.startsWith("Thai")) {
-      cn.name = cn.name.replace(/[a-zA-Z]/g,"")
-      
+
+
     } else if(cn.lang0Abv in lang_rules){
       const langRules = lang_rules[cn.lang0Abv]
       cn.name = cn.name
-        .toLowerCase() // (duplicate? done??)
+        .toLowerCase() // (did we already do this? duplicate? ) // TODO: start with standardized name
         .replace(/\s*$/,"") // trim white space
         .replace(/^\s*/,"")
         .replace(/-+/g," "); // turn dashes into spaces
+
       if("nameReplacingRules" in langRules){
         cn.name = replaceByArray(cn.name, langRules.nameReplacingRules)
       }
       if("excludeNames" in langRules && langRules.excludeNames.indexOf(cn.name) >= 0 ) {
         cn.name = "";
+      }
+      if("forbiddenCharacters" in langRules){
+        cn.name = cn.name.replace(langRules.forbiddenCharacters,"")
       }
     }
 

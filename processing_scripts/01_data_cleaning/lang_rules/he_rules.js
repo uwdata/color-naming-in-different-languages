@@ -1,13 +1,12 @@
-// Greek (modern) (ελληνικά)
+// Hebrew (modern) (עברית),כחול,כחול,כחול
 
 const forbiddenCharacters = /[a-zA-Z]/g
 
 const excludeNames = [
 
 ];
-
 const nameReplacingRules = [
-    [/μοβ/,"μωβ"]
+
 ];
 
 export default {

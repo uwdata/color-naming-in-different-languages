@@ -1,13 +1,12 @@
-// Greek (modern) (ελληνικά)
+// Bulgarian (български език)
 
 const forbiddenCharacters = /[a-zA-Z]/g
 
 const excludeNames = [
 
 ];
-
 const nameReplacingRules = [
-    [/μοβ/,"μωβ"]
+
 ];
 
 export default {
