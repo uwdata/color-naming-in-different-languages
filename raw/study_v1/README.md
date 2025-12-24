@@ -52,6 +52,35 @@
 - Missing Color Blindness data : For much of the study, a data type bug caused all colorBlindness entries to save as 0. Any values that are not 0 should be valid
 - Version 1.1.4 : Possible Priming effect due to the advertisement showing Korean and English color names for some saturated colors.
 
+### Study version history:
+(this is as best as I can reconstruct from looking at the git commit history)
+- pilot: Initial data collection, which was successful. We only collected color names for the "line" of full hue colors. 
+- 1: 
+  - Start collecting "full" colors for some languages
+  -  Improve demographic forms (e.g., allow "other" language entry)
+  - save more information about tile sorting task
+  - various UI improvements and fixes
+- 1.1: 
+  - For color sorting, always start with the same random tile shuffle (so scores are consistent)
+  - Calculate average sorting score and sorting tile error to show users in results page
+  - various UI improvements
+- 1.1.1:
+  - improve results page
+  - change our claimed time estimate from 15 minutes to 12 minutes
+- 1.1.2:
+  - fix bugs in choosing which languages to ask for "full" data
+  - Add Korean localization of instructions in the middle of this version
+- 1.1.3
+  -  Change color naming wording from "You can practice entering color names below." to "You can practice entering color names below. You can use color words that are as specific or as general as you want."
+  - Better indicate what language we are expecting them to name colors in (based on their demographics form)
+  - Part way through this version add instruction localizations in Chinese, Persian
+- 1.1.4
+  - Fix bug where we were choosing full colors that were close together instead of what we intended in trying to choose full colors that were more different
+  - Share some of the results of our study on social media (which could have a priming effect, particularly for English and Korean participants reading about color naming differences before taking the study)
+- 1.1.5
+  - Add demographic question: Have you recently looked in detail at any website comparing how colors are named in different languages?
+  - Release blog post on results of study, again possible priming effect of people reading results before taking study
+
 ## Color Sampling Procedure
 
 To ensure that each participant is given an approximately perceptually uniform set of colors, we discretize the hue circle into 36 equally-spaced 36 bins within CIELAB color space. Every subject saw one color from each of these 36 bins, with the specific color stimuli randomly sampled from each bin.
