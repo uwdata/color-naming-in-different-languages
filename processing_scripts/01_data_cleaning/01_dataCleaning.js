@@ -110,17 +110,20 @@ csv().fromFile(FILE_I)
   });
   
   colorNames.forEach(cn => {
-     refine.refine(cn)
-
-    // try refining again and make sure it doesn't mess it up
-    let oldName = cn.name
     refine.refine(cn)
-    let newName = cn.name
-    if(oldName != newName){
-      console.log("WARNING: Name changed on repeated refining")
-      console.log("  lang0", cn.lang0)
-      console.log("  colorName row", cn.cn_i)
-      console.log("  names: ", oldName, ", ", newName)
+
+    if(cn.name != ""){
+      // try refining again and make sure it doesn't mess it up
+      //   e.g., simply replacing "blu" with "blue" would turn "blue" into "bluee"
+      let oldName = cn.name
+      refine.refine(cn)
+      let newName = cn.name
+      if(oldName != newName){
+        console.log("WARNING: Name changed on repeated refining")
+        console.log("  lang0", cn.lang0)
+        console.log("  colorName row", cn.cn_i)
+        console.log("  names: ", oldName, ", ", newName)
+      }
     }
   })
 

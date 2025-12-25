@@ -68,12 +68,20 @@ function refine(cn){
         cn.name = langRules.convertScript(cn.name)
       }
 
+      // remove standardized end (though doesn't work for Korean for some reason???)
+      if("standardizedEnd" in langRules){
+        if(cn.name.endsWith(langRules.standardizedEnd)){
+          cn.name = cn.name.slice(0, cn.name.length - 1)
+        }
+      }
+
       if("nameReplacingRules" in langRules){
         cn.name = replaceByArray(cn.name, langRules.nameReplacingRules)
       }
       if("excludeNames" in langRules && langRules.excludeNames.indexOf(cn.name) >= 0 ) {
         cn.name = "";
         cn.reason_excluded = "excluded name"
+        return
       }
       if("forbiddenCharacters" in langRules){
         cn.name = cn.name.replace(langRules.forbiddenCharacters,"")
@@ -83,6 +91,7 @@ function refine(cn){
           .replace(/\s+/g," ")
         if(cn.name == ""){
           cn.reason_excluded = "forbidden characters"
+          return
         }
       }
       // TODO: Remove this when forbidden characters are removed outright
@@ -92,13 +101,6 @@ function refine(cn){
 
       if("additionalReplacementRule" in langRules){
         cn.name = langRules.additionalReplacementRule(cn.name)
-      }
-
-      // remove standardized end (though doesn't work for Korean for some reason???)
-      if("standardizedEnd" in langRules){
-        if(cn.name.endsWith(langRules.standardizedEnd)){
-          cn.name = cn.name.slice(0, cn.name.length - 1)
-        }
       }
     }
 
@@ -117,6 +119,9 @@ function refine(cn){
 
 function replaceByArray(string, array){
   array.forEach(function(pattern){
+    if(!pattern){
+      console.error("name replacement pattern incorrectly formatted (perhaps missing comma?):", pattern, "\nall patterns:", array)
+    }
     string = string.replace(pattern[0],pattern[1]);
   });
   return string;

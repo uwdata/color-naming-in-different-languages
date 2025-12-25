@@ -12,7 +12,7 @@ const forbiddenCharacters = /[a-zA-Z]/g
 
 const excludeNames = [
     // nonsense names
-    "1色"
+    "1色", "1"
 ];
 
 const nameReplacingRules = [
