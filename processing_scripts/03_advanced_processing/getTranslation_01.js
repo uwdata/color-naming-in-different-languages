@@ -10,8 +10,8 @@ import csv from 'csvtojson';
 import * as labBinHelperLib from '../utils/labBinHelper.js'
 import BinSize from "../../shared_files/binSize.js";
 
-const LOW_RES_BIN = new BinSize({ type: "cube", l: 1/10})
-const HIGH_RES_BIN =  new BinSize({type: "cube", l: 1/20})
+const LOW_RES_BIN = new BinSize({type: "ring", l: 1/10, h_divs: 8})
+const HIGH_RES_BIN =  new BinSize({type: "ring", l: 1/20, h_divs: 8})
 
 const NO_BLUR = "no-blur"
 const BLUR = "blur"
@@ -84,7 +84,11 @@ for(const blur of [NO_BLUR, BLUR]){
           g_lang.values.forEach(g_term => {
             let labPct = labBinHelper.createLABNumBins(nested_lab_bins);
             g_term.values.forEach(d => {
-              labPct[d.binL][d.binA][d.binB] = d.pCT;
+              if(BIN_SIZE.type == "ring"){
+                labPct[d.binL][d.binC][d.binH] = d.pCT;
+              } else {
+                labPct[d.binL][d.binA][d.binB] = d.pCT;
+              }
             });
 
 
@@ -109,6 +113,7 @@ for(const blur of [NO_BLUR, BLUR]){
 
 function getDistanceMatrix(labBinHelper, lab_bins){
   const labBinArr = labBinHelper.labBinsToArray(lab_bins)
+  const [dim1, dim2, dim3] = labBinHelper.binSize.dims
   const MSize = labBinArr.length
   let distM = new Array(MSize).fill(0);
   distM = distM.map(d => {
@@ -116,13 +121,16 @@ function getDistanceMatrix(labBinHelper, lab_bins){
   });
 
   for (let i = 0; i < MSize; i++) {
-    const [l_i, a_i, b_i] = [labBinArr[i].l_center, labBinArr[i].a_center, labBinArr[i].b_center]
+    const [l_center_i, a_center_i, b_center_i] = [labBinArr[i].center_lab.l, labBinArr[i].center_lab.a, labBinArr[i].center_lab.b]
 
 
     for (let j = 0; j < MSize; j++) {
-      const [l_j, a_j, b_j] = [labBinArr[j].l_center, labBinArr[j].a_center, labBinArr[j].b_center]
+      const [l_center_j, a_center_j, b_center_j] = [labBinArr[j].center_lab.l, labBinArr[j].center_lab.a, labBinArr[j].center_lab.b]
 
-      distM[i][j] = Math.sqrt(Math.pow(l_i - l_j,2) + Math.pow(a_i - a_j,2) + Math.pow(b_i - b_j,2));
+      distM[i][j] = Math.sqrt(
+        Math.pow(l_center_i - l_center_j,2) 
+        + Math.pow(a_center_i - a_center_j,2) 
+        + Math.pow(b_center_i - b_center_j,2));
     }
   }
   return distM;

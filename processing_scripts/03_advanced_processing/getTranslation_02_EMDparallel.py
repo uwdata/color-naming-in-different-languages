@@ -9,8 +9,8 @@ import psutil
 import signal
 import time
 
-DEFAULT_BIN = '0.1'
-HIGH_RES_BIN = '0.05'
+DEFAULT_BIN = 'ring_0.1_h8'
+HIGH_RES_BIN = 'ring_0.05_h8'
 
 # Just-noticeable distance is .02 in OKLAB, and for high-res data, there are normally
 # several closets matches under .20
@@ -18,7 +18,7 @@ HIGH_RES_BIN = '0.05'
 #    is normally around +0 to +.01 distance
 HIGH_RES_DIST = .20
 
-NUM_PROCESSES = 6
+NUM_PROCESSES = 12
 
 # We will us the blur version of the files
 # because we think that the smoothed out data will be

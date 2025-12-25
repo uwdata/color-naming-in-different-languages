@@ -298,7 +298,8 @@ function getLabBins(binSizeInfo){
       "createLABNumBins": createLABNumBins,
       "labBinsToArray": labBinsToArray,
       "binsArrayToNested": binsArrayToNested,
-      "createLabBinInfo": createLabBinInfo
+      "createLabBinInfo": createLabBinInfo,
+      "binSize": binSizeInfo
     }
   } else if(binSizeInfo.type == "ring") {
     // ceil to make a whole number big enough, 
@@ -450,7 +451,8 @@ function getLabBins(binSizeInfo){
       "createLABNumBins": createLCHNumBins,
       "labBinsToArray": lchBinsToArray,
       "binsArrayToNested": binsArrayToNested,
-      "createLchBinInfo": createLchBinInfo
+      "createLchBinInfo": createLchBinInfo,
+      "binSize": binSizeInfo
     }
   } else {
     console.log("unexpected bin type", binSizeInfo)
