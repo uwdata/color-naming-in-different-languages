@@ -1,6 +1,6 @@
 // Arabic (العربية),وردي,وردي,وردي
 
-const forbiddenCharacters = /[^\u0600-\u06FF]/ig
+const ignoreCharactersForMatching = /[^\u0600-\u06FF]/ig
 
 const keepSpaces = true
 
@@ -19,7 +19,7 @@ const nameReplacingRules = [
 ];
 
 export default {
-    forbiddenCharacters: forbiddenCharacters,
+    ignoreCharactersForMatching: ignoreCharactersForMatching,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules,
     keepSpaces: keepSpaces

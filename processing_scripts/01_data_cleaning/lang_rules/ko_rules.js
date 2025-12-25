@@ -2,7 +2,7 @@
 
 const standardizedEnd = "색"
 
-const forbiddenCharacters = /[a-zA-Z]/ig
+const ignoreCharactersForMatching = /[a-zA-Z]/ig
 
 const excludeNames = [
 
@@ -22,7 +22,7 @@ const nameReplacingRules = [
 
 export default {
     standardizedEnd: standardizedEnd,
-    forbiddenCharacters: forbiddenCharacters,
+    ignoreCharactersForMatching: ignoreCharactersForMatching,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules
 }

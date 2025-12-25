@@ -1,7 +1,7 @@
 // English (English)
 
 
-const forbiddenCharacters = /[^0-9a-zA-Z]/ig
+const ignoreCharactersForMatching = /[^0-9a-zA-Z]/ig
 
 const excludeNames = [
     // nonsense entries:
@@ -182,7 +182,7 @@ const nameReplacingRules = [
 ];
 
 export default {
-    forbiddenCharacters: forbiddenCharacters,
+    ignoreCharactersForMatching: ignoreCharactersForMatching,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules
 }

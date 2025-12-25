@@ -1,6 +1,6 @@
 // Greek (modern) (ελληνικά)
 
-const forbiddenCharacters = /[a-zA-Z]/g
+const ignoreCharactersForMatching = /[a-zA-Z]/g
 
 const excludeNames = [
 
@@ -11,7 +11,7 @@ const nameReplacingRules = [
 ];
 
 export default {
-    forbiddenCharacters: forbiddenCharacters,
+    ignoreCharactersForMatching: ignoreCharactersForMatching,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules
 }

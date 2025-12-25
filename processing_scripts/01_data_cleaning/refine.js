@@ -83,8 +83,8 @@ function refine(cn){
         cn.reason_excluded = "excluded name"
         return
       }
-      if("forbiddenCharacters" in langRules){
-        cn.name = cn.name.replace(langRules.forbiddenCharacters,"")
+      if("ignoreCharactersForMatching" in langRules){
+        cn.name = cn.name.replace(langRules.ignoreCharactersForMatching,"")
           // TODO: ban words outright
           .replace(/\s*$/,"") // trim white space
           .replace(/^\s*/,"")

@@ -1,6 +1,6 @@
 // Persian (Farsi) (فارسی),صورتی,صورتی,صورتی
 
-const forbiddenCharacters = /[^\u0600-\u06FF ]/ig
+const ignoreCharactersForMatching = /[^\u0600-\u06FF ]/ig
 
 const keepSpaces = true
 
@@ -20,7 +20,7 @@ const additionalReplacementRule = (str) => {
 }
 
 export default {
-    forbiddenCharacters: forbiddenCharacters,
+    ignoreCharactersForMatching: ignoreCharactersForMatching,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules,
     additionalReplacementRule: additionalReplacementRule,
