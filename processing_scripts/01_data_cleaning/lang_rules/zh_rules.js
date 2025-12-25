@@ -8,7 +8,7 @@ const convertScript = (str) =>
   str.split('').map(function(c){ 
     return !!chineseT2STable[c] ? chineseT2STable[c] : c; }).join('')
 
-const ignoreCharactersForMatching = /[a-zA-Z]/g
+const forbiddenCharacters = /[a-zA-Z]/
 
 const excludeNames = [
     // nonsense names
@@ -36,7 +36,7 @@ const nameReplacingRules = [
 export default {
     standardizedEnd: standardizedEnd,
     convertScript: convertScript,
-    ignoreCharactersForMatching: ignoreCharactersForMatching,
+    forbiddenCharacters: forbiddenCharacters,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules
 }
