@@ -16,6 +16,10 @@ const FILE_I = "../../raw/color_names.csv"
 const FILE_O = "../../model/cleaned_color_names.csv"; // Path for the output
 const FILE_REMOVED_O = "../../model/removed_color_data.csv"; // Path for the output
 
+// load language names to fix
+const lang_name_changes = await csv().fromFile("lang_name_change.csv")
+
+
 const csvColumnOrder = [
   "participantId",
   "lang0Abv",
@@ -83,14 +87,22 @@ csv().fromFile(FILE_I)
     enteredColorNameLookup[cn.cn_i] = cn.name;
   }
 
+  // Fix language names then
   // Add language abbreviation to each color name
   for(const colorName of colorNames){
+    if(lang_name_changes.map(lnc => lnc.lang0).includes(colorName.lang0)){
+      colorName.lang0 = lang_name_changes.find(lnc => lnc.lang0 == colorName.lang0).newLang0
+      colorName.originalLang0Abv = colorName.lang0
+    }
     colorName.lang0Abv = getLangAbv(colorName.lang0)
   }
 
+  // change languages for specific participants
   for(const [cn_i, cn] of colorNames.entries()){
     if(cn.participantId in participantLangChanges){
-      cn.originalLang0Abv = cn.lang0Abv
+      if(!(cn.originalLang0Abv in cn)){
+        cn.originalLang0Abv = cn.lang0Abv
+      }
       cn.lang0Abv = participantLangChanges[cn.participantId]
       const lang = languages_iso_639.find(l => l["639‑1"] == cn.lang0Abv)
       cn.lang0 = `${lang["Language name"]} (${lang["Native name"]})`
