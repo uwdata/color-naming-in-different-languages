@@ -121,6 +121,7 @@ csv().fromFile(FILE_I)
       if(oldName != newName){
         console.log("WARNING: Name changed on repeated refining")
         console.log("  lang0", cn.lang0)
+        console.log("  entered name", enteredColorNameLookup[cn.cn_i])
         console.log("  colorName row", cn.cn_i)
         console.log("  names: ", oldName, ", ", newName)
       }

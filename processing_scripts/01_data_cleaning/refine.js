@@ -78,11 +78,21 @@ function refine(cn){
       if("nameReplacingRules" in langRules){
         cn.name = replaceByArray(cn.name, langRules.nameReplacingRules)
       }
+      
       if("excludeNames" in langRules && langRules.excludeNames.indexOf(cn.name) >= 0 ) {
         cn.name = "";
         cn.reason_excluded = "excluded name"
         return
       }
+
+      if("forbiddenCharacters" in langRules){
+        if((langRules.forbiddenCharacters).test(cn.name)){
+          cn.name = "";
+          cn.reason_excluded = "forbidden characters"
+          return
+        }
+      }
+
       if("ignoreCharactersForMatching" in langRules){
         cn.name = cn.name.replace(langRules.ignoreCharactersForMatching,"")
           // TODO: ban words outright
@@ -90,7 +100,7 @@ function refine(cn){
           .replace(/^\s*/,"")
           .replace(/\s+/g," ")
         if(cn.name == ""){
-          cn.reason_excluded = "forbidden characters"
+          cn.reason_excluded = "ignoring characters left nothing"
           return
         }
       }
