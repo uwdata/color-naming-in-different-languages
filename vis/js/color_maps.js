@@ -341,7 +341,7 @@ $(document).on('ready page:load', function () {
     }else{
       curr_blur = NO_BLUR
     }
-    createOrRefreshAllLangs()
+    updateDisplay()
   })
 
   bin_size_by = $("#bin_size_by").val()

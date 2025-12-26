@@ -257,7 +257,7 @@ for(let labBinSize of LAB_BIN_SIZES){
           [dim1BinName]: dim1Bin,
           [dim2BinName]: dim2Bin,
           [dim3BinName]: dim3Bin,
-          "lab": [rep_lab[dim1], rep_lab[dim2], rep_lab[dim3]].join(","),
+          "lab": [rep_lab.l, rep_lab.a, rep_lab.b].join(","),
           "saliency": -entropy(langTermBinsBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin).map(d => d.pTC)),
           "maxpTC": maxpTC,
           "majorTerm": majorTerm,

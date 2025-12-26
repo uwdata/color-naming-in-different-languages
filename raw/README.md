@@ -1,7 +1,8 @@
 ## Column Info
+
 ### color_names.csv
 - participantId : Participant ID (note: many participant IDs were saved as 0 due to an error in the study code)
-- lang0 : Language of a color name
+- lang : Language of a color name
 - name : Color name entered by participant
 - colorSpace : The display gamut used to show the color tile to use participant. The older "rgb" 0-255 values, or the HDR "p3" or "rec2020" color spaces 
 - r/g/b : The r, g, and b values for the displayed color (0-255 for "rgb", and 0-1 for "p3" and "rec2020")
