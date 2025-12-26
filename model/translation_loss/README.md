@@ -16,7 +16,7 @@ The translation loss is calculated by using the binned full color names and comp
 
 You can find the calculated "most accurate" translation for a term by finding the term pair with the smallest distance.
 
-You can also compare the LAB distances to the estimated "Just Noticeable Difference" value of 2.3 LAB distance (SHARMA G.: Digital Color Imaging Handbook. CRC press, 2002).
+You can also compare the LAB distances to the estimated "Just Noticeable Difference" value of .02 Oklab distance.
 
 
 ## Translation Loss Files

@@ -9,6 +9,7 @@ This project is divided up as follows:
 - the "processing_scripts" directory contains the code we that takes the raw data and calculates information about color naming.
 - the "model" directory contains the various models and calculations about color naming
 - this directory and the "vis" directory contains the code of [The Many Languages, Many Colors Project](https://uwdata.github.io/color-naming-in-different-languages) page and all the visualizations of the color naming data
+- the "shared_files" directory has some utility files shared by both processing scripts and the vis code
 
 ## Color Naming Data, Models, Translations, and Visualizations
 

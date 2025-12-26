@@ -22,7 +22,7 @@ const COLOR_NAME_STEPS = [1,3,5]
 const color_names_writer = csvWriter({
     headers: [
         "participantId",
-        "lang0",
+        "lang",
         "name",
         "colorSpace", "r", "g", "b",
         "trialNum", "tileNum",
@@ -35,13 +35,18 @@ color_names_writer.pipe(fs.createWriteStream(NAMES_O));
 
 const v1_names = await csv().fromFile(STUDY_1_NAMES_I)
 for(const colorNameRow of v1_names){
+    colorNameRow.lang = colorNameRow.lang0
+    delete colorNameRow.lang0
+
     delete colorNameRow.colorNameId
     delete colorNameRow.phaseNum
     delete colorNameRow.lab_l
     delete colorNameRow.lab_a
     delete colorNameRow.lab_b
+
     colorNameRow.colorSpace = "rgb"
     colorNameRow.background = "white"
+    
     color_names_writer.write(colorNameRow)
 }
 
@@ -53,7 +58,7 @@ for(const participant of v2_data){
             for(const [name_i, name_info] of color_names.entries()){
                 const colorNameRow = {
                     participantId:  participant.participant_id,
-                    lang0: color_name_sets[step].lang0,
+                    lang: color_name_sets[step].lang0,
                     trialNum: color_name_sets[step].trialNum,
                     tileNum: name_i,
                     name: name_info.name,

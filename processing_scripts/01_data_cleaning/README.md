@@ -11,16 +11,34 @@ Data Outputs:
 
 Data Inputs:
 - raw/color_names.csv
+- Refinement Rules (see below)
 
-## refine.js
-This file has our data cleaning rules 
+## Refinement Rules and refine.js
+There are a number of files with refinement rules. Most are run by *rifine.js*. But also:
 
-There are two higher level rules: 
+- *lang_name_change.csv* has rules for changing language names
+- *participant_lang_changes.js* has rules for changing languages for specific participants
+- *participants_to_exclude.csv* has specific ids for participants to exclude (e.g., they entered nonsense or entered data in the wrong language)
+- *lang_rules/*_rules.js* has rules for specific languages based on the two letter language id (see */shared_files/languages-iso-639.js*). Look in that folder for more on language rules
 
-1) Exclusion Rule
-We defined a list of words for each language to exclude terms that are not belong to the corresponding language. If a given word is an item of the list, we excluded the term.
+The full process of refining color names in 01_dataCleaning.js goes as follows:
 
-2) Replacement Rule 
-We defined a list of pairs of two regular expression to replace/correct a part of a given word. The first  expression is to find the part of the word to be corrected, and the second expression is the correction of the part. 
-
-We also do things like change all traditional Chinese characters to simplified characters, remove diacritic remarks (for matching colors).
+1) Change color name **lang** if there is a rule to do so in *lang_name_change.csv*
+2) Add the two letter "639‑1" abbreviation for the language
+3) Change language for participants listed in *participant_lang_changes.js*
+4) find the **standardized_entered_name** color name (e.g., trim whitespace, all lowercase, replace dash with space, etc.)- from *refine.js*
+5) remove all blank color names (don't bother to save this in *removed_color_data.csv*)
+6) find the matching color name using *refine.js*
+  a) Remove data based on **participantId** based on *participants_to_exclude.csv*
+  b) make name lowercase, and try to remove all diacritics, short vowel marks, etc.
+  c) Remove extra spaces, replace dashes with spaces
+  d) if the language has a convertScript function, use it to convert the script (e.g., traditional -> simplified Chinese)
+  e) if the language has a standardizedEnd (e.g., "色" in Chinese), remove it
+  f) if the language has any nameReplacingRules (e.g., "pruple" -> "purple"), run them on the color name
+  g) if the language has any excludeNames (e.g., "test" or "asdf"), remove them
+  h) if the language has any forbiddenCharacters, remove the name if it has a forbidden character
+  i) if the language has any ignoreCharactersForMatching, remove those characters from the name
+  j) if the language has nameReplacingRules, run that again (in case changes above make it now match a rule)
+  k) if the language has an additionalReplacementRule, run that on the name
+  l) Do one more pass of removing whitespace, making lowercase, removing diacritics, etc.
+7) re-run the refine function from **refine.js** to make sure the name doesn't change again, since that would mean our refining process is not stable (e.g., replacing "gree" with "green" could cause "green" -> "greenn" -> "greennn", etc.)

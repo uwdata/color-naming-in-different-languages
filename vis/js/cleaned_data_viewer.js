@@ -2,9 +2,9 @@ const STANDARDIZED_NAME_COL = "Standardized Names"
 
 const rawDataRowSort = [
     "reason_excluded", "entered_name", "standardized_entered_name", "name",
-    "lang0", "lang0Abv", "participantId", "rgbSet",
+    "lang", "langAbv", "participantId", "rgbSet",
     "studyVersion", "locale", "phaseNum", "trialNum","tileNum", "background",
-    "colorSpace", "r", "g", "b", "originalLang0Abv"
+    "colorSpace", "r", "g", "b", "originalLangAbv"
 ]
 
 $(document).on('ready page:load', async () => {
@@ -22,8 +22,8 @@ await Promise.all([
 console.log(cleanedColorNames[0]);
 console.log(removedColorData[0]);
 
-const allNamesByLang = Object.groupBy(cleanedColorNames, ({lang0}) => lang0)
-const allRemovedNamesByLang = Object.groupBy(removedColorData, ({lang0}) => lang0)
+const allNamesByLang = Object.groupBy(cleanedColorNames, ({lang}) => lang)
+const allRemovedNamesByLang = Object.groupBy(removedColorData, ({lang}) => lang)
 
 const allLangs = Array.from(new Set([
                     ...Object.keys(allNamesByLang), 

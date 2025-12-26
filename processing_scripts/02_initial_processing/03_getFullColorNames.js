@@ -68,7 +68,7 @@ for(let labBinSize of LAB_BIN_SIZES){
 		commonColorNameLookup[ci.lang][ci.simplifiedName] = ci.commonName;
 	});
 
-  let grouped_lang = d3.groups(colorNames, d => d.lang0)
+  let grouped_lang = d3.groups(colorNames, d => d.lang)
      .map(a => {return {key: a[0], values: a[1]}})
     .sort((a,b) =>  - a.values.length + b.values.length);
 

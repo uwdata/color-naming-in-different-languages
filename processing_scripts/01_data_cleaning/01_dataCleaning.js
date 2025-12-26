@@ -22,8 +22,8 @@ const lang_name_changes = await csv().fromFile("lang_name_change.csv")
 
 const csvColumnOrder = [
   "participantId",
-  "lang0Abv",
-  "lang0",
+  "langAbv",
+  "lang",
   "name",
   "standardized_entered_name",
   "entered_name",
@@ -33,14 +33,14 @@ const csvColumnOrder = [
   "background",
   "locale",
   "studyVersion",
-  "originalLang0Abv"
+  "originalLangAbv"
 ]
 
 const csvDeletedColumnOrder = [
   "reason_excluded",
   "participantId",
-  "lang0Abv",
-  "lang0",
+  "langAbv",
+  "lang",
   "standardized_entered_name",
   "entered_name",
   "colorSpace", "r", "g", "b",
@@ -49,7 +49,7 @@ const csvDeletedColumnOrder = [
   "background",
   "locale",
   "studyVersion",
-  "originalLang0Abv"
+  "originalLangAbv"
 ]
 
 import {languages_iso_639} from "../../shared_files/languages-iso-639.js"
@@ -78,7 +78,7 @@ csv().fromFile(FILE_I)
   // now by including these
 
   //colorNames = colorNames.filter(cn => cn.participantId !== 0);
-  //colorNames = colorNames.filter(cn => !(cn.lang0=="Korean (한국어, 조선어)" && cn.studyVersion === "1.1.4" && cn.rgbSet === "line")); //There is a priming effect for that set.
+  //colorNames = colorNames.filter(cn => !(cn.lang=="Korean (한국어, 조선어)" && cn.studyVersion === "1.1.4" && cn.rgbSet === "line")); //There is a priming effect for that set.
 
   const enteredColorNameLookup = {}
 
@@ -90,22 +90,22 @@ csv().fromFile(FILE_I)
   // Fix language names then
   // Add language abbreviation to each color name
   for(const colorName of colorNames){
-    if(lang_name_changes.map(lnc => lnc.lang0).includes(colorName.lang0)){
-      colorName.lang0 = lang_name_changes.find(lnc => lnc.lang0 == colorName.lang0).newLang0
-      colorName.originalLang0Abv = colorName.lang0
+    if(lang_name_changes.map(lnc => lnc.lang).includes(colorName.lang)){
+      colorName.lang = lang_name_changes.find(lnc => lnc.lang == colorName.lang).newLang
+      colorName.originalLangAbv = colorName.lang
     }
-    colorName.lang0Abv = getLangAbv(colorName.lang0)
+    colorName.langAbv = getLangAbv(colorName.lang)
   }
 
   // change languages for specific participants
   for(const [cn_i, cn] of colorNames.entries()){
     if(cn.participantId in participantLangChanges){
-      if(!(cn.originalLang0Abv in cn)){
-        cn.originalLang0Abv = cn.lang0Abv
+      if(!(cn.originalLangAbv in cn)){
+        cn.originalLangAbv = cn.langAbv
       }
-      cn.lang0Abv = participantLangChanges[cn.participantId]
-      const lang = languages_iso_639.find(l => l["639‑1"] == cn.lang0Abv)
-      cn.lang0 = `${lang["Language name"]} (${lang["Native name"]})`
+      cn.langAbv = participantLangChanges[cn.participantId]
+      const lang = languages_iso_639.find(l => l["639‑1"] == cn.langAbv)
+      cn.lang = `${lang["Language name"]} (${lang["Native name"]})`
     }
   }
 
@@ -132,7 +132,7 @@ csv().fromFile(FILE_I)
       let newName = cn.name
       if(oldName != newName){
         console.log("WARNING: Name changed on repeated refining")
-        console.log("  lang0", cn.lang0)
+        console.log("  lang", cn.lang)
         console.log("  entered name", enteredColorNameLookup[cn.cn_i])
         console.log("  colorName row", cn.cn_i)
         console.log("  names: ", oldName, ", ", newName)

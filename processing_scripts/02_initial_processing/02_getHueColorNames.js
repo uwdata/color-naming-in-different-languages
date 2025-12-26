@@ -44,7 +44,7 @@ csv()
 
 
       // 1. Get top languages
-      let groupedByLang = d3.groups(colorNames, d => d.lang0)
+      let groupedByLang = d3.groups(colorNames, d => d.lang)
         .map(a => {return {key: a[0], values: a[1]}})
         .sort((a,b) =>  - a.values.length + b.values.length)
         

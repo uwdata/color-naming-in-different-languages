@@ -9,16 +9,33 @@ Created by:
 - The scripts in: 00_pre-processing-colors
 
 ## Cleaned Color Names
-"cleaned_color_names.csv" contains the cleaned version of the raw dataset. Besides removing data, we:
-- update the "**name**" field to include a simplified matching name (e.g., fixing typos, removing diacritic marks)
-- the "**entered_name**" field is the name as it was entered
-- the "**standardized_entered_name**" has some standardization steps run on it (e.g., all lowercase, trimmed white space)
+"cleaned_color_names.csv" contains the cleaned version of the raw dataset. 
+
+Fields:
+- **participantId:** The id of the participant (0 for some data where there were errors in the study)
+- **langAbv:** Two letter abbreviation of the language name (if one could be found)
+- **lang:** The long form version of the language name
+- **name:** The simplified matching color name. Not meant for display. (e.g., all lowercase, removed spaces, removed diacritics etc.)
+- **standardized_entered_name:** has some standardization steps run on it (e.g., all lowercase, trimmed white space, add standard color word ending to languages like Chinese). Meant to be consistent as an option for display name
+- **entered_name:** the name as entered by the user
+- **colorSpace:** the color space of the tile being named (regular "rgb" or HDR: "p3' or "rec2020")
+- **r/g/b:** the r, g, or b value for the color in the given colorSpace
+- **trialNum:** the step number in the study
+- **tileNum:** for the given step, what tile number was this tile in the order of display
+- **rgbSet:** whether we were asking users to name tiles that were only on the full hue color "line" ![The hue colors](../vis/hue-colors-smallest.png), or if we were asking about any color from the "full" color space (e.g., brown, dark green, beige, etc.)
+- **background:** The background color behind the tiles: "white" for light more, and "black" for dark mode
+- **locale:** The language the instructions were given in (2 code abbreviation)
+- **studyVersion:** The version of the study being answered in (see the README files in the raw study folders)
+- **originalLangAbv:** If we changed the language the user said they answered in to the one we believe they answered in, this shows the original language
 
 Created by: 
 - processing_scripts/01_data_cleaning/01_dataCleaning.js
 
 ## Removed Color Data
-"removed_color_data.csv" is the raw data that was excluded in our data cleaning process
+"removed_color_data.csv" is the raw data that was excluded in our data cleaning process.
+
+It has most of the same fields as "cleaned_color_names.csv", but has an additional field:
+- **reason_excluded:** Why this name was removed from the final cleaned dataset.
 
 Created by: 
 - processing_scripts/01_data_cleaning/01_dataCleaning.js
@@ -30,13 +47,9 @@ Created by:
 Fields:
 - **lang:** The language name (long form, e.g., "Korean (한국어, 조선어)")
 - **langAbv:** The 2 letter language abbreviation (for where we have it). E.g., "ko"
-- **numLineNames:** The number of names collected when we asking only to name rgb hue color line (max(r,g,b) == 255, min(r,g,b) == 0) ![The hue colors](../vis/hue-colors-smallest.png)
+- **numLineNames:** The number of names collected when we asking only to name rgb hue color line (max(r,g,b) == 255 or 1, min(r,g,b) == 0) ![The hue colors](../vis/hue-colors-smallest.png)
 - **numFullNames:** The number of names collected when asking to name colors chosen from the whole rgb color space
-- **numHueColorNames:** The number of color names that are rgb hue colors (regardless of of what color set was being asked)
-- **numNonHueColorNames:** The number of color names that are rgb hue colors (regardless of of what color set was being asked, though theoretically, this should only be "full" color names)
-- **numFilteredTerms:** The number of color names kept for a language (after filtering out those that didn't have sufficient data)
-- **hue_correction_multiplier:** a multiplier for the language to rebalance the rgb hue colors based on how many we expect in an even distribution in LAB color space
-- **non_hue_correction_multiplier:** a multiplier for the language to rebalance the rgb non-hue colors based on how many we expect in an even distribution in LAB color space
+- **numColorTerms:** The number of color names kept for a language (after filtering out those that didn't have sufficient data)
 
 Created by:
 - processing_scripts/02_initial_processing/01_getBasicFullColorInfo.js
@@ -65,12 +78,12 @@ Created by:
 Fields:
 - **lang:** The language of the color term (long form)
 - **lang_abv:** Two letter abbreviation of the language
-- **simplifiedName:** the simplified matching "name" from cleaned_color_names.csv used to group color terms
 - **commonName:** For the color term, the most common "standardized_entered_name" used for it
-- **totalColorFraction:** The total fraction of color names for this language are this color term (balancing in LAB space and for the expected rgb hue color ratio)
-- **avgColorRGBCode:** The average rgb color for this term (balancing in LAB space and for the expected rgb hue color ratio)
-- **avgL, avgA, avgB:** The average LAB color for this term (balancing in LAB space and for the expected rgb hue color ratio)
-- **numFullNames:** The number of times this name was given when we were asking only to name rgb hue color line (max(r,g,b) == 255, min(r,g,b) == 0)
+- **simplifiedName:** the simplified matching "name" from cleaned_color_names.csv used to group color terms
+- **avgColorRGBCode:** The average rgb color for this term (balancing in Oklab space and for the expected rgb hue color ratio)
+- **totalColorFraction:** The total fraction of color names for this language are this color term (balancing in Oklab space and for the expected rgb hue color ratio)
+- **avgL, avgA, avgB:** The average Oklab color for this term (balancing in Oklab space and for the expected rgb hue color ratio)
+- **numFullNames:** The number of times this name was given when we were asking only to name rgb hue color line (max(r,g,b) == 255 or 1, min(r,g,b) == 0)
 - **numLineNames:** The number of times this name was given when we were asking to name colors chosen from the whole rgb color space
 
 
@@ -139,6 +152,6 @@ Created by:
 
 ## Disclaimer
 
-Note: We represent the color labels provided by the participants in our study, which may include misspellings, but also whatever racial biases they have (e.g., the color "skin"). This is not meant to be a prescriptive definition of what colors  fit what labels.
+Note: We represent the color labels provided by the participants in our study, which may include misspellings, but also whatever racial biases they have (e.g., the color "skin"). This is not meant to be a prescriptive definition of what colors fit what labels.
 
 

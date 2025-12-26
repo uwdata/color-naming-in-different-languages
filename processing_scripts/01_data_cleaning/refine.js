@@ -27,8 +27,8 @@ function standardize_entered(cn){
   let name = cn.name.replace(/\s*-\s*/, " ")
   name = name.toString().trim().toLowerCase()
 
-  if(lang_rules[cn.lang0Abv]){
-    const standardizedEnd = lang_rules[cn.lang0Abv].standardizedEnd
+  if(lang_rules[cn.langAbv]){
+    const standardizedEnd = lang_rules[cn.langAbv].standardizedEnd
     if(standardizedEnd){
       if(name.length > 0 && !name.endsWith(standardizedEnd)){
           name += standardizedEnd
@@ -54,8 +54,8 @@ function refine(cn){
     cn.name = cn.name.toLowerCase()
       .normalize("NFD").replace(/\p{Diacritic}/gu, "")
 
-    if(cn.lang0Abv in lang_rules){
-      const langRules = lang_rules[cn.lang0Abv]
+    if(cn.langAbv in lang_rules){
+      const langRules = lang_rules[cn.langAbv]
       cn.name = cn.name
         .toLowerCase() // (did we already do this? duplicate? ) // TODO: start with standardized name
         .replace(/\s*$/,"") // trim white space
@@ -117,7 +117,7 @@ function refine(cn){
     // re-do some steps in case replacements messed up things
     
     // remove all extra spaces (except where spaces are more needed, like in Arabic and Persian)
-    if(!(cn.lang0Abv in lang_rules) || !lang_rules[cn.lang0Abv].keepSpaces){
+    if(!(cn.langAbv in lang_rules) || !lang_rules[cn.langAbv].keepSpaces){
       cn.name = cn.name.replace(/\s*/,"")
     }
     

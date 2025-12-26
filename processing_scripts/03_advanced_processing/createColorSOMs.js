@@ -81,7 +81,7 @@ function createSOMs(colorInfo, namingData, lang_info){
 			let colorName = colorNames[lang][i];
 			
 			let thisColorData = namingData.filter(function(item){
-				return lang == colorNamesAbrv[item.lang0.split("(")[0].trim()] && 
+				return lang == colorNamesAbrv[item.lang.split("(")[0].trim()] && 
 						item.name == colorName &&
 						item.rgbSet == "full"
 			}); 

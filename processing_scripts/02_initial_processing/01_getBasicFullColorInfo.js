@@ -31,7 +31,7 @@ langDataWriter.pipe(fs.createWriteStream(FILE_LANG_O));
 csv().fromFile(FILE_I)
   .then((colorNames)=>{
 
-  let grouped_lang = d3.groups(colorNames, d => d.lang0)
+  let grouped_lang = d3.groups(colorNames, d => d.lang)
     .map(a => {return {key: a[0], values: a[1]}})
     .sort((a,b) =>  - a.values.length + b.values.length);
 
