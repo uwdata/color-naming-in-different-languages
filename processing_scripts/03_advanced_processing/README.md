@@ -16,9 +16,10 @@ Input Data:
 - model/binned_full_colors/full_color_lang_bin_info.csv
 
 Constants:
-- LOW_RES_BIN = 20: The size of the low resolution bins to use for comparing sizes if distances are far or data is scarce
-- HIGH_RES_BIN = 10: The size of the high resolution bins to use for computing sizes where distance is small and there is enough data (slower)
-- MIN_FRACTION_BIN_HIGH_RES = 0.4: The fraction of bins that have to be present in the HIGH_RES_BIN size to be considered usable for calculating color distance
+- LOW_RES_BIN = Oklch bin: {type: "ring", l: 1/10, h_divs: 8}: The size of the low resolution bins to use for comparing sizes if distances are far or data is scarce
+- HIGH_RES_BIN = Oklch bin: {type: "ring", l: 1/20, h_divs: 8}: The size of the high resolution bins to use for computing sizes where distance is small and there is enough data (slower)
+- Note: We calculate this for both the blur and no-blur version of our binning, but in our next step we just use the blurred version
+- MIN_FRACTION_BIN_HIGH_RES = 0.8: The fraction of bins that have to be present in the HIGH_RES_BIN size to be considered usable for calculating color distance
 
 
 ## getTranslation_02_EMDparallel.py
@@ -36,9 +37,11 @@ Input Data:
 - ./temp/fullColorNames_*_*.json
 
 Constants:
-- DEFAULT_BIN = '20': the default bin size to use for distance calculations
-- HIGH_RES_BIN = '10': the high res bin size to use for more precise calculations in close colors
-- HIGH_RES_DIST = 60: the threshold distance for when to switch to high res distance calculation
+- DEFAULT_BIN = 'ring_0.1_h8': the default bin size to use for distance calculations
+- HIGH_RES_BIN = 'ring_0.05_h8': the high res bin size to use for more precise calculations in close colors
+- BLUR_TEXT = "_blur": We think the smoothed out data is more accurate for comparison of distributions
+- HIGH_RES_DIST = .20: the threshold distance for when to switch to high res distance calculation
+- NUM_PROCESSES = 12: How many nodejs processes to use to do the calculations (what is best for you will depend on how many cores your computer processors has)
 
 
 ## getSchemeColorNames.js 

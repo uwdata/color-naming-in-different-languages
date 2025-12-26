@@ -3,28 +3,33 @@
 These scripts are to calculate things about colors and color spaces before considering any color naming.
 
 ## hueColorGenerator.js
-This script generates an OKLAB uniformly spaced color ring of the hue colors (RGBs with at least one 0 and one [255 or 1]). We use this in picking colors for our "line" data in our study, and for displaying the hue color data.
+This script generates an Oklab uniformly spaced color ring of the hue colors (RGBs with at least one 0 and one [255 or 1]). We use this in picking colors for our "line" data in our study, and for displaying the hue color data. We do this for different color spaces: sRGB, p3 and rec2020
 
 Data Outputs:
 - model/color_info_pre_naming/hue_colors_*.json
 
-
-## estimateHueColorPercentage.js
-This script estimates what percentage of LAB space is RGB hue colors vs. RGB non-hue colors. This is used for rebalancing the naming data since some of the data is collected specifically from the hue colors.
-
-Data Outputs:
-- model/color_info_pre_naming/lab_hue_color_ratio.json
-
-Constants:
-- LAB_DELTA LAB_DELTA = .01: 
-
-
-## createLABBins.js
-This script calculates properties of the LAB bins we use for binning colors
+## 01_createLABBins.js
+This script calculates properties of the Oklab bins we use for binning colors
 
 Data Outputs:
-- model/color_info_pre_naming/lab_bins_*.json
-
+- model/color_info_pre_naming/oklab_bins_*.json
 
 Constants:
-- HUE_RATIO_LAB_DELTA = .05: This is the step size to use when estimating what proportion of each LAB bin are hue colors, so that we can re-balance color names given that the "line" color data we collect is just those hue colors. Note: This runs very slow at .05 LAB delta size.
+- LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES: Use all the bin sizes listed in the labBinHelper (e.g., cube bins, box bins, Oklch ring bins)
+
+- COLOR_SPACES = ['srgb', 'p3', "rec2020"]: The color spaces to use when creating bins.
+
+Note: if you want to run it fast for testing, "change color_step" to a larger number, like 15
+
+## 02_LABBinSpaceEstimate.js
+This script estimates what percentage of Oklab space in each color bin, and also trying to find better representative colors for the bin in each color space. It updates the bin files
+
+Data Inputs:
+- model/color_info_pre_naming/oklab_bins_*.json
+
+Data Outputs:
+- model/color_info_pre_naming/oklab_bins_*.json
+
+Constants:
+- const LAB_N_SAMPLES = 500: How many divisions to make when sampling the l/a/b space of Oklab
+
