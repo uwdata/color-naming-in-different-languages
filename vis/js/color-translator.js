@@ -1,3 +1,6 @@
+import som from '../../shared_files/SOM.js'
+
+$(document).on('ready page:load', start)
 
 //The checkStatus function for using fetch() for Ajax
 // Either copy the function below into your JavaScript file
@@ -60,7 +63,7 @@ let langAbv = [];
 let abvToColorName = {};
 let colorNamesKey = {}
 let colorNames = {};
-for(lang in colorNamesAbrv){
+for(const lang in colorNamesAbrv){
 	abvToColorName[colorNamesAbrv[lang]] = lang;
 	langAbv.push(colorNamesAbrv[lang]);
 	colorNamesKey[lang] = colorNamesAbrv[lang]+"term";
@@ -95,8 +98,8 @@ function start(){
 
 
   // load translations
-  for(i in langAbv){
-    for(j in langAbv){
+  for(const i in langAbv){
+    for(const j in langAbv){
 		let lang1 = langAbv[i];
 		let lang2 = langAbv[j];
 
@@ -146,8 +149,8 @@ function start(){
 
 function  initializeTerms(){
 	//drawColorResults();
-	for(langAbv in allColorInfo){
-		for(colorName in allColorInfo[langAbv]){
+	for(const langAbv in allColorInfo){
+		for(const colorName in allColorInfo[langAbv]){
 			if(colorNames[abvToColorName[langAbv]]){
 				colorNames[abvToColorName[langAbv]].push(colorName);
 			} else{
@@ -157,12 +160,12 @@ function  initializeTerms(){
 	}
 
 	let allLangs = [];
-	for(lang in colorNames){
+	for(const lang in colorNames){
 		allLangs.push(lang);
 		let langAbrv = colorNamesAbrv[lang];
 		colorNames[lang].sort(function(a, b){return allColorInfo[langAbrv][b].totalColorFraction - allColorInfo[langAbrv][a].totalColorFraction});
 
-		for(i in colorNames[lang]){
+		for(const i in colorNames[lang]){
 			allColorInfo[langAbrv][colorNames[lang][i]]["rank"] = Number(i) + 1;
 		}
 	}
@@ -170,7 +173,7 @@ function  initializeTerms(){
 	allLangs.sort(function(a, b){return colorNames[b].length - colorNames[a].length})
 	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
 	
-	for(i in allLangs){		
+	for(const i in allLangs){		
 		if(colorNames[allLangs[i]].length >= 10){
 			// set selection from url hash params 
 			let startSelectedStr = "";
@@ -195,7 +198,7 @@ function  initializeTerms(){
 function updateTerms(){
 	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
 	
-	for(langName in colorNamesAbrv){	
+	for(const langName in colorNamesAbrv){	
 		let langNameAbv = colorNamesAbrv[langName]	
 		// set selection from url hash params 
 		if(langNameAbv == urlParams.get("start_lang")){
@@ -217,7 +220,7 @@ function updateColorNames(){
 	var urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
 	
 	$("#startTerm").html("");
-	for(i in colorNames[currentLang]){
+	for(const i in colorNames[currentLang]){
 		let name = colorNames[currentLang][i];
 		
 		// set selection from url hash params 
@@ -271,7 +274,7 @@ function updateTranslation(){
 	}
 
 	let matchedTranslations = [];
-	for(i in translationLoss[translationKey]){
+	for(const i in translationLoss[translationKey]){
 		if(translationLoss[translationKey][i][currentStartLangKey] == term){
 			matchedTranslations.push(translationLoss[translationKey][i]);
 		}
@@ -290,7 +293,7 @@ function updateTranslation(){
 
 
 	$("#results").html("");
-	for(i in matchedTranslations){
+	for(const i in matchedTranslations){
 		let matchedName = matchedTranslations[i][currentEndLangKey]
 
 		// create link to this name
@@ -408,7 +411,7 @@ function generateColorGrid(nodes){
 
 
 function createSOMCompare(lang1Abrv, lang2Abrv, term, translations){
-	labColors = [];
+	let labColors = [];
 
 	//get starting term
 	labColors =labColors.concat(getProportionalLABColorSet(lang1Abrv, term));
@@ -447,8 +450,8 @@ function createSOMCompare(lang1Abrv, lang2Abrv, term, translations){
 function getSOMD3Data(compareSom, term, translations, lang1Abrv, lang2Abrv){
 	var d3Data = compareSom.neurons.reduce(function(prev, neuron, i){
 		return prev.concat(neuron.map(function(n,j){
-			var labColor = d3.lab(n.weights[0], n.weights[1], n.weights[2]);
-			var rgbColor = labColor.rgb();
+			var labColor = new Color('oklab', [n.weights[0], n.weights[1], n.weights[2]]);
+			var rgbColor = labColor.to("srgb");
 			//var color = n.weights.map(function(w){ return Math.round(w); });
 			var result = {"rgbColor": rgbColor};
 			result["labColor"] = labColor;
@@ -457,7 +460,7 @@ function getSOMD3Data(compareSom, term, translations, lang1Abrv, lang2Abrv){
 			//TODO:**********************************************************************
 			result["x"] = i;
 			result["y"] = j;
-			result["lab"] = $.colorspaces.make_color('sRGB', [rgbColor.r/256, rgbColor.g/256, rgbColor.b/256]).as("CIELAB");
+			result["lab"] = labColor
 
 			return result;
 		}))
@@ -484,7 +487,7 @@ function updateSOM(compareSom, divID, term, d3Data){
 	 				// .attr("ry",1)
 	 				.attr("width", boxWidth + .2)
 	 				.attr("height", boxHeight + .2)
-	 				.style("fill", function(d){ return "rgb(" + d.rgbColor.r + "," + d.rgbColor.g+ "," + d.rgbColor.b +")"});
+	 				.style("fill", function(d){ return d.rgbColor});
 
 
 	//horizontal midline
@@ -578,7 +581,10 @@ function getProportionalLABColorSet(langAbv, term){
 		console.error("could not find term " + langAbv + ": " + term);
 		return [];
 	}
-	let nodes = allColorInfo[langAbv][term].colorNodes9;
+	let nodes = 'colorNodes16' in allColorInfo[langAbv][term] ? allColorInfo[langAbv][term].colorNodes16 :
+        'colorNodes9' in allColorInfo[langAbv][term] ? allColorInfo[langAbv][term].colorNodes9 :
+        allColorInfo[langAbv][term].colorNodes4
+
 	let colorTerms = [];
 	for(let i = 0; i < nodes.length; i++){
 		for(let j = 0; j < nodes[i].length; j++){
@@ -608,7 +614,10 @@ function getNodeColorAmount(labColor, term, langAbrv){
 	if(!allColorInfo[langAbrv][term]){
 		return 0;
 	}
-	let infoNodes = allColorInfo[langAbrv][term].colorNodes9;
+	let infoNodes = 'colorNodes16' in allColorInfo[langAbrv][term] ? allColorInfo[langAbrv][term].colorNodes16 :
+        'colorNodes9' in allColorInfo[langAbrv][term] ? allColorInfo[langAbrv][term].colorNodes9 :
+        allColorInfo[langAbrv][term].colorNodes4
+    
 	let multiplier = 1;
 	if(allColorInfo[langAbrv][term].numFullData < 50){ //if not much data, compare with only 4 nodes
 		infoNodes = allColorInfo[langAbrv][term].colorNodes4;

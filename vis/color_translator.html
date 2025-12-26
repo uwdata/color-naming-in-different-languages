@@ -35,8 +35,9 @@ $( document ).tooltip({
 <link href="css-lib/select2.min.css" rel="stylesheet" />
 <script src="js-lib/select2.min.js"></script>
 
-<script src="js-lib/colorspaces.min.js"></script>
-<script type="module" src="../shared_files/SOM.js"></script>
+<script src="js-lib/color.global.js"></script>
+<!-- <script type="module" src="../shared_files/SOM.js"></script> -->
+<script type="module" src="js/color-translator.js"></script>
 
 <script src="../addNavBar.js"></script>
 
@@ -61,11 +62,9 @@ $( document ).tooltip({
   color: black
 }
 </style>
-
-<script type="text/javascript" src="js/color-translator.js"></script>
 </head>
 
-<body onload = "start()">
+<body>
  <div id = "main" class="container" style="height:100%">
 
  <h1 style="margin-bottom:0px;">Color Translator</h1>
