@@ -12,11 +12,14 @@ const NAMES_O = "./color_names.csv"
 const STUDY_1_DEMOGRAPHICS_I = "./study_v1/color_perception_table_demographics.csv"
 const DEMOGRAPHICS_O = "./demographics.csv"
 
+const NAME_MATCHES_O = "./color_name_matches.csv"
 
 const v2_data = JSON.parse(fs.readFileSync(STUDY_2_I))
 
 
 const COLOR_NAME_STEPS = [1,3,5]
+
+
 ///////////// COLOR NAMES /////////////////
 
 const color_names_writer = csvWriter({
@@ -76,6 +79,43 @@ for(const participant of v2_data){
         }
     }
 }
+
+
+///////////// COLOR NAME MATCHES /////////////////
+
+const color_name_matches_writer = csvWriter();
+color_name_matches_writer.pipe(fs.createWriteStream(NAME_MATCHES_O));
+
+for(const participant of v2_data){
+    const color_name_match_sets = participant.study.data.color_name_match_set
+    if(color_name_match_sets[COLOR_NAME_STEPS[0]].matches.length > 0){
+        for(const step of COLOR_NAME_STEPS){
+            const color_names = color_name_match_sets[step].matches
+            for(const [name_match_i, name_match_info] of color_names.entries()){
+                const colorNameMatchRow = {
+                    participantId:  participant.participant_id,
+                    lang: color_name_match_sets[step].lang0,
+                    trialNum: color_name_match_sets[step].trialNum,
+                    termNum: name_match_info.termNum,
+                    colorNum: name_match_info.colorNum,
+                    name: name_match_info.name,
+                    displayName: name_match_info.displayName,
+                    match: name_match_info.match,
+                    colorSpace: name_match_info.colorSpace,
+                    r: name_match_info.r,
+                    g: name_match_info.g,
+                    b: name_match_info.b,
+                    rgbSet: color_name_match_sets[step].rgbSet,
+                    studyVersion: color_name_match_sets[step].studyVersion,
+                    locale: color_name_match_sets[step].locale,
+                    background: color_name_match_sets[step].background,
+                }
+                color_name_matches_writer.write(colorNameMatchRow)
+            }
+        }
+    }
+}
+
 
 ///////////// Demographics /////////////////
 

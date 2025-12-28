@@ -15,3 +15,4 @@
 - 2.0.2:
   - Fix bugs with saving additional language fields
   - Add option for "other" with textbox when selecting countries
+  - In color matching task make sure to save color displayName in addition to the simplified "name"
