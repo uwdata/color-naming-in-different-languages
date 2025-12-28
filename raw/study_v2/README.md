@@ -12,3 +12,6 @@
 
 - 2.0.1:
   - Fix "next" arrow to have transparent background, so when users get a black background, they don't have any big white areas on screen to compare sample colors to.
+- 2.0.2:
+  - Fix bugs with saving additional language fields
+  - Add option for "other" with textbox when selecting countries

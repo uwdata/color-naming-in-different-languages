@@ -9,8 +9,8 @@ const STUDY_2_I = "./study_v2/study_2_data.json"
 
 const NAMES_O = "./color_names.csv"
 
-// const STUDY_1_DEMOGRAPHICS_I = "./study_v1/color_perception_table_demographics.csv"
-// const DEMOGRAPHICS_O = "./demographics.csv"
+const STUDY_1_DEMOGRAPHICS_I = "./study_v1/color_perception_table_demographics.csv"
+const DEMOGRAPHICS_O = "./demographics.csv"
 
 
 const v2_data = JSON.parse(fs.readFileSync(STUDY_2_I))
@@ -77,11 +77,136 @@ for(const participant of v2_data){
     }
 }
 
+///////////// Demographics /////////////////
 
-// const demographics_writer = csvWriter();
-// demographics_writer.pipe(fs.createWriteStream(DEMOGRAPHICS_O));
-//
-// const v1_demographics = await csv().fromFile(STUDY_1_DEMOGRAPHICS_I)
-// for(const demographic of v1_demographics){
-//     demographics_writer.write(demographic)
-// }
+const demographics_writer = csvWriter({
+    headers: [
+        "participantId",
+        "date",
+        "ipCountry", "ipRegion",
+        "locale",
+        "retake",
+        "gender",
+
+        // Study v2 country data
+        "countryGrow", "countryLive", 
+        // Study v1 country data
+        "multinational", "country1", "country2", "country3", "country4", "country5",
+
+        "education",
+
+        "lang0", "lang1", "fluency1", "lang2", "fluency2",
+
+        "age",
+        "colorBlindness", "colorBlindnessOther",
+        "colorWork", "colorWorkDetails",
+        "readingAboutColor",
+        "surroundingBrightness", "surroundingBrightIDK",
+        "monitorBrightness", "monitorBrightIDK",
+        "backgroundColor",
+        "displayColorSpace"
+    ]});
+demographics_writer.pipe(fs.createWriteStream(DEMOGRAPHICS_O));
+
+const v1_demographics = await csv({delimiter: ";"}).fromFile(STUDY_1_DEMOGRAPHICS_I)
+for(const demographic of v1_demographics){
+    //demographics_writer.write(demographic)
+    if(demographic.participantId == 0){ // Study error
+        continue
+    }
+    const demographicRow = {
+        participantId:  demographic.participantId,
+        date: (new Date(demographic.current_time)).getFullYear(),
+        ipCountry: undefined, // todo: do we have this saved elsewhere?
+        ipRegion: undefined, // todo: do we have this saved elsewhere?
+        locale: undefined, // todo: get this information from naming data?
+        retake: demographic.retake == 0 ? "no" : "yes",
+        gender: demographic.gender == 0 ? "male" : demographic.gender == 1 ? "female" : "other",
+        // countryGrow: 
+        // countryLive:
+        multinational: demographic.multinational == 0 ? "no" : "yes",
+        country1: demographic.country1,
+        country2: demographic.country2,
+        country3: demographic.country3,
+        country4: demographic.country4,
+        country5: demographic.country5,
+        education: demographic.education,
+        lang0: demographic.lang0,
+        lang1: demographic.lang1,
+        fluency1: demographic.fluency1,
+        lang2: demographic.lang2,
+        fluency2: demographic.fluency2,
+        age: demographic.age,
+        colorBlindness: demographic.colorBlindness,
+        colorBlindnessOther: demographic.colorBlindnessText0,
+        colorWork: demographic.colorWork == 0 ? "no" : "yes",
+        colorWorkDetails: demographic.colorWorkText0,
+        readingAboutColor: demographic.colorReading ? demographic.colorReading.toLowerCase() : demographic.colorReading,
+        surroundingBrightness: demographic.surrBrightnessSlider,
+        surroundingBrightIDK: demographic.surrBrightIDK,
+        monitorBrightness: demographic.mBrightnessSlider,
+        monitorBrightIDK: demographic.mBrightIDK,
+        backgroundColor: "white",
+        displayColorSpace: "rgb"
+    }
+    demographics_writer.write(demographicRow)
+}
+
+for(const participant of v2_data){
+    const demographicRow = {
+        participantId:  participant.participant_id,
+        date:  participant.litw.initialize.date,
+        ipCountry:  participant.litw.initialize.geoLoc.country,
+        ipRegion:  participant.litw.initialize.geoLoc.region,
+        locale:  participant.litw.initialize.contentLanguage,
+        retake: participant.study.demographics["demographics-retake"],
+        gender: participant.study.demographics["demographics-gender"] !== "other" ? 
+            participant.study.demographics["demographics-gender"] :
+            participant.study.demographics["demographics-gender-other"],
+        countryGrow: participant.study.demographics["demographics-country-grow"] !== "other" ? 
+            participant.study.demographics["demographics-country-grow"] :
+            participant.study.demographics["demographics-country-grow-other"],
+        countryLive: participant.study.demographics["demographics-country-live"] !== "other" ? 
+            participant.study.demographics["demographics-country-live"] :
+            participant.study.demographics["demographics-country-live-other"],
+        // multinational: 
+        // country1:
+        // country2:
+        // country3:
+        // country4:
+        // country5:
+        education: participant.study.demographics["demographics-education"],
+        lang0: participant.study.demographics["demographics-lang0"] !== "Other" ? 
+            participant.study.demographics["demographics-lang0"] :
+            participant.study.demographics["demographics-lang0-other"],
+        lang1: participant.study.demographics["demographics-more-lang"] ? 
+            (
+                participant.study.demographics["demographics-more-lang"]["demographics-lang1"] !== "Other" ?
+                    participant.study.demographics["demographics-more-lang"]["demographics-lang1"] :
+                    participant.study.demographics["demographics-more-lang"]["demographics-lang1-other"]
+            )
+            : undefined,
+        fluency1: participant.study.demographics["demographics-more-lang"] ? participant.study.demographics["demographics-more-lang"]["demographics-lang1-fluency"] : undefined,
+        lang2: participant.study.demographics["demographics-more-lang"] ? 
+            (
+                participant.study.demographics["demographics-more-lang"]["demographics-lang2"] !== "Other" ?
+                    participant.study.demographics["demographics-more-lang"]["demographics-lang2"] :
+                    participant.study.demographics["demographics-more-lang"]["demographics-lang2-other"]
+            )
+            : undefined,
+        fluency2: participant.study.demographics["demographics-more-lang"] ? participant.study.demographics["demographics-more-lang"]["demographics-lang2-fluency"] : undefined,
+        age: participant.study.demographics["demographics-age"],
+        colorBlindness: participant.study.demographics["demographics-color-blindness"],
+        colorBlindnessOther: participant.study.demographics["demographics-color-blindness-other"],
+        colorWork: participant.study.demographics["demographics-color-work"],
+        colorWorkDetails: participant.study.demographics["demographics-color-work-details"],
+        readingAboutColor: participant.study.demographics["demographics-color-reading"],
+        surroundingBrightness: participant.study.demographics["demographics-surrounding-brightness"] ?  participant.study.demographics["demographics-surrounding-brightness"]["demographics-surrounding-brightness-value"] : undefined,
+        surroundingBrightIDK: participant.study.demographics["demographics-surrounding-brightness"] ? participant.study.demographics["demographics-surrounding-brightness"]["demographics-surrounding-brightness-idk"] : undefined,
+        monitorBrightness: participant.study.demographics["demographics-monitor-brightness"] ? participant.study.demographics["demographics-monitor-brightness"]["demographics-monitor-brightness-value"] : undefined,
+        monitorBrightIDK: participant.study.demographics["demographics-monitor-brightness"] ?  participant.study.demographics["demographics-monitor-brightness"]["demographics-monitor-brightness-idk"] : undefined,
+        backgroundColor: participant.study.demographics.background,
+        displayColorSpace: participant.study.demographics.colorSpace
+    }
+    demographics_writer.write(demographicRow)
+}
