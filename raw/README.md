@@ -1,6 +1,11 @@
-## Column Info
+# Raw datasets
+This directory contains our raw datasets (combining data from study v1 and study v2 from the "study_v1" and "study_v2" directories).
 
-### color_names.csv
+## Color Name Tasks
+
+### Naming colors: color_names.csv
+In this tasks, users were presented with colors and asked to enter names for those colors (without hints or assistance).
+
 - participantId : Participant ID (note: many participant IDs were saved as 0 due to an error in the study code)
 - lang : Language of a color name
 - name : Color name entered by participant
@@ -13,6 +18,8 @@
 - locale : Language that the study instructions were displayed in
 - studyVersion : Study Version
 
+### Does name match color?: color_name_matches.csv
+In this tasks, users were presented with colors and names and asked if the color name matched the color tile ("yes", "no", "somewhat", or "don't know").
 
 ## Color Sampling Procedure
 
@@ -24,7 +31,12 @@ To sample the RGB cube, we select 36 random colors from the full space (for vers
 
 
 ## Tile sorting task
-Tiles start with a predetermined shuffled state, so every participant starts from the same place (starting from version 1.1 I believe):
+
+Users were asked to sort color tiles (which they receive a "score" on at the end of the study).
+
+Sorting tiles were chosen to be a maximum saturation (max radius in a/b) ring of 90 colors of uniform brightness (in CIELAB in study v1 and Oklab in v2). See color info in color_sorting_tiles_info.csv.
+
+Tiles start with a predetermined shuffled state, so every participant starts from the same place (starting from version 1.1 I believe). Shuffle information is in color_sorting_tile_start_shuffle.csv and here below:
 ```javascript
 const colorSetsShuffles = [
 		[12,  2, 14, 6,  9,  8,  1,  15, 7,  3,  10, 13, 5,  4,  11],
@@ -35,3 +47,11 @@ const colorSetsShuffles = [
 		[8,  9,  4,  5,  2,  13, 3,  7,  12, 11, 14, 6,  1,  15, 10]
 	]
 ```
+
+The results of the user shuffling task are saved in color_sorting.csv, which also includes information about number of user drag actions used to sort colors, and time spent on each row.
+
+## Demographics
+Demographic information about the study users is saved in demographics.csv, though throughout the life of the study, there were many times demographics did not save properly.
+
+## Combining script: combine_studies_data.js
+This script is used to combine the data from the study_v1 folder and the study_v2 folder
