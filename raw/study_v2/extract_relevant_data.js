@@ -13,6 +13,7 @@ const FIELDS_TO_IGNORE = [
     
     // other tracking info that feels too specific
     ["litw", "initialize", "geoLoc", "city"],
+    ["litw", "initialize", "geoLoc", "region"],
     ["litw", "initialize", "requester"],
     ["litw", "initialize", "userAgent"],
 

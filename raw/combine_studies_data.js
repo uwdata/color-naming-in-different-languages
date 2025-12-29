@@ -3,21 +3,26 @@ import csv from 'csvtojson';
 import csvWriter from 'csv-write-stream'
 
 
-const STUDY_1_NAMES_I = "./study_v1/color_perception_table_color_names.csv" 
-
 const STUDY_2_I = "./study_v2/study_2_data.json"
 
+const STUDY_1_NAMES_I = "./study_v1/color_perception_table_color_names.csv" 
 const NAMES_O = "./color_names.csv"
+
+const NAME_MATCHES_O = "./color_name_matches.csv"
+
+const STUDY_1_SORT_I = "./study_v1/color_sorting_scores.csv" 
+const COLOR_SORT_O = "./color_sorting.csv"
 
 const STUDY_1_DEMOGRAPHICS_I = "./study_v1/color_perception_table_demographics.csv"
 const DEMOGRAPHICS_O = "./demographics.csv"
 
-const NAME_MATCHES_O = "./color_name_matches.csv"
+
 
 const v2_data = JSON.parse(fs.readFileSync(STUDY_2_I))
 
 
 const COLOR_NAME_STEPS = [1,3,5]
+const COLOR_SORT_STEPS = [1,2]
 
 
 ///////////// COLOR NAMES /////////////////
@@ -81,6 +86,81 @@ for(const participant of v2_data){
 }
 
 
+///////////// COLOR NAMES /////////////////
+
+const color_sort_writer = csvWriter({
+    // headers: [
+    //     "participantId",
+    //     "lang",
+    //     "name",
+    //     "colorSpace", "r", "g", "b",
+    //     "trialNum", "tileNum",
+    //     "rgbSet",
+    //     "background",
+    //     "locale",
+    //     "studyVersion"
+    // ]
+});
+color_sort_writer.pipe(fs.createWriteStream(COLOR_SORT_O));
+
+const v1_sorts = await csv().fromFile(STUDY_1_SORT_I)
+for(const colorSort of v1_sorts){
+    if(colorSort.participantId <= 15332){ // data seems corrupted after this, with only Sorts 1,2 & 3
+        const colorSortRow = {
+            participantId: colorSort.participantId,
+            userSort1: colorSort.userSort1,
+            userSort2: colorSort.userSort2,
+            userSort3: colorSort.userSort3,
+            userSort4: colorSort.userSort4,
+            userSort5: colorSort.userSort6,
+            userSort6: colorSort.userSort6,
+            userSort1Drags: colorSort.userSort1Drags,
+            userSort2Drags: colorSort.userSort2Drags,
+            userSort3Drags: colorSort.userSort3Drags,
+            userSort4Drags: colorSort.userSort4Drags,
+            userSort5Drags: colorSort.userSort5Drags,
+            userSort6Drags: colorSort.userSort6Drags,
+            userSort1Time: colorSort.userSort1Time,
+            userSort2Time: colorSort.userSort2Time,
+            userSort3Time: colorSort.userSort3Time,
+            userSort4Time: colorSort.userSort4Time,
+            userSort5Time: colorSort.userSort5Time,
+            userSort6Time: colorSort.userSort6Time,
+            background: "white",
+            sort_score: colorSort.score
+        }
+        color_sort_writer.write(colorSortRow)
+    }
+}
+
+for(const participant of v2_data){
+    const color_sort_sets = participant.study.data.color_sorting_results
+    if(color_sort_sets[COLOR_SORT_STEPS[0]].sortTiles){
+        const colorSortRow = {
+            participantId:  participant.participant_id,
+        }
+        for(const step of COLOR_SORT_STEPS){
+            if(step in color_sort_sets){
+                const tilePage = color_sort_sets[step].sortTilePage
+                colorSortRow.background = color_sort_sets[step].background
+                const color_sort = color_sort_sets[step].sortTiles
+                for(const [sort_i_str, sort_info] of Object.entries(color_sort)){
+                    const sort_i = parseInt(sort_i_str)
+                    const overall_sort_i = (tilePage-1)*3 + sort_i
+                    colorSortRow["userSort" + overall_sort_i] = sort_info.tilesOrder.join(",")
+                    colorSortRow[`userSort${overall_sort_i}Drags`] = sort_info.tilesDrags
+                    colorSortRow[`userSort${overall_sort_i}Time`] = sort_info.tilesTime
+                }
+            }
+        }
+        if("result" in participant.study.data && "sort_score" in  participant.study.data.result){
+            colorSortRow.sort_score = participant.study.data.result.sort_score
+        }
+
+        color_sort_writer.write(colorSortRow)
+    }
+}
+
 ///////////// COLOR NAME MATCHES /////////////////
 
 const color_name_matches_writer = csvWriter();
@@ -123,7 +203,7 @@ const demographics_writer = csvWriter({
     headers: [
         "participantId",
         "date",
-        "ipCountry", "ipRegion",
+        "ipCountry",
         "locale",
         "retake",
         "gender",
