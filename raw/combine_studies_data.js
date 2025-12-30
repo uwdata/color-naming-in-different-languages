@@ -63,23 +63,25 @@ for(const participant of v2_data){
     if(color_name_sets[COLOR_NAME_STEPS[0]].color_names.length > 0){
         for(const step of COLOR_NAME_STEPS){
             const color_names = color_name_sets[step].color_names
-            for(const [name_i, name_info] of color_names.entries()){
-                const colorNameRow = {
-                    participantId:  participant.participant_id,
-                    lang: color_name_sets[step].lang0,
-                    trialNum: color_name_sets[step].trialNum,
-                    tileNum: name_i,
-                    name: name_info.name,
-                    colorSpace: name_info.colorSpace,
-                    r: name_info.r,
-                    g: name_info.g,
-                    b: name_info.b,
-                    rgbSet: color_name_sets[step].rgbSet,
-                    studyVersion: color_name_sets[step].studyVersion,
-                    locale: color_name_sets[step].locale,
-                    background: color_name_sets[step].background,
+            if(color_names.length > 0){
+                for(const [name_i, name_info] of color_names.entries()){
+                    const colorNameRow = {
+                        participantId:  participant.participant_id,
+                        lang: color_name_sets[step].lang0,
+                        trialNum: color_name_sets[step].trialNum,
+                        tileNum: name_i,
+                        name: name_info.name,
+                        colorSpace: name_info.colorSpace,
+                        r: name_info.r,
+                        g: name_info.g,
+                        b: name_info.b,
+                        rgbSet: color_name_sets[step].rgbSet,
+                        studyVersion: color_name_sets[step].studyVersion,
+                        locale: color_name_sets[step].locale,
+                        background: color_name_sets[step].background,
+                    }
+                    color_names_writer.write(colorNameRow)
                 }
-                color_names_writer.write(colorNameRow)
             }
         }
     }
@@ -147,7 +149,7 @@ for(const participant of v2_data){
                 for(const [sort_i_str, sort_info] of Object.entries(color_sort)){
                     const sort_i = parseInt(sort_i_str)
                     const overall_sort_i = (tilePage-1)*3 + sort_i
-                    colorSortRow["userSort" + overall_sort_i] = sort_info.tilesOrder.join(",")
+                    colorSortRow["userSort" + overall_sort_i] = sort_info.tilesOrder.length > 0 ? sort_info.tilesOrder.join(",") : sort_info.tilesOrder
                     colorSortRow[`userSort${overall_sort_i}Drags`] = sort_info.tilesDrags
                     colorSortRow[`userSort${overall_sort_i}Time`] = sort_info.tilesTime
                 }

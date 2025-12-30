@@ -58,8 +58,13 @@ for(const participant_row of study_2_data){
 }
 
 
-// filter participants that have actual info
+// filter participants that have actual info or that we are intending to exclude
 participantInfo = participantInfo.filter(p => {
+    // exclude ones marked specifically as "test"
+    if(p.litw.initialize.urlParams && p.litw.initialize.urlParams.test){
+        return false
+    }
+
     if(p.study.data.color_sorting_results[1].sortTiles[1].tilesOrder.length > 0){
         return true
     }
