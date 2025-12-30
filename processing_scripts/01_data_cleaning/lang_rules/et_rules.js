@@ -6,7 +6,7 @@ const excludeNames = [
 ];
 
 const nameReplacingRules = [
-
+    [/oran$/, "oranz"],
 ];
 
 export default {

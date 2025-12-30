@@ -91,8 +91,8 @@ csv().fromFile(FILE_I)
   // Add language abbreviation to each color name
   for(const colorName of colorNames){
     if(lang_name_changes.map(lnc => lnc.lang).includes(colorName.lang)){
-      colorName.lang = lang_name_changes.find(lnc => lnc.lang == colorName.lang).newLang
       colorName.originalLangAbv = colorName.lang
+      colorName.lang = lang_name_changes.find(lnc => lnc.lang == colorName.lang).newLang
     }
     colorName.langAbv = getLangAbv(colorName.lang)
   }
