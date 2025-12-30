@@ -24,7 +24,7 @@ for(const lang_rule_file_name of lang_rule_files){
 //    and in some languages (e.g., Korean, Chinese) add a standardized ending,
 //    so display name will be consistent with those characteristics
 function standardize_entered(cn){
-  let name = cn.name.replace(/\s*-\s*/, " ")
+  let name = cn.name.replace(/\s*[-_]\s*/, " ")
   name = name.toString().trim().toLowerCase()
 
   if(lang_rules[cn.langAbv]){
@@ -56,11 +56,12 @@ function refine(cn){
 
     if(cn.langAbv in lang_rules){
       const langRules = lang_rules[cn.langAbv]
+
       cn.name = cn.name
         .toLowerCase() // (did we already do this? duplicate? ) // TODO: start with standardized name
         .replace(/\s*$/,"") // trim white space
         .replace(/^\s*/,"")
-        .replace(/-+/g," ")
+        .replace(/[-_]+/g," ")
         .replace(/\s+/g," ")
         ; // turn dashes into spaces
 

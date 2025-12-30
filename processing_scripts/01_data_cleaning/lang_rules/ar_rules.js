@@ -1,6 +1,6 @@
 // Arabic (العربية),وردي,وردي,وردي
 
-const ignoreCharactersForMatching = /[^\u0600-\u06FF]/ig
+const ignoreCharactersForMatching = /[^\u0600-\u06FF\s ]/ig
 
 const keepSpaces = true
 

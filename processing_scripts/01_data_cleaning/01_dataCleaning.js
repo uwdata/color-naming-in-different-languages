@@ -145,7 +145,6 @@ csv().fromFile(FILE_I)
   });
 
   let cleanedData = colorNames.filter(cn => {
-    cn.name = cn.name.toString().trim().toLowerCase().replace(/[- _]+/g,"");
     return cn.name !== "";
   });
 
@@ -162,8 +161,7 @@ csv().fromFile(FILE_I)
 
 
   let removedData = colorNames.filter(cn => {
-    cn.name = cn.name.toString().trim().toLowerCase().replace(/[- _]+/g,"");
-    return cn.name == "";
+    return cn.name === "";
   });
   console.log("writing removed data file");
   let removedWriter = csvWriter({headers: csvDeletedColumnOrder});
