@@ -46,7 +46,17 @@ for(lang of allLangs){
     selected_lang_temp = false
 }
 
-$("#selected_langs").change(e => { 
+$("#selected_langs").change(e => {
+    const selected_lang = $("#selected_langs").val()
+    if(groupedNamesByLang[selected_lang].length > 1000){
+        if($("#min_name_count").val() == 1){
+            $("#min_name_count").val(2)
+        }
+    } else {
+        if($("#min_name_count").val() == 2){
+            $("#min_name_count").val(1)
+        }
+    }
     updateTableData()
 })
 
@@ -127,7 +137,7 @@ function updateTableData(){
     $("#min_name_count_div").show()
     
     table.selectAll("th")
-        .data(Object.keys(groupedNamesByLang[selected_lang][0]))
+        .data(groupedNamesByLang[selected_lang] ? Object.keys(groupedNamesByLang[selected_lang][0]) : [])
         .join("th")
         .text(d => d)
    

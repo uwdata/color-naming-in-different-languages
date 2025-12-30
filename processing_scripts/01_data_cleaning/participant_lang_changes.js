@@ -10,7 +10,23 @@ const participantLangChanges = {
     "11758": "fa",
     "11775": "fa",
     "11776": "fa",
-    "20244": "zh"
+    "20244": "zh",
+
+
+    // Participants with consistently English color names, but labeled as another languages
+    "5904": "en",
+    "6025": "en",
+    "8107": "en",
+    "8220": "en",
+    "9102": "en",
+    "10819": "en",
+    "15017": "en",
+    "18584": "en",
+    "8175": "en",
+    "9249": "en",
+    "18576": "en",
+    "3431": "en",
+    "4874": "en"
 };
 
 
