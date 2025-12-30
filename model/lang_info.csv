@@ -1,6 +1,6 @@
 lang,langAbv,numLineNames,numFullNames,numColorTerms
-English (English),en,47065,145658,545
-"Korean (한국어, 조선어)",ko,2999,13507,146
+English (English),en,47308,145658,545
+"Korean (한국어, 조선어)",ko,2995,13507,146
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,1638,5753,84
 Spanish (español),es,2469,4124,49
 German (Deutsch),de,2594,3721,49
@@ -14,7 +14,7 @@ Swedish (svenska),sv,1471,912,17
 "Finnish (suomi, suomen kieli)",fi,837,530,12
 Romanian (limba română),ro,834,227,4
 Italian (italiano),it,1992,0,0
-Danish (dansk),da,962,0,0
+Danish (dansk),da,955,0,0
 Greek (modern) (ελληνικά),el,928,0,0
 Turkish (Türkçe),tr,876,0,0
 Arabic (العربية),ar,820,0,0
@@ -32,7 +32,6 @@ Bulgarian (български език),bg,387,0,0
 "Estonian (eesti, eesti keel)",et,310,72,0
 Serbian (српски језик),sr,262,0,0
 "Slovene (slovenski jezik, slovenščina)",sl,252,0,0
-,,227,0,0
 Tagalog (Wikang Tagalog),tl,224,0,0
 Macedonian (македонски јазик),mk,216,0,0
 Ukrainian (Українська),uk,202,0,0
@@ -42,7 +41,6 @@ Japanese (日本語 (にほんご)),ja,193,0,0
 "Hindi (हिन्दी, हिंदी)",hi,166,0,0
 Malayalam (മലയാളം),ml,156,0,0
 Urdu (اردو),ur,151,0,0
-Afar (Afaraf),aa,144,0,0
 Afrikaans (Afrikaans),af,132,0,0
 Georgian (ქართული),ka,123,0,0
 Nepali (नेपाली),ne,104,0,0
@@ -50,18 +48,19 @@ Nepali (नेपाली),ne,104,0,0
 Latvian (latviešu valoda),lv,97,0,0
 Akan (Akan),ak,94,0,0
 Tamil (தமிழ்),ta,87,0,0
-Amharic (አማርኛ),am,84,0,0
 "Sinhalese, Sinhala (සිංහල)",si,84,0,0
 Telugu (తెలుగు),te,80,0,0
 Norwegian Nynorsk (Norsk nynorsk),nn,72,0,0
+Amharic (አማርኛ),am,72,0,0
 Albanian (Shqip),sq,71,0,0
 Burmese (ဗမာစာ),my,60,0,0
 Azerbaijani (azərbaycan dili),az,58,0,0
-"Abkhaz (аҧсуа бызшәа, аҧсшәа)",ab,49,0,0
+,,48,0,0
 Sundanese (Basa Sunda),su,48,0,0
 Norwegian (Norsk),no,47,0,0
 Kannada (ಕನ್ನಡ),kn,46,0,0
 "Luxembourgish, Letzeburgesch (Lëtzebuergesch)",lb,46,0,0
+Afar (Afaraf),aa,36,0,0
 Mauritian creole,,36,0,0
 Malay,,36,0,0
 Irish (Gaeilge),ga,36,0,0
@@ -79,6 +78,7 @@ Samoan (gagana fa'a Samoa),sm,28,0,0
 Saurashtri,,24,0,0
 Filipino,,23,0,0
 "Pashto, Pushto (پښتو)",ps,16,0,0
+"Abkhaz (аҧсуа бызшәа, аҧсшәа)",ab,13,0,0
 Cape Verdean Creol,,12,0,0
 "Occitan (occitan, lenga d'òc)",oc,12,0,0
 Welsh (Cymraeg),cy,12,0,0

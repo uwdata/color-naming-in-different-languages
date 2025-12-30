@@ -118,8 +118,8 @@ function refine(cn){
     // re-do some steps in case replacements messed up things
     
     // remove all extra spaces (except where spaces are more needed, like in Arabic and Persian)
-    if(!(cn.langAbv in lang_rules) || !lang_rules[cn.langAbv].keepSpaces){
-      cn.name = cn.name.replace(/\s*/,"")
+    if(!(cn.langAbv in lang_rules) || !("keepSpaces" in lang_rules[cn.langAbv]) || !lang_rules[cn.langAbv].keepSpaces){
+      cn.name = cn.name.replace(/\s*/g,"")
     }
     
     // ensure diacritics removed (in case replacement rules introduced them)

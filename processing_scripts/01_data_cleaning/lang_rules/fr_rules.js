@@ -9,7 +9,7 @@ const nameReplacingRules = [
     [/aqua marine/, "aquamarine"],
 
     [/bleu gommette/, "bleu"],
-    [/bleur/, "bleu"],
+    [/bleur$/, "bleu$"],
     [/blue normal/, "bleu"],
 
     [/^canard/, "bleu canard"],
