@@ -2,7 +2,10 @@
 
 const excludeNames = [
     // English color names:
-    "blue", "green", "purple", "red", "light blue", "yellow", "pink", "electric blue", "king blue", "bright blue", "bright purple", "dark blue", "fluorescent green", "lime", "neon green", "vert flash", "bge", "bleu flashy", "bright green", "electrique", "france", "gold", "green water", "gtz", "jaune primaire", "light green", "marin", "orange red", "printemps", "rose forsythia", "y", "yellow green"
+    "blue", "green", "purple", "red", "light blue", "yellow", "pink", "electric blue", "king blue", "bright blue", "bright purple", "dark blue", "fluorescent green", "lime", "neon green", "vert flash", "bge", "bleu flashy", "bright green", "electrique", "france", "gold", "green water", "gtz", "jaune primaire", "light green", "marin", "orange red", "printemps", "rose forsythia", "y", "yellow green",
+
+    //nonsense
+    "zefza", "fgeklf", "d", "nlndfnzdlanzv", "fezl", "fln", "nl", "l", "d", "fn", "n", "b"
 ];
 const nameReplacingRules = [
     [/aqua$/, "aqua frais"],
