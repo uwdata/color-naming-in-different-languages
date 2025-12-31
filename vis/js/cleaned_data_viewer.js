@@ -48,7 +48,7 @@ for(lang of allLangs){
 
 $("#selected_langs").change(e => {
     const selected_lang = $("#selected_langs").val()
-    if(groupedNamesByLang[selected_lang].length > 1000){
+    if(groupedNamesByLang[selected_lang] && groupedNamesByLang[selected_lang].length > 1000){
         if($("#min_name_count").val() == 1){
             $("#min_name_count").val(2)
         }
@@ -151,14 +151,14 @@ function updateTableData(){
         nameData = nameData.filter(d => d["data count"] > min_name_count)
         $("#filter_lang_note").text(`Filtered down from ${preLength.toLocaleString()}, to ${nameData.length.toLocaleString()} names`)
     }else{
-        $("#filter_lang_note").text(`Showing ${nameData.length.toLocaleString()} names`)
+        $("#filter_lang_note").text(`Showing ${nameData ? nameData.length.toLocaleString() : 0} names`)
     }
 
 
 
     const rows = table
         .selectAll("tr")
-        .data(Object.entries(nameData))
+        .data(Object.entries(nameData ? nameData : []))
         .join("tr")
             .attr("test2", "test2")
             .attr("data-name-i", d => d[0])
