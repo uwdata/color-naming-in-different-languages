@@ -2,22 +2,22 @@
   {
     "frterm": "bleu",
     "roterm": "albastru",
-    "dist": 0.04383157926392868
+    "dist": 0.04404732086522356
   },
   {
     "frterm": "bleu",
     "roterm": "verde",
-    "dist": 0.418677778189103
+    "dist": 0.418603045046749
   },
   {
     "frterm": "bleu",
     "roterm": "roz",
-    "dist": 0.3211187168758319
+    "dist": 0.32113396726643106
   },
   {
     "frterm": "bleu",
     "roterm": "mov",
-    "dist": 0.23033931915841446
+    "dist": 0.23052274081979082
   },
   {
     "frterm": "vert",
@@ -82,22 +82,22 @@
   {
     "frterm": "orange",
     "roterm": "albastru",
-    "dist": 0.388335946623413
+    "dist": 0.38828566107890966
   },
   {
     "frterm": "orange",
     "roterm": "verde",
-    "dist": 0.29564965302456797
+    "dist": 0.2957967882773125
   },
   {
     "frterm": "orange",
     "roterm": "roz",
-    "dist": 0.2536972033616462
+    "dist": 0.25357392725105665
   },
   {
     "frterm": "orange",
     "roterm": "mov",
-    "dist": 0.3596921230026351
+    "dist": 0.35928746086525976
   },
   {
     "frterm": "rouge",
@@ -142,22 +142,22 @@
   {
     "frterm": "turquoise",
     "roterm": "albastru",
-    "dist": 0.3150105282784938
+    "dist": 0.314040947759013
   },
   {
     "frterm": "turquoise",
     "roterm": "verde",
-    "dist": 0.15692860743981385
+    "dist": 0.15819697163039975
   },
   {
     "frterm": "turquoise",
     "roterm": "roz",
-    "dist": 0.40887986283126715
+    "dist": 0.40805435112992955
   },
   {
     "frterm": "turquoise",
     "roterm": "mov",
-    "dist": 0.43497481472801414
+    "dist": 0.4334164761316339
   },
   {
     "frterm": "mauve",
@@ -180,26 +180,6 @@
     "dist": 0.0827925080958325
   },
   {
-    "frterm": "fuchsia",
-    "roterm": "albastru",
-    "dist": 0.33760316409481134
-  },
-  {
-    "frterm": "fuchsia",
-    "roterm": "verde",
-    "dist": 0.5069284808788745
-  },
-  {
-    "frterm": "fuchsia",
-    "roterm": "roz",
-    "dist": 0.04762190386115771
-  },
-  {
-    "frterm": "fuchsia",
-    "roterm": "mov",
-    "dist": 0.1414721923510402
-  },
-  {
     "frterm": "bleuciel",
     "roterm": "albastru",
     "dist": 0.2113645607988912
@@ -218,6 +198,26 @@
     "frterm": "bleuciel",
     "roterm": "mov",
     "dist": 0.3285144160171246
+  },
+  {
+    "frterm": "fuchsia",
+    "roterm": "albastru",
+    "dist": 0.338019881904736
+  },
+  {
+    "frterm": "fuchsia",
+    "roterm": "verde",
+    "dist": 0.5066514050493125
+  },
+  {
+    "frterm": "fuchsia",
+    "roterm": "roz",
+    "dist": 0.04771004821956705
+  },
+  {
+    "frterm": "fuchsia",
+    "roterm": "mov",
+    "dist": 0.14234755951049782
   },
   {
     "frterm": "marron",
@@ -262,22 +262,22 @@
   {
     "frterm": "magenta",
     "roterm": "albastru",
-    "dist": 0.34809933347263877
+    "dist": 0.34651272848646175
   },
   {
     "frterm": "magenta",
     "roterm": "verde",
-    "dist": 0.5073522203265733
+    "dist": 0.5078023805903146
   },
   {
     "frterm": "magenta",
     "roterm": "roz",
-    "dist": 0.06228494654941845
+    "dist": 0.0638246433103221
   },
   {
     "frterm": "magenta",
     "roterm": "mov",
-    "dist": 0.1552700618519119
+    "dist": 0.15194734997022238
   },
   {
     "frterm": "vertclair",
@@ -322,22 +322,22 @@
   {
     "frterm": "cyan",
     "roterm": "albastru",
-    "dist": 0.26071258959555826
+    "dist": 0.25875165127858607
   },
   {
     "frterm": "cyan",
     "roterm": "verde",
-    "dist": 0.20858498361611802
+    "dist": 0.20970086752792783
   },
   {
     "frterm": "cyan",
     "roterm": "roz",
-    "dist": 0.37890336165732225
+    "dist": 0.38160103564775794
   },
   {
     "frterm": "cyan",
     "roterm": "mov",
-    "dist": 0.39333619557194704
+    "dist": 0.39565419853108885
   },
   {
     "frterm": "vertfonce",

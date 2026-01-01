@@ -87,17 +87,17 @@
   {
     "esterm": "azul",
     "esterm2": "fucsia",
-    "dist": 0.32318086620642744
-  },
-  {
-    "esterm": "azul",
-    "esterm2": "magenta",
-    "dist": 0.31457729340945845
+    "dist": 0.32300311127984604
   },
   {
     "esterm": "azul",
     "esterm2": "celeste",
     "dist": 0.237639459334667
+  },
+  {
+    "esterm": "azul",
+    "esterm2": "magenta",
+    "dist": 0.3143084352081354
   },
   {
     "esterm": "azul",
@@ -126,11 +126,6 @@
   },
   {
     "esterm": "azul",
-    "esterm2": "cyan",
-    "dist": 0.2861413148260865
-  },
-  {
-    "esterm": "azul",
     "esterm2": "verdeclaro",
     "dist": 0.42572977535914874
   },
@@ -138,6 +133,11 @@
     "esterm": "azul",
     "esterm2": "purpura",
     "dist": 0.20487074554438278
+  },
+  {
+    "esterm": "azul",
+    "esterm2": "cyan",
+    "dist": 0.28434665388988783
   },
   {
     "esterm": "azul",
@@ -221,13 +221,13 @@
   },
   {
     "esterm": "azul",
-    "esterm2": "salmon",
-    "dist": 0.34846275987899
+    "esterm2": "rosaoscuro",
+    "dist": 0.3200973050459398
   },
   {
     "esterm": "azul",
-    "esterm2": "rosaoscuro",
-    "dist": 0.3200973050459398
+    "esterm2": "salmon",
+    "dist": 0.3474829286336385
   },
   {
     "esterm": "azul",
@@ -331,13 +331,13 @@
   },
   {
     "esterm": "rosa",
-    "esterm2": "salmon",
-    "dist": 0.15703674294768605
+    "esterm2": "rosaoscuro",
+    "dist": 0.09478859421824314
   },
   {
     "esterm": "rosa",
-    "esterm2": "rosaoscuro",
-    "dist": 0.09478859421824314
+    "esterm2": "salmon",
+    "dist": 0.15826263017068032
   },
   {
     "esterm": "rosa",
@@ -441,13 +441,13 @@
   },
   {
     "esterm": "morado",
-    "esterm2": "salmon",
-    "dist": 0.30101988444508576
+    "esterm2": "rosaoscuro",
+    "dist": 0.19906104253835527
   },
   {
     "esterm": "morado",
-    "esterm2": "rosaoscuro",
-    "dist": 0.19906104253835527
+    "esterm2": "salmon",
+    "dist": 0.30129965504547346
   },
   {
     "esterm": "morado",
@@ -536,13 +536,13 @@
   },
   {
     "esterm": "rojo",
-    "esterm2": "salmon",
-    "dist": 0.20264522226633847
+    "esterm2": "rosaoscuro",
+    "dist": 0.11431006015493385
   },
   {
     "esterm": "rojo",
-    "esterm2": "rosaoscuro",
-    "dist": 0.11431006015493385
+    "esterm2": "salmon",
+    "dist": 0.20637113260988632
   },
   {
     "esterm": "rojo",
@@ -636,13 +636,13 @@
   },
   {
     "esterm": "naranja",
-    "esterm2": "salmon",
-    "dist": 0.11797810347203777
+    "esterm2": "rosaoscuro",
+    "dist": 0.22892133830666833
   },
   {
     "esterm": "naranja",
-    "esterm2": "rosaoscuro",
-    "dist": 0.22892133830666833
+    "esterm2": "salmon",
+    "dist": 0.1209225740454894
   },
   {
     "esterm": "naranja",
@@ -707,17 +707,17 @@
   {
     "esterm": "amarillo",
     "esterm2": "fucsia",
-    "dist": 0.4499725108155903
-  },
-  {
-    "esterm": "amarillo",
-    "esterm2": "magenta",
-    "dist": 0.4503357355524626
+    "dist": 0.4499622018728812
   },
   {
     "esterm": "amarillo",
     "esterm2": "celeste",
     "dist": 0.2713715719856289
+  },
+  {
+    "esterm": "amarillo",
+    "esterm2": "magenta",
+    "dist": 0.4490403485421992
   },
   {
     "esterm": "amarillo",
@@ -746,11 +746,6 @@
   },
   {
     "esterm": "amarillo",
-    "esterm2": "cyan",
-    "dist": 0.23795072728010302
-  },
-  {
-    "esterm": "amarillo",
     "esterm2": "verdeclaro",
     "dist": 0.14941407635094472
   },
@@ -758,6 +753,11 @@
     "esterm": "amarillo",
     "esterm2": "purpura",
     "dist": 0.5430626812112589
+  },
+  {
+    "esterm": "amarillo",
+    "esterm2": "cyan",
+    "dist": 0.2402078370422967
   },
   {
     "esterm": "amarillo",
@@ -841,13 +841,13 @@
   },
   {
     "esterm": "amarillo",
-    "esterm2": "salmon",
-    "dist": 0.30467485122000376
+    "esterm2": "rosaoscuro",
+    "dist": 0.4371568770615555
   },
   {
     "esterm": "amarillo",
-    "esterm2": "rosaoscuro",
-    "dist": 0.4371568770615555
+    "esterm2": "salmon",
+    "dist": 0.30501097747427425
   },
   {
     "esterm": "amarillo",
@@ -907,322 +907,177 @@
   {
     "esterm": "fucsia",
     "esterm2": "verde",
-    "dist": 0.44853428689732494
+    "dist": 0.44834759087749493
   },
   {
     "esterm": "fucsia",
     "esterm2": "rosa",
-    "dist": 0.07445011451037269
+    "dist": 0.07430183620213468
   },
   {
     "esterm": "fucsia",
     "esterm2": "morado",
-    "dist": 0.20016688237182506
+    "dist": 0.19962177714122012
   },
   {
     "esterm": "fucsia",
     "esterm2": "rojo",
-    "dist": 0.16936531606698382
+    "dist": 0.16947785968505316
   },
   {
     "esterm": "fucsia",
     "esterm2": "naranja",
-    "dist": 0.256403854969154
+    "dist": 0.25660672408367774
   },
   {
     "esterm": "fucsia",
     "esterm2": "violeta",
-    "dist": 0.1899732112470297
+    "dist": 0.18943540112812673
   },
   {
     "esterm": "fucsia",
     "esterm2": "magenta",
-    "dist": 0.02113298285571151
+    "dist": 0.021167187936078836
   },
   {
     "esterm": "fucsia",
     "esterm2": "turquesa",
-    "dist": 0.4012504989563401
+    "dist": 0.4011281848195
   },
   {
     "esterm": "fucsia",
     "esterm2": "lila",
-    "dist": 0.1807711209494427
+    "dist": 0.18035808078485419
   },
   {
     "esterm": "fucsia",
     "esterm2": "marron",
-    "dist": 0.29697235103280684
+    "dist": 0.29658652125237717
   },
   {
     "esterm": "fucsia",
     "esterm2": "gris",
-    "dist": 0.28955081156480755
+    "dist": 0.28921645821567715
   },
   {
     "esterm": "fucsia",
     "esterm2": "verdeclaro",
-    "dist": 0.4852439584869374
+    "dist": 0.48513466372508257
   },
   {
     "esterm": "fucsia",
     "esterm2": "purpura",
-    "dist": 0.19807060818279604
+    "dist": 0.19753785796646167
   },
   {
     "esterm": "fucsia",
     "esterm2": "verdelimon",
-    "dist": 0.48997704865398056
+    "dist": 0.4898770144145436
   },
   {
     "esterm": "fucsia",
     "esterm2": "verdeoscuro",
-    "dist": 0.4019099648243193
+    "dist": 0.4014910025734653
   },
   {
     "esterm": "fucsia",
     "esterm2": "negro",
-    "dist": 0.5178419344953668
+    "dist": 0.5173910428836299
   },
   {
     "esterm": "fucsia",
     "esterm2": "verdeagua",
-    "dist": 0.4549667373795235
+    "dist": 0.4548301859315646
   },
   {
     "esterm": "fucsia",
     "esterm2": "mostaza",
-    "dist": 0.34985171012813654
+    "dist": 0.34974232547871065
   },
   {
     "esterm": "fucsia",
     "esterm2": "verdelima",
-    "dist": 0.4926741582519531
+    "dist": 0.4925854074723288
   },
   {
     "esterm": "fucsia",
     "esterm2": "ocre",
-    "dist": 0.3262905644627886
+    "dist": 0.3261565189812066
   },
   {
     "esterm": "fucsia",
     "esterm2": "lima",
-    "dist": 0.505634846952074
+    "dist": 0.5055463895958916
   },
   {
     "esterm": "fucsia",
     "esterm2": "verdeoliva",
-    "dist": 0.3667879176051012
-  },
-  {
-    "esterm": "fucsia",
-    "esterm2": "salmon",
-    "dist": 0.22447718129461208
+    "dist": 0.3664802559782503
   },
   {
     "esterm": "fucsia",
     "esterm2": "rosaoscuro",
-    "dist": 0.08642075031754096
+    "dist": 0.0861412776052908
+  },
+  {
+    "esterm": "fucsia",
+    "esterm2": "salmon",
+    "dist": 0.2261262448767065
   },
   {
     "esterm": "fucsia",
     "esterm2": "verdeazulado",
-    "dist": 0.42010709913413713
+    "dist": 0.41986397366828415
   },
   {
     "esterm": "fucsia",
     "esterm2": "moradooscuro",
-    "dist": 0.3471196527944442
+    "dist": 0.3466208920596994
   },
   {
     "esterm": "fucsia",
     "esterm2": "marronclaro",
-    "dist": 0.27698638710531226
+    "dist": 0.2767563276415023
   },
   {
     "esterm": "fucsia",
     "esterm2": "verdemilitar",
-    "dist": 0.3580940918468543
+    "dist": 0.35776025179915943
   },
   {
     "esterm": "fucsia",
     "esterm2": "verdepastel",
-    "dist": 0.4809529423398711
+    "dist": 0.4808789823626655
   },
   {
     "esterm": "fucsia",
     "esterm2": "vino",
-    "dist": 0.30719543299171626
+    "dist": 0.30675006924486997
   },
   {
     "esterm": "fucsia",
     "esterm2": "lilaoscuro",
-    "dist": 0.19308693010301214
+    "dist": 0.1926068539633299
   },
   {
     "esterm": "fucsia",
     "esterm2": "piel",
-    "dist": 0.3252749633465676
+    "dist": 0.32518486504168165
   },
   {
     "esterm": "fucsia",
     "esterm2": "moradoclaro",
-    "dist": 0.2049095198933639
+    "dist": 0.2045160423814002
   },
   {
     "esterm": "fucsia",
     "esterm2": "marronoscuro",
-    "dist": 0.4026298070829155
+    "dist": 0.40219131064494035
   },
   {
     "esterm": "fucsia",
     "esterm2": "granate",
-    "dist": 0.320128967963578
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "verde",
-    "dist": 0.4408620640782066
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "rosa",
-    "dist": 0.07461205724533208
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "morado",
-    "dist": 0.18852845926441764
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "rojo",
-    "dist": 0.16438409027136022
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "naranja",
-    "dist": 0.25730948264222786
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "violeta",
-    "dist": 0.17790602902840186
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "turquesa",
-    "dist": 0.3974120128153673
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "marron",
-    "dist": 0.2837275333318257
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "verdeclaro",
-    "dist": 0.48284653666063126
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "purpura",
-    "dist": 0.188011281554459
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "verdelimon",
-    "dist": 0.48619739735251793
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "verdeoscuro",
-    "dist": 0.38902247082037683
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "negro",
-    "dist": 0.5049310911129065
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "verdeagua",
-    "dist": 0.45217890159612584
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "mostaza",
-    "dist": 0.34710095528778906
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "verdelima",
-    "dist": 0.4905146115883093
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "ocre",
-    "dist": 0.3234072786499621
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "verdeoliva",
-    "dist": 0.3562293037224607
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "salmon",
-    "dist": 0.22329236151345955
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "rosaoscuro",
-    "dist": 0.07479442170814513
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "verdeazulado",
-    "dist": 0.4144816494168044
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "moradooscuro",
-    "dist": 0.3348535969097373
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "marronclaro",
-    "dist": 0.2703167903703512
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "verdemilitar",
-    "dist": 0.3484487593113745
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "verdepastel",
-    "dist": 0.4802015432826077
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "vino",
-    "dist": 0.29514973489451035
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "piel",
-    "dist": 0.32425431526750587
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "moradoclaro",
-    "dist": 0.19893928677407072
-  },
-  {
-    "esterm": "magenta",
-    "esterm2": "marronoscuro",
-    "dist": 0.38958626216499825
+    "dist": 0.3197046494672422
   },
   {
     "esterm": "celeste",
@@ -1257,12 +1112,12 @@
   {
     "esterm": "celeste",
     "esterm2": "fucsia",
-    "dist": 0.36434212444472164
+    "dist": 0.3641071451973559
   },
   {
     "esterm": "celeste",
     "esterm2": "magenta",
-    "dist": 0.3617638647417064
+    "dist": 0.35970695025973415
   },
   {
     "esterm": "celeste",
@@ -1286,11 +1141,6 @@
   },
   {
     "esterm": "celeste",
-    "esterm2": "cyan",
-    "dist": 0.07914035292319051
-  },
-  {
-    "esterm": "celeste",
     "esterm2": "verdeclaro",
     "dist": 0.2211462473818137
   },
@@ -1298,6 +1148,11 @@
     "esterm": "celeste",
     "esterm2": "purpura",
     "dist": 0.3612107019574656
+  },
+  {
+    "esterm": "celeste",
+    "esterm2": "cyan",
+    "dist": 0.08167647598166343
   },
   {
     "esterm": "celeste",
@@ -1346,13 +1201,13 @@
   },
   {
     "esterm": "celeste",
-    "esterm2": "salmon",
-    "dist": 0.2816462814324908
+    "esterm2": "rosaoscuro",
+    "dist": 0.36547002166378184
   },
   {
     "esterm": "celeste",
-    "esterm2": "rosaoscuro",
-    "dist": 0.36547002166378184
+    "esterm2": "salmon",
+    "dist": 0.28001494663335824
   },
   {
     "esterm": "celeste",
@@ -1408,6 +1263,151 @@
     "esterm": "celeste",
     "esterm2": "granate",
     "dist": 0.46566403728147365
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "verde",
+    "dist": 0.4400235119953333
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "rosa",
+    "dist": 0.0730318132367583
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "morado",
+    "dist": 0.18733201775225
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "rojo",
+    "dist": 0.1665434184436046
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "naranja",
+    "dist": 0.25784419982835854
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "violeta",
+    "dist": 0.17654723656226423
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "turquesa",
+    "dist": 0.3970423616818518
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "marron",
+    "dist": 0.2837953113208718
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "verdeclaro",
+    "dist": 0.4814229880791592
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "purpura",
+    "dist": 0.18690582226629743
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "verdelimon",
+    "dist": 0.4849745751552178
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "verdeoscuro",
+    "dist": 0.3885359539023125
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "negro",
+    "dist": 0.5052301040729474
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "verdeagua",
+    "dist": 0.4505920839137882
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "mostaza",
+    "dist": 0.34597842771724724
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "verdelima",
+    "dist": 0.48921660910992215
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "ocre",
+    "dist": 0.32232075861464277
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "verdeoliva",
+    "dist": 0.35566178720338254
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "rosaoscuro",
+    "dist": 0.07573804753473132
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "salmon",
+    "dist": 0.2237753658736862
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "verdeazulado",
+    "dist": 0.41312623345123556
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "moradooscuro",
+    "dist": 0.3348139519038749
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "marronclaro",
+    "dist": 0.26940414215343045
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "verdemilitar",
+    "dist": 0.3476684636318285
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "verdepastel",
+    "dist": 0.47858667366142355
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "vino",
+    "dist": 0.29563698991701554
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "piel",
+    "dist": 0.32291220088517
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "moradoclaro",
+    "dist": 0.19722833130343045
+  },
+  {
+    "esterm": "magenta",
+    "esterm2": "marronoscuro",
+    "dist": 0.3899574866241175
   },
   {
     "esterm": "turquesa",
@@ -1502,7 +1502,7 @@
   {
     "esterm": "lila",
     "esterm2": "magenta",
-    "dist": 0.17483809064952754
+    "dist": 0.17287762546306717
   },
   {
     "esterm": "lila",
@@ -1571,13 +1571,13 @@
   },
   {
     "esterm": "lila",
-    "esterm2": "salmon",
-    "dist": 0.20756976424734053
+    "esterm2": "rosaoscuro",
+    "dist": 0.1973977944460722
   },
   {
     "esterm": "lila",
-    "esterm2": "rosaoscuro",
-    "dist": 0.1973977944460722
+    "esterm2": "salmon",
+    "dist": 0.20693288782878216
   },
   {
     "esterm": "lila",
@@ -1716,13 +1716,13 @@
   },
   {
     "esterm": "marron",
-    "esterm2": "salmon",
-    "dist": 0.25066837945905546
+    "esterm2": "rosaoscuro",
+    "dist": 0.22561946089154705
   },
   {
     "esterm": "marron",
-    "esterm2": "rosaoscuro",
-    "dist": 0.22561946089154705
+    "esterm2": "salmon",
+    "dist": 0.25200434064813343
   },
   {
     "esterm": "marron",
@@ -1802,7 +1802,7 @@
   {
     "esterm": "gris",
     "esterm2": "magenta",
-    "dist": 0.2801535689156293
+    "dist": 0.2789782830662618
   },
   {
     "esterm": "gris",
@@ -1876,13 +1876,13 @@
   },
   {
     "esterm": "gris",
-    "esterm2": "salmon",
-    "dist": 0.16810529388707354
+    "esterm2": "rosaoscuro",
+    "dist": 0.2534975752387151
   },
   {
     "esterm": "gris",
-    "esterm2": "rosaoscuro",
-    "dist": 0.2534975752387151
+    "esterm2": "salmon",
+    "dist": 0.16685299133693662
   },
   {
     "esterm": "gris",
@@ -1967,17 +1967,17 @@
   {
     "esterm": "azulmarino",
     "esterm2": "fucsia",
-    "dist": 0.37366798660942563
-  },
-  {
-    "esterm": "azulmarino",
-    "esterm2": "magenta",
-    "dist": 0.36084497498963697
+    "dist": 0.3731166389439475
   },
   {
     "esterm": "azulmarino",
     "esterm2": "celeste",
     "dist": 0.42043076295422
+  },
+  {
+    "esterm": "azulmarino",
+    "esterm2": "magenta",
+    "dist": 0.36020628033275426
   },
   {
     "esterm": "azulmarino",
@@ -2001,11 +2001,6 @@
   },
   {
     "esterm": "azulmarino",
-    "esterm2": "cyan",
-    "dist": 0.4796513722107362
-  },
-  {
-    "esterm": "azulmarino",
     "esterm2": "verdeclaro",
     "dist": 0.5728157152338527
   },
@@ -2013,6 +2008,11 @@
     "esterm": "azulmarino",
     "esterm2": "purpura",
     "dist": 0.20271192947668726
+  },
+  {
+    "esterm": "azulmarino",
+    "esterm2": "cyan",
+    "dist": 0.47948444551813674
   },
   {
     "esterm": "azulmarino",
@@ -2081,13 +2081,13 @@
   },
   {
     "esterm": "azulmarino",
-    "esterm2": "salmon",
-    "dist": 0.44065450075748824
+    "esterm2": "rosaoscuro",
+    "dist": 0.34958213410669653
   },
   {
     "esterm": "azulmarino",
-    "esterm2": "rosaoscuro",
-    "dist": 0.34958213410669653
+    "esterm2": "salmon",
+    "dist": 0.44093604123792746
   },
   {
     "esterm": "azulmarino",
@@ -2143,186 +2143,6 @@
     "esterm": "azulmarino",
     "esterm2": "granate",
     "dist": 0.2330037753088655
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "verde",
-    "dist": 0.18030974213365045
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "rosa",
-    "dist": 0.36069489968342505
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "morado",
-    "dist": 0.42095322838013494
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "rojo",
-    "dist": 0.426517827595843
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "naranja",
-    "dist": 0.2978346908694427
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "violeta",
-    "dist": 0.39830789144068157
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "fucsia",
-    "dist": 0.40302209978677733
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "magenta",
-    "dist": 0.4022365537218652
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "turquesa",
-    "dist": 0.046846028597916776
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "lila",
-    "dist": 0.3068132981368368
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "marron",
-    "dist": 0.40347492649856476
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "gris",
-    "dist": 0.23493390458108326
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "verdeclaro",
-    "dist": 0.18588221084778148
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "purpura",
-    "dist": 0.4250237271972709
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "verdelimon",
-    "dist": 0.20492263252976672
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "verdeoscuro",
-    "dist": 0.36874712133561083
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "negro",
-    "dist": 0.645977672037541
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "verdeagua",
-    "dist": 0.11137136345470827
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "mostaza",
-    "dist": 0.23361963943906125
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "verdelima",
-    "dist": 0.21570903216143428
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "ocre",
-    "dist": 0.2395493501450871
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "lima",
-    "dist": 0.2152119654964883
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "verdeoliva",
-    "dist": 0.2838365966902131
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "salmon",
-    "dist": 0.3156930906298963
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "rosaoscuro",
-    "dist": 0.40800818735075983
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "verdeazulado",
-    "dist": 0.14714346970678727
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "moradooscuro",
-    "dist": 0.5346867782850445
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "marronclaro",
-    "dist": 0.29069018569966315
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "verdemilitar",
-    "dist": 0.3057071019352286
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "verdepastel",
-    "dist": 0.189794401008799
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "vino",
-    "dist": 0.5217254451511208
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "lilaoscuro",
-    "dist": 0.35436979404433183
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "piel",
-    "dist": 0.24771386104671328
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "moradoclaro",
-    "dist": 0.3177205510619676
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "marronoscuro",
-    "dist": 0.5496524966953016
-  },
-  {
-    "esterm": "cyan",
-    "esterm2": "granate",
-    "dist": 0.5139252659678111
   },
   {
     "esterm": "verdeclaro",
@@ -2421,13 +2241,13 @@
   },
   {
     "esterm": "purpura",
-    "esterm2": "salmon",
-    "dist": 0.3188360283579526
+    "esterm2": "rosaoscuro",
+    "dist": 0.20442357479015516
   },
   {
     "esterm": "purpura",
-    "esterm2": "rosaoscuro",
-    "dist": 0.20442357479015516
+    "esterm2": "salmon",
+    "dist": 0.3191267618982185
   },
   {
     "esterm": "purpura",
@@ -2448,6 +2268,186 @@
     "esterm": "purpura",
     "esterm2": "vino",
     "dist": 0.22623540226331065
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "verde",
+    "dist": 0.18064707833575863
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "rosa",
+    "dist": 0.3621018108251251
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "morado",
+    "dist": 0.42129427997239566
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "rojo",
+    "dist": 0.4264623848369011
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "naranja",
+    "dist": 0.2995902237668211
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "violeta",
+    "dist": 0.39872451150562743
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "fucsia",
+    "dist": 0.40434771838105493
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "magenta",
+    "dist": 0.4027091468312055
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "turquesa",
+    "dist": 0.04834961495736917
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "lila",
+    "dist": 0.3075901335295998
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "marron",
+    "dist": 0.40390009125518106
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "gris",
+    "dist": 0.23618173986786098
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "verdeclaro",
+    "dist": 0.18770988028210261
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "purpura",
+    "dist": 0.4253387388945494
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "verdelimon",
+    "dist": 0.20646513169325945
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "verdeoscuro",
+    "dist": 0.36884082572184984
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "negro",
+    "dist": 0.645756578350397
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "verdeagua",
+    "dist": 0.11289479489770327
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "mostaza",
+    "dist": 0.23532126044139992
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "verdelima",
+    "dist": 0.21746296558600808
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "ocre",
+    "dist": 0.24147961714301122
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "lima",
+    "dist": 0.2171085829162067
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "verdeoliva",
+    "dist": 0.2844333773540919
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "rosaoscuro",
+    "dist": 0.4089769520415981
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "salmon",
+    "dist": 0.31630014846110055
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "verdeazulado",
+    "dist": 0.14789573824303884
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "moradooscuro",
+    "dist": 0.5346478033292703
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "marronclaro",
+    "dist": 0.29208049258504415
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "verdemilitar",
+    "dist": 0.30655480634145743
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "verdepastel",
+    "dist": 0.1922622646510017
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "vino",
+    "dist": 0.5219429788520229
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "lilaoscuro",
+    "dist": 0.3549143391538069
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "piel",
+    "dist": 0.24981495599843045
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "moradoclaro",
+    "dist": 0.31849521566977784
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "marronoscuro",
+    "dist": 0.5497061433432502
+  },
+  {
+    "esterm": "cyan",
+    "esterm2": "granate",
+    "dist": 0.5141477872780923
   },
   {
     "esterm": "azuloscuro",
@@ -2482,17 +2482,17 @@
   {
     "esterm": "azuloscuro",
     "esterm2": "fucsia",
-    "dist": 0.3542567724793375
-  },
-  {
-    "esterm": "azuloscuro",
-    "esterm2": "magenta",
-    "dist": 0.34182717715949934
+    "dist": 0.3537177025374911
   },
   {
     "esterm": "azuloscuro",
     "esterm2": "celeste",
     "dist": 0.39342483287465313
+  },
+  {
+    "esterm": "azuloscuro",
+    "esterm2": "magenta",
+    "dist": 0.34103582382501724
   },
   {
     "esterm": "azuloscuro",
@@ -2516,11 +2516,6 @@
   },
   {
     "esterm": "azuloscuro",
-    "esterm2": "cyan",
-    "dist": 0.445541085586652
-  },
-  {
-    "esterm": "azuloscuro",
     "esterm2": "verdeclaro",
     "dist": 0.556407735243278
   },
@@ -2528,6 +2523,11 @@
     "esterm": "azuloscuro",
     "esterm2": "purpura",
     "dist": 0.1926078797784874
+  },
+  {
+    "esterm": "azuloscuro",
+    "esterm2": "cyan",
+    "dist": 0.4453447048701811
   },
   {
     "esterm": "azuloscuro",
@@ -2591,13 +2591,13 @@
   },
   {
     "esterm": "azuloscuro",
-    "esterm2": "salmon",
-    "dist": 0.4322184918704327
+    "esterm2": "rosaoscuro",
+    "dist": 0.3388258676014028
   },
   {
     "esterm": "azuloscuro",
-    "esterm2": "rosaoscuro",
-    "dist": 0.3388258676014028
+    "esterm2": "salmon",
+    "dist": 0.43225444909450567
   },
   {
     "esterm": "azuloscuro",
@@ -2687,17 +2687,17 @@
   {
     "esterm": "azulclaro",
     "esterm2": "fucsia",
-    "dist": 0.31860844681207245
-  },
-  {
-    "esterm": "azulclaro",
-    "esterm2": "magenta",
-    "dist": 0.3163559412053493
+    "dist": 0.3185557474908371
   },
   {
     "esterm": "azulclaro",
     "esterm2": "celeste",
     "dist": 0.1038894313078857
+  },
+  {
+    "esterm": "azulclaro",
+    "esterm2": "magenta",
+    "dist": 0.3155573124790617
   },
   {
     "esterm": "azulclaro",
@@ -2726,11 +2726,6 @@
   },
   {
     "esterm": "azulclaro",
-    "esterm2": "cyan",
-    "dist": 0.1591529707407273
-  },
-  {
-    "esterm": "azulclaro",
     "esterm2": "verdeclaro",
     "dist": 0.3107371459763602
   },
@@ -2738,6 +2733,11 @@
     "esterm": "azulclaro",
     "esterm2": "purpura",
     "dist": 0.2882781421300601
+  },
+  {
+    "esterm": "azulclaro",
+    "esterm2": "cyan",
+    "dist": 0.15996169265268523
   },
   {
     "esterm": "azulclaro",
@@ -2811,13 +2811,13 @@
   },
   {
     "esterm": "azulclaro",
-    "esterm2": "salmon",
-    "dist": 0.2926050541715681
+    "esterm2": "rosaoscuro",
+    "dist": 0.32893979675314966
   },
   {
     "esterm": "azulclaro",
-    "esterm2": "rosaoscuro",
-    "dist": 0.32893979675314966
+    "esterm2": "salmon",
+    "dist": 0.29106421921862724
   },
   {
     "esterm": "azulclaro",
@@ -2907,17 +2907,17 @@
   {
     "esterm": "cafe",
     "esterm2": "fucsia",
-    "dist": 0.28904731813006407
-  },
-  {
-    "esterm": "cafe",
-    "esterm2": "magenta",
-    "dist": 0.2756712648839358
+    "dist": 0.28866041710377566
   },
   {
     "esterm": "cafe",
     "esterm2": "celeste",
     "dist": 0.34481009131896806
+  },
+  {
+    "esterm": "cafe",
+    "esterm2": "magenta",
+    "dist": 0.2756358940086768
   },
   {
     "esterm": "cafe",
@@ -2941,11 +2941,6 @@
   },
   {
     "esterm": "cafe",
-    "esterm2": "cyan",
-    "dist": 0.38861009991427686
-  },
-  {
-    "esterm": "cafe",
     "esterm2": "verdeclaro",
     "dist": 0.39639033520476
   },
@@ -2953,6 +2948,11 @@
     "esterm": "cafe",
     "esterm2": "purpura",
     "dist": 0.2506778418517098
+  },
+  {
+    "esterm": "cafe",
+    "esterm2": "cyan",
+    "dist": 0.38908948642015934
   },
   {
     "esterm": "cafe",
@@ -3001,13 +3001,13 @@
   },
   {
     "esterm": "cafe",
-    "esterm2": "salmon",
-    "dist": 0.2274595727551489
+    "esterm2": "rosaoscuro",
+    "dist": 0.2189663402964843
   },
   {
     "esterm": "cafe",
-    "esterm2": "rosaoscuro",
-    "dist": 0.2189663402964843
+    "esterm2": "salmon",
+    "dist": 0.22872524287687393
   },
   {
     "esterm": "cafe",
@@ -3097,17 +3097,17 @@
   {
     "esterm": "azulcielo",
     "esterm2": "fucsia",
-    "dist": 0.3323449335870034
-  },
-  {
-    "esterm": "azulcielo",
-    "esterm2": "magenta",
-    "dist": 0.3297250812361797
+    "dist": 0.33207301136129336
   },
   {
     "esterm": "azulcielo",
     "esterm2": "celeste",
     "dist": 0.05990327871634119
+  },
+  {
+    "esterm": "azulcielo",
+    "esterm2": "magenta",
+    "dist": 0.32884680254929155
   },
   {
     "esterm": "azulcielo",
@@ -3136,11 +3136,6 @@
   },
   {
     "esterm": "azulcielo",
-    "esterm2": "cyan",
-    "dist": 0.12126500127078024
-  },
-  {
-    "esterm": "azulcielo",
     "esterm2": "verdeclaro",
     "dist": 0.2723110571739726
   },
@@ -3148,6 +3143,11 @@
     "esterm": "azulcielo",
     "esterm2": "purpura",
     "dist": 0.3211645600016023
+  },
+  {
+    "esterm": "azulcielo",
+    "esterm2": "cyan",
+    "dist": 0.12272939812579582
   },
   {
     "esterm": "azulcielo",
@@ -3226,13 +3226,13 @@
   },
   {
     "esterm": "azulcielo",
-    "esterm2": "salmon",
-    "dist": 0.2842241179775237
+    "esterm2": "rosaoscuro",
+    "dist": 0.34156540581889483
   },
   {
     "esterm": "azulcielo",
-    "esterm2": "rosaoscuro",
-    "dist": 0.34156540581889483
+    "esterm2": "salmon",
+    "dist": 0.28262493206119044
   },
   {
     "esterm": "azulcielo",
@@ -3401,13 +3401,13 @@
   },
   {
     "esterm": "negro",
-    "esterm2": "salmon",
-    "dist": 0.5203862158242404
+    "esterm2": "rosaoscuro",
+    "dist": 0.4605871355857083
   },
   {
     "esterm": "negro",
-    "esterm2": "rosaoscuro",
-    "dist": 0.4605871355857083
+    "esterm2": "salmon",
+    "dist": 0.5198143563860663
   },
   {
     "esterm": "negro",
@@ -3527,17 +3527,17 @@
   {
     "esterm": "aguamarina",
     "esterm2": "fucsia",
-    "dist": 0.41601143782124494
-  },
-  {
-    "esterm": "aguamarina",
-    "esterm2": "magenta",
-    "dist": 0.4126986251599871
+    "dist": 0.41584862409098067
   },
   {
     "esterm": "aguamarina",
     "esterm2": "celeste",
     "dist": 0.10330298123052395
+  },
+  {
+    "esterm": "aguamarina",
+    "esterm2": "magenta",
+    "dist": 0.41100116727276587
   },
   {
     "esterm": "aguamarina",
@@ -3566,11 +3566,6 @@
   },
   {
     "esterm": "aguamarina",
-    "esterm2": "cyan",
-    "dist": 0.055518268952976395
-  },
-  {
-    "esterm": "aguamarina",
     "esterm2": "verdeclaro",
     "dist": 0.14367667431254064
   },
@@ -3578,6 +3573,11 @@
     "esterm": "aguamarina",
     "esterm2": "purpura",
     "dist": 0.4396062585805467
+  },
+  {
+    "esterm": "aguamarina",
+    "esterm2": "cyan",
+    "dist": 0.057167179764638074
   },
   {
     "esterm": "aguamarina",
@@ -3661,13 +3661,13 @@
   },
   {
     "esterm": "aguamarina",
-    "esterm2": "salmon",
-    "dist": 0.3057510990817149
+    "esterm2": "rosaoscuro",
+    "dist": 0.40753919148154877
   },
   {
     "esterm": "aguamarina",
-    "esterm2": "rosaoscuro",
-    "dist": 0.40753919148154877
+    "esterm2": "salmon",
+    "dist": 0.3045949112863351
   },
   {
     "esterm": "aguamarina",
@@ -3757,17 +3757,17 @@
   {
     "esterm": "azulrey",
     "esterm2": "fucsia",
-    "dist": 0.34957757560721847
-  },
-  {
-    "esterm": "azulrey",
-    "esterm2": "magenta",
-    "dist": 0.3418820517359187
+    "dist": 0.349367426782689
   },
   {
     "esterm": "azulrey",
     "esterm2": "celeste",
     "dist": 0.3506640419482459
+  },
+  {
+    "esterm": "azulrey",
+    "esterm2": "magenta",
+    "dist": 0.3417081525169079
   },
   {
     "esterm": "azulrey",
@@ -3791,11 +3791,6 @@
   },
   {
     "esterm": "azulrey",
-    "esterm2": "cyan",
-    "dist": 0.39839683031405243
-  },
-  {
-    "esterm": "azulrey",
     "esterm2": "verdeclaro",
     "dist": 0.536673645394715
   },
@@ -3803,6 +3798,11 @@
     "esterm": "azulrey",
     "esterm2": "purpura",
     "dist": 0.19971611620366742
+  },
+  {
+    "esterm": "azulrey",
+    "esterm2": "cyan",
+    "dist": 0.39653996767678235
   },
   {
     "esterm": "azulrey",
@@ -3861,13 +3861,13 @@
   },
   {
     "esterm": "azulrey",
-    "esterm2": "salmon",
-    "dist": 0.4294690079634064
+    "esterm2": "rosaoscuro",
+    "dist": 0.3542493048018353
   },
   {
     "esterm": "azulrey",
-    "esterm2": "rosaoscuro",
-    "dist": 0.3542493048018353
+    "esterm2": "salmon",
+    "dist": 0.4289813302541175
   },
   {
     "esterm": "azulrey",
@@ -4001,13 +4001,13 @@
   },
   {
     "esterm": "mostaza",
-    "esterm2": "salmon",
-    "dist": 0.17076752288292646
+    "esterm2": "rosaoscuro",
+    "dist": 0.32131919391555414
   },
   {
     "esterm": "mostaza",
-    "esterm2": "rosaoscuro",
-    "dist": 0.32131919391555414
+    "esterm2": "salmon",
+    "dist": 0.17099348830029817
   },
   {
     "esterm": "mostaza",
@@ -4102,17 +4102,17 @@
   {
     "esterm": "azulelectrico",
     "esterm2": "fucsia",
-    "dist": 0.3614946849553416
-  },
-  {
-    "esterm": "azulelectrico",
-    "esterm2": "magenta",
-    "dist": 0.353563292746887
+    "dist": 0.3612710212008721
   },
   {
     "esterm": "azulelectrico",
     "esterm2": "celeste",
     "dist": 0.37980224696020065
+  },
+  {
+    "esterm": "azulelectrico",
+    "esterm2": "magenta",
+    "dist": 0.3536345145284895
   },
   {
     "esterm": "azulelectrico",
@@ -4141,11 +4141,6 @@
   },
   {
     "esterm": "azulelectrico",
-    "esterm2": "cyan",
-    "dist": 0.42717763262360375
-  },
-  {
-    "esterm": "azulelectrico",
     "esterm2": "verdeclaro",
     "dist": 0.5616940973095671
   },
@@ -4153,6 +4148,11 @@
     "esterm": "azulelectrico",
     "esterm2": "purpura",
     "dist": 0.201704863137515
+  },
+  {
+    "esterm": "azulelectrico",
+    "esterm2": "cyan",
+    "dist": 0.42529784453857555
   },
   {
     "esterm": "azulelectrico",
@@ -4221,13 +4221,13 @@
   },
   {
     "esterm": "azulelectrico",
-    "esterm2": "salmon",
-    "dist": 0.44795856530760436
+    "esterm2": "rosaoscuro",
+    "dist": 0.3636646266054939
   },
   {
     "esterm": "azulelectrico",
-    "esterm2": "rosaoscuro",
-    "dist": 0.3636646266054939
+    "esterm2": "salmon",
+    "dist": 0.44766095341969797
   },
   {
     "esterm": "azulelectrico",
@@ -4346,13 +4346,13 @@
   },
   {
     "esterm": "ocre",
-    "esterm2": "salmon",
-    "dist": 0.15282406422751055
+    "esterm2": "rosaoscuro",
+    "dist": 0.29251713052757594
   },
   {
     "esterm": "ocre",
-    "esterm2": "rosaoscuro",
-    "dist": 0.29251713052757594
+    "esterm2": "salmon",
+    "dist": 0.153260249412391
   },
   {
     "esterm": "ocre",
@@ -4412,7 +4412,7 @@
   {
     "esterm": "lima",
     "esterm2": "magenta",
-    "dist": 0.5038895237357837
+    "dist": 0.5024860811498612
   },
   {
     "esterm": "lima",
@@ -4476,13 +4476,13 @@
   },
   {
     "esterm": "lima",
-    "esterm2": "salmon",
-    "dist": 0.3316707051923013
+    "esterm2": "rosaoscuro",
+    "dist": 0.4845093401609234
   },
   {
     "esterm": "lima",
-    "esterm2": "rosaoscuro",
-    "dist": 0.4845093401609234
+    "esterm2": "salmon",
+    "dist": 0.3314032748236488
   },
   {
     "esterm": "lima",
@@ -4562,17 +4562,17 @@
   {
     "esterm": "beige",
     "esterm2": "fucsia",
-    "dist": 0.3889767326848684
-  },
-  {
-    "esterm": "beige",
-    "esterm2": "magenta",
-    "dist": 0.3886889404969411
+    "dist": 0.38890734044839903
   },
   {
     "esterm": "beige",
     "esterm2": "celeste",
     "dist": 0.22385949874761463
+  },
+  {
+    "esterm": "beige",
+    "esterm2": "magenta",
+    "dist": 0.3871309133880197
   },
   {
     "esterm": "beige",
@@ -4596,11 +4596,6 @@
   },
   {
     "esterm": "beige",
-    "esterm2": "cyan",
-    "dist": 0.22054655142927607
-  },
-  {
-    "esterm": "beige",
     "esterm2": "verdeclaro",
     "dist": 0.16727460586835843
   },
@@ -4608,6 +4603,11 @@
     "esterm": "beige",
     "esterm2": "purpura",
     "dist": 0.45545623201350866
+  },
+  {
+    "esterm": "beige",
+    "esterm2": "cyan",
+    "dist": 0.223030938961916
   },
   {
     "esterm": "beige",
@@ -4661,13 +4661,13 @@
   },
   {
     "esterm": "beige",
-    "esterm2": "salmon",
-    "dist": 0.19583227233197303
+    "esterm2": "rosaoscuro",
+    "dist": 0.3769431045878071
   },
   {
     "esterm": "beige",
-    "esterm2": "rosaoscuro",
-    "dist": 0.3769431045878071
+    "esterm2": "salmon",
+    "dist": 0.1928366597194778
   },
   {
     "esterm": "beige",
@@ -4745,71 +4745,6 @@
     "dist": 0.31518529251454536
   },
   {
-    "esterm": "salmon",
-    "esterm2": "verde",
-    "dist": 0.3013971771591561
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "violeta",
-    "dist": 0.2783940631415637
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "turquesa",
-    "dist": 0.3051208776330801
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "verdeclaro",
-    "dist": 0.306609347523246
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "verdelimon",
-    "dist": 0.3292656362559871
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "verdeoscuro",
-    "dist": 0.33338956074722054
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "verdeagua",
-    "dist": 0.3083742363322671
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "verdelima",
-    "dist": 0.3173003328090454
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "verdeoliva",
-    "dist": 0.23270121992948803
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "verdeazulado",
-    "dist": 0.2704201850105452
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "verdemilitar",
-    "dist": 0.22000301325447122
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "verdepastel",
-    "dist": 0.2936323875121574
-  },
-  {
-    "esterm": "salmon",
-    "esterm2": "vino",
-    "dist": 0.3573105694935846
-  },
-  {
     "esterm": "rosaoscuro",
     "esterm2": "verde",
     "dist": 0.41080596562651767
@@ -4857,7 +4792,7 @@
   {
     "esterm": "rosaoscuro",
     "esterm2": "salmon",
-    "dist": 0.19924586610332676
+    "dist": 0.20175368164110286
   },
   {
     "esterm": "rosaoscuro",
@@ -4878,6 +4813,71 @@
     "esterm": "rosaoscuro",
     "esterm2": "vino",
     "dist": 0.25047778987944336
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "verde",
+    "dist": 0.30067681799888374
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "violeta",
+    "dist": 0.2784969007946472
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "turquesa",
+    "dist": 0.30382157164809526
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "verdeclaro",
+    "dist": 0.3060801465977076
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "verdelimon",
+    "dist": 0.32892453980972036
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "verdeoscuro",
+    "dist": 0.3338187504562465
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "verdeagua",
+    "dist": 0.30729741541083744
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "verdelima",
+    "dist": 0.3169676361234868
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "verdeoliva",
+    "dist": 0.23263062018946432
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "verdeazulado",
+    "dist": 0.2690967095449008
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "verdemilitar",
+    "dist": 0.220235936063304
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "verdepastel",
+    "dist": 0.2906224278725023
+  },
+  {
+    "esterm": "salmon",
+    "esterm2": "vino",
+    "dist": 0.3589124119750078
   },
   {
     "esterm": "verdeazulado",
@@ -5006,13 +5006,13 @@
   },
   {
     "esterm": "moradooscuro",
-    "esterm2": "salmon",
-    "dist": 0.3947528874763355
+    "esterm2": "rosaoscuro",
+    "dist": 0.3110513164305587
   },
   {
     "esterm": "moradooscuro",
-    "esterm2": "rosaoscuro",
-    "dist": 0.3110513164305587
+    "esterm2": "salmon",
+    "dist": 0.3956870541134757
   },
   {
     "esterm": "moradooscuro",
@@ -5126,13 +5126,13 @@
   },
   {
     "esterm": "marronclaro",
-    "esterm2": "salmon",
-    "dist": 0.11878086776319464
+    "esterm2": "rosaoscuro",
+    "dist": 0.22771309312244073
   },
   {
     "esterm": "marronclaro",
-    "esterm2": "rosaoscuro",
-    "dist": 0.22771309312244073
+    "esterm2": "salmon",
+    "dist": 0.11932241916424545
   },
   {
     "esterm": "marronclaro",
@@ -5247,7 +5247,7 @@
   {
     "esterm": "lilaoscuro",
     "esterm2": "magenta",
-    "dist": 0.18354462464151433
+    "dist": 0.1819931102323586
   },
   {
     "esterm": "lilaoscuro",
@@ -5316,13 +5316,13 @@
   },
   {
     "esterm": "lilaoscuro",
-    "esterm2": "salmon",
-    "dist": 0.2239015036130882
+    "esterm2": "rosaoscuro",
+    "dist": 0.18366400814021688
   },
   {
     "esterm": "lilaoscuro",
-    "esterm2": "rosaoscuro",
-    "dist": 0.18366400814021688
+    "esterm2": "salmon",
+    "dist": 0.2237745200527825
   },
   {
     "esterm": "lilaoscuro",
@@ -5431,13 +5431,13 @@
   },
   {
     "esterm": "piel",
-    "esterm2": "salmon",
-    "dist": 0.12290599185172377
+    "esterm2": "rosaoscuro",
+    "dist": 0.30635092796838514
   },
   {
     "esterm": "piel",
-    "esterm2": "rosaoscuro",
-    "dist": 0.30635092796838514
+    "esterm2": "salmon",
+    "dist": 0.12011348614044108
   },
   {
     "esterm": "piel",
@@ -5541,13 +5541,13 @@
   },
   {
     "esterm": "moradoclaro",
-    "esterm2": "salmon",
-    "dist": 0.20691394076875252
+    "esterm2": "rosaoscuro",
+    "dist": 0.21071132627090666
   },
   {
     "esterm": "moradoclaro",
-    "esterm2": "rosaoscuro",
-    "dist": 0.21071132627090666
+    "esterm2": "salmon",
+    "dist": 0.20632135584852027
   },
   {
     "esterm": "moradoclaro",
@@ -5666,13 +5666,13 @@
   },
   {
     "esterm": "marronoscuro",
-    "esterm2": "salmon",
-    "dist": 0.41076668366342955
+    "esterm2": "rosaoscuro",
+    "dist": 0.34053029996221523
   },
   {
     "esterm": "marronoscuro",
-    "esterm2": "rosaoscuro",
-    "dist": 0.34053029996221523
+    "esterm2": "salmon",
+    "dist": 0.41236950479025164
   },
   {
     "esterm": "marronoscuro",
@@ -5742,7 +5742,7 @@
   {
     "esterm": "granate",
     "esterm2": "magenta",
-    "dist": 0.307490376983983
+    "dist": 0.3080149155178473
   },
   {
     "esterm": "granate",
@@ -5821,13 +5821,13 @@
   },
   {
     "esterm": "granate",
-    "esterm2": "salmon",
-    "dist": 0.3558768519937
+    "esterm2": "rosaoscuro",
+    "dist": 0.2554207417088607
   },
   {
     "esterm": "granate",
-    "esterm2": "rosaoscuro",
-    "dist": 0.2554207417088607
+    "esterm2": "salmon",
+    "dist": 0.35757865249413334
   },
   {
     "esterm": "granate",

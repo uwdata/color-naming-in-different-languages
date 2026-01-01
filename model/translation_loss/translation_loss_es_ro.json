@@ -162,42 +162,22 @@
   {
     "esterm": "fucsia",
     "roterm": "albastru",
-    "dist": 0.34055322937833116
+    "dist": 0.34040345548089956
   },
   {
     "esterm": "fucsia",
     "roterm": "verde",
-    "dist": 0.5082273654950612
+    "dist": 0.5083494113808106
   },
   {
     "esterm": "fucsia",
     "roterm": "roz",
-    "dist": 0.05407747735081794
+    "dist": 0.05459435836375502
   },
   {
     "esterm": "fucsia",
     "roterm": "mov",
-    "dist": 0.14080913838699854
-  },
-  {
-    "esterm": "magenta",
-    "roterm": "albastru",
-    "dist": 0.3357171346692422
-  },
-  {
-    "esterm": "magenta",
-    "roterm": "verde",
-    "dist": 0.5058008991084832
-  },
-  {
-    "esterm": "magenta",
-    "roterm": "roz",
-    "dist": 0.0644264505219512
-  },
-  {
-    "esterm": "magenta",
-    "roterm": "mov",
-    "dist": 0.13608331727664918
+    "dist": 0.1403798838856164
   },
   {
     "esterm": "celeste",
@@ -218,6 +198,26 @@
     "esterm": "celeste",
     "roterm": "mov",
     "dist": 0.3473294894890971
+  },
+  {
+    "esterm": "magenta",
+    "roterm": "albastru",
+    "dist": 0.33510369070765494
+  },
+  {
+    "esterm": "magenta",
+    "roterm": "verde",
+    "dist": 0.5057358977644195
+  },
+  {
+    "esterm": "magenta",
+    "roterm": "roz",
+    "dist": 0.0643258831901475
+  },
+  {
+    "esterm": "magenta",
+    "roterm": "mov",
+    "dist": 0.13443498401034779
   },
   {
     "esterm": "turquesa",
@@ -320,26 +320,6 @@
     "dist": 0.2768362568581003
   },
   {
-    "esterm": "cyan",
-    "roterm": "albastru",
-    "dist": 0.28330583430662903
-  },
-  {
-    "esterm": "cyan",
-    "roterm": "verde",
-    "dist": 0.19116050753590716
-  },
-  {
-    "esterm": "cyan",
-    "roterm": "roz",
-    "dist": 0.3884745179380647
-  },
-  {
-    "esterm": "cyan",
-    "roterm": "mov",
-    "dist": 0.405198437252756
-  },
-  {
     "esterm": "verdeclaro",
     "roterm": "albastru",
     "dist": 0.4329417546101918
@@ -378,6 +358,26 @@
     "esterm": "purpura",
     "roterm": "mov",
     "dist": 0.08447867968692563
+  },
+  {
+    "esterm": "cyan",
+    "roterm": "albastru",
+    "dist": 0.2816404331241401
+  },
+  {
+    "esterm": "cyan",
+    "roterm": "verde",
+    "dist": 0.19017160415235076
+  },
+  {
+    "esterm": "cyan",
+    "roterm": "roz",
+    "dist": 0.38782341692443756
+  },
+  {
+    "esterm": "cyan",
+    "roterm": "mov",
+    "dist": 0.40574182917602086
   },
   {
     "esterm": "azuloscuro",
@@ -720,26 +720,6 @@
     "dist": 0.37515506220065364
   },
   {
-    "esterm": "salmon",
-    "roterm": "albastru",
-    "dist": 0.3683426539545935
-  },
-  {
-    "esterm": "salmon",
-    "roterm": "verde",
-    "dist": 0.37307161697845065
-  },
-  {
-    "esterm": "salmon",
-    "roterm": "roz",
-    "dist": 0.21734948719676322
-  },
-  {
-    "esterm": "salmon",
-    "roterm": "mov",
-    "dist": 0.3037227042463363
-  },
-  {
     "esterm": "rosaoscuro",
     "roterm": "albastru",
     "dist": 0.35024014546942706
@@ -758,6 +738,26 @@
     "esterm": "rosaoscuro",
     "roterm": "mov",
     "dist": 0.17367092917862018
+  },
+  {
+    "esterm": "salmon",
+    "roterm": "albastru",
+    "dist": 0.3672268258251019
+  },
+  {
+    "esterm": "salmon",
+    "roterm": "verde",
+    "dist": 0.37268462797128654
+  },
+  {
+    "esterm": "salmon",
+    "roterm": "roz",
+    "dist": 0.21922777656863382
+  },
+  {
+    "esterm": "salmon",
+    "roterm": "mov",
+    "dist": 0.3041113650103449
   },
   {
     "esterm": "verdeazulado",
