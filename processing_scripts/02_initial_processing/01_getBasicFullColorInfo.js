@@ -33,7 +33,7 @@ csv().fromFile(FILE_I)
 
   let grouped_lang = d3.groups(colorNames, d => d.lang)
     .map(a => {return {key: a[0], values: a[1]}})
-    .sort((a,b) =>  - a.values.length + b.values.length);
+    .sort((a,b) => a.key.localeCompare(b.key));
 
   grouped_lang.forEach(lang => {
     lang.terms = d3.groups(lang.values, v => v.name)
@@ -62,7 +62,8 @@ csv().fromFile(FILE_I)
     lang.terms.sort((a,b) => -a.numFullNames + b.numFullNames);
   });
 
-  grouped_lang.sort((a,b) =>  - a.terms.length + b.terms.length);
+  // sort language by lang_abv (secondary "lang") so order in file stays consistent
+  grouped_lang.sort((a,b) => a.key.localeCompare(b.key));
 
   console.log("writing file");
   let basicColorWriter = csvWriter();
