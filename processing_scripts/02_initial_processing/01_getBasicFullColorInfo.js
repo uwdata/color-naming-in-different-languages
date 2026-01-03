@@ -59,7 +59,8 @@ csv().fromFile(FILE_I)
 
     lang.terms = lang.terms.filter(g_term => g_term.numFullNames >= MIN_FULL_COLOR_NAMES);
 
-    lang.terms.sort((a,b) => -a.numFullNames + b.numFullNames);
+    // sort alphabetically by simplifiedName (stable-ish sort)
+    lang.terms.sort((a,b) => a.simplifiedName.localeCompare(b.simplifiedName));
   });
 
   // sort language by lang_abv (secondary "lang") so order in file stays consistent
