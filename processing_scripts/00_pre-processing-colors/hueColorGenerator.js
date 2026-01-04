@@ -122,9 +122,10 @@ for(const [gamutName, gamutInfo] of Object.entries(GAMUTS)){
                 bin_start_r: hueColorSet[currBinStart].rgb.r,
                 bin_start_g: hueColorSet[currBinStart].rgb.g,
                 bin_start_b: hueColorSet[currBinStart].rgb.b,
-                bin_end_before_r: hueColorSet[binEndPoint].rgb.r,
-                bin_end_before_g: hueColorSet[binEndPoint].rgb.g,
-                bin_end_before_b: hueColorSet[binEndPoint].rgb.b,
+                // TODO: Center RGB, and center a bin around rgb 255,0,0
+                bin_end_r: hueColorSet[binEndPoint].rgb.r,
+                bin_end_g: hueColorSet[binEndPoint].rgb.g,
+                bin_end_b: hueColorSet[binEndPoint].rgb.b,
             })
             currBinStart = binEndPoint
         }
@@ -137,8 +138,9 @@ function genBin(Nbin, colorSet){
 
   //find binning points
   let binEndPoints = [];
+  // endpoint should take us back to index 0
   let endPoint = colorSet[colorSet.length-1].cumulative_dist + colorSet[colorSet.length-1].next_dist;
-  let binIndex = 1;
+  let binIndex = 1; // should go from 1 - colorSet.length
   for (let j = 0; j < colorSet.length; j++) {
     if (colorSet[j].cumulative_dist >= endPoint/Nbin*binIndex ) {
       binEndPoints.push(j);

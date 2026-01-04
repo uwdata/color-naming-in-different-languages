@@ -2,9 +2,6 @@
 
 These are utility files used by other scripts
 
-## hueColorBins.js
-This code helps generate bins for the hue colors
-
 ## labBinHelper.js
 This code helps generate LAB bins for the full color dataset.
 
