@@ -1,6 +1,7 @@
 import fs from 'fs'
 import Color from "colorjs.io";
 import csvWriter from 'csv-write-stream'
+import hueBinHelper from '../utils/hueBinHelper.js'
 
 const GAMUTS = {
     srgb: {
@@ -110,43 +111,53 @@ for(const [gamutName, gamutInfo] of Object.entries(GAMUTS)){
     const hueColorSet = hueColorsByGamut[gamutName]
     for(const n_bins of N_BIN_OPTIONS){
         
-        const binEndPoints = genBin(n_bins, hueColorSet);
+        const hueBins = genBins(n_bins, hueColorSet);
         const hueBinWriter = csvWriter();
         hueBinWriter.pipe(fs.createWriteStream(`${O_HUE_BIN_FILE}${n_bins}_${gamutInfo.fileNameAbv}.csv`));
-        
-        let currBinStart = 0
-        
-        for(const [bin_i, binEndPoint] of binEndPoints.entries()){
-            hueBinWriter.write({
-                bin_i: bin_i,
-                bin_start_r: hueColorSet[currBinStart].rgb.r,
-                bin_start_g: hueColorSet[currBinStart].rgb.g,
-                bin_start_b: hueColorSet[currBinStart].rgb.b,
-                // TODO: Center RGB, and center a bin around rgb 255,0,0
-                bin_end_r: hueColorSet[binEndPoint].rgb.r,
-                bin_end_g: hueColorSet[binEndPoint].rgb.g,
-                bin_end_b: hueColorSet[binEndPoint].rgb.b,
-            })
-            currBinStart = binEndPoint
+                
+        for(const [bin_i, hueBin] of hueBins.entries()){
+            hueBinWriter.write(hueBin)
         }
         hueBinWriter.end();
     }
 }
 
 
-function genBin(Nbin, colorSet){
+function genBins(Nbin, colorSet){
+    const binHelper = hueBinHelper.getHueBinHelper(colorSet)
+    const totalColorSetDist = binHelper.totalColorSetDist
 
-  //find binning points
-  let binEndPoints = [];
-  // endpoint should take us back to index 0
-  let endPoint = colorSet[colorSet.length-1].cumulative_dist + colorSet[colorSet.length-1].next_dist;
-  let binIndex = 1; // should go from 1 - colorSet.length
-  for (let j = 0; j < colorSet.length; j++) {
-    if (colorSet[j].cumulative_dist >= endPoint/Nbin*binIndex ) {
-      binEndPoints.push(j);
-      binIndex += 1;
-    };
-  };
-  binEndPoints.push(colorSet.length-1);
-  return binEndPoints;
+    const bins = []
+
+    for(let i = 0; i < Nbin; i++){
+        // first bin centered at 0 (i.e. rgb(255,0,0))
+        const centerDist = 1/Nbin*i
+        let startDist = 1/Nbin*(i-0.5)
+        let endDist = 1/Nbin*(i+0.5)
+
+        if(startDist < 0){
+            startDist = 1 + startDist
+        }
+
+        const startColor = binHelper.getHueColorFromRatio(startDist)
+        const centerColor = binHelper.getHueColorFromRatio(centerDist)
+        const endBeforeColor = binHelper.getHueColorFromRatio(endDist)
+
+        bins.push({
+            bin_i: i,
+            bin_start_r: startColor.r,
+            bin_start_g: startColor.g,
+            bin_start_b: startColor.b,
+
+            bin_center_r: centerColor.r,
+            bin_center_g: centerColor.g,
+            bin_center_b: centerColor.b,
+
+            bin_end_before_r: endBeforeColor.r,
+            bin_end_before_g: endBeforeColor.g,
+            bin_end_before_b: endBeforeColor.b
+        })
+    }
+
+    return bins
 }

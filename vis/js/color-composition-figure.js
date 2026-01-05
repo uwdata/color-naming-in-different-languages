@@ -137,7 +137,7 @@ $(document).on('ready page:load', function () {
             .attr("y", -15)
             .attr("width", function(d,i) { return [0, spectrumN-1].indexOf(i) >= 0 ? (x(1)-x(0)) /2 : x(1)-x(0)+1; } )
             .attr("height", 10 )
-            .attr("fill", function(d){ return 'rgb(' + d.rgb.r + ',' + d.rgb.g+',' + d.rgb.b + ')' ;})
+            .attr("fill", function(d){ return 'rgb(' + d.r + ',' + d.g+',' + d.b + ')' ;})
 
         svg.append("g")
             .attr("class", "x axis")

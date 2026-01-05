@@ -1,4 +1,37 @@
 lang,lang_abv,simplifiedName,commonName,avgHueColor,cnt
+Arabic (العربية),ar,أزرق,أزرق,"rgb(0, 126, 255)",126
+Arabic (العربية),ar,أخضر,أخضر,"rgb(0, 255, 58)",78
+Arabic (العربية),ar,برتقالي,برتقالي,"rgb(255, 132, 0)",63
+Arabic (العربية),ar,أصفر,اصفر,"rgb(255, 237, 0)",55
+Arabic (العربية),ar,بنفسجي,بنفسجي,"rgb(196, 0, 255)",51
+Arabic (العربية),ar,أحمر,أحمر,"rgb(255, 0, 32)",50
+Arabic (العربية),ar,فوشي,فوشي,"rgb(255, 0, 165)",38
+Arabic (العربية),ar,سماوي,سماوي,"rgb(0, 215, 255)",36
+Arabic (العربية),ar,وردي,وردي,"rgb(255, 0, 163)",28
+Arabic (العربية),ar,أزرق فاتح,ازرق فاتح,"rgb(0, 196, 255)",26
+Arabic (العربية),ar,زهري,زهري,"rgb(255, 0, 172)",25
+Arabic (العربية),ar,أزرق سماوي,أزرق سماوي,"rgb(0, 177, 255)",12
+Arabic (العربية),ar,أخضر فاتح,أخضر فاتح,"rgb(0, 255, 49)",12
+Arabic (العربية),ar,نيلي,نيلي,"rgb(0, 52, 255)",11
+Arabic (العربية),ar,فسفوري,فسفوري,"rgb(140, 255, 0)",9
+Arabic (العربية),ar,أزرق غامق,أزرق غامق,"rgb(0, 55, 255)",8
+Arabic (العربية),ar,فستقي,فستقي,"rgb(0, 255, 96)",8
+Arabic (العربية),ar,تركواز,تركواز,"rgb(0, 255, 198)",8
+Catalan (català),ca,blau,blau,"rgb(0, 145, 255)",46
+Catalan (català),ca,taronja,taronja,"rgb(255, 132, 0)",27
+Catalan (català),ca,groc,groc,"rgb(255, 235, 0)",27
+Catalan (català),ca,verd,verd,"rgb(0, 255, 74)",26
+Catalan (català),ca,vermell,vermell,"rgb(255, 0, 23)",22
+Catalan (català),ca,blaucel,blau cel,"rgb(0, 200, 255)",21
+Catalan (català),ca,fucsia,fucsia,"rgb(255, 0, 179)",17
+Catalan (català),ca,lila,lila,"rgb(175, 0, 255)",17
+Catalan (català),ca,rosa,rosa,"rgb(255, 0, 171)",17
+Catalan (català),ca,verdllima,verd llima,"rgb(35, 255, 0)",13
+Catalan (català),ca,magenta,magenta,"rgb(255, 0, 162)",12
+Catalan (català),ca,blaumari,blau marí,"rgb(0, 57, 255)",10
+Catalan (català),ca,turquesa,turquesa,"rgb(0, 255, 237)",10
+Catalan (català),ca,blaufosc,blau fosc,"rgb(0, 82, 255)",10
+Catalan (català),ca,blauclar,blau clar,"rgb(0, 203, 255)",9
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,蓝,蓝色,"rgb(0, 125, 255)",137
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,天蓝,天蓝色,"rgb(0, 198, 255)",78
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,黄,黄色,"rgb(255, 233, 0)",75
@@ -44,6 +77,45 @@ lang,lang_abv,simplifiedName,commonName,avgHueColor,cnt
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,淡绿,淡绿色,"rgb(0, 255, 117)",8
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,靛蓝,靛蓝色,"rgb(0, 64, 255)",8
 "Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,品红,品红色,"rgb(255, 0, 128)",7
+"Czech (čeština, český jazyk)",cs,modra,modrá,"rgb(0, 141, 255)",105
+"Czech (čeština, český jazyk)",cs,zelena,zelená,"rgb(0, 255, 73)",69
+"Czech (čeština, český jazyk)",cs,cervena,červená,"rgb(255, 0, 47)",52
+"Czech (čeština, český jazyk)",cs,oranzova,oranžová,"rgb(255, 142, 0)",50
+"Czech (čeština, český jazyk)",cs,fialova,fialová,"rgb(202, 0, 255)",48
+"Czech (čeština, český jazyk)",cs,zluta,žlutá,"rgb(255, 236, 0)",41
+"Czech (čeština, český jazyk)",cs,ruzova,růžová,"rgb(255, 0, 183)",35
+"Czech (čeština, český jazyk)",cs,tyrkysova,tyrkysová,"rgb(0, 255, 243)",31
+"Czech (čeština, český jazyk)",cs,svetlemodra,světle modrá,"rgb(0, 196, 255)",17
+"Czech (čeština, český jazyk)",cs,svetlezelena,světle zelená,"rgb(0, 255, 73)",15
+"Czech (čeština, český jazyk)",cs,tmavemodra,tmavě modrá,"rgb(0, 81, 255)",14
+Danish (dansk),da,bla,blå,"rgb(0, 119, 255)",105
+Danish (dansk),da,orange,orange,"rgb(255, 140, 0)",79
+Danish (dansk),da,grøn,grøn,"rgb(0, 255, 67)",76
+Danish (dansk),da,rød,rød,"rgb(255, 0, 46)",73
+Danish (dansk),da,gul,gul,"rgb(255, 237, 0)",65
+Danish (dansk),da,lilla,lilla,"rgb(195, 0, 255)",63
+Danish (dansk),da,turkis,turkis,"rgb(0, 255, 244)",61
+Danish (dansk),da,pink,pink,"rgb(255, 0, 182)",61
+Danish (dansk),da,lysebla,lyseblå,"rgb(0, 198, 255)",50
+Danish (dansk),da,mørkebla,mørkeblå,"rgb(0, 55, 255)",34
+Danish (dansk),da,lysegrøn,lysegrøn,"rgb(0, 255, 30)",22
+Danish (dansk),da,lyserød,lyserød,"rgb(255, 0, 181)",17
+Danish (dansk),da,neongrøn,neongrøn,"rgb(147, 255, 0)",10
+Danish (dansk),da,limegrøn,limegrøn,"rgb(115, 255, 0)",8
+Danish (dansk),da,turkisgrøn,turkisgrøn,"rgb(0, 255, 153)",8
+"Dutch (Nederlands, Vlaams)",nl,blauw,blauw,"rgb(0, 134, 255)",111
+"Dutch (Nederlands, Vlaams)",nl,groen,groen,"rgb(0, 255, 72)",75
+"Dutch (Nederlands, Vlaams)",nl,paars,paars,"rgb(208, 0, 255)",59
+"Dutch (Nederlands, Vlaams)",nl,oranje,oranje,"rgb(255, 145, 0)",58
+"Dutch (Nederlands, Vlaams)",nl,rood,rood,"rgb(255, 0, 41)",52
+"Dutch (Nederlands, Vlaams)",nl,roze,roze,"rgb(255, 0, 171)",38
+"Dutch (Nederlands, Vlaams)",nl,geel,geel,"rgb(255, 242, 0)",33
+"Dutch (Nederlands, Vlaams)",nl,lichtblauw,lichtblauw,"rgb(0, 217, 255)",30
+"Dutch (Nederlands, Vlaams)",nl,donkerblauw,donkerblauw,"rgb(0, 24, 255)",25
+"Dutch (Nederlands, Vlaams)",nl,turquoise,turquoise,"rgb(0, 249, 255)",17
+"Dutch (Nederlands, Vlaams)",nl,lichtgroen,lichtgroen,"rgb(0, 255, 56)",16
+"Dutch (Nederlands, Vlaams)",nl,magenta,magenta,"rgb(255, 0, 213)",13
+"Dutch (Nederlands, Vlaams)",nl,donkerroze,donkerroze,"rgb(255, 0, 156)",8
 English (English),en,blue,blue,"rgb(0, 126, 255)",6620
 English (English),en,orange,orange,"rgb(255, 136, 0)",3087
 English (English),en,green,green,"rgb(0, 255, 69)",3017
@@ -96,6 +168,23 @@ English (English),en,neonblue,neon blue,"rgb(0, 241, 255)",115
 English (English),en,bluegreen,blue green,"rgb(0, 255, 197)",114
 English (English),en,rose,rose,"rgb(255, 0, 113)",108
 English (English),en,darkyellow,dark yellow,"rgb(255, 210, 0)",101
+"Finnish (suomi, suomen kieli)",fi,sininen,sininen,"rgb(0, 118, 255)",110
+"Finnish (suomi, suomen kieli)",fi,oranssi,oranssi,"rgb(255, 136, 0)",71
+"Finnish (suomi, suomen kieli)",fi,vihrea,vihreä,"rgb(0, 255, 36)",63
+"Finnish (suomi, suomen kieli)",fi,punainen,punainen,"rgb(255, 0, 43)",55
+"Finnish (suomi, suomen kieli)",fi,turkoosi,turkoosi,"rgb(0, 255, 231)",49
+"Finnish (suomi, suomen kieli)",fi,keltainen,keltainen,"rgb(255, 237, 0)",48
+"Finnish (suomi, suomen kieli)",fi,violetti,violetti,"rgb(214, 0, 255)",46
+"Finnish (suomi, suomen kieli)",fi,pinkki,pinkki,"rgb(255, 0, 159)",43
+"Finnish (suomi, suomen kieli)",fi,vaaleansininen,vaaleansininen,"rgb(0, 222, 255)",43
+"Finnish (suomi, suomen kieli)",fi,tummansininen,tummansininen,"rgb(0, 57, 255)",21
+"Finnish (suomi, suomen kieli)",fi,liila,liila,"rgb(222, 0, 255)",17
+"Finnish (suomi, suomen kieli)",fi,vaaleanvihrea,vaaleanvihreä,"rgb(69, 255, 0)",14
+"Finnish (suomi, suomen kieli)",fi,taivaansininen,taivaansininen,"rgb(0, 190, 255)",13
+"Finnish (suomi, suomen kieli)",fi,magenta,magenta,"rgb(255, 0, 222)",12
+"Finnish (suomi, suomen kieli)",fi,lime,lime,"rgb(152, 255, 0)",10
+"Finnish (suomi, suomen kieli)",fi,syaani,syaani,"rgb(0, 203, 255)",10
+"Finnish (suomi, suomen kieli)",fi,kirkkaanvihrea,kirkkaanvihreä,"rgb(0, 255, 54)",8
 "French (français, langue française)",fr,bleu,bleu,"rgb(0, 137, 255)",297
 "French (français, langue française)",fr,vert,vert,"rgb(0, 255, 76)",210
 "French (français, langue française)",fr,orange,orange,"rgb(255, 137, 0)",161
@@ -165,6 +254,70 @@ German (Deutsch),de,rotorange,rot orange,"rgb(255, 76, 0)",8
 German (Deutsch),de,fuchsia,fuchsia,"rgb(255, 0, 151)",8
 German (Deutsch),de,grasgrun,grasgrün,"rgb(117, 255, 0)",8
 German (Deutsch),de,turkies,türkies,"rgb(0, 255, 214)",8
+Greek (modern) (ελληνικά),el,μπλε,μπλε,"rgb(0, 93, 255)",127
+Greek (modern) (ελληνικά),el,γαλαζιο,γαλάζιο,"rgb(0, 201, 255)",84
+Greek (modern) (ελληνικά),el,πορτοκαλι,πορτοκαλί,"rgb(255, 138, 0)",82
+Greek (modern) (ελληνικά),el,πρασινο,πράσινο,"rgb(0, 255, 54)",72
+Greek (modern) (ελληνικά),el,κοκκινο,κόκκινο,"rgb(255, 0, 45)",70
+Greek (modern) (ελληνικά),el,φουξια,φούξια,"rgb(255, 0, 187)",59
+Greek (modern) (ελληνικά),el,μωβ,μωβ,"rgb(180, 0, 255)",53
+Greek (modern) (ελληνικά),el,κιτρινο,κίτρινο,"rgb(255, 236, 0)",48
+Greek (modern) (ελληνικά),el,τιρκουαζ,τιρκουάζ,"rgb(0, 255, 231)",45
+Greek (modern) (ελληνικά),el,λαχανι,λαχανί,"rgb(51, 255, 0)",40
+Greek (modern) (ελληνικά),el,ροζ,ροζ,"rgb(255, 0, 175)",37
+Greek (modern) (ελληνικά),el,ανοιχτοπρασινο,ανοιχτό πράσινο,"rgb(63, 255, 0)",18
+Greek (modern) (ελληνικά),el,θαλασσι,θαλασσί,"rgb(0, 202, 255)",11
+Greek (modern) (ελληνικά),el,μουσταρδι,μουσταρδί,"rgb(255, 194, 0)",10
+Greek (modern) (ελληνικά),el,κυανο,κυανό,"rgb(0, 237, 255)",8
+Hebrew (modern) (עברית),he,כחול,כחול,"rgb(0, 94, 255)",78
+Hebrew (modern) (עברית),he,ירוק,ירוק,"rgb(0, 255, 53)",60
+Hebrew (modern) (עברית),he,תכלת,תכלת,"rgb(0, 210, 255)",52
+Hebrew (modern) (עברית),he,ורוד,ורוד,"rgb(255, 0, 169)",48
+Hebrew (modern) (עברית),he,צהוב,צהוב,"rgb(255, 243, 0)",47
+Hebrew (modern) (עברית),he,כתום,כתום,"rgb(255, 137, 0)",46
+Hebrew (modern) (עברית),he,אדום,אדום,"rgb(255, 0, 36)",45
+Hebrew (modern) (עברית),he,טורקיז,טורקיז,"rgb(0, 255, 211)",34
+Hebrew (modern) (עברית),he,סגול,סגול,"rgb(179, 0, 255)",31
+Hebrew (modern) (עברית),he,ורודפוקסיה,ורוד פוקסיה,"rgb(255, 0, 200)",12
+Hebrew (modern) (עברית),he,כחולבהיר,כחול בהיר,"rgb(0, 172, 255)",11
+Hebrew (modern) (עברית),he,ירקרק,ירקרק,"rgb(0, 255, 60)",10
+Hebrew (modern) (עברית),he,פוקסיה,פוקסיה,"rgb(255, 0, 173)",8
+Hungarian (magyar),hu,kek,kék,"rgb(0, 128, 255)",120
+Hungarian (magyar),hu,zold,zöld,"rgb(0, 255, 50)",59
+Hungarian (magyar),hu,lila,lila,"rgb(209, 0, 255)",51
+Hungarian (magyar),hu,piros,piros,"rgb(255, 0, 42)",49
+Hungarian (magyar),hu,sarga,sárga,"rgb(255, 241, 0)",38
+Hungarian (magyar),hu,narancssarga,narancssárga,"rgb(255, 144, 0)",37
+Hungarian (magyar),hu,magenta,magenta,"rgb(255, 0, 166)",25
+Hungarian (magyar),hu,vilagoskek,világoskék,"rgb(0, 194, 255)",24
+Hungarian (magyar),hu,rozsaszin,rózsaszín,"rgb(255, 0, 177)",21
+Hungarian (magyar),hu,turkiz,türkiz,"rgb(0, 255, 236)",20
+Hungarian (magyar),hu,sotetkek,sötétkék,"rgb(0, 17, 255)",16
+Hungarian (magyar),hu,narancs,narancs,"rgb(255, 138, 0)",14
+Hungarian (magyar),hu,ciklamen,ciklámen,"rgb(255, 0, 151)",13
+Hungarian (magyar),hu,pink,pink,"rgb(255, 0, 156)",13
+Hungarian (magyar),hu,kekeszold,kékeszöld,"rgb(0, 255, 161)",12
+Hungarian (magyar),hu,citromsarga,citromsárga,"rgb(255, 245, 0)",12
+Hungarian (magyar),hu,neonzold,neonzöld,"rgb(92, 255, 0)",11
+Hungarian (magyar),hu,vilagoszold,világoszöld,"rgb(0, 255, 66)",10
+Hungarian (magyar),hu,voros,vörös,"rgb(255, 0, 48)",10
+Hungarian (magyar),hu,turkizkek,türkizkék,"rgb(0, 247, 255)",9
+Hungarian (magyar),hu,kiralykek,királykék,"rgb(0, 32, 255)",9
+Indonesian (Bahasa Indonesia),id,birumuda,biru muda,"rgb(0, 204, 255)",67
+Indonesian (Bahasa Indonesia),id,merah,merah,"rgb(255, 0, 38)",48
+Indonesian (Bahasa Indonesia),id,biru,biru,"rgb(0, 114, 255)",47
+Indonesian (Bahasa Indonesia),id,hijau,hijau,"rgb(0, 255, 70)",43
+Indonesian (Bahasa Indonesia),id,birutua,biru tua,"rgb(0, 70, 255)",40
+Indonesian (Bahasa Indonesia),id,kuning,kuning,"rgb(255, 239, 0)",37
+Indonesian (Bahasa Indonesia),id,hijaumuda,hijau muda,"rgb(0, 255, 76)",35
+Indonesian (Bahasa Indonesia),id,ungu,ungu,"rgb(177, 0, 255)",33
+Indonesian (Bahasa Indonesia),id,oranye,oranye,"rgb(255, 135, 0)",30
+Indonesian (Bahasa Indonesia),id,pink,pink,"rgb(255, 0, 183)",25
+Indonesian (Bahasa Indonesia),id,merahmuda,merah muda,"rgb(255, 0, 169)",21
+Indonesian (Bahasa Indonesia),id,magenta,magenta,"rgb(255, 0, 147)",15
+Indonesian (Bahasa Indonesia),id,merahjambu,merah jambu,"rgb(255, 0, 175)",12
+Indonesian (Bahasa Indonesia),id,jingga,jingga,"rgb(255, 139, 0)",11
+Indonesian (Bahasa Indonesia),id,birulangit,biru langit,"rgb(0, 195, 255)",9
 Italian (italiano),it,azzurro,azzurro,"rgb(0, 202, 255)",172
 Italian (italiano),it,blu,blu,"rgb(0, 83, 255)",168
 Italian (italiano),it,arancione,arancione,"rgb(255, 137, 0)",139
@@ -263,6 +416,65 @@ Italian (italiano),it,fuchsia,fuchsia,"rgb(255, 0, 206)",8
 "Korean (한국어, 조선어)",ko,연보라색,연보라색,"rgb(229, 0, 255)",8
 "Korean (한국어, 조선어)",ko,밝은하늘색,밝은 하늘색,"rgb(0, 241, 255)",8
 "Korean (한국어, 조선어)",ko,형광핑크색,형광 핑크색,"rgb(255, 0, 212)",8
+Lithuanian (lietuvių kalba),lt,melyna,mėlyna,"rgb(0, 100, 255)",54
+Lithuanian (lietuvių kalba),lt,zydra,žydra,"rgb(0, 217, 255)",42
+Lithuanian (lietuvių kalba),lt,oranzine,oranžinė,"rgb(255, 140, 0)",33
+Lithuanian (lietuvių kalba),lt,violetine,violetinė,"rgb(194, 0, 255)",28
+Lithuanian (lietuvių kalba),lt,geltona,geltona,"rgb(255, 233, 0)",26
+Lithuanian (lietuvių kalba),lt,raudona,raudona,"rgb(255, 0, 45)",25
+Lithuanian (lietuvių kalba),lt,rozine,rožinė,"rgb(255, 0, 176)",24
+Lithuanian (lietuvių kalba),lt,zalia,žalia,"rgb(4, 255, 0)",21
+Lithuanian (lietuvių kalba),lt,salotine,salotinė,"rgb(118, 255, 0)",18
+Lithuanian (lietuvių kalba),lt,zalsva,žalsva,"rgb(0, 255, 162)",16
+Lithuanian (lietuvių kalba),lt,purpurine,purpurinė,"rgb(255, 0, 176)",13
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,biru,biru,"rgb(0, 137, 255)",62
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,hijau,hijau,"rgb(0, 255, 80)",50
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,merah,merah,"rgb(255, 0, 45)",33
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,merahjambu,merah jambu,"rgb(255, 0, 165)",30
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,kuning,kuning,"rgb(255, 234, 0)",24
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,ungu,ungu,"rgb(198, 0, 255)",19
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,oren,oren,"rgb(255, 137, 0)",18
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,jingga,jingga,"rgb(255, 118, 0)",15
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,birumuda,biru muda,"rgb(0, 200, 255)",12
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,birulangit,biru langit,"rgb(0, 195, 255)",11
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,hijaumuda,hijau muda,"rgb(0, 255, 37)",9
+"Malay (bahasa Melayu, بهاس ملايو‎)",ms,pink,pink,"rgb(255, 0, 161)",8
+Norwegian Bokmål (Norsk bokmål),nb,bla,blå,"rgb(0, 125, 255)",81
+Norwegian Bokmål (Norsk bokmål),nb,grønn,grønn,"rgb(0, 255, 82)",55
+Norwegian Bokmål (Norsk bokmål),nb,rosa,rosa,"rgb(255, 0, 181)",51
+Norwegian Bokmål (Norsk bokmål),nb,rød,rød,"rgb(255, 0, 46)",43
+Norwegian Bokmål (Norsk bokmål),nb,turkis,turkis,"rgb(0, 255, 250)",39
+Norwegian Bokmål (Norsk bokmål),nb,oransje,oransje,"rgb(255, 134, 0)",39
+Norwegian Bokmål (Norsk bokmål),nb,gul,gul,"rgb(255, 233, 0)",37
+Norwegian Bokmål (Norsk bokmål),nb,lilla,lilla,"rgb(186, 0, 255)",31
+Norwegian Bokmål (Norsk bokmål),nb,lysebla,lyseblå,"rgb(0, 209, 255)",17
+Norwegian Bokmål (Norsk bokmål),nb,himmelbla,himmelblå,"rgb(0, 181, 255)",11
+Norwegian Bokmål (Norsk bokmål),nb,lime,lime,"rgb(152, 255, 0)",9
+Norwegian Bokmål (Norsk bokmål),nb,mørkebla,mørkeblå,"rgb(0, 64, 255)",8
+Norwegian Bokmål (Norsk bokmål),nb,magenta,magenta,"rgb(255, 0, 198)",8
+Norwegian Bokmål (Norsk bokmål),nb,kongebla,kongeblå,"rgb(0, 53, 255)",8
+Norwegian Bokmål (Norsk bokmål),nb,limegrønn,limegrønn,"rgb(121, 255, 0)",8
+Persian (Farsi) (فارسی),fa,ابی,آبی,"rgb(0, 136, 255)",115
+Persian (Farsi) (فارسی),fa,سبز,سبز,"rgb(0, 255, 104)",81
+Persian (Farsi) (فارسی),fa,بنفش,بنفش,"rgb(188, 0, 255)",79
+Persian (Farsi) (فارسی),fa,قرمز,قرمز,"rgb(255, 0, 39)",72
+Persian (Farsi) (فارسی),fa,نارنجی,نارنجی,"rgb(255, 135, 0)",63
+Persian (Farsi) (فارسی),fa,صورتی,صورتی,"rgb(255, 0, 178)",53
+Persian (Farsi) (فارسی),fa,زرد,زرد,"rgb(255, 242, 0)",50
+Persian (Farsi) (فارسی),fa,ابی اسمانی,ابی اسمانی,"rgb(0, 204, 255)",30
+Persian (Farsi) (فارسی),fa,سرخابی,سرخابی,"rgb(255, 0, 157)",24
+Persian (Farsi) (فارسی),fa,سبز فسفری,سبز فسفری,"rgb(29, 255, 0)",23
+Persian (Farsi) (فارسی),fa,ابی روشن,آبی روشن,"rgb(0, 204, 255)",20
+Persian (Farsi) (فارسی),fa,سبز روشن,سبز روشن,"rgb(0, 255, 52)",18
+Persian (Farsi) (فارسی),fa,ابی نفتی,آبی نفتی,"rgb(0, 59, 255)",16
+Persian (Farsi) (فارسی),fa,خردلی,خردلی,"rgb(255, 187, 0)",15
+Persian (Farsi) (فارسی),fa,سبز ابی,سبز آبی,"rgb(0, 255, 208)",13
+Persian (Farsi) (فارسی),fa,ابی تیره,ابی تیره,"rgb(0, 68, 255)",12
+Persian (Farsi) (فارسی),fa,فسفری,فسفری,"rgb(196, 255, 0)",10
+Persian (Farsi) (فارسی),fa,ابی فیروزه ای,ابی فیروزه ای,"rgb(0, 245, 255)",10
+Persian (Farsi) (فارسی),fa,ابی کاربنی,آبی کاربنی,"rgb(0, 47, 255)",10
+Persian (Farsi) (فارسی),fa,فیروزه ای,فیروزه ای,"rgb(0, 249, 255)",8
+Persian (Farsi) (فارسی),fa,ابی پررنگ,ابی پررنگ,"rgb(0, 63, 255)",8
 "Polish (język polski, polszczyzna)",pl,niebieski,niebieski,"rgb(0, 140, 255)",217
 "Polish (język polski, polszczyzna)",pl,zielony,zielony,"rgb(0, 255, 49)",150
 "Polish (język polski, polszczyzna)",pl,rozowy,różowy,"rgb(255, 0, 177)",113
@@ -305,6 +517,51 @@ Portuguese (português),pt,turquesa,turquesa,"rgb(0, 222, 255)",13
 Portuguese (português),pt,fucsia,fúcsia,"rgb(255, 0, 205)",9
 Portuguese (português),pt,azulceleste,azul celeste,"rgb(0, 163, 255)",9
 Portuguese (português),pt,azulceu,azul céu,"rgb(0, 178, 255)",8
+Romanian (limba română),ro,albastru,albastru,"rgb(0, 127, 255)",133
+Romanian (limba română),ro,verde,verde,"rgb(0, 255, 67)",97
+Romanian (limba română),ro,rosu,rosu,"rgb(255, 0, 41)",64
+Romanian (limba română),ro,galben,galben,"rgb(255, 237, 0)",60
+Romanian (limba română),ro,roz,roz,"rgb(255, 0, 180)",59
+Romanian (limba română),ro,portocaliu,portocaliu,"rgb(255, 137, 0)",55
+Romanian (limba română),ro,mov,mov,"rgb(214, 0, 255)",48
+Romanian (limba română),ro,bleu,bleu,"rgb(0, 207, 255)",25
+Romanian (limba română),ro,albastrudeschis,albastru deschis,"rgb(0, 217, 255)",24
+Romanian (limba română),ro,turcoaz,turcoaz,"rgb(0, 255, 228)",23
+Romanian (limba română),ro,violet,violet,"rgb(213, 0, 255)",20
+Romanian (limba română),ro,verdedeschis,verde deschis,"rgb(0, 255, 48)",14
+Romanian (limba română),ro,magenta,magenta,"rgb(255, 0, 192)",13
+Romanian (limba română),ro,albastruinchis,albastru inchis,"rgb(0, 64, 255)",13
+Romanian (limba română),ro,verdeneon,verde neon,"rgb(0, 255, 149)",9
+Romanian (limba română),ro,fucsia,fucsia,"rgb(255, 0, 138)",9
+Romanian (limba română),ro,bleumarin,bleumarin,"rgb(0, 88, 255)",8
+Russian (Русский),ru,синии,синий,"rgb(0, 93, 255)",136
+Russian (Русский),ru,голубои,голубой,"rgb(0, 193, 255)",109
+Russian (Русский),ru,оранжевыи,оранжевый,"rgb(255, 137, 0)",80
+Russian (Русский),ru,желтыи,желтый,"rgb(255, 244, 0)",74
+Russian (Русский),ru,красныи,красный,"rgb(255, 0, 36)",73
+Russian (Русский),ru,зеленыи,зеленый,"rgb(0, 255, 64)",70
+Russian (Русский),ru,розовыи,розовый,"rgb(255, 0, 180)",65
+Russian (Русский),ru,фиолетовыи,фиолетовый,"rgb(198, 0, 255)",54
+Russian (Русский),ru,бирюзовыи,бирюзовый,"rgb(0, 255, 212)",45
+Russian (Русский),ru,салатовыи,салатовый,"rgb(109, 255, 0)",41
+Russian (Русский),ru,малиновыи,малиновый,"rgb(255, 0, 109)",25
+Russian (Русский),ru,фуксия,фуксия,"rgb(255, 0, 195)",22
+Russian (Русский),ru,темносинии,темно синий,"rgb(22, 0, 255)",20
+Russian (Русский),ru,сиреневыи,сиреневый,"rgb(226, 0, 255)",17
+Russian (Русский),ru,светлоголубои,светло голубой,"rgb(0, 239, 255)",15
+Russian (Русский),ru,темноголубои,темно голубой,"rgb(0, 141, 255)",15
+Russian (Русский),ru,пурпурныи,пурпурный,"rgb(255, 0, 254)",15
+Russian (Русский),ru,светлосинии,светло синий,"rgb(0, 146, 255)",14
+Russian (Русский),ru,светлозеленыи,светло зеленый,"rgb(0, 255, 26)",13
+Russian (Русский),ru,алыи,алый,"rgb(255, 0, 47)",13
+Russian (Русский),ru,мятныи,мятный,"rgb(0, 255, 184)",11
+Russian (Русский),ru,яркорозовыи,ярко розовый,"rgb(255, 0, 177)",11
+Russian (Русский),ru,желтозеленыи,желто зеленый,"rgb(163, 255, 0)",10
+Russian (Русский),ru,лазурныи,лазурный,"rgb(0, 182, 255)",9
+Russian (Русский),ru,темнооранжевыи,темно оранжевый,"rgb(255, 96, 0)",9
+Russian (Русский),ru,лимонныи,лимонный,"rgb(209, 255, 0)",8
+Russian (Русский),ru,яркозеленыи,ярко зеленый,"rgb(14, 255, 0)",8
+Russian (Русский),ru,небесныи,небесный,"rgb(0, 198, 255)",8
 Spanish (español),es,azul,azul,"rgb(0, 130, 255)",313
 Spanish (español),es,verde,verde,"rgb(0, 255, 58)",204
 Spanish (español),es,naranja,naranja,"rgb(255, 133, 0)",164
@@ -358,158 +615,6 @@ Swedish (svenska),sv,morkgul,mörkgul,"rgb(255, 214, 0)",8
 Swedish (svenska),sv,mintgron,mintgrön,"rgb(0, 255, 160)",8
 Swedish (svenska),sv,himmelsbla,himmelsblå,"rgb(0, 166, 255)",8
 Swedish (svenska),sv,neongron,neongrön,"rgb(53, 255, 0)",8
-Arabic (العربية),ar,أزرق,أزرق,"rgb(0, 126, 255)",126
-Arabic (العربية),ar,أخضر,أخضر,"rgb(0, 255, 58)",78
-Arabic (العربية),ar,برتقالي,برتقالي,"rgb(255, 132, 0)",63
-Arabic (العربية),ar,أصفر,اصفر,"rgb(255, 237, 0)",55
-Arabic (العربية),ar,بنفسجي,بنفسجي,"rgb(196, 0, 255)",51
-Arabic (العربية),ar,أحمر,أحمر,"rgb(255, 0, 32)",50
-Arabic (العربية),ar,فوشي,فوشي,"rgb(255, 0, 165)",38
-Arabic (العربية),ar,سماوي,سماوي,"rgb(0, 215, 255)",36
-Arabic (العربية),ar,وردي,وردي,"rgb(255, 0, 163)",28
-Arabic (العربية),ar,أزرق فاتح,ازرق فاتح,"rgb(0, 196, 255)",26
-Arabic (العربية),ar,زهري,زهري,"rgb(255, 0, 172)",25
-Arabic (العربية),ar,أزرق سماوي,أزرق سماوي,"rgb(0, 177, 255)",12
-Arabic (العربية),ar,أخضر فاتح,أخضر فاتح,"rgb(0, 255, 49)",12
-Arabic (العربية),ar,نيلي,نيلي,"rgb(0, 52, 255)",11
-Arabic (العربية),ar,فسفوري,فسفوري,"rgb(140, 255, 0)",9
-Arabic (العربية),ar,أزرق غامق,أزرق غامق,"rgb(0, 55, 255)",8
-Arabic (العربية),ar,فستقي,فستقي,"rgb(0, 255, 96)",8
-Arabic (العربية),ar,تركواز,تركواز,"rgb(0, 255, 198)",8
-Danish (dansk),da,bla,blå,"rgb(0, 119, 255)",105
-Danish (dansk),da,orange,orange,"rgb(255, 140, 0)",79
-Danish (dansk),da,grøn,grøn,"rgb(0, 255, 67)",76
-Danish (dansk),da,rød,rød,"rgb(255, 0, 46)",73
-Danish (dansk),da,gul,gul,"rgb(255, 237, 0)",65
-Danish (dansk),da,lilla,lilla,"rgb(195, 0, 255)",63
-Danish (dansk),da,turkis,turkis,"rgb(0, 255, 244)",61
-Danish (dansk),da,pink,pink,"rgb(255, 0, 182)",61
-Danish (dansk),da,lysebla,lyseblå,"rgb(0, 198, 255)",50
-Danish (dansk),da,mørkebla,mørkeblå,"rgb(0, 55, 255)",34
-Danish (dansk),da,lysegrøn,lysegrøn,"rgb(0, 255, 30)",22
-Danish (dansk),da,lyserød,lyserød,"rgb(255, 0, 181)",17
-Danish (dansk),da,neongrøn,neongrøn,"rgb(147, 255, 0)",10
-Danish (dansk),da,limegrøn,limegrøn,"rgb(115, 255, 0)",8
-Danish (dansk),da,turkisgrøn,turkisgrøn,"rgb(0, 255, 153)",8
-"Finnish (suomi, suomen kieli)",fi,sininen,sininen,"rgb(0, 118, 255)",110
-"Finnish (suomi, suomen kieli)",fi,oranssi,oranssi,"rgb(255, 136, 0)",71
-"Finnish (suomi, suomen kieli)",fi,vihrea,vihreä,"rgb(0, 255, 36)",63
-"Finnish (suomi, suomen kieli)",fi,punainen,punainen,"rgb(255, 0, 43)",55
-"Finnish (suomi, suomen kieli)",fi,turkoosi,turkoosi,"rgb(0, 255, 231)",49
-"Finnish (suomi, suomen kieli)",fi,keltainen,keltainen,"rgb(255, 237, 0)",48
-"Finnish (suomi, suomen kieli)",fi,violetti,violetti,"rgb(214, 0, 255)",46
-"Finnish (suomi, suomen kieli)",fi,pinkki,pinkki,"rgb(255, 0, 159)",43
-"Finnish (suomi, suomen kieli)",fi,vaaleansininen,vaaleansininen,"rgb(0, 222, 255)",43
-"Finnish (suomi, suomen kieli)",fi,tummansininen,tummansininen,"rgb(0, 57, 255)",21
-"Finnish (suomi, suomen kieli)",fi,liila,liila,"rgb(222, 0, 255)",17
-"Finnish (suomi, suomen kieli)",fi,vaaleanvihrea,vaaleanvihreä,"rgb(69, 255, 0)",14
-"Finnish (suomi, suomen kieli)",fi,taivaansininen,taivaansininen,"rgb(0, 190, 255)",13
-"Finnish (suomi, suomen kieli)",fi,magenta,magenta,"rgb(255, 0, 222)",12
-"Finnish (suomi, suomen kieli)",fi,lime,lime,"rgb(152, 255, 0)",10
-"Finnish (suomi, suomen kieli)",fi,syaani,syaani,"rgb(0, 203, 255)",10
-"Finnish (suomi, suomen kieli)",fi,kirkkaanvihrea,kirkkaanvihreä,"rgb(0, 255, 54)",8
-Greek (modern) (ελληνικά),el,μπλε,μπλε,"rgb(0, 93, 255)",127
-Greek (modern) (ελληνικά),el,γαλαζιο,γαλάζιο,"rgb(0, 201, 255)",84
-Greek (modern) (ελληνικά),el,πορτοκαλι,πορτοκαλί,"rgb(255, 138, 0)",82
-Greek (modern) (ελληνικά),el,πρασινο,πράσινο,"rgb(0, 255, 54)",72
-Greek (modern) (ελληνικά),el,κοκκινο,κόκκινο,"rgb(255, 0, 45)",70
-Greek (modern) (ελληνικά),el,φουξια,φούξια,"rgb(255, 0, 187)",59
-Greek (modern) (ελληνικά),el,μωβ,μωβ,"rgb(180, 0, 255)",53
-Greek (modern) (ελληνικά),el,κιτρινο,κίτρινο,"rgb(255, 236, 0)",48
-Greek (modern) (ελληνικά),el,τιρκουαζ,τιρκουάζ,"rgb(0, 255, 231)",45
-Greek (modern) (ελληνικά),el,λαχανι,λαχανί,"rgb(51, 255, 0)",40
-Greek (modern) (ελληνικά),el,ροζ,ροζ,"rgb(255, 0, 175)",37
-Greek (modern) (ελληνικά),el,ανοιχτοπρασινο,ανοιχτό πράσινο,"rgb(63, 255, 0)",18
-Greek (modern) (ελληνικά),el,θαλασσι,θαλασσί,"rgb(0, 202, 255)",11
-Greek (modern) (ελληνικά),el,μουσταρδι,μουσταρδί,"rgb(255, 194, 0)",10
-Greek (modern) (ελληνικά),el,κυανο,κυανό,"rgb(0, 237, 255)",8
-Hungarian (magyar),hu,kek,kék,"rgb(0, 128, 255)",120
-Hungarian (magyar),hu,zold,zöld,"rgb(0, 255, 50)",59
-Hungarian (magyar),hu,lila,lila,"rgb(209, 0, 255)",51
-Hungarian (magyar),hu,piros,piros,"rgb(255, 0, 42)",49
-Hungarian (magyar),hu,sarga,sárga,"rgb(255, 241, 0)",38
-Hungarian (magyar),hu,narancssarga,narancssárga,"rgb(255, 144, 0)",37
-Hungarian (magyar),hu,magenta,magenta,"rgb(255, 0, 166)",25
-Hungarian (magyar),hu,vilagoskek,világoskék,"rgb(0, 194, 255)",24
-Hungarian (magyar),hu,rozsaszin,rózsaszín,"rgb(255, 0, 177)",21
-Hungarian (magyar),hu,turkiz,türkiz,"rgb(0, 255, 236)",20
-Hungarian (magyar),hu,sotetkek,sötétkék,"rgb(0, 17, 255)",16
-Hungarian (magyar),hu,narancs,narancs,"rgb(255, 138, 0)",14
-Hungarian (magyar),hu,ciklamen,ciklámen,"rgb(255, 0, 151)",13
-Hungarian (magyar),hu,pink,pink,"rgb(255, 0, 156)",13
-Hungarian (magyar),hu,kekeszold,kékeszöld,"rgb(0, 255, 161)",12
-Hungarian (magyar),hu,citromsarga,citromsárga,"rgb(255, 245, 0)",12
-Hungarian (magyar),hu,neonzold,neonzöld,"rgb(92, 255, 0)",11
-Hungarian (magyar),hu,vilagoszold,világoszöld,"rgb(0, 255, 66)",10
-Hungarian (magyar),hu,voros,vörös,"rgb(255, 0, 48)",10
-Hungarian (magyar),hu,turkizkek,türkizkék,"rgb(0, 247, 255)",9
-Hungarian (magyar),hu,kiralykek,királykék,"rgb(0, 32, 255)",9
-Persian (Farsi) (فارسی),fa,ابی,آبی,"rgb(0, 136, 255)",115
-Persian (Farsi) (فارسی),fa,سبز,سبز,"rgb(0, 255, 104)",81
-Persian (Farsi) (فارسی),fa,بنفش,بنفش,"rgb(188, 0, 255)",79
-Persian (Farsi) (فارسی),fa,قرمز,قرمز,"rgb(255, 0, 39)",72
-Persian (Farsi) (فارسی),fa,نارنجی,نارنجی,"rgb(255, 135, 0)",63
-Persian (Farsi) (فارسی),fa,صورتی,صورتی,"rgb(255, 0, 178)",53
-Persian (Farsi) (فارسی),fa,زرد,زرد,"rgb(255, 242, 0)",50
-Persian (Farsi) (فارسی),fa,ابی اسمانی,ابی اسمانی,"rgb(0, 204, 255)",30
-Persian (Farsi) (فارسی),fa,سرخابی,سرخابی,"rgb(255, 0, 157)",24
-Persian (Farsi) (فارسی),fa,سبز فسفری,سبز فسفری,"rgb(29, 255, 0)",23
-Persian (Farsi) (فارسی),fa,ابی روشن,آبی روشن,"rgb(0, 204, 255)",20
-Persian (Farsi) (فارسی),fa,سبز روشن,سبز روشن,"rgb(0, 255, 52)",18
-Persian (Farsi) (فارسی),fa,ابی نفتی,آبی نفتی,"rgb(0, 59, 255)",16
-Persian (Farsi) (فارسی),fa,خردلی,خردلی,"rgb(255, 187, 0)",15
-Persian (Farsi) (فارسی),fa,سبز ابی,سبز آبی,"rgb(0, 255, 208)",13
-Persian (Farsi) (فارسی),fa,ابی تیره,ابی تیره,"rgb(0, 68, 255)",12
-Persian (Farsi) (فارسی),fa,فسفری,فسفری,"rgb(196, 255, 0)",10
-Persian (Farsi) (فارسی),fa,ابی فیروزه ای,ابی فیروزه ای,"rgb(0, 245, 255)",10
-Persian (Farsi) (فارسی),fa,ابی کاربنی,آبی کاربنی,"rgb(0, 47, 255)",10
-Persian (Farsi) (فارسی),fa,فیروزه ای,فیروزه ای,"rgb(0, 249, 255)",8
-Persian (Farsi) (فارسی),fa,ابی پررنگ,ابی پررنگ,"rgb(0, 63, 255)",8
-Romanian (limba română),ro,albastru,albastru,"rgb(0, 127, 255)",133
-Romanian (limba română),ro,verde,verde,"rgb(0, 255, 67)",97
-Romanian (limba română),ro,rosu,rosu,"rgb(255, 0, 41)",64
-Romanian (limba română),ro,galben,galben,"rgb(255, 237, 0)",60
-Romanian (limba română),ro,roz,roz,"rgb(255, 0, 180)",59
-Romanian (limba română),ro,portocaliu,portocaliu,"rgb(255, 137, 0)",55
-Romanian (limba română),ro,mov,mov,"rgb(214, 0, 255)",48
-Romanian (limba română),ro,bleu,bleu,"rgb(0, 207, 255)",25
-Romanian (limba română),ro,albastrudeschis,albastru deschis,"rgb(0, 217, 255)",24
-Romanian (limba română),ro,turcoaz,turcoaz,"rgb(0, 255, 228)",23
-Romanian (limba română),ro,violet,violet,"rgb(213, 0, 255)",20
-Romanian (limba română),ro,verdedeschis,verde deschis,"rgb(0, 255, 48)",14
-Romanian (limba română),ro,magenta,magenta,"rgb(255, 0, 192)",13
-Romanian (limba română),ro,albastruinchis,albastru inchis,"rgb(0, 64, 255)",13
-Romanian (limba română),ro,verdeneon,verde neon,"rgb(0, 255, 149)",9
-Romanian (limba română),ro,fucsia,fucsia,"rgb(255, 0, 138)",9
-Romanian (limba română),ro,bleumarin,bleumarin,"rgb(0, 88, 255)",8
-Russian (Русский),ru,синии,синий,"rgb(0, 93, 255)",136
-Russian (Русский),ru,голубои,голубой,"rgb(0, 193, 255)",109
-Russian (Русский),ru,оранжевыи,оранжевый,"rgb(255, 137, 0)",80
-Russian (Русский),ru,желтыи,желтый,"rgb(255, 244, 0)",74
-Russian (Русский),ru,красныи,красный,"rgb(255, 0, 36)",73
-Russian (Русский),ru,зеленыи,зеленый,"rgb(0, 255, 64)",70
-Russian (Русский),ru,розовыи,розовый,"rgb(255, 0, 180)",65
-Russian (Русский),ru,фиолетовыи,фиолетовый,"rgb(198, 0, 255)",54
-Russian (Русский),ru,бирюзовыи,бирюзовый,"rgb(0, 255, 212)",45
-Russian (Русский),ru,салатовыи,салатовый,"rgb(109, 255, 0)",41
-Russian (Русский),ru,малиновыи,малиновый,"rgb(255, 0, 109)",25
-Russian (Русский),ru,фуксия,фуксия,"rgb(255, 0, 195)",22
-Russian (Русский),ru,темносинии,темно синий,"rgb(22, 0, 255)",20
-Russian (Русский),ru,сиреневыи,сиреневый,"rgb(226, 0, 255)",17
-Russian (Русский),ru,светлоголубои,светло голубой,"rgb(0, 239, 255)",15
-Russian (Русский),ru,темноголубои,темно голубой,"rgb(0, 141, 255)",15
-Russian (Русский),ru,пурпурныи,пурпурный,"rgb(255, 0, 254)",15
-Russian (Русский),ru,светлосинии,светло синий,"rgb(0, 146, 255)",14
-Russian (Русский),ru,светлозеленыи,светло зеленый,"rgb(0, 255, 26)",13
-Russian (Русский),ru,алыи,алый,"rgb(255, 0, 47)",13
-Russian (Русский),ru,мятныи,мятный,"rgb(0, 255, 184)",11
-Russian (Русский),ru,яркорозовыи,ярко розовый,"rgb(255, 0, 177)",11
-Russian (Русский),ru,желтозеленыи,желто зеленый,"rgb(163, 255, 0)",10
-Russian (Русский),ru,лазурныи,лазурный,"rgb(0, 182, 255)",9
-Russian (Русский),ru,темнооранжевыи,темно оранжевый,"rgb(255, 96, 0)",9
-Russian (Русский),ru,лимонныи,лимонный,"rgb(209, 255, 0)",8
-Russian (Русский),ru,яркозеленыи,ярко зеленый,"rgb(14, 255, 0)",8
-Russian (Русский),ru,небесныи,небесный,"rgb(0, 198, 255)",8
 Turkish (Türkçe),tr,mavi,mavi,"rgb(0, 151, 255)",116
 Turkish (Türkçe),tr,yesil,yeşil,"rgb(0, 255, 55)",85
 Turkish (Türkçe),tr,turuncu,turuncu,"rgb(255, 134, 0)",69
@@ -525,111 +630,6 @@ Turkish (Türkçe),tr,fistikyesili,fıstık yeşili,"rgb(53, 255, 0)",13
 Turkish (Türkçe),tr,acikyesil,açık yeşil,"rgb(54, 255, 0)",13
 Turkish (Türkçe),tr,eflatun,eflatun,"rgb(255, 0, 217)",11
 Turkish (Türkçe),tr,fusya,fuşya,"rgb(255, 0, 183)",9
-Catalan (català),ca,blau,blau,"rgb(0, 145, 255)",46
-Catalan (català),ca,taronja,taronja,"rgb(255, 132, 0)",27
-Catalan (català),ca,groc,groc,"rgb(255, 235, 0)",27
-Catalan (català),ca,verd,verd,"rgb(0, 255, 74)",26
-Catalan (català),ca,vermell,vermell,"rgb(255, 0, 23)",22
-Catalan (català),ca,blaucel,blau cel,"rgb(0, 200, 255)",21
-Catalan (català),ca,fucsia,fucsia,"rgb(255, 0, 179)",17
-Catalan (català),ca,lila,lila,"rgb(175, 0, 255)",17
-Catalan (català),ca,rosa,rosa,"rgb(255, 0, 171)",17
-Catalan (català),ca,verdllima,verd llima,"rgb(35, 255, 0)",13
-Catalan (català),ca,magenta,magenta,"rgb(255, 0, 162)",12
-Catalan (català),ca,blaumari,blau marí,"rgb(0, 57, 255)",10
-Catalan (català),ca,turquesa,turquesa,"rgb(0, 255, 237)",10
-Catalan (català),ca,blaufosc,blau fosc,"rgb(0, 82, 255)",10
-Catalan (català),ca,blauclar,blau clar,"rgb(0, 203, 255)",9
-"Czech (čeština, český jazyk)",cs,modra,modrá,"rgb(0, 141, 255)",105
-"Czech (čeština, český jazyk)",cs,zelena,zelená,"rgb(0, 255, 73)",69
-"Czech (čeština, český jazyk)",cs,cervena,červená,"rgb(255, 0, 47)",52
-"Czech (čeština, český jazyk)",cs,oranzova,oranžová,"rgb(255, 142, 0)",50
-"Czech (čeština, český jazyk)",cs,fialova,fialová,"rgb(202, 0, 255)",48
-"Czech (čeština, český jazyk)",cs,zluta,žlutá,"rgb(255, 236, 0)",41
-"Czech (čeština, český jazyk)",cs,ruzova,růžová,"rgb(255, 0, 183)",35
-"Czech (čeština, český jazyk)",cs,tyrkysova,tyrkysová,"rgb(0, 255, 243)",31
-"Czech (čeština, český jazyk)",cs,svetlemodra,světle modrá,"rgb(0, 196, 255)",17
-"Czech (čeština, český jazyk)",cs,svetlezelena,světle zelená,"rgb(0, 255, 73)",15
-"Czech (čeština, český jazyk)",cs,tmavemodra,tmavě modrá,"rgb(0, 81, 255)",14
-"Dutch (Nederlands, Vlaams)",nl,blauw,blauw,"rgb(0, 134, 255)",111
-"Dutch (Nederlands, Vlaams)",nl,groen,groen,"rgb(0, 255, 72)",75
-"Dutch (Nederlands, Vlaams)",nl,paars,paars,"rgb(208, 0, 255)",59
-"Dutch (Nederlands, Vlaams)",nl,oranje,oranje,"rgb(255, 145, 0)",58
-"Dutch (Nederlands, Vlaams)",nl,rood,rood,"rgb(255, 0, 41)",52
-"Dutch (Nederlands, Vlaams)",nl,roze,roze,"rgb(255, 0, 171)",38
-"Dutch (Nederlands, Vlaams)",nl,geel,geel,"rgb(255, 242, 0)",33
-"Dutch (Nederlands, Vlaams)",nl,lichtblauw,lichtblauw,"rgb(0, 217, 255)",30
-"Dutch (Nederlands, Vlaams)",nl,donkerblauw,donkerblauw,"rgb(0, 24, 255)",25
-"Dutch (Nederlands, Vlaams)",nl,turquoise,turquoise,"rgb(0, 249, 255)",17
-"Dutch (Nederlands, Vlaams)",nl,lichtgroen,lichtgroen,"rgb(0, 255, 56)",16
-"Dutch (Nederlands, Vlaams)",nl,magenta,magenta,"rgb(255, 0, 213)",13
-"Dutch (Nederlands, Vlaams)",nl,donkerroze,donkerroze,"rgb(255, 0, 156)",8
-Hebrew (modern) (עברית),he,כחול,כחול,"rgb(0, 94, 255)",78
-Hebrew (modern) (עברית),he,ירוק,ירוק,"rgb(0, 255, 53)",60
-Hebrew (modern) (עברית),he,תכלת,תכלת,"rgb(0, 210, 255)",52
-Hebrew (modern) (עברית),he,ורוד,ורוד,"rgb(255, 0, 169)",48
-Hebrew (modern) (עברית),he,צהוב,צהוב,"rgb(255, 243, 0)",47
-Hebrew (modern) (עברית),he,כתום,כתום,"rgb(255, 137, 0)",46
-Hebrew (modern) (עברית),he,אדום,אדום,"rgb(255, 0, 36)",45
-Hebrew (modern) (עברית),he,טורקיז,טורקיז,"rgb(0, 255, 211)",34
-Hebrew (modern) (עברית),he,סגול,סגול,"rgb(179, 0, 255)",31
-Hebrew (modern) (עברית),he,ורודפוקסיה,ורוד פוקסיה,"rgb(255, 0, 200)",12
-Hebrew (modern) (עברית),he,כחולבהיר,כחול בהיר,"rgb(0, 172, 255)",11
-Hebrew (modern) (עברית),he,ירקרק,ירקרק,"rgb(0, 255, 60)",10
-Hebrew (modern) (עברית),he,פוקסיה,פוקסיה,"rgb(255, 0, 173)",8
-Indonesian (Bahasa Indonesia),id,birumuda,biru muda,"rgb(0, 204, 255)",67
-Indonesian (Bahasa Indonesia),id,merah,merah,"rgb(255, 0, 38)",48
-Indonesian (Bahasa Indonesia),id,biru,biru,"rgb(0, 114, 255)",47
-Indonesian (Bahasa Indonesia),id,hijau,hijau,"rgb(0, 255, 70)",43
-Indonesian (Bahasa Indonesia),id,birutua,biru tua,"rgb(0, 70, 255)",40
-Indonesian (Bahasa Indonesia),id,kuning,kuning,"rgb(255, 239, 0)",37
-Indonesian (Bahasa Indonesia),id,hijaumuda,hijau muda,"rgb(0, 255, 76)",35
-Indonesian (Bahasa Indonesia),id,ungu,ungu,"rgb(177, 0, 255)",33
-Indonesian (Bahasa Indonesia),id,oranye,oranye,"rgb(255, 135, 0)",30
-Indonesian (Bahasa Indonesia),id,pink,pink,"rgb(255, 0, 183)",25
-Indonesian (Bahasa Indonesia),id,merahmuda,merah muda,"rgb(255, 0, 169)",21
-Indonesian (Bahasa Indonesia),id,magenta,magenta,"rgb(255, 0, 147)",15
-Indonesian (Bahasa Indonesia),id,merahjambu,merah jambu,"rgb(255, 0, 175)",12
-Indonesian (Bahasa Indonesia),id,jingga,jingga,"rgb(255, 139, 0)",11
-Indonesian (Bahasa Indonesia),id,birulangit,biru langit,"rgb(0, 195, 255)",9
-Lithuanian (lietuvių kalba),lt,melyna,mėlyna,"rgb(0, 100, 255)",54
-Lithuanian (lietuvių kalba),lt,zydra,žydra,"rgb(0, 217, 255)",42
-Lithuanian (lietuvių kalba),lt,oranzine,oranžinė,"rgb(255, 140, 0)",33
-Lithuanian (lietuvių kalba),lt,violetine,violetinė,"rgb(194, 0, 255)",28
-Lithuanian (lietuvių kalba),lt,geltona,geltona,"rgb(255, 233, 0)",26
-Lithuanian (lietuvių kalba),lt,raudona,raudona,"rgb(255, 0, 45)",25
-Lithuanian (lietuvių kalba),lt,rozine,rožinė,"rgb(255, 0, 176)",24
-Lithuanian (lietuvių kalba),lt,zalia,žalia,"rgb(4, 255, 0)",21
-Lithuanian (lietuvių kalba),lt,salotine,salotinė,"rgb(118, 255, 0)",18
-Lithuanian (lietuvių kalba),lt,zalsva,žalsva,"rgb(0, 255, 162)",16
-Lithuanian (lietuvių kalba),lt,purpurine,purpurinė,"rgb(255, 0, 176)",13
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,biru,biru,"rgb(0, 137, 255)",62
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,hijau,hijau,"rgb(0, 255, 80)",50
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,merah,merah,"rgb(255, 0, 45)",33
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,merahjambu,merah jambu,"rgb(255, 0, 165)",30
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,kuning,kuning,"rgb(255, 234, 0)",24
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,ungu,ungu,"rgb(198, 0, 255)",19
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,oren,oren,"rgb(255, 137, 0)",18
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,jingga,jingga,"rgb(255, 118, 0)",15
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,birumuda,biru muda,"rgb(0, 200, 255)",12
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,birulangit,biru langit,"rgb(0, 195, 255)",11
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,hijaumuda,hijau muda,"rgb(0, 255, 37)",9
-"Malay (bahasa Melayu, بهاس ملايو‎)",ms,pink,pink,"rgb(255, 0, 161)",8
-Norwegian Bokmål (Norsk bokmål),nb,bla,blå,"rgb(0, 125, 255)",81
-Norwegian Bokmål (Norsk bokmål),nb,grønn,grønn,"rgb(0, 255, 82)",55
-Norwegian Bokmål (Norsk bokmål),nb,rosa,rosa,"rgb(255, 0, 181)",51
-Norwegian Bokmål (Norsk bokmål),nb,rød,rød,"rgb(255, 0, 46)",43
-Norwegian Bokmål (Norsk bokmål),nb,turkis,turkis,"rgb(0, 255, 250)",39
-Norwegian Bokmål (Norsk bokmål),nb,oransje,oransje,"rgb(255, 134, 0)",39
-Norwegian Bokmål (Norsk bokmål),nb,gul,gul,"rgb(255, 233, 0)",37
-Norwegian Bokmål (Norsk bokmål),nb,lilla,lilla,"rgb(186, 0, 255)",31
-Norwegian Bokmål (Norsk bokmål),nb,lysebla,lyseblå,"rgb(0, 209, 255)",17
-Norwegian Bokmål (Norsk bokmål),nb,himmelbla,himmelblå,"rgb(0, 181, 255)",11
-Norwegian Bokmål (Norsk bokmål),nb,lime,lime,"rgb(152, 255, 0)",9
-Norwegian Bokmål (Norsk bokmål),nb,mørkebla,mørkeblå,"rgb(0, 64, 255)",8
-Norwegian Bokmål (Norsk bokmål),nb,magenta,magenta,"rgb(255, 0, 198)",8
-Norwegian Bokmål (Norsk bokmål),nb,kongebla,kongeblå,"rgb(0, 53, 255)",8
-Norwegian Bokmål (Norsk bokmål),nb,limegrønn,limegrønn,"rgb(121, 255, 0)",8
 Vietnamese (Tiếng Việt),vi,hong,hồng,"rgb(255, 0, 187)",48
 Vietnamese (Tiếng Việt),vi,xanhduong,xanh dương,"rgb(0, 128, 255)",38
 Vietnamese (Tiếng Việt),vi,vang,vàng,"rgb(255, 233, 0)",33

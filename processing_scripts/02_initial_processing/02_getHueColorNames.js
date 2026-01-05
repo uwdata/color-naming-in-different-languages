@@ -4,8 +4,9 @@ import csv from 'csvtojson';
 import * as d3 from 'd3'
 import csvWriter from 'csv-write-stream'
 import {languages_iso_639} from "../../shared_files/languages-iso-639.js"
+import hueBinHelper from '../utils/hueBinHelper.js'
 
-const N_BIN_OPTIONS = [72, 36]
+const N_BIN_OPTIONS = [120, 72, 36]
 
 // fraction of colors needed to include this color
 const MIN_COLOR_FRACTION = .002 
@@ -128,7 +129,7 @@ csv()
                     += blurFraction
               }
             }
-            const colorHueRatio = getHueColorRatio(response)
+            const colorHueRatio = hueBinHelper.getHueBinHelper(colorSet).getHueColorRatio(response)
             x_hue_angle += Math.cos(colorHueRatio * 2*Math.PI),
             y_hue_angle += Math.sin(colorHueRatio * 2*Math.PI)
           });
@@ -138,7 +139,7 @@ csv()
           } else if (y_hue_angle < 0){
             angle += 2 * Math.PI
           } 
-          const avgHueColor = getHueColorFromRatio(angle / (2*Math.PI))
+          const avgHueColor = hueBinHelper.getHueBinHelper(colorSet).getHueColorFromRatio(angle / (2*Math.PI))
           mapped.avgHueColor.push(
             d3.rgb(avgHueColor.r, avgHueColor.g, avgHueColor.b)
           );
@@ -180,25 +181,12 @@ csv()
       });
 
 
-      // TODO: This is incorrect midpoint math
       result.colorSet = hueColorBins.map(function(bin, i, array){
-        //const index = bin????
-        let startIndex, endIndex
-        for(const [color_i, setColor] of colorSet.entries()){
-          if(colorEqual(setColor.rgb, {r: bin.bin_start_r, g: bin.bin_start_g, b: bin.bin_start_b})){
-            startIndex = color_i
-          }
-          if(colorEqual(setColor.rgb, {r: bin.bin_end_r, g: bin.bin_end_g, b: bin.bin_end_b})){
-            endIndex = color_i
-          }
+        return{
+          r: bin.bin_center_r,
+          g: bin.bin_center_g,
+          b: bin.bin_center_b
         }
-
-        const middleIndex = Math.round(i===0 ? endIndex/2 : (endIndex + startIndex) / 2)
-        delete colorSet[middleIndex].lch
-        return colorSet[middleIndex]
-        //const i = bin.bin_i
-        // get the midpoint hue color in the bin to represent the bin
-        //return colorSet[Math.round(i===0 ? index/2 : (index + array[i-1]) / 2)];
       });
 
 
@@ -240,6 +228,8 @@ csv()
     }
   }
 
+  hue_colors_info.sort((a, b) => a.lang.localeCompare(b.lang))
+
   // export overall color info
   let hueColorWriter = csvWriter();
   hueColorWriter.pipe(fs.createWriteStream(O_HUE_SUMMARY_FILE));
@@ -251,35 +241,11 @@ csv()
 
 
 
-const totalColorSetDist = colorSet[colorSet.length - 1].cumulative_dist +
-                          colorSet[colorSet.length - 1].next_dist
-
-// ratio for how long along the hue color line is the given color
-function getHueColorRatio(color){
-  for (var i = 0; i < colorSet.length; i++) {
-    if(colorEqual(colorSet[i].rgb, color)){
-      const currentMidpointDist = colorSet[i].cumulative_dist + colorSet[i].next_dist / 2
-      return currentMidpointDist / totalColorSetDist;
-    }
-  }
-  throw new Error("Error, hue color not found in color set: ", color)
-}
-
-function getHueColorFromRatio(ratio){
-  for (var i = 0; i < colorSet.length; i++) {
-    if(ratio < (colorSet[i].cumulative_dist + colorSet[i].next_dist) / totalColorSetDist){
-      return colorSet[i].rgb
-    }
-  }
-  throw new Error("Error, hue color not found for ratio value: ", color)
-}
-
-
 function binNum(response, hueColorBins){
-  const responseRatio = getHueColorRatio(response)
+  const responseRatio = hueBinHelper.getHueBinHelper(colorSet).getHueColorRatio(response)
   for(const [bin_i, bin] of hueColorBins.entries()){
     if(!bin.binStartRatio){
-      bin.binStartRatio = getHueColorRatio({
+      bin.binStartRatio = hueBinHelper.getHueBinHelper(colorSet).getHueColorRatio({
         r: bin.bin_start_r,
         g: bin.bin_start_g,
         b: bin.bin_start_b
@@ -287,26 +253,22 @@ function binNum(response, hueColorBins){
     }
 
     if(!bin.binEndRatio){
-      bin.binEndRatio = getHueColorRatio({
-      r: bin.bin_end_r,
-      g: bin.bin_end_g,
-      b: bin.bin_end_b
+      bin.binEndRatio = hueBinHelper.getHueBinHelper(colorSet).getHueColorRatio({
+      r: bin.bin_end_before_r,
+      g: bin.bin_end_before_g,
+      b: bin.bin_end_before_b
     })
     }
 
     if(bin.binStartRatio < bin.binEndRatio){
-      if(responseRatio >= bin.binStartRatio && responseRatio <= bin.binEndRatio){
+      if(responseRatio >= bin.binStartRatio && responseRatio < bin.binEndRatio){
         return bin_i
       }
     } else {
-      if(responseRatio <= bin.binStartRatio && responseRatio >= bin.binEndRatio){
+      if(responseRatio >= bin.binStartRatio || responseRatio < bin.binEndRatio){
         return bin_i
       }
     }
   }
-  throw new Error("Error, hue color not found in color set: ", color)
-}
-function colorEqual(colorA, colorB){
-  // console.log(colorA);
-  return colorA.r+"" === colorB.r && colorA.g+"" === colorB.g && colorA.b+"" === colorB.b;
+  throw new Error("Error, hue color not found in color set: ", response)
 }

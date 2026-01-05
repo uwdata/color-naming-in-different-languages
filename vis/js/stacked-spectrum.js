@@ -1,4 +1,7 @@
-const N_BIN_OPTIONS = [36, 72]
+const N_BIN_OPTIONS = [
+  {bins: "36", name: "Low-res (36)"}, 
+  {bins: "72", name: "Medium-res (72)"},
+  {bins: "120", name: "High-res (120)"}]
 const NO_BLUR = "no-blur"
 const BLUR = "blur"
 
@@ -13,7 +16,7 @@ const langIds = {}
 const langsByIds = {}
 let langIdCount = 0
 let data_blur = BLUR
-let num_bins = N_BIN_OPTIONS[1]
+let num_bins = N_BIN_OPTIONS[1].bins
 let numTerms = 20
 let isDrawn = false
 let formerLangSelected = []
@@ -36,9 +39,9 @@ $(document).on('ready page:load', async function () {
       blur_text = "_blur"
     }
     for(const n_bins of N_BIN_OPTIONS){
-      $.getJSON(`../model/binned_hue_colors/hue_color_names_binned_${n_bins}${blur_text}_aggregated.json`,
+      $.getJSON(`../model/binned_hue_colors/hue_color_names_binned_${n_bins.bins}${blur_text}_aggregated.json`,
         function( data ) {
-          colorData[blur][n_bins] = data
+          colorData[blur][n_bins.bins] = data
           refreshPage();
         })
     }
@@ -48,7 +51,7 @@ $(document).on('ready page:load', async function () {
   $("#blur").change(refreshPage)
 
   for(const n_bins of N_BIN_OPTIONS){
-    $("#num_bins").append(`<option val="${n_bins}" selected >${n_bins}</option>`)
+    $("#num_bins").append(`<option value="${n_bins.bins}">${n_bins.name}</option>`)
   }
   $("#num_bins").val(num_bins)
   $("#num_bins").change(refreshPage)
@@ -271,7 +274,7 @@ function refreshPage(){
             .attr('class','vis-title')
             .attr('x',10)
             .attr('y',-10)
-            .text(lang + " (# of names : "+ data[lang].totalCount +")");
+            .text(lang + " (# of names : "+ data[lang].totalCount.toLocaleString() +")");
 
       let colorPatch = svg.selectAll(".color_patch")
           .data(data_colors)
@@ -281,7 +284,7 @@ function refreshPage(){
           .attr("y", 0)
           .attr("width", function(d,i) { return i===(spectrumN-1) ? (x(1)-x(0)) /2 : x(1)-x(0)+1; } )
           .attr("height", height+20 )
-          .attr("fill", function(d){ return 'rgb(' + d.rgb.r + ',' + d.rgb.g+',' + d.rgb.b + ')';})
+          .attr("fill", function(d){ return 'rgb(' + d.r + ',' + d.g+',' + d.b + ')';})
 
       svg.append("rect")
           .attr("class", "spacer-rect")
@@ -483,9 +486,9 @@ function indexOfColorOffset(color, colorSet, colorName){
   let min_dist_sq = 100000000000
   let min_i = 0
   for(const [i, c] of colorSet.entries()){
-    const dist_sq = Math.pow(color.r - c.rgb.r, 2) +
-                    Math.pow(color.g - c.rgb.g, 2) +
-                    Math.pow(color.b - c.rgb.b, 2) 
+    const dist_sq = Math.pow(color.r - c.r, 2) +
+                    Math.pow(color.g - c.g, 2) +
+                    Math.pow(color.b - c.b, 2) 
     if(dist_sq < min_dist_sq){
       min_dist_sq = dist_sq
       min_i = i
