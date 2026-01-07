@@ -1,6 +1,6 @@
 # Many Languages, Many Colors Dataset
 
-This is the data page for [The Many Languages, Many Colors Project](https://uwdata.github.io/color-naming-in-different-languages).
+This is the data and project page for [The Many Languages, Many Colors Project](https://uwdata.github.io/color-naming-in-different-languages).
 
 ## Data page organization
 This project is divided up as follows:
