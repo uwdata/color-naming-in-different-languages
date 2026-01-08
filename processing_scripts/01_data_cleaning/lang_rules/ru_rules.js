@@ -6,23 +6,24 @@ const excludeNames = [
 
 ];
 
+// NOTE: Make sure to normalize NFD (string.normalize("NFD"))
 const nameReplacingRules = [
-    [/sholte/, "желтый"],
-    [/xolte/, "желтый"],
+    [/sholte/, "желтый"],
+    [/xolte/, "желтый"],
 
-    [/жлтый/, "желтый"],
+    [/жлтый/, "желтый"],
 
-    [/zelone/, "зеленый"],
-    [/celone/, "зеленый"],
-    [/зелный/, "зеленый"],
+    [/zelone/, "зеленый"],
+    [/celone/, "зеленый"],
+    [/зелный/, "зеленый"],
 
-    [/djelatoi/, "золотой"],
-    [/krasne/, "красный"],
-    [/arangeve/, "оранжевый"],
-    [/roseve/, "розовый"],
+    [/djelatoi/, "золотой"],
+    [/krasne/, "красный"],
+    [/arangeve/, "оранжевый"],
+    [/roseve/, "розовый"],
     
-    [/cene/, "синий"],
-    [/cenya/, "синий"]
+    [/cene/, "синий"],
+    [/cenya/, "синий"]
 ];
 
 export default {

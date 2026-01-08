@@ -4,13 +4,15 @@ const excludeNames = [
     // English color names:
     "pink", "blue"
 ];
+
+// NOTE: Make sure to normalize NFD (string.normalize("NFD"))
 const nameReplacingRules = [
-    [/blekitny/, "błękitny"], 
+    [/blekitny/, "błękitny"], 
     [/ciemny/, "ciemno"],
     [/jasny/, "jasno"],
-    [/pomaranczowy/, "pomarańczowy"], 
-     ["rozowy", "różowy"],
-    ["zolty", "żółty"]
+    [/pomaranczowy/, "pomarańczowy"], 
+     ["rozowy", "różowy"],
+    ["zolty", "żółty"]
 ];
 
 export default {

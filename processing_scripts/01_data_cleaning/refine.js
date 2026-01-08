@@ -24,7 +24,10 @@ for(const lang_rule_file_name of lang_rule_files){
 //    and in some languages (e.g., Korean, Chinese) add a standardized ending,
 //    so display name will be consistent with those characteristics
 function standardize_entered(cn){
-  let name = cn.name.replace(/\s*[-_]\s*/, " ")
+  let name = cn.name
+    .normalize("NFD")
+    .replace(/\s*[-_]\s*/, " ")
+
   name = name.toString().trim().toLowerCase()
 
   if(lang_rules[cn.langAbv]){
@@ -51,7 +54,8 @@ function refine(cn){
 
     // general refine:
     // remove diacritics:
-    cn.name = cn.name.toLowerCase()
+    cn.name = cn.name
+      .toLowerCase()
       .normalize("NFD").replace(/\p{Diacritic}/gu, "")
 
     if(cn.langAbv in lang_rules){
@@ -76,6 +80,10 @@ function refine(cn){
         }
       }
 
+      if(cn.langAbv == "ko"){
+        //cn.name.includes("란")){
+        debugger;
+      }
       if("nameReplacingRules" in langRules){
         cn.name = replaceByArray(cn.name, langRules.nameReplacingRules)
       }

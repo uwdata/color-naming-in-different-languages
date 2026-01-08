@@ -6,6 +6,8 @@ const excludeNames = [
     // English color names:
     "blue", "green", "magenta", "orange", "pink", "purple", "red", "yellow"
 ];
+
+// NOTE: Make sure to normalize NFD (string.normalize("NFD"))
 const nameReplacingRules = [
 
 ];

@@ -7,6 +7,8 @@ const excludeNames = [
     //nonsense
     "zefza", "fgeklf", "d", "nlndfnzdlanzv", "fezl", "fln", "nl", "l", "d", "fn", "n", "b"
 ];
+
+// NOTE: Make sure to normalize NFD (string.normalize("NFD"))
 const nameReplacingRules = [
     [/aqua$/, "aqua frais"],
     [/aqua marine/, "aquamarine"],
@@ -24,19 +26,19 @@ const nameReplacingRules = [
     [/bleau cyan/, "bleu cyan"],
     [/bleu prusse/, "bleu de prusse"],
     [/bleu électrict/, "bleu électrique"],
-    [/bleu émaraude/, "bleu émeraude"],
-    [/bleu fnoncé/, "bleu foncé"],
+    [/"bleu émaraude/, "bleu émeraude"],
+    [/bleu fnoncé/, "bleu fnoncé"],
 
     [/bleu marin$/, "bleu marine"],
     [/bleur marine/, "bleu marine"],
 
     [/vert outremer/, "bleu outremer"],
-    [/bleu pale/, "bleu pâle"],
-    [/bleu plus pale/, "bleu plus pâle"],
+    [/bleu pale/, "bleu pâle"],
+    [/bleu plus pale/, "bleu plus pâle"],
     [/^royal/, "bleu royal"],
     [/jaune bouton d'or/, "bouton d'or"],
-    [/bue$/, "buée"],
-    [/ecarlate/, "écarlate"],
+    [/bue$/, "buée"],
+    [/ecarlate/, "écarlate"],
 
     [/fushia/, "fuchsia"],
     [/fuschia/, "fuchsia"],
@@ -44,26 +46,26 @@ const nameReplacingRules = [
     [/fuchia/, "fuchsia"],
 
     [/bleu jade/, "jade"],
-    [/jaunatre/, "jaunâtre"],
+    [/jaunatre/, "jaunâtre"],
 
     [/jauen/, "jaune"],
     [/jeaune/, "jaune "],
 
-    [/jaune brûler/, "jaune brûlé"],
+    [/jaune brûler/, "jaune brûlé"],
 
     [/jaune d'œuf frais/, "jaune d'œuf"],
     [/jaune d’oeuf/, "jaune d'œuf"],
 
     [/jaune vert fluo/, "jaune fluo"],
 
-    [/jaune orange/, "jaune orangé"],
-    [/jaune oragne/, "jaune orangé"],
+    [/jaune orange/, "jaune orangé"],
+    [/jaune oragne/, "jaune orangé"],
 
     [/vert jaune/, "jaune vert"],
-    [/mentholé/, "menthe"],
-    [/mauredoré/, "mordoré"],
+    [/mentholé/, "menthe"],
+    [/mauredoré/, "mordoré"],
     [/organge/, "orange"],
-    [/orange brûler/, "orange brûlé"],
+    [/orange brûler/, "orange brûlé"],
     [/orange claire/, "orange clair"],
     [/orange pale/, "orange pâle"],
     [/orange sanguin$/, "orange sanguine"],
@@ -71,7 +73,7 @@ const nameReplacingRules = [
     [/rose fuchia/, "rose fuchsia"],
     [/rose rouge/, "rose, rouge"],
 
-    [/rouge orange/, "rouge orangé"],
+    [/rouge orange/, "rouge orangé"],
     [/rouge orance/, "rouge orangé"],
 
     [/turquoi$/, "turquoise"],
@@ -84,13 +86,13 @@ const nameReplacingRules = [
     [/vert claire/, "vert clair"],
     [/very eau/, "vert d'eau"],
     [/vert mint/, "vert menthe"],
-    [/verte pale/, "vert pâle"],
+    [/verte pale/, "vert pâle"],
 
     [/viloet/, "violet"],
     [/voilet/, "violet"],
     [/volet/, "violet"],
 
-    [/violet pale/, "violet pâle"]
+    [/violet pale/, "violet pâle"]
 ];
 
 export default {
