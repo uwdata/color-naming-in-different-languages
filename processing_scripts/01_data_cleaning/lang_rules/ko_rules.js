@@ -2,11 +2,9 @@
 
 const standardizedEnd = "색"
 
-const ignoreCharactersForMatching = /[a-zA-Z]/ig
+const forbiddenCharacters = /[a-zA-Z]/
 
 const excludeNames = [
-
-
 ];
 
 // NOTE: Make sure to normalize NFD (string.normalize("NFD"))
@@ -23,7 +21,7 @@ const nameReplacingRules = [
 
 export default {
     standardizedEnd: standardizedEnd,
-    ignoreCharactersForMatching: ignoreCharactersForMatching,
+    forbiddenCharacters: forbiddenCharacters,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules
 }

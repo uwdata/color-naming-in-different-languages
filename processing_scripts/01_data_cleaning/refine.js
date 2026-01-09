@@ -76,14 +76,10 @@ function refine(cn){
       // remove standardized end (though doesn't work for Korean for some reason???)
       if("standardizedEnd" in langRules){
         if(cn.name.endsWith(langRules.standardizedEnd)){
-          cn.name = cn.name.slice(0, cn.name.length - 1)
+          cn.name = cn.name.slice(0, cn.name.length - langRules.standardizedEnd.length)
         }
       }
 
-      if(cn.langAbv == "ko"){
-        //cn.name.includes("란")){
-        debugger;
-      }
       if("nameReplacingRules" in langRules){
         cn.name = replaceByArray(cn.name, langRules.nameReplacingRules)
       }

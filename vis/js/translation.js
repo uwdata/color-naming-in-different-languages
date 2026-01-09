@@ -56,6 +56,16 @@ const translationByDict = [
   {"direction": "ko-en", "lang_t": "en", "lang_s": "ko", "koterm": "검정색", "enterm": "black", "by": "dict", "gid": 16},
   {"direction": "en-ko", "lang_t": "ko", "lang_s": "en", "enterm": "black", "koterm": "검정색", "by": "dict", "gid": 16}
 ];
+
+const koColorEnding = "색".normalize("NFD")
+
+function standardizeKoTerm(koterm){
+  koterm = koterm.normalize("NFD")
+  if(koterm.endsWith(koColorEnding)){
+    koterm = koterm.slice(0, koterm.length - koColorEnding.length)
+  }
+  return koterm
+}
 //Papago translator
 //Google Translator
 //Korean-English Dictionary
@@ -80,10 +90,11 @@ $(document).on('ready page:load', function () {
         "by": "color",
         "gid": td.gid
       };
-      let translateInfo = data.find(d => d.koterm === td.koterm && d.enterm === td.enterm)
+      let translateInfo = data.find(
+        d => standardizeKoTerm(d.koterm)=== standardizeKoTerm(td.koterm) && d.enterm === td.enterm)
       td.dist = translateInfo.dist;
       if (td.lang_s === "ko") {
-        minD = d3.min(data.filter(d => d.koterm === td.koterm), d => d.dist);
+        minD = d3.min(data.filter(d => standardizeKoTerm(d.koterm) === standardizeKoTerm(td.koterm)), d => d.dist);
         best = data.find(d => d.dist === minD);
         translationByColor = Object.assign(translationByColor, {
           "koterm": td.koterm,
@@ -142,7 +153,7 @@ function draw(translations, fullColorDetails){
   let terms = basicTerms.concat(otherTerms).sort((a,b) => -a.basic +b.basic).sort((a,b) => a.gid - b.gid);
   terms =  unique(terms, t => t.gid + t.term);
   terms.forEach(t => {
-    let avgC = fullColorDetails.find(avgC => avgC.simplifiedName === t.term && LANG_CODE[t.lang] === avgC.lang);
+    let avgC = fullColorDetails.find(avgC => standardizeKoTerm(avgC.simplifiedName) === standardizeKoTerm(t.term) && LANG_CODE[t.lang] === avgC.lang);
     t.lab = avgC.avgLABColor;
     t.avgColorCode = avgC.avgColorRGBCode;
     t.soleTarget = translations.filter(tr => {
