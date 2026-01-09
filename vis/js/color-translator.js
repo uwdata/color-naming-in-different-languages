@@ -29,9 +29,56 @@ function formatColorOpt (colorOpt) {
   return $colorOpt;
 };
 
+// custom color term matching that removes diacritics and runs .normalize("NFD") 
+// on both sides before comparing
+const standardizedColorTermEnds = ["色", "색"]
+
+function simplifyColorTerm(term){
+	term = term.toLowerCase()
+      .normalize("NFD")
+	  .replace(/\p{Diacritic}/gu, "")
+		.replace(/\s*$/,"") // trim white space
+        .replace(/^\s*/,"")
+        .replace(/[-_]+/g," ")
+        .replace(/\s+/g,"")
+
+	for(const standardizedEnd of standardizedColorTermEnds){
+		if(term.endsWith(standardizedEnd)){
+			term = term.slice(0, term.length - standardizedEnd.length)
+		}
+	}
+	return term
+}
+
+function colorTermEquals(term1, term2){
+	return simplifyColorTerm(term1) == simplifyColorTerm(term2)
+}
+
+function colorTermsContains(term1, term2){
+	return simplifyColorTerm(term1).indexOf(simplifyColorTerm(term2)) > -1
+}
+
+function colorTermMatcher(params, data) {
+	// If there are no search terms, return all of the data
+	if ($.trim(params.term) === '') {
+		return data;
+	}
+
+	// Do not display the item if there is no 'text' property
+	if (typeof data.text === 'undefined') {
+		return null;
+	}
+
+	if(colorTermsContains(data.text, params.term)){
+		return data
+	}
+	return null;
+}
+
 
 $(document).ready(function() {
    $('.js-example-basic-single').select2({
+	matcher: colorTermMatcher,
 	templateResult: formatColorOpt,
 	templateSelection: formatColorOpt
    });
@@ -225,7 +272,8 @@ function updateColorNames(){
 		
 		// set selection from url hash params 
 		let termSelectedStr = "";
-		if(name == urlParams.get("term")){
+		// TODO: use custom compare function that we will add above
+		if(colorTermEquals(name, urlParams.get("term"))){
 			termSelectedStr = " selected ";
 		}
 		$("#startTerm").append("<option value='"+name+"' "+
