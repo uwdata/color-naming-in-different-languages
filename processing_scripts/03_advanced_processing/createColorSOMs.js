@@ -143,7 +143,7 @@ function createSOMs(colorInfo, namingData, lang_info){
 function createSOM(colorName, LABdata, size){
 
 	
-	let minNeighborhoodSize = size * .75; // 1.5 for size 2, 3 for size 4
+	let minNeighborhoodSize = size * .75; // 1.5 for size 2; 3 for size 4, 
 	let numExcluded;
 	
 	let bestRatio = 1;

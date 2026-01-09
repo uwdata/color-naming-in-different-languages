@@ -25,7 +25,7 @@ for(const lang_rule_file_name of lang_rule_files){
 //    so display name will be consistent with those characteristics
 function standardize_entered(cn){
   let name = cn.name
-    .normalize("NFD")
+    .normalize("NFC")
     .replace(/\s*[-_]\s*/, " ")
 
   name = name.toString().trim().toLowerCase()
@@ -33,8 +33,8 @@ function standardize_entered(cn){
   if(lang_rules[cn.langAbv]){
     const standardizedEnd = lang_rules[cn.langAbv].standardizedEnd
     if(standardizedEnd){
-      if(name.length > 0 && !name.endsWith(standardizedEnd)){
-          name += standardizedEnd
+      if(name.length > 0 && !name.endsWith(standardizedEnd.normalize("NFC"))){
+          name += standardizedEnd.normalize("NFC")
       }
     }
   }
@@ -75,8 +75,8 @@ function refine(cn){
 
       // remove standardized end (though doesn't work for Korean for some reason???)
       if("standardizedEnd" in langRules){
-        if(cn.name.endsWith(langRules.standardizedEnd)){
-          cn.name = cn.name.slice(0, cn.name.length - langRules.standardizedEnd.length)
+        if(cn.name.endsWith(langRules.standardizedEnd.normalize("NFD"))){
+          cn.name = cn.name.slice(0, cn.name.length - langRules.standardizedEnd.normalize("NFD").length)
         }
       }
 

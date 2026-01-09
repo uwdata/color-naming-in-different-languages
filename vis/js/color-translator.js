@@ -34,6 +34,7 @@ function formatColorOpt (colorOpt) {
 const standardizedColorTermEnds = ["色", "색"]
 
 function simplifyColorTerm(term){
+	if(!term) return ""
 	term = term.toLowerCase()
       .normalize("NFD")
 	  .replace(/\p{Diacritic}/gu, "")
