@@ -12,23 +12,17 @@ console.log(cleanedColorNames[0]);
 
 const allNamesByLang = Object.groupBy(cleanedColorNames, ({lang}) => lang)
 
-//OPTIONAL FILTER FOR JUST HUE COLORS
-for(let [lang, langData] of Object.entries(allNamesByLang)){
-    allNamesByLang[lang] = langData.filter(d=> d.rgbSet == "line")
-}
 
 const allLangs = Array.from(new Set([
                     ...Object.keys(allNamesByLang)]))
                 .sort()
 console.log(Object.keys(allLangs))
 
-//let selected_lang = "English (English)"
-let selected_lang = allLangs.find(a => a.startsWith("Greek"))
 
 $("#selected_langs").empty()
 
-for(lang of allLangs){
-    let selected_lang_temp = lang.startsWith("Greek")
+for(const lang of allLangs){
+    let selected_lang_temp = lang.startsWith("Persian")
     $("#selected_langs").append(new Option(
         `${lang} ‎(${ // Note LTR character here to make arrows show 
             allNamesByLang[lang] ? allNamesByLang[lang].length.toLocaleString() : 0}`, 
@@ -44,12 +38,8 @@ $("#min_name_count").change(e => {
     updateForceDirectedGraph()
 })
 
-$("#selected_langs").change(e => { 
-    updateForceDirectedGraph()
-})
 
-
-$("input[name='naming-or-matching']").change(e => {
+$("input[name='rgb-set']").change(e => {
     updateForceDirectedGraph()
 })
 
@@ -64,15 +54,24 @@ for(let [lang, langData] of Object.entries(allNamesByLang)){
 }
 
 
+function groupNameByLang(lang, rgbSet){
+    let langData = allNamesByLang[lang]
 
-const groupedNamesByLang = {}
-for(let [lang, langData] of Object.entries(allNamesByLang)){
+    // filter by rgbset
+    if(rgbSet == "hue-data"){
+        langData = langData.filter(d=> d.rgbSet == "line")
+    }else if(rgbSet == "full-data"){
+        langData = langData.filter(d=> d.rgbSet == "full")
+    }
+    // else it is both, so do no filtering
+
+
     console.log(lang)
     const groupedTerm = Object.groupBy(
         langData, 
         ({name}) => name)
 
-    groupedNamesByLang[lang] = Object.entries(groupedTerm).map(gTerm => {
+    const groupedNames = Object.entries(groupedTerm).map(gTerm => {
         const termGroup = d3.groups(
                 gTerm[1], 
                     t => t.standardized_entered_name)
@@ -109,15 +108,16 @@ for(let [lang, langData] of Object.entries(allNamesByLang)){
             "Standardized Names": termGroup,
         }
     })
+    return groupedNames
 }
 
-const groupedNamesByLangLinks = {}
+//const groupedNamesByLangLinks = {}
 
 // sort by name
-for(let [lang, langData] of Object.entries(groupedNamesByLang)){
-    groupedNamesByLang[lang] = langData
-        .sort((a, b) => a["Common Name"].localeCompare(b["Common Name"]))
-}
+// for(let [lang, langData] of Object.entries(groupedNamesByLang)){
+//     groupedNamesByLang[lang] = langData
+//         .sort((a, b) => a["Common Name"].localeCompare(b["Common Name"]))
+// }
 
 $("#data_view").empty()
     
@@ -140,73 +140,76 @@ function updateForceDirectedGraph(){
 
     const selected_lang = $("#selected_langs").val()
 
-    let nameData = groupedNamesByLang[selected_lang]
+    const rgbSet = $("input[name='rgb-set']:checked").val()
+
+    let nameData = groupNameByLang(selected_lang, rgbSet)
+    
     // filter by length more than 1
     const min_name_count = $("#min_name_count").val()
     const preLength = nameData.length
     if(min_name_count > 1){
         nameData = nameData.filter(d => d["data count"] > min_name_count)
-        $("#filter_lang_note").text(`Filtered down from ${preLength.toLocaleString()}, to ${nameData.length.toLocaleString()} names`)
+        $("#filter_lang_note").text(`Filtered down from ${preLength.toLocaleString()}, to ${nameData.length.toLocaleString()} names based on min-count`)
     }else{
-        $("#filter_lang_note").text(`Showing ${nameData ? nameData.length.toLocaleString() : 0} names`)
+        $("#filter_lang_note").text(`${nameData ? nameData.length.toLocaleString() : 0} names`)
     }
+
+    const postMinCountLength = nameData.length
 
     if(nameData.length > 100){
         nameData = nameData.sort((a,b) =>b["data count"] - a["data count"]).slice(0, 100)
-         $("#filter_lang_note").text(`For speed reasons, truncated data down from ${preLength.toLocaleString()}, to ${nameData.length.toLocaleString()} names`)
+         $("#filter_lang_note").text(`${$("#filter_lang_note").text()}. Note: For speed reasons cut down to ${nameData.length.toLocaleString()} names`)
     }
 
     // Specify the dimensions of the chart.
     const width = 928;
     const height = 680;
 
-    // Specify the color scale.
-    const color = d3.scaleOrdinal(d3.schemeCategory10);
 
     //if(!groupedNamesByLangLinks[selected_lang]){
-        console.log("calculating links for ", selected_lang)
-        groupedNamesByLangLinks[selected_lang] = []
-        let maxLinkStrength = 0
-        for(const term1 of nameData){
-            console.log("term1", term1["simplified name"])
-            for(const term2 of nameData){
-                if(term1 != term2){
-                    // how many participants have used both terms?
-                    let numSharedParticipants = 0
-                    for(const participantId of allParticipantsByLang[selected_lang]){
-                        if(participantId != "0"){
-                            if(term1.participantIds.has(participantId) &&
-                                term2.participantIds.has(participantId)){
-                                numSharedParticipants++
-                            }
+    console.log("calculating links for ", selected_lang)
+    const groupedNamesLinks = []
+    let maxLinkStrength = 0
+    for(const term1 of nameData){
+        console.log("term1", term1["simplified name"])
+        for(const term2 of nameData){
+            if(term1 != term2){
+                // how many participants have used both terms?
+                let numSharedParticipants = 0
+                for(const participantId of allParticipantsByLang[selected_lang]){
+                    if(participantId != "0"){
+                        if(term1.participantIds.has(participantId) &&
+                            term2.participantIds.has(participantId)){
+                            numSharedParticipants++
                         }
                     }
+                }
 
-                    const linkStrength = numSharedParticipants * numSharedParticipants
+                const linkStrength = numSharedParticipants * numSharedParticipants
 
-                    if(linkStrength > 0){
-                        groupedNamesByLangLinks[selected_lang].push({
-                            "source": term1["simplified name"],
-                            "target": term2["simplified name"],
-                            "value": linkStrength
-                        })
-                    }
-                    if(linkStrength > maxLinkStrength){
-                        maxLinkStrength = linkStrength
-                    }
+                if(linkStrength > 0){
+                    groupedNamesLinks.push({
+                        "source": term1["simplified name"],
+                        "target": term2["simplified name"],
+                        "value": linkStrength
+                    })
+                }
+                if(linkStrength > maxLinkStrength){
+                    maxLinkStrength = linkStrength
                 }
             }
         }
+    }
 
-        for(const link of groupedNamesByLangLinks[selected_lang]){
-            link.value = link.value / maxLinkStrength
-        }
-        console.log("found links", groupedNamesByLangLinks[selected_lang])
+    for(const link of groupedNamesLinks){
+        link.value = link.value / maxLinkStrength
+    }
+    console.log("found links", groupedNamesLinks)
    // }
 
     // The force simulation mutates links and nodes, so create a copy
     // so that re-evaluating this cell produces the same result.
-    const links = groupedNamesByLangLinks[selected_lang].map(d => ({...d}));
+    const links = groupedNamesLinks.map(d => ({...d}));
     const nodes = nameData.map(d => ({...d}));
 
     const maxNodeCount = Math.max(...nodes.map(d=>d["data count"]))
