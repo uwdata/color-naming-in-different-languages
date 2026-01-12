@@ -9,7 +9,7 @@ const rawDataRowSort = [
 
 $(document).on('ready page:load', async () => {
 
-let cleanedColorNames, removedColorData
+let cleanedColorNames, removedColorData, colorNameMatches
 
 await Promise.all([
     d3.csv("../model/cleaned_color_names.csv").then(data => {
@@ -17,17 +17,23 @@ await Promise.all([
     }),
     d3.csv("../model/removed_color_data.csv").then(data => {
         removedColorData = data
+    }),
+    d3.csv("../model/cleaned_color_name_matches.csv").then(data => {
+        colorNameMatches = data
     })
 ])
 console.log(cleanedColorNames[0]);
 console.log(removedColorData[0]);
+console.log(colorNameMatches[0]);
 
 const allNamesByLang = Object.groupBy(cleanedColorNames, ({lang}) => lang)
 const allRemovedNamesByLang = Object.groupBy(removedColorData, ({lang}) => lang)
+const allNameMatchesByLang = Object.groupBy(colorNameMatches, ({lang}) => lang)
 
 const allLangs = Array.from(new Set([
                     ...Object.keys(allNamesByLang), 
-                    ...Object.keys(allRemovedNamesByLang)]))
+                    ...Object.keys(allRemovedNamesByLang),
+                    ...Object.keys(allNameMatchesByLang)]))
                 .sort()
 console.log(Object.keys(allLangs))
 
@@ -72,6 +78,10 @@ $("input[name='cleaned-or-deleted']").change(e => {
     updateTableData()
 })
 
+$("input[name='naming-or-matching']").change(e => {
+    updateTableData()
+})
+
 
 const groupedNamesByLang = {}
 for(let [lang, langData] of Object.entries(allNamesByLang)){
@@ -111,6 +121,42 @@ for(let [lang, langData] of Object.entries(groupedNamesByLang)){
         .sort((a, b) => a["Common Name"].localeCompare(b["Common Name"]))
 }
 
+
+const groupedNameMatchessByLang = {}
+for(let [lang, langData] of Object.entries(allNameMatchesByLang)){
+    console.log(lang)
+    const groupedTerm = Object.groupBy(
+        langData, 
+        ({name}) => name)
+
+    groupedNamesByLang[lang] = Object.entries(groupedTerm).map(gTerm => {
+        const termGroup = d3.groups(
+                gTerm[1], 
+                    t => t.displayName)
+
+        const matchGroups = d3.groups(
+                gTerm[1], 
+                    t => t.matched )
+        
+        const displayName = termGroup
+                .map(a => {
+                    return {key: a[0], values: a[1]}})
+                .sort((a,b) => -a.values.length + b.values.length)[0]
+                .key
+        
+        const color_sample = getColorSample(gTerm[1], 9)
+        
+        return {
+            "Common Name": displayName,
+            "simplified name": gTerm[1][0].name,
+            "Color Sample": color_sample,
+            "data count": gTerm[1].length,
+            "Standardized Names": termGroup,
+        }
+    })
+}
+
+
 $("#data_view").empty()
     
 
@@ -124,6 +170,14 @@ function updateTableData(){
     $(table.node()).empty()
 
     const selected_lang = $("#selected_langs").val()
+
+    const dataSetTask = $("input[name='naming-or-matching']:checked").val()
+    if(dataSetTask == "naming-match-data"){
+        showRawData(allNameMatchesByLang[selected_lang], table, true, cleanedColorNames, removedColorData)
+        $("#filter_lang_note").hide()
+        $("#min_name_count_div").hide()
+        return
+    }
 
     const datasetShown = $("input[name='cleaned-or-deleted']:checked").val()
     console.log("datasetShown", datasetShown)
