@@ -12,9 +12,12 @@ import participantLangChanges from "./participant_lang_changes.js"
 
 
 // Path or the input csv file
-const FILE_I = "../../raw/color_names.csv"
-const FILE_O = "../../model/cleaned_color_names.csv"; // Path for the output
-const FILE_REMOVED_O = "../../model/removed_color_data.csv"; // Path for the output
+const COLOR_NAMES_I = "../../raw/color_names.csv"
+const COLOR_NAMES_O = "../../model/cleaned_color_names.csv"; // Path for the output
+const COLOR_NAMES_REMOVED_O = "../../model/removed_color_data.csv"; // Path for the output
+
+const COLOR_MATCHES_I = "../../raw/color_name_matches.csv"
+const COLOR_MATCHES_O = "../../model/cleaned_color_name_matches.csv"; // Path for the output
 
 // load language names to fix
 const lang_name_changes = await csv().fromFile("lang_name_change.csv")
@@ -69,7 +72,7 @@ function getLangAbv(lang){
 }
 
 
-csv().fromFile(FILE_I)
+csv().fromFile(COLOR_NAMES_I)
   .then((colorNames)=>{
 
   // ignore some of the priming effects and participant info data errors
@@ -150,7 +153,7 @@ csv().fromFile(FILE_I)
 
   console.log("writing file");
   let cleanedWriter = csvWriter({headers: csvColumnOrder});
-  cleanedWriter.pipe(fs.createWriteStream(FILE_O));
+  cleanedWriter.pipe(fs.createWriteStream(COLOR_NAMES_O));
 
   cleanedData.forEach(d => {
     delete d.cn_i
@@ -165,7 +168,7 @@ csv().fromFile(FILE_I)
   });
   console.log("writing removed data file");
   let removedWriter = csvWriter({headers: csvDeletedColumnOrder});
-  removedWriter.pipe(fs.createWriteStream(FILE_REMOVED_O));
+  removedWriter.pipe(fs.createWriteStream(COLOR_NAMES_REMOVED_O));
 
   removedData.forEach(d => {
     delete d.cn_i
@@ -175,3 +178,55 @@ csv().fromFile(FILE_I)
   removedWriter.end();
 });
 
+
+
+///////////////////////
+// Color name Matches
+const color_name_matches = await csv().fromFile(COLOR_MATCHES_I)
+
+
+color_name_matches.forEach(cn => {
+  
+  let oldName = cn.name
+  refine.refine(cn)
+  let newName = cn.name
+  if(oldName != newName){
+      console.log("WARNING: Name changed when transferring color name match")
+      console.log("  lang", cn.lang)
+      console.log("  entered name", enteredColorNameLookup[cn.cn_i])
+      console.log("  colorName row", cn.cn_i)
+      console.log("  names: ", oldName, ", ", newName)
+  }
+
+  if(cn.name != ""){
+    // try refining again and make sure it doesn't mess it up
+    //   e.g., simply replacing "blu" with "blue" would turn "blue" into "bluee"
+    let oldName = cn.name
+    refine.refine(cn)
+    let newName = cn.name
+    if(oldName != newName){
+      console.log("WARNING: Name changed on repeated refining (color name matches)")
+      console.log("  lang", cn.lang)
+      console.log("  entered name", enteredColorNameLookup[cn.cn_i])
+      console.log("  colorName row", cn.cn_i)
+      console.log("  names: ", oldName, ", ", newName)
+    }
+  }
+})
+
+// color_name_matches.forEach(cn => {
+//   cn.entered_name = enteredColorNameLookup[cn.cn_i];
+// });
+
+// let cleanedData = colorNames.filter(cn => {
+//   return cn.name !== "";
+// });
+
+console.log("writing file");
+let cleanedMatchesWriter = csvWriter();
+cleanedMatchesWriter.pipe(fs.createWriteStream(COLOR_MATCHES_O));
+
+color_name_matches.forEach(d => {
+  delete d.cn_i
+  cleanedMatchesWriter.write(d);
+});
