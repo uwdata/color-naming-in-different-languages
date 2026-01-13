@@ -1,10 +1,18 @@
 const STANDARDIZED_NAME_COL = "Standardized Names"
+const STANDARDIZED_MATCH_COL = "Match?"
 
 const rawDataRowSort = [
     "reason_excluded", "entered_name", "standardized_entered_name", "name",
     "lang", "langAbv", "participantId", "rgbSet",
     "studyVersion", "locale", "phaseNum", "trialNum","tileNum", "background",
     "colorSpace", "r", "g", "b", "originalLangAbv"
+]
+
+const matchTypeSort = [
+    "yes",
+    "somewhat",
+    "no",
+    "idk"
 ]
 
 $(document).on('ready page:load', async () => {
@@ -30,27 +38,43 @@ const allNamesByLang = Object.groupBy(cleanedColorNames, ({lang}) => lang)
 const allRemovedNamesByLang = Object.groupBy(removedColorData, ({lang}) => lang)
 const allNameMatchesByLang = Object.groupBy(colorNameMatches, ({lang}) => lang)
 
-const allLangs = Array.from(new Set([
+const allNameLangs = Array.from(new Set([
                     ...Object.keys(allNamesByLang), 
-                    ...Object.keys(allRemovedNamesByLang),
-                    ...Object.keys(allNameMatchesByLang)]))
+                    ...Object.keys(allRemovedNamesByLang)]))
                 .sort()
-console.log(Object.keys(allLangs))
+console.log(Object.keys(allNameLangs))
 
-//let selected_lang = "English (English)"
-let selected_lang = allLangs.find(a => a.startsWith("Greek"))
+const allNameMatchLangs = Array.from(Object.keys(allNameMatchesByLang))
+                .sort()
 
-$("#selected_langs").empty()
+function fillSelectedLangs(){
+    $("#selected_langs").empty()
 
-for(lang of allLangs){
-    let selected_lang_temp = lang.startsWith("Greek")
-    $("#selected_langs").append(new Option(
-        `${lang} ‎(${ // Note LTR character here to make arrows show 
-            allNamesByLang[lang] ? allNamesByLang[lang].length.toLocaleString() : 0} - ${
-            allRemovedNamesByLang[lang] ? allRemovedNamesByLang[lang].length.toLocaleString() : 0})`, 
-        lang, true, selected_lang_temp))
-    selected_lang_temp = false
+
+
+    const dataSetTask = $("input[name='naming-or-matching']:checked").val()
+
+    let langArray
+    if(dataSetTask == "naming-data"){
+        langArray = allNameLangs
+        $("#cleaned-or-deleted-div").show()
+    }else {
+        langArray = allNameMatchLangs
+        $("#cleaned-or-deleted-div").hide()
+    }
+
+    for(lang of langArray){
+        let selected_lang_temp = lang.startsWith("Greek")
+        $("#selected_langs").append(new Option(
+            `${lang} ‎(${ // Note LTR character here to make arrows show 
+                allNamesByLang[lang] ? allNamesByLang[lang].length.toLocaleString() : 0} - ${
+                allRemovedNamesByLang[lang] ? allRemovedNamesByLang[lang].length.toLocaleString() : 0})`, 
+            lang, true, selected_lang_temp))
+        selected_lang_temp = false
+    }
 }
+
+fillSelectedLangs()
 
 $("#selected_langs").change(e => {
     const selected_lang = $("#selected_langs").val()
@@ -79,6 +103,7 @@ $("input[name='cleaned-or-deleted']").change(e => {
 })
 
 $("input[name='naming-or-matching']").change(e => {
+    fillSelectedLangs()
     updateTableData()
 })
 
@@ -122,21 +147,26 @@ for(let [lang, langData] of Object.entries(groupedNamesByLang)){
 }
 
 
-const groupedNameMatchessByLang = {}
+const groupedNameMatchesByLang = {}
 for(let [lang, langData] of Object.entries(allNameMatchesByLang)){
     console.log(lang)
     const groupedTerm = Object.groupBy(
         langData, 
         ({name}) => name)
 
-    groupedNamesByLang[lang] = Object.entries(groupedTerm).map(gTerm => {
+    groupedNameMatchesByLang[lang] = Object.entries(groupedTerm).map(gTerm => {
         const termGroup = d3.groups(
                 gTerm[1], 
                     t => t.displayName)
 
         const matchGroups = d3.groups(
                 gTerm[1], 
-                    t => t.matched )
+                    t => t.match )
+
+        // add yes if it isn't already there
+        if(!matchGroups.map(d => d[0]).includes(matchTypeSort[0])){
+            matchGroups.push([matchTypeSort[0], []])
+        }
         
         const displayName = termGroup
                 .map(a => {
@@ -144,18 +174,20 @@ for(let [lang, langData] of Object.entries(allNameMatchesByLang)){
                 .sort((a,b) => -a.values.length + b.values.length)[0]
                 .key
         
-        const color_sample = getColorSample(gTerm[1], 9)
-        
         return {
             "Common Name": displayName,
             "simplified name": gTerm[1][0].name,
-            "Color Sample": color_sample,
+            "Match?": matchGroups,
             "data count": gTerm[1].length,
-            "Standardized Names": termGroup,
         }
     })
 }
+for(let [lang, langData] of Object.entries(groupedNameMatchesByLang)){
+    groupedNameMatchesByLang[lang] = langData
+        .sort((a, b) => a["Common Name"].localeCompare(b["Common Name"]))
+}
 
+console.log(groupedNameMatchesByLang)
 
 $("#data_view").empty()
     
@@ -172,12 +204,6 @@ function updateTableData(){
     const selected_lang = $("#selected_langs").val()
 
     const dataSetTask = $("input[name='naming-or-matching']:checked").val()
-    if(dataSetTask == "naming-match-data"){
-        showRawData(allNameMatchesByLang[selected_lang], table, true, cleanedColorNames, removedColorData)
-        $("#filter_lang_note").hide()
-        $("#min_name_count_div").hide()
-        return
-    }
 
     const datasetShown = $("input[name='cleaned-or-deleted']:checked").val()
     console.log("datasetShown", datasetShown)
@@ -197,6 +223,10 @@ function updateTableData(){
    
 
     let nameData = groupedNamesByLang[selected_lang]
+
+    if(dataSetTask == "naming-match-data"){
+        nameData = groupedNameMatchesByLang[selected_lang]
+    }
 
     // filter by length more than 1
     const min_name_count = $("#min_name_count").val()
@@ -223,12 +253,26 @@ function updateTableData(){
             return a
         }))
         .join("td")
-        .style("text-align", d => d[0] == STANDARDIZED_NAME_COL ? "left" : undefined)
+        .style("text-align", d => d[0] == STANDARDIZED_NAME_COL || d[0] == STANDARDIZED_MATCH_COL ? "left" : undefined)
         .html((d) => {
             if(d[0] == STANDARDIZED_NAME_COL){
                 return `<ul>
                 ${d[1]
                     .sort((a, b) => b[1].length - a[1].length)
+                    .map((a, a_i) => 
+                        $("<li></li>")
+                        .append(
+                            $(`<a href="#" data-name-standardized-i=${a_i}></a>`).text(`${a[0]} (${a[1].length})`)
+                        ).append(
+                            getColorSample(a[1], 3).map(c => `&nbsp<span style="background-color:${c};">&nbsp &nbsp</span>`).join("")
+                        )
+                        .prop('outerHTML'))
+                    .join("")}
+                </ul>`
+            } else if (d[0] == STANDARDIZED_MATCH_COL) {
+                return `<ul>
+                ${d[1]
+                    .sort((a, b) => matchTypeSort.indexOf(a[0]) - matchTypeSort.indexOf(b[0]))
                     .map((a, a_i) => 
                         $("<li></li>")
                         .append(
