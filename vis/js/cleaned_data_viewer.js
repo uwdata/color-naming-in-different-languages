@@ -67,8 +67,14 @@ function fillSelectedLangs(){
         let selected_lang_temp = lang.startsWith("Greek")
         $("#selected_langs").append(new Option(
             `${lang} ‎(${ // Note LTR character here to make arrows show 
-                allNamesByLang[lang] ? allNamesByLang[lang].length.toLocaleString() : 0} - ${
-                allRemovedNamesByLang[lang] ? allRemovedNamesByLang[lang].length.toLocaleString() : 0})`, 
+                dataSetTask == "naming-data" ? (
+                    (allNamesByLang[lang] ? allNamesByLang[lang].length.toLocaleString() : 0) + 
+                    " - " +
+                    (allRemovedNamesByLang[lang] ? allRemovedNamesByLang[lang].length.toLocaleString() : 0)
+                ) 
+                : 
+                (allNameMatchesByLang[lang] ? allNameMatchesByLang[lang].length : 0)
+            })`, 
             lang, true, selected_lang_temp))
         selected_lang_temp = false
     }

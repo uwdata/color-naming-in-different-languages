@@ -25,7 +25,7 @@ for(const lang of allLangs){
     let selected_lang_temp = lang.startsWith("Persian")
     $("#selected_langs").append(new Option(
         `${lang} ‎(${ // Note LTR character here to make arrows show 
-            allNamesByLang[lang] ? allNamesByLang[lang].length.toLocaleString() : 0}`, 
+            allNamesByLang[lang] ? allNamesByLang[lang].length.toLocaleString() : 0} data points)`, 
         lang, true, selected_lang_temp))
     selected_lang_temp = false
 }
