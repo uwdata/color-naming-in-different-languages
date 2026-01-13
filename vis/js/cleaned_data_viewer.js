@@ -206,8 +206,10 @@ function updateTableData(){
     const dataSetTask = $("input[name='naming-or-matching']:checked").val()
 
     const datasetShown = $("input[name='cleaned-or-deleted']:checked").val()
+    
     console.log("datasetShown", datasetShown)
-    if(datasetShown == "naming-data" && datasetShown == "removed"){
+
+    if(dataSetTask == "naming-data" && datasetShown == "removed"){
         showRawData(allRemovedNamesByLang[selected_lang], table, true, cleanedColorNames, removedColorData, colorNameMatches, dataSetTask)
         $("#filter_lang_note").hide()
         $("#min_name_count_div").hide()
