@@ -207,8 +207,8 @@ function updateTableData(){
 
     const datasetShown = $("input[name='cleaned-or-deleted']:checked").val()
     console.log("datasetShown", datasetShown)
-    if(datasetShown == "removed"){
-        showRawData(allRemovedNamesByLang[selected_lang], table, true, cleanedColorNames, removedColorData)
+    if(datasetShown == "naming-data" && datasetShown == "removed"){
+        showRawData(allRemovedNamesByLang[selected_lang], table, true, cleanedColorNames, removedColorData, colorNameMatches, dataSetTask)
         $("#filter_lang_note").hide()
         $("#min_name_count_div").hide()
         return
@@ -305,7 +305,12 @@ function updateTableData(){
         const name_standardized_i = event.target.dataset.nameStandardizedI
         const name_i = $(event.target).parents("tr")[0].dataset.nameI
 
-        const standardized_name_entry = nameData[name_i][STANDARDIZED_NAME_COL][name_standardized_i]
+        let name_col = STANDARDIZED_NAME_COL
+        if(dataSetTask == "naming-match-data"){
+            name_col = STANDARDIZED_MATCH_COL
+        }
+
+        const standardized_name_entry = nameData[name_i][name_col][name_standardized_i]
         const standardized_name = standardized_name_entry[0]
         const standardized_name_data = standardized_name_entry[1]
 
@@ -334,14 +339,14 @@ function updateTableData(){
 
         const standardized_modal_body = d3.select('#standardized-name-modal .modal-body')
         
-        showRawData(standardized_name_data, standardized_modal_body, true, cleanedColorNames, removedColorData)
+        showRawData(standardized_name_data, standardized_modal_body, true, cleanedColorNames, removedColorData, colorNameMatches, dataSetTask)
     }    
 }
 
 })
 
 
-function showRawData(dataset, tableElement, linkToParticipantInfo, cleanedColorNames, removedColorData){
+function showRawData(dataset, tableElement, linkToParticipantInfo, cleanedColorNames, removedColorData, colorNameMatches, dataSetTask){
     if(!dataset || dataset.length == 0){
         tableElement.text("No data")
         return
@@ -404,10 +409,17 @@ function showRawData(dataset, tableElement, linkToParticipantInfo, cleanedColorN
         const cleanedTable = d3.select('#participant-info-modal .modal-body .cleaned-data table')
         const removeTable = d3.select('#participant-info-modal .modal-body .removed-data table')
 
-         showRawData(cleanedColorNames.filter(a => a.participantId == participantId), 
-            cleanedTable, false, cleanedColorNames, removedColorData)
-         showRawData(removedColorData.filter(a => a.participantId == participantId), 
-            removeTable, false, cleanedColorNames, removedColorData)
+        if(dataSetTask == "naming-data"){
+            showRawData(cleanedColorNames.filter(a => a.participantId == participantId), 
+                cleanedTable, false, cleanedColorNames, removedColorData, colorNameMatches, dataSetTask)
+            showRawData(removedColorData.filter(a => a.participantId == participantId), 
+                removeTable, false, cleanedColorNames, removedColorData, colorNameMatches, dataSetTask)
+        } else {
+            showRawData(colorNameMatches.filter(a => a.participantId == participantId), 
+                cleanedTable, false, cleanedColorNames, removedColorData, colorNameMatches, dataSetTask)
+        }
+
+
 
     }
 
