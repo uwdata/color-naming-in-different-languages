@@ -337,14 +337,14 @@ for(let labBinSize of LAB_BIN_SIZES){
 
 let langBinInfoWriter = csvWriter();
 langBinInfoWriter.pipe(fs.createWriteStream(FILE_LANG_BIN_O));
-for(const [lang, lang_bin_info_entry] of Object.entries(lang_bin_info)){
+for(const [lang, lang_bin_info_entry] of (Object.entries(lang_bin_info).sort((a, b) => a[1].lang.localeCompare(b[1].lang)))){
   langBinInfoWriter.write(lang_bin_info_entry)
 }
 langBinInfoWriter.end();
 
 let langBinBlurInfoWriter = csvWriter();
 langBinBlurInfoWriter.pipe(fs.createWriteStream(FILE_LANG_BIN_BLUR_O));
-for(const [lang, lang_bin_blur_info_entry] of Object.entries(lang_bin_blur_info)){
+for(const [lang, lang_bin_blur_info_entry] of (Object.entries(lang_bin_blur_info).sort((a, b) => a[1].lang.localeCompare(b[1].lang)))){
   langBinBlurInfoWriter.write(lang_bin_blur_info_entry)
 }
 langBinBlurInfoWriter.end();
