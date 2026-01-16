@@ -8,7 +8,6 @@ const excludeNames = [
     "zefza", "fgeklf", "d", "nlndfnzdlanzv", "fezl", "fln", "nl", "l", "d", "fn", "n", "b"
 ];
 
-// NOTE: Make sure to normalize NFD (string.normalize("NFD"))
 const nameReplacingRules = [
     [/aqua$/, "aqua frais"],
     [/aqua marine/, "aquamarine"],
@@ -26,8 +25,8 @@ const nameReplacingRules = [
     [/bleau cyan/, "bleu cyan"],
     [/bleu prusse/, "bleu de prusse"],
     [/bleu électrict/, "bleu électrique"],
-    [/"bleu émaraude/, "bleu émeraude"],
-    [/bleu fnoncé/, "bleu fnoncé"],
+    [/"bleu émaraude/, "bleu émaraude"],
+    [/bleu éfnoncé/, "bleu fnoncé"],
 
     [/bleu marin$/, "bleu marine"],
     [/bleur marine/, "bleu marine"],

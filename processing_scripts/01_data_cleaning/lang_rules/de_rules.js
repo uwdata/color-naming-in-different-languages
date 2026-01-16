@@ -5,7 +5,6 @@ const excludeNames = [
     "blue", "cyan", "green", "red", "yellow"
 ];
 
-// NOTE: Make sure to normalize NFD (string.normalize("NFD"))
 const nameReplacingRules = [
     [/gruen/, "grün"]
 ];

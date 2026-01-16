@@ -137,7 +137,16 @@ function replaceByArray(string, array){
     if(!pattern){
       console.error("name replacement pattern incorrectly formatted (perhaps missing comma?):", pattern, "\nall patterns:", array)
     }
-    string = string.replace(pattern[0],pattern[1]);
+    // Normalize Unicode encoding
+    let pattern0 = pattern[0]
+    if(typeof pattern0 === "string"){
+      pattern0 = pattern0.normalize("NFD")
+    } else if(pattern0.constructor.name === "RegExp"){
+      pattern0 = new RegExp(pattern0.source.normalize("NFD"), pattern0.flags)
+    }
+
+    // do the replacement
+    string = string.replace(pattern0,pattern[1]);
   });
   return string;
 }
