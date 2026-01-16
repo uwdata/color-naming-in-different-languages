@@ -8,54 +8,54 @@ const excludeNames = [
     "a", "c", "d", "w", "y", "b", "as", "asd", "asdf", "adsf", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"
 ];
 const nameReplacingRules = [
-    [/avacado/, "avocado"],
+    [/avacado/g, "avocado"],
 
     [/^bage$/, "beige"],
-    [/baige/, "beige"],
-    [/biege/, "beige"],
+    [/baige/g, "beige"],
+    [/biege/g, "beige"],
 
     [/^blu$/, "blue"],
     [/^bluw$/, "blue"],
     [/^bue$/, "blue"],
 
-    [/burgendy/, "burgundy"],
-    [/burgandy/, "burgundy"],
+    [/burgendy/g, "burgundy"],
+    [/burgandy/g, "burgundy"],
 
-    [/cerulian/, "cerulean"],
+    [/cerulian/g, "cerulean"],
 
-    [/chartruse/, "chartreuse"],
-    [/chartruese/, "chartreuse"],
-    [/charteuse/, "chartreuse"],
-    [/chartruce/, "chartreuse"],
-    [/chatreuse/, "chartreuse"],
+    [/chartruse/g, "chartreuse"],
+    [/chartruese/g, "chartreuse"],
+    [/charteuse/g, "chartreuse"],
+    [/chartruce/g, "chartreuse"],
+    [/chatreuse/g, "chartreuse"],
 
-    [/colbalt/, "cobalt"],
-    [/cobolt blue/, "cobaltblue"],
+    [/colbalt/g, "cobalt"],
+    [/cobolt blue/g, "cobaltblue"],
 
     [/^cian$/, 'cyan'],
     
 
-    [/forrest/, "forest"],
+    [/forrest/g, "forest"],
 
-    [/fusha/, "fuchsia"],
-    [/fuchia/, "fuchsia"],
-    [/fucsia/, "fuchsia"],
-    [/fusia/, "fuchsia"],
-    [/fushia/, "fuchsia"],
-    [/fuschia/, "fuchsia"],
-    [/fuscia/, "fuchsia"],
-    [/fuscia/, "fuchsia"],
-    [/fascia/, "fuchsia"],
-    [/fucia/, "fuchsia"],
-    [/fucia/, "fuchsia"],
-    [/fucshia/, "fuchsia"],
-    [/fuscha/, "fuchsia"],
-    [/fuschsia/, "fuchsia"],
-    [/fushchia/, "fuchsia"],
-    [/fushcia/, "fuchsia"],
-    [/fusica/, "fuchsia"],
+    [/fusha/g, "fuchsia"],
+    [/fuchia/g, "fuchsia"],
+    [/fucsia/g, "fuchsia"],
+    [/fusia/g, "fuchsia"],
+    [/fushia/g, "fuchsia"],
+    [/fuschia/g, "fuchsia"],
+    [/fuscia/g, "fuchsia"],
+    [/fuscia/g, "fuchsia"],
+    [/fascia/g, "fuchsia"],
+    [/fucia/g, "fuchsia"],
+    [/fucia/g, "fuchsia"],
+    [/fucshia/g, "fuchsia"],
+    [/fuscha/g, "fuchsia"],
+    [/fuschsia/g, "fuchsia"],
+    [/fushchia/g, "fuchsia"],
+    [/fushcia/g, "fuchsia"],
+    [/fusica/g, "fuchsia"],
     
-    [/grey/, "gray"],
+    [/grey/g, "gray"],
 
     [/^geen$/, "green"],
     [/^grean$/, "green"],
@@ -67,44 +67,44 @@ const nameReplacingRules = [
     [/^gteen$/, "green"],
 
 
-    [/lavendar/, "lavender"],
-    [/lavander/, "lavender"],
-    [/lavender/, "lavender"],
-    [/lavender/, "lavender"],
+    [/lavendar/g, "lavender"],
+    [/lavander/g, "lavender"],
+    [/lavender/g, "lavender"],
+    [/lavender/g, "lavender"],
 
     [/^linegreen/, "limegreen"],
-    [/majenta/, "magenta"],
+    [/majenta/g, "magenta"],
 
-    [/marron/, "maroon"],
-    [/marroon/, "maroon"],
+    [/marron/g, "maroon"],
+    [/marroon/g, "maroon"],
 
-    [/muave/, "mauve"],
+    [/muave/g, "mauve"],
 
-    [/indago/, "indigo"],
-    [/indego/, "indigo"],
-    [/indgo/, "indigo"],
+    [/indago/g, "indigo"],
+    [/indego/g, "indigo"],
+    [/indgo/g, "indigo"],
 
-    [/i dont know/, "idk"], 
-    [/i don't know/, "idk"],
-    [/dont know/, "idk"],
+    [/i dont know/g, "idk"], 
+    [/i don't know/g, "idk"],
+    [/dont know/g, "idk"],
     
-    [/kahki/, "khaki"],
-    [/kaki/, "khaki"],
+    [/kahki/g, "khaki"],
+    [/kaki/g, "khaki"],
 
     [/light gree$/, "light green"],
 
-    [/magentia/, "magenta"],
-    [/magento/, "magenta"],
-    [/magnenta/, "magenta"],
-    [/magneta/, "magenta"],
-    [/mangenta/, "magenta"],
-    [/megenta/, "magenta"],
+    [/magentia/g, "magenta"],
+    [/magento/g, "magenta"],
+    [/magnenta/g, "magenta"],
+    [/magneta/g, "magenta"],
+    [/mangenta/g, "magenta"],
+    [/megenta/g, "magenta"],
     
-    [/mahagony/, "mahogany"],
+    [/mahagony/g, "mahogany"],
 
     [/maron$/, "maroon"],
-    [/maroom/, "maroon"],
-    [/maroone/, "maroon"],
+    [/maroom/g, "maroon"],
+    [/maroone/g, "maroon"],
 
     [/^ocre$/, "ochre"],
 
@@ -118,20 +118,20 @@ const nameReplacingRules = [
     [/^organge$/, "orange"],
     [/^ornage$/, "orange"],
 
-    [/perrywinkle/, "periwinkle"],
-    [/perriwinkle/, "periwinkle"],
+    [/perrywinkle/g, "periwinkle"],
+    [/perriwinkle/g, "periwinkle"],
 
     [/^pank$/, "pink"],
     [/^pinl$/, "pink"],
 
-    [/puple/, "purple"],
-    [/pruple/, "purple"],
+    [/puple/g, "purple"],
+    [/pruple/g, "purple"],
     [/^pirple$/, "purple"],
     [/^pueple$/, "purple"],
-    [/purpel/, "purple"],
+    [/purpel/g, "purple"],
     [/purpl$/, "purple"],
-    [/purplr/, "purple"],
-    [/putple/, "purple"],
+    [/purplr/g, "purple"],
+    [/putple/g, "purple"],
 
     [/^puse$/, "puce"],
 
@@ -139,46 +139,46 @@ const nameReplacingRules = [
     [/^ref$/, "red"],
     [/^res$/, "red"],
 
-    [/redish/, "reddish"],
+    [/redish/g, "reddish"],
 
-    [/robinsegg/, "robinegg"],
+    [/robinsegg/g, "robinegg"],
 
-    [/royal blye/, "royal blue"],
+    [/royal blye/g, "royal blue"],
     
-    [/scarlett/, "scarlet"],
+    [/scarlett/g, "scarlet"],
 
-    [/siena/, "sienna"],
+    [/siena/g, "sienna"],
 
     [/^teel$/, "teal"],
     [/^teil$/, "teal"],
 
-    [/terracota/, "terracotta"],
+    [/terracota/g, "terracotta"],
 
-    [/turquise/, "turquoise"],
-    [/turqouise/, "turquoise"],
-    [/turquise/, "turquoise"],
-    [/turquiose/, "turquoise"],
-    [/torquoise/, "turquoise"],
-    [/turqoise/, "turquoise"],
-    [/terquoise/, "turquoise"],
-    [/torquise/, "turquoise"],
+    [/turquise/g, "turquoise"],
+    [/turqouise/g, "turquoise"],
+    [/turquise/g, "turquoise"],
+    [/turquiose/g, "turquoise"],
+    [/torquoise/g, "turquoise"],
+    [/turqoise/g, "turquoise"],
+    [/terquoise/g, "turquoise"],
+    [/torquise/g, "turquoise"],
     [/torquois$/, "turquoise"],
-    [/torquose/, "turquoise"],
-    [/tourquise/, "turquoise"],
-    [/tourquoise/, "turquoise"],
-    [/tuqoise/, "turquoise"],
-    [/tuquoise/, "turquoise"],
-    [/turcoise/, "turquoise"],
-    [/turqouis/, "turquoise"],
+    [/torquose/g, "turquoise"],
+    [/tourquise/g, "turquoise"],
+    [/tourquoise/g, "turquoise"],
+    [/tuqoise/g, "turquoise"],
+    [/tuquoise/g, "turquoise"],
+    [/turcoise/g, "turquoise"],
+    [/turqouis/g, "turquoise"],
     [/turquois$/, "turquoise"],
-    [/turquoises/, "turquoise"],
+    [/turquoises/g, "turquoise"],
     
-    [/viloet/, "viloet"],
+    [/viloet/g, "viloet"],
     
 
     [/yello$/, "yellow"],
-    [/yelloe/, "yellow"],
-    [/yelloq/, "yellow"]
+    [/yelloe/g, "yellow"],
+    [/yelloq/g, "yellow"]
 ];
 
 export default {

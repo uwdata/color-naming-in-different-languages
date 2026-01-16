@@ -15,6 +15,7 @@ const participantLangChanges = {
 
 
     // Participants with consistently English color names, but labeled as another languages
+    "5891": "en",
     "5904": "en",
     "6025": "en",
     "8107": "en",
@@ -111,7 +112,13 @@ const participantLangChanges = {
     "12435": "en",
     "21257": "en",
     "18558": "en",
-    "7310": "en"
+    "7310": "en",
+    "11580": "en",
+    "16977": "en",
+    "4830": "en",
+    "8433": "en",
+    "5834": "en",
+    "17908": "en"
 };
 
 
