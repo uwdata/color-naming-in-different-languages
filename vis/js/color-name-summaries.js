@@ -24,10 +24,6 @@ $("input:radio[name=color_set]").change(e => {
     updateColorSet()
 })
 
-$("#sort_by").change(e => { 
-    updateTableData()
-})
-
 let currentDataset
 let currentDatasetColorSet
 let currentDatasetLangAbv
@@ -46,12 +42,6 @@ $("#download_language_subset_button").click(e => {
 })
 
 let allNamesByLang
-// const table =  d3.select("#data_view")
-//     .html("")
-//     .append("table")
-
-// table.append("thead")
-// table.append("tbody")
 
 
 updateColorSet()
@@ -89,43 +79,14 @@ function updateTableData(){
         return
     }
 
-    // table.select("thead").selectAll("th")
-    //     .data(Object.keys(allNamesByLang[selected_lang][0]))
-    //     .join("th")
-    //     .text(d => d)
-
-
     currentDatasetLangAbv = allNamesByLang[selected_lang][0].lang_abv
 
     let nameData = allNamesByLang[selected_lang]
 
-    const sort_by = $("#sort_by").val()
-    if(sort_by == "count"){
-        if("totalColorFraction" in nameData[0]){
-            nameData = nameData.sort((a, b) => b.totalColorFraction - a.totalColorFraction)
-        } else {
-            nameData = nameData.sort((a, b) => b.cnt - a.cnt)
-        }
-        
-    } else if(sort_by == "name"){
-        nameData = nameData.sort((a, b) => a.commonName.localeCompare(b.commonName))
-    } else if(sort_by == "hue"){
-        nameData = nameData.sort((a, b) => {
-            let a_h, b_h
-            if("avgL" in a){
-                a_h = new Color({space: "oklab", coords: [a.avgL, a.avgA, a.avgB]}).to("oklch").h
-                b_h = new Color({space: "oklab", coords: [b.avgL, b.avgA, b.avgB]}).to("oklch").h
-            } else {
-                a_h = new Color(a.avgHueColor).to("oklch").h
-                b_h = new Color(b.avgHueColor).to("oklch").h
-            }
-            return a_h - b_h
-        })
-    }
-
     currentDataset = nameData
 
     if(!grid){
+        $("#loading-data-span").hide()
         grid = new gridjs.Grid({
             columns: [{
                     "id": "commonName", 
@@ -134,12 +95,37 @@ function updateTableData(){
                     sort: {
                         compare: (a, b) =>  a.commonName.localeCompare(b.commonName)
                     },
-                    //formatter: (cell, row, col) => return componentChild,
                     formatter: (cell, row, col) => gridjs.html(`${escapeHTML(cell.commonName)}<br><span class="simplified-name">${escapeHTML(cell.simplifiedName)}</span>`)
-                    // attributes: (cell, row, col) => return htmlAttributes
-                    //attributes: (cell, row, col) => {return {"lock-col": "true"}}
-                }, 
-                "avgColorRGBCode", "totalColorFraction", "avgL", "avgA", "avgB", "totalColorFraction", "numFullNames", "numLineNames", "lang"],
+                },{
+                    name: "Color",
+                    data: (row) => row,
+                    sort: {
+                        compare: (a, b) => {
+                            let a_h, b_h
+                            if("avgL" in a){
+                                a_h = new Color({space: "oklab", coords: [a.avgL, a.avgA, a.avgB]}).to("oklch").h
+                                b_h = new Color({space: "oklab", coords: [b.avgL, b.avgA, b.avgB]}).to("oklch").h
+                            } else {
+                                a_h = new Color(a.avgHueColor).to("oklch").h
+                                b_h = new Color(b.avgHueColor).to("oklch").h
+                            }
+                            return a_h - b_h
+                        }
+                    },
+                    formatter: (cell, row, col) => {
+                        const avgColor = "avgColorRGBCode" in cell ? cell.avgColorRGBCode : cell.avgHueColor
+                        return gridjs.html(`
+                        <div
+                            style="height:20px; width: 20px; float:left; margin: 5px;
+                            background-color:${avgColor};" ></div>
+                        ${escapeHTML(avgColor)}`)
+                    }
+                },
+                "Sample",
+                "Full Bins",
+                "Hue Bins",
+                "Name proportion / Commonality [phrasing]??"
+                ],
             sort: true,
             search: true,
             pagination: true,
@@ -150,27 +136,6 @@ function updateTableData(){
             data: nameData
         }).forceRender();
     }
-    // const rows = table
-    //     .select("tbody")
-    //     .selectAll("tr")
-    //     .data(Object.entries(nameData))
-    //     .join("tr")
-    
-    // rows.selectAll("td")
-    //     .data(d => Object.entries(d[1]))
-    //     .join("td")
-    //     .html(d => {
-    //         if(d[0] == "avgHueColor" || d[0] == "avgColorRGBCode"){
-    //             return `
-    //             <div
-    //                 style="height:20px; width: 20px; float:left; margin: 5px;
-    //                 background-color:${d[1]};" ></div>
-    //             ${escapeHTML(d[1])}`
-    //         }
-    //         return escapeHTML(d[1])
-    //     })
-
-
     
 }
 
