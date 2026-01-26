@@ -8,7 +8,9 @@ const escapeHTML = str => String(str).replace(/[&<>'"]/g,
       '"': '&quot;'
   }[tag]));
 
-$(document).on('ready page:load', async () => {
+
+
+let grid = undefined
 
 const hueColorNames = await d3.csv("../model/hue_colors_info.csv");
 const fullColorNames = await d3.csv("../model/full_colors_info.csv");
@@ -44,12 +46,12 @@ $("#download_language_subset_button").click(e => {
 })
 
 let allNamesByLang
-const table =  d3.select("#data_view")
-    .html("")
-    .append("table")
+// const table =  d3.select("#data_view")
+//     .html("")
+//     .append("table")
 
-table.append("thead")
-table.append("tbody")
+// table.append("thead")
+// table.append("tbody")
 
 
 updateColorSet()
@@ -71,13 +73,14 @@ function updateColorSet(){
 
     $("#selected_langs").empty()
     let selected_lang_temp = true
-    for(lang of Object.keys(allNamesByLang)){
+    for(const lang of Object.keys(allNamesByLang)){
         $("#selected_langs").append(new Option(lang, lang, true, selected_lang_temp))
         selected_lang_temp = false
     }
 
     updateTableData();
 }
+
 
 function updateTableData(){
 
@@ -86,13 +89,10 @@ function updateTableData(){
         return
     }
 
-    
-    
-
-    table.select("thead").selectAll("th")
-        .data(Object.keys(allNamesByLang[selected_lang][0]))
-        .join("th")
-        .text(d => d)
+    // table.select("thead").selectAll("th")
+    //     .data(Object.keys(allNamesByLang[selected_lang][0]))
+    //     .join("th")
+    //     .text(d => d)
 
 
     currentDatasetLangAbv = allNamesByLang[selected_lang][0].lang_abv
@@ -125,31 +125,55 @@ function updateTableData(){
 
     currentDataset = nameData
 
-    const rows = table
-        .select("tbody")
-        .selectAll("tr")
-        .data(Object.entries(nameData))
-        .join("tr")
+    if(!grid){
+        grid = new gridjs.Grid({
+            columns: [{
+                    "id": "commonName", 
+                    name: gridjs.html('Name<br><span class="simplified-name">simplified name</span>'),
+                    data: (row) => row,
+                    sort: {
+                        compare: (a, b) =>  a.commonName.localeCompare(b.commonName)
+                    },
+                    //formatter: (cell, row, col) => return componentChild,
+                    formatter: (cell, row, col) => gridjs.html(`${escapeHTML(cell.commonName)}<br><span class="simplified-name">${escapeHTML(cell.simplifiedName)}</span>`)
+                    // attributes: (cell, row, col) => return htmlAttributes
+                    //attributes: (cell, row, col) => {return {"lock-col": "true"}}
+                }, 
+                "avgColorRGBCode", "totalColorFraction", "avgL", "avgA", "avgB", "totalColorFraction", "numFullNames", "numLineNames", "lang"],
+            sort: true,
+            search: true,
+            pagination: true,
+            data: nameData
+        }).render(document.getElementById("data_table"));
+    } else {
+        grid.updateConfig({
+            data: nameData
+        }).forceRender();
+    }
+    // const rows = table
+    //     .select("tbody")
+    //     .selectAll("tr")
+    //     .data(Object.entries(nameData))
+    //     .join("tr")
     
-    rows.selectAll("td")
-        .data(d => Object.entries(d[1]))
-        .join("td")
-        .html(d => {
-            if(d[0] == "avgHueColor" || d[0] == "avgColorRGBCode"){
-                return `
-                <div
-                    style="height:20px; width: 20px; float:left; margin: 5px;
-                    background-color:${d[1]};" ></div>
-                ${escapeHTML(d[1])}`
-            }
-            return escapeHTML(d[1])
-        })
+    // rows.selectAll("td")
+    //     .data(d => Object.entries(d[1]))
+    //     .join("td")
+    //     .html(d => {
+    //         if(d[0] == "avgHueColor" || d[0] == "avgColorRGBCode"){
+    //             return `
+    //             <div
+    //                 style="height:20px; width: 20px; float:left; margin: 5px;
+    //                 background-color:${d[1]};" ></div>
+    //             ${escapeHTML(d[1])}`
+    //         }
+    //         return escapeHTML(d[1])
+    //     })
 
 
     
 }
 
-})
 
 
 
