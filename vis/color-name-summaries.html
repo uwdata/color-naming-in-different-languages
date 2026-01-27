@@ -76,16 +76,14 @@
 	<p>This page lets you see the color names in different languages</p>
 
   <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="color_set" id="full_colors" checked>
-    <label class="form-check-label" for="full_colors">
-      Full Colors
-    </label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="color_set" id="hue_colors" >
-    <label class="form-check-label" for="hue_colors">
-      Hue Colors
-    </label>
+    <input type="radio" class="btn-check" value="hue-data" name="rgb-set" id="hue-data" autocomplete="off" >
+    <label class="btn btn-outline-primary" for="hue-data">Hue Data</label>
+
+    <input type="radio" class="btn-check" value="full-data" name="rgb-set" id="full-data" autocomplete="off">
+    <label class="btn btn-outline-primary" for="full-data">Full Color Data</label>
+
+    <input type="radio" class="btn-check" value="both-hue-full" name="rgb-set" id="both-hue-full" autocomplete="off" checked>
+    <label class="btn btn-outline-primary" for="both-hue-full">Both Data Sets</label>
   </div>
 
 
