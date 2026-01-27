@@ -8,9 +8,6 @@ import hueBinHelper from '../utils/hueBinHelper.js'
 
 const N_BIN_OPTIONS = [120, 72, 36]
 
-// fraction of colors needed to include this color
-const MIN_COLOR_FRACTION = .002 
-
 const MIN_ENTRIES_PER_TERM = 8 // make sure each term is named a minimum number of times to count it
 
 // Restrict languages to those that have an average minimum number of terms per bin
@@ -63,7 +60,6 @@ csv()
         
         lang.topNTerms = lang.terms
           .filter(t => t.values.length >= MIN_ENTRIES_PER_TERM)
-          .filter(t => t.values.length / lang.values.length > MIN_COLOR_FRACTION);
 
         lang.terms.forEach(t => {
           t.rank = rankLookUp.indexOf(t.values.length) + 1;
