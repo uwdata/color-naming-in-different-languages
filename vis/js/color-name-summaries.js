@@ -88,7 +88,10 @@ function updateRgbSet(){
                         avgA: fullTermRow ? fullTermRow.avgA : undefined,
                         avgB: fullTermRow ? fullTermRow.avgB : undefined,
                         avgHueColor: hueTermRow ? hueTermRow.avgHueColor : undefined,
-                        somColorPatch: somColorPatch
+                        somColorPatch: somColorPatch,
+                        totalColorFraction: fullTermRow ? fullTermRow.totalColorFraction : undefined,
+                        numFullNames: fullTermRow ? fullTermRow.numFullNames : undefined,
+                        numHueNames: fullTermRow ? fullTermRow.numLineNames : hueTermRow.cnt,
                     })
                 }
             }
@@ -102,6 +105,8 @@ function updateRgbSet(){
                 for(const row of allFullNamesByLang[lang]){
                     const langAbv = row.lang_abv
                     const term = row.simplifiedName
+
+                    row.numHueNames = row.numLineNames
                     row.somColorPatch = langAbv in colorSampleSOMs && term in colorSampleSOMs[langAbv] ? colorSampleSOMs[langAbv][term] : undefined
                 }
             }
@@ -111,6 +116,13 @@ function updateRgbSet(){
     } else { // hue
         if(!allHueNamesByLang){
             allHueNamesByLang = Object.groupBy(hueColorNames, ({lang}) => lang)
+            for(const lang of Object.keys(allHueNamesByLang)){
+                for(const row of allHueNamesByLang[lang]){
+                    const langAbv = row.lang_abv
+                    const term = row.simplifiedName
+                    row.numHueNames = row.cnt
+                }
+            }
         }
         color_set = allHueNamesByLang
         $("#source-data-link").attr("href", "https://github.com/uwdata/color-naming-in-different-languages/blob/master/model/hue_colors_info.csv")
@@ -154,6 +166,26 @@ function updateTableData(){
 
     if(!grid){
         $("#loading-data-span").hide()
+
+        function namePercentSort(a, b){
+            if(a.totalColorFraction){
+                if(b.totalColorFraction){
+                    const diff = b.totalColorFraction - a.totalColorFraction
+                    // for some reason sort fails if these are small values, so make them bigger
+                    const returnVal = diff < 0 ? -1 : diff > 0 ? 1 : 0
+                    return returnVal
+                } else {
+                    return -1
+                }
+            } else {
+                if(b.totalColorFraction){
+                    return 1
+                } else {
+                    return parseFloat(b.numHueNames) - parseFloat(a.numHueNames)
+                }
+            }
+        }
+
         grid = new gridjs.Grid({
             columns: [{
                     "id": "commonName", 
@@ -199,7 +231,6 @@ function updateTableData(){
                     name: "Sample",
                     sort: false,
                     formatter: (cell, row, col) => {
-                        //const avgColor = "avgColorRGBCode" in cell ? cell.avgColorRGBCode : cell.avgHueColor
                         if(!cell){
                             return ""
                         }
@@ -213,14 +244,29 @@ function updateTableData(){
                 },
                 "Full Bins",
                 "Hue Bins",
-                "Name proportion / Commonality [phrasing]??"
+                {
+                    id: "NamePercent",
+                    name: "% of names",
+                    data: (row) => row,
+                    sort:  {
+                        compare: namePercentSort
+                    },
+                    formatter: (cell, row, col) => {
+                        if(cell.totalColorFraction){
+                            return (cell.totalColorFraction * 100).toPrecision(3) / 1 + "%"
+                        } else {
+                            return cell.numHueNames + " hue names"
+                        }
+                    }
+                }
+                
                 ],
             sort: true,
             search:  {
                 selector: (cell, rowIndex, cellIndex) => cellIndex === 0 ? cell.commonName : cell
             },
             pagination: true,
-            data: nameData
+            data: nameData.sort(namePercentSort)
         }).render(document.getElementById("data_table"));
     } else {
         grid.updateConfig({
