@@ -1,3 +1,17 @@
+import {languages_iso_639} from "../../shared_files/languages-iso-639.js"
+
+const langToAbv = {}
+const abvToLang = {}
+
+for(const langRow of languages_iso_639){
+  const langName = `${langRow["Language name"]} (${langRow["Native name"]})`
+  const langAbv = langRow["639‑1"]
+  langToAbv[langName] = langAbv
+  abvToLang[langAbv] = langName
+}
+
+
+
 $(document).on('ready page:load', function () {
   let minSal = 0;
   let Nbin, emptyNbin;
@@ -10,7 +24,8 @@ $(document).on('ready page:load', function () {
       emptyNbin.push(0);
     }
 
-    let langs = Object.keys(data).filter(key => key !== "colorSet").sort();
+    let langAbvs = Object.keys(data).filter(key => key !== "colorSet");
+    let langs = langAbvs.map(langAbv => abvToLang[langAbv]).sort()
     langNum = langs.length;
     langs.forEach((lang, i) => {
       $(".container").append('<div class="row" id="vis'+i+'"></div>');
@@ -21,12 +36,13 @@ $(document).on('ready page:load', function () {
 
 
   function drawLangSpec(targetSelector, data, lang, colorSet, index){
+    const langAbv = langToAbv[lang]
 
-    let data_terms = data[lang].terms;
+    let data_terms = data[langAbv].terms;
     let data_colors = colorSet;
     let data_color_counts = emptyNbin.slice();
-    let data_line = data[lang].colorNameBinCounts;
-    let data_avgColor = data[lang].avgHueColor.slice();
+    let data_line = data[langAbv].colorNameBinCounts;
+    let data_avgColor = data[langAbv].avgHueColor.slice();
     let stacked_area = [];
     let stacked_terms = [];
 
@@ -123,7 +139,7 @@ $(document).on('ready page:load', function () {
       let info = svg.append('text')
             .attr('x',-5)
             .attr('y',height/2 + 6)
-            .text(" (" + data[lang].totalCount +")")
+            .text(" (" + data[langAbv].totalCount +")")
             .style("font-size", "10px")
             .style("text-anchor", "end")
             .style("alignment-baseline", "middle");
@@ -170,7 +186,7 @@ $(document).on('ready page:load', function () {
 
 
 
-      avgColor = (i) => {
+      const avgColor = (i) => {
         let c = data_avgColor[i];
         return `rgb(${Math.floor(c.r)},${Math.floor(c.g)},${Math.floor(c.b)})`;
       };

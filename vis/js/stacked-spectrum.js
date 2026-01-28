@@ -1,3 +1,15 @@
+import {languages_iso_639} from "../../shared_files/languages-iso-639.js"
+
+const langToAbv = {}
+const abvToLang = {}
+
+for(const langRow of languages_iso_639){
+  const langName = `${langRow["Language name"]} (${langRow["Native name"]})`
+  const langAbv = langRow["639‑1"]
+  langToAbv[langName] = langAbv
+  abvToLang[langAbv] = langName
+}
+
 const N_BIN_OPTIONS = [
   {bins: "36", name: "Low-res (36)"}, 
   {bins: "72", name: "Medium-res (72)"},
@@ -122,7 +134,8 @@ function refreshPage(){
     }
 
     // make sure we have an ID for all languages
-    let langs = Object.keys(data).filter(key => key !== "colorSet")
+    const langAbvs = Object.keys(data).filter(key => key !== "colorSet")
+    let langs = langAbvs.map(langAbv => abvToLang[langAbv])
     for(let lang of langs){
       if(!(lang in langIds)){
         langIds[lang] = langIdCount
@@ -179,14 +192,15 @@ function refreshPage(){
 
   
   function drawLangSpec(targetSelector, data, lang, colorSet){
-    
-    let data_terms = data[lang].terms.slice(0, numTerms);
-    let data_common_names = data[lang].commonNames.slice(0, numTerms);
+    const langAbv = langToAbv[lang]
+
+    let data_terms = data[langAbv].terms.slice(0, numTerms);
+    let data_common_names = data[langAbv].commonNames.slice(0, numTerms);
     let data_colors = colorSet;
     let data_color_counts = emptyNbin.slice();
-    let data_line = data[lang].colorNameBinCounts.slice(0, numTerms);
+    let data_line = data[langAbv].colorNameBinCounts.slice(0, numTerms);
     const original_data_line = data_line
-    let data_avgColor = data[lang].avgHueColor.slice().slice(0, numTerms);
+    let data_avgColor = data[langAbv].avgHueColor.slice().slice(0, numTerms);
     let stacked_area = [];
     let stacked_terms = [];
     let stacked_common_names = []
@@ -274,7 +288,7 @@ function refreshPage(){
             .attr('class','vis-title')
             .attr('x',10)
             .attr('y',-10)
-            .text(lang + " (# of names : "+ data[lang].totalCount.toLocaleString() +")");
+            .text(lang + " (# of names : "+ data[langAbv].totalCount.toLocaleString() +")");
 
       let colorPatch = svg.selectAll(".color_patch")
           .data(data_colors)
@@ -308,7 +322,7 @@ function refreshPage(){
 
 
 
-      avgColor = (i) => {
+      const avgColor = (i) => {
         let c = data_avgColor[i];
         return `rgb(${Math.floor(c.r)},${Math.floor(c.g)},${Math.floor(c.b)})`;
       };
@@ -359,7 +373,7 @@ function refreshPage(){
         svg.selectAll('.area1')
           .attr('fill', function(g,j){
             let c = data_avgColor[j];
-            return color = `rgb(${Math.floor(c.r)},${Math.floor(c.g)},${Math.floor(c.b)})`;
+            return `rgb(${Math.floor(c.r)},${Math.floor(c.g)},${Math.floor(c.b)})`;
           })
 
         $(targetSelector+"-selected-title").html('color name ');
@@ -509,7 +523,7 @@ function indexOfColorOffset(color, colorSet, colorName){
 function meanIndexOffset(arr){
   let x_sum = 0
   let y_sum = 0
-  for([i, val] of arr.entries()){
+  for(const [i, val] of arr.entries()){
     const i_fraction = i / (arr.length + 1) // + 1 since the last one shouldn't be 100% (2*Pi)
     x_sum += val * Math.cos(i_fraction * 2 * Math.PI)
     y_sum += val * Math.sin(i_fraction * 2 * Math.PI)

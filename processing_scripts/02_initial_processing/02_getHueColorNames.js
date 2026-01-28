@@ -64,12 +64,7 @@ csv()
         lang.terms.forEach(t => {
           t.rank = rankLookUp.indexOf(t.values.length) + 1;
         });
-
-
-        //Print out the terms
-        //console.log(`Lang : ${lang.key}`);
-
-        //console.log(`Terms : ${JSON.stringify(lang.topNTerms.map(subg => subg.key))}`);
+;
 
       });
 
@@ -77,11 +72,13 @@ csv()
 
       // 3. Group the data into bins
       //let bin = colorBins.genBin(n_bins);
-      let result = {};
-      let flatten = [];
+      let langTermAggregated = {};
+      //let flatten = [];
+      const langTermInfo = {}
 
-      groupedByLang.forEach(lang => {
-        let bufFlatten = [];
+
+      groupedByLang.forEach(langData => {
+        let termBinsRows = [];
         let terms = [];
         let mapped = {
           'colorNameBinCounts': [],
@@ -94,12 +91,12 @@ csv()
         if(blur == BLUR){
           mapped.totalCountBlur = 0
         }
-        lang.topNTerms.forEach(term => {
+        langData.topNTerms.forEach(term => {
           mapped.terms.push(term.key);
 
           //find most common name for term
           let commonName = d3.groups(
-            lang.values.filter(v => v.name == term.key),
+            langData.values.filter(v => v.name == term.key),
             t => t.standardized_entered_name)
                   .map(a => {return {key: a[0], values: a[1]}})
                   .sort((a,b) => -a.values.length + b.values.length)[0].key;
@@ -146,8 +143,8 @@ csv()
             mapped.totalCountBlur += termNameCnt
           }
           for (var i = 0; i < n_bins; i++) {
-            bufFlatten.push({
-              "lang": lang.key,
+            termBinsRows.push({
+              "lang": langData.key,
               "simplifiedName": term.key,
               "commonName": commonName,
               "rank": term.rank,
@@ -162,22 +159,63 @@ csv()
           });
         });
         terms.sort((a,b) => a.modeBinNum - b.modeBinNum);
-        bufFlatten.forEach( d => {
-          d.termSubID = terms.findIndex(t => t.simplifiedName === d.simplifiedName);
-          d.pTC = d.cnt / d3.sum(bufFlatten.filter(d2 => d2.binNum === d.binNum), x => x.cnt);
+        termBinsRows.forEach( d => {
+          d.pTC = d.cnt / d3.sum(termBinsRows.filter(d2 => d2.binNum === d.binNum), x => x.cnt);
         });
 
         // limit which languages are displayed
         if(
           (blur == BLUR ? mapped.totalCountBlur : mapped.totalCount)
            > MIN_TERMS_PER_BIN * n_bins){ 
-          flatten = flatten.concat(bufFlatten);
-          result[lang.key] = mapped;
+
+          let lang_abv = langData.key
+          const langMatch = languages_iso_639.find(l => `${l["Language name"]} (${l["Native name"]})` == langData.key)
+          if(langMatch){
+            lang_abv = langMatch["639‑1"]
+          }
+
+          // Update aggregated data
+          langTermAggregated[lang_abv] = mapped;
+
+
+          // update full dataset
+          langTermInfo[lang_abv] = {}
+          
+          // sort for consistency in saving
+          termBinsRows.sort((a, b) => a.simplifiedName.localeCompare(b.simplifiedName))
+
+          for(const termBinsRow of termBinsRows){
+
+            if(!(termBinsRow.simplifiedName in langTermInfo[lang_abv])){
+              const totalTermCnt = d3.sum(termBinsRows.filter(d => d.simplifiedName === termBinsRow.simplifiedName), x => x.cnt)
+              
+              langTermInfo[lang_abv][termBinsRow.simplifiedName] = {
+                simplifiedName: termBinsRow.simplifiedName,
+                commonName: termBinsRow.commonName,
+                rank: termBinsRow.rank,
+                cnt: totalTermCnt,
+                totalColorFraction: totalTermCnt / (blur == BLUR ? mapped.totalCountBlur : mapped.totalCount),
+                bins: []
+              }
+              if(blur != BLUR){
+                langTermInfo[lang_abv][termBinsRow.simplifiedName].cnt= totalTermCnt
+              } else {
+                langTermInfo[lang_abv][termBinsRow.simplifiedName].blur_cnt= totalTermCnt * mapped.totalCount /  mapped.totalCountBlur 
+                langTermInfo[lang_abv][termBinsRow.simplifiedName].blur_cnt= totalTermCnt
+              }
+            }
+
+            langTermInfo[lang_abv][termBinsRow.simplifiedName].bins[termBinsRow.binNum] = {
+              cnt: termBinsRow.cnt,
+              pCT: termBinsRow.pCT,
+              pTC: termBinsRow.pTC
+            }
+          }
         }
       });
 
 
-      result.colorSet = hueColorBins.map(function(bin, i, array){
+      langTermAggregated.colorSet = hueColorBins.map(function(bin, i, array){
         return{
           r: bin.bin_center_r,
           g: bin.bin_center_g,
@@ -187,14 +225,14 @@ csv()
 
 
       // fill in the hue_colors_info
-      for(const [lang, colorData] of Object.entries(result)){
-        let lang_abv 
-        const langMatch = languages_iso_639.find(l => `${l["Language name"]} (${l["Native name"]})` == lang)
+      for(const [lang_abv, colorData] of Object.entries(langTermAggregated)){
+        let lang
+        const langMatch = languages_iso_639.find(l => l["639‑1"] == lang_abv)
         if(langMatch){
-          lang_abv = langMatch["639‑1"]
+          lang = `${langMatch["Language name"]} (${langMatch["Native name"]})`
         }
 
-        if(lang != "colorSet"){
+        if(lang_abv != "colorSet"){
           for(const [i, simplifiedName] of colorData.terms.entries()){
             // check if lang term already in hue_colors_info
             if(hue_colors_info.filter(d => d.lang == lang && d.simplifiedName == simplifiedName).length < 1){
@@ -219,8 +257,10 @@ csv()
       if(blur == BLUR){
         blur_text = "_blur"
       }
-      fs.writeFileSync(`${O_FILE_NAME}${n_bins}${blur_text}_${O_AGGREGATE}.json`, JSON.stringify(result, null, 2));
-      fs.writeFileSync(`${O_FILE_NAME}${n_bins}${blur_text}.json`, JSON.stringify(flatten, null, 2));
+      fs.writeFileSync(`${O_FILE_NAME}${n_bins}${blur_text}_${O_AGGREGATE}.json`, JSON.stringify(langTermAggregated, null, 2));
+      
+
+      fs.writeFileSync(`${O_FILE_NAME}${n_bins}${blur_text}.json`, JSON.stringify(langTermInfo, null));
     }
   }
 

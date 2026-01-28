@@ -2406,6 +2406,6 @@ var languages_iso_639 = [
   }
 ]
 
-module.exports = {
-  "languages_iso_639": languages_iso_639
+export {
+  languages_iso_639
 }
