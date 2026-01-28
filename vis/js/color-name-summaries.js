@@ -8,6 +8,7 @@ const escapeHTML = str => String(str).replace(/[&<>'"]/g,
       '"': '&quot;'
   }[tag]));
 
+const cellHeight = 40
 
 
 let grid = undefined
@@ -15,6 +16,13 @@ let grid = undefined
 const hueColorNames = await d3.csv("../model/hue_colors_info.csv");
 const fullColorNames = await d3.csv("../model/full_colors_info.csv");
 const colorSampleSOMs = await (await fetch("../model/colorSOMPatches.json")).json();
+// const colorSampleFullBinsRequest = await fetch("../model/binned_full_colors/full_color_names_binned_blur_0.1_0.025.json.gz")
+// const colorSampleFullBins = await (colorSampleFullBinsRequest).json();
+const hueBins36 = await d3.csv("../model/color_info_pre_naming/hue_color_bins_36_rgb.csv");
+const hueBins72 = await d3.csv("../model/color_info_pre_naming/hue_color_bins_72_rgb.csv");
+const colorSampleHueBins36Blur = await (await fetch("../model/binned_hue_colors/hue_color_names_binned_36_blur.json")).json();
+const colorSampleHueBins72Blur = await (await fetch("../model/binned_hue_colors/hue_color_names_binned_72_blur.json")).json();
+
 
 console.log(hueColorNames[0]);
 
@@ -80,6 +88,10 @@ function updateRgbSet(){
                     const fullTermRow =  lang in fullNameSetByLang ? fullNameSetByLang[lang].find(d => d.simplifiedName == term) : undefined
                     const langAbv = fullTermRow ? fullTermRow.lang_abv : hueTermRow.lang_abv
                     const somColorPatch = langAbv in colorSampleSOMs && term in colorSampleSOMs[langAbv] ? colorSampleSOMs[langAbv][term] : undefined
+                    
+                    const hueBinsData = langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
+                        colorSampleHueBins36Blur[langAbv][term] : undefined
+
                     allBothNamesByLang[lang].push({
                         simplifiedName: term,
                         commonName: hueTermRow ? hueTermRow.commonName : fullTermRow.commonName,
@@ -92,6 +104,7 @@ function updateRgbSet(){
                         totalColorFraction: fullTermRow ? fullTermRow.totalColorFraction : undefined,
                         numFullNames: fullTermRow ? fullTermRow.numFullNames : undefined,
                         numHueNames: fullTermRow ? fullTermRow.numLineNames : hueTermRow.cnt,
+                        hueBinsData: hueBinsData
                     })
                 }
             }
@@ -108,6 +121,8 @@ function updateRgbSet(){
 
                     row.numHueNames = row.numLineNames
                     row.somColorPatch = langAbv in colorSampleSOMs && term in colorSampleSOMs[langAbv] ? colorSampleSOMs[langAbv][term] : undefined
+                    row.hueBinsData = langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
+                        colorSampleHueBins36Blur[langAbv][term] : undefined
                 }
             }
         }
@@ -120,7 +135,10 @@ function updateRgbSet(){
                 for(const row of allHueNamesByLang[lang]){
                     const langAbv = row.lang_abv
                     const term = row.simplifiedName
+
                     row.numHueNames = row.cnt
+                    row.hueBinsData = langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
+                        colorSampleHueBins36Blur[langAbv][term] : undefined
                 }
             }
         }
@@ -243,7 +261,15 @@ function updateTableData(){
                     
                 },
                 "Full Bins",
-                "Hue Bins",
+                {
+                    id: "hueBinsData",
+                    name: "Hue Bins",
+                    sort: false,
+                    formatter: (cell, row, col) => {
+                        return cell ? gridjs.html(generateHueColorSvg(cell).node().outerHTML) : ""
+                        
+                    }
+                },
                 {
                     id: "NamePercent",
                     name: "% of names",
@@ -292,7 +318,7 @@ function updateTableData(){
 
 
 function generateColorGrid(nodes){
-    const totalGridPx = 40
+    const totalGridPx = cellHeight
 	let str = "";
 	for(let i = 0; i < nodes.length; i++){
 		for(let j = 0; j < nodes.length; j++){
@@ -312,6 +338,71 @@ function generateColorGrid(nodes){
 }
 
 
+function generateHueColorSvg(hueData){
+    combineHueBinDataWithColors(hueData)
+
+    const width = 200,
+        height = cellHeight
+
+    const hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
+        .attr("width", width)
+        .attr("height", height)
+    
+    let spectrumN = hueData.bins.length;
+
+    let x = d3.scaleLinear()
+        .range([0, width])
+        .clamp(true);
+
+    let y = d3.scaleLinear()
+        .range([0, height]);
+
+
+    x.domain([0,spectrumN]);
+
+    const maxPCT = Math.max(...hueData.bins.map(b => b.pCT))
+    y.domain([0,maxPCT]);
+    //y.domain([0,1]);
+
+    let yAxis = d3.axisLeft()
+        .scale(y);
+
+    let colorPatch = hueBinSvg.selectAll(".color_patch")
+        .data(hueData.bins.filter(d => d.pCT > 0))
+        .join("rect")
+        .attr("class", "color_patch")
+        .attr("x", (d) => (x(d.colorBin.bin_i)+x(d.colorBin.bin_i-1))/2)
+        .attr("y",  d => height - y(d.pCT))//d => y(d.pCT))
+        .attr("width", (d) => d.colorBin.bin_i===(spectrumN-1) ? (x(1)-x(0)) /2 : x(1)-x(0)+1 )
+        .attr("height", d => y(d.pCT))
+        .attr("fill", d => d.binColorStr)
+
+
+    //   let axisTitle = 'Probability of Name, given Color';
+    //   svg.append("g")
+    //       .attr("class", "y axis")
+    //       .call(yAxis);
+
+    //   svg.append('text')
+    //       .text(axisTitle)
+    //       .attr('y',-30)
+    //       .attr('x', -height/2)
+    //       .attr('transform','rotate(-90)')
+    //       .attr('text-anchor','middle');
+    return hueBinSvg
+}
+
+function combineHueBinDataWithColors (hueData){
+    if("colorBin" in hueData.bins[0]){ // if we've already done this, no need to repeat
+        return
+    }
+
+    // TODO: check bin size
+    for(const[binN, binDataInfo] of hueData.bins.entries()){
+        binDataInfo.colorBin = hueBins36.find(b => parseInt(b.bin_i) == binN)
+        binDataInfo.binColorStr = `rgb(${binDataInfo.colorBin.bin_center_r},${binDataInfo.colorBin.bin_center_g},${binDataInfo.colorBin.bin_center_b})`
+    }
+}
 
 
 
