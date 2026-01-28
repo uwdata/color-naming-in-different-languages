@@ -268,6 +268,20 @@ function updateTableData(){
             pagination: true,
             data: nameData.sort(namePercentSort)
         }).render(document.getElementById("data_table"));
+
+        // try to set default sort
+        function trySetDefaultSort(){
+            setTimeout(() => {
+                const column = document.querySelector('[data-column-id="NamePercent"]')
+                if(column){
+                    column.click()
+                } else {
+                    trySetDefaultSort()
+                }
+            }, 100)
+        }
+        trySetDefaultSort()
+
     } else {
         grid.updateConfig({
             data: nameData
