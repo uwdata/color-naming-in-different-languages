@@ -1,3 +1,13 @@
+import BinSize from "../../shared_files/binSize.js";
+import FullColorBinView from "./full-color-bin-view.js";
+
+const fullBinSize = new BinSize({
+    type: "ring",
+    l: 1/5, c: 1/20, h_divs: 8,
+    simpleName: "LCH Arcs: Low-res",
+    displayLABArcs: true
+  })
+
 
 const escapeHTML = str => String(str).replace(/[&<>'"]/g, 
   tag => ({
@@ -16,8 +26,26 @@ let grid = undefined
 const hueColorNames = await d3.csv("../model/hue_colors_info.csv");
 const fullColorNames = await d3.csv("../model/full_colors_info.csv");
 const colorSampleSOMs = await (await fetch("../model/colorSOMPatches.json")).json();
-// const colorSampleFullBinsRequest = await fetch("../model/binned_full_colors/full_color_names_binned_blur_0.1_0.025.json.gz")
-// const colorSampleFullBins = await (colorSampleFullBinsRequest).json();
+const fullBinsInfoAll = await (await fetch(`../model/color_info_pre_naming/oklab_bins_${fullBinSize}.json`)).json()
+const fullBinsInfo = fullBinSize.filterBinsByGamut(fullBinsInfoAll, "rgb") //assume just rgb bins
+const colorSampleFullBinsZipped = await (await fetch(`../model/binned_full_colors/full_color_names_binned_blur_${fullBinSize}.json.gz`)).arrayBuffer()
+const colorSampleFullBinsFlat = JSON.parse(pako.ungzip(colorSampleFullBinsZipped,{ to: 'string' }))
+const colorSampleFullBinsGrouped = d3.groups(colorSampleFullBinsFlat, d => d.lang, d => d.term)
+          .map(a => {return {key: a[0], values: a[1].map(b => {return{key: b[0], values: b[1]}}) }})
+
+const colorSampleFullBins = {}
+for(const [i, langVal] of colorSampleFullBinsGrouped.entries()){
+    const lang = langVal.key
+    const langData = langVal.values
+    colorSampleFullBins[lang] = {}
+    for(const [j, termVal] of langData.entries()){
+        const term = termVal.key
+        const termData = termVal.values
+        colorSampleFullBins[lang][term] = termData
+    }
+}
+
+
 const hueBins36 = await d3.csv("../model/color_info_pre_naming/hue_color_bins_36_rgb.csv");
 const hueBins72 = await d3.csv("../model/color_info_pre_naming/hue_color_bins_72_rgb.csv");
 const colorSampleHueBins36Blur = await (await fetch("../model/binned_hue_colors/hue_color_names_binned_36_blur.json")).json();
@@ -92,6 +120,9 @@ function updateRgbSet(){
                     const hueBinsData = langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
                         colorSampleHueBins36Blur[langAbv][term] : undefined
 
+                    const fullBinsData = lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
+                        colorSampleFullBins[lang][term] : undefined
+
                     allBothNamesByLang[lang].push({
                         simplifiedName: term,
                         commonName: hueTermRow ? hueTermRow.commonName : fullTermRow.commonName,
@@ -104,7 +135,8 @@ function updateRgbSet(){
                         totalColorFraction: fullTermRow ? fullTermRow.totalColorFraction : undefined,
                         numFullNames: fullTermRow ? fullTermRow.numFullNames : undefined,
                         numHueNames: fullTermRow ? fullTermRow.numLineNames : hueTermRow.cnt,
-                        hueBinsData: hueBinsData
+                        hueBinsData: hueBinsData,
+                        fullBinsData: fullBinsData
                     })
                 }
             }
@@ -231,7 +263,6 @@ function updateTableData(){
                         }
                     },
                     formatter: (cell, row, col) => {
-                        //const avgColor = "avgColorRGBCode" in cell ? cell.avgColorRGBCode : cell.avgHueColor
                         return gridjs.html(`
                         <div
                             style="height:30px; width: 30px; border-radius: 15px; float:left; margin: 5px;
@@ -260,7 +291,16 @@ function updateTableData(){
                     }
                     
                 },
-                "Full Bins",
+                {
+                    id: "fullBinsData",
+                    name: "Full Bins",
+                    width: "291px",
+                    sort: false,
+                    formatter: (cell, row, col) => {
+                        return cell ? gridjs.html(generateFullColorBinSvg(cell).node().outerHTML) : ""
+                        
+                    }
+                },
                 {
                     id: "hueBinsData",
                     name: "Hue Bins",
@@ -402,6 +442,57 @@ function combineHueBinDataWithColors (hueData){
         binDataInfo.colorBin = hueBins36.find(b => parseInt(b.bin_i) == binN)
         binDataInfo.binColorStr = `rgb(${binDataInfo.colorBin.bin_center_r},${binDataInfo.colorBin.bin_center_g},${binDataInfo.colorBin.bin_center_b})`
     }
+}
+
+function generateFullColorBinSvg(fullData){
+    const maxWidth = 300,
+        maxHeight = cellHeight*2
+
+    const binView = new FullColorBinView({
+      bin_size: fullBinSize,
+      bin_array: fullBinsInfo,
+      x_dim: "-b",
+      y_dim: "-a",
+      split_dim: "l",
+    })
+
+
+    // TODO: Why does p(C|T) look so much worse than p(T|C)????
+    //  Is there an error in the calculation?????
+    //  Do I have some confusion on teh definition????
+    //   Maybe we ignored or misused binning in the definition???
+
+    //const maxPCT = Math.max(...fullData.map(d => d.pCT))
+    const maxPTC = Math.max(...fullData.map(d => d.pTC))
+
+    binView.setDisplayOffsets(binView.getDisplayOffsets())
+
+
+    const ratioHeight = maxWidth * binView.display_offsets.y_height_in_bins /  binView.display_offsets.x_width_in_bins
+    
+    const height = Math.min(maxHeight, ratioHeight)
+
+    const width = height * binView.display_offsets.x_width_in_bins / binView.display_offsets.y_height_in_bins
+
+
+
+    const hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
+        .attr("width", width)
+        .attr("height", height)
+
+
+    binView.createOrUpdateColorTiles(hueBinSvg, {
+        getTileScale: (b) => {
+            const binData = fullData.find((d) => 
+                b.l_bin == d.binL && b.c_bin == d.binC && b.h_bin == d.binH)
+            //return binData ? 1.5 * binData.pCT / maxPCT : 0
+            return binData ? 1.5 * binData.pTC / maxPTC : 0
+
+            //return 1 // for testing showing all colors
+        },
+    })
+
+    return hueBinSvg
 }
 
 
