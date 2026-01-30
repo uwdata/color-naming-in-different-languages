@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Hue Color Comparisons - Color Naming in Different Language</title>
+    <title>Color Name Summaries - Color Naming in Different Language</title>
     <!-- <meta name="og:description" content="Compare hue color name distributions in different languages.">
     <meta name="og:image" content="stacked-small.png"> -->
 	
@@ -20,23 +20,52 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+  <script src="js-lib/pako.min.js"></script>
 	<script src="js-lib/jquery-1.12.0.min.js"></script>
+  
+  <link href="css-lib/mermaid.min.css" rel="stylesheet" />
+  
   <link href="css-lib/select2.min.css" rel="stylesheet" />
   <script src="js-lib/select2.min.js"></script>
+
 	<script src="js-lib/bootstrap.bundle.min.js"></script>
   <script src="js-lib/d3.v7.min.js"></script>
   <script src="js-lib/color.global.js"></script>
 	
-  <script type="text/javascript" src="js/color-name-summaries.js"></script>
+
 	
 	<script src="../addNavBar.js"></script>
 
   <style>
-    tr{
+    /* tr{
       border: solid black 1px
     }
     td{
       border: solid black 1px
+    } */
+
+    th.gridjs-th:first-child, td.gridjs-td:first-child{
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      text-align: right;
+      border-top: none; 
+      border-bottom: none; 
+      box-shadow: 1px 0px 0px #e5e7eb;
+      background-color: white;
+      min-width: 120px;
+      padding-left:10px;
+      padding-right:10px;
+    }
+
+    .gridjs-wrapper{
+      box-shadow: none
+    }
+
+    .simplified-name{
+      font-size: smaller;
+      color: gray;
     }
 
   </style>
@@ -46,19 +75,17 @@
 
     <div class="container">
 	<h1>Color Name Summaries</h1>
-	<p>This page lets you see the color names in different languages</p>
+	<p style="margin-bottom: 0px;">This page lets you see color names in different languages</p>
 
   <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="color_set" id="full_colors" checked>
-    <label class="form-check-label" for="full_colors">
-      Full Colors
-    </label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="color_set" id="hue_colors" >
-    <label class="form-check-label" for="hue_colors">
-      Hue Colors
-    </label>
+    <input type="radio" class="btn-check" value="hue-data" name="rgb-set" id="hue-data" autocomplete="off" >
+    <label class="btn btn-outline-primary btn-sm" for="hue-data">Hue Data</label>
+
+    <input type="radio" class="btn-check" value="full-data" name="rgb-set" id="full-data" autocomplete="off">
+    <label class="btn btn-outline-primary btn-sm" for="full-data">Full Color Data</label>
+
+    <input type="radio" class="btn-check" value="both-hue-full" name="rgb-set" id="both-hue-full" autocomplete="off" checked>
+    <label class="btn btn-outline-primary btn-sm" for="both-hue-full">Both Data Sets</label>
   </div>
 
 
@@ -70,14 +97,6 @@
     </div>
   </div>
 
-   <div class="form-check form-check-inline justify-content-center align-items-center flex-nowrap">
-    <label class="form-label" for="sort_by" style="display: block; text-align: center;" >Sort By</label>
-    <select class="form-select" name ="sort_by" id="sort_by" value="sort_by" style="width:100%">
-      <option value="count" selected>Count</option>
-      <option value="name">Name</option>
-      <option value="hue">Hue</option>
-    </select> 
-  </div>
 
   <a id="source-data-link" href="https://github.com/uwdata/color-naming-in-different-languages/tree/master/model" target="_blank">
     Source data</a>
@@ -86,13 +105,17 @@
   <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
 </svg></button>
 
-  <div id="data_view">Loading...</div>
-
+  <div id="data_view"><span id="loading-data-span">Loading...</span><div id="data_table"></div></div>
 
 
 
 
     </div>
 
+  <script src="js-lib/gridjs.umd.js"></script>
+   
+  <!-- <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script> -->
+  <script type="module" src="js/color-name-summaries.js"></script>
+   <!-- <script type="module" src="js/testindex.js"></script> -->
   </body>
 </html>
