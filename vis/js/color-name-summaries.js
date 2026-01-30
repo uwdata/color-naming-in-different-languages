@@ -173,7 +173,6 @@ function updateRgbSet(){
             }
         }
         color_set = allBothNamesByLang
-        $("#source-data-link").attr("href", "https://github.com/uwdata/color-naming-in-different-languages/blob/master/model/")
     } else if(rgbSet == "full-data"){
         if(!allFullNamesByLang){
             allFullNamesByLang = Object.groupBy(fullColorNames, ({lang}) => lang)
@@ -191,7 +190,6 @@ function updateRgbSet(){
             }
         }
         color_set = allFullNamesByLang
-        $("#source-data-link").attr("href", "https://github.com/uwdata/color-naming-in-different-languages/blob/master/model/full_colors_info.csv")
     } else { // hue
         if(!allHueNamesByLang){
             allHueNamesByLang = Object.groupBy(hueColorNames, ({lang}) => lang)
@@ -209,7 +207,6 @@ function updateRgbSet(){
             }
         }
         color_set = allHueNamesByLang
-        $("#source-data-link").attr("href", "https://github.com/uwdata/color-naming-in-different-languages/blob/master/model/hue_colors_info.csv")
     }
 
     let prev_selected_lang = $("#selected_langs").val()
