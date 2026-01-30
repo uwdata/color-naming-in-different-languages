@@ -72,14 +72,18 @@ let currentDataset
 let currentDatasetRgbSet
 let currentDatasetLangAbv
 $("#download_language_subset_button").click(e => {
-    const csvContent = "data:text/csv;charset=utf-8," + d3.csvFormat(currentDataset)
+    //const csvContent = "data:text/csv;charset=utf-8," + d3.csvFormat(currentDataset)
+    const jsonContent = "data:text/csv;charset=utf-8," + JSON.stringify(currentDataset, null, 2)
     
     // based on:
     // https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
-    var encodedUri = encodeURI(csvContent);
+    
+    //var encodedUri = encodeURI(csvContent);
+    var encodedUri = encodeURI(jsonContent);
     var link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", `${currentDatasetRgbSet}_summaries_${currentDatasetLangAbv}.csv`);
+    //link.setAttribute("download", `${currentDatasetRgbSet}_summaries_${currentDatasetLangAbv}.csv`);
+    link.setAttribute("download", `${currentDatasetRgbSet}_summaries_${currentDatasetLangAbv}.json`);
     document.body.appendChild(link); // Required for FF
 
     link.click();
