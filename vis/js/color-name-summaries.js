@@ -132,6 +132,7 @@ function updateRgbSet(){
                     allBothNamesByLang[lang].push({
                         simplifiedName: term,
                         commonName: hueTermRow ? hueTermRow.commonName : fullTermRow.commonName,
+                        lang_abv: hueTermRow ? hueTermRow.lang_abv : fullTermRow.lang_abv,
                         avgColorRGBCode: fullTermRow ? fullTermRow.avgColorRGBCode : undefined,
                         avgL: fullTermRow ? fullTermRow.avgL : undefined,
                         avgA: fullTermRow ? fullTermRow.avgA : undefined,
@@ -159,8 +160,9 @@ function updateRgbSet(){
 
                     row.numHueNames = row.numLineNames
                     row.somColorPatch = langAbv in colorSampleSOMs && term in colorSampleSOMs[langAbv] ? colorSampleSOMs[langAbv][term] : undefined
-                    row.hueBinsData = langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
-                        colorSampleHueBins36Blur[langAbv][term] : undefined
+                    
+                    row.fullBinsData = lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
+                        colorSampleFullBins[lang][term] : undefined
                 }
             }
         }
@@ -184,11 +186,13 @@ function updateRgbSet(){
         $("#source-data-link").attr("href", "https://github.com/uwdata/color-naming-in-different-languages/blob/master/model/hue_colors_info.csv")
     }
 
+    let prev_selected_lang = $("#selected_langs").val()
+    if(!Object.keys(color_set).includes(prev_selected_lang)){
+        prev_selected_lang = Object.keys(color_set).sort()[0]
+    }
     $("#selected_langs").empty()
-    let selected_lang_temp = true
     for(const lang of Object.keys(color_set).sort()){
-        $("#selected_langs").append(new Option(lang, lang, true, selected_lang_temp))
-        selected_lang_temp = false
+        $("#selected_langs").append(new Option(lang, lang, true, lang == prev_selected_lang))
     }
 
     updateTableData();
@@ -220,150 +224,152 @@ function updateTableData(){
 
     currentDataset = nameData
 
-    if(!grid){
-        $("#loading-data-span").hide()
+    if(grid){
+        grid.destroy() 
+    }
+    $("#loading-data-span").hide()
 
-        function namePercentSort(a, b){
-            if(a.totalColorFraction){
-                if(b.totalColorFraction){
-                    const diff = b.totalColorFraction - a.totalColorFraction
-                    // for some reason sort fails if these are small values, so make them bigger
-                    const returnVal = diff < 0 ? -1 : diff > 0 ? 1 : 0
-                    return returnVal
-                } else {
-                    return -1
-                }
+    function namePercentSort(a, b){
+        if(a.totalColorFraction){
+            if(b.totalColorFraction){
+                const diff = b.totalColorFraction - a.totalColorFraction
+                // for some reason sort fails if these are small values, so make them bigger
+                const returnVal = diff < 0 ? -1 : diff > 0 ? 1 : 0
+                return returnVal
             } else {
-                if(b.totalColorFraction){
-                    return 1
-                } else {
-                    return parseFloat(b.numHueNames) - parseFloat(a.numHueNames)
-                }
+                return -1
+            }
+        } else {
+            if(b.totalColorFraction){
+                return 1
+            } else {
+                return parseFloat(b.numHueNames) - parseFloat(a.numHueNames)
             }
         }
+    }
 
-        grid = new gridjs.Grid({
-            columns: [{
-                    "id": "commonName", 
-                    name: gridjs.html('Name<br><span class="simplified-name">simplified name</span>'),
-                    data: (row) => row,
-                    sort: {
-                        compare: (a, b) =>  a.commonName.localeCompare(b.commonName)
-                    },
-                    formatter: (cell, row, col) => gridjs.html(`${escapeHTML(cell.commonName)}<br><span class="simplified-name">${escapeHTML(cell.simplifiedName)}</span>`)
-                },{
-                    id: "avgColor",
-                    name: gridjs.html('Avg Color<br><span class="simplified-name">full / hue</span>'),
-                    data: (row) => row,
-                    sort: {
-                        compare: (a, b) => {
-                            let a_h, b_h
-                            if("avgL" in a){
-                                a_h = new Color({space: "oklab", coords: [a.avgL, a.avgA, a.avgB]}).to("oklch").h
-                                b_h = new Color({space: "oklab", coords: [b.avgL, b.avgA, b.avgB]}).to("oklch").h
-                            } else {
-                                a_h = new Color(a.avgHueColor).to("oklch").h
-                                b_h = new Color(b.avgHueColor).to("oklch").h
-                            }
-                            return a_h - b_h
-                        }
-                    },
-                    formatter: (cell, row, col) => {
-                        return gridjs.html(`
-                        <div
-                            style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; float:left; margin: 5px;
-                            background-color:${cell.avgColorRGBCode ? cell.avgColorRGBCode : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgColorRGBCode ? cell.avgColorRGBCode : "")}" >
-                        </div>
-                        <div
-                            style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; float:left; margin: 5px;
-                            background-color:${cell.avgHueColor ? cell.avgHueColor : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgHueColor ? cell.avgHueColor : "")}" >
-                        </div>
-                        `)
-                    }
+    grid = new gridjs.Grid({
+        columns: [{
+                "id": "commonName", 
+                name: gridjs.html('Name<br><span class="simplified-name">simplified name</span>'),
+                data: (row) => row,
+                sort: {
+                    compare: (a, b) =>  a.commonName.localeCompare(b.commonName)
                 },
-                {
-                    id: "somColorPatch",
-                    name: "Sample",
-                    sort: false,
-                    formatter: (cell, row, col) => {
-                        if(!cell){
-                            return ""
-                        }
-                        return gridjs.html(
-                            'colorNodes16' in cell ? generateColorGrid(cell.colorNodes16) :
-                            'colorNodes9' in cell ?  generateColorGrid(cell.colorNodes9) :
-                            generateColorGrid(cell.colorNodes4)
-                        )
-                    }
-                    
-                },
-                {
-                    id: "fullBinsData",
-                    name: "Full Bins",
-                    width: "300px",
-                    sort: false,
-                    formatter: (cell, row, col) => {
-                        return cell ? gridjs.html(generateFullColorBinSvg(cell).node().outerHTML) : ""
-                        
-                    }
-                },
-                {
-                    id: "hueBinsData",
-                    name: "Hue Bins",
-                    sort: false,
-                    formatter: (cell, row, col) => {
-                        return cell ? gridjs.html(generateHueColorSvg(cell).node().outerHTML) : ""
-                        
-                    }
-                },
-                {
-                    id: "NamePercent",
-                    name: "% of names",
-                    data: (row) => row,
-                    sort:  {
-                        compare: namePercentSort
-                    },
-                    formatter: (cell, row, col) => {
-                        if(cell.totalColorFraction){
-                            return (cell.totalColorFraction * 100).toPrecision(3) / 1 + "%"
+                formatter: (cell, row, col) => gridjs.html(`${escapeHTML(cell.commonName)}<br><span class="simplified-name">${escapeHTML(cell.simplifiedName)}</span>`)
+            },{
+                id: "avgColor",
+                name: gridjs.html('Avg Color<br><span class="simplified-name">full / hue</span>'),
+                data: (row) => row,
+                sort: {
+                    compare: (a, b) => {
+                        let a_h, b_h
+                        if("avgL" in a){
+                            a_h = new Color({space: "oklab", coords: [a.avgL, a.avgA, a.avgB]}).to("oklch").h
+                            b_h = new Color({space: "oklab", coords: [b.avgL, b.avgA, b.avgB]}).to("oklch").h
                         } else {
-                            return cell.numHueNames + " hue names"
+                            a_h = new Color(a.avgHueColor).to("oklch").h
+                            b_h = new Color(b.avgHueColor).to("oklch").h
                         }
+                        return a_h - b_h
                     }
+                },
+                formatter: (cell, row, col) => {
+                    return gridjs.html(`
+                    <div
+                        style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; float:left; margin: 5px;
+                        background-color:${cell.avgColorRGBCode ? cell.avgColorRGBCode : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgColorRGBCode ? cell.avgColorRGBCode : "")}" >
+                    </div>
+                    <div
+                        style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; float:left; margin: 5px;
+                        background-color:${cell.avgHueColor ? cell.avgHueColor : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgHueColor ? cell.avgHueColor : "")}" >
+                    </div>
+                    `)
+                }
+            },
+            {
+                id: "somColorPatch",
+                name: "Sample",
+                sort: false,
+                formatter: (cell, row, col) => {
+                    if(!cell){
+                        return ""
+                    }
+                    return gridjs.html(
+                        'colorNodes16' in cell ? generateColorGrid(cell.colorNodes16) :
+                        'colorNodes9' in cell ?  generateColorGrid(cell.colorNodes9) :
+                        generateColorGrid(cell.colorNodes4)
+                    )
                 }
                 
-                ],
-            sort: true,
-            search:  {
-                selector: (cell, rowIndex, cellIndex) => cellIndex === 0 ? cell.commonName : cell
             },
-            pagination: true,
-            data: nameData.sort(namePercentSort),
-            style: {
-                td: {
-                    padding: "6px 12px"
+            {
+                id: "fullBinsData",
+                name: "Full Bins",
+                width: "300px",
+                sort: false,
+                formatter: (cell, row, col) => {
+                    return cell ? gridjs.html(generateFullColorBinSvg(cell).node().outerHTML) : ""
+                    
+                }
+            },
+            {
+                id: "hueBinsData",
+                name: "Hue Bins",
+                sort: false,
+                formatter: (cell, row, col) => {
+                    return cell ? gridjs.html(generateHueColorSvg(cell).node().outerHTML) : ""
+                    
+                }
+            },
+            {
+                id: "NamePercent",
+                name: "% of names",
+                data: (row) => row,
+                sort:  {
+                    compare: namePercentSort
+                },
+                formatter: (cell, row, col) => {
+                    if(cell.totalColorFraction){
+                        return (cell.totalColorFraction * 100).toPrecision(3) / 1 + "%"
+                    } else {
+                        return cell.numHueNames + " hue names"
+                    }
                 }
             }
-        }).render(document.getElementById("data_table"));
-
-        // try to set default sort
-        function trySetDefaultSort(){
-            setTimeout(() => {
-                const column = document.querySelector('[data-column-id="NamePercent"]')
-                if(column){
-                    column.click()
-                } else {
-                    trySetDefaultSort()
-                }
-            }, 100)
+            
+            ],
+        sort: true,
+        search:  {
+            selector: (cell, rowIndex, cellIndex) => cellIndex === 0 ? cell.commonName : cell
+        },
+        pagination: true,
+        data: nameData.sort(namePercentSort),
+        style: {
+            td: {
+                padding: "6px 12px"
+            }
         }
-        trySetDefaultSort()
+    }).render(document.getElementById("data_table"));
 
-    } else {
-        grid.updateConfig({
-            data: nameData
-        }).forceRender();
+    // try to set default sort
+    function trySetDefaultSort(){
+        setTimeout(() => {
+            const column = document.querySelector('[data-column-id="NamePercent"]')
+            if(column){
+                column.click()
+            } else {
+                trySetDefaultSort()
+            }
+        }, 100)
     }
+    trySetDefaultSort()
+
+    // } else {
+    //     grid.updateConfig({
+    //         data: nameData
+    //     }).forceRender();
+    // }
     
 }
 
