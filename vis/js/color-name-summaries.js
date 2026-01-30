@@ -8,6 +8,12 @@ const fullBinSize = new BinSize({
     displayLABArcs: true
   })
 
+// const fullBinSize = new BinSize({
+//     type: "box",
+//     l: 1/5, ab: 1/20,
+//     simpleName: "LAB Boxes: Low-res",
+//   })
+
 
 const escapeHTML = str => String(str).replace(/[&<>'"]/g, 
   tag => ({
@@ -18,7 +24,7 @@ const escapeHTML = str => String(str).replace(/[&<>'"]/g,
       '"': '&quot;'
   }[tag]));
 
-const cellHeight = 40
+const cellHeight = 80
 
 
 let grid = undefined
@@ -265,11 +271,11 @@ function updateTableData(){
                     formatter: (cell, row, col) => {
                         return gridjs.html(`
                         <div
-                            style="height:30px; width: 30px; border-radius: 15px; float:left; margin: 5px;
+                            style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; float:left; margin: 5px;
                             background-color:${cell.avgColorRGBCode ? cell.avgColorRGBCode : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgColorRGBCode ? cell.avgColorRGBCode : "")}" >
                         </div>
                         <div
-                            style="height:30px; width: 30px; border-radius: 15px; float:left; margin: 5px;
+                            style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; float:left; margin: 5px;
                             background-color:${cell.avgHueColor ? cell.avgHueColor : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgHueColor ? cell.avgHueColor : "")}" >
                         </div>
                         `)
@@ -294,7 +300,7 @@ function updateTableData(){
                 {
                     id: "fullBinsData",
                     name: "Full Bins",
-                    width: "291px",
+                    width: "300px",
                     sort: false,
                     formatter: (cell, row, col) => {
                         return cell ? gridjs.html(generateFullColorBinSvg(cell).node().outerHTML) : ""
@@ -332,7 +338,12 @@ function updateTableData(){
                 selector: (cell, rowIndex, cellIndex) => cellIndex === 0 ? cell.commonName : cell
             },
             pagination: true,
-            data: nameData.sort(namePercentSort)
+            data: nameData.sort(namePercentSort),
+            style: {
+                td: {
+                    padding: "6px 12px"
+                }
+            }
         }).render(document.getElementById("data_table"));
 
         // try to set default sort
@@ -446,7 +457,7 @@ function combineHueBinDataWithColors (hueData){
 
 function generateFullColorBinSvg(fullData){
     const maxWidth = 300,
-        maxHeight = cellHeight*2
+        maxHeight = cellHeight
 
     const binView = new FullColorBinView({
       bin_size: fullBinSize,
@@ -484,9 +495,12 @@ function generateFullColorBinSvg(fullData){
     binView.createOrUpdateColorTiles(hueBinSvg, {
         getTileScale: (b) => {
             const binData = fullData.find((d) => 
-                b.l_bin == d.binL && b.c_bin == d.binC && b.h_bin == d.binH)
-            //return binData ? 1.5 * binData.pCT / maxPCT : 0
-            return binData ? 1.5 * binData.pTC / maxPTC : 0
+                fullBinSize.type == "ring" ? 
+                    b.l_bin == d.binL && b.c_bin == d.binC && b.h_bin == d.binH :
+                    b.l_bin == d.binL && b.a_bin == d.binA && b.b_bin == d.binB
+            )
+
+            return binData ? 1.5 * Math.sqrt(binData.pTC / maxPTC) : 0
 
             //return 1 // for testing showing all colors
         },
