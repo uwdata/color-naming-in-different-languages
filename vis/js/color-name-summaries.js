@@ -29,15 +29,33 @@ const cellHeight = 80
 
 let grid = undefined
 
-const hueColorNames = await d3.csv("../model/hue_colors_info.csv");
-const fullColorNames = await d3.csv("../model/full_colors_info.csv");
-const colorSampleSOMs = await (await fetch("../model/colorSOMPatches.json")).json();
-const fullBinsInfoAll = await (await fetch(`../model/color_info_pre_naming/oklab_bins_${fullBinSize}.json`)).json()
-const fullBinsInfo = fullBinSize.filterBinsByGamut(fullBinsInfoAll, "rgb") //assume just rgb bins
-const colorSampleFullBinsZipped = await (await fetch(`../model/binned_full_colors/full_color_names_binned_blur_${fullBinSize}.json.gz`)).arrayBuffer()
-const colorSampleFullBinsFlat = JSON.parse(pako.ungzip(colorSampleFullBinsZipped,{ to: 'string' }))
-const colorSampleFullBinsGrouped = d3.groups(colorSampleFullBinsFlat, d => d.lang, d => d.term)
+let hueColorNames,
+    fullColorNames,
+    colorSampleSOMs,
+    fullBinsInfo,
+    colorSampleFullBinsGrouped
+
+await Promise.all([
+    new Promise(async (r) => {
+        hueColorNames = await d3.csv("../model/hue_colors_info.csv"); 
+        r()}),
+    new Promise(async (r) => {
+        fullColorNames = await d3.csv("../model/full_colors_info.csv")
+        r()}),
+    new Promise(async (r) => {
+        colorSampleSOMs = await (await fetch("../model/colorSOMPatches.json")).json()
+        r()}),
+    new Promise(async (r) => {
+        const fullBinsInfoAll = await (await fetch(`../model/color_info_pre_naming/oklab_bins_${fullBinSize}.json`)).json()
+        fullBinsInfo = fullBinSize.filterBinsByGamut(fullBinsInfoAll, "rgb")  //assume just rgb bins
+        r()}),
+    new Promise(async (r) => {
+        const colorSampleFullBinsZipped = await (await fetch(`../model/binned_full_colors/full_color_names_binned_blur_${fullBinSize}.json.gz`)).arrayBuffer()
+        const colorSampleFullBinsFlat = JSON.parse(pako.ungzip(colorSampleFullBinsZipped,{ to: 'string' }))
+        colorSampleFullBinsGrouped = d3.groups(colorSampleFullBinsFlat, d => d.lang, d => d.term)
           .map(a => {return {key: a[0], values: a[1].map(b => {return{key: b[0], values: b[1]}}) }})
+        r()})
+])
 
 const colorSampleFullBins = {}
 for(const [i, langVal] of colorSampleFullBinsGrouped.entries()){
@@ -127,8 +145,10 @@ function updateRgbSet(){
                     const langAbv = fullTermRow ? fullTermRow.lang_abv : hueTermRow.lang_abv
                     const somColorPatch = langAbv in colorSampleSOMs && term in colorSampleSOMs[langAbv] ? colorSampleSOMs[langAbv][term] : undefined
                     
-                    const hueBinsData = langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
-                        colorSampleHueBins36Blur[langAbv][term] : undefined
+                    const hueBinsData = langAbv in colorSampleHueBins72Blur && term in colorSampleHueBins72Blur[langAbv] ?
+                        colorSampleHueBins72Blur[langAbv][term] : 
+                            langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
+                            colorSampleHueBins36Blur[langAbv][term] : undefined
 
                     const fullBinsData = lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
                         colorSampleFullBins[lang][term] : undefined
@@ -181,8 +201,10 @@ function updateRgbSet(){
                     const term = row.simplifiedName
 
                     row.numHueNames = row.cnt
-                    row.hueBinsData = langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
-                        colorSampleHueBins36Blur[langAbv][term] : undefined
+                    row.hueBinsData = langAbv in colorSampleHueBins72Blur && term in colorSampleHueBins72Blur[langAbv] ?
+                        colorSampleHueBins72Blur[langAbv][term] : 
+                            langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
+                            colorSampleHueBins36Blur[langAbv][term] : undefined
                 }
             }
         }
@@ -480,7 +502,9 @@ function combineHueBinDataWithColors (hueData){
 
     // TODO: check bin size
     for(const[binN, binDataInfo] of hueData.bins.entries()){
-        binDataInfo.colorBin = hueBins36.find(b => parseInt(b.bin_i) == binN)
+        binDataInfo.colorBin = hueData.bins.length == 72 ?
+            hueBins72.find(b => parseInt(b.bin_i) == binN) : 
+            hueBins36.find(b => parseInt(b.bin_i) == binN) //assume alternative is 36
         binDataInfo.binColorStr = `rgb(${binDataInfo.colorBin.bin_center_r},${binDataInfo.colorBin.bin_center_g},${binDataInfo.colorBin.bin_center_b})`
     }
 }
