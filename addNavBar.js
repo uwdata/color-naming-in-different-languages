@@ -28,6 +28,9 @@ $( document ).ready(function() {
 	         Visualizations
 	        </a>
 	        <ul class="dropdown-menu">
+			  <li><a class="dropdown-item" href="${visPath}color-name-summaries.html">
+			  		<img src="${visPath}imgs/color-name-summaries-tiny.png" style="max-height:20px; max-width:50px" />
+			  		Color Name Summaries</a></li>
 	          <li><a class="dropdown-item" href="${visPath}color_translator.html">
 			  		<img src="${visPath}imgs/translator-tiny.png" style="max-height:20px; max-width:50px" /> 
 					Color Translator</a></li>
@@ -43,9 +46,6 @@ $( document ).ready(function() {
 	          <li><a class="dropdown-item" href="${visPath}viridis.html">
 			  		<img src="${visPath}imgs/viridis-graph-tiny.png" style="max-height:20px; max-width:50px" />
 			  		Korean-English Viridis Color Spectrum</a></li>
-			  <li><a class="dropdown-item" href="${visPath}color-name-summaries.html">
-			  		<img src="${visPath}imgs/color-name-summaries-tiny.png" style="max-height:20px; max-width:50px" />
-			  		Color Name Summaries</a></li>
 			  <li><a class="dropdown-item" href="${visPath}cleaned_data_viewer.html">
 			  		<img src="${visPath}imgs/cleaned-data-viewer-tiny.png" style="max-height:20px; max-width:50px" />
 					Cleaned Data Viewer</a></li>
