@@ -279,18 +279,22 @@ function updateTableData(){
 
     gridColumns.push({
         "id": "commonName", 
-        name: gridjs.html('Name<br><span class="simplified-name">simplified name</span>'),
+        name: gridjs.html(`
+            <p style="margin-bottom:0px">Name</p>
+            <p style="margin-bottom:0px" class="simplified-name">simplified name</p>`),
         data: (row) => row,
         sort: {
             compare: (a, b) =>  a.commonName.localeCompare(b.commonName)
         },
-        formatter: (cell, row, col) => gridjs.html(`${escapeHTML(cell.commonName)}<br><span class="simplified-name">${escapeHTML(cell.simplifiedName)}</span>`)
+        formatter: (cell, row, col) => gridjs.html(`<p style="margin-bottom:0px">${escapeHTML(cell.commonName)}
+            <p style="margin-bottom:0px" class="simplified-name">${escapeHTML(cell.simplifiedName)}</p>`)
     })
 
     gridColumns.push({
         id: "avgColor",
-        name: gridjs.html(`Avg Color<br>
-            <span class="simplified-name">${rgbSet == "both-hue-full" ? "full / hue" : rgbSet == "full-data" ? "full" : "hue"}</span>`),
+        name: gridjs.html(`
+            <p style="margin-bottom:0px">Avg Color</p>
+            <p class="simplified-name" style="margin-bottom:0px">${rgbSet == "both-hue-full" ? "full / hue" : rgbSet == "full-data" ? "full" : "hue"}</p>`),
         data: (row) => row,
         sort: {
             compare: (a, b) => {
@@ -307,19 +311,21 @@ function updateTableData(){
         },
         formatter: (cell, row, col) => {
             return gridjs.html(`
-                ${rgbSet == "both-hue-full" || rgbSet == "full-data" ? `
-                    <div
-                        style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; float:left; margin: 5px;
-                        background-color:${cell.avgColorRGBCode ? cell.avgColorRGBCode : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgColorRGBCode ? cell.avgColorRGBCode : "")}" >
-                    </div>` : ""
-                }
-                ${rgbSet == "both-hue-full" ? `<div style="height:${cellHeight/2}px; width:0px; float:left; margin:5px; border:solid rgba(128,128,128,0.5) 1px"></div>` : ""}
-                ${rgbSet == "both-hue-full" || rgbSet == "hue-data" ? `
-                    <div
-                        style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; float:left; margin: 5px;
-                        background-color:${cell.avgHueColor ? cell.avgHueColor : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgHueColor ? cell.avgHueColor : "")}" >
-                    </div>` : ""
-                }`)
+                <div style="white-space:nowrap">
+                    ${rgbSet == "both-hue-full" || rgbSet == "full-data" ? `
+                        <div
+                            style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; display: inline-block; margin: 5px;
+                            background-color:${cell.avgColorRGBCode ? cell.avgColorRGBCode : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgColorRGBCode ? cell.avgColorRGBCode : "")}" >
+                        </div>` : ""
+                    }
+                    ${rgbSet == "both-hue-full" ? `<div style="height:${cellHeight/2}px; width:0px; display: inline-block; margin:5px; border:solid rgba(128,128,128,0.5) 1px"></div>` : ""}
+                    ${rgbSet == "both-hue-full" || rgbSet == "hue-data" ? `
+                        <div
+                            style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; display: inline-block; margin: 5px;
+                            background-color:${cell.avgHueColor ? cell.avgHueColor : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgHueColor ? cell.avgHueColor : "")}" >
+                        </div>` : ""
+                    }
+                </div>`)
         }
     })
 
@@ -388,11 +394,11 @@ function updateTableData(){
         },
         pagination: true,
         data: nameData.sort(namePercentSort),
-        style: {
-            td: {
-                padding: "6px 12px"
-            }
-        }
+        // style: {
+        //     td: {
+        //         padding: "6px 12px"
+        //     }
+        // }
     }).render(document.getElementById("data_table"));
 
     // try to set default sort
@@ -419,7 +425,7 @@ function updateTableData(){
 
 function generateColorGrid(nodes){
     const totalGridPx = cellHeight
-	let str = "";
+	let str = `<div style="width:${cellHeight}px; height:${cellHeight}px">`;
 	for(let i = 0; i < nodes.length; i++){
 		for(let j = 0; j < nodes.length; j++){
 			let node = nodes[i][j];
@@ -434,7 +440,7 @@ function generateColorGrid(nodes){
 		str += "<div style='clear:both'></div>";
 	}
 
-	return str;
+	return str + "</div>";
 }
 
 
