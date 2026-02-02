@@ -19,7 +19,7 @@ const isometric_x_radius = Math.sqrt(1.5) // 1.224744871391589
 class FullColorBinView {
     constructor(options) {
         this.TILE_SEGMENT_LEVEL_MARGIN_NUM = 3 // 3 tiles worth between each "level", and 1/2 of this padding on all sides
-        this.TILE_SEGMENT_OUTER_MARGIN_NUM = this.TILE_SEGMENT_LEVEL_MARGIN_NUM / 2
+        this.TILE_SEGMENT_OUTER_MARGIN_NUM = options.TILE_SEGMENT_OUTER_MARGIN_NUM ?  options.TILE_SEGMENT_OUTER_MARGIN_NUM : this.TILE_SEGMENT_LEVEL_MARGIN_NUM / 2
         this.bin_size = options.bin_size
         this.bin_array = options.bin_array
         this.nested_bins = this.binsArrayToNested(this.bin_array)

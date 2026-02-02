@@ -24,7 +24,7 @@ const escapeHTML = str => String(str).replace(/[&<>'"]/g,
       '"': '&quot;'
   }[tag]));
 
-const cellHeight = 80
+const cellHeight = 60
 
 
 let grid = undefined
@@ -349,7 +349,7 @@ function updateTableData(){
         gridColumns.push({
             id: "fullBinsData",
             name: "Full Bins",
-            width: "300px",
+            width: "262px",
             sort: false,
             formatter: (cell, row, col) => {
                 return cell ? gridjs.html(generateFullColorBinSvg(cell).node().outerHTML) : ""
@@ -550,6 +550,7 @@ function generateFullColorBinSvg(fullData){
 
 
     binView.createOrUpdateColorTiles(hueBinSvg, {
+        TILE_SEGMENT_OUTER_MARGIN_NUM: 0,
         getTileScale: (b) => {
             const binData = fullData.find((d) => 
                 fullBinSize.type == "ring" ? 
@@ -557,9 +558,11 @@ function generateFullColorBinSvg(fullData){
                     b.l_bin == d.binL && b.a_bin == d.binA && b.b_bin == d.binB
             )
 
+            //return 1 // for testing showing all colors
+
             return binData ? 1.5 * Math.sqrt(binData.pTC / maxPTC) : 0
 
-            //return 1 // for testing showing all colors
+            
         },
     })
 
