@@ -18,7 +18,8 @@ const isometric_x_radius = Math.sqrt(1.5) // 1.224744871391589
 
 class FullColorBinView {
     constructor(options) {
-        this.TILE_SEGMENT_MARGIN_NUM = 3 // 3 tiles worth between each "level"
+        this.TILE_SEGMENT_LEVEL_MARGIN_NUM = 3 // 3 tiles worth between each "level", and 1/2 of this padding on all sides
+        this.TILE_SEGMENT_OUTER_MARGIN_NUM = this.TILE_SEGMENT_LEVEL_MARGIN_NUM / 2
         this.bin_size = options.bin_size
         this.bin_array = options.bin_array
         this.nested_bins = this.binsArrayToNested(this.bin_array)
@@ -137,109 +138,62 @@ class FullColorBinView {
         // for the c-radius we need to correct for whether it is a 3 or 8 h division
         const arcCToABRadiusCorrection = this.bin_size.c_ring_width_ratio / this.bin_size.c
 
-        this[dim1 + "_nums"] = []
-        this[dim2 + "_nums"] = []
-        this[dim3 + "_nums"] = []
-        if(areRingArcs){
-            this[this.x_dim + "_nums"] = []
-            this[this.y_dim + "_nums"] = []
-            this[this.split_dim + "_nums"] = [] // probably duplicates shared "l" in lab/lch 
-        }
-        this.splitDimNums = {}
+        // assume split_dim (this.split_dim)
+        const splitLevelEdgesInTiles = {}
 
         for(const bin of this.bin_array){
-            const dim1_bin = bin[dim1 + "_bin"]
-            const dim2_bin = bin[dim2 + "_bin"]
-            const dim3_bin = bin[dim3 + "_bin"]
 
-            // track the range of bin numbers in each direction
-            if(!this[dim1 + "_nums"].includes(dim1_bin)){
-                this[dim1 + "_nums"].push(dim1_bin)
-            }
-            if(!this[dim2 + "_nums"].includes(dim2_bin)){
-                this[dim2 + "_nums"].push(dim2_bin)
-            }
-            if(!this[dim3 + "_nums"].includes(dim3_bin)){
-                this[dim3 + "_nums"].push(dim3_bin)
-            }
-            if(areRingArcs){
-                const a_bin_center = arcCToABRadiusCorrection * bin.c_center * Math.cos(bin.h_center / 360 * 2* Math.PI)
-                const b_bin_center = arcCToABRadiusCorrection * bin.c_center * Math.sin(bin.h_center / 360 * 2* Math.PI)
-                let dim_x_bin, dim_y_bin
-                if(this.x_dim == "a"){
-                    dim_x_bin = a_bin_center
-                    dim_y_bin = b_bin_center
-                } else {
-                    dim_x_bin = b_bin_center
-                    dim_y_bin = b_bin_center
-                }
-                //const dim_x_bin = 
-                //const dim_y_bin = bin[this.y_dim + "_bin"]
-                const dim_split_bin = bin[this.split_dim + "_bin"] // probably duplicates shared "l" in lab/lch 
-
-
-                if(!this[this.x_dim + "_nums"].includes(dim_x_bin)){
-                    this[this.x_dim + "_nums"].push(dim_x_bin)
-                }
-                if(!this[this.y_dim + "_nums"].includes(dim_y_bin)){
-                    this[this.y_dim + "_nums"].push(dim_y_bin)
-                }
-                // probably duplicates shared "l" in lab/lch 
-                if(!this[this.split_dim + "_nums"].includes(dim_split_bin)){
-                    this[this.split_dim + "_nums"].push(dim_split_bin)
-                }
-            }
-
-            // track the range of bin numbers in each level
             const splitDimBinNum = bin[this.split_dim + "_bin"]
-            if(!(splitDimBinNum in this.splitDimNums)){
-                this.splitDimNums[splitDimBinNum] = {
+            if(!(splitDimBinNum in splitLevelEdgesInTiles)){
+                splitLevelEdgesInTiles[splitDimBinNum] = {
                     [this.x_dim]: [],
                     [this.y_dim]: []
                 }
-                if(areRingArcs){
-                    this.splitDimNums[splitDimBinNum].h = []
-                    this.splitDimNums[splitDimBinNum].c = []
-                }
             }
-            
-            if(!areRingArcs){ // normal square bins:
+
+            // track the range of bin edge numbers in each direction
+            // (+1/2 -1/2 for the sides of the centered bin)
+            if(!areRingArcs){ 
+
+                // track the range of bin number distance in each level
                 const xDimNum = bin[this.x_dim + "_bin"]
-                if(!(this.splitDimNums[splitDimBinNum][this.x_dim].includes(xDimNum))){
-                    this.splitDimNums[splitDimBinNum][this.x_dim].push(xDimNum)
+                if(!(splitLevelEdgesInTiles[splitDimBinNum][this.x_dim].includes(xDimNum + 1/2))){
+                    splitLevelEdgesInTiles[splitDimBinNum][this.x_dim].push(xDimNum + 1/2)
+                }
+                if(!(splitLevelEdgesInTiles[splitDimBinNum][this.x_dim].includes(xDimNum - 1/2))){
+                    splitLevelEdgesInTiles[splitDimBinNum][this.x_dim].push(xDimNum - 1/2)
                 }
                 const yDimNum = bin[this.y_dim + "_bin"]
-                if(!(this.splitDimNums[splitDimBinNum][this.y_dim].includes(yDimNum))){
-                    this.splitDimNums[splitDimBinNum][this.y_dim].push(yDimNum)
+                if(!(splitLevelEdgesInTiles[splitDimBinNum][this.y_dim].includes(yDimNum + 1/2))){
+                    splitLevelEdgesInTiles[splitDimBinNum][this.y_dim].push(yDimNum + 1/2)
                 } 
-            } else { // arc bins
-                // TODO: We want need the a and b in "bin" dimensions
+                if(!(splitLevelEdgesInTiles[splitDimBinNum][this.y_dim].includes(yDimNum - 1/2))){
+                    splitLevelEdgesInTiles[splitDimBinNum][this.y_dim].push(yDimNum - 1/2)
+                } 
 
-
+            } else if(this.split_dim){ // arc bins
+                
                 // we assume split_dim is l, x/y dims are a/b, and that we have c/h data
-                // if(this.split_dim !== "l" || ![this.x_dim, this.y_dim].includes("a") ||
-                //    ![this.x_dim, this.y_dim].includes("b") || !("c_bin" in bin) || !("h_bin" in bin)){
-                //     throw new Error("Arc bin detected, but not expected dimensions of x/y dims: a/b, split dim: l, and bin c/h data")
-                // }
-
-                // track c and h nums
-                if(!(this.splitDimNums[splitDimBinNum].c.includes(bin.c_bin))){
-                    this.splitDimNums[splitDimBinNum].c.push(bin.c_bin)
+                if(this.split_dim !== "l" || ![this.x_dim, this.y_dim].includes("a") ||
+                   ![this.x_dim, this.y_dim].includes("b") || !("c_bin" in bin) || !("h_bin" in bin)){
+                    throw new Error("Arc bin detected, but not expected dimensions of x/y dims: a/b, split dim: l, and bin c/h data")
                 }
-                if(!(this.splitDimNums[splitDimBinNum].h.includes(bin.h_num))){
-                    this.splitDimNums[splitDimBinNum].h.push(bin.h_num)
-                } 
 
-                // for each arc, consider the center line of the arc in the c
-                // direction, and calculate the max x/y values of that center line
-                if(bin.c_center == 0){ // bin at center is a circle at x/y 0
-                    const xDimNum = 0
-                    const yDimNum = 0
-                    if(!(this.splitDimNums[splitDimBinNum][this.x_dim].includes(xDimNum))){
-                        this.splitDimNums[splitDimBinNum][this.x_dim].push(xDimNum)
+                // for each arc, consider the outermost line of the arc in the c
+                // direction, and calculate the max x/y values of that max c line
+
+                if(bin.c_center == 0){ // bin at center is a circle at x/y 0, then min/max of x/y is c_max
+                    if(!(splitLevelEdgesInTiles[splitDimBinNum][this.x_dim].includes(bin.c_max))){
+                        splitLevelEdgesInTiles[splitDimBinNum][this.x_dim].push(bin.c_max)
                     }
-                    if(!(this.splitDimNums[splitDimBinNum][this.y_dim].includes(yDimNum))){
-                        this.splitDimNums[splitDimBinNum][this.y_dim].push(yDimNum)
+                    if(!(splitLevelEdgesInTiles[splitDimBinNum][this.x_dim].includes(-bin.c_max))){
+                        splitLevelEdgesInTiles[splitDimBinNum][this.x_dim].push(-bin.c_max)
+                    }
+                    if(!(splitLevelEdgesInTiles[splitDimBinNum][this.y_dim].includes(bin.c_max))){
+                        splitLevelEdgesInTiles[splitDimBinNum][this.y_dim].push(bin.c_max)
+                    } 
+                    if(!(splitLevelEdgesInTiles[splitDimBinNum][this.y_dim].includes(-bin.c_max))){
+                        splitLevelEdgesInTiles[splitDimBinNum][this.y_dim].push(-bin.c_max)
                     } 
                 } else { // arc, not a circle at the center
                     // sine starts goes 0 -> 1 -> 0 -> -1
@@ -251,9 +205,9 @@ class FullColorBinView {
                     // a max (h 0 degrees, a+ / b0)
                     // if h overlaps with 0, then max a is just "c"
                     if(bin.h_min > bin.h_max || [0,360].includes(bin.h_min) || [0,360].includes(bin.h_max)){
-                        a_max = arcCToABRadiusCorrection * bin.c_center
+                        a_max = arcCToABRadiusCorrection * bin.c_max
                     } else{
-                        a_max = arcCToABRadiusCorrection * bin.c_center * Math.max(
+                        a_max = arcCToABRadiusCorrection * bin.c_max * Math.max(
                             Math.cos(bin.h_min / 360 * 2* Math.PI),
                             Math.cos(bin.h_max / 360 * 2* Math.PI)
                         )
@@ -261,9 +215,9 @@ class FullColorBinView {
 
                     // b max (90 degrees is b+ / a0)
                     if(bin.h_min <= 90 && bin.h_max >= 90){
-                        b_max = arcCToABRadiusCorrection * bin.c_center
+                        b_max = arcCToABRadiusCorrection * bin.c_max
                     } else{
-                        b_max = arcCToABRadiusCorrection * bin.c_center * Math.max(
+                        b_max = arcCToABRadiusCorrection * bin.c_max * Math.max(
                             Math.sin(bin.h_min / 360 * 2* Math.PI),
                             Math.sin(bin.h_max / 360 * 2* Math.PI)
                         )
@@ -271,9 +225,9 @@ class FullColorBinView {
                     
                     // a min (180 degrees is a- / b0)
                     if(bin.h_min <= 180 && bin.h_max >= 180){
-                        a_min = arcCToABRadiusCorrection * -bin.c_center
+                        a_min = arcCToABRadiusCorrection * -bin.c_max
                     } else{
-                        a_min = arcCToABRadiusCorrection * bin.c_center * Math.min(
+                        a_min = arcCToABRadiusCorrection * bin.c_max * Math.min(
                             Math.cos(bin.h_min / 360 * 2* Math.PI),
                             Math.cos(bin.h_max / 360 * 2* Math.PI)
                         )
@@ -281,67 +235,88 @@ class FullColorBinView {
 
                     // b min 270 degrees is b- / a0
                     if(bin.h_min <= 270 && bin.h_max >= 270){
-                        b_min = arcCToABRadiusCorrection * -bin.c_center
+                        b_min = arcCToABRadiusCorrection * -bin.c_max
                     } else{
-                        b_min = arcCToABRadiusCorrection * bin.c_center * Math.max(
+                        b_min = arcCToABRadiusCorrection * bin.c_max * Math.max(
                             Math.sin(bin.h_min / 360 * 2* Math.PI),
                             Math.sin(bin.h_max / 360 * 2* Math.PI)
                         )
                     }
 
+                    // track the range of bin numbers in each level
+                    const splitDimBinNum = bin[this.split_dim + "_bin"]
+
                     // update a/b values with mins and maxes
-                    if(!(this.splitDimNums[splitDimBinNum].a.includes(a_min))){
-                        this.splitDimNums[splitDimBinNum].a.push(a_min)
+                    if(!(splitLevelEdgesInTiles[splitDimBinNum].a.includes(a_min))){
+                        splitLevelEdgesInTiles[splitDimBinNum].a.push(a_min)
                     }
-                    if(!(this.splitDimNums[splitDimBinNum].a.includes(a_max))){
-                        this.splitDimNums[splitDimBinNum].a.push(a_max)
+                    if(!(splitLevelEdgesInTiles[splitDimBinNum].a.includes(a_max))){
+                        splitLevelEdgesInTiles[splitDimBinNum].a.push(a_max)
                     }
-                    if(!(this.splitDimNums[splitDimBinNum].b.includes(b_min))){
-                        this.splitDimNums[splitDimBinNum].b.push(b_min)
+                    if(!(splitLevelEdgesInTiles[splitDimBinNum].b.includes(b_min))){
+                        splitLevelEdgesInTiles[splitDimBinNum].b.push(b_min)
                     }
-                    if(!(this.splitDimNums[splitDimBinNum].b.includes(b_max))){
-                        this.splitDimNums[splitDimBinNum].b.push(b_max)
+                    if(!(splitLevelEdgesInTiles[splitDimBinNum].b.includes(b_max))){
+                        splitLevelEdgesInTiles[splitDimBinNum].b.push(b_max)
                     }
                 }
-            }            
-        }
-        this[dim1 + "_nums"].sort((a,b) => a - b)
-        this[dim2 + "_nums"].sort((a,b) => a - b)
-        this[dim3 + "_nums"].sort((a,b) => a - b)
+            } else { // 3D bins
+                // TODO: calculate 3D bin min/maxes
+                // and no need for split levels
+            }         
+        } 
 
-        this[dim1 + "_min_bin"] = Math.min(... this[dim1 + "_nums"])
-        this[dim1 + "_max_bin"] = Math.max(... this[dim1 + "_nums"])
-
-        this[dim2 + "_min_bin"] = Math.min(... this[dim2 + "_nums"])
-        this[dim2 + "_max_bin"] = Math.max(... this[dim2 + "_nums"])
-
-        this[dim3 + "_min_bin"] = Math.min(... this[dim3 + "_nums"])
-        this[dim3 + "_max_bin"] = Math.max(... this[dim3 + "_nums"])
-
-        if(areRingArcs){
-            this[this.x_dim + "_min_bin"] = Math.min(... this[this.x_dim + "_nums"])
-            this[this.x_dim + "_max_bin"] = Math.max(... this[this.x_dim + "_nums"])
-
-            this[this.y_dim + "_min_bin"] = Math.min(... this[this.y_dim + "_nums"])
-            this[this.y_dim + "_max_bin"] = Math.max(... this[this.y_dim + "_nums"])
-        }
-
-        // calculate min/max of split values
         this.splitLevelRanges = {}
-        for(const [l, levelNums] of Object.entries(this.splitDimNums)){
-            levelNums[this.x_dim].sort((a,b) => this.x_dim_direction * a - this.x_dim_direction * b)
-            levelNums[this.y_dim].sort((a,b) => this.y_dim_direction * a - this.y_dim_direction * b)
 
-            this.splitLevelRanges[l] = {
+        for(const [splitDimBinNum, edgeValues] of Object.entries(splitLevelEdgesInTiles)){
+
+            // find min/max x/y vals for this level
+            const minLevelX =  Math.min(...edgeValues[this.x_dim])
+            const maxLevelX =  Math.max(...edgeValues[this.x_dim])
+            const minLevelY =  Math.min(...edgeValues[this.y_dim])
+            const maxLevelY =  Math.max(...edgeValues[this.y_dim])
+
+            // fill in splitLevelRanges
+            this.splitLevelRanges[splitDimBinNum] = {
                 [this.x_dim]: {
-                    min: Math.min(...levelNums[this.x_dim]),
-                    max: Math.max(...levelNums[this.x_dim])
+                    min: minLevelX,
+                    max: maxLevelX
                 },
                 [this.y_dim]: {
-                    min: Math.min(...levelNums[this.y_dim]),
-                    max: Math.max(...levelNums[this.y_dim])
+                    min: minLevelY,
+                    max: maxLevelY
                 }
             }
+
+            // update overall "this" x/y min/max values
+
+            // make sure x/y min/max values are set in "this"
+            if(!((this.x_dim + "_min_in_bins") in this)){
+                this[this.x_dim + "_min_in_bins"] = minLevelX
+            }
+            if(!((this.x_dim + "_max_in_bins") in this)){
+                this[this.x_dim + "_max_in_bins"] = maxLevelX
+            }
+            if(!((this.y_dim + "_min_in_bins") in this)){
+                this[this.y_dim + "_min_in_bins"] = minLevelY
+            }
+            if(!((this.y_dim + "_max_in_bins") in this)){
+                this[this.y_dim + "_max_in_bins"] = maxLevelY
+            }
+
+            // update x/y min/max values if we've found a more min/max one
+            if(minLevelX < this[this.x_dim + "_min_in_bins"]){
+                this[this.x_dim + "_min_in_bins"] = minLevelX
+            }
+            if(maxLevelX > this[this.x_dim + "_max_in_bins"]){
+                this[this.x_dim + "_max_in_bins"] = maxLevelX
+            }
+            if(minLevelY < this[this.y_dim + "_min_in_bins"]){
+                this[this.y_dim + "_min_in_bins"] = minLevelY
+            }
+            if(maxLevelY > this[this.y_dim + "_max_in_bins"]){
+                this[this.y_dim + "_max_in_bins"] = maxLevelY
+            }           
         }
     }
 
@@ -352,19 +327,19 @@ class FullColorBinView {
 
             const y_offset_in_bins = 
                 (
-                    this[this.y_dim + (this.y_dim_direction > 0 ? "_max_bin" : "_min_bin")] * this.y_dim_direction  
-                    +1/2
+                    this[this.y_dim + (this.y_dim_direction > 0 ? "_max_in_bins" : "_min_in_bins")] * this.y_dim_direction  
                 ) * y_scale 
-                + this.TILE_SEGMENT_MARGIN_NUM
+                + this.TILE_SEGMENT_OUTER_MARGIN_NUM
             const y_height_in_bins =  y_offset_in_bins - 
                 (
-                    this[this.y_dim + (this.y_dim_direction > 0 ? "_min_bin" : "_max_bin")] * this.y_dim_direction  
-                    -1/2
+                    this[this.y_dim + (this.y_dim_direction > 0 ? "_min_in_bins" : "_max_in_bins")] * this.y_dim_direction  
                 ) * y_scale 
-                + this.TILE_SEGMENT_MARGIN_NUM
+                + this.TILE_SEGMENT_OUTER_MARGIN_NUM
+
+            console.log("y_offset_in_bins", y_offset_in_bins, "y_height_in_bins", y_height_in_bins)
 
             const x_offsets_in_bins = {}
-            let currXBinOffset = this.TILE_SEGMENT_MARGIN_NUM 
+            let currXBinOffset = this.TILE_SEGMENT_OUTER_MARGIN_NUM 
             let x_width_in_bins
 
             for(const [split_bin, ranges] of Object.entries(this.splitLevelRanges)){
@@ -376,12 +351,15 @@ class FullColorBinView {
                 // adjust for positive direction
                 currXBinOffset = currXBinOffset 
                     + ranges[this.x_dim][this.x_dim_direction > 0 ? "max" : "min"] * this.x_dim_direction
-                    + this.TILE_SEGMENT_MARGIN_NUM 
+                    + this.TILE_SEGMENT_LEVEL_MARGIN_NUM 
                 
                 // only the last one will be saved at the end, giving us total svg width
                 x_width_in_bins = currXBinOffset
             }
 
+            // remove final inner margin and add the outer margin
+            x_width_in_bins = x_width_in_bins - this.TILE_SEGMENT_LEVEL_MARGIN_NUM + this.TILE_SEGMENT_OUTER_MARGIN_NUM
+            
             return {
                 y_offset_in_bins: y_offset_in_bins,
                 y_height_in_bins: y_height_in_bins,
@@ -449,29 +427,29 @@ class FullColorBinView {
                         tileSize * (
                             d[1] 
                             + thisView.splitLevelRanges[d[0]][thisView.x_dim][thisView.x_dim_direction > 0 ? "max" : "min"] * this.x_dim_direction
-                            + thisView.TILE_SEGMENT_MARGIN_NUM / 2 
+                            + thisView.TILE_SEGMENT_OUTER_MARGIN_NUM 
                         ))
                     .attr("y1", (d) => 
                         tileSize * (
                             thisView.display_offsets.y_offset_in_bins 
-                            - thisView[thisView.y_dim + (thisView.y_dim_direction > 0 ? "_max_bin" : "_min_bin")] * thisView.y_dim_direction * y_scale 
+                            - thisView[thisView.y_dim + (thisView.y_dim_direction > 0 ? "_max_in_bins" : "_min_in_bins")] * thisView.y_dim_direction * y_scale 
                             - 0.5
                         ))
                     .attr("x2", (d) => 
                         tileSize * (
                             d[1] 
                             + thisView.splitLevelRanges[d[0]][thisView.x_dim][thisView.x_dim_direction > 0 ? "max" : "min"] * this.x_dim_direction 
-                            + thisView.TILE_SEGMENT_MARGIN_NUM / 2
+                            + thisView.TILE_SEGMENT_OUTER_MARGIN_NUM
                         ))
                     .attr("y2", (d)=> 
                         tileSize * (
                             thisView.display_offsets.y_offset_in_bins 
-                            - thisView[thisView.y_dim + (thisView.y_dim_direction > 0 ? "_min_bin" : "_max_bin")] * thisView.y_dim_direction * y_scale 
+                            - thisView[thisView.y_dim + (thisView.y_dim_direction > 0 ? "_min_in_bins" : "_max_in_bins")] * thisView.y_dim_direction * y_scale 
                             + 0.5
                         ))
                     .style("stroke", "oklch(70% 0 0 / .5)")
                     .style("stroke-width", tileBorderSize*2)
-                    .style("display", (d) => d[0] ==  ""+thisView[thisView.split_dim+"_max_bin"] ? "none" : "") 
+                    .style("display", (d) => d[0] ==  ""+thisView[thisView.split_dim+"_max_in_bins"] ? "none" : "") 
         } else {
             parentElement.selectAll(".level-outline")
                 .data([])
@@ -832,7 +810,6 @@ class FullColorBinView {
         }
         return{
             tileSize: tileSize,
-            verticalMargin: tileSize * this.TILE_SEGMENT_MARGIN_NUM
         }
     }
 }

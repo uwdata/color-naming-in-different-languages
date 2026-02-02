@@ -593,20 +593,20 @@ function createOrRefreshLang(i){
 
   for(const [thisBin_i, thisBinView] of binViews.entries()){
 
-    let binSetText = svg.select(".bin-text"+thisBin_i)
+    //let binSetText = svg.select(".bin-text"+thisBin_i)
     let binGroup = svg.select(".bin-group" + thisBin_i)
 
 
     if(!thisBinView){
-      binSetText.remove()
+      //binSetText.remove()
       binGroup.remove()
       return
     }
 
-    if(binSetText.empty()){
-      binSetText = svg.append("text")
-        .attr("class", "bin-text"+thisBin_i)
-    }
+    // if(binSetText.empty()){
+    //   binSetText = svg.append("text")
+    //     .attr("class", "bin-text"+thisBin_i)
+    // }
 
     if(binGroup.empty()){
       binGroup = svg.append("g")
@@ -622,13 +622,13 @@ function createOrRefreshLang(i){
         "Oklab view"
     }
 
-    binSetText.text(binLabel)
-        .attr("x", 20)
-        .attr("y", binLabel ? 25 + extraHeightOffset: 0)
-        .style("fill", labelColor)
+    // binSetText.text(binLabel)
+    //     .attr("x", 20)
+    //     .attr("y", binLabel ? 25 + extraHeightOffset: 0)
+    //     .style("fill", labelColor)
 
 
-    const binTextTotalHeight = binLabel ? binSetText.node().getBBox().height + 10 : 0
+    //const binTextTotalHeight = binLabel ? binSetText.node().getBBox().height + 10 : 0
 
 
     const thisBinGroupHeight =  currSvgSize[0].width * thisBinView.display_offsets.y_height_in_bins /  thisBinView.display_offsets.x_width_in_bins
@@ -721,8 +721,8 @@ function createOrRefreshLang(i){
       })
     }
 
-    binGroup.attr("transform", `translate(0,${binTextTotalHeight - displayInfo.verticalMargin + extraHeightOffset})`)
-    svg.attr("height", thisBinGroupHeight + binTextTotalHeight - displayInfo.verticalMargin + extraHeightOffset)
+    binGroup.attr("transform", `translate(0,${extraHeightOffset})`)
+    svg.attr("height", thisBinGroupHeight + extraHeightOffset)
     extraHeightOffset += parseFloat(binGroup.attr("height"))
   }
 }
