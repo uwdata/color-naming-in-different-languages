@@ -364,8 +364,8 @@ function updateTableData(){
             name: "Hue Bins",
             sort: false,
             formatter: (cell, row, col) => {
-                return cell ? gridjs.html(generateHueColorSvg(cell).node().outerHTML) : ""
-                
+                //return cell ? gridjs.html(generateHueColorSvg(cell).node().outerHTML) : ""
+                return cell ? gridjs.html(generateHueColorRingSvg(cell).node().outerHTML) : ""
             }
         })
     }
@@ -425,7 +425,7 @@ function updateTableData(){
 
 function generateColorGrid(nodes){
     const totalGridPx = cellHeight
-	let str = `<div style="width:${cellHeight}px; height:${cellHeight}px">`;
+	let str = `<div style="width:${cellHeight}px; height:${cellHeight}px; margin: auto;">`;
 	for(let i = 0; i < nodes.length; i++){
 		for(let j = 0; j < nodes.length; j++){
 			let node = nodes[i][j];
@@ -497,6 +497,74 @@ function generateHueColorSvg(hueData){
     //       .attr('text-anchor','middle');
     return hueBinSvg
 }
+
+function generateHueColorRingSvg(hueData){
+    combineHueBinDataWithColors(hueData)
+
+    const width = cellHeight,
+        height = cellHeight
+
+    const hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
+        .attr("width", width)
+        .attr("height", height)
+    
+    let spectrumN = hueData.bins.length;
+
+
+    const centerRadius = 15
+    const bandWidth = 15
+
+    let binWidthScale = d3.scaleLinear()
+        .range([0, bandWidth]);
+    const maxPCT = Math.max(...hueData.bins.map(b => b.pCT))
+    binWidthScale.domain([0,maxPCT]);
+
+    hueBinSvg.append("circle")
+        .attr("cx", width/2)
+        .attr("cy", height/2)
+        .attr("r", centerRadius)
+        .attr("fill", "rgba(128,128,128,0.1)")
+
+    hueBinSvg.selectAll(".color_patch")
+        .data(hueData.bins.filter(d => d.pCT > 0))
+        // .data(hueData.bins)
+        .join("path")
+        .attr("class", "color_patch")
+        .attr("d", d => {
+            const startBinI = (d.colorBin.bin_i-1) % spectrumN
+            const endBinI = d.colorBin.bin_i 
+
+            const binWidth = binWidthScale(d.pCT)
+            // const binWidth = binWidthScale(maxPCT)
+
+            const correctedRadius = centerRadius + binWidth / 2
+            
+            const x_start = correctedRadius * - Math.sin(
+                startBinI
+                / spectrumN * 2 * Math.PI)
+            const y_start = correctedRadius * - Math.cos(
+                startBinI
+                / spectrumN * 2 * Math.PI)
+            const x_end = correctedRadius * - Math.sin(
+                endBinI
+                / spectrumN * 2 * Math.PI)
+            const y_end = correctedRadius * - Math.cos(
+                endBinI
+                / spectrumN * 2 * Math.PI)
+            //a_bin_dims.b_bin = a.c_center * Math.sin(a.h_center / 360 * 2 * Math.PI)
+            return `
+            M ${width/2 + x_start} ${height/2 + - y_start} 
+            A ${correctedRadius} ${correctedRadius} 0 0 ${1/*arcDirection*/} ${width/2 + x_end} ${height/2 + - y_end}
+            `
+        })
+        .style("stroke-width", (d) => binWidthScale(d.pCT))
+        //.style("stroke-width", (d) => binWidthScale(maxPCT))
+        .attr("stroke", d => d.binColorStr)
+
+    
+    return hueBinSvg
+}
+
 
 function combineHueBinDataWithColors (hueData){
     if("colorBin" in hueData.bins[0]){ // if we've already done this, no need to repeat
