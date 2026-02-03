@@ -91,6 +91,12 @@ $("#hue_bins_in_circle").change(() => {
     //redrawTable() // For some reason, this doesn't fix spacing issues
 })
 
+$("#hue_bins_color_scale").change(() => {
+    updateTableData()
+    //redrawTable() // For some reason, this doesn't fix spacing issues
+})
+
+
 let currentDataset
 let currentDatasetRgbSet
 let currentDatasetLangAbv
@@ -473,8 +479,16 @@ function generateHueColorSvg(hueData){
         .range([0, width])
         .clamp(true);
 
+
+    let colorScaleSpace = 0
+    let colorScaleHeight = 0
+    if($("#hue_bins_color_scale").is(":checked")){
+        colorScaleSpace = .05 * height
+        colorScaleHeight = .1 * height
+    }
+    
     let y = d3.scaleLinear()
-        .range([0, height]);
+        .range([0, height - colorScaleSpace - colorScaleHeight]);
 
 
     x.domain([0,spectrumN]);
@@ -486,12 +500,26 @@ function generateHueColorSvg(hueData){
     let yAxis = d3.axisLeft()
         .scale(y);
 
+    if($("#hue_bins_color_scale").is(":checked")){
+            const colorScaleSpace = .1 * height
+    const colorScaleHeight = .1 * height
+        let colorPatch = hueBinSvg.selectAll(".color_scale_patch")
+            .data(hueData.bins)
+            .join("rect")
+            .attr("class", "color_scale_patch")
+            .attr("x", (d) => (x(d.colorBin.bin_i)+x(d.colorBin.bin_i-1))/2)
+            .attr("y", height - colorScaleHeight)
+            .attr("width", (d) => d.colorBin.bin_i===(spectrumN-1) ? (x(1)-x(0)) /2 : x(1)-x(0)+1 )
+            .attr("height", colorScaleHeight)
+            .attr("fill", d => d.binColorStr)
+    }
+
     let colorPatch = hueBinSvg.selectAll(".color_patch")
         .data(hueData.bins.filter(d => d.pCT > 0))
         .join("rect")
         .attr("class", "color_patch")
         .attr("x", (d) => (x(d.colorBin.bin_i)+x(d.colorBin.bin_i-1))/2)
-        .attr("y",  d => height - y(d.pCT))//d => y(d.pCT))
+        .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
         .attr("width", (d) => d.colorBin.bin_i===(spectrumN-1) ? (x(1)-x(0)) /2 : x(1)-x(0)+1 )
         .attr("height", d => y(d.pCT))
         .attr("fill", d => d.binColorStr)
@@ -527,19 +555,57 @@ function generateHueColorRingSvg(hueData){
     const centerRadius = 15
     const bandWidth = 15
 
+    const centerColorScaleRadius = centerRadius *.7
+    const centerColorScaleBandWidth = centerRadius *.15
+
     let binWidthScale = d3.scaleLinear()
         .range([0, bandWidth]);
     const maxPCT = Math.max(...hueData.bins.map(b => b.pCT))
     binWidthScale.domain([0,maxPCT]);
 
-    hueBinSvg.append("circle")
-        .attr("cx", width/2)
-        .attr("cy", height/2)
-        .attr("r", centerRadius)
-        .attr("fill", "rgba(128,128,128,0.1)")
+    if($("#hue_bins_color_scale").is(":checked")){
+        hueBinSvg.selectAll(".color_scale_patch")
+            .data(hueData.bins)
+            // .data(hueData.bins)
+            .join("path")
+            .attr("class", "color_scale_patch")
+            .attr("d", d => {
+                const startBinI = (d.colorBin.bin_i-1) % spectrumN
+                const endBinI = d.colorBin.bin_i 
+
+                const binWidth = centerColorScaleBandWidth
+
+                const correctedRadius = centerColorScaleRadius + binWidth / 2
+                
+                const x_start = correctedRadius * - Math.sin(
+                    startBinI
+                    / spectrumN * 2 * Math.PI)
+                const y_start = correctedRadius * - Math.cos(
+                    startBinI
+                    / spectrumN * 2 * Math.PI)
+                const x_end = correctedRadius * - Math.sin(
+                    endBinI
+                    / spectrumN * 2 * Math.PI)
+                const y_end = correctedRadius * - Math.cos(
+                    endBinI
+                    / spectrumN * 2 * Math.PI)
+                //a_bin_dims.b_bin = a.c_center * Math.sin(a.h_center / 360 * 2 * Math.PI)
+                return `
+                M ${width/2 + x_start} ${height/2 + - y_start} 
+                A ${correctedRadius} ${correctedRadius} 0 0 ${1/*arcDirection*/} ${width/2 + x_end} ${height/2 + - y_end}
+                `
+            })
+            .style("stroke-width", centerColorScaleBandWidth)
+            .attr("stroke", d => d.binColorStr)
+    } else {
+        hueBinSvg.append("circle")
+            .attr("cx", width/2)
+            .attr("cy", height/2)
+            .attr("r", centerRadius)
+            .attr("fill", "rgba(128,128,128,0.1)")
+    }
 
     
-    // TODO: add hue bin range in middle
 
     hueBinSvg.selectAll(".color_patch")
         .data(hueData.bins.filter(d => d.pCT > 0))
