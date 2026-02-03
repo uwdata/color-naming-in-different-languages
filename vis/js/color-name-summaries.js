@@ -86,6 +86,11 @@ $("input:radio[name=rgb-set]").change(e => {
     updateRgbSet()
 })
 
+$("#hue_bins_in_circle").change(() => {
+    updateTableData()
+    //redrawTable() // For some reason, this doesn't fix spacing issues
+})
+
 let currentDataset
 let currentDatasetRgbSet
 let currentDatasetLangAbv
@@ -364,8 +369,11 @@ function updateTableData(){
             name: "Hue Bins",
             sort: false,
             formatter: (cell, row, col) => {
-                //return cell ? gridjs.html(generateHueColorSvg(cell).node().outerHTML) : ""
-                return cell ? gridjs.html(generateHueColorRingSvg(cell).node().outerHTML) : ""
+                if($("#hue_bins_in_circle").is(':checked')){
+                    return cell ? gridjs.html(generateHueColorRingSvg(cell).node().outerHTML) : ""
+                } else {
+                    return cell ? gridjs.html(generateHueColorSvg(cell).node().outerHTML) : ""
+                }
             }
         })
     }
@@ -420,6 +428,11 @@ function updateTableData(){
     //     }).forceRender();
     // }
     
+}
+
+function redrawTable(){
+    // TODO: for some reason this doesn't recalculate column widths
+    grid.forceRender()
 }
 
 
@@ -524,6 +537,9 @@ function generateHueColorRingSvg(hueData){
         .attr("cy", height/2)
         .attr("r", centerRadius)
         .attr("fill", "rgba(128,128,128,0.1)")
+
+    
+    // TODO: add hue bin range in middle
 
     hueBinSvg.selectAll(".color_patch")
         .data(hueData.bins.filter(d => d.pCT > 0))
