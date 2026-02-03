@@ -157,15 +157,17 @@ function som(width, height, dims) {
 			minNeighborhoodSize = optionalMinNeighborhoodSize;
 		}
 		
-		//initialize neurons to trainWeights
-		var width = this.neurons.length;
-		var height = this.neurons[0].length;
-		for(var i = 0; i < width; i++){
-			for(var j = 0; j < height; j++){
-				var index = i * width + height;
-				this.neurons[i][j].setWeights(trainWeights[index % trainWeights.length]);
-			}
-		}
+		//optional initialize neurons to samples from the training Weights
+		//
+		// var width = this.neurons.length;
+		// var height = this.neurons[0].length;
+		// for(var i = 0; i < width; i++){
+		// 	for(var j = 0; j < height; j++){
+		// 		var index = i * width + height;
+		//		// Note: Index should be something like: u * height + j
+		// 		this.neurons[i][j].setWeights(trainWeights[index % trainWeights.length]);
+		// 	}
+		// }
 		
 		
 		var maxNeighborhoodSize = Math.max(this.neurons.length, this.neurons[0].length) / 1;

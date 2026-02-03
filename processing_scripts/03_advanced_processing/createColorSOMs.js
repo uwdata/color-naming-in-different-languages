@@ -3,10 +3,7 @@ import Color from "colorjs.io";
 import csv from 'csvtojson';
 import som from '../../shared_files/SOM.js'
 
-console.log(som)
-
 const SOM = som
-console.log(SOM)
 
 // throw new Error("test")
 
@@ -40,7 +37,6 @@ csv().fromFile("../../model/full_colors_info.csv")
 .then((colorInfo)=>{
 csv().fromFile("../../model/lang_info.csv")
 .then((lang_info)=> {
-		console.log(colorInfo);
 		createSOMs(colorInfo, namingData, lang_info);
 });
 });
@@ -67,12 +63,8 @@ function createSOMs(colorInfo, namingData, lang_info){
 		commonColorNameLookup[langAbv][color.simplifiedName] = color.commonName;
 	});
 	
-	//en, fa, ko, zh
-	
-	
+
 	console.log(colorNames.en.length);
-	
-	//let colorNames = ["연두", "초록", "green", "armygreen", "mint", "blue", "하늘", "파랑", "aqua", "cyan", "red", "magenta", "purple", "pink", "white", "cream", "black", "gray", "pastel", "neon"];
 	
 	const outputJSON = {};
 	Object.keys(colorNames).forEach(lang => {
@@ -97,7 +89,7 @@ function createSOMs(colorInfo, namingData, lang_info){
 			for(var j in thisColorData){
 				const c = thisColorData[j]
 				
-				const oklabColor = RGBtoLAB(c.r,c.g,c.b);
+				const oklabColor = RGBtoLAB(c.r,c.g,c.b, c.colorSpace);
 
 				LABdata.push([oklabColor.l, oklabColor.a, oklabColor.b]);
 			}
@@ -105,7 +97,7 @@ function createSOMs(colorInfo, namingData, lang_info){
 			LABdata.sort(function() {
 			  return .5 - Math.random();
 			});
-			
+
 			
 			let thisColorInfo = {};
 			console.log("color:", colorName);
@@ -441,9 +433,12 @@ function flipNeurons(neurons){
 
 
 
-function RGBtoLAB(r,g,b){
-	var labColor = new Color({space: "srgb", coords: [r/255, g/255, b/255]}).to("oklab")
-	return labColor;
+function RGBtoLAB(r,g,b, colorSpace){
+	if(!colorSpace || colorSpace == "rgb"){
+		return new Color({space: "srgb", coords: [r/255, g/255, b/255]}).to("oklab")
+	} else {
+		return new Color({space: colorSpace, coords: [r, g, b]}).to("oklab")
+	}
 }
  
   
