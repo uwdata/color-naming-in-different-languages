@@ -39,19 +39,19 @@ $( document ).ready(function() {
 					Hue Color Comparisons</a></li>
 	          <li><a class="dropdown-item" href="${visPath}full_color_maps.html">
 			  		<img src="${visPath}imgs/full-color-tiny.png" style="max-height:20px; max-width:50px" /> 
-					Full Color Maps</a></li>
+					Full Color Comparisons</a></li>
 	          <li><a class="dropdown-item" href="${visPath}en-ko-translation-comparison.html">
 			  		<img src="${visPath}imgs/en-ko-translation-tiny.png" style="max-height:20px; max-width:50px" />
 			  		Korean-English Translation Comparison</a></li>
 	          <li><a class="dropdown-item" href="${visPath}viridis.html">
 			  		<img src="${visPath}imgs/viridis-graph-tiny.png" style="max-height:20px; max-width:50px" />
 			  		Korean-English Viridis Color Spectrum</a></li>
-			  <li><a class="dropdown-item" href="${visPath}cleaned_data_viewer.html">
-			  		<img src="${visPath}imgs/cleaned-data-viewer-tiny.png" style="max-height:20px; max-width:50px" />
-					Cleaned Data Viewer</a></li>
 				<li><a class="dropdown-item" href="${visPath}full-color-bins-viewer.html">
 			  		<img src="${visPath}imgs/full-color-bin-viewer-tiny.png" style="max-height:20px; max-width:50px" />
-					Full Color Bins Viewer</a></li>
+					Full Color Bin Options</a></li>
+				<li><a class="dropdown-item" href="${visPath}cleaned_data_viewer.html">
+			  		<img src="${visPath}imgs/cleaned-data-viewer-tiny.png" style="max-height:20px; max-width:50px" />
+					Color Name Data Entries</a></li>
 	        </ul>
 	      </li>
 	      <li class="nav-item">
