@@ -161,6 +161,10 @@ function updateRgbSet(){
                             langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
                             colorSampleHueBins36Blur[langAbv][term] : undefined
 
+                    if(hueBinsData){
+                        hueBinsData.langAbv = langAbv
+                    }
+                    
                     const fullBinsData = lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
                         colorSampleFullBins[lang][term] : undefined
 
@@ -214,6 +218,8 @@ function updateRgbSet(){
                         colorSampleHueBins72Blur[langAbv][term] : 
                             langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
                             colorSampleHueBins36Blur[langAbv][term] : undefined
+
+                    row.hueBinsData.langAbv = langAbv
                 }
             }
         }
@@ -462,6 +468,7 @@ function generateColorGrid(nodes){
 	return str + "</div>";
 }
 
+let hueOffset = 0
 
 function generateHueColorSvg(hueData){
     combineHueBinDataWithColors(hueData)
@@ -469,11 +476,18 @@ function generateHueColorSvg(hueData){
     const width = 200,
         height = cellHeight
 
-    const hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
+    let hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
         .attr("width", width)
         .attr("height", height)
-    
+        .attr("xmlns", "http://www.w3.org/2000/svg")
+        .attr("class", "hue-color-svg")
+        .attr("color-name-id", `${hueData.langAbv}_${[...hueData.simplifiedName].map(c => c.charCodeAt(0)).join("_")}`)
+
     let spectrumN = hueData.bins.length;
+
+    //extend hue Data: 72 or 36 by 1/9th
+    const goalHorizontalExtend = 0 //1/9
+    const horizontalExtendBins = Math.round(spectrumN * goalHorizontalExtend)
 
     let x = d3.scaleLinear()
         .range([0, width])
@@ -491,7 +505,7 @@ function generateHueColorSvg(hueData){
         .range([0, height - colorScaleSpace - colorScaleHeight]);
 
 
-    x.domain([0,spectrumN]);
+    x.domain([0 - horizontalExtendBins, spectrumN + horizontalExtendBins]);
 
     const maxPCT = Math.max(...hueData.bins.map(b => b.pCT))
     y.domain([0,maxPCT]);
@@ -500,31 +514,65 @@ function generateHueColorSvg(hueData){
     let yAxis = d3.axisLeft()
         .scale(y);
 
-    if($("#hue_bins_color_scale").is(":checked")){
-            const colorScaleSpace = .1 * height
-    const colorScaleHeight = .1 * height
-        let colorPatch = hueBinSvg.selectAll(".color_scale_patch")
-            .data(hueData.bins)
+    let colorScalePatch = undefined
+
+    updateHueColorSvg(hueBinSvg)
+
+    function updateHueColorSvg(svg){
+        if(!svg){
+            svg = d3.select(`svg[color-name-id=${hueData.langAbv}_${[...hueData.simplifiedName].map(c => c.charCodeAt(0)).join("_")}]`)
+        }
+        const hueOffsetInBins = Math.round(hueOffset * x.domain()[1] / x.range()[1])
+        const hueOffsetRemainder = hueOffset - hueOffsetInBins * x.range()[1] / x.domain()[1] 
+        
+
+        if($("#hue_bins_color_scale").is(":checked")){
+            colorScalePatch = svg.selectAll(".color_scale_patch")
+                .data(hueData.bins)
+                .join("rect")
+                .attr("class", "color_scale_patch")
+                .attr("x", (d) => x(((parseInt(d.colorBin.bin_i) + hueOffsetInBins -0.5) 
+                        % spectrumN + spectrumN) % spectrumN)  // double mod for negative number js mod bug
+                        + hueOffsetRemainder)
+                .attr("y", height - colorScaleHeight)
+                .attr("width", (d) => d.colorBin.bin_i===(spectrumN-1) ? (x(1)-x(0)) /2 : x(1)-x(0)+1 )
+                .attr("height", colorScaleHeight)
+                .attr("fill", d => d.binColorStr)
+        }
+
+        let colorPatch = svg.selectAll(".color_patch")
+            .data(hueData.bins.filter(d => d.pCT > 0))
             .join("rect")
-            .attr("class", "color_scale_patch")
-            .attr("x", (d) => (x(d.colorBin.bin_i)+x(d.colorBin.bin_i-1))/2)
-            .attr("y", height - colorScaleHeight)
+            .attr("class", "color_patch")
+            .attr("x", (d) => 
+                    x(((parseInt(d.colorBin.bin_i) + hueOffsetInBins -0.5) 
+                        % spectrumN + spectrumN) % spectrumN)  // double mod for negative number js mod bug
+                        + hueOffsetRemainder) 
+            .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
             .attr("width", (d) => d.colorBin.bin_i===(spectrumN-1) ? (x(1)-x(0)) /2 : x(1)-x(0)+1 )
-            .attr("height", colorScaleHeight)
+            .attr("height", d => y(d.pCT))
             .attr("fill", d => d.binColorStr)
     }
 
-    let colorPatch = hueBinSvg.selectAll(".color_patch")
-        .data(hueData.bins.filter(d => d.pCT > 0))
-        .join("rect")
-        .attr("class", "color_patch")
-        .attr("x", (d) => (x(d.colorBin.bin_i)+x(d.colorBin.bin_i-1))/2)
-        .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
-        .attr("width", (d) => d.colorBin.bin_i===(spectrumN-1) ? (x(1)-x(0)) /2 : x(1)-x(0)+1 )
-        .attr("height", d => y(d.pCT))
-        .attr("fill", d => d.binColorStr)
+    const hueBinSvgSelect = d3.select(`svg[color-name-id=${hueData.langAbv}_${[...hueData.simplifiedName].map(c => c.charCodeAt(0)).join("_")}]`)
+    hueBinSvgSelect.call(d3.drag()
+        //.on("start", dragstarted)
+        .on("drag", dragged)
+        //.on("end", dragended)
+    ) 
 
+    
+    function dragstarted(event) {
+    }
 
+    // Update the subject (dragged node) position during drag.
+    function dragged(event) {
+        hueOffset += event.dx
+        updateHueColorSvg()
+    }
+
+    function dragended(event) {
+    }
     //   let axisTitle = 'Probability of Name, given Color';
     //   svg.append("g")
     //       .attr("class", "y axis")
