@@ -491,13 +491,13 @@ function generateHueColorSvg(hueData){
 
     const totalBins = spectrumN + 2 * horizontalExtendBins
     const binWidth = width / totalBins
-    const minBinCenter = binWidth/ 2
+    const minBinCenter = binWidth / 2
     const maxBinCenter = width - binWidth / 2
 
     let x = d3.scaleLinear()
         .range([minBinCenter, maxBinCenter])
 
-    x.domain([0 - horizontalExtendBins, spectrumN + horizontalExtendBins]);
+    x.domain([0 - horizontalExtendBins, spectrumN - 1 + horizontalExtendBins]);
 
     const maxPCT = Math.max(...hueData.bins.map(b => b.pCT))
 
@@ -534,8 +534,8 @@ function generateHueColorSvg(hueData){
 
     hueBinSvg
         .append("line")
-        .attr("x1", x(spectrumN + 1/2)) // right edge of the main range 
-        .attr("x2", x(spectrumN + 1/2)) // right edge of extendBins
+        .attr("x1", x(spectrumN - 1 + 1/2)) // right edge of the main range 
+        .attr("x2", x(spectrumN - 1 + 1/2)) // right edge of extendBins
         .attr("y1", 0) 
         .attr("y2", height)
         .style("stroke", "rgba(0,0,0,0.3)")
@@ -642,32 +642,34 @@ function generateHueColorSvg(hueData){
                 .join("rect")
                 .attr("class", "color_scale_patch_main_right")
                 .attr("display", d => 
-                    getBinRightEdgeWithinRange(d.colorBin.bin_i) < getBinLeftEdgeWithinRange(d.colorBin.bin_i)
-                    ? undefined : "none")
-                .attr("x", d => 
-                    x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
-                )
+                   getBinLeftEdgeWithinRange(d.colorBin.bin_i) > getBinRightEdgeWithinRange(d.colorBin.bin_i)
+                     ? undefined : "none")
+                .attr("x", d => x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
                 .attr("y", height - colorScaleHeight)
-                .attr("width", d => x(spectrumN + 1/2) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
+                .attr("width", d => x(spectrumN - 1/2) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
                 .attr("height", colorScaleHeight)
                 .attr("fill", d => d.binColorStr)
 
 
-            // color patch left faded if relevant
+            // color patch right faded if relevant
             colorScalePatchG
                 .selectAll(".color_scale_patch_fade_right")
                 .data(d => [d])
                 .join("rect")
                 .attr("class", "color_scale_patch_fade_right")
                 .attr("display", d => 
-                    getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN < spectrumN + horizontalExtendBins + 1
+                    getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN < spectrumN - 1 + horizontalExtendBins + 1
                     ? undefined : "none")
-                .attr("x", d => x(getBinLeftEdgeWithinRange(d.colorBin.bin_i) + spectrumN ))
+                .attr("x", d => 
+                    getBinLeftEdgeWithinRange(d.colorBin.bin_i) < getBinRightEdgeWithinRange(d.colorBin.bin_i) ? 
+                    x(getBinLeftEdgeWithinRange(d.colorBin.bin_i) + spectrumN) :
+                    x(spectrumN -1/2)
+                )
                 .attr("y", height - colorScaleHeight)
                 .attr("width", d => {
                     let width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
                     if(width < 0){
-                        width = x((getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN )) - x(spectrumN + 1/2)
+                        width = x((getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN )) - x(spectrumN - 1/2)
                     }
                     return width >= 0 ? width : 0
                 })
@@ -691,7 +693,8 @@ function generateHueColorSvg(hueData){
             .join("rect")
             .attr("class", "color_patch_main_fade_left")
             .attr("display", d => 
-                getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN > -horizontalExtendBins - 1? undefined : "none")
+                    getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN > -horizontalExtendBins - 1
+                    ? undefined : "none")
             .attr("x", d => x(getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN ))
             .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
             .attr("width", d => {
@@ -735,13 +738,11 @@ function generateHueColorSvg(hueData){
             .join("rect")
             .attr("class", "color_patch_main_right")
             .attr("display", d => 
-                getBinRightEdgeWithinRange(d.colorBin.bin_i) < getBinLeftEdgeWithinRange(d.colorBin.bin_i)
-                ? undefined : "none")
-            .attr("x", d => 
-                x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
-            )
+                getBinLeftEdgeWithinRange(d.colorBin.bin_i) > getBinRightEdgeWithinRange(d.colorBin.bin_i)
+                    ? undefined : "none")
+            .attr("x", d => x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
             .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
-            .attr("width", d => x(spectrumN + 1/2) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
+            .attr("width", d => x(spectrumN - 1/2) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
             .attr("height", d => y(d.pCT))
             .attr("fill", d => d.binColorStr)
 
@@ -751,14 +752,18 @@ function generateHueColorSvg(hueData){
             .join("rect")
             .attr("class", "color_patch_main_fade_right")
             .attr("display", d => 
-                    getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN < spectrumN + horizontalExtendBins + 1
-                    ? undefined : "none")
-            .attr("x", d => x(getBinLeftEdgeWithinRange(d.colorBin.bin_i) + spectrumN ))
+                getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN < spectrumN - 1 + horizontalExtendBins + 1
+                ? undefined : "none")
+            .attr("x", d => 
+                getBinLeftEdgeWithinRange(d.colorBin.bin_i) < getBinRightEdgeWithinRange(d.colorBin.bin_i) ? 
+                x(getBinLeftEdgeWithinRange(d.colorBin.bin_i) + spectrumN) :
+                x(spectrumN -1/2)
+            )
             .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
             .attr("width", d => {
                 let width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
                 if(width < 0){
-                    width = x((getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN )) - x(spectrumN + 1/2)
+                    width = x((getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN )) - x(spectrumN - 1/2)
                 }
                 return width >= 0 ? width : 0
             })
