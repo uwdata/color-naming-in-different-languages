@@ -78,6 +78,132 @@ const colorSampleHueBins72Blur = await (await fetch("../model/binned_hue_colors/
 
 console.log(hueColorNames[0]);
 
+const langAbvToLang = {}
+
+function nameToUnicode(name){
+    return [...name].map(c => c.charCodeAt(0)).join("_")
+}
+
+function nameFromUnicode(unicodeString){
+    return String.fromCharCode(...unicodeString.split("_"))
+}
+
+
+const colorDetailsModalEl = document.getElementById('color_details_modal')
+const colorDetailsModal = new bootstrap.Modal(colorDetailsModalEl)
+
+colorDetailsModalEl.addEventListener('show.bs.modal', event => {
+    const langAbv = event.relatedTarget.getAttribute("data-lang") 
+    const lang = langAbvToLang[langAbv]
+    const term = nameFromUnicode(event.relatedTarget.getAttribute("data-color-name"))
+
+    const fullNameSetByLang = Object.groupBy(fullColorNames, ({lang}) => lang)
+    const hueNameSetByLang = Object.groupBy(hueColorNames, ({lang}) => lang)
+
+    const hueTermRow =  lang in hueNameSetByLang ? hueNameSetByLang[lang].find(d => d.simplifiedName == term) : undefined
+    const fullTermRow =  lang in fullNameSetByLang ? fullNameSetByLang[lang].find(d => d.simplifiedName == term) : undefined
+    const somColorPatch = langAbv in colorSampleSOMs && term in colorSampleSOMs[langAbv] ? colorSampleSOMs[langAbv][term] : undefined
+
+    const hueBinsData = langAbv in colorSampleHueBins72Blur && term in colorSampleHueBins72Blur[langAbv] ?
+        colorSampleHueBins72Blur[langAbv][term] : 
+            langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
+            colorSampleHueBins36Blur[langAbv][term] : undefined
+
+    if(hueBinsData){
+        hueBinsData.langAbv = langAbv
+    }
+
+    const fullBinsData = lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
+        colorSampleFullBins[lang][term] : undefined
+
+    $("#color_details_modal_name").text(hueTermRow ? hueTermRow.commonName : fullTermRow.commonName)
+    $("#color_details_modal_lang").text(langAbv + " - " + lang)
+    $("#color_details_modal_simplified_name").text(term)
+    if(fullTermRow){
+        $("#color_details_modal_full_details").show()
+        $("#color_details_modal_full_perc").text(fullTermRow.totalColorFraction * 100)
+        $("#color_details_modal_full_rank").text("TBD")
+        $("#color_details_modal_full_num_entries").text(fullTermRow.numFullNames)
+    } else {
+        $("#color_details_modal_full_details").hide()
+    }
+    if(hueTermRow){
+        $("#color_details_modal_hue_details").show()
+        $("#color_details_modal_hue_perc").text("TBD")
+        $("#color_details_modal_hue_rank").text("TBD")
+        $("#color_details_modal_hue_num_entries").text(hueTermRow.cnt)
+    } else {
+        $("#color_details_modal_hue_details").hide()
+    }
+
+    // Average Color Info
+    if(fullTermRow){
+        $("#color_details_modal_avg_full_color").show()
+        $("#color_details_modal_avg_full_color_patch").css("background-color", fullTermRow.avgColorRGBCode)
+        $("#color_details_modal_avg_full_color_rgb").text(fullTermRow.avgColorRGBCode)
+        $("#color_details_modal_avg_full_color_oklab").text(new Color({space: "oklab", coords: [fullTermRow.avgL, fullTermRow.avgA, fullTermRow.avgB]}))
+        $("#color_details_modal_avg_full_color_oklch").text(new Color({space: "oklab", coords: [fullTermRow.avgL, fullTermRow.avgA, fullTermRow.avgB]}).to("oklch"))
+    } else{
+        $("#color_details_modal_avg_full_color").hide()
+    }
+
+    if(hueTermRow){
+        $("#color_details_modal_avg_hue_color").show()
+        $("#color_details_modal_avg_hue_color_patch").css("background-color", hueTermRow.avgHueColor)
+        $("#color_details_modal_avg_hue_color_rgb").text(hueTermRow.avgHueColor)
+        $("#color_details_modal_avg_hue_color_oklab").text(new Color(hueTermRow.avgHueColor).to("oklab"))
+        $("#color_details_modal_avg_hue_color_oklch").text(new Color(hueTermRow.avgHueColor).to("oklch"))
+    } else {
+        $("#color_details_modal_avg_hue_color").hide()
+    }
+
+    // SOM Sample patches
+    if(somColorPatch){
+        $("#color_details_modal_color_sample_patch_2").show()
+        $("#color_details_modal_color_sample_patch_2_display").html(generateColorGrid(somColorPatch.colorNodes4))
+
+        if('colorNodes9' in somColorPatch){
+            $("#color_details_modal_color_sample_patch_3").show()
+            $("#color_details_modal_color_sample_patch_3_display").html(generateColorGrid(somColorPatch.colorNodes9))
+        }else {
+            $("#color_details_modal_color_sample_patch_3").hide()
+        }
+        
+        if('colorNodes16' in somColorPatch){
+            $("#color_details_modal_color_sample_patch_4").show()
+            $("#color_details_modal_color_sample_patch_4_display").html(generateColorGrid(somColorPatch.colorNodes16))
+        }else {
+            $("#color_details_modal_color_sample_patch_4").hide()
+        }
+    }else{
+        $("#color_details_modal_color_sample").hide()
+    }
+
+    // full color bins
+    if(fullBinsData){
+        $("#color_details_modal_full_bins").show()
+        $("#color_details_modal_full_bins_view").html(generateFullColorBinSvg(fullBinsData).node().outerHTML)
+    }else{
+        $("#color_details_modal_full_bins").hide()
+    }
+
+    // hue bins
+    if(hueBinsData){
+        $("#color_details_modal_hue_bins").show()
+        $("#color_details_modal_hue_bins_line_view").html(generateHueColorSvg(hueBinsData).node().outerHTML)
+        $("#color_details_modal_hue_bins_circle_view").html(generateHueColorRingSvg(hueBinsData).node().outerHTML)
+    }else{
+        $("#color_details_modal_hue_bins").hide()
+    }
+
+})
+
+colorDetailsModalEl.addEventListener('show.bs.modal', event => {
+  // TODO: ScrollTo
+})
+
+
+
 $("#selected_langs").change(e => { 
     updateTableData()
 })
@@ -238,6 +364,11 @@ function updateRgbSet(){
         $("#selected_langs").append(new Option(lang, lang, true, lang == prev_selected_lang))
     }
 
+    // make sure langAbvToLang table updated
+    for(const [lang, colorSetData] of Object.entries(color_set)){
+        langAbvToLang[colorSetData[0].lang_abv] = lang
+    }
+
     updateTableData();
 }
 
@@ -328,7 +459,7 @@ function updateTableData(){
         },
         formatter: (cell, row, col) => {
             return gridjs.html(`
-                <div style="white-space:nowrap">
+                <div style="white-space:nowrap" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${cell.lang_abv}" data-color-name="${nameToUnicode(cell.simplifiedName)}">
                     ${rgbSet == "both-hue-full" || rgbSet == "full-data" ? `
                         <div
                             style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; display: inline-block; margin: 5px;
@@ -481,7 +612,7 @@ function generateHueColorSvg(hueData){
         .attr("height", height)
         .attr("xmlns", "http://www.w3.org/2000/svg")
         .attr("class", "hue-color-svg")
-        .attr("color-name-id", `${hueData.langAbv}_${[...hueData.simplifiedName].map(c => c.charCodeAt(0)).join("_")}`)
+        .attr("color-name-id", `${hueData.langAbv}_${nameToUnicode(hueData.simplifiedName)}`)
 
     let spectrumN = hueData.bins.length;
 
@@ -544,7 +675,7 @@ function generateHueColorSvg(hueData){
 
     function updateHueColorSvg(svg){
         if(!svg){
-            svg = d3.select(`svg[color-name-id=${hueData.langAbv}_${[...hueData.simplifiedName].map(c => c.charCodeAt(0)).join("_")}]`)
+            svg = d3.select(`svg[color-name-id=${hueData.langAbv}_${nameToUnicode(hueData.simplifiedName)}]`)
         }
 
         const hueOffsetInBins = hueOffset * x.domain()[1] / x.range()[1]
@@ -775,7 +906,7 @@ function generateHueColorSvg(hueData){
             })
     }
 
-    const hueBinSvgSelect = d3.select(`svg[color-name-id=${hueData.langAbv}_${[...hueData.simplifiedName].map(c => c.charCodeAt(0)).join("_")}]`)
+    const hueBinSvgSelect = d3.select(`svg[color-name-id=${hueData.langAbv}_${nameToUnicode(hueData.simplifiedName)}]`)
     hueBinSvgSelect.call(d3.drag()
         //.on("start", dragstarted)
         .on("drag", dragged)

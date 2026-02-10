@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Color Name Summaries - Color Naming in Different Language</title>
-    <!-- <meta name="og:description" content="Compare hue color name distributions in different languages.">
-    <meta name="og:image" content="stacked-small.png"> -->
+    <meta name="og:description" content="See summary data about color names in different languages.">
+    <meta name="og:image" content="imgs/color-name-summaries-small.png">
 	
 	<link rel="icon" href="../favicon.ico" type="image/x-icon" />
 
@@ -76,15 +76,20 @@
       color: gray;
     }
 
+    dd{
+      margin-left:20px
+    }
+
   </style>
 
   </head>
   <body>
 
-    <div class="container">
+  <div class="container">
 	<h1>Color Name Summaries</h1>
 	<p style="margin-bottom: 5px;">This page lets you see color names in different languages</p>
 
+  <!-- controls -->
   <div class="form-check form-check-inline">
     <input type="radio" class="btn-check" value="hue-data" name="rgb-set" id="hue-data" autocomplete="off" >
     <label class="btn btn-outline-primary btn-sm" for="hue-data">Hue Data</label>
@@ -119,11 +124,123 @@
     </svg>
   </button>
 
+  <!-- Data Table -->
   <div id="data_view">
     <span id="loading-data-span">Loading...</span>
     <div id="data_table"></div>
   </div>
+
+  <!-- Color Name Details -->
+  <div class="modal" id="color_details_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Color Name Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h1 id="color_details_modal_name"></h1>
+          <p><dl>
+              <dt>Language</dt>
+                <dd id="color_details_modal_lang"></dd>
+              <dt>Simplified Name <small title='The "Simplified Name" is used for matching variations of name, see the Color Name Data Entries visualization'>(?)</small></dt>
+                <dd id="color_details_modal_simplified_name"></dd>
+              <span id="color_details_modal_full_details">
+                <dt>Percentage of Full Color Names</dt>
+                  <dd id="color_details_modal_full_perc"></dd>
+                <dt>Full Color Rank</dt>
+                  <dd id="color_details_modal_full_rank"></dd>
+                <dt>Number Full Color Data Entries</dt>
+                  <dd id="color_details_modal_full_num_entries"></dd>
+              </span>
+              <span id="color_details_modal_hue_details">
+                <dt>Percentage of Hue Color Names</dt>
+                  <dd id="color_details_modal_hue_perc"></dd>
+                <dt>Hue Color Rank</dt>
+                  <dd id="color_details_modal_hue_rank"></dd>
+                <dt>Number Hue Color Data Entries</dt>
+                  <dd id="color_details_modal_hue_num_entries"></dd>
+              </span>
+            </dl>
+          </p>
+
+          <h2>Average Color</h2>
+            <div id="color_details_modal_avg_full_color">
+            <h3>Average Full Color</h3>
+              <p><small>The average color when people gave this name when asked to name from the full color range</small></p>
+              <div id="color_details_modal_avg_full_color_patch" style="height:50px; width: 50px; border-radius: 25px; display: inline-block; margin: 5px;"></div>
+              <p>
+                <dt>RGB</dt>
+                  <dd id="color_details_modal_avg_full_color_rgb"></dd>
+                <dt>Oklab</dt>
+                  <dd id="color_details_modal_avg_full_color_oklab"></dd>
+                <dt>Oklch</dt>
+                  <dd id="color_details_modal_avg_full_color_oklch"></dd>
+              </p>
+            </div>
+            
+            <div id="color_details_modal_avg_hue_color">
+              <h3 id="">Average Hue Color</h3>
+              <p><small>The average color when people gave this name when asked to name hue colors</small></p>
+              <div id="color_details_modal_avg_hue_color_patch" style="height:50px; width: 50px; border-radius: 25px; display: inline-block; margin: 5px;"></div>
+              <p>
+                <dt>RGB</dt>
+                  <dd id="color_details_modal_avg_hue_color_rgb"></dd>
+                <dt>Oklab</dt>
+                  <dd id="color_details_modal_avg_hue_color_oklab"></dd>
+                <dt>Oklch</dt>
+                  <dd id="color_details_modal_avg_hue_color_oklch"></dd>
+              </p>
+            </div>
+          
+          <div id="color_details_modal_color_sample">
+          <h2>Color Sample</h2>
+            <p><small>A sample of the range of colors users labeled with this color name. Created using self-organizing maps</small></p>
+            <div id="color_details_modal_color_sample_patch_2">
+              2x2: <div id="color_details_modal_color_sample_patch_2_display"></div>
+            </div>
+            <div id="color_details_modal_color_sample_patch_3">
+              3x3: <div id="color_details_modal_color_sample_patch_3_display"></div>
+            </div>
+            <div id="color_details_modal_color_sample_patch_4">
+              4x4: <div id="color_details_modal_color_sample_patch_4_display"></div>
+            </div>
+          </div>
+          <div id="color_details_modal_full_bins">
+            <h2>Full Color Bins</h2>
+            <p><small>The full color spectrum divided into equal size bins in the perceptually uniform Oklab space (bins are divided using Oklch rings). The size of the bin corresponds to how often this color name was chosen for colors in the bin.</small></p>
+            <div id="color_details_modal_full_bins_view"></div>
+            
+          </div>
+          <div id="color_details_modal_hue_bins">
+            <h2>Hue Color Bins</h2>
+            <p><small>The hue color line divided into equal size bins in the perceptually uniform Oklab space. The size of the bin corresponds to how often this color name was chosen for colors in the bin.</small></p>
+            <h3>Linear View</h3>
+            <div id="color_details_modal_hue_bins_line_view"></div>
+            <h3>Circular View</h3>
+            <div id="color_details_modal_hue_bins_circle_view"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inform modal -->
+  <div class="modal" id="inform_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   
+  <!-- Advanced Settings -->
   <div class="modal" id="advanced_settings_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
