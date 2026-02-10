@@ -3,7 +3,6 @@ import fs from 'fs'
 import csv from 'csvtojson';
 import * as d3 from 'd3'
 import csvWriter from 'csv-write-stream'
-import {languages_iso_639} from "../../shared_files/languages-iso-639.js"
 import hueBinHelper from '../utils/hueBinHelper.js'
 
 const N_BIN_OPTIONS = [120, 72, 36]
@@ -26,6 +25,8 @@ const O_HUE_SUMMARY_FILE = `../../model/hue_colors_info.csv`;
 
 const colorSet = JSON.parse(
       fs.readFileSync('../../model/color_info_pre_naming/hue_colors_rgb.json'));
+
+const langAbvToLang = {}
 
 csv()
 .fromFile(I_FILE)
@@ -168,11 +169,8 @@ csv()
           (blur == BLUR ? mapped.totalCountBlur : mapped.totalCount)
            > MIN_TERMS_PER_BIN * n_bins){ 
 
-          let lang_abv = langData.key
-          const langMatch = languages_iso_639.find(l => `${l["Language name"]} (${l["Native name"]})` == langData.key)
-          if(langMatch){
-            lang_abv = langMatch["639‑1"]
-          }
+          let lang_abv = langData.terms[0].values[0].langAbv//langData.key
+          langAbvToLang[lang_abv] = langData.terms[0].values[0].lang
 
           // Update aggregated data
           langTermAggregated[lang_abv] = mapped;
@@ -226,11 +224,7 @@ csv()
 
       // fill in the hue_colors_info
       for(const [lang_abv, colorData] of Object.entries(langTermAggregated)){
-        let lang
-        const langMatch = languages_iso_639.find(l => l["639‑1"] == lang_abv)
-        if(langMatch){
-          lang = `${langMatch["Language name"]} (${langMatch["Native name"]})`
-        }
+        const lang = langAbvToLang[lang_abv]
 
         if(lang_abv != "colorSet"){
           for(const [i, simplifiedName] of colorData.terms.entries()){

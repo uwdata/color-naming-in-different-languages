@@ -13,6 +13,7 @@ import participantLangChanges from "./participant_lang_changes.js"
 
 // Path or the input csv file
 const COLOR_NAMES_I = "../../raw/color_names.csv"
+const DEMOGRAPHICS_I = "../../raw/demographics.csv"
 const COLOR_NAMES_O = "../../model/cleaned_color_names.csv"; // Path for the output
 const COLOR_NAMES_REMOVED_O = "../../model/removed_color_data.csv"; // Path for the output
 
@@ -72,14 +73,17 @@ function getLangAbv(lang){
 }
 
 
+const demographics_info = await csv().fromFile(DEMOGRAPHICS_I)
+
+
 csv().fromFile(COLOR_NAMES_I)
   .then((colorNames)=>{
 
-  // ignore some of the priming effects and participant info data errors
-  // since we already have a lot of data to ge the main issues this
-  // would reveal, and hopefully we can get more nuanced or rare colors
-  // now by including these
-
+  // we previously left out some data because we were worried about
+  // priming effects and missing demographics, but since we now have
+  // lot of data, we think it worth including all the data
+  // and hopefully we can get more nuanced or rare colors
+  //
   //colorNames = colorNames.filter(cn => cn.participantId !== 0);
   //colorNames = colorNames.filter(cn => !(cn.lang=="Korean (한국어, 조선어)" && cn.studyVersion === "1.1.4" && cn.rgbSet === "line")); //There is a priming effect for that set.
 
@@ -111,6 +115,23 @@ csv().fromFile(COLOR_NAMES_I)
       cn.lang = `${lang["Language name"]} (${lang["Native name"]})`
     }
   }
+
+  //////////////////
+  //optional modify languages to create additional splits through the rest of the process
+  // e.g., gender split
+  // for(const [cn_i, cn] of colorNames.entries()){
+  //   const demographic = demographics_info.find(d => d.participantId == cn.participantId)
+  //   if(demographic && cn.participantId != 0){
+  //     cn.lang = cn.lang + " - " + demographic.gender
+  //     cn.langAbv = cn.langAbv + " - " + demographic.gender
+  //   } else {
+  //     cn.lang = ""
+  //     cn.langAbv = ""
+  //   }
+  // }
+  // colorNames = colorNames.filter(cn => cn.lang)
+  //////////////////
+
 
   // standardize entered name (e.g., trim, lowcase)
   colorNames.forEach(cn => {
