@@ -14,6 +14,7 @@ const STUDY_1_SORT_I = "./study_v1/color_sorting_scores.csv"
 const COLOR_SORT_O = "./color_sorting.csv"
 
 const STUDY_1_DEMOGRAPHICS_I = "./study_v1/color_perception_table_demographics.csv"
+const STUDY_1_PARTICIPANT_INFO_I = "./study_v1/participant_info.csv"
 const DEMOGRAPHICS_O = "./demographics.csv"
 
 
@@ -208,6 +209,7 @@ const demographics_writer = csvWriter({
         "participantId",
         "date",
         "ipCountry",
+        "ipRegion",
         "locale",
         "retake",
         "gender",
@@ -233,17 +235,19 @@ const demographics_writer = csvWriter({
 demographics_writer.pipe(fs.createWriteStream(DEMOGRAPHICS_O));
 
 const v1_demographics = await csv({delimiter: ";"}).fromFile(STUDY_1_DEMOGRAPHICS_I)
+const v1_participant_info =await csv().fromFile(STUDY_1_PARTICIPANT_INFO_I)
 for(const demographic of v1_demographics){
     //demographics_writer.write(demographic)
     if(demographic.participantId == 0){ // Study error
         continue
     }
+    const participantInfo = v1_participant_info.find(p => p.participantId == demographic.participantId)
     const demographicRow = {
         participantId:  demographic.participantId,
         date: (new Date(demographic.current_time)).getFullYear(),
-        ipCountry: undefined, // todo: do we have this saved elsewhere?
-        ipRegion: undefined, // todo: do we have this saved elsewhere?
-        locale: undefined, // todo: get this information from naming data?
+        ipCountry: participantInfo ? participantInfo.ipCountry : "", 
+        ipRegion: participantInfo ? participantInfo.ip_region : "",
+        locale: participantInfo ? participantInfo.contentLanguage : "", 
         retake: demographic.retake == 0 ? "no" : "yes",
         gender: demographic.gender == 0 ? "male" : demographic.gender == 1 ? "female" : "other",
         // countryGrow: 
@@ -281,7 +285,7 @@ for(const participant of v2_data){
         participantId:  participant.participant_id,
         date:  participant.litw.initialize.date,
         ipCountry:  participant.litw.initialize.geoLoc.country,
-        ipRegion:  participant.litw.initialize.geoLoc.region,
+        ipRegion:  participant.litw.initialize.geoLoc.simplifiedRegion,
         locale:  participant.litw.initialize.contentLanguage,
         retake: participant.study.demographics["demographics-retake"],
         gender: participant.study.demographics["demographics-gender"] !== "other" ? 

@@ -1,0 +1,132 @@
+{
+  "regions": [
+    { "key": "north", "nameEn": "North China", "nameZh": "北方" },
+    { "key": "south", "nameEn": "South China", "nameZh": "南方" }
+  ],
+
+  "provinces": [
+    { "code": "AH", "nameEn": "Anhui", "nameZh": "安徽", "regionKey": "south" },
+    { "code": "FJ", "nameEn": "Fujian", "nameZh": "福建", "regionKey": "south" },
+    { "code": "GS", "nameEn": "Gansu", "nameZh": "甘肃", "regionKey": "north" },
+    { "code": "GD", "nameEn": "Guangdong", "nameZh": "广东", "regionKey": "south" },
+    { "code": "GZ", "nameEn": "Guizhou", "nameZh": "贵州", "regionKey": "south" },
+    { "code": "HI", "nameEn": "Hainan", "nameZh": "海南", "regionKey": "south" },
+    { "code": "HE", "nameEn": "Hebei", "nameZh": "河北", "regionKey": "north" },
+    { "code": "HL", "nameEn": "Heilongjiang", "nameZh": "黑龙江", "regionKey": "north" },
+    { "code": "HA", "nameEn": "Henan", "nameZh": "河南", "regionKey": "north" },
+    { "code": "HB", "nameEn": "Hubei", "nameZh": "湖北", "regionKey": "south" },
+    { "code": "HN", "nameEn": "Hunan", "nameZh": "湖南", "regionKey": "south" },
+    { "code": "JS", "nameEn": "Jiangsu", "nameZh": "江苏", "regionKey": "south" },
+    { "code": "JX", "nameEn": "Jiangxi", "nameZh": "江西", "regionKey": "south" },
+    { "code": "JL", "nameEn": "Jilin", "nameZh": "吉林", "regionKey": "north" },
+    { "code": "LN", "nameEn": "Liaoning", "nameZh": "辽宁", "regionKey": "north" },
+    { "code": "QH", "nameEn": "Qinghai", "nameZh": "青海", "regionKey": "north" },
+    { "code": "SN", "nameEn": "Shaanxi", "nameZh": "陕西", "regionKey": "north" },
+    { "code": "SD", "nameEn": "Shandong", "nameZh": "山东", "regionKey": "north" },
+    { "code": "SX", "nameEn": "Shanxi", "nameZh": "山西", "regionKey": "north" },
+    { "code": "SC", "nameEn": "Sichuan", "nameZh": "四川", "regionKey": "south" },
+    { "code": "YN", "nameEn": "Yunnan", "nameZh": "云南", "regionKey": "south" },
+    { "code": "ZJ", "nameEn": "Zhejiang", "nameZh": "浙江", "regionKey": "south" },
+    { "code": "TW", "nameEn": "Taiwan", "nameZh": "台湾", "regionKey": "south" }
+  ],
+
+  "cities": [
+    {
+      "nameEn": "Beijing",
+      "nameZh": "北京",
+      "provinceCode": null,
+      "municipalityEn": "Beijing",
+      "municipalityZh": "北京",
+      "regionKey": "north"
+    },
+    {
+      "nameEn": "Shanghai",
+      "nameZh": "上海",
+      "provinceCode": null,
+      "municipalityEn": "Shanghai",
+      "municipalityZh": "上海",
+      "regionKey": "south"
+    },
+    {
+      "nameEn": "Tianjin",
+      "nameZh": "天津",
+      "provinceCode": null,
+      "municipalityEn": "Tianjin",
+      "municipalityZh": "天津",
+      "regionKey": "north"
+    },
+    {
+      "nameEn": "Chongqing",
+      "nameZh": "重庆",
+      "provinceCode": null,
+      "municipalityEn": "Chongqing",
+      "municipalityZh": "重庆",
+      "regionKey": "south"
+    },
+
+    { "nameEn": "Guangzhou", "nameZh": "广州", "provinceCode": "GD" },
+    { "nameEn": "Shenzhen", "nameZh": "深圳", "provinceCode": "GD" },
+    { "nameEn": "Dongguan", "nameZh": "东莞", "provinceCode": "GD" },
+    { "nameEn": "Foshan", "nameZh": "佛山", "provinceCode": "GD" },
+    { "nameEn": "Zhuhai", "nameZh": "珠海", "provinceCode": "GD" },
+    { "nameEn": "Zhanjiang", "nameZh": "湛江", "provinceCode": "GD" },
+    { "nameEn": "Zhongshan", "nameZh": "中山", "provinceCode": "GD" },
+    { "nameEn": "Shantou", "nameZh": "汕头", "provinceCode": "GD" },
+    { "nameEn": "Jiangmen", "nameZh": "江门", "provinceCode": "GD" },
+    { "nameEn": "Huizhou", "nameZh": "惠州", "provinceCode": "GD" },
+    { "nameEn": "Zhaoqing", "nameZh": "肇庆", "provinceCode": "GD" },
+    { "nameEn": "Meizhou", "nameZh": "梅州", "provinceCode": "GD" },
+    { "nameEn": "Shanwei", "nameZh": "汕尾", "provinceCode": "GD" },
+    { "nameEn": "Yangjiang", "nameZh": "阳江", "provinceCode": "GD" },
+    { "nameEn": "Qingyuan", "nameZh": "清远", "provinceCode": "GD" },
+
+    { "nameEn": "Hangzhou", "nameZh": "杭州", "provinceCode": "ZJ" },
+    { "nameEn": "Ningbo", "nameZh": "宁波", "provinceCode": "ZJ" },
+    { "nameEn": "Quzhou", "nameZh": "衢州", "provinceCode": "ZJ" },
+    { "nameEn": "Wenzhou", "nameZh": "温州", "provinceCode": "ZJ" },
+
+    { "nameEn": "Nanjing", "nameZh": "南京", "provinceCode": "JS" },
+    { "nameEn": "Suzhou", "nameZh": "苏州", "provinceCode": "JS" },
+    { "nameEn": "Wuxi", "nameZh": "无锡", "provinceCode": "JS" },
+
+    { "nameEn": "Jinan", "nameZh": "济南", "provinceCode": "SD" },
+    { "nameEn": "Qingdao", "nameZh": "青岛", "provinceCode": "SD" },
+
+    { "nameEn": "Zhengzhou", "nameZh": "郑州", "provinceCode": "HA" },
+    { "nameEn": "Luoyang", "nameZh": "洛阳", "provinceCode": "HA" },
+
+    { "nameEn": "Wuhan", "nameZh": "武汉", "provinceCode": "HB" },
+    { "nameEn": "Changsha", "nameZh": "长沙", "provinceCode": "HN" },
+
+    { "nameEn": "Chengdu", "nameZh": "成都", "provinceCode": "SC" },
+
+    { "nameEn": "Fuzhou", "nameZh": "福州", "provinceCode": "FJ" },
+    { "nameEn": "Xiamen", "nameZh": "厦门", "provinceCode": "FJ" },
+
+    { "nameEn": "Hefei", "nameZh": "合肥", "provinceCode": "AH" },
+    { "nameEn": "Nanchang", "nameZh": "南昌", "provinceCode": "JX" },
+
+    { "nameEn": "Kunming", "nameZh": "昆明", "provinceCode": "YN" },
+    { "nameEn": "Guiyang", "nameZh": "贵阳", "provinceCode": "GZ" },
+
+    { "nameEn": "Haikou", "nameZh": "海口", "provinceCode": "HI" },
+    { "nameEn": "Sanya", "nameZh": "三亚", "provinceCode": "HI" },
+
+    { "nameEn": "Xi'an", "nameZh": "西安", "provinceCode": "SN" },
+    { "nameEn": "Taiyuan", "nameZh": "太原", "provinceCode": "SX" },
+    { "nameEn": "Shijiazhuang", "nameZh": "石家庄", "provinceCode": "HE" },
+    { "nameEn": "Lanzhou", "nameZh": "兰州", "provinceCode": "GS" },
+    { "nameEn": "Xining", "nameZh": "西宁", "provinceCode": "QH" },
+
+    { "nameEn": "Shenyang", "nameZh": "沈阳", "provinceCode": "LN" },
+    { "nameEn": "Dalian", "nameZh": "大连", "provinceCode": "LN" },
+    { "nameEn": "Changchun", "nameZh": "长春", "provinceCode": "JL" },
+    { "nameEn": "Harbin", "nameZh": "哈尔滨", "provinceCode": "HL" },
+
+    { "nameEn": "Taipei", "nameZh": "台北", "provinceCode": "TW" },
+    { "nameEn": "Kaohsiung", "nameZh": "高雄", "provinceCode": "TW" },
+
+    { "nameEn": "Jiaxing", "nameZh": "嘉兴", "provinceCode": "ZJ" },
+    { "nameEn": "Sihui", "nameZh": "四会", "provinceCode": "GD" }
+  ]
+}

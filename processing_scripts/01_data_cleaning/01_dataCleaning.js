@@ -130,6 +130,20 @@ csv().fromFile(COLOR_NAMES_I)
   //   }
   // }
   // colorNames = colorNames.filter(cn => cn.lang)
+
+
+  //optional modify languages to separate by region
+  //
+  // for(const [cn_i, cn] of colorNames.entries()){
+  //   const demographic = demographics_info.find(d => d.participantId == cn.participantId)
+  //   if(demographic && cn.participantId != 0){
+  //     if(demographic.ipRegion){
+  //       cn.lang = cn.lang + " - " + demographic.ipRegion
+  //       cn.langAbv = cn.langAbv + " - " + demographic.ipRegion
+  //     }
+  //   }
+  // }
+  // colorNames = colorNames.filter(cn => cn.lang)
   //////////////////
 
 
@@ -203,7 +217,7 @@ csv().fromFile(COLOR_NAMES_I)
 
 ///////////////////////
 // Color name Matches
-const color_name_matches = await csv().fromFile(COLOR_MATCHES_I)
+let color_name_matches = await csv().fromFile(COLOR_MATCHES_I)
 
 
 color_name_matches.forEach(cn => {
@@ -234,6 +248,36 @@ color_name_matches.forEach(cn => {
     }
   }
 })
+
+//////////////////
+  //optional modify languages to create additional splits through the rest of the process
+  // e.g., gender split
+  // for(const [cn_i, cn] of color_name_matches.entries()){
+  //   const demographic = demographics_info.find(d => d.participantId == cn.participantId)
+  //   if(demographic && cn.participantId != 0){
+  //     cn.lang = cn.lang + " - " + demographic.gender
+  //     cn.langAbv = cn.langAbv + " - " + demographic.gender
+  //   } else {
+  //     cn.lang = ""
+  //     cn.langAbv = ""
+  //   }
+  // }
+  // color_name_matches = colorNames.filter(cn => cn.lang)
+
+
+  //optional modify languages to separate by region
+  //
+  // for(const [cn_i, cn] of color_name_matches.entries()){
+  //   const demographic = demographics_info.find(d => d.participantId == cn.participantId)
+  //   if(demographic && cn.participantId != 0){
+  //     if(demographic.ipRegion){
+  //       cn.lang = cn.lang + " - " + demographic.ipRegion
+  //       cn.langAbv = cn.langAbv + " - " + demographic.ipRegion
+  //     }
+  //   }
+  // }
+  // color_name_matches = color_name_matches.filter(cn => cn.lang)
+  //////////////////
 
 // color_name_matches.forEach(cn => {
 //   cn.entered_name = enteredColorNameLookup[cn.cn_i];

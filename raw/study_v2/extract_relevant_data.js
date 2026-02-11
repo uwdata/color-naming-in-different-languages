@@ -5,6 +5,9 @@ import JSON5 from 'json5'
 const STUDY_2_DATA_I = "./download.csv"
 const NAMES_O = "./study_2_data.json"
 
+const CHINA_REGIONS_I = "../supporting_files/chinaRegions.json"
+const china_regions = JSON.parse(fs.readFileSync(CHINA_REGIONS_I))
+
 const FIELDS_CONVERT_JSON = ["color_names", "matches"]
 
 const FIELDS_TO_IGNORE = [
@@ -59,6 +62,43 @@ for(const participant_row of study_2_data){
         currObject[lastLocation] = outputData
     }
     participantInfo.push(participant)
+}
+
+// add Region for Chinese data
+for(const participant_row of participantInfo){
+    if(participant_row.litw.initialize.geoLoc.country == "China"){
+        const regionInfo = china_regions.provinces.find(p => p.nameEn == participant_row.litw.initialize.geoLoc.region)
+        if(regionInfo){
+            participant_row.litw.initialize.geoLoc.simplifiedRegion = regionInfo.regionKey
+        } else {
+            const cityInfo = china_regions.cities.find(c => c.nameEn == participant_row.litw.initialize.geoLoc.city)
+            if(cityInfo){
+                if(cityInfo.regionKey){
+                    participant_row.litw.initialize.geoLoc.simplifiedRegion = cityInfo.regionKey
+                } else {
+                    const provinceInfo = china_regions.provinces.find(p => p.code = cityInfo.provinceCode)
+                    if(provinceInfo){
+                        participant_row.litw.initialize.geoLoc.simplifiedRegion = provinceInfo.regionKey
+                    } else{
+                        console.log("could not find info for Chinese city: ", participant_row.litw.initialize.geoLoc.city)
+                    }
+                }
+                if(!participant_row.litw.initialize.geoLoc.simplifiedRegion){
+                    console.log("how did I not get info for", participant_row.litw.initialize.geoLoc.city, "?")
+                }
+            } else{
+                console.log("could not find Chinese city: ", participant_row.litw.initialize.geoLoc.city)
+            }
+        }
+    } else if(participant_row.litw.initialize.geoLoc.country == "Taiwan"){
+        const provinceInfo = china_regions.provinces.find(p => p.code = participant_row.litw.initialize.geoLoc.country)
+        if(provinceInfo){
+            participant_row.litw.initialize.geoLoc.simplifiedRegion = provinceInfo.regionKey
+        } else{
+            console.log("could not find info for Taiwan")
+        }
+    }
+
 }
 
 
