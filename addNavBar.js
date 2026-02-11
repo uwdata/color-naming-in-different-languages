@@ -21,7 +21,7 @@ $( document ).ready(function() {
  	       <a class="nav-link" href="${rootPath}index.html">Home <span class="sr-only"></span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="https://studies2.labinthewild.org/color-perception/" target="_blank">Take the Survey</a>
+	        <a class="nav-link" href="https://studies.labinthewild.org/color-perception/" target="_blank">Take the Survey</a>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
