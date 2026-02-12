@@ -2,62 +2,82 @@
   {
     "nlterm": "blauw",
     "roterm": "albastru",
-    "dist": 0.04822293590906998
+    "dist": 0.05002136669873288
   },
   {
     "nlterm": "blauw",
     "roterm": "verde",
-    "dist": 0.42205683470702177
+    "dist": 0.4225994519981932
   },
   {
     "nlterm": "blauw",
     "roterm": "roz",
-    "dist": 0.32206297675056106
+    "dist": 0.3224121809892217
   },
   {
     "nlterm": "blauw",
     "roterm": "mov",
-    "dist": 0.2296704843562621
+    "dist": 0.22901014525560062
   },
   {
     "nlterm": "groen",
     "roterm": "albastru",
-    "dist": 0.37578213846117053
+    "dist": 0.37343029544746326
   },
   {
     "nlterm": "groen",
     "roterm": "verde",
-    "dist": 0.11156831684854697
+    "dist": 0.11384859941259605
   },
   {
     "nlterm": "groen",
     "roterm": "roz",
-    "dist": 0.44359922160461307
+    "dist": 0.4421964889698367
   },
   {
     "nlterm": "groen",
     "roterm": "mov",
-    "dist": 0.46523748737666104
+    "dist": 0.4631393527699416
   },
   {
     "nlterm": "paars",
     "roterm": "albastru",
-    "dist": 0.2431359827648068
+    "dist": 0.241380374473135
   },
   {
     "nlterm": "paars",
     "roterm": "verde",
-    "dist": 0.5340718247203671
+    "dist": 0.5363469458692999
   },
   {
     "nlterm": "paars",
     "roterm": "roz",
-    "dist": 0.1971386948895299
+    "dist": 0.20280659943890067
   },
   {
     "nlterm": "paars",
     "roterm": "mov",
-    "dist": 0.05983433696172997
+    "dist": 0.06195032030658886
+  },
+  {
+    "nlterm": "roze",
+    "roterm": "albastru",
+    "dist": 0.3229411660375019
+  },
+  {
+    "nlterm": "roze",
+    "roterm": "verde",
+    "dist": 0.46778869373328164
+  },
+  {
+    "nlterm": "roze",
+    "roterm": "roz",
+    "dist": 0.06411004436472577
+  },
+  {
+    "nlterm": "roze",
+    "roterm": "mov",
+    "dist": 0.16269469316339333
   },
   {
     "nlterm": "oranje",
@@ -78,26 +98,6 @@
     "nlterm": "oranje",
     "roterm": "mov",
     "dist": 0.35718977164753446
-  },
-  {
-    "nlterm": "roze",
-    "roterm": "albastru",
-    "dist": 0.32641754726378497
-  },
-  {
-    "nlterm": "roze",
-    "roterm": "verde",
-    "dist": 0.46972404033703635
-  },
-  {
-    "nlterm": "roze",
-    "roterm": "roz",
-    "dist": 0.05748398627892963
-  },
-  {
-    "nlterm": "roze",
-    "roterm": "mov",
-    "dist": 0.16511724107195955
   },
   {
     "nlterm": "rood",
@@ -122,42 +122,62 @@
   {
     "nlterm": "lichtblauw",
     "roterm": "albastru",
-    "dist": 0.25092554438371156
+    "dist": 0.25073343565482237
   },
   {
     "nlterm": "lichtblauw",
     "roterm": "verde",
-    "dist": 0.24921605579391934
+    "dist": 0.250040455708351
   },
   {
     "nlterm": "lichtblauw",
     "roterm": "roz",
-    "dist": 0.3573801051702369
+    "dist": 0.35675510671896915
   },
   {
     "nlterm": "lichtblauw",
     "roterm": "mov",
-    "dist": 0.3584366251778502
+    "dist": 0.3579532390200729
+  },
+  {
+    "nlterm": "bruin",
+    "roterm": "albastru",
+    "dist": 0.32439158843456606
+  },
+  {
+    "nlterm": "bruin",
+    "roterm": "verde",
+    "dist": 0.43369387397396963
+  },
+  {
+    "nlterm": "bruin",
+    "roterm": "roz",
+    "dist": 0.31594536685781627
+  },
+  {
+    "nlterm": "bruin",
+    "roterm": "mov",
+    "dist": 0.2968351927826575
   },
   {
     "nlterm": "donkerblauw",
     "roterm": "albastru",
-    "dist": 0.20090629053693632
+    "dist": 0.2016408788522747
   },
   {
     "nlterm": "donkerblauw",
     "roterm": "verde",
-    "dist": 0.5740534383927066
+    "dist": 0.569811458960862
   },
   {
     "nlterm": "donkerblauw",
     "roterm": "roz",
-    "dist": 0.3895700973545331
+    "dist": 0.3882285406328114
   },
   {
     "nlterm": "donkerblauw",
     "roterm": "mov",
-    "dist": 0.25791068147269686
+    "dist": 0.25604099122485646
   },
   {
     "nlterm": "geel",
@@ -180,64 +200,44 @@
     "dist": 0.5136828481947567
   },
   {
-    "nlterm": "bruin",
-    "roterm": "albastru",
-    "dist": 0.3266839712338119
-  },
-  {
-    "nlterm": "bruin",
-    "roterm": "verde",
-    "dist": 0.434486747535235
-  },
-  {
-    "nlterm": "bruin",
-    "roterm": "roz",
-    "dist": 0.3157579469409952
-  },
-  {
-    "nlterm": "bruin",
-    "roterm": "mov",
-    "dist": 0.2979063047098792
-  },
-  {
     "nlterm": "lichtgroen",
     "roterm": "albastru",
-    "dist": 0.425364607896634
+    "dist": 0.42666098739296066
   },
   {
     "nlterm": "lichtgroen",
     "roterm": "verde",
-    "dist": 0.0840093864973663
+    "dist": 0.0875450244499623
   },
   {
     "nlterm": "lichtgroen",
     "roterm": "roz",
-    "dist": 0.46840562787745393
+    "dist": 0.4680114250743022
   },
   {
     "nlterm": "lichtgroen",
     "roterm": "mov",
-    "dist": 0.5138453844270404
+    "dist": 0.5139121822668683
   },
   {
     "nlterm": "turquoise",
     "roterm": "albastru",
-    "dist": 0.2864782250135506
+    "dist": 0.2910868136346177
   },
   {
     "nlterm": "turquoise",
     "roterm": "verde",
-    "dist": 0.17665348003053835
+    "dist": 0.17525639544192861
   },
   {
     "nlterm": "turquoise",
     "roterm": "roz",
-    "dist": 0.3889320852125964
+    "dist": 0.39152300959078895
   },
   {
     "nlterm": "turquoise",
     "roterm": "mov",
-    "dist": 0.4124486891125014
+    "dist": 0.4125181124793803
   },
   {
     "nlterm": "magenta",
@@ -260,6 +260,46 @@
     "dist": 0.10321753353497623
   },
   {
+    "nlterm": "zwart",
+    "roterm": "albastru",
+    "dist": 0.465649791289023
+  },
+  {
+    "nlterm": "zwart",
+    "roterm": "verde",
+    "dist": 0.6926931351425805
+  },
+  {
+    "nlterm": "zwart",
+    "roterm": "roz",
+    "dist": 0.5326373576216046
+  },
+  {
+    "nlterm": "zwart",
+    "roterm": "mov",
+    "dist": 0.4441422508313992
+  },
+  {
+    "nlterm": "donkerpaars",
+    "roterm": "albastru",
+    "dist": 0.29700234750630367
+  },
+  {
+    "nlterm": "donkerpaars",
+    "roterm": "verde",
+    "dist": 0.5823742749607471
+  },
+  {
+    "nlterm": "donkerpaars",
+    "roterm": "roz",
+    "dist": 0.3350006812218786
+  },
+  {
+    "nlterm": "donkerpaars",
+    "roterm": "mov",
+    "dist": 0.22192636088727655
+  },
+  {
     "nlterm": "donkergroen",
     "roterm": "albastru",
     "dist": 0.3107267850922995
@@ -280,103 +320,83 @@
     "dist": 0.36363931496236584
   },
   {
-    "nlterm": "donkerpaars",
-    "roterm": "albastru",
-    "dist": 0.2982027236134848
-  },
-  {
-    "nlterm": "donkerpaars",
-    "roterm": "verde",
-    "dist": 0.5857707764738986
-  },
-  {
-    "nlterm": "donkerpaars",
-    "roterm": "roz",
-    "dist": 0.3379589553162672
-  },
-  {
-    "nlterm": "donkerpaars",
-    "roterm": "mov",
-    "dist": 0.22351988027987627
-  },
-  {
     "nlterm": "lila",
     "roterm": "albastru",
-    "dist": 0.24360427751308497
+    "dist": 0.24218014572446478
   },
   {
     "nlterm": "lila",
     "roterm": "verde",
-    "dist": 0.4248629246445817
+    "dist": 0.42325336865101976
   },
   {
     "nlterm": "lila",
     "roterm": "roz",
-    "dist": 0.1867916252822484
+    "dist": 0.18955711339133197
   },
   {
     "nlterm": "lila",
     "roterm": "mov",
-    "dist": 0.17891393698875382
-  },
-  {
-    "nlterm": "zwart",
-    "roterm": "albastru",
-    "dist": 0.4652153564491059
-  },
-  {
-    "nlterm": "zwart",
-    "roterm": "verde",
-    "dist": 0.6913678342516741
-  },
-  {
-    "nlterm": "zwart",
-    "roterm": "roz",
-    "dist": 0.5350116812346482
-  },
-  {
-    "nlterm": "zwart",
-    "roterm": "mov",
-    "dist": 0.4465139889391531
+    "dist": 0.18065971144343507
   },
   {
     "nlterm": "grijs",
     "roterm": "albastru",
-    "dist": 0.24783174847587913
+    "dist": 0.24755754392693308
   },
   {
     "nlterm": "grijs",
     "roterm": "verde",
-    "dist": 0.3188431972390648
+    "dist": 0.32379242797210295
   },
   {
     "nlterm": "grijs",
     "roterm": "roz",
-    "dist": 0.2901429126164903
+    "dist": 0.29250135894002577
   },
   {
     "nlterm": "grijs",
     "roterm": "mov",
-    "dist": 0.28693202060643963
+    "dist": 0.28569655898115165
   },
   {
     "nlterm": "beige",
     "roterm": "albastru",
-    "dist": 0.4028855990610733
+    "dist": 0.398831858629243
   },
   {
     "nlterm": "beige",
     "roterm": "verde",
-    "dist": 0.2568598734590968
+    "dist": 0.2558975794275327
   },
   {
     "nlterm": "beige",
     "roterm": "roz",
-    "dist": 0.3672589956498435
+    "dist": 0.3658807609826054
   },
   {
     "nlterm": "beige",
     "roterm": "mov",
-    "dist": 0.4304926745069774
+    "dist": 0.42710411518447006
+  },
+  {
+    "nlterm": "bordeaux",
+    "roterm": "albastru",
+    "dist": 0.36727789600662286
+  },
+  {
+    "nlterm": "bordeaux",
+    "roterm": "verde",
+    "dist": 0.5355306746175167
+  },
+  {
+    "nlterm": "bordeaux",
+    "roterm": "roz",
+    "dist": 0.3223761695832735
+  },
+  {
+    "nlterm": "bordeaux",
+    "roterm": "mov",
+    "dist": 0.2927660266104982
   }
 ]

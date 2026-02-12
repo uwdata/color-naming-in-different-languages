@@ -7,7 +7,7 @@
     "pTC": 0.3389830508474576,
     "binNum": 0,
     "rgb": "rgb(68, 1, 84)",
-    "pCT": 0.18691588785046728
+    "pCT": 0.18518518518518517
   },
   {
     "scheme": "viridis",
@@ -144,7 +144,7 @@
     "lang": "English (English)",
     "term": "blue",
     "cnt": 3,
-    "pTC": 0.017341040462427744,
+    "pTC": 0.017241379310344827,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.02142857142857143
@@ -154,17 +154,17 @@
     "lang": "English (English)",
     "term": "purple",
     "cnt": 77,
-    "pTC": 0.44508670520231214,
+    "pTC": 0.4425287356321839,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
-    "pCT": 0.719626168224299
+    "pCT": 0.7129629629629629
   },
   {
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "red",
     "cnt": 1,
-    "pTC": 0.005780346820809248,
+    "pTC": 0.005747126436781609,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.5
@@ -174,7 +174,7 @@
     "lang": "English (English)",
     "term": "darkblue",
     "cnt": 4,
-    "pTC": 0.023121387283236993,
+    "pTC": 0.022988505747126436,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.15384615384615385
@@ -184,7 +184,7 @@
     "lang": "English (English)",
     "term": "violet",
     "cnt": 10,
-    "pTC": 0.057803468208092484,
+    "pTC": 0.05747126436781609,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.7142857142857143
@@ -194,7 +194,7 @@
     "lang": "English (English)",
     "term": "royalblue",
     "cnt": 1,
-    "pTC": 0.005780346820809248,
+    "pTC": 0.005747126436781609,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.1111111111111111
@@ -203,18 +203,18 @@
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "navyblue",
-    "cnt": 1,
-    "pTC": 0.005780346820809248,
+    "cnt": 2,
+    "pTC": 0.011494252873563218,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
-    "pCT": 0.02631578947368421
+    "pCT": 0.05128205128205128
   },
   {
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "darkpurple",
     "cnt": 30,
-    "pTC": 0.17341040462427745,
+    "pTC": 0.1724137931034483,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.5882352941176471
@@ -224,7 +224,7 @@
     "lang": "English (English)",
     "term": "indigo",
     "cnt": 12,
-    "pTC": 0.06936416184971098,
+    "pTC": 0.06896551724137931,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.4444444444444444
@@ -234,7 +234,7 @@
     "lang": "English (English)",
     "term": "lilac",
     "cnt": 1,
-    "pTC": 0.005780346820809248,
+    "pTC": 0.005747126436781609,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.5
@@ -244,7 +244,7 @@
     "lang": "English (English)",
     "term": "navy",
     "cnt": 1,
-    "pTC": 0.005780346820809248,
+    "pTC": 0.005747126436781609,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.05
@@ -254,7 +254,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 5,
-    "pTC": 0.028901734104046242,
+    "pTC": 0.028735632183908046,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.45454545454545453
@@ -264,7 +264,7 @@
     "lang": "English (English)",
     "term": "royalpurple",
     "cnt": 6,
-    "pTC": 0.03468208092485549,
+    "pTC": 0.034482758620689655,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.6666666666666666
@@ -274,7 +274,7 @@
     "lang": "English (English)",
     "term": "bluepurple",
     "cnt": 2,
-    "pTC": 0.011560693641618497,
+    "pTC": 0.011494252873563218,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.5
@@ -284,7 +284,7 @@
     "lang": "English (English)",
     "term": "eggplant",
     "cnt": 2,
-    "pTC": 0.011560693641618497,
+    "pTC": 0.011494252873563218,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.2857142857142857
@@ -294,7 +294,7 @@
     "lang": "English (English)",
     "term": "deeppurple",
     "cnt": 4,
-    "pTC": 0.023121387283236993,
+    "pTC": 0.022988505747126436,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.8
@@ -304,7 +304,7 @@
     "lang": "English (English)",
     "term": "redviolet",
     "cnt": 1,
-    "pTC": 0.005780346820809248,
+    "pTC": 0.005747126436781609,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 1
@@ -314,7 +314,7 @@
     "lang": "English (English)",
     "term": "darkviolet",
     "cnt": 5,
-    "pTC": 0.028901734104046242,
+    "pTC": 0.028735632183908046,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.8333333333333334
@@ -324,7 +324,7 @@
     "lang": "English (English)",
     "term": "midnightpurple",
     "cnt": 1,
-    "pTC": 0.005780346820809248,
+    "pTC": 0.005747126436781609,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 1
@@ -334,7 +334,7 @@
     "lang": "English (English)",
     "term": "eggplantpurple",
     "cnt": 2,
-    "pTC": 0.011560693641618497,
+    "pTC": 0.011494252873563218,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 0.5
@@ -344,7 +344,7 @@
     "lang": "English (English)",
     "term": "violetpurple",
     "cnt": 1,
-    "pTC": 0.005780346820809248,
+    "pTC": 0.005747126436781609,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 1
@@ -354,7 +354,7 @@
     "lang": "English (English)",
     "term": "deepviolet",
     "cnt": 1,
-    "pTC": 0.005780346820809248,
+    "pTC": 0.005747126436781609,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 1
@@ -364,7 +364,7 @@
     "lang": "English (English)",
     "term": "verydarkpurple",
     "cnt": 1,
-    "pTC": 0.005780346820809248,
+    "pTC": 0.005747126436781609,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 1
@@ -374,7 +374,7 @@
     "lang": "English (English)",
     "term": "grapepurple",
     "cnt": 1,
-    "pTC": 0.005780346820809248,
+    "pTC": 0.005747126436781609,
     "binNum": 1,
     "rgb": "rgb(72, 36, 117)",
     "pCT": 1
@@ -384,7 +384,7 @@
     "lang": "English (English)",
     "term": "blue",
     "cnt": 13,
-    "pTC": 0.14130434782608695,
+    "pTC": 0.13829787234042554,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.09285714285714286
@@ -393,18 +393,18 @@
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "purple",
-    "cnt": 9,
-    "pTC": 0.09782608695652174,
+    "cnt": 10,
+    "pTC": 0.10638297872340426,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
-    "pCT": 0.08411214953271028
+    "pCT": 0.09259259259259259
   },
   {
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "darkblue",
     "cnt": 12,
-    "pTC": 0.13043478260869565,
+    "pTC": 0.1276595744680851,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.46153846153846156
@@ -414,7 +414,7 @@
     "lang": "English (English)",
     "term": "violet",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.07142857142857142
@@ -424,7 +424,7 @@
     "lang": "English (English)",
     "term": "royalblue",
     "cnt": 2,
-    "pTC": 0.021739130434782608,
+    "pTC": 0.02127659574468085,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.2222222222222222
@@ -434,7 +434,7 @@
     "lang": "English (English)",
     "term": "lavender",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 1
@@ -444,17 +444,17 @@
     "lang": "English (English)",
     "term": "navyblue",
     "cnt": 18,
-    "pTC": 0.1956521739130435,
+    "pTC": 0.19148936170212766,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
-    "pCT": 0.47368421052631576
+    "pCT": 0.46153846153846156
   },
   {
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "darkpurple",
     "cnt": 2,
-    "pTC": 0.021739130434782608,
+    "pTC": 0.02127659574468085,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.0392156862745098
@@ -464,7 +464,7 @@
     "lang": "English (English)",
     "term": "indigo",
     "cnt": 12,
-    "pTC": 0.13043478260869565,
+    "pTC": 0.1276595744680851,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.4444444444444444
@@ -474,7 +474,7 @@
     "lang": "English (English)",
     "term": "lilac",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.5
@@ -484,7 +484,7 @@
     "lang": "English (English)",
     "term": "navy",
     "cnt": 9,
-    "pTC": 0.09782608695652174,
+    "pTC": 0.09574468085106383,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.45
@@ -494,7 +494,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.09090909090909091
@@ -504,7 +504,7 @@
     "lang": "English (English)",
     "term": "royalpurple",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.1111111111111111
@@ -514,7 +514,7 @@
     "lang": "English (English)",
     "term": "bluegray",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.2
@@ -524,7 +524,7 @@
     "lang": "English (English)",
     "term": "eggplant",
     "cnt": 2,
-    "pTC": 0.021739130434782608,
+    "pTC": 0.02127659574468085,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.2857142857142857
@@ -534,7 +534,7 @@
     "lang": "English (English)",
     "term": "seablue",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.16666666666666666
@@ -544,7 +544,7 @@
     "lang": "English (English)",
     "term": "deeppurple",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.2
@@ -554,7 +554,7 @@
     "lang": "English (English)",
     "term": "cornflowerblue",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 1
@@ -564,7 +564,7 @@
     "lang": "English (English)",
     "term": "ultramarine",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 1
@@ -572,9 +572,19 @@
   {
     "scheme": "viridis",
     "lang": "English (English)",
+    "term": "denim",
+    "cnt": 1,
+    "pTC": 0.010638297872340425,
+    "binNum": 2,
+    "rgb": "rgb(65, 68, 135)",
+    "pCT": 0.3333333333333333
+  },
+  {
+    "scheme": "viridis",
+    "lang": "English (English)",
     "term": "midnight",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 1
@@ -584,7 +594,7 @@
     "lang": "English (English)",
     "term": "eggplantpurple",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 0.25
@@ -594,7 +604,7 @@
     "lang": "English (English)",
     "term": "darkishblue",
     "cnt": 1,
-    "pTC": 0.010869565217391304,
+    "pTC": 0.010638297872340425,
     "binNum": 2,
     "rgb": "rgb(65, 68, 135)",
     "pCT": 1
@@ -617,7 +627,7 @@
     "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(53, 95, 141)",
-    "pCT": 0.002242152466367713
+    "pCT": 0.0022371364653243847
   },
   {
     "scheme": "viridis",
@@ -627,7 +637,7 @@
     "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(53, 95, 141)",
-    "pCT": 0.009345794392523364
+    "pCT": 0.009259259259259259
   },
   {
     "scheme": "viridis",
@@ -697,7 +707,7 @@
     "pTC": 0.1111111111111111,
     "binNum": 3,
     "rgb": "rgb(53, 95, 141)",
-    "pCT": 0.4473684210526316
+    "pCT": 0.4358974358974359
   },
   {
     "scheme": "viridis",
@@ -957,7 +967,7 @@
     "pTC": 0.011695906432748537,
     "binNum": 4,
     "rgb": "rgb(42, 120, 142)",
-    "pCT": 0.004484304932735426
+    "pCT": 0.0044742729306487695
   },
   {
     "scheme": "viridis",
@@ -1057,7 +1067,7 @@
     "pTC": 0.005847953216374269,
     "binNum": 4,
     "rgb": "rgb(42, 120, 142)",
-    "pCT": 0.02631578947368421
+    "pCT": 0.02564102564102564
   },
   {
     "scheme": "viridis",
@@ -1217,7 +1227,7 @@
     "pTC": 0.011695906432748537,
     "binNum": 4,
     "rgb": "rgb(42, 120, 142)",
-    "pCT": 1
+    "pCT": 0.6666666666666666
   },
   {
     "scheme": "viridis",
@@ -1367,7 +1377,7 @@
     "pTC": 0.06511627906976744,
     "binNum": 5,
     "rgb": "rgb(33, 145, 140)",
-    "pCT": 0.03139013452914798
+    "pCT": 0.03131991051454139
   },
   {
     "scheme": "viridis",
@@ -1757,7 +1767,7 @@
     "pTC": 0.23102310231023102,
     "binNum": 6,
     "rgb": "rgb(34, 168, 132)",
-    "pCT": 0.15695067264573992
+    "pCT": 0.15659955257270694
   },
   {
     "scheme": "viridis",
@@ -1837,7 +1847,7 @@
     "pTC": 0.0033003300330033004,
     "binNum": 6,
     "rgb": "rgb(34, 168, 132)",
-    "pCT": 0.02631578947368421
+    "pCT": 0.02564102564102564
   },
   {
     "scheme": "viridis",
@@ -2022,22 +2032,22 @@
   {
     "scheme": "viridis",
     "lang": "English (English)",
-    "term": "sagegreen",
-    "cnt": 1,
-    "pTC": 0.0033003300330033004,
-    "binNum": 6,
-    "rgb": "rgb(34, 168, 132)",
-    "pCT": 0.5
-  },
-  {
-    "scheme": "viridis",
-    "lang": "English (English)",
     "term": "graygreen",
     "cnt": 2,
     "pTC": 0.006600660066006601,
     "binNum": 6,
     "rgb": "rgb(34, 168, 132)",
     "pCT": 0.6666666666666666
+  },
+  {
+    "scheme": "viridis",
+    "lang": "English (English)",
+    "term": "sagegreen",
+    "cnt": 1,
+    "pTC": 0.0033003300330033004,
+    "binNum": 6,
+    "rgb": "rgb(34, 168, 132)",
+    "pCT": 0.5
   },
   {
     "scheme": "viridis",
@@ -2254,7 +2264,7 @@
     "lang": "English (English)",
     "term": "blue",
     "cnt": 3,
-    "pTC": 0.008130081300813009,
+    "pTC": 0.008086253369272238,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.02142857142857143
@@ -2263,18 +2273,18 @@
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "green",
-    "cnt": 175,
-    "pTC": 0.4742547425474255,
+    "cnt": 176,
+    "pTC": 0.4743935309973046,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
-    "pCT": 0.3923766816143498
+    "pCT": 0.39373601789709173
   },
   {
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "teal",
     "cnt": 24,
-    "pTC": 0.06504065040650407,
+    "pTC": 0.0646900269541779,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.11428571428571428
@@ -2284,7 +2294,7 @@
     "lang": "English (English)",
     "term": "limegreen",
     "cnt": 2,
-    "pTC": 0.005420054200542005,
+    "pTC": 0.005390835579514825,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.018518518518518517
@@ -2294,7 +2304,7 @@
     "lang": "English (English)",
     "term": "turquoise",
     "cnt": 17,
-    "pTC": 0.04607046070460705,
+    "pTC": 0.04582210242587601,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.1650485436893204
@@ -2304,7 +2314,7 @@
     "lang": "English (English)",
     "term": "lightgreen",
     "cnt": 14,
-    "pTC": 0.037940379403794036,
+    "pTC": 0.03773584905660377,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.175
@@ -2314,7 +2324,7 @@
     "lang": "English (English)",
     "term": "darkgreen",
     "cnt": 4,
-    "pTC": 0.01084010840108401,
+    "pTC": 0.01078167115902965,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.3076923076923077
@@ -2324,7 +2334,7 @@
     "lang": "English (English)",
     "term": "cyan",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.07692307692307693
@@ -2334,7 +2344,7 @@
     "lang": "English (English)",
     "term": "forestgreen",
     "cnt": 7,
-    "pTC": 0.018970189701897018,
+    "pTC": 0.018867924528301886,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.4117647058823529
@@ -2344,7 +2354,7 @@
     "lang": "English (English)",
     "term": "aqua",
     "cnt": 5,
-    "pTC": 0.013550135501355014,
+    "pTC": 0.013477088948787063,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.18518518518518517
@@ -2354,7 +2364,7 @@
     "lang": "English (English)",
     "term": "lime",
     "cnt": 2,
-    "pTC": 0.005420054200542005,
+    "pTC": 0.005390835579514825,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.044444444444444446
@@ -2364,7 +2374,7 @@
     "lang": "English (English)",
     "term": "mintgreen",
     "cnt": 7,
-    "pTC": 0.018970189701897018,
+    "pTC": 0.018867924528301886,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.5384615384615384
@@ -2373,18 +2383,18 @@
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "brightgreen",
-    "cnt": 6,
-    "pTC": 0.016260162601626018,
+    "cnt": 7,
+    "pTC": 0.018867924528301886,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
-    "pCT": 0.2608695652173913
+    "pCT": 0.2916666666666667
   },
   {
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "mint",
     "cnt": 7,
-    "pTC": 0.018970189701897018,
+    "pTC": 0.018867924528301886,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.5384615384615384
@@ -2394,7 +2404,7 @@
     "lang": "English (English)",
     "term": "seafoamgreen",
     "cnt": 7,
-    "pTC": 0.018970189701897018,
+    "pTC": 0.018867924528301886,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.5833333333333334
@@ -2404,7 +2414,7 @@
     "lang": "English (English)",
     "term": "bluegreen",
     "cnt": 11,
-    "pTC": 0.02981029810298103,
+    "pTC": 0.029649595687331536,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.2558139534883721
@@ -2414,7 +2424,7 @@
     "lang": "English (English)",
     "term": "seagreen",
     "cnt": 8,
-    "pTC": 0.02168021680216802,
+    "pTC": 0.0215633423180593,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.2962962962962963
@@ -2424,7 +2434,7 @@
     "lang": "English (English)",
     "term": "grassgreen",
     "cnt": 2,
-    "pTC": 0.005420054200542005,
+    "pTC": 0.005390835579514825,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.14285714285714285
@@ -2434,7 +2444,7 @@
     "lang": "English (English)",
     "term": "seafoam",
     "cnt": 9,
-    "pTC": 0.024390243902439025,
+    "pTC": 0.02425876010781671,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.6428571428571429
@@ -2444,7 +2454,7 @@
     "lang": "English (English)",
     "term": "aquamarine",
     "cnt": 3,
-    "pTC": 0.008130081300813009,
+    "pTC": 0.008086253369272238,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.1875
@@ -2454,7 +2464,7 @@
     "lang": "English (English)",
     "term": "palegreen",
     "cnt": 3,
-    "pTC": 0.008130081300813009,
+    "pTC": 0.008086253369272238,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.6
@@ -2464,7 +2474,7 @@
     "lang": "English (English)",
     "term": "pastelgreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.2
@@ -2474,7 +2484,7 @@
     "lang": "English (English)",
     "term": "kellygreen",
     "cnt": 3,
-    "pTC": 0.008130081300813009,
+    "pTC": 0.008086253369272238,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.75
@@ -2484,7 +2494,7 @@
     "lang": "English (English)",
     "term": "springgreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.125
@@ -2494,7 +2504,7 @@
     "lang": "English (English)",
     "term": "bluepurple",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.25
@@ -2504,7 +2514,7 @@
     "lang": "English (English)",
     "term": "greenblue",
     "cnt": 2,
-    "pTC": 0.005420054200542005,
+    "pTC": 0.005390835579514825,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.2222222222222222
@@ -2514,7 +2524,7 @@
     "lang": "English (English)",
     "term": "sagegreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.5
@@ -2524,7 +2534,7 @@
     "lang": "English (English)",
     "term": "leafgreen",
     "cnt": 2,
-    "pTC": 0.005420054200542005,
+    "pTC": 0.005390835579514825,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.6666666666666666
@@ -2534,7 +2544,7 @@
     "lang": "English (English)",
     "term": "emerald",
     "cnt": 4,
-    "pTC": 0.01084010840108401,
+    "pTC": 0.01078167115902965,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.4444444444444444
@@ -2544,7 +2554,7 @@
     "lang": "English (English)",
     "term": "emeraldgreen",
     "cnt": 5,
-    "pTC": 0.013550135501355014,
+    "pTC": 0.013477088948787063,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.5555555555555556
@@ -2554,7 +2564,7 @@
     "lang": "English (English)",
     "term": "applegreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.25
@@ -2564,7 +2574,7 @@
     "lang": "English (English)",
     "term": "jade",
     "cnt": 5,
-    "pTC": 0.013550135501355014,
+    "pTC": 0.013477088948787063,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.38461538461538464
@@ -2574,7 +2584,7 @@
     "lang": "English (English)",
     "term": "evergreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.3333333333333333
@@ -2584,7 +2594,7 @@
     "lang": "English (English)",
     "term": "grass",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 1
@@ -2594,7 +2604,7 @@
     "lang": "English (English)",
     "term": "tealgreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.25
@@ -2604,7 +2614,7 @@
     "lang": "English (English)",
     "term": "dullgreen",
     "cnt": 2,
-    "pTC": 0.005420054200542005,
+    "pTC": 0.005390835579514825,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 1
@@ -2614,7 +2624,7 @@
     "lang": "English (English)",
     "term": "softgreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.5
@@ -2624,7 +2634,7 @@
     "lang": "English (English)",
     "term": "blueishgreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.5
@@ -2634,7 +2644,7 @@
     "lang": "English (English)",
     "term": "mutedgreen",
     "cnt": 2,
-    "pTC": 0.005420054200542005,
+    "pTC": 0.005390835579514825,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 1
@@ -2644,7 +2654,7 @@
     "lang": "English (English)",
     "term": "turquoisegreen",
     "cnt": 4,
-    "pTC": 0.01084010840108401,
+    "pTC": 0.01078167115902965,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.6666666666666666
@@ -2654,7 +2664,7 @@
     "lang": "English (English)",
     "term": "fern",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.5
@@ -2664,7 +2674,7 @@
     "lang": "English (English)",
     "term": "spearmint",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.5
@@ -2674,7 +2684,7 @@
     "lang": "English (English)",
     "term": "coolgreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 1
@@ -2684,7 +2694,7 @@
     "lang": "English (English)",
     "term": "shamrock",
     "cnt": 2,
-    "pTC": 0.005420054200542005,
+    "pTC": 0.005390835579514825,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 1
@@ -2694,7 +2704,7 @@
     "lang": "English (English)",
     "term": "junglegreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 1
@@ -2704,7 +2714,7 @@
     "lang": "English (English)",
     "term": "darkmint",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.3333333333333333
@@ -2714,7 +2724,7 @@
     "lang": "English (English)",
     "term": "darkergreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 1
@@ -2724,7 +2734,7 @@
     "lang": "English (English)",
     "term": "darkmintgreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 1
@@ -2734,7 +2744,7 @@
     "lang": "English (English)",
     "term": "midgreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.5
@@ -2744,7 +2754,7 @@
     "lang": "English (English)",
     "term": "irishgreen",
     "cnt": 2,
-    "pTC": 0.005420054200542005,
+    "pTC": 0.005390835579514825,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 0.6666666666666666
@@ -2754,7 +2764,7 @@
     "lang": "English (English)",
     "term": "racinggreen",
     "cnt": 1,
-    "pTC": 0.0027100271002710027,
+    "pTC": 0.0026954177897574125,
     "binNum": 7,
     "rgb": "rgb(68, 191, 112)",
     "pCT": 1
@@ -2767,7 +2777,7 @@
     "pTC": 0.4099722991689751,
     "binNum": 8,
     "rgb": "rgb(122, 209, 81)",
-    "pCT": 0.33183856502242154
+    "pCT": 0.33109619686800895
   },
   {
     "scheme": "viridis",
@@ -2887,7 +2897,7 @@
     "pTC": 0.04155124653739612,
     "binNum": 8,
     "rgb": "rgb(122, 209, 81)",
-    "pCT": 0.6521739130434783
+    "pCT": 0.625
   },
   {
     "scheme": "viridis",
@@ -3124,27 +3134,27 @@
     "lang": "English (English)",
     "term": "green",
     "cnt": 34,
-    "pTC": 0.10397553516819572,
+    "pTC": 0.10365853658536585,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
-    "pCT": 0.07623318385650224
+    "pCT": 0.07606263982102908
   },
   {
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "yellow",
-    "cnt": 51,
-    "pTC": 0.1559633027522936,
+    "cnt": 52,
+    "pTC": 0.15853658536585366,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
-    "pCT": 0.11233480176211454
+    "pCT": 0.11428571428571428
   },
   {
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "limegreen",
     "cnt": 53,
-    "pTC": 0.1620795107033639,
+    "pTC": 0.16158536585365854,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.49074074074074076
@@ -3154,7 +3164,7 @@
     "lang": "English (English)",
     "term": "lightgreen",
     "cnt": 11,
-    "pTC": 0.03363914373088685,
+    "pTC": 0.03353658536585366,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.1375
@@ -3164,7 +3174,7 @@
     "lang": "English (English)",
     "term": "neongreen",
     "cnt": 2,
-    "pTC": 0.0061162079510703364,
+    "pTC": 0.006097560975609756,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.1
@@ -3174,7 +3184,7 @@
     "lang": "English (English)",
     "term": "yellowgreen",
     "cnt": 59,
-    "pTC": 0.18042813455657492,
+    "pTC": 0.1798780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.855072463768116
@@ -3184,7 +3194,7 @@
     "lang": "English (English)",
     "term": "lime",
     "cnt": 25,
-    "pTC": 0.0764525993883792,
+    "pTC": 0.07621951219512195,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.5555555555555556
@@ -3194,17 +3204,17 @@
     "lang": "English (English)",
     "term": "brightgreen",
     "cnt": 2,
-    "pTC": 0.0061162079510703364,
+    "pTC": 0.006097560975609756,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
-    "pCT": 0.08695652173913043
+    "pCT": 0.08333333333333333
   },
   {
     "scheme": "viridis",
     "lang": "English (English)",
     "term": "gold",
     "cnt": 3,
-    "pTC": 0.009174311926605505,
+    "pTC": 0.009146341463414634,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.2
@@ -3214,7 +3224,7 @@
     "lang": "English (English)",
     "term": "mint",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.07692307692307693
@@ -3224,7 +3234,7 @@
     "lang": "English (English)",
     "term": "olive",
     "cnt": 2,
-    "pTC": 0.0061162079510703364,
+    "pTC": 0.006097560975609756,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3234,7 +3244,7 @@
     "lang": "English (English)",
     "term": "mustard",
     "cnt": 4,
-    "pTC": 0.012232415902140673,
+    "pTC": 0.012195121951219513,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.3076923076923077
@@ -3244,7 +3254,7 @@
     "lang": "English (English)",
     "term": "olivegreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3254,7 +3264,7 @@
     "lang": "English (English)",
     "term": "chartreuse",
     "cnt": 19,
-    "pTC": 0.0581039755351682,
+    "pTC": 0.057926829268292686,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.8260869565217391
@@ -3264,7 +3274,7 @@
     "lang": "English (English)",
     "term": "grassgreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.07142857142857142
@@ -3274,7 +3284,7 @@
     "lang": "English (English)",
     "term": "mustardyellow",
     "cnt": 4,
-    "pTC": 0.012232415902140673,
+    "pTC": 0.012195121951219513,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.4444444444444444
@@ -3284,7 +3294,7 @@
     "lang": "English (English)",
     "term": "palegreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.2
@@ -3294,7 +3304,7 @@
     "lang": "English (English)",
     "term": "darkyellow",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.1111111111111111
@@ -3304,7 +3314,7 @@
     "lang": "English (English)",
     "term": "springgreen",
     "cnt": 2,
-    "pTC": 0.0061162079510703364,
+    "pTC": 0.006097560975609756,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.25
@@ -3314,7 +3324,7 @@
     "lang": "English (English)",
     "term": "goldenrod",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.16666666666666666
@@ -3324,7 +3334,7 @@
     "lang": "English (English)",
     "term": "neonyellow",
     "cnt": 5,
-    "pTC": 0.01529051987767584,
+    "pTC": 0.01524390243902439,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.7142857142857143
@@ -3334,7 +3344,7 @@
     "lang": "English (English)",
     "term": "greenyellow",
     "cnt": 8,
-    "pTC": 0.024464831804281346,
+    "pTC": 0.024390243902439025,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.5333333333333333
@@ -3344,7 +3354,7 @@
     "lang": "English (English)",
     "term": "leafgreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.3333333333333333
@@ -3354,7 +3364,7 @@
     "lang": "English (English)",
     "term": "peagreen",
     "cnt": 4,
-    "pTC": 0.012232415902140673,
+    "pTC": 0.012195121951219513,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3364,7 +3374,7 @@
     "lang": "English (English)",
     "term": "paleyellow",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.5
@@ -3374,7 +3384,7 @@
     "lang": "English (English)",
     "term": "greenishyellow",
     "cnt": 3,
-    "pTC": 0.009174311926605505,
+    "pTC": 0.009146341463414634,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.6
@@ -3384,7 +3394,7 @@
     "lang": "English (English)",
     "term": "puce",
     "cnt": 2,
-    "pTC": 0.0061162079510703364,
+    "pTC": 0.006097560975609756,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3394,7 +3404,7 @@
     "lang": "English (English)",
     "term": "pukegreen",
     "cnt": 3,
-    "pTC": 0.009174311926605505,
+    "pTC": 0.009146341463414634,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.75
@@ -3404,7 +3414,7 @@
     "lang": "English (English)",
     "term": "lemonyellow",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.125
@@ -3414,7 +3424,7 @@
     "lang": "English (English)",
     "term": "yellowishgreen",
     "cnt": 4,
-    "pTC": 0.012232415902140673,
+    "pTC": 0.012195121951219513,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3424,7 +3434,7 @@
     "lang": "English (English)",
     "term": "swampgreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.5
@@ -3434,7 +3444,7 @@
     "lang": "English (English)",
     "term": "dirtyyellow",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.25
@@ -3444,7 +3454,7 @@
     "lang": "English (English)",
     "term": "likegreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.5
@@ -3454,7 +3464,7 @@
     "lang": "English (English)",
     "term": "pistachio",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3464,7 +3474,7 @@
     "lang": "English (English)",
     "term": "neon",
     "cnt": 2,
-    "pTC": 0.0061162079510703364,
+    "pTC": 0.006097560975609756,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.6666666666666666
@@ -3474,7 +3484,7 @@
     "lang": "English (English)",
     "term": "avocado",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3484,7 +3494,7 @@
     "lang": "English (English)",
     "term": "acidgreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3494,7 +3504,7 @@
     "lang": "English (English)",
     "term": "vomitgreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3504,7 +3514,7 @@
     "lang": "English (English)",
     "term": "burntyellow",
     "cnt": 2,
-    "pTC": 0.0061162079510703364,
+    "pTC": 0.006097560975609756,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3514,7 +3524,7 @@
     "lang": "English (English)",
     "term": "brownyellow",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3524,7 +3534,7 @@
     "lang": "English (English)",
     "term": "avocadogreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3534,7 +3544,7 @@
     "lang": "English (English)",
     "term": "yellowgold",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3544,7 +3554,7 @@
     "lang": "English (English)",
     "term": "darklimegreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3554,7 +3564,7 @@
     "lang": "English (English)",
     "term": "slimegreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3564,7 +3574,7 @@
     "lang": "English (English)",
     "term": "pear",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 0.5
@@ -3574,7 +3584,7 @@
     "lang": "English (English)",
     "term": "grossgreen",
     "cnt": 1,
-    "pTC": 0.0030581039755351682,
+    "pTC": 0.003048780487804878,
     "binNum": 9,
     "rgb": "rgb(189, 223, 38)",
     "pCT": 1
@@ -3587,7 +3597,7 @@
     "pTC": 0.004,
     "binNum": 10,
     "rgb": "rgb(253, 231, 37)",
-    "pCT": 0.004484304932735426
+    "pCT": 0.0044742729306487695
   },
   {
     "scheme": "viridis",
@@ -3597,7 +3607,7 @@
     "pTC": 0.806,
     "binNum": 10,
     "rgb": "rgb(253, 231, 37)",
-    "pCT": 0.8876651982378855
+    "pCT": 0.8857142857142857
   },
   {
     "scheme": "viridis",
@@ -3782,22 +3792,22 @@
   {
     "scheme": "viridis",
     "lang": "English (English)",
-    "term": "lemonyellow",
-    "cnt": 7,
-    "pTC": 0.014,
-    "binNum": 10,
-    "rgb": "rgb(253, 231, 37)",
-    "pCT": 0.875
-  },
-  {
-    "scheme": "viridis",
-    "lang": "English (English)",
     "term": "marigold",
     "cnt": 1,
     "pTC": 0.002,
     "binNum": 10,
     "rgb": "rgb(253, 231, 37)",
     "pCT": 1
+  },
+  {
+    "scheme": "viridis",
+    "lang": "English (English)",
+    "term": "lemonyellow",
+    "cnt": 7,
+    "pTC": 0.014,
+    "binNum": 10,
+    "rgb": "rgb(253, 231, 37)",
+    "pCT": 0.875
   },
   {
     "scheme": "viridis",
@@ -4604,7 +4614,7 @@
     "lang": "English (English)",
     "term": "blue",
     "cnt": 6,
-    "pTC": 0.07894736842105263,
+    "pTC": 0.07792207792207792,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
     "pCT": 0.35294117647058826
@@ -4614,17 +4624,17 @@
     "lang": "English (English)",
     "term": "purple",
     "cnt": 1,
-    "pTC": 0.013157894736842105,
+    "pTC": 0.012987012987012988,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
-    "pCT": 0.005263157894736842
+    "pCT": 0.005235602094240838
   },
   {
     "scheme": "magma",
     "lang": "English (English)",
     "term": "darkblue",
     "cnt": 3,
-    "pTC": 0.039473684210526314,
+    "pTC": 0.03896103896103896,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
     "pCT": 0.2
@@ -4633,18 +4643,18 @@
     "scheme": "magma",
     "lang": "English (English)",
     "term": "black",
-    "cnt": 39,
-    "pTC": 0.5131578947368421,
+    "cnt": 40,
+    "pTC": 0.5194805194805194,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
-    "pCT": 0.9512195121951219
+    "pCT": 0.9523809523809523
   },
   {
     "scheme": "magma",
     "lang": "English (English)",
     "term": "navyblue",
     "cnt": 10,
-    "pTC": 0.13157894736842105,
+    "pTC": 0.12987012987012986,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
     "pCT": 0.45454545454545453
@@ -4654,17 +4664,17 @@
     "lang": "English (English)",
     "term": "darkpurple",
     "cnt": 1,
-    "pTC": 0.013157894736842105,
+    "pTC": 0.012987012987012988,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
-    "pCT": 0.02
+    "pCT": 0.0196078431372549
   },
   {
     "scheme": "magma",
     "lang": "English (English)",
     "term": "navy",
     "cnt": 8,
-    "pTC": 0.10526315789473684,
+    "pTC": 0.1038961038961039,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
     "pCT": 0.6666666666666666
@@ -4674,7 +4684,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 1,
-    "pTC": 0.013157894736842105,
+    "pTC": 0.012987012987012988,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
     "pCT": 0.05555555555555555
@@ -4684,7 +4694,7 @@
     "lang": "English (English)",
     "term": "midnightblue",
     "cnt": 2,
-    "pTC": 0.02631578947368421,
+    "pTC": 0.025974025974025976,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
     "pCT": 0.2857142857142857
@@ -4694,7 +4704,7 @@
     "lang": "English (English)",
     "term": "eggplant",
     "cnt": 1,
-    "pTC": 0.013157894736842105,
+    "pTC": 0.012987012987012988,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
     "pCT": 0.16666666666666666
@@ -4704,7 +4714,7 @@
     "lang": "English (English)",
     "term": "deepblue",
     "cnt": 1,
-    "pTC": 0.013157894736842105,
+    "pTC": 0.012987012987012988,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
     "pCT": 0.3333333333333333
@@ -4714,7 +4724,7 @@
     "lang": "English (English)",
     "term": "darknavy",
     "cnt": 2,
-    "pTC": 0.02631578947368421,
+    "pTC": 0.025974025974025976,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
     "pCT": 1
@@ -4724,7 +4734,7 @@
     "lang": "English (English)",
     "term": "verydarkblue",
     "cnt": 1,
-    "pTC": 0.013157894736842105,
+    "pTC": 0.012987012987012988,
     "binNum": 1,
     "rgb": "rgb(20, 14, 54)",
     "pCT": 1
@@ -4747,7 +4757,7 @@
     "pTC": 0.25949367088607594,
     "binNum": 2,
     "rgb": "rgb(59, 15, 112)",
-    "pCT": 0.21578947368421053
+    "pCT": 0.21465968586387435
   },
   {
     "scheme": "magma",
@@ -4797,7 +4807,7 @@
     "pTC": 0.012658227848101266,
     "binNum": 2,
     "rgb": "rgb(59, 15, 112)",
-    "pCT": 0.04878048780487805
+    "pCT": 0.047619047619047616
   },
   {
     "scheme": "magma",
@@ -4817,7 +4827,7 @@
     "pTC": 0.13924050632911392,
     "binNum": 2,
     "rgb": "rgb(59, 15, 112)",
-    "pCT": 0.44
+    "pCT": 0.43137254901960786
   },
   {
     "scheme": "magma",
@@ -4973,18 +4983,18 @@
     "scheme": "magma",
     "lang": "English (English)",
     "term": "purple",
-    "cnt": 75,
-    "pTC": 0.6147540983606558,
+    "cnt": 76,
+    "pTC": 0.6129032258064516,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
-    "pCT": 0.39473684210526316
+    "pCT": 0.39790575916230364
   },
   {
     "scheme": "magma",
     "lang": "English (English)",
     "term": "violet",
     "cnt": 9,
-    "pTC": 0.07377049180327869,
+    "pTC": 0.07258064516129033,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.28125
@@ -4994,7 +5004,7 @@
     "lang": "English (English)",
     "term": "lavender",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.5
@@ -5004,7 +5014,7 @@
     "lang": "English (English)",
     "term": "maroon",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.1111111111111111
@@ -5014,7 +5024,7 @@
     "lang": "English (English)",
     "term": "navyblue",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.045454545454545456
@@ -5023,18 +5033,18 @@
     "scheme": "magma",
     "lang": "English (English)",
     "term": "darkpurple",
-    "cnt": 11,
-    "pTC": 0.09016393442622951,
+    "cnt": 12,
+    "pTC": 0.0967741935483871,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
-    "pCT": 0.22
+    "pCT": 0.23529411764705882
   },
   {
     "scheme": "magma",
     "lang": "English (English)",
     "term": "indigo",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.05555555555555555
@@ -5044,7 +5054,7 @@
     "lang": "English (English)",
     "term": "navy",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.08333333333333333
@@ -5054,7 +5064,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 2,
-    "pTC": 0.01639344262295082,
+    "pTC": 0.016129032258064516,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.1111111111111111
@@ -5064,7 +5074,7 @@
     "lang": "English (English)",
     "term": "royalpurple",
     "cnt": 7,
-    "pTC": 0.05737704918032787,
+    "pTC": 0.056451612903225805,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.5833333333333334
@@ -5074,7 +5084,7 @@
     "lang": "English (English)",
     "term": "midnightblue",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.14285714285714285
@@ -5084,7 +5094,7 @@
     "lang": "English (English)",
     "term": "eggplant",
     "cnt": 3,
-    "pTC": 0.02459016393442623,
+    "pTC": 0.024193548387096774,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.5
@@ -5094,7 +5104,7 @@
     "lang": "English (English)",
     "term": "deeppurple",
     "cnt": 3,
-    "pTC": 0.02459016393442623,
+    "pTC": 0.024193548387096774,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.375
@@ -5104,7 +5114,7 @@
     "lang": "English (English)",
     "term": "purpleblue",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 1
@@ -5114,7 +5124,7 @@
     "lang": "English (English)",
     "term": "darkviolet",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.3333333333333333
@@ -5124,7 +5134,7 @@
     "lang": "English (English)",
     "term": "aubergine",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.3333333333333333
@@ -5134,7 +5144,7 @@
     "lang": "English (English)",
     "term": "midnightpurple",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.5
@@ -5144,7 +5154,7 @@
     "lang": "English (English)",
     "term": "deepviolet",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 0.5
@@ -5154,7 +5164,7 @@
     "lang": "English (English)",
     "term": "vibrantpurple",
     "cnt": 1,
-    "pTC": 0.00819672131147541,
+    "pTC": 0.008064516129032258,
     "binNum": 3,
     "rgb": "rgb(100, 26, 128)",
     "pCT": 1
@@ -5167,7 +5177,7 @@
     "pTC": 0.3776223776223776,
     "binNum": 4,
     "rgb": "rgb(140, 41, 129)",
-    "pCT": 0.28421052631578947
+    "pCT": 0.28272251308900526
   },
   {
     "scheme": "magma",
@@ -5227,7 +5237,7 @@
     "pTC": 0.11188811188811189,
     "binNum": 4,
     "rgb": "rgb(140, 41, 129)",
-    "pCT": 0.32
+    "pCT": 0.3137254901960784
   },
   {
     "scheme": "magma",
@@ -5437,7 +5447,7 @@
     "pTC": 0.07142857142857142,
     "binNum": 5,
     "rgb": "rgb(183, 55, 121)",
-    "pCT": 0.1
+    "pCT": 0.09947643979057591
   },
   {
     "scheme": "magma",
@@ -5814,7 +5824,7 @@
     "lang": "English (English)",
     "term": "pink",
     "cnt": 32,
-    "pTC": 0.12307692307692308,
+    "pTC": 0.12260536398467432,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.35555555555555557
@@ -5824,7 +5834,7 @@
     "lang": "English (English)",
     "term": "red",
     "cnt": 102,
-    "pTC": 0.3923076923076923,
+    "pTC": 0.39080459770114945,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.9272727272727272
@@ -5834,7 +5844,7 @@
     "lang": "English (English)",
     "term": "magenta",
     "cnt": 10,
-    "pTC": 0.038461538461538464,
+    "pTC": 0.038314176245210725,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.10638297872340426
@@ -5844,7 +5854,7 @@
     "lang": "English (English)",
     "term": "fuchsia",
     "cnt": 2,
-    "pTC": 0.007692307692307693,
+    "pTC": 0.007662835249042145,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.05128205128205128
@@ -5854,7 +5864,7 @@
     "lang": "English (English)",
     "term": "hotpink",
     "cnt": 14,
-    "pTC": 0.05384615384615385,
+    "pTC": 0.05363984674329502,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.5833333333333334
@@ -5864,7 +5874,7 @@
     "lang": "English (English)",
     "term": "maroon",
     "cnt": 2,
-    "pTC": 0.007692307692307693,
+    "pTC": 0.007662835249042145,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.2222222222222222
@@ -5874,7 +5884,7 @@
     "lang": "English (English)",
     "term": "darkpink",
     "cnt": 8,
-    "pTC": 0.03076923076923077,
+    "pTC": 0.03065134099616858,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.26666666666666666
@@ -5884,7 +5894,7 @@
     "lang": "English (English)",
     "term": "salmon",
     "cnt": 9,
-    "pTC": 0.03461538461538462,
+    "pTC": 0.034482758620689655,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.20454545454545456
@@ -5894,7 +5904,7 @@
     "lang": "English (English)",
     "term": "burntorange",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.14285714285714285
@@ -5904,7 +5914,7 @@
     "lang": "English (English)",
     "term": "rose",
     "cnt": 9,
-    "pTC": 0.03461538461538462,
+    "pTC": 0.034482758620689655,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.75
@@ -5914,7 +5924,7 @@
     "lang": "English (English)",
     "term": "coral",
     "cnt": 5,
-    "pTC": 0.019230769230769232,
+    "pTC": 0.019157088122605363,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.17857142857142858
@@ -5924,7 +5934,7 @@
     "lang": "English (English)",
     "term": "brightpink",
     "cnt": 2,
-    "pTC": 0.007692307692307693,
+    "pTC": 0.007662835249042145,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.5
@@ -5934,7 +5944,7 @@
     "lang": "English (English)",
     "term": "crimson",
     "cnt": 4,
-    "pTC": 0.015384615384615385,
+    "pTC": 0.01532567049808429,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.6666666666666666
@@ -5944,7 +5954,7 @@
     "lang": "English (English)",
     "term": "scarlet",
     "cnt": 3,
-    "pTC": 0.011538461538461539,
+    "pTC": 0.011494252873563218,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.75
@@ -5954,7 +5964,7 @@
     "lang": "English (English)",
     "term": "orangered",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.3333333333333333
@@ -5964,7 +5974,7 @@
     "lang": "English (English)",
     "term": "redpink",
     "cnt": 4,
-    "pTC": 0.015384615384615385,
+    "pTC": 0.01532567049808429,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.6666666666666666
@@ -5974,7 +5984,7 @@
     "lang": "English (English)",
     "term": "raspberry",
     "cnt": 6,
-    "pTC": 0.023076923076923078,
+    "pTC": 0.022988505747126436,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.3333333333333333
@@ -5983,8 +5993,8 @@
     "scheme": "magma",
     "lang": "English (English)",
     "term": "brightred",
-    "cnt": 2,
-    "pTC": 0.007692307692307693,
+    "cnt": 3,
+    "pTC": 0.011494252873563218,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -5994,7 +6004,7 @@
     "lang": "English (English)",
     "term": "rosepink",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.3333333333333333
@@ -6004,7 +6014,7 @@
     "lang": "English (English)",
     "term": "dustyrose",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6014,7 +6024,7 @@
     "lang": "English (English)",
     "term": "lightred",
     "cnt": 5,
-    "pTC": 0.019230769230769232,
+    "pTC": 0.019157088122605363,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.5555555555555556
@@ -6024,7 +6034,7 @@
     "lang": "English (English)",
     "term": "pinkred",
     "cnt": 7,
-    "pTC": 0.026923076923076925,
+    "pTC": 0.02681992337164751,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6034,7 +6044,7 @@
     "lang": "English (English)",
     "term": "pinkishred",
     "cnt": 3,
-    "pTC": 0.011538461538461539,
+    "pTC": 0.011494252873563218,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.6
@@ -6044,7 +6054,7 @@
     "lang": "English (English)",
     "term": "reddishpink",
     "cnt": 4,
-    "pTC": 0.015384615384615385,
+    "pTC": 0.01532567049808429,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.8
@@ -6054,7 +6064,7 @@
     "lang": "English (English)",
     "term": "bubblegumpink",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6064,7 +6074,7 @@
     "lang": "English (English)",
     "term": "cherryred",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6074,7 +6084,7 @@
     "lang": "English (English)",
     "term": "flesh",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6084,7 +6094,7 @@
     "lang": "English (English)",
     "term": "cherry",
     "cnt": 2,
-    "pTC": 0.007692307692307693,
+    "pTC": 0.007662835249042145,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.6666666666666666
@@ -6094,7 +6104,7 @@
     "lang": "English (English)",
     "term": "ruby",
     "cnt": 2,
-    "pTC": 0.007692307692307693,
+    "pTC": 0.007662835249042145,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6104,7 +6114,7 @@
     "lang": "English (English)",
     "term": "fireenginered",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6114,7 +6124,7 @@
     "lang": "English (English)",
     "term": "rosered",
     "cnt": 3,
-    "pTC": 0.011538461538461539,
+    "pTC": 0.011494252873563218,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6124,7 +6134,7 @@
     "lang": "English (English)",
     "term": "idk",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6134,7 +6144,7 @@
     "lang": "English (English)",
     "term": "strawberry",
     "cnt": 3,
-    "pTC": 0.011538461538461539,
+    "pTC": 0.011494252873563218,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6144,7 +6154,7 @@
     "lang": "English (English)",
     "term": "rouge",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.5
@@ -6154,7 +6164,7 @@
     "lang": "English (English)",
     "term": "darksalmon",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6164,7 +6174,7 @@
     "lang": "English (English)",
     "term": "crimsonred",
     "cnt": 3,
-    "pTC": 0.011538461538461539,
+    "pTC": 0.011494252873563218,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6174,7 +6184,7 @@
     "lang": "English (English)",
     "term": "coralpink",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.5
@@ -6184,7 +6194,7 @@
     "lang": "English (English)",
     "term": "tomatored",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 1
@@ -6194,7 +6204,7 @@
     "lang": "English (English)",
     "term": "carmine",
     "cnt": 1,
-    "pTC": 0.0038461538461538464,
+    "pTC": 0.0038314176245210726,
     "binNum": 6,
     "rgb": "rgb(222, 73, 104)",
     "pCT": 0.5
@@ -6597,7 +6607,7 @@
     "pTC": 0.02040816326530612,
     "binNum": 8,
     "rgb": "rgb(254, 159, 109)",
-    "pCT": 0.06666666666666667
+    "pCT": 0.0625
   },
   {
     "scheme": "magma",
@@ -6684,7 +6694,7 @@
     "lang": "English (English)",
     "term": "pink",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 0.011111111111111112
@@ -6694,7 +6704,7 @@
     "lang": "English (English)",
     "term": "orange",
     "cnt": 2,
-    "pTC": 0.02666666666666667,
+    "pTC": 0.02631578947368421,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 0.014492753623188406
@@ -6704,7 +6714,7 @@
     "lang": "English (English)",
     "term": "yellow",
     "cnt": 7,
-    "pTC": 0.09333333333333334,
+    "pTC": 0.09210526315789473,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 0.7
@@ -6713,18 +6723,18 @@
     "scheme": "magma",
     "lang": "English (English)",
     "term": "tan",
-    "cnt": 13,
-    "pTC": 0.17333333333333334,
+    "cnt": 14,
+    "pTC": 0.18421052631578946,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
-    "pCT": 0.8666666666666667
+    "pCT": 0.875
   },
   {
     "scheme": "magma",
     "lang": "English (English)",
     "term": "beige",
     "cnt": 10,
-    "pTC": 0.13333333333333333,
+    "pTC": 0.13157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 0.9090909090909091
@@ -6734,7 +6744,7 @@
     "lang": "English (English)",
     "term": "peach",
     "cnt": 16,
-    "pTC": 0.21333333333333335,
+    "pTC": 0.21052631578947367,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 0.3902439024390244
@@ -6744,7 +6754,7 @@
     "lang": "English (English)",
     "term": "salmon",
     "cnt": 2,
-    "pTC": 0.02666666666666667,
+    "pTC": 0.02631578947368421,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 0.045454545454545456
@@ -6754,7 +6764,7 @@
     "lang": "English (English)",
     "term": "lightorange",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 0.25
@@ -6764,7 +6774,7 @@
     "lang": "English (English)",
     "term": "goldenrod",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 0.5
@@ -6774,7 +6784,7 @@
     "lang": "English (English)",
     "term": "cream",
     "cnt": 5,
-    "pTC": 0.06666666666666667,
+    "pTC": 0.06578947368421052,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 0.8333333333333334
@@ -6784,7 +6794,7 @@
     "lang": "English (English)",
     "term": "lightyellow",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 0.2
@@ -6794,7 +6804,7 @@
     "lang": "English (English)",
     "term": "ochre",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 1
@@ -6804,7 +6814,7 @@
     "lang": "English (English)",
     "term": "sand",
     "cnt": 2,
-    "pTC": 0.02666666666666667,
+    "pTC": 0.02631578947368421,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 1
@@ -6814,7 +6824,7 @@
     "lang": "English (English)",
     "term": "paleyellow",
     "cnt": 3,
-    "pTC": 0.04,
+    "pTC": 0.039473684210526314,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 1
@@ -6824,7 +6834,7 @@
     "lang": "English (English)",
     "term": "yellowbrown",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 1
@@ -6834,7 +6844,7 @@
     "lang": "English (English)",
     "term": "dandelion",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 1
@@ -6844,7 +6854,7 @@
     "lang": "English (English)",
     "term": "offwhite",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 1
@@ -6854,7 +6864,7 @@
     "lang": "English (English)",
     "term": "skin",
     "cnt": 3,
-    "pTC": 0.04,
+    "pTC": 0.039473684210526314,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 1
@@ -6864,7 +6874,7 @@
     "lang": "English (English)",
     "term": "ivory",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 1
@@ -6874,7 +6884,7 @@
     "lang": "English (English)",
     "term": "eggshell",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 1
@@ -6884,7 +6894,7 @@
     "lang": "English (English)",
     "term": "lighttan",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 1
@@ -6894,7 +6904,7 @@
     "lang": "English (English)",
     "term": "softpink",
     "cnt": 1,
-    "pTC": 0.013333333333333334,
+    "pTC": 0.013157894736842105,
     "binNum": 9,
     "rgb": "rgb(254, 207, 146)",
     "pCT": 1
@@ -6917,7 +6927,7 @@
     "pTC": 0.1111111111111111,
     "binNum": 10,
     "rgb": "rgb(252, 253, 191)",
-    "pCT": 0.06666666666666667
+    "pCT": 0.0625
   },
   {
     "scheme": "magma",
@@ -7407,7 +7417,7 @@
     "pTC": 0.034782608695652174,
     "binNum": 1,
     "rgb": "rgb(22, 11, 57)",
-    "pCT": 0.07017543859649122
+    "pCT": 0.06896551724137931
   },
   {
     "scheme": "inferno",
@@ -7502,7 +7512,7 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
-    "term": "darkindigo",
+    "term": "verydarkblue",
     "cnt": 1,
     "pTC": 0.008695652173913044,
     "binNum": 1,
@@ -7512,7 +7522,7 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
-    "term": "verydarkblue",
+    "term": "darkindigo",
     "cnt": 1,
     "pTC": 0.008695652173913044,
     "binNum": 1,
@@ -7597,7 +7607,7 @@
     "pTC": 0.3076923076923077,
     "binNum": 2,
     "rgb": "rgb(66, 10, 104)",
-    "pCT": 0.5614035087719298
+    "pCT": 0.5517241379310345
   },
   {
     "scheme": "inferno",
@@ -7744,7 +7754,7 @@
     "lang": "English (English)",
     "term": "purple",
     "cnt": 81,
-    "pTC": 0.5328947368421053,
+    "pTC": 0.5294117647058824,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.5586206896551724
@@ -7754,7 +7764,7 @@
     "lang": "English (English)",
     "term": "red",
     "cnt": 1,
-    "pTC": 0.006578947368421052,
+    "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.0030959752321981426
@@ -7764,7 +7774,7 @@
     "lang": "English (English)",
     "term": "magenta",
     "cnt": 3,
-    "pTC": 0.019736842105263157,
+    "pTC": 0.0196078431372549,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.06521739130434782
@@ -7774,7 +7784,7 @@
     "lang": "English (English)",
     "term": "violet",
     "cnt": 10,
-    "pTC": 0.06578947368421052,
+    "pTC": 0.06535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.4166666666666667
@@ -7784,7 +7794,7 @@
     "lang": "English (English)",
     "term": "lavender",
     "cnt": 1,
-    "pTC": 0.006578947368421052,
+    "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 1
@@ -7794,7 +7804,7 @@
     "lang": "English (English)",
     "term": "maroon",
     "cnt": 1,
-    "pTC": 0.006578947368421052,
+    "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.02631578947368421
@@ -7804,7 +7814,7 @@
     "lang": "English (English)",
     "term": "navyblue",
     "cnt": 1,
-    "pTC": 0.006578947368421052,
+    "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.03333333333333333
@@ -7813,18 +7823,18 @@
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "darkpurple",
-    "cnt": 16,
-    "pTC": 0.10526315789473684,
+    "cnt": 17,
+    "pTC": 0.1111111111111111,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
-    "pCT": 0.2807017543859649
+    "pCT": 0.29310344827586204
   },
   {
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "lightpurple",
     "cnt": 1,
-    "pTC": 0.006578947368421052,
+    "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 1
@@ -7834,7 +7844,7 @@
     "lang": "English (English)",
     "term": "indigo",
     "cnt": 2,
-    "pTC": 0.013157894736842105,
+    "pTC": 0.013071895424836602,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.15384615384615385
@@ -7844,7 +7854,7 @@
     "lang": "English (English)",
     "term": "darkpink",
     "cnt": 1,
-    "pTC": 0.006578947368421052,
+    "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.041666666666666664
@@ -7854,7 +7864,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 6,
-    "pTC": 0.039473684210526314,
+    "pTC": 0.0392156862745098,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.3157894736842105
@@ -7864,7 +7874,7 @@
     "lang": "English (English)",
     "term": "brightpurple",
     "cnt": 1,
-    "pTC": 0.006578947368421052,
+    "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 1
@@ -7874,7 +7884,7 @@
     "lang": "English (English)",
     "term": "royalpurple",
     "cnt": 3,
-    "pTC": 0.019736842105263157,
+    "pTC": 0.0196078431372549,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.42857142857142855
@@ -7884,7 +7894,7 @@
     "lang": "English (English)",
     "term": "eggplant",
     "cnt": 5,
-    "pTC": 0.03289473684210526,
+    "pTC": 0.032679738562091505,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.5
@@ -7894,7 +7904,7 @@
     "lang": "English (English)",
     "term": "deeppurple",
     "cnt": 5,
-    "pTC": 0.03289473684210526,
+    "pTC": 0.032679738562091505,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.45454545454545453
@@ -7904,7 +7914,7 @@
     "lang": "English (English)",
     "term": "darkmagenta",
     "cnt": 2,
-    "pTC": 0.013157894736842105,
+    "pTC": 0.013071895424836602,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.2857142857142857
@@ -7914,7 +7924,7 @@
     "lang": "English (English)",
     "term": "darkviolet",
     "cnt": 1,
-    "pTC": 0.006578947368421052,
+    "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.2
@@ -7924,7 +7934,7 @@
     "lang": "English (English)",
     "term": "redpurple",
     "cnt": 3,
-    "pTC": 0.019736842105263157,
+    "pTC": 0.0196078431372549,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.6
@@ -7934,7 +7944,7 @@
     "lang": "English (English)",
     "term": "reddishpurple",
     "cnt": 1,
-    "pTC": 0.006578947368421052,
+    "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.25
@@ -7944,7 +7954,7 @@
     "lang": "English (English)",
     "term": "aubergine",
     "cnt": 3,
-    "pTC": 0.019736842105263157,
+    "pTC": 0.0196078431372549,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 1
@@ -7954,7 +7964,7 @@
     "lang": "English (English)",
     "term": "purplered",
     "cnt": 1,
-    "pTC": 0.006578947368421052,
+    "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.3333333333333333
@@ -7964,7 +7974,7 @@
     "lang": "English (English)",
     "term": "eggplantpurple",
     "cnt": 2,
-    "pTC": 0.013157894736842105,
+    "pTC": 0.013071895424836602,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 0.6666666666666666
@@ -7974,7 +7984,7 @@
     "lang": "English (English)",
     "term": "darkmauve",
     "cnt": 1,
-    "pTC": 0.006578947368421052,
+    "pTC": 0.006535947712418301,
     "binNum": 3,
     "rgb": "rgb(106, 23, 110)",
     "pCT": 1
@@ -8067,7 +8077,7 @@
     "pTC": 0.024390243902439025,
     "binNum": 4,
     "rgb": "rgb(147, 38, 103)",
-    "pCT": 0.08771929824561403
+    "pCT": 0.08620689655172414
   },
   {
     "scheme": "inferno",
@@ -8312,22 +8322,22 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
-    "term": "mediumpurple",
-    "cnt": 1,
-    "pTC": 0.004878048780487805,
-    "binNum": 4,
-    "rgb": "rgb(147, 38, 103)",
-    "pCT": 1
-  },
-  {
-    "scheme": "inferno",
-    "lang": "English (English)",
     "term": "purplered",
     "cnt": 2,
     "pTC": 0.00975609756097561,
     "binNum": 4,
     "rgb": "rgb(147, 38, 103)",
     "pCT": 0.6666666666666666
+  },
+  {
+    "scheme": "inferno",
+    "lang": "English (English)",
+    "term": "mediumpurple",
+    "cnt": 1,
+    "pTC": 0.004878048780487805,
+    "binNum": 4,
+    "rgb": "rgb(147, 38, 103)",
+    "pCT": 1
   },
   {
     "scheme": "inferno",
@@ -8754,7 +8764,7 @@
     "lang": "English (English)",
     "term": "pink",
     "cnt": 3,
-    "pTC": 0.007407407407407408,
+    "pTC": 0.007389162561576354,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.10714285714285714
@@ -8764,7 +8774,7 @@
     "lang": "English (English)",
     "term": "red",
     "cnt": 286,
-    "pTC": 0.7061728395061728,
+    "pTC": 0.7044334975369458,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.8854489164086687
@@ -8773,18 +8783,18 @@
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "orange",
-    "cnt": 15,
-    "pTC": 0.037037037037037035,
+    "cnt": 16,
+    "pTC": 0.03940886699507389,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
-    "pCT": 0.011609907120743035
+    "pCT": 0.01233616037008481
   },
   {
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "brown",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.25
@@ -8794,7 +8804,7 @@
     "lang": "English (English)",
     "term": "magenta",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.021739130434782608
@@ -8804,7 +8814,7 @@
     "lang": "English (English)",
     "term": "fuchsia",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.06666666666666667
@@ -8814,7 +8824,7 @@
     "lang": "English (English)",
     "term": "hotpink",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.3333333333333333
@@ -8824,7 +8834,7 @@
     "lang": "English (English)",
     "term": "darkpink",
     "cnt": 2,
-    "pTC": 0.0049382716049382715,
+    "pTC": 0.0049261083743842365,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.08333333333333333
@@ -8834,7 +8844,7 @@
     "lang": "English (English)",
     "term": "salmon",
     "cnt": 2,
-    "pTC": 0.0049382716049382715,
+    "pTC": 0.0049261083743842365,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.4
@@ -8844,7 +8854,7 @@
     "lang": "English (English)",
     "term": "burntorange",
     "cnt": 4,
-    "pTC": 0.009876543209876543,
+    "pTC": 0.009852216748768473,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.06896551724137931
@@ -8854,7 +8864,7 @@
     "lang": "English (English)",
     "term": "rose",
     "cnt": 2,
-    "pTC": 0.0049382716049382715,
+    "pTC": 0.0049261083743842365,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.18181818181818182
@@ -8864,7 +8874,7 @@
     "lang": "English (English)",
     "term": "redorange",
     "cnt": 14,
-    "pTC": 0.0345679012345679,
+    "pTC": 0.034482758620689655,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.34146341463414637
@@ -8874,7 +8884,7 @@
     "lang": "English (English)",
     "term": "darkred",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.125
@@ -8884,7 +8894,7 @@
     "lang": "English (English)",
     "term": "darkorange",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.024390243902439025
@@ -8894,7 +8904,7 @@
     "lang": "English (English)",
     "term": "coral",
     "cnt": 4,
-    "pTC": 0.009876543209876543,
+    "pTC": 0.009852216748768473,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.8
@@ -8904,7 +8914,7 @@
     "lang": "English (English)",
     "term": "brickred",
     "cnt": 5,
-    "pTC": 0.012345679012345678,
+    "pTC": 0.012315270935960592,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.5
@@ -8914,7 +8924,7 @@
     "lang": "English (English)",
     "term": "crimson",
     "cnt": 3,
-    "pTC": 0.007407407407407408,
+    "pTC": 0.007389162561576354,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.6
@@ -8924,7 +8934,7 @@
     "lang": "English (English)",
     "term": "scarlet",
     "cnt": 12,
-    "pTC": 0.02962962962962963,
+    "pTC": 0.029556650246305417,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.8571428571428571
@@ -8934,7 +8944,7 @@
     "lang": "English (English)",
     "term": "rust",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.1111111111111111
@@ -8944,7 +8954,7 @@
     "lang": "English (English)",
     "term": "orangered",
     "cnt": 2,
-    "pTC": 0.0049382716049382715,
+    "pTC": 0.0049261083743842365,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.2857142857142857
@@ -8954,7 +8964,7 @@
     "lang": "English (English)",
     "term": "brightred",
     "cnt": 5,
-    "pTC": 0.012345679012345678,
+    "pTC": 0.012315270935960592,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -8964,7 +8974,7 @@
     "lang": "English (English)",
     "term": "lightred",
     "cnt": 4,
-    "pTC": 0.009876543209876543,
+    "pTC": 0.009852216748768473,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.6666666666666666
@@ -8974,7 +8984,7 @@
     "lang": "English (English)",
     "term": "redbrown",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -8984,7 +8994,7 @@
     "lang": "English (English)",
     "term": "sienna",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.3333333333333333
@@ -8994,7 +9004,7 @@
     "lang": "English (English)",
     "term": "burntsienna",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.3333333333333333
@@ -9004,7 +9014,7 @@
     "lang": "English (English)",
     "term": "pinkishred",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9014,7 +9024,7 @@
     "lang": "English (English)",
     "term": "reddishpink",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.5
@@ -9024,7 +9034,7 @@
     "lang": "English (English)",
     "term": "bloodred",
     "cnt": 2,
-    "pTC": 0.0049382716049382715,
+    "pTC": 0.0049261083743842365,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9034,7 +9044,7 @@
     "lang": "English (English)",
     "term": "terracotta",
     "cnt": 2,
-    "pTC": 0.0049382716049382715,
+    "pTC": 0.0049261083743842365,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.6666666666666666
@@ -9044,7 +9054,7 @@
     "lang": "English (English)",
     "term": "bloodorange",
     "cnt": 5,
-    "pTC": 0.012345679012345678,
+    "pTC": 0.012315270935960592,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.625
@@ -9054,7 +9064,7 @@
     "lang": "English (English)",
     "term": "vermillion",
     "cnt": 4,
-    "pTC": 0.009876543209876543,
+    "pTC": 0.009852216748768473,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9064,7 +9074,7 @@
     "lang": "English (English)",
     "term": "reddishorange",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.2
@@ -9074,7 +9084,7 @@
     "lang": "English (English)",
     "term": "fireenginered",
     "cnt": 4,
-    "pTC": 0.009876543209876543,
+    "pTC": 0.009852216748768473,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9084,7 +9094,7 @@
     "lang": "English (English)",
     "term": "rustorange",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 0.3333333333333333
@@ -9094,7 +9104,7 @@
     "lang": "English (English)",
     "term": "darksalmon",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9104,7 +9114,7 @@
     "lang": "English (English)",
     "term": "crimsonred",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9114,7 +9124,7 @@
     "lang": "English (English)",
     "term": "palered",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9124,7 +9134,7 @@
     "lang": "English (English)",
     "term": "scarletred",
     "cnt": 3,
-    "pTC": 0.007407407407407408,
+    "pTC": 0.007389162561576354,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9134,7 +9144,7 @@
     "lang": "English (English)",
     "term": "coralpink",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9144,7 +9154,7 @@
     "lang": "English (English)",
     "term": "tomatored",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9154,7 +9164,7 @@
     "lang": "English (English)",
     "term": "firetruckred",
     "cnt": 2,
-    "pTC": 0.0049382716049382715,
+    "pTC": 0.0049261083743842365,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9164,7 +9174,7 @@
     "lang": "English (English)",
     "term": "rustred",
     "cnt": 1,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024630541871921183,
     "binNum": 6,
     "rgb": "rgb(221, 81, 58)",
     "pCT": 1
@@ -9174,7 +9184,7 @@
     "lang": "English (English)",
     "term": "pink",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.03571428571428571
@@ -9184,7 +9194,7 @@
     "lang": "English (English)",
     "term": "red",
     "cnt": 7,
-    "pTC": 0.008641975308641974,
+    "pTC": 0.008610086100861008,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.021671826625386997
@@ -9193,18 +9203,18 @@
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "orange",
-    "cnt": 627,
-    "pTC": 0.774074074074074,
+    "cnt": 630,
+    "pTC": 0.7749077490774908,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
-    "pCT": 0.4852941176470588
+    "pCT": 0.48573631457208943
   },
   {
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "yellow",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.004694835680751174
@@ -9214,7 +9224,7 @@
     "lang": "English (English)",
     "term": "brown",
     "cnt": 2,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024600246002460025,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.5
@@ -9224,7 +9234,7 @@
     "lang": "English (English)",
     "term": "peach",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.1
@@ -9234,7 +9244,7 @@
     "lang": "English (English)",
     "term": "mustard",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.045454545454545456
@@ -9244,7 +9254,7 @@
     "lang": "English (English)",
     "term": "burntorange",
     "cnt": 40,
-    "pTC": 0.04938271604938271,
+    "pTC": 0.04920049200492005,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.6896551724137931
@@ -9254,7 +9264,7 @@
     "lang": "English (English)",
     "term": "redorange",
     "cnt": 26,
-    "pTC": 0.03209876543209877,
+    "pTC": 0.03198031980319803,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.6341463414634146
@@ -9264,7 +9274,7 @@
     "lang": "English (English)",
     "term": "darkorange",
     "cnt": 35,
-    "pTC": 0.043209876543209874,
+    "pTC": 0.04305043050430504,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.8536585365853658
@@ -9274,7 +9284,7 @@
     "lang": "English (English)",
     "term": "yelloworange",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.015384615384615385
@@ -9284,7 +9294,7 @@
     "lang": "English (English)",
     "term": "lightorange",
     "cnt": 4,
-    "pTC": 0.0049382716049382715,
+    "pTC": 0.004920049200492005,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.056338028169014086
@@ -9294,7 +9304,7 @@
     "lang": "English (English)",
     "term": "crimson",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.2
@@ -9304,7 +9314,7 @@
     "lang": "English (English)",
     "term": "rust",
     "cnt": 5,
-    "pTC": 0.006172839506172839,
+    "pTC": 0.006150061500615006,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.5555555555555556
@@ -9314,7 +9324,7 @@
     "lang": "English (English)",
     "term": "orangered",
     "cnt": 5,
-    "pTC": 0.006172839506172839,
+    "pTC": 0.006150061500615006,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.7142857142857143
@@ -9324,7 +9334,7 @@
     "lang": "English (English)",
     "term": "ochre",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.25
@@ -9334,7 +9344,7 @@
     "lang": "English (English)",
     "term": "tangerine",
     "cnt": 11,
-    "pTC": 0.013580246913580247,
+    "pTC": 0.013530135301353014,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.28205128205128205
@@ -9344,7 +9354,7 @@
     "lang": "English (English)",
     "term": "lightred",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.16666666666666666
@@ -9354,7 +9364,7 @@
     "lang": "English (English)",
     "term": "sienna",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.3333333333333333
@@ -9364,7 +9374,7 @@
     "lang": "English (English)",
     "term": "brick",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.5
@@ -9374,7 +9384,7 @@
     "lang": "English (English)",
     "term": "burntsienna",
     "cnt": 2,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024600246002460025,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.6666666666666666
@@ -9384,7 +9394,7 @@
     "lang": "English (English)",
     "term": "orangeyellow",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.07692307692307693
@@ -9394,7 +9404,7 @@
     "lang": "English (English)",
     "term": "pumpkin",
     "cnt": 5,
-    "pTC": 0.006172839506172839,
+    "pTC": 0.006150061500615006,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.3125
@@ -9404,7 +9414,7 @@
     "lang": "English (English)",
     "term": "bloodorange",
     "cnt": 3,
-    "pTC": 0.003703703703703704,
+    "pTC": 0.0036900369003690036,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.375
@@ -9414,7 +9424,7 @@
     "lang": "English (English)",
     "term": "amber",
     "cnt": 3,
-    "pTC": 0.003703703703703704,
+    "pTC": 0.0036900369003690036,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.3333333333333333
@@ -9424,7 +9434,7 @@
     "lang": "English (English)",
     "term": "reddishorange",
     "cnt": 3,
-    "pTC": 0.003703703703703704,
+    "pTC": 0.0036900369003690036,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.6
@@ -9434,7 +9444,7 @@
     "lang": "English (English)",
     "term": "brightorange",
     "cnt": 6,
-    "pTC": 0.007407407407407408,
+    "pTC": 0.007380073800738007,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.75
@@ -9444,7 +9454,7 @@
     "lang": "English (English)",
     "term": "pumpkinorange",
     "cnt": 7,
-    "pTC": 0.008641975308641974,
+    "pTC": 0.008610086100861008,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.7
@@ -9454,7 +9464,7 @@
     "lang": "English (English)",
     "term": "copper",
     "cnt": 2,
-    "pTC": 0.0024691358024691358,
+    "pTC": 0.0024600246002460025,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 1
@@ -9464,7 +9474,7 @@
     "lang": "English (English)",
     "term": "sepia",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 1
@@ -9474,7 +9484,7 @@
     "lang": "English (English)",
     "term": "rustorange",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.3333333333333333
@@ -9484,7 +9494,7 @@
     "lang": "English (English)",
     "term": "dullorange",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.5
@@ -9494,7 +9504,7 @@
     "lang": "English (English)",
     "term": "rustyorange",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.5
@@ -9504,7 +9514,7 @@
     "lang": "English (English)",
     "term": "brownorange",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 1
@@ -9514,7 +9524,7 @@
     "lang": "English (English)",
     "term": "lightmaroon",
     "cnt": 1,
-    "pTC": 0.0012345679012345679,
+    "pTC": 0.0012300123001230013,
     "binNum": 7,
     "rgb": "rgb(243, 120, 25)",
     "pCT": 0.5
@@ -9524,7 +9534,7 @@
     "lang": "English (English)",
     "term": "red",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.0030959752321981426
@@ -9533,18 +9543,18 @@
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "orange",
-    "cnt": 649,
-    "pTC": 0.6294859359844811,
+    "cnt": 650,
+    "pTC": 0.6298449612403101,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
-    "pCT": 0.5023219814241486
+    "pCT": 0.5011565150346955
   },
   {
     "scheme": "inferno",
     "lang": "English (English)",
     "term": "yellow",
     "cnt": 34,
-    "pTC": 0.03297769156159069,
+    "pTC": 0.03294573643410853,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.1596244131455399
@@ -9554,7 +9564,7 @@
     "lang": "English (English)",
     "term": "brown",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.25
@@ -9564,7 +9574,7 @@
     "lang": "English (English)",
     "term": "tan",
     "cnt": 5,
-    "pTC": 0.004849660523763337,
+    "pTC": 0.0048449612403100775,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.5
@@ -9574,7 +9584,7 @@
     "lang": "English (English)",
     "term": "beige",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.3333333333333333
@@ -9584,7 +9594,7 @@
     "lang": "English (English)",
     "term": "gold",
     "cnt": 27,
-    "pTC": 0.026188166828322017,
+    "pTC": 0.02616279069767442,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.7714285714285715
@@ -9594,7 +9604,7 @@
     "lang": "English (English)",
     "term": "peach",
     "cnt": 8,
-    "pTC": 0.007759456838021339,
+    "pTC": 0.007751937984496124,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.8
@@ -9604,7 +9614,7 @@
     "lang": "English (English)",
     "term": "mustard",
     "cnt": 17,
-    "pTC": 0.016488845780795344,
+    "pTC": 0.016472868217054265,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.7727272727272727
@@ -9614,7 +9624,7 @@
     "lang": "English (English)",
     "term": "salmon",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.4
@@ -9624,7 +9634,7 @@
     "lang": "English (English)",
     "term": "burntorange",
     "cnt": 14,
-    "pTC": 0.013579049466537343,
+    "pTC": 0.013565891472868217,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.2413793103448276
@@ -9634,7 +9644,7 @@
     "lang": "English (English)",
     "term": "redorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.024390243902439025
@@ -9644,7 +9654,7 @@
     "lang": "English (English)",
     "term": "mustardyellow",
     "cnt": 5,
-    "pTC": 0.004849660523763337,
+    "pTC": 0.0048449612403100775,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.45454545454545453
@@ -9654,7 +9664,7 @@
     "lang": "English (English)",
     "term": "darkorange",
     "cnt": 5,
-    "pTC": 0.004849660523763337,
+    "pTC": 0.0048449612403100775,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.12195121951219512
@@ -9664,7 +9674,7 @@
     "lang": "English (English)",
     "term": "coral",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.2
@@ -9674,7 +9684,7 @@
     "lang": "English (English)",
     "term": "yelloworange",
     "cnt": 64,
-    "pTC": 0.06207565470417071,
+    "pTC": 0.06201550387596899,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.9846153846153847
@@ -9684,7 +9694,7 @@
     "lang": "English (English)",
     "term": "lightorange",
     "cnt": 65,
-    "pTC": 0.06304558680892337,
+    "pTC": 0.06298449612403101,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.9154929577464789
@@ -9694,7 +9704,7 @@
     "lang": "English (English)",
     "term": "darkyellow",
     "cnt": 7,
-    "pTC": 0.006789524733268671,
+    "pTC": 0.006782945736434108,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.875
@@ -9704,7 +9714,7 @@
     "lang": "English (English)",
     "term": "goldenrod",
     "cnt": 20,
-    "pTC": 0.019398642095053348,
+    "pTC": 0.01937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.8333333333333334
@@ -9714,7 +9724,7 @@
     "lang": "English (English)",
     "term": "rust",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.2222222222222222
@@ -9724,7 +9734,7 @@
     "lang": "English (English)",
     "term": "ochre",
     "cnt": 3,
-    "pTC": 0.002909796314258002,
+    "pTC": 0.0029069767441860465,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.75
@@ -9734,7 +9744,7 @@
     "lang": "English (English)",
     "term": "tangerine",
     "cnt": 28,
-    "pTC": 0.027158098933074686,
+    "pTC": 0.027131782945736434,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.717948717948718
@@ -9744,7 +9754,7 @@
     "lang": "English (English)",
     "term": "goldenyellow",
     "cnt": 3,
-    "pTC": 0.002909796314258002,
+    "pTC": 0.0029069767441860465,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.6
@@ -9754,7 +9764,7 @@
     "lang": "English (English)",
     "term": "sienna",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.3333333333333333
@@ -9764,7 +9774,7 @@
     "lang": "English (English)",
     "term": "brick",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.5
@@ -9774,7 +9784,7 @@
     "lang": "English (English)",
     "term": "marigold",
     "cnt": 9,
-    "pTC": 0.008729388942774006,
+    "pTC": 0.00872093023255814,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -9784,7 +9794,7 @@
     "lang": "English (English)",
     "term": "orangeyellow",
     "cnt": 12,
-    "pTC": 0.011639185257032008,
+    "pTC": 0.011627906976744186,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.9230769230769231
@@ -9794,7 +9804,7 @@
     "lang": "English (English)",
     "term": "pumpkin",
     "cnt": 11,
-    "pTC": 0.01066925315227934,
+    "pTC": 0.01065891472868217,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.6875
@@ -9804,7 +9814,7 @@
     "lang": "English (English)",
     "term": "terracotta",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.3333333333333333
@@ -9814,7 +9824,7 @@
     "lang": "English (English)",
     "term": "orangebrown",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -9824,7 +9834,7 @@
     "lang": "English (English)",
     "term": "amber",
     "cnt": 5,
-    "pTC": 0.004849660523763337,
+    "pTC": 0.0048449612403100775,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.5555555555555556
@@ -9834,7 +9844,7 @@
     "lang": "English (English)",
     "term": "reddishorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.2
@@ -9844,7 +9854,7 @@
     "lang": "English (English)",
     "term": "yellowochre",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.6666666666666666
@@ -9854,7 +9864,7 @@
     "lang": "English (English)",
     "term": "brightorange",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.25
@@ -9864,7 +9874,7 @@
     "lang": "English (English)",
     "term": "pumpkinorange",
     "cnt": 3,
-    "pTC": 0.002909796314258002,
+    "pTC": 0.0029069767441860465,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.3
@@ -9874,7 +9884,7 @@
     "lang": "English (English)",
     "term": "flesh",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -9884,7 +9894,7 @@
     "lang": "English (English)",
     "term": "apricot",
     "cnt": 3,
-    "pTC": 0.002909796314258002,
+    "pTC": 0.0029069767441860465,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -9894,7 +9904,7 @@
     "lang": "English (English)",
     "term": "golden",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.6666666666666666
@@ -9904,7 +9914,7 @@
     "lang": "English (English)",
     "term": "paleorange",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -9914,7 +9924,7 @@
     "lang": "English (English)",
     "term": "darkpeach",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -9924,7 +9934,7 @@
     "lang": "English (English)",
     "term": "rustorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.3333333333333333
@@ -9934,7 +9944,7 @@
     "lang": "English (English)",
     "term": "burntyellow",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -9944,7 +9954,7 @@
     "lang": "English (English)",
     "term": "dullorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.5
@@ -9954,7 +9964,7 @@
     "lang": "English (English)",
     "term": "rustyorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 0.5
@@ -9964,7 +9974,7 @@
     "lang": "English (English)",
     "term": "yellowgold",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -9974,7 +9984,7 @@
     "lang": "English (English)",
     "term": "honey",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -9984,7 +9994,7 @@
     "lang": "English (English)",
     "term": "pastelorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -9994,7 +10004,7 @@
     "lang": "English (English)",
     "term": "brownishorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -10004,7 +10014,7 @@
     "lang": "English (English)",
     "term": "yellowishbrown",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 165, 10)",
     "pCT": 1
@@ -10017,7 +10027,7 @@
     "pTC": 0.003703703703703704,
     "binNum": 9,
     "rgb": "rgb(246, 215, 70)",
-    "pCT": 0.0007739938080495357
+    "pCT": 0.0007710100231303007
   },
   {
     "scheme": "inferno",
@@ -10222,16 +10232,6 @@
   {
     "scheme": "inferno",
     "lang": "English (English)",
-    "term": "ivory",
-    "cnt": 1,
-    "pTC": 0.003703703703703704,
-    "binNum": 9,
-    "rgb": "rgb(246, 215, 70)",
-    "pCT": 1
-  },
-  {
-    "scheme": "inferno",
-    "lang": "English (English)",
     "term": "golden",
     "cnt": 1,
     "pTC": 0.003703703703703704,
@@ -10245,6 +10245,16 @@
     "term": "pastelyellow",
     "cnt": 4,
     "pTC": 0.014814814814814815,
+    "binNum": 9,
+    "rgb": "rgb(246, 215, 70)",
+    "pCT": 1
+  },
+  {
+    "scheme": "inferno",
+    "lang": "English (English)",
+    "term": "ivory",
+    "cnt": 1,
+    "pTC": 0.003703703703703704,
     "binNum": 9,
     "rgb": "rgb(246, 215, 70)",
     "pCT": 1
@@ -10897,7 +10907,7 @@
     "pTC": 0.006211180124223602,
     "binNum": 0,
     "rgb": "rgb(13, 8, 135)",
-    "pCT": 0.0034965034965034965
+    "pCT": 0.0034602076124567475
   },
   {
     "scheme": "plasma",
@@ -10907,7 +10917,7 @@
     "pTC": 0.006211180124223602,
     "binNum": 0,
     "rgb": "rgb(13, 8, 135)",
-    "pCT": 0.011235955056179775
+    "pCT": 0.01098901098901099
   },
   {
     "scheme": "plasma",
@@ -10947,7 +10957,7 @@
     "pTC": 0.006211180124223602,
     "binNum": 0,
     "rgb": "rgb(13, 8, 135)",
-    "pCT": 0.02127659574468085
+    "pCT": 0.020833333333333332
   },
   {
     "scheme": "plasma",
@@ -11012,9 +11022,9 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "mediumblue",
-    "cnt": 1,
-    "pTC": 0.006211180124223602,
+    "term": "electricblue",
+    "cnt": 2,
+    "pTC": 0.012422360248447204,
     "binNum": 0,
     "rgb": "rgb(13, 8, 135)",
     "pCT": 1
@@ -11022,9 +11032,9 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "electricblue",
-    "cnt": 2,
-    "pTC": 0.012422360248447204,
+    "term": "mediumblue",
+    "cnt": 1,
+    "pTC": 0.006211180124223602,
     "binNum": 0,
     "rgb": "rgb(13, 8, 135)",
     "pCT": 1
@@ -11117,7 +11127,7 @@
     "pTC": 0.17721518987341772,
     "binNum": 1,
     "rgb": "rgb(65, 4, 157)",
-    "pCT": 0.0979020979020979
+    "pCT": 0.09688581314878893
   },
   {
     "scheme": "plasma",
@@ -11147,7 +11157,7 @@
     "pTC": 0.056962025316455694,
     "binNum": 1,
     "rgb": "rgb(65, 4, 157)",
-    "pCT": 0.23076923076923078
+    "pCT": 0.225
   },
   {
     "scheme": "plasma",
@@ -11177,7 +11187,7 @@
     "pTC": 0.08227848101265822,
     "binNum": 1,
     "rgb": "rgb(65, 4, 157)",
-    "pCT": 0.2765957446808511
+    "pCT": 0.2708333333333333
   },
   {
     "scheme": "plasma",
@@ -11333,18 +11343,18 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "purple",
-    "cnt": 81,
-    "pTC": 0.5827338129496403,
+    "cnt": 82,
+    "pTC": 0.5857142857142857,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
-    "pCT": 0.28321678321678323
+    "pCT": 0.2837370242214533
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "darkblue",
     "cnt": 1,
-    "pTC": 0.007194244604316547,
+    "pTC": 0.007142857142857143,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 0.018518518518518517
@@ -11354,27 +11364,27 @@
     "lang": "English (English)",
     "term": "violet",
     "cnt": 9,
-    "pTC": 0.06474820143884892,
+    "pTC": 0.06428571428571428,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
-    "pCT": 0.23076923076923078
+    "pCT": 0.225
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "darkpurple",
     "cnt": 19,
-    "pTC": 0.1366906474820144,
+    "pTC": 0.1357142857142857,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
-    "pCT": 0.40425531914893614
+    "pCT": 0.3958333333333333
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "lightpurple",
     "cnt": 1,
-    "pTC": 0.007194244604316547,
+    "pTC": 0.007142857142857143,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 0.3333333333333333
@@ -11384,7 +11394,7 @@
     "lang": "English (English)",
     "term": "indigo",
     "cnt": 6,
-    "pTC": 0.04316546762589928,
+    "pTC": 0.04285714285714286,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 0.18181818181818182
@@ -11394,7 +11404,7 @@
     "lang": "English (English)",
     "term": "mauve",
     "cnt": 1,
-    "pTC": 0.007194244604316547,
+    "pTC": 0.007142857142857143,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 0.125
@@ -11404,7 +11414,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 1,
-    "pTC": 0.007194244604316547,
+    "pTC": 0.007142857142857143,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 0.125
@@ -11414,7 +11424,7 @@
     "lang": "English (English)",
     "term": "brightpurple",
     "cnt": 1,
-    "pTC": 0.007194244604316547,
+    "pTC": 0.007142857142857143,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 0.25
@@ -11424,7 +11434,7 @@
     "lang": "English (English)",
     "term": "royalpurple",
     "cnt": 7,
-    "pTC": 0.050359712230215826,
+    "pTC": 0.05,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 0.3684210526315789
@@ -11434,7 +11444,7 @@
     "lang": "English (English)",
     "term": "eggplant",
     "cnt": 2,
-    "pTC": 0.014388489208633094,
+    "pTC": 0.014285714285714285,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 0.5
@@ -11442,19 +11452,9 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "purplepink",
-    "cnt": 1,
-    "pTC": 0.007194244604316547,
-    "binNum": 2,
-    "rgb": "rgb(106, 0, 168)",
-    "pCT": 0.3333333333333333
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "deeppurple",
     "cnt": 4,
-    "pTC": 0.02877697841726619,
+    "pTC": 0.02857142857142857,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 0.4
@@ -11462,9 +11462,19 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
+    "term": "purplepink",
+    "cnt": 1,
+    "pTC": 0.007142857142857143,
+    "binNum": 2,
+    "rgb": "rgb(106, 0, 168)",
+    "pCT": 0.3333333333333333
+  },
+  {
+    "scheme": "plasma",
+    "lang": "English (English)",
     "term": "plumpurple",
     "cnt": 1,
-    "pTC": 0.007194244604316547,
+    "pTC": 0.007142857142857143,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 1
@@ -11474,7 +11484,7 @@
     "lang": "English (English)",
     "term": "purplishblue",
     "cnt": 1,
-    "pTC": 0.007194244604316547,
+    "pTC": 0.007142857142857143,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 1
@@ -11484,7 +11494,7 @@
     "lang": "English (English)",
     "term": "violetblue",
     "cnt": 1,
-    "pTC": 0.007194244604316547,
+    "pTC": 0.007142857142857143,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 1
@@ -11494,7 +11504,7 @@
     "lang": "English (English)",
     "term": "deepviolet",
     "cnt": 1,
-    "pTC": 0.007194244604316547,
+    "pTC": 0.007142857142857143,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 0.3333333333333333
@@ -11504,7 +11514,7 @@
     "lang": "English (English)",
     "term": "grapepurple",
     "cnt": 1,
-    "pTC": 0.007194244604316547,
+    "pTC": 0.007142857142857143,
     "binNum": 2,
     "rgb": "rgb(106, 0, 168)",
     "pCT": 1
@@ -11513,28 +11523,28 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "purple",
-    "cnt": 144,
-    "pTC": 0.6824644549763034,
+    "cnt": 145,
+    "pTC": 0.677570093457944,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
-    "pCT": 0.5034965034965035
+    "pCT": 0.5017301038062284
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "orange",
     "cnt": 2,
-    "pTC": 0.009478672985781991,
+    "pTC": 0.009345794392523364,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
-    "pCT": 0.002081165452653486
+    "pCT": 0.002074688796680498
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "magenta",
     "cnt": 4,
-    "pTC": 0.018957345971563982,
+    "pTC": 0.018691588785046728,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.05714285714285714
@@ -11543,18 +11553,18 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "violet",
-    "cnt": 15,
-    "pTC": 0.07109004739336493,
+    "cnt": 16,
+    "pTC": 0.07476635514018691,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
-    "pCT": 0.38461538461538464
+    "pCT": 0.4
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "fuchsia",
     "cnt": 2,
-    "pTC": 0.009478672985781991,
+    "pTC": 0.009345794392523364,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.06060606060606061
@@ -11564,7 +11574,7 @@
     "lang": "English (English)",
     "term": "lavender",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.5
@@ -11574,7 +11584,7 @@
     "lang": "English (English)",
     "term": "navyblue",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.03571428571428571
@@ -11583,18 +11593,18 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "darkpurple",
-    "cnt": 13,
-    "pTC": 0.061611374407582936,
+    "cnt": 14,
+    "pTC": 0.06542056074766354,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
-    "pCT": 0.2765957446808511
+    "pCT": 0.2916666666666667
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "lightpurple",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.3333333333333333
@@ -11604,7 +11614,7 @@
     "lang": "English (English)",
     "term": "indigo",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.030303030303030304
@@ -11614,7 +11624,7 @@
     "lang": "English (English)",
     "term": "mauve",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.125
@@ -11624,7 +11634,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 5,
-    "pTC": 0.023696682464454975,
+    "pTC": 0.02336448598130841,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.625
@@ -11634,7 +11644,7 @@
     "lang": "English (English)",
     "term": "brightpurple",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.25
@@ -11644,7 +11654,7 @@
     "lang": "English (English)",
     "term": "royalpurple",
     "cnt": 4,
-    "pTC": 0.018957345971563982,
+    "pTC": 0.018691588785046728,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.21052631578947367
@@ -11654,7 +11664,7 @@
     "lang": "English (English)",
     "term": "neonpurple",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.5
@@ -11664,7 +11674,7 @@
     "lang": "English (English)",
     "term": "eggplant",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.25
@@ -11674,7 +11684,7 @@
     "lang": "English (English)",
     "term": "deeppurple",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.1
@@ -11684,7 +11694,7 @@
     "lang": "English (English)",
     "term": "darkmagenta",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.125
@@ -11694,7 +11704,7 @@
     "lang": "English (English)",
     "term": "grape",
     "cnt": 2,
-    "pTC": 0.009478672985781991,
+    "pTC": 0.009345794392523364,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.6666666666666666
@@ -11704,7 +11714,7 @@
     "lang": "English (English)",
     "term": "redviolet",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.3333333333333333
@@ -11714,7 +11724,7 @@
     "lang": "English (English)",
     "term": "reddishpurple",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.3333333333333333
@@ -11724,17 +11734,7 @@
     "lang": "English (English)",
     "term": "aubergine",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
-    "binNum": 3,
-    "rgb": "rgb(143, 13, 164)",
-    "pCT": 1
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
-    "term": "mediumpurple",
-    "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 1
@@ -11744,7 +11744,7 @@
     "lang": "English (English)",
     "term": "purplered",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.5
@@ -11752,9 +11752,19 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
+    "term": "mediumpurple",
+    "cnt": 1,
+    "pTC": 0.004672897196261682,
+    "binNum": 3,
+    "rgb": "rgb(143, 13, 164)",
+    "pCT": 1
+  },
+  {
+    "scheme": "plasma",
+    "lang": "English (English)",
     "term": "eggplantpurple",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 1
@@ -11764,17 +11774,7 @@
     "lang": "English (English)",
     "term": "hotpurple",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
-    "binNum": 3,
-    "rgb": "rgb(143, 13, 164)",
-    "pCT": 1
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
-    "term": "darkindigo",
-    "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 1
@@ -11784,7 +11784,17 @@
     "lang": "English (English)",
     "term": "velvet",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
+    "binNum": 3,
+    "rgb": "rgb(143, 13, 164)",
+    "pCT": 1
+  },
+  {
+    "scheme": "plasma",
+    "lang": "English (English)",
+    "term": "darkindigo",
+    "cnt": 1,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 1
@@ -11794,7 +11804,7 @@
     "lang": "English (English)",
     "term": "deepviolet",
     "cnt": 1,
-    "pTC": 0.004739336492890996,
+    "pTC": 0.004672897196261682,
     "binNum": 3,
     "rgb": "rgb(143, 13, 164)",
     "pCT": 0.3333333333333333
@@ -11804,7 +11814,7 @@
     "lang": "English (English)",
     "term": "blue",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.013333333333333334
@@ -11813,28 +11823,28 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "purple",
-    "cnt": 28,
-    "pTC": 0.14,
+    "cnt": 29,
+    "pTC": 0.14427860696517414,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
-    "pCT": 0.0979020979020979
+    "pCT": 0.10034602076124567
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "pink",
     "cnt": 25,
-    "pTC": 0.125,
+    "pTC": 0.12437810945273632,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
-    "pCT": 0.2808988764044944
+    "pCT": 0.27472527472527475
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "magenta",
     "cnt": 59,
-    "pTC": 0.295,
+    "pTC": 0.2935323383084577,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.8428571428571429
@@ -11844,17 +11854,17 @@
     "lang": "English (English)",
     "term": "violet",
     "cnt": 6,
-    "pTC": 0.03,
+    "pTC": 0.029850746268656716,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
-    "pCT": 0.15384615384615385
+    "pCT": 0.15
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "gray",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -11864,7 +11874,7 @@
     "lang": "English (English)",
     "term": "fuchsia",
     "cnt": 27,
-    "pTC": 0.135,
+    "pTC": 0.13432835820895522,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.8181818181818182
@@ -11874,7 +11884,7 @@
     "lang": "English (English)",
     "term": "hotpink",
     "cnt": 5,
-    "pTC": 0.025,
+    "pTC": 0.024875621890547265,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -11884,7 +11894,7 @@
     "lang": "English (English)",
     "term": "lavender",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -11894,7 +11904,7 @@
     "lang": "English (English)",
     "term": "maroon",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.14285714285714285
@@ -11904,17 +11914,17 @@
     "lang": "English (English)",
     "term": "darkpurple",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
-    "pCT": 0.02127659574468085
+    "pCT": 0.020833333333333332
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "lightpurple",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.3333333333333333
@@ -11924,7 +11934,7 @@
     "lang": "English (English)",
     "term": "indigo",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.030303030303030304
@@ -11934,7 +11944,7 @@
     "lang": "English (English)",
     "term": "mauve",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009950248756218905,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.25
@@ -11944,7 +11954,7 @@
     "lang": "English (English)",
     "term": "darkpink",
     "cnt": 10,
-    "pTC": 0.05,
+    "pTC": 0.04975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.29411764705882354
@@ -11954,7 +11964,7 @@
     "lang": "English (English)",
     "term": "burgundy",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -11964,7 +11974,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.125
@@ -11974,7 +11984,7 @@
     "lang": "English (English)",
     "term": "brightpurple",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009950248756218905,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -11984,7 +11994,7 @@
     "lang": "English (English)",
     "term": "neonpurple",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -11994,7 +12004,7 @@
     "lang": "English (English)",
     "term": "brightpink",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009950248756218905,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.6666666666666666
@@ -12004,7 +12014,7 @@
     "lang": "English (English)",
     "term": "pinkpurple",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.3333333333333333
@@ -12012,19 +12022,9 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "purplepink",
-    "cnt": 2,
-    "pTC": 0.01,
-    "binNum": 4,
-    "rgb": "rgb(177, 42, 144)",
-    "pCT": 0.6666666666666666
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "deeppurple",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.1
@@ -12032,9 +12032,19 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
+    "term": "purplepink",
+    "cnt": 2,
+    "pTC": 0.009950248756218905,
+    "binNum": 4,
+    "rgb": "rgb(177, 42, 144)",
+    "pCT": 0.6666666666666666
+  },
+  {
+    "scheme": "plasma",
+    "lang": "English (English)",
     "term": "redpink",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -12044,7 +12054,7 @@
     "lang": "English (English)",
     "term": "raspberry",
     "cnt": 3,
-    "pTC": 0.015,
+    "pTC": 0.014925373134328358,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.75
@@ -12054,7 +12064,7 @@
     "lang": "English (English)",
     "term": "darkmagenta",
     "cnt": 7,
-    "pTC": 0.035,
+    "pTC": 0.03482587064676617,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.875
@@ -12064,7 +12074,7 @@
     "lang": "English (English)",
     "term": "orchid",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -12074,7 +12084,7 @@
     "lang": "English (English)",
     "term": "pinkishpurple",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -12084,7 +12094,7 @@
     "lang": "English (English)",
     "term": "pastelpink",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -12094,7 +12104,7 @@
     "lang": "English (English)",
     "term": "redviolet",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.3333333333333333
@@ -12104,7 +12114,7 @@
     "lang": "English (English)",
     "term": "reddishpurple",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.3333333333333333
@@ -12114,7 +12124,7 @@
     "lang": "English (English)",
     "term": "purplered",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 0.5
@@ -12124,7 +12134,7 @@
     "lang": "English (English)",
     "term": "darkfuchsia",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009950248756218905,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -12134,7 +12144,7 @@
     "lang": "English (English)",
     "term": "iris",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.004975124378109453,
     "binNum": 4,
     "rgb": "rgb(177, 42, 144)",
     "pCT": 1
@@ -12144,27 +12154,27 @@
     "lang": "English (English)",
     "term": "purple",
     "cnt": 3,
-    "pTC": 0.02127659574468085,
+    "pTC": 0.02112676056338028,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
-    "pCT": 0.01048951048951049
+    "pCT": 0.010380622837370242
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "pink",
-    "cnt": 33,
-    "pTC": 0.23404255319148937,
+    "cnt": 34,
+    "pTC": 0.23943661971830985,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
-    "pCT": 0.3707865168539326
+    "pCT": 0.37362637362637363
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "red",
     "cnt": 13,
-    "pTC": 0.09219858156028368,
+    "pTC": 0.09154929577464789,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.3023255813953488
@@ -12174,7 +12184,7 @@
     "lang": "English (English)",
     "term": "magenta",
     "cnt": 6,
-    "pTC": 0.0425531914893617,
+    "pTC": 0.04225352112676056,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.08571428571428572
@@ -12184,7 +12194,7 @@
     "lang": "English (English)",
     "term": "fuchsia",
     "cnt": 3,
-    "pTC": 0.02127659574468085,
+    "pTC": 0.02112676056338028,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.09090909090909091
@@ -12194,7 +12204,7 @@
     "lang": "English (English)",
     "term": "maroon",
     "cnt": 4,
-    "pTC": 0.028368794326241134,
+    "pTC": 0.028169014084507043,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.5714285714285714
@@ -12204,7 +12214,7 @@
     "lang": "English (English)",
     "term": "mauve",
     "cnt": 3,
-    "pTC": 0.02127659574468085,
+    "pTC": 0.02112676056338028,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.375
@@ -12214,7 +12224,7 @@
     "lang": "English (English)",
     "term": "darkpink",
     "cnt": 22,
-    "pTC": 0.15602836879432624,
+    "pTC": 0.15492957746478872,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.6470588235294118
@@ -12224,7 +12234,7 @@
     "lang": "English (English)",
     "term": "peach",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.05555555555555555
@@ -12234,17 +12244,17 @@
     "lang": "English (English)",
     "term": "salmon",
     "cnt": 5,
-    "pTC": 0.03546099290780142,
+    "pTC": 0.035211267605633804,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
-    "pCT": 0.125
+    "pCT": 0.12195121951219512
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "chartreuse",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.3333333333333333
@@ -12254,7 +12264,7 @@
     "lang": "English (English)",
     "term": "rose",
     "cnt": 10,
-    "pTC": 0.07092198581560284,
+    "pTC": 0.07042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.8333333333333334
@@ -12264,7 +12274,7 @@
     "lang": "English (English)",
     "term": "lightpink",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.5
@@ -12274,7 +12284,7 @@
     "lang": "English (English)",
     "term": "plum",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.125
@@ -12284,7 +12294,7 @@
     "lang": "English (English)",
     "term": "coral",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.03571428571428571
@@ -12294,7 +12304,7 @@
     "lang": "English (English)",
     "term": "brightpink",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.3333333333333333
@@ -12304,7 +12314,7 @@
     "lang": "English (English)",
     "term": "brickred",
     "cnt": 2,
-    "pTC": 0.014184397163120567,
+    "pTC": 0.014084507042253521,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.4
@@ -12314,7 +12324,7 @@
     "lang": "English (English)",
     "term": "babypink",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12324,7 +12334,7 @@
     "lang": "English (English)",
     "term": "pinkpurple",
     "cnt": 2,
-    "pTC": 0.014184397163120567,
+    "pTC": 0.014084507042253521,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.6666666666666666
@@ -12334,7 +12344,7 @@
     "lang": "English (English)",
     "term": "redpink",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.5
@@ -12344,7 +12354,7 @@
     "lang": "English (English)",
     "term": "dustyrose",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.3333333333333333
@@ -12354,7 +12364,7 @@
     "lang": "English (English)",
     "term": "lightred",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.16666666666666666
@@ -12362,9 +12372,9 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "pinkred",
+    "term": "palepink",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12372,9 +12382,9 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "palepink",
+    "term": "pinkred",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12384,7 +12394,7 @@
     "lang": "English (English)",
     "term": "brick",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.25
@@ -12394,7 +12404,7 @@
     "lang": "English (English)",
     "term": "dustypink",
     "cnt": 2,
-    "pTC": 0.014184397163120567,
+    "pTC": 0.014084507042253521,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12404,7 +12414,7 @@
     "lang": "English (English)",
     "term": "reddishpink",
     "cnt": 3,
-    "pTC": 0.02127659574468085,
+    "pTC": 0.02112676056338028,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.6
@@ -12414,7 +12424,7 @@
     "lang": "English (English)",
     "term": "redviolet",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.3333333333333333
@@ -12424,7 +12434,7 @@
     "lang": "English (English)",
     "term": "salmonpink",
     "cnt": 2,
-    "pTC": 0.014184397163120567,
+    "pTC": 0.014084507042253521,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.2857142857142857
@@ -12434,7 +12444,7 @@
     "lang": "English (English)",
     "term": "cherryred",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12444,7 +12454,7 @@
     "lang": "English (English)",
     "term": "berry",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12454,7 +12464,7 @@
     "lang": "English (English)",
     "term": "reddishpurple",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.3333333333333333
@@ -12464,7 +12474,7 @@
     "lang": "English (English)",
     "term": "blushpink",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.3333333333333333
@@ -12474,7 +12484,7 @@
     "lang": "English (English)",
     "term": "darkmaroon",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12484,7 +12494,7 @@
     "lang": "English (English)",
     "term": "mulberry",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12494,7 +12504,7 @@
     "lang": "English (English)",
     "term": "strawberry",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12504,7 +12514,7 @@
     "lang": "English (English)",
     "term": "auburn",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12514,7 +12524,7 @@
     "lang": "English (English)",
     "term": "rouge",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.3333333333333333
@@ -12524,7 +12534,7 @@
     "lang": "English (English)",
     "term": "darksalmon",
     "cnt": 2,
-    "pTC": 0.014184397163120567,
+    "pTC": 0.014084507042253521,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 0.5
@@ -12534,7 +12544,7 @@
     "lang": "English (English)",
     "term": "palered",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12544,7 +12554,7 @@
     "lang": "English (English)",
     "term": "duskyrose",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12554,7 +12564,7 @@
     "lang": "English (English)",
     "term": "lightmaroon",
     "cnt": 1,
-    "pTC": 0.0070921985815602835,
+    "pTC": 0.007042253521126761,
     "binNum": 5,
     "rgb": "rgb(204, 71, 120)",
     "pCT": 1
@@ -12564,27 +12574,27 @@
     "lang": "English (English)",
     "term": "purple",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
-    "pCT": 0.0034965034965034965
+    "pCT": 0.0034602076124567475
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "pink",
-    "cnt": 30,
-    "pTC": 0.15,
+    "cnt": 31,
+    "pTC": 0.15346534653465346,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
-    "pCT": 0.33707865168539325
+    "pCT": 0.34065934065934067
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "red",
     "cnt": 28,
-    "pTC": 0.14,
+    "pTC": 0.13861386138613863,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.6511627906976745
@@ -12594,17 +12604,17 @@
     "lang": "English (English)",
     "term": "orange",
     "cnt": 6,
-    "pTC": 0.03,
+    "pTC": 0.0297029702970297,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
-    "pCT": 0.006243496357960458
+    "pCT": 0.006224066390041493
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "brown",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.25
@@ -12614,7 +12624,7 @@
     "lang": "English (English)",
     "term": "fuchsia",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.030303030303030304
@@ -12624,7 +12634,7 @@
     "lang": "English (English)",
     "term": "maroon",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.2857142857142857
@@ -12634,7 +12644,7 @@
     "lang": "English (English)",
     "term": "mauve",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.125
@@ -12644,7 +12654,7 @@
     "lang": "English (English)",
     "term": "darkpink",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.058823529411764705
@@ -12654,7 +12664,7 @@
     "lang": "English (English)",
     "term": "peach",
     "cnt": 7,
-    "pTC": 0.035,
+    "pTC": 0.034653465346534656,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.3888888888888889
@@ -12664,7 +12674,7 @@
     "lang": "English (English)",
     "term": "burgundy",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.5
@@ -12673,18 +12683,18 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "salmon",
-    "cnt": 30,
-    "pTC": 0.15,
+    "cnt": 31,
+    "pTC": 0.15346534653465346,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
-    "pCT": 0.75
+    "pCT": 0.7560975609756098
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "burntorange",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.029411764705882353
@@ -12694,7 +12704,7 @@
     "lang": "English (English)",
     "term": "rose",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.16666666666666666
@@ -12704,7 +12714,7 @@
     "lang": "English (English)",
     "term": "lightpink",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.5
@@ -12714,7 +12724,7 @@
     "lang": "English (English)",
     "term": "redorange",
     "cnt": 3,
-    "pTC": 0.015,
+    "pTC": 0.01485148514851485,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.5
@@ -12724,7 +12734,7 @@
     "lang": "English (English)",
     "term": "darkorange",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.06666666666666667
@@ -12734,7 +12744,7 @@
     "lang": "English (English)",
     "term": "coral",
     "cnt": 25,
-    "pTC": 0.125,
+    "pTC": 0.12376237623762376,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.8928571428571429
@@ -12744,7 +12754,7 @@
     "lang": "English (English)",
     "term": "brickred",
     "cnt": 3,
-    "pTC": 0.015,
+    "pTC": 0.01485148514851485,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.6
@@ -12754,7 +12764,7 @@
     "lang": "English (English)",
     "term": "scarlet",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -12764,7 +12774,7 @@
     "lang": "English (English)",
     "term": "rust",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.2
@@ -12774,7 +12784,7 @@
     "lang": "English (English)",
     "term": "orangered",
     "cnt": 3,
-    "pTC": 0.015,
+    "pTC": 0.01485148514851485,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -12784,7 +12794,7 @@
     "lang": "English (English)",
     "term": "raspberry",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.25
@@ -12794,7 +12804,7 @@
     "lang": "English (English)",
     "term": "rosepink",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -12804,7 +12814,7 @@
     "lang": "English (English)",
     "term": "dustyrose",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.6666666666666666
@@ -12814,7 +12824,7 @@
     "lang": "English (English)",
     "term": "lightred",
     "cnt": 5,
-    "pTC": 0.025,
+    "pTC": 0.024752475247524754,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.8333333333333334
@@ -12824,7 +12834,7 @@
     "lang": "English (English)",
     "term": "redbrown",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -12834,7 +12844,7 @@
     "lang": "English (English)",
     "term": "brick",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.5
@@ -12844,7 +12854,7 @@
     "lang": "English (English)",
     "term": "reddishpink",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.4
@@ -12854,7 +12864,7 @@
     "lang": "English (English)",
     "term": "blush",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -12864,7 +12874,7 @@
     "lang": "English (English)",
     "term": "pastelpink",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.5
@@ -12874,7 +12884,7 @@
     "lang": "English (English)",
     "term": "terracotta",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.6666666666666666
@@ -12884,7 +12894,7 @@
     "lang": "English (English)",
     "term": "orangebrown",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.5
@@ -12894,7 +12904,7 @@
     "lang": "English (English)",
     "term": "salmonpink",
     "cnt": 5,
-    "pTC": 0.025,
+    "pTC": 0.024752475247524754,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.7142857142857143
@@ -12904,7 +12914,7 @@
     "lang": "English (English)",
     "term": "vermillion",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -12914,7 +12924,7 @@
     "lang": "English (English)",
     "term": "reddishorange",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.5
@@ -12924,7 +12934,7 @@
     "lang": "English (English)",
     "term": "cerise",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -12934,7 +12944,7 @@
     "lang": "English (English)",
     "term": "blushpink",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.6666666666666666
@@ -12944,7 +12954,7 @@
     "lang": "English (English)",
     "term": "duskypink",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -12954,7 +12964,7 @@
     "lang": "English (English)",
     "term": "barbiepink",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -12964,7 +12974,7 @@
     "lang": "English (English)",
     "term": "rosered",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -12974,7 +12984,7 @@
     "lang": "English (English)",
     "term": "brownred",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -12984,7 +12994,7 @@
     "lang": "English (English)",
     "term": "rouge",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.6666666666666666
@@ -12994,7 +13004,7 @@
     "lang": "English (English)",
     "term": "darksalmon",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.5
@@ -13004,7 +13014,7 @@
     "lang": "English (English)",
     "term": "dullorange",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 0.2
@@ -13014,7 +13024,7 @@
     "lang": "English (English)",
     "term": "coralpink",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -13024,7 +13034,7 @@
     "lang": "English (English)",
     "term": "melon",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -13034,7 +13044,7 @@
     "lang": "English (English)",
     "term": "firetruckred",
     "cnt": 1,
-    "pTC": 0.005,
+    "pTC": 0.0049504950495049506,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -13044,7 +13054,7 @@
     "lang": "English (English)",
     "term": "darkcoral",
     "cnt": 3,
-    "pTC": 0.015,
+    "pTC": 0.01485148514851485,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -13054,7 +13064,7 @@
     "lang": "English (English)",
     "term": "peachpink",
     "cnt": 2,
-    "pTC": 0.01,
+    "pTC": 0.009900990099009901,
     "binNum": 6,
     "rgb": "rgb(225, 100, 98)",
     "pCT": 1
@@ -13064,7 +13074,7 @@
     "lang": "English (English)",
     "term": "red",
     "cnt": 1,
-    "pTC": 0.0026954177897574125,
+    "pTC": 0.002680965147453083,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.023255813953488372
@@ -13073,18 +13083,18 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "orange",
-    "cnt": 294,
-    "pTC": 0.7924528301886793,
+    "cnt": 296,
+    "pTC": 0.7935656836461126,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
-    "pCT": 0.3059313215400624
+    "pCT": 0.3070539419087137
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "brown",
     "cnt": 5,
-    "pTC": 0.013477088948787063,
+    "pTC": 0.013404825737265416,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.625
@@ -13094,7 +13104,7 @@
     "lang": "English (English)",
     "term": "tan",
     "cnt": 3,
-    "pTC": 0.008086253369272238,
+    "pTC": 0.00804289544235925,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.23076923076923078
@@ -13104,7 +13114,7 @@
     "lang": "English (English)",
     "term": "peach",
     "cnt": 1,
-    "pTC": 0.0026954177897574125,
+    "pTC": 0.002680965147453083,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.05555555555555555
@@ -13114,7 +13124,7 @@
     "lang": "English (English)",
     "term": "mustard",
     "cnt": 1,
-    "pTC": 0.0026954177897574125,
+    "pTC": 0.002680965147453083,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.01639344262295082
@@ -13124,17 +13134,17 @@
     "lang": "English (English)",
     "term": "salmon",
     "cnt": 3,
-    "pTC": 0.008086253369272238,
+    "pTC": 0.00804289544235925,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
-    "pCT": 0.075
+    "pCT": 0.07317073170731707
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "burntorange",
     "cnt": 19,
-    "pTC": 0.05121293800539083,
+    "pTC": 0.05093833780160858,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.5588235294117647
@@ -13144,7 +13154,7 @@
     "lang": "English (English)",
     "term": "redorange",
     "cnt": 2,
-    "pTC": 0.005390835579514825,
+    "pTC": 0.005361930294906166,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.3333333333333333
@@ -13154,7 +13164,7 @@
     "lang": "English (English)",
     "term": "darkorange",
     "cnt": 9,
-    "pTC": 0.02425876010781671,
+    "pTC": 0.024128686327077747,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.6
@@ -13164,7 +13174,7 @@
     "lang": "English (English)",
     "term": "coral",
     "cnt": 1,
-    "pTC": 0.0026954177897574125,
+    "pTC": 0.002680965147453083,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.03571428571428571
@@ -13174,7 +13184,7 @@
     "lang": "English (English)",
     "term": "yelloworange",
     "cnt": 1,
-    "pTC": 0.0026954177897574125,
+    "pTC": 0.002680965147453083,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.013333333333333334
@@ -13184,7 +13194,7 @@
     "lang": "English (English)",
     "term": "lightorange",
     "cnt": 4,
-    "pTC": 0.01078167115902965,
+    "pTC": 0.010723860589812333,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.05714285714285714
@@ -13194,7 +13204,7 @@
     "lang": "English (English)",
     "term": "rust",
     "cnt": 2,
-    "pTC": 0.005390835579514825,
+    "pTC": 0.005361930294906166,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.4
@@ -13204,7 +13214,7 @@
     "lang": "English (English)",
     "term": "tangerine",
     "cnt": 4,
-    "pTC": 0.01078167115902965,
+    "pTC": 0.010723860589812333,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.125
@@ -13214,7 +13224,7 @@
     "lang": "English (English)",
     "term": "sienna",
     "cnt": 2,
-    "pTC": 0.005390835579514825,
+    "pTC": 0.005361930294906166,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.6666666666666666
@@ -13224,7 +13234,7 @@
     "lang": "English (English)",
     "term": "burntsienna",
     "cnt": 3,
-    "pTC": 0.008086253369272238,
+    "pTC": 0.00804289544235925,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 1
@@ -13234,7 +13244,7 @@
     "lang": "English (English)",
     "term": "pumpkin",
     "cnt": 2,
-    "pTC": 0.005390835579514825,
+    "pTC": 0.005361930294906166,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.15384615384615385
@@ -13244,7 +13254,7 @@
     "lang": "English (English)",
     "term": "bloodorange",
     "cnt": 1,
-    "pTC": 0.0026954177897574125,
+    "pTC": 0.002680965147453083,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 1
@@ -13254,7 +13264,7 @@
     "lang": "English (English)",
     "term": "umber",
     "cnt": 1,
-    "pTC": 0.0026954177897574125,
+    "pTC": 0.002680965147453083,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 1
@@ -13264,7 +13274,7 @@
     "lang": "English (English)",
     "term": "brightorange",
     "cnt": 2,
-    "pTC": 0.005390835579514825,
+    "pTC": 0.005361930294906166,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.5
@@ -13274,7 +13284,7 @@
     "lang": "English (English)",
     "term": "pumpkinorange",
     "cnt": 2,
-    "pTC": 0.005390835579514825,
+    "pTC": 0.005361930294906166,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.4
@@ -13284,7 +13294,7 @@
     "lang": "English (English)",
     "term": "copper",
     "cnt": 1,
-    "pTC": 0.0026954177897574125,
+    "pTC": 0.002680965147453083,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 1
@@ -13294,7 +13304,7 @@
     "lang": "English (English)",
     "term": "skin",
     "cnt": 1,
-    "pTC": 0.0026954177897574125,
+    "pTC": 0.002680965147453083,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 1
@@ -13304,7 +13314,7 @@
     "lang": "English (English)",
     "term": "paleorange",
     "cnt": 1,
-    "pTC": 0.0026954177897574125,
+    "pTC": 0.002680965147453083,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.25
@@ -13314,7 +13324,7 @@
     "lang": "English (English)",
     "term": "dullorange",
     "cnt": 3,
-    "pTC": 0.008086253369272238,
+    "pTC": 0.00804289544235925,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.6
@@ -13324,7 +13334,7 @@
     "lang": "English (English)",
     "term": "pastelorange",
     "cnt": 2,
-    "pTC": 0.005390835579514825,
+    "pTC": 0.005361930294906166,
     "binNum": 7,
     "rgb": "rgb(242, 132, 75)",
     "pCT": 0.6666666666666666
@@ -13334,7 +13344,7 @@
     "lang": "English (English)",
     "term": "red",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.023255813953488372
@@ -13343,28 +13353,28 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "orange",
-    "cnt": 649,
-    "pTC": 0.6294859359844811,
+    "cnt": 650,
+    "pTC": 0.6298449612403101,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
-    "pCT": 0.6753381893860562
+    "pCT": 0.6742738589211619
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "yellow",
     "cnt": 34,
-    "pTC": 0.03297769156159069,
+    "pTC": 0.03294573643410853,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
-    "pCT": 0.02176696542893726
+    "pCT": 0.021753039027511197
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "brown",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.125
@@ -13374,7 +13384,7 @@
     "lang": "English (English)",
     "term": "tan",
     "cnt": 5,
-    "pTC": 0.004849660523763337,
+    "pTC": 0.0048449612403100775,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.38461538461538464
@@ -13384,7 +13394,7 @@
     "lang": "English (English)",
     "term": "beige",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.2
@@ -13394,7 +13404,7 @@
     "lang": "English (English)",
     "term": "gold",
     "cnt": 27,
-    "pTC": 0.026188166828322017,
+    "pTC": 0.02616279069767442,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.36486486486486486
@@ -13404,7 +13414,7 @@
     "lang": "English (English)",
     "term": "peach",
     "cnt": 8,
-    "pTC": 0.007759456838021339,
+    "pTC": 0.007751937984496124,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.4444444444444444
@@ -13414,7 +13424,7 @@
     "lang": "English (English)",
     "term": "mustard",
     "cnt": 17,
-    "pTC": 0.016488845780795344,
+    "pTC": 0.016472868217054265,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.2786885245901639
@@ -13424,17 +13434,17 @@
     "lang": "English (English)",
     "term": "salmon",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
-    "pCT": 0.05
+    "pCT": 0.04878048780487805
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "burntorange",
     "cnt": 14,
-    "pTC": 0.013579049466537343,
+    "pTC": 0.013565891472868217,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.4117647058823529
@@ -13444,7 +13454,7 @@
     "lang": "English (English)",
     "term": "redorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.16666666666666666
@@ -13454,7 +13464,7 @@
     "lang": "English (English)",
     "term": "mustardyellow",
     "cnt": 5,
-    "pTC": 0.004849660523763337,
+    "pTC": 0.0048449612403100775,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.12195121951219512
@@ -13464,7 +13474,7 @@
     "lang": "English (English)",
     "term": "darkorange",
     "cnt": 5,
-    "pTC": 0.004849660523763337,
+    "pTC": 0.0048449612403100775,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.3333333333333333
@@ -13474,7 +13484,7 @@
     "lang": "English (English)",
     "term": "coral",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.03571428571428571
@@ -13484,7 +13494,7 @@
     "lang": "English (English)",
     "term": "yelloworange",
     "cnt": 64,
-    "pTC": 0.06207565470417071,
+    "pTC": 0.06201550387596899,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.8533333333333334
@@ -13494,7 +13504,7 @@
     "lang": "English (English)",
     "term": "lightorange",
     "cnt": 65,
-    "pTC": 0.06304558680892337,
+    "pTC": 0.06298449612403101,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.9285714285714286
@@ -13504,7 +13514,7 @@
     "lang": "English (English)",
     "term": "darkyellow",
     "cnt": 7,
-    "pTC": 0.006789524733268671,
+    "pTC": 0.006782945736434108,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.2916666666666667
@@ -13514,7 +13524,7 @@
     "lang": "English (English)",
     "term": "goldenrod",
     "cnt": 20,
-    "pTC": 0.019398642095053348,
+    "pTC": 0.01937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.6060606060606061
@@ -13524,7 +13534,7 @@
     "lang": "English (English)",
     "term": "rust",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.4
@@ -13534,7 +13544,7 @@
     "lang": "English (English)",
     "term": "ochre",
     "cnt": 3,
-    "pTC": 0.002909796314258002,
+    "pTC": 0.0029069767441860465,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.375
@@ -13544,7 +13554,7 @@
     "lang": "English (English)",
     "term": "tangerine",
     "cnt": 28,
-    "pTC": 0.027158098933074686,
+    "pTC": 0.027131782945736434,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.875
@@ -13554,7 +13564,7 @@
     "lang": "English (English)",
     "term": "goldenyellow",
     "cnt": 3,
-    "pTC": 0.002909796314258002,
+    "pTC": 0.0029069767441860465,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.17647058823529413
@@ -13564,7 +13574,7 @@
     "lang": "English (English)",
     "term": "sienna",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.3333333333333333
@@ -13574,7 +13584,7 @@
     "lang": "English (English)",
     "term": "brick",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.25
@@ -13584,7 +13594,7 @@
     "lang": "English (English)",
     "term": "marigold",
     "cnt": 9,
-    "pTC": 0.008729388942774006,
+    "pTC": 0.00872093023255814,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.6
@@ -13594,7 +13604,7 @@
     "lang": "English (English)",
     "term": "orangeyellow",
     "cnt": 12,
-    "pTC": 0.011639185257032008,
+    "pTC": 0.011627906976744186,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.75
@@ -13604,7 +13614,7 @@
     "lang": "English (English)",
     "term": "pumpkin",
     "cnt": 11,
-    "pTC": 0.01066925315227934,
+    "pTC": 0.01065891472868217,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.8461538461538461
@@ -13614,7 +13624,7 @@
     "lang": "English (English)",
     "term": "terracotta",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.3333333333333333
@@ -13624,7 +13634,7 @@
     "lang": "English (English)",
     "term": "orangebrown",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.5
@@ -13634,7 +13644,7 @@
     "lang": "English (English)",
     "term": "amber",
     "cnt": 5,
-    "pTC": 0.004849660523763337,
+    "pTC": 0.0048449612403100775,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 1
@@ -13644,7 +13654,7 @@
     "lang": "English (English)",
     "term": "reddishorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.5
@@ -13654,7 +13664,7 @@
     "lang": "English (English)",
     "term": "yellowochre",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.4
@@ -13664,7 +13674,7 @@
     "lang": "English (English)",
     "term": "brightorange",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.5
@@ -13674,7 +13684,7 @@
     "lang": "English (English)",
     "term": "pumpkinorange",
     "cnt": 3,
-    "pTC": 0.002909796314258002,
+    "pTC": 0.0029069767441860465,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.6
@@ -13684,7 +13694,7 @@
     "lang": "English (English)",
     "term": "flesh",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 1
@@ -13694,7 +13704,7 @@
     "lang": "English (English)",
     "term": "apricot",
     "cnt": 3,
-    "pTC": 0.002909796314258002,
+    "pTC": 0.0029069767441860465,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.75
@@ -13704,7 +13714,7 @@
     "lang": "English (English)",
     "term": "golden",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.6666666666666666
@@ -13714,7 +13724,7 @@
     "lang": "English (English)",
     "term": "paleorange",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.5
@@ -13724,7 +13734,7 @@
     "lang": "English (English)",
     "term": "darkpeach",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 1
@@ -13734,7 +13744,7 @@
     "lang": "English (English)",
     "term": "rustorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 1
@@ -13744,7 +13754,7 @@
     "lang": "English (English)",
     "term": "burntyellow",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 1
@@ -13754,7 +13764,7 @@
     "lang": "English (English)",
     "term": "dullorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.2
@@ -13764,7 +13774,7 @@
     "lang": "English (English)",
     "term": "rustyorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 1
@@ -13774,7 +13784,7 @@
     "lang": "English (English)",
     "term": "yellowgold",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.2
@@ -13784,7 +13794,7 @@
     "lang": "English (English)",
     "term": "honey",
     "cnt": 2,
-    "pTC": 0.0019398642095053346,
+    "pTC": 0.001937984496124031,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.5
@@ -13794,7 +13804,7 @@
     "lang": "English (English)",
     "term": "pastelorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 0.3333333333333333
@@ -13804,7 +13814,7 @@
     "lang": "English (English)",
     "term": "brownishorange",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 1
@@ -13814,7 +13824,7 @@
     "lang": "English (English)",
     "term": "yellowishbrown",
     "cnt": 1,
-    "pTC": 0.0009699321047526673,
+    "pTC": 0.0009689922480620155,
     "binNum": 8,
     "rgb": "rgb(252, 166, 54)",
     "pCT": 1
@@ -13837,7 +13847,7 @@
     "pTC": 0.0211864406779661,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
-    "pCT": 0.01040582726326743
+    "pCT": 0.01037344398340249
   },
   {
     "scheme": "plasma",
@@ -13847,7 +13857,7 @@
     "pTC": 0.4894067796610169,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
-    "pCT": 0.14788732394366197
+    "pCT": 0.14779270633397312
   },
   {
     "scheme": "plasma",
@@ -14072,22 +14082,22 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "lemonyellow",
-    "cnt": 1,
-    "pTC": 0.00211864406779661,
-    "binNum": 9,
-    "rgb": "rgb(252, 206, 37)",
-    "pCT": 0.047619047619047616
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "marigold",
     "cnt": 5,
     "pTC": 0.01059322033898305,
     "binNum": 9,
     "rgb": "rgb(252, 206, 37)",
     "pCT": 0.3333333333333333
+  },
+  {
+    "scheme": "plasma",
+    "lang": "English (English)",
+    "term": "lemonyellow",
+    "cnt": 1,
+    "pTC": 0.00211864406779661,
+    "binNum": 9,
+    "rgb": "rgb(252, 206, 37)",
+    "pCT": 0.047619047619047616
   },
   {
     "scheme": "plasma",
@@ -14293,18 +14303,18 @@
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "yellow",
-    "cnt": 1297,
-    "pTC": 0.8769438810006761,
+    "cnt": 1298,
+    "pTC": 0.8770270270270271,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
-    "pCT": 0.8303457106274008
+    "pCT": 0.8304542546385156
   },
   {
     "scheme": "plasma",
     "lang": "English (English)",
     "term": "limegreen",
     "cnt": 2,
-    "pTC": 0.001352265043948614,
+    "pTC": 0.0013513513513513514,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 1
@@ -14314,7 +14324,7 @@
     "lang": "English (English)",
     "term": "yellowgreen",
     "cnt": 1,
-    "pTC": 0.000676132521974307,
+    "pTC": 0.0006756756756756757,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.5
@@ -14324,7 +14334,7 @@
     "lang": "English (English)",
     "term": "beige",
     "cnt": 1,
-    "pTC": 0.000676132521974307,
+    "pTC": 0.0006756756756756757,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.2
@@ -14334,7 +14344,7 @@
     "lang": "English (English)",
     "term": "gold",
     "cnt": 12,
-    "pTC": 0.008113590263691683,
+    "pTC": 0.008108108108108109,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.16216216216216217
@@ -14344,7 +14354,7 @@
     "lang": "English (English)",
     "term": "mustard",
     "cnt": 6,
-    "pTC": 0.004056795131845842,
+    "pTC": 0.004054054054054054,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.09836065573770492
@@ -14354,7 +14364,7 @@
     "lang": "English (English)",
     "term": "chartreuse",
     "cnt": 2,
-    "pTC": 0.001352265043948614,
+    "pTC": 0.0013513513513513514,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.6666666666666666
@@ -14364,7 +14374,7 @@
     "lang": "English (English)",
     "term": "mustardyellow",
     "cnt": 2,
-    "pTC": 0.001352265043948614,
+    "pTC": 0.0013513513513513514,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.04878048780487805
@@ -14374,7 +14384,7 @@
     "lang": "English (English)",
     "term": "yelloworange",
     "cnt": 4,
-    "pTC": 0.002704530087897228,
+    "pTC": 0.002702702702702703,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.05333333333333334
@@ -14384,7 +14394,7 @@
     "lang": "English (English)",
     "term": "darkyellow",
     "cnt": 5,
-    "pTC": 0.0033806626098715348,
+    "pTC": 0.0033783783783783786,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.20833333333333334
@@ -14394,7 +14404,7 @@
     "lang": "English (English)",
     "term": "khaki",
     "cnt": 1,
-    "pTC": 0.000676132521974307,
+    "pTC": 0.0006756756756756757,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.5
@@ -14404,7 +14414,7 @@
     "lang": "English (English)",
     "term": "goldenrod",
     "cnt": 2,
-    "pTC": 0.001352265043948614,
+    "pTC": 0.0013513513513513514,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.06060606060606061
@@ -14414,7 +14424,7 @@
     "lang": "English (English)",
     "term": "neonyellow",
     "cnt": 27,
-    "pTC": 0.018255578093306288,
+    "pTC": 0.018243243243243244,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 1
@@ -14424,7 +14434,7 @@
     "lang": "English (English)",
     "term": "lightyellow",
     "cnt": 9,
-    "pTC": 0.006085192697768763,
+    "pTC": 0.006081081081081081,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.75
@@ -14434,7 +14444,7 @@
     "lang": "English (English)",
     "term": "sand",
     "cnt": 1,
-    "pTC": 0.000676132521974307,
+    "pTC": 0.0006756756756756757,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.3333333333333333
@@ -14444,7 +14454,7 @@
     "lang": "English (English)",
     "term": "paleyellow",
     "cnt": 3,
-    "pTC": 0.002028397565922921,
+    "pTC": 0.002027027027027027,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.6
@@ -14454,7 +14464,7 @@
     "lang": "English (English)",
     "term": "goldenyellow",
     "cnt": 3,
-    "pTC": 0.002028397565922921,
+    "pTC": 0.002027027027027027,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.17647058823529413
@@ -14464,7 +14474,7 @@
     "lang": "English (English)",
     "term": "greenishyellow",
     "cnt": 2,
-    "pTC": 0.001352265043948614,
+    "pTC": 0.0013513513513513514,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.6666666666666666
@@ -14472,19 +14482,9 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "lemonyellow",
-    "cnt": 20,
-    "pTC": 0.013522650439486139,
-    "binNum": 10,
-    "rgb": "rgb(240, 249, 33)",
-    "pCT": 0.9523809523809523
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "marigold",
     "cnt": 1,
-    "pTC": 0.000676132521974307,
+    "pTC": 0.0006756756756756757,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.06666666666666667
@@ -14492,9 +14492,19 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
+    "term": "lemonyellow",
+    "cnt": 20,
+    "pTC": 0.013513513513513514,
+    "binNum": 10,
+    "rgb": "rgb(240, 249, 33)",
+    "pCT": 0.9523809523809523
+  },
+  {
+    "scheme": "plasma",
+    "lang": "English (English)",
     "term": "orangeyellow",
     "cnt": 2,
-    "pTC": 0.001352265043948614,
+    "pTC": 0.0013513513513513514,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.125
@@ -14504,7 +14514,7 @@
     "lang": "English (English)",
     "term": "brightyellow",
     "cnt": 39,
-    "pTC": 0.02636916835699797,
+    "pTC": 0.026351351351351353,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.975
@@ -14514,7 +14524,7 @@
     "lang": "English (English)",
     "term": "lemon",
     "cnt": 9,
-    "pTC": 0.006085192697768763,
+    "pTC": 0.006081081081081081,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.8181818181818182
@@ -14524,7 +14534,7 @@
     "lang": "English (English)",
     "term": "fluorescentgreen",
     "cnt": 1,
-    "pTC": 0.000676132521974307,
+    "pTC": 0.0006756756756756757,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 1
@@ -14534,7 +14544,7 @@
     "lang": "English (English)",
     "term": "dandelion",
     "cnt": 3,
-    "pTC": 0.002028397565922921,
+    "pTC": 0.002027027027027027,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.25
@@ -14542,19 +14552,9 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
-    "term": "highlighteryellow",
-    "cnt": 4,
-    "pTC": 0.002704530087897228,
-    "binNum": 10,
-    "rgb": "rgb(240, 249, 33)",
-    "pCT": 1
-  },
-  {
-    "scheme": "plasma",
-    "lang": "English (English)",
     "term": "golden",
     "cnt": 1,
-    "pTC": 0.000676132521974307,
+    "pTC": 0.0006756756756756757,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.3333333333333333
@@ -14562,9 +14562,19 @@
   {
     "scheme": "plasma",
     "lang": "English (English)",
+    "term": "highlighteryellow",
+    "cnt": 4,
+    "pTC": 0.002702702702702703,
+    "binNum": 10,
+    "rgb": "rgb(240, 249, 33)",
+    "pCT": 1
+  },
+  {
+    "scheme": "plasma",
+    "lang": "English (English)",
     "term": "canaryyellow",
     "cnt": 9,
-    "pTC": 0.006085192697768763,
+    "pTC": 0.006081081081081081,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.8181818181818182
@@ -14574,7 +14584,7 @@
     "lang": "English (English)",
     "term": "limeyellow",
     "cnt": 2,
-    "pTC": 0.001352265043948614,
+    "pTC": 0.0013513513513513514,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 1
@@ -14584,7 +14594,7 @@
     "lang": "English (English)",
     "term": "sunflower",
     "cnt": 1,
-    "pTC": 0.000676132521974307,
+    "pTC": 0.0006756756756756757,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.3333333333333333
@@ -14594,7 +14604,7 @@
     "lang": "English (English)",
     "term": "sunfloweryellow",
     "cnt": 3,
-    "pTC": 0.002028397565922921,
+    "pTC": 0.002027027027027027,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.5
@@ -14604,7 +14614,7 @@
     "lang": "English (English)",
     "term": "yellowgold",
     "cnt": 1,
-    "pTC": 0.000676132521974307,
+    "pTC": 0.0006756756756756757,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.2
@@ -14614,7 +14624,7 @@
     "lang": "English (English)",
     "term": "dandelionyellow",
     "cnt": 2,
-    "pTC": 0.001352265043948614,
+    "pTC": 0.0013513513513513514,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 0.3333333333333333
@@ -14624,7 +14634,7 @@
     "lang": "English (English)",
     "term": "butteryellow",
     "cnt": 1,
-    "pTC": 0.000676132521974307,
+    "pTC": 0.0006756756756756757,
     "binNum": 10,
     "rgb": "rgb(240, 249, 33)",
     "pCT": 1
