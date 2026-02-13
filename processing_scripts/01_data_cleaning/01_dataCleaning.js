@@ -12,13 +12,19 @@ import participantLangChanges from "./participant_lang_changes.js"
 
 
 // Path or the input csv file
+const COLOR_NAMES_BY_LANG_D = "../../model/cleaned_color_data_by_lang/"
+
 const COLOR_NAMES_I = "../../raw/color_names.csv"
 const DEMOGRAPHICS_I = "../../raw/demographics.csv"
-const COLOR_NAMES_O = "../../model/cleaned_color_names.csv"; // Path for the output
-const COLOR_NAMES_REMOVED_O = "../../model/removed_color_data.csv"; // Path for the output
+const COLOR_NAMES_O = "../../model/cleaned_color_names.csv";
+const COLOR_NAMES_BY_LANG_O = COLOR_NAMES_BY_LANG_D + "cleaned_color_names";
+const COLOR_NAMES_REMOVED_O = "../../model/removed_color_data.csv";
+const COLOR_NAMES_REMOVED_BY_LANG_O = COLOR_NAMES_BY_LANG_D + "removed_color_data";
+
 
 const COLOR_MATCHES_I = "../../raw/color_name_matches.csv"
-const COLOR_MATCHES_O = "../../model/cleaned_color_name_matches.csv"; // Path for the output
+const COLOR_MATCHES_O = "../../model/cleaned_color_name_matches.csv";
+const COLOR_MATCHES_BY_LANG_O = COLOR_NAMES_BY_LANG_D + "cleaned_color_name_matches";
 
 // load language names to fix
 const lang_name_changes = await csv().fromFile("lang_name_change.csv")
@@ -56,6 +62,26 @@ const csvDeletedColumnOrder = [
   "originalLangAbv"
 ]
 
+const colorMatchColumnOrder = [
+  "participantId",
+  "langAbv",
+  "lang",
+  "trialNum",
+  "termNum",
+  "colorNum",
+  "name",
+  "displayName",
+  "match",
+  "colorSpace",
+  "r",
+  "g",
+  "b",
+  "rgbSet",
+  "studyVersion",
+  "locale",
+  "background"
+]
+
 import {languages_iso_639} from "../../shared_files/languages-iso-639.js"
 const missingLangs = []
 function getLangAbv(lang){
@@ -74,6 +100,12 @@ function getLangAbv(lang){
 
 
 const demographics_info = await csv().fromFile(DEMOGRAPHICS_I)
+
+// clear old files:
+for(const file of fs.readdirSync(COLOR_NAMES_BY_LANG_D)){
+  //console.log("delete file? " + file)
+  fs.rmSync(COLOR_NAMES_BY_LANG_D + file)
+}
 
 
 csv().fromFile(COLOR_NAMES_I)
@@ -190,9 +222,20 @@ csv().fromFile(COLOR_NAMES_I)
   let cleanedWriter = csvWriter({headers: csvColumnOrder});
   cleanedWriter.pipe(fs.createWriteStream(COLOR_NAMES_O));
 
+  const cleanedWritersByLang = {}
+
   cleanedData.forEach(d => {
     delete d.cn_i
     cleanedWriter.write(d);
+
+    const langAbv = d.langAbv ? d.langAbv : d.lang 
+
+    if(!(langAbv in cleanedWritersByLang)){
+      const cleanedWriterByLangTmp = csvWriter({headers: csvColumnOrder});
+      cleanedWriterByLangTmp.pipe(fs.createWriteStream(COLOR_NAMES_BY_LANG_O + "-"+langAbv+".csv"));
+      cleanedWritersByLang[langAbv] = cleanedWriterByLangTmp
+    }
+    cleanedWritersByLang[langAbv].write(d)
   });
 
   cleanedWriter.end();
@@ -204,10 +247,20 @@ csv().fromFile(COLOR_NAMES_I)
   console.log("writing removed data file");
   let removedWriter = csvWriter({headers: csvDeletedColumnOrder});
   removedWriter.pipe(fs.createWriteStream(COLOR_NAMES_REMOVED_O));
+  const removedWriterByLang = {}
 
   removedData.forEach(d => {
     delete d.cn_i
     removedWriter.write(d);
+
+    const langAbv = d.langAbv ? d.langAbv : d.lang 
+
+    if(!(langAbv in removedWriterByLang)){
+      const removedWriterByLangTmp = csvWriter({headers: csvColumnOrder});
+      removedWriterByLangTmp.pipe(fs.createWriteStream(COLOR_NAMES_REMOVED_BY_LANG_O + "-"+langAbv+".csv"));
+      removedWriterByLang[langAbv] = removedWriterByLangTmp
+    }
+    removedWriterByLang[langAbv].write(d)
   });
 
   removedWriter.end();
@@ -221,6 +274,8 @@ let color_name_matches = await csv().fromFile(COLOR_MATCHES_I)
 
 
 color_name_matches.forEach(cn => {
+
+  cn.langAbv = getLangAbv(cn.lang)
   
   let oldName = cn.name
   refine.refine(cn)
@@ -288,10 +343,20 @@ color_name_matches.forEach(cn => {
 // });
 
 console.log("writing file");
-let cleanedMatchesWriter = csvWriter();
+let cleanedMatchesWriter = csvWriter({headers: colorMatchColumnOrder});
 cleanedMatchesWriter.pipe(fs.createWriteStream(COLOR_MATCHES_O));
+const cleanedMatchesWriterByLang = {}
 
 color_name_matches.forEach(d => {
   delete d.cn_i
   cleanedMatchesWriter.write(d);
+
+    const langAbv = d.langAbv ? d.langAbv : d.lang 
+
+    if(!(langAbv in cleanedMatchesWriterByLang)){
+      const cleanedMatchesByLangTmp = csvWriter({headers: colorMatchColumnOrder});
+      cleanedMatchesByLangTmp.pipe(fs.createWriteStream(COLOR_MATCHES_BY_LANG_O + "-"+langAbv+".csv"));
+      cleanedMatchesWriterByLang[langAbv] = cleanedMatchesByLangTmp
+    }
+    cleanedMatchesWriterByLang[langAbv].write(d)
 });
