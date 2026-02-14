@@ -326,7 +326,7 @@ $(document).on('ready page:load', function () {
     createOrRefreshAllLangs()
   })
 
-  $("#low-data").change(createOrRefreshAllLangs)
+  $("#low-data").change(updateDisplay)
   $("#ref_bins").change(createOrRefreshAllLangs)
   $("#both_lch_views").change(createOrRefreshAllLangs)
 
@@ -362,6 +362,7 @@ $(document).on('ready page:load', function () {
 
   $("#additional_bins").change(() => {
     setBinOptions()
+    updateDisplay()
   })
 
   updateDisplay()
