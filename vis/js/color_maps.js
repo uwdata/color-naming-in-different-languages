@@ -381,7 +381,8 @@ function updateDisplay(){
   curr_bin_size = LAB_BIN_SIZES.find((bin) => bin.abv == curr_bin_size)
 
   if(!language_stats[curr_bin_size] || !language_stats[curr_bin_size][curr_blur]){
-    d3.select("#main")
+    d3.select("#maps_div")
+      .html("")
       .append("p")
       .attr("id", "loading-p")
       .html("loading...")
@@ -401,7 +402,7 @@ function updateDisplay(){
   }
 
   //TODO: have maximum for height too
-  currSvgSize[0].width = $("#main").width()
+  currSvgSize[0].width = $("#maps_div").width()
   currSvgSize[0].height =  currSvgSize[0].width * binView.display_offsets.y_height_in_bins /  binView.display_offsets.x_width_in_bins
 
   // const language_stat = language_stats[curr_bin_size][curr_blur][0]
@@ -414,7 +415,7 @@ function updateDisplay(){
     this.style["min-width"] = svg_widths[curr_bin_size] + 5 + "px"
   })
 
-  d3.select("#main")
+  d3.select("#maps_div")
     .selectAll("#vis")
     .data(currSvgSize) // single data point, but uses d3 for updating
     .join("div")
@@ -524,26 +525,6 @@ function createOrRefreshLang(i){
       });
     }
 
-    let langLabel = "All Color Bins (Reference)"
-    if(i != -1){
-      const language_stat = language_stats[curr_bin_size][curr_blur][i]
-      langLabel = language_stat.lang
-    }
-    $("#"+lang_id_str + " .lang-label").text(langLabel)
-
-   
-    if(i != -1){
-      $(`#${lang_id_str} #selected_color_${i} option`).remove()
-      const language_stat = language_stats[curr_bin_size][curr_blur][i]
-      const newOptions = color_names_by_lang[curr_bin_size][curr_blur][language_stat.lang].map((colorInfo) =>{
-        return `<option value="${colorInfo.colorName}" data-commonColorName="${colorInfo.colorName}"
-          style='background-color:${colorInfo.avgTermColor}'>
-          ${colorInfo.colorName}
-        </option>`
-      })
-       $(`#${lang_id_str} #selected_color_${i}`).append(newOptions).trigger('change');
-    }   
-
     $(`#${lang_id_str} #selected_color_${i}`).change(function() {
       const selection = lang_color_selections[curr_bin_size][curr_blur][i]
       if(this.value == COLOR_NAME_UNSELECTED){
@@ -557,6 +538,37 @@ function createOrRefreshLang(i){
     })
 
     svg = d3.select("#"+lang_id_str).append("svg")
+  }
+
+  let langLabel = "All Color Bins (Reference)"
+  if(i != -1){
+    const language_stat = language_stats[curr_bin_size][curr_blur][i]
+    langLabel = language_stat.lang
+  }
+  $("#"+lang_id_str + " .lang-label").text(langLabel)
+
+  
+  if(i != -1){
+    // if options (color names) have changed, replace them
+    const language_stat = language_stats[curr_bin_size][curr_blur][i]
+
+    const currNames =  $(`#${lang_id_str} #selected_color_${i} option`).map(function(a){ 
+      return this.value}).get()
+    const newNames = color_names_by_lang[curr_bin_size][curr_blur][language_stat.lang].map(colorInfo => colorInfo.colorName)
+    
+    if(JSON.stringify(currNames) != JSON.stringify(newNames)){
+      $(`#${lang_id_str} #selected_color_${i} option`).remove()
+      const language_stat = language_stats[curr_bin_size][curr_blur][i]
+      const newOptions = color_names_by_lang[curr_bin_size][curr_blur][language_stat.lang].map((colorInfo) =>{
+        return `<option value="${colorInfo.colorName}" data-commonColorName="${colorInfo.colorName}"
+          style='background-color:${colorInfo.avgTermColor}'>
+          ${colorInfo.colorName}
+        </option>`
+      })
+      $(`#${lang_id_str} #selected_color_${i}`).append(newOptions).trigger('change');
+    } 
+
+
   }
 
   svg.attr("width", currSvgSize[0].width)
