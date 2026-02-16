@@ -273,7 +273,7 @@ function process_saliency_bin_data(saliency_data, bin_size, blur){
 const currSvgSize = [{}]
 let curr_blur = BLUR
 let curr_bin_size = LAB_BIN_SIZES.find(s => s.simpleName == "LCH Arcs: Medium-res")
-let backgroundColor = 'white'
+let backgroundColor = "white"
 let tile_size_type = 'ptc'
 let bin_size_by = "area"
 let additional_tooltip_info = false
@@ -318,13 +318,18 @@ $(document).on('ready page:load', function () {
     const brightness255 = Math.round(255*brightness/100)
     backgroundColor = `rgb(${brightness255}, ${brightness255}, ${brightness255})`
 
-    d3.select('#vis')
+    d3.select('#maps_div')
       .style("background-color", backgroundColor)
       .selectAll(".lang-map")
       .style("background-color", backgroundColor)
 
     createOrRefreshAllLangs()
   })
+  const brightness = $("#background-brightness").val() 
+  const brightness255 = Math.round(255*brightness/100)
+  backgroundColor = `rgb(${brightness255}, ${brightness255}, ${brightness255})`
+  d3.select('#maps_div')
+      .style("background-color", backgroundColor)
 
   $("#low-data").change(updateDisplay)
   $("#ref_bins").change(createOrRefreshAllLangs)
