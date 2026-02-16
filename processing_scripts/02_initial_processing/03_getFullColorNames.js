@@ -38,10 +38,9 @@ for(let labBinSize of LAB_BIN_SIZES){
 
   const [dim1BinName, dim2BinName, dim3BinName] = labBinSize.dims.map(d => "bin"+d.toUpperCase())
 
-  // TODO: When we have full gamut data, remove the filter
+  // TODO: Transform between different colorspaces (for now we reduce all to srgb)
   const lab_bins_arr_full = JSON.parse(fs.readFileSync(`../../model/color_info_pre_naming/oklab_bins_${labBinSize}.json`))
     
-
   const lab_bins_arr = labBinSize.filterBinsByGamut(lab_bins_arr_full, "rgb") // filter for only the rgb bins while we only have rgb data
 
   console.log("for only rgb data, reducing ", lab_bins_arr_full.length, " bins down to", lab_bins_arr.length, "bins")
@@ -58,7 +57,7 @@ for(let labBinSize of LAB_BIN_SIZES){
     blurWeights = getBlurWeights(labBinSize)
     areBlurWeightsRelativePosition = true
   }
-  
+
 
   const commonColorNameLookup = {};
   colorInfo.forEach(ci => {
@@ -77,11 +76,14 @@ for(let labBinSize of LAB_BIN_SIZES){
                 .map(a => {return {key: a[0], values: a[1]}})
                 .sort((a,b) => -a.values.length + b.values.length);
 
-    langData.terms = langData.terms.filter(g_term => commonColorNameLookup[langData.key] && commonColorNameLookup[langData.key][g_term.key]);
+    langData.terms = langData.terms
+          .filter(g_term => commonColorNameLookup[langData.key] && commonColorNameLookup[langData.key][g_term.key])
+          .sort((a, b) => a.key.localeCompare(b.key));
   });
 
-  grouped_lang = grouped_lang.filter(g => g.terms.length > 0);
-
+  grouped_lang = grouped_lang
+                  .filter(g => g.terms.length > 0)
+                  .sort((a, b) => a.key.localeCompare(b.key));
 
   let flatten = [], saliency = [],
       flattenBlur = [], saliencyBlur = [];
@@ -170,14 +172,61 @@ for(let labBinSize of LAB_BIN_SIZES){
       }
     }
 
-  
-    // find P of term given Color and P of color given term (and blurred version too)
+    // find P of Term given Color for each bin
+    langData.terms.forEach(term => {
+       term.binPTC = labBinHelper.createLABNumBins(lab_bins)
+       term.totalPTC = 0
+
+       for(let i = 0; i < lab_bins_arr.length; i++){
+          const thisBin = lab_bins_arr[i]
+
+          const dim1Bin = thisBin[dim1 + "_bin"],
+                dim2Bin = thisBin[dim2 + "_bin"],
+                dim3Bin = thisBin[dim3 + "_bin"]
+          
+          if(langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin] == 0 && term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] == 0){
+            term.binPTC[dim1Bin][dim2Bin][dim3Bin] = 0
+          } else {
+            term.binPTC[dim1Bin][dim2Bin][dim3Bin] = term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] / langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin]
+            term.totalPTC += term.binPTC[dim1Bin][dim2Bin][dim3Bin]
+          }
+       }
+    })
+
+    // find blur for P(Term|Color) for each bin
+    //   note: For where the totalColorNameCnt < MIN_NperBin
+    //     only use that fractional value
+    langData.terms.forEach(term => {
+       term.binPTCBlur = labBinHelper.createLABNumBins(lab_bins)
+       term.totalPTCBlur = 0
+
+       for(let i = 0; i < lab_bins_arr.length; i++){
+          const thisBin = lab_bins_arr[i]
+
+          const dim1Bin = thisBin[dim1 + "_bin"],
+                dim2Bin = thisBin[dim2 + "_bin"],
+                dim3Bin = thisBin[dim3 + "_bin"]
+
+          const thisBlurWeights = labBinSize.type == "ring" ? 
+              blurWeights[dim1Bin][dim2Bin][dim3Bin]
+            :
+              blurWeights
+
+          
+          // Resize blurWeights based on MIN_NperBin and resize blurWeights to sum of 1
+          const standardizedBlurWeights = standardizeBlurWeightsIncludingCounts(thisBlurWeights, areBlurWeightsRelativePosition, langBinColorNameCnt, dim1Bin, dim2Bin, dim3Bin)
+          // get blurred PCT value
+          term.binPTCBlur[dim1Bin][dim2Bin][dim3Bin] = getFieldBlur(standardizedBlurWeights, areBlurWeightsRelativePosition, term, dim1Bin, dim2Bin, dim3Bin, "binPTC")
+          
+          term.totalPTCBlur += term.binPTCBlur[dim1Bin][dim2Bin][dim3Bin]
+       }
+    })
+
+    // calculate P(Color|Term) (both blur and not)
     langData.terms.forEach(term => {
        term.binPCT = labBinHelper.createLABNumBins(lab_bins)
        term.binPCTBlur = labBinHelper.createLABNumBins(lab_bins)
 
-       term.binPTC = labBinHelper.createLABNumBins(lab_bins)
-       term.binPTCBlur = labBinHelper.createLABNumBins(lab_bins)
 
        for(let i = 0; i < lab_bins_arr.length; i++){
           const thisBin = lab_bins_arr[i]
@@ -186,19 +235,8 @@ for(let labBinSize of LAB_BIN_SIZES){
                 dim2Bin = thisBin[dim2 + "_bin"],
                 dim3Bin = thisBin[dim3 + "_bin"]
             
-          term.binPCT[dim1Bin][dim2Bin][dim3Bin] = term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] / term.totalColorNameCnt
-          term.binPCTBlur[dim1Bin][dim2Bin][dim3Bin] = term.binColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] / term.totalColorNameCntBlur
-          
-          if(langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin] == 0 && term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] == 0){
-            term.binPTC[dim1Bin][dim2Bin][dim3Bin] = 0
-          } else {
-            term.binPTC[dim1Bin][dim2Bin][dim3Bin] = term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] / langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin]
-          }
-          if(langBinColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] == 0 && term.binColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] == 0){
-            term.binPTCBlur[dim1Bin][dim2Bin][dim3Bin] = 0
-          } else {
-            term.binPTCBlur[dim1Bin][dim2Bin][dim3Bin] = term.binColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] / langBinColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin]
-          }
+          term.binPCT[dim1Bin][dim2Bin][dim3Bin] = term.binPTC[dim1Bin][dim2Bin][dim3Bin] / term.totalPTC
+          term.binPCTBlur[dim1Bin][dim2Bin][dim3Bin] = term.binPTCBlur[dim1Bin][dim2Bin][dim3Bin] / term.totalPTCBlur
        }
     })
 
@@ -263,7 +301,7 @@ for(let labBinSize of LAB_BIN_SIZES){
         const majorTerm = langTermBinsBuff.find(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin && d.pTC === maxpTC ).term
         const basicColorInfo = colorInfo.find((a) => a.lang == langData.key && a.simplifiedName == majorTerm)
 
-        const topTerms = langTermBinsBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin)
+        const topTerms = [...langTermBinsBuff].filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin)
                           .sort((a, b) => b.pTC - a.pTC)
                           .slice(0, 4)
                           .map(d => {return {
@@ -301,7 +339,7 @@ for(let labBinSize of LAB_BIN_SIZES){
         const majorTerm = langTermBinsBlurBuff.find(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin && d.pTC === maxpTC ).term
         const basicColorInfo = colorInfo.find((a) => a.lang == langData.key && a.simplifiedName == majorTerm)
 
-        const topTerms = langTermBinsBlurBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin)
+        const topTerms = [...langTermBinsBlurBuff].filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin)
                           .sort((a, b) => b.pTC - a.pTC)
                           .slice(0, 4)
                           .map(d => {return {
@@ -535,9 +573,64 @@ function getBlurWeightsForBins(binSize, bins){
   return blurWeights
 }
 
+// Resize blurWeights based on MIN_NperBin,
+// then resize blurWeights to sum of 1
+function standardizeBlurWeightsIncludingCounts(blurWeights, areBlurWeightsRelativePosition, langBinColorNameCnt, dim1Bin, dim2Bin, dim3Bin){
+  const standardizedBlurWeights = {}
+  let sumOfWeights = 0
+  
+  // Resize blurWeights based on MIN_NperBin and find sum of weights
+  for(let i of Object.keys(blurWeights)){
+    standardizedBlurWeights[i] = {}
+    i = parseInt(i)
+    const i_bin = areBlurWeightsRelativePosition ? dim1Bin + i : i
+    for(let j of Object.keys(blurWeights[i])){
+      standardizedBlurWeights[i][j] = {}
+      j = parseInt(j)
+      const j_bin = areBlurWeightsRelativePosition ? dim2Bin + j : j
+      for(let k of Object.keys(blurWeights[i][j])){
+        k = parseInt(k)
+        const k_bin = areBlurWeightsRelativePosition ? dim3Bin + k : k
+        if((i_bin) in langBinColorNameCnt &&
+           (j_bin) in langBinColorNameCnt[i_bin] &&
+           (k_bin) in langBinColorNameCnt[i_bin][j_bin]
+        ){
+          if(langBinColorNameCnt[i_bin][j_bin][k_bin] < MIN_NperBin){
+            // if there is less than the MIN_NperBin data in the bin, then
+            // reduce the weight to a fraction of the value (how close it is to MIN_NperBin)
+            standardizedBlurWeights[i][j][k] = blurWeights[i][j][k] * langBinColorNameCnt[i_bin][j_bin][k_bin] / MIN_NperBin
+          } else {
+            standardizedBlurWeights[i][j][k] = blurWeights[i][j][k]
+          }
+          sumOfWeights += standardizedBlurWeights[i][j][k] 
+        }
+      }
+    }
+  }
+
+  if(sumOfWeights == 0){
+    return standardizedBlurWeights
+  }
+
+  // resize bins to add up to 1
+  for(let i of Object.keys(standardizedBlurWeights)){
+    i = parseInt(i)
+    const i_bin = areBlurWeightsRelativePosition ? dim1Bin + i : i
+    for(let j of Object.keys(standardizedBlurWeights[i])){
+      j = parseInt(j)
+      const j_bin = areBlurWeightsRelativePosition ? dim2Bin + j : j
+      for(let k of Object.keys(standardizedBlurWeights[i][j])){
+        k = parseInt(k)
+        standardizedBlurWeights[i][j][k] = standardizedBlurWeights[i][j][k] / sumOfWeights
+      }
+    }
+  }
+
+  return standardizedBlurWeights
+}
+
 
 function getBlur(blurWeights, areBlurWeightsRelativePosition, binInfo, dim1Bin, dim2Bin, dim3Bin){
-  let sumOfWeights = 0
   let weightedSum = 0
   
   for(let i of Object.keys(blurWeights)){
@@ -553,15 +646,11 @@ function getBlur(blurWeights, areBlurWeightsRelativePosition, binInfo, dim1Bin, 
            (j_bin) in binInfo[i_bin] &&
            (k_bin) in binInfo[i_bin][j_bin]
         ){
-          sumOfWeights += blurWeights[i][j][k]
           weightedSum += binInfo[i_bin][j_bin][k_bin] * 
                           blurWeights[i][j][k] 
         }
       }
     }
-  }
-  if(weightedSum == 0){
-    return 0
   }
   return weightedSum
 }

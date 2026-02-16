@@ -84,42 +84,22 @@ const MAX_H = 360
 
 
 const LAB_BIN_SIZES = [ 
-  new BinSize({
-    type: "cube",
-    l: 1/10}), 
-  new BinSize({
-    type: "cube",
-    l: 1/20}), 
-  new BinSize({
-    type: "cube",
-    l: 1/40}),
-  new BinSize({
-    type: "box",
-    l: 1/5, 
-    ab: 1/20}),
-  new BinSize({
-    type: "box",
-    l: 1/10, 
-    ab: 1/40}), 
-  new BinSize({
-    type: "box",
-    l: 1/15, 
-    ab: 1/60}),
-  new BinSize({
-    type: "ring",
-    l: 1/10,
-    h_divs: 8
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/20,
-    h_divs: 8
-  }),
-  new BinSize({
-    type: "ring",
-    l: 1/40,
-    h_divs: 8
-  }),
+  // ring h-div 8 I think looks best
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/10,
+  //   h_divs: 8
+  // }),
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/20,
+  //   h_divs: 8
+  // }),
+  // new BinSize({
+  //   type: "ring",
+  //   l: 1/40,
+  //   h_divs: 8
+  // }),
    new BinSize({
     type: "ring",
     l: 1/5,
@@ -138,6 +118,30 @@ const LAB_BIN_SIZES = [
     c: 1/60, // for h_divs 3, c should be 1/2 l, but to make it a box 4 higher, we do 1/8th l
     h_divs: 8
   }),
+  // cube size for uniform sizing
+  new BinSize({
+    type: "cube",
+    l: 1/10}), 
+  new BinSize({
+    type: "cube",
+    l: 1/20}), 
+  new BinSize({
+    type: "cube",
+    l: 1/40}),
+  // boxes to make more a/b bins per lightness level
+  new BinSize({
+    type: "box",
+    l: 1/5, 
+    ab: 1/20}),
+  new BinSize({
+    type: "box",
+    l: 1/10, 
+    ab: 1/40}), 
+  new BinSize({
+    type: "box",
+    l: 1/15, 
+    ab: 1/60}),
+  // ring size h-div 3 (didn't look as good)
   new BinSize({
     type: "ring",
     l: 1/10,
