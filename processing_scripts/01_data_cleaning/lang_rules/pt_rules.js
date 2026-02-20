@@ -8,9 +8,20 @@ const excludeNames = [
 const nameReplacingRules = [
     [/azul maringo/, "azul marinho"], 
     [/fucsia/, "fúcsia"], 
+    [/florescente/, "fluorescente"],
+    [/laranha/, "laranja"],
     [/laranja escuto/, "laranja escuro"], 
+
+    [/lilaz/, "lilas"],
     [/lilas/, "lilás"], 
+
     [/limao/, "limão"],
+
+    [/magennta/, "magenta"],
+    [/mangenta/, "magenta"],
+
+    [/marron/, "marrom"],
+
     [/purpura/, "púrpura"], 
     [/rosa chock$/, "rosa choque"], 
     [/turqueza/, "turquesa"], 

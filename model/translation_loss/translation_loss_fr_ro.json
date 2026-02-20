@@ -1,902 +1,902 @@
 [
   {
-    "frterm": "bleu",
-    "roterm": "albastru",
-    "dist": 0.04404732086522356
-  },
-  {
-    "frterm": "bleu",
-    "roterm": "verde",
-    "dist": 0.418603045046749
-  },
-  {
-    "frterm": "bleu",
-    "roterm": "roz",
-    "dist": 0.32113396726643106
-  },
-  {
-    "frterm": "bleu",
-    "roterm": "mov",
-    "dist": 0.23052274081979082
-  },
-  {
-    "frterm": "vert",
-    "roterm": "albastru",
-    "dist": 0.38888824360654056
-  },
-  {
-    "frterm": "vert",
-    "roterm": "verde",
-    "dist": 0.09088851436848398
-  },
-  {
-    "frterm": "vert",
-    "roterm": "roz",
-    "dist": 0.45085623516293466
-  },
-  {
-    "frterm": "vert",
-    "roterm": "mov",
-    "dist": 0.477518918028673
-  },
-  {
-    "frterm": "violet",
-    "roterm": "albastru",
-    "dist": 0.24452176301140083
-  },
-  {
-    "frterm": "violet",
-    "roterm": "verde",
-    "dist": 0.5380897152547705
-  },
-  {
-    "frterm": "violet",
-    "roterm": "roz",
-    "dist": 0.20313796838779558
-  },
-  {
-    "frterm": "violet",
-    "roterm": "mov",
-    "dist": 0.06318885555265862
-  },
-  {
-    "frterm": "rose",
-    "roterm": "albastru",
-    "dist": 0.3303167720880366
-  },
-  {
-    "frterm": "rose",
-    "roterm": "verde",
-    "dist": 0.47050464669998054
-  },
-  {
-    "frterm": "rose",
-    "roterm": "roz",
-    "dist": 0.05736562572951247
-  },
-  {
-    "frterm": "rose",
-    "roterm": "mov",
-    "dist": 0.16715303252243577
-  },
-  {
-    "frterm": "orange",
-    "roterm": "albastru",
-    "dist": 0.38828566107890966
-  },
-  {
-    "frterm": "orange",
-    "roterm": "verde",
-    "dist": 0.2957967882773125
-  },
-  {
-    "frterm": "orange",
-    "roterm": "roz",
-    "dist": 0.25357392725105665
-  },
-  {
-    "frterm": "orange",
-    "roterm": "mov",
-    "dist": 0.35928746086525976
-  },
-  {
-    "frterm": "rouge",
-    "roterm": "albastru",
-    "dist": 0.4032925907173026
-  },
-  {
-    "frterm": "rouge",
-    "roterm": "verde",
-    "dist": 0.47079317162221557
-  },
-  {
-    "frterm": "rouge",
-    "roterm": "roz",
-    "dist": 0.17856616464790567
-  },
-  {
-    "frterm": "rouge",
-    "roterm": "mov",
-    "dist": 0.2733009313428365
-  },
-  {
-    "frterm": "jaune",
-    "roterm": "albastru",
-    "dist": 0.4720549094713471
-  },
-  {
-    "frterm": "jaune",
-    "roterm": "verde",
-    "dist": 0.15740565949118504
-  },
-  {
-    "frterm": "jaune",
-    "roterm": "roz",
-    "dist": 0.4275247898769108
-  },
-  {
-    "frterm": "jaune",
-    "roterm": "mov",
-    "dist": 0.5123331784016707
-  },
-  {
-    "frterm": "turquoise",
-    "roterm": "albastru",
-    "dist": 0.314040947759013
-  },
-  {
-    "frterm": "turquoise",
-    "roterm": "verde",
-    "dist": 0.15819697163039975
-  },
-  {
-    "frterm": "turquoise",
-    "roterm": "roz",
-    "dist": 0.40805435112992955
-  },
-  {
-    "frterm": "turquoise",
-    "roterm": "mov",
-    "dist": 0.4334164761316339
-  },
-  {
-    "frterm": "mauve",
-    "roterm": "albastru",
-    "dist": 0.2375062221554929
-  },
-  {
-    "frterm": "mauve",
-    "roterm": "verde",
-    "dist": 0.505561291837739
-  },
-  {
-    "frterm": "mauve",
-    "roterm": "roz",
-    "dist": 0.18024984455294804
-  },
-  {
-    "frterm": "mauve",
-    "roterm": "mov",
-    "dist": 0.0827925080958325
-  },
-  {
-    "frterm": "bleuciel",
-    "roterm": "albastru",
-    "dist": 0.2113645607988912
-  },
-  {
-    "frterm": "bleuciel",
-    "roterm": "verde",
-    "dist": 0.2704539559551146
-  },
-  {
-    "frterm": "bleuciel",
-    "roterm": "roz",
-    "dist": 0.3460019958895968
-  },
-  {
-    "frterm": "bleuciel",
-    "roterm": "mov",
-    "dist": 0.3285144160171246
-  },
-  {
-    "frterm": "fuchsia",
-    "roterm": "albastru",
-    "dist": 0.338019881904736
-  },
-  {
-    "frterm": "fuchsia",
-    "roterm": "verde",
-    "dist": 0.5066514050493125
-  },
-  {
-    "frterm": "fuchsia",
-    "roterm": "roz",
-    "dist": 0.04771004821956705
-  },
-  {
-    "frterm": "fuchsia",
-    "roterm": "mov",
-    "dist": 0.14234755951049782
-  },
-  {
-    "frterm": "marron",
-    "roterm": "albastru",
-    "dist": 0.32733289461246384
-  },
-  {
-    "frterm": "marron",
-    "roterm": "verde",
-    "dist": 0.4349755107811682
-  },
-  {
-    "frterm": "marron",
-    "roterm": "roz",
-    "dist": 0.3098871879187625
-  },
-  {
-    "frterm": "marron",
-    "roterm": "mov",
-    "dist": 0.29894604926802215
-  },
-  {
-    "frterm": "bleumarine",
-    "roterm": "albastru",
-    "dist": 0.19154733985015834
-  },
-  {
-    "frterm": "bleumarine",
-    "roterm": "verde",
-    "dist": 0.5559739631953386
-  },
-  {
-    "frterm": "bleumarine",
-    "roterm": "roz",
-    "dist": 0.3754265643921158
-  },
-  {
-    "frterm": "bleumarine",
-    "roterm": "mov",
-    "dist": 0.25303545885723444
-  },
-  {
-    "frterm": "magenta",
-    "roterm": "albastru",
-    "dist": 0.34651272848646175
-  },
-  {
-    "frterm": "magenta",
-    "roterm": "verde",
-    "dist": 0.5078023805903146
-  },
-  {
-    "frterm": "magenta",
-    "roterm": "roz",
-    "dist": 0.0638246433103221
-  },
-  {
-    "frterm": "magenta",
-    "roterm": "mov",
-    "dist": 0.15194734997022238
-  },
-  {
-    "frterm": "vertclair",
-    "roterm": "albastru",
-    "dist": 0.43677739829040757
-  },
-  {
-    "frterm": "vertclair",
-    "roterm": "verde",
-    "dist": 0.08128120755126628
-  },
-  {
-    "frterm": "vertclair",
-    "roterm": "roz",
-    "dist": 0.4769871043061912
-  },
-  {
-    "frterm": "vertclair",
-    "roterm": "mov",
-    "dist": 0.5226981112590677
-  },
-  {
-    "frterm": "bleuclair",
-    "roterm": "albastru",
-    "dist": 0.22283933011618795
-  },
-  {
-    "frterm": "bleuclair",
-    "roterm": "verde",
-    "dist": 0.27608689589668917
-  },
-  {
-    "frterm": "bleuclair",
-    "roterm": "roz",
-    "dist": 0.34942148994188194
-  },
-  {
-    "frterm": "bleuclair",
-    "roterm": "mov",
-    "dist": 0.33496164886895535
-  },
-  {
-    "frterm": "cyan",
-    "roterm": "albastru",
-    "dist": 0.25875165127858607
-  },
-  {
-    "frterm": "cyan",
-    "roterm": "verde",
-    "dist": 0.20970086752792783
-  },
-  {
-    "frterm": "cyan",
-    "roterm": "roz",
-    "dist": 0.38160103564775794
-  },
-  {
-    "frterm": "cyan",
-    "roterm": "mov",
-    "dist": 0.39565419853108885
-  },
-  {
-    "frterm": "vertfonce",
-    "roterm": "albastru",
-    "dist": 0.318022416119082
-  },
-  {
-    "frterm": "vertfonce",
-    "roterm": "verde",
-    "dist": 0.41242601882034713
-  },
-  {
-    "frterm": "vertfonce",
-    "roterm": "roz",
-    "dist": 0.4234095796430345
-  },
-  {
-    "frterm": "vertfonce",
-    "roterm": "mov",
-    "dist": 0.3841812232246145
-  },
-  {
-    "frterm": "vertfluo",
-    "roterm": "albastru",
-    "dist": 0.4602159165784699
-  },
-  {
-    "frterm": "vertfluo",
-    "roterm": "verde",
-    "dist": 0.04157620079158152
-  },
-  {
-    "frterm": "vertfluo",
-    "roterm": "roz",
-    "dist": 0.5047686894402272
-  },
-  {
-    "frterm": "vertfluo",
-    "roterm": "mov",
-    "dist": 0.5583134457303285
-  },
-  {
-    "frterm": "vertpomme",
-    "roterm": "albastru",
-    "dist": 0.46155716759569065
-  },
-  {
-    "frterm": "vertpomme",
-    "roterm": "verde",
-    "dist": 0.06213029526475096
-  },
-  {
-    "frterm": "vertpomme",
-    "roterm": "roz",
-    "dist": 0.49470714971847
-  },
-  {
-    "frterm": "vertpomme",
-    "roterm": "mov",
-    "dist": 0.545893353511743
-  },
-  {
-    "frterm": "bleufonce",
-    "roterm": "albastru",
-    "dist": 0.15874992986374456
-  },
-  {
-    "frterm": "bleufonce",
-    "roterm": "verde",
-    "dist": 0.5427873115506878
-  },
-  {
-    "frterm": "bleufonce",
-    "roterm": "roz",
-    "dist": 0.3627734341534066
-  },
-  {
-    "frterm": "bleufonce",
-    "roterm": "mov",
-    "dist": 0.2341502304435241
-  },
-  {
-    "frterm": "kaki",
-    "roterm": "albastru",
-    "dist": 0.32020191465631187
-  },
-  {
-    "frterm": "kaki",
-    "roterm": "verde",
-    "dist": 0.3130140033426879
-  },
-  {
-    "frterm": "kaki",
-    "roterm": "roz",
-    "dist": 0.3641393705230195
-  },
-  {
-    "frterm": "kaki",
-    "roterm": "mov",
-    "dist": 0.3632642862629145
-  },
-  {
-    "frterm": "brun",
-    "roterm": "albastru",
-    "dist": 0.33750970968790023
-  },
-  {
-    "frterm": "brun",
-    "roterm": "verde",
-    "dist": 0.4655672777807025
-  },
-  {
-    "frterm": "brun",
-    "roterm": "roz",
-    "dist": 0.3175974743094592
-  },
-  {
-    "frterm": "brun",
-    "roterm": "mov",
-    "dist": 0.29634057546156234
-  },
-  {
     "frterm": "beige",
     "roterm": "albastru",
-    "dist": 0.39391367438780384
-  },
-  {
-    "frterm": "beige",
-    "roterm": "verde",
-    "dist": 0.2625007371257724
-  },
-  {
-    "frterm": "beige",
-    "roterm": "roz",
-    "dist": 0.33436287869632675
+    "dist": 0.2800387115272445
   },
   {
     "frterm": "beige",
     "roterm": "mov",
-    "dist": 0.40499469947303285
+    "dist": 0.43673727879580143
   },
   {
-    "frterm": "noir",
-    "roterm": "albastru",
-    "dist": 0.4895258708376714
-  },
-  {
-    "frterm": "noir",
-    "roterm": "verde",
-    "dist": 0.7053377093269259
-  },
-  {
-    "frterm": "noir",
+    "frterm": "beige",
     "roterm": "roz",
-    "dist": 0.5526315038803714
+    "dist": 0.20206336990109536
   },
   {
-    "frterm": "noir",
-    "roterm": "mov",
-    "dist": 0.4680720201289688
-  },
-  {
-    "frterm": "bleuroi",
-    "roterm": "albastru",
-    "dist": 0.13198855498405648
-  },
-  {
-    "frterm": "bleuroi",
+    "frterm": "beige",
     "roterm": "verde",
-    "dist": 0.5351987686198949
+    "dist": 0.2330683203041591
   },
   {
-    "frterm": "bleuroi",
-    "roterm": "roz",
-    "dist": 0.35842774645863296
-  },
-  {
-    "frterm": "bleuroi",
-    "roterm": "mov",
-    "dist": 0.23116379414584481
-  },
-  {
-    "frterm": "gris",
+    "frterm": "bleu",
     "roterm": "albastru",
-    "dist": 0.2424088045495804
+    "dist": 0.1132719210856757
   },
   {
-    "frterm": "gris",
-    "roterm": "verde",
-    "dist": 0.341058067091721
-  },
-  {
-    "frterm": "gris",
-    "roterm": "roz",
-    "dist": 0.2952836467210428
-  },
-  {
-    "frterm": "gris",
+    "frterm": "bleu",
     "roterm": "mov",
-    "dist": 0.27610335055525675
+    "dist": 0.17177702557550076
   },
   {
-    "frterm": "indigo",
+    "frterm": "bleu",
+    "roterm": "roz",
+    "dist": 0.2918862566247595
+  },
+  {
+    "frterm": "bleu",
+    "roterm": "verde",
+    "dist": 0.290999430319125
+  },
+  {
+    "frterm": "bleuciel",
     "roterm": "albastru",
-    "dist": 0.16166919348294628
+    "dist": 0.1882050454247075
   },
   {
-    "frterm": "indigo",
-    "roterm": "verde",
-    "dist": 0.5200007933099526
-  },
-  {
-    "frterm": "indigo",
-    "roterm": "roz",
-    "dist": 0.3096989882366954
-  },
-  {
-    "frterm": "indigo",
+    "frterm": "bleuciel",
     "roterm": "mov",
-    "dist": 0.17849102793909943
+    "dist": 0.4017139805630458
   },
   {
-    "frterm": "pourpre",
+    "frterm": "bleuciel",
+    "roterm": "roz",
+    "dist": 0.2506768988464951
+  },
+  {
+    "frterm": "bleuciel",
+    "roterm": "verde",
+    "dist": 0.2548457022232485
+  },
+  {
+    "frterm": "bleuclair",
     "roterm": "albastru",
-    "dist": 0.31205134563393955
+    "dist": 0.16740559251112777
   },
   {
-    "frterm": "pourpre",
-    "roterm": "verde",
-    "dist": 0.5573306250242298
-  },
-  {
-    "frterm": "pourpre",
-    "roterm": "roz",
-    "dist": 0.23926060795162366
-  },
-  {
-    "frterm": "pourpre",
+    "frterm": "bleuclair",
     "roterm": "mov",
-    "dist": 0.15675325899167905
+    "dist": 0.3851290037241523
   },
   {
-    "frterm": "vertd'eau",
+    "frterm": "bleuclair",
+    "roterm": "roz",
+    "dist": 0.24792800741122364
+  },
+  {
+    "frterm": "bleuclair",
+    "roterm": "verde",
+    "dist": 0.2497342523188662
+  },
+  {
+    "frterm": "bleufonce",
     "roterm": "albastru",
-    "dist": 0.3673104377516517
+    "dist": 0.2920370351590153
   },
   {
-    "frterm": "vertd'eau",
-    "roterm": "verde",
-    "dist": 0.11487387329140154
-  },
-  {
-    "frterm": "vertd'eau",
-    "roterm": "roz",
-    "dist": 0.4384875660046935
-  },
-  {
-    "frterm": "vertd'eau",
+    "frterm": "bleufonce",
     "roterm": "mov",
-    "dist": 0.4666162389269877
+    "dist": 0.16334860787475736
   },
   {
-    "frterm": "bordeaux",
-    "roterm": "albastru",
-    "dist": 0.37049793483072224
-  },
-  {
-    "frterm": "bordeaux",
-    "roterm": "verde",
-    "dist": 0.5269443941117413
-  },
-  {
-    "frterm": "bordeaux",
+    "frterm": "bleufonce",
     "roterm": "roz",
-    "dist": 0.28919572988497394
+    "dist": 0.4201559486573667
   },
   {
-    "frterm": "bordeaux",
-    "roterm": "mov",
-    "dist": 0.2696179246019398
-  },
-  {
-    "frterm": "bleuturquoise",
-    "roterm": "albastru",
-    "dist": 0.2873787711348
-  },
-  {
-    "frterm": "bleuturquoise",
+    "frterm": "bleufonce",
     "roterm": "verde",
-    "dist": 0.19086871592725327
-  },
-  {
-    "frterm": "bleuturquoise",
-    "roterm": "roz",
-    "dist": 0.3909211133615273
-  },
-  {
-    "frterm": "bleuturquoise",
-    "roterm": "mov",
-    "dist": 0.403621605606529
-  },
-  {
-    "frterm": "violetfonce",
-    "roterm": "albastru",
-    "dist": 0.28901734735560536
-  },
-  {
-    "frterm": "violetfonce",
-    "roterm": "verde",
-    "dist": 0.5913463422013991
-  },
-  {
-    "frterm": "violetfonce",
-    "roterm": "roz",
-    "dist": 0.32997683313234605
-  },
-  {
-    "frterm": "violetfonce",
-    "roterm": "mov",
-    "dist": 0.21444949710368125
-  },
-  {
-    "frterm": "ocre",
-    "roterm": "albastru",
-    "dist": 0.38525378617032435
-  },
-  {
-    "frterm": "ocre",
-    "roterm": "verde",
-    "dist": 0.26824426697117437
-  },
-  {
-    "frterm": "ocre",
-    "roterm": "roz",
-    "dist": 0.30268133869064795
-  },
-  {
-    "frterm": "ocre",
-    "roterm": "mov",
-    "dist": 0.3772208087526746
-  },
-  {
-    "frterm": "vertpale",
-    "roterm": "albastru",
-    "dist": 0.44972908692671604
-  },
-  {
-    "frterm": "vertpale",
-    "roterm": "verde",
-    "dist": 0.16030478477361668
-  },
-  {
-    "frterm": "vertpale",
-    "roterm": "roz",
-    "dist": 0.46342715329929074
-  },
-  {
-    "frterm": "vertpale",
-    "roterm": "mov",
-    "dist": 0.5178402065367339
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "roterm": "albastru",
-    "dist": 0.41074895863171296
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "roterm": "verde",
-    "dist": 0.20346577222417325
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "roterm": "roz",
-    "dist": 0.3576937407968011
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "roterm": "mov",
-    "dist": 0.42938657012283366
-  },
-  {
-    "frterm": "lavande",
-    "roterm": "albastru",
-    "dist": 0.22512585423348552
-  },
-  {
-    "frterm": "lavande",
-    "roterm": "verde",
-    "dist": 0.4087142541097499
-  },
-  {
-    "frterm": "lavande",
-    "roterm": "roz",
-    "dist": 0.23840802144808845
-  },
-  {
-    "frterm": "lavande",
-    "roterm": "mov",
-    "dist": 0.19983874281089864
-  },
-  {
-    "frterm": "saumon",
-    "roterm": "albastru",
-    "dist": 0.36964411809221875
-  },
-  {
-    "frterm": "saumon",
-    "roterm": "verde",
-    "dist": 0.34553336375344257
-  },
-  {
-    "frterm": "saumon",
-    "roterm": "roz",
-    "dist": 0.23401929247774753
-  },
-  {
-    "frterm": "saumon",
-    "roterm": "mov",
-    "dist": 0.3209864042870493
-  },
-  {
-    "frterm": "bleunuit",
-    "roterm": "albastru",
-    "dist": 0.2851393722715767
-  },
-  {
-    "frterm": "bleunuit",
-    "roterm": "verde",
-    "dist": 0.591058800891284
-  },
-  {
-    "frterm": "bleunuit",
-    "roterm": "roz",
-    "dist": 0.42623922471924663
-  },
-  {
-    "frterm": "bleunuit",
-    "roterm": "mov",
-    "dist": 0.3029755160646154
+    "dist": 0.42913909755512913
   },
   {
     "frterm": "bleugris",
     "roterm": "albastru",
-    "dist": 0.18272489557304095
-  },
-  {
-    "frterm": "bleugris",
-    "roterm": "verde",
-    "dist": 0.3635732989697721
-  },
-  {
-    "frterm": "bleugris",
-    "roterm": "roz",
-    "dist": 0.32382583643376367
+    "dist": 0.11954241242048325
   },
   {
     "frterm": "bleugris",
     "roterm": "mov",
-    "dist": 0.26923237353735324
+    "dist": 0.20639387302569362
+  },
+  {
+    "frterm": "bleugris",
+    "roterm": "roz",
+    "dist": 0.24417006315293577
+  },
+  {
+    "frterm": "bleugris",
+    "roterm": "verde",
+    "dist": 0.1997239204188955
+  },
+  {
+    "frterm": "bleumarine",
+    "roterm": "albastru",
+    "dist": 0.325607599492037
+  },
+  {
+    "frterm": "bleumarine",
+    "roterm": "mov",
+    "dist": 0.17899971304485082
+  },
+  {
+    "frterm": "bleumarine",
+    "roterm": "roz",
+    "dist": 0.4378795055352897
+  },
+  {
+    "frterm": "bleumarine",
+    "roterm": "verde",
+    "dist": 0.42515517415663107
+  },
+  {
+    "frterm": "bleunuit",
+    "roterm": "albastru",
+    "dist": 0.42268002882063954
+  },
+  {
+    "frterm": "bleunuit",
+    "roterm": "mov",
+    "dist": 0.27044678207445116
+  },
+  {
+    "frterm": "bleunuit",
+    "roterm": "roz",
+    "dist": 0.5215059544903655
+  },
+  {
+    "frterm": "bleunuit",
+    "roterm": "verde",
+    "dist": 0.478097799220521
+  },
+  {
+    "frterm": "bleuroi",
+    "roterm": "albastru",
+    "dist": 0.24545879478851404
+  },
+  {
+    "frterm": "bleuroi",
+    "roterm": "mov",
+    "dist": 0.1567565059057423
+  },
+  {
+    "frterm": "bleuroi",
+    "roterm": "roz",
+    "dist": 0.39592183207307263
+  },
+  {
+    "frterm": "bleuroi",
+    "roterm": "verde",
+    "dist": 0.39911297508412025
+  },
+  {
+    "frterm": "bleuturquoise",
+    "roterm": "albastru",
+    "dist": 0.20454235427256226
+  },
+  {
+    "frterm": "bleuturquoise",
+    "roterm": "mov",
+    "dist": 0.41535936517107186
+  },
+  {
+    "frterm": "bleuturquoise",
+    "roterm": "roz",
+    "dist": 0.2901689680234789
+  },
+  {
+    "frterm": "bleuturquoise",
+    "roterm": "verde",
+    "dist": 0.20696641800533486
+  },
+  {
+    "frterm": "bordeaux",
+    "roterm": "albastru",
+    "dist": 0.33338432840995785
+  },
+  {
+    "frterm": "bordeaux",
+    "roterm": "mov",
+    "dist": 0.16236643023667421
+  },
+  {
+    "frterm": "bordeaux",
+    "roterm": "roz",
+    "dist": 0.3033133996990458
+  },
+  {
+    "frterm": "bordeaux",
+    "roterm": "verde",
+    "dist": 0.33086698841724316
+  },
+  {
+    "frterm": "brun",
+    "roterm": "albastru",
+    "dist": 0.3261609978808211
+  },
+  {
+    "frterm": "brun",
+    "roterm": "mov",
+    "dist": 0.20076769140926204
+  },
+  {
+    "frterm": "brun",
+    "roterm": "roz",
+    "dist": 0.3272004950372201
+  },
+  {
+    "frterm": "brun",
+    "roterm": "verde",
+    "dist": 0.2955646332381461
+  },
+  {
+    "frterm": "cyan",
+    "roterm": "albastru",
+    "dist": 0.16861867575913445
+  },
+  {
+    "frterm": "cyan",
+    "roterm": "mov",
+    "dist": 0.3921066155072722
+  },
+  {
+    "frterm": "cyan",
+    "roterm": "roz",
+    "dist": 0.2832573294800982
+  },
+  {
+    "frterm": "cyan",
+    "roterm": "verde",
+    "dist": 0.2233916567361012
+  },
+  {
+    "frterm": "fuchsia",
+    "roterm": "albastru",
+    "dist": 0.29172265444599293
+  },
+  {
+    "frterm": "fuchsia",
+    "roterm": "mov",
+    "dist": 0.1767136254932875
+  },
+  {
+    "frterm": "fuchsia",
+    "roterm": "roz",
+    "dist": 0.17073493562988776
+  },
+  {
+    "frterm": "fuchsia",
+    "roterm": "verde",
+    "dist": 0.362538417652903
+  },
+  {
+    "frterm": "gris",
+    "roterm": "albastru",
+    "dist": 0.1391319555730294
+  },
+  {
+    "frterm": "gris",
+    "roterm": "mov",
+    "dist": 0.23540855921452034
+  },
+  {
+    "frterm": "gris",
+    "roterm": "roz",
+    "dist": 0.1772678359600784
+  },
+  {
+    "frterm": "gris",
+    "roterm": "verde",
+    "dist": 0.15333212100683097
+  },
+  {
+    "frterm": "indigo",
+    "roterm": "albastru",
+    "dist": 0.20370544315005606
+  },
+  {
+    "frterm": "indigo",
+    "roterm": "mov",
+    "dist": 0.11296761607906322
+  },
+  {
+    "frterm": "indigo",
+    "roterm": "roz",
+    "dist": 0.324288166362185
+  },
+  {
+    "frterm": "indigo",
+    "roterm": "verde",
+    "dist": 0.3604989059915181
+  },
+  {
+    "frterm": "jaune",
+    "roterm": "albastru",
+    "dist": 0.37406426679023813
+  },
+  {
+    "frterm": "jaune",
+    "roterm": "mov",
+    "dist": 0.5315384647966374
+  },
+  {
+    "frterm": "jaune",
+    "roterm": "roz",
+    "dist": 0.2973860607395002
+  },
+  {
+    "frterm": "jaune",
+    "roterm": "verde",
+    "dist": 0.25709602145521326
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "roterm": "albastru",
+    "dist": 0.28766184776204035
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "roterm": "mov",
+    "dist": 0.4141063542516646
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "roterm": "roz",
+    "dist": 0.21828060562195553
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "roterm": "verde",
+    "dist": 0.1545024106060945
+  },
+  {
+    "frterm": "kaki",
+    "roterm": "albastru",
+    "dist": 0.2507773376889494
+  },
+  {
+    "frterm": "kaki",
+    "roterm": "mov",
+    "dist": 0.2895932402501353
+  },
+  {
+    "frterm": "kaki",
+    "roterm": "roz",
+    "dist": 0.2780810265630299
+  },
+  {
+    "frterm": "kaki",
+    "roterm": "verde",
+    "dist": 0.12447129955115654
+  },
+  {
+    "frterm": "lavande",
+    "roterm": "albastru",
+    "dist": 0.15386262778194537
+  },
+  {
+    "frterm": "lavande",
+    "roterm": "mov",
+    "dist": 0.26592641133404576
+  },
+  {
+    "frterm": "lavande",
+    "roterm": "roz",
+    "dist": 0.1575289469284729
+  },
+  {
+    "frterm": "lavande",
+    "roterm": "verde",
+    "dist": 0.2752203431878211
+  },
+  {
+    "frterm": "magenta",
+    "roterm": "albastru",
+    "dist": 0.2812663616215641
+  },
+  {
+    "frterm": "magenta",
+    "roterm": "mov",
+    "dist": 0.2066507853392291
+  },
+  {
+    "frterm": "magenta",
+    "roterm": "roz",
+    "dist": 0.13543909602891466
+  },
+  {
+    "frterm": "magenta",
+    "roterm": "verde",
+    "dist": 0.3616066714787732
+  },
+  {
+    "frterm": "marron",
+    "roterm": "albastru",
+    "dist": 0.2921434309422353
+  },
+  {
+    "frterm": "marron",
+    "roterm": "mov",
+    "dist": 0.20068680524969837
+  },
+  {
+    "frterm": "marron",
+    "roterm": "roz",
+    "dist": 0.2861606455259644
+  },
+  {
+    "frterm": "marron",
+    "roterm": "verde",
+    "dist": 0.24682676251340893
+  },
+  {
+    "frterm": "mauve",
+    "roterm": "albastru",
+    "dist": 0.1753338596998754
+  },
+  {
+    "frterm": "mauve",
+    "roterm": "mov",
+    "dist": 0.1380487954370706
+  },
+  {
+    "frterm": "mauve",
+    "roterm": "roz",
+    "dist": 0.17284719958465194
+  },
+  {
+    "frterm": "mauve",
+    "roterm": "verde",
+    "dist": 0.30844633815253303
+  },
+  {
+    "frterm": "noir",
+    "roterm": "albastru",
+    "dist": 0.4937218565212679
+  },
+  {
+    "frterm": "noir",
+    "roterm": "mov",
+    "dist": 0.32925426483803794
+  },
+  {
+    "frterm": "noir",
+    "roterm": "roz",
+    "dist": 0.5520514147187099
+  },
+  {
+    "frterm": "noir",
+    "roterm": "verde",
+    "dist": 0.5010799019395259
+  },
+  {
+    "frterm": "ocre",
+    "roterm": "albastru",
+    "dist": 0.26970021214792855
+  },
+  {
+    "frterm": "ocre",
+    "roterm": "mov",
+    "dist": 0.35474364330390346
+  },
+  {
+    "frterm": "ocre",
+    "roterm": "roz",
+    "dist": 0.14079771415311731
+  },
+  {
+    "frterm": "ocre",
+    "roterm": "verde",
+    "dist": 0.1715119239704568
+  },
+  {
+    "frterm": "orange",
+    "roterm": "albastru",
+    "dist": 0.3112189492251349
+  },
+  {
+    "frterm": "orange",
+    "roterm": "mov",
+    "dist": 0.3625307163987509
+  },
+  {
+    "frterm": "orange",
+    "roterm": "roz",
+    "dist": 0.15223530611371563
+  },
+  {
+    "frterm": "orange",
+    "roterm": "verde",
+    "dist": 0.2184337707941068
+  },
+  {
+    "frterm": "pourpre",
+    "roterm": "albastru",
+    "dist": 0.3038091906951893
+  },
+  {
+    "frterm": "pourpre",
+    "roterm": "mov",
+    "dist": 0.09322693600155689
+  },
+  {
+    "frterm": "pourpre",
+    "roterm": "roz",
+    "dist": 0.3000238453707112
+  },
+  {
+    "frterm": "pourpre",
+    "roterm": "verde",
+    "dist": 0.36670574624126256
   },
   {
     "frterm": "prune",
     "roterm": "albastru",
-    "dist": 0.3437588994375018
-  },
-  {
-    "frterm": "prune",
-    "roterm": "verde",
-    "dist": 0.5817250897740623
-  },
-  {
-    "frterm": "prune",
-    "roterm": "roz",
-    "dist": 0.33781822612565676
+    "dist": 0.3269948570728999
   },
   {
     "frterm": "prune",
     "roterm": "mov",
-    "dist": 0.2609816503132931
+    "dist": 0.13136464848161322
+  },
+  {
+    "frterm": "prune",
+    "roterm": "roz",
+    "dist": 0.36365005767500713
+  },
+  {
+    "frterm": "prune",
+    "roterm": "verde",
+    "dist": 0.3744230008125579
+  },
+  {
+    "frterm": "rose",
+    "roterm": "albastru",
+    "dist": 0.2431391004325172
+  },
+  {
+    "frterm": "rose",
+    "roterm": "mov",
+    "dist": 0.2615373173158847
+  },
+  {
+    "frterm": "rose",
+    "roterm": "roz",
+    "dist": 0.06815334013890474
+  },
+  {
+    "frterm": "rose",
+    "roterm": "verde",
+    "dist": 0.30833784659478775
+  },
+  {
+    "frterm": "rouge",
+    "roterm": "albastru",
+    "dist": 0.34497934123946183
+  },
+  {
+    "frterm": "rouge",
+    "roterm": "mov",
+    "dist": 0.24910685163756427
+  },
+  {
+    "frterm": "rouge",
+    "roterm": "roz",
+    "dist": 0.19529430881356882
+  },
+  {
+    "frterm": "rouge",
+    "roterm": "verde",
+    "dist": 0.30719503329876735
+  },
+  {
+    "frterm": "saumon",
+    "roterm": "albastru",
+    "dist": 0.2677587804858587
+  },
+  {
+    "frterm": "saumon",
+    "roterm": "mov",
+    "dist": 0.3691486790925677
+  },
+  {
+    "frterm": "saumon",
+    "roterm": "roz",
+    "dist": 0.11897873022002564
+  },
+  {
+    "frterm": "saumon",
+    "roterm": "verde",
+    "dist": 0.2392906914565386
   },
   {
     "frterm": "taupe",
     "roterm": "albastru",
-    "dist": 0.2892187039149455
-  },
-  {
-    "frterm": "taupe",
-    "roterm": "verde",
-    "dist": 0.3458856332385271
-  },
-  {
-    "frterm": "taupe",
-    "roterm": "roz",
-    "dist": 0.2593770157175818
+    "dist": 0.18620884749268035
   },
   {
     "frterm": "taupe",
     "roterm": "mov",
-    "dist": 0.2749018491397421
+    "dist": 0.23777860879291196
+  },
+  {
+    "frterm": "taupe",
+    "roterm": "roz",
+    "dist": 0.14870543668246058
+  },
+  {
+    "frterm": "taupe",
+    "roterm": "verde",
+    "dist": 0.1663695497946173
+  },
+  {
+    "frterm": "turquoise",
+    "roterm": "albastru",
+    "dist": 0.18479598480494355
+  },
+  {
+    "frterm": "turquoise",
+    "roterm": "mov",
+    "dist": 0.3867719929375241
+  },
+  {
+    "frterm": "turquoise",
+    "roterm": "roz",
+    "dist": 0.27637908842639997
+  },
+  {
+    "frterm": "turquoise",
+    "roterm": "verde",
+    "dist": 0.1662881713012636
+  },
+  {
+    "frterm": "vert",
+    "roterm": "albastru",
+    "dist": 0.24348762205391242
+  },
+  {
+    "frterm": "vert",
+    "roterm": "mov",
+    "dist": 0.3868980338733321
+  },
+  {
+    "frterm": "vert",
+    "roterm": "roz",
+    "dist": 0.28571862390475183
+  },
+  {
+    "frterm": "vert",
+    "roterm": "verde",
+    "dist": 0.07315927503920419
+  },
+  {
+    "frterm": "vertclair",
+    "roterm": "albastru",
+    "dist": 0.3116563583691575
+  },
+  {
+    "frterm": "vertclair",
+    "roterm": "mov",
+    "dist": 0.4928586266361763
+  },
+  {
+    "frterm": "vertclair",
+    "roterm": "roz",
+    "dist": 0.30800998609644253
+  },
+  {
+    "frterm": "vertclair",
+    "roterm": "verde",
+    "dist": 0.20767938863419894
+  },
+  {
+    "frterm": "vertd'eau",
+    "roterm": "albastru",
+    "dist": 0.19515412908291754
+  },
+  {
+    "frterm": "vertd'eau",
+    "roterm": "mov",
+    "dist": 0.38389653933141105
+  },
+  {
+    "frterm": "vertd'eau",
+    "roterm": "roz",
+    "dist": 0.2690273131480219
+  },
+  {
+    "frterm": "vertd'eau",
+    "roterm": "verde",
+    "dist": 0.13466662643637806
+  },
+  {
+    "frterm": "vertfluo",
+    "roterm": "albastru",
+    "dist": 0.3786882184592889
+  },
+  {
+    "frterm": "vertfluo",
+    "roterm": "mov",
+    "dist": 0.5463304652220785
+  },
+  {
+    "frterm": "vertfluo",
+    "roterm": "roz",
+    "dist": 0.39347675110886704
+  },
+  {
+    "frterm": "vertfluo",
+    "roterm": "verde",
+    "dist": 0.2218731478108149
+  },
+  {
+    "frterm": "vertfonce",
+    "roterm": "albastru",
+    "dist": 0.30193193170504773
+  },
+  {
+    "frterm": "vertfonce",
+    "roterm": "mov",
+    "dist": 0.2748982965935651
+  },
+  {
+    "frterm": "vertfonce",
+    "roterm": "roz",
+    "dist": 0.37678905183570827
+  },
+  {
+    "frterm": "vertfonce",
+    "roterm": "verde",
+    "dist": 0.25972284344840135
   },
   {
     "frterm": "vertforet",
     "roterm": "albastru",
-    "dist": 0.3138326062644687
-  },
-  {
-    "frterm": "vertforet",
-    "roterm": "verde",
-    "dist": 0.379687912537225
-  },
-  {
-    "frterm": "vertforet",
-    "roterm": "roz",
-    "dist": 0.41805227493379365
+    "dist": 0.28028092701740076
   },
   {
     "frterm": "vertforet",
     "roterm": "mov",
-    "dist": 0.38211707877855505
+    "dist": 0.27113200899729106
+  },
+  {
+    "frterm": "vertforet",
+    "roterm": "roz",
+    "dist": 0.3573375692847599
+  },
+  {
+    "frterm": "vertforet",
+    "roterm": "verde",
+    "dist": 0.21710167973175726
   },
   {
     "frterm": "vertkaki",
     "roterm": "albastru",
-    "dist": 0.32958848104101823
-  },
-  {
-    "frterm": "vertkaki",
-    "roterm": "verde",
-    "dist": 0.31888526453912985
-  },
-  {
-    "frterm": "vertkaki",
-    "roterm": "roz",
-    "dist": 0.36702820415013326
+    "dist": 0.24070681763302232
   },
   {
     "frterm": "vertkaki",
     "roterm": "mov",
-    "dist": 0.3711230953417069
+    "dist": 0.29811481981635746
+  },
+  {
+    "frterm": "vertkaki",
+    "roterm": "roz",
+    "dist": 0.2521825184773934
+  },
+  {
+    "frterm": "vertkaki",
+    "roterm": "verde",
+    "dist": 0.11572542719755627
+  },
+  {
+    "frterm": "vertpale",
+    "roterm": "albastru",
+    "dist": 0.3241487151192727
+  },
+  {
+    "frterm": "vertpale",
+    "roterm": "mov",
+    "dist": 0.5047123664315379
+  },
+  {
+    "frterm": "vertpale",
+    "roterm": "roz",
+    "dist": 0.2870344582832847
+  },
+  {
+    "frterm": "vertpale",
+    "roterm": "verde",
+    "dist": 0.25271996227785204
+  },
+  {
+    "frterm": "vertpomme",
+    "roterm": "albastru",
+    "dist": 0.3453957272198528
+  },
+  {
+    "frterm": "vertpomme",
+    "roterm": "mov",
+    "dist": 0.5175812228732668
+  },
+  {
+    "frterm": "vertpomme",
+    "roterm": "roz",
+    "dist": 0.3400933857665747
+  },
+  {
+    "frterm": "vertpomme",
+    "roterm": "verde",
+    "dist": 0.2040736918683426
   },
   {
     "frterm": "vertsapin",
     "roterm": "albastru",
-    "dist": 0.30192946780758606
-  },
-  {
-    "frterm": "vertsapin",
-    "roterm": "verde",
-    "dist": 0.4029184037279533
-  },
-  {
-    "frterm": "vertsapin",
-    "roterm": "roz",
-    "dist": 0.40421407362966044
+    "dist": 0.2632075753187214
   },
   {
     "frterm": "vertsapin",
     "roterm": "mov",
-    "dist": 0.36155334140254136
+    "dist": 0.2510829143838898
+  },
+  {
+    "frterm": "vertsapin",
+    "roterm": "roz",
+    "dist": 0.3473547475407944
+  },
+  {
+    "frterm": "vertsapin",
+    "roterm": "verde",
+    "dist": 0.22210984837687156
+  },
+  {
+    "frterm": "violet",
+    "roterm": "albastru",
+    "dist": 0.20893869071164406
+  },
+  {
+    "frterm": "violet",
+    "roterm": "mov",
+    "dist": 0.0740757620313292
+  },
+  {
+    "frterm": "violet",
+    "roterm": "roz",
+    "dist": 0.24556692569974753
+  },
+  {
+    "frterm": "violet",
+    "roterm": "verde",
+    "dist": 0.35097998117646056
+  },
+  {
+    "frterm": "violetfonce",
+    "roterm": "albastru",
+    "dist": 0.3270671582142115
+  },
+  {
+    "frterm": "violetfonce",
+    "roterm": "mov",
+    "dist": 0.11710195803225672
+  },
+  {
+    "frterm": "violetfonce",
+    "roterm": "roz",
+    "dist": 0.3778139440112482
+  },
+  {
+    "frterm": "violetfonce",
+    "roterm": "verde",
+    "dist": 0.40755613330072193
   }
 ]

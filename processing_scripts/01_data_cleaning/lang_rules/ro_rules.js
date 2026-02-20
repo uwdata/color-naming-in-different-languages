@@ -5,6 +5,7 @@ const excludeNames = [
     "blue"
 ];
 const nameReplacingRules = [
+    [/fuchsia/, "fucsia"],
     [/închis/, "inchis"],
     ["roșu", "rosu"]
 ];

@@ -18,6 +18,7 @@ HIGH_RES_BIN = 'ring_0.05_h8'
 #    is normally around +0 to +.01 distance
 HIGH_RES_DIST = .20
 
+#NUM_PROCESSES = 8
 NUM_PROCESSES = 12
 
 # We will us the blur version of the files
@@ -135,6 +136,8 @@ def main():
 						colorNamesWithBins[colorInfo["term"]][bin_size] = colorInfo
 			for term, binnedInfo in colorNamesWithBins.items():
 				ColorNames[lang].append(binnedInfo)
+
+			ColorNames[lang].sort(key= lambda x:x[DEFAULT_BIN]["term"])
 
 
 		print("loading distance matrix")

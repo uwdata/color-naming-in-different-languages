@@ -85,21 +85,21 @@ const MAX_H = 360
 
 const LAB_BIN_SIZES = [ 
   // ring h-div 8 I think looks best
-  // new BinSize({
-  //   type: "ring",
-  //   l: 1/10,
-  //   h_divs: 8
-  // }),
-  // new BinSize({
-  //   type: "ring",
-  //   l: 1/20,
-  //   h_divs: 8
-  // }),
-  // new BinSize({
-  //   type: "ring",
-  //   l: 1/40,
-  //   h_divs: 8
-  // }),
+  new BinSize({
+    type: "ring",
+    l: 1/10,
+    h_divs: 8
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/20,
+    h_divs: 8
+  }),
+  new BinSize({
+    type: "ring",
+    l: 1/40,
+    h_divs: 8
+  }),
    new BinSize({
     type: "ring",
     l: 1/5,
@@ -141,6 +141,7 @@ const LAB_BIN_SIZES = [
     type: "box",
     l: 1/15, 
     ab: 1/60}),
+
   // ring size h-div 3 (didn't look as good)
   new BinSize({
     type: "ring",
