@@ -4,6 +4,7 @@ import JSON5 from 'json5'
 
 const STUDY_2_DATA_I = "./download.csv"
 const NAMES_O = "./study_2_data.json"
+const DATA_STRUCTURE_O = "./data_structure.json"
 
 const CHINA_REGIONS_I = "../supporting_files/chinaRegions.json"
 const china_regions = JSON.parse(fs.readFileSync(CHINA_REGIONS_I))
@@ -25,11 +26,13 @@ const FIELDS_TO_IGNORE = [
     
 
     // delete comments in case there is any personalized info
-    ["study", "comments"]
+    ["study", "comments"],
+    ["study", "demographics", "demographics-color-work-details"]
 ]
 
 const study_2_data = await csv({checkType: true}).fromFile(STUDY_2_DATA_I)
 
+const dataStructure = {}
 let participantInfo = []
 
 for(const participant_row of study_2_data){
@@ -140,8 +143,26 @@ for(const participant of participantInfo){
     }
 }
 
-// console.log(JSON.stringify(participantInfo, null, 2))
+// Get final data structure (so we can track new information and make sure to filter out potentially sensitive data)
+function addFields(participantInfoSubset, structureObjectSubset){
+    for(const [key, vals] of Object.entries(participantInfoSubset)){
+        if(!(key in structureObjectSubset)){
+            structureObjectSubset[key] = {}
+        }
+        if(participantInfoSubset[key]?.constructor === Object){
+            addFields(participantInfoSubset[key], structureObjectSubset[key])
+        } else {
+            structureObjectSubset[key] = ""
+        }
+    }
+}
+
+for(const participant of participantInfo){
+    addFields(participant, dataStructure)
+}
+
 console.log("saving info from ", participantInfo.length, " participants")
 
 fs.writeFileSync(NAMES_O, JSON.stringify(participantInfo, null, 2));
 
+fs.writeFileSync(DATA_STRUCTURE_O, JSON.stringify(dataStructure, null, 2));

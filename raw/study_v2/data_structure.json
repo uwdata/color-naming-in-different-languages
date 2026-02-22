@@ -1,0 +1,164 @@
+{
+  "litw": {
+    "initialize": {
+      "contentLanguage": "",
+      "date": "",
+      "geoLoc": {
+        "country": "",
+        "simplifiedRegion": ""
+      },
+      "urlParams": {
+        "locale": "",
+        "test": ""
+      }
+    }
+  },
+  "participant_id": "",
+  "study": {
+    "data": {
+      "color_name_match_set": {
+        "1": {
+          "background": "",
+          "lang0": "",
+          "locale": "",
+          "matches": "",
+          "rgbSet": "",
+          "studyVersion": "",
+          "trialNum": ""
+        },
+        "3": {
+          "background": "",
+          "lang0": "",
+          "locale": "",
+          "matches": "",
+          "rgbSet": "",
+          "studyVersion": "",
+          "trialNum": ""
+        },
+        "5": {
+          "background": "",
+          "lang0": "",
+          "locale": "",
+          "matches": "",
+          "rgbSet": "",
+          "studyVersion": "",
+          "trialNum": ""
+        }
+      },
+      "color_name_set": {
+        "1": {
+          "background": "",
+          "color_names": "",
+          "lang0": "",
+          "locale": "",
+          "rgbSet": "",
+          "studyVersion": "",
+          "trialNum": ""
+        },
+        "3": {
+          "background": "",
+          "color_names": "",
+          "lang0": "",
+          "locale": "",
+          "rgbSet": "",
+          "studyVersion": "",
+          "trialNum": ""
+        },
+        "5": {
+          "background": "",
+          "color_names": "",
+          "lang0": "",
+          "locale": "",
+          "rgbSet": "",
+          "studyVersion": "",
+          "trialNum": ""
+        }
+      },
+      "color_sorting_results": {
+        "1": {
+          "background": "",
+          "sortTilePage": "",
+          "sortTiles": {
+            "1": {
+              "tilesDrags": "",
+              "tilesOrder": "",
+              "tilesTime": ""
+            },
+            "2": {
+              "tilesDrags": "",
+              "tilesOrder": "",
+              "tilesTime": ""
+            },
+            "3": {
+              "tilesDrags": "",
+              "tilesOrder": "",
+              "tilesTime": ""
+            }
+          },
+          "trialNum": ""
+        },
+        "2": {
+          "background": "",
+          "sortTilePage": "",
+          "sortTiles": {
+            "1": {
+              "tilesDrags": "",
+              "tilesOrder": "",
+              "tilesTime": ""
+            },
+            "2": {
+              "tilesDrags": "",
+              "tilesOrder": "",
+              "tilesTime": ""
+            },
+            "3": {
+              "tilesDrags": "",
+              "tilesOrder": "",
+              "tilesTime": ""
+            }
+          },
+          "trialNum": ""
+        }
+      },
+      "date": "",
+      "result": {
+        "sort_score": ""
+      }
+    },
+    "demographics": {
+      "background": "",
+      "colorSpace": "",
+      "date": "",
+      "demographics-age": "",
+      "demographics-color-blindness": "",
+      "demographics-color-reading": "",
+      "demographics-color-work": "",
+      "demographics-country-grow": "",
+      "demographics-country-grow-other": "",
+      "demographics-country-live": "",
+      "demographics-country-live-other": "",
+      "demographics-education": "",
+      "demographics-gender": "",
+      "demographics-gender-other": "",
+      "demographics-lang0": "",
+      "demographics-lang0-other": "",
+      "demographics-monitor-brightness": {
+        "demographics-monitor-brightness-idk": "",
+        "demographics-monitor-brightness-value": ""
+      },
+      "demographics-more-lang": {
+        "demographics-lang1": "",
+        "demographics-lang1-fluency": "",
+        "demographics-lang1-other": "",
+        "demographics-lang2": "",
+        "demographics-lang2-fluency": "",
+        "demographics-lang2-other": ""
+      },
+      "demographics-retake": "",
+      "demographics-surrounding-brightness": {
+        "demographics-surrounding-brightness-idk": "",
+        "demographics-surrounding-brightness-value": ""
+      }
+    }
+  }
+}
