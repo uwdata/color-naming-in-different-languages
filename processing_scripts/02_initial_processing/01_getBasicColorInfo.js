@@ -11,6 +11,7 @@ const colorSet = JSON.parse(
 
 const MIN_FULL_COLOR_NAMES = 12;
 const MIN_LINE_COLOR_NAMES = 8
+const MIN_PARTICIPANT_IDS_PER_COLOR_NAME = 2
 const LINE_RGB_SET = "line";
 const FULL_RGB_SET = "full";
 
@@ -56,7 +57,6 @@ csv().fromFile(FILE_I)
   grouped_lang.forEach(lang => {
     lang.terms = d3.groups(lang.values, v => v.name)
                 .map(a => {return {key: a[0], values: a[1]}})
-                .sort((a,b) => -a.values.length + b.values.length);
 
     lang.numLineNames = 0 // count line info just for the lang_info summary
     lang.numFullNames = 0
@@ -67,8 +67,11 @@ csv().fromFile(FILE_I)
       term.numFullNames = term.values.filter(entry => entry.rgbSet == FULL_RGB_SET).length
       lang.numFullNames += term.numFullNames
 
+      term.numParticipantIds = (new Set(term.values.map(a => a.participantId))).size
+
       term.simplifiedName = term.key;
-      // TODO: Get alternate names
+
+      // TODO: Get alternate names (e.g., simplified and traditional Chinese script)
       term.commonName = d3.groups(
         lang.values.filter(v => v.name == term.key)
         ,t => t.standardized_entered_name)
@@ -76,7 +79,11 @@ csv().fromFile(FILE_I)
         .sort((a,b) => -a.values.length + b.values.length)[0].key;
     })
 
-    lang.terms = lang.terms.filter(g_term => g_term.numFullNames >= MIN_FULL_COLOR_NAMES || g_term.numLineNames >= MIN_LINE_COLOR_NAMES);
+    lang.terms = lang.terms.filter(g_term => 
+      g_term.numParticipantIds >= MIN_PARTICIPANT_IDS_PER_COLOR_NAME && (
+        g_term.numFullNames >= MIN_FULL_COLOR_NAMES || 
+        g_term.numLineNames >= MIN_LINE_COLOR_NAMES)
+      );
 
     // sort alphabetically by simplifiedName (stable-ish sort)
     lang.terms.sort((a,b) => a.simplifiedName.localeCompare(b.simplifiedName));
