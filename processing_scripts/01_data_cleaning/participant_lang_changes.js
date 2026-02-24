@@ -1,6 +1,13 @@
 // Participants who entered data in a language different than they marked
 
 const participantLangChanges = {
+    // special cases for participant 0
+    "0": {
+        "": "en",
+        "na": "zh"
+    },
+
+
     "11895": "fa",
     "13230": "ko",
     "3944": "ko",
@@ -12,7 +19,6 @@ const participantLangChanges = {
     "11776": "fa",
     "20244": "zh",
     "5608": "de", // appears to be German
-
 
     // Participants with consistently English color names, but labeled as another languages
     "5891": "en",
@@ -124,7 +130,14 @@ const participantLangChanges = {
     "18548": "en",
     "18585": "en",
     "18561": "en",
-    "18627": "en"
+    "18627": "en",
+    "9760": "en",
+    "7505": "en",
+    "9303": "en",
+    "17690": "en",
+    "6915": "en",
+    "7445": "en",
+    "8408": "en"
 };
 
 

@@ -142,7 +142,26 @@ csv().fromFile(COLOR_NAMES_I)
       if(!(cn.originalLangAbv in cn)){
         cn.originalLangAbv = cn.langAbv
       }
-      cn.langAbv = participantLangChanges[cn.participantId]
+      const newLangAbv = participantLangChanges[cn.participantId]
+      if((typeof newLangAbv) === "string"){
+        cn.langAbv = newLangAbv
+      } else if(cn.langAbv !== undefined){
+        if(cn.langAbv in newLangAbv){
+          cn.langAbv = newLangAbv[cn.originalLangAbv]
+        } else {
+          // don't change in this case, go back to how it was
+          delete cn.originalLangAbv
+          continue
+        }
+      } else {
+        if(cn.lang in newLangAbv){
+          cn.langAbv = newLangAbv[cn.lang]
+        } else { 
+          // don't change in this case, go back to how it was
+          delete cn.originalLangAbv
+          continue
+        }
+      }
       const lang = languages_iso_639.find(l => l["639‑1"] == cn.langAbv)
       cn.lang = `${lang["Language name"]} (${lang["Native name"]})`
     }
