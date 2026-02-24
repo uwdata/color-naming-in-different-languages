@@ -65,7 +65,6 @@ csv()
         lang.terms.forEach(t => {
           t.rank = rankLookUp.indexOf(t.values.length) + 1;
         });
-;
 
       });
 

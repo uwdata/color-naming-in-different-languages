@@ -14,6 +14,7 @@ const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 const MIN_NperBin = 4;
 
 
+//const FILE_BASIC_COLOR_O = "../../model/full_colors_info.csv"; // Path for the output
 const FILE_O = "../../model/binned_full_colors/full_color_names_binned";
 const FILE_O_SALIENCY = "../../model/binned_full_colors/full_color_map_saliency_bins"
 const FILE_LANG_BIN_O = "../../model/binned_full_colors/full_color_lang_bin_info.csv"
