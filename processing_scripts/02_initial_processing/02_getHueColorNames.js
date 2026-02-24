@@ -30,6 +30,8 @@ const colorSet = JSON.parse(
 const langAbvToLang = {}
 
 let colorNames = await csv().fromFile(I_FILE)
+let basicColorInfo = await csv().fromFile(I_BASIC_COLOR_INFO_FILE)
+
 const hue_colors_info = []
 
 for(const n_bins of N_BIN_OPTIONS){
@@ -41,6 +43,7 @@ for(const n_bins of N_BIN_OPTIONS){
     //There is a possible priming effect for studies with version 1.1.4, but we'll ignore that for now
     // We also won't remove participants who got assigned id of 0 due to a bug (as we had previously done)
     //colorNames = colorNames.filter(cn => cn.participantId != 0);
+
     colorNames = colorNames.filter(cn => cn.rgbSet === "line");
 
 
@@ -54,16 +57,24 @@ for(const n_bins of N_BIN_OPTIONS){
     groupedByLang.forEach((lang) => {
       lang.terms = d3.groups(lang.values, v => v.name)
         .map(a => {return {key: a[0], values: a[1]}})
-        .sort((a,b) => -a.values.length + b.values.length);
+        .sort((a,b) => -a.values.name + b.values.length);
 
       let rankLookUp = lang.terms.map(t => t.values.length);
       
       lang.topNTerms = lang.terms
+      // TODO: Filter by if they are in basicColorInfo (which did the MIN_ENTRIES_PER_TERM check
+      // before calculating an "average" hue color)
         .filter(t => t.values.length >= MIN_ENTRIES_PER_TERM)
 
       lang.terms.forEach(t => {
         t.rank = rankLookUp.indexOf(t.values.length) + 1;
       });
+      
+      lang.terms.sort((a, b) => 
+        a.key.localeCompare(b.key))
+
+      lang.topNTerms.sort((a, b) => 
+        a.key.localeCompare(b.key))
 
     });
 
@@ -105,8 +116,10 @@ for(const n_bins of N_BIN_OPTIONS){
         let termNameCnt = 0
         let [x_hue_angle, y_hue_angle] = [0, 0]
 
+        // TODO: Fix p3/Rec2020 colors
         // make sure all values are actually hue colors (some got mislabeled)
         term.values = term.values.filter((response) => Math.max(response.r, response.g, response.b) == 255 && Math.min(response.r, response.g, response.b) == 0)
+          .sort((a,b) => a.name.localeCompare(b.name))
 
         term.values.forEach(response => {
           if(blur == NO_BLUR){
@@ -256,7 +269,12 @@ for(const n_bins of N_BIN_OPTIONS){
   }
 }
 
-hue_colors_info.sort((a, b) => a.lang.localeCompare(b.lang))
+// TODO: secondary sort by term
+hue_colors_info.sort((a, b) => 
+  a.lang != b.lang ? 
+  a.lang.localeCompare(b.lang) :
+  a.simplifiedName.localeCompare(b.simplifiedName)
+)
 
 // export overall color info
 let hueColorWriter = csvWriter();
