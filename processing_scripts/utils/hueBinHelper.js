@@ -21,6 +21,7 @@ function getHueBinHelper(colorSet){
             return colorSet[i].rgb
             }
         }
+        console.log("Error, hue color not found for ratio value: ", ratio)
         throw new Error("Error, hue color not found for ratio value: ", ratio)
     }
 

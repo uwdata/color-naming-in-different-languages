@@ -7,8 +7,6 @@ import hueBinHelper from '../utils/hueBinHelper.js'
 
 const N_BIN_OPTIONS = [120, 72, 36]
 
-const MIN_ENTRIES_PER_TERM = 8 // make sure each term is named a minimum number of times to count it
-
 // Restrict languages to those that have an average minimum number of terms per bin
 //  (note: blur allows more languages to be included since entries get double counted)
 const MIN_TERMS_PER_BIN = 15
@@ -19,7 +17,7 @@ const BLUR = "blur"
 const BLUR_EXPONENT = 1.5
 
 const I_FILE = "../../model/cleaned_color_names.csv"
-const I_BASIC_COLOR_INFO_FILE = "../../model/cleaned_color_names.csv"
+const I_BASIC_COLOR_INFO_FILE = "../../model/basic_colors_info.csv"
 const O_FILE_NAME = `../../model/binned_hue_colors/hue_color_names_binned_`;
 const O_AGGREGATE = `aggregated`;
 const O_HUE_SUMMARY_FILE = `../../model/hue_colors_info.csv`;
@@ -31,6 +29,27 @@ const langAbvToLang = {}
 
 let colorNames = await csv().fromFile(I_FILE)
 let basicColorInfo = await csv().fromFile(I_BASIC_COLOR_INFO_FILE)
+
+
+colorNames = colorNames.filter(cn => cn.rgbSet === "line");
+
+// TODO: Proper calculation of offset of these
+// Naively map p3/rec2020 colors to match to srgb
+for(const entry of colorNames){
+  if(entry.colorSpace == "p3"){
+    entry.r = Math.round(entry.r*255)
+    entry.g = Math.round(entry.g*255)
+    entry.b = Math.round(entry.b*255)
+  } if(entry.colorSpace == "rec2020"){
+    console.log("WARNING: mapping rec2020 hue colors, likely quite inaccurate")
+    entry.r = Math.round(entry.r*255)
+    entry.g = Math.round(entry.g*255)
+    entry.b = Math.round(entry.b*255)
+  }
+}
+
+ // make sure all values are actually hue colors (some got mislabeled)
+colorNames = colorNames.filter((response) => Math.max(response.r, response.g, response.b) == 255 && Math.min(response.r, response.g, response.b) == 0)
 
 const hue_colors_info = []
 
@@ -44,7 +63,7 @@ for(const n_bins of N_BIN_OPTIONS){
     // We also won't remove participants who got assigned id of 0 due to a bug (as we had previously done)
     //colorNames = colorNames.filter(cn => cn.participantId != 0);
 
-    colorNames = colorNames.filter(cn => cn.rgbSet === "line");
+
 
 
     // 1. Get top languages
@@ -62,9 +81,17 @@ for(const n_bins of N_BIN_OPTIONS){
       let rankLookUp = lang.terms.map(t => t.values.length);
       
       lang.topNTerms = lang.terms
-      // TODO: Filter by if they are in basicColorInfo (which did the MIN_ENTRIES_PER_TERM check
-      // before calculating an "average" hue color)
-        .filter(t => t.values.length >= MIN_ENTRIES_PER_TERM)
+      // filter for terms that were deemed as having enough hue data in basic color info
+        .filter(t => {
+          const bci = basicColorInfo.find(
+            bci => bci.lang === lang.key && bci.simplifiedName == t.key)
+          if(bci){
+            if(bci.avgHueRGBCode !== ""){
+              return true
+            }
+          }
+          return false
+        })
 
       lang.terms.forEach(t => {
         t.rank = rankLookUp.indexOf(t.values.length) + 1;
@@ -115,11 +142,8 @@ for(const n_bins of N_BIN_OPTIONS){
         let colorNameCnt = new Array(n_bins).fill(0);
         let termNameCnt = 0
         let [x_hue_angle, y_hue_angle] = [0, 0]
-
-        // TODO: Fix p3/Rec2020 colors
-        // make sure all values are actually hue colors (some got mislabeled)
-        term.values = term.values.filter((response) => Math.max(response.r, response.g, response.b) == 255 && Math.min(response.r, response.g, response.b) == 0)
-          .sort((a,b) => a.name.localeCompare(b.name))
+        
+        term.values.sort((a,b) => a.name.localeCompare(b.name))
 
         term.values.forEach(response => {
           if(blur == NO_BLUR){
@@ -269,7 +293,6 @@ for(const n_bins of N_BIN_OPTIONS){
   }
 }
 
-// TODO: secondary sort by term
 hue_colors_info.sort((a, b) => 
   a.lang != b.lang ? 
   a.lang.localeCompare(b.lang) :
