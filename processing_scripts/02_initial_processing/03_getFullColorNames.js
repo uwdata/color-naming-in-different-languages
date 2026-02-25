@@ -14,20 +14,89 @@ const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 const MIN_NperBin = 4;
 
 
-//const FILE_BASIC_COLOR_O = "../../model/full_colors_info.csv"; // Path for the output
+const I_NAMES_DATA_FILE = "../../model/cleaned_color_names.csv"
+const I_BASIC_COLOR_INFO_FILE = "../../model/basic_colors_info.csv"
+const I_LANG_INFO_FILE = "../../model/lang_info.csv"
+
+const FILE_FULL_COLOR_O = "../../model/full_colors_info.csv"; // Path for the output
 const FILE_O = "../../model/binned_full_colors/full_color_names_binned";
 const FILE_O_SALIENCY = "../../model/binned_full_colors/full_color_map_saliency_bins"
 const FILE_LANG_BIN_O = "../../model/binned_full_colors/full_color_lang_bin_info.csv"
 const FILE_LANG_BIN_BLUR_O = "../../model/binned_full_colors/full_color_lang_bin_blur_info.csv"
 
 
+const colorNames = await csv().fromFile(I_NAMES_DATA_FILE)
+const basicColorInfo = await csv().fromFile(I_BASIC_COLOR_INFO_FILE)
+const lang_info = await csv().fromFile(I_LANG_INFO_FILE)
 
-csv().fromFile("../../model/cleaned_color_names.csv").then((colorNames)=> {
-csv().fromFile("../../model/full_colors_info.csv").then((colorInfo)=> {
-csv().fromFile("../../model/lang_info.csv").then((lang_info)=> {
+// lang,lang_abv,commonName,simplifiedName,avgColorRGBCode,totalColorFraction,avgL,avgA,avgB,numFullNames,numLineNames
+// TODO: totalColorFraction LowRes, MedRes, HighRes (each level depending on if enough info) all blur
+// TODO: avgColor LowRes, MedRes, HighRes (each level depending on if enough info) all blur
+//     Use the first Low,Med,High
+//   for totalcolorfraction, I just add up all the p(T|C) and divide by number of bins? right?
+//     before filter for too low count bins?
+
+//  for avgColor I want to use blur, but does that mess up my averaging calculation? I think it doesn't
+//      I do sum( color okLAB vals / binCount)  / sum(1 per / color totalBinCount)
+//              langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin]
+const full_colors_info = {}
 
 const lang_bin_info = {}
 const lang_bin_blur_info = {}
+
+
+// Store basic color lookup info
+const basicColorInfoLookup = {}
+basicColorInfo.forEach(ci => {
+  if(!basicColorInfoLookup[ci.lang]){
+    basicColorInfoLookup[ci.lang] = [];
+  }
+  basicColorInfoLookup[ci.lang][ci.simplifiedName] = ci;
+});
+
+
+// Do the initial grouping of terms
+let grouped_lang = d3.groups(colorNames, d => d.lang)
+    .map(a => {return {key: a[0], values: a[1]}})
+
+for(const langData of grouped_lang){
+  langData.terms = d3.groups(langData.values, v => v.name)
+              .map(a => {return {key: a[0], values: a[1]}})
+
+  langData.terms = langData.terms
+        // limit to terms that had enough data to find avg full color in basic colors info
+        .filter(g_term => 
+            basicColorInfoLookup[langData.key] && basicColorInfoLookup[langData.key][g_term.key] 
+            && basicColorInfoLookup[langData.key][g_term.key].avgFullColorRGBCode)
+        .sort((a, b) => a.key.localeCompare(b.key));
+}
+
+// make sure at least 1 color term to try binning
+grouped_lang = grouped_lang
+                .filter(g => g.terms.length > 0)
+                .sort((a, b) => a.key.localeCompare(b.key));
+
+// Convert all response colors to sRGB for now
+for(const langData of grouped_lang){
+  for(const term of langData.terms){
+    for(const response of term.values){
+      if(response.colorSpace == "rgb"){
+        response.responseColor = new Color({
+          space: "srgb", coords: [response.r/255, response.g/255, response.b/255]
+        })
+      } else {
+        response.responseColor = new Color({
+          space: response.colorSpace, coords: [response.r, response.g, response.b]
+        })
+        .to("srgb").toGamut() // For now we reduce all color spaces to srgb until we have enough data to estimate transformation
+      }
+
+      response.responseOklch = response.responseColor.to("oklch");
+      response.responseOklab = response.responseColor.to("oklab");
+
+    }
+  }
+}
 
 for(let labBinSize of LAB_BIN_SIZES){
   console.log("calculating full colors for bin size " + labBinSize)
@@ -60,38 +129,18 @@ for(let labBinSize of LAB_BIN_SIZES){
   }
 
 
-  const commonColorNameLookup = {};
-  colorInfo.forEach(ci => {
-		if(!commonColorNameLookup[ci.lang]){
-      commonColorNameLookup[ci.lang] = [];
-    }
-		commonColorNameLookup[ci.lang][ci.simplifiedName] = ci.commonName;
-	});
-
-  let grouped_lang = d3.groups(colorNames, d => d.lang)
-     .map(a => {return {key: a[0], values: a[1]}})
-    .sort((a,b) =>  - a.values.length + b.values.length);
-
-  grouped_lang.forEach(langData => {
-    langData.terms = d3.groups(langData.values, v => v.name)
-                .map(a => {return {key: a[0], values: a[1]}})
-                .sort((a,b) => -a.values.length + b.values.length);
-
-    langData.terms = langData.terms
-          .filter(g_term => commonColorNameLookup[langData.key] && commonColorNameLookup[langData.key][g_term.key])
-          .sort((a, b) => a.key.localeCompare(b.key));
-  });
-
-  grouped_lang = grouped_lang
-                  .filter(g => g.terms.length > 0)
-                  .sort((a, b) => a.key.localeCompare(b.key));
 
   let flatten = [], saliency = [],
       flattenBlur = [], saliencyBlur = [];
 
   grouped_lang.forEach(langData => {
+    // make a shallow copy of langData and langData terms so we can track values for this binning
+    langData = {...langData}
+    langData.terms = [...langData.terms]
+
     console.log("Start : " + langData.key);
 
+  
     if(!(langData.key in lang_bin_info)){
       lang_bin_info[langData.key] = {
         lang: langData.key,
@@ -108,24 +157,12 @@ for(let labBinSize of LAB_BIN_SIZES){
       term.binColorNameCnt = labBinHelper.createLABNumBins(lab_bins)      
 
       term.values.forEach(response => {
-        let responseColor
-        if(response.colorSpace == "rgb"){
-          responseColor = new Color({
-            space: "srgb", coords: [response.r/255, response.g/255, response.b/255]
-          })
-        } else {
-          responseColor = new Color({
-            space: response.colorSpace, coords: [response.r, response.g, response.b]
-          })
-          .to("srgb").toGamut() // For now we reduce all color spaces to srgb until we have enough data to estimate transformation
-        }
-        
         let dim1Bin, dim2Bin, dim3Bin
         if(labBinSize.type == "ring"){
-          const responseOklch = responseColor.to("oklch");
+          const responseOklch =response.responseOklch;
           [dim1Bin, dim2Bin, dim3Bin] = labBinHelper.bins_from_lch({l: responseOklch.l, c: responseOklch.c, h: responseOklch.h})
         } else {
-          const responseOklab = responseColor.to("oklab");
+          const responseOklab = response.responseOklab;
           [dim1Bin, dim2Bin, dim3Bin] = labBinHelper.bins_from_lab({l: responseOklab.l, a: responseOklab.a, b: responseOklab.b}) 
         }
 
@@ -134,7 +171,7 @@ for(let labBinSize of LAB_BIN_SIZES){
     });
 
 
-    // calculate blur of color name counts
+    // calculate blur of color name counts across bins (by name)
     for(const term of langData.terms){
       term.binColorNameCntBlur = labBinHelper.createLABNumBins(lab_bins)
 
@@ -153,7 +190,7 @@ for(let labBinSize of LAB_BIN_SIZES){
        }
     }
 
-    // calculate counts of the bins and blurred bins
+    // calculate total counts for the bins and blurred bins
     let langBinColorNameCnt = labBinHelper.createLABNumBins(lab_bins);
     let langBinColorNameCntBlur = labBinHelper.createLABNumBins(lab_bins);
     for(const term of langData.terms){
@@ -244,6 +281,7 @@ for(let labBinSize of LAB_BIN_SIZES){
     const langTermBinsBuff = [];
     const langTermBinsBlurBuff = [];
 
+    // gather term info
     langData.terms.forEach(term => {
       for(let i = 0; i < lab_bins_arr.length; i++){
         const thisBin = lab_bins_arr[i]
@@ -252,12 +290,14 @@ for(let labBinSize of LAB_BIN_SIZES){
               dim2Bin = thisBin[dim2 + "_bin"],
               dim3Bin = thisBin[dim3 + "_bin"]
 
-        if (term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] !== 0) {
+        if (term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] !== 0 &&
+          langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin] >= MIN_NperBin
+        ) {
           langTermBinsBuff.push({
             "lang": langData.key,
             "langAbv": lang_info.find(d => d.lang == langData.key).langAbv,
             "term": term.key,
-            "commonTerm": commonColorNameLookup[langData.key][term.key],
+            "commonTerm": basicColorInfoLookup[langData.key][term.key].commonName,
             [dim1BinName]: dim1Bin,
             [dim2BinName]: dim2Bin,
             [dim3BinName]: dim3Bin,
@@ -266,12 +306,14 @@ for(let labBinSize of LAB_BIN_SIZES){
             "pTC": term.binPTC[dim1Bin][dim2Bin][dim3Bin]
           });
         }
-        if (term.binColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] !== 0) {
+        if (term.binColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] !== 0 &&
+            langBinColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] >= MIN_NperBin
+        ) {
           langTermBinsBlurBuff.push({
             "lang": langData.key,
             "langAbv": lang_info.find(d => d.lang == langData.key).langAbv,
             "term": term.key,
-            "commonTerm": commonColorNameLookup[langData.key][term.key],
+            "commonTerm": basicColorInfoLookup[langData.key][term.key].commonName,
             [dim1BinName]: dim1Bin,
             [dim2BinName]: dim2Bin,
             [dim3BinName]: dim3Bin,
@@ -283,7 +325,10 @@ for(let labBinSize of LAB_BIN_SIZES){
       }
     })
 
+    // TODO: Calculate term average color (bin scaled)
+    // and term fraction of color space
 
+    // gather bin info
     let bufSaliency = [];
     let bufSaliencyBlur = [];
     for(let i = 0; i < lab_bins_arr.length; i++){
@@ -293,21 +338,26 @@ for(let labBinSize of LAB_BIN_SIZES){
             dim2Bin = thisBin[dim2 + "_bin"],
             dim3Bin = thisBin[dim3 + "_bin"]
       if (langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin] >= MIN_NperBin) {
-        let maxpTC = d3.max(langTermBinsBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin), d => d.pTC);
+        // bin representative color
         const rep_lab = "representative_lab" in lab_bins[dim1Bin][dim2Bin][dim3Bin] ? 
             lab_bins[dim1Bin][dim2Bin][dim3Bin].representative_lab
           :
             lab_bins[dim1Bin][dim2Bin][dim3Bin].center_lab
         
-        const majorTerm = langTermBinsBuff.find(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin && d.pTC === maxpTC ).term
-        const basicColorInfo = colorInfo.find((a) => a.lang == langData.key && a.simplifiedName == majorTerm)
-
-        const topTerms = [...langTermBinsBuff].filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin)
+        
+        // redo: 
+        const thisBinTerms = [...langTermBinsBuff].filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin)
                           .sort((a, b) => b.pTC - a.pTC)
+
+        // top term name info
+        let maxpTC = thisBinTerms[0].pTC;
+        const majorTerm = thisBinTerms[0].term
+
+        const topTerms = thisBinTerms
                           .slice(0, 4)
                           .map(d => {return {
                             term: d.term, 
-                            commonTerm: commonColorNameLookup[langData.key][d.term], 
+                            commonTerm: basicColorInfoLookup[langData.key][d.term].commonName, 
                             pTC: d.pTC
                           }})
 
@@ -318,34 +368,32 @@ for(let labBinSize of LAB_BIN_SIZES){
           [dim2BinName]: dim2Bin,
           [dim3BinName]: dim3Bin,
           "lab": [rep_lab.l, rep_lab.a, rep_lab.b].join(","),
-          "saliency": -entropy(langTermBinsBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin).map(d => d.pTC)),
+          "saliency": -entropy(thisBinTerms.map(d => d.pTC)),
           "maxpTC": maxpTC,
           "majorTerm": majorTerm,
-          "commonTerm": commonColorNameLookup[langData.key][majorTerm],
-          "avgTermColor": basicColorInfo.avgColorRGBCode,
+          "commonTerm": basicColorInfoLookup[langData.key][majorTerm].commonName,
+          "avgTermColor": basicColorInfoLookup[langData.key][majorTerm].avgFullColorRGBCode,
           "topTerms": topTerms
         });
       }
       // blurred version
       if (langBinColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] >= MIN_NperBin) {
-        let maxpTC = d3.max(langTermBinsBlurBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin), d => d.pTC);
         const rep_lab = "representative_lab" in lab_bins[dim1Bin][dim2Bin][dim3Bin] ? 
             lab_bins[dim1Bin][dim2Bin][dim3Bin].representative_lab
           :
             lab_bins[dim1Bin][dim2Bin][dim3Bin].center_lab
 
-        if(!langTermBinsBlurBuff.find(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin && d.pTC === maxpTC )){
-          console.log("Error!")
-        }
-        const majorTerm = langTermBinsBlurBuff.find(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin && d.pTC === maxpTC ).term
-        const basicColorInfo = colorInfo.find((a) => a.lang == langData.key && a.simplifiedName == majorTerm)
+        const thisBinTerms = [...langTermBinsBlurBuff].filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin)
+                  .sort((a, b) => b.pTC - a.pTC)
 
-        const topTerms = [...langTermBinsBlurBuff].filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin)
-                          .sort((a, b) => b.pTC - a.pTC)
+        const maxpTC = thisBinTerms[0].pTC;
+        const majorTerm = thisBinTerms[0].term
+
+        const topTerms = thisBinTerms
                           .slice(0, 4)
                           .map(d => {return {
                             term: d.term, 
-                            commonTerm: commonColorNameLookup[langData.key][d.term], 
+                            commonTerm: basicColorInfoLookup[langData.key][d.term].commonName, 
                             pTC: d.pTC
                           }})
 
@@ -356,11 +404,11 @@ for(let labBinSize of LAB_BIN_SIZES){
           [dim2BinName]: dim2Bin,
           [dim3BinName]: dim3Bin,
           "lab": [rep_lab.dim1, rep_lab.dim2, rep_lab.dim3].join(","),
-          "saliency": -entropy(langTermBinsBlurBuff.filter(d => d[dim1BinName] === dim1Bin && d[dim2BinName] === dim2Bin && d[dim3BinName] === dim3Bin).map(d => d.pTC)),
+          "saliency": -entropy(thisBinTerms.map(d => d.pTC)),
           "maxpTC": maxpTC,
           "majorTerm": majorTerm,
-          "commonTerm": commonColorNameLookup[langData.key][majorTerm],
-          "avgTermColor": basicColorInfo.avgColorRGBCode,
+          "commonTerm": basicColorInfoLookup[langData.key][majorTerm].commonName,
+          "avgTermColor": basicColorInfoLookup[langData.key][majorTerm].avgFullColorRGBCode,
           "topTerms": topTerms
         });
       }
@@ -406,10 +454,6 @@ for(const [lang, lang_bin_blur_info_entry] of (Object.entries(lang_bin_blur_info
 }
 langBinBlurInfoWriter.end();
 
-
-});
-});
-});
 
 function entropy(arr){
   return arr.reduce((acc, curr) => {
