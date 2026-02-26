@@ -9,14 +9,18 @@ import psutil
 import signal
 import time
 
-DEFAULT_BIN = 'ring_0.1_h8'
-HIGH_RES_BIN = 'ring_0.05_h8'
+TINY_RES_BIN = 'ring_0.2_h8'
+LOW_RES_BIN = 'ring_0.1_h8'
+MED_RES_BIN = 'ring_0.05_h8'
 
-# Just-noticeable distance is .02 in OKLAB, and for high-res data, there are normally
+# Default resolution is tiny
+# Switch to low res if data is available
+# For switching from low to medium res:
+# Just-noticeable distance is .02 in OKLAB, and for med-res data, there are normally
 # several closets matches under .20
 # Difference in distance measure when switching to high res 
 #    is normally around +0 to +.01 distance
-HIGH_RES_DIST = .20
+MED_RES_DIST = .20
 
 #NUM_PROCESSES = 8
 NUM_PROCESSES = 12
@@ -35,7 +39,7 @@ def init_worker():
 	signal.signal(signal.SIGINT, signal.SIG_IGN)
 
 def job(lang1_lang2_terms):
-	global DEFAULT_BIN, HIGH_RES_BIN, HIGH_RES_DIST
+	global TINY_RES_BIN, LOW_RES_BIN, MED_RES_BIN, MED_RES_DIST
 	returnval = {}
 	try:
 		lang1 = lang1_lang2_terms[0]
@@ -47,31 +51,37 @@ def job(lang1_lang2_terms):
 
 
 
-		print(lang1Term[DEFAULT_BIN]["term"], lang2Term[DEFAULT_BIN]["term"])
-		if(lang1 != lang2 or lang1Term[DEFAULT_BIN]["term"] < lang2Term[DEFAULT_BIN]["term"]):
-			returnval[lang1+"term"] = lang1Term[DEFAULT_BIN]["term"]
+		print(lang1Term[TINY_RES_BIN]["term"], lang2Term[TINY_RES_BIN]["term"])
+		if(lang1 != lang2 or lang1Term[TINY_RES_BIN]["term"] < lang2Term[TINY_RES_BIN]["term"]):
+			returnval[lang1+"term"] = lang1Term[TINY_RES_BIN]["term"]
 			if(lang1 == lang2):
-				returnval[lang2+"term2"] =lang2Term[DEFAULT_BIN]["term"]
+				returnval[lang2+"term2"] =lang2Term[TINY_RES_BIN]["term"]
 			else:
-				returnval[lang2+"term"] =lang2Term[DEFAULT_BIN]["term"]
+				returnval[lang2+"term"] =lang2Term[TINY_RES_BIN]["term"]
 			
 			# Do default size 20 bin check
-			returnval["dist"] = emd(np.array(lang1Term[DEFAULT_BIN]["labPct"]),
-						  np.array(lang2Term[DEFAULT_BIN]["labPct"]),
-						  distance_matrices[DEFAULT_BIN])
+			# if low res available use it, otherwise use tiny res
+			if(LOW_RES_BIN in lang1Term and LOW_RES_BIN in lang2Term):
+				returnval["dist"] = emd(np.array(lang1Term[LOW_RES_BIN]["labPct"]),
+							np.array(lang2Term[LOW_RES_BIN]["labPct"]),
+							distance_matrices[LOW_RES_BIN])
+			else: # only tiny res available
+				returnval["dist"] = emd(np.array(lang1Term[TINY_RES_BIN]["labPct"]),
+							np.array(lang2Term[TINY_RES_BIN]["labPct"]),
+							distance_matrices[TINY_RES_BIN])
 			
 			# if low distance and we have high res bin data, calculate more accurate
-			if(returnval["dist"] < HIGH_RES_DIST
-	  				and HIGH_RES_BIN in lang1Term and HIGH_RES_BIN in lang2Term):
-				print("  --- dist small enough ("+str(returnval["dist"])+"), highres bins exist:", lang1Term[DEFAULT_BIN]["term"], lang2Term[DEFAULT_BIN]["term"])
+			if(returnval["dist"] < MED_RES_DIST
+	  				and MED_RES_BIN in lang1Term and MED_RES_BIN in lang2Term):
+				print("  --- dist small enough ("+str(returnval["dist"])+"), highres bins exist:", lang1Term[TINY_RES_BIN]["term"], lang2Term[TINY_RES_BIN]["term"])
 				prevDist = returnval["dist"]
-				returnval["dist"] = emd(np.array(lang1Term[HIGH_RES_BIN]["labPct"]),
-						  np.array(lang2Term[HIGH_RES_BIN]["labPct"]),
-						  distance_matrices[HIGH_RES_BIN])
-				print("  ----- new high res dist ("+str(returnval["dist"])+") instead of ("+str(prevDist)+") for ", lang1Term[DEFAULT_BIN]["term"], lang2Term[DEFAULT_BIN]["term"])
+				returnval["dist"] = emd(np.array(lang1Term[MED_RES_BIN]["labPct"]),
+						  np.array(lang2Term[MED_RES_BIN]["labPct"]),
+						  distance_matrices[MED_RES_BIN])
+				print("  ----- new high res dist ("+str(returnval["dist"])+") instead of ("+str(prevDist)+") for ", lang1Term[TINY_RES_BIN]["term"], lang2Term[TINY_RES_BIN]["term"])
 			elif(returnval["dist"] == 0):
 				print("Unexpected error: distance was 0 and high res not available for " +
-		  				lang1Term[DEFAULT_BIN]["term"], lang2Term[DEFAULT_BIN]["term"])
+		  				lang1Term[TINY_RES_BIN]["term"], lang2Term[TINY_RES_BIN]["term"])
 				raise Exception("Unexpected error: distance was 0 and high res not available")
 			# TODO: Round to like 4 significant digits to not waste file space
 
@@ -123,7 +133,7 @@ def main():
 			print("loading language " + lang)
 			ColorNames[lang] = []
 			colorNamesWithBins = {}
-			for bin_size in [DEFAULT_BIN, HIGH_RES_BIN]:
+			for bin_size in [TINY_RES_BIN, LOW_RES_BIN, MED_RES_BIN]:
 				fname = 'temp/fullColorNames_'+lang+BLUR_TEXT+'_'+bin_size+'.json'
 				if(os.path.isfile(fname)):
 					binColorNames = []
@@ -137,12 +147,12 @@ def main():
 			for term, binnedInfo in colorNamesWithBins.items():
 				ColorNames[lang].append(binnedInfo)
 
-			ColorNames[lang].sort(key= lambda x:x[DEFAULT_BIN]["term"])
+			ColorNames[lang].sort(key= lambda x:x[TINY_RES_BIN]["term"])
 
 
 		print("loading distance matrix")
 		distance_matrices = {}
-		for bin_size in [DEFAULT_BIN, HIGH_RES_BIN]:
+		for bin_size in [TINY_RES_BIN, LOW_RES_BIN, MED_RES_BIN]:
 			with open('temp/distanceMatrix_'+bin_size+'.json', 'r') as distance_matrix_f:
 				distance_matrices[bin_size]=np.array(json.loads(distance_matrix_f.read()))
 
