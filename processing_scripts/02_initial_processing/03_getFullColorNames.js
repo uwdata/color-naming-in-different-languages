@@ -10,8 +10,18 @@ import * as labBinHelperLib from '../utils/labBinHelper.js'
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
   .filter(binSize => !(binSize.h_divs == 3)) // don't bother with the ring bins with h_divs of 3 as I don't think they look that good
 
+
+const LAB_BIN_RES_SIZES = {
+  "low": LAB_BIN_SIZES[0],
+  "med": LAB_BIN_SIZES[1],
+  "high": LAB_BIN_SIZES[2]
+}
+
 // Number of colors in a bin we require to output data for that bin
 const MIN_NperBin = 4;
+
+// Number of bins kept in order for us to confidently calculate color space ratio and binned average colors
+const MIN_FRACTION_BIN_FOR_RES = 0.8 
 
 
 const I_NAMES_DATA_FILE = "../../model/cleaned_color_names.csv"
@@ -29,17 +39,16 @@ const colorNames = await csv().fromFile(I_NAMES_DATA_FILE)
 const basicColorInfo = await csv().fromFile(I_BASIC_COLOR_INFO_FILE)
 const lang_info = await csv().fromFile(I_LANG_INFO_FILE)
 
-// lang,lang_abv,commonName,simplifiedName,avgColorRGBCode,totalColorFraction,avgL,avgA,avgB,numFullNames,numLineNames
-// TODO: totalColorFraction LowRes, MedRes, HighRes (each level depending on if enough info) all blur
-// TODO: avgColor LowRes, MedRes, HighRes (each level depending on if enough info) all blur
-//     Use the first Low,Med,High
-//   for totalcolorfraction, I just add up all the p(T|C) and divide by number of bins? right?
-//     before filter for too low count bins?
-
-//  for avgColor I want to use blur, but does that mess up my averaging calculation? I think it doesn't
-//      I do sum( color okLAB vals / binCount)  / sum(1 per / color totalBinCount)
-//              langBinColorNameCnt[dim1Bin][dim2Bin][dim3Bin]
 const full_colors_info = {}
+const fullColorInfoWriter = csvWriter({
+  headers: ["lang","lang_abv","commonName","simplifiedName",
+    "lowResBlurTermFraction","lowResBlurAvgRGBCode","lowResBlurAvgL","lowResBlurAvgA","lowResBlurAvgB",
+    "medResBlurTermFraction","medResBlurAvgRGBCode","medResBlurAvgL","medResBlurAvgA","medResBlurAvgB",
+    "highResBlurTermFraction","highResBlurAvgRGBCode","highResBlurAvgL","highResBlurAvgA","highResBlurAvgB"
+  ]
+});
+const fullColorInfoWriteStream = fs.createWriteStream(FILE_FULL_COLOR_O)
+fullColorInfoWriter.pipe(fullColorInfoWriteStream);
 
 const lang_bin_info = {}
 const lang_bin_blur_info = {}
@@ -155,6 +164,7 @@ for(let labBinSize of LAB_BIN_SIZES){
     // place colors in bins
     langData.terms.forEach(term => {
       term.binColorNameCnt = labBinHelper.createLABNumBins(lab_bins)      
+      term.binColorEntries = labBinHelper.createLABNumBins(lab_bins)
 
       term.values.forEach(response => {
         let dim1Bin, dim2Bin, dim3Bin
@@ -167,6 +177,11 @@ for(let labBinSize of LAB_BIN_SIZES){
         }
 
         term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] += 1;
+
+        if(term.binColorEntries[dim1Bin][dim2Bin][dim3Bin] == 0){
+          term.binColorEntries[dim1Bin][dim2Bin][dim3Bin] = []
+        }
+        term.binColorEntries[dim1Bin][dim2Bin][dim3Bin].push(response)
       });
     });
 
@@ -281,6 +296,92 @@ for(let labBinSize of LAB_BIN_SIZES){
     const langTermBinsBuff = [];
     const langTermBinsBlurBuff = [];
 
+    // Calculate term average color (bin scaled)
+    // and term fraction of color space
+    if(Object.values(LAB_BIN_RES_SIZES).includes(labBinSize)){
+      const binRes = Object.keys(LAB_BIN_RES_SIZES).find(key => LAB_BIN_RES_SIZES[key] == labBinSize)
+
+      // see if there is enough data to save info
+      let keptBins = 0
+      let numBins = 0
+      for(let i = 0; i < lab_bins_arr.length; i++){
+        const thisBin = lab_bins_arr[i]
+        const dim1Bin = thisBin[dim1 + "_bin"],
+              dim2Bin = thisBin[dim2 + "_bin"],
+              dim3Bin = thisBin[dim3 + "_bin"]
+        numBins++
+        if (langBinColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] >= MIN_NperBin) {
+          keptBins++
+        }
+      }
+      if(keptBins / numBins > MIN_FRACTION_BIN_FOR_RES){
+
+        // Make initial entries if needed
+        if(!(langData.key in full_colors_info)){
+          full_colors_info[langData.key] = {}
+        }
+        for(const term of langData.terms){
+          if(!(term.key in full_colors_info[langData.key])){
+            full_colors_info[langData.key][term.key] = {
+              lang: langData.key,
+              lang_abv: lang_info.find(d => d.lang == langData.key).langAbv,
+              commonName: basicColorInfoLookup[langData.key][term.key].commonName,
+              simplifiedName: term.key
+            }
+          }
+
+          // calculate term average color (bin scaled)
+          // calculate bin color fraction (using p(T|C) and reducing weight for low-data bins)
+          let sumL = 0
+          let sumA = 0
+          let sumB = 0
+          let totalEntries = 0
+
+          let sumBinTermProb = 0
+          let sumBinProb = 0
+
+          for(let i = 0; i < lab_bins_arr.length; i++){
+            const thisBin = lab_bins_arr[i]
+            const dim1Bin = thisBin[dim1 + "_bin"],
+                dim2Bin = thisBin[dim2 + "_bin"],
+                dim3Bin = thisBin[dim3 + "_bin"]
+
+            let lowBinCorrection = 1
+            if(langBinColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] < MIN_NperBin){
+              lowBinCorrection = langBinColorNameCntBlur[dim1Bin][dim2Bin][dim3Bin] / MIN_NperBin
+            }
+
+            if(term.binColorEntries[dim1Bin][dim2Bin][dim3Bin] !== 0){
+              for(const entry of term.binColorEntries[dim1Bin][dim2Bin][dim3Bin]){
+                const oklabcolor = entry.responseOklab
+                sumL += oklabcolor.l * lowBinCorrection
+                sumA += oklabcolor.a * lowBinCorrection
+                sumB += oklabcolor.b * lowBinCorrection
+                totalEntries += lowBinCorrection
+              }
+            }
+
+            sumBinTermProb += term.binPTCBlur[dim1Bin][dim2Bin][dim3Bin] * lowBinCorrection
+            sumBinProb += lowBinCorrection
+          }
+
+          const avgColor = new Color({
+            space: "oklab", coords: [sumL / totalEntries, sumA / totalEntries, sumB / totalEntries]
+          })
+          const avgColorRgb = avgColor.to("sRGB").toGamut()
+
+          full_colors_info[langData.key][term.key][binRes + "ResBlurTermFraction"] = sumBinTermProb / sumBinProb
+          full_colors_info[langData.key][term.key][binRes + "ResBlurAvgRGBCode"] = `rgb(${Math.round(255*avgColorRgb.r)},${Math.round(255*avgColorRgb.g)},${Math.round(255*avgColorRgb.b)})`
+          full_colors_info[langData.key][term.key][binRes + "ResBlurAvgL"] = avgColor.l
+          full_colors_info[langData.key][term.key][binRes + "ResBlurAvgA"] = avgColor.a
+          full_colors_info[langData.key][term.key][binRes + "ResBlurAvgB"] = avgColor.b
+
+          delete term.binColorEntries // we don't need the specific color entries anymore
+        }        
+      }
+    }
+    
+
     // gather term info
     langData.terms.forEach(term => {
       for(let i = 0; i < lab_bins_arr.length; i++){
@@ -324,9 +425,6 @@ for(let labBinSize of LAB_BIN_SIZES){
         }
       }
     })
-
-    // TODO: Calculate term average color (bin scaled)
-    // and term fraction of color space
 
     // gather bin info
     let bufSaliency = [];
@@ -437,6 +535,22 @@ for(let labBinSize of LAB_BIN_SIZES){
 
   fs.writeFileSync(FILE_O_SALIENCY + "_"+labBinSize+".json", JSON.stringify(saliency))
   fs.writeFileSync(FILE_O_SALIENCY + "_blur_"+labBinSize+".json", JSON.stringify(saliencyBlur))
+
+
+  // if all bins are done for full_colors_info (should only be on the high res bin), then output it
+  if(labBinSize == LAB_BIN_RES_SIZES.high){
+    console.log("starting writing full_colors_info")
+    for(const [lang, lang_color_info_entry] of Object.entries(full_colors_info)){
+      for(const [term, term_color_info_entry] of Object.entries(lang_color_info_entry)){
+        fullColorInfoWriter.write(term_color_info_entry)
+      }
+    }
+    fullColorInfoWriter.end();
+    // make sure file is written (memory garbage collection seems to kill it)
+    await new Promise(resolve => fullColorInfoWriter.on("finish", resolve));
+    await new Promise(resolve => fullColorInfoWriteStream.on("finish", resolve));
+    console.log("finished writing full_colors_info")
+  }
 }
 
 // TODO: Make by_lang subfolder with each of these as separate jsons? csvs?

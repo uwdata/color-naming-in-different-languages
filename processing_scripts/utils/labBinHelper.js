@@ -85,6 +85,7 @@ const MAX_H = 360
 
 const LAB_BIN_SIZES = [ 
   // ring h-div 8 I think looks best
+  // first 3 are the default low, med, and high res
   new BinSize({
     type: "ring",
     l: 1/10,
@@ -100,7 +101,8 @@ const LAB_BIN_SIZES = [
     l: 1/40,
     h_divs: 8
   }),
-   new BinSize({
+
+  new BinSize({
     type: "ring",
     l: 1/5,
     c: 1/20, // for h_divs 3, c should be = l, but we make it 1/4th
