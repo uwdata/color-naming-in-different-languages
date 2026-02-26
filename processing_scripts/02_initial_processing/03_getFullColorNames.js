@@ -12,16 +12,17 @@ const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 
 
 const LAB_BIN_RES_SIZES = {
-  "low": LAB_BIN_SIZES[0],
-  "med": LAB_BIN_SIZES[1],
-  "high": LAB_BIN_SIZES[2]
+  "tiny": LAB_BIN_SIZES[0],
+  "low": LAB_BIN_SIZES[1],
+  "med": LAB_BIN_SIZES[2],
+  "high": LAB_BIN_SIZES[3]
 }
 
 // Number of colors in a bin we require to output data for that bin
 const MIN_NperBin = 4;
 
 // Number of bins kept in order for us to confidently calculate color space ratio and binned average colors
-const MIN_FRACTION_BIN_FOR_RES = 0.8 
+const MIN_FRACTION_BIN_FOR_RES = 0.9
 
 
 const I_NAMES_DATA_FILE = "../../model/cleaned_color_names.csv"
@@ -42,6 +43,7 @@ const lang_info = await csv().fromFile(I_LANG_INFO_FILE)
 const full_colors_info = {}
 const fullColorInfoWriter = csvWriter({
   headers: ["lang","lang_abv","commonName","simplifiedName",
+    "tinyResBlurTermFraction","tinyResBlurAvgRGBCode","tinyResBlurAvgL","tinyResBlurAvgA","tinyResBlurAvgB",
     "lowResBlurTermFraction","lowResBlurAvgRGBCode","lowResBlurAvgL","lowResBlurAvgA","lowResBlurAvgB",
     "medResBlurTermFraction","medResBlurAvgRGBCode","medResBlurAvgL","medResBlurAvgA","medResBlurAvgB",
     "highResBlurTermFraction","highResBlurAvgRGBCode","highResBlurAvgL","highResBlurAvgA","highResBlurAvgB"
@@ -274,6 +276,10 @@ for(let labBinSize of LAB_BIN_SIZES){
           term.totalPTCBlur += term.binPTCBlur[dim1Bin][dim2Bin][dim3Bin]
        }
     })
+
+    // TODO: Filter by MIN_NperBin before finding P(Color|Term) ?
+    // also move P(Color|Term) to after finding average and color space fraction
+    // for translation, should I keep all bins?
 
     // calculate P(Color|Term) (both blur and not)
     langData.terms.forEach(term => {
