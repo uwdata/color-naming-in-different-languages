@@ -341,9 +341,9 @@ function updateRgbSet(){
                         commonName: basicInfoTermRow ? basicInfoTermRow.commonName : basicInfoTermRow.commonName,
                         lang_abv: basicInfoTermRow ? basicInfoTermRow.lang_abv : basicInfoTermRow.lang_abv,
                         avgColorRGBCode: basicInfoTermRow.avgFullColorRGBCode,//fullTermRow ? basicInfoTermRow.avgFullColorRGBCode : undefined,
-                        avgL: fullTermRow ? fullTermRow.avgL : undefined,
-                        avgA: fullTermRow ? fullTermRow.avgA : undefined,
-                        avgB: fullTermRow ? fullTermRow.avgB : undefined,
+                        avgL: basicInfoTermRow.avgFullColorRGBCode ? (new Color(basicInfoTermRow.avgFullColorRGBCode).to("oklab")).l : undefined,
+                        avgA: basicInfoTermRow.avgFullColorRGBCode ? (new Color(basicInfoTermRow.avgFullColorRGBCode).to("oklab")).a : undefined,
+                        avgB: basicInfoTermRow.avgFullColorRGBCode ? (new Color(basicInfoTermRow.avgFullColorRGBCode).to("oklab")).b : undefined,
                         avgHueColor: basicInfoTermRow.avgHueRGBCode,// , hueTermRow ? hueTermRow.avgHueColor :
                         somColorPatch: somColorPatch,
                         totalColorFraction: fullTermRow ? fullTermRow.tinyResBlurTermFraction : undefined,
@@ -495,7 +495,7 @@ function updateTableData(){
         sort: {
             compare: (a, b) => {
                 let a_h, b_h
-                if("avgL" in a){
+                if("avgL" in a && a.avgL){
                     a_h = new Color({space: "oklab", coords: [a.avgL, a.avgA, a.avgB]}).to("oklch").h
                     b_h = new Color({space: "oklab", coords: [b.avgL, b.avgA, b.avgB]}).to("oklch").h
                 } else {
