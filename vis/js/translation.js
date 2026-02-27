@@ -78,8 +78,8 @@ $(document).on('ready page:load', function () {
 
   d3.json("../model/translation_loss/translation_loss_en_ko.json")
   .then(data => {
-  d3.csv("../model/full_colors_info.csv")
-  .then((fullColorDetails)=> {
+  d3.csv("../model/basic_colors_info.csv")
+  .then((basicColorInfo)=> {
     let translations  = translationByDict.slice();
     translationByDict.slice().forEach(td => {
       let best, minD;
@@ -114,7 +114,7 @@ $(document).on('ready page:load', function () {
       translations.push(translationByColor);
     });
     translations = unique(translations, tr => tr.koterm + tr.enterm + tr.direction + tr.by + tr.gid);
-    draw(translations, fullColorDetails);
+    draw(translations, basicColorInfo);
   });
   });
 });
@@ -122,7 +122,7 @@ $(document).on('ready page:load', function () {
 const gray = "#555";
 const targetSelector = "#vis";
 
-function draw(translations, fullColorDetails){
+function draw(translations, basicColorInfo){
 
   //Extract terms and check each of them if it is a basic term.
   let basicTerms = translationByDict.map(d => {
@@ -153,9 +153,9 @@ function draw(translations, fullColorDetails){
   let terms = basicTerms.concat(otherTerms).sort((a,b) => -a.basic +b.basic).sort((a,b) => a.gid - b.gid);
   terms =  unique(terms, t => t.gid + t.term);
   terms.forEach(t => {
-    let avgC = fullColorDetails.find(avgC => standardizeKoTerm(avgC.simplifiedName) === standardizeKoTerm(t.term) && LANG_CODE[t.lang] === avgC.lang);
+    let avgC = basicColorInfo.find(avgC => standardizeKoTerm(avgC.simplifiedName) === standardizeKoTerm(t.term) && LANG_CODE[t.lang] === avgC.lang);
     t.lab = avgC.avgLABColor;
-    t.avgColorCode = avgC.avgColorRGBCode;
+    t.avgColorCode = avgC.avgFullColorRGBCode;
     t.soleTarget = translations.filter(tr => {
       return t.term === (tr.lang_t === "ko" ? tr.koterm : tr.enterm);
     }).length === 1;

@@ -72,7 +72,7 @@ $(document).on('ready page:load', async function () {
   $("#max_terms").change(refreshPage)
 
   function formatLangOpt (langOpt) {
-    return $(`<span class="small">${escapeHTML(langOpt.text)}</span>`)
+    return $(`<span class="small" translate="no" class="notranslate">${escapeHTML(langOpt.text)}</span>`)
   };
 
   $("#selected_langs").select2({
@@ -263,7 +263,7 @@ function refreshPage(){
       let toggle = false;
 
       let termDiv = $('<div class="termDiv text-center"></div>');
-      termDiv.append('<div class="main-term"><p class="mb-0">&nbsp;<span class="text-muted fs-4" id="'+targetSelector.replace('#','')+'-selected-title" class="text-center">color name</span>&nbsp;</p></div>');
+      termDiv.append('<div class="main-term"><p class="mb-0">&nbsp;<span class="text-muted fs-4" id="'+targetSelector.replace('#','')+'-selected-title" class="text-center" translate="no" class="notranslate">color name</span>&nbsp;</p></div>');
 
       let termLabel = $(targetSelector).append(termDiv);
       let area = d3.area()

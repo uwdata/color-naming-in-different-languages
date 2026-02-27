@@ -56,6 +56,13 @@ const LAB_BIN_SIZES = [
   }),
   new BinSize({
     type: "ring",
+    l: 1/5, h_divs: 8,
+    simpleName: "LCH Bins: Tiny-res",
+    altDisplayCategory: "Oklch Bins",
+    defaultHidden: true,
+  }), 
+  new BinSize({
+    type: "ring",
     l: 1/10, h_divs: 8,
     simpleName: "LCH Bins: Low-res",
     altDisplayCategory: "Oklch Bins",
@@ -566,7 +573,7 @@ function createOrRefreshLang(i){
       const language_stat = language_stats[curr_bin_size][curr_blur][i]
       const newOptions = color_names_by_lang[curr_bin_size][curr_blur][language_stat.lang].map((colorInfo) =>{
         return `<option value="${colorInfo.colorName}" data-commonColorName="${colorInfo.colorName}"
-          style='background-color:${colorInfo.avgTermColor}'>
+          style='background-color:${colorInfo.avgTermColor}' translate="no" class="notranslate">
           ${colorInfo.colorName}
         </option>`
       })

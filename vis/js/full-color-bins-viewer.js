@@ -57,6 +57,11 @@ const LAB_BIN_SIZES = [
   }),
   new BinSize({
     type: "ring",
+    l: 1/5, h_divs: 8,
+    simpleName: "LCH Bins: Super-Low-res",
+  }), 
+  new BinSize({
+    type: "ring",
     l: 1/10, h_divs: 8,
     simpleName: "LCH Bins: Low-res",
   }), 
