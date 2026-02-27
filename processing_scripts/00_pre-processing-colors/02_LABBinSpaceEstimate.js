@@ -29,9 +29,9 @@ const FILE_IO_LAB_BINS = "../../model/color_info_pre_naming/oklab_bins"
 
 const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 
-// const HUE_RATIO_LAB_N = 1000 // NOTE: This makes it very slow (and more accurate)
-//const HUE_RATIO_LAB_N = 200 // ok enough
-//const HUE_RATIO_LAB_N = 50 // For speed / test purposes (gives less accurate bin info)
+// const LAB_N_SAMPLES = 1000 // NOTE: This makes it very slow (and more accurate)
+//const LAB_N_SAMPLES = 200 // ok enough
+//const LAB_N_SAMPLES = 50 // For speed / test purposes (gives less accurate bin info)
 const LAB_N_SAMPLES = 500
 
 const LAB_SAMPLE_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / LAB_N_SAMPLES 
