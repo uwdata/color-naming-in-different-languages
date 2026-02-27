@@ -139,12 +139,12 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <h1 id="color_details_modal_name"></h1>
+          <h1 id="color_details_modal_name" translate="no" class="notranslate"></h1>
           <p><dl>
               <dt>Language</dt>
                 <dd id="color_details_modal_lang"></dd>
               <dt>Simplified Name <small title='The "Simplified Name" is used for matching variations of name, see the Color Name Data Entries visualization'>(?)</small></dt>
-                <dd id="color_details_modal_simplified_name"></dd>
+                <dd id="color_details_modal_simplified_name" translate="no" class="notranslate"></dd>
               <span id="color_details_modal_full_details">
                 <dt>Percentage of Full Color Names</dt>
                   <dd id="color_details_modal_full_perc"></dd>
@@ -210,7 +210,12 @@
             <h2>Full Color Bins</h2>
             <p><small>The full color spectrum divided into equal size bins in the perceptually uniform Oklab space (bins are divided using Oklch rings). The size of the bin corresponds to how often this color name was chosen for colors in the bin.</small></p>
             <div id="color_details_modal_full_bins_view"></div>
-            
+              <button id="download_color_full_bins" title="download" aria-label="download" class="btn btn-outline-secondary btn-sm p-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download d-flex justify-content-center" viewBox="0 0 16 16">
+                  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                </svg>
+              </button>
           </div>
           <div id="color_details_modal_hue_bins">
             <h2>Hue Color Bins</h2>
@@ -228,11 +233,30 @@
     </div>
   </div>
 
+  <!-- download modal -->
+  <div class="modal" id="download_modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Download</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <button id="download_color_name_data">download data</button>
+          <button>download svg</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Inform modal -->
   <div class="modal" id="inform_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-body">
+        <div class="modal-body"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
