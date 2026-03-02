@@ -41,7 +41,7 @@ langDataWriter.pipe(fs.createWriteStream(FILE_LANG_O));
 // delete all old file_basic_color_by_lang
 const byLangFiles = fs.readdirSync(FILE_COLOR_BY_NAME_DIR)
 for(const fn of byLangFiles){
-  console.log("file name", fn)
+  //console.log("file name", fn)
   fs.rmSync(FILE_COLOR_BY_NAME_DIR + fn)
 }
 
