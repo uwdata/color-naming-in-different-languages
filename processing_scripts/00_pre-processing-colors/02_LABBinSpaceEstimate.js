@@ -32,7 +32,7 @@ const LAB_BIN_SIZES = labBinHelperLib.LAB_BIN_SIZES
 // const LAB_N_SAMPLES = 1000 // NOTE: This makes it very slow (and more accurate)
 //const LAB_N_SAMPLES = 200 // ok enough
 //const LAB_N_SAMPLES = 50 // For speed / test purposes (gives less accurate bin info)
-const LAB_N_SAMPLES = 500
+const LAB_N_SAMPLES = 1000
 
 const LAB_SAMPLE_DELTA = (labBinHelperLib.MAX_L - labBinHelperLib.MIN_L) / LAB_N_SAMPLES 
 
@@ -53,10 +53,12 @@ function LabDistance(color1, color2){
 
 function binSetHasAllRatios(bins){
     for(const bin of bins){
-        for(const colorSpace in COLOR_SPACES){
+        for(const colorSpace of COLOR_SPACES){
             const colorSpacePercName = "ratio_bin_in_gamut_" + (colorSpace == "srgb" ? "rgb" : colorSpace)
             if(!(colorSpacePercName in bin)){
-                return false
+                return false // no calculation at all
+            }else if (bin.gamut_ratio_sample_lab_delta > LAB_SAMPLE_DELTA){
+                return false // we are doing a higher res calculation, so we need to run it on these bins
             }
         }
     }
@@ -123,6 +125,11 @@ for(const binSize of LAB_BIN_SIZES){
     }
 }
 
+console.log("bin sets for processing", labBinSetsForProcessing.map(d => d.binSize + ""))
+if(labBinSetsForProcessing.length == 0){
+    console.log("no bins to process")
+    process.exit()
+}
 console.log("lmin, lmax, a/b max", min_l, max_l, max_ab)
 
 

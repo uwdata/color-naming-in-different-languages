@@ -96,10 +96,10 @@ for(const langData of grouped_lang){
           space: "srgb", coords: [response.r/255, response.g/255, response.b/255]
         })
       } else {
+        // For now we naively treat all color spaces as srgb until we have enough data to estimate transformation
         response.responseColor = new Color({
-          space: response.colorSpace, coords: [response.r, response.g, response.b]
+          space: "srgb", coords: [Math.round(response.r*255)/255, Math.round(response.g*255)/255, Math.round(response.b*255)/255]
         })
-        .to("srgb").toGamut() // For now we reduce all color spaces to srgb until we have enough data to estimate transformation
       }
 
       response.responseOklch = response.responseColor.to("oklch");
@@ -176,6 +176,17 @@ for(let labBinSize of LAB_BIN_SIZES){
         } else {
           const responseOklab = response.responseOklab;
           [dim1Bin, dim2Bin, dim3Bin] = labBinHelper.bins_from_lab({l: responseOklab.l, a: responseOklab.a, b: responseOklab.b}) 
+        }
+
+        // make sure bin exists
+        if(!(dim1Bin in term.binColorEntries) || 
+            !(dim2Bin in term.binColorEntries[dim1Bin]) ||
+            !(dim3Bin in term.binColorEntries[dim1Bin][dim2Bin])){
+
+            console.log("ERROR: MISSING BIN: ", dim1Bin, dim2Bin, dim3Bin)
+            console.log("FOR BIN SIZE, " + labBinSize)
+            console.log("and color, ", response.colorSpace, response.r, response.g, response.b )
+            return
         }
 
         term.binColorNameCnt[dim1Bin][dim2Bin][dim3Bin] += 1;
