@@ -26,8 +26,15 @@ const FIELDS_TO_IGNORE = [
     
 
     // delete comments in case there is any personalized info
+    // and some demographic free text fields as well
     ["study", "comments"],
-    ["study", "demographics", "demographics-color-work-details"]
+    ["study", "demographics", "demographics-color-work-details"],
+    ["study", "demographics", "demographics-color-blindness-other"]
+    
+]
+
+const PARTICIPANTS_TO_IGNORE = [
+    "5d65af49-af88-4d2f-88ea-7ccb310f8256"
 ]
 
 const study_2_data = await csv({checkType: true}).fromFile(STUDY_2_DATA_I)
@@ -64,7 +71,9 @@ for(const participant_row of study_2_data){
 
         currObject[lastLocation] = outputData
     }
-    participantInfo.push(participant)
+    if(!PARTICIPANTS_TO_IGNORE.includes(participant.participant_id)){
+        participantInfo.push(participant)
+    }
 }
 
 // add Region for Chinese data

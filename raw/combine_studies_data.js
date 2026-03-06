@@ -37,7 +37,8 @@ const color_names_writer = csvWriter({
         "trialNum", "tileNum",
         "rgbSet",
         "background",
-        "locale",
+        "instructionsLocale",
+        "browserLocale",
         "studyVersion"
     ]});
 color_names_writer.pipe(fs.createWriteStream(NAMES_O));
@@ -52,6 +53,9 @@ for(const colorNameRow of v1_names){
     delete colorNameRow.lab_l
     delete colorNameRow.lab_a
     delete colorNameRow.lab_b
+
+    colorNameRow.instructionsLocale = colorNameRow.locale
+    delete colorNameRow.locale
 
     colorNameRow.colorSpace = "rgb"
     colorNameRow.background = "white"
@@ -78,7 +82,8 @@ for(const participant of v2_data){
                         b: name_info.b,
                         rgbSet: color_name_sets[step].rgbSet,
                         studyVersion: color_name_sets[step].studyVersion,
-                        locale: color_name_sets[step].locale,
+                        browserLocale: color_name_sets[step].locale,
+                        instructionsLocale: color_name_sets[step].instructionsLocale ? color_name_sets[step].instructionsLocale : "en",
                         background: color_name_sets[step].background,
                     }
                     color_names_writer.write(colorNameRow)
@@ -191,7 +196,8 @@ for(const participant of v2_data){
                         b: name_match_info.b,
                         rgbSet: color_name_match_sets[step].rgbSet,
                         studyVersion: color_name_match_sets[step].studyVersion,
-                        locale: color_name_match_sets[step].locale,
+                        browserLocale: color_name_match_sets[step].locale,
+                        instructionsLocale: color_name_match_sets[step].instructionsLocale ? color_name_match_sets[step].instructionsLocale : "en",
                         background: color_name_match_sets[step].background,
                     }
                     color_name_matches_writer.write(colorNameMatchRow)
@@ -210,7 +216,8 @@ const demographics_writer = csvWriter({
         "date",
         "ipCountry",
         "ipRegion",
-        "locale",
+        "instructionsLocale",
+        "browserLocale",
         "retake",
         "gender",
 
@@ -247,7 +254,7 @@ for(const demographic of v1_demographics){
         date: (new Date(demographic.current_time)).getFullYear(),
         ipCountry: participantInfo ? participantInfo.ipCountry : "", 
         ipRegion: participantInfo ? participantInfo.ip_region : "",
-        locale: participantInfo ? participantInfo.contentLanguage : "", 
+        instructionsLocale: participantInfo ? participantInfo.contentLanguage : "", 
         retake: demographic.retake == 0 ? "no" : "yes",
         gender: demographic.gender == 0 ? "male" : demographic.gender == 1 ? "female" : "other",
         // countryGrow: 
@@ -286,7 +293,8 @@ for(const participant of v2_data){
         date:  participant.litw.initialize.date,
         ipCountry:  participant.litw.initialize.geoLoc.country,
         ipRegion:  participant.litw.initialize.geoLoc.simplifiedRegion,
-        locale:  participant.litw.initialize.contentLanguage,
+        instructionsLocale: participant.study.demographics['demographics-instructions_locale'] ? participant.study.demographics['demographics-instructions_locale'] : "en", // (blank is "en")
+        browserLocale: participant.litw.initialize.contentLanguage,        
         retake: participant.study.demographics["demographics-retake"],
         gender: participant.study.demographics["demographics-gender"] !== "other" ? 
             participant.study.demographics["demographics-gender"] :

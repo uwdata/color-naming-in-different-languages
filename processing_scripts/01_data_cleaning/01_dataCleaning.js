@@ -41,7 +41,8 @@ const csvColumnOrder = [
   "trialNum", "tileNum",
   "rgbSet",
   "background",
-  "locale",
+  "instructionsLocale",
+  "browserLocale",
   "studyVersion",
   "originalLangAbv"
 ]
@@ -57,7 +58,8 @@ const csvDeletedColumnOrder = [
   "trialNum", "tileNum",
   "rgbSet",
   "background",
-  "locale",
+  "instructionsLocale",
+  "browserLocale",
   "studyVersion",
   "originalLangAbv"
 ]
@@ -78,7 +80,8 @@ const colorMatchColumnOrder = [
   "b",
   "rgbSet",
   "studyVersion",
-  "locale",
+  "instructionsLocale",
+  "browserLocale",
   "background"
 ]
 

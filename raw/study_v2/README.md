@@ -16,3 +16,6 @@
   - Fix bugs with saving additional language fields
   - Add option for "other" with textbox when selecting countries
   - In color matching task make sure to save color displayName in addition to the simplified "name"
+- 2.1.1:
+  - Add Chinese translation of instructions (and ability to switch between Chinese and English instructions at the start)
+  - Fix bug in selecting color matching names after changes to full_colors_info.csv in this project 
