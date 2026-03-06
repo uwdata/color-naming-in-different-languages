@@ -12,125 +12,106 @@ const MIN_NAMES_FOR_16_SOM = 201
 const SOM_TRAIN_ITERATIONS = 20000
 //const SOM_TRAIN_ITERATIONS = 100
 
-let colorNamesAbrv = {
-	"English": "en",
-	'Korean': "ko",
-	"Persian": "fa",
-	"Chinese": "zh",
-	"German": "de",
-	"French": "fr",
-	"Portuguese": "pt",
-	"Spanish": "es",
-	"Swedish": "sv",
-	"Russian": "ru",
-	"Dutch": "nl",
-	"Polish": "pl",
-	"Finnish": "fi",
-	"Romanian": "ro"
-};
-
 let commonColorNameLookup = {};
   
-csv().fromFile("../../model/cleaned_color_names.csv")
-.then((namingData)=>{
-csv().fromFile("../../model/full_colors_info.csv")
-.then((colorInfo)=>{
-csv().fromFile("../../model/lang_info.csv")
-.then((lang_info)=> {
-		createSOMs(colorInfo, namingData, lang_info);
-});
-});
-});
- 
+const namingData = await csv().fromFile("../../model/cleaned_color_names.csv")
+const basicColorInfo  = await csv().fromFile("../../model/basic_colors_info.csv")
+const fullColorInfo  = await csv().fromFile("../../model/full_colors_info.csv")
+const lang_info = await csv().fromFile("../../model/lang_info.csv")
 
-function createSOMs(colorInfo, namingData, lang_info){
-	let colorNames = {};
-	colorInfo.forEach(color => {
-		let langAbv = colorNamesAbrv[color.lang.split("(")[0].trim()];
-		if(!langAbv){
-			throw new Error("Could not find abbreviation for '"+color.lang.split("(")[0].trim()+"'");
+
+let colorNamesByLang = {};
+basicColorInfo.forEach(color => {
+	let langAbv = color.lang_abv;
+	if(!langAbv){
+		throw new Error("Could not find abbreviation for '"+color.lang.split("(")[0].trim()+"'");
+	}
+
+	// TODO: filter for if it has full color info
+	if(color.avgFullColorRGBCode){
+
+		if(!colorNamesByLang[langAbv]){
+			colorNamesByLang[langAbv] = [];
 		}
 
-		if(!colorNames[langAbv]){
-			colorNames[langAbv] = [];
-		}
-
-		colorNames[langAbv].push(color.simplifiedName);
+		colorNamesByLang[langAbv].push(color.simplifiedName);
 
 		if(!commonColorNameLookup[langAbv]){
 			commonColorNameLookup[langAbv] = [];
 		}
 		commonColorNameLookup[langAbv][color.simplifiedName] = color.commonName;
-	});
-	
+	}
+});
 
-	console.log(colorNames.en.length);
-	
-	const outputJSON = {};
-	Object.keys(colorNames).forEach(lang => {
-		outputJSON[lang] = {};
-		for(var i in colorNames[lang]){
-			let colorName = colorNames[lang][i];
-			
-			let thisColorData = namingData.filter(function(item){
-				return lang == colorNamesAbrv[item.lang.split("(")[0].trim()] && 
-						item.name == colorName &&
-						item.rgbSet == "full"
-			}); 
 
-			console.log(thisColorData.length);
+console.log(colorNamesByLang.en.length);
 
-			if(thisColorData.length == 0){
-				console.log("Color name had no data", colorName, lang, i);
-				continue
-			}
+const outputJSON = {};
+Object.keys(colorNamesByLang).forEach(lang => {
+	outputJSON[lang] = {};
+	for(var i in colorNamesByLang[lang]){
+		let colorName = colorNamesByLang[lang][i];
+		
+		let thisColorData = namingData.filter(function(item){
+			return lang == item.langAbv && 
+					item.name == colorName &&
+					item.rgbSet == "full"
+		}); 
 
-			var LABdata = [];
-			for(var j in thisColorData){
-				const c = thisColorData[j]
-				
-				const oklabColor = RGBtoLAB(c.r,c.g,c.b, c.colorSpace);
+		console.log(thisColorData.length);
 
-				LABdata.push([oklabColor.l, oklabColor.a, oklabColor.b]);
-			}
-			
-			LABdata.sort(function() {
-			  return .5 - Math.random();
-			});
-
-			
-			let thisColorInfo = {};
-			console.log("color:", colorName);
-			
-			thisColorInfo["commonColorName"] = commonColorNameLookup[lang][colorName];
-			thisColorInfo["numRecords"] = thisColorData.length;
-			thisColorInfo["totalColorFraction"] = colorInfo.find(c => c.lang_abv == lang && c.simplifiedName == colorName).totalColorFraction;
-			thisColorInfo["representativeColor"] = colorInfo.find(c => c.lang_abv == lang && c.simplifiedName == colorName).avgColorRGBCode
-			
-			thisColorInfo["colorNodes4"] = createSOM(colorName, LABdata, 2);
-			thisColorInfo["colorNodes4Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes4"]);
-			
-			thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes4"]).rgb;
-
-			if(thisColorData.length >= MIN_NAMES_FOR_9_SOM){
-				thisColorInfo["colorNodes9"] = createSOM(colorName, LABdata, 3);
-				thisColorInfo["colorNodes9Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes9"]);
-				thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes9"]).rgb;
-			}
-
-			if(thisColorData.length > MIN_NAMES_FOR_16_SOM){
-				thisColorInfo["colorNodes16"] = createSOM(colorName, LABdata, 4);
-				thisColorInfo["colorNodes16Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes16"]);
-				thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes16"]).rgb;
-			}
-
-			outputJSON[lang][colorName] = thisColorInfo;
-
-			
+		if(thisColorData.length == 0){
+			console.log("Color name had no data", colorName, lang, i);
+			continue
 		}
-	});
-	fs.writeFileSync("../../model/colorSOMPatches.json", JSON.stringify(outputJSON));
-}	
+
+		var LABdata = [];
+		for(var j in thisColorData){
+			const c = thisColorData[j]
+			
+			const oklabColor = RGBtoLAB(c.r,c.g,c.b, c.colorSpace);
+
+			LABdata.push([oklabColor.l, oklabColor.a, oklabColor.b]);
+		}
+		
+		LABdata.sort(function() {
+			return .5 - Math.random();
+		});
+
+		
+		let thisColorInfo = {};
+		console.log("color:", colorName);
+		
+		thisColorInfo["commonColorName"] = commonColorNameLookup[lang][colorName];
+		thisColorInfo["numRecords"] = thisColorData.length;
+		const fullColorForThisTerm = fullColorInfo.find(c => c.lang_abv == lang && c.simplifiedName == colorName)
+		thisColorInfo["totalColorFraction"] = fullColorForThisTerm ? fullColorForThisTerm.tinyResBlurTermFraction : undefined
+		thisColorInfo["representativeColor"] = basicColorInfo.find(c => c.lang_abv == lang && c.simplifiedName == colorName).avgFullColorRGBCode
+		
+		thisColorInfo["colorNodes4"] = createSOM(colorName, LABdata, 2);
+		thisColorInfo["colorNodes4Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes4"]);
+		
+		thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes4"]).rgb;
+
+		if(thisColorData.length >= MIN_NAMES_FOR_9_SOM){
+			thisColorInfo["colorNodes9"] = createSOM(colorName, LABdata, 3);
+			thisColorInfo["colorNodes9Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes9"]);
+			thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes9"]).rgb;
+		}
+
+		if(thisColorData.length > MIN_NAMES_FOR_16_SOM){
+			thisColorInfo["colorNodes16"] = createSOM(colorName, LABdata, 4);
+			thisColorInfo["colorNodes16Excluded"] = findSOMExcludedAmount(thisColorInfo["colorNodes16"]);
+			thisColorInfo["mostDenseNodeRGB"] = findMostDenseNode(thisColorInfo["colorNodes16"]).rgb;
+		}
+
+		outputJSON[lang][colorName] = thisColorInfo;
+
+		
+	}
+});
+fs.writeFileSync("../../model/colorSOMPatches.json", JSON.stringify(outputJSON));
+
  
 function createSOM(colorName, LABdata, size){
 

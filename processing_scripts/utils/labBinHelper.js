@@ -253,14 +253,14 @@ function getLabBins(binSizeInfo){
       return labBinsArr;
     }
 
-    function createLABNumBins(lab_bins_example_struct){
+    function createLABNumBins(lab_bins_example_struct, default_val = 0){
       const newBins = {}
       for(const [l_bin, l_bin_entries] of Object.entries(lab_bins_example_struct)){
         newBins[l_bin] = {}
         for(const [a_bin, a_bin_entries] of Object.entries(l_bin_entries)){
           newBins[l_bin][a_bin] = {}
           for(const [b_bin, b_bin_entry] of Object.entries(a_bin_entries)){
-            newBins[l_bin][a_bin][b_bin] = 0
+            newBins[l_bin][a_bin][b_bin] = default_val
           }
         }
       }
@@ -391,14 +391,14 @@ function getLabBins(binSizeInfo){
       return labBinsArr;
     }
 
-    function createLCHNumBins(lch_bins_example_struct){
+    function createLCHNumBins(lch_bins_example_struct, default_val = 0){
       const newBins = {}
       for(const [l_bin, l_bin_entries] of Object.entries(lch_bins_example_struct)){
         newBins[l_bin] = {}
         for(const [c_bin, c_bin_entries] of Object.entries(l_bin_entries)){
           newBins[l_bin][c_bin] = {}
           for(const [h_bin, h_bin_entry] of Object.entries(c_bin_entries)){
-            newBins[l_bin][c_bin][h_bin] = 0
+            newBins[l_bin][c_bin][h_bin] = default_val
           }
         }
       }

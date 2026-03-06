@@ -85,8 +85,30 @@ for(const blur of [NO_BLUR, BLUR]){
         
         g_lang.values = g_lang.values.sort((a,b) => d3.sum(b.values, d => d.cnt) - d3.sum(a.values, d => d.cnt));
         
+        // find default values for bins (NaN if missing, 0 if present at least once)
+        const langBinDefaults = labBinHelper.createLABNumBins(nested_lab_bins, NaN);
         g_lang.values.forEach(g_term => {
-          let labPct = labBinHelper.createLABNumBins(nested_lab_bins);
+          g_term.values.forEach(d => {
+            if(BIN_SIZE.type == "ring"){
+              langBinDefaults[d.binL][d.binC][d.binH] = 0;
+            } else {
+              langBinDefaults[d.binL][d.binA][d.binB] = 0;
+            }
+          });
+        });
+
+        g_lang.values.forEach(g_term => {
+          // create bin set for term with NaNs or 0s depending on what bins are missing
+          let labPct = labBinHelper.createLABNumBins(nested_lab_bins, NaN);
+          for(const bin1 of Object.keys(labPct)){
+            for(const bin2 of Object.keys(labPct[bin1])){
+              for(const bin3 of Object.keys(labPct[bin1][bin2])){
+                labPct[bin1][bin2][bin3] = langBinDefaults[bin1][bin2][bin3]
+              }
+            }
+          }
+
+ 
           g_term.values.forEach(d => {
             if(BIN_SIZE.type == "ring"){
               labPct[d.binL][d.binC][d.binH] = d.pCT;

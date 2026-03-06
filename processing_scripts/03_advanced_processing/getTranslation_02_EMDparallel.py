@@ -62,22 +62,19 @@ def job(lang1_lang2_terms):
 			# Do default size 20 bin check
 			# if low res available use it, otherwise use tiny res
 			if(LOW_RES_BIN in lang1Term and LOW_RES_BIN in lang2Term):
-				returnval["dist"] = emd(np.array(lang1Term[LOW_RES_BIN]["labPct"]),
-							np.array(lang2Term[LOW_RES_BIN]["labPct"]),
-							distance_matrices[LOW_RES_BIN])
+				[arr1, arr2] = reNormalizeArrays(np.array(lang1Term[LOW_RES_BIN]["labPct"]), np.array(lang2Term[LOW_RES_BIN]["labPct"]))
+				returnval["dist"] = emd(arr1.astype(np.float64), arr2.astype(np.float64), distance_matrices[LOW_RES_BIN])
 			else: # only tiny res available
-				returnval["dist"] = emd(np.array(lang1Term[TINY_RES_BIN]["labPct"]),
-							np.array(lang2Term[TINY_RES_BIN]["labPct"]),
-							distance_matrices[TINY_RES_BIN])
+				[arr1, arr2] = reNormalizeArrays(np.array(lang1Term[TINY_RES_BIN]["labPct"]), np.array(lang2Term[TINY_RES_BIN]["labPct"]))
+				returnval["dist"] = emd(arr1.astype(np.float64), arr2.astype(np.float64), distance_matrices[TINY_RES_BIN])
 			
 			# if low distance and we have high res bin data, calculate more accurate
 			if(returnval["dist"] < MED_RES_DIST
 	  				and MED_RES_BIN in lang1Term and MED_RES_BIN in lang2Term):
 				print("  --- dist small enough ("+str(returnval["dist"])+"), highres bins exist:", lang1Term[TINY_RES_BIN]["term"], lang2Term[TINY_RES_BIN]["term"])
 				prevDist = returnval["dist"]
-				returnval["dist"] = emd(np.array(lang1Term[MED_RES_BIN]["labPct"]),
-						  np.array(lang2Term[MED_RES_BIN]["labPct"]),
-						  distance_matrices[MED_RES_BIN])
+				[arr1, arr2] = reNormalizeArrays(np.array(lang1Term[MED_RES_BIN]["labPct"]), np.array(lang2Term[MED_RES_BIN]["labPct"]))
+				returnval["dist"] = emd(arr1.astype(np.float64), arr2.astype(np.float64), distance_matrices[MED_RES_BIN])
 				print("  ----- new high res dist ("+str(returnval["dist"])+") instead of ("+str(prevDist)+") for ", lang1Term[TINY_RES_BIN]["term"], lang2Term[TINY_RES_BIN]["term"])
 			elif(returnval["dist"] == 0):
 				print("Unexpected error: distance was 0 and high res not available for " +
@@ -96,6 +93,28 @@ def job(lang1_lang2_terms):
 
 		raise err
 	return returnval
+
+# When doing comparisons, some bins are missing (NaN)
+# 
+def reNormalizeArrays(arr1, arr2):
+	arr1Total = 0
+	arr2Total = 0
+	# if either side is None, set to 0
+	for i in range(len(arr1)):
+		if(arr1[i] is None or arr2[i] is None):
+			arr1[i] = 0
+			arr2[i] = 0
+		else:
+			arr1Total += arr1[i]
+			arr2Total += arr2[i]
+	
+	# renormalize with remaining data
+	for i in range(len(arr1)):
+		arr1[i] = arr1[i] / arr1Total
+		arr2[i] = arr2[i] / arr2Total
+
+	return [arr1, arr2]
+
 
 def main():
 	try:

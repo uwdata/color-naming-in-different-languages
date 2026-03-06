@@ -6,6 +6,10 @@ const excludeNames = [
 ];
 const nameReplacingRules = [
     [/arancio$/, "arancione"],
+
+    [/fuchsia/, "fucsia"],
+    [/fucsha/, "fucsia"],
+    [/fucshia/, "fucsia"],
     [/fuxia/, "fucsia"]
 ];
 
