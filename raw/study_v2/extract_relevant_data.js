@@ -11,6 +11,12 @@ const china_regions = JSON.parse(fs.readFileSync(CHINA_REGIONS_I))
 
 const FIELDS_CONVERT_JSON = ["color_names", "matches"]
 
+const FIELDS_TO_SAVE_SEPARATELY = [
+    ["study", "comments", "comments", "comment-general"],
+    ["study", "comments", "comments", "comment-issue"],
+    ["study", "comments", "comments", "comment-whyexclude"]
+]
+
 const FIELDS_TO_IGNORE = [
     // timed study step tracking info
     "break", "comments", "demographics", "informed_consent", "introduction", "results", "studyStep1", "studyStep2", "studyStep3", "studyStep4", "studyStep5",
@@ -132,6 +138,29 @@ participantInfo = participantInfo.filter(p => {
     }
     return false
 })
+
+for(const participant of participantInfo){
+    for(const field of FIELDS_TO_SAVE_SEPARATELY){
+        if(typeof field == "string"){
+            if(participant[field]){
+                console.log(participant[field])
+            }
+        } else { //assume array
+            // clone array
+            const fieldArray = [...field]
+            let currObject = participant
+            while(fieldArray.length > 1){
+                const subField = fieldArray.shift()
+                currObject = currObject[subField]
+            }
+            const finalField = fieldArray.shift()
+            if(currObject[finalField]){
+                console.log(JSON.stringify(currObject[finalField]))
+            }
+        }
+    }
+        
+}
 
 // Delete information we aren't interested in using
 for(const participant of participantInfo){
