@@ -12,6 +12,7 @@ function getHueBinHelper(colorSet){
             return currentMidpointDist / totalColorSetDist;
             }
         }
+        console.log("Error, hue color not found in color set: ", color)
         throw new Error("Error, hue color not found in color set: ", color)
     }
 
@@ -37,5 +38,5 @@ export default {
 
 function colorEqual(colorA, colorB){
   // console.log(colorA);
-  return colorA.r+"" === colorB.r && colorA.g+"" === colorB.g && colorA.b+"" === colorB.b;
+  return colorA.r+"" === colorB.r+"" && colorA.g+"" === colorB.g+"" && colorA.b+"" === colorB.b+"";
 }

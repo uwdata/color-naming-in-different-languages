@@ -1,7 +1,3 @@
-// Need to install 'csvtojson' and 'csv-write-stream'
-// npm install csvtojson
-// npm install csv-write-stream
-
 import fs from "fs";
 import csv from 'csvtojson';
 import csvWriter from 'csv-write-stream'
@@ -111,161 +107,161 @@ for(const file of fs.readdirSync(COLOR_NAMES_BY_LANG_D)){
 }
 
 
-csv().fromFile(COLOR_NAMES_I)
-  .then((colorNames)=>{
+let colorNames = await csv().fromFile(COLOR_NAMES_I)
 
-  // we previously left out some data because we were worried about
-  // priming effects and missing demographics, but since we now have
-  // lot of data, we think it worth including all the data
-  // and hopefully we can get more nuanced or rare colors
-  //
-  //colorNames = colorNames.filter(cn => cn.participantId !== 0);
-  //colorNames = colorNames.filter(cn => !(cn.lang=="Korean (한국어, 조선어)" && cn.studyVersion === "1.1.4" && cn.rgbSet === "line")); //There is a priming effect for that set.
+// we previously left out some data because we were worried about
+// priming effects and missing demographics, but since we now have
+// lot of data, we think it worth including all the data
+// and hopefully we can get more nuanced or rare colors
+//
+//colorNames = colorNames.filter(cn => cn.participantId !== 0);
+//colorNames = colorNames.filter(cn => !(cn.lang=="Korean (한국어, 조선어)" && cn.studyVersion === "1.1.4" && cn.rgbSet === "line")); //There is a priming effect for that set.
 
-  const enteredColorNameLookup = {}
+const enteredColorNameLookup = {}
 
-  for(const [cn_i, cn] of colorNames.entries()){
-    cn.cn_i = cn_i
-    enteredColorNameLookup[cn.cn_i] = cn.name;
+for(const [cn_i, cn] of colorNames.entries()){
+  cn.cn_i = cn_i
+  enteredColorNameLookup[cn.cn_i] = cn.name;
+}
+
+// Fix language names then
+// Add language abbreviation to each color name
+for(const colorName of colorNames){
+  if(lang_name_changes.map(lnc => lnc.lang).includes(colorName.lang)){
+    colorName.originalLangAbv = colorName.lang
+    colorName.lang = lang_name_changes.find(lnc => lnc.lang == colorName.lang).newLang
   }
+  colorName.langAbv = getLangAbv(colorName.lang)
+}
 
-  // Fix language names then
-  // Add language abbreviation to each color name
-  for(const colorName of colorNames){
-    if(lang_name_changes.map(lnc => lnc.lang).includes(colorName.lang)){
-      colorName.originalLangAbv = colorName.lang
-      colorName.lang = lang_name_changes.find(lnc => lnc.lang == colorName.lang).newLang
+// change languages for specific participants
+for(const [cn_i, cn] of colorNames.entries()){
+  if(cn.participantId in participantLangChanges){
+    if(!(cn.originalLangAbv in cn)){
+      cn.originalLangAbv = cn.langAbv
     }
-    colorName.langAbv = getLangAbv(colorName.lang)
-  }
-
-  // change languages for specific participants
-  for(const [cn_i, cn] of colorNames.entries()){
-    if(cn.participantId in participantLangChanges){
-      if(!(cn.originalLangAbv in cn)){
-        cn.originalLangAbv = cn.langAbv
-      }
-      const newLangAbv = participantLangChanges[cn.participantId]
-      if((typeof newLangAbv) === "string"){
-        cn.langAbv = newLangAbv
-      } else if(cn.langAbv !== undefined){
-        if(cn.langAbv in newLangAbv){
-          cn.langAbv = newLangAbv[cn.originalLangAbv]
-        } else {
-          // don't change in this case, go back to how it was
-          delete cn.originalLangAbv
-          continue
-        }
+    const newLangAbv = participantLangChanges[cn.participantId]
+    if((typeof newLangAbv) === "string"){
+      cn.langAbv = newLangAbv
+    } else if(cn.langAbv !== undefined){
+      if(cn.langAbv in newLangAbv){
+        cn.langAbv = newLangAbv[cn.originalLangAbv]
       } else {
-        if(cn.lang in newLangAbv){
-          cn.langAbv = newLangAbv[cn.lang]
-        } else { 
-          // don't change in this case, go back to how it was
-          delete cn.originalLangAbv
-          continue
-        }
+        // don't change in this case, go back to how it was
+        delete cn.originalLangAbv
+        continue
       }
-      const lang = languages_iso_639.find(l => l["639‑1"] == cn.langAbv)
-      cn.lang = `${lang["Language name"]} (${lang["Native name"]})`
+    } else {
+      if(cn.lang in newLangAbv){
+        cn.langAbv = newLangAbv[cn.lang]
+      } else { 
+        // don't change in this case, go back to how it was
+        delete cn.originalLangAbv
+        continue
+      }
+    }
+    const lang = languages_iso_639.find(l => l["639‑1"] == cn.langAbv)
+    cn.lang = `${lang["Language name"]} (${lang["Native name"]})`
+  }
+}
+
+//////////////////
+//optional modify languages to create additional splits through the rest of the process
+// e.g., gender split
+// for(const [cn_i, cn] of colorNames.entries()){
+//   const demographic = demographics_info.find(d => d.participantId == cn.participantId)
+//   if(demographic && cn.participantId != 0){
+//     cn.lang = cn.lang + " - " + demographic.gender
+//     cn.langAbv = cn.langAbv + " - " + demographic.gender
+//   } else {
+//     cn.lang = ""
+//     cn.langAbv = ""
+//   }
+// }
+// colorNames = colorNames.filter(cn => cn.lang)
+
+
+//optional modify languages to separate by region
+//
+// for(const [cn_i, cn] of colorNames.entries()){
+//   const demographic = demographics_info.find(d => d.participantId == cn.participantId)
+//   if(demographic && cn.participantId != 0){
+//     if(demographic.ipRegion){
+//       cn.lang = cn.lang + " - " + demographic.ipRegion
+//       cn.langAbv = cn.langAbv + " - " + demographic.ipRegion
+//     }
+//   }
+// }
+// colorNames = colorNames.filter(cn => cn.lang)
+//////////////////
+
+
+// standardize entered name (e.g., trim, lowcase)
+colorNames.forEach(cn => {
+  cn.name = refine.standardize_entered(cn)
+  cn.standardized_entered_name = cn.name
+})
+
+// Remove all blank color names (don't even bother to report these as "deleted")
+colorNames = colorNames.filter(cn => {
+  cn.name = cn.name.toString().trim().toLowerCase();
+  return cn.name !== "";
+});
+
+colorNames.forEach(cn => {
+  refine.refine(cn)
+
+  if(cn.name != ""){
+    // try refining again and make sure it doesn't mess it up
+    //   e.g., simply replacing "blu" with "blue" would turn "blue" into "bluee"
+    let oldName = cn.name
+    refine.refine(cn)
+    let newName = cn.name
+    if(oldName != newName){
+      console.log("WARNING: Name changed on repeated refining")
+      console.log("  lang", cn.lang)
+      console.log("  entered name", enteredColorNameLookup[cn.cn_i])
+      console.log("  colorName row", cn.cn_i)
+      console.log("  names: ", oldName, ", ", newName)
     }
   }
+})
 
-  //////////////////
-  //optional modify languages to create additional splits through the rest of the process
-  // e.g., gender split
-  // for(const [cn_i, cn] of colorNames.entries()){
-  //   const demographic = demographics_info.find(d => d.participantId == cn.participantId)
-  //   if(demographic && cn.participantId != 0){
-  //     cn.lang = cn.lang + " - " + demographic.gender
-  //     cn.langAbv = cn.langAbv + " - " + demographic.gender
-  //   } else {
-  //     cn.lang = ""
-  //     cn.langAbv = ""
-  //   }
-  // }
-  // colorNames = colorNames.filter(cn => cn.lang)
+colorNames.forEach(cn => {
+  cn.entered_name = enteredColorNameLookup[cn.cn_i];
+});
 
+let cleanedData = colorNames.filter(cn => {
+  return cn.name !== "";
+});
 
-  //optional modify languages to separate by region
-  //
-  // for(const [cn_i, cn] of colorNames.entries()){
-  //   const demographic = demographics_info.find(d => d.participantId == cn.participantId)
-  //   if(demographic && cn.participantId != 0){
-  //     if(demographic.ipRegion){
-  //       cn.lang = cn.lang + " - " + demographic.ipRegion
-  //       cn.langAbv = cn.langAbv + " - " + demographic.ipRegion
-  //     }
-  //   }
-  // }
-  // colorNames = colorNames.filter(cn => cn.lang)
-  //////////////////
+console.log("writing file");
+let cleanedWriter = csvWriter({headers: csvColumnOrder});
+cleanedWriter.pipe(fs.createWriteStream(COLOR_NAMES_O));
 
+const cleanedWritersByLang = {}
 
-  // standardize entered name (e.g., trim, lowcase)
-  colorNames.forEach(cn => {
-    cn.name = refine.standardize_entered(cn)
-    cn.standardized_entered_name = cn.name
-  })
-  
-  // Remove all blank color names (don't even bother to report these as "deleted")
-  var colorNames = colorNames.filter(cn => {
-    cn.name = cn.name.toString().trim().toLowerCase();
-    return cn.name !== "";
-  });
-  
-  colorNames.forEach(cn => {
-    refine.refine(cn)
+cleanedData.forEach(d => {
+  delete d.cn_i
+  cleanedWriter.write(d);
 
-    if(cn.name != ""){
-      // try refining again and make sure it doesn't mess it up
-      //   e.g., simply replacing "blu" with "blue" would turn "blue" into "bluee"
-      let oldName = cn.name
-      refine.refine(cn)
-      let newName = cn.name
-      if(oldName != newName){
-        console.log("WARNING: Name changed on repeated refining")
-        console.log("  lang", cn.lang)
-        console.log("  entered name", enteredColorNameLookup[cn.cn_i])
-        console.log("  colorName row", cn.cn_i)
-        console.log("  names: ", oldName, ", ", newName)
-      }
-    }
-  })
+  const langAbv = d.langAbv ? d.langAbv : d.lang 
 
-  colorNames.forEach(cn => {
-	  cn.entered_name = enteredColorNameLookup[cn.cn_i];
-  });
+  if(!(langAbv in cleanedWritersByLang)){
+    const cleanedWriterByLangTmp = csvWriter({headers: csvColumnOrder});
+    cleanedWriterByLangTmp.pipe(fs.createWriteStream(COLOR_NAMES_BY_LANG_O + "-"+langAbv+".csv"));
+    cleanedWritersByLang[langAbv] = cleanedWriterByLangTmp
+  }
+  cleanedWritersByLang[langAbv].write(d)
+});
 
-  let cleanedData = colorNames.filter(cn => {
-    return cn.name !== "";
-  });
-
-  console.log("writing file");
-  let cleanedWriter = csvWriter({headers: csvColumnOrder});
-  cleanedWriter.pipe(fs.createWriteStream(COLOR_NAMES_O));
-
-  const cleanedWritersByLang = {}
-
-  cleanedData.forEach(d => {
-    delete d.cn_i
-    cleanedWriter.write(d);
-
-    const langAbv = d.langAbv ? d.langAbv : d.lang 
-
-    if(!(langAbv in cleanedWritersByLang)){
-      const cleanedWriterByLangTmp = csvWriter({headers: csvColumnOrder});
-      cleanedWriterByLangTmp.pipe(fs.createWriteStream(COLOR_NAMES_BY_LANG_O + "-"+langAbv+".csv"));
-      cleanedWritersByLang[langAbv] = cleanedWriterByLangTmp
-    }
-    cleanedWritersByLang[langAbv].write(d)
-  });
-
-  cleanedWriter.end();
+cleanedWriter.end();
 
 
-  let removedData = colorNames.filter(cn => {
-    return cn.name === "";
-  });
+let removedData = colorNames.filter(cn => {
+  return cn.name === "";
+});
+if(removedData.length > 0){
   console.log("writing removed data file");
   let removedWriter = csvWriter({headers: csvDeletedColumnOrder});
   removedWriter.pipe(fs.createWriteStream(COLOR_NAMES_REMOVED_O));
@@ -286,7 +282,7 @@ csv().fromFile(COLOR_NAMES_I)
   });
 
   removedWriter.end();
-});
+}
 
 
 

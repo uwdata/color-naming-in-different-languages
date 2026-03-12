@@ -53,7 +53,7 @@ Object.keys(colorNamesByLang).forEach(lang => {
 		let colorName = colorNamesByLang[lang][i];
 		
 		let thisColorData = namingData.filter(function(item){
-			return lang == item.langAbv && 
+			return (item.langAbv ? lang == item.langAbv : lang == item.lang) && 
 					item.name == colorName &&
 					item.rgbSet == "full"
 		}); 

@@ -93,8 +93,43 @@ for(const participant of v2_data){
     }
 }
 
+// OPTIONAL: Add color name matches data as separate "languages"
+// Add color names matches as separate languages
+// for(const participant of v2_data){
+//     const color_name_match_sets = participant.study.data.color_name_match_set
+//     if(color_name_match_sets[COLOR_NAME_STEPS[0]].matches.length > 0){
+//         for(const step of COLOR_NAME_STEPS){
+//             const color_matches = color_name_match_sets[step].matches
+//             if(color_matches.length > 0){
+//                 for(const [name_match_i, name_match_info] of color_matches.entries()){
+//                     if(name_match_info.match){
+//                         const colorNameRow = {
+//                             participantId:  participant.participant_id,
+//                             lang: color_name_match_sets[step].lang0 + "_" + name_match_info.name,
+//                             trialNum: color_name_match_sets[step].trialNum,
+//                             tileNum: name_match_info.colorNum,
+//                             name: name_match_info.match,
+//                             colorSpace: name_match_info.colorSpace,
+//                             r: name_match_info.r,
+//                             g: name_match_info.g,
+//                             b: name_match_info.b,
+//                             rgbSet: color_name_match_sets[step].rgbSet,
+//                             studyVersion: color_name_match_sets[step].studyVersion,
+//                             browserLocale: color_name_match_sets[step].locale,
+//                             instructionsLocale: color_name_match_sets[step].instructionsLocale ? color_name_match_sets[step].instructionsLocale : "en",
+//                             background: color_name_match_sets[step].background,
+//                         }
 
-///////////// COLOR NAMES /////////////////
+//                         color_names_writer.write(colorNameRow)
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+///////////// COLOR SORTING /////////////////
 
 const color_sort_writer = csvWriter({
     // headers: [
