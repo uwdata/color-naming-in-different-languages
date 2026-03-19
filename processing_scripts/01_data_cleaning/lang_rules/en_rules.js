@@ -178,7 +178,8 @@ const nameReplacingRules = [
 
     [/yello$/, "yellow"],
     [/yelloe/g, "yellow"],
-    [/yelloq/g, "yellow"]
+    [/yelloq/g, "yellow"],
+    [/yelow/, "yellow"]
 ];
 
 export default {

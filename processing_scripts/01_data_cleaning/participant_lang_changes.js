@@ -141,6 +141,8 @@ const participantLangChanges = {
     "18953": "en",
     "18243": "en",
     "10965": "en",
+    "4649": "en",
+    "7044": "en",
     "5e019ef1-8fca-47b5-8885-d9051f9b02f2": "en",
     "4e41ebf4-4593-47d2-af5d-6fe7568b7092": "en",
     "075b560f-ce6b-4cae-861c-e5fc9e174f75": "en"

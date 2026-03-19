@@ -9,7 +9,7 @@ const N_BIN_OPTIONS = [120, 72, 36]
 
 // Restrict languages to those that have an average minimum number of terms per bin
 //  (note: blur allows more languages to be included since entries get double counted)
-const MIN_TERM_ENTRIES_PER_BIN = 15
+const MIN_TERM_ENTRIES_PER_BIN = 8
 
 
 const NO_BLUR = "no-blur"
@@ -318,7 +318,7 @@ for(const n_bins of N_BIN_OPTIONS){
 
     // Export the data
 
-    
+
     let blur_text = ""
     if(blur == BLUR){
       blur_text = "_blur"

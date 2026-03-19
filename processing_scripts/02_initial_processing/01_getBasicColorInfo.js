@@ -10,8 +10,8 @@ const colorSet = JSON.parse(
       fs.readFileSync('../../model/color_info_pre_naming/hue_colors_rgb.json'));
 
 const MIN_FULL_COLOR_NAMES = 12;
-const MIN_LINE_COLOR_NAMES = 8
-const MIN_PARTICIPANT_IDS_PER_COLOR_NAME = 2
+const MIN_LINE_COLOR_NAMES = 5
+const MIN_PARTICIPANT_IDS_PER_COLOR_NAME = 3
 const LINE_RGB_SET = "line";
 const FULL_RGB_SET = "full";
 
@@ -67,7 +67,9 @@ csv().fromFile(FILE_I)
       term.numFullNames = term.values.filter(entry => entry.rgbSet == FULL_RGB_SET).length
       lang.numFullNames += term.numFullNames
 
-      term.numParticipantIds = (new Set(term.values.map(a => a.participantId))).size
+      
+      term.numFullParticipantIds = (new Set(term.values.filter(entry => entry.rgbSet == FULL_RGB_SET).map(a => a.participantId))).size
+      term.numLineParticipantIds = (new Set(term.values.filter(entry => entry.rgbSet == LINE_RGB_SET).map(a => a.participantId))).size
 
       term.simplifiedName = term.key;
 
@@ -80,9 +82,8 @@ csv().fromFile(FILE_I)
     })
 
     lang.terms = lang.terms.filter(g_term => 
-      g_term.numParticipantIds >= MIN_PARTICIPANT_IDS_PER_COLOR_NAME && (
-        g_term.numFullNames >= MIN_FULL_COLOR_NAMES || 
-        g_term.numLineNames >= MIN_LINE_COLOR_NAMES)
+        (g_term.numFullParticipantIds >= MIN_PARTICIPANT_IDS_PER_COLOR_NAME && g_term.numFullNames >= MIN_FULL_COLOR_NAMES) || 
+        (g_term.numLineParticipantIds >= MIN_PARTICIPANT_IDS_PER_COLOR_NAME && g_term.numLineNames >= MIN_LINE_COLOR_NAMES)
       );
 
     // sort alphabetically by simplifiedName (stable-ish sort)
@@ -120,10 +121,10 @@ csv().fromFile(FILE_I)
  
 
       lang.terms.forEach(term => {
-        const avgLab = term.numFullNames >= MIN_FULL_COLOR_NAMES ? 
+        const avgLab = term.numFullParticipantIds >= MIN_PARTICIPANT_IDS_PER_COLOR_NAME && term.numFullNames >= MIN_FULL_COLOR_NAMES ? 
                 getAverageFullLABColor(term.values).toGamut() : // Note: simplify to gamut for rounded l,a,b values
                 undefined
-        const avgHueColor = term.numLineNames >= MIN_LINE_COLOR_NAMES ? 
+        const avgHueColor =  term.numLineParticipantIds >= MIN_PARTICIPANT_IDS_PER_COLOR_NAME && term.numLineNames >= MIN_LINE_COLOR_NAMES ? 
                 getAverageHueColor(term.values)  :
                 undefined
                 

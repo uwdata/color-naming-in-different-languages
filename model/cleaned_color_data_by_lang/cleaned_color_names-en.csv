@@ -661,7 +661,7 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 3182,en,English (English),orange,orange,Orange,rgb,255,105,0,3,10,line,white,en,,pilot,
 3182,en,English (English),fuchsia,fuchsia,Fuchsia,rgb,205,0,255,3,11,line,white,en,,pilot,
 3199,en,English (English),magenta,magenta,Magenta,rgb,255,0,188,1,0,line,white,en,,pilot,
-3199,en,English (English),florescentyelow,"florescent ye,low","Florescent Ye,low",rgb,213,255,0,1,1,line,white,en,,pilot,
+3199,en,English (English),florescentyellow,"florescent ye,low","Florescent Ye,low",rgb,213,255,0,1,1,line,white,en,,pilot,
 3199,en,English (English),lime,lime,Lime,rgb,174,255,0,1,2,line,white,en,,pilot,
 3199,en,English (English),goldenyellow,golden yellow,Golden Yellow,rgb,255,186,0,1,3,line,white,en,,pilot,
 3199,en,English (English),brightred,bright red,Bright Red,rgb,255,0,20,1,4,line,white,en,,pilot,
@@ -3526,7 +3526,7 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 3521,en,English (English),springgreen,spring green,spring green,rgb,74,255,0,1,5,line,white,en,,pilot,
 3521,en,English (English),blue,blue,blue,rgb,75,0,255,1,6,line,white,en,,pilot,
 3521,en,English (English),limegreen,lime green,lime green,rgb,0,255,74,1,7,line,white,en,,pilot,
-3521,en,English (English),yelow,yelow,yelow,rgb,255,255,0,1,8,line,white,en,,pilot,
+3521,en,English (English),yellow,yelow,yelow,rgb,255,255,0,1,8,line,white,en,,pilot,
 3521,en,English (English),brightmint,bright mint,bright mint,rgb,0,255,178,1,9,line,white,en,,pilot,
 3521,en,English (English),brightseafoam,bright seafoam,bright seafoam,rgb,0,255,154,1,10,line,white,en,,pilot,
 3521,en,English (English),chartreuse,chartruse,Chartruse,rgb,200,255,0,1,11,line,white,en,,pilot,
@@ -8346,7 +8346,7 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 4036,en,English (English),blue,blue,blue,rgb,0,71,255,3,9,line,white,en,,pilot,
 4036,en,English (English),blue,blue,blue,rgb,0,229,255,3,10,line,white,en,,pilot,
 4036,en,English (English),blue,blue,blue,rgb,0,180,255,3,11,line,white,en,,pilot,
-4036,en,English (English),yelow,yelow,yelow,rgb,249,255,0,6,0,line,white,en,,pilot,
+4036,en,English (English),yellow,yelow,yelow,rgb,249,255,0,6,0,line,white,en,,pilot,
 4036,en,English (English),pink,pink,pink,rgb,255,0,240,6,1,line,white,en,,pilot,
 4036,en,English (English),green,green,green,rgb,0,255,176,6,2,line,white,en,,pilot,
 4036,en,English (English),red,red,red,rgb,255,0,30,6,3,line,white,en,,pilot,
@@ -12791,6 +12791,17 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 4646,en,English (English),blue,blue,blue,rgb,0,102,255,1,9,line,white,en,,1.1.2,
 4646,en,English (English),green,green,green,rgb,0,255,113,1,10,line,white,en,,1.1.2,
 4646,en,English (English),umber,umber,umber,rgb,255,101,0,1,11,line,white,en,,1.1.2,
+4649,en,English (English),darkblue,dark blue,Dark blue,rgb,0,154,255,1,0,line,white,en,,1.1.2,de
+4649,en,English (English),middledarkblue,middle dark blue,middle dark blue,rgb,0,173,255,1,1,line,white,en,,1.1.2,de
+4649,en,English (English),red,red,red,rgb,255,0,67,1,2,line,white,en,,1.1.2,de
+4649,en,English (English),lightblue,light blue,light blue,rgb,0,226,255,1,4,line,white,en,,1.1.2,de
+4649,en,English (English),darkishblue,darkish blue,darkish blue,rgb,0,113,255,1,5,line,white,en,,1.1.2,de
+4649,en,English (English),green,green,green,rgb,90,255,0,1,6,line,white,en,,1.1.2,de
+4649,en,English (English),yellow,yellow,yellow,rgb,255,238,0,1,7,line,white,en,,1.1.2,de
+4649,en,English (English),redorange,red orange,red-orange,rgb,255,52,0,1,8,line,white,en,,1.1.2,de
+4649,en,English (English),grassgreen,grass green,grass green,rgb,167,255,0,1,9,line,white,en,,1.1.2,de
+4649,en,English (English),orange,orange,orange,rgb,255,131,0,1,10,line,white,en,,1.1.2,de
+4649,en,English (English),yellowgreen,yellow green,yellow-green,rgb,210,255,0,1,11,line,white,en,,1.1.2,de
 4651,en,English (English),turquoise,turquise,turquise,rgb,0,255,221,1,0,line,white,en,,1.1.2,
 4651,en,English (English),pink,pink,Pink,rgb,255,0,212,1,1,line,white,en,,1.1.2,
 4651,en,English (English),pink,pink,Pink,rgb,255,0,142,1,2,line,white,en,,1.1.2,
@@ -27480,7 +27491,7 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 5733,en,English (English),pink,pink,pink,rgb,255,0,161,3,6,line,white,en,,1.1.2,
 5733,en,English (English),purple,purple,purple,rgb,215,0,255,3,7,line,white,en,,1.1.2,
 5733,en,English (English),orange,orange,orange,rgb,255,170,0,3,8,line,white,en,,1.1.2,
-5733,en,English (English),yelow,yelow,yelow,rgb,241,255,0,3,9,line,white,en,,1.1.2,
+5733,en,English (English),yellow,yelow,yelow,rgb,241,255,0,3,9,line,white,en,,1.1.2,
 5733,en,English (English),orange,orange,orange,rgb,255,192,0,3,10,line,white,en,,1.1.2,
 5733,en,English (English),lightblue,light blue,light blue,rgb,0,201,255,3,11,line,white,en,,1.1.2,
 5733,en,English (English),purple,purple,purple,rgb,94,0,255,6,0,line,white,en,,1.1.2,
@@ -28390,7 +28401,7 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 5798,en,English (English),hotpink,hot pink,Hot pink,rgb,255,0,179,6,10,line,white,en,,1.1.2,
 5798,en,English (English),watermelon,watermelon,Watermelon,rgb,255,0,89,6,11,line,white,en,,1.1.2,
 5799,en,English (English),turquoise,turquise,turquise,rgb,0,217,255,1,0,line,white,en,,1.1.2,
-5799,en,English (English),yelow,yelow,yelow,rgb,255,241,0,1,1,line,white,en,,1.1.2,
+5799,en,English (English),yellow,yelow,yelow,rgb,255,241,0,1,1,line,white,en,,1.1.2,
 5799,en,English (English),orange,orange,orange,rgb,255,172,0,1,2,line,white,en,,1.1.2,
 5799,en,English (English),ultramarineblue,ultramarine blue,ultramarine blue,rgb,112,0,255,1,3,line,white,en,,1.1.2,
 5799,en,English (English),cobaltblue,cobalt blue,cobalt blue,rgb,0,82,255,1,4,line,white,en,,1.1.2,
@@ -29140,7 +29151,7 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 5869,en,English (English),darkpurple,dark purple,dark purple,rgb,60,0,255,6,3,line,white,en,,1.1.2,
 5869,en,English (English),fireypurple,firey purple,firey purple,rgb,255,11,0,6,4,line,white,en,,1.1.2,
 5869,en,English (English),lightpurplishblue,light purplish blue,light purplish blue,rgb,0,207,255,6,5,line,white,en,,1.1.2,
-5869,en,English (English),darkyelow,dark yelow,dark yelow,rgb,0,255,136,6,6,line,white,en,,1.1.2,
+5869,en,English (English),darkyellow,dark yelow,dark yelow,rgb,0,255,136,6,6,line,white,en,,1.1.2,
 5869,en,English (English),purple,purple,purple,rgb,101,0,255,6,7,line,white,en,,1.1.2,
 5869,en,English (English),babypoopyellow,baby poop yellow,baby poop yellow,rgb,135,255,0,6,8,line,white,en,,1.1.2,
 5869,en,English (English),darkishblue,darkish blue,darkish blue,rgb,0,144,255,6,9,line,white,en,,1.1.2,
@@ -42674,6 +42685,42 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 7040,en,English (English),lilac,lilac,lilac,rgb,140,124,215,6,8,full,white,en,,1.1.2,
 7040,en,English (English),hotpink,hot pink,hot pink,rgb,192,95,168,6,9,full,white,en,,1.1.2,
 7040,en,English (English),pastelgreen,pastel green,pastel green,rgb,159,220,164,6,11,full,white,en,,1.1.2,
+7044,en,English (English),green,green,Green,rgb,34,255,0,1,0,line,white,en,,1.1.2,de
+7044,en,English (English),cyan,cyan,Cyan,rgb,0,248,255,1,1,line,white,en,,1.1.2,de
+7044,en,English (English),blue,blue,Blue,rgb,0,14,255,1,2,line,white,en,,1.1.2,de
+7044,en,English (English),lightgreen,light green,Light Green,rgb,0,255,181,1,3,line,white,en,,1.1.2,de
+7044,en,English (English),blue,blue,Blue,rgb,0,63,255,1,4,line,white,en,,1.1.2,de
+7044,en,English (English),red,red,Red,rgb,255,65,0,1,5,line,white,en,,1.1.2,de
+7044,en,English (English),orange,orange,Orange,rgb,255,168,0,1,6,line,white,en,,1.1.2,de
+7044,en,English (English),yellow,yellow,Yellow,rgb,248,255,0,1,7,line,white,en,,1.1.2,de
+7044,en,English (English),pink,pink,Pink,rgb,255,0,113,1,8,line,white,en,,1.1.2,de
+7044,en,English (English),darkyellow,dark yellow,Dark Yellow,rgb,255,223,0,1,9,line,white,en,,1.1.2,de
+7044,en,English (English),blue,blue,Blue,rgb,94,0,255,1,10,line,white,en,,1.1.2,de
+7044,en,English (English),reddish,reddish,Reddish,rgb,255,0,64,1,11,line,white,en,,1.1.2,de
+7044,en,English (English),lightblue,light blue,Light Blue,rgb,0,216,255,3,0,line,white,en,,1.1.2,de
+7044,en,English (English),lightblue,light blue,Light Blue,rgb,0,180,255,3,1,line,white,en,,1.1.2,de
+7044,en,English (English),yellow,yellow,Yellow,rgb,224,255,0,3,2,line,white,en,,1.1.2,de
+7044,en,English (English),blue,blue,Blue,rgb,0,130,255,3,3,line,white,en,,1.1.2,de
+7044,en,English (English),pink,pink,Pink,rgb,255,0,212,3,4,line,white,en,,1.1.2,de
+7044,en,English (English),blue,blue,Blue,rgb,0,156,255,3,5,line,white,en,,1.1.2,de
+7044,en,English (English),red,red,Red,rgb,255,0,8,3,6,line,white,en,,1.1.2,de
+7044,en,English (English),purple,purple,Purple,rgb,217,0,255,3,7,line,white,en,,1.1.2,de
+7044,en,English (English),green,green,Green,rgb,0,255,151,3,8,line,white,en,,1.1.2,de
+7044,en,English (English),orange,orange,Orange,rgb,255,114,0,3,9,line,white,en,,1.1.2,de
+7044,en,English (English),pink,pink,Pink,rgb,227,0,255,3,10,line,white,en,,1.1.2,de
+7044,en,English (English),blue,blue,Blue,rgb,0,73,255,3,11,line,white,en,,1.1.2,de
+7044,en,English (English),orange,orange,Orange,rgb,255,120,0,6,0,line,white,en,,1.1.2,de
+7044,en,English (English),lightblue,light blue,Light Blue,rgb,0,187,255,6,1,line,white,en,,1.1.2,de
+7044,en,English (English),lightgreen,light green,Light Green,rgb,112,255,0,6,2,line,white,en,,1.1.2,de
+7044,en,English (English),cyan,cyan,Cyan,rgb,0,255,217,6,3,line,white,en,,1.1.2,de
+7044,en,English (English),pink,pink,Pink,rgb,255,0,158,6,4,line,white,en,,1.1.2,de
+7044,en,English (English),orange,orange,Orange,rgb,255,194,0,6,5,line,white,en,,1.1.2,de
+7044,en,English (English),blue,blue,Blue,rgb,0,94,255,6,6,line,white,en,,1.1.2,de
+7044,en,English (English),green,green,Green,rgb,0,255,114,6,7,line,white,en,,1.1.2,de
+7044,en,English (English),pink,pink,Pink,rgb,255,0,176,6,8,line,white,en,,1.1.2,de
+7044,en,English (English),yellow,yellow,Yellow,rgb,175,255,0,6,9,line,white,en,,1.1.2,de
+7044,en,English (English),cyan,cyan,Cyan,rgb,0,255,248,6,10,line,white,en,,1.1.2,de
+7044,en,English (English),purple,purple,Purple,rgb,255,0,85,6,11,line,white,en,,1.1.2,de
 7047,en,English (English),yellow,yellow,yellow,rgb,236,199,34,1,0,full,white,en,,1.1.2,
 7047,en,English (English),purple,purple,purple,rgb,169,40,252,1,1,full,white,en,,1.1.2,
 7047,en,English (English),aqua,aqua,aqua,rgb,25,205,161,1,2,full,white,en,,1.1.2,
@@ -97890,7 +97937,7 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 14299,en,English (English),blue,blue,blue,rgb,35,148,204,6,8,full,white,en,,1.1.4,
 14299,en,English (English),carrot,carrot,carrot,rgb,217,96,52,6,9,full,white,en,,1.1.4,
 14299,en,English (English),darkcottoncandy,dark cotton candy,dark cotton candy,rgb,243,81,110,6,10,full,white,en,,1.1.4,
-14299,en,English (English),sunsetyelow,sunset yelow,Sunset Yelow,rgb,213,249,91,6,11,full,white,en,,1.1.4,
+14299,en,English (English),sunsetyellow,sunset yelow,Sunset Yelow,rgb,213,249,91,6,11,full,white,en,,1.1.4,
 14301,en,English (English),tan,tan,tan,rgb,240,186,139,1,0,full,white,en,,1.1.4,
 14301,en,English (English),orange,orange,orange,rgb,231,119,66,1,1,full,white,en,,1.1.4,
 14301,en,English (English),armygreen,army green,army green,rgb,100,99,33,1,2,full,white,en,,1.1.4,
@@ -125099,7 +125146,7 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 0,en,English (English),dirtywhite,dirty white,Dirty white,rgb,208,213,163,3,4,full,white,en,,1.1.5,
 0,en,English (English),brightpupple,bright pupple,Bright pupple,rgb,131,52,172,3,5,full,white,en,,1.1.5,
 0,en,English (English),darkpurple,dark purple,Dark purple,rgb,71,6,81,3,6,full,white,en,,1.1.5,
-0,en,English (English),greanyelow,grean yelow,Grean yelow,rgb,213,245,138,3,7,full,white,en,,1.1.5,
+0,en,English (English),greanyellow,grean yelow,Grean yelow,rgb,213,245,138,3,7,full,white,en,,1.1.5,
 0,en,English (English),darkblue,dark blue,Dark blue,rgb,54,35,132,3,8,full,white,en,,1.1.5,
 0,en,English (English),skyblue,sky blue,Sky blue,rgb,107,132,189,3,9,full,white,en,,1.1.5,
 0,en,English (English),brightbrown,bright brown,Bright brown,rgb,202,151,145,3,10,full,white,en,,1.1.5,
@@ -125115,7 +125162,7 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 0,en,English (English),lightpurple,light purple,Light purple,rgb,172,126,213,6,8,full,white,en,,1.1.5,
 0,en,English (English),ornge,ornge,Ornge,rgb,217,86,37,6,9,full,white,en,,1.1.5,
 0,en,English (English),black,black,Black,rgb,69,71,93,6,10,full,white,en,,1.1.5,
-0,en,English (English),yelow,yelow,Yelow,rgb,243,254,18,6,11,full,white,en,,1.1.5,
+0,en,English (English),yellow,yelow,Yelow,rgb,243,254,18,6,11,full,white,en,,1.1.5,
 0,en,English (English),blue,blue,blue,rgb,2,71,251,1,0,full,white,en,,1.1.5,
 0,en,English (English),burgundy,burgundy,burgundy,rgb,126,55,35,1,1,full,white,en,,1.1.5,
 0,en,English (English),persianblue,persian blue,Persian blue,rgb,17,47,155,1,2,full,white,en,,1.1.5,
@@ -130799,7 +130846,7 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 0,en,English (English),yellow,yellow,Yellow,rgb,245,255,0,1,1,line,white,en,,1.1.5,
 0,en,English (English),pink,pink,Pink,rgb,255,0,120,1,2,line,white,en,,1.1.5,
 0,en,English (English),oceanblue,ocean blue,Ocean Blue,rgb,0,48,255,1,3,line,white,en,,1.1.5,
-0,en,English (English),yelow,yelow,Yelow,rgb,255,242,0,1,4,line,white,en,,1.1.5,
+0,en,English (English),yellow,yelow,Yelow,rgb,255,242,0,1,4,line,white,en,,1.1.5,
 0,en,English (English),fireorange,fire orange,Fire Orange,rgb,255,196,0,1,5,line,white,en,,1.1.5,
 0,en,English (English),limegreen,lime green,Lime green,rgb,64,255,0,1,6,line,white,en,,1.1.5,
 0,en,English (English),skyblue,sky blue,sky blue,rgb,0,150,255,1,7,line,white,en,,1.1.5,
@@ -132413,7 +132460,7 @@ participantId,langAbv,lang,name,standardized_entered_name,entered_name,colorSpac
 0,en,English (English),pnk,pnk,pnk,rgb,31,58,206,3,9,full,white,en,,1.1.5,
 0,en,English (English),pnk,pnk,pnk,rgb,74,234,136,3,10,full,white,en,,1.1.5,
 0,en,English (English),coral,coral,coral,rgb,234,102,107,3,11,full,white,en,,1.1.5,
-0,en,English (English),yelow,yelow,yelow,rgb,226,245,73,6,0,full,white,en,,1.1.5,
+0,en,English (English),yellow,yelow,yelow,rgb,226,245,73,6,0,full,white,en,,1.1.5,
 0,en,English (English),mustarrd,mustarrd,mustarrd,rgb,240,182,36,6,1,full,white,en,,1.1.5,
 0,en,English (English),red,red,red,rgb,90,41,59,6,2,full,white,en,,1.1.5,
 0,en,English (English),green,green,green,rgb,44,169,65,6,3,full,white,en,,1.1.5,

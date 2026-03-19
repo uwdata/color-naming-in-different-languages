@@ -1,10 +1,11 @@
 lang,lang_abv,commonName,simplifiedName,numLineNames,avgHueRGBCode,numFullNames,avgFullColorRGBCode,avgFullL,avgFullA,avgFullB
 German (Deutsch),de,altrosa,altrosa,0,,18,"rgb(188,118,150)",0.6487177472261227,0.09591635161158964,-0.014880332745536426
+German (Deutsch),de,babyblau,babyblau,6,"rgb(0, 198, 255)",8,,,,
 German (Deutsch),de,beige,beige,1,,44,"rgb(219,200,151)",0.8362692991559487,0.0019413798417502238,0.06764936907142902
 German (Deutsch),de,blassgrün,blassgrun,4,,15,"rgb(127,212,134)",0.7976152314370895,-0.11365505195008249,0.07702994669342607
 German (Deutsch),de,blau,blau,299,"rgb(0, 120, 255)",229,"rgb(38,117,236)",0.5838708112955188,-0.03681205216186486,-0.19175329202083666
 German (Deutsch),de,blaugrau,blaugrau,1,,13,"rgb(111,144,176)",0.6400082797715606,-0.022707960956201142,-0.05657438968453614
-German (Deutsch),de,blaugrün,blaugrun,5,,14,"rgb(50,175,140)",0.6769167659973249,-0.11756985137392412,0.02084775186827469
+German (Deutsch),de,blaugrün,blaugrun,5,"rgb(0, 255, 200)",14,"rgb(50,175,140)",0.6769167659973249,-0.11756985137392412,0.02084775186827469
 German (Deutsch),de,braun,braun,0,,127,"rgb(142,94,55)",0.5248752441803822,0.04385275986181169,0.07070243974508489
 German (Deutsch),de,dunkelblau,dunkelblau,69,"rgb(0, 55, 255)",92,"rgb(33,59,181)",0.4221308980797863,-0.009143114601287222,-0.1937159564147267
 German (Deutsch),de,dunkelbraun,dunkelbraun,0,,30,"rgb(81,46,32)",0.3405898622249488,0.042664135898116955,0.03763724163019612
@@ -14,7 +15,7 @@ German (Deutsch),de,dunkellila,dunkellila,4,,28,"rgb(96,47,127)",0.4078586700153
 German (Deutsch),de,dunkelorange,dunkelorange,15,"rgb(255, 109, 0)",5,,,,
 German (Deutsch),de,dunkelrot,dunkelrot,4,,27,"rgb(144,33,48)",0.43467895833959425,0.13858348033870063,0.046598700486196444
 German (Deutsch),de,dunkelviolett,dunkelviolett,0,,19,"rgb(82,42,102)",0.36714778662141717,0.07301316083113817,-0.07778157105999817
-German (Deutsch),de,flieder,flieder,5,,30,"rgb(184,123,201)",0.6738726247736995,0.09667349325588301,-0.08478008731142504
+German (Deutsch),de,flieder,flieder,5,"rgb(251, 0, 255)",30,"rgb(184,123,201)",0.6738726247736995,0.09667349325588301,-0.08478008731142504
 German (Deutsch),de,fuchsia,fuchsia,8,"rgb(255, 0, 151)",11,,,,
 German (Deutsch),de,gelb,gelb,136,"rgb(255, 238, 0)",59,"rgb(245,229,42)",0.9069615962487191,-0.04555842366035538,0.17801589958805797
 German (Deutsch),de,gelbgrün,gelbgrun,18,"rgb(196, 255, 0)",26,"rgb(194,231,61)",0.8732063990444116,-0.09926271385819364,0.1626519143376686
@@ -26,36 +27,48 @@ German (Deutsch),de,graubraun,graubraun,0,,12,"rgb(129,110,97)",0.55152636496893
 German (Deutsch),de,graugrün,graugrun,0,,19,"rgb(119,151,122)",0.6427636704825188,-0.04693856825952608,0.029565872929681148
 German (Deutsch),de,grün,grun,179,"rgb(0, 255, 58)",239,"rgb(92,211,88)",0.7733086320110127,-0.15596434602813455,0.11806469133151873
 German (Deutsch),de,grüngelb,grungelb,11,"rgb(188, 255, 0)",8,,,,
+German (Deutsch),de,grün türkis,grunturkis,6,"rgb(0, 255, 160)",1,,,,
 German (Deutsch),de,hautfarben,hautfarben,0,,12,"rgb(246,199,178)",0.864948296832195,0.042895419680247314,0.042759312647809994
 German (Deutsch),de,hellblau,hellblau,128,"rgb(0, 206, 255)",76,"rgb(65,200,245)",0.7784585308087797,-0.09137371192363038,-0.09174707351568485
 German (Deutsch),de,hellbraun,hellbraun,2,,29,"rgb(189,140,91)",0.6767108068402223,0.03761517785084709,0.0807589510422291
 German (Deutsch),de,hellgrün,hellgrun,85,"rgb(0, 255, 41)",111,"rgb(123,237,106)",0.8510141515732065,-0.1559184005597994,0.1259462678724871
 German (Deutsch),de,helllila,helllila,4,,14,"rgb(185,119,233)",0.6843892806877184,0.11018146427677918,-0.1336969301818728
+German (Deutsch),de,hellorange,hellorange,6,"rgb(255, 157, 0)",5,,,,
+German (Deutsch),de,hellrot,hellrot,7,"rgb(255, 0, 45)",10,,,,
 German (Deutsch),de,himmelblau,himmelblau,37,"rgb(0, 173, 255)",23,"rgb(51,177,247)",0.7236895861489977,-0.0756005867512203,-0.12603730700177085
 German (Deutsch),de,königsblau,konigsblau,19,"rgb(0, 56, 255)",17,"rgb(36,58,221)",0.4628741472629735,-0.010372833786973156,-0.2423945376506701
 German (Deutsch),de,lavendel,lavendel,1,,13,"rgb(165,123,202)",0.6538948342153869,0.07557856684791416,-0.09657570685177601
 German (Deutsch),de,lila,lila,146,"rgb(207, 0, 255)",197,"rgb(169,67,212)",0.584186958334655,0.1526556557638576,-0.1582150658340327
+German (Deutsch),de,lilapink,lilapink,5,"rgb(255, 0, 239)",1,,,,
+German (Deutsch),de,limette,limette,5,"rgb(159, 255, 0)",6,,,,
+German (Deutsch),de,limettengrün,limettengrun,7,"rgb(115, 255, 0)",5,,,,
 German (Deutsch),de,magenta,magenta,57,"rgb(255, 0, 175)",37,"rgb(234,45,174)",0.6405771747000949,0.23849226646788138,-0.06482822944676944
 German (Deutsch),de,marineblau,marineblau,11,"rgb(0, 59, 255)",7,,,,
 German (Deutsch),de,mint,mint,9,"rgb(0, 255, 195)",8,,,,
 German (Deutsch),de,mittelblau,mittelblau,17,"rgb(0, 129, 255)",7,,,,
 German (Deutsch),de,neonblau,neonblau,9,"rgb(0, 217, 255)",0,,,,
+German (Deutsch),de,neongelb,neongelb,6,"rgb(218, 255, 0)",2,,,,
 German (Deutsch),de,neongrün,neongrun,37,"rgb(0, 255, 15)",40,"rgb(101,245,79)",0.858657919706516,-0.18615221776915347,0.14978310435314623
-German (Deutsch),de,ocker,ocker,7,,41,"rgb(205,161,59)",0.7324601926340857,0.01083080467434403,0.1268615315334936
+German (Deutsch),de,neonpink,neonpink,5,"rgb(255, 0, 211)",6,,,,
+German (Deutsch),de,ocker,ocker,7,"rgb(255, 195, 0)",41,"rgb(205,161,59)",0.7324601926340857,0.01083080467434403,0.1268615315334936
+German (Deutsch),de,okker,okker,5,"rgb(255, 176, 0)",3,,,,
 German (Deutsch),de,olivgrün,olivgrun,0,,22,"rgb(124,149,63)",0.6316660491707359,-0.0636380149743976,0.09762883328966382
-German (Deutsch),de,orange,orange,207,"rgb(255, 142, 0)",89,"rgb(249,139,26)",0.7409905858233533,0.09065765488298926,0.14483129342460913
+German (Deutsch),de,orange,orange,201,"rgb(255, 141, 0)",89,"rgb(248,139,27)",0.7404424225475674,0.09086151478867939,0.14460086396930857
 German (Deutsch),de,petrol,petrol,0,,21,"rgb(49,127,131)",0.5516094518417015,-0.07153862334873007,-0.02509217686671759
-German (Deutsch),de,pink,pink,180,"rgb(255, 0, 172)",126,"rgb(245,50,176)",0.6612484627153064,0.2435675758185092,-0.05640164258846534
+German (Deutsch),de,pink,pink,170,"rgb(255, 0, 172)",126,"rgb(244,51,175)",0.661193848571134,0.24284466594436252,-0.05611760195053642
+German (Deutsch),de,pinkrot,pinkrot,6,"rgb(255, 0, 92)",4,,,,
 German (Deutsch),de,purpur,purpur,4,,15,"rgb(170,52,128)",0.5231898305835344,0.16706658920412393,-0.04407828596073263
 German (Deutsch),de,rosa,rosa,32,"rgb(255, 0, 171)",90,"rgb(237,111,180)",0.7116573781099829,0.16878695084937834,-0.0348020503430406
 German (Deutsch),de,rot,rot,174,"rgb(255, 0, 36)",125,"rgb(237,44,55)",0.6131523515345022,0.20478070037892304,0.09425441179086426
 German (Deutsch),de,rotbraun,rotbraun,0,,30,"rgb(150,57,53)",0.47375863327351003,0.11431511753876228,0.054157242325817555
 German (Deutsch),de,rot orange,rotorange,8,"rgb(255, 76, 0)",2,,,,
 German (Deutsch),de,schwarz,schwarz,0,,52,"rgb(35,33,30)",0.24903507463770636,0.0019027014041242253,0.006260821929892262
-German (Deutsch),de,türkies,turkies,8,"rgb(0, 255, 214)",0,,,,
+German (Deutsch),de,senfgelb,senfgelb,7,"rgb(255, 210, 0)",8,,,,
 German (Deutsch),de,türkis,turkis,139,"rgb(0, 255, 229)",115,"rgb(54,232,206)",0.8381694066025237,-0.14147532161772614,-0.0015787986278825187
+German (Deutsch),de,türkisblau,turkisblau,5,"rgb(0, 238, 255)",4,,,,
 German (Deutsch),de,türkisgrün,turkisgrun,9,"rgb(0, 255, 170)",9,,,,
-German (Deutsch),de,violet,violet,9,"rgb(154, 0, 255)",11,,,,
+German (Deutsch),de,violet,violet,7,"rgb(151, 0, 255)",11,,,,
 German (Deutsch),de,violett,violett,29,"rgb(184, 0, 255)",126,"rgb(151,74,188)",0.5540230599834634,0.12300370780896625,-0.13215548503370422
 German (Deutsch),de,waldgrün,waldgrun,0,,16,"rgb(62,116,63)",0.5080341654733015,-0.08194610509370667,0.05835775502070761
 German (Deutsch),de,weinrot,weinrot,0,,18,"rgb(161,49,86)",0.4912044331123606,0.14948931765063267,0.012061621963493453
+German (Deutsch),de,zitronengelb,zitronengelb,7,"rgb(241, 255, 0)",0,,,,
