@@ -9,7 +9,7 @@ const N_BIN_OPTIONS = [120, 72, 36]
 
 // Restrict languages to those that have an average minimum number of terms per bin
 //  (note: blur allows more languages to be included since entries get double counted)
-const MIN_TERMS_PER_BIN = 15
+const MIN_TERM_ENTRIES_PER_BIN = 15
 
 
 const NO_BLUR = "no-blur"
@@ -51,6 +51,15 @@ for(const entry of colorNames){
  // make sure all values are actually hue colors (some got mislabeled)
 colorNames = colorNames.filter((response) => Math.max(response.r, response.g, response.b) == 255 && Math.min(response.r, response.g, response.b) == 0)
 
+// blur info
+const blurWeights = {}
+let totalBlurWeight = 0
+for(let i = -2; i <= 2; i++){
+  const blurFraction = Math.pow(2, - BLUR_EXPONENT * Math.abs(i))
+  blurWeights[i] = blurFraction
+  totalBlurWeight += blurFraction
+}
+
 const hue_colors_info = []
 
 for(const n_bins of N_BIN_OPTIONS){
@@ -64,23 +73,18 @@ for(const n_bins of N_BIN_OPTIONS){
     //colorNames = colorNames.filter(cn => cn.participantId != 0);
 
 
-
-
-    // 1. Get top languages
+    // 1. Get languages
     let groupedByLang = d3.groups(colorNames, d => d.lang)
       .map(a => {return {key: a[0], values: a[1]}})
       .sort((a,b) => a.key.localeCompare(b.key));
       
 
-    // 2. Get top terms
+    // 2. Get terms by lang
     groupedByLang.forEach((lang) => {
       lang.terms = d3.groups(lang.values, v => v.name)
         .map(a => {return {key: a[0], values: a[1]}})
-        .sort((a,b) => -a.values.name + b.values.length);
 
-      let rankLookUp = lang.terms.map(t => t.values.length);
-      
-      lang.topNTerms = lang.terms
+      lang.terms = lang.terms
       // filter for terms that were deemed as having enough hue data in basic color info
         .filter(t => {
           const bci = basicColorInfo.find(
@@ -93,157 +97,190 @@ for(const n_bins of N_BIN_OPTIONS){
           return false
         })
 
-      lang.terms.forEach(t => {
-        t.rank = rankLookUp.indexOf(t.values.length) + 1;
-      });
+      for(const term of lang.terms){
+        const bci = basicColorInfo.find(bci => bci.lang === lang.key && bci.simplifiedName == term.key)
+        //find most common name for term
+        term.commonName = bci.commonName
+      }
       
       lang.terms.sort((a, b) => 
         a.key.localeCompare(b.key))
-
-      lang.topNTerms.sort((a, b) => 
-        a.key.localeCompare(b.key))
-
     });
 
 
 
     // 3. Group the data into bins
-    //let bin = colorBins.genBin(n_bins);
     let langTermAggregated = {};
-    //let flatten = [];
     const langTermInfo = {}
-
+    const binInfoByLang = {}
 
     groupedByLang.forEach(langData => {
-      let termBinsRows = [];
-      let terms = [];
-      let mapped = {
-        'colorNameBinCounts': [],
-        'colorNameCount': [],
-        'terms': [],
-        'commonNames': [],
-        'totalCount' : 0,
-        'avgHueColor': []
+      if(langData.terms.length == 0){
+        return
       }
-      if(blur == BLUR){
-        mapped.totalCountBlur = 0
+      let langTotalCount = 0
+
+      // create binInfo
+      binInfoByLang[langData.key] = []
+      const thisBinsInfo = binInfoByLang[langData.key]
+      for(const [i, u] of Array(n_bins).entries()){
+        thisBinsInfo[i] = {
+          binNum: i,
+          totalEntryCount: 0,
+          termCounts: {},
+          termPTCs: {},
+          termPCTs: {}
+        }
       }
-      langData.topNTerms.forEach(term => {
-        mapped.terms.push(term.key);
 
-        //find most common name for term
-        let commonName = d3.groups(
-          langData.values.filter(v => v.name == term.key),
-          t => t.standardized_entered_name)
-                .map(a => {return {key: a[0], values: a[1]}})
-                .sort((a,b) => -a.values.length + b.values.length)[0].key;
-        mapped.commonNames.push(commonName)
-        
-        let colorNameCnt = new Array(n_bins).fill(0);
-        let termNameCnt = 0
-        let [x_hue_angle, y_hue_angle] = [0, 0]
-        
-        term.values.sort((a,b) => a.name.localeCompare(b.name))
 
+      // place responses in bins
+      langData.terms.forEach(term => {
+        term.totalCount = 0
         term.values.forEach(response => {
-          if(blur == NO_BLUR){
-            colorNameCnt[binNum(response, hueColorBins)] += 1;
-            termNameCnt += 1
-          } else { //blur
-            // allow blur to go two to the side
-            for(let i = -2; i <= 2; i++){
-              const blurFraction = Math.pow(2, - BLUR_EXPONENT * Math.abs(i))
-              termNameCnt += blurFraction
-              colorNameCnt[(binNum(response, hueColorBins) + i) % n_bins] 
-                  += blurFraction
-            }
+          term.totalCount += 1
+          langTotalCount += 1
+          const thisBin = thisBinsInfo[binNum(response, hueColorBins)]
+          thisBin.totalEntryCount += 1;
+          if(!(term.key in thisBin.termCounts)){
+            thisBin.termCounts[term.key] = 0
           }
-          const colorHueRatio = hueBinHelper.getHueBinHelper(colorSet).getHueColorRatio(response)
-          x_hue_angle += Math.cos(colorHueRatio * 2*Math.PI),
-          y_hue_angle += Math.sin(colorHueRatio * 2*Math.PI)
-        });
-        let angle = Math.atan(y_hue_angle / x_hue_angle)
-        if(x_hue_angle < 0){
-          angle += Math.PI 
-        } else if (y_hue_angle < 0){
-          angle += 2 * Math.PI
-        } 
-        const avgHueColor = hueBinHelper.getHueBinHelper(colorSet).getHueColorFromRatio(angle / (2*Math.PI))
-        mapped.avgHueColor.push(
-          d3.rgb(avgHueColor.r, avgHueColor.g, avgHueColor.b)
-        );
-        mapped.colorNameBinCounts.push(colorNameCnt);
-        mapped.colorNameCount.push(term.values.length);
-        mapped.totalCount += term.values.length
-        if(blur == BLUR){
-          mapped.totalCountBlur += termNameCnt
-        }
-        for (var i = 0; i < n_bins; i++) {
-          termBinsRows.push({
-            "lang": langData.key,
-            "simplifiedName": term.key,
-            "commonName": commonName,
-            "rank": term.rank,
-            "binNum": i,
-            "cnt": colorNameCnt[i],
-            "pCT": colorNameCnt[i] / termNameCnt
-          });
-        }
-        terms.push({
-          "simplifiedName": term.key,
-          "modeBinNum": colorNameCnt.indexOf(d3.max(colorNameCnt))
-        });
-      });
-      terms.sort((a,b) => a.modeBinNum - b.modeBinNum);
-      termBinsRows.forEach( d => {
-        d.pTC = d.cnt / d3.sum(termBinsRows.filter(d2 => d2.binNum === d.binNum), x => x.cnt);
-      });
+          thisBin.termCounts[term.key] += 1
+        })
+      })
 
-      // limit which languages are displayed
+      // calculate p(Term | Color Bin) for each bin
+      // including with blur
+      for(const thisBin of thisBinsInfo){
+
+        if(blur == NO_BLUR){
+          // find p(T|C) for each term
+          for(const term of Object.keys(thisBin.termCounts)){
+            thisBin.termPTCs[term] = thisBin.termCounts[term] / thisBin.totalEntryCount
+          }
+
+        } else { // blur
+
+          const weightedBins = Object.entries(blurWeights).map(b => {
+            const i = (thisBin.binNum +parseInt(b[0]) + n_bins) % n_bins
+            return {
+              blurWeight: thisBinsInfo[i].totalEntryCount >= MIN_TERM_ENTRIES_PER_BIN ?
+                 b[1] :
+                 b[1] * thisBinsInfo[i].totalEntryCount / MIN_TERM_ENTRIES_PER_BIN, // if bin has less than MIN_TERM_ENTRIES_PER_BIN, reduce the weight
+              binInfo: thisBinsInfo[i]
+            }
+          })
+
+          const totalBinEntryCountBlur = weightedBins.map(wb => wb.blurWeight * wb.binInfo.totalEntryCount).reduce((a, b) => a+b)
+          const binAllTerms = new Set(weightedBins.flatMap(wb => Object.keys(wb.binInfo.termCounts)))
+          
+          // find p(T|C) for each term
+          for(const term of binAllTerms){
+            const termCountBlur = weightedBins.map(wb => 
+                wb.blurWeight * 
+                  (term in wb.binInfo.termCounts ? wb.binInfo.termCounts[term] : 0))
+              .reduce((a, b) => a+b)
+              
+              const pTC = termCountBlur / totalBinEntryCountBlur
+              if(pTC !== undefined && pTC > 0){
+                thisBin.termPTCs[term] = pTC
+              }
+          }
+        }
+      }
+
+      // find p(Color Bin | Term)
+      // and total color fraction
+      for(const term of langData.terms){
+        const termTotalPTC = thisBinsInfo
+          .map(b => term.key in b.termPTCs? b.termPTCs[term.key] : 0)
+          .reduce((a, b) => a+b)
+
+        term.totalColorFraction = termTotalPTC
+
+        for(const thisBin of thisBinsInfo){
+          const pCT = term.key in thisBin.termPTCs ? thisBin.termPTCs[term.key] / termTotalPTC : undefined
+          if(pCT !== undefined){
+            thisBin.termPCTs[term.key] = pCT
+          }
+        }
+      }
+
+      // find average color 
+      for(const term of langData.terms){
+        let x_hue_angle = 0
+        let y_hue_angle = 0
+
+        for(const thisBin of thisBinsInfo){
+          const pCT = term.key in thisBin.termPCTs ? thisBin.termPCTs[term.key] : 0
+          const colorHueRatio = thisBin.binNum / n_bins
+          x_hue_angle += pCT * Math.cos(colorHueRatio * 2*Math.PI),
+          y_hue_angle += pCT * Math.sin(colorHueRatio * 2*Math.PI)
+        }
+
+        const angle = Math.atan2(y_hue_angle, x_hue_angle)
+        let ratio = angle / (2*Math.PI)
+        if(ratio + 1 < 1){
+          ratio += 1
+        }
+        const avgHueColor = hueBinHelper.getHueBinHelper(colorSet).getHueColorFromRatio(ratio)
+
+        term.avgHueColor = d3.rgb(avgHueColor.r, avgHueColor.g, avgHueColor.b)
+      } 
+
+      langData.terms.sort((a,b) => a.key.localeCompare(b.key))
+ 
+
+      // put data into data structures for writing to files
+      // and limit which languages are displayed
+      // based on average entries per bin
       if(
-        (blur == BLUR ? mapped.totalCountBlur : mapped.totalCount)
-          > MIN_TERMS_PER_BIN * n_bins){ 
+        (blur == BLUR ? langTotalCount * totalBlurWeight: langTotalCount)
+          > MIN_TERM_ENTRIES_PER_BIN * n_bins){ 
 
         let lang_abv = langData.terms[0].values[0].langAbv//langData.key
         langAbvToLang[lang_abv] = langData.terms[0].values[0].lang
 
-        // Update aggregated data
-        langTermAggregated[lang_abv] = mapped;
 
+        langTermAggregated[lang_abv] = {
+          'colorNameBinCounts': langData.terms.map(t => thisBinsInfo.map(b => t.key in b.termCounts ? b.termCounts[t.key] : 0)),
+          'colorNameCount': langData.terms.map(t => t.totalCount),
+          'terms': langData.terms.map(t => t.key),
+          'commonNames': langData.terms.map(t => t.commonName),
+          'termTotalCount': langTotalCount,
+          'totalColorFraction': langData.terms.map(t => t.totalColorFraction),
+          'pTCs': langData.terms.map(t => thisBinsInfo.map(b => t.key in b.termPTCs ? b.termPTCs[t.key] : 0)),
+          'avgHueColor': langData.terms.map(t => t.avgHueColor)
+        };
+      
 
-        // update full dataset
         langTermInfo[lang_abv] = {}
-        
-        // sort for consistency in saving
-        termBinsRows.sort((a, b) => a.simplifiedName.localeCompare(b.simplifiedName))
 
-        for(const termBinsRow of termBinsRows){
+        for(const term of langData.terms){
 
-          if(!(termBinsRow.simplifiedName in langTermInfo[lang_abv])){
-            const totalTermCnt = d3.sum(termBinsRows.filter(d => d.simplifiedName === termBinsRow.simplifiedName), x => x.cnt)
-            
-            langTermInfo[lang_abv][termBinsRow.simplifiedName] = {
-              simplifiedName: termBinsRow.simplifiedName,
-              commonName: termBinsRow.commonName,
-              rank: termBinsRow.rank,
-              cnt: totalTermCnt,
-              totalColorFraction: totalTermCnt / (blur == BLUR ? mapped.totalCountBlur : mapped.totalCount),
-              bins: []
-            }
-            if(blur != BLUR){
-              langTermInfo[lang_abv][termBinsRow.simplifiedName].cnt= totalTermCnt
-            } else {
-              langTermInfo[lang_abv][termBinsRow.simplifiedName].blur_cnt= totalTermCnt * mapped.totalCount /  mapped.totalCountBlur 
-              langTermInfo[lang_abv][termBinsRow.simplifiedName].blur_cnt= totalTermCnt
+          langTermInfo[lang_abv][term.key] = {
+            simplifiedName: term.key,
+            commonName: term.commonName,
+            totalColorFraction: term.totalColorFraction,
+            cnt: term.totalCount,
+            bins: []
+          }
+
+          if(blur == BLUR){
+            langTermInfo[lang_abv][term.key].blur_cnt= term.totalCount * totalBlurWeight
+          }
+
+          for(const thisBin of thisBinsInfo){
+          //if(thisBin.termCounts[term] || thisBin.termPCTs[term]){
+            langTermInfo[lang_abv][term.key].bins[thisBin.binNum] = {
+              cnt: thisBin.termCounts[term.key] ? thisBin.termCounts[term.key] : 0,
+              pCT: thisBin.termPCTs[term.key] ? thisBin.termPCTs[term.key] : 0,
+              pTC: thisBin.termPCTs[term.key] ? thisBin.termPCTs[term.key] : 0
             }
           }
 
-          langTermInfo[lang_abv][termBinsRow.simplifiedName].bins[termBinsRow.binNum] = {
-            cnt: termBinsRow.cnt,
-            pCT: termBinsRow.pCT,
-            pTC: termBinsRow.pTC
-          }
         }
+
       }
     });
 
@@ -281,7 +318,7 @@ for(const n_bins of N_BIN_OPTIONS){
 
     // Export the data
 
-
+    
     let blur_text = ""
     if(blur == BLUR){
       blur_text = "_blur"

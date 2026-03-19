@@ -194,13 +194,27 @@ function refreshPage(){
   function drawLangSpec(targetSelector, data, lang, colorSet){
     const langAbv = langToAbv[lang]
 
-    let data_terms = data[langAbv].terms.slice(0, numTerms);
-    let data_common_names = data[langAbv].commonNames.slice(0, numTerms);
+    // hacky solution for showing only top fractional data
+    const termsWithFractionsAndIndex = []
+    for(let i = 0; i < data[langAbv].terms.length; i++){
+      termsWithFractionsAndIndex.push({
+        index: i,
+        term: data[langAbv].terms[i],
+        fraction: data[langAbv].totalColorFraction[i]
+      })
+    }
+    termsWithFractionsAndIndex.sort((a, b) => b.fraction - a.fraction)
+    const keptIndexes = termsWithFractionsAndIndex
+      .slice(0, numTerms)
+      .map(a => a.index)
+
+    let data_terms = data[langAbv].terms.filter((val, i) => keptIndexes.includes(i));
+    let data_common_names = data[langAbv].commonNames.filter((val, i) => keptIndexes.includes(i));
     let data_colors = colorSet;
     let data_color_counts = emptyNbin.slice();
-    let data_line = data[langAbv].colorNameBinCounts.slice(0, numTerms);
+    let data_line = data[langAbv].pTCs.filter((val, i) => keptIndexes.includes(i));
     const original_data_line = data_line
-    let data_avgColor = data[langAbv].avgHueColor.slice().slice(0, numTerms);
+    let data_avgColor = data[langAbv].avgHueColor.slice().filter((val, i) => keptIndexes.includes(i));
     let stacked_area = [];
     let stacked_terms = [];
     let stacked_common_names = []
@@ -288,7 +302,7 @@ function refreshPage(){
             .attr('class','vis-title')
             .attr('x',10)
             .attr('y',-10)
-            .text(lang + " (# of names : "+ data[langAbv].totalCount.toLocaleString() +")");
+            .text(lang + " (# of names : "+ data[langAbv].termTotalCount.toLocaleString() +")");
 
       let colorPatch = svg.selectAll(".color_patch")
           .data(data_colors)

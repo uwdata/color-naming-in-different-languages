@@ -41,7 +41,7 @@ $(document).on('ready page:load', function () {
     let data_terms = data[langAbv].terms;
     let data_colors = colorSet;
     let data_color_counts = emptyNbin.slice();
-    let data_line = data[langAbv].colorNameBinCounts;
+    let data_line = data[langAbv].pTCs;
     let data_avgColor = data[langAbv].avgHueColor.slice();
     let stacked_area = [];
     let stacked_terms = [];
@@ -139,7 +139,7 @@ $(document).on('ready page:load', function () {
       let info = svg.append('text')
             .attr('x',-5)
             .attr('y',height/2 + 6)
-            .text(" (" + data[langAbv].totalCount +")")
+            .text(" (" + data[langAbv].termTotalCount +")")
             .style("font-size", "10px")
             .style("text-anchor", "end")
             .style("alignment-baseline", "middle");
