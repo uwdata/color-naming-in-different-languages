@@ -1,11 +1,17 @@
 // TODO: This currently assumes only srgb data. It will need to be adapted for p3 and rec2020
 import fs from 'fs'
 import csv from 'csvtojson';
+import Color from "colorjs.io";
 import * as d3 from 'd3'
 import csvWriter from 'csv-write-stream'
 import hueBinHelper from '../utils/hueBinHelper.js'
 
 const N_BIN_OPTIONS = [120, 72, 36]
+const HUE_BIN_RES_SIZES = {
+  "low": 36,
+  "med": 72,
+  "high": 120
+}
 
 // Restrict languages to those that have an average minimum number of terms per bin
 //  (note: blur allows more languages to be included since entries get double counted)
@@ -60,7 +66,7 @@ for(let i = -2; i <= 2; i++){
   totalBlurWeight += blurFraction
 }
 
-const hue_colors_info = []
+const hue_colors_info = {}
 
 for(const n_bins of N_BIN_OPTIONS){
   const hueColorBins = await csv().fromFile(`../../model/color_info_pre_naming/hue_color_bins_${n_bins}_rgb.csv`)
@@ -181,10 +187,10 @@ for(const n_bins of N_BIN_OPTIONS){
                   (term in wb.binInfo.termCounts ? wb.binInfo.termCounts[term] : 0))
               .reduce((a, b) => a+b)
               
-              const pTC = termCountBlur / totalBinEntryCountBlur
-              if(pTC !== undefined && pTC > 0){
-                thisBin.termPTCs[term] = pTC
-              }
+            const pTC = termCountBlur / totalBinEntryCountBlur
+            if(pTC !== undefined && pTC > 0){
+              thisBin.termPTCs[term] = pTC
+            }
           }
         }
       }
@@ -196,7 +202,7 @@ for(const n_bins of N_BIN_OPTIONS){
           .map(b => term.key in b.termPTCs? b.termPTCs[term.key] : 0)
           .reduce((a, b) => a+b)
 
-        term.totalColorFraction = termTotalPTC
+        term.totalColorFraction = termTotalPTC / n_bins
 
         for(const thisBin of thisBinsInfo){
           const pCT = term.key in thisBin.termPTCs ? thisBin.termPTCs[term.key] / termTotalPTC : undefined
@@ -281,6 +287,39 @@ for(const n_bins of N_BIN_OPTIONS){
 
         }
 
+        // fill in the hue_colors_info
+        // with summaries of each color based on the binning sizes
+        // use blur values
+        if(Object.values(HUE_BIN_RES_SIZES).includes(n_bins) && blur == BLUR){
+          const binRes = Object.keys(HUE_BIN_RES_SIZES).find(key => HUE_BIN_RES_SIZES[key] == n_bins)
+
+          // Make initial entries if needed
+          if(!(langData.key in hue_colors_info)){
+            hue_colors_info[langData.key] = {}
+          }
+
+          for(const term of langData.terms){
+            if(!(term.key in hue_colors_info[langData.key])){
+              hue_colors_info[langData.key][term.key] = {
+                lang: langData.key,
+                lang_abv: lang_abv,
+                commonName: term.commonName,
+                simplifiedName: term.key
+              }
+            }
+
+            const avgColor = new Color({
+              space: "sRGB", coords: [term.avgHueColor.r, term.avgHueColor.g, term.avgHueColor.b]
+            })
+            const avgColorOkLab = avgColor.to("oklab").toGamut()
+  
+            hue_colors_info[langData.key][term.key][binRes + "ResBlurTermFraction"] = term.totalColorFraction
+            hue_colors_info[langData.key][term.key][binRes + "ResBlurAvgRGBCode"] = term.avgHueColor,
+            hue_colors_info[langData.key][term.key][binRes + "ResBlurAvgL"] = avgColorOkLab.l
+            hue_colors_info[langData.key][term.key][binRes + "ResBlurAvgA"] = avgColorOkLab.a
+            hue_colors_info[langData.key][term.key][binRes + "ResBlurAvgB"] = avgColorOkLab.b
+          }
+        }
       }
     });
 
@@ -292,29 +331,6 @@ for(const n_bins of N_BIN_OPTIONS){
         b: bin.bin_center_b
       }
     });
-
-
-    // fill in the hue_colors_info
-    for(const [lang_abv, colorData] of Object.entries(langTermAggregated)){
-      const lang = langAbvToLang[lang_abv]
-
-      if(lang_abv != "colorSet"){
-        for(const [i, simplifiedName] of colorData.terms.entries()){
-          // check if lang term already in hue_colors_info
-          if(hue_colors_info.filter(d => d.lang == lang && d.simplifiedName == simplifiedName).length < 1){
-            hue_colors_info.push({
-              lang: lang,
-              lang_abv: lang_abv,
-              simplifiedName: simplifiedName,
-              commonName: colorData.commonNames[i],
-              avgHueColor: colorData.avgHueColor[i],
-              cnt: colorData.colorNameCount[i]
-            })
-          }
-        }
-      }
-    }
-    
 
     // Export the data
 
@@ -330,20 +346,23 @@ for(const n_bins of N_BIN_OPTIONS){
   }
 }
 
-hue_colors_info.sort((a, b) => 
-  a.lang != b.lang ? 
-  a.lang.localeCompare(b.lang) :
-  a.simplifiedName.localeCompare(b.simplifiedName)
-)
 
 // export overall color info
-let hueColorWriter = csvWriter();
-hueColorWriter.pipe(fs.createWriteStream(O_HUE_SUMMARY_FILE));
-for(const [lang, hue_color_data_row] of Object.entries(hue_colors_info)){
-  hueColorWriter.write(hue_color_data_row)
-}
-hueColorWriter.end();
+const hueColorInfoWriter = csvWriter({
+  headers: ["lang","lang_abv","commonName","simplifiedName",
+    "lowResBlurTermFraction","lowResBlurAvgRGBCode","lowResBlurAvgL","lowResBlurAvgA","lowResBlurAvgB",
+    "medResBlurTermFraction","medResBlurAvgRGBCode","medResBlurAvgL","medResBlurAvgA","medResBlurAvgB",
+    "highResBlurTermFraction","highResBlurAvgRGBCode","highResBlurAvgL","highResBlurAvgA","highResBlurAvgB"
+  ]
+});
+const hueColorInfoWriteStream = fs.createWriteStream(O_HUE_SUMMARY_FILE)
+hueColorInfoWriter.pipe(hueColorInfoWriteStream);
 
+for(const [lang, hue_color_lang_row] of Object.entries(hue_colors_info).sort((a, b) => a[0].localeCompare(b[0]))){
+  for(const [term, term_color_row] of Object.entries(hue_color_lang_row).sort((a, b) => a[0].localeCompare(b[0]))){
+     hueColorInfoWriter.write(term_color_row)
+  }
+}
 
 
 
