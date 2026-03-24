@@ -171,10 +171,10 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
 
     if(hueTermRow){
         $("#color_details_modal_avg_hue_color").show()
-        $("#color_details_modal_avg_hue_color_patch").css("background-color", hueTermRow.avgHueColor)
-        $("#color_details_modal_avg_hue_color_rgb").text(hueTermRow.avgHueColor)
-        $("#color_details_modal_avg_hue_color_oklab").text(new Color(hueTermRow.avgHueColor).to("oklab"))
-        $("#color_details_modal_avg_hue_color_oklch").text(new Color(hueTermRow.avgHueColor).to("oklch"))
+        $("#color_details_modal_avg_hue_color_patch").css("background-color", basicInfoTermRow.avgHueRGBCode)
+        $("#color_details_modal_avg_hue_color_rgb").text(basicInfoTermRow.avgHueRGBCode)
+        $("#color_details_modal_avg_hue_color_oklab").text(new Color(basicInfoTermRow.avgHueRGBCode).to("oklab"))
+        $("#color_details_modal_avg_hue_color_oklch").text(new Color(basicInfoTermRow.avgHueRGBCode).to("oklch"))
     } else {
         $("#color_details_modal_avg_hue_color").hide()
     }
