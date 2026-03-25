@@ -150,15 +150,13 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
     if(currentColorTermData.fullTermRow){
         $("#color_details_modal_full_details").show()
         $("#color_details_modal_full_perc").text(currentColorTermData.fullTermRow.tinyResBlurTermFraction * 100)
-        $("#color_details_modal_full_rank").text("TBD")
         $("#color_details_modal_full_num_entries").text(currentColorTermData.basicInfoTermRow.numFullNames)
     } else {
         $("#color_details_modal_full_details").hide()
     }
     if(currentColorTermData.hueTermRow){
         $("#color_details_modal_hue_details").show()
-        $("#color_details_modal_hue_perc").text("TBD")
-        $("#color_details_modal_hue_rank").text("TBD")
+        $("#color_details_modal_hue_perc").text(currentColorTermData.hueTermRow.lowResBlurTermFraction * 100)
         $("#color_details_modal_hue_num_entries").text(currentColorTermData.basicInfoTermRow.numLineNames)
     } else {
         $("#color_details_modal_hue_details").hide()
