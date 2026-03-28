@@ -28,6 +28,7 @@ const FIELDS_TO_IGNORE = [
     ["litw", "initialize", "userAgent"],
     ["litw", "initialize", "urlParams", "fbclid"],
     ["litw", "initialize", "urlParams", "REF"],
+    ["litw", "initialize", "urlParams", "utm_source"],
     ["litw", "tracking"],
     
 

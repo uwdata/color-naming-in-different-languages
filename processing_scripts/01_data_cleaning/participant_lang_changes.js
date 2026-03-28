@@ -145,7 +145,10 @@ const participantLangChanges = {
     "7044": "en",
     "5e019ef1-8fca-47b5-8885-d9051f9b02f2": "en",
     "4e41ebf4-4593-47d2-af5d-6fe7568b7092": "en",
-    "075b560f-ce6b-4cae-861c-e5fc9e174f75": "en"
+    "075b560f-ce6b-4cae-861c-e5fc9e174f75": "en",
+    "de82f080-fa83-4abd-b92c-e8375354fcd8": "en",
+    "c32c5873-6daa-4f7e-a222-261381d839c1": "en",
+    "0499c408-40d7-4395-8253-48a4172b2194": "en"
 };
 
 
