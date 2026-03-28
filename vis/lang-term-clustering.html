@@ -45,7 +45,6 @@
     td{
       border: solid black 1px
     }
-
   </style>
 
   </head>
@@ -53,8 +52,8 @@
 
     <div class="container">
       <h1>Language Term Clustering</h1>
-      <p>This page clusters language terms based on which participants used each term. 
-        Can be useful in looking for dialect differences or finding data entered in the wrong language.
+      <p>This page clusters language terms based on which participants used each term (note: participant errors, where participant id was set as 0, are not counted for connections). 
+        Can be useful in looking for dialect differences, finding data entered in different scripts, or finding data entered in the wrong language.
         If you have feedback on any of these, please email <a href="mailto:kmthayer@uw.edu">kmthayer@uw.edu</a>
       </p>
 
@@ -82,6 +81,11 @@
           <label class="form-label" for="min_name_count">Minimum data count 
           </label>
           <input type="number" id="min_name_count" name="min_name_count" min="1" value="1" />
+        </div>
+        <div class="form-check form-check-inline"> 
+          <label class="form-label" for="size-force">Size Force
+          </label>
+          <input class="" type="range" id="size-force" name="size-force" min="0" max="1000" value="300" />
         </div>
         <div id="filter_lang_note"></div>
       </div>

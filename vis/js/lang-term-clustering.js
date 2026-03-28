@@ -43,6 +43,9 @@ $("input[name='rgb-set']").change(e => {
     updateForceDirectedGraph()
 })
 
+let sizeForce = $("#size-force").val()
+
+
 const allParticipantsByLang = {}
 for(let [lang, langData] of Object.entries(allNamesByLang)){
     allParticipantsByLang[lang] = []
@@ -126,7 +129,22 @@ const forceDirectedGraphSVG = d3.select("#data_view")
     .append("svg")
 
 
-let simulation
+let simulation = undefined
+let links
+
+$("#size-force").change(e => {
+    sizeForce = $("#size-force").val()
+    if(simulation){
+        //simulation.force("charge", d3.forceManyBody().strength(-sizeForce))
+        simulation.force("link", d3.forceLink(links)
+            .id(d => d.id)
+            .distance((d) => (1 - d.value) * sizeForce)
+        )
+        simulation.restart()
+        simulation.alpha(0.1)
+    }
+})
+
 
 updateForceDirectedGraph();
 
@@ -141,6 +159,7 @@ function updateForceDirectedGraph(){
     const selected_lang = $("#selected_langs").val()
 
     const rgbSet = $("input[name='rgb-set']:checked").val()
+    
 
     let nameData = groupNameByLang(selected_lang, rgbSet)
     
@@ -166,8 +185,16 @@ function updateForceDirectedGraph(){
     const height = 680;
 
 
-    //if(!groupedNamesByLangLinks[selected_lang]){
     console.log("calculating links for ", selected_lang)
+    // TODO: Find participants / names links
+    // const nameParticipantLinks = []
+    // let maxLinkStrength = 0
+    // for(const participantId of allParticipantsByLang[selected_lang]){
+    //     if(participantId != "0"){
+
+    //     }
+    // }
+
     const groupedNamesLinks = []
     let maxLinkStrength = 0
     for(const term1 of nameData){
@@ -209,15 +236,21 @@ function updateForceDirectedGraph(){
 
     // The force simulation mutates links and nodes, so create a copy
     // so that re-evaluating this cell produces the same result.
-    const links = groupedNamesLinks.map(d => ({...d}));
+    links = groupedNamesLinks.map(d => ({...d}));
     const nodes = nameData.map(d => ({...d}));
 
     const maxNodeCount = Math.max(...nodes.map(d=>d["data count"]))
 
     // Create a simulation with several forces.
     simulation = d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id))
-        .force("charge", d3.forceManyBody().strength(-500))
+        .force("link", d3.forceLink(links)
+            .id(d => d.id)
+            //.strength((d) => d.value)
+            //.distance((d) => (1 - d.value) * 200)
+            .distance((d) => (1 - d.value) * sizeForce)
+        )
+        .force("charge", d3.forceManyBody().strength(-100))
+        //.force("charge", d3.forceManyBody().strength(-sizeForce))
         .force("x", d3.forceX())
         .force("y", d3.forceY());
 
