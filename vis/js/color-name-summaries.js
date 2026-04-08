@@ -81,6 +81,18 @@ const hueBins72 = await d3.csv("../model/color_info_pre_naming/hue_color_bins_72
 const colorSampleHueBins36Blur = await (await fetch("../model/binned_hue_colors/hue_color_names_binned_36_blur.json")).json();
 const colorSampleHueBins72Blur = await (await fetch("../model/binned_hue_colors/hue_color_names_binned_72_blur.json")).json();
 
+function getHueBinInfo(langAbv, term){
+    const hueBinsData = langAbv in colorSampleHueBins72Blur && term in colorSampleHueBins72Blur[langAbv] ?
+        colorSampleHueBins72Blur[langAbv][term] : 
+            langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
+            colorSampleHueBins36Blur[langAbv][term] : undefined
+
+    if(hueBinsData){
+        hueBinsData.langAbv = langAbv
+    }
+
+    return hueBinsData
+}
 
 function getColorInfo(langAbv, term){
     const lang = langAbvToLang[langAbv]
@@ -94,14 +106,7 @@ function getColorInfo(langAbv, term){
     const fullTermRow =  lang in fullNameSetByLang ? fullNameSetByLang[lang].find(d => d.simplifiedName == term) : undefined
     const somColorPatch = langAbv in colorSampleSOMs && term in colorSampleSOMs[langAbv] ? colorSampleSOMs[langAbv][term] : undefined
 
-    const hueBinsData = langAbv in colorSampleHueBins72Blur && term in colorSampleHueBins72Blur[langAbv] ?
-        colorSampleHueBins72Blur[langAbv][term] : 
-            langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
-            colorSampleHueBins36Blur[langAbv][term] : undefined
-
-    if(hueBinsData){
-        hueBinsData.langAbv = langAbv
-    }
+    const hueBinsData = getHueBinInfo(langAbv, term)
 
     const fullBinsData = lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
         colorSampleFullBins[lang][term] : undefined
@@ -662,7 +667,7 @@ function updateHueColorSvg(svg){
     const width = svg.attr("width")
     const height = svg.attr("height")
 
-    const hueData = getColorInfo(langAbv, term).hueBinsData
+    const hueData = getHueBinInfo(langAbv, term)
 
     
     let spectrumN = hueData.bins.length;
@@ -983,7 +988,7 @@ function generateHueColorSvg(hueData){
     updateHueColorSvg(hueBinSvg)
 
 
-    const hueBinSvgSelect = d3.select(`svg[data-lang=${hueData.langAbv}][data-color-name="${nameToUnicode(hueData.simplifiedName)}"]`)
+    const hueBinSvgSelect = d3.select(`svg[data-color-name="${nameToUnicode(hueData.simplifiedName)}"][data-lang=${hueData.langAbv}]`)
     hueBinSvgSelect.call(d3.drag()
         //.on("start", dragstarted)
         .on("drag", dragged)
