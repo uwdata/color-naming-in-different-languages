@@ -656,19 +656,15 @@ function generateColorGrid(nodes){
 
 let hueOffset = 0
 
-function generateHueColorSvg(hueData){
-    combineHueBinDataWithColors(hueData)
+function updateHueColorSvg(svg){
+    const langAbv = svg.attr("data-lang")
+    const term = nameFromUnicode(svg.attr("data-color-name"))
+    const width = svg.attr("width")
+    const height = svg.attr("height")
 
-    const width = 200,
-        height = cellHeight
+    const hueData = getColorInfo(langAbv, term).hueBinsData
 
-    let hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
-        .attr("width", width)
-        .attr("height", height)
-        .attr("xmlns", "http://www.w3.org/2000/svg")
-        .attr("class", "hue-color-svg")
-        .attr("color-name-id", `${hueData.langAbv}_${nameToUnicode(hueData.simplifiedName)}`)
-
+    
     let spectrumN = hueData.bins.length;
 
     //extend hue Data: 72 or 36 by 1/9th
@@ -705,184 +701,58 @@ function generateHueColorSvg(hueData){
     let yAxis = d3.axisLeft()
         .scale(y);
 
-    updateHueColorSvg(hueBinSvg)
+    const hueOffsetInBins = hueOffset * x.domain()[1] / x.range()[1]
 
-    // add lines to show beginning/end of hue range (before repeats)
-    hueBinSvg
-        .append("line")
-        .attr("x1", x(- 1/2)) // left edge of the main range 
-        .attr("x2", x(- 1/2)) 
-        .attr("y1", 0) 
-        .attr("y2", height)
-        .style("stroke", "rgba(0,0,0,0.3)")
-        .style("stroke-width", "1")
+    const maxRepeatFade = 0.25
+    const repeatFadeScale = d3.scaleLinear()
+    .range([maxRepeatFade, 0])
+    .domain([-1/2, - horizontalExtendBins]);
 
-
-    hueBinSvg
-        .append("line")
-        .attr("x1", x(spectrumN - 1 + 1/2)) // right edge of the main range 
-        .attr("x2", x(spectrumN - 1 + 1/2)) // right edge of extendBins
-        .attr("y1", 0) 
-        .attr("y2", height)
-        .style("stroke", "rgba(0,0,0,0.3)")
-        .style("stroke-width", "1")
-
-
-    function updateHueColorSvg(svg){
-        if(!svg){
-            svg = d3.select(`svg[color-name-id=${hueData.langAbv}_${nameToUnicode(hueData.simplifiedName)}]`)
+    function getBinLeftEdgeWithinRange(bin_i){
+        let leftEdge = parseInt(bin_i) - 1/2 + hueOffsetInBins
+        while(leftEdge < -1/2 || leftEdge >= spectrumN - 1/2){
+            if(leftEdge < -1/2){
+                leftEdge += spectrumN
+            } 
+            if(leftEdge >= spectrumN -1/2){
+                leftEdge -= spectrumN
+            } 
         }
+        return leftEdge
+    }
 
-        const hueOffsetInBins = hueOffset * x.domain()[1] / x.range()[1]
- 
-        const maxRepeatFade = 0.25
-        const repeatFadeScale = d3.scaleLinear()
-        .range([maxRepeatFade, 0])
-        .domain([-1/2, - horizontalExtendBins]);
+    function getBinRightEdgeWithinRange(bin_i){
+        let rightEdge = parseInt(bin_i) + 1/2 + hueOffsetInBins
 
-        function getBinLeftEdgeWithinRange(bin_i){
-            let leftEdge = parseInt(bin_i) - 1/2 + hueOffsetInBins
-            while(leftEdge < -1/2 || leftEdge >= spectrumN - 1/2){
-                if(leftEdge < -1/2){
-                    leftEdge += spectrumN
-                } 
-                if(leftEdge >= spectrumN -1/2){
-                    leftEdge -= spectrumN
-                } 
-            }
-            return leftEdge
+        while(rightEdge < -1/2 || rightEdge >= spectrumN - 1/2){
+            if(rightEdge < -1/2){
+                rightEdge += spectrumN
+            } 
+            if(rightEdge >= spectrumN -1/2){
+                rightEdge -= spectrumN
+            } 
         }
+        return rightEdge
+    }
 
-        function getBinRightEdgeWithinRange(bin_i){
-            let rightEdge = parseInt(bin_i) + 1/2 + hueOffsetInBins
-
-            while(rightEdge < -1/2 || rightEdge >= spectrumN - 1/2){
-                if(rightEdge < -1/2){
-                    rightEdge += spectrumN
-                } 
-                if(rightEdge >= spectrumN -1/2){
-                    rightEdge -= spectrumN
-                } 
-            }
-            return rightEdge
-        }
-
-        if($("#hue_bins_color_scale").is(":checked")){
-            const colorScalePatchG = svg.selectAll(".color_scale_patch_g")
-                .data(hueData.bins)
-                .join("g")
-                .attr("class", "color_scale_patch_g")
-
-            
-            // color patch left faded if relevant
-            colorScalePatchG
-                .selectAll(".color_scale_patch_fade_left")
-                .data(d => [d])
-                .join("rect")
-                .attr("class", "color_scale_patch_fade_left")
-                .attr("display", d => 
-                    getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN > -horizontalExtendBins - 1
-                    ? undefined : "none")
-                .attr("x", d => x(getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN ))
-                .attr("y", height - colorScaleHeight)
-                .attr("width", d => {
-                    let width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
-                    if(width < 0){
-                        width = x(-1/2) - x((getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN ))
-                    }
-                    return width >= 0 ? width : 0
-                })
-                .attr("height", colorScaleHeight)
-                .attr("fill", d => {
-                    const color = d3.color(d.binColorStr)
-                    color.opacity = repeatFadeScale(getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN)
-                    return color
-                })
-            
-            //main color patch (left)
-            colorScalePatchG
-                .selectAll(".color_scale_patch_main_left")
-                .data(d => [d])
-                .join("rect")
-                .attr("class", "color_scale_patch_main_left")
-                .attr("x", d => 
-                    getBinLeftEdgeWithinRange(d.colorBin.bin_i) < getBinRightEdgeWithinRange(d.colorBin.bin_i) ? 
-                    x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)) :
-                    x(-1/2)
-                )
-                .attr("y", height - colorScaleHeight)
-                .attr("width", d => {
-                    let width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
-                    if(width < 0){
-                        width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(-1/2)
-                    }
-                    return width >= 0 ? width : 0
-                })
-                .attr("height", colorScaleHeight)
-                .attr("fill", d => d.binColorStr)
-
-            // main color patch right (if a second is needed)
-             colorScalePatchG
-                .selectAll(".color_scale_patch_main_right")
-                .data(d => [d])
-                .join("rect")
-                .attr("class", "color_scale_patch_main_right")
-                .attr("display", d => 
-                   getBinLeftEdgeWithinRange(d.colorBin.bin_i) > getBinRightEdgeWithinRange(d.colorBin.bin_i)
-                     ? undefined : "none")
-                .attr("x", d => x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
-                .attr("y", height - colorScaleHeight)
-                .attr("width", d => x(spectrumN - 1/2) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
-                .attr("height", colorScaleHeight)
-                .attr("fill", d => d.binColorStr)
-
-
-            // color patch right faded if relevant
-            colorScalePatchG
-                .selectAll(".color_scale_patch_fade_right")
-                .data(d => [d])
-                .join("rect")
-                .attr("class", "color_scale_patch_fade_right")
-                .attr("display", d => 
-                    getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN < spectrumN - 1 + horizontalExtendBins + 1
-                    ? undefined : "none")
-                .attr("x", d => 
-                    getBinLeftEdgeWithinRange(d.colorBin.bin_i) < getBinRightEdgeWithinRange(d.colorBin.bin_i) ? 
-                    x(getBinLeftEdgeWithinRange(d.colorBin.bin_i) + spectrumN) :
-                    x(spectrumN -1/2)
-                )
-                .attr("y", height - colorScaleHeight)
-                .attr("width", d => {
-                    let width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
-                    if(width < 0){
-                        width = x((getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN )) - x(spectrumN - 1/2)
-                    }
-                    return width >= 0 ? width : 0
-                })
-                .attr("height", colorScaleHeight)
-                .attr("fill", d => {
-                    const color = d3.color(d.binColorStr)
-                    color.opacity = repeatFadeScale(-getBinRightEdgeWithinRange(d.colorBin.bin_i))
-                    return color
-                })
-                
-        }
-
-        const colorPatchG = svg.selectAll(".color_patch_g")
-            .data(hueData.bins.filter(d => d.pCT > 0))
+    if($("#hue_bins_color_scale").is(":checked")){
+        const colorScalePatchG = svg.selectAll(".color_scale_patch_g")
+            .data(hueData.bins)
             .join("g")
-            .attr("class", "color_patch_g")
+            .attr("class", "color_scale_patch_g")
+
         
-        // fade left
-        colorPatchG.selectAll(".color_patch_main_fade_left")
+        // color patch left faded if relevant
+        colorScalePatchG
+            .selectAll(".color_scale_patch_fade_left")
             .data(d => [d])
             .join("rect")
-            .attr("class", "color_patch_main_fade_left")
+            .attr("class", "color_scale_patch_fade_left")
             .attr("display", d => 
-                    getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN > -horizontalExtendBins - 1
-                    ? undefined : "none")
+                getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN > -horizontalExtendBins - 1
+                ? undefined : "none")
             .attr("x", d => x(getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN ))
-            .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
+            .attr("y", height - colorScaleHeight)
             .attr("width", d => {
                 let width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
                 if(width < 0){
@@ -890,24 +760,25 @@ function generateHueColorSvg(hueData){
                 }
                 return width >= 0 ? width : 0
             })
-            .attr("height", d => y(d.pCT))
+            .attr("height", colorScaleHeight)
             .attr("fill", d => {
                 const color = d3.color(d.binColorStr)
                 color.opacity = repeatFadeScale(getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN)
                 return color
             })
-
-        // main left
-        colorPatchG.selectAll(".color_patch_main_left")
+        
+        //main color patch (left)
+        colorScalePatchG
+            .selectAll(".color_scale_patch_main_left")
             .data(d => [d])
             .join("rect")
-            .attr("class", "color_patch_main_left")
+            .attr("class", "color_scale_patch_main_left")
             .attr("x", d => 
                 getBinLeftEdgeWithinRange(d.colorBin.bin_i) < getBinRightEdgeWithinRange(d.colorBin.bin_i) ? 
                 x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)) :
                 x(-1/2)
             )
-            .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
+            .attr("y", height - colorScaleHeight)
             .attr("width", d => {
                 let width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
                 if(width < 0){
@@ -915,28 +786,31 @@ function generateHueColorSvg(hueData){
                 }
                 return width >= 0 ? width : 0
             })
-            .attr("height", d => y(d.pCT))
+            .attr("height", colorScaleHeight)
             .attr("fill", d => d.binColorStr)
 
-        // main right
-        colorPatchG.selectAll(".color_patch_main_right")
+        // main color patch right (if a second is needed)
+            colorScalePatchG
+            .selectAll(".color_scale_patch_main_right")
             .data(d => [d])
             .join("rect")
-            .attr("class", "color_patch_main_right")
+            .attr("class", "color_scale_patch_main_right")
             .attr("display", d => 
                 getBinLeftEdgeWithinRange(d.colorBin.bin_i) > getBinRightEdgeWithinRange(d.colorBin.bin_i)
                     ? undefined : "none")
             .attr("x", d => x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
-            .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
+            .attr("y", height - colorScaleHeight)
             .attr("width", d => x(spectrumN - 1/2) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
-            .attr("height", d => y(d.pCT))
+            .attr("height", colorScaleHeight)
             .attr("fill", d => d.binColorStr)
 
-        // fade right
-        colorPatchG.selectAll(".color_patch_main_fade_right")
+
+        // color patch right faded if relevant
+        colorScalePatchG
+            .selectAll(".color_scale_patch_fade_right")
             .data(d => [d])
             .join("rect")
-            .attr("class", "color_patch_main_fade_right")
+            .attr("class", "color_scale_patch_fade_right")
             .attr("display", d => 
                 getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN < spectrumN - 1 + horizontalExtendBins + 1
                 ? undefined : "none")
@@ -945,7 +819,7 @@ function generateHueColorSvg(hueData){
                 x(getBinLeftEdgeWithinRange(d.colorBin.bin_i) + spectrumN) :
                 x(spectrumN -1/2)
             )
-            .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
+            .attr("y", height - colorScaleHeight)
             .attr("width", d => {
                 let width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
                 if(width < 0){
@@ -953,15 +827,163 @@ function generateHueColorSvg(hueData){
                 }
                 return width >= 0 ? width : 0
             })
-            .attr("height", d => y(d.pCT))
+            .attr("height", colorScaleHeight)
             .attr("fill", d => {
                 const color = d3.color(d.binColorStr)
                 color.opacity = repeatFadeScale(-getBinRightEdgeWithinRange(d.colorBin.bin_i))
                 return color
             })
+            
     }
 
-    const hueBinSvgSelect = d3.select(`svg[color-name-id=${hueData.langAbv}_${nameToUnicode(hueData.simplifiedName)}]`)
+    const colorPatchG = svg.selectAll(".color_patch_g")
+        .data(hueData.bins.filter(d => d.pCT > 0))
+        .join("g")
+        .attr("class", "color_patch_g")
+    
+    // fade left
+    colorPatchG.selectAll(".color_patch_main_fade_left")
+        .data(d => [d])
+        .join("rect")
+        .attr("class", "color_patch_main_fade_left")
+        .attr("display", d => 
+                getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN > -horizontalExtendBins - 1
+                ? undefined : "none")
+        .attr("x", d => x(getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN ))
+        .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
+        .attr("width", d => {
+            let width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
+            if(width < 0){
+                width = x(-1/2) - x((getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN ))
+            }
+            return width >= 0 ? width : 0
+        })
+        .attr("height", d => y(d.pCT))
+        .attr("fill", d => {
+            const color = d3.color(d.binColorStr)
+            color.opacity = repeatFadeScale(getBinLeftEdgeWithinRange(d.colorBin.bin_i) - spectrumN)
+            return color
+        })
+
+    // main left
+    colorPatchG.selectAll(".color_patch_main_left")
+        .data(d => [d])
+        .join("rect")
+        .attr("class", "color_patch_main_left")
+        .attr("x", d => 
+            getBinLeftEdgeWithinRange(d.colorBin.bin_i) < getBinRightEdgeWithinRange(d.colorBin.bin_i) ? 
+            x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)) :
+            x(-1/2)
+        )
+        .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
+        .attr("width", d => {
+            let width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
+            if(width < 0){
+                width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(-1/2)
+            }
+            return width >= 0 ? width : 0
+        })
+        .attr("height", d => y(d.pCT))
+        .attr("fill", d => d.binColorStr)
+
+    // main right
+    colorPatchG.selectAll(".color_patch_main_right")
+        .data(d => [d])
+        .join("rect")
+        .attr("class", "color_patch_main_right")
+        .attr("display", d => 
+            getBinLeftEdgeWithinRange(d.colorBin.bin_i) > getBinRightEdgeWithinRange(d.colorBin.bin_i)
+                ? undefined : "none")
+        .attr("x", d => x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
+        .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
+        .attr("width", d => x(spectrumN - 1/2) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i)))
+        .attr("height", d => y(d.pCT))
+        .attr("fill", d => d.binColorStr)
+
+    // fade right
+    colorPatchG.selectAll(".color_patch_main_fade_right")
+        .data(d => [d])
+        .join("rect")
+        .attr("class", "color_patch_main_fade_right")
+        .attr("display", d => 
+            getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN < spectrumN - 1 + horizontalExtendBins + 1
+            ? undefined : "none")
+        .attr("x", d => 
+            getBinLeftEdgeWithinRange(d.colorBin.bin_i) < getBinRightEdgeWithinRange(d.colorBin.bin_i) ? 
+            x(getBinLeftEdgeWithinRange(d.colorBin.bin_i) + spectrumN) :
+            x(spectrumN -1/2)
+        )
+        .attr("y",  d => height - colorScaleSpace - colorScaleHeight - y(d.pCT))//d => y(d.pCT))
+        .attr("width", d => {
+            let width = x(getBinRightEdgeWithinRange(d.colorBin.bin_i)) - x(getBinLeftEdgeWithinRange(d.colorBin.bin_i))
+            if(width < 0){
+                width = x((getBinRightEdgeWithinRange(d.colorBin.bin_i) + spectrumN )) - x(spectrumN - 1/2)
+            }
+            return width >= 0 ? width : 0
+        })
+        .attr("height", d => y(d.pCT))
+        .attr("fill", d => {
+            const color = d3.color(d.binColorStr)
+            color.opacity = repeatFadeScale(-getBinRightEdgeWithinRange(d.colorBin.bin_i))
+            return color
+        })
+
+    // add lines to show beginning/end of hue range (before repeats)
+    svg.selectAll(".hue-line-begin-range")
+        .data([{id: "begin"}])
+        .join("line")
+        .attr("class", "hue-line-begin-range")
+        .attr("x1", x(- 1/2)) // left edge of the main range 
+        .attr("x2", x(- 1/2)) 
+        .attr("y1", 0) 
+        .attr("y2", height)
+        .style("stroke", "rgba(0,0,0,0.3)")
+        .style("stroke-width", "1")
+
+
+    svg.selectAll(".hue-line-end-range")
+        .data([{id: "end"}])
+        .join("line")
+        .attr("class", "hue-line-end-range")
+        .attr("x1", x(spectrumN - 1 + 1/2)) // right edge of the main range 
+        .attr("x2", x(spectrumN - 1 + 1/2)) // right edge of extendBins
+        .attr("y1", 0) 
+        .attr("y2", height)
+        .style("stroke", "rgba(0,0,0,0.3)")
+        .style("stroke-width", "1")
+
+    //   let axisTitle = 'Probability of Name, given Color';
+    //   svg.append("g")
+    //       .attr("class", "y axis")
+    //       .call(yAxis);
+
+    //   svg.append('text')
+    //       .text(axisTitle)
+    //       .attr('y',-30)
+    //       .attr('x', -height/2)
+    //       .attr('transform','rotate(-90)')
+    //       .attr('text-anchor','middle');
+}
+
+function generateHueColorSvg(hueData){
+    combineHueBinDataWithColors(hueData)
+
+    const width = 200,
+        height = cellHeight
+
+    let hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
+        .attr("width", width)
+        .attr("height", height)
+        .attr("xmlns", "http://www.w3.org/2000/svg")
+        .attr("class", "hue-color-svg")
+        .attr("data-lang", hueData.langAbv) 
+        .attr("data-color-name", nameToUnicode(hueData.simplifiedName))
+
+
+    updateHueColorSvg(hueBinSvg)
+
+
+    const hueBinSvgSelect = d3.select(`svg[data-lang=${hueData.langAbv}][data-color-name="${nameToUnicode(hueData.simplifiedName)}"]`)
     hueBinSvgSelect.call(d3.drag()
         //.on("start", dragstarted)
         .on("drag", dragged)
@@ -975,22 +997,14 @@ function generateHueColorSvg(hueData){
     // Update the subject (dragged node) position during drag.
     function dragged(event) {
         hueOffset += event.dx
-        updateHueColorSvg()
+        //update all hue color svgs
+        for(const hueColorSVG of $(".hue-color-svg")){
+            updateHueColorSvg(d3.select(hueColorSVG))
+        }
     }
 
     function dragended(event) {
     }
-    //   let axisTitle = 'Probability of Name, given Color';
-    //   svg.append("g")
-    //       .attr("class", "y axis")
-    //       .call(yAxis);
-
-    //   svg.append('text')
-    //       .text(axisTitle)
-    //       .attr('y',-30)
-    //       .attr('x', -height/2)
-    //       .attr('transform','rotate(-90)')
-    //       .attr('text-anchor','middle');
     return hueBinSvg
 }
 
@@ -1003,6 +1017,7 @@ function generateHueColorRingSvg(hueData){
     const hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
         .attr("width", width)
         .attr("height", height)
+        .attr("xmlns", "http://www.w3.org/2000/svg")
     
     let spectrumN = hueData.bins.length;
 
@@ -1146,6 +1161,7 @@ function generateFullColorBinSvg(fullData){
     const hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
         .attr("width", width)
         .attr("height", height)
+        .attr("xmlns", "http://www.w3.org/2000/svg")
 
 
     binView.createOrUpdateColorTiles(hueBinSvg, {
