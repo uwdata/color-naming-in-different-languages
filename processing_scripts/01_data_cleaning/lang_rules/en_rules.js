@@ -34,6 +34,7 @@ const nameReplacingRules = [
 
     [/^cian$/, 'cyan'],
     
+    [/florescent/g, "fluorescent"],
 
     [/forrest/g, "forest"],
 

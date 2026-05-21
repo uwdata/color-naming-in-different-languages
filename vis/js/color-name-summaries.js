@@ -1,6 +1,14 @@
 import BinSize from "../../shared_files/binSize.js";
 import FullColorBinView from "./full-color-bin-view.js";
 
+// TODO: Redo HTML Table
+// use: contentvisibilityautostatechange 
+// if (event.skipped) {
+//  then add SVG
+// else
+//   remove SVG
+// canvasElem.style.contentVisibility = "auto"
+
 const fullBinSize = new BinSize({
     type: "ring",
     l: 1/5, c: 1/20, h_divs: 8,
@@ -221,7 +229,7 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
     // hue bins
     if(currentColorTermData.hueBinsData){
         $("#color_details_modal_hue_bins").show()
-        $("#color_details_modal_hue_bins_line_view").html(generateHueColorSvg(currentColorTermData.hueBinsData).node().outerHTML)
+        $("#color_details_modal_hue_bins_line_view").html(generateHueColorSvg(currentColorTermData.hueBinsData, true).node().outerHTML)
         $("#color_details_modal_hue_bins_circle_view").html(generateHueColorRingSvg(currentColorTermData.hueBinsData).node().outerHTML)
     }else{
         $("#color_details_modal_hue_bins").hide()
@@ -970,7 +978,9 @@ function updateHueColorSvg(svg){
     //       .attr('text-anchor','middle');
 }
 
-function generateHueColorSvg(hueData){
+function generateHueColorSvg(hueData, isModal){
+    isModal = isModal ? "-modal" : ""
+
     combineHueBinDataWithColors(hueData)
 
     const width = 200,
@@ -980,7 +990,7 @@ function generateHueColorSvg(hueData){
         .attr("width", width)
         .attr("height", height)
         .attr("xmlns", "http://www.w3.org/2000/svg")
-        .attr("class", "hue-color-svg")
+        .attr("class", `hue-color-svg${isModal}`)
         .attr("data-lang", hueData.langAbv) 
         .attr("data-color-name", nameToUnicode(hueData.simplifiedName))
 
@@ -988,7 +998,7 @@ function generateHueColorSvg(hueData){
     updateHueColorSvg(hueBinSvg)
 
 
-    const hueBinSvgSelect = d3.select(`svg[data-color-name="${nameToUnicode(hueData.simplifiedName)}"][data-lang=${hueData.langAbv}]`)
+    const hueBinSvgSelect = d3.select(`svg.hue-color-svg${isModal}[data-color-name="${nameToUnicode(hueData.simplifiedName)}"][data-lang=${hueData.langAbv}]`)
     hueBinSvgSelect.call(d3.drag()
         //.on("start", dragstarted)
         .on("drag", dragged)
@@ -1003,7 +1013,7 @@ function generateHueColorSvg(hueData){
     function dragged(event) {
         hueOffset += event.dx
         //update all hue color svgs
-        for(const hueColorSVG of $(".hue-color-svg")){
+        for(const hueColorSVG of $(`.hue-color-svg${isModal}`)){
             updateHueColorSvg(d3.select(hueColorSVG))
         }
     }
@@ -1012,6 +1022,29 @@ function generateHueColorSvg(hueData){
     }
     return hueBinSvg
 }
+
+// const hueBinSvgSelect = d3.select(`svg.hue-color-svg`)
+// hueBinSvgSelect.call(d3.drag()
+//     //.on("start", dragstarted)
+//     .on("drag", dragged)
+//     //.on("end", dragended)
+// ) 
+
+
+// function dragstarted(event) {
+// }
+
+// // Update the subject (dragged node) position during drag.
+// function dragged(event) {
+//     hueOffset += event.dx
+//     //update all hue color svgs
+//     for(const hueColorSVG of $(`.hue-color-svg`)){
+//         updateHueColorSvg(d3.select(hueColorSVG))
+//     }
+// }
+
+// function dragended(event) {
+// }
 
 function generateHueColorRingSvg(hueData){
     combineHueBinDataWithColors(hueData)
