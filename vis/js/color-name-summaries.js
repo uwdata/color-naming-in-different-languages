@@ -37,62 +37,83 @@ const cellHeight = 60
 
 let grid = undefined
 
-let basicColorInfo,
-    hueColorNames,
+// load basic color info
+const basicColorInfo = await d3.csv("../model/basic_colors_info.csv");
+
+// start async loading of additional color info
+let hueColorNames,
     fullColorNames,
     colorSampleSOMs,
+    hueBins36,
+    hueBins72,
+    colorSampleHueBins36Blur,
+    colorSampleHueBins72Blur,
     fullBinsInfo,
-    colorSampleFullBinsGrouped
+    colorSampleFullBins
 
-await Promise.all([
-    new Promise(async (r) => {
-        basicColorInfo = await d3.csv("../model/basic_colors_info.csv"); 
-        r()}),
-    new Promise(async (r) => {
-        hueColorNames = await d3.csv("../model/hue_colors_info.csv"); 
-        r()}),
-    new Promise(async (r) => {
-        fullColorNames = await d3.csv("../model/full_colors_info.csv")
-        r()}),
-    new Promise(async (r) => {
-        colorSampleSOMs = await (await fetch("../model/colorSOMPatches.json")).json()
-        r()}),
-    new Promise(async (r) => {
-        const fullBinsInfoAll = await (await fetch(`../model/color_info_pre_naming/oklab_bins_${fullBinSize}.json`)).json()
-        fullBinsInfo = fullBinSize.filterBinsByGamut(fullBinsInfoAll, "rgb")  //assume just rgb bins
-        r()}),
-    new Promise(async (r) => {
-        const colorSampleFullBinsZipped = await (await fetch(`../model/binned_full_colors/full_color_names_binned_blur_${fullBinSize}.json.gz`)).arrayBuffer()
-        const colorSampleFullBinsFlat = JSON.parse(pako.ungzip(colorSampleFullBinsZipped,{ to: 'string' }))
-        //const colorSampleFullBinsFlat = await (await fetch(`../model/binned_full_colors/full_color_names_binned_${fullBinSize}.json`)).json()
-        
-        colorSampleFullBinsGrouped = d3.groups(colorSampleFullBinsFlat, d => d.lang, d => d.term)
-          .map(a => {return {key: a[0], values: a[1].map(b => {return{key: b[0], values: b[1]}}) }})
-        r()})
-])
 
-const colorSampleFullBins = {}
-for(const [i, langVal] of colorSampleFullBinsGrouped.entries()){
-    const lang = langVal.key
-    const langData = langVal.values
-    colorSampleFullBins[lang] = {}
-    for(const [j, termVal] of langData.entries()){
-        const term = termVal.key
-        const termData = termVal.values
-        colorSampleFullBins[lang][term] = termData
+d3.csv("../model/hue_colors_info.csv").then((data) => {
+    hueColorNames = data
+    updateData()
+})
+d3.csv("../model/full_colors_info.csv").then((data) => {
+    fullColorNames = data
+    updateData()
+})
+fetch("../model/colorSOMPatches.json").then(async (response) => {
+    colorSampleSOMs = await response.json()
+    updateData()
+})
+d3.csv("../model/color_info_pre_naming/hue_color_bins_36_rgb.csv").then((data) => {
+    hueBins36 = data
+    updateData()
+})
+d3.csv("../model/color_info_pre_naming/hue_color_bins_72_rgb.csv").then((data) => {
+    hueBins72 = data
+    updateData()
+})
+fetch("../model/binned_hue_colors/hue_color_names_binned_36_blur.json").then(async (response) => {
+    colorSampleHueBins36Blur = await response.json()
+    updateData()
+})
+fetch("../model/binned_hue_colors/hue_color_names_binned_72_blur.json").then(async (response) => {
+    colorSampleHueBins72Blur = await response.json()
+    updateData()
+})
+fetch(`../model/color_info_pre_naming/oklab_bins_${fullBinSize}.json`).then(async (response) => {
+    const fullBinsInfoAll = await response.json()
+    fullBinsInfo = fullBinSize.filterBinsByGamut(fullBinsInfoAll, "rgb")  //assume just rgb bins
+    updateData()
+})
+fetch(`../model/binned_full_colors/full_color_names_binned_blur_${fullBinSize}.json.gz`).then(async (response) => {
+    const colorSampleFullBinsZipped =  await response.arrayBuffer()
+    const colorSampleFullBinsFlat = JSON.parse(pako.ungzip(colorSampleFullBinsZipped,{ to: 'string' }))
+
+    const colorSampleFullBinsGrouped = d3.groups(colorSampleFullBinsFlat, d => d.lang, d => d.term)
+        .map(a => {return {key: a[0], values: a[1].map(b => {return{key: b[0], values: b[1]}}) }})
+
+    colorSampleFullBins = {}
+    for(const [i, langVal] of colorSampleFullBinsGrouped.entries()){
+        const lang = langVal.key
+        const langData = langVal.values
+        colorSampleFullBins[lang] = {}
+        for(const [j, termVal] of langData.entries()){
+            const term = termVal.key
+            const termData = termVal.values
+            colorSampleFullBins[lang][term] = termData
+        }
     }
-}
+
+    updateData()
+})
 
 
-const hueBins36 = await d3.csv("../model/color_info_pre_naming/hue_color_bins_36_rgb.csv");
-const hueBins72 = await d3.csv("../model/color_info_pre_naming/hue_color_bins_72_rgb.csv");
-const colorSampleHueBins36Blur = await (await fetch("../model/binned_hue_colors/hue_color_names_binned_36_blur.json")).json();
-const colorSampleHueBins72Blur = await (await fetch("../model/binned_hue_colors/hue_color_names_binned_72_blur.json")).json();
+
 
 function getHueBinInfo(langAbv, term){
-    const hueBinsData = langAbv in colorSampleHueBins72Blur && term in colorSampleHueBins72Blur[langAbv] ?
+    const hueBinsData = colorSampleHueBins72Blur && langAbv in colorSampleHueBins72Blur && term in colorSampleHueBins72Blur[langAbv] ?
         colorSampleHueBins72Blur[langAbv][term] : 
-            langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
+            colorSampleHueBins36Blur && langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
             colorSampleHueBins36Blur[langAbv][term] : undefined
 
     if(hueBinsData){
@@ -112,11 +133,11 @@ function getColorInfo(langAbv, term){
     const basicInfoTermRow =  lang in basicNameInfoByLang ? basicNameInfoByLang[lang].find(d => d.simplifiedName == term) : undefined
     const hueTermRow =  lang in hueNameSetByLang ? hueNameSetByLang[lang].find(d => d.simplifiedName == term) : undefined
     const fullTermRow =  lang in fullNameSetByLang ? fullNameSetByLang[lang].find(d => d.simplifiedName == term) : undefined
-    const somColorPatch = langAbv in colorSampleSOMs && term in colorSampleSOMs[langAbv] ? colorSampleSOMs[langAbv][term] : undefined
+    const somColorPatch = colorSampleSOMs && langAbv in colorSampleSOMs && term in colorSampleSOMs[langAbv] ? colorSampleSOMs[langAbv][term] : undefined
 
     const hueBinsData = getHueBinInfo(langAbv, term)
 
-    const fullBinsData = lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
+    const fullBinsData = colorSampleFullBins && lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
         colorSampleFullBins[lang][term] : undefined
 
     return {
@@ -133,7 +154,7 @@ function getColorInfo(langAbv, term){
     }
 }
 
-console.log(hueColorNames[0]);
+//console.log(hueColorNames[0]);
 
 const langAbvToLang = {}
 
@@ -312,15 +333,22 @@ let allHueNamesByLang
 let allFullNamesByLang
 let allBothNamesByLang
 
+function updateData() {
+    updateRgbSet()
+}
 
-updateRgbSet()
+updateData()
 
 function updateRgbSet(){
     const rgbSet = $("input[name='rgb-set']:checked").val()
 
-    if(currentDatasetRgbSet == rgbSet){
+    if(!fullColorNames || !hueColorNames){
         return
     }
+
+    // if(currentDatasetRgbSet == rgbSet){
+    //     return
+    // }
 
     currentDatasetRgbSet = rgbSet
 
@@ -334,7 +362,8 @@ function updateRgbSet(){
 
     
     if(rgbSet == "both-hue-full"){
-        if(!allBothNamesByLang){
+        //if(!allBothNamesByLang){
+            console.log("updating both-hue-full")
             const fullNameSetByLang = Object.groupBy(fullColorNames, ({lang}) => lang)
             const hueNameSetByLang = Object.groupBy(hueColorNames, ({lang}) => lang)
             allBothNamesByLang = {}
@@ -365,10 +394,10 @@ function updateRgbSet(){
                     })
                 }
             }
-        }
+        //}
         color_set = allBothNamesByLang
     } else if(rgbSet == "full-data"){
-        if(!allFullNamesByLang){
+        //if(!allFullNamesByLang){
             allFullNamesByLang = {}
             const groupedLangFullNames = Object.groupBy(fullColorNames, ({lang}) => lang)
             for(const lang of Object.keys(groupedLangFullNames)){
@@ -393,10 +422,10 @@ function updateRgbSet(){
                     })
                 }
             }
-        }
+        //}
         color_set = allFullNamesByLang
     } else { // hue
-        if(!allHueNamesByLang){
+        //if(!allHueNamesByLang){
             allHueNamesByLang = {}
             const groupedLangHueNames = Object.groupBy(hueColorNames, ({lang}) => lang)
             for(const lang of Object.keys(groupedLangHueNames)){
@@ -421,7 +450,7 @@ function updateRgbSet(){
                     })
                 }
             }
-        }
+        //}
         color_set = allHueNamesByLang
     }
 
