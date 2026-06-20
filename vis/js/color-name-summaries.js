@@ -38,52 +38,101 @@ const cellHeight = 60
 let grid = undefined
 
 // load basic color info
-const basicColorInfo = await d3.csv("../model/basic_colors_info.csv");
+const allColorInfo = await d3.csv("../model/basic_colors_info.csv");
+let filteredColorInfo,
+    sortedColorInfo
 
 // start async loading of additional color info
-let hueColorNames,
+let hueColorInfo,
     fullColorNames,
     colorSampleSOMs,
     hueBins36,
     hueBins72,
-    colorSampleHueBins36Blur,
-    colorSampleHueBins72Blur,
+    colorSampleHueBins36BlurByLang,
+    colorSampleHueBins72BlurByLang,
     fullBinsInfo,
     colorSampleFullBins
 
 
 d3.csv("../model/hue_colors_info.csv").then((data) => {
-    hueColorNames = data
-    updateData()
+    hueColorInfo = data
+    const hueNameSetByLang = Object.groupBy(hueColorInfo, ({lang}) => lang)
+    for(const colorInfo of allColorInfo){
+        const lang = colorInfo.lang
+        const term = colorInfo.simplifiedName
+        const hueTermRow =  lang in hueNameSetByLang ? hueNameSetByLang[lang].find(d => d.simplifiedName == term) : undefined
+        if(hueTermRow){
+            colorInfo.hueColorInfo = hueTermRow
+        }
+    }
+    updateTable()
 })
 d3.csv("../model/full_colors_info.csv").then((data) => {
     fullColorNames = data
-    updateData()
+    const fullNameSetByLang = Object.groupBy(fullColorNames, ({lang}) => lang)
+    for(const colorInfo of allColorInfo){
+        const lang = colorInfo.lang
+        const term = colorInfo.simplifiedName
+        const fullTermRow =  lang in fullNameSetByLang ? fullNameSetByLang[lang].find(d => d.simplifiedName == term) : undefined
+        if(fullTermRow){
+            colorInfo.fullColorInfo = fullTermRow
+        }
+    }
+    updateTable()
 })
 fetch("../model/colorSOMPatches.json").then(async (response) => {
     colorSampleSOMs = await response.json()
-    updateData()
+    for(const colorInfo of allColorInfo){
+        const langAbv = colorInfo.lang_abv
+        const term = colorInfo.simplifiedName
+        const somColorPatch = colorSampleSOMs && langAbv in colorSampleSOMs && term in colorSampleSOMs[langAbv] ? colorSampleSOMs[langAbv][term] : undefined
+        if(somColorPatch){
+            colorInfo.somColorPatch = somColorPatch
+        }
+    }
+    updateTable()
 })
 d3.csv("../model/color_info_pre_naming/hue_color_bins_36_rgb.csv").then((data) => {
     hueBins36 = data
-    updateData()
+    updateTable()
 })
 d3.csv("../model/color_info_pre_naming/hue_color_bins_72_rgb.csv").then((data) => {
     hueBins72 = data
-    updateData()
+    updateTable()
 })
 fetch("../model/binned_hue_colors/hue_color_names_binned_36_blur.json").then(async (response) => {
-    colorSampleHueBins36Blur = await response.json()
-    updateData()
+    colorSampleHueBins36BlurByLang = await response.json()
+    for(const colorInfo of allColorInfo){
+        const langAbv = colorInfo.lang_abv
+        const term = colorInfo.simplifiedName
+        const hueBins36BlurData = colorSampleHueBins36BlurByLang && langAbv in colorSampleHueBins36BlurByLang && term in colorSampleHueBins36BlurByLang[langAbv] ? colorSampleHueBins36BlurByLang[langAbv][term] : undefined
+        if(hueBins36BlurData){
+            hueBins36BlurData.langAbv = langAbv
+            colorInfo.hueBins36BlurData = hueBins36BlurData
+        }
+    }
+    updateTable()
 })
 fetch("../model/binned_hue_colors/hue_color_names_binned_72_blur.json").then(async (response) => {
-    colorSampleHueBins72Blur = await response.json()
-    updateData()
+    colorSampleHueBins72BlurByLang = await response.json()
+    for(const colorInfo of allColorInfo){
+        const langAbv = colorInfo.lang_abv
+        const term = colorInfo.simplifiedName
+        const hueBins72BlurData = colorSampleHueBins72BlurByLang && langAbv in colorSampleHueBins72BlurByLang && term in colorSampleHueBins72BlurByLang[langAbv] ? colorSampleHueBins72BlurByLang[langAbv][term] : undefined
+        if(hueBins72BlurData){
+            hueBins72BlurData.langAbv = langAbv
+            colorInfo.hueBins72BlurData = hueBins72BlurData
+        }
+    }
+    updateTable()
 })
 fetch(`../model/color_info_pre_naming/oklab_bins_${fullBinSize}.json`).then(async (response) => {
-    const fullBinsInfoAll = await response.json()
-    fullBinsInfo = fullBinSize.filterBinsByGamut(fullBinsInfoAll, "rgb")  //assume just rgb bins
-    updateData()
+    // const fullBinsData = colorSampleFullBins && lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
+    //     colorSampleFullBins[lang][term] : undefined
+
+    const fullBinsInfoAllSpaces = await response.json()
+    fullBinsInfo = fullBinSize.filterBinsByGamut(fullBinsInfoAllSpaces, "rgb")  //assume just rgb bins
+    updateTable()
 })
 fetch(`../model/binned_full_colors/full_color_names_binned_blur_${fullBinSize}.json.gz`).then(async (response) => {
     const colorSampleFullBinsZipped =  await response.arrayBuffer()
@@ -104,17 +153,25 @@ fetch(`../model/binned_full_colors/full_color_names_binned_blur_${fullBinSize}.j
         }
     }
 
-    updateData()
+    for(const colorInfo of allColorInfo){
+        const lang = colorInfo.lang
+        const term = colorInfo.simplifiedName
+        const fullBinsData = colorSampleFullBins && lang in colorSampleFullBins && term in colorSampleFullBins[lang] ? colorSampleFullBins[lang][term] : undefined
+        if(fullBinsData){
+            colorInfo.fullBinsData = fullBinsData
+        }
+    }
+
+    updateTable()
 })
 
 
 
-
 function getHueBinInfo(langAbv, term){
-    const hueBinsData = colorSampleHueBins72Blur && langAbv in colorSampleHueBins72Blur && term in colorSampleHueBins72Blur[langAbv] ?
-        colorSampleHueBins72Blur[langAbv][term] : 
-            colorSampleHueBins36Blur && langAbv in colorSampleHueBins36Blur && term in colorSampleHueBins36Blur[langAbv] ?
-            colorSampleHueBins36Blur[langAbv][term] : undefined
+    const hueBinsData = colorSampleHueBins72BlurByLang && langAbv in colorSampleHueBins72BlurByLang && term in colorSampleHueBins72BlurByLang[langAbv] ?
+        colorSampleHueBins72BlurByLang[langAbv][term] : 
+            colorSampleHueBins36BlurByLang && langAbv in colorSampleHueBins36BlurByLang && term in colorSampleHueBins36BlurByLang[langAbv] ?
+            colorSampleHueBins36BlurByLang[langAbv][term] : undefined
 
     if(hueBinsData){
         hueBinsData.langAbv = langAbv
@@ -126,9 +183,9 @@ function getHueBinInfo(langAbv, term){
 function getColorInfo(langAbv, term){
     const lang = langAbvToLang[langAbv]
 
-    const basicNameInfoByLang = Object.groupBy(basicColorInfo, ({lang}) => lang)
+    const basicNameInfoByLang = Object.groupBy(allColorInfo, ({lang}) => lang)
     const fullNameSetByLang = Object.groupBy(fullColorNames, ({lang}) => lang)
-    const hueNameSetByLang = Object.groupBy(hueColorNames, ({lang}) => lang)
+    const hueNameSetByLang = Object.groupBy(hueColorInfo, ({lang}) => lang)
 
     const basicInfoTermRow =  lang in basicNameInfoByLang ? basicNameInfoByLang[lang].find(d => d.simplifiedName == term) : undefined
     const hueTermRow =  lang in hueNameSetByLang ? hueNameSetByLang[lang].find(d => d.simplifiedName == term) : undefined
@@ -299,12 +356,10 @@ $("input:radio[name=rgb-set]").change(e => {
 
 $("#hue_bins_in_circle").change(() => {
     updateTableData()
-    //redrawTable() // For some reason, this doesn't fix spacing issues
 })
 
 $("#hue_bins_color_scale").change(() => {
     updateTableData()
-    //redrawTable() // For some reason, this doesn't fix spacing issues
 })
 
 
@@ -333,6 +388,186 @@ let allHueNamesByLang
 let allFullNamesByLang
 let allBothNamesByLang
 
+// create data table
+$("#loading-data-span").hide()
+//$("#data-table").append("<table>")
+
+// html scrolling table
+// https://stackoverflow.com/questions/17067294/html-table-with-100-width-with-vertical-scroll-inside-tbody
+
+const cols = ["Name", "Avg Color"]
+//tmp solution
+let rgbSet = "both-hue-full"
+
+function namePercentSort(a, b){
+    if(a.totalColorFraction){
+        if(b.totalColorFraction){
+            const diff = b.totalColorFraction - a.totalColorFraction
+            // for some reason sort fails if these are small values, so make them bigger
+            const returnVal = diff < 0 ? -1 : diff > 0 ? 1 : 0
+            return returnVal
+        } else {
+            return -1
+        }
+    } else {
+        if(b.totalColorFraction){
+            return 1
+        } else {
+            return parseFloat(b.numHueNames) - parseFloat(a.numHueNames)
+        }
+    }
+}
+
+const tableCols = [
+    {
+        id: "commonName",
+        key: "commonName",
+        headerHTML: `<p style="margin-bottom:0px">Name</p>
+                    <p style="margin-bottom:0px" class="simplified-name">simplified name</p>`,
+        formatter: (cell, row) => 
+             `<p style="margin-bottom:0px" translate="no" class="notranslate">${escapeHTML(row.commonName)}
+             <p style="margin-bottom:0px" class="simplified-name" translate="no" class="notranslate">${escapeHTML(row.simplifiedName)}</p>`
+    },
+    {
+        id: "avgColor",
+        key: "avgFullColorRGBCode",
+        headerHTML: `
+            <p style="margin-bottom:0px">Avg Color</p>
+            <p class="simplified-name" style="margin-bottom:0px">${rgbSet == "both-hue-full" ? "full / hue" : rgbSet == "full-data" ? "full" : "hue"}</p>`,
+        compare: (a, b) => {
+            let a_h, b_h
+            if("avgFullL" in a && a.avgFullL){
+                a_h = new Color({space: "oklab", coords: [a.avgFullL, a.avgFullA, a.avgFullB]}).to("oklch").h
+            } else {
+                a_h = new Color(a.avgHueRGBCode).to("oklch").h
+            }
+            if("avgFullL" in b && b.avgFullL){
+                b_h = new Color({space: "oklab", coords: [b.avgFullL, b.avgFullA, b.avgFullB]}).to("oklch").h
+            } else {
+                b_h = new Color(b.avgHueRGBCode).to("oklch").h
+            }
+            return a_h - b_h
+        },
+        formatter: (cell, row) => {
+            return `
+                <div style="white-space:nowrap" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${row.lang_abv}" data-color-name="${nameToUnicode(row.simplifiedName)}">
+                    ${rgbSet == "both-hue-full" || rgbSet == "full-data" ? `
+                        <div
+                            style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; display: inline-block; margin: 5px;
+                            background-color:${row.avgFullColorRGBCode ? row.avgFullColorRGBCode : "rgba(0,0,0,0)"};" title="${escapeHTML(row.avgFullColorRGBCode ? row.avgFullColorRGBCode : "")}" >
+                        </div>` : ""
+                    }
+                    ${rgbSet == "both-hue-full" ? `<div style="height:${cellHeight/2}px; width:0px; display: inline-block; margin:5px; border:solid rgba(128,128,128,0.5) 1px"></div>` : ""}
+                    ${rgbSet == "both-hue-full" || rgbSet == "hue-data" ? `
+                        <div
+                            style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; display: inline-block; margin: 5px;
+                            background-color:${row.avgHueRGBCode ? row.avgHueRGBCode : "rgba(0,0,0,0)"};" title="${escapeHTML(row.avgHueRGBCode ? row.avgHueRGBCode : "")}" >
+                        </div>` : ""
+                    }
+                </div>`
+        }
+    },
+    {
+        key: "somColorPatch",
+        headerHTML: "Sample",
+        sort: false,
+        formatter: (cell, row) => {
+            if(!cell){
+                return ""
+            }
+            return 'colorNodes16' in cell ? generateColorGrid(cell.colorNodes16) :
+                   'colorNodes9' in cell ?  generateColorGrid(cell.colorNodes9) :
+                   generateColorGrid(cell.colorNodes4)
+        }
+    },
+    {
+        key: "fullBinsData",
+        headerHTML: "Full Bins",
+        width: "262px",
+        sort: false,
+        formatter: (cell, row) => {
+            return cell ? generateFullColorBinSvg(cell).node().outerHTML : ""
+        }
+            
+    },
+    {
+        headerHTML: "Hue Bins",
+        sort: false,
+        formatter: (cell, row) => {
+            //TODO: get hue Bins data
+            //const hueBinData = getHueBinData(row)
+            const hueBinData = row.hueBins72BlurData ? row.hueBins72BlurData : row.hueBins36BlurData
+            if(!hueBinData){
+                return ""
+            }
+            if($("#hue_bins_in_circle").is(':checked')){
+                return generateHueColorRingSvg(hueBinData).node().outerHTML
+            } else {
+                return generateHueColorSvg(hueBinData).node().outerHTML
+            }
+        }
+    },
+    {
+        id: "NamePercent",
+        headerHTML: "% of names",
+        sort:  {
+            compare: namePercentSort
+        },
+        formatter: (cell, row, col) => {
+            // TODO : redo logic
+            const totalColorFraction = row.fullColorInfo ? row.fullColorInfo.tinyResBlurTermFraction : undefined
+            if(totalColorFraction){
+                return (totalColorFraction * 100).toPrecision(3) / 1 + "%"
+            } else {
+                return row.numLineNames + " hue names"
+            }
+        }
+    }
+]
+
+
+function updateFilteredData(){
+    filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == "fi")
+    sortFilteredData()
+    
+}
+
+function sortFilteredData(){
+    const sortColumn = tableCols[0]
+    const sortDirection = -1
+    sortedColorInfo = filteredColorInfo.sort((a, b) => sortColumn.compare ? sortColumn.compare(a, b) : 
+        a[sortColumn.key] < b[sortColumn.key] ? sortDirection :
+        a[sortColumn.key] > b[sortColumn.key] ? - sortDirection:
+        1)
+    updateTable()
+}
+
+function updateTable(){
+    
+    const headerRow = d3.select("#data-table thead tr")
+    headerRow.selectAll(".table-headers")
+        .data(tableCols)
+        .join("th")
+        .attr("class", "table-headers")
+        .html(d => d.headerHTML)
+
+    const tableBody = d3.select("#data-table tbody")
+    const nameRows = tableBody.selectAll(".name-row")
+        .data(sortedColorInfo)
+        .join("tr")
+        .attr("class", "name-row")
+
+    nameRows.selectAll(".name-cell")
+            .data(d => tableCols.map(col => {
+                    return {cell: d[col.key], row: d, tableCol: col}
+                }))
+            .join("td")
+            .attr("class", "name-cell")
+            .html((d) => {
+                    return d.tableCol.formatter ? d.tableCol.formatter(d.cell, d.row) : d.cell
+                })
+}
+
 function updateData() {
     updateRgbSet()
 }
@@ -340,340 +575,40 @@ function updateData() {
 updateData()
 
 function updateRgbSet(){
-    const rgbSet = $("input[name='rgb-set']:checked").val()
+    //const rgbSet = $("input[name='rgb-set']:checked").val()
+    updateFilteredData()
 
-    if(!fullColorNames || !hueColorNames){
-        return
-    }
+    // Also: 
+    // use: contentvisibilityautostatechange 
+    // if (event.skipped) {
+    //  then add SVG
+    // else
+    //   remove SVG
+    // canvasElem.style.contentVisibility = "auto"
+    
+    // let prev_selected_lang = $("#selected_langs").val()
+    // if(!prev_selected_lang){
+    //     prev_selected_lang = "Korean (한국어, 조선어)"
+    // }
+    // if(!Object.keys(color_set).includes(prev_selected_lang)){
+    //     prev_selected_lang = Object.keys(color_set).sort()[0]
+    // }
+    // $("#selected_langs").empty()
+    // for(const lang of Object.keys(color_set).sort()){
+    //     $("#selected_langs").append(new Option(lang, lang, true, lang == prev_selected_lang))
+    // }
 
-    // if(currentDatasetRgbSet == rgbSet){
+    // updateTableData();
+
+    // const selected_lang = $("#selected_langs").val()
+    // if(!selected_lang){
     //     return
     // }
 
-    currentDatasetRgbSet = rgbSet
-
-    let color_set
-    const basicNameInfoByLang = Object.groupBy(basicColorInfo, ({lang}) => lang)
-
-        // make sure langAbvToLang table updated
-    for(const [lang, colorSetData] of Object.entries(basicColorInfo)){
-        langAbvToLang[colorSetData.lang_abv] = colorSetData.lang
-    }
-
-    
-    if(rgbSet == "both-hue-full"){
-        //if(!allBothNamesByLang){
-            console.log("updating both-hue-full")
-            const fullNameSetByLang = Object.groupBy(fullColorNames, ({lang}) => lang)
-            const hueNameSetByLang = Object.groupBy(hueColorNames, ({lang}) => lang)
-            allBothNamesByLang = {}
-            for(const lang of Object.keys(basicNameInfoByLang)){
-                allBothNamesByLang[lang] = []
-                let basicTermData = basicNameInfoByLang[lang]
-                for(const termData of basicTermData){
-                    const term = termData.simplifiedName
-                    const langAbv = termData.lang_abv
-
-                    const colorTermData =  getColorInfo(langAbv, term)
-
-                    allBothNamesByLang[lang].push({
-                        simplifiedName: term,
-                        commonName: colorTermData.basicInfoTermRow ? colorTermData.basicInfoTermRow.commonName : colorTermData.basicInfoTermRow.commonName,
-                        lang_abv: colorTermData.basicInfoTermRow ? colorTermData.basicInfoTermRow.lang_abv : colorTermData.basicInfoTermRow.lang_abv,
-                        avgColorRGBCode: colorTermData.basicInfoTermRow.avgFullColorRGBCode,//fullTermRow ? basicInfoTermRow.avgFullColorRGBCode : undefined,
-                        avgL: colorTermData.basicInfoTermRow.avgFullColorRGBCode ? (new Color(colorTermData.basicInfoTermRow.avgFullColorRGBCode).to("oklab")).l : undefined,
-                        avgA: colorTermData.basicInfoTermRow.avgFullColorRGBCode ? (new Color(colorTermData.basicInfoTermRow.avgFullColorRGBCode).to("oklab")).a : undefined,
-                        avgB: colorTermData.basicInfoTermRow.avgFullColorRGBCode ? (new Color(colorTermData.basicInfoTermRow.avgFullColorRGBCode).to("oklab")).b : undefined,
-                        avgHueColor: colorTermData.basicInfoTermRow.avgHueRGBCode,// , hueTermRow ? hueTermRow.avgHueColor :
-                        somColorPatch: colorTermData.somColorPatch,
-                        totalColorFraction: colorTermData.fullTermRow ? colorTermData.fullTermRow.tinyResBlurTermFraction : undefined,
-                        numFullNames: colorTermData.basicInfoTermRow.numFullNames,
-                        numHueNames: colorTermData.basicInfoTermRow.numLineNames,
-                        hueBinsData: colorTermData.hueBinsData,
-                        fullBinsData: colorTermData.fullBinsData
-                    })
-                }
-            }
-        //}
-        color_set = allBothNamesByLang
-    } else if(rgbSet == "full-data"){
-        //if(!allFullNamesByLang){
-            allFullNamesByLang = {}
-            const groupedLangFullNames = Object.groupBy(fullColorNames, ({lang}) => lang)
-            for(const lang of Object.keys(groupedLangFullNames)){
-                allFullNamesByLang[lang] = []
-                for(const row of groupedLangFullNames[lang]){
-                    const langAbv = row.lang_abv
-                    const term = row.simplifiedName
-
-                    const colorTermData = getColorInfo(langAbv, term)
-
-                    allFullNamesByLang[lang].push({
-                        simplifiedName: term,
-                        commonName: colorTermData.commonName,
-                        lang_abv: langAbv,
-                        basicInfoTermRow: colorTermData,
-                        numHueNames: colorTermData.basicInfoTermRow ? colorTermData.basicInfoTermRow.numLineNames : undefined,
-                        numFullNames: colorTermData.basicInfoTermRow ? colorTermData.basicInfoTermRow.numFullNames : undefined,
-                        somColorPatch: colorTermData.somColorPatch,
-                        totalColorFraction: row.tinyResBlurTermFraction,
-                        avgColorRGBCode: colorTermData.basicInfoTermRow ? colorTermData.basicInfoTermRow.avgFullColorRGBCode : undefined,
-                        fullBinsData: colorTermData.fullBinsData
-                    })
-                }
-            }
-        //}
-        color_set = allFullNamesByLang
-    } else { // hue
-        //if(!allHueNamesByLang){
-            allHueNamesByLang = {}
-            const groupedLangHueNames = Object.groupBy(hueColorNames, ({lang}) => lang)
-            for(const lang of Object.keys(groupedLangHueNames)){
-                allHueNamesByLang[lang] = []
-                for(const row of groupedLangHueNames[lang]){
-                    const langAbv = row.lang_abv
-                    const term = row.simplifiedName
-
-                    const colorTermData = getColorInfo(langAbv, term)
-                    
-                    allHueNamesByLang[lang].push({
-                        simplifiedName: term,
-                        commonName: colorTermData.commonName,
-                        lang_abv: langAbv,
-                        basicInfoTermRow: colorTermData,
-                        numHueNames: colorTermData.basicInfoTermRow ? colorTermData.basicInfoTermRow.numLineNames : undefined,
-                        numFullNames: colorTermData.basicInfoTermRow ? colorTermData.basicInfoTermRow.numFullNames : undefined,
-                        somColorPatch: colorTermData.somColorPatch,
-                        totalColorFraction: row.tinyResBlurTermFraction,
-                        avgHueColor: colorTermData.basicInfoTermRow.avgHueRGBCode,
-                        hueBinsData: colorTermData.hueBinsData
-                    })
-                }
-            }
-        //}
-        color_set = allHueNamesByLang
-    }
-
-    let prev_selected_lang = $("#selected_langs").val()
-    if(!prev_selected_lang){
-        prev_selected_lang = "Korean (한국어, 조선어)"
-    }
-    if(!Object.keys(color_set).includes(prev_selected_lang)){
-        prev_selected_lang = Object.keys(color_set).sort()[0]
-    }
-    $("#selected_langs").empty()
-    for(const lang of Object.keys(color_set).sort()){
-        $("#selected_langs").append(new Option(lang, lang, true, lang == prev_selected_lang))
-    }
-
-    updateTableData();
+    // $("#loading-data-span").hide()
 }
 
 
-function updateTableData(){
-
-    const selected_lang = $("#selected_langs").val()
-    if(!selected_lang){
-        return
-    }
-
-    const rgbSet = $("input[name='rgb-set']:checked").val()
-
-    let allNamesByLang
-    if(rgbSet == "both-hue-full"){
-        allNamesByLang = allBothNamesByLang
-    } else if(rgbSet == "full-data"){
-        allNamesByLang = allFullNamesByLang
-    } else { // hue
-        allNamesByLang = allHueNamesByLang
-    }
-
-
-    currentDatasetLangAbv = allNamesByLang[selected_lang][0].lang_abv
-
-    let nameData = allNamesByLang[selected_lang]
-
-    currentDataset = nameData
-
-    if(grid){
-        grid.destroy() 
-    }
-    $("#loading-data-span").hide()
-
-    function namePercentSort(a, b){
-        if(a.totalColorFraction){
-            if(b.totalColorFraction){
-                const diff = b.totalColorFraction - a.totalColorFraction
-                // for some reason sort fails if these are small values, so make them bigger
-                const returnVal = diff < 0 ? -1 : diff > 0 ? 1 : 0
-                return returnVal
-            } else {
-                return -1
-            }
-        } else {
-            if(b.totalColorFraction){
-                return 1
-            } else {
-                return parseFloat(b.numHueNames) - parseFloat(a.numHueNames)
-            }
-        }
-    }
-
-    // Grid column definitions
-    const gridColumns = []
-
-    gridColumns.push({
-        "id": "commonName", 
-        name: gridjs.html(`
-            <p style="margin-bottom:0px">Name</p>
-            <p style="margin-bottom:0px" class="simplified-name">simplified name</p>`),
-        data: (row) => row,
-        sort: {
-            compare: (a, b) =>  a.commonName.localeCompare(b.commonName)
-        },
-        formatter: (cell, row, col) => gridjs.html(`<p style="margin-bottom:0px" translate="no" class="notranslate">${escapeHTML(cell.commonName)}
-            <p style="margin-bottom:0px" class="simplified-name" translate="no" class="notranslate">${escapeHTML(cell.simplifiedName)}</p>`)
-    })
-
-    gridColumns.push({
-        id: "avgColor",
-        name: gridjs.html(`
-            <p style="margin-bottom:0px">Avg Color</p>
-            <p class="simplified-name" style="margin-bottom:0px">${rgbSet == "both-hue-full" ? "full / hue" : rgbSet == "full-data" ? "full" : "hue"}</p>`),
-        data: (row) => row,
-        sort: {
-            compare: (a, b) => {
-                let a_h, b_h
-                if("avgL" in a && a.avgL){
-                    a_h = new Color({space: "oklab", coords: [a.avgL, a.avgA, a.avgB]}).to("oklch").h
-                    b_h = new Color({space: "oklab", coords: [b.avgL, b.avgA, b.avgB]}).to("oklch").h
-                } else {
-                    a_h = new Color(a.avgHueColor).to("oklch").h
-                    b_h = new Color(b.avgHueColor).to("oklch").h
-                }
-                return a_h - b_h
-            }
-        },
-        formatter: (cell, row, col) => {
-            return gridjs.html(`
-                <div style="white-space:nowrap" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${cell.lang_abv}" data-color-name="${nameToUnicode(cell.simplifiedName)}">
-                    ${rgbSet == "both-hue-full" || rgbSet == "full-data" ? `
-                        <div
-                            style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; display: inline-block; margin: 5px;
-                            background-color:${cell.avgColorRGBCode ? cell.avgColorRGBCode : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgColorRGBCode ? cell.avgColorRGBCode : "")}" >
-                        </div>` : ""
-                    }
-                    ${rgbSet == "both-hue-full" ? `<div style="height:${cellHeight/2}px; width:0px; display: inline-block; margin:5px; border:solid rgba(128,128,128,0.5) 1px"></div>` : ""}
-                    ${rgbSet == "both-hue-full" || rgbSet == "hue-data" ? `
-                        <div
-                            style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; display: inline-block; margin: 5px;
-                            background-color:${cell.avgHueColor ? cell.avgHueColor : "rgba(0,0,0,0)"};" title="${escapeHTML(cell.avgHueColor ? cell.avgHueColor : "")}" >
-                        </div>` : ""
-                    }
-                </div>`)
-        }
-    })
-
-    if(rgbSet == "both-hue-full" || rgbSet == "full-data"){
-        gridColumns.push({
-            id: "somColorPatch",
-            name: "Sample",
-            sort: false,
-            formatter: (cell, row, col) => {
-                if(!cell){
-                    return ""
-                }
-                return gridjs.html(
-                    'colorNodes16' in cell ? generateColorGrid(cell.colorNodes16) :
-                    'colorNodes9' in cell ?  generateColorGrid(cell.colorNodes9) :
-                    generateColorGrid(cell.colorNodes4)
-                )
-            }
-        })
-
-        gridColumns.push({
-            id: "fullBinsData",
-            name: "Full Bins",
-            width: "262px",
-            sort: false,
-            formatter: (cell, row, col) => {
-                return cell ? gridjs.html(generateFullColorBinSvg(cell).node().outerHTML) : ""
-                
-            }
-        })
-    }
-
-    if(rgbSet == "both-hue-full" || rgbSet == "hue-data"){
-        gridColumns.push({
-            id: "hueBinsData",
-            name: "Hue Bins",
-            sort: false,
-            formatter: (cell, row, col) => {
-                if($("#hue_bins_in_circle").is(':checked')){
-                    return cell ? gridjs.html(generateHueColorRingSvg(cell).node().outerHTML) : ""
-                } else {
-                    return cell ? gridjs.html(generateHueColorSvg(cell).node().outerHTML) : ""
-                }
-            }
-        })
-    }
-
-    gridColumns.push({
-        id: "NamePercent",
-        name: "% of names",
-        data: (row) => row,
-        sort:  {
-            compare: namePercentSort
-        },
-        formatter: (cell, row, col) => {
-            if(cell.totalColorFraction){
-                return (cell.totalColorFraction * 100).toPrecision(3) / 1 + "%"
-            } else {
-                return cell.numHueNames + " hue names"
-            }
-        }
-    })
-
-    grid = new gridjs.Grid({
-        columns: gridColumns,
-        sort: true,
-        search:  {
-            selector: (cell, rowIndex, cellIndex) => cellIndex === 0 ? cell.commonName : cell
-        },
-        pagination: true,
-        data: nameData.sort(namePercentSort),
-        // style: {
-        //     td: {
-        //         padding: "6px 12px"
-        //     }
-        // }
-    }).render(document.getElementById("data_table"));
-
-    // try to set default sort
-    function trySetDefaultSort(){
-        setTimeout(() => {
-            const column = document.querySelector('[data-column-id="NamePercent"]')
-            if(column){
-                column.click()
-            } else {
-                trySetDefaultSort()
-            }
-        }, 100)
-    }
-    trySetDefaultSort()
-
-    // } else {
-    //     grid.updateConfig({
-    //         data: nameData
-    //     }).forceRender();
-    // }
-    
-}
-
-function redrawTable(){
-    // TODO: for some reason this doesn't recalculate column widths
-    grid.forceRender()
-}
 
 
 function generateColorGrid(nodes){
@@ -1040,6 +975,7 @@ function generateHueColorSvg(hueData, isModal){
 
     // Update the subject (dragged node) position during drag.
     function dragged(event) {
+        console.log("test")
         hueOffset += event.dx
         //update all hue color svgs
         for(const hueColorSVG of $(`.hue-color-svg${isModal}`)){
