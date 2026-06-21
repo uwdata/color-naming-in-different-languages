@@ -35,10 +35,6 @@ const escapeHTML = str => String(str).replace(/[&<>'"]/g,
 const cellHeight = 60
 let hueOffset = 0
 
-
-// TODO: Remove
-let grid = undefined
-
 // load basic color info
 const allColorInfo = await d3.csv("../model/basic_colors_info.csv");
 let filteredColorInfo,

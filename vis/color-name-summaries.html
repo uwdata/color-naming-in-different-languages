@@ -45,13 +45,24 @@
       border: solid black 1px
     } */
 
+    /* #data-table thead, #data-table tbody { display: block; } */
+
+    /* #data-table tbody {
+      height: 200px; 
+      overflow-y: auto;
+      overflow-x: hidden;
+    } */
+
+    #data-table th {
+      background-color: oklch(98% 0 0);
+    }
     
-    th.gridjs-th, td.gridjs-td{
+    #data-table th, #data-table td{
       text-align: center;
       padding: 5px 5px;
     }
 
-    th.gridjs-th:first-child, td.gridjs-td:first-child{
+    #data-table th:first-child, #data-table td:first-child{
       position: sticky;
       left: 0;
       z-index: 1;
