@@ -33,8 +33,10 @@ const escapeHTML = str => String(str).replace(/[&<>'"]/g,
   }[tag]));
 
 const cellHeight = 60
+let hueOffset = 0
 
 
+// TODO: Remove
 let grid = undefined
 
 // load basic color info
@@ -65,7 +67,7 @@ d3.csv("../model/hue_colors_info.csv").then((data) => {
             colorInfo.hueColorInfo = hueTermRow
         }
     }
-    updateTable()
+    sortFilteredData()
 })
 d3.csv("../model/full_colors_info.csv").then((data) => {
     fullColorNames = data
@@ -78,7 +80,7 @@ d3.csv("../model/full_colors_info.csv").then((data) => {
             colorInfo.fullColorInfo = fullTermRow
         }
     }
-    updateTable()
+    sortFilteredData()
 })
 fetch("../model/colorSOMPatches.json").then(async (response) => {
     colorSampleSOMs = await response.json()
@@ -395,14 +397,17 @@ $("#loading-data-span").hide()
 // html scrolling table
 // https://stackoverflow.com/questions/17067294/html-table-with-100-width-with-vertical-scroll-inside-tbody
 
-const cols = ["Name", "Avg Color"]
+
 //tmp solution
 let rgbSet = "both-hue-full"
 
 function namePercentSort(a, b){
-    if(a.totalColorFraction){
-        if(b.totalColorFraction){
-            const diff = b.totalColorFraction - a.totalColorFraction
+    console.log("namePercentSort")
+    const aTotalColorFraction = a.fullColorInfo ? a.fullColorInfo.tinyResBlurTermFraction : undefined
+    const bTotalColorFraction = b.fullColorInfo ? b.fullColorInfo.tinyResBlurTermFraction : undefined
+    if(aTotalColorFraction){
+        if(bTotalColorFraction){
+            const diff = bTotalColorFraction - aTotalColorFraction
             // for some reason sort fails if these are small values, so make them bigger
             const returnVal = diff < 0 ? -1 : diff > 0 ? 1 : 0
             return returnVal
@@ -410,7 +415,7 @@ function namePercentSort(a, b){
             return -1
         }
     } else {
-        if(b.totalColorFraction){
+        if(bTotalColorFraction){
             return 1
         } else {
             return parseFloat(b.numHueNames) - parseFloat(a.numHueNames)
@@ -510,9 +515,9 @@ const tableCols = [
     {
         id: "NamePercent",
         headerHTML: "% of names",
-        sort:  {
-            compare: namePercentSort
-        },
+        //sort:  {
+        compare: namePercentSort,
+        //},
         formatter: (cell, row, col) => {
             // TODO : redo logic
             const totalColorFraction = row.fullColorInfo ? row.fullColorInfo.tinyResBlurTermFraction : undefined
@@ -533,7 +538,7 @@ function updateFilteredData(){
 }
 
 function sortFilteredData(){
-    const sortColumn = tableCols[0]
+    const sortColumn = tableCols[5]
     const sortDirection = -1
     sortedColorInfo = filteredColorInfo.sort((a, b) => sortColumn.compare ? sortColumn.compare(a, b) : 
         a[sortColumn.key] < b[sortColumn.key] ? sortDirection :
@@ -631,7 +636,7 @@ function generateColorGrid(nodes){
 	return str + "</div>";
 }
 
-let hueOffset = 0
+
 
 function updateHueColorSvg(svg){
     const langAbv = svg.attr("data-lang")
