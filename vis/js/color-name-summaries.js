@@ -209,8 +209,6 @@ function getColorInfo(langAbv, term){
     }
 }
 
-//console.log(hueColorNames[0]);
-
 const langAbvToLang = {}
 
 function nameToUnicode(name){
@@ -398,7 +396,6 @@ $("#loading-data-span").hide()
 let rgbSet = "both-hue-full"
 
 function namePercentSort(a, b){
-    console.log("namePercentSort")
     const aTotalColorFraction = a.fullColorInfo ? a.fullColorInfo.tinyResBlurTermFraction : undefined
     const bTotalColorFraction = b.fullColorInfo ? b.fullColorInfo.tinyResBlurTermFraction : undefined
     if(aTotalColorFraction){
@@ -506,7 +503,9 @@ const tableCols = [
             } else {
                 return generateHueColorSvg(hueBinData).node().outerHTML
             }
-        }
+        },
+        d3Formatter: d3SvgUpdateHueColor
+        //todo: drag
     },
     {
         id: "NamePercent",
@@ -558,15 +557,26 @@ function updateTable(){
         .join("tr")
         .attr("class", "name-row")
 
-    nameRows.selectAll(".name-cell")
+    const tableCell = nameRows.selectAll(".name-cell")
             .data(d => tableCols.map(col => {
                     return {cell: d[col.key], row: d, tableCol: col}
                 }))
             .join("td")
             .attr("class", "name-cell")
-            .html((d) => {
-                    return d.tableCol.formatter ? d.tableCol.formatter(d.cell, d.row) : d.cell
-                })
+    
+    // for any cells with a d3 formatter use that
+    const d3Formatters = tableCols.filter(tableCol => tableCol.d3Formatter).map(tableCol => tableCol.d3Formatter)
+    for(const d3Formatter of d3Formatters){
+        d3Formatter(
+            tableCell.filter((d) => d.tableCol.d3Formatter === d3Formatter)
+        )
+    }
+
+    // for the rest of the cells without a d3 formatter, set the html:
+    tableCell.filter((d) => !d.tableCol.d3Formatter)
+                .html((d) => {
+            return d.tableCol.formatter ? d.tableCol.formatter(d.cell, d.row) : d.cell
+        })
 }
 
 function updateData() {
@@ -943,6 +953,58 @@ function updateHueColorSvg(svg){
     //       .attr('text-anchor','middle');
 }
 
+function d3SvgUpdateHueColor(d3selection, isModal) {
+    isModal = isModal ? "-modal" : ""
+
+    const width = 200,
+        height = cellHeight
+
+    const hueBinSvgs = d3selection.selectAll("svg")
+        .data((d) => {
+            if(d.row.hueBins36BlurData){
+                combineHueBinDataWithColors(d.row.hueBins36BlurData)
+            }
+            if(d.row.hueBins72BlurData){
+                combineHueBinDataWithColors(d.row.hueBins72BlurData)
+                return [d.row.hueBins72BlurData]
+            }
+            if(d.row.hueBins36BlurData){
+                return [d.row.hueBins36BlurData]
+            }
+            return []
+        })
+        .join("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("xmlns", "http://www.w3.org/2000/svg")
+        .attr("class", `hue-color-svg${isModal}`)
+        .attr("data-lang", (d) => d.langAbv) 
+        .attr("data-color-name", (d) => nameToUnicode(d.simplifiedName))
+
+    
+
+    hueBinSvgs.each(function() {
+        const hueBinSvg = d3.select(this)
+
+        updateHueColorSvg(hueBinSvg)
+
+        hueBinSvg.call(d3.drag()
+            .on("drag", dragged)
+        ) 
+
+        // Update the subject (dragged node) position during drag.
+        function dragged(event) {
+            hueOffset += event.dx
+            //update all hue color svgs
+            for(const hueColorSVG of $(`.hue-color-svg${isModal}`)){
+                updateHueColorSvg(d3.select(hueColorSVG))
+            }
+        }
+
+    })
+}
+
+// TODO: Hopefully remove this function
 function generateHueColorSvg(hueData, isModal){
     isModal = isModal ? "-modal" : ""
 
