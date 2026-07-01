@@ -45,13 +45,20 @@
       border: solid black 1px
     } */
 
-    /* #data-table thead, #data-table tbody { display: block; } */
+    body {
+      height:100vh;
+    }
+    #main-contents, #data-view, #data-table, #data-table tbody{
+      height:100%
+    }
 
-    /* #data-table tbody {
-      height: 200px; 
+
+    #data-table, #data-table thead, #data-table tbody { display: block; }
+
+    #data-table tbody {
       overflow-y: auto;
       overflow-x: hidden;
-    } */
+    }
 
     #data-table th {
       background-color: oklch(98% 0 0);
@@ -96,7 +103,7 @@
   </head>
   <body>
 
-  <div class="container">
+  <div class="container" id="main-contents">
 	<h1>Color Name Summaries</h1>
 	<p style="margin-bottom: 5px;">This page lets you see color names in different languages</p>
 
@@ -136,7 +143,7 @@
   </button>
 
   <!-- Data Table -->
-  <div id="data_view">
+  <div id="data-view">
     <span id="loading-data-span">Loading...</span>
     <table id="data-table">
       <thead><tr></tr></thead>
