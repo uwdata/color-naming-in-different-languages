@@ -48,16 +48,19 @@
     body {
       height:100vh;
     }
-    #main-contents, #data-view, #data-table, #data-table tbody{
+
+    #main-contents {
+      height:100%;
+    }
+
+    #data-view{
       height:100%
     }
 
 
-    #data-table, #data-table thead, #data-table tbody { display: block; }
-
-    #data-table tbody {
-      overflow-y: auto;
-      overflow-x: hidden;
+    #data-view {
+      display:block;
+      overflow: scroll;
     }
 
     #data-table th {
@@ -69,10 +72,23 @@
       padding: 5px 5px;
     }
 
-    #data-table th:first-child, #data-table td:first-child{
+    #data-table th {
       position: sticky;
-      left: 0;
+      top: 0px;
+    }
+
+    #data-table th:first-child{
+      z-index: 2;
+    }
+
+    #data-table td:first-child{
       z-index: 1;
+    }
+
+    #data-table th:first-child, #data-table td:first-child{
+      position: sticky; 
+      left:0;
+      
       text-align: right;
       border-top: none; 
       border-bottom: none; 
