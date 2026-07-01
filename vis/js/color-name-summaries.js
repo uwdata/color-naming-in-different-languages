@@ -1,13 +1,6 @@
 import BinSize from "../../shared_files/binSize.js";
 import FullColorBinView from "./full-color-bin-view.js";
 
-// TODO: Redo HTML Table
-// use: contentvisibilityautostatechange 
-// if (event.skipped) {
-//  then add SVG
-// else
-//   remove SVG
-// canvasElem.style.contentVisibility = "auto"
 
 const fullBinSize = new BinSize({
     type: "ring",
@@ -31,6 +24,18 @@ const escapeHTML = str => String(str).replace(/[&<>'"]/g,
       "'": '&#39;',
       '"': '&quot;'
   }[tag]));
+
+
+//based on https://coreui.io/blog/how-to-check-if-an-element-is-visible-in-javascript/
+const isVisibleInViewport = (element) => {
+    const rect = element.getBoundingClientRect()
+    return (
+        rect.bottom >= 0 &&
+        rect.right >= 0 &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+    )
+}
 
 const cellHeight = 60
 let hueOffset = 0
@@ -478,16 +483,16 @@ const tableCols = [
                    generateColorGrid(cell.colorNodes4)
         }
     },
-    {
-        key: "fullBinsData",
-        headerHTML: "Full Bins",
-        width: "262px",
-        sort: false,
-        formatter: (cell, row) => {
-            return cell ? generateFullColorBinSvg(cell).node().outerHTML : ""
-        }
+    // {
+    //     key: "fullBinsData",
+    //     headerHTML: "Full Bins",
+    //     width: "262px",
+    //     sort: false,
+    //     formatter: (cell, row) => {
+    //         return cell ? generateFullColorBinSvg(cell).node().outerHTML : ""
+    //     }
             
-    },
+    // },
     {
         headerHTML: "Hue Bins",
         sort: false,
@@ -527,13 +532,13 @@ const tableCols = [
 
 
 function updateFilteredData(){
-    filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == "fi")
+    filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == "en")
     sortFilteredData()
     
 }
 
 function sortFilteredData(){
-    const sortColumn = tableCols[5]
+    const sortColumn = tableCols[tableCols.length - 1]
     const sortDirection = -1
     sortedColorInfo = filteredColorInfo.sort((a, b) => sortColumn.compare ? sortColumn.compare(a, b) : 
         a[sortColumn.key] < b[sortColumn.key] ? sortDirection :
@@ -589,14 +594,6 @@ function updateRgbSet(){
     //const rgbSet = $("input[name='rgb-set']:checked").val()
     updateFilteredData()
 
-    // Also: 
-    // use: contentvisibilityautostatechange 
-    // if (event.skipped) {
-    //  then add SVG
-    // else
-    //   remove SVG
-    // canvasElem.style.contentVisibility = "auto"
-    
     // let prev_selected_lang = $("#selected_langs").val()
     // if(!prev_selected_lang){
     //     prev_selected_lang = "Korean (한국어, 조선어)"
@@ -643,12 +640,25 @@ function generateColorGrid(nodes){
 }
 
 
+$("#data-view").on("scroll", () => {
+    const isModal = ""
+    for(const hueColorSVG of $(`.hue-color-svg${isModal}`)){
+        updateHueColorSvg(d3.select(hueColorSVG))
+    }
+})
 
 function updateHueColorSvg(svg){
     const langAbv = svg.attr("data-lang")
     const term = nameFromUnicode(svg.attr("data-color-name"))
     const width = svg.attr("width")
     const height = svg.attr("height")
+
+    // if svg not on screen, leave empty
+    if(!isVisibleInViewport(svg.node())){
+        console.log("node not in viewport " + langAbv + " " + term )
+        svg.html("")
+        return
+    }
 
     const hueData = getHueBinInfo(langAbv, term)
 
@@ -976,13 +986,13 @@ function d3SvgUpdateHueColor(d3selection, isModal) {
         .join("svg")
         .attr("width", width)
         .attr("height", height)
+        .attr("content-visibility", "auto")
         .attr("xmlns", "http://www.w3.org/2000/svg")
         .attr("class", `hue-color-svg${isModal}`)
         .attr("data-lang", (d) => d.langAbv) 
         .attr("data-color-name", (d) => nameToUnicode(d.simplifiedName))
 
     
-
     hueBinSvgs.each(function() {
         const hueBinSvg = d3.select(this)
 
@@ -1001,6 +1011,12 @@ function d3SvgUpdateHueColor(d3selection, isModal) {
             }
         }
 
+        hueBinSvg
+            .on("contentvisibilityautostatechange", visibilityStateChange)
+
+        function visibilityStateChange(){
+            console.log("visibility state change!")
+        }
     })
 }
 
@@ -1016,6 +1032,7 @@ function generateHueColorSvg(hueData, isModal){
     let hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
         .attr("width", width)
         .attr("height", height)
+        .attr("content-visibility", "auto")
         .attr("xmlns", "http://www.w3.org/2000/svg")
         .attr("class", `hue-color-svg${isModal}`)
         .attr("data-lang", hueData.langAbv) 
@@ -1224,13 +1241,14 @@ function generateFullColorBinSvg(fullData){
 
 
 
-    const hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
+    const fullBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
         .attr("width", width)
         .attr("height", height)
+        .attr("content-visibility", "auto")
         .attr("xmlns", "http://www.w3.org/2000/svg")
 
 
-    binView.createOrUpdateColorTiles(hueBinSvg, {
+    binView.createOrUpdateColorTiles(fullBinSvg, {
         TILE_SEGMENT_OUTER_MARGIN_NUM: 0,
         getTileScale: (b) => {
             const binData = fullData.find((d) => 
@@ -1245,7 +1263,7 @@ function generateFullColorBinSvg(fullData){
         },
     })
 
-    return hueBinSvg
+    return fullBinSvg
 }
 
 
