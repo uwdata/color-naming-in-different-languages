@@ -564,40 +564,40 @@ class FullColorBinView {
                     // TODO: Generalize to use x_dim and y_dim
                     // 
                     // this.x_dim_direction
-                    const l_min_y = ((z_scale) * getTileScale(d) / 2);
-                    const l_max_y = -((z_scale) * getTileScale(d) / 2);
+                    const l_min_y = ((z_scale) * tileScale / 2);
+                    const l_max_y = -((z_scale) * tileScale / 2);
                     const a_min_x =  Math.max(
-                            Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2,
-                            -Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
+                            Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2,
+                            -Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2)
                     const a_max_x =  Math.min(
-                            Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2,
-                            -Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
+                            Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2,
+                            -Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2)
                     const a_min_y = Math.max(
-                        Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2,
-                        -Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
+                        Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2,
+                        -Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2)
                     const a_max_y = Math.min(
-                        Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2,
-                        -Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
+                        Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2,
+                        -Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2)
                     const b_min_x = Math.min(
-                        Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2,
-                        -Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
+                        Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2,
+                        -Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2)
                     const b_max_x = Math.max(
-                        Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2,
-                        -Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
+                        Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2,
+                        -Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2)
                     const b_min_y = Math.max(
-                        Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2,
-                        -Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
+                        Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2,
+                        -Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2)
                     const b_max_y = Math.min(
-                        Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2,
-                        -Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
-                    // const a_min_x =  -Math.abs(Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
-                    // const a_max_x =  Math.abs(Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
-                    // const a_min_y =  Math.abs(Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
-                    // const a_max_y =  -Math.abs(Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
-                    // const b_min_x =  -Math.abs(Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
-                    // const b_max_x =  Math.abs(Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
-                    // const b_min_y =  Math.abs(Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
-                    // const b_max_y =  -Math.abs(Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * getTileScale(d) / 2)
+                        Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2,
+                        -Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2)
+                    // const a_min_x =  -Math.abs(Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2)
+                    // const a_max_x =  Math.abs(Math.cos(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2)
+                    // const a_min_y =  Math.abs(Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2)
+                    // const a_max_y =  -Math.abs(Math.sin(isometric_x_angle / 360 * 2 * Math.PI) * tileScale / 2)
+                    // const b_min_x =  -Math.abs(Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2)
+                    // const b_max_x =  Math.abs(Math.cos(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2)
+                    // const b_min_y =  Math.abs(Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2)
+                    // const b_max_y =  -Math.abs(Math.sin(isometric_y_angle / 360 * 2 * Math.PI) * tileScale / 2)
                     
                     return `
                         M ${tileSize*(center_x +  a_min_x + b_max_x)} ${tileSize*(center_y +l_max_y + a_min_y + b_max_y)} 
@@ -850,13 +850,14 @@ function getArcPath(d, thisView, tileSize, tileBorderSizeInBins, getTileScale){
 
 function getArcPathArea(d, thisView, tileSize, tileBorderSizeInBins, getTileScale){
     const bin = thisView.getBinInfo(d)
+    const tileScale = getTileScale(d)
     const levelCenterX = tileSize* thisView.display_offsets.x_offsets_in_bins[bin[thisView.split_dim + "_bin"]] 
     const levelCenterY =   tileSize* thisView.display_offsets.y_offset_in_bins
 
     const binCenterRadius = bin.c_center/thisView.bin_size.c*tileSize * thisView.bin_size.c_ring_width_ratio
 
     
-    const binRadialWidth = getTileScale(d) * getTileScale(d)* tileSize * (thisView.bin_size.c_ring_width_ratio - tileBorderSizeInBins)
+    const binRadialWidth = tileScale * tileScale* tileSize * (thisView.bin_size.c_ring_width_ratio - tileBorderSizeInBins)
     
     const binInnerRadius = binCenterRadius - binRadialWidth / 2
     const binOuterRadius = binCenterRadius + binRadialWidth / 2
@@ -864,7 +865,7 @@ function getArcPathArea(d, thisView, tileSize, tileBorderSizeInBins, getTileScal
     const halfAngle = (bin.h_max - bin.h_center) 
     const angleMargin = 0.5 * tileBorderSizeInBins * 360 / (2 * Math.PI * (bin.c_center * thisView.bin_size.c_ring_width_ratio / thisView.bin_size.c))
     const halfAngleWithMargin = halfAngle - angleMargin
-    const halfAngleScaled = getTileScale(d) * halfAngleWithMargin
+    const halfAngleScaled = tileScale * halfAngleWithMargin
     const endAngleMargin = (bin.h_center - halfAngleScaled)
     const startAngleMargin = (bin.h_center + halfAngleScaled)
         
@@ -901,7 +902,7 @@ function getIsometricArcBinPath(d, binView, tileSize, tileBorderSizeInBins, getT
     const tileScale = getTileScale(d)
     const z_scale = binView.z_dim == "l" ? binView.bin_size.l_scale : 1
 
-    //const [raw_center_x, raw_center_y] = getIsometricBinPosition(thisView, bin, getTileScale(d))
+    //const [raw_center_x, raw_center_y] = getIsometricBinPosition(thisView, bin, tileScale)
     const [center_x, center_y] = [
         //raw_center_x + 30, 
         100, // x always same center 
@@ -941,7 +942,7 @@ function getIsometricArcBinPath(d, binView, tileSize, tileBorderSizeInBins, getT
     const halfAngle = (bin.h_max - bin.h_center) 
     const angleMargin = 0.5 * tileBorderSizeInBins * 360 / (2 * Math.PI * (bin.c_center * binView.bin_size.c_ring_width_ratio / binView.bin_size.c))
     const halfAngleWithMargin = halfAngle - angleMargin
-    const halfAngleScaled = getTileScale(d) * halfAngleWithMargin
+    const halfAngleScaled = tileScale * halfAngleWithMargin
     const endAngleMargin = (bin.h_center - halfAngleScaled)
     const startAngleMargin = (bin.h_center + halfAngleScaled)
         

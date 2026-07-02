@@ -42,8 +42,17 @@ let hueOffset = 0
 
 // load basic color info
 const allColorInfo = await d3.csv("../model/basic_colors_info.csv");
+// store temporary filtered and sorted info for display
 let filteredColorInfo,
     sortedColorInfo
+
+const langAbvToLang = {}
+for(const colorInfo of allColorInfo){
+    if(!(colorInfo.lang_abv in langAbvToLang)){
+        langAbvToLang[colorInfo.lang_abv] = colorInfo.lang
+    }
+}
+
 
 // start async loading of additional color info
 let hueColorInfo,
@@ -183,6 +192,14 @@ function getHueBinInfo(langAbv, term){
     return hueBinsData
 }
 
+function getFullBinInfo(langAbv, term){
+    const lang = langAbvToLang[langAbv]
+    const fullBinsData = colorSampleFullBins && lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
+        colorSampleFullBins[lang][term] : undefined
+
+    return fullBinsData
+}
+
 function getColorInfo(langAbv, term){
     const lang = langAbvToLang[langAbv]
 
@@ -213,8 +230,6 @@ function getColorInfo(langAbv, term){
         fullBinsData: fullBinsData
     }
 }
-
-const langAbvToLang = {}
 
 function nameToUnicode(name){
     return [...name].map(c => c.charCodeAt(0)).join("_")
@@ -483,25 +498,26 @@ const tableCols = [
                    generateColorGrid(cell.colorNodes4)
         }
     },
-    // {
-    //     key: "fullBinsData",
-    //     headerHTML: "Full Bins",
-    //     width: "262px",
-    //     sort: false,
-    //     formatter: (cell, row) => {
-    //         return cell ? generateFullColorBinSvg(cell).node().outerHTML : ""
-    //     }
+    {
+        key: "fullBinsData",
+        headerHTML: "Full Bins",
+        width: "262px",
+        sort: false,
+        formatter: (cell, row) => { //TODO: REMOVE
+            return cell ? generateFullColorBinSvg(cell).node().outerHTML : ""
+        },
+        d3Formatter: d3SvgUpdateFullColorBins
             
-    // },
+    },
     {
         headerHTML: "Hue Bins",
         sort: false,
-        formatter: (cell, row) => {
+        formatter: (cell, row) => { //TODO: REMOVE
             //TODO: get hue Bins data
             //const hueBinData = getHueBinData(row)
             const hueBinData = row.hueBins72BlurData ? row.hueBins72BlurData : row.hueBins36BlurData
             if(!hueBinData){
-                return ""
+                return "" // TODO: loading
             }
             if($("#hue_bins_in_circle").is(':checked')){
                 return generateHueColorRingSvg(hueBinData).node().outerHTML
@@ -640,12 +656,27 @@ function generateColorGrid(nodes){
 }
 
 
-$("#data-view").on("scroll", () => {
+function refreshAllSvgs(){
+    refreshHueSvgs()
+    refreshFullSvgs()
+}
+
+function refreshHueSvgs(){
     const isModal = ""
     for(const hueColorSVG of $(`.hue-color-svg${isModal}`)){
         updateHueColorSvg(d3.select(hueColorSVG))
     }
-})
+}
+
+function refreshFullSvgs(){
+    const isModal = ""
+    for(const fullColorSVG of $(`.full-color-svg${isModal}`)){
+        updateFullColorBinSvg(d3.select(fullColorSVG))
+    }
+}
+
+$("#data-view").on("scroll", refreshAllSvgs)
+$( window ).on( "resize", refreshAllSvgs)
 
 function updateHueColorSvg(svg){
     const langAbv = svg.attr("data-lang")
@@ -655,7 +686,6 @@ function updateHueColorSvg(svg){
 
     // if svg not on screen, leave empty
     if(!isVisibleInViewport(svg.node())){
-        console.log("node not in viewport " + langAbv + " " + term )
         svg.html("")
         return
     }
@@ -986,9 +1016,9 @@ function d3SvgUpdateHueColor(d3selection, isModal) {
         .join("svg")
         .attr("width", width)
         .attr("height", height)
-        .attr("content-visibility", "auto")
         .attr("xmlns", "http://www.w3.org/2000/svg")
         .attr("class", `hue-color-svg${isModal}`)
+        .style("cursor", "grab")
         .attr("data-lang", (d) => d.langAbv) 
         .attr("data-color-name", (d) => nameToUnicode(d.simplifiedName))
 
@@ -1006,16 +1036,7 @@ function d3SvgUpdateHueColor(d3selection, isModal) {
         function dragged(event) {
             hueOffset += event.dx
             //update all hue color svgs
-            for(const hueColorSVG of $(`.hue-color-svg${isModal}`)){
-                updateHueColorSvg(d3.select(hueColorSVG))
-            }
-        }
-
-        hueBinSvg
-            .on("contentvisibilityautostatechange", visibilityStateChange)
-
-        function visibilityStateChange(){
-            console.log("visibility state change!")
+            refreshHueSvgs()
         }
     })
 }
@@ -1215,6 +1236,110 @@ function combineHueBinDataWithColors (hueData){
     }
 }
 
+function d3SvgUpdateFullColorBins(d3selection, isModal) {
+    isModal = isModal ? "-modal" : ""
+
+    const maxWidth = 300,
+        maxHeight = cellHeight
+
+
+    const width = maxWidth
+    const height = maxHeight
+
+    
+    /////////////////
+
+    const fullBinSvgs = d3selection.selectAll("svg")
+        .data((d) => {
+            if(d.row.fullBinsData){
+                return [d.row.fullBinsData]
+            }
+            return []
+        })
+        .join("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("xmlns", "http://www.w3.org/2000/svg")
+        .attr("class", `full-color-svg${isModal}`)
+        .attr("data-lang", (d) => d[0].langAbv) 
+        .attr("data-color-name", (d) => nameToUnicode(d[0].term))
+
+    
+    fullBinSvgs.each(function() {
+        const fullBinSvg = d3.select(this)
+
+        updateFullColorBinSvg(fullBinSvg)
+    })
+}
+
+
+function updateFullColorBinSvg(fullBinSvg){
+
+    const langAbv = fullBinSvg.attr("data-lang")
+    const term = nameFromUnicode(fullBinSvg.attr("data-color-name"))
+    //const width = fullBinSvg.attr("width")
+    //const height = fullBinSvg.attr("height")
+
+    // if svg not on screen, leave empty
+    if(!isVisibleInViewport(fullBinSvg.node())){
+        fullBinSvg.html("")
+        return
+    }
+
+    const fullData = getFullBinInfo(langAbv, term)
+
+    
+    const maxWidth = 300,
+        maxHeight = cellHeight
+
+    const binView = new FullColorBinView({
+      bin_size: fullBinSize,
+      bin_array: fullBinsInfo,
+      x_dim: "-b",
+      y_dim: "-a",
+      split_dim: "l",
+    })
+
+
+    const maxPCT = Math.max(...fullData.map(d => d.pCT))
+
+    binView.setDisplayOffsets(binView.getDisplayOffsets())
+
+
+    const ratioHeight = maxWidth * binView.display_offsets.y_height_in_bins /  binView.display_offsets.x_width_in_bins
+    
+    const height = Math.min(maxHeight, ratioHeight)
+
+    const width = height * binView.display_offsets.x_width_in_bins / binView.display_offsets.y_height_in_bins
+
+
+
+    fullBinSvg
+        .attr("width", width)
+        .attr("height", height)
+
+
+    binView.createOrUpdateColorTiles(fullBinSvg, {
+        TILE_SEGMENT_OUTER_MARGIN_NUM: 0,
+        getTileScale: (b) => {
+            const binData = fullData.find((d) => 
+                fullBinSize.type == "ring" ? 
+                    b.l_bin == d.binL && b.c_bin == d.binC && b.h_bin == d.binH :
+                    b.l_bin == d.binL && b.a_bin == d.binA && b.b_bin == d.binB
+            )
+
+            //return 1 // for testing showing all colors
+
+            return binData ? 1.5 * Math.sqrt(binData.pCT / maxPCT) : 0         
+        },
+    })
+
+    return fullBinSvg
+}
+
+
+
+// TODO: OLD: delete 
 function generateFullColorBinSvg(fullData){
     const maxWidth = 300,
         maxHeight = cellHeight
