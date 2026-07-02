@@ -30,10 +30,17 @@ const escapeHTML = str => String(str).replace(/[&<>'"]/g,
 const isVisibleInViewport = (element) => {
     const rect = element.getBoundingClientRect()
     return (
-        rect.bottom >= 0 &&
-        rect.right >= 0 &&
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+        // no margin version
+        // rect.bottom >= 0 &&
+        // rect.right >= 0 &&
+        // rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        // rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+
+        // extra margin version
+        rect.bottom >= -0.5*(window.innerHeight || document.documentElement.clientHeight)  &&
+        rect.right >= -0.5*(window.innerWidth || document.documentElement.clientWidth) &&
+        rect.top <= 1.5*(window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <= 1.5*(window.innerWidth || document.documentElement.clientWidth)
     )
 }
 
@@ -51,6 +58,13 @@ for(const colorInfo of allColorInfo){
     if(!(colorInfo.lang_abv in langAbvToLang)){
         langAbvToLang[colorInfo.lang_abv] = colorInfo.lang
     }
+}
+
+let prev_selected_lang_abv = "ko"
+$("#selected_langs").empty()
+for(const langAbv of Object.keys(langAbvToLang).sort()){
+    const lang = langAbvToLang[langAbv]
+    $("#selected_langs").append(new Option(lang, langAbv, true, langAbv == prev_selected_lang_abv))
 }
 
 
@@ -363,7 +377,7 @@ $("#download_color_name_data").click(e => {
 
 
 $("#selected_langs").change(e => { 
-    updateTableData()
+    updateData()
 })
 
 $("input:radio[name=rgb-set]").change(e => { 
@@ -371,11 +385,11 @@ $("input:radio[name=rgb-set]").change(e => {
 })
 
 $("#hue_bins_in_circle").change(() => {
-    updateTableData()
+    updateData()
 })
 
 $("#hue_bins_color_scale").change(() => {
-    updateTableData()
+    updateData()
 })
 
 
@@ -548,12 +562,16 @@ const tableCols = [
 
 
 function updateFilteredData(){
-    filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == "en")
+    const lang_abv = $("#selected_langs").val()
+    filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == lang_abv)
     sortFilteredData()
     
 }
 
 function sortFilteredData(){
+    if(!filteredColorInfo){
+        return
+    }
     const sortColumn = tableCols[tableCols.length - 1]
     const sortDirection = -1
     sortedColorInfo = filteredColorInfo.sort((a, b) => sortColumn.compare ? sortColumn.compare(a, b) : 
@@ -564,6 +582,10 @@ function sortFilteredData(){
 }
 
 function updateTable(){
+
+    if(!sortedColorInfo){
+        return
+    }
     
     const headerRow = d3.select("#data-table thead tr")
     headerRow.selectAll(".table-headers")
@@ -601,14 +623,18 @@ function updateTable(){
 }
 
 function updateData() {
+
+
+
     updateRgbSet()
 }
 
 updateData()
 
+
 function updateRgbSet(){
-    //const rgbSet = $("input[name='rgb-set']:checked").val()
-    updateFilteredData()
+    // const rgbSet = $("input[name='rgb-set']:checked").val()
+
 
     // let prev_selected_lang = $("#selected_langs").val()
     // if(!prev_selected_lang){
@@ -622,14 +648,14 @@ function updateRgbSet(){
     //     $("#selected_langs").append(new Option(lang, lang, true, lang == prev_selected_lang))
     // }
 
-    // updateTableData();
+    updateFilteredData()
 
     // const selected_lang = $("#selected_langs").val()
     // if(!selected_lang){
     //     return
     // }
 
-    // $("#loading-data-span").hide()
+    //$("#loading-data-span").hide()
 }
 
 
@@ -1285,6 +1311,13 @@ function updateFullColorBinSvg(fullBinSvg){
         fullBinSvg.html("")
         return
     }
+
+    // if the svg is already filled in, we don't need to 
+    // re-draw it:
+    // TODO: track last-drawn info in svg and see if it has changed???
+    // if(fullBinSvg.node().children.length > 0){
+    //     return
+    // }
 
     const fullData = getFullBinInfo(langAbv, term)
 
