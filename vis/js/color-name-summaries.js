@@ -1115,28 +1115,6 @@ function generateHueColorSvg(hueData, isModal){
     return hueBinSvg
 }
 
-// const hueBinSvgSelect = d3.select(`svg.hue-color-svg`)
-// hueBinSvgSelect.call(d3.drag()
-//     //.on("start", dragstarted)
-//     .on("drag", dragged)
-//     //.on("end", dragended)
-// ) 
-
-
-// function dragstarted(event) {
-// }
-
-// // Update the subject (dragged node) position during drag.
-// function dragged(event) {
-//     hueOffset += event.dx
-//     //update all hue color svgs
-//     for(const hueColorSVG of $(`.hue-color-svg`)){
-//         updateHueColorSvg(d3.select(hueColorSVG))
-//     }
-// }
-
-// function dragended(event) {
-// }
 
 function generateHueColorRingSvg(hueData){
     combineHueBinDataWithColors(hueData)
