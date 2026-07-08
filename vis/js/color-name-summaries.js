@@ -380,6 +380,9 @@ $("#selected_langs").change(e => {
     updateData()
 })
 
+$("#search-input").change(updateFilteredData)
+$("#search-input").keyup(updateFilteredData)
+
 $("input:radio[name=rgb-set]").change(e => { 
     updateRgbSet()
 })
@@ -562,8 +565,39 @@ const tableCols = [
 
 
 function updateFilteredData(){
+    // filter by language
     const lang_abv = $("#selected_langs").val()
     filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == lang_abv)
+    filteredColorInfo = allColorInfo
+    
+    // filter by search term
+    const search_str = $("#search-input").val()
+    const searches = search_str.split(";").map(s => s.split(/\s+/))
+
+    // if there is a search, restrict results, otherwise show all
+    if(searches.length > 1 || searches[0].length > 0){
+        filteredColorInfo = filteredColorInfo.filter((t) => {
+            let matchAnySearch = false
+            for(const search of searches){ // see if it matches any of the searches
+                // must match all parts in the search
+                let matchAll = true
+                for(const searchPart of search){
+                    if(searchPart.length > 1 && 
+                        !t.lang.includes(searchPart) &&
+                        !t.commonName.includes(searchPart)
+                    ){
+                        matchAll = false
+                    }
+                }
+                if(matchAll){
+                    matchAnySearch = true
+                    return true
+                }
+            }
+            return false
+        })
+    }
+
     sortFilteredData()
     
 }
