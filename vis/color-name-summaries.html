@@ -116,39 +116,45 @@
 	<p style="margin-bottom: 5px;">This page lets you see color names in different languages</p>
 
   <!-- controls -->
-  <div class="form-check form-check-inline">
-    <input type="radio" class="btn-check" value="hue-data" name="rgb-set" id="hue-data" autocomplete="off" >
-    <label class="btn btn-outline-primary btn-sm" for="hue-data">Hue Data</label>
-
-    <input type="radio" class="btn-check" value="full-data" name="rgb-set" id="full-data" autocomplete="off">
-    <label class="btn btn-outline-primary btn-sm" for="full-data">Full Color Data</label>
-
-    <input type="radio" class="btn-check" value="both-hue-full" name="rgb-set" id="both-hue-full" autocomplete="off" checked>
-    <label class="btn btn-outline-primary btn-sm" for="both-hue-full">Both Data Sets</label>
-  </div>
-
-
-  <div class="form-check form-check-inline justify-content-center align-items-center flex-nowrap">
-    <div class="small" style="max-width:500px;margin:auto;">
-      <select class="form-select form-select-sm" aria-label="language" name ="selected_langs" id="selected_langs" value="selected_langs" style="width:100%">
-        </select> 
+  <div class="container" id="controlls">
+    <div class="form-check form-check-inline">
+      <input type="text" class="form-control" id="search-input" placeholder="Type search keywords; separate by semicolons; ..." aria-label="Search">
     </div>
+
+    <div class="form-check form-check-inline">
+      <input type="radio" class="btn-check" value="hue-data" name="rgb-set" id="hue-data" autocomplete="off" >
+      <label class="btn btn-outline-primary btn-sm" for="hue-data">Hue Data</label>
+
+      <input type="radio" class="btn-check" value="full-data" name="rgb-set" id="full-data" autocomplete="off">
+      <label class="btn btn-outline-primary btn-sm" for="full-data">Full Color Data</label>
+
+      <input type="radio" class="btn-check" value="both-hue-full" name="rgb-set" id="both-hue-full" autocomplete="off" checked>
+      <label class="btn btn-outline-primary btn-sm" for="both-hue-full">Both Data Sets</label>
+    </div>
+
+
+    <div class="form-check form-check-inline justify-content-center align-items-center flex-nowrap">
+      <div class="small" style="max-width:500px;margin:auto;">
+        <select class="form-select form-select-sm" aria-label="language" name ="selected_langs" id="selected_langs" value="selected_langs" style="width:100%">
+          </select> 
+      </div>
+    </div>
+    <button id="settings" title="settings" 
+      aria-label="settings" class="btn btn-outline-secondary btn-sm p-1"
+      data-bs-toggle="modal" data-bs-target="#advanced_settings_modal"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear d-flex justify-content-center" viewBox="0 0 16 16">
+        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+      </svg>
+    </button>
+    <button id="download_language_subset_button" title="download" aria-label="download" class="btn btn-outline-secondary btn-sm p-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download d-flex justify-content-center" viewBox="0 0 16 16">
+        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+      </svg>
+    </button>
   </div>
-  <button id="settings" title="settings" 
-    aria-label="settings" class="btn btn-outline-secondary btn-sm p-1"
-    data-bs-toggle="modal" data-bs-target="#advanced_settings_modal"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear d-flex justify-content-center" viewBox="0 0 16 16">
-      <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
-      <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
-    </svg>
-  </button>
-  <button id="download_language_subset_button" title="download" aria-label="download" class="btn btn-outline-secondary btn-sm p-1">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download d-flex justify-content-center" viewBox="0 0 16 16">
-      <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-      <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-    </svg>
-  </button>
 
   <!-- Data Table -->
   <div id="data-view">
