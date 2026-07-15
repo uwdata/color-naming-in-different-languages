@@ -66,6 +66,7 @@ for(const colorInfo of allColorInfo){
 
 let prev_selected_lang_abv = "ko"
 $("#selected_langs").empty()
+$("#selected_langs").append(new Option("All languages", "allLang", true, false))
 for(const langAbv of Object.keys(langAbvToLang).sort()){
     const lang = langAbvToLang[langAbv]
     $("#selected_langs").append(new Option(lang, langAbv, true, langAbv == prev_selected_lang_abv))
@@ -384,8 +385,7 @@ $("#selected_langs").change(e => {
     updateData()
 })
 
-$("#search-input").change(updateFilteredData)
-$("#search-input").keyup(updateFilteredData)
+$("#search-input").on('input', updateFilteredData)
 
 $("input:radio[name=rgb-set]").change(e => { 
     updateRgbSet()
@@ -571,8 +571,12 @@ const tableCols = [
 function updateFilteredData(){
     // filter by language
     const lang_abv = $("#selected_langs").val()
-    filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == lang_abv)
-    filteredColorInfo = allColorInfo
+    if(lang_abv == "allLang"){
+        filteredColorInfo = allColorInfo
+    } else{
+        filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == lang_abv)
+    }
+    
     
     // filter by search term
     const search_str = $("#search-input").val()
