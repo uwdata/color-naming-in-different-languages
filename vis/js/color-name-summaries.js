@@ -1,6 +1,10 @@
 import BinSize from "../../shared_files/binSize.js";
 import FullColorBinView from "./full-color-bin-view.js";
 
+// enable popover library
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
 
 const fullBinSize = new BinSize({
     type: "ring",
