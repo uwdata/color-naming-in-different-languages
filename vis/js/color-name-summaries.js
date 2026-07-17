@@ -634,7 +634,18 @@ function updateTable(){
         .data(tableCols)
         .join("th")
         .attr("class", "table-headers")
-        .html(d => d.headerHTML)
+        //.style("display", "flex")
+        .html(d => 
+            `<div style="display:inline-flex">
+                <div>
+                    ${d.headerHTML}
+                </div>
+                <i class="bi bi-arrow-down-up text-body-tertiary ms-1"></i>
+            </div>
+            `)
+        //bi-sort-up
+        //bi-sort-down
+        //bi-arrow-down-up (grayed)
 
     const tableBody = d3.select("#data-table tbody")
     const nameRows = tableBody.selectAll(".name-row")
