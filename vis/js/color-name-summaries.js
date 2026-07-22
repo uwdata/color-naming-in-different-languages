@@ -436,6 +436,9 @@ $("#loading-data-span").hide()
 //tmp solution
 let rgbSet = "both-hue-full"
 
+let sortColumnId = "namePercent"
+let sortDirection = "down"
+
 function namePercentSort(a, b){
     const aTotalColorFraction = a.fullColorInfo ? a.fullColorInfo.tinyResBlurTermFraction : undefined
     const bTotalColorFraction = b.fullColorInfo ? b.fullColorInfo.tinyResBlurTermFraction : undefined
@@ -461,6 +464,8 @@ const tableCols = [
     {
         id: "commonName",
         key: "commonName",
+        sortable: true,
+        defaultSortDirection: "up",
         headerHTML: `<p style="margin-bottom:0px">Name</p>
                     <p style="margin-bottom:0px" class="simplified-name">simplified name</p>`,
         formatter: (cell, row) => 
@@ -470,6 +475,8 @@ const tableCols = [
     {
         id: "avgColor",
         key: "avgFullColorRGBCode",
+        sortable: true,
+        defaultSortDirection: "down",
         headerHTML: `
             <p style="margin-bottom:0px">Avg Color</p>
             <p class="simplified-name" style="margin-bottom:0px">${rgbSet == "both-hue-full" ? "full / hue" : rgbSet == "full-data" ? "full" : "hue"}</p>`,
@@ -507,9 +514,10 @@ const tableCols = [
         }
     },
     {
+        id: "somColorPatch",
         key: "somColorPatch",
         headerHTML: "Sample",
-        sort: false,
+        sortable: false,
         formatter: (cell, row) => {
             if(!cell){
                 return ""
@@ -520,10 +528,11 @@ const tableCols = [
         }
     },
     {
+        id: "fullBins",
         key: "fullBinsData",
         headerHTML: "Full Bins",
         width: "262px",
-        sort: false,
+        sortable: false,
         formatter: (cell, row) => { //TODO: REMOVE
             return cell ? generateFullColorBinSvg(cell).node().outerHTML : ""
         },
@@ -531,8 +540,9 @@ const tableCols = [
             
     },
     {
+        key: "hueBins",
         headerHTML: "Hue Bins",
-        sort: false,
+        sortable: false,
         formatter: (cell, row) => { //TODO: REMOVE
             //TODO: get hue Bins data
             //const hueBinData = getHueBinData(row)
@@ -550,11 +560,11 @@ const tableCols = [
         //todo: drag
     },
     {
-        id: "NamePercent",
+        id: "namePercent",
         headerHTML: "% of names",
-        //sort:  {
+        sortable: true,
+        defaultSortDirection: "down",
         compare: namePercentSort,
-        //},
         formatter: (cell, row, col) => {
             // TODO : redo logic
             const totalColorFraction = row.fullColorInfo ? row.fullColorInfo.tinyResBlurTermFraction : undefined
@@ -614,11 +624,13 @@ function sortFilteredData(){
     if(!filteredColorInfo){
         return
     }
-    const sortColumn = tableCols[tableCols.length - 1]
-    const sortDirection = -1
-    sortedColorInfo = filteredColorInfo.sort((a, b) => sortColumn.compare ? sortColumn.compare(a, b) : 
-        a[sortColumn.key] < b[sortColumn.key] ? sortDirection :
-        a[sortColumn.key] > b[sortColumn.key] ? - sortDirection:
+    const sortColumn = tableCols.find((c) => c.id == sortColumnId)//tableCols[tableCols.length - 1]
+    const sortDirectionSign = sortDirection == "up" ? -1 : 1
+
+    
+    sortedColorInfo = filteredColorInfo.sort((a, b) => sortColumn.compare ? sortColumn.compare(a, b) * sortDirectionSign : 
+        a[sortColumn.key] < b[sortColumn.key] ? sortDirectionSign :
+        a[sortColumn.key] > b[sortColumn.key] ? - sortDirectionSign:
         1)
     updateTable()
 }
@@ -634,18 +646,36 @@ function updateTable(){
         .data(tableCols)
         .join("th")
         .attr("class", "table-headers")
-        //.style("display", "flex")
+        .style("cursor", d => d.sortable ? "pointer" : "auto" )
         .html(d => 
             `<div style="display:inline-flex">
                 <div>
                     ${d.headerHTML}
                 </div>
-                <i class="bi bi-arrow-down-up text-body-tertiary ms-1"></i>
+                ${
+                    d.sortable ? 
+                        sortColumnId == d.id ? 
+                            sortDirection == "up" ?
+                                `<i class="bi bi-sort-up fs-5 ms-1"></i>`:
+                                `<i class="bi bi-sort-down fs-5 ms-1"></i>` :
+                            `<i class="bi bi-arrow-down-up text-body-tertiary ms-1" style="font-size: smaller"></i>`:
+                    ""
+                }
+                
             </div>
             `)
-        //bi-sort-up
-        //bi-sort-down
-        //bi-arrow-down-up (grayed)
+        .on("click", (e,d,i) => {
+            if(d.sortable){
+                if(sortColumnId == d.id){
+                    sortDirection = sortDirection == "up" ? "down" : "up"
+                } else {
+                    sortColumnId = d.id
+                    sortDirection = d.defaultSortDirection == "up" ? "up" : "down"
+                }
+                sortFilteredData()
+            }
+        })
+
 
     const tableBody = d3.select("#data-table tbody")
     const nameRows = tableBody.selectAll(".name-row")
@@ -1284,11 +1314,12 @@ function combineHueBinDataWithColors (hueData){
         return
     }
 
-    // TODO: check bin size
     for(const[binN, binDataInfo] of hueData.bins.entries()){
-        binDataInfo.colorBin = hueData.bins.length == 72 ?
+        binDataInfo.colorBin = hueData.bins.length == 72 && hueBins72 ?
             hueBins72.find(b => parseInt(b.bin_i) == binN) : 
-            hueBins36.find(b => parseInt(b.bin_i) == binN) //assume alternative is 36
+            hueBins36 ? //assume alternative is 36
+                hueBins36.find(b => parseInt(b.bin_i) == binN) :
+                undefined
         binDataInfo.binColorStr = `rgb(${binDataInfo.colorBin.bin_center_r},${binDataInfo.colorBin.bin_center_g},${binDataInfo.colorBin.bin_center_b})`
     }
 }
