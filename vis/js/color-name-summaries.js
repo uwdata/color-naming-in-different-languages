@@ -541,7 +541,12 @@ const tableCols = [
         sortable: false,
         formatter: (cell, row) => {
             if(!cell){
-                return ""
+                return `<div style="width:${cellHeight}px; height:${cellHeight}px; margin: auto;">
+                ${!colorSampleSOMs ? 
+                    '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>' 
+                    : ""
+                }
+                </div>`;
             }
             return 'colorNodes16' in cell ? generateColorGrid(cell.colorNodes16) :
                    'colorNodes9' in cell ?  generateColorGrid(cell.colorNodes9) :
@@ -569,6 +574,7 @@ const tableCols = [
             if(!hueBinData){
                 return "" // TODO: loading
             }
+            console.log("hue_bins_in_circle? ", $("#hue_bins_in_circle").is(':checked'))
             if($("#hue_bins_in_circle").is(':checked')){
                 return generateHueColorRingSvg(hueBinData).node().outerHTML
             } else {
@@ -820,6 +826,16 @@ function updateHueColorSvg(svg){
     const term = nameFromUnicode(svg.attr("data-color-name"))
     const width = svg.attr("width")
     const height = svg.attr("height")
+
+    // if no langAbv or term data, 
+    if(langAbv == "" || term == ""){
+        if(!hueBins36 || !colorSampleHueBins36BlurByLang){ // if lowest res hue bins not loaded, show loading spin
+            svg.html('<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>')
+        } else {
+            svg.html("")
+        }
+        return
+    }
 
     // if svg not on screen, leave empty
     if(!isVisibleInViewport(svg.node())){
@@ -1136,19 +1152,24 @@ function d3SvgUpdateHueColor(d3selection, isModal) {
     const width = 200,
         height = cellHeight
 
+    let anyData = false
+
     const hueBinSvgs = d3selection.selectAll("svg")
         .data((d) => {
             if(d.row.hueBins36BlurData){
+                anyData = true
                 combineHueBinDataWithColors(d.row.hueBins36BlurData)
             }
             if(d.row.hueBins72BlurData){
+                anyData = true
                 combineHueBinDataWithColors(d.row.hueBins72BlurData)
                 return [d.row.hueBins72BlurData]
             }
             if(d.row.hueBins36BlurData){
+                anyData = true
                 return [d.row.hueBins36BlurData]
             }
-            return []
+            return [{}]
         })
         .join("svg")
         .attr("width", width)
@@ -1156,9 +1177,15 @@ function d3SvgUpdateHueColor(d3selection, isModal) {
         .attr("xmlns", "http://www.w3.org/2000/svg")
         .attr("class", `hue-color-svg${isModal}`)
         .style("cursor", "grab")
-        .attr("data-lang", (d) => d.langAbv) 
-        .attr("data-color-name", (d) => nameToUnicode(d.simplifiedName))
+        .attr("data-lang", (d) => d.langAbv ? d.langAbv : "") 
+        .attr("data-color-name", (d) => d.simplifiedName ? nameToUnicode(d.simplifiedName) : "")
 
+    if(!anyData && (!hueBins36 || !colorSampleHueBins36BlurByLang)){ // if lowest res hue bins not loaded, show loading spin
+        d3selection.html(`<div class="hue-color-spinner" style="width:${width}px;height:${height}px" ><div class="spinner-border" role="status" ><span class="visually-hidden">Loading...</span></div></div>`)
+        return
+    } else {
+        d3selection.selectAll(".hue-color-spinner").remove()
+    }
     
     hueBinSvgs.each(function() {
         const hueBinSvg = d3.select(this)
@@ -1364,11 +1391,13 @@ function d3SvgUpdateFullColorBins(d3selection, isModal) {
 
     
     /////////////////
-    console.log("displaying svg")
+
+    let anyData = false
 
     const fullBinSvgs = d3selection.selectAll("svg")
         .data((d) => {
             if(d.row.fullBinsData){
+                anyData = true
                 return [d.row.fullBinsData]
             }
             return [{}]
@@ -1381,6 +1410,12 @@ function d3SvgUpdateFullColorBins(d3selection, isModal) {
         .attr("data-lang", (d) => d[0] ? d[0].langAbv : "") 
         .attr("data-color-name", (d) => d[0] ? nameToUnicode(d[0].term) : "")
 
+    if(!anyData && (!fullBinsInfo || !colorSampleFullBins)){ // if lowest res hue bins not loaded, show loading spin
+        d3selection.html(`<div class="full-color-spinner" style="width:${width}px;height:${height}px" ><div class="spinner-border" role="status" ><span class="visually-hidden">Loading...</span></div></div>`)
+        return
+    } else {
+        d3selection.selectAll(".full-color-spinner").remove()
+    }
     
     fullBinSvgs.each(function() {
         const fullBinSvg = d3.select(this)
