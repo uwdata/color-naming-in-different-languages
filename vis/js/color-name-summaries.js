@@ -436,10 +436,10 @@ $("#loading-data-span").hide()
 //tmp solution
 let rgbSet = "both-hue-full"
 
-let sortColumnId = "namePercent"
+let sortColumnId = "fullNamePercent"
 let sortDirection = "down"
 
-function namePercentSort(a, b){
+function fullNamePercentCompare(a, b){
     const aTotalColorFraction = a.fullColorInfo ? a.fullColorInfo.tinyResBlurTermFraction : undefined
     const bTotalColorFraction = b.fullColorInfo ? b.fullColorInfo.tinyResBlurTermFraction : undefined
     if(aTotalColorFraction){
@@ -455,7 +455,28 @@ function namePercentSort(a, b){
         if(bTotalColorFraction){
             return 1
         } else {
-            return parseFloat(b.numHueNames) - parseFloat(a.numHueNames)
+            return parseFloat(b.numFullNames) - parseFloat(a.numFullNames)
+        }
+    }
+}
+
+function hueNamePercentCompare(a, b){
+    const aTotalColorFraction = a.hueColorInfo ? a.hueColorInfo.lowResBlurTermFraction : undefined
+    const bTotalColorFraction = b.hueColorInfo ? b.hueColorInfo.lowResBlurTermFraction : undefined
+    if(aTotalColorFraction){
+        if(bTotalColorFraction){
+            const diff = bTotalColorFraction - aTotalColorFraction
+            // for some reason sort fails if these are small values, so make them bigger
+            const returnVal = diff < 0 ? -1 : diff > 0 ? 1 : 0
+            return returnVal
+        } else {
+            return -1
+        }
+    } else {
+        if(bTotalColorFraction){
+            return 1
+        } else {
+            return parseFloat(b.numLineNames) - parseFloat(a.numLineNames)
         }
     }
 }
@@ -467,10 +488,10 @@ const tableCols = [
         sortable: true,
         defaultSortDirection: "up",
         headerHTML: `<p style="margin-bottom:0px">Name</p>
-                    <p style="margin-bottom:0px" class="simplified-name">simplified name</p>`,
+                    <p style="margin-bottom:0px" class="table-subheader">simplified name</p>`,
         formatter: (cell, row) => 
              `<p style="margin-bottom:0px" translate="no" class="notranslate">${escapeHTML(row.commonName)}
-             <p style="margin-bottom:0px" class="simplified-name" translate="no" class="notranslate">${escapeHTML(row.simplifiedName)}</p>`
+             <p style="margin-bottom:0px" class="table-subheader" translate="no" class="notranslate">${escapeHTML(row.simplifiedName)}</p>`
     },
     {
         id: "avgColor",
@@ -479,7 +500,7 @@ const tableCols = [
         defaultSortDirection: "down",
         headerHTML: `
             <p style="margin-bottom:0px">Avg Color</p>
-            <p class="simplified-name" style="margin-bottom:0px">${rgbSet == "both-hue-full" ? "full / hue" : rgbSet == "full-data" ? "full" : "hue"}</p>`,
+            <p class="table-subheader" style="margin-bottom:0px">${rgbSet == "both-hue-full" ? "full / hue" : rgbSet == "full-data" ? "full" : "hue"}</p>`,
         compare: (a, b) => {
             let a_h, b_h
             if("avgFullL" in a && a.avgFullL){
@@ -533,9 +554,9 @@ const tableCols = [
         headerHTML: "Full Bins",
         width: "262px",
         sortable: false,
-        formatter: (cell, row) => { //TODO: REMOVE
-            return cell ? generateFullColorBinSvg(cell).node().outerHTML : ""
-        },
+        // formatter: (cell, row) => { //TODO: REMOVE
+        //     return cell ? generateFullColorBinSvg(cell).node().outerHTML : "<div width=300px></div>"
+        // },
         d3Formatter: d3SvgUpdateFullColorBins
             
     },
@@ -543,9 +564,7 @@ const tableCols = [
         key: "hueBins",
         headerHTML: "Hue Bins",
         sortable: false,
-        formatter: (cell, row) => { //TODO: REMOVE
-            //TODO: get hue Bins data
-            //const hueBinData = getHueBinData(row)
+        formatter: (cell, row) => {
             const hueBinData = row.hueBins72BlurData ? row.hueBins72BlurData : row.hueBins36BlurData
             if(!hueBinData){
                 return "" // TODO: loading
@@ -557,22 +576,31 @@ const tableCols = [
             }
         },
         d3Formatter: d3SvgUpdateHueColor
-        //todo: drag
     },
     {
-        id: "namePercent",
-        headerHTML: "% of names",
+        id: "fullNamePercent",
+        headerHTML: `<p style="margin-bottom:0px">% full names</p>
+                    <p style="margin-bottom:0px" class="table-subheader">num entries</p>`,
         sortable: true,
         defaultSortDirection: "down",
-        compare: namePercentSort,
+        compare: fullNamePercentCompare,
         formatter: (cell, row, col) => {
-            // TODO : redo logic
             const totalColorFraction = row.fullColorInfo ? row.fullColorInfo.tinyResBlurTermFraction : undefined
-            if(totalColorFraction){
-                return (totalColorFraction * 100).toPrecision(3) / 1 + "%"
-            } else {
-                return row.numLineNames + " hue names"
-            }
+            return `<p style="margin-bottom:0px">${totalColorFraction ? (totalColorFraction * 100).toPrecision(3) / 1 + "%" : ""}</p>
+            <p style="margin-bottom:0px" class="table-subheader">${row.numFullNames} entries</p>`
+        }
+    },
+    {
+        id: "hueNamePercent",
+        headerHTML: `<p style="margin-bottom:0px">% hue names</p>
+                    <p style="margin-bottom:0px" class="table-subheader">num entries</p>`,
+        sortable: true,
+        defaultSortDirection: "down",
+        compare: hueNamePercentCompare,
+        formatter: (cell, row, col) => {
+            const totalColorFraction = row.hueColorInfo ? row.hueColorInfo.lowResBlurTermFraction : undefined
+            return `<p style="margin-bottom:0px">${totalColorFraction ? (totalColorFraction * 100).toPrecision(3) / 1 + "%" : ""}</p>
+            <p style="margin-bottom:0px" class="table-subheader">${row.numLineNames} entries</p>`
         }
     }
 ]
@@ -1327,7 +1355,7 @@ function combineHueBinDataWithColors (hueData){
 function d3SvgUpdateFullColorBins(d3selection, isModal) {
     isModal = isModal ? "-modal" : ""
 
-    const maxWidth = 300,
+    const maxWidth = 260,
         maxHeight = cellHeight
 
 
@@ -1336,21 +1364,22 @@ function d3SvgUpdateFullColorBins(d3selection, isModal) {
 
     
     /////////////////
+    console.log("displaying svg")
 
     const fullBinSvgs = d3selection.selectAll("svg")
         .data((d) => {
             if(d.row.fullBinsData){
                 return [d.row.fullBinsData]
             }
-            return []
+            return [{}]
         })
         .join("svg")
         .attr("width", width)
         .attr("height", height)
         .attr("xmlns", "http://www.w3.org/2000/svg")
         .attr("class", `full-color-svg${isModal}`)
-        .attr("data-lang", (d) => d[0].langAbv) 
-        .attr("data-color-name", (d) => nameToUnicode(d[0].term))
+        .attr("data-lang", (d) => d[0] ? d[0].langAbv : "") 
+        .attr("data-color-name", (d) => d[0] ? nameToUnicode(d[0].term) : "")
 
     
     fullBinSvgs.each(function() {
@@ -1365,8 +1394,12 @@ function updateFullColorBinSvg(fullBinSvg){
 
     const langAbv = fullBinSvg.attr("data-lang")
     const term = nameFromUnicode(fullBinSvg.attr("data-color-name"))
-    //const width = fullBinSvg.attr("width")
-    //const height = fullBinSvg.attr("height")
+
+    // if no data (no langAbv or term), leave empty
+    if(langAbv == "" || term == ""){
+        fullBinSvg.html("")
+        return
+    }
 
     // if svg not on screen, leave empty
     if(!isVisibleInViewport(fullBinSvg.node())){
