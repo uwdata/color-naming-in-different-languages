@@ -349,13 +349,17 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
     // hue bins
     if(currentColorTermData.hueBinsData){
         $("#color_details_modal_hue_bins").show()
-        const hueSvgSelect = d3.select("#color_details_modal_hue_bins_line_view")
+        const hueLineSvgSelect = d3.select("#color_details_modal_hue_bins_line_view")
             .data([{
                 row: basicInfoTermRow
             }])
-        d3SvgUpdateHueColor(hueSvgSelect, true)
-        
-        $("#color_details_modal_hue_bins_circle_view").html(generateHueColorRingSvg(currentColorTermData.hueBinsData).node().outerHTML)
+        d3SvgUpdateHueColor(hueLineSvgSelect, true, "line")
+
+        const hueRingSvgSelect = d3.select("#color_details_modal_hue_bins_circle_view")
+            .data([{
+                row: basicInfoTermRow
+            }])
+        d3SvgUpdateHueColor(hueRingSvgSelect, true, "ring")
     }else{
         $("#color_details_modal_hue_bins").hide()
     }
@@ -806,7 +810,12 @@ function refreshAllSvgs(){
 function refreshHueSvgs(){
     const isModal = ""
     for(const hueColorSVG of $(`.hue-color-svg${isModal}`)){
-        updateHueColorSvg(d3.select(hueColorSVG))
+        if($("#hue_bins_in_circle").is(':checked')){
+            updateHueColorRingSvg(d3.select(hueColorSVG))
+        } else {
+            updateHueColorSvg(d3.select(hueColorSVG))
+        }
+        
     }
 }
 
@@ -819,6 +828,16 @@ function refreshFullSvgs(){
 
 $("#data-view").on("scroll", refreshAllSvgs)
 $( window ).on( "resize", refreshAllSvgs)
+
+function d3SvgUpdateHueColor(d3selection, isModal, lineOrRing) {
+    const isLine = lineOrRing ? lineOrRing == "line" : !$("#hue_bins_in_circle").is(':checked')
+    if(isLine){
+        d3SvgUpdateHueColorLine(d3selection, isModal)
+    } else{
+        d3SvgUpdateHueColorRing(d3selection, isModal)
+    }
+}
+
 
 function updateHueColorSvg(svg){
     const langAbv = svg.attr("data-lang")
@@ -841,6 +860,9 @@ function updateHueColorSvg(svg){
         svg.html("")
         return
     }
+
+    // clear any hue ring elements
+    svg.selectAll(".color_scale_patch,circle,.color_patch").remove()
 
     const hueData = getHueBinInfo(langAbv, term)
 
@@ -1014,6 +1036,8 @@ function updateHueColorSvg(svg){
                 return color
             })
             
+    } else {
+        svg.selectAll(".color_scale_patch_g").remove()
     }
 
     const colorPatchG = svg.selectAll(".color_patch_g")
@@ -1145,7 +1169,8 @@ function updateHueColorSvg(svg){
     //       .attr('text-anchor','middle');
 }
 
-function d3SvgUpdateHueColor(d3selection, isModal) {
+
+function d3SvgUpdateHueColorLine(d3selection, isModal) {
     isModal = isModal ? "-modal" : ""
 
     const width = 200,
@@ -1204,18 +1229,35 @@ function d3SvgUpdateHueColor(d3selection, isModal) {
     })
 }
 
-function generateHueColorRingSvg(hueData){
-    combineHueBinDataWithColors(hueData)
+function updateHueColorRingSvg(svg){
+    const langAbv = svg.attr("data-lang")
+    const term = nameFromUnicode(svg.attr("data-color-name"))
+    const width = svg.attr("width")
+    const height = svg.attr("height")
 
-    const width = cellHeight,
-        height = cellHeight
+    // if no langAbv or term data, 
+    if(langAbv == "" || term == ""){
+        if(!hueBins36 || !colorSampleHueBins36BlurByLang){ // if lowest res hue bins not loaded, show loading spin
+            svg.html('<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>')
+        } else {
+            svg.html("")
+        }
+        return
+    }
 
-    const hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
-        .attr("width", width)
-        .attr("height", height)
-        .attr("xmlns", "http://www.w3.org/2000/svg")
+    // if svg not on screen, leave empty
+    if(!isVisibleInViewport(svg.node())){
+        svg.html("")
+        return
+    }
+
+    // clear any hue line elements
+    svg.selectAll(".color_scale_patch_g,.color_patch_g,.color_patch_main_fade_left,.color_patch_main_left,.color_patch_main_right,.color_patch_main_fade_right,.hue-line-begin-range,.hue-line-end-range").remove()
+
+    const hueData = getHueBinInfo(langAbv, term)
+
     
-    let spectrumN = hueData.bins.length;
+     let spectrumN = hueData.bins.length;
 
 
     const centerRadius = 15
@@ -1230,7 +1272,7 @@ function generateHueColorRingSvg(hueData){
     binWidthScale.domain([0,maxPCT]);
 
     if($("#hue_bins_color_scale").is(":checked")){
-        hueBinSvg.selectAll(".color_scale_patch")
+        svg.selectAll(".color_scale_patch")
             .data(hueData.bins)
             // .data(hueData.bins)
             .join("path")
@@ -1263,17 +1305,27 @@ function generateHueColorRingSvg(hueData){
             })
             .style("stroke-width", centerColorScaleBandWidth)
             .attr("stroke", d => d.binColorStr)
+        
+        // clear circle from no scale
+        svg.selectAll("circle").remove()
+
     } else {
-        hueBinSvg.append("circle")
+        // clear any old circle
+        svg.selectAll("circle").remove()
+
+        svg.append("circle")
             .attr("cx", width/2)
             .attr("cy", height/2)
             .attr("r", centerRadius)
             .attr("fill", "rgba(128,128,128,0.1)")
+        
+        // clear scale
+        svg.selectAll(".color_scale_patch").remove()
     }
 
     
 
-    hueBinSvg.selectAll(".color_patch")
+    svg.selectAll(".color_patch")
         .data(hueData.bins.filter(d => d.pCT > 0))
         // .data(hueData.bins)
         .join("path")
@@ -1309,8 +1361,58 @@ function generateHueColorRingSvg(hueData){
         //.style("stroke-width", (d) => binWidthScale(maxPCT))
         .attr("stroke", d => d.binColorStr)
 
+
+}
+
+
+
+function d3SvgUpdateHueColorRing(d3selection, isModal) {
+    isModal = isModal ? "-modal" : ""
+
+     const width = cellHeight,
+        height = cellHeight
+
+
+    let anyData = false
+
+    const hueBinSvgs = d3selection.selectAll("svg")
+        .data((d) => {
+            if(d.row.hueBins36BlurData){
+                anyData = true
+                combineHueBinDataWithColors(d.row.hueBins36BlurData)
+            }
+            if(d.row.hueBins72BlurData){
+                anyData = true
+                combineHueBinDataWithColors(d.row.hueBins72BlurData)
+                return [d.row.hueBins72BlurData]
+            }
+            if(d.row.hueBins36BlurData){
+                anyData = true
+                return [d.row.hueBins36BlurData]
+            }
+            return [{}]
+        })
+        .join("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("xmlns", "http://www.w3.org/2000/svg")
+        .attr("class", `hue-color-svg${isModal}`)
+        .style("cursor", isModal ? "default" : "grab")
+        .attr("data-lang", (d) => d.langAbv ? d.langAbv : "") 
+        .attr("data-color-name", (d) => d.simplifiedName ? nameToUnicode(d.simplifiedName) : "")
+
+    if(!anyData && (!hueBins36 || !colorSampleHueBins36BlurByLang)){ // if lowest res hue bins not loaded, show loading spin
+        d3selection.html(`<div class="hue-color-spinner" style="width:${width}px;height:${height}px" ><div class="spinner-border" role="status" ><span class="visually-hidden">Loading...</span></div></div>`)
+        return
+    } else {
+        d3selection.selectAll(".hue-color-spinner").remove()
+    }
     
-    return hueBinSvg
+    hueBinSvgs.each(function() {
+        const hueBinSvg = d3.select(this)
+
+        updateHueColorRingSvg(hueBinSvg)
+    })
 }
 
 
