@@ -219,6 +219,7 @@ function getFullBinInfo(langAbv, term){
     return fullBinsData
 }
 
+// TODO: delete
 function getColorInfo(langAbv, term){
     const lang = langAbvToLang[langAbv]
 
@@ -266,9 +267,15 @@ let currentColorTermData
 
 colorDetailsModalEl.addEventListener('show.bs.modal', event => {
     const langAbv = event.relatedTarget.getAttribute("data-lang") 
+    const lang = langAbvToLang[langAbv]
     const term = nameFromUnicode(event.relatedTarget.getAttribute("data-color-name"))
 
+    // TODO: Delete
     currentColorTermData =  getColorInfo(langAbv, term)
+
+    const basicNameInfoByLang = Object.groupBy(allColorInfo, ({lang}) => lang)
+    const basicInfoTermRow =  lang in basicNameInfoByLang ? basicNameInfoByLang[lang].find(d => d.simplifiedName == term) : undefined
+    const hueBinsData = getHueBinInfo(langAbv, term)
 
     $("#color_details_modal_name").text(currentColorTermData.basicInfoTermRow.commonName)
     $("#color_details_modal_lang").text(langAbv + " - " + currentColorTermData.lang)
@@ -342,7 +349,12 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
     // hue bins
     if(currentColorTermData.hueBinsData){
         $("#color_details_modal_hue_bins").show()
-        $("#color_details_modal_hue_bins_line_view").html(generateHueColorSvg(currentColorTermData.hueBinsData, true).node().outerHTML)
+        const hueSvgSelect = d3.select("#color_details_modal_hue_bins_line_view")
+            .data([{
+                row: basicInfoTermRow
+            }])
+        d3SvgUpdateHueColor(hueSvgSelect, true)
+        
         $("#color_details_modal_hue_bins_circle_view").html(generateHueColorRingSvg(currentColorTermData.hueBinsData).node().outerHTML)
     }else{
         $("#color_details_modal_hue_bins").hide()
@@ -490,8 +502,10 @@ const tableCols = [
         headerHTML: `<p style="margin-bottom:0px">Name</p>
                     <p style="margin-bottom:0px" class="table-subheader">simplified name</p>`,
         formatter: (cell, row) => 
-             `<p style="margin-bottom:0px" translate="no" class="notranslate">${escapeHTML(row.commonName)}
-             <p style="margin-bottom:0px" class="table-subheader" translate="no" class="notranslate">${escapeHTML(row.simplifiedName)}</p>`
+            `<div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${row.lang_abv}" data-color-name="${nameToUnicode(row.simplifiedName)}">
+                <p style="margin-bottom:0px" translate="no" class="notranslate">${escapeHTML(row.commonName)}
+                <p style="margin-bottom:0px" class="table-subheader" translate="no" class="notranslate">${escapeHTML(row.simplifiedName)}</p>
+            </div>`
     },
     {
         id: "avgColor",
@@ -517,7 +531,7 @@ const tableCols = [
         },
         formatter: (cell, row) => {
             return `
-                <div style="white-space:nowrap" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${row.lang_abv}" data-color-name="${nameToUnicode(row.simplifiedName)}">
+                <div style="white-space:nowrap;cursor:pointer" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${row.lang_abv}" data-color-name="${nameToUnicode(row.simplifiedName)}">
                     ${rgbSet == "both-hue-full" || rgbSet == "full-data" ? `
                         <div
                             style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; display: inline-block; margin: 5px;
@@ -559,9 +573,6 @@ const tableCols = [
         headerHTML: "Full Bins",
         width: "262px",
         sortable: false,
-        // formatter: (cell, row) => { //TODO: REMOVE
-        //     return cell ? generateFullColorBinSvg(cell).node().outerHTML : "<div width=300px></div>"
-        // },
         d3Formatter: d3SvgUpdateFullColorBins
             
     },
@@ -569,18 +580,6 @@ const tableCols = [
         key: "hueBins",
         headerHTML: "Hue Bins",
         sortable: false,
-        formatter: (cell, row) => {
-            const hueBinData = row.hueBins72BlurData ? row.hueBins72BlurData : row.hueBins36BlurData
-            if(!hueBinData){
-                return "" // TODO: loading
-            }
-            console.log("hue_bins_in_circle? ", $("#hue_bins_in_circle").is(':checked'))
-            if($("#hue_bins_in_circle").is(':checked')){
-                return generateHueColorRingSvg(hueBinData).node().outerHTML
-            } else {
-                return generateHueColorSvg(hueBinData).node().outerHTML
-            }
-        },
         d3Formatter: d3SvgUpdateHueColor
     },
     {
@@ -1176,7 +1175,7 @@ function d3SvgUpdateHueColor(d3selection, isModal) {
         .attr("height", height)
         .attr("xmlns", "http://www.w3.org/2000/svg")
         .attr("class", `hue-color-svg${isModal}`)
-        .style("cursor", "grab")
+        .style("cursor", isModal ? "default" : "grab")
         .attr("data-lang", (d) => d.langAbv ? d.langAbv : "") 
         .attr("data-color-name", (d) => d.simplifiedName ? nameToUnicode(d.simplifiedName) : "")
 
@@ -1204,55 +1203,6 @@ function d3SvgUpdateHueColor(d3selection, isModal) {
         }
     })
 }
-
-// TODO: Hopefully remove this function
-function generateHueColorSvg(hueData, isModal){
-    isModal = isModal ? "-modal" : ""
-
-    combineHueBinDataWithColors(hueData)
-
-    const width = 200,
-        height = cellHeight
-
-    let hueBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
-        .attr("width", width)
-        .attr("height", height)
-        .attr("content-visibility", "auto")
-        .attr("xmlns", "http://www.w3.org/2000/svg")
-        .attr("class", `hue-color-svg${isModal}`)
-        .attr("data-lang", hueData.langAbv) 
-        .attr("data-color-name", nameToUnicode(hueData.simplifiedName))
-
-
-    updateHueColorSvg(hueBinSvg)
-
-
-    const hueBinSvgSelect = d3.select(`svg.hue-color-svg${isModal}[data-color-name="${nameToUnicode(hueData.simplifiedName)}"][data-lang=${hueData.langAbv}]`)
-    hueBinSvgSelect.call(d3.drag()
-        //.on("start", dragstarted)
-        .on("drag", dragged)
-        //.on("end", dragended)
-    ) 
-
-    
-    function dragstarted(event) {
-    }
-
-    // Update the subject (dragged node) position during drag.
-    function dragged(event) {
-        console.log("test")
-        hueOffset += event.dx
-        //update all hue color svgs
-        for(const hueColorSVG of $(`.hue-color-svg${isModal}`)){
-            updateHueColorSvg(d3.select(hueColorSVG))
-        }
-    }
-
-    function dragended(event) {
-    }
-    return hueBinSvg
-}
-
 
 function generateHueColorRingSvg(hueData){
     combineHueBinDataWithColors(hueData)
