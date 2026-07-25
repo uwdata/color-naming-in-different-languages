@@ -341,7 +341,11 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
     // full color bins
     if(currentColorTermData.fullBinsData){
         $("#color_details_modal_full_bins").show()
-        $("#color_details_modal_full_bins_view").html(generateFullColorBinSvg(currentColorTermData.fullBinsData).node().outerHTML)
+        //TODO: use d3 thing and remove this
+        const fullBinSvgSelect = d3.select("#color_details_modal_full_bins_view")
+            .data([{row: basicInfoTermRow}])
+        d3SvgUpdateFullColorBins(fullBinSvgSelect, true)
+        //$("#color_details_modal_full_bins_view").html(generateFullColorBinSvg(currentColorTermData.fullBinsData).node().outerHTML)
     }else{
         $("#color_details_modal_full_bins").hide()
     }
@@ -350,15 +354,11 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
     if(currentColorTermData.hueBinsData){
         $("#color_details_modal_hue_bins").show()
         const hueLineSvgSelect = d3.select("#color_details_modal_hue_bins_line_view")
-            .data([{
-                row: basicInfoTermRow
-            }])
+            .data([{row: basicInfoTermRow}])
         d3SvgUpdateHueColor(hueLineSvgSelect, true, "line")
 
         const hueRingSvgSelect = d3.select("#color_details_modal_hue_bins_circle_view")
-            .data([{
-                row: basicInfoTermRow
-            }])
+            .data([{row: basicInfoTermRow}])
         d3SvgUpdateHueColor(hueRingSvgSelect, true, "ring")
     }else{
         $("#color_details_modal_hue_bins").hide()
@@ -1551,61 +1551,4 @@ function updateFullColorBinSvg(fullBinSvg){
 
     return fullBinSvg
 }
-
-
-
-// TODO: OLD: delete 
-function generateFullColorBinSvg(fullData){
-    const maxWidth = 300,
-        maxHeight = cellHeight
-
-    const binView = new FullColorBinView({
-      bin_size: fullBinSize,
-      bin_array: fullBinsInfo,
-      x_dim: "-b",
-      y_dim: "-a",
-      split_dim: "l",
-    })
-
-
-    const maxPCT = Math.max(...fullData.map(d => d.pCT))
-
-    binView.setDisplayOffsets(binView.getDisplayOffsets())
-
-
-    const ratioHeight = maxWidth * binView.display_offsets.y_height_in_bins /  binView.display_offsets.x_width_in_bins
-    
-    const height = Math.min(maxHeight, ratioHeight)
-
-    const width = height * binView.display_offsets.x_width_in_bins / binView.display_offsets.y_height_in_bins
-
-
-
-    const fullBinSvg = d3.select(document.createElementNS("http://www.w3.org/2000/svg", "svg"))
-        .attr("width", width)
-        .attr("height", height)
-        .attr("content-visibility", "auto")
-        .attr("xmlns", "http://www.w3.org/2000/svg")
-
-
-    binView.createOrUpdateColorTiles(fullBinSvg, {
-        TILE_SEGMENT_OUTER_MARGIN_NUM: 0,
-        getTileScale: (b) => {
-            const binData = fullData.find((d) => 
-                fullBinSize.type == "ring" ? 
-                    b.l_bin == d.binL && b.c_bin == d.binC && b.h_bin == d.binH :
-                    b.l_bin == d.binL && b.a_bin == d.binA && b.b_bin == d.binB
-            )
-
-            //return 1 // for testing showing all colors
-
-            return binData ? 1.5 * Math.sqrt(binData.pCT / maxPCT) : 0         
-        },
-    })
-
-    return fullBinSvg
-}
-
-
-
 
