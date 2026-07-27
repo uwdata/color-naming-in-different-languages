@@ -18,7 +18,8 @@ const participantLangChanges = {
     "11775": "fa",
     "11776": "fa",
     "20244": "zh",
-    "5608": "de", // appears to be German
+    "5608": "de", // appears to be German,
+    "8275eade-8b7a-4c36-96ee-0bb2d6828fdf": "fr",
 
     // Participants with consistently English color names, but labeled as another languages
     "5891": "en",
@@ -153,7 +154,11 @@ const participantLangChanges = {
     "62d01933-f094-4b9a-a036-81cf036ba292": "en",
     "75484d20-d79e-4855-af76-ffaa2546943c": "en",
     "8825ce4f-ea79-49e4-85f1-7d0f9d6f8df5": "en",
-    "e4856bb1-5604-4669-a029-7de2d1c904fe": "en"
+    "e4856bb1-5604-4669-a029-7de2d1c904fe": "en",
+    "a216c652-28e5-449e-bfc1-1867ddeecff6": "en",
+    "65000483-ac0d-4fea-bfff-04f91853bc46": "en",
+    "27b11774-fc2b-4262-b05a-3117278580f2": "en",
+    "2d2e227a-d4d8-4a39-8f98-52e1f0a612dc": "en"
 };
 
 

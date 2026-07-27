@@ -28,6 +28,7 @@ const FIELDS_TO_IGNORE = [
     ["litw", "initialize", "userAgent"],
     ["litw", "initialize", "urlParams", "fbclid"],
     ["litw", "initialize", "urlParams", "REF"],
+    ["litw", "initialize", "urlParams", "ref"],
     ["litw", "initialize", "urlParams", "utm_source"],
     ["litw", "tracking"],
     
@@ -124,9 +125,11 @@ for(const participant_row of participantInfo){
 // filter participants that have actual info or that we are intending to exclude
 participantInfo = participantInfo.filter(p => {
     // exclude ones marked specifically as "test"
-    if(p.litw.initialize.urlParams && p.litw.initialize.urlParams.test){
+    if(p.litw.initialize.urlParams && (p.litw.initialize.urlParams.test || p.litw.initialize.urlParams.TEST)){
         return false
     }
+    delete p.litw.initialize.urlParams.test
+    delete p.litw.initialize.urlParams.TEST
 
     if(p.study.data.color_sorting_results[1].sortTiles[1].tilesOrder.length > 0){
         return true
