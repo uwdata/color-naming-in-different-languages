@@ -110,6 +110,11 @@
       color: gray;
     }
 
+    .table-extra-small-subheader{
+      font-size: x-small;
+      color: gray;
+    }
+
     dd{
       margin-left:20px
     }
@@ -301,7 +306,8 @@
           <h5 class="modal-title">Settings</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="form-check form-check-inline">
+        <div class="form-check form-check-inline" style="display:none">
+          <!-- TODO: Redo as dropdown -->
           <input type="radio" class="btn-check" value="hue-data" name="rgb-set" id="hue-data" autocomplete="off" >
           <label class="btn btn-outline-primary btn-sm" for="hue-data">Hue Data</label>
 

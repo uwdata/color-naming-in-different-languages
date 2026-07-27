@@ -464,7 +464,7 @@ function hueNamePercentCompare(a, b){
     }
 }
 
-const tableCols = [
+const allTableCols = [
     {
         id: "commonName",
         key: "commonName",
@@ -475,8 +475,22 @@ const tableCols = [
         formatter: (cell, row) => 
             `<div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${row.lang_abv}" data-color-name="${nameToUnicode(row.simplifiedName)}">
                 <p style="margin-bottom:0px" translate="no" class="notranslate">${escapeHTML(row.commonName)}
-                <p style="margin-bottom:0px" class="table-subheader" translate="no" class="notranslate">${escapeHTML(row.simplifiedName)}</p>
+                <p style="margin-bottom:0px" class="table-subheader notranslate" translate="no">${escapeHTML(row.simplifiedName)}</p>
             </div>`
+    },
+    {
+        id: "lang",
+        key: "lang",
+        sortable: true,
+        hideForOneLanguage: true,
+        defaultSortDirection: "up",
+        headerHTML: `Lang`,
+        formatter: (cell, row) => 
+            `<div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${row.lang_abv}" data-color-name="${nameToUnicode(row.simplifiedName)}">
+                <p style="margin-bottom:0px" translate="no" class="notranslate">${escapeHTML(row.lang_abv)}</p>
+                <p style="margin-bottom:0px" translate="no" class="table-extra-small-subheader notranslate">${escapeHTML(row.lang)}
+            </div>`
+            //
     },
     {
         id: "avgColor",
@@ -580,6 +594,7 @@ const tableCols = [
         }
     }
 ]
+let tableCols = allTableCols
 
 
 function updateFilteredData(){
@@ -643,6 +658,13 @@ function updateTable(){
 
     if(!sortedColorInfo){
         return
+    }
+
+    const lang_abv = $("#selected_langs").val()
+    if(lang_abv == "allLang"){
+        tableCols = allTableCols
+    } else {
+        tableCols = allTableCols.filter(c => !c.hideForOneLanguage)
     }
     
     const headerRow = d3.select("#data-table thead tr")
@@ -710,8 +732,6 @@ function updateTable(){
 }
 
 function updateData() {
-
-
 
     updateRgbSet()
 }
@@ -1145,7 +1165,11 @@ function d3SvgUpdateHueColorLine(d3selection, isModal) {
 
     let anyData = false
 
-    const hueBinSvgs = d3selection.selectAll("svg")
+    // remove old/irrelevant elements
+    d3selection.selectChildren()
+        .filter(`:not(.hue-color-svg${isModal}`).remove()
+    
+    const hueBinSvgs = d3selection.selectAll(`svg.hue-color-svg${isModal}`)
         .data((d) => {
             if(d.row.hueBins36BlurData){
                 anyData = true
@@ -1342,7 +1366,11 @@ function d3SvgUpdateHueColorRing(d3selection, isModal) {
 
     let anyData = false
 
-    const hueBinSvgs = d3selection.selectAll("svg")
+    //remove old/irrelevant elements
+    d3selection.selectChildren()
+        .filter(`:not(.hue-color-svg${isModal}`).remove() 
+    
+    const hueBinSvgs = d3selection.selectAll(`svg.hue-color-svg${isModal}`)
         .data((d) => {
             if(d.row.hueBins36BlurData){
                 anyData = true
@@ -1413,7 +1441,11 @@ function d3SvgUpdateFullColorBins(d3selection, isModal) {
 
     let anyData = false
 
-    const fullBinSvgs = d3selection.selectAll("svg")
+    //remove old/irrelevant elements 
+    d3selection.selectChildren()
+        .filter(`:not(.full-color-svg${isModal}`).remove()
+    
+    const fullBinSvgs = d3selection.selectAll(`svg.full-color-svg${isModal}`)
         .data((d) => {
             if(d.row.fullBinsData){
                 anyData = true
