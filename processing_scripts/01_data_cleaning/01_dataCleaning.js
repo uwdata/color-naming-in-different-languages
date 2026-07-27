@@ -197,10 +197,10 @@ for(const [cn_i, cn] of colorNames.entries()){
 
 
 // standardize entered name (e.g., trim, lowcase)
-colorNames.forEach(cn => {
+for(const cn of colorNames){
   cn.name = refine.standardize_entered(cn)
   cn.standardized_entered_name = cn.name
-})
+}
 
 // Remove all blank color names (don't even bother to report these as "deleted")
 colorNames = colorNames.filter(cn => {
@@ -208,14 +208,14 @@ colorNames = colorNames.filter(cn => {
   return cn.name !== "";
 });
 
-colorNames.forEach(cn => {
-  refine.refine(cn)
+for(const cn of colorNames){
+  await refine.refine(cn)
 
   if(cn.name != ""){
     // try refining again and make sure it doesn't mess it up
     //   e.g., simply replacing "blu" with "blue" would turn "blue" into "bluee"
     let oldName = cn.name
-    refine.refine(cn)
+    await refine.refine(cn)
     let newName = cn.name
     if(oldName != newName){
       console.log("WARNING: Name changed on repeated refining")
@@ -225,7 +225,7 @@ colorNames.forEach(cn => {
       console.log("  names: ", oldName, ", ", newName)
     }
   }
-})
+}
 
 colorNames.forEach(cn => {
   cn.entered_name = enteredColorNameLookup[cn.cn_i];
@@ -290,13 +290,12 @@ if(removedData.length > 0){
 // Color name Matches
 let color_name_matches = await csv().fromFile(COLOR_MATCHES_I)
 
-
-color_name_matches.forEach(cn => {
+for(const cn of color_name_matches){
 
   cn.langAbv = getLangAbv(cn.lang)
   
   let oldName = cn.name
-  refine.refine(cn)
+  await refine.refine(cn)
   let newName = cn.name
   if(oldName != newName){
       console.log("WARNING: Name changed when transferring color name match")
@@ -310,7 +309,7 @@ color_name_matches.forEach(cn => {
     // try refining again and make sure it doesn't mess it up
     //   e.g., simply replacing "blu" with "blue" would turn "blue" into "bluee"
     let oldName = cn.name
-    refine.refine(cn)
+    await refine.refine(cn)
     let newName = cn.name
     if(oldName != newName){
       console.log("WARNING: Name changed on repeated refining (color name matches)")
@@ -320,7 +319,7 @@ color_name_matches.forEach(cn => {
       console.log("  names: ", oldName, ", ", newName)
     }
   }
-})
+}
 
 //////////////////
   //optional modify languages to create additional splits through the rest of the process

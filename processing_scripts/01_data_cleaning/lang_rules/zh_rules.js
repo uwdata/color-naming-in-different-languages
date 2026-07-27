@@ -2,7 +2,7 @@
 
 import chineseT2STable from './zh_tongwen_table_t2s.js'
 
-const standardizedEnd = "色"
+const standardizedEnds = ["色"]
 
 const convertScript = (str) => 
   str.split('').map(function(c){ 
@@ -34,7 +34,7 @@ const nameReplacingRules = [
 ];
 
 export default {
-    standardizedEnd: standardizedEnd,
+    standardizedEnds: standardizedEnds,
     convertScript: convertScript,
     forbiddenCharacters: forbiddenCharacters,
     excludeNames: excludeNames,

@@ -1,6 +1,6 @@
 // Korean (한국어, 조선어)
 
-const standardizedEnd = "색"
+const standardizedEnds = ["색"]
 
 const forbiddenCharacters = /[a-zA-Z]/
 
@@ -19,7 +19,7 @@ const nameReplacingRules = [
 
 
 export default {
-    standardizedEnd: standardizedEnd,
+    standardizedEnds: standardizedEnds,
     forbiddenCharacters: forbiddenCharacters,
     excludeNames: excludeNames,
     nameReplacingRules: nameReplacingRules

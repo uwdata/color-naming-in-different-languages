@@ -1,11 +1,13 @@
 {
-  "type":"module",
+  "type": "module",
   "dependencies": {
     "colorjs.io": "^0.5.2",
     "csv-write-stream": "^2.0.0",
     "csvtojson": "^2.0.10",
     "d3": "^7.9.0",
     "fs": "^0.0.1-security",
+    "kuroshiro": "~1.1.2",
+    "kuroshiro-analyzer-kuromoji": "^1.1.0",
     "zlib": "^1.0.5"
   }
 }

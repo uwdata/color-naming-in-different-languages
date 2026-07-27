@@ -31,10 +31,21 @@ function standardize_entered(cn){
   name = name.toString().trim().toLowerCase()
 
   if(lang_rules[cn.langAbv]){
-    const standardizedEnd = lang_rules[cn.langAbv].standardizedEnd
-    if(standardizedEnd){
-      if(name.length > 0 && !name.endsWith(standardizedEnd.normalize("NFC"))){
-          name += standardizedEnd.normalize("NFC")
+    let standardizedEnds = lang_rules[cn.langAbv].standardizedEnds
+
+    if(standardizedEnds){    
+      
+      let hasStandardEnd = false
+
+      for(let se of standardizedEnds){
+        se = se.normalize("NFC")
+        if(name.endsWith(se)){
+          hasStandardEnd = true
+        }
+      } 
+
+      if(name.length > 0 && !hasStandardEnd){
+          name += standardizedEnds.at(-1).normalize("NFC") // last option
       }
     }
   }
@@ -43,7 +54,7 @@ function standardize_entered(cn){
 
 
 // For a given color name, clean it up for matching or remove it
-function refine(cn){
+async function refine(cn){
 
     // remove participants with ids specifically marked for removal
     if(participants_to_exclude.includes(String(cn.participantId))){
@@ -70,13 +81,22 @@ function refine(cn){
         ; // turn dashes into spaces
 
       if("convertScript" in langRules){
-        cn.name = langRules.convertScript(cn.name)
+        cn.name = await langRules.convertScript(cn.name)
       }
 
       // remove standardized end (though doesn't work for Korean for some reason???)
-      if("standardizedEnd" in langRules){
-        if(cn.name.endsWith(langRules.standardizedEnd.normalize("NFD"))){
-          cn.name = cn.name.slice(0, cn.name.length - langRules.standardizedEnd.normalize("NFD").length)
+      if("standardizedEnds" in langRules){
+        if(cn.name.endsWith(langRules.standardizedEnds[0].normalize("NFD"))){
+          cn.name = cn.name.slice(0, cn.name.length - langRules.standardizedEnds[0].normalize("NFD").length)
+        }
+      }
+
+      // remove any "removedEnds"
+      if("removedEnds" in langRules){
+        for(const removedEnd of langRules.removedEnds){
+          if(cn.name.endsWith(removedEnd)){
+            cn.name = cn.name.slice(0, cn.name.length - removedEnd.length)
+          }
         }
       }
 
