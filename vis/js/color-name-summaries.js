@@ -219,38 +219,6 @@ function getFullBinInfo(langAbv, term){
     return fullBinsData
 }
 
-// TODO: delete
-function getColorInfo(langAbv, term){
-    const lang = langAbvToLang[langAbv]
-
-    const basicNameInfoByLang = Object.groupBy(allColorInfo, ({lang}) => lang)
-    const fullNameSetByLang = Object.groupBy(fullColorNames, ({lang}) => lang)
-    const hueNameSetByLang = Object.groupBy(hueColorInfo, ({lang}) => lang)
-
-    const basicInfoTermRow =  lang in basicNameInfoByLang ? basicNameInfoByLang[lang].find(d => d.simplifiedName == term) : undefined
-    const hueTermRow =  lang in hueNameSetByLang ? hueNameSetByLang[lang].find(d => d.simplifiedName == term) : undefined
-    const fullTermRow =  lang in fullNameSetByLang ? fullNameSetByLang[lang].find(d => d.simplifiedName == term) : undefined
-    const somColorPatch = colorSampleSOMs && langAbv in colorSampleSOMs && term in colorSampleSOMs[langAbv] ? colorSampleSOMs[langAbv][term] : undefined
-
-    const hueBinsData = getHueBinInfo(langAbv, term)
-
-    const fullBinsData = colorSampleFullBins && lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
-        colorSampleFullBins[lang][term] : undefined
-
-    return {
-        langAbv: langAbv,
-        lang: lang,
-        term: term,
-        commonName: basicInfoTermRow ? basicInfoTermRow.commonName : hueTermRow ? hueTermRow.commonName : fullTermRow ? fullTermRow.commonName : undefined, 
-        basicInfoTermRow: basicInfoTermRow,
-        hueTermRow: hueTermRow,
-        fullTermRow: fullTermRow,
-        somColorPatch: somColorPatch,
-        hueBinsData: hueBinsData,
-        fullBinsData: fullBinsData
-    }
-}
-
 function nameToUnicode(name){
     return [...name].map(c => c.charCodeAt(0)).join("_")
 }
@@ -270,48 +238,46 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
     const lang = langAbvToLang[langAbv]
     const term = nameFromUnicode(event.relatedTarget.getAttribute("data-color-name"))
 
-    // TODO: Delete
-    currentColorTermData =  getColorInfo(langAbv, term)
+    const nameInfoByLang = Object.groupBy(allColorInfo, ({lang}) => lang)
+    currentColorTermData =  lang in nameInfoByLang ? nameInfoByLang[lang].find(d => d.simplifiedName == term) : undefined
 
-    const basicNameInfoByLang = Object.groupBy(allColorInfo, ({lang}) => lang)
-    const basicInfoTermRow =  lang in basicNameInfoByLang ? basicNameInfoByLang[lang].find(d => d.simplifiedName == term) : undefined
-    const hueBinsData = getHueBinInfo(langAbv, term)
-
-    $("#color_details_modal_name").text(currentColorTermData.basicInfoTermRow.commonName)
+    $("#color_details_modal_name").text(currentColorTermData.commonName)
     $("#color_details_modal_lang").text(langAbv + " - " + currentColorTermData.lang)
     $("#color_details_modal_simplified_name").text(term)
-    if(currentColorTermData.fullTermRow){
+    if(currentColorTermData.fullColorInfo){
         $("#color_details_modal_full_details").show()
-        $("#color_details_modal_full_perc").text(currentColorTermData.fullTermRow.tinyResBlurTermFraction * 100)
-        $("#color_details_modal_full_num_entries").text(currentColorTermData.basicInfoTermRow.numFullNames)
+        $("#color_details_modal_full_perc").text(currentColorTermData.fullColorInfo.tinyResBlurTermFraction * 100)
+        $("#color_details_modal_full_num_entries").text(currentColorTermData.numFullNames)
     } else {
         $("#color_details_modal_full_details").hide()
     }
-    if(currentColorTermData.hueTermRow){
+    if(currentColorTermData.hueColorInfo){
         $("#color_details_modal_hue_details").show()
-        $("#color_details_modal_hue_perc").text(currentColorTermData.hueTermRow.lowResBlurTermFraction * 100)
-        $("#color_details_modal_hue_num_entries").text(currentColorTermData.basicInfoTermRow.numLineNames)
+        $("#color_details_modal_hue_perc").text(currentColorTermData.hueColorInfo.lowResBlurTermFraction * 100)
+        $("#color_details_modal_hue_num_entries").text(currentColorTermData.numLineNames)
     } else {
         $("#color_details_modal_hue_details").hide()
     }
 
     // Average Color Info
-    if(currentColorTermData.fullTermRow){
+    // TODO: Show basic color info has an average, and full color info has a weighted average
+    if(currentColorTermData.fullColorInfo){
         $("#color_details_modal_avg_full_color").show()
-        $("#color_details_modal_avg_full_color_patch").css("background-color", currentColorTermData.basicInfoTermRow.avgFullColorRGBCode)
-        $("#color_details_modal_avg_full_color_rgb").text(currentColorTermData.basicInfoTermRow.avgFullColorRGBCode)
-        $("#color_details_modal_avg_full_color_oklab").text(new Color({space: "oklab", coords: [currentColorTermData.fullTermRow.tinyResBlurAvgL, currentColorTermData.fullTermRow.tinyResBlurAvgA, currentColorTermData.fullTermRow.tinyResBlurAvgB]}))
-        $("#color_details_modal_avg_full_color_oklch").text(new Color({space: "oklab", coords: [currentColorTermData.fullTermRow.tinyResBlurAvgL, currentColorTermData.fullTermRow.tinyResBlurAvgA, currentColorTermData.fullTermRow.tinyResBlurAvgB]}).to("oklch"))
+        $("#color_details_modal_avg_full_color_patch").css("background-color", currentColorTermData.avgFullColorRGBCode)
+        $("#color_details_modal_avg_full_color_rgb").text(currentColorTermData.avgFullColorRGBCode)
+        $("#color_details_modal_avg_full_color_oklab").text(new Color({space: "oklab", coords: [currentColorTermData.fullColorInfo.tinyResBlurAvgL, currentColorTermData.fullColorInfo.tinyResBlurAvgA, currentColorTermData.fullColorInfo.tinyResBlurAvgB]}))
+        $("#color_details_modal_avg_full_color_oklch").text(new Color({space: "oklab", coords: [currentColorTermData.fullColorInfo.tinyResBlurAvgL, currentColorTermData.fullColorInfo.tinyResBlurAvgA, currentColorTermData.fullColorInfo.tinyResBlurAvgB]}).to("oklch"))
     } else{
         $("#color_details_modal_avg_full_color").hide()
     }
 
-    if(currentColorTermData.hueTermRow){
+    // TODO: Show basic color info has an average, and full color info has a weighted average??
+    if(currentColorTermData.hueColorInfo){
         $("#color_details_modal_avg_hue_color").show()
-        $("#color_details_modal_avg_hue_color_patch").css("background-color", currentColorTermData.basicInfoTermRow.avgHueRGBCode)
-        $("#color_details_modal_avg_hue_color_rgb").text(currentColorTermData.basicInfoTermRow.avgHueRGBCode)
-        $("#color_details_modal_avg_hue_color_oklab").text(new Color(currentColorTermData.basicInfoTermRow.avgHueRGBCode).to("oklab"))
-        $("#color_details_modal_avg_hue_color_oklch").text(new Color(currentColorTermData.basicInfoTermRow.avgHueRGBCode).to("oklch"))
+        $("#color_details_modal_avg_hue_color_patch").css("background-color", currentColorTermData.avgHueRGBCode)
+        $("#color_details_modal_avg_hue_color_rgb").text(currentColorTermData.avgHueRGBCode)
+        $("#color_details_modal_avg_hue_color_oklab").text(new Color(currentColorTermData.avgHueRGBCode).to("oklab"))
+        $("#color_details_modal_avg_hue_color_oklch").text(new Color(currentColorTermData.avgHueRGBCode).to("oklch"))
     } else {
         $("#color_details_modal_avg_hue_color").hide()
     }
@@ -343,22 +309,22 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
         $("#color_details_modal_full_bins").show()
         //TODO: use d3 thing and remove this
         const fullBinSvgSelect = d3.select("#color_details_modal_full_bins_view")
-            .data([{row: basicInfoTermRow}])
+            .data([{row: currentColorTermData}])
         d3SvgUpdateFullColorBins(fullBinSvgSelect, true)
-        //$("#color_details_modal_full_bins_view").html(generateFullColorBinSvg(currentColorTermData.fullBinsData).node().outerHTML)
     }else{
         $("#color_details_modal_full_bins").hide()
     }
 
     // hue bins
-    if(currentColorTermData.hueBinsData){
+    const hueData = getHueBinInfo(langAbv, term)
+    if(hueData){
         $("#color_details_modal_hue_bins").show()
         const hueLineSvgSelect = d3.select("#color_details_modal_hue_bins_line_view")
-            .data([{row: basicInfoTermRow}])
+            .data([{row: currentColorTermData}])
         d3SvgUpdateHueColor(hueLineSvgSelect, true, "line")
 
         const hueRingSvgSelect = d3.select("#color_details_modal_hue_bins_circle_view")
-            .data([{row: basicInfoTermRow}])
+            .data([{row: currentColorTermData}])
         d3SvgUpdateHueColor(hueRingSvgSelect, true, "ring")
     }else{
         $("#color_details_modal_hue_bins").hide()
@@ -390,7 +356,7 @@ $("#download_color_name_data").click(e => {
     var link = document.createElement("a");
     link.setAttribute("href", encodedUri);
     //link.setAttribute("download", `${currentDatasetRgbSet}_summaries_${currentDatasetLangAbv}.csv`);
-    link.setAttribute("download", `full_color_bins_summaries_${currentDatasetLangAbv}_${currentColorTermData.term}.csv`);
+    link.setAttribute("download", `full_color_bins_summaries_${currentColorTermData.lang_abv}_${currentColorTermData.simplifiedName}.csv`);
     document.body.appendChild(link); // Required for FF
 
     link.click();
@@ -416,13 +382,14 @@ $("#hue_bins_color_scale").change(() => {
 })
 
 
-let currentDataset
-let currentDatasetRgbSet
-let currentDatasetLangAbv
 $("#download_language_subset_button").click(e => {
     //const csvContent = "data:text/csv;charset=utf-8," + d3.csvFormat(currentDataset)
-    const jsonContent = "data:text/json;charset=utf-8," + JSON.stringify(currentDataset, null, 2)
+    const jsonContent = "data:text/json;charset=utf-8," + JSON.stringify(sortedColorInfo, null, 2)
     
+    const currentDatasetLangAbv = $("#selected_langs").val()
+    // TODO: update based on dropdown
+    const currentDatasetRgbSet = "all"
+
     // based on:
     // https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
     
