@@ -30,6 +30,15 @@ const escapeHTML = str => String(str).replace(/[&<>'"]/g,
   }[tag]));
 
 
+// from FreeCodeCamp https://www.freecodecamp.org/news/javascript-debounce-example/
+function debounce(func, timeout = 300){
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+  };
+}
+
 //based on https://coreui.io/blog/how-to-check-if-an-element-is-visible-in-javascript/
 const isVisibleInViewport = (element) => {
     const rect = element.getBoundingClientRect()
@@ -362,26 +371,6 @@ $("#download_color_name_data").click(e => {
     link.click();
 })
 
-
-$("#selected_langs").change(e => { 
-    updateData()
-})
-
-$("#search-input").on('input', updateFilteredData)
-
-$("input:radio[name=rgb-set]").change(e => { 
-    updateRgbSet()
-})
-
-$("#hue_bins_in_circle").change(() => {
-    updateData()
-})
-
-$("#hue_bins_color_scale").change(() => {
-    updateData()
-})
-
-
 $("#download_language_subset_button").click(e => {
     //const csvContent = "data:text/csv;charset=utf-8," + d3.csvFormat(currentDataset)
     const jsonContent = "data:text/json;charset=utf-8," + JSON.stringify(sortedColorInfo, null, 2)
@@ -597,47 +586,80 @@ const allTableCols = [
 let tableCols = allTableCols
 
 
-function updateFilteredData(){
+
+function searchMatch(term, searchStrings){
+    let matchAnySearch = false
+    for(let search of searchStrings){ // see if it matches any of the searches
+        // must match all parts in the search
+        // TODO: look for quoted sections
+        //.replace(/\s*[-_]\s*/, " ")
+        let matchAll = true
+        if(search.length > 0){
+            for(const searchPart of search){
+                // TODO: 
+                if(searchPart.length > 1 && 
+                    //only check language when more than one language selected
+                    (search_lang_abv != "allLang" || !term.lang.toLowerCase().normalize("NFC").includes(searchPart)) &&
+                    !term.commonName.normalize("NFC").includes(searchPart)
+                ){
+                    matchAll = false
+                }
+            }
+        } else { // search length was equal to 0
+            matchAll = false
+        }
+        if(matchAll){
+            matchAnySearch = true
+            return true
+        }
+    }
+    return false
+}
+
+
+let search_string
+let search_lang_abv
+
+// debounce updateFilteredData to keep it from updating too fast on searches and loading
+const updateFilteredData = debounce(() => {
     // filter by language
-    const lang_abv = $("#selected_langs").val()
-    if(lang_abv == "allLang"){
+    const new_lang_abv = $("#selected_langs").val()
+    if(new_lang_abv == "allLang"){
         filteredColorInfo = allColorInfo
     } else{
-        filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == lang_abv)
+        filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == new_lang_abv)
     }
     
     
     // filter by search term
-    const search_str = $("#search-input").val()
-    const searches = search_str.split(";").map(s => s.split(/\s+/))
+    let new_search_str = $("#search-input").val()
+    new_search_str = new_search_str.toLowerCase().normalize("NFC")
 
-    // if there is a search, restrict results, otherwise show all
-    if(searches.length > 1 || searches[0].length > 0){
-        filteredColorInfo = filteredColorInfo.filter((t) => {
-            let matchAnySearch = false
-            for(const search of searches){ // see if it matches any of the searches
-                // must match all parts in the search
-                let matchAll = true
-                for(const searchPart of search){
-                    if(searchPart.length > 1 && 
-                        !t.lang.includes(searchPart) &&
-                        !t.commonName.includes(searchPart)
-                    ){
-                        matchAll = false
-                    }
-                }
-                if(matchAll){
-                    matchAnySearch = true
-                    return true
-                }
+    if(new_search_str != search_string || new_lang_abv != search_lang_abv){
+
+        search_string = new_search_str
+        search_lang_abv = new_lang_abv
+
+        const searchStrings = new_search_str.split(";").map(s => s.split(/\s+/))
+
+        // if there is a search, restrict results, otherwise show all
+        if(searchStrings.length > 1 || searchStrings[0].length > 0){
+            // if only an empty search, match all
+            if(searchStrings.length == 1 && searchStrings[0].length == 0){
+                filteredColorInfo = allColorInfo
+            } else {
+                filteredColorInfo = filteredColorInfo.filter((t) =>  searchMatch(t, searchStrings))
             }
-            return false
-        })
+        }
+    } else {
+        console.log("skipping search")
     }
+
+
 
     sortFilteredData()
     
-}
+})
 
 function sortFilteredData(){
     if(!filteredColorInfo){
@@ -1551,3 +1573,22 @@ function updateFullColorBinSvg(fullBinSvg){
     return fullBinSvg
 }
 
+// handle update events
+
+$("#selected_langs").change(e => { 
+    updateData()
+})
+
+$("#search-input").on('input', updateFilteredData)
+
+$("input:radio[name=rgb-set]").change(e => { 
+    updateRgbSet()
+})
+
+$("#hue_bins_in_circle").change(() => {
+    updateData()
+})
+
+$("#hue_bins_color_scale").change(() => {
+    updateData()
+})
