@@ -410,6 +410,8 @@ let rgbSet = "both-hue-full"
 
 let sortColumnId = "fullNamePercent"
 let sortDirection = "down"
+let multipleLangsDisplayed = false
+let pinnedColorTerms = []
 
 function fullNamePercentCompare(a, b){
     const aTotalColorFraction = a.fullColorInfo ? a.fullColorInfo.tinyResBlurTermFraction : undefined
@@ -453,6 +455,24 @@ function hueNamePercentCompare(a, b){
     }
 }
 
+function pinToggleColorTerm(event){
+    const langAbv = event.target.getAttribute("data-lang") 
+    const lang = langAbvToLang[langAbv]
+    const term = nameFromUnicode(event.target.getAttribute("data-color-name"))
+
+    const nameInfoByLang = Object.groupBy(allColorInfo, ({lang}) => lang)
+    const colorTermData =  lang in nameInfoByLang ? nameInfoByLang[lang].find(d => d.simplifiedName == term) : undefined
+
+    if(pinnedColorTerms.includes(colorTermData)){
+        pinnedColorTerms = pinnedColorTerms.filter(t => t !== colorTermData)
+    }else{
+        pinnedColorTerms.push(colorTermData)
+    }
+
+    updateData()
+}
+window.pinToggleColorTerm = pinToggleColorTerm // make function global for onclick
+
 const allTableCols = [
     {
         id: "commonName",
@@ -462,9 +482,18 @@ const allTableCols = [
         headerHTML: `<p style="margin-bottom:0px">Name</p>
                     <p style="margin-bottom:0px" class="table-subheader">simplified name</p>`,
         formatter: (cell, row) => 
-            `<div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${row.lang_abv}" data-color-name="${nameToUnicode(row.simplifiedName)}">
-                <p style="margin-bottom:0px" translate="no" class="notranslate">${escapeHTML(row.commonName)}
-                <p style="margin-bottom:0px" class="table-subheader notranslate" translate="no">${escapeHTML(row.simplifiedName)}</p>
+            `<div style="display:inline-flex">
+                <div style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${escapeHTML(row.lang_abv)}" data-color-name="${nameToUnicode(row.simplifiedName)}">
+                    <p style="margin-bottom:0px" translate="no" class="notranslate">${escapeHTML(row.commonName)}
+                    <p style="margin-bottom:0px" class="table-subheader notranslate" translate="no">${escapeHTML(row.simplifiedName)}</p>
+                </div>
+
+                
+                <i class="color-name-pin bi ${pinnedColorTerms.includes(row) ? "bi-pin-fill" : "bi-pin-angle"}" 
+                    ${pinnedColorTerms.includes(row) ? "" : `style="font-size: smaller"`}
+                    data-lang="${escapeHTML(row.lang_abv)}" data-color-name="${nameToUnicode(row.simplifiedName)}"
+                    onclick="pinToggleColorTerm(event)"
+                    ></i>
             </div>`
     },
     {
@@ -620,46 +649,55 @@ function searchMatch(term, searchStrings){
 let search_string
 let search_lang_abv
 
-// debounce updateFilteredData to keep it from updating too fast on searches and loading
-const updateFilteredData = debounce(() => {
-    // filter by language
-    const new_lang_abv = $("#selected_langs").val()
-    if(new_lang_abv == "allLang"){
-        filteredColorInfo = allColorInfo
-    } else{
-        filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == new_lang_abv)
-    }
-    
-    
-    // filter by search term
-    let new_search_str = $("#search-input").val()
-    new_search_str = new_search_str.toLowerCase().normalize("NFC")
+const updateFilteredData = 
+    debounce(() => { // debounce updateFilteredData to keep it from updating too fast on searches and loading
+        // filter by language
+        const new_lang_abv = $("#selected_langs").val()
+        if(new_lang_abv == "allLang"){
+            filteredColorInfo = allColorInfo
+            multipleLangsDisplayed = true
+        } else{
+            filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == new_lang_abv)
+        }
+        
+        
+        // filter by search term
+        let new_search_str = $("#search-input").val()
+        new_search_str = new_search_str.toLowerCase().normalize("NFC")
 
-    if(new_search_str != search_string || new_lang_abv != search_lang_abv){
+        if(new_search_str != search_string || new_lang_abv != search_lang_abv){
 
-        search_string = new_search_str
-        search_lang_abv = new_lang_abv
+            search_string = new_search_str
+            search_lang_abv = new_lang_abv
 
-        const searchStrings = new_search_str.split(";").map(s => s.split(/\s+/))
+            const searchStrings = new_search_str.split(";").map(s => s.split(/\s+/))
 
-        // if there is a search, restrict results, otherwise show all
-        if(searchStrings.length > 1 || searchStrings[0].length > 0){
-            // if only an empty search, match all
-            if(searchStrings.length == 1 && searchStrings[0].length == 0){
-                filteredColorInfo = allColorInfo
-            } else {
-                filteredColorInfo = filteredColorInfo.filter((t) =>  searchMatch(t, searchStrings))
+            // if there is a search, restrict results, otherwise show all
+            if(searchStrings.length > 1 || searchStrings[0].length > 0){
+                // if only an empty search, match all
+                if(searchStrings.length == 1 && searchStrings[0].length == 0){
+                    filteredColorInfo = allColorInfo
+                } else {
+                    filteredColorInfo = filteredColorInfo.filter((t) =>  searchMatch(t, searchStrings))
+                }
+            }
+        } else {
+            console.log("skipping search")
+        }
+
+        // make sure all pinned colors are present
+        for(const pinnedColor of pinnedColorTerms){
+            if(!filteredColorInfo.includes(pinnedColor)){
+                filteredColorInfo.push(pinnedColor)
+                if(pinnedColor.lang_abv !== new_lang_abv){
+                    multipleLangsDisplayed = true
+                }
             }
         }
-    } else {
-        console.log("skipping search")
+
+        sortFilteredData()
     }
-
-
-
-    sortFilteredData()
-    
-})
+)
 
 function sortFilteredData(){
     if(!filteredColorInfo){
@@ -668,11 +706,20 @@ function sortFilteredData(){
     const sortColumn = tableCols.find((c) => c.id == sortColumnId)//tableCols[tableCols.length - 1]
     const sortDirectionSign = sortDirection == "up" ? -1 : 1
 
-    
-    sortedColorInfo = filteredColorInfo.sort((a, b) => sortColumn.compare ? sortColumn.compare(a, b) * sortDirectionSign : 
-        a[sortColumn.key] < b[sortColumn.key] ? sortDirectionSign :
-        a[sortColumn.key] > b[sortColumn.key] ? - sortDirectionSign:
-        1)
+    //TODO: make pinned be first compare 
+    sortedColorInfo = filteredColorInfo.sort((a, b) => {
+        // pinned always stay at top
+        if(pinnedColorTerms.includes(a) && !pinnedColorTerms.includes(b)){
+            return -1
+        } else if (pinnedColorTerms.includes(b) && !pinnedColorTerms.includes(a)) {
+            return 1
+        }
+        // sort 1
+        return sortColumn.compare ? sortColumn.compare(a, b) * sortDirectionSign : 
+            a[sortColumn.key] < b[sortColumn.key] ? sortDirectionSign :
+            a[sortColumn.key] > b[sortColumn.key] ? - sortDirectionSign:
+        1
+    })
     updateTable()
 }
 
@@ -682,8 +729,7 @@ function updateTable(){
         return
     }
 
-    const lang_abv = $("#selected_langs").val()
-    if(lang_abv == "allLang"){
+    if(multipleLangsDisplayed){
         tableCols = allTableCols
     } else {
         tableCols = allTableCols.filter(c => !c.hideForOneLanguage)
@@ -736,7 +782,7 @@ function updateTable(){
                     return {cell: d[col.key], row: d, tableCol: col}
                 }))
             .join("td")
-            .attr("class", "name-cell")
+            .attr("class", "name-cell align-middle")
     
     // for any cells with a d3 formatter use that
     const d3Formatters = tableCols.filter(tableCol => tableCol.d3Formatter).map(tableCol => tableCol.d3Formatter)
