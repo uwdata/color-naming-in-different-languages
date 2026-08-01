@@ -1,9 +1,10 @@
 import fs from 'fs'
 import csv from 'csvtojson';
 import csvWriter from 'csv-write-stream'
+import zlib from 'zlib'
 
 
-const STUDY_2_I = "./study_v2/study_2_data.json"
+const STUDY_2_I = "./study_v2/study_2_data.json.gz"
 
 const STUDY_1_NAMES_I = "./study_v1/color_perception_table_color_names.csv" 
 const NAMES_O = "./color_names.csv"
@@ -19,7 +20,9 @@ const DEMOGRAPHICS_O = "./demographics.csv"
 
 
 
-const v2_data = JSON.parse(fs.readFileSync(STUDY_2_I))
+const v2_data = JSON.parse(
+    zlib.unzipSync(
+        fs.readFileSync(STUDY_2_I))); 
 
 
 const COLOR_NAME_STEPS = [1,3,5]

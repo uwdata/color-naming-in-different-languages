@@ -144,8 +144,11 @@ for(const [cn_i, cn] of colorNames.entries()){
     if((typeof newLangAbv) === "string"){
       cn.langAbv = newLangAbv
     } else if(cn.langAbv !== undefined){
-      if(cn.langAbv in newLangAbv){
-        cn.langAbv = newLangAbv[cn.originalLangAbv]
+      // special case for participant IDs of 0
+      if(cn.participantId == "0" && cn.langAbv in newLangAbv){ 
+          cn.langAbv = newLangAbv[cn.originalLangAbv]
+      } else if(cn.trialNum in newLangAbv){ // special case only some trial nums change language
+        cn.langAbv = newLangAbv[cn.trialNum]
       } else {
         // don't change in this case, go back to how it was
         delete cn.originalLangAbv
@@ -154,6 +157,8 @@ for(const [cn_i, cn] of colorNames.entries()){
     } else {
       if(cn.lang in newLangAbv){
         cn.langAbv = newLangAbv[cn.lang]
+      }else if(cn.trialNum in newLangAbv){ // special case only some trial nums change language
+        cn.langAbv = newLangAbv[cn.trialNum]
       } else { 
         // don't change in this case, go back to how it was
         delete cn.originalLangAbv

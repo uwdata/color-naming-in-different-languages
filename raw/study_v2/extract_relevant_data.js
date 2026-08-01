@@ -1,9 +1,10 @@
 import fs from 'fs'
 import csv from 'csvtojson';
 import JSON5 from 'json5'
+import zlib from 'zlib'
 
 const STUDY_2_DATA_I = "./download.csv"
-const NAMES_O = "./study_2_data.json"
+const NAMES_O = "./study_2_data.json.gz"
 const DATA_STRUCTURE_O = "./data_structure.json"
 
 const CHINA_REGIONS_I = "../supporting_files/chinaRegions.json"
@@ -42,7 +43,8 @@ const FIELDS_TO_IGNORE = [
 ]
 
 const PARTICIPANTS_TO_IGNORE = [
-    "5d65af49-af88-4d2f-88ea-7ccb310f8256"
+    "5d65af49-af88-4d2f-88ea-7ccb310f8256",
+    "0128f902-d1c4-4266-9540-9ef47bc77e77"
 ]
 
 const study_2_data = await csv({checkType: true}).fromFile(STUDY_2_DATA_I)
@@ -205,6 +207,9 @@ for(const participant of participantInfo){
 
 console.log("saving info from ", participantInfo.length, " participants")
 
-fs.writeFileSync(NAMES_O, JSON.stringify(participantInfo, null, 2));
+// gzip these files since they are getting very large
+fs.writeFileSync(
+    NAMES_O, 
+    zlib.gzipSync(Buffer.from(JSON.stringify(participantInfo), 'utf-8')))
 
 fs.writeFileSync(DATA_STRUCTURE_O, JSON.stringify(dataStructure, null, 2));

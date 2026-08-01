@@ -73,6 +73,8 @@ const nameReplacingRules = [
     [/lavender/g, "lavender"],
     [/lavender/g, "lavender"],
 
+    [/liliac/g, "lilac"],
+
     [/^linegreen/, "limegreen"],
     [/majenta/g, "magenta"],
 
