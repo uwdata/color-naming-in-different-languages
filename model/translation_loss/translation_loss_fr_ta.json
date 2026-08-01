@@ -1,0 +1,962 @@
+[
+  {
+    "frterm": "beige",
+    "taterm": "neelam",
+    "dist": 0.1678479938818195
+  },
+  {
+    "frterm": "beige",
+    "taterm": "oodha",
+    "dist": 0.25560718882757494
+  },
+  {
+    "frterm": "beige",
+    "taterm": "pachai",
+    "dist": 0.12467312684278724
+  },
+  {
+    "frterm": "beige",
+    "taterm": "ஊதா",
+    "dist": 0.30539560396496324
+  },
+  {
+    "frterm": "bleu",
+    "taterm": "neelam",
+    "dist": 0.05100586047829173
+  },
+  {
+    "frterm": "bleu",
+    "taterm": "oodha",
+    "dist": 0.14901589048554525
+  },
+  {
+    "frterm": "bleu",
+    "taterm": "pachai",
+    "dist": 0.17487366535871846
+  },
+  {
+    "frterm": "bleu",
+    "taterm": "ஊதா",
+    "dist": 0.17149209231612997
+  },
+  {
+    "frterm": "bleucanard",
+    "taterm": "neelam",
+    "dist": 0.1272868673809578
+  },
+  {
+    "frterm": "bleucanard",
+    "taterm": "oodha",
+    "dist": 0.16682237531321853
+  },
+  {
+    "frterm": "bleucanard",
+    "taterm": "pachai",
+    "dist": 0.089878577471355
+  },
+  {
+    "frterm": "bleucanard",
+    "taterm": "ஊதா",
+    "dist": 0.2146674573947547
+  },
+  {
+    "frterm": "bleuciel",
+    "taterm": "neelam",
+    "dist": 0.12181554615772479
+  },
+  {
+    "frterm": "bleuciel",
+    "taterm": "oodha",
+    "dist": 0.2806796234945922
+  },
+  {
+    "frterm": "bleuciel",
+    "taterm": "pachai",
+    "dist": 0.1583271509410574
+  },
+  {
+    "frterm": "bleuciel",
+    "taterm": "ஊதா",
+    "dist": 0.3195680054068005
+  },
+  {
+    "frterm": "bleuclair",
+    "taterm": "neelam",
+    "dist": 0.11755740578487076
+  },
+  {
+    "frterm": "bleuclair",
+    "taterm": "oodha",
+    "dist": 0.28142415162481016
+  },
+  {
+    "frterm": "bleuclair",
+    "taterm": "pachai",
+    "dist": 0.15721804235880465
+  },
+  {
+    "frterm": "bleuclair",
+    "taterm": "ஊதா",
+    "dist": 0.3203986155352595
+  },
+  {
+    "frterm": "bleufonce",
+    "taterm": "neelam",
+    "dist": 0.20785228803473071
+  },
+  {
+    "frterm": "bleufonce",
+    "taterm": "oodha",
+    "dist": 0.14027245614960027
+  },
+  {
+    "frterm": "bleufonce",
+    "taterm": "pachai",
+    "dist": 0.29051454226066387
+  },
+  {
+    "frterm": "bleufonce",
+    "taterm": "ஊதா",
+    "dist": 0.10045912122997021
+  },
+  {
+    "frterm": "bleugris",
+    "taterm": "neelam",
+    "dist": 0.10507442120700786
+  },
+  {
+    "frterm": "bleugris",
+    "taterm": "oodha",
+    "dist": 0.15398316580796378
+  },
+  {
+    "frterm": "bleugris",
+    "taterm": "pachai",
+    "dist": 0.10117706839684018
+  },
+  {
+    "frterm": "bleugris",
+    "taterm": "ஊதா",
+    "dist": 0.19990129411012975
+  },
+  {
+    "frterm": "bleumarine",
+    "taterm": "neelam",
+    "dist": 0.1915803251340167
+  },
+  {
+    "frterm": "bleumarine",
+    "taterm": "oodha",
+    "dist": 0.12425861045869324
+  },
+  {
+    "frterm": "bleumarine",
+    "taterm": "pachai",
+    "dist": 0.2710772056074914
+  },
+  {
+    "frterm": "bleumarine",
+    "taterm": "ஊதா",
+    "dist": 0.09532428340497182
+  },
+  {
+    "frterm": "bleunuit",
+    "taterm": "neelam",
+    "dist": 0.2278632101183972
+  },
+  {
+    "frterm": "bleunuit",
+    "taterm": "oodha",
+    "dist": 0.1446259023033215
+  },
+  {
+    "frterm": "bleunuit",
+    "taterm": "pachai",
+    "dist": 0.2906255947724047
+  },
+  {
+    "frterm": "bleunuit",
+    "taterm": "ஊதா",
+    "dist": 0.10593173604284001
+  },
+  {
+    "frterm": "bleuroi",
+    "taterm": "neelam",
+    "dist": 0.19391284010060847
+  },
+  {
+    "frterm": "bleuroi",
+    "taterm": "oodha",
+    "dist": 0.14410394477479957
+  },
+  {
+    "frterm": "bleuroi",
+    "taterm": "pachai",
+    "dist": 0.27756308469287977
+  },
+  {
+    "frterm": "bleuroi",
+    "taterm": "ஊதா",
+    "dist": 0.11231286729304657
+  },
+  {
+    "frterm": "bleuturquoise",
+    "taterm": "neelam",
+    "dist": 0.12695501463179915
+  },
+  {
+    "frterm": "bleuturquoise",
+    "taterm": "oodha",
+    "dist": 0.2744438635978437
+  },
+  {
+    "frterm": "bleuturquoise",
+    "taterm": "pachai",
+    "dist": 0.10999448011965253
+  },
+  {
+    "frterm": "bleuturquoise",
+    "taterm": "ஊதா",
+    "dist": 0.3207580806040073
+  },
+  {
+    "frterm": "bordeau",
+    "taterm": "neelam",
+    "dist": 0.3087636226460092
+  },
+  {
+    "frterm": "bordeau",
+    "taterm": "oodha",
+    "dist": 0.13597285543084317
+  },
+  {
+    "frterm": "bordeau",
+    "taterm": "pachai",
+    "dist": 0.3364678307529645
+  },
+  {
+    "frterm": "bordeau",
+    "taterm": "ஊதா",
+    "dist": 0.1149367835079843
+  },
+  {
+    "frterm": "bordeaux",
+    "taterm": "neelam",
+    "dist": 0.2775662355942553
+  },
+  {
+    "frterm": "bordeaux",
+    "taterm": "oodha",
+    "dist": 0.10256068649235696
+  },
+  {
+    "frterm": "bordeaux",
+    "taterm": "pachai",
+    "dist": 0.3000264553018096
+  },
+  {
+    "frterm": "bordeaux",
+    "taterm": "ஊதா",
+    "dist": 0.09630691299362988
+  },
+  {
+    "frterm": "brun",
+    "taterm": "neelam",
+    "dist": 0.20014658153824488
+  },
+  {
+    "frterm": "brun",
+    "taterm": "oodha",
+    "dist": 0.08661672193382229
+  },
+  {
+    "frterm": "brun",
+    "taterm": "pachai",
+    "dist": 0.2041768525908694
+  },
+  {
+    "frterm": "brun",
+    "taterm": "ஊதா",
+    "dist": 0.11351335995946646
+  },
+  {
+    "frterm": "cyan",
+    "taterm": "neelam",
+    "dist": 0.13087779826537363
+  },
+  {
+    "frterm": "cyan",
+    "taterm": "oodha",
+    "dist": 0.28492431020134074
+  },
+  {
+    "frterm": "cyan",
+    "taterm": "pachai",
+    "dist": 0.12897272943798352
+  },
+  {
+    "frterm": "cyan",
+    "taterm": "ஊதா",
+    "dist": 0.3284583961090828
+  },
+  {
+    "frterm": "fuchsia",
+    "taterm": "neelam",
+    "dist": 0.2341725161697741
+  },
+  {
+    "frterm": "fuchsia",
+    "taterm": "oodha",
+    "dist": 0.10287129774908542
+  },
+  {
+    "frterm": "fuchsia",
+    "taterm": "pachai",
+    "dist": 0.27824283689636914
+  },
+  {
+    "frterm": "fuchsia",
+    "taterm": "ஊதா",
+    "dist": 0.09998132342035104
+  },
+  {
+    "frterm": "gris",
+    "taterm": "neelam",
+    "dist": 0.12347822299749728
+  },
+  {
+    "frterm": "gris",
+    "taterm": "oodha",
+    "dist": 0.17166523668783604
+  },
+  {
+    "frterm": "gris",
+    "taterm": "pachai",
+    "dist": 0.08586462180143874
+  },
+  {
+    "frterm": "gris",
+    "taterm": "ஊதா",
+    "dist": 0.21925977243994665
+  },
+  {
+    "frterm": "indigo",
+    "taterm": "neelam",
+    "dist": 0.19133919282755588
+  },
+  {
+    "frterm": "indigo",
+    "taterm": "oodha",
+    "dist": 0.09774347122990881
+  },
+  {
+    "frterm": "indigo",
+    "taterm": "pachai",
+    "dist": 0.2753929818336728
+  },
+  {
+    "frterm": "indigo",
+    "taterm": "ஊதா",
+    "dist": 0.07267763919147784
+  },
+  {
+    "frterm": "jaune",
+    "taterm": "neelam",
+    "dist": 0.20932252694799933
+  },
+  {
+    "frterm": "jaune",
+    "taterm": "oodha",
+    "dist": 0.30924308101150144
+  },
+  {
+    "frterm": "jaune",
+    "taterm": "pachai",
+    "dist": 0.10119961361065907
+  },
+  {
+    "frterm": "jaune",
+    "taterm": "ஊதா",
+    "dist": 0.3619658217595516
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "taterm": "neelam",
+    "dist": 0.19267854434911705
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "taterm": "oodha",
+    "dist": 0.28063386936123796
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "taterm": "pachai",
+    "dist": 0.07700165272561384
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "taterm": "ஊதா",
+    "dist": 0.33377904062344055
+  },
+  {
+    "frterm": "kaki",
+    "taterm": "neelam",
+    "dist": 0.15588452732183025
+  },
+  {
+    "frterm": "kaki",
+    "taterm": "oodha",
+    "dist": 0.1576652649778825
+  },
+  {
+    "frterm": "kaki",
+    "taterm": "pachai",
+    "dist": 0.09676274509503748
+  },
+  {
+    "frterm": "kaki",
+    "taterm": "ஊதா",
+    "dist": 0.2113271498961471
+  },
+  {
+    "frterm": "lavande",
+    "taterm": "neelam",
+    "dist": 0.08402580938885534
+  },
+  {
+    "frterm": "lavande",
+    "taterm": "oodha",
+    "dist": 0.18228551167710452
+  },
+  {
+    "frterm": "lavande",
+    "taterm": "pachai",
+    "dist": 0.1534023574562201
+  },
+  {
+    "frterm": "lavande",
+    "taterm": "ஊதா",
+    "dist": 0.20651113896499884
+  },
+  {
+    "frterm": "lilas",
+    "taterm": "neelam",
+    "dist": 0.1374420619017793
+  },
+  {
+    "frterm": "lilas",
+    "taterm": "oodha",
+    "dist": 0.09500832196020674
+  },
+  {
+    "frterm": "lilas",
+    "taterm": "pachai",
+    "dist": 0.18675563017491334
+  },
+  {
+    "frterm": "lilas",
+    "taterm": "ஊதா",
+    "dist": 0.1297338022864509
+  },
+  {
+    "frterm": "magenta",
+    "taterm": "neelam",
+    "dist": 0.24640129474482697
+  },
+  {
+    "frterm": "magenta",
+    "taterm": "oodha",
+    "dist": 0.09317899776642116
+  },
+  {
+    "frterm": "magenta",
+    "taterm": "pachai",
+    "dist": 0.2855567947101376
+  },
+  {
+    "frterm": "magenta",
+    "taterm": "ஊதா",
+    "dist": 0.08654684540178531
+  },
+  {
+    "frterm": "marron",
+    "taterm": "neelam",
+    "dist": 0.2004929126157574
+  },
+  {
+    "frterm": "marron",
+    "taterm": "oodha",
+    "dist": 0.1003675040512644
+  },
+  {
+    "frterm": "marron",
+    "taterm": "pachai",
+    "dist": 0.1964865194740286
+  },
+  {
+    "frterm": "marron",
+    "taterm": "ஊதா",
+    "dist": 0.12783624800751414
+  },
+  {
+    "frterm": "mauve",
+    "taterm": "neelam",
+    "dist": 0.15911108431651172
+  },
+  {
+    "frterm": "mauve",
+    "taterm": "oodha",
+    "dist": 0.06329939357132974
+  },
+  {
+    "frterm": "mauve",
+    "taterm": "pachai",
+    "dist": 0.22575696501771267
+  },
+  {
+    "frterm": "mauve",
+    "taterm": "ஊதா",
+    "dist": 0.07818700671209869
+  },
+  {
+    "frterm": "noir",
+    "taterm": "neelam",
+    "dist": 0.27132135696284104
+  },
+  {
+    "frterm": "noir",
+    "taterm": "oodha",
+    "dist": 0.1527583037198405
+  },
+  {
+    "frterm": "noir",
+    "taterm": "pachai",
+    "dist": 0.3004032297112581
+  },
+  {
+    "frterm": "noir",
+    "taterm": "ஊதா",
+    "dist": 0.1301622058746656
+  },
+  {
+    "frterm": "ocre",
+    "taterm": "neelam",
+    "dist": 0.14625116584104833
+  },
+  {
+    "frterm": "ocre",
+    "taterm": "oodha",
+    "dist": 0.18094688271108358
+  },
+  {
+    "frterm": "ocre",
+    "taterm": "pachai",
+    "dist": 0.07698717289508905
+  },
+  {
+    "frterm": "ocre",
+    "taterm": "ஊதா",
+    "dist": 0.23367621824950677
+  },
+  {
+    "frterm": "orange",
+    "taterm": "neelam",
+    "dist": 0.16038918807489666
+  },
+  {
+    "frterm": "orange",
+    "taterm": "oodha",
+    "dist": 0.18304076748864515
+  },
+  {
+    "frterm": "orange",
+    "taterm": "pachai",
+    "dist": 0.10898983955674742
+  },
+  {
+    "frterm": "orange",
+    "taterm": "ஊதா",
+    "dist": 0.23168581361643056
+  },
+  {
+    "frterm": "pourpre",
+    "taterm": "neelam",
+    "dist": 0.2691522390159663
+  },
+  {
+    "frterm": "pourpre",
+    "taterm": "oodha",
+    "dist": 0.09450414415183679
+  },
+  {
+    "frterm": "pourpre",
+    "taterm": "pachai",
+    "dist": 0.3089221346326858
+  },
+  {
+    "frterm": "pourpre",
+    "taterm": "ஊதா",
+    "dist": 0.07206185455287606
+  },
+  {
+    "frterm": "prune",
+    "taterm": "neelam",
+    "dist": 0.2646425393077965
+  },
+  {
+    "frterm": "prune",
+    "taterm": "oodha",
+    "dist": 0.09422224901474828
+  },
+  {
+    "frterm": "prune",
+    "taterm": "pachai",
+    "dist": 0.30131117456992323
+  },
+  {
+    "frterm": "prune",
+    "taterm": "ஊதா",
+    "dist": 0.08257632984042501
+  },
+  {
+    "frterm": "rose",
+    "taterm": "neelam",
+    "dist": 0.18379608601914532
+  },
+  {
+    "frterm": "rose",
+    "taterm": "oodha",
+    "dist": 0.10531877341171662
+  },
+  {
+    "frterm": "rose",
+    "taterm": "pachai",
+    "dist": 0.21956506723865243
+  },
+  {
+    "frterm": "rose",
+    "taterm": "ஊதா",
+    "dist": 0.1345563036912109
+  },
+  {
+    "frterm": "rouge",
+    "taterm": "neelam",
+    "dist": 0.23246702129978658
+  },
+  {
+    "frterm": "rouge",
+    "taterm": "oodha",
+    "dist": 0.07007893168563747
+  },
+  {
+    "frterm": "rouge",
+    "taterm": "pachai",
+    "dist": 0.25641105672599607
+  },
+  {
+    "frterm": "rouge",
+    "taterm": "ஊதா",
+    "dist": 0.08691028693172277
+  },
+  {
+    "frterm": "saumon",
+    "taterm": "neelam",
+    "dist": 0.1584345763091187
+  },
+  {
+    "frterm": "saumon",
+    "taterm": "oodha",
+    "dist": 0.2153717950052356
+  },
+  {
+    "frterm": "saumon",
+    "taterm": "pachai",
+    "dist": 0.13044513520508977
+  },
+  {
+    "frterm": "saumon",
+    "taterm": "ஊதா",
+    "dist": 0.2582181359902814
+  },
+  {
+    "frterm": "taupe",
+    "taterm": "neelam",
+    "dist": 0.13483862197247298
+  },
+  {
+    "frterm": "taupe",
+    "taterm": "oodha",
+    "dist": 0.15033515445440582
+  },
+  {
+    "frterm": "taupe",
+    "taterm": "pachai",
+    "dist": 0.10180639088329974
+  },
+  {
+    "frterm": "taupe",
+    "taterm": "ஊதா",
+    "dist": 0.19717437600814294
+  },
+  {
+    "frterm": "turquoise",
+    "taterm": "neelam",
+    "dist": 0.13500802044535523
+  },
+  {
+    "frterm": "turquoise",
+    "taterm": "oodha",
+    "dist": 0.27525194214420234
+  },
+  {
+    "frterm": "turquoise",
+    "taterm": "pachai",
+    "dist": 0.09758928525036832
+  },
+  {
+    "frterm": "turquoise",
+    "taterm": "ஊதா",
+    "dist": 0.3224893028308823
+  },
+  {
+    "frterm": "vert",
+    "taterm": "neelam",
+    "dist": 0.18057672337182876
+  },
+  {
+    "frterm": "vert",
+    "taterm": "oodha",
+    "dist": 0.26883331318686027
+  },
+  {
+    "frterm": "vert",
+    "taterm": "pachai",
+    "dist": 0.05422904071460736
+  },
+  {
+    "frterm": "vert",
+    "taterm": "ஊதா",
+    "dist": 0.3215904428279776
+  },
+  {
+    "frterm": "vertclair",
+    "taterm": "neelam",
+    "dist": 0.22164509032758672
+  },
+  {
+    "frterm": "vertclair",
+    "taterm": "oodha",
+    "dist": 0.3335350101689022
+  },
+  {
+    "frterm": "vertclair",
+    "taterm": "pachai",
+    "dist": 0.12115331824614314
+  },
+  {
+    "frterm": "vertclair",
+    "taterm": "ஊதா",
+    "dist": 0.3870525253045375
+  },
+  {
+    "frterm": "vertd'eau",
+    "taterm": "neelam",
+    "dist": 0.16435409796694667
+  },
+  {
+    "frterm": "vertd'eau",
+    "taterm": "oodha",
+    "dist": 0.26915592970668634
+  },
+  {
+    "frterm": "vertd'eau",
+    "taterm": "pachai",
+    "dist": 0.06890222716289449
+  },
+  {
+    "frterm": "vertd'eau",
+    "taterm": "ஊதா",
+    "dist": 0.3218549186966427
+  },
+  {
+    "frterm": "vertfluo",
+    "taterm": "neelam",
+    "dist": 0.2549833591558667
+  },
+  {
+    "frterm": "vertfluo",
+    "taterm": "oodha",
+    "dist": 0.36349894536709243
+  },
+  {
+    "frterm": "vertfluo",
+    "taterm": "pachai",
+    "dist": 0.15533918817508147
+  },
+  {
+    "frterm": "vertfluo",
+    "taterm": "ஊதா",
+    "dist": 0.4163981494937194
+  },
+  {
+    "frterm": "vertfonce",
+    "taterm": "neelam",
+    "dist": 0.19045362451632247
+  },
+  {
+    "frterm": "vertfonce",
+    "taterm": "oodha",
+    "dist": 0.17245120766514213
+  },
+  {
+    "frterm": "vertfonce",
+    "taterm": "pachai",
+    "dist": 0.1353799873329786
+  },
+  {
+    "frterm": "vertfonce",
+    "taterm": "ஊதா",
+    "dist": 0.21753955615400805
+  },
+  {
+    "frterm": "vertforet",
+    "taterm": "neelam",
+    "dist": 0.19213261230469558
+  },
+  {
+    "frterm": "vertforet",
+    "taterm": "oodha",
+    "dist": 0.21487779338455412
+  },
+  {
+    "frterm": "vertforet",
+    "taterm": "pachai",
+    "dist": 0.10612457206611431
+  },
+  {
+    "frterm": "vertforet",
+    "taterm": "ஊதா",
+    "dist": 0.2621748465528942
+  },
+  {
+    "frterm": "vertkaki",
+    "taterm": "neelam",
+    "dist": 0.15329379334758583
+  },
+  {
+    "frterm": "vertkaki",
+    "taterm": "oodha",
+    "dist": 0.14619800452113627
+  },
+  {
+    "frterm": "vertkaki",
+    "taterm": "pachai",
+    "dist": 0.10608400366619966
+  },
+  {
+    "frterm": "vertkaki",
+    "taterm": "ஊதா",
+    "dist": 0.20073240526110736
+  },
+  {
+    "frterm": "vertpale",
+    "taterm": "neelam",
+    "dist": 0.22018918967158616
+  },
+  {
+    "frterm": "vertpale",
+    "taterm": "oodha",
+    "dist": 0.3292969211742647
+  },
+  {
+    "frterm": "vertpale",
+    "taterm": "pachai",
+    "dist": 0.12451963610435915
+  },
+  {
+    "frterm": "vertpale",
+    "taterm": "ஊதா",
+    "dist": 0.38180737780825835
+  },
+  {
+    "frterm": "vertpomme",
+    "taterm": "neelam",
+    "dist": 0.22014125340161336
+  },
+  {
+    "frterm": "vertpomme",
+    "taterm": "oodha",
+    "dist": 0.32429869753341367
+  },
+  {
+    "frterm": "vertpomme",
+    "taterm": "pachai",
+    "dist": 0.11326896979459664
+  },
+  {
+    "frterm": "vertpomme",
+    "taterm": "ஊதா",
+    "dist": 0.3773550451759395
+  },
+  {
+    "frterm": "vertsapin",
+    "taterm": "neelam",
+    "dist": 0.18100214684012814
+  },
+  {
+    "frterm": "vertsapin",
+    "taterm": "oodha",
+    "dist": 0.1760660390735851
+  },
+  {
+    "frterm": "vertsapin",
+    "taterm": "pachai",
+    "dist": 0.11332047054639816
+  },
+  {
+    "frterm": "vertsapin",
+    "taterm": "ஊதா",
+    "dist": 0.22394740362517396
+  },
+  {
+    "frterm": "violet",
+    "taterm": "neelam",
+    "dist": 0.20214318747545731
+  },
+  {
+    "frterm": "violet",
+    "taterm": "oodha",
+    "dist": 0.05485239099179842
+  },
+  {
+    "frterm": "violet",
+    "taterm": "pachai",
+    "dist": 0.2684792600858697
+  },
+  {
+    "frterm": "violet",
+    "taterm": "ஊதா",
+    "dist": 0.03786572430140724
+  },
+  {
+    "frterm": "violetfonce",
+    "taterm": "neelam",
+    "dist": 0.2389773318333912
+  },
+  {
+    "frterm": "violetfonce",
+    "taterm": "oodha",
+    "dist": 0.09721852587685328
+  },
+  {
+    "frterm": "violetfonce",
+    "taterm": "pachai",
+    "dist": 0.3072074321001118
+  },
+  {
+    "frterm": "violetfonce",
+    "taterm": "ஊதா",
+    "dist": 0.042733466633405576
+  }
+]

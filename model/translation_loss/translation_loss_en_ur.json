@@ -1,0 +1,6312 @@
+[
+  {
+    "enterm": "acidgreen",
+    "urterm": "hara",
+    "dist": 0.15800763012470084
+  },
+  {
+    "enterm": "acidgreen",
+    "urterm": "neela",
+    "dist": 0.31037608811182726
+  },
+  {
+    "enterm": "amber",
+    "urterm": "hara",
+    "dist": 0.0553579146292602
+  },
+  {
+    "enterm": "amber",
+    "urterm": "neela",
+    "dist": 0.17048748018025853
+  },
+  {
+    "enterm": "amethyst",
+    "urterm": "hara",
+    "dist": 0.22805602310634104
+  },
+  {
+    "enterm": "amethyst",
+    "urterm": "neela",
+    "dist": 0.09334829963633924
+  },
+  {
+    "enterm": "applegreen",
+    "urterm": "hara",
+    "dist": 0.08395496112953056
+  },
+  {
+    "enterm": "applegreen",
+    "urterm": "neela",
+    "dist": 0.2513097584371271
+  },
+  {
+    "enterm": "apricot",
+    "urterm": "hara",
+    "dist": 0.08276324679131337
+  },
+  {
+    "enterm": "apricot",
+    "urterm": "neela",
+    "dist": 0.15863562771762343
+  },
+  {
+    "enterm": "aqua",
+    "urterm": "hara",
+    "dist": 0.10276213250480366
+  },
+  {
+    "enterm": "aqua",
+    "urterm": "neela",
+    "dist": 0.14640863216261485
+  },
+  {
+    "enterm": "aquablue",
+    "urterm": "hara",
+    "dist": 0.1274564515315762
+  },
+  {
+    "enterm": "aquablue",
+    "urterm": "neela",
+    "dist": 0.12549270797254347
+  },
+  {
+    "enterm": "aquagreen",
+    "urterm": "hara",
+    "dist": 0.042593002031751884
+  },
+  {
+    "enterm": "aquagreen",
+    "urterm": "neela",
+    "dist": 0.19288552257745803
+  },
+  {
+    "enterm": "aquamarine",
+    "urterm": "hara",
+    "dist": 0.09226956787543178
+  },
+  {
+    "enterm": "aquamarine",
+    "urterm": "neela",
+    "dist": 0.14418537827025762
+  },
+  {
+    "enterm": "army",
+    "urterm": "hara",
+    "dist": 0.136086232618214
+  },
+  {
+    "enterm": "army",
+    "urterm": "neela",
+    "dist": 0.1642380315464861
+  },
+  {
+    "enterm": "armygreen",
+    "urterm": "hara",
+    "dist": 0.10101185781599141
+  },
+  {
+    "enterm": "armygreen",
+    "urterm": "neela",
+    "dist": 0.15373712919314866
+  },
+  {
+    "enterm": "ash",
+    "urterm": "hara",
+    "dist": 0.13403299173257102
+  },
+  {
+    "enterm": "ash",
+    "urterm": "neela",
+    "dist": 0.1221845936700519
+  },
+  {
+    "enterm": "asparagus",
+    "urterm": "hara",
+    "dist": 0.03720706569430699
+  },
+  {
+    "enterm": "asparagus",
+    "urterm": "neela",
+    "dist": 0.17646118797933624
+  },
+  {
+    "enterm": "aubergine",
+    "urterm": "hara",
+    "dist": 0.21699898002790138
+  },
+  {
+    "enterm": "aubergine",
+    "urterm": "neela",
+    "dist": 0.13343495737748157
+  },
+  {
+    "enterm": "auburn",
+    "urterm": "hara",
+    "dist": 0.15313014900502633
+  },
+  {
+    "enterm": "auburn",
+    "urterm": "neela",
+    "dist": 0.16572007520900886
+  },
+  {
+    "enterm": "avocado",
+    "urterm": "hara",
+    "dist": 0.031609888401237456
+  },
+  {
+    "enterm": "avocado",
+    "urterm": "neela",
+    "dist": 0.19330655222778137
+  },
+  {
+    "enterm": "avocadogreen",
+    "urterm": "hara",
+    "dist": 0.04703806209774679
+  },
+  {
+    "enterm": "avocadogreen",
+    "urterm": "neela",
+    "dist": 0.22010262368970984
+  },
+  {
+    "enterm": "azure",
+    "urterm": "hara",
+    "dist": 0.17647931195367217
+  },
+  {
+    "enterm": "azure",
+    "urterm": "neela",
+    "dist": 0.07090861526922128
+  },
+  {
+    "enterm": "azureblue",
+    "urterm": "hara",
+    "dist": 0.1876853506207682
+  },
+  {
+    "enterm": "azureblue",
+    "urterm": "neela",
+    "dist": 0.04725954607696867
+  },
+  {
+    "enterm": "babyblue",
+    "urterm": "hara",
+    "dist": 0.19720558459276893
+  },
+  {
+    "enterm": "babyblue",
+    "urterm": "neela",
+    "dist": 0.15626257214791153
+  },
+  {
+    "enterm": "babygreen",
+    "urterm": "hara",
+    "dist": 0.12492649464123468
+  },
+  {
+    "enterm": "babygreen",
+    "urterm": "neela",
+    "dist": 0.2756973700991151
+  },
+  {
+    "enterm": "babypink",
+    "urterm": "hara",
+    "dist": 0.14607885948911972
+  },
+  {
+    "enterm": "babypink",
+    "urterm": "neela",
+    "dist": 0.1127896394297913
+  },
+  {
+    "enterm": "babypurple",
+    "urterm": "hara",
+    "dist": 0.19261915838277718
+  },
+  {
+    "enterm": "babypurple",
+    "urterm": "neela",
+    "dist": 0.10738510787376619
+  },
+  {
+    "enterm": "banana",
+    "urterm": "hara",
+    "dist": 0.15008317860058226
+  },
+  {
+    "enterm": "banana",
+    "urterm": "neela",
+    "dist": 0.28195203255172624
+  },
+  {
+    "enterm": "barbiepink",
+    "urterm": "hara",
+    "dist": 0.20488092745091438
+  },
+  {
+    "enterm": "barbiepink",
+    "urterm": "neela",
+    "dist": 0.09638822242076456
+  },
+  {
+    "enterm": "beige",
+    "urterm": "hara",
+    "dist": 0.08982630607414065
+  },
+  {
+    "enterm": "beige",
+    "urterm": "neela",
+    "dist": 0.14627012467173012
+  },
+  {
+    "enterm": "berry",
+    "urterm": "hara",
+    "dist": 0.19860291957087697
+  },
+  {
+    "enterm": "berry",
+    "urterm": "neela",
+    "dist": 0.09417954645896878
+  },
+  {
+    "enterm": "black",
+    "urterm": "hara",
+    "dist": 0.25525126442415536
+  },
+  {
+    "enterm": "black",
+    "urterm": "neela",
+    "dist": 0.20230744615808557
+  },
+  {
+    "enterm": "bloodorange",
+    "urterm": "hara",
+    "dist": 0.1585194423074631
+  },
+  {
+    "enterm": "bloodorange",
+    "urterm": "neela",
+    "dist": 0.14328185858853854
+  },
+  {
+    "enterm": "bloodred",
+    "urterm": "hara",
+    "dist": 0.22046915836136954
+  },
+  {
+    "enterm": "bloodred",
+    "urterm": "neela",
+    "dist": 0.1865726604821102
+  },
+  {
+    "enterm": "blue",
+    "urterm": "hara",
+    "dist": 0.18623190918924507
+  },
+  {
+    "enterm": "blue",
+    "urterm": "neela",
+    "dist": 0.03305562438721445
+  },
+  {
+    "enterm": "blueblack",
+    "urterm": "hara",
+    "dist": 0.26445115288070037
+  },
+  {
+    "enterm": "blueblack",
+    "urterm": "neela",
+    "dist": 0.18229553301470922
+  },
+  {
+    "enterm": "bluegray",
+    "urterm": "hara",
+    "dist": 0.11985797481292192
+  },
+  {
+    "enterm": "bluegray",
+    "urterm": "neela",
+    "dist": 0.10566028948510271
+  },
+  {
+    "enterm": "bluegreen",
+    "urterm": "hara",
+    "dist": 0.06872542731327662
+  },
+  {
+    "enterm": "bluegreen",
+    "urterm": "neela",
+    "dist": 0.14463536483733835
+  },
+  {
+    "enterm": "blueishgray",
+    "urterm": "hara",
+    "dist": 0.12013301478330447
+  },
+  {
+    "enterm": "blueishgray",
+    "urterm": "neela",
+    "dist": 0.12033057800049056
+  },
+  {
+    "enterm": "blueishgreen",
+    "urterm": "hara",
+    "dist": 0.04206947141593766
+  },
+  {
+    "enterm": "blueishgreen",
+    "urterm": "neela",
+    "dist": 0.15723302985281096
+  },
+  {
+    "enterm": "blueishpurple",
+    "urterm": "hara",
+    "dist": 0.23343548333411193
+  },
+  {
+    "enterm": "blueishpurple",
+    "urterm": "neela",
+    "dist": 0.10642360325780416
+  },
+  {
+    "enterm": "bluepurple",
+    "urterm": "hara",
+    "dist": 0.23482229355453751
+  },
+  {
+    "enterm": "bluepurple",
+    "urterm": "neela",
+    "dist": 0.08531263731977565
+  },
+  {
+    "enterm": "blueviolet",
+    "urterm": "hara",
+    "dist": 0.23976914017639475
+  },
+  {
+    "enterm": "blueviolet",
+    "urterm": "neela",
+    "dist": 0.0882580098705503
+  },
+  {
+    "enterm": "bluishgray",
+    "urterm": "hara",
+    "dist": 0.129243067186393
+  },
+  {
+    "enterm": "bluishgray",
+    "urterm": "neela",
+    "dist": 0.10697111824898216
+  },
+  {
+    "enterm": "bluishgreen",
+    "urterm": "hara",
+    "dist": 0.044459344145531175
+  },
+  {
+    "enterm": "bluishgreen",
+    "urterm": "neela",
+    "dist": 0.17035242617064647
+  },
+  {
+    "enterm": "bluishpurple",
+    "urterm": "hara",
+    "dist": 0.23448092897506104
+  },
+  {
+    "enterm": "bluishpurple",
+    "urterm": "neela",
+    "dist": 0.09735092030621376
+  },
+  {
+    "enterm": "blurple",
+    "urterm": "hara",
+    "dist": 0.2459355610909609
+  },
+  {
+    "enterm": "blurple",
+    "urterm": "neela",
+    "dist": 0.08980525765710377
+  },
+  {
+    "enterm": "blush",
+    "urterm": "hara",
+    "dist": 0.11463360458719785
+  },
+  {
+    "enterm": "blush",
+    "urterm": "neela",
+    "dist": 0.10602423002140639
+  },
+  {
+    "enterm": "blushpink",
+    "urterm": "hara",
+    "dist": 0.12576598589106985
+  },
+  {
+    "enterm": "blushpink",
+    "urterm": "neela",
+    "dist": 0.10698475071832522
+  },
+  {
+    "enterm": "bottlegreen",
+    "urterm": "hara",
+    "dist": 0.13113527574403402
+  },
+  {
+    "enterm": "bottlegreen",
+    "urterm": "neela",
+    "dist": 0.16276059812370403
+  },
+  {
+    "enterm": "brick",
+    "urterm": "hara",
+    "dist": 0.16858513881636628
+  },
+  {
+    "enterm": "brick",
+    "urterm": "neela",
+    "dist": 0.15424218851899257
+  },
+  {
+    "enterm": "brickbrown",
+    "urterm": "hara",
+    "dist": 0.18116393227291594
+  },
+  {
+    "enterm": "brickbrown",
+    "urterm": "neela",
+    "dist": 0.15884042009216015
+  },
+  {
+    "enterm": "brickorange",
+    "urterm": "hara",
+    "dist": 0.10768144034819035
+  },
+  {
+    "enterm": "brickorange",
+    "urterm": "neela",
+    "dist": 0.16136737386192934
+  },
+  {
+    "enterm": "brickred",
+    "urterm": "hara",
+    "dist": 0.1985096913039263
+  },
+  {
+    "enterm": "brickred",
+    "urterm": "neela",
+    "dist": 0.16833809297301502
+  },
+  {
+    "enterm": "brightblue",
+    "urterm": "hara",
+    "dist": 0.1829298383701169
+  },
+  {
+    "enterm": "brightblue",
+    "urterm": "neela",
+    "dist": 0.05380022552639877
+  },
+  {
+    "enterm": "brightgreen",
+    "urterm": "hara",
+    "dist": 0.12613702297452437
+  },
+  {
+    "enterm": "brightgreen",
+    "urterm": "neela",
+    "dist": 0.2843925205934817
+  },
+  {
+    "enterm": "brightmagenta",
+    "urterm": "hara",
+    "dist": 0.2223775831584228
+  },
+  {
+    "enterm": "brightmagenta",
+    "urterm": "neela",
+    "dist": 0.11298187639067897
+  },
+  {
+    "enterm": "brightmint",
+    "urterm": "hara",
+    "dist": 0.16244923279133627
+  },
+  {
+    "enterm": "brightmint",
+    "urterm": "neela",
+    "dist": 0.3120425885370458
+  },
+  {
+    "enterm": "brightorange",
+    "urterm": "hara",
+    "dist": 0.08515240632614599
+  },
+  {
+    "enterm": "brightorange",
+    "urterm": "neela",
+    "dist": 0.16006856124755406
+  },
+  {
+    "enterm": "brightpink",
+    "urterm": "hara",
+    "dist": 0.21241875919718245
+  },
+  {
+    "enterm": "brightpink",
+    "urterm": "neela",
+    "dist": 0.10400142479775397
+  },
+  {
+    "enterm": "brightpurple",
+    "urterm": "hara",
+    "dist": 0.24736029488047365
+  },
+  {
+    "enterm": "brightpurple",
+    "urterm": "neela",
+    "dist": 0.11982160748396653
+  },
+  {
+    "enterm": "brightred",
+    "urterm": "hara",
+    "dist": 0.1780352248008476
+  },
+  {
+    "enterm": "brightred",
+    "urterm": "neela",
+    "dist": 0.1430958047639805
+  },
+  {
+    "enterm": "brightteal",
+    "urterm": "hara",
+    "dist": 0.14039043285959255
+  },
+  {
+    "enterm": "brightteal",
+    "urterm": "neela",
+    "dist": 0.25117537402055967
+  },
+  {
+    "enterm": "brightturquoise",
+    "urterm": "hara",
+    "dist": 0.1443818065925516
+  },
+  {
+    "enterm": "brightturquoise",
+    "urterm": "neela",
+    "dist": 0.21986590981113333
+  },
+  {
+    "enterm": "brightviolet",
+    "urterm": "hara",
+    "dist": 0.24280831964309194
+  },
+  {
+    "enterm": "brightviolet",
+    "urterm": "neela",
+    "dist": 0.11080698708083475
+  },
+  {
+    "enterm": "brightyellow",
+    "urterm": "hara",
+    "dist": 0.17613798024043542
+  },
+  {
+    "enterm": "brightyellow",
+    "urterm": "neela",
+    "dist": 0.3272704404814855
+  },
+  {
+    "enterm": "bronze",
+    "urterm": "hara",
+    "dist": 0.08564175480393658
+  },
+  {
+    "enterm": "bronze",
+    "urterm": "neela",
+    "dist": 0.15111112350811376
+  },
+  {
+    "enterm": "brown",
+    "urterm": "hara",
+    "dist": 0.16578487886828502
+  },
+  {
+    "enterm": "brown",
+    "urterm": "neela",
+    "dist": 0.1580699294066616
+  },
+  {
+    "enterm": "browngray",
+    "urterm": "hara",
+    "dist": 0.13767063367619456
+  },
+  {
+    "enterm": "browngray",
+    "urterm": "neela",
+    "dist": 0.12627152422084645
+  },
+  {
+    "enterm": "browngreen",
+    "urterm": "hara",
+    "dist": 0.08552265918549809
+  },
+  {
+    "enterm": "browngreen",
+    "urterm": "neela",
+    "dist": 0.150011299039066
+  },
+  {
+    "enterm": "brownish",
+    "urterm": "hara",
+    "dist": 0.10833730437237898
+  },
+  {
+    "enterm": "brownish",
+    "urterm": "neela",
+    "dist": 0.13117917410453342
+  },
+  {
+    "enterm": "brownishgray",
+    "urterm": "hara",
+    "dist": 0.1365033116971096
+  },
+  {
+    "enterm": "brownishgray",
+    "urterm": "neela",
+    "dist": 0.12552350074130644
+  },
+  {
+    "enterm": "brownishgreen",
+    "urterm": "hara",
+    "dist": 0.07051165777286207
+  },
+  {
+    "enterm": "brownishgreen",
+    "urterm": "neela",
+    "dist": 0.15166239047818622
+  },
+  {
+    "enterm": "brownishorange",
+    "urterm": "hara",
+    "dist": 0.15317887770444358
+  },
+  {
+    "enterm": "brownishorange",
+    "urterm": "neela",
+    "dist": 0.1718326066912113
+  },
+  {
+    "enterm": "brownishpurple",
+    "urterm": "hara",
+    "dist": 0.18171164568325984
+  },
+  {
+    "enterm": "brownishpurple",
+    "urterm": "neela",
+    "dist": 0.15473700809277022
+  },
+  {
+    "enterm": "brownishred",
+    "urterm": "hara",
+    "dist": 0.20308565566589842
+  },
+  {
+    "enterm": "brownishred",
+    "urterm": "neela",
+    "dist": 0.17505397967796163
+  },
+  {
+    "enterm": "brownorange",
+    "urterm": "hara",
+    "dist": 0.1062060128490908
+  },
+  {
+    "enterm": "brownorange",
+    "urterm": "neela",
+    "dist": 0.15739225436933532
+  },
+  {
+    "enterm": "brownpurple",
+    "urterm": "hara",
+    "dist": 0.21092809355667297
+  },
+  {
+    "enterm": "brownpurple",
+    "urterm": "neela",
+    "dist": 0.18589929927750048
+  },
+  {
+    "enterm": "brownred",
+    "urterm": "hara",
+    "dist": 0.1902744126917814
+  },
+  {
+    "enterm": "brownred",
+    "urterm": "neela",
+    "dist": 0.18021541127402452
+  },
+  {
+    "enterm": "brownyellow",
+    "urterm": "hara",
+    "dist": 0.042151931285895186
+  },
+  {
+    "enterm": "brownyellow",
+    "urterm": "neela",
+    "dist": 0.17628615742626244
+  },
+  {
+    "enterm": "bubblegum",
+    "urterm": "hara",
+    "dist": 0.19824698500409185
+  },
+  {
+    "enterm": "bubblegum",
+    "urterm": "neela",
+    "dist": 0.09411772400875867
+  },
+  {
+    "enterm": "bubblegumpink",
+    "urterm": "hara",
+    "dist": 0.19887039792273775
+  },
+  {
+    "enterm": "bubblegumpink",
+    "urterm": "neela",
+    "dist": 0.0971669157582223
+  },
+  {
+    "enterm": "burgundy",
+    "urterm": "hara",
+    "dist": 0.22263008141699347
+  },
+  {
+    "enterm": "burgundy",
+    "urterm": "neela",
+    "dist": 0.1804792249044713
+  },
+  {
+    "enterm": "burntorange",
+    "urterm": "hara",
+    "dist": 0.10189895912194676
+  },
+  {
+    "enterm": "burntorange",
+    "urterm": "neela",
+    "dist": 0.16428543907159082
+  },
+  {
+    "enterm": "burntred",
+    "urterm": "hara",
+    "dist": 0.2162515398201045
+  },
+  {
+    "enterm": "burntred",
+    "urterm": "neela",
+    "dist": 0.18466637245875797
+  },
+  {
+    "enterm": "burntsienna",
+    "urterm": "hara",
+    "dist": 0.16389189145580887
+  },
+  {
+    "enterm": "burntsienna",
+    "urterm": "neela",
+    "dist": 0.16862517189061826
+  },
+  {
+    "enterm": "burntumber",
+    "urterm": "hara",
+    "dist": 0.18664802811868705
+  },
+  {
+    "enterm": "burntumber",
+    "urterm": "neela",
+    "dist": 0.17635198545408298
+  },
+  {
+    "enterm": "burntyellow",
+    "urterm": "hara",
+    "dist": 0.0332179850750669
+  },
+  {
+    "enterm": "burntyellow",
+    "urterm": "neela",
+    "dist": 0.1976033340851551
+  },
+  {
+    "enterm": "butteryellow",
+    "urterm": "hara",
+    "dist": 0.1297159671165013
+  },
+  {
+    "enterm": "butteryellow",
+    "urterm": "neela",
+    "dist": 0.23659505354062962
+  },
+  {
+    "enterm": "cadetblue",
+    "urterm": "hara",
+    "dist": 0.13029679959782559
+  },
+  {
+    "enterm": "cadetblue",
+    "urterm": "neela",
+    "dist": 0.06514929876931061
+  },
+  {
+    "enterm": "camel",
+    "urterm": "hara",
+    "dist": 0.08630467670125214
+  },
+  {
+    "enterm": "camel",
+    "urterm": "neela",
+    "dist": 0.13431827440327337
+  },
+  {
+    "enterm": "camogreen",
+    "urterm": "hara",
+    "dist": 0.08280954086290282
+  },
+  {
+    "enterm": "camogreen",
+    "urterm": "neela",
+    "dist": 0.15724189497652352
+  },
+  {
+    "enterm": "canaryyellow",
+    "urterm": "hara",
+    "dist": 0.1549080794754302
+  },
+  {
+    "enterm": "canaryyellow",
+    "urterm": "neela",
+    "dist": 0.30845017248365175
+  },
+  {
+    "enterm": "caramel",
+    "urterm": "hara",
+    "dist": 0.09755795235572572
+  },
+  {
+    "enterm": "caramel",
+    "urterm": "neela",
+    "dist": 0.15011681331602972
+  },
+  {
+    "enterm": "carmine",
+    "urterm": "hara",
+    "dist": 0.20084684741643627
+  },
+  {
+    "enterm": "carmine",
+    "urterm": "neela",
+    "dist": 0.15244890385553458
+  },
+  {
+    "enterm": "carnationpink",
+    "urterm": "hara",
+    "dist": 0.1660022575187969
+  },
+  {
+    "enterm": "carnationpink",
+    "urterm": "neela",
+    "dist": 0.10734812118730672
+  },
+  {
+    "enterm": "carolinablue",
+    "urterm": "hara",
+    "dist": 0.1998779199497281
+  },
+  {
+    "enterm": "carolinablue",
+    "urterm": "neela",
+    "dist": 0.1488852410426426
+  },
+  {
+    "enterm": "carrot",
+    "urterm": "hara",
+    "dist": 0.11214942368562772
+  },
+  {
+    "enterm": "carrot",
+    "urterm": "neela",
+    "dist": 0.15639062591249484
+  },
+  {
+    "enterm": "cerise",
+    "urterm": "hara",
+    "dist": 0.19297355844451114
+  },
+  {
+    "enterm": "cerise",
+    "urterm": "neela",
+    "dist": 0.09228857579029483
+  },
+  {
+    "enterm": "cerulean",
+    "urterm": "hara",
+    "dist": 0.1750646099476154
+  },
+  {
+    "enterm": "cerulean",
+    "urterm": "neela",
+    "dist": 0.057561433092927064
+  },
+  {
+    "enterm": "ceruleanblue",
+    "urterm": "hara",
+    "dist": 0.16903312105677765
+  },
+  {
+    "enterm": "ceruleanblue",
+    "urterm": "neela",
+    "dist": 0.06418690028299007
+  },
+  {
+    "enterm": "charcoal",
+    "urterm": "hara",
+    "dist": 0.21009978996153267
+  },
+  {
+    "enterm": "charcoal",
+    "urterm": "neela",
+    "dist": 0.18072018071652993
+  },
+  {
+    "enterm": "charcoalgray",
+    "urterm": "hara",
+    "dist": 0.18284780614676788
+  },
+  {
+    "enterm": "charcoalgray",
+    "urterm": "neela",
+    "dist": 0.15832629568659323
+  },
+  {
+    "enterm": "chartreuse",
+    "urterm": "hara",
+    "dist": 0.09836262474481207
+  },
+  {
+    "enterm": "chartreuse",
+    "urterm": "neela",
+    "dist": 0.25776512968084464
+  },
+  {
+    "enterm": "chartreusegreen",
+    "urterm": "hara",
+    "dist": 0.14093930507821023
+  },
+  {
+    "enterm": "chartreusegreen",
+    "urterm": "neela",
+    "dist": 0.2957011056532337
+  },
+  {
+    "enterm": "cherry",
+    "urterm": "hara",
+    "dist": 0.19785420361695244
+  },
+  {
+    "enterm": "cherry",
+    "urterm": "neela",
+    "dist": 0.1526784860088248
+  },
+  {
+    "enterm": "cherryred",
+    "urterm": "hara",
+    "dist": 0.19626435272487602
+  },
+  {
+    "enterm": "cherryred",
+    "urterm": "neela",
+    "dist": 0.14860437916169034
+  },
+  {
+    "enterm": "chestnut",
+    "urterm": "hara",
+    "dist": 0.1659322676630906
+  },
+  {
+    "enterm": "chestnut",
+    "urterm": "neela",
+    "dist": 0.16217085724226912
+  },
+  {
+    "enterm": "chestnutbrown",
+    "urterm": "hara",
+    "dist": 0.18842668873401183
+  },
+  {
+    "enterm": "chestnutbrown",
+    "urterm": "neela",
+    "dist": 0.1828211666670722
+  },
+  {
+    "enterm": "chocolate",
+    "urterm": "hara",
+    "dist": 0.20800206074557526
+  },
+  {
+    "enterm": "chocolate",
+    "urterm": "neela",
+    "dist": 0.18279359886906216
+  },
+  {
+    "enterm": "chocolatebrown",
+    "urterm": "hara",
+    "dist": 0.21506505467834885
+  },
+  {
+    "enterm": "chocolatebrown",
+    "urterm": "neela",
+    "dist": 0.18889384628091865
+  },
+  {
+    "enterm": "cinnamon",
+    "urterm": "hara",
+    "dist": 0.12153161495970881
+  },
+  {
+    "enterm": "cinnamon",
+    "urterm": "neela",
+    "dist": 0.1354641507374241
+  },
+  {
+    "enterm": "clay",
+    "urterm": "hara",
+    "dist": 0.1124024934249688
+  },
+  {
+    "enterm": "clay",
+    "urterm": "neela",
+    "dist": 0.1251758570333987
+  },
+  {
+    "enterm": "cobalt",
+    "urterm": "hara",
+    "dist": 0.2248501928764265
+  },
+  {
+    "enterm": "cobalt",
+    "urterm": "neela",
+    "dist": 0.08894479157112316
+  },
+  {
+    "enterm": "cobaltblue",
+    "urterm": "hara",
+    "dist": 0.22821628573938701
+  },
+  {
+    "enterm": "cobaltblue",
+    "urterm": "neela",
+    "dist": 0.08699738919991665
+  },
+  {
+    "enterm": "coffee",
+    "urterm": "hara",
+    "dist": 0.17842276156699102
+  },
+  {
+    "enterm": "coffee",
+    "urterm": "neela",
+    "dist": 0.166083307616938
+  },
+  {
+    "enterm": "coffeebrown",
+    "urterm": "hara",
+    "dist": 0.198188944245783
+  },
+  {
+    "enterm": "coffeebrown",
+    "urterm": "neela",
+    "dist": 0.1739523571569599
+  },
+  {
+    "enterm": "coolblue",
+    "urterm": "hara",
+    "dist": 0.18331625874876983
+  },
+  {
+    "enterm": "coolblue",
+    "urterm": "neela",
+    "dist": 0.03783558678826591
+  },
+  {
+    "enterm": "coolgray",
+    "urterm": "hara",
+    "dist": 0.11930334492424187
+  },
+  {
+    "enterm": "coolgray",
+    "urterm": "neela",
+    "dist": 0.1207346202387499
+  },
+  {
+    "enterm": "coolgreen",
+    "urterm": "hara",
+    "dist": 0.04490708805267123
+  },
+  {
+    "enterm": "coolgreen",
+    "urterm": "neela",
+    "dist": 0.20941741689566673
+  },
+  {
+    "enterm": "copper",
+    "urterm": "hara",
+    "dist": 0.08954119086135794
+  },
+  {
+    "enterm": "copper",
+    "urterm": "neela",
+    "dist": 0.15420113002885696
+  },
+  {
+    "enterm": "coral",
+    "urterm": "hara",
+    "dist": 0.1482966686545593
+  },
+  {
+    "enterm": "coral",
+    "urterm": "neela",
+    "dist": 0.1386931208849026
+  },
+  {
+    "enterm": "coralpink",
+    "urterm": "hara",
+    "dist": 0.15963066861348044
+  },
+  {
+    "enterm": "coralpink",
+    "urterm": "neela",
+    "dist": 0.1228239776550139
+  },
+  {
+    "enterm": "cornflower",
+    "urterm": "hara",
+    "dist": 0.19534239655501484
+  },
+  {
+    "enterm": "cornflower",
+    "urterm": "neela",
+    "dist": 0.08662304457524671
+  },
+  {
+    "enterm": "cornflowerblue",
+    "urterm": "hara",
+    "dist": 0.1872393919027953
+  },
+  {
+    "enterm": "cornflowerblue",
+    "urterm": "neela",
+    "dist": 0.08156681419266583
+  },
+  {
+    "enterm": "cranberry",
+    "urterm": "hara",
+    "dist": 0.19610949600807118
+  },
+  {
+    "enterm": "cranberry",
+    "urterm": "neela",
+    "dist": 0.1311848712288379
+  },
+  {
+    "enterm": "cream",
+    "urterm": "hara",
+    "dist": 0.1357276714281803
+  },
+  {
+    "enterm": "cream",
+    "urterm": "neela",
+    "dist": 0.20025576458218441
+  },
+  {
+    "enterm": "creme",
+    "urterm": "hara",
+    "dist": 0.09950117174525455
+  },
+  {
+    "enterm": "creme",
+    "urterm": "neela",
+    "dist": 0.1449916837416996
+  },
+  {
+    "enterm": "crimson",
+    "urterm": "hara",
+    "dist": 0.20181593414999874
+  },
+  {
+    "enterm": "crimson",
+    "urterm": "neela",
+    "dist": 0.16373564376727265
+  },
+  {
+    "enterm": "crimsonred",
+    "urterm": "hara",
+    "dist": 0.20956584917320215
+  },
+  {
+    "enterm": "crimsonred",
+    "urterm": "neela",
+    "dist": 0.17406935506426535
+  },
+  {
+    "enterm": "cyan",
+    "urterm": "hara",
+    "dist": 0.11496506157493727
+  },
+  {
+    "enterm": "cyan",
+    "urterm": "neela",
+    "dist": 0.14983357676662065
+  },
+  {
+    "enterm": "cyanblue",
+    "urterm": "hara",
+    "dist": 0.1357799931068266
+  },
+  {
+    "enterm": "cyanblue",
+    "urterm": "neela",
+    "dist": 0.14329338901564243
+  },
+  {
+    "enterm": "cyangreen",
+    "urterm": "hara",
+    "dist": 0.09143576290224709
+  },
+  {
+    "enterm": "cyangreen",
+    "urterm": "neela",
+    "dist": 0.2481069037349509
+  },
+  {
+    "enterm": "dandelion",
+    "urterm": "hara",
+    "dist": 0.11613119110343739
+  },
+  {
+    "enterm": "dandelion",
+    "urterm": "neela",
+    "dist": 0.2761680074300771
+  },
+  {
+    "enterm": "dandelionyellow",
+    "urterm": "hara",
+    "dist": 0.1247476686125895
+  },
+  {
+    "enterm": "dandelionyellow",
+    "urterm": "neela",
+    "dist": 0.28439468648156463
+  },
+  {
+    "enterm": "darkaqua",
+    "urterm": "hara",
+    "dist": 0.11881459968187585
+  },
+  {
+    "enterm": "darkaqua",
+    "urterm": "neela",
+    "dist": 0.0979870328285827
+  },
+  {
+    "enterm": "darkbeige",
+    "urterm": "hara",
+    "dist": 0.08640704250907223
+  },
+  {
+    "enterm": "darkbeige",
+    "urterm": "neela",
+    "dist": 0.13500770013616736
+  },
+  {
+    "enterm": "darkblue",
+    "urterm": "hara",
+    "dist": 0.2498026480089529
+  },
+  {
+    "enterm": "darkblue",
+    "urterm": "neela",
+    "dist": 0.12475844776341527
+  },
+  {
+    "enterm": "darkbluegray",
+    "urterm": "hara",
+    "dist": 0.18663235227438268
+  },
+  {
+    "enterm": "darkbluegray",
+    "urterm": "neela",
+    "dist": 0.16065680917074873
+  },
+  {
+    "enterm": "darkbluegreen",
+    "urterm": "hara",
+    "dist": 0.1394771066211687
+  },
+  {
+    "enterm": "darkbluegreen",
+    "urterm": "neela",
+    "dist": 0.1179043358187103
+  },
+  {
+    "enterm": "darkbrown",
+    "urterm": "hara",
+    "dist": 0.23242827095425958
+  },
+  {
+    "enterm": "darkbrown",
+    "urterm": "neela",
+    "dist": 0.1980252072112073
+  },
+  {
+    "enterm": "darkburgundy",
+    "urterm": "hara",
+    "dist": 0.24800359655124687
+  },
+  {
+    "enterm": "darkburgundy",
+    "urterm": "neela",
+    "dist": 0.2116258293482925
+  },
+  {
+    "enterm": "darkcoral",
+    "urterm": "hara",
+    "dist": 0.18680323075399574
+  },
+  {
+    "enterm": "darkcoral",
+    "urterm": "neela",
+    "dist": 0.14425402346964672
+  },
+  {
+    "enterm": "darkcyan",
+    "urterm": "hara",
+    "dist": 0.09832806188033755
+  },
+  {
+    "enterm": "darkcyan",
+    "urterm": "neela",
+    "dist": 0.10489713800195426
+  },
+  {
+    "enterm": "darkerblue",
+    "urterm": "hara",
+    "dist": 0.22913076488040005
+  },
+  {
+    "enterm": "darkerblue",
+    "urterm": "neela",
+    "dist": 0.08733451233235738
+  },
+  {
+    "enterm": "darkergreen",
+    "urterm": "hara",
+    "dist": 0.055246091281402586
+  },
+  {
+    "enterm": "darkergreen",
+    "urterm": "neela",
+    "dist": 0.1912547149686162
+  },
+  {
+    "enterm": "darkforestgreen",
+    "urterm": "hara",
+    "dist": 0.19138957526239755
+  },
+  {
+    "enterm": "darkforestgreen",
+    "urterm": "neela",
+    "dist": 0.1708557693786412
+  },
+  {
+    "enterm": "darkfuchsia",
+    "urterm": "hara",
+    "dist": 0.211323422520021
+  },
+  {
+    "enterm": "darkfuchsia",
+    "urterm": "neela",
+    "dist": 0.11095801883239936
+  },
+  {
+    "enterm": "darkgold",
+    "urterm": "hara",
+    "dist": 0.0573274277798625
+  },
+  {
+    "enterm": "darkgold",
+    "urterm": "neela",
+    "dist": 0.16184935591574354
+  },
+  {
+    "enterm": "darkgray",
+    "urterm": "hara",
+    "dist": 0.19477305876992465
+  },
+  {
+    "enterm": "darkgray",
+    "urterm": "neela",
+    "dist": 0.16758749885236154
+  },
+  {
+    "enterm": "darkgrayblue",
+    "urterm": "hara",
+    "dist": 0.19706806724580994
+  },
+  {
+    "enterm": "darkgrayblue",
+    "urterm": "neela",
+    "dist": 0.17083996590995765
+  },
+  {
+    "enterm": "darkgreen",
+    "urterm": "hara",
+    "dist": 0.11031217096827153
+  },
+  {
+    "enterm": "darkgreen",
+    "urterm": "neela",
+    "dist": 0.16069294834203623
+  },
+  {
+    "enterm": "darkindigo",
+    "urterm": "hara",
+    "dist": 0.2368590488042703
+  },
+  {
+    "enterm": "darkindigo",
+    "urterm": "neela",
+    "dist": 0.1565621426108852
+  },
+  {
+    "enterm": "darkishblue",
+    "urterm": "hara",
+    "dist": 0.2167246631494759
+  },
+  {
+    "enterm": "darkishblue",
+    "urterm": "neela",
+    "dist": 0.07694129463732276
+  },
+  {
+    "enterm": "darkishgreen",
+    "urterm": "hara",
+    "dist": 0.058177651129830935
+  },
+  {
+    "enterm": "darkishgreen",
+    "urterm": "neela",
+    "dist": 0.19644761322598028
+  },
+  {
+    "enterm": "darkkhaki",
+    "urterm": "hara",
+    "dist": 0.09367514748572621
+  },
+  {
+    "enterm": "darkkhaki",
+    "urterm": "neela",
+    "dist": 0.13678822616455322
+  },
+  {
+    "enterm": "darklavender",
+    "urterm": "hara",
+    "dist": 0.19096953711947803
+  },
+  {
+    "enterm": "darklavender",
+    "urterm": "neela",
+    "dist": 0.08807714297158235
+  },
+  {
+    "enterm": "darklilac",
+    "urterm": "hara",
+    "dist": 0.1915847900506812
+  },
+  {
+    "enterm": "darklilac",
+    "urterm": "neela",
+    "dist": 0.09638648646568998
+  },
+  {
+    "enterm": "darklime",
+    "urterm": "hara",
+    "dist": 0.04095291193221283
+  },
+  {
+    "enterm": "darklime",
+    "urterm": "neela",
+    "dist": 0.2110828051818976
+  },
+  {
+    "enterm": "darklimegreen",
+    "urterm": "hara",
+    "dist": 0.0692907636091501
+  },
+  {
+    "enterm": "darklimegreen",
+    "urterm": "neela",
+    "dist": 0.24041913994571615
+  },
+  {
+    "enterm": "darkmagenta",
+    "urterm": "hara",
+    "dist": 0.20879268032050594
+  },
+  {
+    "enterm": "darkmagenta",
+    "urterm": "neela",
+    "dist": 0.12261891266343805
+  },
+  {
+    "enterm": "darkmaroon",
+    "urterm": "hara",
+    "dist": 0.23975289309199357
+  },
+  {
+    "enterm": "darkmaroon",
+    "urterm": "neela",
+    "dist": 0.2047556684517877
+  },
+  {
+    "enterm": "darkmauve",
+    "urterm": "hara",
+    "dist": 0.16121575352340367
+  },
+  {
+    "enterm": "darkmauve",
+    "urterm": "neela",
+    "dist": 0.12674863359246483
+  },
+  {
+    "enterm": "darkmint",
+    "urterm": "hara",
+    "dist": 0.017435295159119697
+  },
+  {
+    "enterm": "darkmint",
+    "urterm": "neela",
+    "dist": 0.18306624731261
+  },
+  {
+    "enterm": "darkmintgreen",
+    "urterm": "hara",
+    "dist": 0.07302996604184774
+  },
+  {
+    "enterm": "darkmintgreen",
+    "urterm": "neela",
+    "dist": 0.2409701853939849
+  },
+  {
+    "enterm": "darkmustard",
+    "urterm": "hara",
+    "dist": 0.05817668869499652
+  },
+  {
+    "enterm": "darkmustard",
+    "urterm": "neela",
+    "dist": 0.1744805567012096
+  },
+  {
+    "enterm": "darknavy",
+    "urterm": "hara",
+    "dist": 0.24922747505584253
+  },
+  {
+    "enterm": "darknavy",
+    "urterm": "neela",
+    "dist": 0.18000204823395377
+  },
+  {
+    "enterm": "darknavyblue",
+    "urterm": "hara",
+    "dist": 0.25592445509715633
+  },
+  {
+    "enterm": "darknavyblue",
+    "urterm": "neela",
+    "dist": 0.18730763600413142
+  },
+  {
+    "enterm": "darkolive",
+    "urterm": "hara",
+    "dist": 0.1757101114465657
+  },
+  {
+    "enterm": "darkolive",
+    "urterm": "neela",
+    "dist": 0.16909843068462138
+  },
+  {
+    "enterm": "darkolivegreen",
+    "urterm": "hara",
+    "dist": 0.14427978311862452
+  },
+  {
+    "enterm": "darkolivegreen",
+    "urterm": "neela",
+    "dist": 0.16128116157048253
+  },
+  {
+    "enterm": "darkorange",
+    "urterm": "hara",
+    "dist": 0.09664704113633955
+  },
+  {
+    "enterm": "darkorange",
+    "urterm": "neela",
+    "dist": 0.16407555089604117
+  },
+  {
+    "enterm": "darkpeach",
+    "urterm": "hara",
+    "dist": 0.09737885270349556
+  },
+  {
+    "enterm": "darkpeach",
+    "urterm": "neela",
+    "dist": 0.1145620818438493
+  },
+  {
+    "enterm": "darkperiwinkle",
+    "urterm": "hara",
+    "dist": 0.20788664487026215
+  },
+  {
+    "enterm": "darkperiwinkle",
+    "urterm": "neela",
+    "dist": 0.08305376376769458
+  },
+  {
+    "enterm": "darkpink",
+    "urterm": "hara",
+    "dist": 0.18489983334746934
+  },
+  {
+    "enterm": "darkpink",
+    "urterm": "neela",
+    "dist": 0.09525908061790386
+  },
+  {
+    "enterm": "darkplum",
+    "urterm": "hara",
+    "dist": 0.24808283363385128
+  },
+  {
+    "enterm": "darkplum",
+    "urterm": "neela",
+    "dist": 0.17444380777387158
+  },
+  {
+    "enterm": "darkpurple",
+    "urterm": "hara",
+    "dist": 0.2299820348153412
+  },
+  {
+    "enterm": "darkpurple",
+    "urterm": "neela",
+    "dist": 0.1282347503997058
+  },
+  {
+    "enterm": "darkred",
+    "urterm": "hara",
+    "dist": 0.21922458799071615
+  },
+  {
+    "enterm": "darkred",
+    "urterm": "neela",
+    "dist": 0.18577004244413417
+  },
+  {
+    "enterm": "darkrose",
+    "urterm": "hara",
+    "dist": 0.154588467888368
+  },
+  {
+    "enterm": "darkrose",
+    "urterm": "neela",
+    "dist": 0.09902549372042367
+  },
+  {
+    "enterm": "darkroyalblue",
+    "urterm": "hara",
+    "dist": 0.2610609300225378
+  },
+  {
+    "enterm": "darkroyalblue",
+    "urterm": "neela",
+    "dist": 0.14087406443500164
+  },
+  {
+    "enterm": "darksalmon",
+    "urterm": "hara",
+    "dist": 0.12658236881074747
+  },
+  {
+    "enterm": "darksalmon",
+    "urterm": "neela",
+    "dist": 0.13768704702840412
+  },
+  {
+    "enterm": "darkskyblue",
+    "urterm": "hara",
+    "dist": 0.19955832948994345
+  },
+  {
+    "enterm": "darkskyblue",
+    "urterm": "neela",
+    "dist": 0.0977235936487131
+  },
+  {
+    "enterm": "darktan",
+    "urterm": "hara",
+    "dist": 0.10199009861328645
+  },
+  {
+    "enterm": "darktan",
+    "urterm": "neela",
+    "dist": 0.1342038872010973
+  },
+  {
+    "enterm": "darkteal",
+    "urterm": "hara",
+    "dist": 0.11061878964275046
+  },
+  {
+    "enterm": "darkteal",
+    "urterm": "neela",
+    "dist": 0.11505057954003553
+  },
+  {
+    "enterm": "darkturquoise",
+    "urterm": "hara",
+    "dist": 0.09488627920843042
+  },
+  {
+    "enterm": "darkturquoise",
+    "urterm": "neela",
+    "dist": 0.11138405119501515
+  },
+  {
+    "enterm": "darkviolet",
+    "urterm": "hara",
+    "dist": 0.22900713173016016
+  },
+  {
+    "enterm": "darkviolet",
+    "urterm": "neela",
+    "dist": 0.10867302945055043
+  },
+  {
+    "enterm": "darkyellow",
+    "urterm": "hara",
+    "dist": 0.03167488842987364
+  },
+  {
+    "enterm": "darkyellow",
+    "urterm": "neela",
+    "dist": 0.20273616363684255
+  },
+  {
+    "enterm": "darkyellowgreen",
+    "urterm": "hara",
+    "dist": 0.0621988965416084
+  },
+  {
+    "enterm": "darkyellowgreen",
+    "urterm": "neela",
+    "dist": 0.18079322040798565
+  },
+  {
+    "enterm": "deepblue",
+    "urterm": "hara",
+    "dist": 0.23856636667979378
+  },
+  {
+    "enterm": "deepblue",
+    "urterm": "neela",
+    "dist": 0.11086431475248237
+  },
+  {
+    "enterm": "deepbrown",
+    "urterm": "hara",
+    "dist": 0.22670796859051184
+  },
+  {
+    "enterm": "deepbrown",
+    "urterm": "neela",
+    "dist": 0.19991073566779977
+  },
+  {
+    "enterm": "deepgreen",
+    "urterm": "hara",
+    "dist": 0.11229870987046607
+  },
+  {
+    "enterm": "deepgreen",
+    "urterm": "neela",
+    "dist": 0.16376023144740742
+  },
+  {
+    "enterm": "deepmagenta",
+    "urterm": "hara",
+    "dist": 0.19990192865965234
+  },
+  {
+    "enterm": "deepmagenta",
+    "urterm": "neela",
+    "dist": 0.11905919040444032
+  },
+  {
+    "enterm": "deeppink",
+    "urterm": "hara",
+    "dist": 0.19272531913485058
+  },
+  {
+    "enterm": "deeppink",
+    "urterm": "neela",
+    "dist": 0.10145538656358125
+  },
+  {
+    "enterm": "deeppurple",
+    "urterm": "hara",
+    "dist": 0.23634622036244357
+  },
+  {
+    "enterm": "deeppurple",
+    "urterm": "neela",
+    "dist": 0.13444315875092125
+  },
+  {
+    "enterm": "deepred",
+    "urterm": "hara",
+    "dist": 0.20268310944121185
+  },
+  {
+    "enterm": "deepred",
+    "urterm": "neela",
+    "dist": 0.16654050813201476
+  },
+  {
+    "enterm": "deepseablue",
+    "urterm": "hara",
+    "dist": 0.22786784544939304
+  },
+  {
+    "enterm": "deepseablue",
+    "urterm": "neela",
+    "dist": 0.09631862628075097
+  },
+  {
+    "enterm": "deepteal",
+    "urterm": "hara",
+    "dist": 0.1767404930541655
+  },
+  {
+    "enterm": "deepteal",
+    "urterm": "neela",
+    "dist": 0.15163839585379346
+  },
+  {
+    "enterm": "deepviolet",
+    "urterm": "hara",
+    "dist": 0.23059825666427194
+  },
+  {
+    "enterm": "deepviolet",
+    "urterm": "neela",
+    "dist": 0.14323035730235992
+  },
+  {
+    "enterm": "deepyellow",
+    "urterm": "hara",
+    "dist": 0.07920002174760299
+  },
+  {
+    "enterm": "deepyellow",
+    "urterm": "neela",
+    "dist": 0.24747358243829926
+  },
+  {
+    "enterm": "denim",
+    "urterm": "hara",
+    "dist": 0.17269249872345616
+  },
+  {
+    "enterm": "denim",
+    "urterm": "neela",
+    "dist": 0.03453976078422694
+  },
+  {
+    "enterm": "denimblue",
+    "urterm": "hara",
+    "dist": 0.1881945608503582
+  },
+  {
+    "enterm": "denimblue",
+    "urterm": "neela",
+    "dist": 0.07891368490662655
+  },
+  {
+    "enterm": "dirt",
+    "urterm": "hara",
+    "dist": 0.15603207538247102
+  },
+  {
+    "enterm": "dirt",
+    "urterm": "neela",
+    "dist": 0.145736827582603
+  },
+  {
+    "enterm": "dirtbrown",
+    "urterm": "hara",
+    "dist": 0.1564090324265608
+  },
+  {
+    "enterm": "dirtbrown",
+    "urterm": "neela",
+    "dist": 0.15623954626176062
+  },
+  {
+    "enterm": "dirtygreen",
+    "urterm": "hara",
+    "dist": 0.07199072846531486
+  },
+  {
+    "enterm": "dirtygreen",
+    "urterm": "neela",
+    "dist": 0.1552017297085403
+  },
+  {
+    "enterm": "dirtypink",
+    "urterm": "hara",
+    "dist": 0.12690101030016912
+  },
+  {
+    "enterm": "dirtypink",
+    "urterm": "neela",
+    "dist": 0.11190971615943743
+  },
+  {
+    "enterm": "dirtyyellow",
+    "urterm": "hara",
+    "dist": 0.05735276206251345
+  },
+  {
+    "enterm": "dirtyyellow",
+    "urterm": "neela",
+    "dist": 0.22621483040108215
+  },
+  {
+    "enterm": "drabgreen",
+    "urterm": "hara",
+    "dist": 0.10589268512133039
+  },
+  {
+    "enterm": "drabgreen",
+    "urterm": "neela",
+    "dist": 0.13312265237332244
+  },
+  {
+    "enterm": "duckeggblue",
+    "urterm": "hara",
+    "dist": 0.12201314579006864
+  },
+  {
+    "enterm": "duckeggblue",
+    "urterm": "neela",
+    "dist": 0.1369469940638804
+  },
+  {
+    "enterm": "dullblue",
+    "urterm": "hara",
+    "dist": 0.15336623920824893
+  },
+  {
+    "enterm": "dullblue",
+    "urterm": "neela",
+    "dist": 0.04440552448407096
+  },
+  {
+    "enterm": "dullbrown",
+    "urterm": "hara",
+    "dist": 0.16468715750309335
+  },
+  {
+    "enterm": "dullbrown",
+    "urterm": "neela",
+    "dist": 0.14669075900220924
+  },
+  {
+    "enterm": "dullgreen",
+    "urterm": "hara",
+    "dist": 0.05172914718134693
+  },
+  {
+    "enterm": "dullgreen",
+    "urterm": "neela",
+    "dist": 0.16317748588024908
+  },
+  {
+    "enterm": "dullorange",
+    "urterm": "hara",
+    "dist": 0.08092041740990914
+  },
+  {
+    "enterm": "dullorange",
+    "urterm": "neela",
+    "dist": 0.17265747822911917
+  },
+  {
+    "enterm": "dullpink",
+    "urterm": "hara",
+    "dist": 0.13024383354996485
+  },
+  {
+    "enterm": "dullpink",
+    "urterm": "neela",
+    "dist": 0.108270954807664
+  },
+  {
+    "enterm": "dullpurple",
+    "urterm": "hara",
+    "dist": 0.1709929355275715
+  },
+  {
+    "enterm": "dullpurple",
+    "urterm": "neela",
+    "dist": 0.09289767174007904
+  },
+  {
+    "enterm": "dullred",
+    "urterm": "hara",
+    "dist": 0.18319521405663716
+  },
+  {
+    "enterm": "dullred",
+    "urterm": "neela",
+    "dist": 0.1554426819604634
+  },
+  {
+    "enterm": "dullyellow",
+    "urterm": "hara",
+    "dist": 0.05569706299231105
+  },
+  {
+    "enterm": "dullyellow",
+    "urterm": "neela",
+    "dist": 0.2139360277502791
+  },
+  {
+    "enterm": "duskyblue",
+    "urterm": "hara",
+    "dist": 0.12638126804169453
+  },
+  {
+    "enterm": "duskyblue",
+    "urterm": "neela",
+    "dist": 0.07942073392087472
+  },
+  {
+    "enterm": "duskypink",
+    "urterm": "hara",
+    "dist": 0.11947106507830683
+  },
+  {
+    "enterm": "duskypink",
+    "urterm": "neela",
+    "dist": 0.0978906203055301
+  },
+  {
+    "enterm": "duskypurple",
+    "urterm": "hara",
+    "dist": 0.14092886353652587
+  },
+  {
+    "enterm": "duskypurple",
+    "urterm": "neela",
+    "dist": 0.10679079053257509
+  },
+  {
+    "enterm": "duskyrose",
+    "urterm": "hara",
+    "dist": 0.1433761188062765
+  },
+  {
+    "enterm": "duskyrose",
+    "urterm": "neela",
+    "dist": 0.09322627329116834
+  },
+  {
+    "enterm": "dustyblue",
+    "urterm": "hara",
+    "dist": 0.14606550754437478
+  },
+  {
+    "enterm": "dustyblue",
+    "urterm": "neela",
+    "dist": 0.06244550637697951
+  },
+  {
+    "enterm": "dustygreen",
+    "urterm": "hara",
+    "dist": 0.036359260278996074
+  },
+  {
+    "enterm": "dustygreen",
+    "urterm": "neela",
+    "dist": 0.1641576136788339
+  },
+  {
+    "enterm": "dustylavender",
+    "urterm": "hara",
+    "dist": 0.13519971176322418
+  },
+  {
+    "enterm": "dustylavender",
+    "urterm": "neela",
+    "dist": 0.11986595004453071
+  },
+  {
+    "enterm": "dustypink",
+    "urterm": "hara",
+    "dist": 0.1228122175803093
+  },
+  {
+    "enterm": "dustypink",
+    "urterm": "neela",
+    "dist": 0.11349880257897332
+  },
+  {
+    "enterm": "dustypurple",
+    "urterm": "hara",
+    "dist": 0.13902347928888778
+  },
+  {
+    "enterm": "dustypurple",
+    "urterm": "neela",
+    "dist": 0.10411180362805669
+  },
+  {
+    "enterm": "dustyrose",
+    "urterm": "hara",
+    "dist": 0.1260165902799713
+  },
+  {
+    "enterm": "dustyrose",
+    "urterm": "neela",
+    "dist": 0.12568825916150098
+  },
+  {
+    "enterm": "ecru",
+    "urterm": "hara",
+    "dist": 0.1293670294671244
+  },
+  {
+    "enterm": "ecru",
+    "urterm": "neela",
+    "dist": 0.21175784932503616
+  },
+  {
+    "enterm": "eggplant",
+    "urterm": "hara",
+    "dist": 0.22417001175463347
+  },
+  {
+    "enterm": "eggplant",
+    "urterm": "neela",
+    "dist": 0.14611926388009153
+  },
+  {
+    "enterm": "eggplantpurple",
+    "urterm": "hara",
+    "dist": 0.22064358921365945
+  },
+  {
+    "enterm": "eggplantpurple",
+    "urterm": "neela",
+    "dist": 0.14141959988992273
+  },
+  {
+    "enterm": "eggshell",
+    "urterm": "hara",
+    "dist": 0.15560626237457592
+  },
+  {
+    "enterm": "eggshell",
+    "urterm": "neela",
+    "dist": 0.21021690532169338
+  },
+  {
+    "enterm": "electricblue",
+    "urterm": "hara",
+    "dist": 0.1982592049359108
+  },
+  {
+    "enterm": "electricblue",
+    "urterm": "neela",
+    "dist": 0.05623552552689839
+  },
+  {
+    "enterm": "electricgreen",
+    "urterm": "hara",
+    "dist": 0.1453268548165002
+  },
+  {
+    "enterm": "electricgreen",
+    "urterm": "neela",
+    "dist": 0.299583315565557
+  },
+  {
+    "enterm": "electricpink",
+    "urterm": "hara",
+    "dist": 0.21369380296053117
+  },
+  {
+    "enterm": "electricpink",
+    "urterm": "neela",
+    "dist": 0.10010582081972487
+  },
+  {
+    "enterm": "electricpurple",
+    "urterm": "hara",
+    "dist": 0.24444102818170546
+  },
+  {
+    "enterm": "electricpurple",
+    "urterm": "neela",
+    "dist": 0.10794133731976838
+  },
+  {
+    "enterm": "emerald",
+    "urterm": "hara",
+    "dist": 0.05156975348853313
+  },
+  {
+    "enterm": "emerald",
+    "urterm": "neela",
+    "dist": 0.18746264756286196
+  },
+  {
+    "enterm": "emeraldgreen",
+    "urterm": "hara",
+    "dist": 0.0569036177677928
+  },
+  {
+    "enterm": "emeraldgreen",
+    "urterm": "neela",
+    "dist": 0.17803915748593482
+  },
+  {
+    "enterm": "evergreen",
+    "urterm": "hara",
+    "dist": 0.10559469772850918
+  },
+  {
+    "enterm": "evergreen",
+    "urterm": "neela",
+    "dist": 0.15604022194929415
+  },
+  {
+    "enterm": "fadedblue",
+    "urterm": "hara",
+    "dist": 0.16005287373057436
+  },
+  {
+    "enterm": "fadedblue",
+    "urterm": "neela",
+    "dist": 0.062109829219393065
+  },
+  {
+    "enterm": "fadedgreen",
+    "urterm": "hara",
+    "dist": 0.02861831265869813
+  },
+  {
+    "enterm": "fadedgreen",
+    "urterm": "neela",
+    "dist": 0.18394847698268843
+  },
+  {
+    "enterm": "fadedpink",
+    "urterm": "hara",
+    "dist": 0.10251695476577599
+  },
+  {
+    "enterm": "fadedpink",
+    "urterm": "neela",
+    "dist": 0.10228804854667083
+  },
+  {
+    "enterm": "fadedpurple",
+    "urterm": "hara",
+    "dist": 0.1447027497130942
+  },
+  {
+    "enterm": "fadedpurple",
+    "urterm": "neela",
+    "dist": 0.08493550439316618
+  },
+  {
+    "enterm": "fern",
+    "urterm": "hara",
+    "dist": 0.038762963149582656
+  },
+  {
+    "enterm": "fern",
+    "urterm": "neela",
+    "dist": 0.18198418027182053
+  },
+  {
+    "enterm": "fireenginered",
+    "urterm": "hara",
+    "dist": 0.18509066733455384
+  },
+  {
+    "enterm": "fireenginered",
+    "urterm": "neela",
+    "dist": 0.14513444196697411
+  },
+  {
+    "enterm": "firetruckred",
+    "urterm": "hara",
+    "dist": 0.182771343934266
+  },
+  {
+    "enterm": "firetruckred",
+    "urterm": "neela",
+    "dist": 0.14853857370620915
+  },
+  {
+    "enterm": "flesh",
+    "urterm": "hara",
+    "dist": 0.10559758917341554
+  },
+  {
+    "enterm": "flesh",
+    "urterm": "neela",
+    "dist": 0.1517482860827887
+  },
+  {
+    "enterm": "flourescentgreen",
+    "urterm": "hara",
+    "dist": 0.16332924568205748
+  },
+  {
+    "enterm": "flourescentgreen",
+    "urterm": "neela",
+    "dist": 0.3146943906094942
+  },
+  {
+    "enterm": "fluorescentgreen",
+    "urterm": "hara",
+    "dist": 0.15932612606088595
+  },
+  {
+    "enterm": "fluorescentgreen",
+    "urterm": "neela",
+    "dist": 0.3093954408975404
+  },
+  {
+    "enterm": "fluorescentpink",
+    "urterm": "hara",
+    "dist": 0.2035070395185925
+  },
+  {
+    "enterm": "fluorescentpink",
+    "urterm": "neela",
+    "dist": 0.092850741212953
+  },
+  {
+    "enterm": "fluorescentpurple",
+    "urterm": "hara",
+    "dist": 0.23959590530117125
+  },
+  {
+    "enterm": "fluorescentpurple",
+    "urterm": "neela",
+    "dist": 0.10706567869086997
+  },
+  {
+    "enterm": "flurogreen",
+    "urterm": "hara",
+    "dist": 0.1647835504581484
+  },
+  {
+    "enterm": "flurogreen",
+    "urterm": "neela",
+    "dist": 0.3156745129143955
+  },
+  {
+    "enterm": "forest",
+    "urterm": "hara",
+    "dist": 0.09841401362718451
+  },
+  {
+    "enterm": "forest",
+    "urterm": "neela",
+    "dist": 0.1627618765274408
+  },
+  {
+    "enterm": "forestgreen",
+    "urterm": "hara",
+    "dist": 0.09816780810530876
+  },
+  {
+    "enterm": "forestgreen",
+    "urterm": "neela",
+    "dist": 0.1609006438147792
+  },
+  {
+    "enterm": "fuchsia",
+    "urterm": "hara",
+    "dist": 0.21656919074748057
+  },
+  {
+    "enterm": "fuchsia",
+    "urterm": "neela",
+    "dist": 0.10539360220838706
+  },
+  {
+    "enterm": "fuchsiapink",
+    "urterm": "hara",
+    "dist": 0.19783812243730958
+  },
+  {
+    "enterm": "fuchsiapink",
+    "urterm": "neela",
+    "dist": 0.11074729379862853
+  },
+  {
+    "enterm": "gold",
+    "urterm": "hara",
+    "dist": 0.03190527797211178
+  },
+  {
+    "enterm": "gold",
+    "urterm": "neela",
+    "dist": 0.20289054028605943
+  },
+  {
+    "enterm": "golden",
+    "urterm": "hara",
+    "dist": 0.04343710005705399
+  },
+  {
+    "enterm": "golden",
+    "urterm": "neela",
+    "dist": 0.20166996612355456
+  },
+  {
+    "enterm": "goldenbrown",
+    "urterm": "hara",
+    "dist": 0.06768333221255479
+  },
+  {
+    "enterm": "goldenbrown",
+    "urterm": "neela",
+    "dist": 0.16119680826529229
+  },
+  {
+    "enterm": "goldenrod",
+    "urterm": "hara",
+    "dist": 0.08652288592595386
+  },
+  {
+    "enterm": "goldenrod",
+    "urterm": "neela",
+    "dist": 0.25209424088418153
+  },
+  {
+    "enterm": "goldenyellow",
+    "urterm": "hara",
+    "dist": 0.08990896261124062
+  },
+  {
+    "enterm": "goldenyellow",
+    "urterm": "neela",
+    "dist": 0.2557688840536085
+  },
+  {
+    "enterm": "grape",
+    "urterm": "hara",
+    "dist": 0.223640630645186
+  },
+  {
+    "enterm": "grape",
+    "urterm": "neela",
+    "dist": 0.0903098381217875
+  },
+  {
+    "enterm": "grapepurple",
+    "urterm": "hara",
+    "dist": 0.20952713861328492
+  },
+  {
+    "enterm": "grapepurple",
+    "urterm": "neela",
+    "dist": 0.10886617385130722
+  },
+  {
+    "enterm": "grass",
+    "urterm": "hara",
+    "dist": 0.05593488273298213
+  },
+  {
+    "enterm": "grass",
+    "urterm": "neela",
+    "dist": 0.21530239298591444
+  },
+  {
+    "enterm": "grassgreen",
+    "urterm": "hara",
+    "dist": 0.060837116989855444
+  },
+  {
+    "enterm": "grassgreen",
+    "urterm": "neela",
+    "dist": 0.21831932922618408
+  },
+  {
+    "enterm": "gray",
+    "urterm": "hara",
+    "dist": 0.11593428079530418
+  },
+  {
+    "enterm": "gray",
+    "urterm": "neela",
+    "dist": 0.11399764182303203
+  },
+  {
+    "enterm": "grayblue",
+    "urterm": "hara",
+    "dist": 0.12853294702263432
+  },
+  {
+    "enterm": "grayblue",
+    "urterm": "neela",
+    "dist": 0.08949019393143703
+  },
+  {
+    "enterm": "graybrown",
+    "urterm": "hara",
+    "dist": 0.14060962830299528
+  },
+  {
+    "enterm": "graybrown",
+    "urterm": "neela",
+    "dist": 0.12973838056553721
+  },
+  {
+    "enterm": "graygreen",
+    "urterm": "hara",
+    "dist": 0.10221514229757536
+  },
+  {
+    "enterm": "graygreen",
+    "urterm": "neela",
+    "dist": 0.12528831085564254
+  },
+  {
+    "enterm": "grayishblue",
+    "urterm": "hara",
+    "dist": 0.1222037346530075
+  },
+  {
+    "enterm": "grayishblue",
+    "urterm": "neela",
+    "dist": 0.09674481788268677
+  },
+  {
+    "enterm": "grayishbrown",
+    "urterm": "hara",
+    "dist": 0.12539453007001428
+  },
+  {
+    "enterm": "grayishbrown",
+    "urterm": "neela",
+    "dist": 0.1243914221510183
+  },
+  {
+    "enterm": "grayishgreen",
+    "urterm": "hara",
+    "dist": 0.10119142787928674
+  },
+  {
+    "enterm": "grayishgreen",
+    "urterm": "neela",
+    "dist": 0.12591794938647016
+  },
+  {
+    "enterm": "grayishpink",
+    "urterm": "hara",
+    "dist": 0.12095538460864476
+  },
+  {
+    "enterm": "grayishpink",
+    "urterm": "neela",
+    "dist": 0.12331048455018992
+  },
+  {
+    "enterm": "grayishpurple",
+    "urterm": "hara",
+    "dist": 0.1472113696971325
+  },
+  {
+    "enterm": "grayishpurple",
+    "urterm": "neela",
+    "dist": 0.10256690801206587
+  },
+  {
+    "enterm": "graypink",
+    "urterm": "hara",
+    "dist": 0.11278562087619577
+  },
+  {
+    "enterm": "graypink",
+    "urterm": "neela",
+    "dist": 0.12119197195199266
+  },
+  {
+    "enterm": "graypurple",
+    "urterm": "hara",
+    "dist": 0.13119039710563146
+  },
+  {
+    "enterm": "graypurple",
+    "urterm": "neela",
+    "dist": 0.11295392794066443
+  },
+  {
+    "enterm": "green",
+    "urterm": "hara",
+    "dist": 0.03782123455356558
+  },
+  {
+    "enterm": "green",
+    "urterm": "neela",
+    "dist": 0.20752740564728675
+  },
+  {
+    "enterm": "greenapple",
+    "urterm": "hara",
+    "dist": 0.08554136380354198
+  },
+  {
+    "enterm": "greenapple",
+    "urterm": "neela",
+    "dist": 0.25395321347480015
+  },
+  {
+    "enterm": "greenblue",
+    "urterm": "hara",
+    "dist": 0.07408244861221151
+  },
+  {
+    "enterm": "greenblue",
+    "urterm": "neela",
+    "dist": 0.15036604072388976
+  },
+  {
+    "enterm": "greenbrown",
+    "urterm": "hara",
+    "dist": 0.11831166010920631
+  },
+  {
+    "enterm": "greenbrown",
+    "urterm": "neela",
+    "dist": 0.14871089124946568
+  },
+  {
+    "enterm": "greengold",
+    "urterm": "hara",
+    "dist": 0.0325899900632683
+  },
+  {
+    "enterm": "greengold",
+    "urterm": "neela",
+    "dist": 0.1882960623906875
+  },
+  {
+    "enterm": "greengray",
+    "urterm": "hara",
+    "dist": 0.10223312889616662
+  },
+  {
+    "enterm": "greengray",
+    "urterm": "neela",
+    "dist": 0.11661286826545897
+  },
+  {
+    "enterm": "greenish",
+    "urterm": "hara",
+    "dist": 0.05956146904572425
+  },
+  {
+    "enterm": "greenish",
+    "urterm": "neela",
+    "dist": 0.21163472242482997
+  },
+  {
+    "enterm": "greenishblue",
+    "urterm": "hara",
+    "dist": 0.053720602662176126
+  },
+  {
+    "enterm": "greenishblue",
+    "urterm": "neela",
+    "dist": 0.13552603866822324
+  },
+  {
+    "enterm": "greenishbrown",
+    "urterm": "hara",
+    "dist": 0.12520001651419146
+  },
+  {
+    "enterm": "greenishbrown",
+    "urterm": "neela",
+    "dist": 0.1483594164656526
+  },
+  {
+    "enterm": "greenishgray",
+    "urterm": "hara",
+    "dist": 0.11270600239814972
+  },
+  {
+    "enterm": "greenishgray",
+    "urterm": "neela",
+    "dist": 0.12151136902534354
+  },
+  {
+    "enterm": "greenishyellow",
+    "urterm": "hara",
+    "dist": 0.11245561591074814
+  },
+  {
+    "enterm": "greenishyellow",
+    "urterm": "neela",
+    "dist": 0.2708543233129302
+  },
+  {
+    "enterm": "greenyellow",
+    "urterm": "hara",
+    "dist": 0.09928333889244081
+  },
+  {
+    "enterm": "greenyellow",
+    "urterm": "neela",
+    "dist": 0.2603489968197873
+  },
+  {
+    "enterm": "greige",
+    "urterm": "hara",
+    "dist": 0.11316115547944557
+  },
+  {
+    "enterm": "greige",
+    "urterm": "neela",
+    "dist": 0.1291082818798122
+  },
+  {
+    "enterm": "grossgreen",
+    "urterm": "hara",
+    "dist": 0.042948803652821124
+  },
+  {
+    "enterm": "grossgreen",
+    "urterm": "neela",
+    "dist": 0.21519071702929535
+  },
+  {
+    "enterm": "hazel",
+    "urterm": "hara",
+    "dist": 0.09860547056352272
+  },
+  {
+    "enterm": "hazel",
+    "urterm": "neela",
+    "dist": 0.13029007800299575
+  },
+  {
+    "enterm": "heather",
+    "urterm": "hara",
+    "dist": 0.10336193947895758
+  },
+  {
+    "enterm": "heather",
+    "urterm": "neela",
+    "dist": 0.10690434232669112
+  },
+  {
+    "enterm": "highlightergreen",
+    "urterm": "hara",
+    "dist": 0.16227591580762135
+  },
+  {
+    "enterm": "highlightergreen",
+    "urterm": "neela",
+    "dist": 0.3128311072904419
+  },
+  {
+    "enterm": "highlighteryellow",
+    "urterm": "hara",
+    "dist": 0.17765676253027662
+  },
+  {
+    "enterm": "highlighteryellow",
+    "urterm": "neela",
+    "dist": 0.3290053524781973
+  },
+  {
+    "enterm": "honey",
+    "urterm": "hara",
+    "dist": 0.05240219965562168
+  },
+  {
+    "enterm": "honey",
+    "urterm": "neela",
+    "dist": 0.1693132984708454
+  },
+  {
+    "enterm": "hotpink",
+    "urterm": "hara",
+    "dist": 0.20573246049322297
+  },
+  {
+    "enterm": "hotpink",
+    "urterm": "neela",
+    "dist": 0.10502088841536579
+  },
+  {
+    "enterm": "hotpurple",
+    "urterm": "hara",
+    "dist": 0.23641795315786165
+  },
+  {
+    "enterm": "hotpurple",
+    "urterm": "neela",
+    "dist": 0.10282588053854495
+  },
+  {
+    "enterm": "hotred",
+    "urterm": "hara",
+    "dist": 0.19040413666264236
+  },
+  {
+    "enterm": "hotred",
+    "urterm": "neela",
+    "dist": 0.15298986732967823
+  },
+  {
+    "enterm": "huntergreen",
+    "urterm": "hara",
+    "dist": 0.12296783037054962
+  },
+  {
+    "enterm": "huntergreen",
+    "urterm": "neela",
+    "dist": 0.15433237926840507
+  },
+  {
+    "enterm": "iceblue",
+    "urterm": "hara",
+    "dist": 0.15633991804293085
+  },
+  {
+    "enterm": "iceblue",
+    "urterm": "neela",
+    "dist": 0.14168599295525228
+  },
+  {
+    "enterm": "idk",
+    "urterm": "hara",
+    "dist": 0.06999321467419332
+  },
+  {
+    "enterm": "idk",
+    "urterm": "neela",
+    "dist": 0.11781479686268495
+  },
+  {
+    "enterm": "indigo",
+    "urterm": "hara",
+    "dist": 0.2259932757565885
+  },
+  {
+    "enterm": "indigo",
+    "urterm": "neela",
+    "dist": 0.07515197457983352
+  },
+  {
+    "enterm": "indigoblue",
+    "urterm": "hara",
+    "dist": 0.2570351511275801
+  },
+  {
+    "enterm": "indigoblue",
+    "urterm": "neela",
+    "dist": 0.13415865051216447
+  },
+  {
+    "enterm": "inkblue",
+    "urterm": "hara",
+    "dist": 0.24321896474653168
+  },
+  {
+    "enterm": "inkblue",
+    "urterm": "neela",
+    "dist": 0.11282063396165752
+  },
+  {
+    "enterm": "iris",
+    "urterm": "hara",
+    "dist": 0.23266332975840895
+  },
+  {
+    "enterm": "iris",
+    "urterm": "neela",
+    "dist": 0.09741758346878725
+  },
+  {
+    "enterm": "irishgreen",
+    "urterm": "hara",
+    "dist": 0.09019243794875341
+  },
+  {
+    "enterm": "irishgreen",
+    "urterm": "neela",
+    "dist": 0.23472438773466978
+  },
+  {
+    "enterm": "ivory",
+    "urterm": "hara",
+    "dist": 0.085223838230462
+  },
+  {
+    "enterm": "ivory",
+    "urterm": "neela",
+    "dist": 0.146426628647185
+  },
+  {
+    "enterm": "jade",
+    "urterm": "hara",
+    "dist": 0.053750140774355915
+  },
+  {
+    "enterm": "jade",
+    "urterm": "neela",
+    "dist": 0.18457054023777952
+  },
+  {
+    "enterm": "jadegreen",
+    "urterm": "hara",
+    "dist": 0.010857454437900765
+  },
+  {
+    "enterm": "jadegreen",
+    "urterm": "neela",
+    "dist": 0.1811791610423281
+  },
+  {
+    "enterm": "jeanblue",
+    "urterm": "hara",
+    "dist": 0.18636888454714243
+  },
+  {
+    "enterm": "jeanblue",
+    "urterm": "neela",
+    "dist": 0.07284208807671223
+  },
+  {
+    "enterm": "junglegreen",
+    "urterm": "hara",
+    "dist": 0.06925833902156815
+  },
+  {
+    "enterm": "junglegreen",
+    "urterm": "neela",
+    "dist": 0.16994009264417237
+  },
+  {
+    "enterm": "kellygreen",
+    "urterm": "hara",
+    "dist": 0.06927319107439871
+  },
+  {
+    "enterm": "kellygreen",
+    "urterm": "neela",
+    "dist": 0.21760824277579222
+  },
+  {
+    "enterm": "keylime",
+    "urterm": "hara",
+    "dist": 0.12091255255102717
+  },
+  {
+    "enterm": "keylime",
+    "urterm": "neela",
+    "dist": 0.27870781179369586
+  },
+  {
+    "enterm": "khaki",
+    "urterm": "hara",
+    "dist": 0.07344584603021573
+  },
+  {
+    "enterm": "khaki",
+    "urterm": "neela",
+    "dist": 0.14164104648925246
+  },
+  {
+    "enterm": "khakigreen",
+    "urterm": "hara",
+    "dist": 0.07199669468527517
+  },
+  {
+    "enterm": "khakigreen",
+    "urterm": "neela",
+    "dist": 0.15435906035406036
+  },
+  {
+    "enterm": "lavender",
+    "urterm": "hara",
+    "dist": 0.1938594783892298
+  },
+  {
+    "enterm": "lavender",
+    "urterm": "neela",
+    "dist": 0.08161141713058262
+  },
+  {
+    "enterm": "lavenderpurple",
+    "urterm": "hara",
+    "dist": 0.20110655472692396
+  },
+  {
+    "enterm": "lavenderpurple",
+    "urterm": "neela",
+    "dist": 0.0892006028676525
+  },
+  {
+    "enterm": "leafgreen",
+    "urterm": "hara",
+    "dist": 0.04918865560859087
+  },
+  {
+    "enterm": "leafgreen",
+    "urterm": "neela",
+    "dist": 0.1992748677494761
+  },
+  {
+    "enterm": "leafygreen",
+    "urterm": "hara",
+    "dist": 0.04713447938226382
+  },
+  {
+    "enterm": "leafygreen",
+    "urterm": "neela",
+    "dist": 0.19266972508802563
+  },
+  {
+    "enterm": "lemon",
+    "urterm": "hara",
+    "dist": 0.12793226683526984
+  },
+  {
+    "enterm": "lemon",
+    "urterm": "neela",
+    "dist": 0.2811326727693872
+  },
+  {
+    "enterm": "lemongreen",
+    "urterm": "hara",
+    "dist": 0.15193563108922642
+  },
+  {
+    "enterm": "lemongreen",
+    "urterm": "neela",
+    "dist": 0.3050181721756416
+  },
+  {
+    "enterm": "lemonlime",
+    "urterm": "hara",
+    "dist": 0.14908471894063624
+  },
+  {
+    "enterm": "lemonlime",
+    "urterm": "neela",
+    "dist": 0.29993322322283184
+  },
+  {
+    "enterm": "lemonyellow",
+    "urterm": "hara",
+    "dist": 0.15586215965587122
+  },
+  {
+    "enterm": "lemonyellow",
+    "urterm": "neela",
+    "dist": 0.3041816276032924
+  },
+  {
+    "enterm": "lightaqua",
+    "urterm": "hara",
+    "dist": 0.13847082564555738
+  },
+  {
+    "enterm": "lightaqua",
+    "urterm": "neela",
+    "dist": 0.2390977809029357
+  },
+  {
+    "enterm": "lightblack",
+    "urterm": "hara",
+    "dist": 0.2400622084176156
+  },
+  {
+    "enterm": "lightblack",
+    "urterm": "neela",
+    "dist": 0.20284125827775762
+  },
+  {
+    "enterm": "lightblue",
+    "urterm": "hara",
+    "dist": 0.18809040995637077
+  },
+  {
+    "enterm": "lightblue",
+    "urterm": "neela",
+    "dist": 0.14094530683527723
+  },
+  {
+    "enterm": "lightbluegray",
+    "urterm": "hara",
+    "dist": 0.1736349763113903
+  },
+  {
+    "enterm": "lightbluegray",
+    "urterm": "neela",
+    "dist": 0.1573167797430912
+  },
+  {
+    "enterm": "lightbluegreen",
+    "urterm": "hara",
+    "dist": 0.11190246818058552
+  },
+  {
+    "enterm": "lightbluegreen",
+    "urterm": "neela",
+    "dist": 0.24634609921595163
+  },
+  {
+    "enterm": "lightbrown",
+    "urterm": "hara",
+    "dist": 0.10575888890623819
+  },
+  {
+    "enterm": "lightbrown",
+    "urterm": "neela",
+    "dist": 0.13417956958849167
+  },
+  {
+    "enterm": "lightburgundy",
+    "urterm": "hara",
+    "dist": 0.15443762133523173
+  },
+  {
+    "enterm": "lightburgundy",
+    "urterm": "neela",
+    "dist": 0.11147022634826348
+  },
+  {
+    "enterm": "lightcyan",
+    "urterm": "hara",
+    "dist": 0.13929698260039355
+  },
+  {
+    "enterm": "lightcyan",
+    "urterm": "neela",
+    "dist": 0.18688460443285598
+  },
+  {
+    "enterm": "lightergreen",
+    "urterm": "hara",
+    "dist": 0.0698201649627246
+  },
+  {
+    "enterm": "lightergreen",
+    "urterm": "neela",
+    "dist": 0.2375021634042553
+  },
+  {
+    "enterm": "lighterpurple",
+    "urterm": "hara",
+    "dist": 0.2117201912374199
+  },
+  {
+    "enterm": "lighterpurple",
+    "urterm": "neela",
+    "dist": 0.08864197105124011
+  },
+  {
+    "enterm": "lightforestgreen",
+    "urterm": "hara",
+    "dist": 0.040124313336357874
+  },
+  {
+    "enterm": "lightforestgreen",
+    "urterm": "neela",
+    "dist": 0.17040559492798832
+  },
+  {
+    "enterm": "lightgray",
+    "urterm": "hara",
+    "dist": 0.0978264684987901
+  },
+  {
+    "enterm": "lightgray",
+    "urterm": "neela",
+    "dist": 0.13577807140466877
+  },
+  {
+    "enterm": "lightgreen",
+    "urterm": "hara",
+    "dist": 0.12147264294605052
+  },
+  {
+    "enterm": "lightgreen",
+    "urterm": "neela",
+    "dist": 0.27315786422496025
+  },
+  {
+    "enterm": "lightindigo",
+    "urterm": "hara",
+    "dist": 0.24173028397585333
+  },
+  {
+    "enterm": "lightindigo",
+    "urterm": "neela",
+    "dist": 0.11642132538412753
+  },
+  {
+    "enterm": "lightlavender",
+    "urterm": "hara",
+    "dist": 0.1740205798607707
+  },
+  {
+    "enterm": "lightlavender",
+    "urterm": "neela",
+    "dist": 0.09600559274908008
+  },
+  {
+    "enterm": "lightlime",
+    "urterm": "hara",
+    "dist": 0.1810394402152747
+  },
+  {
+    "enterm": "lightlime",
+    "urterm": "neela",
+    "dist": 0.30403831845955337
+  },
+  {
+    "enterm": "lightlimegreen",
+    "urterm": "hara",
+    "dist": 0.15972035612943958
+  },
+  {
+    "enterm": "lightlimegreen",
+    "urterm": "neela",
+    "dist": 0.29881989603613146
+  },
+  {
+    "enterm": "lightmagenta",
+    "urterm": "hara",
+    "dist": 0.1942708577769742
+  },
+  {
+    "enterm": "lightmagenta",
+    "urterm": "neela",
+    "dist": 0.08036655569667751
+  },
+  {
+    "enterm": "lightmaroon",
+    "urterm": "hara",
+    "dist": 0.17493630072011462
+  },
+  {
+    "enterm": "lightmaroon",
+    "urterm": "neela",
+    "dist": 0.11792580496094592
+  },
+  {
+    "enterm": "lightmauve",
+    "urterm": "hara",
+    "dist": 0.1149282822615222
+  },
+  {
+    "enterm": "lightmauve",
+    "urterm": "neela",
+    "dist": 0.10830698857609931
+  },
+  {
+    "enterm": "lightmintgreen",
+    "urterm": "hara",
+    "dist": 0.1659329911221775
+  },
+  {
+    "enterm": "lightmintgreen",
+    "urterm": "neela",
+    "dist": 0.28550237326443434
+  },
+  {
+    "enterm": "lightnavy",
+    "urterm": "hara",
+    "dist": 0.21203641845633944
+  },
+  {
+    "enterm": "lightnavy",
+    "urterm": "neela",
+    "dist": 0.1176391666944902
+  },
+  {
+    "enterm": "lightneongreen",
+    "urterm": "hara",
+    "dist": 0.17718205469078957
+  },
+  {
+    "enterm": "lightneongreen",
+    "urterm": "neela",
+    "dist": 0.31737842363935725
+  },
+  {
+    "enterm": "lightolive",
+    "urterm": "hara",
+    "dist": 0.0491223891374979
+  },
+  {
+    "enterm": "lightolive",
+    "urterm": "neela",
+    "dist": 0.15269351260007338
+  },
+  {
+    "enterm": "lightolivegreen",
+    "urterm": "hara",
+    "dist": 0.03692672208789636
+  },
+  {
+    "enterm": "lightolivegreen",
+    "urterm": "neela",
+    "dist": 0.17899781975850898
+  },
+  {
+    "enterm": "lightorange",
+    "urterm": "hara",
+    "dist": 0.058536210362861156
+  },
+  {
+    "enterm": "lightorange",
+    "urterm": "neela",
+    "dist": 0.2075532236453646
+  },
+  {
+    "enterm": "lightpeach",
+    "urterm": "hara",
+    "dist": 0.10442936310451728
+  },
+  {
+    "enterm": "lightpeach",
+    "urterm": "neela",
+    "dist": 0.16895576070705767
+  },
+  {
+    "enterm": "lightpink",
+    "urterm": "hara",
+    "dist": 0.1507060202189629
+  },
+  {
+    "enterm": "lightpink",
+    "urterm": "neela",
+    "dist": 0.11217875654085631
+  },
+  {
+    "enterm": "lightpurple",
+    "urterm": "hara",
+    "dist": 0.20830777144376833
+  },
+  {
+    "enterm": "lightpurple",
+    "urterm": "neela",
+    "dist": 0.08597731592517531
+  },
+  {
+    "enterm": "lightred",
+    "urterm": "hara",
+    "dist": 0.15981315683748495
+  },
+  {
+    "enterm": "lightred",
+    "urterm": "neela",
+    "dist": 0.12690425495313712
+  },
+  {
+    "enterm": "lightskyblue",
+    "urterm": "hara",
+    "dist": 0.19431868825758933
+  },
+  {
+    "enterm": "lightskyblue",
+    "urterm": "neela",
+    "dist": 0.17277613927342153
+  },
+  {
+    "enterm": "lighttan",
+    "urterm": "hara",
+    "dist": 0.12313192097725748
+  },
+  {
+    "enterm": "lighttan",
+    "urterm": "neela",
+    "dist": 0.19695121548456232
+  },
+  {
+    "enterm": "lightteal",
+    "urterm": "hara",
+    "dist": 0.0891218340157725
+  },
+  {
+    "enterm": "lightteal",
+    "urterm": "neela",
+    "dist": 0.1635642354740373
+  },
+  {
+    "enterm": "lightturquoise",
+    "urterm": "hara",
+    "dist": 0.10394299753070668
+  },
+  {
+    "enterm": "lightturquoise",
+    "urterm": "neela",
+    "dist": 0.166296905385273
+  },
+  {
+    "enterm": "lightviolet",
+    "urterm": "hara",
+    "dist": 0.2043326802466533
+  },
+  {
+    "enterm": "lightviolet",
+    "urterm": "neela",
+    "dist": 0.08137775097574146
+  },
+  {
+    "enterm": "lightyellow",
+    "urterm": "hara",
+    "dist": 0.1532119647250267
+  },
+  {
+    "enterm": "lightyellow",
+    "urterm": "neela",
+    "dist": 0.2601241345188402
+  },
+  {
+    "enterm": "lightyellowgreen",
+    "urterm": "hara",
+    "dist": 0.16040185074948107
+  },
+  {
+    "enterm": "lightyellowgreen",
+    "urterm": "neela",
+    "dist": 0.28091407436508076
+  },
+  {
+    "enterm": "likegreen",
+    "urterm": "hara",
+    "dist": 0.12527932679220094
+  },
+  {
+    "enterm": "likegreen",
+    "urterm": "neela",
+    "dist": 0.2841206081026382
+  },
+  {
+    "enterm": "lilac",
+    "urterm": "hara",
+    "dist": 0.19290864314730224
+  },
+  {
+    "enterm": "lilac",
+    "urterm": "neela",
+    "dist": 0.08500447002921908
+  },
+  {
+    "enterm": "lilacpurple",
+    "urterm": "hara",
+    "dist": 0.20306612441010785
+  },
+  {
+    "enterm": "lilacpurple",
+    "urterm": "neela",
+    "dist": 0.0892299894532892
+  },
+  {
+    "enterm": "lime",
+    "urterm": "hara",
+    "dist": 0.1464978144585421
+  },
+  {
+    "enterm": "lime",
+    "urterm": "neela",
+    "dist": 0.2989633428584961
+  },
+  {
+    "enterm": "limegreen",
+    "urterm": "hara",
+    "dist": 0.142273512713985
+  },
+  {
+    "enterm": "limegreen",
+    "urterm": "neela",
+    "dist": 0.2962649308108226
+  },
+  {
+    "enterm": "limeyellow",
+    "urterm": "hara",
+    "dist": 0.12708843395898256
+  },
+  {
+    "enterm": "limeyellow",
+    "urterm": "neela",
+    "dist": 0.2853559583446225
+  },
+  {
+    "enterm": "magenta",
+    "urterm": "hara",
+    "dist": 0.21498484784687694
+  },
+  {
+    "enterm": "magenta",
+    "urterm": "neela",
+    "dist": 0.09988909910547118
+  },
+  {
+    "enterm": "magentapink",
+    "urterm": "hara",
+    "dist": 0.2073726750424916
+  },
+  {
+    "enterm": "magentapink",
+    "urterm": "neela",
+    "dist": 0.10068297160703897
+  },
+  {
+    "enterm": "magentapurple",
+    "urterm": "hara",
+    "dist": 0.2543783505882828
+  },
+  {
+    "enterm": "magentapurple",
+    "urterm": "neela",
+    "dist": 0.13762674524042706
+  },
+  {
+    "enterm": "mahogany",
+    "urterm": "hara",
+    "dist": 0.21312077943586905
+  },
+  {
+    "enterm": "mahogany",
+    "urterm": "neela",
+    "dist": 0.18109459255953428
+  },
+  {
+    "enterm": "marigold",
+    "urterm": "hara",
+    "dist": 0.07205840913723238
+  },
+  {
+    "enterm": "marigold",
+    "urterm": "neela",
+    "dist": 0.23986260051196118
+  },
+  {
+    "enterm": "marineblue",
+    "urterm": "hara",
+    "dist": 0.18230633703243335
+  },
+  {
+    "enterm": "marineblue",
+    "urterm": "neela",
+    "dist": 0.06217682383965082
+  },
+  {
+    "enterm": "maroon",
+    "urterm": "hara",
+    "dist": 0.2185526898467559
+  },
+  {
+    "enterm": "maroon",
+    "urterm": "neela",
+    "dist": 0.17961403525712052
+  },
+  {
+    "enterm": "mauve",
+    "urterm": "hara",
+    "dist": 0.14378552141123493
+  },
+  {
+    "enterm": "mauve",
+    "urterm": "neela",
+    "dist": 0.08966647663849547
+  },
+  {
+    "enterm": "mauvepink",
+    "urterm": "hara",
+    "dist": 0.19084101506094245
+  },
+  {
+    "enterm": "mauvepink",
+    "urterm": "neela",
+    "dist": 0.08687574311718493
+  },
+  {
+    "enterm": "mediumblue",
+    "urterm": "hara",
+    "dist": 0.19109514487522256
+  },
+  {
+    "enterm": "mediumblue",
+    "urterm": "neela",
+    "dist": 0.06047446426905871
+  },
+  {
+    "enterm": "mediumbrown",
+    "urterm": "hara",
+    "dist": 0.12403071479794846
+  },
+  {
+    "enterm": "mediumbrown",
+    "urterm": "neela",
+    "dist": 0.13152480745669087
+  },
+  {
+    "enterm": "mediumgreen",
+    "urterm": "hara",
+    "dist": 0.05556175051340014
+  },
+  {
+    "enterm": "mediumgreen",
+    "urterm": "neela",
+    "dist": 0.21531869184474012
+  },
+  {
+    "enterm": "mediumpink",
+    "urterm": "hara",
+    "dist": 0.20356564944781586
+  },
+  {
+    "enterm": "mediumpink",
+    "urterm": "neela",
+    "dist": 0.10001029941763956
+  },
+  {
+    "enterm": "mediumpurple",
+    "urterm": "hara",
+    "dist": 0.24293553816686347
+  },
+  {
+    "enterm": "mediumpurple",
+    "urterm": "neela",
+    "dist": 0.12207707911708003
+  },
+  {
+    "enterm": "melon",
+    "urterm": "hara",
+    "dist": 0.13176462856252105
+  },
+  {
+    "enterm": "melon",
+    "urterm": "neela",
+    "dist": 0.28122432410642445
+  },
+  {
+    "enterm": "midblue",
+    "urterm": "hara",
+    "dist": 0.15844207568390964
+  },
+  {
+    "enterm": "midblue",
+    "urterm": "neela",
+    "dist": 0.06563856635217596
+  },
+  {
+    "enterm": "midgreen",
+    "urterm": "hara",
+    "dist": 0.05939672115602483
+  },
+  {
+    "enterm": "midgreen",
+    "urterm": "neela",
+    "dist": 0.20456318692968653
+  },
+  {
+    "enterm": "midnight",
+    "urterm": "hara",
+    "dist": 0.2521192818314574
+  },
+  {
+    "enterm": "midnight",
+    "urterm": "neela",
+    "dist": 0.16364448542587762
+  },
+  {
+    "enterm": "midnightblue",
+    "urterm": "hara",
+    "dist": 0.2560862244955672
+  },
+  {
+    "enterm": "midnightblue",
+    "urterm": "neela",
+    "dist": 0.15887009434816105
+  },
+  {
+    "enterm": "midnightpurple",
+    "urterm": "hara",
+    "dist": 0.25177156478537166
+  },
+  {
+    "enterm": "midnightpurple",
+    "urterm": "neela",
+    "dist": 0.15898274768586035
+  },
+  {
+    "enterm": "militarygreen",
+    "urterm": "hara",
+    "dist": 0.12490026638522538
+  },
+  {
+    "enterm": "militarygreen",
+    "urterm": "neela",
+    "dist": 0.1399551223200502
+  },
+  {
+    "enterm": "mint",
+    "urterm": "hara",
+    "dist": 0.14858287572141002
+  },
+  {
+    "enterm": "mint",
+    "urterm": "neela",
+    "dist": 0.2843449333442561
+  },
+  {
+    "enterm": "mintgreen",
+    "urterm": "hara",
+    "dist": 0.14362499543626725
+  },
+  {
+    "enterm": "mintgreen",
+    "urterm": "neela",
+    "dist": 0.28669517277904427
+  },
+  {
+    "enterm": "mocha",
+    "urterm": "hara",
+    "dist": 0.11438262649625525
+  },
+  {
+    "enterm": "mocha",
+    "urterm": "neela",
+    "dist": 0.12185563729655145
+  },
+  {
+    "enterm": "moss",
+    "urterm": "hara",
+    "dist": 0.06659037156426889
+  },
+  {
+    "enterm": "moss",
+    "urterm": "neela",
+    "dist": 0.15350656371944046
+  },
+  {
+    "enterm": "mossgreen",
+    "urterm": "hara",
+    "dist": 0.07121903722281019
+  },
+  {
+    "enterm": "mossgreen",
+    "urterm": "neela",
+    "dist": 0.16508665750519538
+  },
+  {
+    "enterm": "mossygreen",
+    "urterm": "hara",
+    "dist": 0.049519673791027924
+  },
+  {
+    "enterm": "mossygreen",
+    "urterm": "neela",
+    "dist": 0.16285806918995033
+  },
+  {
+    "enterm": "mud",
+    "urterm": "hara",
+    "dist": 0.1268209521520265
+  },
+  {
+    "enterm": "mud",
+    "urterm": "neela",
+    "dist": 0.12963176393766357
+  },
+  {
+    "enterm": "mudbrown",
+    "urterm": "hara",
+    "dist": 0.15012321405199713
+  },
+  {
+    "enterm": "mudbrown",
+    "urterm": "neela",
+    "dist": 0.14295771760770998
+  },
+  {
+    "enterm": "muddybrown",
+    "urterm": "hara",
+    "dist": 0.1536939982361061
+  },
+  {
+    "enterm": "muddybrown",
+    "urterm": "neela",
+    "dist": 0.1428051854951486
+  },
+  {
+    "enterm": "muddygreen",
+    "urterm": "hara",
+    "dist": 0.13244043552407786
+  },
+  {
+    "enterm": "muddygreen",
+    "urterm": "neela",
+    "dist": 0.1407145191962686
+  },
+  {
+    "enterm": "mulberry",
+    "urterm": "hara",
+    "dist": 0.19665396954016845
+  },
+  {
+    "enterm": "mulberry",
+    "urterm": "neela",
+    "dist": 0.1167206956606149
+  },
+  {
+    "enterm": "murkygreen",
+    "urterm": "hara",
+    "dist": 0.0967846003482881
+  },
+  {
+    "enterm": "murkygreen",
+    "urterm": "neela",
+    "dist": 0.1581822602425942
+  },
+  {
+    "enterm": "mustard",
+    "urterm": "hara",
+    "dist": 0.037234552298589706
+  },
+  {
+    "enterm": "mustard",
+    "urterm": "neela",
+    "dist": 0.20618596820862492
+  },
+  {
+    "enterm": "mustardgreen",
+    "urterm": "hara",
+    "dist": 0.04608190458899374
+  },
+  {
+    "enterm": "mustardgreen",
+    "urterm": "neela",
+    "dist": 0.18350573300275594
+  },
+  {
+    "enterm": "mustardyellow",
+    "urterm": "hara",
+    "dist": 0.06994961377213622
+  },
+  {
+    "enterm": "mustardyellow",
+    "urterm": "neela",
+    "dist": 0.2378065081271309
+  },
+  {
+    "enterm": "mutedblue",
+    "urterm": "hara",
+    "dist": 0.18057321625600906
+  },
+  {
+    "enterm": "mutedblue",
+    "urterm": "neela",
+    "dist": 0.039952410147585334
+  },
+  {
+    "enterm": "mutedgreen",
+    "urterm": "hara",
+    "dist": 0.046611151998070456
+  },
+  {
+    "enterm": "mutedgreen",
+    "urterm": "neela",
+    "dist": 0.1855586119732514
+  },
+  {
+    "enterm": "mutedpink",
+    "urterm": "hara",
+    "dist": 0.1273205092748049
+  },
+  {
+    "enterm": "mutedpink",
+    "urterm": "neela",
+    "dist": 0.10976375903304668
+  },
+  {
+    "enterm": "mutedpurple",
+    "urterm": "hara",
+    "dist": 0.1618342138245643
+  },
+  {
+    "enterm": "mutedpurple",
+    "urterm": "neela",
+    "dist": 0.09203599925667573
+  },
+  {
+    "enterm": "mutedyellow",
+    "urterm": "hara",
+    "dist": 0.11434479645134464
+  },
+  {
+    "enterm": "mutedyellow",
+    "urterm": "neela",
+    "dist": 0.2729821433625453
+  },
+  {
+    "enterm": "navy",
+    "urterm": "hara",
+    "dist": 0.2540623105747655
+  },
+  {
+    "enterm": "navy",
+    "urterm": "neela",
+    "dist": 0.15226500926177955
+  },
+  {
+    "enterm": "navyblue",
+    "urterm": "hara",
+    "dist": 0.24947028324378917
+  },
+  {
+    "enterm": "navyblue",
+    "urterm": "neela",
+    "dist": 0.14465457898816458
+  },
+  {
+    "enterm": "navygreen",
+    "urterm": "hara",
+    "dist": 0.11595931848124744
+  },
+  {
+    "enterm": "navygreen",
+    "urterm": "neela",
+    "dist": 0.14755671447741953
+  },
+  {
+    "enterm": "neon",
+    "urterm": "hara",
+    "dist": 0.1552635172131302
+  },
+  {
+    "enterm": "neon",
+    "urterm": "neela",
+    "dist": 0.29822175904695714
+  },
+  {
+    "enterm": "neonblue",
+    "urterm": "hara",
+    "dist": 0.14839647737343986
+  },
+  {
+    "enterm": "neonblue",
+    "urterm": "neela",
+    "dist": 0.10316851886839276
+  },
+  {
+    "enterm": "neongreen",
+    "urterm": "hara",
+    "dist": 0.16176653279775527
+  },
+  {
+    "enterm": "neongreen",
+    "urterm": "neela",
+    "dist": 0.3126699664879387
+  },
+  {
+    "enterm": "neonlime",
+    "urterm": "hara",
+    "dist": 0.15810838642089275
+  },
+  {
+    "enterm": "neonlime",
+    "urterm": "neela",
+    "dist": 0.310292770793808
+  },
+  {
+    "enterm": "neonpink",
+    "urterm": "hara",
+    "dist": 0.22052591370988847
+  },
+  {
+    "enterm": "neonpink",
+    "urterm": "neela",
+    "dist": 0.10815907662291094
+  },
+  {
+    "enterm": "neonpurple",
+    "urterm": "hara",
+    "dist": 0.2546382268812971
+  },
+  {
+    "enterm": "neonpurple",
+    "urterm": "neela",
+    "dist": 0.13230146375624868
+  },
+  {
+    "enterm": "neonteal",
+    "urterm": "hara",
+    "dist": 0.16021298182355648
+  },
+  {
+    "enterm": "neonteal",
+    "urterm": "neela",
+    "dist": 0.267356214193471
+  },
+  {
+    "enterm": "neonyellow",
+    "urterm": "hara",
+    "dist": 0.17582657140017358
+  },
+  {
+    "enterm": "neonyellow",
+    "urterm": "neela",
+    "dist": 0.32691093078917827
+  },
+  {
+    "enterm": "neonyellowgreen",
+    "urterm": "hara",
+    "dist": 0.15385880892125064
+  },
+  {
+    "enterm": "neonyellowgreen",
+    "urterm": "neela",
+    "dist": 0.306714999676171
+  },
+  {
+    "enterm": "nightblue",
+    "urterm": "hara",
+    "dist": 0.25379713466782994
+  },
+  {
+    "enterm": "nightblue",
+    "urterm": "neela",
+    "dist": 0.1410919175696756
+  },
+  {
+    "enterm": "nude",
+    "urterm": "hara",
+    "dist": 0.0872901765687861
+  },
+  {
+    "enterm": "nude",
+    "urterm": "neela",
+    "dist": 0.12133228595206517
+  },
+  {
+    "enterm": "ocean",
+    "urterm": "hara",
+    "dist": 0.16935814193053217
+  },
+  {
+    "enterm": "ocean",
+    "urterm": "neela",
+    "dist": 0.038606981165854266
+  },
+  {
+    "enterm": "oceanblue",
+    "urterm": "hara",
+    "dist": 0.1579760674131694
+  },
+  {
+    "enterm": "oceanblue",
+    "urterm": "neela",
+    "dist": 0.048266513810963786
+  },
+  {
+    "enterm": "oceangreen",
+    "urterm": "hara",
+    "dist": 0.09394221650359738
+  },
+  {
+    "enterm": "oceangreen",
+    "urterm": "neela",
+    "dist": 0.14542034513226193
+  },
+  {
+    "enterm": "ochre",
+    "urterm": "hara",
+    "dist": 0.05119892972052058
+  },
+  {
+    "enterm": "ochre",
+    "urterm": "neela",
+    "dist": 0.16853039665967207
+  },
+  {
+    "enterm": "offwhite",
+    "urterm": "hara",
+    "dist": 0.1581545417043099
+  },
+  {
+    "enterm": "offwhite",
+    "urterm": "neela",
+    "dist": 0.22360080058329695
+  },
+  {
+    "enterm": "olive",
+    "urterm": "hara",
+    "dist": 0.07361550224833625
+  },
+  {
+    "enterm": "olive",
+    "urterm": "neela",
+    "dist": 0.15562369016855904
+  },
+  {
+    "enterm": "olivebrown",
+    "urterm": "hara",
+    "dist": 0.14359660888563425
+  },
+  {
+    "enterm": "olivebrown",
+    "urterm": "neela",
+    "dist": 0.1559688399521416
+  },
+  {
+    "enterm": "olivedrab",
+    "urterm": "hara",
+    "dist": 0.08793600439682665
+  },
+  {
+    "enterm": "olivedrab",
+    "urterm": "neela",
+    "dist": 0.13808603156144555
+  },
+  {
+    "enterm": "olivegreen",
+    "urterm": "hara",
+    "dist": 0.0800229767262245
+  },
+  {
+    "enterm": "olivegreen",
+    "urterm": "neela",
+    "dist": 0.15652102503637091
+  },
+  {
+    "enterm": "orange",
+    "urterm": "hara",
+    "dist": 0.06122788974675302
+  },
+  {
+    "enterm": "orange",
+    "urterm": "neela",
+    "dist": 0.1742601207744589
+  },
+  {
+    "enterm": "orangebrown",
+    "urterm": "hara",
+    "dist": 0.11244472770005352
+  },
+  {
+    "enterm": "orangebrown",
+    "urterm": "neela",
+    "dist": 0.15674237719981943
+  },
+  {
+    "enterm": "orangered",
+    "urterm": "hara",
+    "dist": 0.1638992774885745
+  },
+  {
+    "enterm": "orangered",
+    "urterm": "neela",
+    "dist": 0.13934950220258077
+  },
+  {
+    "enterm": "orangeyellow",
+    "urterm": "hara",
+    "dist": 0.06735312614585676
+  },
+  {
+    "enterm": "orangeyellow",
+    "urterm": "neela",
+    "dist": 0.23187352783675236
+  },
+  {
+    "enterm": "orchid",
+    "urterm": "hara",
+    "dist": 0.21372479772899206
+  },
+  {
+    "enterm": "orchid",
+    "urterm": "neela",
+    "dist": 0.0909319045566277
+  },
+  {
+    "enterm": "oxblood",
+    "urterm": "hara",
+    "dist": 0.2192795166012173
+  },
+  {
+    "enterm": "oxblood",
+    "urterm": "neela",
+    "dist": 0.19057015554822274
+  },
+  {
+    "enterm": "pale",
+    "urterm": "hara",
+    "dist": 0.09835510403266369
+  },
+  {
+    "enterm": "pale",
+    "urterm": "neela",
+    "dist": 0.15963343838150407
+  },
+  {
+    "enterm": "paleblue",
+    "urterm": "hara",
+    "dist": 0.1539865509654347
+  },
+  {
+    "enterm": "paleblue",
+    "urterm": "neela",
+    "dist": 0.10080007419211627
+  },
+  {
+    "enterm": "palebrown",
+    "urterm": "hara",
+    "dist": 0.11730554219412033
+  },
+  {
+    "enterm": "palebrown",
+    "urterm": "neela",
+    "dist": 0.12544679792035116
+  },
+  {
+    "enterm": "palegray",
+    "urterm": "hara",
+    "dist": 0.09165448543402542
+  },
+  {
+    "enterm": "palegray",
+    "urterm": "neela",
+    "dist": 0.11722199137568076
+  },
+  {
+    "enterm": "palegreen",
+    "urterm": "hara",
+    "dist": 0.10760999352516337
+  },
+  {
+    "enterm": "palegreen",
+    "urterm": "neela",
+    "dist": 0.24054785506434842
+  },
+  {
+    "enterm": "paleorange",
+    "urterm": "hara",
+    "dist": 0.07034867261216911
+  },
+  {
+    "enterm": "paleorange",
+    "urterm": "neela",
+    "dist": 0.18837251934202123
+  },
+  {
+    "enterm": "palepink",
+    "urterm": "hara",
+    "dist": 0.1274054930870151
+  },
+  {
+    "enterm": "palepink",
+    "urterm": "neela",
+    "dist": 0.12699018477012108
+  },
+  {
+    "enterm": "palepurple",
+    "urterm": "hara",
+    "dist": 0.16117091294364336
+  },
+  {
+    "enterm": "palepurple",
+    "urterm": "neela",
+    "dist": 0.07609200484236214
+  },
+  {
+    "enterm": "palered",
+    "urterm": "hara",
+    "dist": 0.13073787975749224
+  },
+  {
+    "enterm": "palered",
+    "urterm": "neela",
+    "dist": 0.11991486518347755
+  },
+  {
+    "enterm": "paleteal",
+    "urterm": "hara",
+    "dist": 0.11081049309322642
+  },
+  {
+    "enterm": "paleteal",
+    "urterm": "neela",
+    "dist": 0.14156789307844345
+  },
+  {
+    "enterm": "paleturquoise",
+    "urterm": "hara",
+    "dist": 0.17341586160688258
+  },
+  {
+    "enterm": "paleturquoise",
+    "urterm": "neela",
+    "dist": 0.19771561458866635
+  },
+  {
+    "enterm": "paleviolet",
+    "urterm": "hara",
+    "dist": 0.17678297503553939
+  },
+  {
+    "enterm": "paleviolet",
+    "urterm": "neela",
+    "dist": 0.07349005331787156
+  },
+  {
+    "enterm": "paleyellow",
+    "urterm": "hara",
+    "dist": 0.17814495594553306
+  },
+  {
+    "enterm": "paleyellow",
+    "urterm": "neela",
+    "dist": 0.32016452155228525
+  },
+  {
+    "enterm": "parrotgreen",
+    "urterm": "hara",
+    "dist": 0.09558573939972649
+  },
+  {
+    "enterm": "parrotgreen",
+    "urterm": "neela",
+    "dist": 0.25612560751519775
+  },
+  {
+    "enterm": "pastelblue",
+    "urterm": "hara",
+    "dist": 0.16817328011364868
+  },
+  {
+    "enterm": "pastelblue",
+    "urterm": "neela",
+    "dist": 0.09889690239578722
+  },
+  {
+    "enterm": "pastelgreen",
+    "urterm": "hara",
+    "dist": 0.11236685643775661
+  },
+  {
+    "enterm": "pastelgreen",
+    "urterm": "neela",
+    "dist": 0.2446046661719065
+  },
+  {
+    "enterm": "pastelorange",
+    "urterm": "hara",
+    "dist": 0.07203715561519512
+  },
+  {
+    "enterm": "pastelorange",
+    "urterm": "neela",
+    "dist": 0.1600674365965923
+  },
+  {
+    "enterm": "pastelpink",
+    "urterm": "hara",
+    "dist": 0.14520189318505294
+  },
+  {
+    "enterm": "pastelpink",
+    "urterm": "neela",
+    "dist": 0.11239553374569988
+  },
+  {
+    "enterm": "pastelpurple",
+    "urterm": "hara",
+    "dist": 0.18655752674720405
+  },
+  {
+    "enterm": "pastelpurple",
+    "urterm": "neela",
+    "dist": 0.08037091835760515
+  },
+  {
+    "enterm": "pastelyellow",
+    "urterm": "hara",
+    "dist": 0.15736745136066613
+  },
+  {
+    "enterm": "pastelyellow",
+    "urterm": "neela",
+    "dist": 0.2705902133193108
+  },
+  {
+    "enterm": "peach",
+    "urterm": "hara",
+    "dist": 0.10242082282850976
+  },
+  {
+    "enterm": "peach",
+    "urterm": "neela",
+    "dist": 0.13256052803040544
+  },
+  {
+    "enterm": "peachpink",
+    "urterm": "hara",
+    "dist": 0.13167623886940485
+  },
+  {
+    "enterm": "peachpink",
+    "urterm": "neela",
+    "dist": 0.11588466415772772
+  },
+  {
+    "enterm": "peacockblue",
+    "urterm": "hara",
+    "dist": 0.13843622040211212
+  },
+  {
+    "enterm": "peacockblue",
+    "urterm": "neela",
+    "dist": 0.06061043229933455
+  },
+  {
+    "enterm": "peacockgreen",
+    "urterm": "hara",
+    "dist": 0.0549849209133252
+  },
+  {
+    "enterm": "peacockgreen",
+    "urterm": "neela",
+    "dist": 0.15249404091472538
+  },
+  {
+    "enterm": "peagreen",
+    "urterm": "hara",
+    "dist": 0.030143360278003996
+  },
+  {
+    "enterm": "peagreen",
+    "urterm": "neela",
+    "dist": 0.20618627506659945
+  },
+  {
+    "enterm": "pear",
+    "urterm": "hara",
+    "dist": 0.12350015285348272
+  },
+  {
+    "enterm": "pear",
+    "urterm": "neela",
+    "dist": 0.2807909413297339
+  },
+  {
+    "enterm": "peasoup",
+    "urterm": "hara",
+    "dist": 0.06139633916054907
+  },
+  {
+    "enterm": "peasoup",
+    "urterm": "neela",
+    "dist": 0.2277107856124843
+  },
+  {
+    "enterm": "periwinkle",
+    "urterm": "hara",
+    "dist": 0.1944210050597526
+  },
+  {
+    "enterm": "periwinkle",
+    "urterm": "neela",
+    "dist": 0.07999505642993608
+  },
+  {
+    "enterm": "periwinkleblue",
+    "urterm": "hara",
+    "dist": 0.19305516628156508
+  },
+  {
+    "enterm": "periwinkleblue",
+    "urterm": "neela",
+    "dist": 0.08705553405878774
+  },
+  {
+    "enterm": "persianblue",
+    "urterm": "hara",
+    "dist": 0.26206609437304407
+  },
+  {
+    "enterm": "persianblue",
+    "urterm": "neela",
+    "dist": 0.13111132763493688
+  },
+  {
+    "enterm": "pine",
+    "urterm": "hara",
+    "dist": 0.1209029705490226
+  },
+  {
+    "enterm": "pine",
+    "urterm": "neela",
+    "dist": 0.16046603881432886
+  },
+  {
+    "enterm": "pinegreen",
+    "urterm": "hara",
+    "dist": 0.08915940557404721
+  },
+  {
+    "enterm": "pinegreen",
+    "urterm": "neela",
+    "dist": 0.16046348825723344
+  },
+  {
+    "enterm": "pink",
+    "urterm": "hara",
+    "dist": 0.18559811179204255
+  },
+  {
+    "enterm": "pink",
+    "urterm": "neela",
+    "dist": 0.087382715825626
+  },
+  {
+    "enterm": "pinkgray",
+    "urterm": "hara",
+    "dist": 0.11852006521657407
+  },
+  {
+    "enterm": "pinkgray",
+    "urterm": "neela",
+    "dist": 0.1309831786176096
+  },
+  {
+    "enterm": "pinkish",
+    "urterm": "hara",
+    "dist": 0.18103617538956543
+  },
+  {
+    "enterm": "pinkish",
+    "urterm": "neela",
+    "dist": 0.09905375739386436
+  },
+  {
+    "enterm": "pinkishbrown",
+    "urterm": "hara",
+    "dist": 0.1181256239272558
+  },
+  {
+    "enterm": "pinkishbrown",
+    "urterm": "neela",
+    "dist": 0.1241986922832113
+  },
+  {
+    "enterm": "pinkishpurple",
+    "urterm": "hara",
+    "dist": 0.21434635430981117
+  },
+  {
+    "enterm": "pinkishpurple",
+    "urterm": "neela",
+    "dist": 0.09838427233029483
+  },
+  {
+    "enterm": "pinkishred",
+    "urterm": "hara",
+    "dist": 0.18071173144437364
+  },
+  {
+    "enterm": "pinkishred",
+    "urterm": "neela",
+    "dist": 0.13190791543986136
+  },
+  {
+    "enterm": "pinkpurple",
+    "urterm": "hara",
+    "dist": 0.21908859185974414
+  },
+  {
+    "enterm": "pinkpurple",
+    "urterm": "neela",
+    "dist": 0.10055583059244368
+  },
+  {
+    "enterm": "pinkred",
+    "urterm": "hara",
+    "dist": 0.18745950104562326
+  },
+  {
+    "enterm": "pinkred",
+    "urterm": "neela",
+    "dist": 0.14106060771342285
+  },
+  {
+    "enterm": "pinkypurple",
+    "urterm": "hara",
+    "dist": 0.21954989333978955
+  },
+  {
+    "enterm": "pinkypurple",
+    "urterm": "neela",
+    "dist": 0.10098617552525892
+  },
+  {
+    "enterm": "pissyellow",
+    "urterm": "hara",
+    "dist": 0.1156008659961905
+  },
+  {
+    "enterm": "pissyellow",
+    "urterm": "neela",
+    "dist": 0.27227552771104674
+  },
+  {
+    "enterm": "pistachio",
+    "urterm": "hara",
+    "dist": 0.11609638755198462
+  },
+  {
+    "enterm": "pistachio",
+    "urterm": "neela",
+    "dist": 0.25566735654295275
+  },
+  {
+    "enterm": "pistachiogreen",
+    "urterm": "hara",
+    "dist": 0.11971382178043385
+  },
+  {
+    "enterm": "pistachiogreen",
+    "urterm": "neela",
+    "dist": 0.24946974710840242
+  },
+  {
+    "enterm": "pistagreen",
+    "urterm": "hara",
+    "dist": 0.07789609000216124
+  },
+  {
+    "enterm": "pistagreen",
+    "urterm": "neela",
+    "dist": 0.2073885320315038
+  },
+  {
+    "enterm": "plum",
+    "urterm": "hara",
+    "dist": 0.20425350127247524
+  },
+  {
+    "enterm": "plum",
+    "urterm": "neela",
+    "dist": 0.1250475331441772
+  },
+  {
+    "enterm": "plumpurple",
+    "urterm": "hara",
+    "dist": 0.23931228285694528
+  },
+  {
+    "enterm": "plumpurple",
+    "urterm": "neela",
+    "dist": 0.16398041534186122
+  },
+  {
+    "enterm": "poop",
+    "urterm": "hara",
+    "dist": 0.16461597241681672
+  },
+  {
+    "enterm": "poop",
+    "urterm": "neela",
+    "dist": 0.15057066196921298
+  },
+  {
+    "enterm": "poopbrown",
+    "urterm": "hara",
+    "dist": 0.12705297358141035
+  },
+  {
+    "enterm": "poopbrown",
+    "urterm": "neela",
+    "dist": 0.14312743082675006
+  },
+  {
+    "enterm": "powderblue",
+    "urterm": "hara",
+    "dist": 0.18957344721995475
+  },
+  {
+    "enterm": "powderblue",
+    "urterm": "neela",
+    "dist": 0.11714742200284613
+  },
+  {
+    "enterm": "powderpink",
+    "urterm": "hara",
+    "dist": 0.14905718740379356
+  },
+  {
+    "enterm": "powderpink",
+    "urterm": "neela",
+    "dist": 0.1168549495300451
+  },
+  {
+    "enterm": "primaryblue",
+    "urterm": "hara",
+    "dist": 0.2407740806228354
+  },
+  {
+    "enterm": "primaryblue",
+    "urterm": "neela",
+    "dist": 0.10484342300602811
+  },
+  {
+    "enterm": "prussianblue",
+    "urterm": "hara",
+    "dist": 0.24531982756595078
+  },
+  {
+    "enterm": "prussianblue",
+    "urterm": "neela",
+    "dist": 0.12286097820978664
+  },
+  {
+    "enterm": "puce",
+    "urterm": "hara",
+    "dist": 0.08989354824669676
+  },
+  {
+    "enterm": "puce",
+    "urterm": "neela",
+    "dist": 0.11755440111011728
+  },
+  {
+    "enterm": "puke",
+    "urterm": "hara",
+    "dist": 0.03371180540622814
+  },
+  {
+    "enterm": "puke",
+    "urterm": "neela",
+    "dist": 0.16618814414752492
+  },
+  {
+    "enterm": "pukegreen",
+    "urterm": "hara",
+    "dist": 0.026411753923002632
+  },
+  {
+    "enterm": "pukegreen",
+    "urterm": "neela",
+    "dist": 0.18695234899854735
+  },
+  {
+    "enterm": "pukeyellow",
+    "urterm": "hara",
+    "dist": 0.06248695983002787
+  },
+  {
+    "enterm": "pukeyellow",
+    "urterm": "neela",
+    "dist": 0.22620842601217708
+  },
+  {
+    "enterm": "pumpkin",
+    "urterm": "hara",
+    "dist": 0.06781335065791158
+  },
+  {
+    "enterm": "pumpkin",
+    "urterm": "neela",
+    "dist": 0.17270459985321981
+  },
+  {
+    "enterm": "pumpkinorange",
+    "urterm": "hara",
+    "dist": 0.06908350662455072
+  },
+  {
+    "enterm": "pumpkinorange",
+    "urterm": "neela",
+    "dist": 0.17235362762265077
+  },
+  {
+    "enterm": "purple",
+    "urterm": "hara",
+    "dist": 0.2239470197179551
+  },
+  {
+    "enterm": "purple",
+    "urterm": "neela",
+    "dist": 0.08989248435871092
+  },
+  {
+    "enterm": "purpleblue",
+    "urterm": "hara",
+    "dist": 0.22714750241846163
+  },
+  {
+    "enterm": "purpleblue",
+    "urterm": "neela",
+    "dist": 0.07036208694953673
+  },
+  {
+    "enterm": "purplebrown",
+    "urterm": "hara",
+    "dist": 0.1939486703661552
+  },
+  {
+    "enterm": "purplebrown",
+    "urterm": "neela",
+    "dist": 0.16450216076850804
+  },
+  {
+    "enterm": "purplegray",
+    "urterm": "hara",
+    "dist": 0.13356492726079605
+  },
+  {
+    "enterm": "purplegray",
+    "urterm": "neela",
+    "dist": 0.10964357212347169
+  },
+  {
+    "enterm": "purplepink",
+    "urterm": "hara",
+    "dist": 0.20629057594722627
+  },
+  {
+    "enterm": "purplepink",
+    "urterm": "neela",
+    "dist": 0.0877492651018974
+  },
+  {
+    "enterm": "purplered",
+    "urterm": "hara",
+    "dist": 0.20563103050029566
+  },
+  {
+    "enterm": "purplered",
+    "urterm": "neela",
+    "dist": 0.13491272533979543
+  },
+  {
+    "enterm": "purplishblue",
+    "urterm": "hara",
+    "dist": 0.21393360271472725
+  },
+  {
+    "enterm": "purplishblue",
+    "urterm": "neela",
+    "dist": 0.04898622462364409
+  },
+  {
+    "enterm": "purplishpink",
+    "urterm": "hara",
+    "dist": 0.2301182602777755
+  },
+  {
+    "enterm": "purplishpink",
+    "urterm": "neela",
+    "dist": 0.11404762375742548
+  },
+  {
+    "enterm": "racinggreen",
+    "urterm": "hara",
+    "dist": 0.12610560560748466
+  },
+  {
+    "enterm": "racinggreen",
+    "urterm": "neela",
+    "dist": 0.16544688876689256
+  },
+  {
+    "enterm": "raspberry",
+    "urterm": "hara",
+    "dist": 0.19865932105662013
+  },
+  {
+    "enterm": "raspberry",
+    "urterm": "neela",
+    "dist": 0.11601720783946858
+  },
+  {
+    "enterm": "rawumber",
+    "urterm": "hara",
+    "dist": 0.17419270621119143
+  },
+  {
+    "enterm": "rawumber",
+    "urterm": "neela",
+    "dist": 0.17001184518605306
+  },
+  {
+    "enterm": "red",
+    "urterm": "hara",
+    "dist": 0.1730308221712097
+  },
+  {
+    "enterm": "red",
+    "urterm": "neela",
+    "dist": 0.13429390627264187
+  },
+  {
+    "enterm": "redbrown",
+    "urterm": "hara",
+    "dist": 0.1939940653164163
+  },
+  {
+    "enterm": "redbrown",
+    "urterm": "neela",
+    "dist": 0.17527356159542914
+  },
+  {
+    "enterm": "reddishbrown",
+    "urterm": "hara",
+    "dist": 0.18646102889002014
+  },
+  {
+    "enterm": "reddishbrown",
+    "urterm": "neela",
+    "dist": 0.16821339086636405
+  },
+  {
+    "enterm": "reddishorange",
+    "urterm": "hara",
+    "dist": 0.12855278203517564
+  },
+  {
+    "enterm": "reddishorange",
+    "urterm": "neela",
+    "dist": 0.14367779942403028
+  },
+  {
+    "enterm": "reddishpink",
+    "urterm": "hara",
+    "dist": 0.18273298126311344
+  },
+  {
+    "enterm": "reddishpink",
+    "urterm": "neela",
+    "dist": 0.1200111393568733
+  },
+  {
+    "enterm": "reddishpurple",
+    "urterm": "hara",
+    "dist": 0.2012389290508504
+  },
+  {
+    "enterm": "reddishpurple",
+    "urterm": "neela",
+    "dist": 0.11022115658239542
+  },
+  {
+    "enterm": "redorange",
+    "urterm": "hara",
+    "dist": 0.15811578480756275
+  },
+  {
+    "enterm": "redorange",
+    "urterm": "neela",
+    "dist": 0.13856388602423095
+  },
+  {
+    "enterm": "redpink",
+    "urterm": "hara",
+    "dist": 0.1817715686589585
+  },
+  {
+    "enterm": "redpink",
+    "urterm": "neela",
+    "dist": 0.13155132902054034
+  },
+  {
+    "enterm": "redpurple",
+    "urterm": "hara",
+    "dist": 0.20350478130970148
+  },
+  {
+    "enterm": "redpurple",
+    "urterm": "neela",
+    "dist": 0.12719992053597734
+  },
+  {
+    "enterm": "redviolet",
+    "urterm": "hara",
+    "dist": 0.19343116801415094
+  },
+  {
+    "enterm": "redviolet",
+    "urterm": "neela",
+    "dist": 0.09994417936387187
+  },
+  {
+    "enterm": "robinegg",
+    "urterm": "hara",
+    "dist": 0.1689411105631623
+  },
+  {
+    "enterm": "robinegg",
+    "urterm": "neela",
+    "dist": 0.16134530944485867
+  },
+  {
+    "enterm": "robineggblue",
+    "urterm": "hara",
+    "dist": 0.1436852715058095
+  },
+  {
+    "enterm": "robineggblue",
+    "urterm": "neela",
+    "dist": 0.13153980310097027
+  },
+  {
+    "enterm": "rose",
+    "urterm": "hara",
+    "dist": 0.1454380951781595
+  },
+  {
+    "enterm": "rose",
+    "urterm": "neela",
+    "dist": 0.1012483502767842
+  },
+  {
+    "enterm": "rosepink",
+    "urterm": "hara",
+    "dist": 0.1463692716367988
+  },
+  {
+    "enterm": "rosepink",
+    "urterm": "neela",
+    "dist": 0.10595705829792346
+  },
+  {
+    "enterm": "rosered",
+    "urterm": "hara",
+    "dist": 0.1792152160240937
+  },
+  {
+    "enterm": "rosered",
+    "urterm": "neela",
+    "dist": 0.1360869000737495
+  },
+  {
+    "enterm": "rouge",
+    "urterm": "hara",
+    "dist": 0.16595180511622926
+  },
+  {
+    "enterm": "rouge",
+    "urterm": "neela",
+    "dist": 0.11306552884991412
+  },
+  {
+    "enterm": "royal",
+    "urterm": "hara",
+    "dist": 0.23830576917738042
+  },
+  {
+    "enterm": "royal",
+    "urterm": "neela",
+    "dist": 0.09690836198158216
+  },
+  {
+    "enterm": "royalblue",
+    "urterm": "hara",
+    "dist": 0.25161566659485074
+  },
+  {
+    "enterm": "royalblue",
+    "urterm": "neela",
+    "dist": 0.1217851535365575
+  },
+  {
+    "enterm": "royalpurple",
+    "urterm": "hara",
+    "dist": 0.2300025943159514
+  },
+  {
+    "enterm": "royalpurple",
+    "urterm": "neela",
+    "dist": 0.08508284547032784
+  },
+  {
+    "enterm": "ruby",
+    "urterm": "hara",
+    "dist": 0.20017609839465203
+  },
+  {
+    "enterm": "ruby",
+    "urterm": "neela",
+    "dist": 0.15151785636843523
+  },
+  {
+    "enterm": "rubyred",
+    "urterm": "hara",
+    "dist": 0.2061971565578063
+  },
+  {
+    "enterm": "rubyred",
+    "urterm": "neela",
+    "dist": 0.1639466850891448
+  },
+  {
+    "enterm": "russet",
+    "urterm": "hara",
+    "dist": 0.14026772655405045
+  },
+  {
+    "enterm": "russet",
+    "urterm": "neela",
+    "dist": 0.14890350872264496
+  },
+  {
+    "enterm": "rust",
+    "urterm": "hara",
+    "dist": 0.1600354905183383
+  },
+  {
+    "enterm": "rust",
+    "urterm": "neela",
+    "dist": 0.16601522160662277
+  },
+  {
+    "enterm": "rustbrown",
+    "urterm": "hara",
+    "dist": 0.18033278366148145
+  },
+  {
+    "enterm": "rustbrown",
+    "urterm": "neela",
+    "dist": 0.17615035530890324
+  },
+  {
+    "enterm": "rustorange",
+    "urterm": "hara",
+    "dist": 0.10034880486367655
+  },
+  {
+    "enterm": "rustorange",
+    "urterm": "neela",
+    "dist": 0.1630010600865447
+  },
+  {
+    "enterm": "rustred",
+    "urterm": "hara",
+    "dist": 0.2041521874239947
+  },
+  {
+    "enterm": "rustred",
+    "urterm": "neela",
+    "dist": 0.19033289931753478
+  },
+  {
+    "enterm": "rustyorange",
+    "urterm": "hara",
+    "dist": 0.10499841665598267
+  },
+  {
+    "enterm": "rustyorange",
+    "urterm": "neela",
+    "dist": 0.16527687412951225
+  },
+  {
+    "enterm": "rustyred",
+    "urterm": "hara",
+    "dist": 0.2183357676308963
+  },
+  {
+    "enterm": "rustyred",
+    "urterm": "neela",
+    "dist": 0.1874247887360257
+  },
+  {
+    "enterm": "saffron",
+    "urterm": "hara",
+    "dist": 0.06646186342197725
+  },
+  {
+    "enterm": "saffron",
+    "urterm": "neela",
+    "dist": 0.16799247757042604
+  },
+  {
+    "enterm": "sage",
+    "urterm": "hara",
+    "dist": 0.0450788021942755
+  },
+  {
+    "enterm": "sage",
+    "urterm": "neela",
+    "dist": 0.15039337627379837
+  },
+  {
+    "enterm": "sagegreen",
+    "urterm": "hara",
+    "dist": 0.05242075733522022
+  },
+  {
+    "enterm": "sagegreen",
+    "urterm": "neela",
+    "dist": 0.14568858791383058
+  },
+  {
+    "enterm": "salmon",
+    "urterm": "hara",
+    "dist": 0.14115867438696045
+  },
+  {
+    "enterm": "salmon",
+    "urterm": "neela",
+    "dist": 0.1259576711145909
+  },
+  {
+    "enterm": "salmonpink",
+    "urterm": "hara",
+    "dist": 0.14746220098220442
+  },
+  {
+    "enterm": "salmonpink",
+    "urterm": "neela",
+    "dist": 0.12683346240773963
+  },
+  {
+    "enterm": "sand",
+    "urterm": "hara",
+    "dist": 0.07251322677239116
+  },
+  {
+    "enterm": "sand",
+    "urterm": "neela",
+    "dist": 0.16807579496289107
+  },
+  {
+    "enterm": "sandstone",
+    "urterm": "hara",
+    "dist": 0.09089020178294076
+  },
+  {
+    "enterm": "sandstone",
+    "urterm": "neela",
+    "dist": 0.13861300983545244
+  },
+  {
+    "enterm": "sandyellow",
+    "urterm": "hara",
+    "dist": 0.07657675175792325
+  },
+  {
+    "enterm": "sandyellow",
+    "urterm": "neela",
+    "dist": 0.23285593070362665
+  },
+  {
+    "enterm": "sapgreen",
+    "urterm": "hara",
+    "dist": 0.07990856326715758
+  },
+  {
+    "enterm": "sapgreen",
+    "urterm": "neela",
+    "dist": 0.15360736986466675
+  },
+  {
+    "enterm": "sapphire",
+    "urterm": "hara",
+    "dist": 0.22639634428710143
+  },
+  {
+    "enterm": "sapphire",
+    "urterm": "neela",
+    "dist": 0.10149801606162907
+  },
+  {
+    "enterm": "sapphireblue",
+    "urterm": "hara",
+    "dist": 0.23775263638224559
+  },
+  {
+    "enterm": "sapphireblue",
+    "urterm": "neela",
+    "dist": 0.10402044735496156
+  },
+  {
+    "enterm": "scarlet",
+    "urterm": "hara",
+    "dist": 0.19653326161583923
+  },
+  {
+    "enterm": "scarlet",
+    "urterm": "neela",
+    "dist": 0.15619309446423982
+  },
+  {
+    "enterm": "scarletred",
+    "urterm": "hara",
+    "dist": 0.20083342486352818
+  },
+  {
+    "enterm": "scarletred",
+    "urterm": "neela",
+    "dist": 0.16368588916654536
+  },
+  {
+    "enterm": "seablue",
+    "urterm": "hara",
+    "dist": 0.13477715640467802
+  },
+  {
+    "enterm": "seablue",
+    "urterm": "neela",
+    "dist": 0.07214825379477453
+  },
+  {
+    "enterm": "seafoam",
+    "urterm": "hara",
+    "dist": 0.11261238249692596
+  },
+  {
+    "enterm": "seafoam",
+    "urterm": "neela",
+    "dist": 0.25374460555087197
+  },
+  {
+    "enterm": "seafoamgreen",
+    "urterm": "hara",
+    "dist": 0.11872205676801915
+  },
+  {
+    "enterm": "seafoamgreen",
+    "urterm": "neela",
+    "dist": 0.26356562756949825
+  },
+  {
+    "enterm": "seagreen",
+    "urterm": "hara",
+    "dist": 0.04862732989042681
+  },
+  {
+    "enterm": "seagreen",
+    "urterm": "neela",
+    "dist": 0.18813022592558948
+  },
+  {
+    "enterm": "seaweed",
+    "urterm": "hara",
+    "dist": 0.09385309988610066
+  },
+  {
+    "enterm": "seaweed",
+    "urterm": "neela",
+    "dist": 0.15953879992767697
+  },
+  {
+    "enterm": "seaweedgreen",
+    "urterm": "hara",
+    "dist": 0.06250663508212918
+  },
+  {
+    "enterm": "seaweedgreen",
+    "urterm": "neela",
+    "dist": 0.17051705923450547
+  },
+  {
+    "enterm": "sepia",
+    "urterm": "hara",
+    "dist": 0.14369067795540785
+  },
+  {
+    "enterm": "sepia",
+    "urterm": "neela",
+    "dist": 0.15353062863891628
+  },
+  {
+    "enterm": "shamrock",
+    "urterm": "hara",
+    "dist": 0.07865303990072747
+  },
+  {
+    "enterm": "shamrock",
+    "urterm": "neela",
+    "dist": 0.23749644896979966
+  },
+  {
+    "enterm": "shamrockgreen",
+    "urterm": "hara",
+    "dist": 0.06878399136866098
+  },
+  {
+    "enterm": "shamrockgreen",
+    "urterm": "neela",
+    "dist": 0.23907568185740333
+  },
+  {
+    "enterm": "shockingpink",
+    "urterm": "hara",
+    "dist": 0.2098295629934014
+  },
+  {
+    "enterm": "shockingpink",
+    "urterm": "neela",
+    "dist": 0.11520155181153752
+  },
+  {
+    "enterm": "sienna",
+    "urterm": "hara",
+    "dist": 0.13267479641930768
+  },
+  {
+    "enterm": "sienna",
+    "urterm": "neela",
+    "dist": 0.15500065037780492
+  },
+  {
+    "enterm": "silver",
+    "urterm": "hara",
+    "dist": 0.09987219429140422
+  },
+  {
+    "enterm": "silver",
+    "urterm": "neela",
+    "dist": 0.13242575215395141
+  },
+  {
+    "enterm": "skin",
+    "urterm": "hara",
+    "dist": 0.09888689633688458
+  },
+  {
+    "enterm": "skin",
+    "urterm": "neela",
+    "dist": 0.23362248381101922
+  },
+  {
+    "enterm": "skincolor",
+    "urterm": "hara",
+    "dist": 0.09155875221051084
+  },
+  {
+    "enterm": "skincolor",
+    "urterm": "neela",
+    "dist": 0.15362859250398256
+  },
+  {
+    "enterm": "skintone",
+    "urterm": "hara",
+    "dist": 0.10850704184949447
+  },
+  {
+    "enterm": "skintone",
+    "urterm": "neela",
+    "dist": 0.12737931905499902
+  },
+  {
+    "enterm": "sky",
+    "urterm": "hara",
+    "dist": 0.20763547929347118
+  },
+  {
+    "enterm": "sky",
+    "urterm": "neela",
+    "dist": 0.1685383835456001
+  },
+  {
+    "enterm": "skyblue",
+    "urterm": "hara",
+    "dist": 0.2012922819154306
+  },
+  {
+    "enterm": "skyblue",
+    "urterm": "neela",
+    "dist": 0.14817429440226682
+  },
+  {
+    "enterm": "slate",
+    "urterm": "hara",
+    "dist": 0.13433909456168144
+  },
+  {
+    "enterm": "slate",
+    "urterm": "neela",
+    "dist": 0.12114126903867554
+  },
+  {
+    "enterm": "slateblue",
+    "urterm": "hara",
+    "dist": 0.12024386211763882
+  },
+  {
+    "enterm": "slateblue",
+    "urterm": "neela",
+    "dist": 0.0915898363413279
+  },
+  {
+    "enterm": "slategray",
+    "urterm": "hara",
+    "dist": 0.1344413917101841
+  },
+  {
+    "enterm": "slategray",
+    "urterm": "neela",
+    "dist": 0.12324937965338195
+  },
+  {
+    "enterm": "slimegreen",
+    "urterm": "hara",
+    "dist": 0.16003917680860447
+  },
+  {
+    "enterm": "slimegreen",
+    "urterm": "neela",
+    "dist": 0.312033902977345
+  },
+  {
+    "enterm": "softblue",
+    "urterm": "hara",
+    "dist": 0.17191264705193415
+  },
+  {
+    "enterm": "softblue",
+    "urterm": "neela",
+    "dist": 0.07527604318532027
+  },
+  {
+    "enterm": "softgreen",
+    "urterm": "hara",
+    "dist": 0.11559482336538329
+  },
+  {
+    "enterm": "softgreen",
+    "urterm": "neela",
+    "dist": 0.2604492959868401
+  },
+  {
+    "enterm": "softpink",
+    "urterm": "hara",
+    "dist": 0.15650688431307958
+  },
+  {
+    "enterm": "softpink",
+    "urterm": "neela",
+    "dist": 0.07867682875214813
+  },
+  {
+    "enterm": "softpurple",
+    "urterm": "hara",
+    "dist": 0.19519312014091766
+  },
+  {
+    "enterm": "softpurple",
+    "urterm": "neela",
+    "dist": 0.07597621036077068
+  },
+  {
+    "enterm": "spearmint",
+    "urterm": "hara",
+    "dist": 0.0486832584727042
+  },
+  {
+    "enterm": "spearmint",
+    "urterm": "neela",
+    "dist": 0.21124668556418924
+  },
+  {
+    "enterm": "springgreen",
+    "urterm": "hara",
+    "dist": 0.116340853920681
+  },
+  {
+    "enterm": "springgreen",
+    "urterm": "neela",
+    "dist": 0.27536034072030635
+  },
+  {
+    "enterm": "spruce",
+    "urterm": "hara",
+    "dist": 0.10126210730497619
+  },
+  {
+    "enterm": "spruce",
+    "urterm": "neela",
+    "dist": 0.1430664676184369
+  },
+  {
+    "enterm": "steel",
+    "urterm": "hara",
+    "dist": 0.11868425560191534
+  },
+  {
+    "enterm": "steel",
+    "urterm": "neela",
+    "dist": 0.12439565263006284
+  },
+  {
+    "enterm": "steelblue",
+    "urterm": "hara",
+    "dist": 0.11096155863497353
+  },
+  {
+    "enterm": "steelblue",
+    "urterm": "neela",
+    "dist": 0.09972194896977764
+  },
+  {
+    "enterm": "steelgray",
+    "urterm": "hara",
+    "dist": 0.1144861198523
+  },
+  {
+    "enterm": "steelgray",
+    "urterm": "neela",
+    "dist": 0.1290345208055905
+  },
+  {
+    "enterm": "stormblue",
+    "urterm": "hara",
+    "dist": 0.12851861812410684
+  },
+  {
+    "enterm": "stormblue",
+    "urterm": "neela",
+    "dist": 0.12142587847359364
+  },
+  {
+    "enterm": "strawberry",
+    "urterm": "hara",
+    "dist": 0.184463980592469
+  },
+  {
+    "enterm": "strawberry",
+    "urterm": "neela",
+    "dist": 0.1385228282571363
+  },
+  {
+    "enterm": "sunflower",
+    "urterm": "hara",
+    "dist": 0.11426623952185413
+  },
+  {
+    "enterm": "sunflower",
+    "urterm": "neela",
+    "dist": 0.27410869637994145
+  },
+  {
+    "enterm": "sunfloweryellow",
+    "urterm": "hara",
+    "dist": 0.130104134748636
+  },
+  {
+    "enterm": "sunfloweryellow",
+    "urterm": "neela",
+    "dist": 0.28869488573037083
+  },
+  {
+    "enterm": "swamp",
+    "urterm": "hara",
+    "dist": 0.09401384336280548
+  },
+  {
+    "enterm": "swamp",
+    "urterm": "neela",
+    "dist": 0.14586662837121273
+  },
+  {
+    "enterm": "swampgreen",
+    "urterm": "hara",
+    "dist": 0.0679164384654788
+  },
+  {
+    "enterm": "swampgreen",
+    "urterm": "neela",
+    "dist": 0.1573920454268127
+  },
+  {
+    "enterm": "tan",
+    "urterm": "hara",
+    "dist": 0.06540008008908994
+  },
+  {
+    "enterm": "tan",
+    "urterm": "neela",
+    "dist": 0.15639672905132712
+  },
+  {
+    "enterm": "tanbrown",
+    "urterm": "hara",
+    "dist": 0.1235027122889909
+  },
+  {
+    "enterm": "tanbrown",
+    "urterm": "neela",
+    "dist": 0.1459768249645973
+  },
+  {
+    "enterm": "tangerine",
+    "urterm": "hara",
+    "dist": 0.06004715766044678
+  },
+  {
+    "enterm": "tangerine",
+    "urterm": "neela",
+    "dist": 0.19957474664806127
+  },
+  {
+    "enterm": "tangreen",
+    "urterm": "hara",
+    "dist": 0.03370539576431331
+  },
+  {
+    "enterm": "tangreen",
+    "urterm": "neela",
+    "dist": 0.17761244489371994
+  },
+  {
+    "enterm": "taupe",
+    "urterm": "hara",
+    "dist": 0.10433680998650285
+  },
+  {
+    "enterm": "taupe",
+    "urterm": "neela",
+    "dist": 0.11784148576003811
+  },
+  {
+    "enterm": "teagreen",
+    "urterm": "hara",
+    "dist": 0.06306846008710577
+  },
+  {
+    "enterm": "teagreen",
+    "urterm": "neela",
+    "dist": 0.1709841030406434
+  },
+  {
+    "enterm": "teal",
+    "urterm": "hara",
+    "dist": 0.09511053806183406
+  },
+  {
+    "enterm": "teal",
+    "urterm": "neela",
+    "dist": 0.1380414013345966
+  },
+  {
+    "enterm": "tealblue",
+    "urterm": "hara",
+    "dist": 0.11864664239688873
+  },
+  {
+    "enterm": "tealblue",
+    "urterm": "neela",
+    "dist": 0.13058854770391418
+  },
+  {
+    "enterm": "tealgreen",
+    "urterm": "hara",
+    "dist": 0.059422480667329004
+  },
+  {
+    "enterm": "tealgreen",
+    "urterm": "neela",
+    "dist": 0.16522479129709852
+  },
+  {
+    "enterm": "terracotta",
+    "urterm": "hara",
+    "dist": 0.13536767067887795
+  },
+  {
+    "enterm": "terracotta",
+    "urterm": "neela",
+    "dist": 0.13411777891537116
+  },
+  {
+    "enterm": "tiffanyblue",
+    "urterm": "hara",
+    "dist": 0.13139599611344152
+  },
+  {
+    "enterm": "tiffanyblue",
+    "urterm": "neela",
+    "dist": 0.1914171535990611
+  },
+  {
+    "enterm": "tomatored",
+    "urterm": "hara",
+    "dist": 0.19190471630333647
+  },
+  {
+    "enterm": "tomatored",
+    "urterm": "neela",
+    "dist": 0.15464497296783122
+  },
+  {
+    "enterm": "treegreen",
+    "urterm": "hara",
+    "dist": 0.06259070091887628
+  },
+  {
+    "enterm": "treegreen",
+    "urterm": "neela",
+    "dist": 0.19894856078776227
+  },
+  {
+    "enterm": "trueblue",
+    "urterm": "hara",
+    "dist": 0.2340241214903691
+  },
+  {
+    "enterm": "trueblue",
+    "urterm": "neela",
+    "dist": 0.10001664585618782
+  },
+  {
+    "enterm": "turquoise",
+    "urterm": "hara",
+    "dist": 0.09748852558474418
+  },
+  {
+    "enterm": "turquoise",
+    "urterm": "neela",
+    "dist": 0.14071767164876603
+  },
+  {
+    "enterm": "turquoiseblue",
+    "urterm": "hara",
+    "dist": 0.12578955729276378
+  },
+  {
+    "enterm": "turquoiseblue",
+    "urterm": "neela",
+    "dist": 0.17362727859901728
+  },
+  {
+    "enterm": "turquoisegreen",
+    "urterm": "hara",
+    "dist": 0.08008720733015276
+  },
+  {
+    "enterm": "turquoisegreen",
+    "urterm": "neela",
+    "dist": 0.23865285580210926
+  },
+  {
+    "enterm": "uglygreen",
+    "urterm": "hara",
+    "dist": 0.046834089885201324
+  },
+  {
+    "enterm": "uglygreen",
+    "urterm": "neela",
+    "dist": 0.20098055292303055
+  },
+  {
+    "enterm": "ultramarine",
+    "urterm": "hara",
+    "dist": 0.23708128073316942
+  },
+  {
+    "enterm": "ultramarine",
+    "urterm": "neela",
+    "dist": 0.10029546353307835
+  },
+  {
+    "enterm": "ultramarineblue",
+    "urterm": "hara",
+    "dist": 0.23655085569737774
+  },
+  {
+    "enterm": "ultramarineblue",
+    "urterm": "neela",
+    "dist": 0.09875911891672283
+  },
+  {
+    "enterm": "ultraviolet",
+    "urterm": "hara",
+    "dist": 0.2362782524005489
+  },
+  {
+    "enterm": "ultraviolet",
+    "urterm": "neela",
+    "dist": 0.08688038744591066
+  },
+  {
+    "enterm": "umber",
+    "urterm": "hara",
+    "dist": 0.13462240519066612
+  },
+  {
+    "enterm": "umber",
+    "urterm": "neela",
+    "dist": 0.143107369608446
+  },
+  {
+    "enterm": "velvet",
+    "urterm": "hara",
+    "dist": 0.20355776166337142
+  },
+  {
+    "enterm": "velvet",
+    "urterm": "neela",
+    "dist": 0.14176096277856434
+  },
+  {
+    "enterm": "vermillion",
+    "urterm": "hara",
+    "dist": 0.14722191174457055
+  },
+  {
+    "enterm": "vermillion",
+    "urterm": "neela",
+    "dist": 0.11079409696448497
+  },
+  {
+    "enterm": "verydarkblue",
+    "urterm": "hara",
+    "dist": 0.25457825734849104
+  },
+  {
+    "enterm": "verydarkblue",
+    "urterm": "neela",
+    "dist": 0.16780846929505114
+  },
+  {
+    "enterm": "verydarkgreen",
+    "urterm": "hara",
+    "dist": 0.22608036512222365
+  },
+  {
+    "enterm": "verydarkgreen",
+    "urterm": "neela",
+    "dist": 0.19296773418329372
+  },
+  {
+    "enterm": "verydarkpurple",
+    "urterm": "hara",
+    "dist": 0.2428222373628047
+  },
+  {
+    "enterm": "verydarkpurple",
+    "urterm": "neela",
+    "dist": 0.1806595862142385
+  },
+  {
+    "enterm": "verylightgreen",
+    "urterm": "hara",
+    "dist": 0.17564159869420837
+  },
+  {
+    "enterm": "verylightgreen",
+    "urterm": "neela",
+    "dist": 0.28713054634654717
+  },
+  {
+    "enterm": "vibrantpurple",
+    "urterm": "hara",
+    "dist": 0.24951766744087958
+  },
+  {
+    "enterm": "vibrantpurple",
+    "urterm": "neela",
+    "dist": 0.119688299019665
+  },
+  {
+    "enterm": "violet",
+    "urterm": "hara",
+    "dist": 0.22439977443768988
+  },
+  {
+    "enterm": "violet",
+    "urterm": "neela",
+    "dist": 0.08287191574904545
+  },
+  {
+    "enterm": "violetblue",
+    "urterm": "hara",
+    "dist": 0.22948393864731725
+  },
+  {
+    "enterm": "violetblue",
+    "urterm": "neela",
+    "dist": 0.07346665319734189
+  },
+  {
+    "enterm": "violetpink",
+    "urterm": "hara",
+    "dist": 0.2153937067056519
+  },
+  {
+    "enterm": "violetpink",
+    "urterm": "neela",
+    "dist": 0.09675744434097515
+  },
+  {
+    "enterm": "violetpurple",
+    "urterm": "hara",
+    "dist": 0.22094042905276295
+  },
+  {
+    "enterm": "violetpurple",
+    "urterm": "neela",
+    "dist": 0.09559418390633914
+  },
+  {
+    "enterm": "voilet",
+    "urterm": "hara",
+    "dist": 0.22330089234189418
+  },
+  {
+    "enterm": "voilet",
+    "urterm": "neela",
+    "dist": 0.08198476378943026
+  },
+  {
+    "enterm": "vomit",
+    "urterm": "hara",
+    "dist": 0.014656230713371892
+  },
+  {
+    "enterm": "vomit",
+    "urterm": "neela",
+    "dist": 0.18277176427193978
+  },
+  {
+    "enterm": "vomitgreen",
+    "urterm": "hara",
+    "dist": 0.05106578068318308
+  },
+  {
+    "enterm": "vomitgreen",
+    "urterm": "neela",
+    "dist": 0.160210434516576
+  },
+  {
+    "enterm": "warmbrown",
+    "urterm": "hara",
+    "dist": 0.18808139879979868
+  },
+  {
+    "enterm": "warmbrown",
+    "urterm": "neela",
+    "dist": 0.17582614300706892
+  },
+  {
+    "enterm": "warmgray",
+    "urterm": "hara",
+    "dist": 0.12652421613915868
+  },
+  {
+    "enterm": "warmgray",
+    "urterm": "neela",
+    "dist": 0.11709323574737812
+  },
+  {
+    "enterm": "warmpurple",
+    "urterm": "hara",
+    "dist": 0.22577935535289292
+  },
+  {
+    "enterm": "warmpurple",
+    "urterm": "neela",
+    "dist": 0.10475718917938216
+  },
+  {
+    "enterm": "white",
+    "urterm": "hara",
+    "dist": 0.15581129163834184
+  },
+  {
+    "enterm": "white",
+    "urterm": "neela",
+    "dist": 0.21946758603759522
+  },
+  {
+    "enterm": "wine",
+    "urterm": "hara",
+    "dist": 0.219228975804087
+  },
+  {
+    "enterm": "wine",
+    "urterm": "neela",
+    "dist": 0.16661714031421318
+  },
+  {
+    "enterm": "winepurple",
+    "urterm": "hara",
+    "dist": 0.2379490195517021
+  },
+  {
+    "enterm": "winepurple",
+    "urterm": "neela",
+    "dist": 0.1668606772805436
+  },
+  {
+    "enterm": "winered",
+    "urterm": "hara",
+    "dist": 0.21378253635815672
+  },
+  {
+    "enterm": "winered",
+    "urterm": "neela",
+    "dist": 0.17128794901108338
+  },
+  {
+    "enterm": "wisteria",
+    "urterm": "hara",
+    "dist": 0.21435137987998854
+  },
+  {
+    "enterm": "wisteria",
+    "urterm": "neela",
+    "dist": 0.09059292329966402
+  },
+  {
+    "enterm": "woodbrown",
+    "urterm": "hara",
+    "dist": 0.17265915442266536
+  },
+  {
+    "enterm": "woodbrown",
+    "urterm": "neela",
+    "dist": 0.16796716412440846
+  },
+  {
+    "enterm": "yellow",
+    "urterm": "hara",
+    "dist": 0.1272803747208861
+  },
+  {
+    "enterm": "yellow",
+    "urterm": "neela",
+    "dist": 0.28364937701838855
+  },
+  {
+    "enterm": "yellowbrown",
+    "urterm": "hara",
+    "dist": 0.09153165596880548
+  },
+  {
+    "enterm": "yellowbrown",
+    "urterm": "neela",
+    "dist": 0.15858726020011457
+  },
+  {
+    "enterm": "yellowgold",
+    "urterm": "hara",
+    "dist": 0.09686425755338747
+  },
+  {
+    "enterm": "yellowgold",
+    "urterm": "neela",
+    "dist": 0.17451889218744943
+  },
+  {
+    "enterm": "yellowgreen",
+    "urterm": "hara",
+    "dist": 0.10534934679006601
+  },
+  {
+    "enterm": "yellowgreen",
+    "urterm": "neela",
+    "dist": 0.26630540992458807
+  },
+  {
+    "enterm": "yellowishbrown",
+    "urterm": "hara",
+    "dist": 0.07947279582079352
+  },
+  {
+    "enterm": "yellowishbrown",
+    "urterm": "neela",
+    "dist": 0.15321899622398552
+  },
+  {
+    "enterm": "yellowishgreen",
+    "urterm": "hara",
+    "dist": 0.06392863492117111
+  },
+  {
+    "enterm": "yellowishgreen",
+    "urterm": "neela",
+    "dist": 0.23121223988862613
+  },
+  {
+    "enterm": "yellowochre",
+    "urterm": "hara",
+    "dist": 0.025482814178847284
+  },
+  {
+    "enterm": "yellowochre",
+    "urterm": "neela",
+    "dist": 0.1854314369502356
+  },
+  {
+    "enterm": "yelloworange",
+    "urterm": "hara",
+    "dist": 0.07748842693076904
+  },
+  {
+    "enterm": "yelloworange",
+    "urterm": "neela",
+    "dist": 0.2444952804878327
+  },
+  {
+    "enterm": "yellowtan",
+    "urterm": "hara",
+    "dist": 0.08765057663658413
+  },
+  {
+    "enterm": "yellowtan",
+    "urterm": "neela",
+    "dist": 0.2095394218881842
+  }
+]

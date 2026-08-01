@@ -1,262 +1,632 @@
 [
   {
     "fiterm": "liila",
+    "itterm": "azzurro",
+    "dist": 0.35719488119343906
+  },
+  {
+    "fiterm": "liila",
     "itterm": "blu",
-    "dist": 0.22498873060755645
+    "dist": 0.2629945985966858
+  },
+  {
+    "fiterm": "liila",
+    "itterm": "fucsia",
+    "dist": 0.1429792449532143
+  },
+  {
+    "fiterm": "liila",
+    "itterm": "marrone",
+    "dist": 0.2511296352842054
+  },
+  {
+    "fiterm": "liila",
+    "itterm": "nero",
+    "dist": 0.36904585760678915
   },
   {
     "fiterm": "liila",
     "itterm": "rosa",
-    "dist": 0.1943704392019613
+    "dist": 0.23881439924970863
+  },
+  {
+    "fiterm": "liila",
+    "itterm": "rosso",
+    "dist": 0.23954735160010435
   },
   {
     "fiterm": "liila",
     "itterm": "verde",
-    "dist": 0.3635923520568947
+    "dist": 0.3619686566910049
   },
   {
     "fiterm": "liila",
     "itterm": "viola",
-    "dist": 0.0798634016510888
+    "dist": 0.12808159471683095
+  },
+  {
+    "fiterm": "musta",
+    "itterm": "azzurro",
+    "dist": 0.6034112577754921
   },
   {
     "fiterm": "musta",
     "itterm": "blu",
-    "dist": 0.24581356547758038
+    "dist": 0.2567295755564634
+  },
+  {
+    "fiterm": "musta",
+    "itterm": "fucsia",
+    "dist": 0.5069750616283772
+  },
+  {
+    "fiterm": "musta",
+    "itterm": "marrone",
+    "dist": 0.30011083210838047
+  },
+  {
+    "fiterm": "musta",
+    "itterm": "nero",
+    "dist": 0.042860558609710296
   },
   {
     "fiterm": "musta",
     "itterm": "rosa",
-    "dist": 0.4801414251879486
+    "dist": 0.5273112390846068
+  },
+  {
+    "fiterm": "musta",
+    "itterm": "rosso",
+    "dist": 0.304482384822266
   },
   {
     "fiterm": "musta",
     "itterm": "verde",
-    "dist": 0.5410600206445751
+    "dist": 0.49202315845766736
   },
   {
     "fiterm": "musta",
     "itterm": "viola",
-    "dist": 0.31541838391325755
+    "dist": 0.2925051777936605
+  },
+  {
+    "fiterm": "oranssi",
+    "itterm": "azzurro",
+    "dist": 0.29128172878049796
   },
   {
     "fiterm": "oranssi",
     "itterm": "blu",
-    "dist": 0.4189187433441523
+    "dist": 0.4800458323924512
+  },
+  {
+    "fiterm": "oranssi",
+    "itterm": "fucsia",
+    "dist": 0.2593590447025724
+  },
+  {
+    "fiterm": "oranssi",
+    "itterm": "marrone",
+    "dist": 0.21430833126701182
+  },
+  {
+    "fiterm": "oranssi",
+    "itterm": "nero",
+    "dist": 0.46619921357505195
   },
   {
     "fiterm": "oranssi",
     "itterm": "rosa",
-    "dist": 0.14318314197867696
+    "dist": 0.14810604871105637
+  },
+  {
+    "fiterm": "oranssi",
+    "itterm": "rosso",
+    "dist": 0.2354147555705679
   },
   {
     "fiterm": "oranssi",
     "itterm": "verde",
-    "dist": 0.19107666134046727
+    "dist": 0.18313030656602702
   },
   {
     "fiterm": "oranssi",
     "itterm": "viola",
-    "dist": 0.33709568128506506
+    "dist": 0.38843839550133946
+  },
+  {
+    "fiterm": "pinkki",
+    "itterm": "azzurro",
+    "dist": 0.29922089624727943
   },
   {
     "fiterm": "pinkki",
     "itterm": "blu",
-    "dist": 0.31602039895050477
+    "dist": 0.3726837504129941
+  },
+  {
+    "fiterm": "pinkki",
+    "itterm": "fucsia",
+    "dist": 0.06556804517455712
+  },
+  {
+    "fiterm": "pinkki",
+    "itterm": "marrone",
+    "dist": 0.26240024851978894
+  },
+  {
+    "fiterm": "pinkki",
+    "itterm": "nero",
+    "dist": 0.4469780811509199
   },
   {
     "fiterm": "pinkki",
     "itterm": "rosa",
-    "dist": 0.0990748481409215
+    "dist": 0.1359696281267789
+  },
+  {
+    "fiterm": "pinkki",
+    "itterm": "rosso",
+    "dist": 0.24562553268173745
   },
   {
     "fiterm": "pinkki",
     "itterm": "verde",
-    "dist": 0.306361349451772
+    "dist": 0.3207213210635701
   },
   {
     "fiterm": "pinkki",
     "itterm": "viola",
-    "dist": 0.18004834711697837
+    "dist": 0.24623990404447668
+  },
+  {
+    "fiterm": "punainen",
+    "itterm": "azzurro",
+    "dist": 0.455184115795984
   },
   {
     "fiterm": "punainen",
     "itterm": "blu",
-    "dist": 0.3183772277911012
+    "dist": 0.3261705252141974
+  },
+  {
+    "fiterm": "punainen",
+    "itterm": "fucsia",
+    "dist": 0.3018858606564126
+  },
+  {
+    "fiterm": "punainen",
+    "itterm": "marrone",
+    "dist": 0.1372892664228204
+  },
+  {
+    "fiterm": "punainen",
+    "itterm": "nero",
+    "dist": 0.2394790032748087
   },
   {
     "fiterm": "punainen",
     "itterm": "rosa",
-    "dist": 0.24186364813368522
+    "dist": 0.31121499369337996
+  },
+  {
+    "fiterm": "punainen",
+    "itterm": "rosso",
+    "dist": 0.039189387222956944
   },
   {
     "fiterm": "punainen",
     "itterm": "verde",
-    "dist": 0.3724905279095363
+    "dist": 0.34226404906411495
   },
   {
     "fiterm": "punainen",
     "itterm": "viola",
-    "dist": 0.1932747182249566
+    "dist": 0.2211371424653175
+  },
+  {
+    "fiterm": "ruskea",
+    "itterm": "azzurro",
+    "dist": 0.41076961372422627
   },
   {
     "fiterm": "ruskea",
     "itterm": "blu",
-    "dist": 0.27492313481912145
+    "dist": 0.31271672418277846
+  },
+  {
+    "fiterm": "ruskea",
+    "itterm": "fucsia",
+    "dist": 0.3285066028086146
+  },
+  {
+    "fiterm": "ruskea",
+    "itterm": "marrone",
+    "dist": 0.058882705544158066
+  },
+  {
+    "fiterm": "ruskea",
+    "itterm": "nero",
+    "dist": 0.2267555587777926
   },
   {
     "fiterm": "ruskea",
     "itterm": "rosa",
-    "dist": 0.23068296076874706
+    "dist": 0.3001514425660278
+  },
+  {
+    "fiterm": "ruskea",
+    "itterm": "rosso",
+    "dist": 0.10416041722526677
   },
   {
     "fiterm": "ruskea",
     "itterm": "verde",
-    "dist": 0.2990286776347042
+    "dist": 0.2720370775102663
   },
   {
     "fiterm": "ruskea",
     "itterm": "viola",
-    "dist": 0.21967072440034083
+    "dist": 0.2568227993087425
+  },
+  {
+    "fiterm": "sininen",
+    "itterm": "azzurro",
+    "dist": 0.363750497347582
   },
   {
     "fiterm": "sininen",
     "itterm": "blu",
-    "dist": 0.04082514813867132
+    "dist": 0.11388600950994071
+  },
+  {
+    "fiterm": "sininen",
+    "itterm": "fucsia",
+    "dist": 0.32315724951414565
+  },
+  {
+    "fiterm": "sininen",
+    "itterm": "marrone",
+    "dist": 0.26384681867374465
+  },
+  {
+    "fiterm": "sininen",
+    "itterm": "nero",
+    "dist": 0.29700061677617345
   },
   {
     "fiterm": "sininen",
     "itterm": "rosa",
-    "dist": 0.32227009852232447
+    "dist": 0.34331216229179606
+  },
+  {
+    "fiterm": "sininen",
+    "itterm": "rosso",
+    "dist": 0.31625202785532724
   },
   {
     "fiterm": "sininen",
     "itterm": "verde",
-    "dist": 0.38705181627159696
+    "dist": 0.3644194387608295
   },
   {
     "fiterm": "sininen",
     "itterm": "viola",
-    "dist": 0.21282604727342255
+    "dist": 0.20773497080030895
+  },
+  {
+    "fiterm": "tummansininen",
+    "itterm": "azzurro",
+    "dist": 0.5590360793320253
   },
   {
     "fiterm": "tummansininen",
     "itterm": "blu",
-    "dist": 0.1946090983177297
+    "dist": 0.0932711777901978
+  },
+  {
+    "fiterm": "tummansininen",
+    "itterm": "fucsia",
+    "dist": 0.44923079726572984
+  },
+  {
+    "fiterm": "tummansininen",
+    "itterm": "marrone",
+    "dist": 0.35027711759869895
+  },
+  {
+    "fiterm": "tummansininen",
+    "itterm": "nero",
+    "dist": 0.2161193296509529
   },
   {
     "fiterm": "tummansininen",
     "itterm": "rosa",
-    "dist": 0.4799071887495872
+    "dist": 0.5039514974663455
+  },
+  {
+    "fiterm": "tummansininen",
+    "itterm": "rosso",
+    "dist": 0.35683209123865095
   },
   {
     "fiterm": "tummansininen",
     "itterm": "verde",
-    "dist": 0.5658000354902754
+    "dist": 0.5189769988496136
   },
   {
     "fiterm": "tummansininen",
     "itterm": "viola",
-    "dist": 0.29186086412252354
+    "dist": 0.20880706501250534
+  },
+  {
+    "fiterm": "turkoosi",
+    "itterm": "azzurro",
+    "dist": 0.09616091924773118
   },
   {
     "fiterm": "turkoosi",
     "itterm": "blu",
-    "dist": 0.32281651449021226
+    "dist": 0.41986683281506226
+  },
+  {
+    "fiterm": "turkoosi",
+    "itterm": "fucsia",
+    "dist": 0.3335657714206259
+  },
+  {
+    "fiterm": "turkoosi",
+    "itterm": "marrone",
+    "dist": 0.30957315073245756
+  },
+  {
+    "fiterm": "turkoosi",
+    "itterm": "nero",
+    "dist": 0.5023010577584047
   },
   {
     "fiterm": "turkoosi",
     "itterm": "rosa",
-    "dist": 0.2508834764979022
+    "dist": 0.23477288265220092
+  },
+  {
+    "fiterm": "turkoosi",
+    "itterm": "rosso",
+    "dist": 0.38408623297683
   },
   {
     "fiterm": "turkoosi",
     "itterm": "verde",
-    "dist": 0.1329945674618887
+    "dist": 0.16745930389490835
   },
   {
     "fiterm": "turkoosi",
     "itterm": "viola",
-    "dist": 0.3748915650881861
+    "dist": 0.41850457453064416
+  },
+  {
+    "fiterm": "vaaleanpunainen",
+    "itterm": "azzurro",
+    "dist": 0.22554375271995575
+  },
+  {
+    "fiterm": "vaaleanpunainen",
+    "itterm": "blu",
+    "dist": 0.4495441315008588
+  },
+  {
+    "fiterm": "vaaleanpunainen",
+    "itterm": "fucsia",
+    "dist": 0.1599991279865406
+  },
+  {
+    "fiterm": "vaaleanpunainen",
+    "itterm": "marrone",
+    "dist": 0.2693952262559829
+  },
+  {
+    "fiterm": "vaaleanpunainen",
+    "itterm": "nero",
+    "dist": 0.5041596291020787
+  },
+  {
+    "fiterm": "vaaleanpunainen",
+    "itterm": "rosa",
+    "dist": 0.02277452214348873
+  },
+  {
+    "fiterm": "vaaleanpunainen",
+    "itterm": "rosso",
+    "dist": 0.28738735215992156
+  },
+  {
+    "fiterm": "vaaleanpunainen",
+    "itterm": "verde",
+    "dist": 0.25058289017970636
+  },
+  {
+    "fiterm": "vaaleanpunainen",
+    "itterm": "viola",
+    "dist": 0.35087936200004216
+  },
+  {
+    "fiterm": "vaaleansininen",
+    "itterm": "azzurro",
+    "dist": 0.0404395453521046
   },
   {
     "fiterm": "vaaleansininen",
     "itterm": "blu",
-    "dist": 0.3817354650266302
+    "dist": 0.4932445293491102
+  },
+  {
+    "fiterm": "vaaleansininen",
+    "itterm": "fucsia",
+    "dist": 0.3126506430498273
+  },
+  {
+    "fiterm": "vaaleansininen",
+    "itterm": "marrone",
+    "dist": 0.3657011820157786
+  },
+  {
+    "fiterm": "vaaleansininen",
+    "itterm": "nero",
+    "dist": 0.5822692754195863
   },
   {
     "fiterm": "vaaleansininen",
     "itterm": "rosa",
-    "dist": 0.225344410319228
+    "dist": 0.1946285934877592
+  },
+  {
+    "fiterm": "vaaleansininen",
+    "itterm": "rosso",
+    "dist": 0.42550790422012824
   },
   {
     "fiterm": "vaaleansininen",
     "itterm": "verde",
-    "dist": 0.14026035230103975
+    "dist": 0.2145252073754976
   },
   {
     "fiterm": "vaaleansininen",
     "itterm": "viola",
-    "dist": 0.39531590870059624
+    "dist": 0.46531857185998765
+  },
+  {
+    "fiterm": "vaaleanvihrea",
+    "itterm": "azzurro",
+    "dist": 0.18057298267808383
   },
   {
     "fiterm": "vaaleanvihrea",
     "itterm": "blu",
-    "dist": 0.50672879875171
+    "dist": 0.6111651016279044
+  },
+  {
+    "fiterm": "vaaleanvihrea",
+    "itterm": "fucsia",
+    "dist": 0.39420575507735317
+  },
+  {
+    "fiterm": "vaaleanvihrea",
+    "itterm": "marrone",
+    "dist": 0.4170103090404872
+  },
+  {
+    "fiterm": "vaaleanvihrea",
+    "itterm": "nero",
+    "dist": 0.6577132864805572
   },
   {
     "fiterm": "vaaleanvihrea",
     "itterm": "rosa",
-    "dist": 0.28854150899684095
+    "dist": 0.24701918112482663
+  },
+  {
+    "fiterm": "vaaleanvihrea",
+    "itterm": "rosso",
+    "dist": 0.47350469647471505
   },
   {
     "fiterm": "vaaleanvihrea",
     "itterm": "verde",
-    "dist": 0.1419467432813997
+    "dist": 0.21555746467170323
   },
   {
     "fiterm": "vaaleanvihrea",
     "itterm": "viola",
-    "dist": 0.4989362842769413
+    "dist": 0.5665144955264225
+  },
+  {
+    "fiterm": "vihrea",
+    "itterm": "azzurro",
+    "dist": 0.25574709234433923
   },
   {
     "fiterm": "vihrea",
     "itterm": "blu",
-    "dist": 0.37299047808411434
+    "dist": 0.419127341370884
+  },
+  {
+    "fiterm": "vihrea",
+    "itterm": "fucsia",
+    "dist": 0.37277207179148686
+  },
+  {
+    "fiterm": "vihrea",
+    "itterm": "marrone",
+    "dist": 0.19714430475268072
+  },
+  {
+    "fiterm": "vihrea",
+    "itterm": "nero",
+    "dist": 0.4098682941541899
   },
   {
     "fiterm": "vihrea",
     "itterm": "rosa",
-    "dist": 0.24122358305535024
+    "dist": 0.25493577416958585
+  },
+  {
+    "fiterm": "vihrea",
+    "itterm": "rosso",
+    "dist": 0.2959853721994862
   },
   {
     "fiterm": "vihrea",
     "itterm": "verde",
-    "dist": 0.07162790769307323
+    "dist": 0.05822953526059267
   },
   {
     "fiterm": "vihrea",
     "itterm": "viola",
-    "dist": 0.384145475500612
+    "dist": 0.3984029287001154
+  },
+  {
+    "fiterm": "violetti",
+    "itterm": "azzurro",
+    "dist": 0.42531905955635785
   },
   {
     "fiterm": "violetti",
     "itterm": "blu",
-    "dist": 0.2550867686768919
+    "dist": 0.2567461194435726
+  },
+  {
+    "fiterm": "violetti",
+    "itterm": "fucsia",
+    "dist": 0.17817452632328876
+  },
+  {
+    "fiterm": "violetti",
+    "itterm": "marrone",
+    "dist": 0.2868243439111498
+  },
+  {
+    "fiterm": "violetti",
+    "itterm": "nero",
+    "dist": 0.3596289034928465
   },
   {
     "fiterm": "violetti",
     "itterm": "rosa",
-    "dist": 0.24818140141659084
+    "dist": 0.3070436470643861
+  },
+  {
+    "fiterm": "violetti",
+    "itterm": "rosso",
+    "dist": 0.2655415370525555
   },
   {
     "fiterm": "violetti",
     "itterm": "verde",
-    "dist": 0.4183014406193431
+    "dist": 0.4129167911153332
   },
   {
     "fiterm": "violetti",
     "itterm": "viola",
-    "dist": 0.08063763946223582
+    "dist": 0.09576495719216006
   }
 ]

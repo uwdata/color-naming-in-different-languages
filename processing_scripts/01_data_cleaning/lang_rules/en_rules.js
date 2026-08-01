@@ -32,6 +32,8 @@ const nameReplacingRules = [
     [/colbalt/g, "cobalt"],
     [/cobolt blue/g, "cobaltblue"],
 
+    [/colour/g, "color"],
+
     [/^cian$/, 'cyan'],
     
     [/florescent/g, "fluorescent"],

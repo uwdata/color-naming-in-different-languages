@@ -1,0 +1,1442 @@
+[
+  {
+    "frterm": "beige",
+    "mrterm": "gulabi",
+    "dist": 0.16364877237146427
+  },
+  {
+    "frterm": "beige",
+    "mrterm": "hirva",
+    "dist": 0.16695094586954895
+  },
+  {
+    "frterm": "beige",
+    "mrterm": "jambhala",
+    "dist": 0.27310273234816496
+  },
+  {
+    "frterm": "beige",
+    "mrterm": "nila",
+    "dist": 0.18535406145234828
+  },
+  {
+    "frterm": "beige",
+    "mrterm": "जांभळा",
+    "dist": 0.26596381184367135
+  },
+  {
+    "frterm": "beige",
+    "mrterm": "निळा",
+    "dist": 0.3256299229280811
+  },
+  {
+    "frterm": "bleu",
+    "mrterm": "gulabi",
+    "dist": 0.2379475878439046
+  },
+  {
+    "frterm": "bleu",
+    "mrterm": "hirva",
+    "dist": 0.23972049332643985
+  },
+  {
+    "frterm": "bleu",
+    "mrterm": "jambhala",
+    "dist": 0.14933221107567085
+  },
+  {
+    "frterm": "bleu",
+    "mrterm": "nila",
+    "dist": 0.05899821438275592
+  },
+  {
+    "frterm": "bleu",
+    "mrterm": "जांभळा",
+    "dist": 0.1390866595304897
+  },
+  {
+    "frterm": "bleu",
+    "mrterm": "निळा",
+    "dist": 0.13845028664096654
+  },
+  {
+    "frterm": "bleucanard",
+    "mrterm": "gulabi",
+    "dist": 0.2656410696187377
+  },
+  {
+    "frterm": "bleucanard",
+    "mrterm": "hirva",
+    "dist": 0.14669143684648692
+  },
+  {
+    "frterm": "bleucanard",
+    "mrterm": "jambhala",
+    "dist": 0.2330684631022011
+  },
+  {
+    "frterm": "bleucanard",
+    "mrterm": "nila",
+    "dist": 0.1253625365168297
+  },
+  {
+    "frterm": "bleucanard",
+    "mrterm": "जांभळा",
+    "dist": 0.20664269726631818
+  },
+  {
+    "frterm": "bleucanard",
+    "mrterm": "निळा",
+    "dist": 0.2173353396770125
+  },
+  {
+    "frterm": "bleuciel",
+    "mrterm": "gulabi",
+    "dist": 0.2206147248379873
+  },
+  {
+    "frterm": "bleuciel",
+    "mrterm": "hirva",
+    "dist": 0.16039116571125883
+  },
+  {
+    "frterm": "bleuciel",
+    "mrterm": "jambhala",
+    "dist": 0.2732437459173979
+  },
+  {
+    "frterm": "bleuciel",
+    "mrterm": "nila",
+    "dist": 0.1285011274367772
+  },
+  {
+    "frterm": "bleuciel",
+    "mrterm": "जांभळा",
+    "dist": 0.27024326324020564
+  },
+  {
+    "frterm": "bleuciel",
+    "mrterm": "निळा",
+    "dist": 0.30547116049369816
+  },
+  {
+    "frterm": "bleuclair",
+    "mrterm": "gulabi",
+    "dist": 0.23272238580186944
+  },
+  {
+    "frterm": "bleuclair",
+    "mrterm": "hirva",
+    "dist": 0.16091183239239687
+  },
+  {
+    "frterm": "bleuclair",
+    "mrterm": "jambhala",
+    "dist": 0.2770976318073448
+  },
+  {
+    "frterm": "bleuclair",
+    "mrterm": "nila",
+    "dist": 0.1232957497809271
+  },
+  {
+    "frterm": "bleuclair",
+    "mrterm": "जांभळा",
+    "dist": 0.272310004372517
+  },
+  {
+    "frterm": "bleuclair",
+    "mrterm": "निळा",
+    "dist": 0.3020952438995154
+  },
+  {
+    "frterm": "bleufonce",
+    "mrterm": "gulabi",
+    "dist": 0.32349445076662475
+  },
+  {
+    "frterm": "bleufonce",
+    "mrterm": "hirva",
+    "dist": 0.38570119141447684
+  },
+  {
+    "frterm": "bleufonce",
+    "mrterm": "jambhala",
+    "dist": 0.16122796682955684
+  },
+  {
+    "frterm": "bleufonce",
+    "mrterm": "nila",
+    "dist": 0.2330547780221936
+  },
+  {
+    "frterm": "bleufonce",
+    "mrterm": "जांभळा",
+    "dist": 0.15238570354623157
+  },
+  {
+    "frterm": "bleufonce",
+    "mrterm": "निळा",
+    "dist": 0.09863321467440946
+  },
+  {
+    "frterm": "bleugris",
+    "mrterm": "gulabi",
+    "dist": 0.15810157087560875
+  },
+  {
+    "frterm": "bleugris",
+    "mrterm": "hirva",
+    "dist": 0.17836798808702084
+  },
+  {
+    "frterm": "bleugris",
+    "mrterm": "jambhala",
+    "dist": 0.1648078802890248
+  },
+  {
+    "frterm": "bleugris",
+    "mrterm": "nila",
+    "dist": 0.10352569627733316
+  },
+  {
+    "frterm": "bleugris",
+    "mrterm": "जांभळा",
+    "dist": 0.15297969087480087
+  },
+  {
+    "frterm": "bleugris",
+    "mrterm": "निळा",
+    "dist": 0.2052659468392827
+  },
+  {
+    "frterm": "bleumarine",
+    "mrterm": "gulabi",
+    "dist": 0.3542552431489005
+  },
+  {
+    "frterm": "bleumarine",
+    "mrterm": "hirva",
+    "dist": 0.42179062307604315
+  },
+  {
+    "frterm": "bleumarine",
+    "mrterm": "jambhala",
+    "dist": 0.18878687401377095
+  },
+  {
+    "frterm": "bleumarine",
+    "mrterm": "nila",
+    "dist": 0.27506781085804094
+  },
+  {
+    "frterm": "bleumarine",
+    "mrterm": "जांभळा",
+    "dist": 0.18109655796844737
+  },
+  {
+    "frterm": "bleumarine",
+    "mrterm": "निळा",
+    "dist": 0.0970919142730579
+  },
+  {
+    "frterm": "bleunuit",
+    "mrterm": "gulabi",
+    "dist": 0.36479148635675307
+  },
+  {
+    "frterm": "bleunuit",
+    "mrterm": "hirva",
+    "dist": 0.4269705496174479
+  },
+  {
+    "frterm": "bleunuit",
+    "mrterm": "jambhala",
+    "dist": 0.19869175357317742
+  },
+  {
+    "frterm": "bleunuit",
+    "mrterm": "nila",
+    "dist": 0.28872436539249
+  },
+  {
+    "frterm": "bleunuit",
+    "mrterm": "जांभळा",
+    "dist": 0.1899886480729727
+  },
+  {
+    "frterm": "bleunuit",
+    "mrterm": "निळा",
+    "dist": 0.10938932583534824
+  },
+  {
+    "frterm": "bleuroi",
+    "mrterm": "gulabi",
+    "dist": 0.3424528236469605
+  },
+  {
+    "frterm": "bleuroi",
+    "mrterm": "hirva",
+    "dist": 0.40309354816266924
+  },
+  {
+    "frterm": "bleuroi",
+    "mrterm": "jambhala",
+    "dist": 0.17882209091510837
+  },
+  {
+    "frterm": "bleuroi",
+    "mrterm": "nila",
+    "dist": 0.2515893680906692
+  },
+  {
+    "frterm": "bleuroi",
+    "mrterm": "जांभळा",
+    "dist": 0.17188542912008836
+  },
+  {
+    "frterm": "bleuroi",
+    "mrterm": "निळा",
+    "dist": 0.08613521996799237
+  },
+  {
+    "frterm": "bleuturquoise",
+    "mrterm": "gulabi",
+    "dist": 0.2705092816040862
+  },
+  {
+    "frterm": "bleuturquoise",
+    "mrterm": "hirva",
+    "dist": 0.11948839951332238
+  },
+  {
+    "frterm": "bleuturquoise",
+    "mrterm": "jambhala",
+    "dist": 0.2863011175732065
+  },
+  {
+    "frterm": "bleuturquoise",
+    "mrterm": "nila",
+    "dist": 0.12770341837887778
+  },
+  {
+    "frterm": "bleuturquoise",
+    "mrterm": "जांभळा",
+    "dist": 0.27494085428314
+  },
+  {
+    "frterm": "bleuturquoise",
+    "mrterm": "निळा",
+    "dist": 0.2934269333854308
+  },
+  {
+    "frterm": "bordeau",
+    "mrterm": "gulabi",
+    "dist": 0.26831429541339497
+  },
+  {
+    "frterm": "bordeau",
+    "mrterm": "hirva",
+    "dist": 0.3944306847516453
+  },
+  {
+    "frterm": "bordeau",
+    "mrterm": "jambhala",
+    "dist": 0.1313372416576092
+  },
+  {
+    "frterm": "bordeau",
+    "mrterm": "nila",
+    "dist": 0.27636225676796633
+  },
+  {
+    "frterm": "bordeau",
+    "mrterm": "जांभळा",
+    "dist": 0.12380089993356586
+  },
+  {
+    "frterm": "bordeau",
+    "mrterm": "निळा",
+    "dist": 0.18192862890582853
+  },
+  {
+    "frterm": "bordeaux",
+    "mrterm": "gulabi",
+    "dist": 0.20880254825410913
+  },
+  {
+    "frterm": "bordeaux",
+    "mrterm": "hirva",
+    "dist": 0.34235346351228213
+  },
+  {
+    "frterm": "bordeaux",
+    "mrterm": "jambhala",
+    "dist": 0.1062933470849404
+  },
+  {
+    "frterm": "bordeaux",
+    "mrterm": "nila",
+    "dist": 0.23953352497437475
+  },
+  {
+    "frterm": "bordeaux",
+    "mrterm": "जांभळा",
+    "dist": 0.09042287554517149
+  },
+  {
+    "frterm": "bordeaux",
+    "mrterm": "निळा",
+    "dist": 0.1717084373943668
+  },
+  {
+    "frterm": "brun",
+    "mrterm": "gulabi",
+    "dist": 0.20213680133492304
+  },
+  {
+    "frterm": "brun",
+    "mrterm": "hirva",
+    "dist": 0.26768363887454
+  },
+  {
+    "frterm": "brun",
+    "mrterm": "jambhala",
+    "dist": 0.10022191030101084
+  },
+  {
+    "frterm": "brun",
+    "mrterm": "nila",
+    "dist": 0.17012523294981025
+  },
+  {
+    "frterm": "brun",
+    "mrterm": "जांभळा",
+    "dist": 0.074637755346781
+  },
+  {
+    "frterm": "brun",
+    "mrterm": "निळा",
+    "dist": 0.1353643462517494
+  },
+  {
+    "frterm": "cyan",
+    "mrterm": "gulabi",
+    "dist": 0.2655740234147587
+  },
+  {
+    "frterm": "cyan",
+    "mrterm": "hirva",
+    "dist": 0.1353329301666042
+  },
+  {
+    "frterm": "cyan",
+    "mrterm": "jambhala",
+    "dist": 0.3018087100915735
+  },
+  {
+    "frterm": "cyan",
+    "mrterm": "nila",
+    "dist": 0.14773686551178053
+  },
+  {
+    "frterm": "cyan",
+    "mrterm": "जांभळा",
+    "dist": 0.2909517179593366
+  },
+  {
+    "frterm": "cyan",
+    "mrterm": "निळा",
+    "dist": 0.31779443555873643
+  },
+  {
+    "frterm": "fuchsia",
+    "mrterm": "gulabi",
+    "dist": 0.1044688526671408
+  },
+  {
+    "frterm": "fuchsia",
+    "mrterm": "hirva",
+    "dist": 0.32838300223601113
+  },
+  {
+    "frterm": "fuchsia",
+    "mrterm": "jambhala",
+    "dist": 0.12011268631416963
+  },
+  {
+    "frterm": "fuchsia",
+    "mrterm": "nila",
+    "dist": 0.22135662509977608
+  },
+  {
+    "frterm": "fuchsia",
+    "mrterm": "जांभळा",
+    "dist": 0.12098271465059283
+  },
+  {
+    "frterm": "fuchsia",
+    "mrterm": "निळा",
+    "dist": 0.2228507656048066
+  },
+  {
+    "frterm": "gris",
+    "mrterm": "gulabi",
+    "dist": 0.14741569659747555
+  },
+  {
+    "frterm": "gris",
+    "mrterm": "hirva",
+    "dist": 0.16242464552626212
+  },
+  {
+    "frterm": "gris",
+    "mrterm": "jambhala",
+    "dist": 0.191631731815027
+  },
+  {
+    "frterm": "gris",
+    "mrterm": "nila",
+    "dist": 0.11889678131567509
+  },
+  {
+    "frterm": "gris",
+    "mrterm": "जांभळा",
+    "dist": 0.179984102811985
+  },
+  {
+    "frterm": "gris",
+    "mrterm": "निळा",
+    "dist": 0.236312139722443
+  },
+  {
+    "frterm": "indigo",
+    "mrterm": "gulabi",
+    "dist": 0.29824178244481403
+  },
+  {
+    "frterm": "indigo",
+    "mrterm": "hirva",
+    "dist": 0.382705994129021
+  },
+  {
+    "frterm": "indigo",
+    "mrterm": "jambhala",
+    "dist": 0.14007101003007438
+  },
+  {
+    "frterm": "indigo",
+    "mrterm": "nila",
+    "dist": 0.22736057875800184
+  },
+  {
+    "frterm": "indigo",
+    "mrterm": "जांभळा",
+    "dist": 0.12863671923283868
+  },
+  {
+    "frterm": "indigo",
+    "mrterm": "निळा",
+    "dist": 0.0786137656717376
+  },
+  {
+    "frterm": "jaune",
+    "mrterm": "gulabi",
+    "dist": 0.29795640263065154
+  },
+  {
+    "frterm": "jaune",
+    "mrterm": "hirva",
+    "dist": 0.12619784127482217
+  },
+  {
+    "frterm": "jaune",
+    "mrterm": "jambhala",
+    "dist": 0.39225812413545774
+  },
+  {
+    "frterm": "jaune",
+    "mrterm": "nila",
+    "dist": 0.2900421067767874
+  },
+  {
+    "frterm": "jaune",
+    "mrterm": "जांभळा",
+    "dist": 0.3744116769242995
+  },
+  {
+    "frterm": "jaune",
+    "mrterm": "निळा",
+    "dist": 0.4216135058797675
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "mrterm": "gulabi",
+    "dist": 0.28766972823551024
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "mrterm": "hirva",
+    "dist": 0.13112478290009513
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "mrterm": "jambhala",
+    "dist": 0.3835574600978064
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "mrterm": "nila",
+    "dist": 0.29345382139439663
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "mrterm": "जांभळा",
+    "dist": 0.3643360616649649
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "mrterm": "निळा",
+    "dist": 0.41699089208023865
+  },
+  {
+    "frterm": "kaki",
+    "mrterm": "gulabi",
+    "dist": 0.2198112021513457
+  },
+  {
+    "frterm": "kaki",
+    "mrterm": "hirva",
+    "dist": 0.11846662296006347
+  },
+  {
+    "frterm": "kaki",
+    "mrterm": "jambhala",
+    "dist": 0.21893718237179416
+  },
+  {
+    "frterm": "kaki",
+    "mrterm": "nila",
+    "dist": 0.14533711481167388
+  },
+  {
+    "frterm": "kaki",
+    "mrterm": "जांभळा",
+    "dist": 0.19759016681669866
+  },
+  {
+    "frterm": "kaki",
+    "mrterm": "निळा",
+    "dist": 0.23861828156682144
+  },
+  {
+    "frterm": "lavande",
+    "mrterm": "gulabi",
+    "dist": 0.1282500031967176
+  },
+  {
+    "frterm": "lavande",
+    "mrterm": "hirva",
+    "dist": 0.29481807920424785
+  },
+  {
+    "frterm": "lavande",
+    "mrterm": "jambhala",
+    "dist": 0.21659971308566428
+  },
+  {
+    "frterm": "lavande",
+    "mrterm": "nila",
+    "dist": 0.20535683724045942
+  },
+  {
+    "frterm": "lavande",
+    "mrterm": "जांभळा",
+    "dist": 0.23833404026581517
+  },
+  {
+    "frterm": "lavande",
+    "mrterm": "निळा",
+    "dist": 0.303912390440512
+  },
+  {
+    "frterm": "lilas",
+    "mrterm": "gulabi",
+    "dist": 0.09179652552256974
+  },
+  {
+    "frterm": "lilas",
+    "mrterm": "hirva",
+    "dist": 0.26878436315838294
+  },
+  {
+    "frterm": "lilas",
+    "mrterm": "jambhala",
+    "dist": 0.14136243962928388
+  },
+  {
+    "frterm": "lilas",
+    "mrterm": "nila",
+    "dist": 0.15463584409223566
+  },
+  {
+    "frterm": "lilas",
+    "mrterm": "जांभळा",
+    "dist": 0.14230708320626184
+  },
+  {
+    "frterm": "lilas",
+    "mrterm": "निळा",
+    "dist": 0.22297055386793688
+  },
+  {
+    "frterm": "magenta",
+    "mrterm": "gulabi",
+    "dist": 0.0933054183670644
+  },
+  {
+    "frterm": "magenta",
+    "mrterm": "hirva",
+    "dist": 0.3284167885626451
+  },
+  {
+    "frterm": "magenta",
+    "mrterm": "jambhala",
+    "dist": 0.12001980262162112
+  },
+  {
+    "frterm": "magenta",
+    "mrterm": "nila",
+    "dist": 0.2207290627397831
+  },
+  {
+    "frterm": "magenta",
+    "mrterm": "जांभळा",
+    "dist": 0.12923144854625185
+  },
+  {
+    "frterm": "magenta",
+    "mrterm": "निळा",
+    "dist": 0.23169923082454624
+  },
+  {
+    "frterm": "marron",
+    "mrterm": "gulabi",
+    "dist": 0.1992568908318834
+  },
+  {
+    "frterm": "marron",
+    "mrterm": "hirva",
+    "dist": 0.2580265030908599
+  },
+  {
+    "frterm": "marron",
+    "mrterm": "jambhala",
+    "dist": 0.11502113745361092
+  },
+  {
+    "frterm": "marron",
+    "mrterm": "nila",
+    "dist": 0.17261494457326215
+  },
+  {
+    "frterm": "marron",
+    "mrterm": "जांभळा",
+    "dist": 0.08822505287598457
+  },
+  {
+    "frterm": "marron",
+    "mrterm": "निळा",
+    "dist": 0.1469093440338272
+  },
+  {
+    "frterm": "mauve",
+    "mrterm": "gulabi",
+    "dist": 0.11811690468139265
+  },
+  {
+    "frterm": "mauve",
+    "mrterm": "hirva",
+    "dist": 0.2983964627681781
+  },
+  {
+    "frterm": "mauve",
+    "mrterm": "jambhala",
+    "dist": 0.07253384191248213
+  },
+  {
+    "frterm": "mauve",
+    "mrterm": "nila",
+    "dist": 0.1452100303554029
+  },
+  {
+    "frterm": "mauve",
+    "mrterm": "जांभळा",
+    "dist": 0.09525193472550184
+  },
+  {
+    "frterm": "mauve",
+    "mrterm": "निळा",
+    "dist": 0.1761531711873602
+  },
+  {
+    "frterm": "noir",
+    "mrterm": "gulabi",
+    "dist": 0.375298997112806
+  },
+  {
+    "frterm": "noir",
+    "mrterm": "hirva",
+    "dist": 0.4359515617466079
+  },
+  {
+    "frterm": "noir",
+    "mrterm": "jambhala",
+    "dist": 0.2185474675604853
+  },
+  {
+    "frterm": "noir",
+    "mrterm": "nila",
+    "dist": 0.3128289144030503
+  },
+  {
+    "frterm": "noir",
+    "mrterm": "जांभळा",
+    "dist": 0.20186399654727857
+  },
+  {
+    "frterm": "noir",
+    "mrterm": "निळा",
+    "dist": 0.13812905868103495
+  },
+  {
+    "frterm": "ocre",
+    "mrterm": "gulabi",
+    "dist": 0.16460540129986848
+  },
+  {
+    "frterm": "ocre",
+    "mrterm": "hirva",
+    "dist": 0.14837397607441738
+  },
+  {
+    "frterm": "ocre",
+    "mrterm": "jambhala",
+    "dist": 0.2594311949394207
+  },
+  {
+    "frterm": "ocre",
+    "mrterm": "nila",
+    "dist": 0.20498672964707434
+  },
+  {
+    "frterm": "ocre",
+    "mrterm": "जांभळा",
+    "dist": 0.24271615718849715
+  },
+  {
+    "frterm": "ocre",
+    "mrterm": "निळा",
+    "dist": 0.3107555489029935
+  },
+  {
+    "frterm": "orange",
+    "mrterm": "gulabi",
+    "dist": 0.12329085122528637
+  },
+  {
+    "frterm": "orange",
+    "mrterm": "hirva",
+    "dist": 0.19904686343066577
+  },
+  {
+    "frterm": "orange",
+    "mrterm": "jambhala",
+    "dist": 0.24190153081985374
+  },
+  {
+    "frterm": "orange",
+    "mrterm": "nila",
+    "dist": 0.21758310722742671
+  },
+  {
+    "frterm": "orange",
+    "mrterm": "जांभळा",
+    "dist": 0.23087026614356548
+  },
+  {
+    "frterm": "orange",
+    "mrterm": "निळा",
+    "dist": 0.3044585918651144
+  },
+  {
+    "frterm": "pourpre",
+    "mrterm": "gulabi",
+    "dist": 0.24560910495029256
+  },
+  {
+    "frterm": "pourpre",
+    "mrterm": "hirva",
+    "dist": 0.3790935531042127
+  },
+  {
+    "frterm": "pourpre",
+    "mrterm": "jambhala",
+    "dist": 0.09555159199724346
+  },
+  {
+    "frterm": "pourpre",
+    "mrterm": "nila",
+    "dist": 0.24332282233777794
+  },
+  {
+    "frterm": "pourpre",
+    "mrterm": "जांभळा",
+    "dist": 0.08888261423629343
+  },
+  {
+    "frterm": "pourpre",
+    "mrterm": "निळा",
+    "dist": 0.14064171048937693
+  },
+  {
+    "frterm": "prune",
+    "mrterm": "gulabi",
+    "dist": 0.3576697645503556
+  },
+  {
+    "frterm": "prune",
+    "mrterm": "hirva",
+    "dist": 0.4499282427528323
+  },
+  {
+    "frterm": "prune",
+    "mrterm": "jambhala",
+    "dist": 0.196330768003715
+  },
+  {
+    "frterm": "prune",
+    "mrterm": "nila",
+    "dist": 0.3159752922671929
+  },
+  {
+    "frterm": "prune",
+    "mrterm": "जांभळा",
+    "dist": 0.1891370117000536
+  },
+  {
+    "frterm": "prune",
+    "mrterm": "निळा",
+    "dist": 0.1378826558872722
+  },
+  {
+    "frterm": "rose",
+    "mrterm": "gulabi",
+    "dist": 0.039806000809160816
+  },
+  {
+    "frterm": "rose",
+    "mrterm": "hirva",
+    "dist": 0.30252992483456476
+  },
+  {
+    "frterm": "rose",
+    "mrterm": "jambhala",
+    "dist": 0.1814025642782175
+  },
+  {
+    "frterm": "rose",
+    "mrterm": "nila",
+    "dist": 0.22338670068595615
+  },
+  {
+    "frterm": "rose",
+    "mrterm": "जांभळा",
+    "dist": 0.19348564765496434
+  },
+  {
+    "frterm": "rose",
+    "mrterm": "निळा",
+    "dist": 0.28298766893858923
+  },
+  {
+    "frterm": "rouge",
+    "mrterm": "gulabi",
+    "dist": 0.1414206086024382
+  },
+  {
+    "frterm": "rouge",
+    "mrterm": "hirva",
+    "dist": 0.3191893297106495
+  },
+  {
+    "frterm": "rouge",
+    "mrterm": "jambhala",
+    "dist": 0.1980358107956525
+  },
+  {
+    "frterm": "rouge",
+    "mrterm": "nila",
+    "dist": 0.27212449154067175
+  },
+  {
+    "frterm": "rouge",
+    "mrterm": "जांभळा",
+    "dist": 0.178057233403031
+  },
+  {
+    "frterm": "rouge",
+    "mrterm": "निळा",
+    "dist": 0.2800289954607991
+  },
+  {
+    "frterm": "saumon",
+    "mrterm": "gulabi",
+    "dist": 0.07677127953185207
+  },
+  {
+    "frterm": "saumon",
+    "mrterm": "hirva",
+    "dist": 0.23695111460593107
+  },
+  {
+    "frterm": "saumon",
+    "mrterm": "jambhala",
+    "dist": 0.22618269632503815
+  },
+  {
+    "frterm": "saumon",
+    "mrterm": "nila",
+    "dist": 0.19961342545128485
+  },
+  {
+    "frterm": "saumon",
+    "mrterm": "जांभळा",
+    "dist": 0.22282645901220186
+  },
+  {
+    "frterm": "saumon",
+    "mrterm": "निळा",
+    "dist": 0.3000504437370124
+  },
+  {
+    "frterm": "taupe",
+    "mrterm": "gulabi",
+    "dist": 0.15485474380984304
+  },
+  {
+    "frterm": "taupe",
+    "mrterm": "hirva",
+    "dist": 0.1757309640653327
+  },
+  {
+    "frterm": "taupe",
+    "mrterm": "jambhala",
+    "dist": 0.16949948178908328
+  },
+  {
+    "frterm": "taupe",
+    "mrterm": "nila",
+    "dist": 0.11769872637014778
+  },
+  {
+    "frterm": "taupe",
+    "mrterm": "जांभळा",
+    "dist": 0.1558741847327387
+  },
+  {
+    "frterm": "taupe",
+    "mrterm": "निळा",
+    "dist": 0.21099077494895813
+  },
+  {
+    "frterm": "turquoise",
+    "mrterm": "gulabi",
+    "dist": 0.2767814264560804
+  },
+  {
+    "frterm": "turquoise",
+    "mrterm": "hirva",
+    "dist": 0.11981597106960856
+  },
+  {
+    "frterm": "turquoise",
+    "mrterm": "jambhala",
+    "dist": 0.286788379634192
+  },
+  {
+    "frterm": "turquoise",
+    "mrterm": "nila",
+    "dist": 0.13057652346226592
+  },
+  {
+    "frterm": "turquoise",
+    "mrterm": "जांभळा",
+    "dist": 0.27473167598798776
+  },
+  {
+    "frterm": "turquoise",
+    "mrterm": "निळा",
+    "dist": 0.2919875910702196
+  },
+  {
+    "frterm": "vert",
+    "mrterm": "gulabi",
+    "dist": 0.2754990924929786
+  },
+  {
+    "frterm": "vert",
+    "mrterm": "hirva",
+    "dist": 0.03240802557383596
+  },
+  {
+    "frterm": "vert",
+    "mrterm": "jambhala",
+    "dist": 0.31000630117436334
+  },
+  {
+    "frterm": "vert",
+    "mrterm": "nila",
+    "dist": 0.18725477921500147
+  },
+  {
+    "frterm": "vert",
+    "mrterm": "जांभळा",
+    "dist": 0.2920425154342575
+  },
+  {
+    "frterm": "vert",
+    "mrterm": "निळा",
+    "dist": 0.3235659748499959
+  },
+  {
+    "frterm": "vertclair",
+    "mrterm": "gulabi",
+    "dist": 0.3008792587617705
+  },
+  {
+    "frterm": "vertclair",
+    "mrterm": "hirva",
+    "dist": 0.07796137295805418
+  },
+  {
+    "frterm": "vertclair",
+    "mrterm": "jambhala",
+    "dist": 0.3730521722562508
+  },
+  {
+    "frterm": "vertclair",
+    "mrterm": "nila",
+    "dist": 0.2473366894458839
+  },
+  {
+    "frterm": "vertclair",
+    "mrterm": "जांभळा",
+    "dist": 0.3573628518878275
+  },
+  {
+    "frterm": "vertclair",
+    "mrterm": "निळा",
+    "dist": 0.39748523070309294
+  },
+  {
+    "frterm": "vertd'eau",
+    "mrterm": "gulabi",
+    "dist": 0.22814550620770668
+  },
+  {
+    "frterm": "vertd'eau",
+    "mrterm": "hirva",
+    "dist": 0.10186829810878911
+  },
+  {
+    "frterm": "vertd'eau",
+    "mrterm": "jambhala",
+    "dist": 0.2923930524798277
+  },
+  {
+    "frterm": "vertd'eau",
+    "mrterm": "nila",
+    "dist": 0.1634123381343357
+  },
+  {
+    "frterm": "vertd'eau",
+    "mrterm": "जांभळा",
+    "dist": 0.28011718512651845
+  },
+  {
+    "frterm": "vertd'eau",
+    "mrterm": "निळा",
+    "dist": 0.3208913118640542
+  },
+  {
+    "frterm": "vertfluo",
+    "mrterm": "gulabi",
+    "dist": 0.3237414440339859
+  },
+  {
+    "frterm": "vertfluo",
+    "mrterm": "hirva",
+    "dist": 0.09813961412526713
+  },
+  {
+    "frterm": "vertfluo",
+    "mrterm": "jambhala",
+    "dist": 0.40255400322351576
+  },
+  {
+    "frterm": "vertfluo",
+    "mrterm": "nila",
+    "dist": 0.27849088506520403
+  },
+  {
+    "frterm": "vertfluo",
+    "mrterm": "जांभळा",
+    "dist": 0.38514106237092466
+  },
+  {
+    "frterm": "vertfluo",
+    "mrterm": "निळा",
+    "dist": 0.42728479625073224
+  },
+  {
+    "frterm": "vertfonce",
+    "mrterm": "gulabi",
+    "dist": 0.2698247650603281
+  },
+  {
+    "frterm": "vertfonce",
+    "mrterm": "hirva",
+    "dist": 0.17731538384283327
+  },
+  {
+    "frterm": "vertfonce",
+    "mrterm": "jambhala",
+    "dist": 0.20800241758413943
+  },
+  {
+    "frterm": "vertfonce",
+    "mrterm": "nila",
+    "dist": 0.15479858046156864
+  },
+  {
+    "frterm": "vertfonce",
+    "mrterm": "जांभळा",
+    "dist": 0.17948299144075203
+  },
+  {
+    "frterm": "vertfonce",
+    "mrterm": "निळा",
+    "dist": 0.19440017046602032
+  },
+  {
+    "frterm": "vertforet",
+    "mrterm": "gulabi",
+    "dist": 0.2855438448648931
+  },
+  {
+    "frterm": "vertforet",
+    "mrterm": "hirva",
+    "dist": 0.12891786676596362
+  },
+  {
+    "frterm": "vertforet",
+    "mrterm": "jambhala",
+    "dist": 0.2592087743335421
+  },
+  {
+    "frterm": "vertforet",
+    "mrterm": "nila",
+    "dist": 0.16846299666022446
+  },
+  {
+    "frterm": "vertforet",
+    "mrterm": "जांभळा",
+    "dist": 0.23072277273013678
+  },
+  {
+    "frterm": "vertforet",
+    "mrterm": "निळा",
+    "dist": 0.2460976121398337
+  },
+  {
+    "frterm": "vertkaki",
+    "mrterm": "gulabi",
+    "dist": 0.21475985169054898
+  },
+  {
+    "frterm": "vertkaki",
+    "mrterm": "hirva",
+    "dist": 0.12641171381504174
+  },
+  {
+    "frterm": "vertkaki",
+    "mrterm": "jambhala",
+    "dist": 0.2113707995693061
+  },
+  {
+    "frterm": "vertkaki",
+    "mrterm": "nila",
+    "dist": 0.14069095596932307
+  },
+  {
+    "frterm": "vertkaki",
+    "mrterm": "जांभळा",
+    "dist": 0.1908392486106721
+  },
+  {
+    "frterm": "vertkaki",
+    "mrterm": "निळा",
+    "dist": 0.23270094111861073
+  },
+  {
+    "frterm": "vertpale",
+    "mrterm": "gulabi",
+    "dist": 0.27380411539501687
+  },
+  {
+    "frterm": "vertpale",
+    "mrterm": "hirva",
+    "dist": 0.10820055833982485
+  },
+  {
+    "frterm": "vertpale",
+    "mrterm": "jambhala",
+    "dist": 0.36262757308617544
+  },
+  {
+    "frterm": "vertpale",
+    "mrterm": "nila",
+    "dist": 0.24536829031376778
+  },
+  {
+    "frterm": "vertpale",
+    "mrterm": "जांभळा",
+    "dist": 0.35031440609306425
+  },
+  {
+    "frterm": "vertpale",
+    "mrterm": "निळा",
+    "dist": 0.3947264322920456
+  },
+  {
+    "frterm": "vertpomme",
+    "mrterm": "gulabi",
+    "dist": 0.3006127738743175
+  },
+  {
+    "frterm": "vertpomme",
+    "mrterm": "hirva",
+    "dist": 0.09595711606666305
+  },
+  {
+    "frterm": "vertpomme",
+    "mrterm": "jambhala",
+    "dist": 0.3834558003583568
+  },
+  {
+    "frterm": "vertpomme",
+    "mrterm": "nila",
+    "dist": 0.2696821026486895
+  },
+  {
+    "frterm": "vertpomme",
+    "mrterm": "जांभळा",
+    "dist": 0.3661995671207628
+  },
+  {
+    "frterm": "vertpomme",
+    "mrterm": "निळा",
+    "dist": 0.4099685579411857
+  },
+  {
+    "frterm": "vertsapin",
+    "mrterm": "gulabi",
+    "dist": 0.2605774255412099
+  },
+  {
+    "frterm": "vertsapin",
+    "mrterm": "hirva",
+    "dist": 0.1507462892544225
+  },
+  {
+    "frterm": "vertsapin",
+    "mrterm": "jambhala",
+    "dist": 0.2205648129019139
+  },
+  {
+    "frterm": "vertsapin",
+    "mrterm": "nila",
+    "dist": 0.1480851452713822
+  },
+  {
+    "frterm": "vertsapin",
+    "mrterm": "जांभळा",
+    "dist": 0.19211420135448257
+  },
+  {
+    "frterm": "vertsapin",
+    "mrterm": "निळा",
+    "dist": 0.20787043110999323
+  },
+  {
+    "frterm": "violet",
+    "mrterm": "gulabi",
+    "dist": 0.17113665264590122
+  },
+  {
+    "frterm": "violet",
+    "mrterm": "hirva",
+    "dist": 0.33559035171393176
+  },
+  {
+    "frterm": "violet",
+    "mrterm": "jambhala",
+    "dist": 0.039731719929671824
+  },
+  {
+    "frterm": "violet",
+    "mrterm": "nila",
+    "dist": 0.17746568213001496
+  },
+  {
+    "frterm": "violet",
+    "mrterm": "जांभळा",
+    "dist": 0.05889351580206228
+  },
+  {
+    "frterm": "violet",
+    "mrterm": "निळा",
+    "dist": 0.1373579918624204
+  },
+  {
+    "frterm": "violetfonce",
+    "mrterm": "gulabi",
+    "dist": 0.32586246544462577
+  },
+  {
+    "frterm": "violetfonce",
+    "mrterm": "hirva",
+    "dist": 0.43285441653225837
+  },
+  {
+    "frterm": "violetfonce",
+    "mrterm": "jambhala",
+    "dist": 0.16795506001069885
+  },
+  {
+    "frterm": "violetfonce",
+    "mrterm": "nila",
+    "dist": 0.2818197406391731
+  },
+  {
+    "frterm": "violetfonce",
+    "mrterm": "जांभळा",
+    "dist": 0.16208660086026205
+  },
+  {
+    "frterm": "violetfonce",
+    "mrterm": "निळा",
+    "dist": 0.10790341745868853
+  }
+]
