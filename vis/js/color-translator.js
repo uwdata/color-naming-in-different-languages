@@ -90,33 +90,12 @@ let allColorInfo;
 let translationLoss = {};
 
 
-let colorNamesAbrv = {
-	"English (English)": "en",
-	"Korean (한국어, 조선어)": "ko",
-	"Persian (Farsi) (فارسی)": "fa",
-	"Chinese (中文 (Zhōngwén), 汉语, 漢語)": "zh",
-	"German (Deutsch)": "de",
-	"Spanish (español)": "es",
-	"French (français, langue française)": "fr",
-	"Portuguese (português)": "pt",
-	"Swedish (svenska)": "sv",
-	"Russian (Русский)": "ru",
-	"Dutch (Nederlands, Vlaams)": "nl",
-	"Polish (język polski, polszczyzna)": "pl",
-	"Finnish (suomi, suomen kieli)": "fi",
-	"Romanian (limba română)": "ro"
-};
+let colorNamesAbrv = {};
 
 let langAbv = [];
 let abvToColorName = {};
 let colorNamesKey = {}
 let colorNames = {};
-for(const lang in colorNamesAbrv){
-	abvToColorName[colorNamesAbrv[lang]] = lang;
-	langAbv.push(colorNamesAbrv[lang]);
-	colorNamesKey[lang] = colorNamesAbrv[lang]+"term";
-	colorNames[lang] = [];
-}
 
 
 let drawComparisonMap = false; //TODO: make this a setting that can be changed
@@ -128,7 +107,37 @@ let boxWidth = somWidth / N;
 let boxHeight = boxWidth;
 let somHeight = M * boxWidth;
 
-function start(){
+async function start(){
+  const lang_info_url =  "../model/lang_info.csv"
+  let langs_info
+  await new Promise(function(resolve, reject) {
+	d3.csv(lang_info_url, data => {
+		langs_info = data;
+		resolve()
+	})
+  })
+	
+//         lang_info = data
+//     })
+//  }
+//   await d3.csv(lang_info_url).then(data => {
+//         lang_info = data
+//     })
+//   const langs_info = await d3.csv(lang_info_url)
+  for(const lang_info of langs_info){
+	if(lang_info.numFullColorTerms >= 10){
+		colorNamesAbrv[lang_info.lang] = lang_info.langAbv
+	}
+  }
+
+  for(const lang in colorNamesAbrv){
+	abvToColorName[colorNamesAbrv[lang]] = lang;
+	langAbv.push(colorNamesAbrv[lang]);
+	colorNamesKey[lang] = colorNamesAbrv[lang]+"term";
+	colorNames[lang] = [];
+}
+
+
   let fileLoadPromises = [];
 
   let url = "../model/colorSOMPatches.json" // put url string here
@@ -199,10 +208,12 @@ function  initializeTerms(){
 	//drawColorResults();
 	for(const langAbv in allColorInfo){
 		for(const colorName in allColorInfo[langAbv]){
-			if(colorNames[abvToColorName[langAbv]]){
-				colorNames[abvToColorName[langAbv]].push(colorName);
-			} else{
-				console.error("could not find language: " + langAbv);
+			if(Object.keys(allColorInfo[langAbv]).length >= 10){
+				if(colorNames[abvToColorName[langAbv]]){
+					colorNames[abvToColorName[langAbv]].push(colorName);
+				} else{
+					console.error("could not find language: " + langAbv);
+				}
 			}
 		}
 	}

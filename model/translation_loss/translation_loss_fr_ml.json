@@ -1,482 +1,722 @@
 [
   {
     "frterm": "beige",
-    "mlterm": "neela",
-    "dist": 0.046859507493989545
+    "mlterm": "നീല",
+    "dist": 0.18671550226909644
   },
   {
     "frterm": "beige",
-    "mlterm": "നീല",
-    "dist": 0.11353373249738707
+    "mlterm": "പചച",
+    "dist": 0.09626014885260911
+  },
+  {
+    "frterm": "beige",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.29379961717990033
   },
   {
     "frterm": "bleu",
-    "mlterm": "neela",
-    "dist": 0.052500820123470446
+    "mlterm": "നീല",
+    "dist": 0.043741919998350136
   },
   {
     "frterm": "bleu",
-    "mlterm": "നീല",
-    "dist": 0.10705672131161718
+    "mlterm": "പചച",
+    "dist": 0.2026835459539952
+  },
+  {
+    "frterm": "bleu",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.21004054801699903
   },
   {
     "frterm": "bleucanard",
-    "mlterm": "neela",
-    "dist": 0.10726438662977819
+    "mlterm": "നീല",
+    "dist": 0.1049064924938668
   },
   {
     "frterm": "bleucanard",
-    "mlterm": "നീല",
-    "dist": 0.07448759691754583
+    "mlterm": "പചച",
+    "dist": 0.16037809429417096
+  },
+  {
+    "frterm": "bleucanard",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.24261550668880164
   },
   {
     "frterm": "bleuciel",
-    "mlterm": "neela",
-    "dist": 0.12069469664860528
+    "mlterm": "നീല",
+    "dist": 0.15210372265587283
   },
   {
     "frterm": "bleuciel",
-    "mlterm": "നീല",
-    "dist": 0.20720678988175723
+    "mlterm": "പചച",
+    "dist": 0.16262313987948052
+  },
+  {
+    "frterm": "bleuciel",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.315168988964874
   },
   {
     "frterm": "bleuclair",
-    "mlterm": "neela",
-    "dist": 0.11245644240368247
+    "mlterm": "നീല",
+    "dist": 0.1462819302001146
   },
   {
     "frterm": "bleuclair",
-    "mlterm": "നീല",
-    "dist": 0.19896808842324876
+    "mlterm": "പചച",
+    "dist": 0.161913258097944
+  },
+  {
+    "frterm": "bleuclair",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.3136416452948134
   },
   {
     "frterm": "bleufonce",
-    "mlterm": "neela",
-    "dist": 0.09548205773179196
+    "mlterm": "നീല",
+    "dist": 0.1681389879928333
   },
   {
     "frterm": "bleufonce",
-    "mlterm": "നീല",
-    "dist": 0.04978986530261693
+    "mlterm": "പചച",
+    "dist": 0.3283864236383318
+  },
+  {
+    "frterm": "bleufonce",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.1233270825603321
   },
   {
     "frterm": "bleugris",
-    "mlterm": "neela",
-    "dist": 0.07839644888558947
+    "mlterm": "നീല",
+    "dist": 0.08221665169282973
   },
   {
     "frterm": "bleugris",
-    "mlterm": "നീല",
-    "dist": 0.07708362201074519
+    "mlterm": "പചച",
+    "dist": 0.14636258312236805
+  },
+  {
+    "frterm": "bleugris",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.19639968033257832
   },
   {
     "frterm": "bleumarine",
-    "mlterm": "neela",
-    "dist": 0.09727116610552558
+    "mlterm": "നീല",
+    "dist": 0.1459381232667761
   },
   {
     "frterm": "bleumarine",
-    "mlterm": "നീല",
-    "dist": 0.057799281979593685
+    "mlterm": "പചച",
+    "dist": 0.3085036026391696
+  },
+  {
+    "frterm": "bleumarine",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.11870902347120169
   },
   {
     "frterm": "bleunuit",
-    "mlterm": "neela",
-    "dist": 0.19513951296681856
+    "mlterm": "നീല",
+    "dist": 0.1923337365027236
   },
   {
     "frterm": "bleunuit",
-    "mlterm": "നീല",
-    "dist": 0.11750799103889271
+    "mlterm": "പചച",
+    "dist": 0.3344320828951013
+  },
+  {
+    "frterm": "bleunuit",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.1323925027938449
   },
   {
     "frterm": "bleuroi",
-    "mlterm": "neela",
-    "dist": 0.07453113302126332
+    "mlterm": "നീല",
+    "dist": 0.13757345182735511
   },
   {
     "frterm": "bleuroi",
-    "mlterm": "നീല",
-    "dist": 0.05945431463650052
+    "mlterm": "പചച",
+    "dist": 0.30412677063095567
+  },
+  {
+    "frterm": "bleuroi",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.12194520431758035
   },
   {
     "frterm": "bleuturquoise",
-    "mlterm": "neela",
-    "dist": 0.09955780999785001
+    "mlterm": "നീല",
+    "dist": 0.13571183537982132
   },
   {
     "frterm": "bleuturquoise",
-    "mlterm": "നീല",
-    "dist": 0.1544060060874826
+    "mlterm": "പചച",
+    "dist": 0.14257135937692714
+  },
+  {
+    "frterm": "bleuturquoise",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.3129467152233847
   },
   {
     "frterm": "bordeau",
-    "mlterm": "neela",
-    "dist": 0.2377024175973758
+    "mlterm": "നീല",
+    "dist": 0.26801885971373085
   },
   {
     "frterm": "bordeau",
-    "mlterm": "നീല",
-    "dist": 0.1607252639258383
+    "mlterm": "പചച",
+    "dist": 0.39038695521128214
+  },
+  {
+    "frterm": "bordeau",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.12186292630313432
   },
   {
     "frterm": "bordeaux",
-    "mlterm": "neela",
-    "dist": 0.21565664419503114
+    "mlterm": "നീല",
+    "dist": 0.23161776757528962
   },
   {
     "frterm": "bordeaux",
-    "mlterm": "നീല",
-    "dist": 0.1359217235941234
+    "mlterm": "പചച",
+    "dist": 0.3524420979023381
+  },
+  {
+    "frterm": "bordeaux",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.09821758147042806
   },
   {
     "frterm": "brun",
-    "mlterm": "neela",
-    "dist": 0.19262595067755223
+    "mlterm": "നീല",
+    "dist": 0.14837671595912663
   },
   {
     "frterm": "brun",
-    "mlterm": "നീല",
-    "dist": 0.12039268777433154
+    "mlterm": "പചച",
+    "dist": 0.2555410108978964
+  },
+  {
+    "frterm": "brun",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.12263325193337149
   },
   {
     "frterm": "cyan",
-    "mlterm": "neela",
-    "dist": 0.12751240359687832
+    "mlterm": "നീല",
+    "dist": 0.1672033391902976
   },
   {
     "frterm": "cyan",
-    "mlterm": "നീല",
-    "dist": 0.20238870728118913
+    "mlterm": "പചച",
+    "dist": 0.1291806159730269
+  },
+  {
+    "frterm": "cyan",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.3383457363242759
   },
   {
     "frterm": "fuchsia",
-    "mlterm": "neela",
-    "dist": 0.11101816939263597
+    "mlterm": "നീല",
+    "dist": 0.2072889583468284
   },
   {
     "frterm": "fuchsia",
-    "mlterm": "നീല",
-    "dist": 0.0871378109779644
+    "mlterm": "പചച",
+    "dist": 0.31572127730220867
+  },
+  {
+    "frterm": "fuchsia",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.054039724087631254
   },
   {
     "frterm": "gris",
-    "mlterm": "neela",
-    "dist": 0.10172609494034277
+    "mlterm": "നീല",
+    "dist": 0.11432068081906026
   },
   {
     "frterm": "gris",
-    "mlterm": "നീല",
-    "dist": 0.07660334721472377
+    "mlterm": "പചച",
+    "dist": 0.12400260002097646
+  },
+  {
+    "frterm": "gris",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.21003705092789174
   },
   {
     "frterm": "indigo",
-    "mlterm": "neela",
-    "dist": 0.07893777490817919
+    "mlterm": "നീല",
+    "dist": 0.162865174124988
   },
   {
     "frterm": "indigo",
-    "mlterm": "നീല",
-    "dist": 0.07385836444815709
+    "mlterm": "പചച",
+    "dist": 0.3194859837547387
+  },
+  {
+    "frterm": "indigo",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.09690950092611555
   },
   {
     "frterm": "jaune",
-    "mlterm": "neela",
-    "dist": 0.09293184742172465
+    "mlterm": "നീല",
+    "dist": 0.30218048570273687
   },
   {
     "frterm": "jaune",
-    "mlterm": "നീല",
-    "dist": 0.1486338670536273
+    "mlterm": "പചച",
+    "dist": 0.11542176954002564
+  },
+  {
+    "frterm": "jaune",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.39984397836490104
   },
   {
     "frterm": "jaunemoutarde",
-    "mlterm": "neela",
-    "dist": 0.10705909016515211
+    "mlterm": "നീല",
+    "dist": 0.3122317987546238
   },
   {
     "frterm": "jaunemoutarde",
-    "mlterm": "നീല",
-    "dist": 0.11502698792582827
+    "mlterm": "പചച",
+    "dist": 0.12951785087393627
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.4018550569521986
   },
   {
     "frterm": "kaki",
-    "mlterm": "neela",
-    "dist": 0.14987532142161392
+    "mlterm": "നീല",
+    "dist": 0.12878787731771071
   },
   {
     "frterm": "kaki",
-    "mlterm": "നീല",
-    "dist": 0.09028261167050017
+    "mlterm": "പചച",
+    "dist": 0.11229693861793859
+  },
+  {
+    "frterm": "kaki",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.22833268035313936
   },
   {
     "frterm": "lavande",
-    "mlterm": "neela",
-    "dist": 0.0616645803869171
+    "mlterm": "നീല",
+    "dist": 0.08862722653979048
   },
   {
     "frterm": "lavande",
-    "mlterm": "നീല",
-    "dist": 0.132166472906152
+    "mlterm": "പചച",
+    "dist": 0.17762030096022305
+  },
+  {
+    "frterm": "lavande",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.19856500038490746
   },
   {
     "frterm": "lilas",
-    "mlterm": "neela",
-    "dist": 0.0966884240648494
+    "mlterm": "നീല",
+    "dist": 0.10912164139743591
   },
   {
     "frterm": "lilas",
-    "mlterm": "നീല",
-    "dist": 0.10720528065365958
+    "mlterm": "പചച",
+    "dist": 0.2231586217705293
+  },
+  {
+    "frterm": "lilas",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.10969818964075308
   },
   {
     "frterm": "magenta",
-    "mlterm": "neela",
-    "dist": 0.1380534132682312
+    "mlterm": "നീല",
+    "dist": 0.21524323824073333
   },
   {
     "frterm": "magenta",
-    "mlterm": "നീല",
-    "dist": 0.08756265608895586
+    "mlterm": "പചച",
+    "dist": 0.3294215646870627
+  },
+  {
+    "frterm": "magenta",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.04130993999291131
   },
   {
     "frterm": "marron",
-    "mlterm": "neela",
-    "dist": 0.20687227598898764
+    "mlterm": "നീല",
+    "dist": 0.15284261451246534
   },
   {
     "frterm": "marron",
-    "mlterm": "നീല",
-    "dist": 0.13160588034744908
+    "mlterm": "പചച",
+    "dist": 0.2512449881397161
+  },
+  {
+    "frterm": "marron",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.13552474929445604
   },
   {
     "frterm": "mauve",
-    "mlterm": "neela",
-    "dist": 0.10875210700319096
+    "mlterm": "നീല",
+    "dist": 0.1259388465461923
   },
   {
     "frterm": "mauve",
-    "mlterm": "നീല",
-    "dist": 0.10031728920487752
+    "mlterm": "പചച",
+    "dist": 0.26529432315775864
+  },
+  {
+    "frterm": "mauve",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.07288810079970234
   },
   {
     "frterm": "noir",
-    "mlterm": "neela",
-    "dist": 0.2829722437355692
+    "mlterm": "നീല",
+    "dist": 0.24718886638900195
   },
   {
     "frterm": "noir",
-    "mlterm": "നീല",
-    "dist": 0.20624536334198207
+    "mlterm": "പചച",
+    "dist": 0.3610962403256737
+  },
+  {
+    "frterm": "noir",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.17569956307022458
   },
   {
     "frterm": "ocre",
-    "mlterm": "neela",
-    "dist": 0.1388487424556543
+    "mlterm": "നീല",
+    "dist": 0.21089508451233624
   },
   {
     "frterm": "ocre",
-    "mlterm": "നീല",
-    "dist": 0.09483464670510341
+    "mlterm": "പചച",
+    "dist": 0.05896846459089941
+  },
+  {
+    "frterm": "ocre",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.29643955677097555
   },
   {
     "frterm": "orange",
-    "mlterm": "neela",
-    "dist": 0.15705333510625089
+    "mlterm": "നീല",
+    "dist": 0.21361043791976866
   },
   {
     "frterm": "orange",
-    "mlterm": "നീല",
-    "dist": 0.10646145866013894
+    "mlterm": "പചച",
+    "dist": 0.07758472183473854
+  },
+  {
+    "frterm": "orange",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.2882302108185604
   },
   {
     "frterm": "pourpre",
-    "mlterm": "neela",
-    "dist": 0.1660162410454357
+    "mlterm": "നീല",
+    "dist": 0.23155703323340807
   },
   {
     "frterm": "pourpre",
-    "mlterm": "നീല",
-    "dist": 0.10251483781910187
+    "mlterm": "പചച",
+    "dist": 0.3599788039288898
+  },
+  {
+    "frterm": "pourpre",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.07773724200743606
   },
   {
     "frterm": "prune",
-    "mlterm": "neela",
-    "dist": 0.22348079733632586
+    "mlterm": "നീല",
+    "dist": 0.2312188038921391
   },
   {
     "frterm": "prune",
-    "mlterm": "നീല",
-    "dist": 0.14461068079491327
+    "mlterm": "പചച",
+    "dist": 0.3566984803321255
+  },
+  {
+    "frterm": "prune",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.10079689259872232
   },
   {
     "frterm": "rose",
-    "mlterm": "neela",
-    "dist": 0.0935884268801626
+    "mlterm": "നീല",
+    "dist": 0.1560469341496906
   },
   {
     "frterm": "rose",
-    "mlterm": "നീല",
-    "dist": 0.09618788590397416
+    "mlterm": "പചച",
+    "dist": 0.24592457410104046
+  },
+  {
+    "frterm": "rose",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.09141826265323608
   },
   {
     "frterm": "rouge",
-    "mlterm": "neela",
-    "dist": 0.1816113193394527
+    "mlterm": "നീല",
+    "dist": 0.18309159837817365
   },
   {
     "frterm": "rouge",
-    "mlterm": "നീല",
-    "dist": 0.1131539954178881
+    "mlterm": "പചച",
+    "dist": 0.2970020552717863
+  },
+  {
+    "frterm": "rouge",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.05476464870895243
   },
   {
     "frterm": "saumon",
-    "mlterm": "neela",
-    "dist": 0.08913438652705985
+    "mlterm": "നീല",
+    "dist": 0.1705919843006642
   },
   {
     "frterm": "saumon",
-    "mlterm": "നീല",
-    "dist": 0.08757114541391033
+    "mlterm": "പചച",
+    "dist": 0.11331257673797218
+  },
+  {
+    "frterm": "saumon",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.24883628901729504
   },
   {
     "frterm": "taupe",
-    "mlterm": "neela",
-    "dist": 0.11768861249757606
+    "mlterm": "നീല",
+    "dist": 0.10612008083137014
   },
   {
     "frterm": "taupe",
-    "mlterm": "നീല",
-    "dist": 0.08258754309117769
+    "mlterm": "പചച",
+    "dist": 0.14192892520234357
+  },
+  {
+    "frterm": "taupe",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.1905141723166942
   },
   {
     "frterm": "turquoise",
-    "mlterm": "neela",
-    "dist": 0.10293257749229232
+    "mlterm": "നീല",
+    "dist": 0.14010341755327776
   },
   {
     "frterm": "turquoise",
-    "mlterm": "നീല",
-    "dist": 0.14610091595273988
+    "mlterm": "പചച",
+    "dist": 0.14174644598422753
+  },
+  {
+    "frterm": "turquoise",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.3126676701353229
   },
   {
     "frterm": "vert",
-    "mlterm": "neela",
-    "dist": 0.07649448735989879
+    "mlterm": "നീല",
+    "dist": 0.1913455255262864
   },
   {
     "frterm": "vert",
-    "mlterm": "നീല",
-    "dist": 0.06784590862768533
+    "mlterm": "പചച",
+    "dist": 0.02678897222555521
+  },
+  {
+    "frterm": "vert",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.32878671079239363
   },
   {
     "frterm": "vertclair",
-    "mlterm": "neela",
-    "dist": 0.12521025211157635
+    "mlterm": "നീല",
+    "dist": 0.259330727410902
   },
   {
     "frterm": "vertclair",
-    "mlterm": "നീല",
-    "dist": 0.19767553256994588
+    "mlterm": "പചച",
+    "dist": 0.08293187054160629
+  },
+  {
+    "frterm": "vertclair",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.39316285648333466
   },
   {
     "frterm": "vertd'eau",
-    "mlterm": "neela",
-    "dist": 0.05766796691578299
+    "mlterm": "നീല",
+    "dist": 0.17385744710793813
   },
   {
     "frterm": "vertd'eau",
-    "mlterm": "നീല",
-    "dist": 0.10947521784004308
+    "mlterm": "പചച",
+    "dist": 0.05458866445974354
+  },
+  {
+    "frterm": "vertd'eau",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.3157236097834177
   },
   {
     "frterm": "vertfluo",
-    "mlterm": "neela",
-    "dist": 0.12559581974754228
+    "mlterm": "നീല",
+    "dist": 0.28115331624269024
   },
   {
     "frterm": "vertfluo",
-    "mlterm": "നീല",
-    "dist": 0.19165762503384018
+    "mlterm": "പചച",
+    "dist": 0.10030307775308638
+  },
+  {
+    "frterm": "vertfluo",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.40896616246229583
   },
   {
     "frterm": "vertfonce",
-    "mlterm": "neela",
-    "dist": 0.18815096775795906
+    "mlterm": "നീല",
+    "dist": 0.13835315279837546
   },
   {
     "frterm": "vertfonce",
-    "mlterm": "നീല",
-    "dist": 0.10864072877016258
+    "mlterm": "പചച",
+    "dist": 0.21918550384297583
+  },
+  {
+    "frterm": "vertfonce",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.18281415876841575
   },
   {
     "frterm": "vertforet",
-    "mlterm": "neela",
-    "dist": 0.14186187610620085
+    "mlterm": "നീല",
+    "dist": 0.10598282700581922
   },
   {
     "frterm": "vertforet",
-    "mlterm": "നീല",
-    "dist": 0.06175206581889272
+    "mlterm": "പചച",
+    "dist": 0.16468900845635476
+  },
+  {
+    "frterm": "vertforet",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.20990733704697073
   },
   {
     "frterm": "vertkaki",
-    "mlterm": "neela",
-    "dist": 0.15258533909978986
+    "mlterm": "നീല",
+    "dist": 0.1288742791376735
   },
   {
     "frterm": "vertkaki",
-    "mlterm": "നീല",
-    "dist": 0.09198053511247192
+    "mlterm": "പചച",
+    "dist": 0.11808415255625275
+  },
+  {
+    "frterm": "vertkaki",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.22320089060064977
   },
   {
     "frterm": "vertpale",
-    "mlterm": "neela",
-    "dist": 0.12447639883581915
+    "mlterm": "നീല",
+    "dist": 0.25615362243093187
   },
   {
     "frterm": "vertpale",
-    "mlterm": "നീല",
-    "dist": 0.2026495654475195
+    "mlterm": "പചച",
+    "dist": 0.07633346774273292
+  },
+  {
+    "frterm": "vertpale",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.38310755838554916
   },
   {
     "frterm": "vertpomme",
-    "mlterm": "neela",
-    "dist": 0.07492952558771353
+    "mlterm": "നീല",
+    "dist": 0.2769679569023093
   },
   {
     "frterm": "vertpomme",
-    "mlterm": "നീല",
-    "dist": 0.12734018160822752
+    "mlterm": "പചച",
+    "dist": 0.08509254212174625
+  },
+  {
+    "frterm": "vertpomme",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.39108623539087284
   },
   {
     "frterm": "vertsapin",
-    "mlterm": "neela",
-    "dist": 0.16330251711229268
+    "mlterm": "നീല",
+    "dist": 0.11420401820390175
   },
   {
     "frterm": "vertsapin",
-    "mlterm": "നീല",
-    "dist": 0.08644205961256114
+    "mlterm": "പചച",
+    "dist": 0.1838127272587746
+  },
+  {
+    "frterm": "vertsapin",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.1862538528503162
   },
   {
     "frterm": "violet",
-    "mlterm": "neela",
-    "dist": 0.11641374768839649
+    "mlterm": "നീല",
+    "dist": 0.17087127179611378
   },
   {
     "frterm": "violet",
-    "mlterm": "നീല",
-    "dist": 0.09862820655919606
+    "mlterm": "പചച",
+    "dist": 0.3157838724190833
+  },
+  {
+    "frterm": "violet",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.04313675107068186
   },
   {
     "frterm": "violetfonce",
-    "mlterm": "neela",
-    "dist": 0.1508820800499179
+    "mlterm": "നീല",
+    "dist": 0.2101609157714593
   },
   {
     "frterm": "violetfonce",
-    "mlterm": "നീല",
-    "dist": 0.10417406915960692
+    "mlterm": "പചച",
+    "dist": 0.359733863168834
+  },
+  {
+    "frterm": "violetfonce",
+    "mlterm": "പർപപിൾ",
+    "dist": 0.0911661427011214
   }
 ]

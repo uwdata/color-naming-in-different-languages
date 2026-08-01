@@ -1,0 +1,66 @@
+// Marathi (Marāṭhī) (मराठी
+
+const excludeNames = [
+];
+
+const nameReplacingRules = [
+    [/aakashi/, "आकाशी"],
+    [/akashi/, "आकाशी"],
+
+    [/nila/, "निळा"],
+
+    [/gulabi/, "गुलाबी"],
+    [/gulaabi/, "गुलाबी"],
+
+    [/jambhala/, "जांभळा"],
+    [/jambhla/, "जांभळा"],
+
+    [/rani/, "राणी"],
+
+    [/lal/, "लाल"],
+    [/laal/, "लाल"],
+
+    [/hirava/, "हिरवा"],
+    [/hirva/, "हिरवा"],
+    [/hirwa/, "हिरवा"],
+
+    [/kalsar/, "काळसर"],
+
+    [/kala/, "काळा"],
+
+    [/keshari/, "केशरी"],
+
+    [/gadad/, "गडद"],
+
+    [/pivla/, "पिवळा"],
+    [/piwala/, "पिवळा"],
+    [/piwla/, "पिवळा"],
+
+    [/mhendi/, "मेंदी"],
+
+    [/chochlatey/, "चाॅकलेटी"],
+    [/choclatey/, "चाॅकलेटी"],
+    [/chocolaty/, "चाॅकलेटी"],
+   
+    [/tapkiri/, "तपकिरी"],
+
+    [/narangi/, "नारिंगी"],
+
+    [/popati/, "पोपटी"],
+    [/poapati/, "पोपटी"],
+    [/popti/, "पोपटी"],
+    [/ppti/, "पोपटी"],
+
+    [/fikat/, "फिकट"],
+
+    [/morpankhi/, "मोरपंखी"],
+
+    [/rakhadi/, "राखाडी"],
+    [/rakhdi/, "राखाडी"]
+
+];
+
+export default {
+    excludeNames: excludeNames,
+    nameReplacingRules: nameReplacingRules
+}

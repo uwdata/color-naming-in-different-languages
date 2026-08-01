@@ -1,482 +1,722 @@
 [
   {
     "frterm": "beige",
-    "urterm": "hara",
-    "dist": 0.0907703898185481
+    "urterm": "جامنی",
+    "dist": 0.2685398816252019
   },
   {
     "frterm": "beige",
-    "urterm": "neela",
-    "dist": 0.14407297130698318
+    "urterm": "نیلا",
+    "dist": 0.1264076089585007
+  },
+  {
+    "frterm": "beige",
+    "urterm": "ہرا",
+    "dist": 0.09486776147047149
   },
   {
     "frterm": "bleu",
-    "urterm": "hara",
-    "dist": 0.1721225396605712
+    "urterm": "جامنی",
+    "dist": 0.1968307032544833
   },
   {
     "frterm": "bleu",
-    "urterm": "neela",
-    "dist": 0.03770420836811771
+    "urterm": "نیلا",
+    "dist": 0.027300545957769082
+  },
+  {
+    "frterm": "bleu",
+    "urterm": "ہرا",
+    "dist": 0.17189495661459397
   },
   {
     "frterm": "bleucanard",
-    "urterm": "hara",
-    "dist": 0.08145533559359712
+    "urterm": "جامنی",
+    "dist": 0.24737862529269317
   },
   {
     "frterm": "bleucanard",
-    "urterm": "neela",
-    "dist": 0.13938969310882346
+    "urterm": "نیلا",
+    "dist": 0.13092027588198651
+  },
+  {
+    "frterm": "bleucanard",
+    "urterm": "ہرا",
+    "dist": 0.09028788620132505
   },
   {
     "frterm": "bleuciel",
-    "urterm": "hara",
-    "dist": 0.20277495449611915
+    "urterm": "جامنی",
+    "dist": 0.32626533875713676
   },
   {
     "frterm": "bleuciel",
-    "urterm": "neela",
-    "dist": 0.16488059124669247
+    "urterm": "نیلا",
+    "dist": 0.1695637685587115
+  },
+  {
+    "frterm": "bleuciel",
+    "urterm": "ہرا",
+    "dist": 0.17393706476708148
   },
   {
     "frterm": "bleuclair",
-    "urterm": "hara",
-    "dist": 0.19443637109680956
+    "urterm": "جامنی",
+    "dist": 0.32480770992308594
   },
   {
     "frterm": "bleuclair",
-    "urterm": "neela",
-    "dist": 0.15289197464284504
+    "urterm": "نیلا",
+    "dist": 0.16623000899150733
+  },
+  {
+    "frterm": "bleuclair",
+    "urterm": "ہرا",
+    "dist": 0.16765248397146493
   },
   {
     "frterm": "bleufonce",
-    "urterm": "hara",
-    "dist": 0.23828113200310322
+    "urterm": "جامنی",
+    "dist": 0.1278949434462749
   },
   {
     "frterm": "bleufonce",
-    "urterm": "neela",
-    "dist": 0.11256357691959186
+    "urterm": "نیلا",
+    "dist": 0.15386607168521968
+  },
+  {
+    "frterm": "bleufonce",
+    "urterm": "ہرا",
+    "dist": 0.2866608284850614
   },
   {
     "frterm": "bleugris",
-    "urterm": "hara",
-    "dist": 0.11959664498320678
+    "urterm": "جامنی",
+    "dist": 0.18375423069401253
   },
   {
     "frterm": "bleugris",
-    "urterm": "neela",
-    "dist": 0.08924529123250224
+    "urterm": "نیلا",
+    "dist": 0.0871184198779036
+  },
+  {
+    "frterm": "bleugris",
+    "urterm": "ہرا",
+    "dist": 0.13772171087284124
   },
   {
     "frterm": "bleumarine",
-    "urterm": "hara",
-    "dist": 0.23194962435777294
+    "urterm": "جامنی",
+    "dist": 0.12705988611412494
   },
   {
     "frterm": "bleumarine",
-    "urterm": "neela",
-    "dist": 0.09813087782930202
+    "urterm": "نیلا",
+    "dist": 0.13761376517227394
+  },
+  {
+    "frterm": "bleumarine",
+    "urterm": "ہرا",
+    "dist": 0.27517421562369343
   },
   {
     "frterm": "bleunuit",
-    "urterm": "hara",
-    "dist": 0.24516338507345323
+    "urterm": "جامنی",
+    "dist": 0.13145588260769528
   },
   {
     "frterm": "bleunuit",
-    "urterm": "neela",
-    "dist": 0.1505917058878946
+    "urterm": "نیلا",
+    "dist": 0.17087178923033677
+  },
+  {
+    "frterm": "bleunuit",
+    "urterm": "ہرا",
+    "dist": 0.289846439766661
   },
   {
     "frterm": "bleuroi",
-    "urterm": "hara",
-    "dist": 0.24438888768244088
+    "urterm": "جامنی",
+    "dist": 0.1404983387674116
   },
   {
     "frterm": "bleuroi",
-    "urterm": "neela",
-    "dist": 0.11267234613730548
+    "urterm": "نیلا",
+    "dist": 0.14102862284692766
+  },
+  {
+    "frterm": "bleuroi",
+    "urterm": "ہرا",
+    "dist": 0.27634489585986205
   },
   {
     "frterm": "bleuturquoise",
-    "urterm": "hara",
-    "dist": 0.10443458550500628
+    "urterm": "جامنی",
+    "dist": 0.3155915617110767
   },
   {
     "frterm": "bleuturquoise",
-    "urterm": "neela",
-    "dist": 0.13576573569961184
+    "urterm": "نیلا",
+    "dist": 0.14799718162072287
+  },
+  {
+    "frterm": "bleuturquoise",
+    "urterm": "ہرا",
+    "dist": 0.10014868619127716
   },
   {
     "frterm": "bordeau",
-    "urterm": "hara",
-    "dist": 0.23032922292075653
+    "urterm": "جامنی",
+    "dist": 0.0999510711813099
   },
   {
     "frterm": "bordeau",
-    "urterm": "neela",
-    "dist": 0.18819993379633848
+    "urterm": "نیلا",
+    "dist": 0.2604428342094901
+  },
+  {
+    "frterm": "bordeau",
+    "urterm": "ہرا",
+    "dist": 0.3493274007135035
   },
   {
     "frterm": "bordeaux",
-    "urterm": "hara",
-    "dist": 0.20171913095332844
+    "urterm": "جامنی",
+    "dist": 0.08163929825110389
   },
   {
     "frterm": "bordeaux",
-    "urterm": "neela",
-    "dist": 0.16521306786700746
+    "urterm": "نیلا",
+    "dist": 0.23050212889086505
+  },
+  {
+    "frterm": "bordeaux",
+    "urterm": "ہرا",
+    "dist": 0.3168644851165073
   },
   {
     "frterm": "brun",
-    "urterm": "hara",
-    "dist": 0.16434644097636306
+    "urterm": "جامنی",
+    "dist": 0.10954927528865507
   },
   {
     "frterm": "brun",
-    "urterm": "neela",
-    "dist": 0.15056181494294063
+    "urterm": "نیلا",
+    "dist": 0.16320646493388966
+  },
+  {
+    "frterm": "brun",
+    "urterm": "ہرا",
+    "dist": 0.22884342690609083
   },
   {
     "frterm": "cyan",
-    "urterm": "hara",
-    "dist": 0.12268434021630593
+    "urterm": "جامنی",
+    "dist": 0.33387166565394666
   },
   {
     "frterm": "cyan",
-    "urterm": "neela",
-    "dist": 0.14243645774335476
+    "urterm": "نیلا",
+    "dist": 0.17261616586492085
+  },
+  {
+    "frterm": "cyan",
+    "urterm": "ہرا",
+    "dist": 0.12724222420157932
   },
   {
     "frterm": "fuchsia",
-    "urterm": "hara",
-    "dist": 0.2097979596671601
+    "urterm": "جامنی",
+    "dist": 0.07457929346452975
   },
   {
     "frterm": "fuchsia",
-    "urterm": "neela",
-    "dist": 0.09961130623972045
+    "urterm": "نیلا",
+    "dist": 0.21658817054634988
+  },
+  {
+    "frterm": "fuchsia",
+    "urterm": "ہرا",
+    "dist": 0.3061410938304298
   },
   {
     "frterm": "gris",
-    "urterm": "hara",
-    "dist": 0.1077850689251337
+    "urterm": "جامنی",
+    "dist": 0.18388614665483755
   },
   {
     "frterm": "gris",
-    "urterm": "neela",
-    "dist": 0.1163851727799828
+    "urterm": "نیلا",
+    "dist": 0.1067336887311753
+  },
+  {
+    "frterm": "gris",
+    "urterm": "ہرا",
+    "dist": 0.12760241499031877
   },
   {
     "frterm": "indigo",
-    "urterm": "hara",
-    "dist": 0.22033457607531007
+    "urterm": "جامنی",
+    "dist": 0.0969893759337936
   },
   {
     "frterm": "indigo",
-    "urterm": "neela",
-    "dist": 0.07825047542563
+    "urterm": "نیلا",
+    "dist": 0.14461026618649797
+  },
+  {
+    "frterm": "indigo",
+    "urterm": "ہرا",
+    "dist": 0.2819607613633502
   },
   {
     "frterm": "jaune",
-    "urterm": "hara",
-    "dist": 0.12367938438777379
+    "urterm": "جامنی",
+    "dist": 0.3768893514198611
   },
   {
     "frterm": "jaune",
-    "urterm": "neela",
-    "dist": 0.27759932562733947
+    "urterm": "نیلا",
+    "dist": 0.2469642002809891
+  },
+  {
+    "frterm": "jaune",
+    "urterm": "ہرا",
+    "dist": 0.09835159098872423
   },
   {
     "frterm": "jaunemoutarde",
-    "urterm": "hara",
-    "dist": 0.09074991961604706
+    "urterm": "جامنی",
+    "dist": 0.3384270576198883
   },
   {
     "frterm": "jaunemoutarde",
-    "urterm": "neela",
-    "dist": 0.2557222320481856
+    "urterm": "نیلا",
+    "dist": 0.21874289723980755
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "urterm": "ہرا",
+    "dist": 0.06246209748202911
   },
   {
     "frterm": "kaki",
-    "urterm": "hara",
-    "dist": 0.08337487966341436
+    "urterm": "جامنی",
+    "dist": 0.2086828547226028
   },
   {
     "frterm": "kaki",
-    "urterm": "neela",
-    "dist": 0.14867826087769392
+    "urterm": "نیلا",
+    "dist": 0.13958565323608632
+  },
+  {
+    "frterm": "kaki",
+    "urterm": "ہرا",
+    "dist": 0.11130864921450226
   },
   {
     "frterm": "lavande",
-    "urterm": "hara",
-    "dist": 0.19393914862334366
+    "urterm": "جامنی",
+    "dist": 0.18566781283418457
   },
   {
     "frterm": "lavande",
-    "urterm": "neela",
-    "dist": 0.09810826646692292
+    "urterm": "نیلا",
+    "dist": 0.08401469869366185
+  },
+  {
+    "frterm": "lavande",
+    "urterm": "ہرا",
+    "dist": 0.19053497069922962
   },
   {
     "frterm": "lilas",
-    "urterm": "hara",
-    "dist": 0.19264451627082904
+    "urterm": "جامنی",
+    "dist": 0.05850331780970381
   },
   {
     "frterm": "lilas",
-    "urterm": "neela",
-    "dist": 0.0833980649173803
+    "urterm": "نیلا",
+    "dist": 0.13859513378360414
+  },
+  {
+    "frterm": "lilas",
+    "urterm": "ہرا",
+    "dist": 0.25746268964571845
   },
   {
     "frterm": "magenta",
-    "urterm": "hara",
-    "dist": 0.2085638969000679
+    "urterm": "جامنی",
+    "dist": 0.05957891623841734
   },
   {
     "frterm": "magenta",
-    "urterm": "neela",
-    "dist": 0.10130466156189195
+    "urterm": "نیلا",
+    "dist": 0.22321907608343744
+  },
+  {
+    "frterm": "magenta",
+    "urterm": "ہرا",
+    "dist": 0.3151155994087692
   },
   {
     "frterm": "marron",
-    "urterm": "hara",
-    "dist": 0.16563296489660168
+    "urterm": "جامنی",
+    "dist": 0.12506629722494703
   },
   {
     "frterm": "marron",
-    "urterm": "neela",
-    "dist": 0.15739306514607182
+    "urterm": "نیلا",
+    "dist": 0.16299946605655918
+  },
+  {
+    "frterm": "marron",
+    "urterm": "ہرا",
+    "dist": 0.22082863210762876
   },
   {
     "frterm": "mauve",
-    "urterm": "hara",
-    "dist": 0.20647848197940483
+    "urterm": "جامنی",
+    "dist": 0.06106174736393969
   },
   {
     "frterm": "mauve",
-    "urterm": "neela",
-    "dist": 0.08600561017233715
+    "urterm": "نیلا",
+    "dist": 0.14012573942698245
+  },
+  {
+    "frterm": "mauve",
+    "urterm": "ہرا",
+    "dist": 0.2602195366150874
   },
   {
     "frterm": "noir",
-    "urterm": "hara",
-    "dist": 0.2580995580834528
+    "urterm": "جامنی",
+    "dist": 0.14267609656229685
   },
   {
     "frterm": "noir",
-    "urterm": "neela",
-    "dist": 0.2068632596630298
+    "urterm": "نیلا",
+    "dist": 0.21502029792035027
+  },
+  {
+    "frterm": "noir",
+    "urterm": "ہرا",
+    "dist": 0.3006564967184068
   },
   {
     "frterm": "ocre",
-    "urterm": "hara",
-    "dist": 0.05489758169063465
+    "urterm": "جامنی",
+    "dist": 0.2086897126121847
   },
   {
     "frterm": "ocre",
-    "urterm": "neela",
-    "dist": 0.17000821118011317
+    "urterm": "نیلا",
+    "dist": 0.14766690769729268
+  },
+  {
+    "frterm": "ocre",
+    "urterm": "ہرا",
+    "dist": 0.10658491153556392
   },
   {
     "frterm": "orange",
-    "urterm": "hara",
-    "dist": 0.059482791132817556
+    "urterm": "جامنی",
+    "dist": 0.18044825479486915
   },
   {
     "frterm": "orange",
-    "urterm": "neela",
-    "dist": 0.18116466782483734
+    "urterm": "نیلا",
+    "dist": 0.1702995795622188
+  },
+  {
+    "frterm": "orange",
+    "urterm": "ہرا",
+    "dist": 0.1477511636122299
   },
   {
     "frterm": "pourpre",
-    "urterm": "hara",
-    "dist": 0.2116445664736057
+    "urterm": "جامنی",
+    "dist": 0.05638803571061644
   },
   {
     "frterm": "pourpre",
-    "urterm": "neela",
-    "dist": 0.11630547487145035
+    "urterm": "نیلا",
+    "dist": 0.22366503135549284
+  },
+  {
+    "frterm": "pourpre",
+    "urterm": "ہرا",
+    "dist": 0.3229185600928647
   },
   {
     "frterm": "prune",
-    "urterm": "hara",
-    "dist": 0.21674054717348942
+    "urterm": "جامنی",
+    "dist": 0.0726937408181886
   },
   {
     "frterm": "prune",
-    "urterm": "neela",
-    "dist": 0.16042653056583853
+    "urterm": "نیلا",
+    "dist": 0.21512363337709747
+  },
+  {
+    "frterm": "prune",
+    "urterm": "ہرا",
+    "dist": 0.31268393193141464
   },
   {
     "frterm": "rose",
-    "urterm": "hara",
-    "dist": 0.18433320237382864
+    "urterm": "جامنی",
+    "dist": 0.08579518472737838
   },
   {
     "frterm": "rose",
-    "urterm": "neela",
-    "dist": 0.08093345101878686
+    "urterm": "نیلا",
+    "dist": 0.19308518634083174
+  },
+  {
+    "frterm": "rose",
+    "urterm": "ہرا",
+    "dist": 0.27518235594931667
   },
   {
     "frterm": "rouge",
-    "urterm": "hara",
-    "dist": 0.1898415703234562
+    "urterm": "جامنی",
+    "dist": 0.0618365299002818
   },
   {
     "frterm": "rouge",
-    "urterm": "neela",
-    "dist": 0.15195057127147066
+    "urterm": "نیلا",
+    "dist": 0.20689526156330992
+  },
+  {
+    "frterm": "rouge",
+    "urterm": "ہرا",
+    "dist": 0.2906316000192405
   },
   {
     "frterm": "saumon",
-    "urterm": "hara",
-    "dist": 0.12040427226327949
+    "urterm": "جامنی",
+    "dist": 0.16841745396689264
   },
   {
     "frterm": "saumon",
-    "urterm": "neela",
-    "dist": 0.12106674131463244
+    "urterm": "نیلا",
+    "dist": 0.14107476247227554
+  },
+  {
+    "frterm": "saumon",
+    "urterm": "ہرا",
+    "dist": 0.16854884119508723
   },
   {
     "frterm": "taupe",
-    "urterm": "hara",
-    "dist": 0.11288938097520886
+    "urterm": "جامنی",
+    "dist": 0.17584165983233116
   },
   {
     "frterm": "taupe",
-    "urterm": "neela",
-    "dist": 0.127240634851474
+    "urterm": "نیلا",
+    "dist": 0.12110300439515365
+  },
+  {
+    "frterm": "taupe",
+    "urterm": "ہرا",
+    "dist": 0.13623044571409246
   },
   {
     "frterm": "turquoise",
-    "urterm": "hara",
-    "dist": 0.09965479850818673
+    "urterm": "جامنی",
+    "dist": 0.31431066908986
   },
   {
     "frterm": "turquoise",
-    "urterm": "neela",
-    "dist": 0.1531617735176942
+    "urterm": "نیلا",
+    "dist": 0.15198242429567804
+  },
+  {
+    "frterm": "turquoise",
+    "urterm": "ہرا",
+    "dist": 0.09232157312014462
   },
   {
     "frterm": "vert",
-    "urterm": "hara",
-    "dist": 0.04197395183420218
+    "urterm": "جامنی",
+    "dist": 0.31996794897668956
   },
   {
     "frterm": "vert",
-    "urterm": "neela",
-    "dist": 0.21371626571300648
+    "urterm": "نیلا",
+    "dist": 0.19641044409558261
+  },
+  {
+    "frterm": "vert",
+    "urterm": "ہرا",
+    "dist": 0.028822941305758205
   },
   {
     "frterm": "vertclair",
-    "urterm": "hara",
-    "dist": 0.12771397189605013
+    "urterm": "جامنی",
+    "dist": 0.39416944532958537
   },
   {
     "frterm": "vertclair",
-    "urterm": "neela",
-    "dist": 0.2795290115969987
+    "urterm": "نیلا",
+    "dist": 0.2591614761936239
+  },
+  {
+    "frterm": "vertclair",
+    "urterm": "ہرا",
+    "dist": 0.11167798163250531
   },
   {
     "frterm": "vertd'eau",
-    "urterm": "hara",
-    "dist": 0.07583812593553524
+    "urterm": "جامنی",
+    "dist": 0.3230205059107642
   },
   {
     "frterm": "vertd'eau",
-    "urterm": "neela",
-    "dist": 0.21267064973013244
+    "urterm": "نیلا",
+    "dist": 0.18751029410552617
+  },
+  {
+    "frterm": "vertd'eau",
+    "urterm": "ہرا",
+    "dist": 0.06335028502395301
   },
   {
     "frterm": "vertfluo",
-    "urterm": "hara",
-    "dist": 0.16350226122295675
+    "urterm": "جامنی",
+    "dist": 0.4184370153969162
   },
   {
     "frterm": "vertfluo",
-    "urterm": "neela",
-    "dist": 0.31475523010743567
+    "urterm": "نیلا",
+    "dist": 0.2919320283609488
+  },
+  {
+    "frterm": "vertfluo",
+    "urterm": "ہرا",
+    "dist": 0.1412374007405525
   },
   {
     "frterm": "vertfonce",
-    "urterm": "hara",
-    "dist": 0.10120030582907284
+    "urterm": "جامنی",
+    "dist": 0.22271214573051187
   },
   {
     "frterm": "vertfonce",
-    "urterm": "neela",
-    "dist": 0.16789147998251178
+    "urterm": "نیلا",
+    "dist": 0.154191971786988
+  },
+  {
+    "frterm": "vertfonce",
+    "urterm": "ہرا",
+    "dist": 0.12907426637366703
   },
   {
     "frterm": "vertforet",
-    "urterm": "hara",
-    "dist": 0.06828602453726697
+    "urterm": "جامنی",
+    "dist": 0.26726908213578504
   },
   {
     "frterm": "vertforet",
-    "urterm": "neela",
-    "dist": 0.1809850462053556
+    "urterm": "نیلا",
+    "dist": 0.17223436032940373
+  },
+  {
+    "frterm": "vertforet",
+    "urterm": "ہرا",
+    "dist": 0.08692387211989737
   },
   {
     "frterm": "vertkaki",
-    "urterm": "hara",
-    "dist": 0.09363456079664849
+    "urterm": "جامنی",
+    "dist": 0.19672514861674054
   },
   {
     "frterm": "vertkaki",
-    "urterm": "neela",
-    "dist": 0.1417709049630697
+    "urterm": "نیلا",
+    "dist": 0.1328594998287161
+  },
+  {
+    "frterm": "vertkaki",
+    "urterm": "ہرا",
+    "dist": 0.1226944458498818
   },
   {
     "frterm": "vertpale",
-    "urterm": "hara",
-    "dist": 0.1549522066187369
+    "urterm": "جامنی",
+    "dist": 0.4012560884924273
   },
   {
     "frterm": "vertpale",
-    "urterm": "neela",
-    "dist": 0.28639804113121237
+    "urterm": "نیلا",
+    "dist": 0.26272596340069354
+  },
+  {
+    "frterm": "vertpale",
+    "urterm": "ہرا",
+    "dist": 0.13144227641461945
   },
   {
     "frterm": "vertpomme",
-    "urterm": "hara",
-    "dist": 0.1297326611564776
+    "urterm": "جامنی",
+    "dist": 0.38575355815213797
   },
   {
     "frterm": "vertpomme",
-    "urterm": "neela",
-    "dist": 0.28042584630504586
+    "urterm": "نیلا",
+    "dist": 0.25695885856863543
+  },
+  {
+    "frterm": "vertpomme",
+    "urterm": "ہرا",
+    "dist": 0.10698455841900241
   },
   {
     "frterm": "vertsapin",
-    "urterm": "hara",
-    "dist": 0.08252246953162094
+    "urterm": "جامنی",
+    "dist": 0.23038258948334275
   },
   {
     "frterm": "vertsapin",
-    "urterm": "neela",
-    "dist": 0.16174821405311213
+    "urterm": "نیلا",
+    "dist": 0.14763583140060918
+  },
+  {
+    "frterm": "vertsapin",
+    "urterm": "ہرا",
+    "dist": 0.1091779139310153
   },
   {
     "frterm": "violet",
-    "urterm": "hara",
-    "dist": 0.22092249862191146
+    "urterm": "جامنی",
+    "dist": 0.025085514918665945
   },
   {
     "frterm": "violet",
-    "urterm": "neela",
-    "dist": 0.08580076127006976
+    "urterm": "نیلا",
+    "dist": 0.16743665829363275
+  },
+  {
+    "frterm": "violet",
+    "urterm": "ہرا",
+    "dist": 0.28993367230868494
   },
   {
     "frterm": "violetfonce",
-    "urterm": "hara",
-    "dist": 0.2295266571507902
+    "urterm": "جامنی",
+    "dist": 0.06290435451885498
   },
   {
     "frterm": "violetfonce",
-    "urterm": "neela",
-    "dist": 0.094235731026303
+    "urterm": "نیلا",
+    "dist": 0.1925964356598515
+  },
+  {
+    "frterm": "violetfonce",
+    "urterm": "ہرا",
+    "dist": 0.3177769483244627
   }
 ]

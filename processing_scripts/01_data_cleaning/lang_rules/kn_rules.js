@@ -1,0 +1,22 @@
+// Kannada (ಕನ್ನಡ)
+
+const excludeNames = [
+];
+
+const nameReplacingRules = [
+    [/kempu/, "ಕೆಂಪು"],
+
+    [/gulabi/, "ಗುಲಾಬಿ"],
+
+    [/neeli/, "ನೀಲಿ"],
+
+    [/nerale/, "ನೇರಳೆ"],
+
+    [/hasiru/, "ಹಸಿರು"]
+    
+];
+
+export default {
+    excludeNames: excludeNames,
+    nameReplacingRules: nameReplacingRules
+}
