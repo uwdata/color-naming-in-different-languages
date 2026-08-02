@@ -614,34 +614,27 @@ const allTableCols = [
 ]
 let tableCols = allTableCols
 
+function normalizeStringForSearch(str){
+    return str
+        .normalize("NFD")
+	    .replace(/\p{Diacritic}/gu, "")
+		.replace(/\s*$/,"") // trim white space
+        .replace(/^\s*/,"")
+        .replace(/[-_]+/g," ")
+        .replace(/\s+/g,"")
+}
 
-
-function searchMatch(term, searchStrings){
-    let matchAnySearch = false
-    for(let search of searchStrings){ // see if it matches any of the searches
-        // must match all parts in the search
-        // TODO: look for quoted sections
-        //.replace(/\s*[-_]\s*/, " ")
-        let matchAll = true
-        if(search.length > 0){
-            for(const searchPart of search){
-                // TODO: 
-                if(searchPart.length > 1 && 
-                    //only check language when more than one language selected
-                    (search_lang_abv != "allLang" || !term.lang.toLowerCase().normalize("NFC").includes(searchPart)) &&
-                    !term.commonName.normalize("NFC").includes(searchPart)
-                ){
-                    matchAll = false
-                }
-            }
-        } else { // search length was equal to 0
-            matchAll = false
-        }
-        if(matchAll){
-            matchAnySearch = true
-            return true
-        }
+function searchMatch(term, searchString){
+    if(search_lang_abv == "allLang" && term.normalizeStringForSearch(lang).includes(searchString)){
+        return true
     }
+
+    const normalized_simplified_term = normalizeStringForSearch(term.simplifiedName)
+    const normalized_common_name = normalizeStringForSearch(term.commonName)
+    if(normalized_simplified_term.includes(searchString) || normalized_common_name.includes(searchString)){
+        return true
+    }
+
     return false
 }
 
@@ -662,24 +655,18 @@ const updateFilteredData =
         
         
         // filter by search term
-        let new_search_str = $("#search-input").val()
-        new_search_str = new_search_str.toLowerCase().normalize("NFC")
+        const new_search_str =normalizeStringForSearch( $("#search-input").val())
 
         if(new_search_str != search_string || new_lang_abv != search_lang_abv){
 
             search_string = new_search_str
             search_lang_abv = new_lang_abv
 
-            const searchStrings = new_search_str.split(";").map(s => s.split(/\s+/))
-
-            // if there is a search, restrict results, otherwise show all
-            if(searchStrings.length > 1 || searchStrings[0].length > 0){
-                // if only an empty search, match all
-                if(searchStrings.length == 1 && searchStrings[0].length == 0){
-                    filteredColorInfo = allColorInfo
-                } else {
-                    filteredColorInfo = filteredColorInfo.filter((t) =>  searchMatch(t, searchStrings))
-                }
+            // if only an empty search, match all
+            if(!search_string || search_string.length == 0){
+                filteredColorInfo = filteredColorInfo
+            } else {
+                filteredColorInfo = filteredColorInfo.filter((t) =>  searchMatch(t, search_string))
             }
         } else {
             console.log("skipping search")
