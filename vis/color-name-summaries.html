@@ -56,6 +56,14 @@
       height:100%;
     }
 
+    .form-check {
+      padding-left:0.5rem
+    }
+
+    .form-check-inline {
+      margin-right: 0.5rem
+    }
+
     #data-view{
       height:100%
     }
@@ -139,7 +147,7 @@
   <!-- controls -->
   <div class="container" id="controlls">
     <div class="form-check form-check-inline" style="display: inline-flex;">
-      <input type="search" class="form-control" id="search-input" placeholder="Type to search" aria-label="Search">
+      <input type="search" class="form-control" id="search-input" placeholder="Type to search" aria-label="Search" size=15 >
        <!-- <div class="input-group-btn">
         <button id="search-help" title="search help" style="border:none;"
           aria-label="search help" class="btn btn-outline-secondary btn-sm p-1"
@@ -159,6 +167,14 @@
           </select> 
       </div>
     </div>
+
+    <div id="hide-non-pinned-control" class="form-check form-check-inline justify-content-center align-items-center flex-nowrap" style="padding-left: 1rem;">
+      <div class="small" style="max-width:500px;margin:auto;">
+        <input class="form-check-input" type="checkbox" name="metric" id="hide-non-pinned" value="hide-non-pinned">
+        <label class="form-label" for="ref_bins">Hide non-pinned</label> 
+      </div>
+    </div>
+
     <button id="settings" title="settings" 
       aria-label="settings" class="btn btn-outline-secondary btn-sm p-1"
       data-bs-toggle="modal" data-bs-target="#advanced_settings_modal"

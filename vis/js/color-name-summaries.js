@@ -73,7 +73,10 @@ for(const colorInfo of allColorInfo){
     }
 }
 
-let prev_selected_lang_abv = "ko"
+// get selected lang from url if there, otherwise default to Korean
+const initialUrlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
+const prev_selected_lang_abv = initialUrlParams.get("lang_abv") ? initialUrlParams.get("lang_abv") : "ko"
+
 $("#selected_langs").empty()
 $("#selected_langs").append(new Option("All languages", "allLang", true, false))
 for(const langAbv of Object.keys(langAbvToLang).sort()){
@@ -408,12 +411,79 @@ $("#loading-data-span").hide()
 //tmp solution
 let rgbSet = "both-hue-full"
 
-let sortColumnId = "fullNamePercent"
-let sortDirection = "down"
-let secondarySortColumnId = "hueNamePercent"
-let secondarySortDirection = "down"
+
+// default to URL param value
+
+if(initialUrlParams.get("hideNonPinned")){
+    $("#hide-non-pinned-control").show()
+    $("#hide-non-pinned").prop("checked", true)
+
+} else {
+    $("#hide-non-pinned-control").hide()
+    $("#hide-non-pinned").prop("checked", false)
+}
+
+let sortColumnId = initialUrlParams.get("sortColumnId") ? initialUrlParams.get("sortColumnId") : "fullNamePercent"
+let sortDirection = initialUrlParams.get("sortDirection") ? initialUrlParams.get("sortDirection") : "down"
+let secondarySortColumnId = initialUrlParams.get("secondarySortColumnId") ? initialUrlParams.get("secondarySortColumnId") : "hueNamePercent"
+let secondarySortDirection = initialUrlParams.get("secondarySortDirection") ? initialUrlParams.get("secondarySortDirection") : "down"
 let multipleLangsDisplayed = false
 let pinnedColorTerms = []
+if(initialUrlParams.get("pinnedColorTerms")){
+    try{
+        const urlPinnedColorTerms = JSON.parse(initialUrlParams.get("pinnedColorTerms"))
+        for(const urlPinnedColorTerm of urlPinnedColorTerms){
+            const colorInfo = allColorInfo.find(c => 
+                c.simplifiedName === urlPinnedColorTerm.simplifiedName && 
+                c.lang_abv === urlPinnedColorTerm.lang_abv
+            )
+            if(colorInfo){
+                pinnedColorTerms.push(colorInfo)
+            } else{
+                console.error("could not find color to pin: ", colorInfo)
+            }
+        }
+        if(pinnedColorTerms.length > 0){
+            $("#hide-non-pinned-control").show()
+        }
+    } catch (e) {
+        console.error("Error parsing URL params:", e)
+    }
+}
+
+let search_string
+let search_lang_abv
+
+function setUrlParams(){
+    const urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
+	urlParams.set("lang_abv", $("#selected_langs").val())
+    urlParams.set("sortColumnId", sortColumnId);
+    urlParams.set("sortDirection", sortDirection);
+    if(pinnedColorTerms.length > 0){
+        urlParams.set("pinnedColorTerms", 
+            JSON.stringify(
+                pinnedColorTerms.map(pc => { return {simplifiedName: pc.simplifiedName, lang_abv: pc.lang_abv}})
+            )
+        );
+    } else {
+        urlParams.delete("pinnedColorTerms")
+    }
+
+    if(secondarySortColumnId){
+        urlParams.set("secondarySortColumnId", secondarySortColumnId);
+        urlParams.set("secondarySortDirection", secondarySortDirection);
+    }else{
+        urlParams.delete("secondarySortColumnId");
+        urlParams.delete("secondarySortDirection");
+    }
+    if($("#hide-non-pinned").is(':checked')){
+         urlParams.set("hideNonPinned", true)
+    } else {
+        urlParams.delete("hideNonPinned");
+    }
+	
+	window.location.hash = urlParams.toString().replace("?", "");
+}
 
 function fullNamePercentCompare(a, b){
     const aTotalColorFraction = a.fullColorInfo ? a.fullColorInfo.tinyResBlurTermFraction : undefined
@@ -470,6 +540,15 @@ function pinToggleColorTerm(event){
     }else{
         pinnedColorTerms.push(colorTermData)
     }
+
+    if(pinnedColorTerms.length > 0){
+        $("#hide-non-pinned-control").show()
+    }else {
+        $("#hide-non-pinned-control").hide()
+        $("#hide-non-pinned").prop("checked", false)
+    }
+
+    setUrlParams()
 
     updateData()
 }
@@ -641,37 +720,45 @@ function searchMatch(term, searchString){
 }
 
 
-let search_string
-let search_lang_abv
-
 const updateFilteredData = 
     debounce(() => { // debounce updateFilteredData to keep it from updating too fast on searches and loading
-        // filter by language
+
         const new_lang_abv = $("#selected_langs").val()
         if(new_lang_abv == "allLang"){
-            filteredColorInfo = allColorInfo
             multipleLangsDisplayed = true
-        } else{
-            filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == new_lang_abv)
-        }
-        
-        
-        // filter by search term
-        const new_search_str =normalizeStringForSearch( $("#search-input").val())
-
-        if(new_search_str != search_string || new_lang_abv != search_lang_abv){
-
-            search_string = new_search_str
-            search_lang_abv = new_lang_abv
-
-            // if only an empty search, match all
-            if(!search_string || search_string.length == 0){
-                filteredColorInfo = filteredColorInfo
-            } else {
-                filteredColorInfo = filteredColorInfo.filter((t) =>  searchMatch(t, search_string))
-            }
         } else {
-            console.log("skipping search")
+            multipleLangsDisplayed = false
+        }
+
+        const hideNonPinned = $("#hide-non-pinned").is(':checked')
+        if(hideNonPinned){
+            filteredColorInfo = []
+        } else {
+            // filter by language
+            if(new_lang_abv == "allLang"){
+                filteredColorInfo = allColorInfo
+            } else{
+                filteredColorInfo = allColorInfo.filter((t) => t.lang_abv == new_lang_abv)
+            }
+            
+            
+            // filter by search term
+            const new_search_str =normalizeStringForSearch( $("#search-input").val())
+
+            if(new_search_str != search_string || new_lang_abv != search_lang_abv){
+
+                search_string = new_search_str
+                search_lang_abv = new_lang_abv
+
+                // if only an empty search, match all
+                if(!search_string || search_string.length == 0){
+                    filteredColorInfo = filteredColorInfo
+                } else {
+                    filteredColorInfo = filteredColorInfo.filter((t) =>  searchMatch(t, search_string))
+                }
+            } else {
+                console.log("skipping search")
+            }
         }
 
         // make sure all pinned colors are present
@@ -776,10 +863,15 @@ function updateTable(){
                     if(e.shiftKey || e.ctrlKey){ // shift or control for secondary sort
                         secondarySortColumnId = sortColumnId
                         secondarySortDirection = sortDirection
+                    } else {
+                        secondarySortColumnId = undefined
+                        secondarySortDirection = undefined
                     }
                     sortColumnId = d.id
                     sortDirection = d.defaultSortDirection == "up" ? "up" : "down"
                 }
+
+                setUrlParams()
                 sortFilteredData()
             }
         })
@@ -1633,9 +1725,16 @@ function updateFullColorBinSvg(fullBinSvg){
     return fullBinSvg
 }
 
+
+// intitalize values
+
+// clear search
+$("#search-input").val("")
+
 // handle update events
 
 $("#selected_langs").change(e => { 
+    setUrlParams()
     updateData()
 })
 
@@ -1652,3 +1751,8 @@ $("#hue_bins_in_circle").change(() => {
 $("#hue_bins_color_scale").change(() => {
     updateData()
 })
+
+$("#hide-non-pinned").change(() => {
+    setUrlParams()
+    updateFilteredData()
+  })
