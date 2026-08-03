@@ -423,6 +423,10 @@ if(initialUrlParams.get("hideNonPinned")){
     $("#hide-non-pinned").prop("checked", false)
 }
 
+const defaultBackgroundBrightness = 85
+let backgroundBrightness = initialUrlParams.get("backgroundBrightness") ? parseInt(initialUrlParams.get("backgroundBrightness")) : defaultBackgroundBrightness
+$("#background-brightness").val(backgroundBrightness)
+
 let sortColumnId = initialUrlParams.get("sortColumnId") ? initialUrlParams.get("sortColumnId") : "fullNamePercent"
 let sortDirection = initialUrlParams.get("sortDirection") ? initialUrlParams.get("sortDirection") : "down"
 let secondarySortColumnId = initialUrlParams.get("secondarySortColumnId") ? initialUrlParams.get("secondarySortColumnId") : "hueNamePercent"
@@ -480,6 +484,12 @@ function setUrlParams(){
          urlParams.set("hideNonPinned", true)
     } else {
         urlParams.delete("hideNonPinned");
+    }
+
+    if(backgroundBrightness !== defaultBackgroundBrightness){
+        urlParams.set("backgroundBrightness", backgroundBrightness)
+    }else{
+        urlParams.delete("backgroundBrightness");
     }
 	
 	window.location.hash = urlParams.toString().replace("?", "");
@@ -615,7 +625,7 @@ const allTableCols = [
         },
         formatter: (cell, row) => {
             return `
-                <div style="white-space:nowrap;cursor:pointer" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${row.lang_abv}" data-color-name="${nameToUnicode(row.simplifiedName)}">
+                <div style="white-space:nowrap;cursor:pointer; data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${row.lang_abv}" data-color-name="${nameToUnicode(row.simplifiedName)}">
                     ${rgbSet == "both-hue-full" || rgbSet == "full-data" ? `
                         <div
                             style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; display: inline-block; margin: 5px;
@@ -889,6 +899,7 @@ function updateTable(){
                 }))
             .join("td")
             .attr("class", "name-cell align-middle")
+            .style("background-color", `oklab(${escapeHTML(backgroundBrightness)}% 0 0)`)
     
     // for any cells with a d3 formatter use that
     const d3Formatters = tableCols.filter(tableCol => tableCol.d3Formatter).map(tableCol => tableCol.d3Formatter)
@@ -1709,6 +1720,7 @@ function updateFullColorBinSvg(fullBinSvg){
 
     binView.createOrUpdateColorTiles(fullBinSvg, {
         TILE_SEGMENT_OUTER_MARGIN_NUM: 0,
+        backgroundColor: `oklab(${escapeHTML(backgroundBrightness)}% 0 0)`,
         getTileScale: (b) => {
             const binData = fullData.find((d) => 
                 fullBinSize.type == "ring" ? 
@@ -1755,4 +1767,11 @@ $("#hue_bins_color_scale").change(() => {
 $("#hide-non-pinned").change(() => {
     setUrlParams()
     updateFilteredData()
-  })
+})
+
+
+$("#background-brightness").on("input", () => {
+    backgroundBrightness = $("#background-brightness").val()
+    setUrlParams()
+    updateTable()
+})
