@@ -410,6 +410,8 @@ let rgbSet = "both-hue-full"
 
 let sortColumnId = "fullNamePercent"
 let sortDirection = "down"
+let secondarySortColumnId = "hueNamePercent"
+let secondarySortDirection = "down"
 let multipleLangsDisplayed = false
 let pinnedColorTerms = []
 
@@ -690,8 +692,11 @@ function sortFilteredData(){
     if(!filteredColorInfo){
         return
     }
-    const sortColumn = tableCols.find((c) => c.id == sortColumnId)//tableCols[tableCols.length - 1]
+    const sortColumn = tableCols.find((c) => c.id == sortColumnId)
+    const secondarySortColumn = secondarySortColumnId ? tableCols.find((c) => c.id == secondarySortColumnId) : undefined
     const sortDirectionSign = sortDirection == "up" ? -1 : 1
+    const secondarySortDirectionSign = secondarySortDirection == "up" ? -1 : 1
+    
 
     //TODO: make pinned be first compare 
     sortedColorInfo = filteredColorInfo.sort((a, b) => {
@@ -702,10 +707,24 @@ function sortFilteredData(){
             return 1
         }
         // sort 1
-        return sortColumn.compare ? sortColumn.compare(a, b) * sortDirectionSign : 
+        const sort1Compare = sortColumn.compare ? sortColumn.compare(a, b) * sortDirectionSign : 
             a[sortColumn.key] < b[sortColumn.key] ? sortDirectionSign :
             a[sortColumn.key] > b[sortColumn.key] ? - sortDirectionSign:
-        1
+            0
+
+        if(sort1Compare !== 0){
+            return sort1Compare
+        }
+
+        // sort 2
+        if(secondarySortColumn){
+            return secondarySortColumn.compare ? secondarySortColumn.compare(a, b) * secondarySortDirectionSign : 
+            a[secondarySortColumn.key] < b[secondarySortColumn.key] ? secondarySortDirectionSign :
+            a[secondarySortColumn.key] > b[secondarySortColumn.key] ? - secondarySortDirectionSign:
+            0
+        } else {
+            return 0
+        }
     })
     updateTable()
 }
@@ -739,6 +758,10 @@ function updateTable(){
                             sortDirection == "up" ?
                                 `<i class="bi bi-sort-up fs-5 ms-1"></i>`:
                                 `<i class="bi bi-sort-down fs-5 ms-1"></i>` :
+                        secondarySortColumnId == d.id ? 
+                            secondarySortDirection == "up" ?
+                                `<i class="bi bi-sort-up text-body-secondary ms-1"></i>`:
+                                `<i class="bi bi-sort-down text-body-secondary ms-1"></i>` :
                             `<i class="bi bi-arrow-down-up text-body-tertiary ms-1" style="font-size: smaller"></i>`:
                     ""
                 }
@@ -750,6 +773,10 @@ function updateTable(){
                 if(sortColumnId == d.id){
                     sortDirection = sortDirection == "up" ? "down" : "up"
                 } else {
+                    if(e.shiftKey || e.ctrlKey){ // shift or control for secondary sort
+                        secondarySortColumnId = sortColumnId
+                        secondarySortDirection = sortDirection
+                    }
                     sortColumnId = d.id
                     sortDirection = d.defaultSortDirection == "up" ? "up" : "down"
                 }
