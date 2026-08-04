@@ -80,7 +80,9 @@ def job(lang1_lang2_terms):
 				print("Unexpected error: distance was 0 and high res not available for " +
 		  				lang1Term[TINY_RES_BIN]["term"], lang2Term[TINY_RES_BIN]["term"])
 				raise Exception("Unexpected error: distance was 0 and high res not available")
-			# TODO: Round to like 4 significant digits to not waste file space
+			
+			# Round to like 4 significant digits to not waste file space
+			returnval["dist"] = float(f"{returnval['dist']:.4f}")
 
 	except Exception as err:
 		print("error from thread" + mp.current_process().name)

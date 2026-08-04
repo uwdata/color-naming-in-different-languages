@@ -65,7 +65,11 @@ const nameReplacingRules = [
     [/jamuni/, "जामुनी"],
     [/jamani/, "जामुनी"],
 
-    [/rani/, "रानी"]
+    [/rani/, "रानी"],
+
+    [/gadha/, "गाढ़ा"],
+    [/gada/, "गाढ़ा"],
+    [/gaadha/, "गाढ़ा"]
 ];
 
 export default {

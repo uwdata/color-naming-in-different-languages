@@ -16,6 +16,8 @@ const nameReplacingRules = [
     [/bleur$/, "bleu$"],
     [/blue normal/, "bleu"],
 
+    [/bordeau$/, "bordeaux"],
+
     [/^canard/, "bleu canard"],
 
     [/^ciel/, "bleu ciel"],

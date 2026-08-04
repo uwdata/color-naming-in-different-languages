@@ -11,8 +11,11 @@ const nameReplacingRules = [
     [/neeli/, "ನೀಲಿ"],
 
     [/nerale/, "ನೇರಳೆ"],
+    [/neralae/, "ನೇರಳೆ"],
 
-    [/hasiru/, "ಹಸಿರು"]
+    [/hasiru/, "ಹಸಿರು"],
+
+    [/aakasha/, "ಆಕಾಶ"]
     
 ];
 

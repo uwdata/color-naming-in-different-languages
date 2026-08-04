@@ -18,12 +18,15 @@ const NO_BLUR = "no-blur"
 const BLUR = "blur"
 
 const MIN_FRACTION_BIN_HIGH_RES = 0.9
+const MIN_NUM_TERMS = 10
 
 //clear tmp folder from old translations
 for(const file of fs.readdirSync("temp")){
   //console.log("delete file? " + file)
   fs.rmSync("temp/"+ file)
 }
+
+const lang_info = await csv().fromFile(`../../model/lang_info.csv`)
 
 for(const blur of [NO_BLUR, BLUR]){
   let blur_text = ""
@@ -64,6 +67,13 @@ for(const blur of [NO_BLUR, BLUR]){
         .map(a => {return {key: a[0], values: a[1].map(b => {return{key: b[0], values: b[1]}}) }})
 
       grouped.forEach(g_lang => {
+
+        // make sure there are enough terms:
+        const thislangInfo = lang_info.find(d=> d.lang == g_lang.key)
+        if(thislangInfo && thislangInfo.numFullColorTerms < 10){
+          //console.log(`skipping lang ${g_lang.key} doesn't have at least 10 colors`)
+          return
+        }
 
         // we want to do use the high res bin, but we'll skip
         // high res bin if there is too low a fraction of bins (from not enough data)

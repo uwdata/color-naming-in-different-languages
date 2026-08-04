@@ -82,6 +82,7 @@ const nameReplacingRules = [
 
     [/marron/g, "maroon"],
     [/marroon/g, "maroon"],
+    [/mahroon/g, "maroon"],
 
     [/muave/g, "mauve"],
 

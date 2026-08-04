@@ -419,14 +419,18 @@ if(initialUrlParams.get("hideNonPinned")){
     $("#hide-non-pinned").prop("checked", false)
 }
 
-const defaultBackgroundBrightness = 85
+const defaultBackgroundBrightness = 95
 let backgroundBrightness = initialUrlParams.get("backgroundBrightness") ? parseInt(initialUrlParams.get("backgroundBrightness")) : defaultBackgroundBrightness
 $("#background-brightness").val(backgroundBrightness)
 
-let sortColumnId = initialUrlParams.get("sortColumnId") ? initialUrlParams.get("sortColumnId") : "fullNamePercent"
-let sortDirection = initialUrlParams.get("sortDirection") ? initialUrlParams.get("sortDirection") : "down"
-let secondarySortColumnId = initialUrlParams.get("secondarySortColumnId") ? initialUrlParams.get("secondarySortColumnId") : "hueNamePercent"
-let secondarySortDirection = initialUrlParams.get("secondarySortDirection") ? initialUrlParams.get("secondarySortDirection") : "down"
+const defaultSortColumnId = "fullNamePercent"
+const defaultSortDirection = "down"
+const defaultSecondarySortColumnId = "hueNamePercent"
+const defaultSecondarySortDirection = "down"
+let sortColumnId = initialUrlParams.get("sortColumnId") ? initialUrlParams.get("sortColumnId") : defaultSortColumnId
+let sortDirection = initialUrlParams.get("sortDirection") ? initialUrlParams.get("sortDirection") : defaultSortDirection
+let secondarySortColumnId = initialUrlParams.get("secondarySortColumnId") ? initialUrlParams.get("secondarySortColumnId") : defaultSecondarySortColumnId
+let secondarySortDirection = initialUrlParams.get("secondarySortDirection") ? initialUrlParams.get("secondarySortDirection") : defaultSecondarySortDirection
 let multipleLangsDisplayed = false
 let pinnedColorTerms = []
 if(initialUrlParams.get("pinnedColorTerms")){
@@ -457,8 +461,15 @@ let search_lang_abv
 function setUrlParams(){
     const urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
 	urlParams.set("lang_abv", $("#selected_langs").val())
-    urlParams.set("sortColumnId", sortColumnId);
-    urlParams.set("sortDirection", sortDirection);
+
+    if(sortColumnId != defaultSortColumnId || sortDirection != defaultSortDirection){
+        urlParams.set("sortColumnId", sortColumnId);
+        urlParams.set("sortDirection", sortDirection)
+    } else {
+        urlParams.delete("sortColumnId");
+        urlParams.delete("sortDirection");
+    }
+
     if(pinnedColorTerms.length > 0){
         urlParams.set("pinnedColorTerms", 
             JSON.stringify(
@@ -469,7 +480,7 @@ function setUrlParams(){
         urlParams.delete("pinnedColorTerms")
     }
 
-    if(secondarySortColumnId){
+    if(secondarySortColumnId && (defaultSecondarySortColumnId != secondarySortColumnId || defaultSecondarySortDirection != secondarySortDirection)){
         urlParams.set("secondarySortColumnId", secondarySortColumnId);
         urlParams.set("secondarySortDirection", secondarySortDirection);
     }else{

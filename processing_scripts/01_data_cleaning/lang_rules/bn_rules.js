@@ -6,6 +6,8 @@ const excludeNames = [
 
 const nameReplacingRules = [
     [/akashi/g, "আকাশি"],
+    [/আকাশী/g, "আকাশি"],
+
     [/kamala/g, "কমলা"],
 
     [/কাল$/, "কালো"],
@@ -24,6 +26,7 @@ const nameReplacingRules = [
     [/pink/g, "পিঙক"],
 
     [/badami/g, "বাদামি"],
+    [/বাদামী/g, "বাদামি"],
 
     [/beguni/g, "বেগুনি"],
 
@@ -33,13 +36,23 @@ const nameReplacingRules = [
     [/sobuj/g, "সবুজ"],
     [/shobuj/g, "সবুজ"],
     [/shobooj/g, "সবুজ"],
+    [/shoobooj/g, "সবুজ"],
+    [/sabuj/g, "সবুজ"],
+    [/sobuj/g, "সবুজ"],
     
     [/holud/g, "হলুদ"],
 
     [/halka/g, "হালকা"],
 
     [/magenda/g, "মেজেনটা"],
-    [/magenta/g, "মেজেনটা"]
+    [/magenta/g, "মেজেনটা"],
+    
+    [/pata/g, "পাতা"],
+
+    [/olive/g, "অলিভ"],
+
+    [/khoyeri/g, "খয়েরি"],
+    [/khoiri/g, "খয়েরি"]
 ];
 
 export default {
