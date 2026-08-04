@@ -319,7 +319,7 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
     // full color bins
     if(currentColorTermData.fullBinsData){
         $("#color_details_modal_full_bins").show()
-        //TODO: use d3 thing and remove this
+        
         const fullBinSvgSelect = d3.select("#color_details_modal_full_bins_view")
             .data([{row: currentColorTermData}])
         d3SvgUpdateFullColorBins(fullBinSvgSelect, true)
@@ -402,10 +402,6 @@ let allBothNamesByLang
 
 // create data table
 $("#loading-data-span").hide()
-//$("#data-table").append("<table>")
-
-// html scrolling table
-// https://stackoverflow.com/questions/17067294/html-table-with-100-width-with-vertical-scroll-inside-tbody
 
 
 //tmp solution
@@ -981,11 +977,27 @@ function refreshAllSvgs(){
 
 function refreshHueSvgs(){
     const isModal = ""
+
+    // Look up svg visibility separately (to avoid layout thrashing)
+    const hueBinVisibility = {}
+
     for(const hueColorSVG of $(`.hue-color-svg${isModal}`)){
+        const hueBinSvg = d3.select(hueColorSVG)
+        const langAbv = hueBinSvg.attr("data-lang")
+        const term = nameFromUnicode(hueBinSvg.attr("data-color-name"))
+
+        hueBinVisibility[langAbv + ";" + term] = isVisibleInViewport(hueBinSvg.node())
+    }
+
+    for(const hueColorSVG of $(`.hue-color-svg${isModal}`)){
+        const hueBinSvg = d3.select(hueColorSVG)
+        const langAbv = hueBinSvg.attr("data-lang")
+        const term = nameFromUnicode(hueBinSvg.attr("data-color-name"))
+
         if($("#hue_bins_in_circle").is(':checked')){
-            updateHueColorRingSvg(d3.select(hueColorSVG))
+            updateHueColorRingSvg(hueBinSvg, hueBinVisibility[langAbv + ";" + term])
         } else {
-            updateHueColorSvg(d3.select(hueColorSVG))
+            updateHueColorSvg(hueBinSvg, hueBinVisibility[langAbv + ";" + term])
         }
         
     }
@@ -993,8 +1005,24 @@ function refreshHueSvgs(){
 
 function refreshFullSvgs(){
     const isModal = ""
+
+    // Look up svg visibility separately (to avoid layout thrashing)
+    const fullBinVisibility = {}
     for(const fullColorSVG of $(`.full-color-svg${isModal}`)){
-        updateFullColorBinSvg(d3.select(fullColorSVG))
+        const fullBinSvg = d3.select(fullColorSVG)
+        const langAbv = fullBinSvg.attr("data-lang")
+        const term = nameFromUnicode(fullBinSvg.attr("data-color-name"))
+
+        fullBinVisibility[langAbv + ";" + term] = isVisibleInViewport(fullBinSvg.node())
+    }
+    
+    for(const fullColorSVG of $(`.full-color-svg${isModal}`)){
+         const fullBinSvg = d3.select(fullColorSVG)
+
+        const langAbv = fullBinSvg.attr("data-lang")
+        const term = nameFromUnicode(fullBinSvg.attr("data-color-name"))
+
+        updateFullColorBinSvg(fullBinSvg, fullBinVisibility[langAbv + ";" + term])
     }
 }
 
@@ -1011,7 +1039,7 @@ function d3SvgUpdateHueColor(d3selection, isModal, lineOrRing) {
 }
 
 
-function updateHueColorSvg(svg){
+function updateHueColorSvg(svg, isVisible){
     const langAbv = svg.attr("data-lang")
     const term = nameFromUnicode(svg.attr("data-color-name"))
     const width = svg.attr("width")
@@ -1028,7 +1056,7 @@ function updateHueColorSvg(svg){
     }
 
     // if svg not on screen, leave empty
-    if(!isVisibleInViewport(svg.node())){
+    if(!isVisible){
         svg.html("")
         return
     }
@@ -1387,10 +1415,22 @@ function d3SvgUpdateHueColorLine(d3selection, isModal) {
         d3selection.selectAll(".hue-color-spinner").remove()
     }
     
+    // Look up svg visibility separately (to avoid layout thrashing)}
+    const hueBinVisibility = {}
+    hueBinSvgs.each(function () {
+        const hueBinSvg = d3.select(this)
+        const langAbv = hueBinSvg.attr("data-lang")
+        const term = nameFromUnicode(hueBinSvg.attr("data-color-name"))
+  
+        hueBinVisibility[langAbv + ";" + term] = isVisibleInViewport(hueBinSvg.node())
+    })
+
     hueBinSvgs.each(function() {
         const hueBinSvg = d3.select(this)
+        const langAbv = hueBinSvg.attr("data-lang")
+        const term = nameFromUnicode(hueBinSvg.attr("data-color-name"))
 
-        updateHueColorSvg(hueBinSvg)
+        updateHueColorSvg(hueBinSvg, hueBinVisibility[langAbv + ";" + term])
 
         hueBinSvg.call(d3.drag()
             .on("drag", dragged)
@@ -1405,7 +1445,7 @@ function d3SvgUpdateHueColorLine(d3selection, isModal) {
     })
 }
 
-function updateHueColorRingSvg(svg){
+function updateHueColorRingSvg(svg, isVisible){
     const langAbv = svg.attr("data-lang")
     const term = nameFromUnicode(svg.attr("data-color-name"))
     const width = svg.attr("width")
@@ -1422,7 +1462,7 @@ function updateHueColorRingSvg(svg){
     }
 
     // if svg not on screen, leave empty
-    if(!isVisibleInViewport(svg.node())){
+    if(!isVisible){
         svg.html("")
         return
     }
@@ -1587,11 +1627,24 @@ function d3SvgUpdateHueColorRing(d3selection, isModal) {
     } else {
         d3selection.selectAll(".hue-color-spinner").remove()
     }
+
+    // Look up svg visibility separately (to avoid layout thrashing)}
+    const hueBinVisibility = {}
+    hueBinSvgs.each(function () {
+        const hueBinSvg = d3.select(this)
+        const langAbv = hueBinSvg.attr("data-lang")
+        const term = nameFromUnicode(hueBinSvg.attr("data-color-name"))
+  
+        hueBinVisibility[langAbv + ";" + term] = isVisibleInViewport(hueBinSvg.node())
+    })
+
     
     hueBinSvgs.each(function() {
         const hueBinSvg = d3.select(this)
+        const langAbv = hueBinSvg.attr("data-lang")
+        const term = nameFromUnicode(hueBinSvg.attr("data-color-name"))
 
-        updateHueColorRingSvg(hueBinSvg)
+        updateHueColorRingSvg(hueBinSvg, hueBinVisibility[langAbv + ";" + term])
     })
 }
 
@@ -1652,16 +1705,30 @@ function d3SvgUpdateFullColorBins(d3selection, isModal) {
     } else {
         d3selection.selectAll(".full-color-spinner").remove()
     }
+
+    // Look up svg visibility separately (to avoid layout thrashing)
+    const fullBinVisibility = {}
+    fullBinSvgs.each(function (d, i) {
+        const fullBinSvg = d3.select(this)
+        const langAbv = fullBinSvg.attr("data-lang")
+        const term = nameFromUnicode(fullBinSvg.attr("data-color-name"))
+
+        fullBinVisibility[langAbv + ";" + term] = isVisibleInViewport(fullBinSvg.node())
+    })
     
-    fullBinSvgs.each(function() {
+    fullBinSvgs.each(function(d, i) {
         const fullBinSvg = d3.select(this)
 
-        updateFullColorBinSvg(fullBinSvg)
+        const langAbv = fullBinSvg.attr("data-lang")
+        const term = nameFromUnicode(fullBinSvg.attr("data-color-name"))
+
+
+        updateFullColorBinSvg(fullBinSvg, fullBinVisibility[langAbv + ";" + term])
     })
 }
 
 
-function updateFullColorBinSvg(fullBinSvg){
+function updateFullColorBinSvg(fullBinSvg, isVisible){
 
     const langAbv = fullBinSvg.attr("data-lang")
     const term = nameFromUnicode(fullBinSvg.attr("data-color-name"))
@@ -1673,7 +1740,7 @@ function updateFullColorBinSvg(fullBinSvg){
     }
 
     // if svg not on screen, leave empty
-    if(!isVisibleInViewport(fullBinSvg.node())){
+    if(!isVisible){
         fullBinSvg.html("")
         return
     }
@@ -1722,6 +1789,8 @@ function updateFullColorBinSvg(fullBinSvg){
         TILE_SEGMENT_OUTER_MARGIN_NUM: 0,
         backgroundColor: `oklab(${escapeHTML(backgroundBrightness)}% 0 0)`,
         getTileScale: (b) => {
+            // TODO: Reorganize fullData as nested dictionaries to speed up this lookup
+            //    currently one of the bottlenecks slowing down the page
             const binData = fullData.find((d) => 
                 fullBinSize.type == "ring" ? 
                     b.l_bin == d.binL && b.c_bin == d.binC && b.h_bin == d.binH :
