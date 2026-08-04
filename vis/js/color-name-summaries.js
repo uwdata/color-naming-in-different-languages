@@ -632,7 +632,7 @@ const allTableCols = [
         },
         formatter: (cell, row) => {
             return `
-                <div style="white-space:nowrap;cursor:pointer; data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${row.lang_abv}" data-color-name="${nameToUnicode(row.simplifiedName)}">
+                <div style="white-space:nowrap;cursor:pointer;" data-bs-toggle="modal" data-bs-target="#color_details_modal" data-lang="${escapeHTML(row.lang_abv)}" data-color-name="${nameToUnicode(row.simplifiedName)}">
                     ${rgbSet == "both-hue-full" || rgbSet == "full-data" ? `
                         <div
                             style="height:${cellHeight/2}px; width: ${cellHeight/2}px; border-radius: ${cellHeight/4}px; display: inline-block; margin: 5px;
