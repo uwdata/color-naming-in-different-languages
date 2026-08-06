@@ -833,6 +833,10 @@ function sortFilteredData(){
     updateTable()
 }
 
+// TODO: Perhaps put table rows into groups of 20 or something, and only display when on screen
+//     (to make table drawing more efficient)
+
+// Also: todo: set table background once, rather than per-cell (header background once as well?)
 function updateTable(){
 
     if(!sortedColorInfo){
@@ -845,7 +849,7 @@ function updateTable(){
         tableCols = allTableCols.filter(c => !c.hideForOneLanguage)
     }
     
-    const headerRow = d3.select("#data-table thead tr")
+    const headerRow = d3.select("#data-table").selectAll("thead tr")
     headerRow.selectAll(".table-headers")
         .data(tableCols)
         .join("th")
@@ -894,7 +898,7 @@ function updateTable(){
         })
 
 
-    const tableBody = d3.select("#data-table tbody")
+    const tableBody = d3.select("#data-table").selectAll("tbody")
     const nameRows = tableBody.selectAll(".name-row")
         .data(sortedColorInfo)
         .join("tr")
@@ -921,6 +925,16 @@ function updateTable(){
                 .html((d) => {
             return d.tableCol.formatter ? d.tableCol.formatter(d.cell, d.row) : d.cell
         })
+
+
+    // display the show-non-pinned-colors button if that is relevant
+    if(pinnedColorTerms.length > 0 && $("#hide-non-pinned").is(':checked')){
+        // move button to last place
+        $("#show-non-bin-table-td").attr("colspan", tableCols.length)
+        $('#show-non-bin-table-button').show()
+    } else {
+        $('#show-non-bin-table-button').hide()
+    }
 }
 
 function updateData() {
@@ -1845,6 +1859,12 @@ $("#hue_bins_color_scale").change(() => {
 })
 
 $("#hide-non-pinned").change(() => {
+    setUrlParams()
+    updateFilteredData()
+})
+
+$("#show-non-bin-table-button").on("click", () => {
+    $("#hide-non-pinned").prop("checked", false)
     setUrlParams()
     updateFilteredData()
 })
