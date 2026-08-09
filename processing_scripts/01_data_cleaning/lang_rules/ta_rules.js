@@ -34,6 +34,9 @@ const nameReplacingRules = [
 
     [/neelam/, "நீலம்"],
     [/nelam/, "நீலம்"],
+    [/neela/, "நீலம்"],
+    [/neelo/, "நீலம்"],
+    [/nela/, "நீலம்"],
 
     [/pull pachai/, "புல் பச்சை"],
 
@@ -65,7 +68,9 @@ const nameReplacingRules = [
     [/sambal/, "சாம்பல்"],
     [/saambal/, "சாம்பல்"],
 
-    [/velir/, "வெளிர்"]
+    [/velir/, "வெளிர்"],
+
+    [/kaavi/, "காவி"]
 ];
 
 export default {

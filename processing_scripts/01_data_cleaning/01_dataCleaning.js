@@ -250,7 +250,7 @@ cleanedData.forEach(d => {
   delete d.cn_i
   cleanedWriter.write(d);
 
-  const langAbv = d.langAbv ? d.langAbv : d.lang 
+  const langAbv = d.langAbv ? d.langAbv : d.lang.toLowerCase()
 
   if(!(langAbv in cleanedWritersByLang)){
     const cleanedWriterByLangTmp = csvWriter({headers: csvColumnOrder});

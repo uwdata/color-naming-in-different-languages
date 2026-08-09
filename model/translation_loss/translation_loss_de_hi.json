@@ -1,18 +1,28 @@
 [
   {
     "determ": "altrosa",
+    "hiterm": "आसमानी",
+    "dist": 0.2499
+  },
+  {
+    "determ": "altrosa",
     "hiterm": "काला",
-    "dist": 0.5733
+    "dist": 0.5764
+  },
+  {
+    "determ": "altrosa",
+    "hiterm": "गहरानीला",
+    "dist": 0.4962
   },
   {
     "determ": "altrosa",
     "hiterm": "गहराहरा",
-    "dist": 0.3734
+    "dist": 0.3813
   },
   {
     "determ": "altrosa",
     "hiterm": "गाढाहरा",
-    "dist": 0.2444
+    "dist": 0.2442
   },
   {
     "determ": "altrosa",
@@ -22,437 +32,527 @@
   {
     "determ": "altrosa",
     "hiterm": "जामुनी",
-    "dist": 0.2867
+    "dist": 0.2841
   },
   {
     "determ": "altrosa",
     "hiterm": "नारंगी",
-    "dist": 0.1274
+    "dist": 0.1266
   },
   {
     "determ": "altrosa",
     "hiterm": "नीला",
-    "dist": 0.2977
+    "dist": 0.2995
   },
   {
     "determ": "altrosa",
     "hiterm": "पीला",
+    "dist": 0.2357
+  },
+  {
+    "determ": "altrosa",
+    "hiterm": "बैंगनी",
+    "dist": 0.2799
+  },
+  {
+    "determ": "altrosa",
+    "hiterm": "भूरा",
+    "dist": 0.2923
+  },
+  {
+    "determ": "altrosa",
+    "hiterm": "रानी",
+    "dist": 0.2944
+  },
+  {
+    "determ": "altrosa",
+    "hiterm": "लाल",
+    "dist": 0.2612
+  },
+  {
+    "determ": "altrosa",
+    "hiterm": "हरा",
     "dist": 0.2352
   },
   {
     "determ": "altrosa",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.0937
+  },
+  {
+    "determ": "altrosa",
+    "hiterm": "हलकाहरा",
+    "dist": 0.2118
+  },
+  {
+    "determ": "beige",
+    "hiterm": "आसमानी",
+    "dist": 0.1625
+  },
+  {
+    "determ": "beige",
+    "hiterm": "काला",
+    "dist": 0.7198
+  },
+  {
+    "determ": "beige",
+    "hiterm": "गहरानीला",
+    "dist": 0.6451
+  },
+  {
+    "determ": "beige",
+    "hiterm": "गहराहरा",
+    "dist": 0.4888
+  },
+  {
+    "determ": "beige",
+    "hiterm": "गाढाहरा",
+    "dist": 0.333
+  },
+  {
+    "determ": "beige",
+    "hiterm": "गुलाबी",
+    "dist": 0.3112
+  },
+  {
+    "determ": "beige",
+    "hiterm": "जामुनी",
+    "dist": 0.4572
+  },
+  {
+    "determ": "beige",
+    "hiterm": "नारंगी",
+    "dist": 0.1681
+  },
+  {
+    "determ": "beige",
+    "hiterm": "नीला",
+    "dist": 0.4054
+  },
+  {
+    "determ": "beige",
+    "hiterm": "पीला",
+    "dist": 0.1068
+  },
+  {
+    "determ": "beige",
     "hiterm": "बैंगनी",
+    "dist": 0.4457
+  },
+  {
+    "determ": "beige",
+    "hiterm": "भूरा",
+    "dist": 0.4421
+  },
+  {
+    "determ": "beige",
+    "hiterm": "रानी",
+    "dist": 0.4696
+  },
+  {
+    "determ": "beige",
+    "hiterm": "लाल",
+    "dist": 0.4232
+  },
+  {
+    "determ": "beige",
+    "hiterm": "हरा",
+    "dist": 0.2244
+  },
+  {
+    "determ": "beige",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2402
+  },
+  {
+    "determ": "beige",
+    "hiterm": "हलकाहरा",
+    "dist": 0.0833
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "आसमानी",
+    "dist": 0.16
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "काला",
+    "dist": 0.6155
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.5432
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "गहराहरा",
+    "dist": 0.3732
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.2204
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "गुलाबी",
+    "dist": 0.3078
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "जामुनी",
+    "dist": 0.3809
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "नारंगी",
+    "dist": 0.1706
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "नीला",
+    "dist": 0.3213
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "पीला",
+    "dist": 0.1565
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "बैंगनी",
+    "dist": 0.3793
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "भूरा",
+    "dist": 0.3546
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "रानी",
+    "dist": 0.3968
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "लाल",
+    "dist": 0.3541
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "हरा",
+    "dist": 0.1401
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1979
+  },
+  {
+    "determ": "blassgrun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.1034
+  },
+  {
+    "determ": "blau",
+    "hiterm": "आसमानी",
+    "dist": 0.3408
+  },
+  {
+    "determ": "blau",
+    "hiterm": "काला",
+    "dist": 0.4479
+  },
+  {
+    "determ": "blau",
+    "hiterm": "गहरानीला",
+    "dist": 0.3135
+  },
+  {
+    "determ": "blau",
+    "hiterm": "गहराहरा",
+    "dist": 0.3212
+  },
+  {
+    "determ": "blau",
+    "hiterm": "गाढाहरा",
+    "dist": 0.2846
+  },
+  {
+    "determ": "blau",
+    "hiterm": "गुलाबी",
+    "dist": 0.2893
+  },
+  {
+    "determ": "blau",
+    "hiterm": "जामुनी",
+    "dist": 0.2274
+  },
+  {
+    "determ": "blau",
+    "hiterm": "नारंगी",
+    "dist": 0.3936
+  },
+  {
+    "determ": "blau",
+    "hiterm": "नीला",
+    "dist": 0.063
+  },
+  {
+    "determ": "blau",
+    "hiterm": "पीला",
+    "dist": 0.4674
+  },
+  {
+    "determ": "blau",
+    "hiterm": "बैंगनी",
+    "dist": 0.1891
+  },
+  {
+    "determ": "blau",
+    "hiterm": "भूरा",
+    "dist": 0.2997
+  },
+  {
+    "determ": "blau",
+    "hiterm": "रानी",
+    "dist": 0.2916
+  },
+  {
+    "determ": "blau",
+    "hiterm": "लाल",
+    "dist": 0.3282
+  },
+  {
+    "determ": "blau",
+    "hiterm": "हरा",
+    "dist": 0.3244
+  },
+  {
+    "determ": "blau",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2195
+  },
+  {
+    "determ": "blau",
+    "hiterm": "हलकाहरा",
+    "dist": 0.3988
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "आसमानी",
+    "dist": 0.2709
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "काला",
+    "dist": 0.4569
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "गहरानीला",
+    "dist": 0.3781
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "गहराहरा",
+    "dist": 0.2467
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "गाढाहरा",
+    "dist": 0.1316
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "गुलाबी",
+    "dist": 0.248
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "जामुनी",
+    "dist": 0.217
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "नारंगी",
+    "dist": 0.2329
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "नीला",
+    "dist": 0.1931
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "पीला",
+    "dist": 0.3115
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "बैंगनी",
+    "dist": 0.2151
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "भूरा",
+    "dist": 0.2059
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "रानी",
+    "dist": 0.2382
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "लाल",
+    "dist": 0.2218
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "हरा",
+    "dist": 0.1624
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1391
+  },
+  {
+    "determ": "blaugrau",
+    "hiterm": "हलकाहरा",
+    "dist": 0.2568
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "आसमानी",
+    "dist": 0.2534
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "काला",
+    "dist": 0.4775
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.3958
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "गहराहरा",
+    "dist": 0.2426
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.151
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "गुलाबी",
+    "dist": 0.3439
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "जामुनी",
+    "dist": 0.2936
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "नारंगी",
+    "dist": 0.2971
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "नीला",
+    "dist": 0.2299
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "पीला",
+    "dist": 0.3254
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "बैंगनी",
+    "dist": 0.303
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "भूरा",
+    "dist": 0.2818
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "रानी",
+    "dist": 0.3298
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "लाल",
+    "dist": 0.3165
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "हरा",
+    "dist": 0.1794
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2269
+  },
+  {
+    "determ": "blaugrun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.2583
+  },
+  {
+    "determ": "braun",
+    "hiterm": "आसमानी",
+    "dist": 0.4434
+  },
+  {
+    "determ": "braun",
+    "hiterm": "काला",
+    "dist": 0.3374
+  },
+  {
+    "determ": "braun",
+    "hiterm": "गहरानीला",
+    "dist": 0.3214
+  },
+  {
+    "determ": "braun",
+    "hiterm": "गहराहरा",
+    "dist": 0.167
+  },
+  {
+    "determ": "braun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.1381
+  },
+  {
+    "determ": "braun",
+    "hiterm": "गुलाबी",
+    "dist": 0.3427
+  },
+  {
+    "determ": "braun",
+    "hiterm": "जामुनी",
+    "dist": 0.1959
+  },
+  {
+    "determ": "braun",
+    "hiterm": "नारंगी",
     "dist": 0.2909
   },
   {
-    "determ": "altrosa",
-    "hiterm": "भूरा",
-    "dist": 0.2956
-  },
-  {
-    "determ": "altrosa",
-    "hiterm": "लाल",
-    "dist": 0.2609
-  },
-  {
-    "determ": "altrosa",
-    "hiterm": "हरा",
-    "dist": 0.2387
-  },
-  {
-    "determ": "altrosa",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.1026
-  },
-  {
-    "determ": "altrosa",
-    "hiterm": "हलकाहरा",
-    "dist": 0.2215
-  },
-  {
-    "determ": "beige",
-    "hiterm": "काला",
-    "dist": 0.7146
-  },
-  {
-    "determ": "beige",
-    "hiterm": "गहराहरा",
-    "dist": 0.4873
-  },
-  {
-    "determ": "beige",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3326
-  },
-  {
-    "determ": "beige",
-    "hiterm": "गुलाबी",
-    "dist": 0.3109
-  },
-  {
-    "determ": "beige",
-    "hiterm": "जामुनी",
-    "dist": 0.4575
-  },
-  {
-    "determ": "beige",
-    "hiterm": "नारंगी",
-    "dist": 0.1655
-  },
-  {
-    "determ": "beige",
-    "hiterm": "नीला",
-    "dist": 0.3926
-  },
-  {
-    "determ": "beige",
-    "hiterm": "पीला",
-    "dist": 0.1041
-  },
-  {
-    "determ": "beige",
-    "hiterm": "बैंगनी",
-    "dist": 0.4552
-  },
-  {
-    "determ": "beige",
-    "hiterm": "भूरा",
-    "dist": 0.444
-  },
-  {
-    "determ": "beige",
-    "hiterm": "लाल",
-    "dist": 0.4218
-  },
-  {
-    "determ": "beige",
-    "hiterm": "हरा",
-    "dist": 0.2296
-  },
-  {
-    "determ": "beige",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2438
-  },
-  {
-    "determ": "beige",
-    "hiterm": "हलकाहरा",
-    "dist": 0.0701
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "काला",
-    "dist": 0.6105
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "गहराहरा",
-    "dist": 0.3713
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.2207
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "गुलाबी",
-    "dist": 0.3065
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "जामुनी",
-    "dist": 0.3819
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "नारंगी",
-    "dist": 0.1692
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "नीला",
-    "dist": 0.3107
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "पीला",
-    "dist": 0.156
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "बैंगनी",
-    "dist": 0.3867
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "भूरा",
-    "dist": 0.3564
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "लाल",
-    "dist": 0.3525
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "हरा",
-    "dist": 0.1439
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.1932
-  },
-  {
-    "determ": "blassgrun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.1176
-  },
-  {
-    "determ": "blau",
-    "hiterm": "काला",
-    "dist": 0.4439
-  },
-  {
-    "determ": "blau",
-    "hiterm": "गहराहरा",
-    "dist": 0.3098
-  },
-  {
-    "determ": "blau",
-    "hiterm": "गाढाहरा",
-    "dist": 0.2831
-  },
-  {
-    "determ": "blau",
-    "hiterm": "गुलाबी",
-    "dist": 0.2876
-  },
-  {
-    "determ": "blau",
-    "hiterm": "जामुनी",
-    "dist": 0.2229
-  },
-  {
-    "determ": "blau",
-    "hiterm": "नारंगी",
-    "dist": 0.3929
-  },
-  {
-    "determ": "blau",
-    "hiterm": "नीला",
-    "dist": 0.0741
-  },
-  {
-    "determ": "blau",
-    "hiterm": "पीला",
-    "dist": 0.4664
-  },
-  {
-    "determ": "blau",
-    "hiterm": "बैंगनी",
-    "dist": 0.192
-  },
-  {
-    "determ": "blau",
-    "hiterm": "भूरा",
-    "dist": 0.2992
-  },
-  {
-    "determ": "blau",
-    "hiterm": "लाल",
-    "dist": 0.3265
-  },
-  {
-    "determ": "blau",
-    "hiterm": "हरा",
-    "dist": 0.3204
-  },
-  {
-    "determ": "blau",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2061
-  },
-  {
-    "determ": "blau",
-    "hiterm": "हलकाहरा",
-    "dist": 0.4165
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "काला",
-    "dist": 0.4635
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "गहराहरा",
-    "dist": 0.2488
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "गाढाहरा",
-    "dist": 0.1353
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "गुलाबी",
-    "dist": 0.2428
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "जामुनी",
-    "dist": 0.226
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "नारंगी",
-    "dist": 0.2239
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "नीला",
-    "dist": 0.1904
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "पीला",
-    "dist": 0.3022
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "बैंगनी",
-    "dist": 0.2293
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "भूरा",
-    "dist": 0.2171
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "लाल",
-    "dist": 0.2263
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "हरा",
-    "dist": 0.1559
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.1226
-  },
-  {
-    "determ": "blaugrau",
-    "hiterm": "हलकाहरा",
-    "dist": 0.2696
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "काला",
-    "dist": 0.4729
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "गहराहरा",
-    "dist": 0.2456
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.1516
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "गुलाबी",
-    "dist": 0.3421
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "जामुनी",
-    "dist": 0.2952
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "नारंगी",
-    "dist": 0.2959
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "नीला",
-    "dist": 0.2294
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "पीला",
-    "dist": 0.3247
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "बैंगनी",
-    "dist": 0.3074
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "भूरा",
-    "dist": 0.2812
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "लाल",
-    "dist": 0.315
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "हरा",
-    "dist": 0.1775
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2158
-  },
-  {
-    "determ": "blaugrun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.2819
-  },
-  {
-    "determ": "braun",
-    "hiterm": "काला",
-    "dist": 0.3344
-  },
-  {
-    "determ": "braun",
-    "hiterm": "गहराहरा",
-    "dist": 0.1549
-  },
-  {
-    "determ": "braun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.1344
-  },
-  {
-    "determ": "braun",
-    "hiterm": "गुलाबी",
-    "dist": 0.341
-  },
-  {
-    "determ": "braun",
-    "hiterm": "जामुनी",
-    "dist": 0.2029
-  },
-  {
-    "determ": "braun",
-    "hiterm": "नारंगी",
-    "dist": 0.2901
-  },
-  {
     "determ": "braun",
     "hiterm": "नीला",
-    "dist": 0.3116
+    "dist": 0.3096
   },
   {
     "determ": "braun",
@@ -462,252 +562,312 @@
   {
     "determ": "braun",
     "hiterm": "बैंगनी",
-    "dist": 0.2566
+    "dist": 0.2567
   },
   {
     "determ": "braun",
     "hiterm": "भूरा",
-    "dist": 0.0628
+    "dist": 0.0599
+  },
+  {
+    "determ": "braun",
+    "hiterm": "रानी",
+    "dist": 0.1615
   },
   {
     "determ": "braun",
     "hiterm": "लाल",
+    "dist": 0.1134
+  },
+  {
+    "determ": "braun",
+    "hiterm": "हरा",
+    "dist": 0.2664
+  },
+  {
+    "determ": "braun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2847
+  },
+  {
+    "determ": "braun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.385
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "आसमानी",
+    "dist": 0.5755
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "काला",
+    "dist": 0.2553
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "गहरानीला",
+    "dist": 0.0884
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "गहराहरा",
+    "dist": 0.2878
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3773
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "गुलाबी",
+    "dist": 0.4618
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "जामुनी",
+    "dist": 0.2431
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "नारंगी",
+    "dist": 0.5608
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "नीला",
+    "dist": 0.2418
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "पीला",
+    "dist": 0.6603
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "बैंगनी",
+    "dist": 0.2425
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "भूरा",
+    "dist": 0.3121
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "रानी",
+    "dist": 0.2823
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "लाल",
+    "dist": 0.3565
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "हरा",
+    "dist": 0.4792
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.4217
+  },
+  {
+    "determ": "dunkelblau",
+    "hiterm": "हलकाहरा",
+    "dist": 0.6022
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "आसमानी",
+    "dist": 0.6178
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "काला",
+    "dist": 0.1726
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "गहरानीला",
+    "dist": 0.2162
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "गहराहरा",
+    "dist": 0.2213
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3155
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "गुलाबी",
+    "dist": 0.4614
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "जामुनी",
+    "dist": 0.2194
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "नारंगी",
+    "dist": 0.4783
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "नीला",
+    "dist": 0.3868
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "पीला",
+    "dist": 0.5986
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "बैंगनी",
+    "dist": 0.2927
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "भूरा",
+    "dist": 0.1705
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "रानी",
+    "dist": 0.1825
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "लाल",
+    "dist": 0.207
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "हरा",
+    "dist": 0.4525
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.4338
+  },
+  {
+    "determ": "dunkelbraun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.5785
+  },
+  {
+    "determ": "dunkelgrau",
+    "hiterm": "आसमानी",
+    "dist": 0.4861
+  },
+  {
+    "determ": "dunkelgrau",
+    "hiterm": "काला",
+    "dist": 0.2317
+  },
+  {
+    "determ": "dunkelgrau",
+    "hiterm": "गहरानीला",
+    "dist": 0.1911
+  },
+  {
+    "determ": "dunkelgrau",
+    "hiterm": "गहराहरा",
     "dist": 0.1139
   },
   {
-    "determ": "braun",
-    "hiterm": "हरा",
-    "dist": 0.2611
-  },
-  {
-    "determ": "braun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2759
-  },
-  {
-    "determ": "braun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.4073
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "काला",
-    "dist": 0.2533
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "गहराहरा",
-    "dist": 0.2766
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3755
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "गुलाबी",
-    "dist": 0.4601
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "जामुनी",
-    "dist": 0.239
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "नारंगी",
-    "dist": 0.5607
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "नीला",
-    "dist": 0.256
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "पीला",
-    "dist": 0.6599
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "बैंगनी",
-    "dist": 0.232
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "भूरा",
-    "dist": 0.3089
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "लाल",
-    "dist": 0.3556
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "हरा",
-    "dist": 0.472
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.4095
-  },
-  {
-    "determ": "dunkelblau",
-    "hiterm": "हलकाहरा",
-    "dist": 0.6245
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "काला",
-    "dist": 0.1699
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "गहराहरा",
-    "dist": 0.2095
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3149
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "गुलाबी",
-    "dist": 0.4612
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "जामुनी",
-    "dist": 0.2272
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "नारंगी",
-    "dist": 0.4796
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "नीला",
-    "dist": 0.3977
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "पीला",
-    "dist": 0.6007
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "बैंगनी",
-    "dist": 0.2879
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "भूरा",
-    "dist": 0.1687
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "लाल",
-    "dist": 0.2074
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "हरा",
-    "dist": 0.4481
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.4266
-  },
-  {
-    "determ": "dunkelbraun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.6033
-  },
-  {
-    "determ": "dunkelgrau",
-    "hiterm": "काला",
-    "dist": 0.2284
-  },
-  {
-    "determ": "dunkelgrau",
-    "hiterm": "गहराहरा",
-    "dist": 0.0932
-  },
-  {
     "determ": "dunkelgrau",
     "hiterm": "गाढाहरा",
-    "dist": 0.197
+    "dist": 0.2002
   },
   {
     "determ": "dunkelgrau",
     "hiterm": "गुलाबी",
-    "dist": 0.3905
+    "dist": 0.3927
   },
   {
     "determ": "dunkelgrau",
     "hiterm": "जामुनी",
-    "dist": 0.1746
+    "dist": 0.1695
   },
   {
     "determ": "dunkelgrau",
     "hiterm": "नारंगी",
-    "dist": 0.4045
+    "dist": 0.4055
   },
   {
     "determ": "dunkelgrau",
     "hiterm": "नीला",
-    "dist": 0.2678
+    "dist": 0.2612
   },
   {
     "determ": "dunkelgrau",
     "hiterm": "पीला",
-    "dist": 0.5059
+    "dist": 0.5065
   },
   {
     "determ": "dunkelgrau",
     "hiterm": "बैंगनी",
-    "dist": 0.2113
+    "dist": 0.2164
   },
   {
     "determ": "dunkelgrau",
     "hiterm": "भूरा",
-    "dist": 0.1267
+    "dist": 0.1302
+  },
+  {
+    "determ": "dunkelgrau",
+    "hiterm": "रानी",
+    "dist": 0.1716
   },
   {
     "determ": "dunkelgrau",
     "hiterm": "लाल",
-    "dist": 0.1943
+    "dist": 0.1955
   },
   {
     "determ": "dunkelgrau",
     "hiterm": "हरा",
-    "dist": 0.3206
+    "dist": 0.3284
   },
   {
     "determ": "dunkelgrau",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.3173
+    "dist": 0.3296
   },
   {
     "determ": "dunkelgrau",
     "hiterm": "हलकाहरा",
-    "dist": 0.4914
+    "dist": 0.4672
+  },
+  {
+    "determ": "dunkelgrun",
+    "hiterm": "आसमानी",
+    "dist": 0.4812
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "काला",
-    "dist": 0.2776
+    "dist": 0.2812
+  },
+  {
+    "determ": "dunkelgrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.2785
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "गहराहरा",
-    "dist": 0.0525
+    "dist": 0.0369
   },
   {
     "determ": "dunkelgrun",
@@ -717,152 +877,182 @@
   {
     "determ": "dunkelgrun",
     "hiterm": "गुलाबी",
-    "dist": 0.4659
+    "dist": 0.4675
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "जामुनी",
-    "dist": 0.2909
+    "dist": 0.2858
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "नारंगी",
-    "dist": 0.4105
+    "dist": 0.4111
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "नीला",
-    "dist": 0.3343
+    "dist": 0.3313
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "पीला",
-    "dist": 0.4805
+    "dist": 0.4799
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "बैंगनी",
-    "dist": 0.3262
+    "dist": 0.3289
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "भूरा",
-    "dist": 0.1977
+    "dist": 0.199
+  },
+  {
+    "determ": "dunkelgrun",
+    "hiterm": "रानी",
+    "dist": 0.2739
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "लाल",
-    "dist": 0.2684
+    "dist": 0.2688
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "हरा",
-    "dist": 0.2787
+    "dist": 0.2868
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.3704
+    "dist": 0.3817
   },
   {
     "determ": "dunkelgrun",
     "hiterm": "हलकाहरा",
-    "dist": 0.4701
+    "dist": 0.4433
+  },
+  {
+    "determ": "dunkellila",
+    "hiterm": "आसमानी",
+    "dist": 0.5512
   },
   {
     "determ": "dunkellila",
     "hiterm": "काला",
-    "dist": 0.2339
+    "dist": 0.2367
+  },
+  {
+    "determ": "dunkellila",
+    "hiterm": "गहरानीला",
+    "dist": 0.1131
   },
   {
     "determ": "dunkellila",
     "hiterm": "गहराहरा",
-    "dist": 0.2374
+    "dist": 0.2558
   },
   {
     "determ": "dunkellila",
     "hiterm": "गाढाहरा",
-    "dist": 0.3249
+    "dist": 0.3285
   },
   {
     "determ": "dunkellila",
     "hiterm": "गुलाबी",
-    "dist": 0.39
+    "dist": 0.3925
   },
   {
     "determ": "dunkellila",
     "hiterm": "जामुनी",
-    "dist": 0.1421
+    "dist": 0.1448
   },
   {
     "determ": "dunkellila",
     "hiterm": "नारंगी",
-    "dist": 0.4866
+    "dist": 0.4874
   },
   {
     "determ": "dunkellila",
     "hiterm": "नीला",
-    "dist": 0.2604
+    "dist": 0.2484
   },
   {
     "determ": "dunkellila",
     "hiterm": "पीला",
-    "dist": 0.6012
+    "dist": 0.6024
   },
   {
     "determ": "dunkellila",
     "hiterm": "बैंगनी",
-    "dist": 0.1547
+    "dist": 0.1671
   },
   {
     "determ": "dunkellila",
     "hiterm": "भूरा",
-    "dist": 0.2166
+    "dist": 0.2211
+  },
+  {
+    "determ": "dunkellila",
+    "hiterm": "रानी",
+    "dist": 0.1742
   },
   {
     "determ": "dunkellila",
     "hiterm": "लाल",
-    "dist": 0.2489
+    "dist": 0.2507
   },
   {
     "determ": "dunkellila",
     "hiterm": "हरा",
-    "dist": 0.4382
+    "dist": 0.445
   },
   {
     "determ": "dunkellila",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.3513
+    "dist": 0.3635
   },
   {
     "determ": "dunkellila",
     "hiterm": "हलकाहरा",
-    "dist": 0.5797
+    "dist": 0.5591
+  },
+  {
+    "determ": "dunkelrosa",
+    "hiterm": "आसमानी",
+    "dist": 0.3013
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "काला",
-    "dist": 0.5446
+    "dist": 0.5463
+  },
+  {
+    "determ": "dunkelrosa",
+    "hiterm": "गहरानीला",
+    "dist": 0.4667
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "गहराहरा",
-    "dist": 0.3649
+    "dist": 0.375
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "गाढाहरा",
-    "dist": 0.2578
+    "dist": 0.2583
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "गुलाबी",
-    "dist": 0.1278
+    "dist": 0.1275
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "जामुनी",
-    "dist": 0.2474
+    "dist": 0.2431
   },
   {
     "determ": "dunkelrosa",
@@ -872,122 +1062,152 @@
   {
     "determ": "dunkelrosa",
     "hiterm": "नीला",
-    "dist": 0.2977
+    "dist": 0.2979
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "पीला",
-    "dist": 0.2865
+    "dist": 0.2883
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "बैंगनी",
-    "dist": 0.2587
+    "dist": 0.2472
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "भूरा",
-    "dist": 0.2692
+    "dist": 0.2649
+  },
+  {
+    "determ": "dunkelrosa",
+    "hiterm": "रानी",
+    "dist": 0.2445
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "लाल",
-    "dist": 0.22
+    "dist": 0.2188
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "हरा",
-    "dist": 0.2732
+    "dist": 0.2716
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.1155
+    "dist": 0.1077
   },
   {
     "determ": "dunkelrosa",
     "hiterm": "हलकाहरा",
-    "dist": 0.2816
+    "dist": 0.2711
+  },
+  {
+    "determ": "dunkelrot",
+    "hiterm": "आसमानी",
+    "dist": 0.579
   },
   {
     "determ": "dunkelrot",
     "hiterm": "काला",
-    "dist": 0.2302
+    "dist": 0.2328
+  },
+  {
+    "determ": "dunkelrot",
+    "hiterm": "गहरानीला",
+    "dist": 0.2365
   },
   {
     "determ": "dunkelrot",
     "hiterm": "गहराहरा",
-    "dist": 0.2232
+    "dist": 0.2415
   },
   {
     "determ": "dunkelrot",
     "hiterm": "गाढाहरा",
-    "dist": 0.2951
+    "dist": 0.298
   },
   {
     "determ": "dunkelrot",
     "hiterm": "गुलाबी",
-    "dist": 0.4004
+    "dist": 0.402
   },
   {
     "determ": "dunkelrot",
     "hiterm": "जामुनी",
-    "dist": 0.1777
+    "dist": 0.1725
   },
   {
     "determ": "dunkelrot",
     "hiterm": "नारंगी",
-    "dist": 0.4322
+    "dist": 0.4319
   },
   {
     "determ": "dunkelrot",
     "hiterm": "नीला",
-    "dist": 0.3683
+    "dist": 0.3609
   },
   {
     "determ": "dunkelrot",
     "hiterm": "पीला",
-    "dist": 0.5614
+    "dist": 0.561
   },
   {
     "determ": "dunkelrot",
     "hiterm": "बैंगनी",
-    "dist": 0.2373
+    "dist": 0.2438
   },
   {
     "determ": "dunkelrot",
     "hiterm": "भूरा",
-    "dist": 0.1395
+    "dist": 0.1429
+  },
+  {
+    "determ": "dunkelrot",
+    "hiterm": "रानी",
+    "dist": 0.1172
   },
   {
     "determ": "dunkelrot",
     "hiterm": "लाल",
-    "dist": 0.1498
+    "dist": 0.1502
   },
   {
     "determ": "dunkelrot",
     "hiterm": "हरा",
-    "dist": 0.4256
+    "dist": 0.4312
   },
   {
     "determ": "dunkelrot",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.378
+    "dist": 0.3861
   },
   {
     "determ": "dunkelrot",
     "hiterm": "हलकाहरा",
-    "dist": 0.5661
+    "dist": 0.5446
+  },
+  {
+    "determ": "dunkelturkis",
+    "hiterm": "आसमानी",
+    "dist": 0.2661
   },
   {
     "determ": "dunkelturkis",
     "hiterm": "काला",
-    "dist": 0.4499
+    "dist": 0.4546
+  },
+  {
+    "determ": "dunkelturkis",
+    "hiterm": "गहरानीला",
+    "dist": 0.3698
   },
   {
     "determ": "dunkelturkis",
     "hiterm": "गहराहरा",
-    "dist": 0.2242
+    "dist": 0.2267
   },
   {
     "determ": "dunkelturkis",
@@ -997,672 +1217,812 @@
   {
     "determ": "dunkelturkis",
     "hiterm": "गुलाबी",
-    "dist": 0.3082
+    "dist": 0.3108
   },
   {
     "determ": "dunkelturkis",
     "hiterm": "जामुनी",
-    "dist": 0.2531
+    "dist": 0.2522
   },
   {
     "determ": "dunkelturkis",
     "hiterm": "नारंगी",
-    "dist": 0.2767
+    "dist": 0.2784
   },
   {
     "determ": "dunkelturkis",
     "hiterm": "नीला",
-    "dist": 0.2091
+    "dist": 0.208
   },
   {
     "determ": "dunkelturkis",
     "hiterm": "पीला",
-    "dist": 0.3292
+    "dist": 0.33
   },
   {
     "determ": "dunkelturkis",
     "hiterm": "बैंगनी",
-    "dist": 0.2654
+    "dist": 0.261
   },
   {
     "determ": "dunkelturkis",
     "hiterm": "भूरा",
+    "dist": 0.2466
+  },
+  {
+    "determ": "dunkelturkis",
+    "hiterm": "रानी",
+    "dist": 0.2877
+  },
+  {
+    "determ": "dunkelturkis",
+    "hiterm": "लाल",
+    "dist": 0.2743
+  },
+  {
+    "determ": "dunkelturkis",
+    "hiterm": "हरा",
+    "dist": 0.1765
+  },
+  {
+    "determ": "dunkelturkis",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1981
+  },
+  {
+    "determ": "dunkelturkis",
+    "hiterm": "हलकाहरा",
+    "dist": 0.2695
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "आसमानी",
+    "dist": 0.5168
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "काला",
+    "dist": 0.2571
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "गहरानीला",
+    "dist": 0.1515
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "गहराहरा",
+    "dist": 0.2285
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "गाढाहरा",
+    "dist": 0.2867
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "गुलाबी",
+    "dist": 0.3556
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "जामुनी",
+    "dist": 0.1023
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "नारंगी",
+    "dist": 0.4396
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "नीला",
+    "dist": 0.2449
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "पीला",
+    "dist": 0.5557
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "बैंगनी",
+    "dist": 0.1445
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "भूरा",
+    "dist": 0.1927
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "रानी",
+    "dist": 0.1315
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "लाल",
+    "dist": 0.209
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "हरा",
+    "dist": 0.4012
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.3195
+  },
+  {
+    "determ": "dunkelviolett",
+    "hiterm": "हलकाहरा",
+    "dist": 0.5156
+  },
+  {
+    "determ": "flieder",
+    "hiterm": "आसमानी",
+    "dist": 0.2539
+  },
+  {
+    "determ": "flieder",
+    "hiterm": "काला",
+    "dist": 0.5832
+  },
+  {
+    "determ": "flieder",
+    "hiterm": "गहरानीला",
+    "dist": 0.4748
+  },
+  {
+    "determ": "flieder",
+    "hiterm": "गहराहरा",
+    "dist": 0.415
+  },
+  {
+    "determ": "flieder",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3063
+  },
+  {
+    "determ": "flieder",
+    "hiterm": "गुलाबी",
+    "dist": 0.1065
+  },
+  {
+    "determ": "flieder",
+    "hiterm": "जामुनी",
+    "dist": 0.2697
+  },
+  {
+    "determ": "flieder",
+    "hiterm": "नारंगी",
     "dist": 0.2455
   },
   {
-    "determ": "dunkelturkis",
-    "hiterm": "लाल",
-    "dist": 0.2717
-  },
-  {
-    "determ": "dunkelturkis",
-    "hiterm": "हरा",
-    "dist": 0.174
-  },
-  {
-    "determ": "dunkelturkis",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.1857
-  },
-  {
-    "determ": "dunkelturkis",
-    "hiterm": "हलकाहरा",
-    "dist": 0.2929
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "काला",
-    "dist": 0.2509
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "गहराहरा",
-    "dist": 0.2071
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "गाढाहरा",
-    "dist": 0.2831
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "गुलाबी",
-    "dist": 0.3554
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "जामुनी",
-    "dist": 0.1011
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "नारंगी",
-    "dist": 0.4395
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "नीला",
-    "dist": 0.2585
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "पीला",
-    "dist": 0.5559
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "बैंगनी",
-    "dist": 0.1378
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "भूरा",
-    "dist": 0.187
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "लाल",
-    "dist": 0.2069
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "हरा",
-    "dist": 0.3949
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.3113
-  },
-  {
-    "determ": "dunkelviolett",
-    "hiterm": "हलकाहरा",
-    "dist": 0.5381
-  },
-  {
-    "determ": "flieder",
-    "hiterm": "काला",
-    "dist": 0.5779
-  },
-  {
-    "determ": "flieder",
-    "hiterm": "गहराहरा",
-    "dist": 0.4036
-  },
-  {
-    "determ": "flieder",
-    "hiterm": "गाढाहरा",
-    "dist": 0.305
-  },
-  {
-    "determ": "flieder",
-    "hiterm": "गुलाबी",
-    "dist": 0.106
-  },
-  {
-    "determ": "flieder",
-    "hiterm": "जामुनी",
-    "dist": 0.2662
-  },
-  {
-    "determ": "flieder",
-    "hiterm": "नारंगी",
-    "dist": 0.248
-  },
-  {
     "determ": "flieder",
     "hiterm": "नीला",
-    "dist": 0.2518
+    "dist": 0.2541
   },
   {
     "determ": "flieder",
     "hiterm": "पीला",
-    "dist": 0.3307
+    "dist": 0.3301
   },
   {
     "determ": "flieder",
     "hiterm": "बैंगनी",
-    "dist": 0.2361
+    "dist": 0.2261
   },
   {
     "determ": "flieder",
     "hiterm": "भूरा",
-    "dist": 0.3329
+    "dist": 0.332
+  },
+  {
+    "determ": "flieder",
+    "hiterm": "रानी",
+    "dist": 0.3052
   },
   {
     "determ": "flieder",
     "hiterm": "लाल",
-    "dist": 0.3024
+    "dist": 0.3031
   },
   {
     "determ": "flieder",
     "hiterm": "हरा",
-    "dist": 0.307
+    "dist": 0.3059
   },
   {
     "determ": "flieder",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.0889
+    "dist": 0.0771
   },
   {
     "determ": "flieder",
     "hiterm": "हलकाहरा",
-    "dist": 0.2981
+    "dist": 0.2894
+  },
+  {
+    "determ": "fuchsia",
+    "hiterm": "आसमानी",
+    "dist": 0.4477
   },
   {
     "determ": "fuchsia",
     "hiterm": "काला",
-    "dist": 0.3841
+    "dist": 0.3883
+  },
+  {
+    "determ": "fuchsia",
+    "hiterm": "गहरानीला",
+    "dist": 0.3069
   },
   {
     "determ": "fuchsia",
     "hiterm": "गहराहरा",
-    "dist": 0.283
+    "dist": 0.3012
   },
   {
     "determ": "fuchsia",
     "hiterm": "गाढाहरा",
-    "dist": 0.2738
-  },
-  {
-    "determ": "fuchsia",
-    "hiterm": "गुलाबी",
-    "dist": 0.2189
-  },
-  {
-    "determ": "fuchsia",
-    "hiterm": "जामुनी",
-    "dist": 0.0834
-  },
-  {
-    "determ": "fuchsia",
-    "hiterm": "नारंगी",
-    "dist": 0.326
-  },
-  {
-    "determ": "fuchsia",
-    "hiterm": "नीला",
     "dist": 0.2758
   },
   {
     "determ": "fuchsia",
+    "hiterm": "गुलाबी",
+    "dist": 0.2192
+  },
+  {
+    "determ": "fuchsia",
+    "hiterm": "जामुनी",
+    "dist": 0.0836
+  },
+  {
+    "determ": "fuchsia",
+    "hiterm": "नारंगी",
+    "dist": 0.3248
+  },
+  {
+    "determ": "fuchsia",
+    "hiterm": "नीला",
+    "dist": 0.2668
+  },
+  {
+    "determ": "fuchsia",
     "hiterm": "पीला",
-    "dist": 0.4633
+    "dist": 0.4622
   },
   {
     "determ": "fuchsia",
     "hiterm": "बैंगनी",
-    "dist": 0.1223
+    "dist": 0.1222
   },
   {
     "determ": "fuchsia",
     "hiterm": "भूरा",
-    "dist": 0.1843
+    "dist": 0.1857
+  },
+  {
+    "determ": "fuchsia",
+    "hiterm": "रानी",
+    "dist": 0.0838
   },
   {
     "determ": "fuchsia",
     "hiterm": "लाल",
-    "dist": 0.1282
+    "dist": 0.1297
   },
   {
     "determ": "fuchsia",
     "hiterm": "हरा",
-    "dist": 0.3601
+    "dist": 0.3628
   },
   {
     "determ": "fuchsia",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.2179
-  },
-  {
-    "determ": "fuchsia",
-    "hiterm": "हलकाहरा",
-    "dist": 0.4523
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "काला",
-    "dist": 0.7747
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "गहराहरा",
-    "dist": 0.5414
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3821
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "गुलाबी",
-    "dist": 0.4169
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "जामुनी",
-    "dist": 0.5476
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "नारंगी",
-    "dist": 0.2107
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "नीला",
-    "dist": 0.493
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "पीला",
-    "dist": 0.0604
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "बैंगनी",
-    "dist": 0.5575
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "भूरा",
-    "dist": 0.5068
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "लाल",
-    "dist": 0.4835
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "हरा",
-    "dist": 0.2739
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.3493
-  },
-  {
-    "determ": "gelb",
-    "hiterm": "हलकाहरा",
-    "dist": 0.1184
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "काला",
-    "dist": 0.7292
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "गहराहरा",
-    "dist": 0.4949
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3349
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "गुलाबी",
-    "dist": 0.3953
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "जामुनी",
-    "dist": 0.5084
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "नारंगी",
-    "dist": 0.1841
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "नीला",
-    "dist": 0.453
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "पीला",
-    "dist": 0.0357
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "बैंगनी",
-    "dist": 0.5172
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "भूरा",
-    "dist": 0.4636
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "लाल",
-    "dist": 0.4448
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "हरा",
-    "dist": 0.2258
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.3185
-  },
-  {
-    "determ": "gelbgrun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.09
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "काला",
-    "dist": 0.6975
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "गहराहरा",
-    "dist": 0.4581
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.2987
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "गुलाबी",
-    "dist": 0.3971
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "जामुनी",
-    "dist": 0.4864
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "नारंगी",
-    "dist": 0.208
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "नीला",
-    "dist": 0.4136
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "पीला",
-    "dist": 0.1012
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "बैंगनी",
-    "dist": 0.4951
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "भूरा",
-    "dist": 0.4421
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "लाल",
-    "dist": 0.4378
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "हरा",
-    "dist": 0.1807
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.3004
-  },
-  {
-    "determ": "giftgrun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.0799
-  },
-  {
-    "determ": "grasgrun",
-    "hiterm": "काला",
-    "dist": 0.525
-  },
-  {
-    "determ": "grasgrun",
-    "hiterm": "गहराहरा",
-    "dist": 0.2831
-  },
-  {
-    "determ": "grasgrun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.1298
-  },
-  {
-    "determ": "grasgrun",
-    "hiterm": "गुलाबी",
-    "dist": 0.3644
-  },
-  {
-    "determ": "grasgrun",
-    "hiterm": "जामुनी",
-    "dist": 0.3589
-  },
-  {
-    "determ": "grasgrun",
-    "hiterm": "नारंगी",
-    "dist": 0.2099
-  },
-  {
-    "determ": "grasgrun",
-    "hiterm": "नीला",
-    "dist": 0.3099
-  },
-  {
-    "determ": "grasgrun",
-    "hiterm": "पीला",
     "dist": 0.2213
   },
   {
+    "determ": "fuchsia",
+    "hiterm": "हलकाहरा",
+    "dist": 0.4338
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "आसमानी",
+    "dist": 0.2485
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "काला",
+    "dist": 0.7786
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "गहरानीला",
+    "dist": 0.7232
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "गहराहरा",
+    "dist": 0.5384
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3807
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "गुलाबी",
+    "dist": 0.4152
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "जामुनी",
+    "dist": 0.5441
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "नारंगी",
+    "dist": 0.211
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "नीला",
+    "dist": 0.5049
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "पीला",
+    "dist": 0.0607
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "बैंगनी",
+    "dist": 0.5467
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "भूरा",
+    "dist": 0.5033
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "रानी",
+    "dist": 0.5477
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "लाल",
+    "dist": 0.4831
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "हरा",
+    "dist": 0.2658
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.3439
+  },
+  {
+    "determ": "gelb",
+    "hiterm": "हलकाहरा",
+    "dist": 0.1359
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "आसमानी",
+    "dist": 0.232
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "काला",
+    "dist": 0.7336
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.6803
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "गहराहरा",
+    "dist": 0.4921
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3342
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "गुलाबी",
+    "dist": 0.3958
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "जामुनी",
+    "dist": 0.5061
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "नारंगी",
+    "dist": 0.1867
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "नीला",
+    "dist": 0.4662
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "पीला",
+    "dist": 0.0373
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "बैंगनी",
+    "dist": 0.5088
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "भूरा",
+    "dist": 0.4609
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "रानी",
+    "dist": 0.5089
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "लाल",
+    "dist": 0.4456
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "हरा",
+    "dist": 0.2188
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.317
+  },
+  {
+    "determ": "gelbgrun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.0981
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "आसमानी",
+    "dist": 0.1996
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "काला",
+    "dist": 0.6864
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.627
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "गहराहरा",
+    "dist": 0.4388
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.2819
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "गुलाबी",
+    "dist": 0.3914
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "जामुनी",
+    "dist": 0.4715
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "नारंगी",
+    "dist": 0.2064
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "नीला",
+    "dist": 0.4127
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "पीला",
+    "dist": 0.1054
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "बैंगनी",
+    "dist": 0.4739
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "भूरा",
+    "dist": 0.4256
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "रानी",
+    "dist": 0.4814
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "लाल",
+    "dist": 0.4268
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "हरा",
+    "dist": 0.1576
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.291
+  },
+  {
+    "determ": "giftgrun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.0761
+  },
+  {
+    "determ": "grasgrun",
+    "hiterm": "आसमानी",
+    "dist": 0.2687
+  },
+  {
+    "determ": "grasgrun",
+    "hiterm": "काला",
+    "dist": 0.5297
+  },
+  {
+    "determ": "grasgrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.4827
+  },
+  {
+    "determ": "grasgrun",
+    "hiterm": "गहराहरा",
+    "dist": 0.2788
+  },
+  {
+    "determ": "grasgrun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.1289
+  },
+  {
+    "determ": "grasgrun",
+    "hiterm": "गुलाबी",
+    "dist": 0.365
+  },
+  {
+    "determ": "grasgrun",
+    "hiterm": "जामुनी",
+    "dist": 0.356
+  },
+  {
+    "determ": "grasgrun",
+    "hiterm": "नारंगी",
+    "dist": 0.2123
+  },
+  {
+    "determ": "grasgrun",
+    "hiterm": "नीला",
+    "dist": 0.318
+  },
+  {
+    "determ": "grasgrun",
+    "hiterm": "पीला",
+    "dist": 0.2208
+  },
+  {
     "determ": "grasgrun",
     "hiterm": "बैंगनी",
-    "dist": 0.3733
+    "dist": 0.3671
   },
   {
     "determ": "grasgrun",
     "hiterm": "भूरा",
-    "dist": 0.2874
+    "dist": 0.2856
+  },
+  {
+    "determ": "grasgrun",
+    "hiterm": "रानी",
+    "dist": 0.3583
   },
   {
     "determ": "grasgrun",
     "hiterm": "लाल",
-    "dist": 0.3082
+    "dist": 0.3098
   },
   {
     "determ": "grasgrun",
     "hiterm": "हरा",
-    "dist": 0.0675
+    "dist": 0.066
   },
   {
     "determ": "grasgrun",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.2454
+    "dist": 0.2539
   },
   {
     "determ": "grasgrun",
     "hiterm": "हलकाहरा",
-    "dist": 0.2099
+    "dist": 0.1822
+  },
+  {
+    "determ": "grau",
+    "hiterm": "आसमानी",
+    "dist": 0.2356
   },
   {
     "determ": "grau",
     "hiterm": "काला",
-    "dist": 0.5105
+    "dist": 0.5129
+  },
+  {
+    "determ": "grau",
+    "hiterm": "गहरानीला",
+    "dist": 0.4385
   },
   {
     "determ": "grau",
     "hiterm": "गहराहरा",
-    "dist": 0.2905
+    "dist": 0.2941
   },
   {
     "determ": "grau",
     "hiterm": "गाढाहरा",
-    "dist": 0.1564
+    "dist": 0.156
   },
   {
     "determ": "grau",
     "hiterm": "गुलाबी",
-    "dist": 0.2433
+    "dist": 0.243
   },
   {
     "determ": "grau",
     "hiterm": "जामुनी",
-    "dist": 0.2715
+    "dist": 0.2677
   },
   {
     "determ": "grau",
     "hiterm": "नारंगी",
-    "dist": 0.1785
+    "dist": 0.1812
   },
   {
     "determ": "grau",
     "hiterm": "नीला",
-    "dist": 0.2246
+    "dist": 0.2328
   },
   {
     "determ": "grau",
     "hiterm": "पीला",
-    "dist": 0.2505
+    "dist": 0.2522
   },
   {
     "determ": "grau",
     "hiterm": "बैंगनी",
-    "dist": 0.2714
+    "dist": 0.2611
   },
   {
     "determ": "grau",
     "hiterm": "भूरा",
-    "dist": 0.2521
+    "dist": 0.2481
+  },
+  {
+    "determ": "grau",
+    "hiterm": "रानी",
+    "dist": 0.2815
   },
   {
     "determ": "grau",
     "hiterm": "लाल",
-    "dist": 0.2502
-  },
-  {
-    "determ": "grau",
-    "hiterm": "हरा",
-    "dist": 0.1329
-  },
-  {
-    "determ": "grau",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.126
-  },
-  {
-    "determ": "grau",
-    "hiterm": "हलकाहरा",
-    "dist": 0.2172
-  },
-  {
-    "determ": "graublau",
-    "hiterm": "काला",
-    "dist": 0.4984
-  },
-  {
-    "determ": "graublau",
-    "hiterm": "गहराहरा",
-    "dist": 0.2842
-  },
-  {
-    "determ": "graublau",
-    "hiterm": "गाढाहरा",
-    "dist": 0.161
-  },
-  {
-    "determ": "graublau",
-    "hiterm": "गुलाबी",
-    "dist": 0.2223
-  },
-  {
-    "determ": "graublau",
-    "hiterm": "जामुनी",
-    "dist": 0.2449
-  },
-  {
-    "determ": "graublau",
-    "hiterm": "नारंगी",
-    "dist": 0.1976
-  },
-  {
-    "determ": "graublau",
-    "hiterm": "नीला",
-    "dist": 0.207
-  },
-  {
-    "determ": "graublau",
-    "hiterm": "पीला",
-    "dist": 0.274
-  },
-  {
-    "determ": "graublau",
-    "hiterm": "बैंगनी",
     "dist": 0.2498
   },
   {
+    "determ": "grau",
+    "hiterm": "हरा",
+    "dist": 0.1344
+  },
+  {
+    "determ": "grau",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1358
+  },
+  {
+    "determ": "grau",
+    "hiterm": "हलकाहरा",
+    "dist": 0.1969
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "आसमानी",
+    "dist": 0.2336
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "काला",
+    "dist": 0.5029
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "गहरानीला",
+    "dist": 0.4186
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "गहराहरा",
+    "dist": 0.291
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "गाढाहरा",
+    "dist": 0.1621
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "गुलाबी",
+    "dist": 0.2232
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "जामुनी",
+    "dist": 0.243
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "नारंगी",
+    "dist": 0.1985
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "नीला",
+    "dist": 0.212
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "पीला",
+    "dist": 0.2744
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "बैंगनी",
+    "dist": 0.2412
+  },
+  {
     "determ": "graublau",
     "hiterm": "भूरा",
-    "dist": 0.2459
+    "dist": 0.2441
+  },
+  {
+    "determ": "graublau",
+    "hiterm": "रानी",
+    "dist": 0.2704
   },
   {
     "determ": "graublau",
     "hiterm": "लाल",
-    "dist": 0.2436
+    "dist": 0.245
   },
   {
     "determ": "graublau",
@@ -1672,1457 +2032,1937 @@
   {
     "determ": "graublau",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.0941
+    "dist": 0.1053
   },
   {
     "determ": "graublau",
     "hiterm": "हलकाहरा",
-    "dist": 0.2408
+    "dist": 0.2201
+  },
+  {
+    "determ": "graubraun",
+    "hiterm": "आसमानी",
+    "dist": 0.3541
   },
   {
     "determ": "graubraun",
     "hiterm": "काला",
-    "dist": 0.3684
+    "dist": 0.3723
+  },
+  {
+    "determ": "graubraun",
+    "hiterm": "गहरानीला",
+    "dist": 0.3071
   },
   {
     "determ": "graubraun",
     "hiterm": "गहराहरा",
-    "dist": 0.1636
+    "dist": 0.1769
   },
   {
     "determ": "graubraun",
     "hiterm": "गाढाहरा",
-    "dist": 0.1142
+    "dist": 0.1168
   },
   {
     "determ": "graubraun",
     "hiterm": "गुलाबी",
-    "dist": 0.2868
+    "dist": 0.2882
   },
   {
     "determ": "graubraun",
     "hiterm": "जामुनी",
-    "dist": 0.1738
+    "dist": 0.169
   },
   {
     "determ": "graubraun",
+    "hiterm": "नारंगी",
+    "dist": 0.2792
+  },
+  {
+    "determ": "graubraun",
+    "hiterm": "नीला",
+    "dist": 0.2044
+  },
+  {
+    "determ": "graubraun",
+    "hiterm": "पीला",
+    "dist": 0.3748
+  },
+  {
+    "determ": "graubraun",
+    "hiterm": "बैंगनी",
+    "dist": 0.19
+  },
+  {
+    "determ": "graubraun",
+    "hiterm": "भूरा",
+    "dist": 0.1389
+  },
+  {
+    "determ": "graubraun",
+    "hiterm": "रानी",
+    "dist": 0.1853
+  },
+  {
+    "determ": "graubraun",
+    "hiterm": "लाल",
+    "dist": 0.1711
+  },
+  {
+    "determ": "graubraun",
+    "hiterm": "हरा",
+    "dist": 0.2106
+  },
+  {
+    "determ": "graubraun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2013
+  },
+  {
+    "determ": "graubraun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.3309
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "आसमानी",
+    "dist": 0.2739
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "काला",
+    "dist": 0.4588
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.3891
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "गहराहरा",
+    "dist": 0.2372
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.1068
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "गुलाबी",
+    "dist": 0.2654
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "जामुनी",
+    "dist": 0.2331
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "नारंगी",
+    "dist": 0.2163
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "नीला",
+    "dist": 0.2207
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "पीला",
+    "dist": 0.2942
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "बैंगनी",
+    "dist": 0.2424
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "भूरा",
+    "dist": 0.2062
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "रानी",
+    "dist": 0.2474
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "लाल",
+    "dist": 0.2206
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "हरा",
+    "dist": 0.1446
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1559
+  },
+  {
+    "determ": "graugrun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.2427
+  },
+  {
+    "determ": "grun",
+    "hiterm": "आसमानी",
+    "dist": 0.2484
+  },
+  {
+    "determ": "grun",
+    "hiterm": "काला",
+    "dist": 0.5375
+  },
+  {
+    "determ": "grun",
+    "hiterm": "गहरानीला",
+    "dist": 0.4839
+  },
+  {
+    "determ": "grun",
+    "hiterm": "गहराहरा",
+    "dist": 0.2853
+  },
+  {
+    "determ": "grun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.1324
+  },
+  {
+    "determ": "grun",
+    "hiterm": "गुलाबी",
+    "dist": 0.3628
+  },
+  {
+    "determ": "grun",
+    "hiterm": "जामुनी",
+    "dist": 0.3547
+  },
+  {
+    "determ": "grun",
+    "hiterm": "नारंगी",
+    "dist": 0.2192
+  },
+  {
+    "determ": "grun",
+    "hiterm": "नीला",
+    "dist": 0.3001
+  },
+  {
+    "determ": "grun",
+    "hiterm": "पीला",
+    "dist": 0.2213
+  },
+  {
+    "determ": "grun",
+    "hiterm": "बैंगनी",
+    "dist": 0.3597
+  },
+  {
+    "determ": "grun",
+    "hiterm": "भूरा",
+    "dist": 0.2928
+  },
+  {
+    "determ": "grun",
+    "hiterm": "रानी",
+    "dist": 0.3602
+  },
+  {
+    "determ": "grun",
+    "hiterm": "लाल",
+    "dist": 0.3174
+  },
+  {
+    "determ": "grun",
+    "hiterm": "हरा",
+    "dist": 0.0386
+  },
+  {
+    "determ": "grun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2506
+  },
+  {
+    "determ": "grun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.1742
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "आसमानी",
+    "dist": 0.1987
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "काला",
+    "dist": 0.5669
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "गहरानीला",
+    "dist": 0.4939
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "गहराहरा",
+    "dist": 0.3394
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "गाढाहरा",
+    "dist": 0.1898
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "गुलाबी",
+    "dist": 0.2595
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "जामुनी",
+    "dist": 0.3217
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "नारंगी",
+    "dist": 0.1772
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "नीला",
+    "dist": 0.275
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "पीला",
+    "dist": 0.2083
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "बैंगनी",
+    "dist": 0.3102
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "भूरा",
+    "dist": 0.3012
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "रानी",
+    "dist": 0.3364
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "लाल",
+    "dist": 0.2981
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "हरा",
+    "dist": 0.1198
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1579
+  },
+  {
+    "determ": "grungrau",
+    "hiterm": "हलकाहरा",
+    "dist": 0.1393
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "आसमानी",
+    "dist": 0.1859
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "काला",
+    "dist": 0.7412
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "गहरानीला",
+    "dist": 0.666
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "गहराहरा",
+    "dist": 0.5169
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3621
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "गुलाबी",
+    "dist": 0.3094
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "जामुनी",
+    "dist": 0.4713
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "नारंगी",
+    "dist": 0.17
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "नीला",
+    "dist": 0.428
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "पीला",
+    "dist": 0.1238
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "बैंगनी",
+    "dist": 0.4605
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "भूरा",
+    "dist": 0.4603
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "रानी",
+    "dist": 0.4828
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "लाल",
+    "dist": 0.4338
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "हरा",
+    "dist": 0.2592
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2553
+  },
+  {
+    "determ": "hautfarben",
+    "hiterm": "हलकाहरा",
+    "dist": 0.1208
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "आसमानी",
+    "dist": 0.0606
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "काला",
+    "dist": 0.6636
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "गहरानीला",
+    "dist": 0.5641
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "गहराहरा",
+    "dist": 0.4375
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3054
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "गुलाबी",
+    "dist": 0.3117
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "जामुनी",
+    "dist": 0.4122
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "नारंगी",
+    "dist": 0.2728
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "नीला",
+    "dist": 0.2894
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "पीला",
+    "dist": 0.2519
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "बैंगनी",
+    "dist": 0.3865
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "भूरा",
+    "dist": 0.4276
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "रानी",
+    "dist": 0.4473
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "लाल",
+    "dist": 0.4262
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "हरा",
+    "dist": 0.2155
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2099
+  },
+  {
+    "determ": "hellblau",
+    "hiterm": "हलकाहरा",
+    "dist": 0.1714
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "आसमानी",
+    "dist": 0.2975
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "काला",
+    "dist": 0.5112
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "गहरानीला",
+    "dist": 0.4597
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "गहराहरा",
+    "dist": 0.301
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.1659
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "गुलाबी",
+    "dist": 0.2506
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "जामुनी",
+    "dist": 0.2686
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "नारंगी",
+    "dist": 0.1205
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "नीला",
+    "dist": 0.3143
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "पीला",
+    "dist": 0.2366
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "बैंगनी",
+    "dist": 0.2913
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "भूरा",
+    "dist": 0.2187
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "रानी",
+    "dist": 0.264
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "लाल",
+    "dist": 0.2066
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "हरा",
+    "dist": 0.1906
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1724
+  },
+  {
+    "determ": "hellbraun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.224
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "आसमानी",
+    "dist": 0.1513
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "काला",
+    "dist": 0.7349
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "गहरानीला",
+    "dist": 0.6574
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "गहराहरा",
+    "dist": 0.5064
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3538
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "गुलाबी",
+    "dist": 0.3151
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "जामुनी",
+    "dist": 0.4693
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "नारंगी",
+    "dist": 0.1912
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "नीला",
+    "dist": 0.4106
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "पीला",
+    "dist": 0.1322
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "बैंगनी",
+    "dist": 0.4564
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "भूरा",
+    "dist": 0.4622
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "रानी",
+    "dist": 0.4859
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "लाल",
+    "dist": 0.4412
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "हरा",
+    "dist": 0.2448
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2472
+  },
+  {
+    "determ": "hellgrau",
+    "hiterm": "हलकाहरा",
+    "dist": 0.1003
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "आसमानी",
+    "dist": 0.1746
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "काला",
+    "dist": 0.7173
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.651
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "गहराहरा",
+    "dist": 0.47
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3123
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "गुलाबी",
+    "dist": 0.3862
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "जामुनी",
+    "dist": 0.4898
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "नारंगी",
+    "dist": 0.2105
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "नीला",
+    "dist": 0.4219
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "पीला",
+    "dist": 0.0919
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "बैंगनी",
+    "dist": 0.4838
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "भूरा",
+    "dist": 0.4516
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "रानी",
+    "dist": 0.4982
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "लाल",
+    "dist": 0.4495
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "हरा",
+    "dist": 0.1788
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2962
+  },
+  {
+    "determ": "hellgrun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.059
+  },
+  {
+    "determ": "helllila",
+    "hiterm": "आसमानी",
+    "dist": 0.2906
+  },
+  {
+    "determ": "helllila",
+    "hiterm": "काला",
+    "dist": 0.559
+  },
+  {
+    "determ": "helllila",
+    "hiterm": "गहरानीला",
+    "dist": 0.446
+  },
+  {
+    "determ": "helllila",
+    "hiterm": "गहराहरा",
+    "dist": 0.4113
+  },
+  {
+    "determ": "helllila",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3168
+  },
+  {
+    "determ": "helllila",
+    "hiterm": "गुलाबी",
+    "dist": 0.1003
+  },
+  {
+    "determ": "helllila",
+    "hiterm": "जामुनी",
+    "dist": 0.2439
+  },
+  {
+    "determ": "helllila",
     "hiterm": "नारंगी",
     "dist": 0.2784
   },
   {
-    "determ": "graubraun",
-    "hiterm": "नीला",
-    "dist": 0.2062
-  },
-  {
-    "determ": "graubraun",
-    "hiterm": "पीला",
-    "dist": 0.3746
-  },
-  {
-    "determ": "graubraun",
-    "hiterm": "बैंगनी",
-    "dist": 0.1946
-  },
-  {
-    "determ": "graubraun",
-    "hiterm": "भूरा",
-    "dist": 0.1396
-  },
-  {
-    "determ": "graubraun",
-    "hiterm": "लाल",
-    "dist": 0.1702
-  },
-  {
-    "determ": "graubraun",
-    "hiterm": "हरा",
-    "dist": 0.205
-  },
-  {
-    "determ": "graubraun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.1895
-  },
-  {
-    "determ": "graubraun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.3551
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "काला",
-    "dist": 0.4544
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "गहराहरा",
-    "dist": 0.2316
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.1065
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "गुलाबी",
-    "dist": 0.2639
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "जामुनी",
-    "dist": 0.2352
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "नारंगी",
-    "dist": 0.2152
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "नीला",
-    "dist": 0.2181
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "पीला",
-    "dist": 0.2943
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "बैंगनी",
-    "dist": 0.2485
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "भूरा",
-    "dist": 0.2082
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "लाल",
-    "dist": 0.2195
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "हरा",
-    "dist": 0.1443
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.1451
-  },
-  {
-    "determ": "graugrun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.2679
-  },
-  {
-    "determ": "grun",
-    "hiterm": "काला",
-    "dist": 0.531
-  },
-  {
-    "determ": "grun",
-    "hiterm": "गहराहरा",
-    "dist": 0.2876
-  },
-  {
-    "determ": "grun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.1319
-  },
-  {
-    "determ": "grun",
-    "hiterm": "गुलाबी",
-    "dist": 0.3635
-  },
-  {
-    "determ": "grun",
-    "hiterm": "जामुनी",
-    "dist": 0.3567
-  },
-  {
-    "determ": "grun",
-    "hiterm": "नारंगी",
-    "dist": 0.2178
-  },
-  {
-    "determ": "grun",
-    "hiterm": "नीला",
-    "dist": 0.2892
-  },
-  {
-    "determ": "grun",
-    "hiterm": "पीला",
-    "dist": 0.2225
-  },
-  {
-    "determ": "grun",
-    "hiterm": "बैंगनी",
-    "dist": 0.366
-  },
-  {
-    "determ": "grun",
-    "hiterm": "भूरा",
-    "dist": 0.2935
-  },
-  {
-    "determ": "grun",
-    "hiterm": "लाल",
-    "dist": 0.3153
-  },
-  {
-    "determ": "grun",
-    "hiterm": "हरा",
-    "dist": 0.0415
-  },
-  {
-    "determ": "grun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2424
-  },
-  {
-    "determ": "grun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.2027
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "काला",
-    "dist": 0.7399
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "गहराहरा",
-    "dist": 0.5177
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3652
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "गुलाबी",
-    "dist": 0.3122
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "जामुनी",
-    "dist": 0.4752
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "नारंगी",
-    "dist": 0.1715
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "नीला",
-    "dist": 0.418
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "पीला",
-    "dist": 0.1225
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "बैंगनी",
-    "dist": 0.4734
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "भूरा",
-    "dist": 0.466
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "लाल",
-    "dist": 0.4362
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "हरा",
-    "dist": 0.2672
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2642
-  },
-  {
-    "determ": "hautfarben",
-    "hiterm": "हलकाहरा",
-    "dist": 0.1054
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "काला",
-    "dist": 0.6583
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "गहराहरा",
-    "dist": 0.4353
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3058
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "गुलाबी",
-    "dist": 0.3118
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "जामुनी",
-    "dist": 0.4106
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "नारंगी",
-    "dist": 0.2726
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "नीला",
-    "dist": 0.2717
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "पीला",
-    "dist": 0.2523
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "बैंगनी",
-    "dist": 0.3951
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "भूरा",
-    "dist": 0.4293
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "लाल",
-    "dist": 0.4252
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "हरा",
-    "dist": 0.2191
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.208
-  },
-  {
-    "determ": "hellblau",
-    "hiterm": "हलकाहरा",
-    "dist": 0.1746
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "काला",
-    "dist": 0.5093
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "गहराहरा",
-    "dist": 0.297
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.167
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "गुलाबी",
-    "dist": 0.2502
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "जामुनी",
-    "dist": 0.2746
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "नारंगी",
-    "dist": 0.1183
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "नीला",
-    "dist": 0.3123
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "पीला",
-    "dist": 0.2356
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "बैंगनी",
-    "dist": 0.2998
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "भूरा",
-    "dist": 0.2239
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "लाल",
-    "dist": 0.2077
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "हरा",
-    "dist": 0.1915
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.1698
-  },
-  {
-    "determ": "hellbraun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.2417
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "काला",
-    "dist": 0.7338
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "गहराहरा",
-    "dist": 0.5085
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3572
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "गुलाबी",
-    "dist": 0.3178
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "जामुनी",
-    "dist": 0.4733
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "नारंगी",
-    "dist": 0.191
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "नीला",
-    "dist": 0.4012
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "पीला",
-    "dist": 0.1308
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "बैंगनी",
-    "dist": 0.4699
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "भूरा",
-    "dist": 0.468
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "लाल",
-    "dist": 0.4436
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "हरा",
-    "dist": 0.2535
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2555
-  },
-  {
-    "determ": "hellgrau",
-    "hiterm": "हलकाहरा",
-    "dist": 0.0859
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "काला",
-    "dist": 0.715
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "गहराहरा",
-    "dist": 0.4751
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3155
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "गुलाबी",
-    "dist": 0.3856
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "जामुनी",
-    "dist": 0.4926
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "नारंगी",
-    "dist": 0.2083
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "नीला",
-    "dist": 0.4091
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "पीला",
-    "dist": 0.088
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "बैंगनी",
-    "dist": 0.4938
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "भूरा",
-    "dist": 0.4559
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "लाल",
-    "dist": 0.4497
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "हरा",
-    "dist": 0.189
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2976
-  },
-  {
-    "determ": "hellgrun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.0502
-  },
-  {
-    "determ": "helllila",
-    "hiterm": "काला",
-    "dist": 0.5547
-  },
-  {
-    "determ": "helllila",
-    "hiterm": "गहराहरा",
-    "dist": 0.3976
-  },
-  {
-    "determ": "helllila",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3144
-  },
-  {
-    "determ": "helllila",
-    "hiterm": "गुलाबी",
-    "dist": 0.0995
-  },
-  {
-    "determ": "helllila",
-    "hiterm": "जामुनी",
-    "dist": 0.2408
-  },
-  {
-    "determ": "helllila",
-    "hiterm": "नारंगी",
-    "dist": 0.2783
-  },
-  {
     "determ": "helllila",
     "hiterm": "नीला",
-    "dist": 0.2382
+    "dist": 0.239
   },
   {
     "determ": "helllila",
     "hiterm": "पीला",
-    "dist": 0.3671
+    "dist": 0.3684
   },
   {
     "determ": "helllila",
     "hiterm": "बैंगनी",
-    "dist": 0.2129
+    "dist": 0.2016
   },
   {
     "determ": "helllila",
     "hiterm": "भूरा",
-    "dist": 0.3214
+    "dist": 0.321
+  },
+  {
+    "determ": "helllila",
+    "hiterm": "रानी",
+    "dist": 0.2828
   },
   {
     "determ": "helllila",
     "hiterm": "लाल",
-    "dist": 0.2938
+    "dist": 0.2951
   },
   {
     "determ": "helllila",
     "hiterm": "हरा",
-    "dist": 0.3252
+    "dist": 0.3256
   },
   {
     "determ": "helllila",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.1093
+    "dist": 0.1066
   },
   {
     "determ": "helllila",
     "hiterm": "हलकाहरा",
-    "dist": 0.3358
+    "dist": 0.3276
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "आसमानी",
+    "dist": 0.1705
   },
   {
     "determ": "hellturkis",
     "hiterm": "काला",
-    "dist": 0.8111
+    "dist": 0.8154
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "गहरानीला",
+    "dist": 0.7376
   },
   {
     "determ": "hellturkis",
     "hiterm": "गहराहरा",
-    "dist": 0.5732
+    "dist": 0.5713
   },
   {
     "determ": "hellturkis",
     "hiterm": "गाढाहरा",
-    "dist": 0.4204
-  },
-  {
-    "determ": "hellturkis",
-    "hiterm": "गुलाबी",
-    "dist": 0.423
-  },
-  {
-    "determ": "hellturkis",
-    "hiterm": "जामुनी",
-    "dist": 0.5689
-  },
-  {
-    "determ": "hellturkis",
-    "hiterm": "नारंगी",
-    "dist": 0.2813
-  },
-  {
-    "determ": "hellturkis",
-    "hiterm": "नीला",
-    "dist": 0.469
-  },
-  {
-    "determ": "hellturkis",
-    "hiterm": "पीला",
-    "dist": 0.1664
-  },
-  {
-    "determ": "hellturkis",
-    "hiterm": "बैंगनी",
-    "dist": 0.5643
-  },
-  {
-    "determ": "hellturkis",
-    "hiterm": "भूरा",
-    "dist": 0.5545
-  },
-  {
-    "determ": "hellturkis",
-    "hiterm": "लाल",
-    "dist": 0.539
-  },
-  {
-    "determ": "hellturkis",
-    "hiterm": "हरा",
-    "dist": 0.2927
-  },
-  {
-    "determ": "hellturkis",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.3545
-  },
-  {
-    "determ": "hellturkis",
-    "hiterm": "हलकाहरा",
-    "dist": 0.1156
-  },
-  {
-    "determ": "himmelblau",
-    "hiterm": "काला",
-    "dist": 0.6494
-  },
-  {
-    "determ": "himmelblau",
-    "hiterm": "गहराहरा",
-    "dist": 0.4333
-  },
-  {
-    "determ": "himmelblau",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3063
-  },
-  {
-    "determ": "himmelblau",
-    "hiterm": "गुलाबी",
-    "dist": 0.2917
-  },
-  {
-    "determ": "himmelblau",
-    "hiterm": "जामुनी",
-    "dist": 0.3946
-  },
-  {
-    "determ": "himmelblau",
-    "hiterm": "नारंगी",
-    "dist": 0.2678
-  },
-  {
-    "determ": "himmelblau",
-    "hiterm": "नीला",
-    "dist": 0.2589
-  },
-  {
-    "determ": "himmelblau",
-    "hiterm": "पीला",
-    "dist": 0.2595
-  },
-  {
-    "determ": "himmelblau",
-    "hiterm": "बैंगनी",
-    "dist": 0.378
-  },
-  {
-    "determ": "himmelblau",
-    "hiterm": "भूरा",
     "dist": 0.419
   },
   {
+    "determ": "hellturkis",
+    "hiterm": "गुलाबी",
+    "dist": 0.4249
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "जामुनी",
+    "dist": 0.5688
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "नारंगी",
+    "dist": 0.285
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "नीला",
+    "dist": 0.4847
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "पीला",
+    "dist": 0.1703
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "बैंगनी",
+    "dist": 0.5555
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "भूरा",
+    "dist": 0.5523
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "रानी",
+    "dist": 0.5865
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "लाल",
+    "dist": 0.5405
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "हरा",
+    "dist": 0.2848
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.3511
+  },
+  {
+    "determ": "hellturkis",
+    "hiterm": "हलकाहरा",
+    "dist": 0.1389
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "आसमानी",
+    "dist": 0.074
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "काला",
+    "dist": 0.6596
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "गहरानीला",
+    "dist": 0.5577
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "गहराहरा",
+    "dist": 0.4402
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3088
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "गुलाबी",
+    "dist": 0.2925
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "जामुनी",
+    "dist": 0.4006
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "नारंगी",
+    "dist": 0.2653
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "नीला",
+    "dist": 0.2823
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "पीला",
+    "dist": 0.254
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "बैंगनी",
+    "dist": 0.3736
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "भूरा",
+    "dist": 0.4202
+  },
+  {
+    "determ": "himmelblau",
+    "hiterm": "रानी",
+    "dist": 0.4372
+  },
+  {
     "determ": "himmelblau",
     "hiterm": "लाल",
-    "dist": 0.4129
+    "dist": 0.416
   },
   {
     "determ": "himmelblau",
     "hiterm": "हरा",
-    "dist": 0.2224
+    "dist": 0.2183
   },
   {
     "determ": "himmelblau",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.1885
+    "dist": 0.1924
   },
   {
     "determ": "himmelblau",
     "hiterm": "हलकाहरा",
-    "dist": 0.1836
+    "dist": 0.1718
+  },
+  {
+    "determ": "khaki",
+    "hiterm": "आसमानी",
+    "dist": 0.308
   },
   {
     "determ": "khaki",
     "hiterm": "काला",
-    "dist": 0.4606
+    "dist": 0.4635
+  },
+  {
+    "determ": "khaki",
+    "hiterm": "गहरानीला",
+    "dist": 0.4217
   },
   {
     "determ": "khaki",
     "hiterm": "गहराहरा",
-    "dist": 0.2245
+    "dist": 0.2243
   },
   {
     "determ": "khaki",
     "hiterm": "गाढाहरा",
-    "dist": 0.0831
+    "dist": 0.0803
   },
   {
     "determ": "khaki",
     "hiterm": "गुलाबी",
-    "dist": 0.3348
+    "dist": 0.3318
   },
   {
     "determ": "khaki",
     "hiterm": "जामुनी",
-    "dist": 0.288
+    "dist": 0.2784
   },
   {
     "determ": "khaki",
     "hiterm": "नारंगी",
-    "dist": 0.2057
+    "dist": 0.2051
   },
   {
     "determ": "khaki",
     "hiterm": "नीला",
-    "dist": 0.3129
+    "dist": 0.3098
   },
   {
     "determ": "khaki",
     "hiterm": "पीला",
-    "dist": 0.2717
+    "dist": 0.272
   },
   {
     "determ": "khaki",
     "hiterm": "बैंगनी",
-    "dist": 0.3237
+    "dist": 0.3141
   },
   {
     "determ": "khaki",
     "hiterm": "भूरा",
-    "dist": 0.2123
+    "dist": 0.2077
+  },
+  {
+    "determ": "khaki",
+    "hiterm": "रानी",
+    "dist": 0.2799
   },
   {
     "determ": "khaki",
     "hiterm": "लाल",
-    "dist": 0.2358
+    "dist": 0.2338
   },
   {
     "determ": "khaki",
     "hiterm": "हरा",
-    "dist": 0.1555
+    "dist": 0.1556
   },
   {
     "determ": "khaki",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.2285
+    "dist": 0.2311
   },
   {
     "determ": "khaki",
     "hiterm": "हलकाहरा",
-    "dist": 0.2692
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "काला",
-    "dist": 0.4017
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "गहराहरा",
-    "dist": 0.3645
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "गाढाहरा",
-    "dist": 0.4176
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "गुलाबी",
-    "dist": 0.4056
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "जामुनी",
-    "dist": 0.2789
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "नारंगी",
-    "dist": 0.5487
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "नीला",
-    "dist": 0.2355
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "पीला",
-    "dist": 0.6328
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "बैंगनी",
-    "dist": 0.2596
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "भूरा",
-    "dist": 0.3886
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "लाल",
-    "dist": 0.4133
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "हरा",
-    "dist": 0.4862
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.3618
-  },
-  {
-    "determ": "konigsblau",
-    "hiterm": "हलकाहरा",
-    "dist": 0.5867
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "काला",
-    "dist": 0.6518
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "गहराहरा",
-    "dist": 0.4577
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3275
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "गुलाबी",
-    "dist": 0.2264
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "जामुनी",
-    "dist": 0.382
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "नारंगी",
-    "dist": 0.1007
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "नीला",
-    "dist": 0.4096
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "पीला",
-    "dist": 0.2006
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "बैंगनी",
-    "dist": 0.3967
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "भूरा",
-    "dist": 0.3724
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "लाल",
-    "dist": 0.3107
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "हरा",
-    "dist": 0.3072
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2222
-  },
-  {
-    "determ": "lachs",
-    "hiterm": "हलकाहरा",
-    "dist": 0.2292
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "काला",
-    "dist": 0.6019
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "गहराहरा",
-    "dist": 0.4168
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3126
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "गुलाबी",
-    "dist": 0.1566
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "जामुनी",
-    "dist": 0.3003
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "नारंगी",
     "dist": 0.2437
   },
   {
-    "determ": "lavendel",
-    "hiterm": "नीला",
-    "dist": 0.2676
+    "determ": "konigsblau",
+    "hiterm": "आसमानी",
+    "dist": 0.504
   },
   {
-    "determ": "lavendel",
-    "hiterm": "पीला",
-    "dist": 0.3083
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "बैंगनी",
-    "dist": 0.2761
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "भूरा",
-    "dist": 0.3651
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "लाल",
-    "dist": 0.3338
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "हरा",
-    "dist": 0.3018
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.1108
-  },
-  {
-    "determ": "lavendel",
-    "hiterm": "हलकाहरा",
-    "dist": 0.2662
-  },
-  {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "काला",
-    "dist": 0.4471
+    "dist": 0.4052
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
+    "hiterm": "गहरानीला",
+    "dist": 0.2399
+  },
+  {
+    "determ": "konigsblau",
     "hiterm": "गहराहरा",
-    "dist": 0.3557
+    "dist": 0.3731
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "गाढाहरा",
-    "dist": 0.3365
+    "dist": 0.4175
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "गुलाबी",
-    "dist": 0.18
+    "dist": 0.4064
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "जामुनी",
-    "dist": 0.1449
+    "dist": 0.285
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "नारंगी",
-    "dist": 0.3792
+    "dist": 0.5474
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "नीला",
-    "dist": 0.2301
+    "dist": 0.2176
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "पीला",
-    "dist": 0.4979
+    "dist": 0.6325
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "बैंगनी",
-    "dist": 0.0961
+    "dist": 0.2635
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "भूरा",
-    "dist": 0.2736
+    "dist": 0.3908
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
+    "hiterm": "रानी",
+    "dist": 0.3471
+  },
+  {
+    "determ": "konigsblau",
     "hiterm": "लाल",
-    "dist": 0.2558
+    "dist": 0.4136
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "हरा",
-    "dist": 0.3942
+    "dist": 0.4894
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.2163
+    "dist": 0.3714
   },
   {
-    "determ": "lila",
+    "determ": "konigsblau",
     "hiterm": "हलकाहरा",
-    "dist": 0.4696
+    "dist": 0.568
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
+    "hiterm": "आसमानी",
+    "dist": 0.2971
+  },
+  {
+    "determ": "lachs",
     "hiterm": "काला",
-    "dist": 0.3544
+    "dist": 0.656
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
+    "hiterm": "गहरानीला",
+    "dist": 0.5937
+  },
+  {
+    "determ": "lachs",
     "hiterm": "गहराहरा",
-    "dist": 0.2544
+    "dist": 0.4647
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
     "hiterm": "गाढाहरा",
-    "dist": 0.2659
+    "dist": 0.3286
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
     "hiterm": "गुलाबी",
-    "dist": 0.2715
+    "dist": 0.2263
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
     "hiterm": "जामुनी",
-    "dist": 0.0898
+    "dist": 0.38
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
     "hiterm": "नारंगी",
-    "dist": 0.3855
+    "dist": 0.0986
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
     "hiterm": "नीला",
-    "dist": 0.1728
+    "dist": 0.416
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
     "hiterm": "पीला",
-    "dist": 0.4941
+    "dist": 0.2001
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
     "hiterm": "बैंगनी",
-    "dist": 0.0962
+    "dist": 0.388
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
     "hiterm": "भूरा",
-    "dist": 0.2178
+    "dist": 0.3702
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
+    "hiterm": "रानी",
+    "dist": 0.3735
+  },
+  {
+    "determ": "lachs",
     "hiterm": "लाल",
-    "dist": 0.227
+    "dist": 0.3112
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
     "hiterm": "हरा",
-    "dist": 0.3503
+    "dist": 0.3039
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.2201
+    "dist": 0.2134
   },
   {
-    "determ": "lilablau",
+    "determ": "lachs",
     "hiterm": "हलकाहरा",
-    "dist": 0.4622
+    "dist": 0.2321
   },
   {
-    "determ": "magenta",
+    "determ": "lavendel",
+    "hiterm": "आसमानी",
+    "dist": 0.2089
+  },
+  {
+    "determ": "lavendel",
     "hiterm": "काला",
-    "dist": 0.5326
+    "dist": 0.6049
   },
   {
-    "determ": "magenta",
+    "determ": "lavendel",
+    "hiterm": "गहरानीला",
+    "dist": 0.4968
+  },
+  {
+    "determ": "lavendel",
     "hiterm": "गहराहरा",
-    "dist": 0.4128
+    "dist": 0.424
   },
   {
-    "determ": "magenta",
+    "determ": "lavendel",
     "hiterm": "गाढाहरा",
-    "dist": 0.3638
+    "dist": 0.3115
   },
   {
-    "determ": "magenta",
+    "determ": "lavendel",
     "hiterm": "गुलाबी",
-    "dist": 0.092
+    "dist": 0.157
   },
   {
-    "determ": "magenta",
+    "determ": "lavendel",
     "hiterm": "जामुनी",
-    "dist": 0.2205
+    "dist": 0.3012
   },
   {
-    "determ": "magenta",
+    "determ": "lavendel",
     "hiterm": "नारंगी",
-    "dist": 0.3095
+    "dist": 0.2429
   },
   {
-    "determ": "magenta",
+    "determ": "lavendel",
     "hiterm": "नीला",
-    "dist": 0.3174
+    "dist": 0.2675
   },
   {
-    "determ": "magenta",
+    "determ": "lavendel",
     "hiterm": "पीला",
-    "dist": 0.4389
+    "dist": 0.3091
   },
   {
-    "determ": "magenta",
+    "determ": "lavendel",
     "hiterm": "बैंगनी",
-    "dist": 0.2055
+    "dist": 0.264
   },
   {
-    "determ": "magenta",
+    "determ": "lavendel",
     "hiterm": "भूरा",
-    "dist": 0.317
-  },
-  {
-    "determ": "magenta",
-    "hiterm": "लाल",
-    "dist": 0.2518
-  },
-  {
-    "determ": "magenta",
-    "hiterm": "हरा",
-    "dist": 0.4026
-  },
-  {
-    "determ": "magenta",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.1971
-  },
-  {
-    "determ": "magenta",
-    "hiterm": "हलकाहरा",
-    "dist": 0.4248
-  },
-  {
-    "determ": "marineblau",
-    "hiterm": "काला",
-    "dist": 0.2636
-  },
-  {
-    "determ": "marineblau",
-    "hiterm": "गहराहरा",
-    "dist": 0.2771
-  },
-  {
-    "determ": "marineblau",
-    "hiterm": "गाढाहरा",
     "dist": 0.3627
   },
   {
+    "determ": "lavendel",
+    "hiterm": "रानी",
+    "dist": 0.3373
+  },
+  {
+    "determ": "lavendel",
+    "hiterm": "लाल",
+    "dist": 0.3336
+  },
+  {
+    "determ": "lavendel",
+    "hiterm": "हरा",
+    "dist": 0.2984
+  },
+  {
+    "determ": "lavendel",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1016
+  },
+  {
+    "determ": "lavendel",
+    "hiterm": "हलकाहरा",
+    "dist": 0.2609
+  },
+  {
+    "determ": "lila",
+    "hiterm": "आसमानी",
+    "dist": 0.4345
+  },
+  {
+    "determ": "lila",
+    "hiterm": "काला",
+    "dist": 0.4499
+  },
+  {
+    "determ": "lila",
+    "hiterm": "गहरानीला",
+    "dist": 0.3305
+  },
+  {
+    "determ": "lila",
+    "hiterm": "गहराहरा",
+    "dist": 0.3727
+  },
+  {
+    "determ": "lila",
+    "hiterm": "गाढाहरा",
+    "dist": 0.338
+  },
+  {
+    "determ": "lila",
+    "hiterm": "गुलाबी",
+    "dist": 0.1813
+  },
+  {
+    "determ": "lila",
+    "hiterm": "जामुनी",
+    "dist": 0.1495
+  },
+  {
+    "determ": "lila",
+    "hiterm": "नारंगी",
+    "dist": 0.3779
+  },
+  {
+    "determ": "lila",
+    "hiterm": "नीला",
+    "dist": 0.2223
+  },
+  {
+    "determ": "lila",
+    "hiterm": "पीला",
+    "dist": 0.4973
+  },
+  {
+    "determ": "lila",
+    "hiterm": "बैंगनी",
+    "dist": 0.0891
+  },
+  {
+    "determ": "lila",
+    "hiterm": "भूरा",
+    "dist": 0.2735
+  },
+  {
+    "determ": "lila",
+    "hiterm": "रानी",
+    "dist": 0.1968
+  },
+  {
+    "determ": "lila",
+    "hiterm": "लाल",
+    "dist": 0.2563
+  },
+  {
+    "determ": "lila",
+    "hiterm": "हरा",
+    "dist": 0.3958
+  },
+  {
+    "determ": "lila",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2175
+  },
+  {
+    "determ": "lila",
+    "hiterm": "हलकाहरा",
+    "dist": 0.4532
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "आसमानी",
+    "dist": 0.4272
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "काला",
+    "dist": 0.3539
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "गहरानीला",
+    "dist": 0.2266
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "गहराहरा",
+    "dist": 0.2708
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "गाढाहरा",
+    "dist": 0.2734
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "गुलाबी",
+    "dist": 0.2792
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "जामुनी",
+    "dist": 0.097
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "नारंगी",
+    "dist": 0.3923
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "नीला",
+    "dist": 0.1635
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "पीला",
+    "dist": 0.5016
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "बैंगनी",
+    "dist": 0.103
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "भूरा",
+    "dist": 0.2227
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "रानी",
+    "dist": 0.1691
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "लाल",
+    "dist": 0.2319
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "हरा",
+    "dist": 0.3616
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2389
+  },
+  {
+    "determ": "lilablau",
+    "hiterm": "हलकाहरा",
+    "dist": 0.4503
+  },
+  {
+    "determ": "limette",
+    "hiterm": "आसमानी",
+    "dist": 0.2441
+  },
+  {
+    "determ": "limette",
+    "hiterm": "काला",
+    "dist": 0.769
+  },
+  {
+    "determ": "limette",
+    "hiterm": "गहरानीला",
+    "dist": 0.7156
+  },
+  {
+    "determ": "limette",
+    "hiterm": "गहराहरा",
+    "dist": 0.5286
+  },
+  {
+    "determ": "limette",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3708
+  },
+  {
+    "determ": "limette",
+    "hiterm": "गुलाबी",
+    "dist": 0.4216
+  },
+  {
+    "determ": "limette",
+    "hiterm": "जामुनी",
+    "dist": 0.5413
+  },
+  {
+    "determ": "limette",
+    "hiterm": "नारंगी",
+    "dist": 0.2171
+  },
+  {
+    "determ": "limette",
+    "hiterm": "नीला",
+    "dist": 0.4988
+  },
+  {
+    "determ": "limette",
+    "hiterm": "पीला",
+    "dist": 0.0634
+  },
+  {
+    "determ": "limette",
+    "hiterm": "बैंगनी",
+    "dist": 0.5449
+  },
+  {
+    "determ": "limette",
+    "hiterm": "भूरा",
+    "dist": 0.4979
+  },
+  {
+    "determ": "limette",
+    "hiterm": "रानी",
+    "dist": 0.5455
+  },
+  {
+    "determ": "limette",
+    "hiterm": "लाल",
+    "dist": 0.4819
+  },
+  {
+    "determ": "limette",
+    "hiterm": "हरा",
+    "dist": 0.254
+  },
+  {
+    "determ": "limette",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.3453
+  },
+  {
+    "determ": "limette",
+    "hiterm": "हलकाहरा",
+    "dist": 0.1274
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "आसमानी",
+    "dist": 0.4049
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "काला",
+    "dist": 0.5378
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "गहरानीला",
+    "dist": 0.4373
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "गहराहरा",
+    "dist": 0.4293
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3657
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "गुलाबी",
+    "dist": 0.0906
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "जामुनी",
+    "dist": 0.2244
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "नारंगी",
+    "dist": 0.3071
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "नीला",
+    "dist": 0.3125
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "पीला",
+    "dist": 0.4375
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "बैंगनी",
+    "dist": 0.1986
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "भूरा",
+    "dist": 0.3179
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "रानी",
+    "dist": 0.2355
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "लाल",
+    "dist": 0.253
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "हरा",
+    "dist": 0.4021
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1905
+  },
+  {
+    "determ": "magenta",
+    "hiterm": "हलकाहरा",
+    "dist": 0.4115
+  },
+  {
+    "determ": "marineblau",
+    "hiterm": "आसमानी",
+    "dist": 0.5559
+  },
+  {
+    "determ": "marineblau",
+    "hiterm": "काला",
+    "dist": 0.269
+  },
+  {
+    "determ": "marineblau",
+    "hiterm": "गहरानीला",
+    "dist": 0.1122
+  },
+  {
+    "determ": "marineblau",
+    "hiterm": "गहराहरा",
+    "dist": 0.2897
+  },
+  {
+    "determ": "marineblau",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3621
+  },
+  {
     "determ": "marineblau",
     "hiterm": "गुलाबी",
-    "dist": 0.4329
+    "dist": 0.4309
   },
   {
     "determ": "marineblau",
     "hiterm": "जामुनी",
-    "dist": 0.2049
+    "dist": 0.2062
   },
   {
     "determ": "marineblau",
     "hiterm": "नारंगी",
-    "dist": 0.5385
+    "dist": 0.5354
   },
   {
     "determ": "marineblau",
     "hiterm": "नीला",
-    "dist": 0.248
+    "dist": 0.23
   },
   {
     "determ": "marineblau",
     "hiterm": "पीला",
-    "dist": 0.6398
+    "dist": 0.6369
   },
   {
     "determ": "marineblau",
     "hiterm": "बैंगनी",
-    "dist": 0.1999
+    "dist": 0.2073
   },
   {
     "determ": "marineblau",
     "hiterm": "भूरा",
-    "dist": 0.2863
+    "dist": 0.288
+  },
+  {
+    "determ": "marineblau",
+    "hiterm": "रानी",
+    "dist": 0.2559
   },
   {
     "determ": "marineblau",
     "hiterm": "लाल",
-    "dist": 0.3289
+    "dist": 0.3279
   },
   {
     "determ": "marineblau",
     "hiterm": "हरा",
-    "dist": 0.4654
+    "dist": 0.4684
   },
   {
     "determ": "marineblau",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.3864
+    "dist": 0.394
   },
   {
     "determ": "marineblau",
     "hiterm": "हलकाहरा",
-    "dist": 0.6066
+    "dist": 0.5813
+  },
+  {
+    "determ": "mintgrun",
+    "hiterm": "आसमानी",
+    "dist": 0.1649
   },
   {
     "determ": "mintgrun",
     "hiterm": "काला",
-    "dist": 0.781
+    "dist": 0.7825
+  },
+  {
+    "determ": "mintgrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.7123
   },
   {
     "determ": "mintgrun",
     "hiterm": "गहराहरा",
-    "dist": 0.5421
+    "dist": 0.5349
   },
   {
     "determ": "mintgrun",
     "hiterm": "गाढाहरा",
-    "dist": 0.3888
+    "dist": 0.3844
   },
   {
     "determ": "mintgrun",
     "hiterm": "गुलाबी",
-    "dist": 0.4369
+    "dist": 0.4338
   },
   {
     "determ": "mintgrun",
     "hiterm": "जामुनी",
-    "dist": 0.5571
+    "dist": 0.5524
   },
   {
     "determ": "mintgrun",
     "hiterm": "नारंगी",
-    "dist": 0.2845
+    "dist": 0.2822
   },
   {
     "determ": "mintgrun",
     "hiterm": "नीला",
-    "dist": 0.4534
+    "dist": 0.4665
   },
   {
     "determ": "mintgrun",
     "hiterm": "पीला",
-    "dist": 0.1601
+    "dist": 0.1605
   },
   {
     "determ": "mintgrun",
     "hiterm": "बैंगनी",
-    "dist": 0.559
+    "dist": 0.5465
   },
   {
     "determ": "mintgrun",
     "hiterm": "भूरा",
-    "dist": 0.5335
+    "dist": 0.5277
+  },
+  {
+    "determ": "mintgrun",
+    "hiterm": "रानी",
+    "dist": 0.5709
   },
   {
     "determ": "mintgrun",
     "hiterm": "लाल",
-    "dist": 0.5258
+    "dist": 0.5232
   },
   {
     "determ": "mintgrun",
     "hiterm": "हरा",
-    "dist": 0.2545
+    "dist": 0.2446
   },
   {
     "determ": "mintgrun",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.3524
+    "dist": 0.3477
   },
   {
     "determ": "mintgrun",
     "hiterm": "हलकाहरा",
-    "dist": 0.1277
+    "dist": 0.142
+  },
+  {
+    "determ": "mittelblau",
+    "hiterm": "आसमानी",
+    "dist": 0.2817
   },
   {
     "determ": "mittelblau",
     "hiterm": "काला",
-    "dist": 0.4851
+    "dist": 0.4888
+  },
+  {
+    "determ": "mittelblau",
+    "hiterm": "गहरानीला",
+    "dist": 0.3634
   },
   {
     "determ": "mittelblau",
     "hiterm": "गहराहरा",
-    "dist": 0.318
+    "dist": 0.3253
   },
   {
     "determ": "mittelblau",
     "hiterm": "गाढाहरा",
-    "dist": 0.2657
+    "dist": 0.2676
   },
   {
     "determ": "mittelblau",
     "hiterm": "गुलाबी",
-    "dist": 0.2836
+    "dist": 0.2857
   },
   {
     "determ": "mittelblau",
     "hiterm": "जामुनी",
-    "dist": 0.2526
+    "dist": 0.2574
   },
   {
     "determ": "mittelblau",
     "hiterm": "नारंगी",
-    "dist": 0.3594
+    "dist": 0.3618
   },
   {
     "determ": "mittelblau",
     "hiterm": "नीला",
-    "dist": 0.1083
+    "dist": 0.1114
   },
   {
     "determ": "mittelblau",
     "hiterm": "पीला",
-    "dist": 0.4192
+    "dist": 0.4214
   },
   {
     "determ": "mittelblau",
     "hiterm": "बैंगनी",
-    "dist": 0.2242
+    "dist": 0.2202
   },
   {
     "determ": "mittelblau",
@@ -3131,248 +3971,393 @@
   },
   {
     "determ": "mittelblau",
+    "hiterm": "रानी",
+    "dist": 0.3162
+  },
+  {
+    "determ": "mittelblau",
     "hiterm": "लाल",
-    "dist": 0.3352
+    "dist": 0.3371
   },
   {
     "determ": "mittelblau",
     "hiterm": "हरा",
-    "dist": 0.2799
+    "dist": 0.2837
   },
   {
     "determ": "mittelblau",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.183
+    "dist": 0.1955
   },
   {
     "determ": "mittelblau",
     "hiterm": "हलकाहरा",
-    "dist": 0.3633
+    "dist": 0.3475
+  },
+  {
+    "determ": "neongrun",
+    "hiterm": "आसमानी",
+    "dist": 0.194
   },
   {
     "determ": "neongrun",
     "hiterm": "काला",
-    "dist": 0.6975
+    "dist": 0.7009
+  },
+  {
+    "determ": "neongrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.6388
   },
   {
     "determ": "neongrun",
     "hiterm": "गहराहरा",
-    "dist": 0.4578
+    "dist": 0.4538
   },
   {
     "determ": "neongrun",
     "hiterm": "गाढाहरा",
-    "dist": 0.298
+    "dist": 0.2957
   },
   {
     "determ": "neongrun",
     "hiterm": "गुलाबी",
-    "dist": 0.3863
+    "dist": 0.3868
   },
   {
     "determ": "neongrun",
     "hiterm": "जामुनी",
-    "dist": 0.481
+    "dist": 0.4784
   },
   {
     "determ": "neongrun",
     "hiterm": "नारंगी",
-    "dist": 0.2018
+    "dist": 0.2051
   },
   {
     "determ": "neongrun",
     "hiterm": "नीला",
-    "dist": 0.4072
+    "dist": 0.4194
   },
   {
     "determ": "neongrun",
     "hiterm": "पीला",
-    "dist": 0.0867
+    "dist": 0.0895
   },
   {
     "determ": "neongrun",
     "hiterm": "बैंगनी",
-    "dist": 0.4874
+    "dist": 0.4783
   },
   {
     "determ": "neongrun",
     "hiterm": "भूरा",
-    "dist": 0.4397
+    "dist": 0.4364
+  },
+  {
+    "determ": "neongrun",
+    "hiterm": "रानी",
+    "dist": 0.4889
   },
   {
     "determ": "neongrun",
     "hiterm": "लाल",
-    "dist": 0.4345
+    "dist": 0.4348
   },
   {
     "determ": "neongrun",
     "hiterm": "हरा",
-    "dist": 0.1776
+    "dist": 0.1691
   },
   {
     "determ": "neongrun",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.2916
+    "dist": 0.2913
   },
   {
     "determ": "neongrun",
     "hiterm": "हलकाहरा",
-    "dist": 0.0636
+    "dist": 0.0622
+  },
+  {
+    "determ": "ocker",
+    "hiterm": "आसमानी",
+    "dist": 0.2829
   },
   {
     "determ": "ocker",
     "hiterm": "काला",
-    "dist": 0.5528
+    "dist": 0.5579
+  },
+  {
+    "determ": "ocker",
+    "hiterm": "गहरानीला",
+    "dist": 0.5146
   },
   {
     "determ": "ocker",
     "hiterm": "गहराहरा",
-    "dist": 0.3277
+    "dist": 0.3302
   },
   {
     "determ": "ocker",
     "hiterm": "गाढाहरा",
-    "dist": 0.1732
+    "dist": 0.1735
   },
   {
     "determ": "ocker",
     "hiterm": "गुलाबी",
-    "dist": 0.3031
+    "dist": 0.3039
   },
   {
     "determ": "ocker",
     "hiterm": "जामुनी",
-    "dist": 0.3411
+    "dist": 0.3383
   },
   {
     "determ": "ocker",
     "hiterm": "नारंगी",
-    "dist": 0.1083
+    "dist": 0.1111
   },
   {
     "determ": "ocker",
     "hiterm": "नीला",
-    "dist": 0.3445
+    "dist": 0.3535
   },
   {
     "determ": "ocker",
     "hiterm": "पीला",
-    "dist": 0.1765
+    "dist": 0.1741
   },
   {
     "determ": "ocker",
     "hiterm": "बैंगनी",
-    "dist": 0.3643
+    "dist": 0.3582
   },
   {
     "determ": "ocker",
     "hiterm": "भूरा",
-    "dist": 0.2765
+    "dist": 0.2746
+  },
+  {
+    "determ": "ocker",
+    "hiterm": "रानी",
+    "dist": 0.3315
   },
   {
     "determ": "ocker",
     "hiterm": "लाल",
-    "dist": 0.2636
+    "dist": 0.2653
   },
   {
     "determ": "ocker",
     "hiterm": "हरा",
-    "dist": 0.1518
+    "dist": 0.1494
   },
   {
     "determ": "ocker",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.2164
+    "dist": 0.2207
   },
   {
     "determ": "ocker",
     "hiterm": "हलकाहरा",
-    "dist": 0.1974
+    "dist": 0.1781
+  },
+  {
+    "determ": "olive",
+    "hiterm": "आसमानी",
+    "dist": 0.3164
+  },
+  {
+    "determ": "olive",
+    "hiterm": "काला",
+    "dist": 0.4715
+  },
+  {
+    "determ": "olive",
+    "hiterm": "गहरानीला",
+    "dist": 0.4374
+  },
+  {
+    "determ": "olive",
+    "hiterm": "गहराहरा",
+    "dist": 0.2297
+  },
+  {
+    "determ": "olive",
+    "hiterm": "गाढाहरा",
+    "dist": 0.0834
+  },
+  {
+    "determ": "olive",
+    "hiterm": "गुलाबी",
+    "dist": 0.3471
+  },
+  {
+    "determ": "olive",
+    "hiterm": "जामुनी",
+    "dist": 0.2987
+  },
+  {
+    "determ": "olive",
+    "hiterm": "नारंगी",
+    "dist": 0.2049
+  },
+  {
+    "determ": "olive",
+    "hiterm": "नीला",
+    "dist": 0.3201
+  },
+  {
+    "determ": "olive",
+    "hiterm": "पीला",
+    "dist": 0.2633
+  },
+  {
+    "determ": "olive",
+    "hiterm": "बैंगनी",
+    "dist": 0.3346
+  },
+  {
+    "determ": "olive",
+    "hiterm": "भूरा",
+    "dist": 0.2166
+  },
+  {
+    "determ": "olive",
+    "hiterm": "रानी",
+    "dist": 0.2961
+  },
+  {
+    "determ": "olive",
+    "hiterm": "लाल",
+    "dist": 0.2434
+  },
+  {
+    "determ": "olive",
+    "hiterm": "हरा",
+    "dist": 0.1445
+  },
+  {
+    "determ": "olive",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.248
+  },
+  {
+    "determ": "olive",
+    "hiterm": "हलकाहरा",
+    "dist": 0.242
+  },
+  {
+    "determ": "olivgrun",
+    "hiterm": "आसमानी",
+    "dist": 0.3799
   },
   {
     "determ": "olivgrun",
     "hiterm": "काला",
-    "dist": 0.4133
+    "dist": 0.4142
+  },
+  {
+    "determ": "olivgrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.3972
   },
   {
     "determ": "olivgrun",
     "hiterm": "गहराहरा",
-    "dist": 0.1834
+    "dist": 0.1754
   },
   {
     "determ": "olivgrun",
     "hiterm": "गाढाहरा",
-    "dist": 0.0784
+    "dist": 0.078
   },
   {
     "determ": "olivgrun",
     "hiterm": "गुलाबी",
-    "dist": 0.3858
+    "dist": 0.3876
   },
   {
     "determ": "olivgrun",
     "hiterm": "जामुनी",
-    "dist": 0.3024
+    "dist": 0.2957
   },
   {
     "determ": "olivgrun",
     "hiterm": "नारंगी",
-    "dist": 0.2613
+    "dist": 0.2645
   },
   {
     "determ": "olivgrun",
     "hiterm": "नीला",
-    "dist": 0.3331
+    "dist": 0.3343
   },
   {
     "determ": "olivgrun",
     "hiterm": "पीला",
-    "dist": 0.3249
+    "dist": 0.327
   },
   {
     "determ": "olivgrun",
     "hiterm": "बैंगनी",
-    "dist": 0.3388
+    "dist": 0.3355
   },
   {
     "determ": "olivgrun",
     "hiterm": "भूरा",
-    "dist": 0.1918
+    "dist": 0.1879
+  },
+  {
+    "determ": "olivgrun",
+    "hiterm": "रानी",
+    "dist": 0.2819
   },
   {
     "determ": "olivgrun",
     "hiterm": "लाल",
-    "dist": 0.2319
+    "dist": 0.2314
   },
   {
     "determ": "olivgrun",
     "hiterm": "हरा",
-    "dist": 0.1621
+    "dist": 0.1689
   },
   {
     "determ": "olivgrun",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.2849
+    "dist": 0.2935
   },
   {
     "determ": "olivgrun",
     "hiterm": "हलकाहरा",
-    "dist": 0.3306
+    "dist": 0.3081
+  },
+  {
+    "determ": "orange",
+    "hiterm": "आसमानी",
+    "dist": 0.2956
   },
   {
     "determ": "orange",
     "hiterm": "काला",
-    "dist": 0.615
+    "dist": 0.6169
+  },
+  {
+    "determ": "orange",
+    "hiterm": "गहरानीला",
+    "dist": 0.5709
   },
   {
     "determ": "orange",
     "hiterm": "गहराहरा",
-    "dist": 0.4045
+    "dist": 0.4051
   },
   {
     "determ": "orange",
     "hiterm": "गाढाहरा",
-    "dist": 0.2598
+    "dist": 0.2578
   },
   {
     "determ": "orange",
@@ -3382,662 +4367,802 @@
   {
     "determ": "orange",
     "hiterm": "जामुनी",
-    "dist": 0.3804
+    "dist": 0.3753
   },
   {
     "determ": "orange",
     "hiterm": "नारंगी",
-    "dist": 0.0326
+    "dist": 0.034
   },
   {
     "determ": "orange",
     "hiterm": "नीला",
-    "dist": 0.3969
+    "dist": 0.4033
   },
   {
     "determ": "orange",
     "hiterm": "पीला",
-    "dist": 0.15
+    "dist": 0.1493
   },
   {
     "determ": "orange",
     "hiterm": "बैंगनी",
-    "dist": 0.4013
+    "dist": 0.3914
   },
   {
     "determ": "orange",
     "hiterm": "भूरा",
-    "dist": 0.3325
+    "dist": 0.3273
+  },
+  {
+    "determ": "orange",
+    "hiterm": "रानी",
+    "dist": 0.3633
   },
   {
     "determ": "orange",
     "hiterm": "लाल",
-    "dist": 0.2938
+    "dist": 0.2923
   },
   {
     "determ": "orange",
     "hiterm": "हरा",
-    "dist": 0.2342
+    "dist": 0.2287
   },
   {
     "determ": "orange",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.2331
+    "dist": 0.2301
   },
   {
     "determ": "orange",
     "hiterm": "हलकाहरा",
-    "dist": 0.1956
+    "dist": 0.1889
+  },
+  {
+    "determ": "orangerot",
+    "hiterm": "आसमानी",
+    "dist": 0.3094
   },
   {
     "determ": "orangerot",
     "hiterm": "काला",
-    "dist": 0.6016
+    "dist": 0.6026
+  },
+  {
+    "determ": "orangerot",
+    "hiterm": "गहरानीला",
+    "dist": 0.542
   },
   {
     "determ": "orangerot",
     "hiterm": "गहराहरा",
-    "dist": 0.4127
+    "dist": 0.4179
   },
   {
     "determ": "orangerot",
     "hiterm": "गाढाहरा",
-    "dist": 0.2875
+    "dist": 0.2857
   },
   {
     "determ": "orangerot",
     "hiterm": "गुलाबी",
-    "dist": 0.1984
+    "dist": 0.1977
   },
   {
     "determ": "orangerot",
     "hiterm": "जामुनी",
-    "dist": 0.3326
+    "dist": 0.3273
   },
   {
     "determ": "orangerot",
     "hiterm": "नारंगी",
-    "dist": 0.087
+    "dist": 0.0829
   },
   {
     "determ": "orangerot",
     "hiterm": "नीला",
-    "dist": 0.3742
+    "dist": 0.3755
   },
   {
     "determ": "orangerot",
     "hiterm": "पीला",
-    "dist": 0.2222
+    "dist": 0.2228
   },
   {
     "determ": "orangerot",
     "hiterm": "बैंगनी",
-    "dist": 0.3494
-  },
-  {
-    "determ": "orangerot",
-    "hiterm": "भूरा",
-    "dist": 0.3235
-  },
-  {
-    "determ": "orangerot",
-    "hiterm": "लाल",
-    "dist": 0.2591
-  },
-  {
-    "determ": "orangerot",
-    "hiterm": "हरा",
-    "dist": 0.2823
-  },
-  {
-    "determ": "orangerot",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.196
-  },
-  {
-    "determ": "orangerot",
-    "hiterm": "हलकाहरा",
-    "dist": 0.249
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "काला",
-    "dist": 0.4282
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "गहराहरा",
-    "dist": 0.2049
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "गाढाहरा",
-    "dist": 0.1192
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "गुलाबी",
-    "dist": 0.302
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "जामुनी",
-    "dist": 0.2294
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "नारंगी",
-    "dist": 0.2782
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "नीला",
-    "dist": 0.1956
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "पीला",
-    "dist": 0.3419
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "बैंगनी",
-    "dist": 0.2442
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "भूरा",
-    "dist": 0.2199
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "लाल",
-    "dist": 0.249
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "हरा",
-    "dist": 0.172
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.186
-  },
-  {
-    "determ": "petrol",
-    "hiterm": "हलकाहरा",
-    "dist": 0.3083
-  },
-  {
-    "determ": "pink",
-    "hiterm": "काला",
-    "dist": 0.5858
-  },
-  {
-    "determ": "pink",
-    "hiterm": "गहराहरा",
-    "dist": 0.4425
-  },
-  {
-    "determ": "pink",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3688
-  },
-  {
-    "determ": "pink",
-    "hiterm": "गुलाबी",
-    "dist": 0.0579
-  },
-  {
-    "determ": "pink",
-    "hiterm": "जामुनी",
-    "dist": 0.2699
-  },
-  {
-    "determ": "pink",
-    "hiterm": "नारंगी",
-    "dist": 0.2747
-  },
-  {
-    "determ": "pink",
-    "hiterm": "नीला",
-    "dist": 0.3316
-  },
-  {
-    "determ": "pink",
-    "hiterm": "पीला",
-    "dist": 0.3895
-  },
-  {
-    "determ": "pink",
-    "hiterm": "बैंगनी",
-    "dist": 0.2505
-  },
-  {
-    "determ": "pink",
-    "hiterm": "भूरा",
-    "dist": 0.3465
-  },
-  {
-    "determ": "pink",
-    "hiterm": "लाल",
-    "dist": 0.2847
-  },
-  {
-    "determ": "pink",
-    "hiterm": "हरा",
-    "dist": 0.3865
-  },
-  {
-    "determ": "pink",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.1714
-  },
-  {
-    "determ": "pink",
-    "hiterm": "हलकाहरा",
-    "dist": 0.3741
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "काला",
-    "dist": 0.3312
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "गहराहरा",
-    "dist": 0.2368
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "गाढाहरा",
-    "dist": 0.253
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "गुलाबी",
-    "dist": 0.2652
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "जामुनी",
-    "dist": 0.0709
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "नारंगी",
-    "dist": 0.354
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "नीला",
-    "dist": 0.2658
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "पीला",
-    "dist": 0.4848
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "बैंगनी",
-    "dist": 0.1209
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "भूरा",
-    "dist": 0.1478
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "लाल",
-    "dist": 0.1248
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "हरा",
-    "dist": 0.354
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2449
-  },
-  {
-    "determ": "purpur",
-    "hiterm": "हलकाहरा",
-    "dist": 0.4725
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "काला",
-    "dist": 0.6269
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "गहराहरा",
-    "dist": 0.4451
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "गाढाहरा",
-    "dist": 0.325
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "गुलाबी",
-    "dist": 0.1128
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "जामुनी",
-    "dist": 0.3237
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "नारंगी",
-    "dist": 0.1681
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "नीला",
-    "dist": 0.3412
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "पीला",
-    "dist": 0.2737
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "बैंगनी",
-    "dist": 0.3132
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "भूरा",
-    "dist": 0.3533
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "लाल",
-    "dist": 0.3022
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "हरा",
-    "dist": 0.3187
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.1431
-  },
-  {
-    "determ": "rosa",
-    "hiterm": "हलकाहरा",
-    "dist": 0.2677
-  },
-  {
-    "determ": "rot",
-    "hiterm": "काला",
-    "dist": 0.3438
-  },
-  {
-    "determ": "rot",
-    "hiterm": "गहराहरा",
-    "dist": 0.245
-  },
-  {
-    "determ": "rot",
-    "hiterm": "गाढाहरा",
-    "dist": 0.2373
-  },
-  {
-    "determ": "rot",
-    "hiterm": "गुलाबी",
-    "dist": 0.2928
-  },
-  {
-    "determ": "rot",
-    "hiterm": "जामुनी",
-    "dist": 0.1642
-  },
-  {
-    "determ": "rot",
-    "hiterm": "नारंगी",
-    "dist": 0.3079
-  },
-  {
-    "determ": "rot",
-    "hiterm": "नीला",
-    "dist": 0.3221
-  },
-  {
-    "determ": "rot",
-    "hiterm": "पीला",
-    "dist": 0.4454
-  },
-  {
-    "determ": "rot",
-    "hiterm": "बैंगनी",
-    "dist": 0.2052
-  },
-  {
-    "determ": "rot",
-    "hiterm": "भूरा",
-    "dist": 0.1133
-  },
-  {
-    "determ": "rot",
-    "hiterm": "लाल",
-    "dist": 0.0495
-  },
-  {
-    "determ": "rot",
-    "hiterm": "हरा",
     "dist": 0.3379
   },
   {
+    "determ": "orangerot",
+    "hiterm": "भूरा",
+    "dist": 0.318
+  },
+  {
+    "determ": "orangerot",
+    "hiterm": "रानी",
+    "dist": 0.3193
+  },
+  {
+    "determ": "orangerot",
+    "hiterm": "लाल",
+    "dist": 0.2566
+  },
+  {
+    "determ": "orangerot",
+    "hiterm": "हरा",
+    "dist": 0.2778
+  },
+  {
+    "determ": "orangerot",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1876
+  },
+  {
+    "determ": "orangerot",
+    "hiterm": "हलकाहरा",
+    "dist": 0.2434
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "आसमानी",
+    "dist": 0.285
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "काला",
+    "dist": 0.4336
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "गहरानीला",
+    "dist": 0.3498
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "गहराहरा",
+    "dist": 0.2095
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "गाढाहरा",
+    "dist": 0.1196
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "गुलाबी",
+    "dist": 0.3042
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "जामुनी",
+    "dist": 0.2284
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "नारंगी",
+    "dist": 0.2798
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "नीला",
+    "dist": 0.1943
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "पीला",
+    "dist": 0.3422
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "बैंगनी",
+    "dist": 0.2398
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "भूरा",
+    "dist": 0.2214
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "रानी",
+    "dist": 0.2612
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "लाल",
+    "dist": 0.2519
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "हरा",
+    "dist": 0.1748
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1988
+  },
+  {
+    "determ": "petrol",
+    "hiterm": "हलकाहरा",
+    "dist": 0.2837
+  },
+  {
+    "determ": "pink",
+    "hiterm": "आसमानी",
+    "dist": 0.3542
+  },
+  {
+    "determ": "pink",
+    "hiterm": "काला",
+    "dist": 0.5898
+  },
+  {
+    "determ": "pink",
+    "hiterm": "गहरानीला",
+    "dist": 0.4907
+  },
+  {
+    "determ": "pink",
+    "hiterm": "गहराहरा",
+    "dist": 0.4552
+  },
+  {
+    "determ": "pink",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3679
+  },
+  {
+    "determ": "pink",
+    "hiterm": "गुलाबी",
+    "dist": 0.0566
+  },
+  {
+    "determ": "pink",
+    "hiterm": "जामुनी",
+    "dist": 0.2721
+  },
+  {
+    "determ": "pink",
+    "hiterm": "नारंगी",
+    "dist": 0.2701
+  },
+  {
+    "determ": "pink",
+    "hiterm": "नीला",
+    "dist": 0.3291
+  },
+  {
+    "determ": "pink",
+    "hiterm": "पीला",
+    "dist": 0.3862
+  },
+  {
+    "determ": "pink",
+    "hiterm": "बैंगनी",
+    "dist": 0.2416
+  },
+  {
+    "determ": "pink",
+    "hiterm": "भूरा",
+    "dist": 0.3441
+  },
+  {
+    "determ": "pink",
+    "hiterm": "रानी",
+    "dist": 0.2858
+  },
+  {
+    "determ": "pink",
+    "hiterm": "लाल",
+    "dist": 0.284
+  },
+  {
+    "determ": "pink",
+    "hiterm": "हरा",
+    "dist": 0.3827
+  },
+  {
+    "determ": "pink",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1576
+  },
+  {
+    "determ": "pink",
+    "hiterm": "हलकाहरा",
+    "dist": 0.3658
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "आसमानी",
+    "dist": 0.4715
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "काला",
+    "dist": 0.3341
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "गहरानीला",
+    "dist": 0.258
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "गहराहरा",
+    "dist": 0.2567
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "गाढाहरा",
+    "dist": 0.2565
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "गुलाबी",
+    "dist": 0.2673
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "जामुनी",
+    "dist": 0.0674
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "नारंगी",
+    "dist": 0.3541
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "नीला",
+    "dist": 0.2573
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "पीला",
+    "dist": 0.4853
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "बैंगनी",
+    "dist": 0.1233
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "भूरा",
+    "dist": 0.1499
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "रानी",
+    "dist": 0.0553
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "लाल",
+    "dist": 0.126
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "हरा",
+    "dist": 0.3591
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2526
+  },
+  {
+    "determ": "purpur",
+    "hiterm": "हलकाहरा",
+    "dist": 0.4524
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "आसमानी",
+    "dist": 0.2841
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "काला",
+    "dist": 0.6298
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "गहरानीला",
+    "dist": 0.5431
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "गहराहरा",
+    "dist": 0.4547
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3265
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "गुलाबी",
+    "dist": 0.1096
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "जामुनी",
+    "dist": 0.3222
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "नारंगी",
+    "dist": 0.1686
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "नीला",
+    "dist": 0.3421
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "पीला",
+    "dist": 0.2759
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "बैंगनी",
+    "dist": 0.3007
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "भूरा",
+    "dist": 0.3504
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "रानी",
+    "dist": 0.3282
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "लाल",
+    "dist": 0.3023
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "हरा",
+    "dist": 0.3171
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.1278
+  },
+  {
+    "determ": "rosa",
+    "hiterm": "हलकाहरा",
+    "dist": 0.2667
+  },
+  {
+    "determ": "rot",
+    "hiterm": "आसमानी",
+    "dist": 0.4791
+  },
+  {
+    "determ": "rot",
+    "hiterm": "काला",
+    "dist": 0.3456
+  },
+  {
+    "determ": "rot",
+    "hiterm": "गहरानीला",
+    "dist": 0.3231
+  },
+  {
+    "determ": "rot",
+    "hiterm": "गहराहरा",
+    "dist": 0.2631
+  },
+  {
+    "determ": "rot",
+    "hiterm": "गाढाहरा",
+    "dist": 0.2406
+  },
+  {
+    "determ": "rot",
+    "hiterm": "गुलाबी",
+    "dist": 0.2952
+  },
+  {
+    "determ": "rot",
+    "hiterm": "जामुनी",
+    "dist": 0.158
+  },
+  {
+    "determ": "rot",
+    "hiterm": "नारंगी",
+    "dist": 0.3088
+  },
+  {
+    "determ": "rot",
+    "hiterm": "नीला",
+    "dist": 0.3193
+  },
+  {
+    "determ": "rot",
+    "hiterm": "पीला",
+    "dist": 0.446
+  },
+  {
+    "determ": "rot",
+    "hiterm": "बैंगनी",
+    "dist": 0.2047
+  },
+  {
+    "determ": "rot",
+    "hiterm": "भूरा",
+    "dist": 0.1127
+  },
+  {
+    "determ": "rot",
+    "hiterm": "रानी",
+    "dist": 0.1043
+  },
+  {
+    "determ": "rot",
+    "hiterm": "लाल",
+    "dist": 0.0486
+  },
+  {
+    "determ": "rot",
+    "hiterm": "हरा",
+    "dist": 0.3427
+  },
+  {
     "determ": "rot",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.276
+    "dist": 0.2824
   },
   {
     "determ": "rot",
     "hiterm": "हलकाहरा",
-    "dist": 0.4552
+    "dist": 0.436
+  },
+  {
+    "determ": "rotbraun",
+    "hiterm": "आसमानी",
+    "dist": 0.5049
   },
   {
     "determ": "rotbraun",
     "hiterm": "काला",
-    "dist": 0.2958
+    "dist": 0.2984
+  },
+  {
+    "determ": "rotbraun",
+    "hiterm": "गहरानीला",
+    "dist": 0.2889
   },
   {
     "determ": "rotbraun",
     "hiterm": "गहराहरा",
+    "dist": 0.1938
+  },
+  {
+    "determ": "rotbraun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.2127
+  },
+  {
+    "determ": "rotbraun",
+    "hiterm": "गुलाबी",
+    "dist": 0.3603
+  },
+  {
+    "determ": "rotbraun",
+    "hiterm": "जामुनी",
     "dist": 0.1785
   },
   {
     "determ": "rotbraun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.2099
-  },
-  {
-    "determ": "rotbraun",
-    "hiterm": "गुलाबी",
-    "dist": 0.3585
-  },
-  {
-    "determ": "rotbraun",
-    "hiterm": "जामुनी",
-    "dist": 0.1856
-  },
-  {
-    "determ": "rotbraun",
     "hiterm": "नारंगी",
-    "dist": 0.3404
+    "dist": 0.3406
   },
   {
     "determ": "rotbraun",
     "hiterm": "नीला",
-    "dist": 0.354
+    "dist": 0.3478
   },
   {
     "determ": "rotbraun",
     "hiterm": "पीला",
-    "dist": 0.4659
+    "dist": 0.4657
   },
   {
     "determ": "rotbraun",
     "hiterm": "बैंगनी",
-    "dist": 0.2536
+    "dist": 0.2552
   },
   {
     "determ": "rotbraun",
     "hiterm": "भूरा",
-    "dist": 0.0991
+    "dist": 0.1018
+  },
+  {
+    "determ": "rotbraun",
+    "hiterm": "रानी",
+    "dist": 0.1259
   },
   {
     "determ": "rotbraun",
     "hiterm": "लाल",
-    "dist": 0.0925
+    "dist": 0.0918
   },
   {
     "determ": "rotbraun",
     "hiterm": "हरा",
-    "dist": 0.3404
+    "dist": 0.345
   },
   {
     "determ": "rotbraun",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.3171
+    "dist": 0.3255
   },
   {
     "determ": "rotbraun",
     "hiterm": "हलकाहरा",
-    "dist": 0.4746
+    "dist": 0.4537
+  },
+  {
+    "determ": "schwarz",
+    "hiterm": "आसमानी",
+    "dist": 0.7441
   },
   {
     "determ": "schwarz",
     "hiterm": "काला",
-    "dist": 0.0511
+    "dist": 0.0476
+  },
+  {
+    "determ": "schwarz",
+    "hiterm": "गहरानीला",
+    "dist": 0.1942
   },
   {
     "determ": "schwarz",
     "hiterm": "गहराहरा",
-    "dist": 0.2929
+    "dist": 0.2989
   },
   {
     "determ": "schwarz",
     "hiterm": "गाढाहरा",
-    "dist": 0.4475
+    "dist": 0.4496
   },
   {
     "determ": "schwarz",
     "hiterm": "गुलाबी",
-    "dist": 0.6289
+    "dist": 0.6305
   },
   {
     "determ": "schwarz",
     "hiterm": "जामुनी",
-    "dist": 0.3793
+    "dist": 0.3764
   },
   {
     "determ": "schwarz",
     "hiterm": "नारंगी",
-    "dist": 0.6594
+    "dist": 0.6595
   },
   {
     "determ": "schwarz",
     "hiterm": "नीला",
-    "dist": 0.4787
+    "dist": 0.4683
   },
   {
     "determ": "schwarz",
     "hiterm": "पीला",
-    "dist": 0.7621
+    "dist": 0.7618
   },
   {
     "determ": "schwarz",
     "hiterm": "बैंगनी",
-    "dist": 0.4123
+    "dist": 0.4226
   },
   {
     "determ": "schwarz",
     "hiterm": "भूरा",
-    "dist": 0.3465
+    "dist": 0.3503
+  },
+  {
+    "determ": "schwarz",
+    "hiterm": "रानी",
+    "dist": 0.3658
   },
   {
     "determ": "schwarz",
     "hiterm": "लाल",
-    "dist": 0.4049
+    "dist": 0.4055
   },
   {
     "determ": "schwarz",
     "hiterm": "हरा",
-    "dist": 0.5752
+    "dist": 0.5833
   },
   {
     "determ": "schwarz",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.5781
+    "dist": 0.5898
   },
   {
     "determ": "schwarz",
     "hiterm": "हलकाहरा",
-    "dist": 0.7528
+    "dist": 0.7277
+  },
+  {
+    "determ": "senfgelb",
+    "hiterm": "आसमानी",
+    "dist": 0.2442
   },
   {
     "determ": "senfgelb",
     "hiterm": "काला",
-    "dist": 0.6546
+    "dist": 0.66
+  },
+  {
+    "determ": "senfgelb",
+    "hiterm": "गहरानीला",
+    "dist": 0.6108
   },
   {
     "determ": "senfgelb",
     "hiterm": "गहराहरा",
-    "dist": 0.421
+    "dist": 0.4224
   },
   {
     "determ": "senfgelb",
     "hiterm": "गाढाहरा",
-    "dist": 0.2624
+    "dist": 0.2641
   },
   {
     "determ": "senfgelb",
     "hiterm": "गुलाबी",
-    "dist": 0.35
+    "dist": 0.3485
   },
   {
     "determ": "senfgelb",
     "hiterm": "जामुनी",
-    "dist": 0.4381
+    "dist": 0.4352
   },
   {
     "determ": "senfgelb",
     "hiterm": "नारंगी",
-    "dist": 0.1268
+    "dist": 0.1249
   },
   {
     "determ": "senfgelb",
     "hiterm": "नीला",
-    "dist": 0.4032
+    "dist": 0.4165
   },
   {
     "determ": "senfgelb",
     "hiterm": "पीला",
-    "dist": 0.0695
+    "dist": 0.0664
   },
   {
     "determ": "senfgelb",
     "hiterm": "बैंगनी",
-    "dist": 0.4522
+    "dist": 0.4441
   },
   {
     "determ": "senfgelb",
     "hiterm": "भूरा",
-    "dist": 0.3858
+    "dist": 0.383
+  },
+  {
+    "determ": "senfgelb",
+    "hiterm": "रानी",
+    "dist": 0.4348
   },
   {
     "determ": "senfgelb",
@@ -4047,102 +5172,127 @@
   {
     "determ": "senfgelb",
     "hiterm": "हरा",
-    "dist": 0.1779
+    "dist": 0.1758
   },
   {
     "determ": "senfgelb",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.2658
+    "dist": 0.2645
   },
   {
     "determ": "senfgelb",
     "hiterm": "हलकाहरा",
-    "dist": 0.11
+    "dist": 0.1025
+  },
+  {
+    "determ": "tannengrun",
+    "hiterm": "आसमानी",
+    "dist": 0.4632
   },
   {
     "determ": "tannengrun",
     "hiterm": "काला",
-    "dist": 0.2903
+    "dist": 0.292
+  },
+  {
+    "determ": "tannengrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.2814
   },
   {
     "determ": "tannengrun",
     "hiterm": "गहराहरा",
-    "dist": 0.0712
+    "dist": 0.05
   },
   {
     "determ": "tannengrun",
     "hiterm": "गाढाहरा",
-    "dist": 0.1681
+    "dist": 0.1673
   },
   {
     "determ": "tannengrun",
     "hiterm": "गुलाबी",
-    "dist": 0.4623
+    "dist": 0.4619
   },
   {
     "determ": "tannengrun",
     "hiterm": "जामुनी",
-    "dist": 0.2935
+    "dist": 0.2858
   },
   {
     "determ": "tannengrun",
     "hiterm": "नारंगी",
-    "dist": 0.4099
+    "dist": 0.41
   },
   {
     "determ": "tannengrun",
     "hiterm": "नीला",
-    "dist": 0.3145
+    "dist": 0.3097
   },
   {
     "determ": "tannengrun",
     "hiterm": "पीला",
-    "dist": 0.4741
+    "dist": 0.4744
   },
   {
     "determ": "tannengrun",
     "hiterm": "बैंगनी",
-    "dist": 0.3245
+    "dist": 0.3234
   },
   {
     "determ": "tannengrun",
     "hiterm": "भूरा",
-    "dist": 0.2091
+    "dist": 0.2081
+  },
+  {
+    "determ": "tannengrun",
+    "hiterm": "रानी",
+    "dist": 0.2831
   },
   {
     "determ": "tannengrun",
     "hiterm": "लाल",
-    "dist": 0.2828
+    "dist": 0.2811
   },
   {
     "determ": "tannengrun",
     "hiterm": "हरा",
-    "dist": 0.2695
+    "dist": 0.2784
   },
   {
     "determ": "tannengrun",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.3618
+    "dist": 0.3723
   },
   {
     "determ": "tannengrun",
     "hiterm": "हलकाहरा",
-    "dist": 0.4612
+    "dist": 0.4352
+  },
+  {
+    "determ": "turkis",
+    "hiterm": "आसमानी",
+    "dist": 0.0797
   },
   {
     "determ": "turkis",
     "hiterm": "काला",
-    "dist": 0.6932
+    "dist": 0.6966
+  },
+  {
+    "determ": "turkis",
+    "hiterm": "गहरानीला",
+    "dist": 0.6106
   },
   {
     "determ": "turkis",
     "hiterm": "गहराहरा",
-    "dist": 0.4598
+    "dist": 0.4557
   },
   {
     "determ": "turkis",
     "hiterm": "गाढाहरा",
-    "dist": 0.3169
+    "dist": 0.3151
   },
   {
     "determ": "turkis",
@@ -4152,401 +5302,481 @@
   {
     "determ": "turkis",
     "hiterm": "जामुनी",
-    "dist": 0.4666
+    "dist": 0.4657
   },
   {
     "determ": "turkis",
     "hiterm": "नारंगी",
-    "dist": 0.2779
+    "dist": 0.2799
   },
   {
     "determ": "turkis",
     "hiterm": "नीला",
-    "dist": 0.3364
-  },
-  {
-    "determ": "turkis",
-    "hiterm": "पीला",
-    "dist": 0.2069
-  },
-  {
-    "determ": "turkis",
-    "hiterm": "बैंगनी",
-    "dist": 0.456
-  },
-  {
-    "determ": "turkis",
-    "hiterm": "भूरा",
-    "dist": 0.4587
-  },
-  {
-    "determ": "turkis",
-    "hiterm": "लाल",
-    "dist": 0.4614
-  },
-  {
-    "determ": "turkis",
-    "hiterm": "हरा",
-    "dist": 0.194
-  },
-  {
-    "determ": "turkis",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2679
-  },
-  {
-    "determ": "turkis",
-    "hiterm": "हलकाहरा",
-    "dist": 0.1302
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "काला",
-    "dist": 0.5993
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "गहराहरा",
-    "dist": 0.3574
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.2068
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "गुलाबी",
-    "dist": 0.3426
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "जामुनी",
-    "dist": 0.3914
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "नारंगी",
-    "dist": 0.2112
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "नीला",
-    "dist": 0.3051
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "पीला",
-    "dist": 0.1851
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "बैंगनी",
-    "dist": 0.3998
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "भूरा",
-    "dist": 0.3589
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "लाल",
-    "dist": 0.3659
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "हरा",
-    "dist": 0.1221
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2266
-  },
-  {
-    "determ": "turkisgrun",
-    "hiterm": "हलकाहरा",
-    "dist": 0.1457
-  },
-  {
-    "determ": "violet",
-    "hiterm": "काला",
-    "dist": 0.4244
-  },
-  {
-    "determ": "violet",
-    "hiterm": "गहराहरा",
-    "dist": 0.3282
-  },
-  {
-    "determ": "violet",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3249
-  },
-  {
-    "determ": "violet",
-    "hiterm": "गुलाबी",
-    "dist": 0.2087
-  },
-  {
-    "determ": "violet",
-    "hiterm": "जामुनी",
-    "dist": 0.125
-  },
-  {
-    "determ": "violet",
-    "hiterm": "नारंगी",
-    "dist": 0.3844
-  },
-  {
-    "determ": "violet",
-    "hiterm": "नीला",
-    "dist": 0.2245
-  },
-  {
-    "determ": "violet",
-    "hiterm": "पीला",
-    "dist": 0.4974
-  },
-  {
-    "determ": "violet",
-    "hiterm": "बैंगनी",
-    "dist": 0.0995
-  },
-  {
-    "determ": "violet",
-    "hiterm": "भूरा",
-    "dist": 0.274
-  },
-  {
-    "determ": "violet",
-    "hiterm": "लाल",
-    "dist": 0.2579
-  },
-  {
-    "determ": "violet",
-    "hiterm": "हरा",
-    "dist": 0.3865
-  },
-  {
-    "determ": "violet",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2102
-  },
-  {
-    "determ": "violet",
-    "hiterm": "हलकाहरा",
-    "dist": 0.4666
-  },
-  {
-    "determ": "violett",
-    "hiterm": "काला",
-    "dist": 0.3923
-  },
-  {
-    "determ": "violett",
-    "hiterm": "गहराहरा",
-    "dist": 0.3209
-  },
-  {
-    "determ": "violett",
-    "hiterm": "गाढाहरा",
-    "dist": 0.3178
-  },
-  {
-    "determ": "violett",
-    "hiterm": "गुलाबी",
-    "dist": 0.2346
-  },
-  {
-    "determ": "violett",
-    "hiterm": "जामुनी",
-    "dist": 0.1167
-  },
-  {
-    "determ": "violett",
-    "hiterm": "नारंगी",
-    "dist": 0.3949
-  },
-  {
-    "determ": "violett",
-    "hiterm": "नीला",
-    "dist": 0.21
-  },
-  {
-    "determ": "violett",
-    "hiterm": "पीला",
-    "dist": 0.5134
-  },
-  {
-    "determ": "violett",
-    "hiterm": "बैंगनी",
-    "dist": 0.0568
-  },
-  {
-    "determ": "violett",
-    "hiterm": "भूरा",
-    "dist": 0.2314
-  },
-  {
-    "determ": "violett",
-    "hiterm": "लाल",
-    "dist": 0.2344
-  },
-  {
-    "determ": "violett",
-    "hiterm": "हरा",
-    "dist": 0.3842
-  },
-  {
-    "determ": "violett",
-    "hiterm": "हलकाबैंगनी",
-    "dist": 0.2335
-  },
-  {
-    "determ": "violett",
-    "hiterm": "हलकाहरा",
-    "dist": 0.4841
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "काला",
-    "dist": 0.3009
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "गहराहरा",
-    "dist": 0.0727
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "गाढाहरा",
-    "dist": 0.1443
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "गुलाबी",
-    "dist": 0.4486
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "जामुनी",
-    "dist": 0.282
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "नारंगी",
-    "dist": 0.3798
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "नीला",
-    "dist": 0.3336
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "पीला",
-    "dist": 0.4504
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "बैंगनी",
-    "dist": 0.325
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "भूरा",
-    "dist": 0.1822
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "लाल",
-    "dist": 0.2493
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "हरा",
-    "dist": 0.2545
-  },
-  {
-    "determ": "waldgrun",
-    "hiterm": "हलकाबैंगनी",
     "dist": 0.3522
   },
   {
-    "determ": "waldgrun",
+    "determ": "turkis",
+    "hiterm": "पीला",
+    "dist": 0.2093
+  },
+  {
+    "determ": "turkis",
+    "hiterm": "बैंगनी",
+    "dist": 0.4463
+  },
+  {
+    "determ": "turkis",
+    "hiterm": "भूरा",
+    "dist": 0.4558
+  },
+  {
+    "determ": "turkis",
+    "hiterm": "रानी",
+    "dist": 0.4938
+  },
+  {
+    "determ": "turkis",
+    "hiterm": "लाल",
+    "dist": 0.4616
+  },
+  {
+    "determ": "turkis",
+    "hiterm": "हरा",
+    "dist": 0.1887
+  },
+  {
+    "determ": "turkis",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2691
+  },
+  {
+    "determ": "turkis",
     "hiterm": "हलकाहरा",
-    "dist": 0.443
+    "dist": 0.1283
   },
   {
-    "determ": "weinrot",
+    "determ": "turkisgrun",
+    "hiterm": "आसमानी",
+    "dist": 0.1691
+  },
+  {
+    "determ": "turkisgrun",
     "hiterm": "काला",
-    "dist": 0.299
+    "dist": 0.6047
   },
   {
-    "determ": "weinrot",
+    "determ": "turkisgrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.5369
+  },
+  {
+    "determ": "turkisgrun",
     "hiterm": "गहराहरा",
-    "dist": 0.2222
+    "dist": 0.3546
   },
   {
-    "determ": "weinrot",
+    "determ": "turkisgrun",
     "hiterm": "गाढाहरा",
-    "dist": 0.258
+    "dist": 0.2066
   },
   {
-    "determ": "weinrot",
+    "determ": "turkisgrun",
     "hiterm": "गुलाबी",
-    "dist": 0.3161
+    "dist": 0.344
   },
   {
-    "determ": "weinrot",
+    "determ": "turkisgrun",
     "hiterm": "जामुनी",
-    "dist": 0.1094
+    "dist": 0.3906
   },
   {
-    "determ": "weinrot",
+    "determ": "turkisgrun",
     "hiterm": "नारंगी",
-    "dist": 0.3668
+    "dist": 0.2115
   },
   {
-    "determ": "weinrot",
+    "determ": "turkisgrun",
     "hiterm": "नीला",
     "dist": 0.3175
   },
   {
+    "determ": "turkisgrun",
+    "hiterm": "पीला",
+    "dist": 0.1857
+  },
+  {
+    "determ": "turkisgrun",
+    "hiterm": "बैंगनी",
+    "dist": 0.3933
+  },
+  {
+    "determ": "turkisgrun",
+    "hiterm": "भूरा",
+    "dist": 0.3577
+  },
+  {
+    "determ": "turkisgrun",
+    "hiterm": "रानी",
+    "dist": 0.4084
+  },
+  {
+    "determ": "turkisgrun",
+    "hiterm": "लाल",
+    "dist": 0.3679
+  },
+  {
+    "determ": "turkisgrun",
+    "hiterm": "हरा",
+    "dist": 0.1196
+  },
+  {
+    "determ": "turkisgrun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2329
+  },
+  {
+    "determ": "turkisgrun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.1256
+  },
+  {
+    "determ": "violet",
+    "hiterm": "आसमानी",
+    "dist": 0.4245
+  },
+  {
+    "determ": "violet",
+    "hiterm": "काला",
+    "dist": 0.4298
+  },
+  {
+    "determ": "violet",
+    "hiterm": "गहरानीला",
+    "dist": 0.3039
+  },
+  {
+    "determ": "violet",
+    "hiterm": "गहराहरा",
+    "dist": 0.345
+  },
+  {
+    "determ": "violet",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3267
+  },
+  {
+    "determ": "violet",
+    "hiterm": "गुलाबी",
+    "dist": 0.2086
+  },
+  {
+    "determ": "violet",
+    "hiterm": "जामुनी",
+    "dist": 0.1347
+  },
+  {
+    "determ": "violet",
+    "hiterm": "नारंगी",
+    "dist": 0.3829
+  },
+  {
+    "determ": "violet",
+    "hiterm": "नीला",
+    "dist": 0.2129
+  },
+  {
+    "determ": "violet",
+    "hiterm": "पीला",
+    "dist": 0.4963
+  },
+  {
+    "determ": "violet",
+    "hiterm": "बैंगनी",
+    "dist": 0.0958
+  },
+  {
+    "determ": "violet",
+    "hiterm": "भूरा",
+    "dist": 0.2774
+  },
+  {
+    "determ": "violet",
+    "hiterm": "रानी",
+    "dist": 0.1973
+  },
+  {
+    "determ": "violet",
+    "hiterm": "लाल",
+    "dist": 0.2596
+  },
+  {
+    "determ": "violet",
+    "hiterm": "हरा",
+    "dist": 0.3889
+  },
+  {
+    "determ": "violet",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2131
+  },
+  {
+    "determ": "violet",
+    "hiterm": "हलकाहरा",
+    "dist": 0.448
+  },
+  {
+    "determ": "violett",
+    "hiterm": "आसमानी",
+    "dist": 0.4555
+  },
+  {
+    "determ": "violett",
+    "hiterm": "काला",
+    "dist": 0.3953
+  },
+  {
+    "determ": "violett",
+    "hiterm": "गहरानीला",
+    "dist": 0.2831
+  },
+  {
+    "determ": "violett",
+    "hiterm": "गहराहरा",
+    "dist": 0.3412
+  },
+  {
+    "determ": "violett",
+    "hiterm": "गाढाहरा",
+    "dist": 0.3215
+  },
+  {
+    "determ": "violett",
+    "hiterm": "गुलाबी",
+    "dist": 0.2369
+  },
+  {
+    "determ": "violett",
+    "hiterm": "जामुनी",
+    "dist": 0.124
+  },
+  {
+    "determ": "violett",
+    "hiterm": "नारंगी",
+    "dist": 0.3962
+  },
+  {
+    "determ": "violett",
+    "hiterm": "नीला",
+    "dist": 0.2017
+  },
+  {
+    "determ": "violett",
+    "hiterm": "पीला",
+    "dist": 0.5148
+  },
+  {
+    "determ": "violett",
+    "hiterm": "बैंगनी",
+    "dist": 0.0579
+  },
+  {
+    "determ": "violett",
+    "hiterm": "भूरा",
+    "dist": 0.2329
+  },
+  {
+    "determ": "violett",
+    "hiterm": "रानी",
+    "dist": 0.174
+  },
+  {
+    "determ": "violett",
+    "hiterm": "लाल",
+    "dist": 0.2367
+  },
+  {
+    "determ": "violett",
+    "hiterm": "हरा",
+    "dist": 0.3893
+  },
+  {
+    "determ": "violett",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.2389
+  },
+  {
+    "determ": "violett",
+    "hiterm": "हलकाहरा",
+    "dist": 0.4671
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "आसमानी",
+    "dist": 0.4667
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "काला",
+    "dist": 0.3018
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "गहरानीला",
+    "dist": 0.2978
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "गहराहरा",
+    "dist": 0.0586
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "गाढाहरा",
+    "dist": 0.1488
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "गुलाबी",
+    "dist": 0.454
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "जामुनी",
+    "dist": 0.2791
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "नारंगी",
+    "dist": 0.3858
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "नीला",
+    "dist": 0.3318
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "पीला",
+    "dist": 0.4541
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "बैंगनी",
+    "dist": 0.3279
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "भूरा",
+    "dist": 0.1873
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "रानी",
+    "dist": 0.2683
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "लाल",
+    "dist": 0.2542
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "हरा",
+    "dist": 0.2653
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "हलकाबैंगनी",
+    "dist": 0.3671
+  },
+  {
+    "determ": "waldgrun",
+    "hiterm": "हलकाहरा",
+    "dist": 0.4202
+  },
+  {
+    "determ": "weinrot",
+    "hiterm": "आसमानी",
+    "dist": 0.5041
+  },
+  {
+    "determ": "weinrot",
+    "hiterm": "काला",
+    "dist": 0.3021
+  },
+  {
+    "determ": "weinrot",
+    "hiterm": "गहरानीला",
+    "dist": 0.2508
+  },
+  {
+    "determ": "weinrot",
+    "hiterm": "गहराहरा",
+    "dist": 0.2406
+  },
+  {
+    "determ": "weinrot",
+    "hiterm": "गाढाहरा",
+    "dist": 0.2606
+  },
+  {
+    "determ": "weinrot",
+    "hiterm": "गुलाबी",
+    "dist": 0.318
+  },
+  {
+    "determ": "weinrot",
+    "hiterm": "जामुनी",
+    "dist": 0.1044
+  },
+  {
+    "determ": "weinrot",
+    "hiterm": "नारंगी",
+    "dist": 0.3663
+  },
+  {
+    "determ": "weinrot",
+    "hiterm": "नीला",
+    "dist": 0.3089
+  },
+  {
     "determ": "weinrot",
     "hiterm": "पीला",
-    "dist": 0.5015
+    "dist": 0.5012
   },
   {
     "determ": "weinrot",
     "hiterm": "बैंगनी",
-    "dist": 0.1853
+    "dist": 0.1875
   },
   {
     "determ": "weinrot",
     "hiterm": "भूरा",
-    "dist": 0.1363
+    "dist": 0.1388
+  },
+  {
+    "determ": "weinrot",
+    "hiterm": "रानी",
+    "dist": 0.0699
   },
   {
     "determ": "weinrot",
     "hiterm": "लाल",
-    "dist": 0.106
+    "dist": 0.1059
   },
   {
     "determ": "weinrot",
     "hiterm": "हरा",
-    "dist": 0.3809
+    "dist": 0.3851
   },
   {
     "determ": "weinrot",
     "hiterm": "हलकाबैंगनी",
-    "dist": 0.2939
+    "dist": 0.3019
   },
   {
     "determ": "weinrot",
     "hiterm": "हलकाहरा",
-    "dist": 0.4981
+    "dist": 0.4782
   }
 ]

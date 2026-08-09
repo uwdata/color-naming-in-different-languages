@@ -9,36 +9,36 @@ const excludeNames = [
 ];
 
 const nameReplacingRules = [
-    [/aqua$/, "aqua frais"],
-    [/aqua marine/, "aquamarine"],
 
-    [/bleu gommette/, "bleu"],
     [/bleur$/, "bleu$"],
-    [/blue normal/, "bleu"],
 
     [/bordeau$/, "bordeaux"],
 
-    [/^canard/, "bleu canard"],
-
-    [/^ciel/, "bleu ciel"],
     [/blue ciel/, "bleu ciel"],
 
     [/bleu claire/, "bleu clair"],
+
     [/bleau cyan/, "bleu cyan"],
+    
     [/bleu prusse/, "bleu de prusse"],
+    
     [/bleu électrict/, "bleu électrique"],
+
     [/"bleu émaraude/, "bleu émaraude"],
+
     [/bleu éfnoncé/, "bleu fnoncé"],
 
     [/bleu marin$/, "bleu marine"],
     [/bleur marine/, "bleu marine"],
 
     [/vert outremer/, "bleu outremer"],
+
     [/bleu pale/, "bleu pâle"],
+    
     [/bleu plus pale/, "bleu plus pâle"],
-    [/^royal/, "bleu royal"],
-    [/jaune bouton d'or/, "bouton d'or"],
+    
     [/bue$/, "buée"],
+
     [/ecarlate/, "écarlate"],
 
     [/fushia/, "fuchsia"],
@@ -46,7 +46,6 @@ const nameReplacingRules = [
     [/fuchsias/, "fuchsia"],
     [/fuchia/, "fuchsia"],
 
-    [/bleu jade/, "jade"],
     [/jaunatre/, "jaunâtre"],
 
     [/jauen/, "jaune"],
@@ -54,7 +53,6 @@ const nameReplacingRules = [
 
     [/jaune brûler/, "jaune brûlé"],
 
-    [/jaune d'œuf frais/, "jaune d'œuf"],
     [/jaune d’oeuf/, "jaune d'œuf"],
 
     [/jaune vert fluo/, "jaune fluo"],
@@ -63,18 +61,29 @@ const nameReplacingRules = [
     [/jaune oragne/, "jaune orangé"],
 
     [/vert jaune/, "jaune vert"],
+
     [/mentholé/, "menthe"],
+
     [/mauredoré/, "mordoré"],
+    
     [/organge/, "orange"],
+    
     [/orange brûler/, "orange brûlé"],
+    
     [/orange claire/, "orange clair"],
+    
     [/orange pale/, "orange pâle"],
+    
     [/orange sanguin$/, "orange sanguine"],
+    
     [/pistaccio/, "pistache"],
+    
     [/rose fuchia/, "rose fuchsia"],
+    
     [/rose rouge/, "rose, rouge"],
 
     [/rouge orange/, "rouge orangé"],
+
     [/rouge orance/, "rouge orangé"],
 
     [/turquoi$/, "turquoise"],
@@ -83,10 +92,13 @@ const nameReplacingRules = [
     [/rouge vermillion/, "vermillon"],
     [/rouge vermillon/, "vermillon"],
 
-    [/^acide/, "vert acide"],
+
     [/vert claire/, "vert clair"],
+
     [/very eau/, "vert d'eau"],
+    
     [/vert mint/, "vert menthe"],
+    
     [/verte pale/, "vert pâle"],
 
     [/viloet/, "violet"],

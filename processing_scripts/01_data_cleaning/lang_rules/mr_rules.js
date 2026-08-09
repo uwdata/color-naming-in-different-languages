@@ -8,12 +8,17 @@ const nameReplacingRules = [
     [/akashi/, "आकाशी"],
 
     [/nila/, "निळा"],
+    [/nili/, "निळा"],
 
     [/gulabi/, "गुलाबी"],
     [/gulaabi/, "गुलाबी"],
 
+    [/jambhalat/, "जांभळा"],
     [/jambhala/, "जांभळा"],
     [/jambhla/, "जांभळा"],
+    [/jambhada/, "जांभळा"],
+    [/jambhalat/, "जांभळा"],
+    [/jambhda/, "जांभळा"],
 
     [/rani/, "राणी"],
 
@@ -31,6 +36,7 @@ const nameReplacingRules = [
     [/keshari/, "केशरी"],
 
     [/gadad/, "गडद"],
+    [/ghatta/, "गडद"],
 
     [/pivla/, "पिवळा"],
     [/piwala/, "पिवळा"],

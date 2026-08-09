@@ -15,12 +15,18 @@ const nameReplacingRules = [
     [/gehra/g, "गहरा"],
     [/ghera/g, "गहरा"],
     [/gahra/g, "गहरा"],
+    [/ghra/g, "गहरा"],
+    [/gehara/, "गहरा"],
+    [/gehr/, "गहरा"],
 
+    [/gulabi\./, "गुलाबी"],
     [/gulabi/, "गुलाबी"],
     [/gulaabi/, "गुलाबी"],
+    [/gulab/, "गुलाबी"],
 
     [/neela/, "नीला"],
     [/nila/, "नीला"],
+    [/nela/, "नीला"],
 
     [/narangi/, "नारंगी"],
     [/narangee/, "नारंगी"],
@@ -41,6 +47,7 @@ const nameReplacingRules = [
     [/bengani/, "बैंगनी"],
     [/bagani/, "बैंगनी"],
     [/baigani/, "बैंगनी"],
+    [/baegaini/, "बैंगनी"],
 
     [/bhura/, "भूरा"],
     [/bhoora/, "भूरा"],
@@ -50,6 +57,7 @@ const nameReplacingRules = [
     [/laal/, "लाल"],
 
     [/saleti/, "सलेटी"],
+    
 
     [/hara/, "हरा"],
     [/haara/, "हरा"],
@@ -66,10 +74,16 @@ const nameReplacingRules = [
     [/jamani/, "जामुनी"],
 
     [/rani/, "रानी"],
+    [/raani/, "रानी"],
 
     [/gadha/, "गाढ़ा"],
     [/gada/, "गाढ़ा"],
-    [/gaadha/, "गाढ़ा"]
+    [/gaadha/, "गाढ़ा"],
+
+    [/santra/, "संतरा"],
+    [/santari/, "संतरा"],
+    
+    [/pista/, "पिस्ता"]
 ];
 
 export default {

@@ -52,7 +52,15 @@ const nameReplacingRules = [
     [/olive/g, "অলিভ"],
 
     [/khoyeri/g, "খয়েরি"],
-    [/khoiri/g, "খয়েরি"]
+    [/khoiri/g, "খয়েরি"],
+
+    [/fyakashe/g, "ফেকাশে"],
+    [/phekashe/g, "ফেকাশে"],
+
+    [/mete/g, "মেটে"],
+    [/mati/g, "মেটে"],
+    [/maati/g, "মেটে"]
+    
 ];
 
 export default {

@@ -11,6 +11,7 @@ const nameReplacingRules = [
     [/asmani/, "آسمانی"],
     
     [/neela/, "نیلا"],
+    [/nela/, "نیلا"],
 
     [/sabz/, "سبز"],
 
@@ -34,9 +35,21 @@ const nameReplacingRules = [
 
     [/gehra/, "گہرا"],
 
-    [/laal/, "لال"],
+    [/hara/, "ہرا"],
 
-    [/hara/, "ہرا"]
+    [/tez/, "تیز"],
+
+    [/surkh/, "سرخ"],
+    [/surukj/, "سرخ"],
+    [/surukj/, "سرخ"],
+
+    [/naranji/, "نارنجی"],
+    [/narangi/, "نارنجی"],
+
+    [/bhoora/, "بھورا"],
+
+    [/laal/, "لال"],
+    [/lal/, "لال"]
     
 ];
 
