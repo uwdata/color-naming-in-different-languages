@@ -455,10 +455,15 @@ if(initialUrlParams.get("pinnedColorTerms")){
     }
 }
 
+
+// Now that all the url params have been used to start the view, clear them:
+window.location.hash = ""
+
+
 let search_string
 let search_lang_abv
 
-function setUrlParams(){
+function getUrlWithParams(){
     const urlParams = new URLSearchParams("?" + window.location.hash.replace("#", ""));
 	urlParams.set("lang_abv", $("#selected_langs").val())
 
@@ -498,8 +503,9 @@ function setUrlParams(){
     }else{
         urlParams.delete("backgroundBrightness");
     }
-	
-	window.location.hash = urlParams.toString().replace("?", "");
+    const url = new URL(window.location.href) 
+	url.hash = urlParams.toString().replace("?", "");
+    return url
 }
 
 function fullNamePercentCompare(a, b){
@@ -564,8 +570,6 @@ function pinToggleColorTerm(event){
         $("#hide-non-pinned-control").hide()
         $("#hide-non-pinned").prop("checked", false)
     }
-
-    setUrlParams()
 
     updateData()
 }
@@ -892,7 +896,6 @@ function updateTable(){
                     sortDirection = d.defaultSortDirection == "up" ? "up" : "down"
                 }
 
-                setUrlParams()
                 sortFilteredData()
             }
         })
@@ -1837,10 +1840,15 @@ function updateFullColorBinSvg(fullBinSvg, isVisible){
 // clear search
 $("#search-input").val("")
 
+
+$("#copy-link-button").on('click', () => {
+    const url = getUrlWithParams()
+    navigator.clipboard.writeText(url.href) 
+})
+
 // handle update events
 
 $("#selected_langs").change(e => { 
-    setUrlParams()
     updateData()
 })
 
@@ -1859,19 +1867,16 @@ $("#hue_bins_color_scale").change(() => {
 })
 
 $("#hide-non-pinned").change(() => {
-    setUrlParams()
     updateFilteredData()
 })
 
 $("#show-non-bin-table-button").on("click", () => {
     $("#hide-non-pinned").prop("checked", false)
-    setUrlParams()
     updateFilteredData()
 })
 
 
 $("#background-brightness").on("input", () => {
     backgroundBrightness = $("#background-brightness").val()
-    setUrlParams()
     updateTable()
 })
