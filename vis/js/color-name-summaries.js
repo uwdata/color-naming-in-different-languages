@@ -349,30 +349,31 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
 })
 
 
-const downloadModal = new bootstrap.Modal('#download_modal', {})
+// TODO: Redo downloads as dropdowns
+// const downloadModal = new bootstrap.Modal('#download_modal', {})
 
-$("#download_color_full_bins").click(e => {
-    downloadModal.show()
-})
+// $("#download_color_full_bins").click(e => {
+//     downloadModal.show()
+// })
 
-$("#download_color_name_data").click(e => {
-    //console.log(currentColorTermData.fullBinsData)
-    const csvContent = "data:text/csv;charset=utf-8," + d3.csvFormat(currentColorTermData.fullBinsData)
-    //const jsonContent = "data:text/csv;charset=utf-8," + currentColorTermData.fullBinsData
+// $("#download_color_name_data").click(e => {
+//     //console.log(currentColorTermData.fullBinsData)
+//     const csvContent = "data:text/csv;charset=utf-8," + d3.csvFormat(currentColorTermData.fullBinsData)
+//     //const jsonContent = "data:text/csv;charset=utf-8," + currentColorTermData.fullBinsData
     
-    // based on:
-    // https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
+//     // based on:
+//     // https://stackoverflow.com/questions/14964035/how-to-export-javascript-array-info-to-csv-on-client-side
     
-    var encodedUri = encodeURI(csvContent);
-    //var encodedUri = encodeURI(jsonContent);
-    var link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    //link.setAttribute("download", `${currentDatasetRgbSet}_summaries_${currentDatasetLangAbv}.csv`);
-    link.setAttribute("download", `full_color_bins_summaries_${currentColorTermData.lang_abv}_${currentColorTermData.simplifiedName}.csv`);
-    document.body.appendChild(link); // Required for FF
+//     var encodedUri = encodeURI(csvContent);
+//     //var encodedUri = encodeURI(jsonContent);
+//     var link = document.createElement("a");
+//     link.setAttribute("href", encodedUri);
+//     //link.setAttribute("download", `${currentDatasetRgbSet}_summaries_${currentDatasetLangAbv}.csv`);
+//     link.setAttribute("download", `full_color_bins_summaries_${currentColorTermData.lang_abv}_${currentColorTermData.simplifiedName}.csv`);
+//     document.body.appendChild(link); // Required for FF
 
-    link.click();
-})
+//     link.click();
+// })
 
 $("#download_language_subset_button").click(e => {
     //const csvContent = "data:text/csv;charset=utf-8," + d3.csvFormat(currentDataset)

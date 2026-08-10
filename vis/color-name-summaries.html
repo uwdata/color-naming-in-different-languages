@@ -171,7 +171,7 @@
     <div id="hide-non-pinned-control" class="form-check form-check-inline justify-content-center align-items-center flex-nowrap" style="padding-left: 1rem;">
       <div class="small" style="max-width:500px;margin:auto;">
         <input class="form-check-input" type="checkbox" name="metric" id="hide-non-pinned" value="hide-non-pinned">
-        <label class="form-label" for="ref_bins">Hide non-pinned</label> 
+        <label class="form-label" for="hide-non-pinned">Hide non-pinned</label> 
       </div>
     </div>
 
@@ -218,7 +218,16 @@
           <p><dl>
               <dt>Language</dt>
                 <dd id="color_details_modal_lang"></dd>
-              <dt>Simplified Name <small title='The "Simplified Name" is used for matching variations of name, see the Color Name Data Entries visualization'>(?)</small></dt>
+              <dt>Simplified Name 
+                    <button id="search-help" title="search help" style="border:none;"
+                      aria-label="search help" class="btn btn-outline-secondary btn-sm p-1"
+                      data-bs-toggle="popover" data-bs-html=true
+                      data-bs-title="Search Instructions" 
+                      data-bs-content='The "Simplified Name" is used for matching variations of name. You can check how we have grouped raw entries in the <a href="cleaned_data_viewer.html" target="_blank">Color Name Data Entries visualization</a>'
+                    >
+                      <i class="fs-5 bi bi-question-circle"></i>
+                    </button>
+                 </dt>
                 <dd id="color_details_modal_simplified_name" translate="no" class="notranslate"></dd>
               <span id="color_details_modal_full_details">
                 <dt>Percentage of Full Color Names</dt>
@@ -281,9 +290,11 @@
             <h2>Full Color Bins</h2>
             <p><small>The full color spectrum divided into equal size bins in the perceptually uniform Oklab space (bins are divided using Oklch rings). The size of the bin corresponds to how often this color name was chosen for colors in the bin.</small></p>
             <div id="color_details_modal_full_bins_view"></div>
-              <button id="download_color_full_bins" title="download" aria-label="download" class="btn btn-outline-secondary btn-sm p-1">
+              <!-- 
+                // TODO: Redo downloads as dropdowns
+                <button id="download_color_full_bins" title="download" aria-label="download" class="btn btn-outline-secondary btn-sm p-1">
                 <i class="bi bi-download"></i>
-              </button>
+              </button> -->
           </div>
           <div id="color_details_modal_hue_bins">
             <h2>Hue Color Bins</h2>
@@ -301,8 +312,8 @@
     </div>
   </div>
 
-  <!-- download modal -->
-  <div class="modal" id="download_modal" tabindex="-1" role="dialog">
+  <!-- download modal // TODO: Redo downloads as dropdowns -->
+  <!-- <div class="modal" id="download_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -318,7 +329,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Inform modal -->
   <div class="modal" id="inform_modal" tabindex="-1" role="dialog">
