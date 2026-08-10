@@ -3,7 +3,7 @@ import FullColorBinView from "./full-color-bin-view.js";
 
 // enable popover library
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {trigger: 'focus'}))
 
 
 const fullBinSize = new BinSize({
@@ -582,7 +582,7 @@ const allTableCols = [
         key: "commonName",
         sortable: true,
         defaultSortDirection: "up",
-        headerHTML: `<p style="margin-bottom:0px">Name</p>
+        headerHTML: `<p style="margin-bottom:0px;">Name</p>
                     <p style="margin-bottom:0px" class="table-subheader">simplified name</p>`,
         formatter: (cell, row) => 
             `<div style="display:inline-flex">
@@ -690,7 +690,7 @@ const allTableCols = [
     },
     {
         id: "fullNamePercent",
-        headerHTML: `<p style="margin-bottom:0px">% full names</p>
+        headerHTML: `<p style="margin-bottom:0px;text-wrap:nowrap;">% full names</p>
                     <p style="margin-bottom:0px" class="table-subheader">num entries</p>`,
         sortable: true,
         defaultSortDirection: "down",
@@ -703,7 +703,7 @@ const allTableCols = [
     },
     {
         id: "hueNamePercent",
-        headerHTML: `<p style="margin-bottom:0px">% hue names</p>
+        headerHTML: `<p style="margin-bottom:0px;text-wrap:nowrap;">% hue names</p>
                     <p style="margin-bottom:0px" class="table-subheader">num entries</p>`,
         sortable: true,
         defaultSortDirection: "down",

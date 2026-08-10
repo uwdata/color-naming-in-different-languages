@@ -54,6 +54,7 @@
 
     #main-contents {
       height:100%;
+      max-width: 100%;
     }
 
     .form-check {
@@ -72,6 +73,10 @@
     #data-view {
       display:block;
       overflow: scroll;
+    }
+
+    #data-table{
+      margin:auto;
     }
 
     #data-table th {
@@ -116,6 +121,7 @@
     .table-subheader{
       font-size: smaller;
       color: gray;
+      text-wrap: nowrap;
     }
 
     .table-extra-small-subheader{
@@ -221,7 +227,7 @@
               <dt>Simplified Name 
                     <button id="search-help" title="search help" style="border:none;"
                       aria-label="search help" class="btn btn-outline-secondary btn-sm p-1"
-                      data-bs-toggle="popover" data-bs-html=true
+                      data-bs-toggle="popover" data-bs-trigger="focus" data-bs-html=true
                       data-bs-title="Search Instructions" 
                       data-bs-content='The "Simplified Name" is used for matching variations of name. You can check how we have grouped raw entries in the <a href="cleaned_data_viewer.html" target="_blank">Color Name Data Entries visualization</a>'
                     >
