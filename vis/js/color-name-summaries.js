@@ -902,6 +902,9 @@ function updateTable(){
 
 
     const tableBody = d3.select("#data-table").selectAll("tbody")
+    
+    tableBody.style("background-color", `oklab(${escapeHTML(backgroundBrightness)}% 0 0)`)
+
     const nameRows = tableBody.selectAll(".name-row")
         .data(sortedColorInfo)
         .join("tr")
@@ -913,7 +916,6 @@ function updateTable(){
                 }))
             .join("td")
             .attr("class", "name-cell align-middle")
-            .style("background-color", `oklab(${escapeHTML(backgroundBrightness)}% 0 0)`)
     
     // for any cells with a d3 formatter use that
     const d3Formatters = tableCols.filter(tableCol => tableCol.d3Formatter).map(tableCol => tableCol.d3Formatter)
@@ -998,12 +1000,13 @@ function generateColorGrid(nodes){
 }
 
 
-function refreshAllSvgs(){
-    refreshHueSvgs()
-    refreshFullSvgs()
+function refreshAllSvgFromScroll(){
+    const fromScroll = true
+    refreshHueSvgs(fromScroll)
+    refreshFullSvgs(fromScroll)
 }
 
-function refreshHueSvgs(){
+function refreshHueSvgs(fromScroll){
     const isModal = ""
 
     // Look up svg visibility separately (to avoid layout thrashing)
@@ -1022,16 +1025,17 @@ function refreshHueSvgs(){
         const langAbv = hueBinSvg.attr("data-lang")
         const term = nameFromUnicode(hueBinSvg.attr("data-color-name"))
 
+        // TODO: Pass in fromScroll
         if($("#hue_bins_in_circle").is(':checked')){
-            updateHueColorRingSvg(hueBinSvg, hueBinVisibility[langAbv + ";" + term])
+            updateHueColorRingSvg(hueBinSvg, hueBinVisibility[langAbv + ";" + term], fromScroll)
         } else {
-            updateHueColorSvg(hueBinSvg, hueBinVisibility[langAbv + ";" + term])
+            updateHueColorSvg(hueBinSvg, hueBinVisibility[langAbv + ";" + term], fromScroll)
         }
         
     }
 }
 
-function refreshFullSvgs(){
+function refreshFullSvgs(fromScroll){
     const isModal = ""
 
     // Look up svg visibility separately (to avoid layout thrashing)
@@ -1050,12 +1054,12 @@ function refreshFullSvgs(){
         const langAbv = fullBinSvg.attr("data-lang")
         const term = nameFromUnicode(fullBinSvg.attr("data-color-name"))
 
-        updateFullColorBinSvg(fullBinSvg, fullBinVisibility[langAbv + ";" + term])
+        updateFullColorBinSvg(fullBinSvg, fullBinVisibility[langAbv + ";" + term], fromScroll)
     }
 }
 
-$("#data-view").on("scroll", refreshAllSvgs)
-$( window ).on( "resize", refreshAllSvgs)
+$("#data-view").on("scroll", refreshAllSvgFromScroll)
+$( window ).on( "resize", refreshAllSvgFromScroll)
 
 function d3SvgUpdateHueColor(d3selection, isModal, lineOrRing) {
     const isLine = lineOrRing ? lineOrRing == "line" : !$("#hue_bins_in_circle").is(':checked')
@@ -1067,7 +1071,18 @@ function d3SvgUpdateHueColor(d3selection, isModal, lineOrRing) {
 }
 
 
-function updateHueColorSvg(svg, isVisible){
+function updateHueColorSvg(svg, isVisible, fromScroll){
+    // if svg not on screen, leave empty
+    if(!isVisible){
+        svg.html("")
+        return
+    }
+
+    // if it was already filled in and is from a scroll, no need to update
+    if(fromScroll && svg.node().children.length > 0){
+        return
+    }
+
     const langAbv = svg.attr("data-lang")
     const term = nameFromUnicode(svg.attr("data-color-name"))
     const width = svg.attr("width")
@@ -1083,11 +1098,7 @@ function updateHueColorSvg(svg, isVisible){
         return
     }
 
-    // if svg not on screen, leave empty
-    if(!isVisible){
-        svg.html("")
-        return
-    }
+
 
     // clear any hue ring elements
     svg.selectAll(".color_scale_patch,circle,.color_patch").remove()
@@ -1473,7 +1484,18 @@ function d3SvgUpdateHueColorLine(d3selection, isModal) {
     })
 }
 
-function updateHueColorRingSvg(svg, isVisible){
+function updateHueColorRingSvg(svg, isVisible, fromScroll){
+    // if svg not on screen, leave empty
+    if(!isVisible){
+        svg.html("")
+        return
+    }
+
+    // if it was already filled in and is from a scroll, no need to update
+    if(fromScroll && svg.node().children.length > 0){
+        return
+    }
+
     const langAbv = svg.attr("data-lang")
     const term = nameFromUnicode(svg.attr("data-color-name"))
     const width = svg.attr("width")
@@ -1486,12 +1508,6 @@ function updateHueColorRingSvg(svg, isVisible){
         } else {
             svg.html("")
         }
-        return
-    }
-
-    // if svg not on screen, leave empty
-    if(!isVisible){
-        svg.html("")
         return
     }
 
@@ -1756,7 +1772,18 @@ function d3SvgUpdateFullColorBins(d3selection, isModal) {
 }
 
 
-function updateFullColorBinSvg(fullBinSvg, isVisible){
+function updateFullColorBinSvg(fullBinSvg, isVisible, fromScroll){
+
+    // if svg not on screen, leave empty
+    if(!isVisible){
+        fullBinSvg.html("")
+        return
+    }
+
+    // if it was already filled in and is from a scroll, no need to update
+    if(fromScroll && fullBinSvg.node().children.length > 0){
+        return
+    }
 
     const langAbv = fullBinSvg.attr("data-lang")
     const term = nameFromUnicode(fullBinSvg.attr("data-color-name"))
@@ -1766,19 +1793,6 @@ function updateFullColorBinSvg(fullBinSvg, isVisible){
         fullBinSvg.html("")
         return
     }
-
-    // if svg not on screen, leave empty
-    if(!isVisible){
-        fullBinSvg.html("")
-        return
-    }
-
-    // if the svg is already filled in, we don't need to 
-    // re-draw it:
-    // TODO: track last-drawn info in svg and see if it has changed???
-    // if(fullBinSvg.node().children.length > 0){
-    //     return
-    // }
 
     const fullData = getFullBinInfo(langAbv, term)
 
