@@ -11,3 +11,4 @@ Each file may provide the following:
 - excludeNames: an array of names to exclude from the data (e.g., "test", "asd", wrong language data, etc.)
 - nameReplacingRules: A set of rules for changing a name (e.g., fixing typos, like [/indago/, "indigo"]; changing from one script to another, like [/xolte/, "желтый"]) 
 - additionalReplacementRule: A function that does additional name replacement operations that can't be done with the rules above
+- standardizedEnds: Ending strings for color words (like Korean "색")

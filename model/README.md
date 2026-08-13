@@ -9,7 +9,7 @@ Created by:
 - The scripts in: 00_pre-processing-colors
 
 ## Cleaned Color Names
-"cleaned_color_names.csv" contains the cleaned version of the raw dataset. 
+"cleaned_color_names.csv" contains the cleaned version of the raw dataset. Separated into separate files per language in the folder [cleaned_color_info_by_lang](cleaned_color_info_by_lang).
 
 Fields:
 - **participantId:** The id of the participant (0 for some data where there were errors in the study)
@@ -32,7 +32,7 @@ Created by:
 - processing_scripts/01_data_cleaning/01_dataCleaning.js
 
 ## Removed Color Data
-"removed_color_data.csv" is the raw data that was excluded in our data cleaning process.
+"removed_color_data.csv" is the raw data that was excluded in our data cleaning process. Separated into separate files per language in the folder [cleaned_color_info_by_lang](cleaned_color_info_by_lang).
 
 It has most of the same fields as "cleaned_color_names.csv", but has an additional field:
 - **reason_excluded:** Why this name was removed from the final cleaned dataset.
@@ -49,23 +49,42 @@ Fields:
 - **langAbv:** The 2 letter language abbreviation (for where we have it). E.g., "ko"
 - **numLineNames:** The number of names collected when we asking only to name rgb hue color line (max(r,g,b) == 255 or 1, min(r,g,b) == 0) ![The hue colors](../vis/hue-colors-smallest.png)
 - **numFullNames:** The number of names collected when asking to name colors chosen from the whole rgb color space
-- **numColorTerms:** The number of color names kept for a language (after filtering out those that didn't have sufficient data)
+- **numLineColorTerms:** The number of hue color names kept for a language (after filtering out those that didn't have sufficient hue data)
+- **numFullColorTerms:** The number of full color space color names kept for a language (after filtering out those that didn't have sufficient full color space data)
+
+Created by:
+- processing_scripts/02_initial_processing/01_getBasicFullColorInfo.js
+
+## Basic Colors Info
+"basic_colors_info.csv" contains information about the color naming data from each language. Separated into separate files per language in the folder [color_info_by_lang](color_info_by_lang).
+
+Fields:
+- **lang:** The language of the color term (long form)
+- **lang_abv:** Two letter abbreviation of the language
+- **commonName:** For the color term, the most common "standardized_entered_name" used for it
+- **simplifiedName:** Tthe simplified matching "name" from cleaned_color_names.csv used to group color terms
+- **numLineNames:** The number of times this color term was used when we asking only to name rgb hue color line (max(r,g,b) == 255 or 1, min(r,g,b) == 0) ![The hue colors](../vis/hue-colors-smallest.png)
+- **avgHueRGBCode:** The average hue color for all the times it was asked (treating the hue color line as a circle, and finding the average point along that circle). Not based on any binning, so no correcting for uneven sampling.
+- **numFullNames:** The number of times this color term was used when asking to name colors chosen from the whole rgb color space
+- **avgFullColorRGBCode:** The average full color space color for all the times it was asked. Not based on any binning, so no correcting for uneven sampling.
+- **avgFullL, avgFullA, avgFullB:** The Oklab value of average full color space color for all the times it was asked. Not based on any binning, so no correcting for uneven sampling.
+
 
 Created by:
 - processing_scripts/02_initial_processing/01_getBasicFullColorInfo.js
 
 ## Hue Colors Info
 
-"hue_colors_info.csv" contains information about hue color terms in different languages.
+"hue_colors_info.csv" contains information about hue color terms in different languages, based on the hue binning.
 
 Fields:
 - **lang:** The language of the color term (long form)
 - **lang_abv:** Two letter abbreviation of the language
-- **simplifiedName:** the simplified matching "name" from cleaned_color_names.csv used to group color terms
 - **commonName:** For the color term, the most common "standardized_entered_name" used for it
-- **avgColorHueColor:** The average rgb hue color for this term (treating the hue color line as a circle, and finding the average point on that circle)
-- **cnt:** The number of times this name was given when we were asking to name colors chosen from the hue rgb line
-
+- **simplifiedName:** the simplified matching "name" from cleaned_color_names.csv used to group color terms
+- **(low/med/high)ResBlurTermFraction:** What percentage of hue colors are given this name (based on the low/med/high  blurred color binning)?
+- **(low/med/high)ResBlurAvgRGBCode:** What is the average rgb hue color for this term (based on the low/med/high  blurred color binning)? (treating the hue color line as a circle, and finding the average point along that circle)
+- **(low/med/high)ResBlurAvg(L/A/B):** What is the average Oklab hue color for this term (based on the low/med/high  blurred color binning)? (treating the hue color line as a circle, and finding the average point along that circle)
 
 Created by:
 - processing_scripts/02_initial_processing/02_getHueColorNames.js
@@ -73,22 +92,19 @@ Created by:
 
 ## Full Colors Info
 
-"full_colors_info.csv" contains information about color terms in different languages.
+"full_colors_info.csv" contains information about full color space color terms in different languages, based on the hue binning.
 
 Fields:
 - **lang:** The language of the color term (long form)
 - **lang_abv:** Two letter abbreviation of the language
 - **commonName:** For the color term, the most common "standardized_entered_name" used for it
 - **simplifiedName:** the simplified matching "name" from cleaned_color_names.csv used to group color terms
-- **avgColorRGBCode:** The average rgb color for this term (balancing in Oklab space and for the expected rgb hue color ratio)
-- **totalColorFraction:** The total fraction of color names for this language are this color term (balancing in Oklab space and for the expected rgb hue color ratio)
-- **avgL, avgA, avgB:** The average Oklab color for this term (balancing in Oklab space and for the expected rgb hue color ratio)
-- **numFullNames:** The number of times this name was given when we were asking only to name rgb hue color line (max(r,g,b) == 255 or 1, min(r,g,b) == 0)
-- **numLineNames:** The number of times this name was given when we were asking to name colors chosen from the whole rgb color space
-
+- **(tiny/low/med/high)ResBlurTermFraction:** What percentage of full color space colors are given this name (based on the tiny/low/med/high blurred full color binning of all color entries)?
+- **(tiny/low/med/high)ResBlurAvgRGBCode:** What is the average rgb color for this term (based on the tiny/low/med/high blurred full color binning of all color entries)?
+- **(tiny/low/med/high)ResBlurAvg(L/A/B):** What is the average Oklab hue color for this term (based on the tiny/low/med/high blurred full color binning of all color entries)?
 
 Created by:
-- processing_scripts/02_initial_processing/01_getBasicFullColorInfo.js
+- processing_scripts/02_initial_processing/03_getFullColorNames.js
 
 
 ## Binned Hue Colors
@@ -104,7 +120,7 @@ The "binned_full_colors/" folder has datasets from our binning all the color nam
 
 ## Translation loss
 
-The "translation_loss/" folder has datasets comparing the distribution of all pairs of color terms in two languages, calculating the LAB distance to signify the "translation loss" of going from one term to another.
+The "translation_loss/" folder has datasets comparing the distribution of all pairs of color terms in two languages, calculating the Oklab distance to signify the "translation loss" of going from one term to another.
 
 
 ## Color SOM Patches

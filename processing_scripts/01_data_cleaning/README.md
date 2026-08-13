@@ -17,7 +17,7 @@ Data Inputs:
 There are a number of files with refinement rules. Most are run by *rifine.js*. But also:
 
 - *lang_name_change.csv* has rules for changing language names
-- *participant_lang_changes.js* has rules for changing languages for specific participants
+- *participant_lang_changes.js* has rules for changing languages for specific participants, and specific pages of results for participants (some will answer one page in the target language and another page in English)
 - *participants_to_exclude.csv* has specific ids for participants to exclude (e.g., they entered nonsense or entered data in the wrong language)
 - *lang_rules/*_rules.js* has rules for specific languages based on the two letter language id (see */shared_files/languages-iso-639.js*). Look in that folder for more on language rules
 
