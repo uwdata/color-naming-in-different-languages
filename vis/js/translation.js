@@ -95,7 +95,7 @@ $(document).on('ready page:load', function () {
       td.dist = translateInfo.dist;
       if (td.lang_s === "ko") {
         minD = d3.min(data.filter(d => standardizeKoTerm(d.koterm) === standardizeKoTerm(td.koterm)), d => d.dist);
-        best = data.find(d => d.dist === minD);
+        best = data.find(d => standardizeKoTerm(d.koterm) === standardizeKoTerm(td.koterm) && d.dist === minD);
         translationByColor = Object.assign(translationByColor, {
           "koterm": td.koterm,
           "enterm": best.enterm,
@@ -103,7 +103,7 @@ $(document).on('ready page:load', function () {
         });
       } else {
         minD = d3.min(data.filter(d => d.enterm === td.enterm), d => d.dist);
-        best = data.find(d => d.dist === minD);
+        best = data.find(d => d.enterm === td.enterm && d.dist === minD);
         translationByColor = Object.assign(translationByColor, {
           "koterm": best.koterm,
           "enterm": td.enterm,

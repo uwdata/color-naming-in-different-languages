@@ -2,12 +2,17 @@
 
 const excludeNames = [
     // English color names:
-    "blue", "brown", "green", "grey", "pink", "purple"
+    "blue", "brown", "green", "grey", "pink", "purple", "black", "sky blue", "violet", "maroon"
 ];
 
 const nameReplacingRules = [
+    [/aakash/g, "आकाश"],
+    [/akash/g, "आकाश"],
+
     [/aasmaani/g, "आसमानी"],
     [/aasmani/g, "आसमानी"],
+    [/aasamni/g, "आसमानी"],
+    [/asmani/g, "आसमानी"],
 
     [/kala/g, "काला"],
     [/kaala/g, "काला"],
@@ -83,7 +88,26 @@ const nameReplacingRules = [
     [/santra/, "संतरा"],
     [/santari/, "संतरा"],
     
-    [/pista/, "पिस्ता"]
+    [/pista/, "पिस्ता"],
+
+    [/chamkila/, "चमकीला"],
+
+    [/firozi/, "फिरोजी"],
+    [/firosi/, "फिरोजी"],
+    [/ferozi/, "फिरोजी"],
+
+    [/samudri/, "समुद्री"],
+
+    [/तोता/, "तोतई"],
+    [/tootiya/, "तोतई"],
+    [/totaiya/, "तोतई"],
+    [/totayi/, "तोतई"],
+    [/totiya/, "तोतई"],
+    [/totia/, "तोतई"],
+    [/tota/, "तोतई"],
+
+    [/feeka/, "फीका"]
+
 ];
 
 export default {

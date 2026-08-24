@@ -10,6 +10,7 @@ const nameReplacingRules = [
     [/aakupacha/g, "ఆకుపచ్చ"],
     [/aaku pachaa/g, "ఆకుపచ్చ"],
     [/aaku pacha/g, "ఆకుపచ్చ"],
+    [/akkupacha/g, "ఆకుపచ్చ"],
 
     [/ooda r/g, "ఊదా"],
     [/ఉదా/g, "ఊదా"],
@@ -44,6 +45,8 @@ const nameReplacingRules = [
     [/పసుప్పచ్చ/g, "పసుపుపచ్చ"], //pasupupacha
 
     [/vankaya/g, "వంకాయ"],
+
+    [/chilaka/g, "చిలుక"],
 ];
 
 export default {

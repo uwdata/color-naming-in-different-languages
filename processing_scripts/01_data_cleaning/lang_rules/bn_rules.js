@@ -9,6 +9,8 @@ const nameReplacingRules = [
     [/আকাশী/g, "আকাশি"],
 
     [/kamala/g, "কমলা"],
+    [/komla/g, "কমলা"],
+    [/komola/g, "কমলা"],
 
     [/কাল$/, "কালো"],
     [/kaalo/g, "কালো"],
@@ -19,6 +21,8 @@ const nameReplacingRules = [
 
     [/golapi/g, "গোলাপি"],
     [/golabi/g, "গোলাপি"],
+
+    [/nilabho/g, "নীলাভ"],
 
     [/nil/g, "নীল"],
     [/neel/g, "নীল"],
@@ -59,7 +63,9 @@ const nameReplacingRules = [
 
     [/mete/g, "মেটে"],
     [/mati/g, "মেটে"],
-    [/maati/g, "মেটে"]
+    [/maati/g, "মেটে"],
+
+    [/khub/g, "খুব"]
     
 ];
 

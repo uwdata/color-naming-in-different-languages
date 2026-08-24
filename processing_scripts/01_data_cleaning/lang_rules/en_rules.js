@@ -96,6 +96,7 @@ const nameReplacingRules = [
     
     [/kahki/g, "khaki"],
     [/kaki/g, "khaki"],
+    [/khakhi/g, "khaki"],
 
     [/light gree$/, "light green"],
 

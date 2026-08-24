@@ -12,9 +12,11 @@ const nameReplacingRules = [
     
     [/neela/, "نیلا"],
     [/nela/, "نیلا"],
+    [/nila/, "نیلا"],
 
     [/sabz/, "سبز"],
 
+    [/jamnii/, "جامنی"],
     [/jaamni/, "جامنی"],
     [/jamini/, "جامنی"],
     [/jaminu/, "جامنی"],
@@ -25,11 +27,14 @@ const nameReplacingRules = [
     [/gulabi/, "گلابی"],
     [/gulaabi/, "گلابی"],
     [/gullabi/, "گلابی"],
+    [/ghulabi/, "گلابی"],
 
+    [/kalaa/, "کالا"],
     [/kaala/, "کالا"],
     [/kala/, "کالا"],
 
     [/peela/, "پیلا"],
+    [/pila/, "پیلا"],
 
     [/halka/, "ہلکا"],
 
@@ -45,11 +50,28 @@ const nameReplacingRules = [
 
     [/naranji/, "نارنجی"],
     [/narangi/, "نارنجی"],
+    [/narenji/, "نارنجی"],
 
     [/bhoora/, "بھورا"],
+    [/bhora/, "بھورا"],
+    [/borrah/, "بھورا"],
+    [/bhura/, "بھورا"],
+    [/buhra/, "بھورا"],
+    [/bora/, "بھورا"],
 
     [/laal/, "لال"],
-    [/lal/, "لال"]
+    [/lal/, "لال"],
+
+    [/baigani/, "بیگنی"],
+    [/baingani/, "بیگنی"],
+    [/bengani/, "بیگنی"],
+    [/bengun/, "بیگنی"],
+
+    [/baby/, "بےبی"],
+
+    [/feroza/, "فیروزی"],
+    [/ferozi/, "فیروزی"],
+    [/firozi/, "فیروزی"]
     
 ];
 

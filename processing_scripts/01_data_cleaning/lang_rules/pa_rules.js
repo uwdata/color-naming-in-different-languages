@@ -4,7 +4,10 @@ const excludeNames = [
 ];
 
 const nameReplacingRules = [
+    [/asmani/, "ਅਸਮਾਨੀ"],
+
     [/hara/, "ਹਰਾ"],
+    [/ਹੱਰਾ/, "ਹਰਾ"],
 
     [/kala/, "ਕਾਲਾ"],
 
