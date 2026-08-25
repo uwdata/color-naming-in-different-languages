@@ -97,15 +97,15 @@
       top: 0px;
     }
 
-    #data-table th:first-child{
+    #data-table th.common-name-column{
       z-index: 2;
     }
 
-    #data-table td:first-child{
+    #data-table td.common-name-column{
       z-index: 1;
     }
 
-    #data-table th:first-child, #data-table td:first-child{
+    #data-table th.common-name-column, #data-table td.common-name-column{
       position: sticky; 
       left:0;
       
@@ -118,6 +118,14 @@
       min-width: 120px;
       padding-left:10px;
       padding-right:5px;
+    }
+
+    #data-table td.name-cell-invisible-spacer, #data-table th.table-headers-invisible-spacer{
+      width: 0px;
+      border-left:none;
+      border-right:none;
+      padding-left:0;
+      padding-right:0;
     }
 
     .table-subheader{
@@ -203,7 +211,7 @@
   <div id="data-view">
     <span id="loading-data-span">Loading...</span>
     <table id="data-table">
-      <thead><tr></tr></thead>
+      <thead><div><tr></tr></div></thead>
       <tbody></tbody>
       <tfoot>
         <tr>

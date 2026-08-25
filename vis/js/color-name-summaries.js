@@ -44,16 +44,16 @@ const isVisibleInViewport = (element) => {
     const rect = element.getBoundingClientRect()
     return (
         // no margin version
-        // rect.bottom >= 0 &&
-        // rect.right >= 0 &&
-        // rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-        // rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.bottom >= 0 &&
+        rect.right >= 0 &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <= (window.innerWidth || document.documentElement.clientWidth)
 
         // extra margin version
-        rect.bottom >= -0.5*(window.innerHeight || document.documentElement.clientHeight)  &&
-        rect.right >= -0.5*(window.innerWidth || document.documentElement.clientWidth) &&
-        rect.top <= 1.5*(window.innerHeight || document.documentElement.clientHeight) &&
-        rect.left <= 1.5*(window.innerWidth || document.documentElement.clientWidth)
+        // rect.bottom >= -0.2*(window.innerHeight || document.documentElement.clientHeight)  &&
+        // rect.right >= -0.2*(window.innerWidth || document.documentElement.clientWidth) &&
+        // rect.top <= 1.2*(window.innerHeight || document.documentElement.clientHeight) &&
+        // rect.left <= 1.2*(window.innerWidth || document.documentElement.clientWidth)
     )
 }
 
@@ -64,7 +64,8 @@ let hueOffset = 0
 const allColorInfo = await d3.csv("../model/basic_colors_info.csv");
 // store temporary filtered and sorted info for display
 let filteredColorInfo,
-    sortedColorInfo
+    sortedColorInfo,
+    sortedColorInfoBinned
 
 const langAbvToLang = {}
 for(const colorInfo of allColorInfo){
@@ -456,6 +457,8 @@ if(initialUrlParams.get("pinnedColorTerms")){
     }
 }
 
+// shared d3 data selectors
+let nameRowBins, nameRows, previousRowBinVisibility
 
 // Now that all the url params have been used to start the view, clear them:
 window.location.hash = ""
@@ -807,7 +810,6 @@ function sortFilteredData(){
     const secondarySortDirectionSign = secondarySortDirection == "up" ? -1 : 1
     
 
-    //TODO: make pinned be first compare 
     sortedColorInfo = filteredColorInfo.sort((a, b) => {
         // pinned always stay at top
         if(pinnedColorTerms.includes(a) && !pinnedColorTerms.includes(b)){
@@ -835,6 +837,16 @@ function sortFilteredData(){
             return 0
         }
     })
+    
+    // bin color info for display updates (particularly in languages where there are a lot of colors)
+    // Based on: Source - https://stackoverflow.com/a/11318797, Posted by ZER0, modified by community. See post 'Timeline' for change history, Retrieved 2026-08-17, License - CC BY-SA 4.0
+    const colorDisplayBinSize = 50
+    sortedColorInfoBinned = []
+        
+    for (let i = 0; i < sortedColorInfo.length; i += colorDisplayBinSize){
+        sortedColorInfoBinned.push(sortedColorInfo.slice(i, i + colorDisplayBinSize))
+    }
+
     updateTable()
 }
 
@@ -855,10 +867,17 @@ function updateTable(){
     }
     
     const headerRow = d3.select("#data-table").selectAll("thead tr")
+
+    // add an invisible spacer
+    headerRow.selectAll(".table-headers-invisible-spacer")
+        .data([{}])
+        .join("th")
+        .attr("class", "table-headers-invisible-spacer")
+    
     headerRow.selectAll(".table-headers")
         .data(tableCols)
         .join("th")
-        .attr("class", "table-headers")
+        .attr("class", (d) => `table-headers ${d.key == "commonName" ? "common-name-column" : ""}` )
         .style("cursor", d => d.sortable ? "pointer" : "auto" )
         .html(d => 
             `<div style="display:inline-flex">
@@ -902,21 +921,82 @@ function updateTable(){
         })
 
 
-    const tableBody = d3.select("#data-table").selectAll("tbody")
+    //const tableBody = d3.select("#data-table").selectAll("tbody")
     
-    tableBody.style("background-color", `oklab(${escapeHTML(backgroundBrightness)}% 0 0)`)
+    //tableBody.style("background-color", `oklab(${escapeHTML(backgroundBrightness)}% 0 0)`)
 
-    const nameRows = tableBody.selectAll(".name-row")
-        .data(sortedColorInfo)
+    nameRowBins = d3.select("#data-table").selectAll("tbody")
+        .data(sortedColorInfoBinned)
+        .join("tbody")
+        .attr("data-row-bin-num", (d, i) => i)
+        .style("background-color", `oklab(${escapeHTML(backgroundBrightness)}% 0 0)`)
+
+    nameRows = nameRowBins.selectAll(".name-row")
+        .data(function(d) {
+            return d.map(x => {
+                return {
+                    rowBinNum: this.getAttribute("data-row-bin-num"),
+                    rowData: x
+                }
+            })
+        })
         .join("tr")
         .attr("class", "name-row")
 
-    const tableCell = nameRows.selectAll(".name-cell")
-            .data(d => tableCols.map(col => {
-                    return {cell: d[col.key], row: d, tableCol: col}
-                }))
+
+    nameRows.selectAll(".name-cell-invisible-spacer")
+        .data([{}])
+        .join("td")
+        .attr("class", "name-cell-invisible-spacer")
+            .selectAll("div")
+            .data([{}])
+            .join("div")
+            .style("height", cellHeight + "px")
+
+    updateTableRowBins()
+}
+
+function updateTableRowBins(fromScroll){
+    const rowBinVisibility = {}
+    nameRowBins.each(function() {
+        const rowBin = d3.select(this)
+        const rowBinNum = rowBin.attr("data-row-bin-num")
+        rowBinVisibility[rowBinNum] = isVisibleInViewport(rowBin.node())
+    })
+
+    // Update all rows unless it is a scroll event (in which case, only update the rows in bins with changed visibility)
+    let rowsBinsToUpdate = rowBinVisibility // by default update all
+    if(fromScroll){
+        rowsBinsToUpdate = {}
+        for(const [rowBin, visibility] of Object.entries(rowBinVisibility)){
+            if(previousRowBinVisibility && previousRowBinVisibility[rowBin] != rowBinVisibility[rowBin]){
+                rowsBinsToUpdate[rowBin] = rowBinVisibility[rowBin]
+            }
+        }
+    }
+
+    previousRowBinVisibility = rowBinVisibility
+
+    nameRowBins.filter()
+    
+    const tableCell = nameRows
+            .filter((d) => { // only update rows needed to update (fewer if scrolling)
+                return d.rowBinNum in rowsBinsToUpdate
+            })
+            .selectAll(".name-cell")
+
+            .data(d => {
+                if(rowBinVisibility[d.rowBinNum]){
+                    return tableCols.map(col => {
+                        return {cell: d.rowData[col.key], row: d.rowData, tableCol: col, rowBinNum: d.rowBinNum}
+                    })
+                } else {
+                    return []
+                }
+            })
+ 
             .join("td")
-            .attr("class", "name-cell align-middle")
+            .attr("class", (d) => `name-cell align-middle ${d.tableCol.key == "commonName" ? "common-name-column" : ""}` )
     
     // for any cells with a d3 formatter use that
     const d3Formatters = tableCols.filter(tableCol => tableCol.d3Formatter).map(tableCol => tableCol.d3Formatter)
@@ -1003,6 +1083,7 @@ function generateColorGrid(nodes){
 
 function refreshAllSvgFromScroll(){
     const fromScroll = true
+    updateTableRowBins(fromScroll)
     refreshHueSvgs(fromScroll)
     refreshFullSvgs(fromScroll)
 }
