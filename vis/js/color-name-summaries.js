@@ -13,6 +13,13 @@ const fullBinSize = new BinSize({
     displayLABArcs: true
   })
 
+const fullBinSizeTiny = new BinSize({
+    type: "ring",
+    l: 1/5,
+    simpleName: "LCH Bins: Tiny-res",
+    displayLABArcs: true
+})
+
 // const fullBinSize = new BinSize({
 //     type: "box",
 //     l: 1/5, ab: 1/20,
@@ -44,16 +51,16 @@ const isVisibleInViewport = (element) => {
     const rect = element.getBoundingClientRect()
     return (
         // no margin version
-        rect.bottom >= 0 &&
-        rect.right >= 0 &&
-        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+        // rect.bottom >= 0 &&
+        // rect.right >= 0 &&
+        // rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        // rect.left <= (window.innerWidth || document.documentElement.clientWidth)
 
         // extra margin version
-        // rect.bottom >= -0.2*(window.innerHeight || document.documentElement.clientHeight)  &&
-        // rect.right >= -0.2*(window.innerWidth || document.documentElement.clientWidth) &&
-        // rect.top <= 1.2*(window.innerHeight || document.documentElement.clientHeight) &&
-        // rect.left <= 1.2*(window.innerWidth || document.documentElement.clientWidth)
+        rect.bottom >= -0.2*(window.innerHeight || document.documentElement.clientHeight)  &&
+        rect.right >= -0.2*(window.innerWidth || document.documentElement.clientWidth) &&
+        rect.top <= 1.2*(window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <= 1.2*(window.innerWidth || document.documentElement.clientWidth)
     )
 }
 
@@ -94,7 +101,10 @@ let hueColorInfo,
     hueBins72,
     colorSampleHueBins36BlurByLang,
     colorSampleHueBins72BlurByLang,
+    fullBinningInfo,
     fullBinsInfo,
+    fullBinsInfoTiny,
+    colorSampleFullBinsTiny,
     colorSampleFullBins
 
 
@@ -170,12 +180,57 @@ fetch("../model/binned_hue_colors/hue_color_names_binned_72_blur.json").then(asy
     }
     updateTable()
 })
+fetch(`../model/color_info_pre_naming/oklab_bins_${fullBinSizeTiny}.json`).then(async (response) => {
+    // const fullBinsData = colorSampleFullBins && lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
+    //     colorSampleFullBins[lang][term] : undefined
+
+    const fullBinsInfoAllSpaces = await response.json()
+    fullBinsInfoTiny = fullBinSize.filterBinsByGamut(fullBinsInfoAllSpaces, "rgb")  //assume just rgb bins
+    updateTable()
+})
 fetch(`../model/color_info_pre_naming/oklab_bins_${fullBinSize}.json`).then(async (response) => {
     // const fullBinsData = colorSampleFullBins && lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
     //     colorSampleFullBins[lang][term] : undefined
 
     const fullBinsInfoAllSpaces = await response.json()
     fullBinsInfo = fullBinSize.filterBinsByGamut(fullBinsInfoAllSpaces, "rgb")  //assume just rgb bins
+    updateTable()
+})
+d3.csv("../model/binned_full_colors/full_color_lang_bin_blur_info.csv").then((data) => {
+    fullBinningInfo = {}
+    for(const row of (data)){
+        fullBinningInfo[row.lang] = row
+    }
+    updateTable()
+})
+fetch(`../model/binned_full_colors/full_color_names_binned_blur_${fullBinSizeTiny}.json.gz`).then(async (response) => {
+    const colorSampleFullBinsZipped =  await response.arrayBuffer()
+    const colorSampleFullBinsFlat = JSON.parse(pako.ungzip(colorSampleFullBinsZipped,{ to: 'string' }))
+
+    const colorSampleFullBinsGrouped = d3.groups(colorSampleFullBinsFlat, d => d.lang, d => d.term)
+        .map(a => {return {key: a[0], values: a[1].map(b => {return{key: b[0], values: b[1]}}) }})
+
+    colorSampleFullBinsTiny = {}
+    for(const [i, langVal] of colorSampleFullBinsGrouped.entries()){
+        const lang = langVal.key
+        const langData = langVal.values
+        colorSampleFullBinsTiny[lang] = {}
+        for(const [j, termVal] of langData.entries()){
+            const term = termVal.key
+            const termData = termVal.values
+            colorSampleFullBinsTiny[lang][term] = termData
+        }
+    }
+
+    for(const colorInfo of allColorInfo){
+        const lang = colorInfo.lang
+        const term = colorInfo.simplifiedName
+        const fullBinsDataTiny = colorSampleFullBinsTiny && lang in colorSampleFullBinsTiny && term in colorSampleFullBinsTiny[lang] ? colorSampleFullBinsTiny[lang][term] : undefined
+        if(fullBinsDataTiny){
+            colorInfo.fullBinsDataTiny = fullBinsDataTiny
+        }
+    }
+
     updateTable()
 })
 fetch(`../model/binned_full_colors/full_color_names_binned_blur_${fullBinSize}.json.gz`).then(async (response) => {
@@ -224,12 +279,33 @@ function getHueBinInfo(langAbv, term){
     return hueBinsData
 }
 
+function getFullBinSize(langAbv, term){
+    const lang = langAbvToLang[langAbv]
+    
+    if(!fullBinningInfo || !(lang in fullBinningInfo)){
+        return undefined
+    }
+
+    const regularBinFractionRatio = 0.5
+
+    //check regular size
+    if(fullBinningInfo[lang]["fraction_bins_"+fullBinSize] > regularBinFractionRatio && colorSampleFullBins && lang in colorSampleFullBins && term in colorSampleFullBins[lang]){
+        return "regular"
+    } else if(colorSampleFullBinsTiny && lang in colorSampleFullBinsTiny && term in colorSampleFullBinsTiny[lang]){
+        return "tiny"
+    }
+    return undefined
+}
+
 function getFullBinInfo(langAbv, term){
     const lang = langAbvToLang[langAbv]
-    const fullBinsData = colorSampleFullBins && lang in colorSampleFullBins && term in colorSampleFullBins[lang] ?
-        colorSampleFullBins[lang][term] : undefined
-
-    return fullBinsData
+    const size = getFullBinSize(langAbv, term)
+    if(size == "regular"){
+        return colorSampleFullBins[lang][term]
+    }else if (size == "tiny"){
+        return  colorSampleFullBinsTiny[lang][term]
+    }
+    return undefined
 }
 
 function nameToUnicode(name){
@@ -318,7 +394,8 @@ colorDetailsModalEl.addEventListener('show.bs.modal', event => {
     }
 
     // full color bins
-    if(currentColorTermData.fullBinsData){
+    if(currentColorTermData.fullBinsData || currentColorTermData.fullBinsDataTiny){
+
         $("#color_details_modal_full_bins").show()
         
         const fullBinSvgSelect = d3.select("#color_details_modal_full_bins_view")
@@ -1811,9 +1888,13 @@ function d3SvgUpdateFullColorBins(d3selection, isModal) {
     
     const fullBinSvgs = d3selection.selectAll(`svg.full-color-svg${isModal}`)
         .data((d) => {
-            if(d.row.fullBinsData){
+            const fullBinSizeName = getFullBinSize(d.row.lang_abv, d.row.simplifiedName)
+            if(fullBinSizeName == "regular"){
                 anyData = true
                 return [d.row.fullBinsData]
+            } else if(fullBinSizeName == "tiny"){
+                anyData = true
+                return [d.row.fullBinsDataTiny]
             }
             return [{}]
         })
@@ -1825,7 +1906,7 @@ function d3SvgUpdateFullColorBins(d3selection, isModal) {
         .attr("data-lang", (d) => d[0] ? d[0].langAbv : "") 
         .attr("data-color-name", (d) => d[0] ? nameToUnicode(d[0].term) : "")
 
-    if(!anyData && (!fullBinsInfo || !colorSampleFullBins)){ // if lowest res hue bins not loaded, show loading spin
+    if(!anyData && (!fullBinsInfo || !colorSampleFullBins) && (!fullBinsInfoTiny || !colorSampleFullBinsTiny)){ // if lowest res hue bins not loaded, show loading spin
         d3selection.html(`<div class="full-color-spinner" style="width:${width}px;height:${height}px" ><div class="spinner-border" role="status" ><span class="visually-hidden">Loading...</span></div></div>`)
         return
     } else {
@@ -1876,15 +1957,22 @@ function updateFullColorBinSvg(fullBinSvg, isVisible, fromScroll){
         return
     }
 
-    const fullData = getFullBinInfo(langAbv, term)
+    const thisFullBinSizeName = getFullBinSize(langAbv, term)
+
+    const thisFullBinSize = thisFullBinSizeName == "regular" ? fullBinSize : fullBinSizeTiny
+    const thisFullBinsInfo = thisFullBinSizeName == "regular" ? fullBinsInfo : fullBinsInfoTiny
+
+    console.log("size:", thisFullBinSizeName)
+
+    let fullData = getFullBinInfo(langAbv, term)
 
     
     const maxWidth = 300,
         maxHeight = cellHeight
 
     const binView = new FullColorBinView({
-      bin_size: fullBinSize,
-      bin_array: fullBinsInfo,
+      bin_size: thisFullBinSize,
+      bin_array: thisFullBinsInfo,
       x_dim: "-b",
       y_dim: "-a",
       split_dim: "l",
