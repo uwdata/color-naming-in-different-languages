@@ -51,16 +51,16 @@ const isVisibleInViewport = (element) => {
     const rect = element.getBoundingClientRect()
     return (
         // no margin version
-        // rect.bottom >= 0 &&
-        // rect.right >= 0 &&
-        // rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-        // rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.bottom >= 0 &&
+        rect.right >= 0 &&
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.left <= (window.innerWidth || document.documentElement.clientWidth)
 
         // extra margin version
-        rect.bottom >= -0.2*(window.innerHeight || document.documentElement.clientHeight)  &&
-        rect.right >= -0.2*(window.innerWidth || document.documentElement.clientWidth) &&
-        rect.top <= 1.2*(window.innerHeight || document.documentElement.clientHeight) &&
-        rect.left <= 1.2*(window.innerWidth || document.documentElement.clientWidth)
+        // rect.bottom >= -0.2*(window.innerHeight || document.documentElement.clientHeight)  &&
+        // rect.right >= -0.2*(window.innerWidth || document.documentElement.clientWidth) &&
+        // rect.top <= 1.2*(window.innerHeight || document.documentElement.clientHeight) &&
+        // rect.left <= 1.2*(window.innerWidth || document.documentElement.clientWidth)
     )
 }
 
@@ -1218,6 +1218,7 @@ function refreshFullSvgs(fromScroll){
 }
 
 $("#data-view").on("scroll", refreshAllSvgFromScroll)
+$(window).on("scroll", refreshAllSvgFromScroll)
 $( window ).on( "resize", refreshAllSvgFromScroll)
 
 function d3SvgUpdateHueColor(d3selection, isModal, lineOrRing) {
@@ -1961,8 +1962,6 @@ function updateFullColorBinSvg(fullBinSvg, isVisible, fromScroll){
 
     const thisFullBinSize = thisFullBinSizeName == "regular" ? fullBinSize : fullBinSizeTiny
     const thisFullBinsInfo = thisFullBinSizeName == "regular" ? fullBinsInfo : fullBinsInfoTiny
-
-    console.log("size:", thisFullBinSizeName)
 
     let fullData = getFullBinInfo(langAbv, term)
 
