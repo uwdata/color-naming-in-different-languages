@@ -113,5 +113,8 @@
       "<rootDir>/build",
       "src"
     ]
+  },
+  "resolutions": {
+    "fsevents": "1.2.11"
   }
 }
