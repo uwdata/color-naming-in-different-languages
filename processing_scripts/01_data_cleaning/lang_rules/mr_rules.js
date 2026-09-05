@@ -35,6 +35,9 @@ const nameReplacingRules = [
     [/kalsar/, "काळसर"],
 
     [/kala/, "काळा"],
+    [/kaala/, "काळा"],
+
+    [/karda/, "करडा"],
 
     [/keshari/, "केशरी"],
 
@@ -63,7 +66,8 @@ const nameReplacingRules = [
     [/ppti/, "पोपटी"],
 
     [/fikat/, "फिकट"],
-
+    [/fikkat/, "फिकट"],
+    
     [/morpankhi/, "मोरपंखी"],
 
     [/rakhadi/, "राखाडी"],

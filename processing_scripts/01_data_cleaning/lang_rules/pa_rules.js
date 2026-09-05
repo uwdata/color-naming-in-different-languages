@@ -25,6 +25,7 @@ const nameReplacingRules = [
 
     [/baingani/, "ਬੈਂਗਣੀ"],   
     [/bengani/, "ਬੈਂਗਣੀ"],
+    [/baigaini/, "ਬੈਂਗਣੀ"],
 
     [/burah/, "ਭੂਰਾ"],
 

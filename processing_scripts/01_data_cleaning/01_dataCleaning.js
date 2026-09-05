@@ -305,8 +305,6 @@ for(const cn of color_name_matches){
   if(oldName != newName){
       console.log("WARNING: Name changed when transferring color name match")
       console.log("  lang", cn.lang)
-      console.log("  entered name", enteredColorNameLookup[cn.cn_i])
-      console.log("  colorName row", cn.cn_i)
       console.log("  names: ", oldName, ", ", newName)
   }
 

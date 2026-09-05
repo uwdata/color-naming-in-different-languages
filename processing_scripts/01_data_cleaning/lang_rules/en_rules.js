@@ -180,7 +180,11 @@ const nameReplacingRules = [
     [/turquois$/, "turquoise"],
     [/turquoises/g, "turquoise"],
     
-    [/viloet/g, "viloet"],
+    [/viloet/g, "violet"],
+    [/voilet/g, "violet"],
+    [/violate/g, "violet"],
+
+    [/vermilion/g, "vermillion"],
     
 
     [/yello$/, "yellow"],

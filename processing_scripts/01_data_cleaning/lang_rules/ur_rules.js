@@ -13,6 +13,7 @@ const nameReplacingRules = [
     [/neela/, "نیلا"],
     [/nela/, "نیلا"],
     [/nila/, "نیلا"],
+    [/نیلے/, "نیلا"],
 
     [/sabz/, "سبز"],
 
@@ -23,6 +24,8 @@ const nameReplacingRules = [
     [/jamni/, "جامنی"],
     [/jamuni/, "جامنی"],
     [/jamun/, "جامنی"],
+    [/jaminj/, "جامنی"],
+    [/jamani/, "جامنی"],
 
     [/gulabi/, "گلابی"],
     [/gulaabi/, "گلابی"],
@@ -37,16 +40,22 @@ const nameReplacingRules = [
     [/pila/, "پیلا"],
 
     [/halka/, "ہلکا"],
+    [/hlka/, "ہلکا"],
 
     [/gehra/, "گہرا"],
+    [/ghera/, "گہرا"],
 
+    [/haraa/, "ہرا"],
     [/hara/, "ہرا"],
+    [/harra/, "ہرا"],
 
     [/tez/, "تیز"],
+    [/teez/, "تیز"],
 
     [/surkh/, "سرخ"],
     [/surukj/, "سرخ"],
     [/surukj/, "سرخ"],
+    [/surk/, "سرخ"],
 
     [/naranji/, "نارنجی"],
     [/narangi/, "نارنجی"],
@@ -71,7 +80,27 @@ const nameReplacingRules = [
 
     [/feroza/, "فیروزی"],
     [/ferozi/, "فیروزی"],
-    [/firozi/, "فیروزی"]
+    [/firozi/, "فیروزی"],
+
+    ["mehandi", "مھندی"],
+    ["mehendi", "مھندی"],
+    ["mehndi", "مھندی"],
+    ["مہندی", "مھندی"],
+
+    ["mehroon", "مہرون"],
+    ["مرون", "مہرون"],
+
+    ["pyazi", "پیازی"],
+    ["pyaazi", "پیازی"],
+
+    ["rani", "رانی"],
+    ["raani", "رانی"],
+
+    ["samndari", "سمندری"],
+    ["samandri", "سمندری"],
+    ["samandar", "سمندری"],
+
+    ["surmai", "سرمئی"]
     
 ];
 

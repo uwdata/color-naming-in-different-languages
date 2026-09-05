@@ -9,6 +9,20 @@ const excludeNames = [
 ];
 
 const nameReplacingRules = [
+    [/ahmar/, "احمر"],
+
+    [/azrak/, "ازرق"],
+
+    [/asfar/, "اصفر"],
+
+    [/werdy/, "وردي"],
+
+    [/benefsegy/, "بنفسجي"],
+
+    [/akhthar/, "اخضر"],
+
+    [/burtiqaly/, "برتقالي"],
+    
     [/احمر/, "أحمر"], 
     [/اخضر/, "أخضر"], 
     [/ازرق/, "أزرق"], 

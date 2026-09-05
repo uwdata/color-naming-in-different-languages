@@ -5,12 +5,14 @@ const excludeNames = [
 
 const nameReplacingRules = [
     [/kalo/, "कालो"],
+    [/kala/, "कालो"],
 
     [/gada/, "गाडा"],
 
     [/gulabi/, "गुलाबि"],
 
     [/nilo/, "निलो"],
+    [/nila/, "निलो"],
 
     [/pahelo/, "पहेलो"],
     [/payelo/, "पहेलो"],
@@ -20,7 +22,11 @@ const nameReplacingRules = [
     [/suntala/, "सुनतला"],
 
     [/hariyo/, "हरीयो"],
-    [/हरियो/, "हरीयो"]
+    [/हरियो/, "हरीयो"],
+
+    [/karani/, "खरानि"],
+
+    [/khaiyo/, "खैरो"]
 
 
 

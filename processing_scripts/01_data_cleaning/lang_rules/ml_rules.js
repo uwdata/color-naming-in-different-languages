@@ -39,6 +39,7 @@ const nameReplacingRules = [
     [/chuvapp/, "ചുവപ്പ്"],
 
     [/karuppu/, "കറുപ്പ്"],
+    [/karupp/, "കറുപ്പ്"],
 
     [/chandanm/, "ചന്ദനം"],
     [/chandanam/, "ചന്ദനം"],

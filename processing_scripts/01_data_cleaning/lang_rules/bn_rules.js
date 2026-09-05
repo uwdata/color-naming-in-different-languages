@@ -21,6 +21,7 @@ const nameReplacingRules = [
 
     [/golapi/g, "গোলাপি"],
     [/golabi/g, "গোলাপি"],
+    [/গোলাপি/, "গোলাপি"],
 
     [/nilabho/g, "নীলাভ"],
 
@@ -55,8 +56,8 @@ const nameReplacingRules = [
 
     [/olive/g, "অলিভ"],
 
-    [/khoyeri/g, "খয়েরি"],
-    [/khoiri/g, "খয়েরি"],
+    [/khoyeri/g, "খয়েরী"],
+    [/khoiri/g, "খয়েরী"],
 
     [/fyakashe/g, "ফেকাশে"],
     [/phekashe/g, "ফেকাশে"],
