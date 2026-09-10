@@ -798,7 +798,7 @@ const allTableCols = [
 let tableCols = allTableCols
 
 function normalizeStringForSearch(str){
-    return str
+    return str.toLowerCase()
         .normalize("NFD")
 	    .replace(/\p{Diacritic}/gu, "")
 		.replace(/\s*$/,"") // trim white space
