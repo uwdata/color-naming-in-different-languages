@@ -46,6 +46,9 @@ $( document ).ready(function() {
 	          <li><a class="dropdown-item" href="${visPath}viridis.html">
 			  		<img src="${visPath}imgs/viridis-graph-tiny.png" style="max-height:20px; max-width:50px" />
 			  		Korean-English Viridis Color Spectrum</a></li>
+				<li><a class="dropdown-item" href="${visPath}color-tile-sorting.html">
+			  		<img src="${visPath}imgs/color-tile-sorting-tiny.png" style="max-height:20px; max-width:50px" />
+			  		Color Tile Sorting Results</a></li>
 				<li><a class="dropdown-item" href="${visPath}full-color-bins-viewer.html">
 			  		<img src="${visPath}imgs/full-color-bin-viewer-tiny.png" style="max-height:20px; max-width:50px" />
 					Full Color Bin Options</a></li>
