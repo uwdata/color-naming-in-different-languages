@@ -173,7 +173,8 @@ for(const colorSort of v1_sorts){
             userSort5Time: colorSort.userSort5Time,
             userSort6Time: colorSort.userSort6Time,
             background: "white",
-            sort_score: colorSort.score
+            sort_score: colorSort.score,
+            studyVersion: 1
         }
         color_sort_writer.write(colorSortRow)
     }
@@ -203,6 +204,7 @@ for(const participant of v2_data){
             colorSortRow.sort_score = participant.study.data.result.sort_score
         }
 
+        colorSortRow.studyVersion = 2
         color_sort_writer.write(colorSortRow)
     }
 }

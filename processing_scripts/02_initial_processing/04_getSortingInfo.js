@@ -28,6 +28,7 @@ for(const i of Array(setN).keys()){
     startShuffles[index] = shuffle.join(",")
 }
 
+// TODO: calculate scores for all users (some finished sorting but score wasn't calculated)
 const zeroscores = colorSortingData.filter(s => s.sort_score == 0)
                 .filter(s => 
                         s.userSort1 && s.userSort2 && s.userSort3 && s.userSort4 && s.userSort5 && s.userSort6
@@ -44,8 +45,12 @@ const colorSortingDataSortsParsed =
     )
     // make sure each color tile set has been modified at least once
     .filter(s => 
-        s.userSort1 != startShuffles[1] && s.userSort2 != startShuffles[2] && s.userSort3 != startShuffles[3] &&
-        s.userSort4 != startShuffles[4] && s.userSort5 != startShuffles[5] && s.userSort6 != startShuffles[6]
+        (s.userSort1 != startShuffles[1] || s.userSort1Drags > 0) &&
+        (s.userSort2 != startShuffles[2] || s.userSort2Drags > 0) &&
+        (s.userSort3 != startShuffles[3] || s.userSort3Drags > 0) &&
+        (s.userSort4 != startShuffles[4] || s.userSort4Drags > 0) &&
+        (s.userSort5 != startShuffles[5] || s.userSort5Drags > 0) &&
+        (s.userSort6 != startShuffles[6] || s.userSort6Drags > 0)
     )
     .map(s => {
         const tileSort = {}
