@@ -5,6 +5,7 @@ import fs from 'fs'
 const FILE_COLOR_SORTING_I = "../../raw/color_sorting.csv"
 const FILE_COLOR_SORTING_START_SHUFFLE_I = "../../raw/color_sorting_tile_start_shuffle.csv"
 const FILE_DEMOGRAPHICS_I = "../../raw/demographics.csv"
+const FILE_SORTING_TILE_INFO_I = "../../raw/color_sorting_tiles_info.csv"
 const FILE_SORTING_AVERAGES_O = "../../model/sortingAverages.json"
 
 const setN = 6
@@ -13,6 +14,7 @@ const N = 15
 const colorSortingData = await csv().fromFile(FILE_COLOR_SORTING_I)
 const colorSortingStartShuffleData = await csv().fromFile(FILE_COLOR_SORTING_START_SHUFFLE_I)
 const demographics = await csv().fromFile(FILE_DEMOGRAPHICS_I)
+const tileInfo = await csv().fromFile(FILE_SORTING_TILE_INFO_I)
 
 console.log("calculating start shuffle")
 
@@ -148,9 +150,30 @@ function findSortAvgs(options){
                 tileNum: tileNum,
                 avgErrorAmount: thisTileAvgError,
                 maxError: sortData[0].maxTileError[index][j],
+                color: tileInfo.find(t => 
+                    "v" + options.version == t.study_version &&
+                    index == t.color_set_num &&
+                    tileNum == t.color_set_tile_num )
+                    .color_string
             })
         }
 
+    // 
+    //       const data = fulldata.tileErrors.map((d, i) => {
+    //     //study_version,color_index,color_set_num,color_set_tile_num,r,g,b,color_string
+    //     const thisTileInfo = tileInfo.find(t => 
+    //         "v" + fulldata.version == t.study_version &&
+    //         d.sortSet == t.color_set_num &&
+    //         d.tileNum == t.color_set_tile_num )
+        
+    //     return {
+    //         ...d, 
+    //         error: d.avgErrorAmount,
+    //         ...thisTileInfo, 
+    //         color: d3.rgb(thisTileInfo.color_string),
+    //         index: i
+    //     }
+    // })
 
     }
 

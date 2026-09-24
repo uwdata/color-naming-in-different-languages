@@ -11,8 +11,6 @@ const escapeHTML = str => String(str).replace(/[&<>'"]/g,
 const sortingAvgRequest = await fetch("../model/sortingAverages.json")
 const sortingAverages = await sortingAvgRequest.json()
 
-const tileInfo = await d3.csv("../raw/color_sorting_tiles_info.csv")
-
 $("#data_view").html("")
 
 let i = 0
@@ -42,17 +40,10 @@ function drawSpectrumGraph(domId, fulldata, N, setN){
   console.log("drawSpectrumGraph")
 
   const data = fulldata.tileErrors.map((d, i) => {
-        //study_version,color_index,color_set_num,color_set_tile_num,r,g,b,color_string
-        const thisTileInfo = tileInfo.find(t => 
-            "v" + fulldata.version == t.study_version &&
-            d.sortSet == t.color_set_num &&
-            d.tileNum == t.color_set_tile_num )
-        
         return {
             ...d, 
             error: d.avgErrorAmount,
-            ...thisTileInfo, 
-            color: d3.rgb(thisTileInfo.color_string),
+            color: d3.rgb(d.color),
             index: i
         }
     })
