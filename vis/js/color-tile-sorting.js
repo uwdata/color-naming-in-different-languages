@@ -23,6 +23,8 @@ for(const sortAvgSet of sortingAverages){
             <ul>
             <li>Test Version ${sortAvgSet.version} (${sortAvgSet.version == 1 ? "LAB" : "oklab"} color space)</li>
             ${sortAvgSet.colorBlindness ? `<li>Color Blindness: ${sortAvgSet.colorBlindness} </li>`: "" }
+            ${sortAvgSet.backgroundColor ? `<li>Background Color: ${sortAvgSet.backgroundColor} </li>`: "" }
+            ${sortAvgSet.displayColorSpace ? `<li>Display Color Space: ${sortAvgSet.displayColorSpace} </li>`: "" }
             <li>Average Score: ${sortAvgSet.avgScore}</li>
             <li>Num Users: ${sortAvgSet.numScores}</li>
             </ul>
