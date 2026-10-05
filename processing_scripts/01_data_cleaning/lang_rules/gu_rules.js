@@ -61,7 +61,9 @@ const nameReplacingRules = [
     [/રીંગણી/g, "રીંગણ"],
     [/ringni/g, "રીંગણ"],
 
-    [/haro/g, "હરો"]
+    [/haro/g, "હરો"],
+
+    [/બદામી/g, "બદામી"]
 
 ];
 

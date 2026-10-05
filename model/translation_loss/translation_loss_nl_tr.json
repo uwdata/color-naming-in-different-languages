@@ -1,1308 +1,1428 @@
 [
   {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "bordo",
+    "dist": 0.5324
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "fusya",
+    "dist": 0.4111
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "kahverengi",
+    "dist": 0.3286
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "kirmizi",
+    "dist": 0.3825
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "koyuyesil",
+    "dist": 0.3514
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "lacivert",
+    "dist": 0.4651
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "mavi",
+    "dist": 0.1042
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "mor",
+    "dist": 0.3791
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "pembe",
+    "dist": 0.3029
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "siyah",
+    "dist": 0.5342
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "turuncu",
+    "dist": 0.2931
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "trterm": "yesil",
+    "dist": 0.1645
+  },
+  {
     "nlterm": "beige",
     "trterm": "bordo",
-    "dist": 0.6016
+    "dist": 0.6069
   },
   {
     "nlterm": "beige",
     "trterm": "fusya",
-    "dist": 0.4526
+    "dist": 0.4583
   },
   {
     "nlterm": "beige",
-    "trterm": "kahverengi",
-    "dist": 0.383
-  },
-  {
-    "nlterm": "beige",
-    "trterm": "kirmizi",
-    "dist": 0.4092
-  },
-  {
-    "nlterm": "beige",
-    "trterm": "koyuyesil",
-    "dist": 0.466
-  },
-  {
-    "nlterm": "beige",
-    "trterm": "lacivert",
-    "dist": 0.5943
-  },
-  {
-    "nlterm": "beige",
-    "trterm": "mavi",
-    "dist": 0.2215
-  },
-  {
-    "nlterm": "beige",
-    "trterm": "mor",
-    "dist": 0.4147
-  },
-  {
-    "nlterm": "beige",
-    "trterm": "pembe",
-    "dist": 0.2433
-  },
-  {
-    "nlterm": "beige",
-    "trterm": "siyah",
-    "dist": 0.6447
-  },
-  {
-    "nlterm": "beige",
-    "trterm": "turuncu",
-    "dist": 0.1795
-  },
-  {
-    "nlterm": "beige",
-    "trterm": "yesil",
-    "dist": 0.1937
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "bordo",
-    "dist": 0.3848
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "fusya",
-    "dist": 0.2718
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "kahverengi",
-    "dist": 0.322
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "kirmizi",
-    "dist": 0.3057
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "koyuyesil",
-    "dist": 0.2774
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "lacivert",
-    "dist": 0.2213
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "mavi",
-    "dist": 0.2178
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "mor",
-    "dist": 0.2316
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "pembe",
-    "dist": 0.2957
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "siyah",
-    "dist": 0.3693
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "turuncu",
-    "dist": 0.3982
-  },
-  {
-    "nlterm": "blauw",
-    "trterm": "yesil",
-    "dist": 0.3337
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "bordo",
-    "dist": 0.111
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "fusya",
-    "dist": 0.2162
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "kahverengi",
-    "dist": 0.1631
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "kirmizi",
-    "dist": 0.1284
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "koyuyesil",
-    "dist": 0.17
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "lacivert",
-    "dist": 0.3116
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "mavi",
-    "dist": 0.4556
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "mor",
-    "dist": 0.3294
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "pembe",
-    "dist": 0.3551
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "siyah",
-    "dist": 0.195
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "turuncu",
-    "dist": 0.388
-  },
-  {
-    "nlterm": "bordeaux",
-    "trterm": "yesil",
-    "dist": 0.405
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "bordo",
-    "dist": 0.1605
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "fusya",
-    "dist": 0.2277
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "kahverengi",
-    "dist": 0.1066
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "kirmizi",
-    "dist": 0.1182
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "koyuyesil",
-    "dist": 0.147
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "lacivert",
-    "dist": 0.327
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "mavi",
-    "dist": 0.4131
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "mor",
-    "dist": 0.3241
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "pembe",
-    "dist": 0.3234
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "siyah",
-    "dist": 0.2329
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "turuncu",
-    "dist": 0.3416
-  },
-  {
-    "nlterm": "bruin",
-    "trterm": "yesil",
-    "dist": 0.3507
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "bordo",
-    "dist": 0.4958
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "fusya",
-    "dist": 0.3784
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "kahverengi",
-    "dist": 0.298
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "kirmizi",
-    "dist": 0.3495
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "koyuyesil",
-    "dist": 0.315
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "lacivert",
-    "dist": 0.4305
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "mavi",
-    "dist": 0.1204
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "mor",
-    "dist": 0.355
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "pembe",
-    "dist": 0.2882
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "siyah",
-    "dist": 0.496
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "turuncu",
-    "dist": 0.2835
-  },
-  {
-    "nlterm": "cyaan",
-    "trterm": "yesil",
-    "dist": 0.1711
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "bordo",
-    "dist": 0.2666
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "fusya",
-    "dist": 0.2615
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "kahverengi",
-    "dist": 0.3815
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "kirmizi",
-    "dist": 0.3397
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "koyuyesil",
-    "dist": 0.2763
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "lacivert",
-    "dist": 0.034
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "mavi",
-    "dist": 0.4612
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "mor",
-    "dist": 0.3062
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "pembe",
-    "dist": 0.452
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "siyah",
-    "dist": 0.2072
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "turuncu",
-    "dist": 0.5632
-  },
-  {
-    "nlterm": "donkerblauw",
-    "trterm": "yesil",
-    "dist": 0.5245
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "bordo",
-    "dist": 0.2911
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "fusya",
-    "dist": 0.3431
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "kahverengi",
-    "dist": 0.184
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "kirmizi",
-    "dist": 0.2747
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "koyuyesil",
-    "dist": 0.0926
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "lacivert",
-    "dist": 0.328
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "mavi",
-    "dist": 0.3785
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "mor",
-    "dist": 0.402
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "pembe",
-    "dist": 0.4083
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "siyah",
-    "dist": 0.2566
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "turuncu",
-    "dist": 0.4004
-  },
-  {
-    "nlterm": "donkergroen",
-    "trterm": "yesil",
-    "dist": 0.3136
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "bordo",
-    "dist": 0.1069
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "fusya",
-    "dist": 0.2057
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "kahverengi",
-    "dist": 0.3021
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "kirmizi",
-    "dist": 0.2373
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "koyuyesil",
-    "dist": 0.2333
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "lacivert",
-    "dist": 0.1828
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "mavi",
-    "dist": 0.4934
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "mor",
-    "dist": 0.3014
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "pembe",
-    "dist": 0.4181
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "siyah",
-    "dist": 0.1352
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "turuncu",
-    "dist": 0.5069
-  },
-  {
-    "nlterm": "donkerpaars",
-    "trterm": "yesil",
-    "dist": 0.5079
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "bordo",
-    "dist": 0.6542
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "fusya",
-    "dist": 0.5403
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "kahverengi",
-    "dist": 0.4112
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "kirmizi",
-    "dist": 0.4648
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "koyuyesil",
-    "dist": 0.5134
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "lacivert",
-    "dist": 0.6866
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "mavi",
-    "dist": 0.3232
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "mor",
-    "dist": 0.5228
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "pembe",
-    "dist": 0.3464
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "siyah",
-    "dist": 0.6995
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "turuncu",
-    "dist": 0.1999
-  },
-  {
-    "nlterm": "geel",
-    "trterm": "yesil",
-    "dist": 0.2059
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "bordo",
-    "dist": 0.4188
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "fusya",
-    "dist": 0.2851
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "kahverengi",
-    "dist": 0.2161
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "kirmizi",
-    "dist": 0.2418
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "koyuyesil",
-    "dist": 0.2748
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "lacivert",
-    "dist": 0.4118
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "mavi",
-    "dist": 0.1671
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "mor",
-    "dist": 0.2751
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "pembe",
-    "dist": 0.1778
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "siyah",
-    "dist": 0.4496
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "turuncu",
-    "dist": 0.1827
-  },
-  {
-    "nlterm": "grijs",
-    "trterm": "yesil",
-    "dist": 0.1402
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "bordo",
-    "dist": 0.4286
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "fusya",
-    "dist": 0.3662
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "kahverengi",
-    "dist": 0.1829
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "kirmizi",
-    "dist": 0.2789
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "koyuyesil",
-    "dist": 0.2453
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "lacivert",
-    "dist": 0.453
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "mavi",
-    "dist": 0.2391
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "mor",
-    "dist": 0.3846
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "pembe",
-    "dist": 0.2914
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "siyah",
-    "dist": 0.4483
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "turuncu",
-    "dist": 0.2164
-  },
-  {
-    "nlterm": "groen",
-    "trterm": "yesil",
-    "dist": 0.09
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "bordo",
-    "dist": 0.5993
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "fusya",
-    "dist": 0.4521
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "kahverengi",
-    "dist": 0.3929
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "kirmizi",
-    "dist": 0.426
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "koyuyesil",
-    "dist": 0.4406
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "lacivert",
-    "dist": 0.542
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "mavi",
-    "dist": 0.1187
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "mor",
-    "dist": 0.4009
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "pembe",
-    "dist": 0.2799
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "siyah",
-    "dist": 0.6202
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "turuncu",
-    "dist": 0.2652
-  },
-  {
-    "nlterm": "lichtblauw",
-    "trterm": "yesil",
-    "dist": 0.1978
-  },
-  {
-    "nlterm": "lichtgroen",
-    "trterm": "bordo",
-    "dist": 0.6302
-  },
-  {
-    "nlterm": "lichtgroen",
-    "trterm": "fusya",
-    "dist": 0.5133
-  },
-  {
-    "nlterm": "lichtgroen",
     "trterm": "kahverengi",
     "dist": 0.3881
   },
   {
-    "nlterm": "lichtgroen",
+    "nlterm": "beige",
     "trterm": "kirmizi",
-    "dist": 0.4493
+    "dist": 0.4146
   },
   {
-    "nlterm": "lichtgroen",
+    "nlterm": "beige",
     "trterm": "koyuyesil",
-    "dist": 0.466
+    "dist": 0.4716
   },
   {
-    "nlterm": "lichtgroen",
+    "nlterm": "beige",
     "trterm": "lacivert",
-    "dist": 0.6268
+    "dist": 0.5998
   },
   {
-    "nlterm": "lichtgroen",
+    "nlterm": "beige",
     "trterm": "mavi",
-    "dist": 0.2379
+    "dist": 0.2259
   },
   {
-    "nlterm": "lichtgroen",
+    "nlterm": "beige",
     "trterm": "mor",
-    "dist": 0.4857
+    "dist": 0.4197
   },
   {
-    "nlterm": "lichtgroen",
+    "nlterm": "beige",
     "trterm": "pembe",
-    "dist": 0.3304
+    "dist": 0.2481
   },
   {
-    "nlterm": "lichtgroen",
+    "nlterm": "beige",
     "trterm": "siyah",
-    "dist": 0.6605
+    "dist": 0.6503
   },
   {
-    "nlterm": "lichtgroen",
+    "nlterm": "beige",
     "trterm": "turuncu",
-    "dist": 0.2222
+    "dist": 0.1816
   },
   {
-    "nlterm": "lichtgroen",
+    "nlterm": "beige",
     "trterm": "yesil",
-    "dist": 0.1477
+    "dist": 0.1981
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "bordo",
-    "dist": 0.4715
+    "dist": 0.3797
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "fusya",
-    "dist": 0.2614
+    "dist": 0.2673
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "kahverengi",
-    "dist": 0.3632
+    "dist": 0.3224
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "kirmizi",
-    "dist": 0.311
+    "dist": 0.3035
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "koyuyesil",
-    "dist": 0.3992
+    "dist": 0.2751
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "lacivert",
-    "dist": 0.4095
+    "dist": 0.2136
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "mavi",
-    "dist": 0.2366
+    "dist": 0.2256
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "mor",
-    "dist": 0.1793
+    "dist": 0.2279
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "pembe",
-    "dist": 0.1323
+    "dist": 0.2977
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "siyah",
-    "dist": 0.5178
+    "dist": 0.3638
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "turuncu",
-    "dist": 0.2932
+    "dist": 0.4021
   },
   {
-    "nlterm": "lichtpaars",
+    "nlterm": "blauw",
     "trterm": "yesil",
-    "dist": 0.3413
+    "dist": 0.3394
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "bordo",
-    "dist": 0.4796
+    "dist": 0.1114
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "fusya",
-    "dist": 0.2737
+    "dist": 0.2174
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "kahverengi",
-    "dist": 0.3478
+    "dist": 0.1633
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "kirmizi",
-    "dist": 0.3095
+    "dist": 0.1285
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "koyuyesil",
-    "dist": 0.3951
+    "dist": 0.1712
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "lacivert",
-    "dist": 0.4296
+    "dist": 0.3135
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "mavi",
-    "dist": 0.2225
+    "dist": 0.4569
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "mor",
-    "dist": 0.2085
+    "dist": 0.331
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "pembe",
-    "dist": 0.1227
+    "dist": 0.3552
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "siyah",
-    "dist": 0.5239
+    "dist": 0.1962
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "turuncu",
-    "dist": 0.2598
+    "dist": 0.3879
   },
   {
-    "nlterm": "lila",
+    "nlterm": "bordeaux",
     "trterm": "yesil",
-    "dist": 0.3127
+    "dist": 0.4055
   },
   {
-    "nlterm": "magenta",
+    "nlterm": "bruin",
     "trterm": "bordo",
-    "dist": 0.4856
+    "dist": 0.1603
   },
   {
-    "nlterm": "magenta",
+    "nlterm": "bruin",
     "trterm": "fusya",
-    "dist": 0.2819
+    "dist": 0.228
   },
   {
-    "nlterm": "magenta",
+    "nlterm": "bruin",
     "trterm": "kahverengi",
-    "dist": 0.3767
+    "dist": 0.107
   },
   {
-    "nlterm": "magenta",
+    "nlterm": "bruin",
     "trterm": "kirmizi",
-    "dist": 0.3157
+    "dist": 0.1177
   },
   {
-    "nlterm": "magenta",
+    "nlterm": "bruin",
     "trterm": "koyuyesil",
-    "dist": 0.4346
+    "dist": 0.1483
   },
   {
-    "nlterm": "magenta",
+    "nlterm": "bruin",
     "trterm": "lacivert",
-    "dist": 0.4677
+    "dist": 0.328
   },
   {
-    "nlterm": "magenta",
+    "nlterm": "bruin",
     "trterm": "mavi",
-    "dist": 0.2721
+    "dist": 0.414
   },
   {
-    "nlterm": "magenta",
+    "nlterm": "bruin",
     "trterm": "mor",
-    "dist": 0.2021
+    "dist": 0.3248
   },
   {
-    "nlterm": "magenta",
+    "nlterm": "bruin",
     "trterm": "pembe",
-    "dist": 0.1397
+    "dist": 0.3231
   },
   {
-    "nlterm": "magenta",
+    "nlterm": "bruin",
     "trterm": "siyah",
-    "dist": 0.5539
+    "dist": 0.2334
   },
   {
-    "nlterm": "magenta",
+    "nlterm": "bruin",
     "trterm": "turuncu",
+    "dist": 0.3418
+  },
+  {
+    "nlterm": "bruin",
+    "trterm": "yesil",
+    "dist": 0.3514
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "bordo",
+    "dist": 0.508
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "fusya",
+    "dist": 0.3833
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "kahverengi",
+    "dist": 0.3042
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "kirmizi",
+    "dist": 0.3532
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "koyuyesil",
+    "dist": 0.3314
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "lacivert",
+    "dist": 0.4496
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "mavi",
+    "dist": 0.11
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "mor",
+    "dist": 0.3536
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "pembe",
+    "dist": 0.2723
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "siyah",
+    "dist": 0.5137
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "turuncu",
+    "dist": 0.2645
+  },
+  {
+    "nlterm": "cyaan",
+    "trterm": "yesil",
+    "dist": 0.148
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "bordo",
+    "dist": 0.2678
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "fusya",
+    "dist": 0.2608
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "kahverengi",
+    "dist": 0.3809
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "kirmizi",
+    "dist": 0.3394
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "koyuyesil",
+    "dist": 0.276
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "lacivert",
+    "dist": 0.0323
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "mavi",
+    "dist": 0.4594
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "mor",
+    "dist": 0.3052
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "pembe",
+    "dist": 0.4506
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "siyah",
+    "dist": 0.2083
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "turuncu",
+    "dist": 0.5623
+  },
+  {
+    "nlterm": "donkerblauw",
+    "trterm": "yesil",
+    "dist": 0.5231
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "bordo",
+    "dist": 0.2922
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "fusya",
+    "dist": 0.3458
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "kahverengi",
+    "dist": 0.1862
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "kirmizi",
+    "dist": 0.2773
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "koyuyesil",
+    "dist": 0.0957
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "lacivert",
+    "dist": 0.3297
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "mavi",
+    "dist": 0.3811
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "mor",
+    "dist": 0.405
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "pembe",
+    "dist": 0.4108
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "siyah",
+    "dist": 0.2568
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "turuncu",
+    "dist": 0.4026
+  },
+  {
+    "nlterm": "donkergroen",
+    "trterm": "yesil",
+    "dist": 0.3154
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "bordo",
+    "dist": 0.1063
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "fusya",
+    "dist": 0.2065
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "kahverengi",
+    "dist": 0.3031
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "kirmizi",
+    "dist": 0.2381
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "koyuyesil",
+    "dist": 0.234
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "lacivert",
+    "dist": 0.1833
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "mavi",
+    "dist": 0.4946
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "mor",
+    "dist": 0.3027
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "pembe",
+    "dist": 0.419
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "siyah",
+    "dist": 0.1344
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "turuncu",
+    "dist": 0.5083
+  },
+  {
+    "nlterm": "donkerpaars",
+    "trterm": "yesil",
+    "dist": 0.5091
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "bordo",
+    "dist": 0.2686
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "fusya",
+    "dist": 0.0635
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "kahverengi",
+    "dist": 0.2399
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "kirmizi",
+    "dist": 0.1291
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "koyuyesil",
+    "dist": 0.2741
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "lacivert",
+    "dist": 0.2995
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "mavi",
+    "dist": 0.3462
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "mor",
+    "dist": 0.135
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "pembe",
+    "dist": 0.1706
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "siyah",
+    "dist": 0.3447
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "turuncu",
+    "dist": 0.3052
+  },
+  {
+    "nlterm": "donkerroze",
+    "trterm": "yesil",
+    "dist": 0.3616
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "bordo",
+    "dist": 0.6568
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "fusya",
+    "dist": 0.541
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "kahverengi",
+    "dist": 0.4141
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "kirmizi",
+    "dist": 0.4666
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "koyuyesil",
+    "dist": 0.5159
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "lacivert",
+    "dist": 0.6871
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "mavi",
+    "dist": 0.3213
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "mor",
+    "dist": 0.5223
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "pembe",
+    "dist": 0.3456
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "siyah",
+    "dist": 0.7022
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "turuncu",
+    "dist": 0.2005
+  },
+  {
+    "nlterm": "geel",
+    "trterm": "yesil",
+    "dist": 0.2064
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "bordo",
+    "dist": 0.4167
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "fusya",
+    "dist": 0.2835
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "kahverengi",
+    "dist": 0.2143
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "kirmizi",
+    "dist": 0.2397
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "koyuyesil",
+    "dist": 0.2732
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "lacivert",
+    "dist": 0.4103
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "mavi",
+    "dist": 0.1685
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "mor",
+    "dist": 0.2739
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "pembe",
+    "dist": 0.1756
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "siyah",
+    "dist": 0.4477
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "turuncu",
+    "dist": 0.1825
+  },
+  {
+    "nlterm": "grijs",
+    "trterm": "yesil",
+    "dist": 0.1416
+  },
+  {
+    "nlterm": "groen",
+    "trterm": "bordo",
+    "dist": 0.428
+  },
+  {
+    "nlterm": "groen",
+    "trterm": "fusya",
+    "dist": 0.3663
+  },
+  {
+    "nlterm": "groen",
+    "trterm": "kahverengi",
+    "dist": 0.1819
+  },
+  {
+    "nlterm": "groen",
+    "trterm": "kirmizi",
     "dist": 0.2782
   },
   {
+    "nlterm": "groen",
+    "trterm": "koyuyesil",
+    "dist": 0.2452
+  },
+  {
+    "nlterm": "groen",
+    "trterm": "lacivert",
+    "dist": 0.4537
+  },
+  {
+    "nlterm": "groen",
+    "trterm": "mavi",
+    "dist": 0.2405
+  },
+  {
+    "nlterm": "groen",
+    "trterm": "mor",
+    "dist": 0.385
+  },
+  {
+    "nlterm": "groen",
+    "trterm": "pembe",
+    "dist": 0.2911
+  },
+  {
+    "nlterm": "groen",
+    "trterm": "siyah",
+    "dist": 0.4482
+  },
+  {
+    "nlterm": "groen",
+    "trterm": "turuncu",
+    "dist": 0.2155
+  },
+  {
+    "nlterm": "groen",
+    "trterm": "yesil",
+    "dist": 0.0908
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "bordo",
+    "dist": 0.5983
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "fusya",
+    "dist": 0.4511
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "kahverengi",
+    "dist": 0.3924
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "kirmizi",
+    "dist": 0.425
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "koyuyesil",
+    "dist": 0.4402
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "lacivert",
+    "dist": 0.5412
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "mavi",
+    "dist": 0.1185
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "mor",
+    "dist": 0.3992
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "pembe",
+    "dist": 0.278
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "siyah",
+    "dist": 0.6197
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "turuncu",
+    "dist": 0.264
+  },
+  {
+    "nlterm": "lichtblauw",
+    "trterm": "yesil",
+    "dist": 0.198
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "bordo",
+    "dist": 0.632
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "fusya",
+    "dist": 0.5159
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "kahverengi",
+    "dist": 0.3898
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "kirmizi",
+    "dist": 0.4514
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "koyuyesil",
+    "dist": 0.4678
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "lacivert",
+    "dist": 0.6287
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "mavi",
+    "dist": 0.2394
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "mor",
+    "dist": 0.4879
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "pembe",
+    "dist": 0.3324
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "siyah",
+    "dist": 0.6623
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "turuncu",
+    "dist": 0.2235
+  },
+  {
+    "nlterm": "lichtgroen",
+    "trterm": "yesil",
+    "dist": 0.1494
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "bordo",
+    "dist": 0.473
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "fusya",
+    "dist": 0.2638
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "kahverengi",
+    "dist": 0.3635
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "kirmizi",
+    "dist": 0.3122
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "koyuyesil",
+    "dist": 0.3997
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "lacivert",
+    "dist": 0.4108
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "mavi",
+    "dist": 0.235
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "mor",
+    "dist": 0.1815
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "pembe",
+    "dist": 0.133
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "siyah",
+    "dist": 0.519
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "turuncu",
+    "dist": 0.2924
+  },
+  {
+    "nlterm": "lichtpaars",
+    "trterm": "yesil",
+    "dist": 0.34
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "bordo",
+    "dist": 0.4814
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "fusya",
+    "dist": 0.2757
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "kahverengi",
+    "dist": 0.3505
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "kirmizi",
+    "dist": 0.3122
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "koyuyesil",
+    "dist": 0.3969
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "lacivert",
+    "dist": 0.4305
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "mavi",
+    "dist": 0.2231
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "mor",
+    "dist": 0.2097
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "pembe",
+    "dist": 0.1259
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "siyah",
+    "dist": 0.5253
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "turuncu",
+    "dist": 0.2624
+  },
+  {
+    "nlterm": "lila",
+    "trterm": "yesil",
+    "dist": 0.315
+  },
+  {
+    "nlterm": "magenta",
+    "trterm": "bordo",
+    "dist": 0.4909
+  },
+  {
+    "nlterm": "magenta",
+    "trterm": "fusya",
+    "dist": 0.2881
+  },
+  {
+    "nlterm": "magenta",
+    "trterm": "kahverengi",
+    "dist": 0.3812
+  },
+  {
+    "nlterm": "magenta",
+    "trterm": "kirmizi",
+    "dist": 0.3213
+  },
+  {
+    "nlterm": "magenta",
+    "trterm": "koyuyesil",
+    "dist": 0.439
+  },
+  {
+    "nlterm": "magenta",
+    "trterm": "lacivert",
+    "dist": 0.4725
+  },
+  {
+    "nlterm": "magenta",
+    "trterm": "mavi",
+    "dist": 0.2726
+  },
+  {
+    "nlterm": "magenta",
+    "trterm": "mor",
+    "dist": 0.2073
+  },
+  {
+    "nlterm": "magenta",
+    "trterm": "pembe",
+    "dist": 0.1439
+  },
+  {
+    "nlterm": "magenta",
+    "trterm": "siyah",
+    "dist": 0.5591
+  },
+  {
+    "nlterm": "magenta",
+    "trterm": "turuncu",
+    "dist": 0.2799
+  },
+  {
     "nlterm": "magenta",
     "trterm": "yesil",
-    "dist": 0.3311
+    "dist": 0.3325
   },
   {
     "nlterm": "oranje",
     "trterm": "bordo",
-    "dist": 0.4713
+    "dist": 0.4711
   },
   {
     "nlterm": "oranje",
     "trterm": "fusya",
-    "dist": 0.356
+    "dist": 0.3559
   },
   {
     "nlterm": "oranje",
     "trterm": "kahverengi",
-    "dist": 0.2526
+    "dist": 0.2533
   },
   {
     "nlterm": "oranje",
     "trterm": "kirmizi",
-    "dist": 0.2733
+    "dist": 0.2732
   },
   {
     "nlterm": "oranje",
     "trterm": "koyuyesil",
-    "dist": 0.3737
+    "dist": 0.3744
   },
   {
     "nlterm": "oranje",
     "trterm": "lacivert",
-    "dist": 0.5375
+    "dist": 0.5378
   },
   {
     "nlterm": "oranje",
     "trterm": "mavi",
-    "dist": 0.297
+    "dist": 0.2987
   },
   {
     "nlterm": "oranje",
     "trterm": "mor",
-    "dist": 0.3647
+    "dist": 0.3644
   },
   {
     "nlterm": "oranje",
     "trterm": "pembe",
-    "dist": 0.1887
+    "dist": 0.1882
   },
   {
     "nlterm": "oranje",
     "trterm": "siyah",
-    "dist": 0.5389
+    "dist": 0.5393
   },
   {
     "nlterm": "oranje",
     "trterm": "turuncu",
-    "dist": 0.0145
+    "dist": 0.0157
   },
   {
     "nlterm": "oranje",
     "trterm": "yesil",
-    "dist": 0.1935
+    "dist": 0.1962
   },
   {
     "nlterm": "oudroze",
     "trterm": "bordo",
-    "dist": 0.3916
+    "dist": 0.3876
   },
   {
     "nlterm": "oudroze",
     "trterm": "fusya",
-    "dist": 0.2306
+    "dist": 0.2297
   },
   {
     "nlterm": "oudroze",
     "trterm": "kahverengi",
-    "dist": 0.2178
+    "dist": 0.2138
   },
   {
     "nlterm": "oudroze",
     "trterm": "kirmizi",
-    "dist": 0.2037
+    "dist": 0.1982
   },
   {
     "nlterm": "oudroze",
     "trterm": "koyuyesil",
-    "dist": 0.2926
+    "dist": 0.2928
   },
   {
     "nlterm": "oudroze",
     "trterm": "lacivert",
-    "dist": 0.4038
+    "dist": 0.4048
   },
   {
     "nlterm": "oudroze",
     "trterm": "mavi",
+    "dist": 0.2449
+  },
+  {
+    "nlterm": "oudroze",
+    "trterm": "mor",
+    "dist": 0.2271
+  },
+  {
+    "nlterm": "oudroze",
+    "trterm": "pembe",
+    "dist": 0.0941
+  },
+  {
+    "nlterm": "oudroze",
+    "trterm": "siyah",
+    "dist": 0.444
+  },
+  {
+    "nlterm": "oudroze",
+    "trterm": "turuncu",
+    "dist": 0.164
+  },
+  {
+    "nlterm": "oudroze",
+    "trterm": "yesil",
+    "dist": 0.2216
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "bordo",
+    "dist": 0.3118
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "fusya",
+    "dist": 0.0981
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "kahverengi",
+    "dist": 0.3212
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "kirmizi",
+    "dist": 0.2292
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "koyuyesil",
+    "dist": 0.3168
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "lacivert",
+    "dist": 0.2522
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "mavi",
+    "dist": 0.3456
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "mor",
+    "dist": 0.0467
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "pembe",
+    "dist": 0.2233
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "siyah",
+    "dist": 0.3603
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "turuncu",
+    "dist": 0.3853
+  },
+  {
+    "nlterm": "paars",
+    "trterm": "yesil",
+    "dist": 0.4093
+  },
+  {
+    "nlterm": "rood",
+    "trterm": "bordo",
+    "dist": 0.2504
+  },
+  {
+    "nlterm": "rood",
+    "trterm": "fusya",
+    "dist": 0.1754
+  },
+  {
+    "nlterm": "rood",
+    "trterm": "kahverengi",
+    "dist": 0.1485
+  },
+  {
+    "nlterm": "rood",
+    "trterm": "kirmizi",
+    "dist": 0.0558
+  },
+  {
+    "nlterm": "rood",
+    "trterm": "koyuyesil",
     "dist": 0.239
   },
   {
-    "nlterm": "oudroze",
-    "trterm": "mor",
-    "dist": 0.225
-  },
-  {
-    "nlterm": "oudroze",
-    "trterm": "pembe",
-    "dist": 0.0934
-  },
-  {
-    "nlterm": "oudroze",
-    "trterm": "siyah",
-    "dist": 0.4455
-  },
-  {
-    "nlterm": "oudroze",
-    "trterm": "turuncu",
-    "dist": 0.1673
-  },
-  {
-    "nlterm": "oudroze",
-    "trterm": "yesil",
-    "dist": 0.22
-  },
-  {
-    "nlterm": "paars",
-    "trterm": "bordo",
-    "dist": 0.3143
-  },
-  {
-    "nlterm": "paars",
-    "trterm": "fusya",
-    "dist": 0.0989
-  },
-  {
-    "nlterm": "paars",
-    "trterm": "kahverengi",
-    "dist": 0.3226
-  },
-  {
-    "nlterm": "paars",
-    "trterm": "kirmizi",
-    "dist": 0.2308
-  },
-  {
-    "nlterm": "paars",
-    "trterm": "koyuyesil",
-    "dist": 0.3202
-  },
-  {
-    "nlterm": "paars",
+    "nlterm": "rood",
     "trterm": "lacivert",
-    "dist": 0.256
+    "dist": 0.3689
   },
   {
-    "nlterm": "paars",
+    "nlterm": "rood",
     "trterm": "mavi",
-    "dist": 0.346
+    "dist": 0.3636
   },
   {
-    "nlterm": "paars",
+    "nlterm": "rood",
     "trterm": "mor",
-    "dist": 0.0435
+    "dist": 0.2558
   },
   {
-    "nlterm": "paars",
+    "nlterm": "rood",
     "trterm": "pembe",
-    "dist": 0.2215
+    "dist": 0.2055
   },
   {
-    "nlterm": "paars",
+    "nlterm": "rood",
     "trterm": "siyah",
-    "dist": 0.3643
+    "dist": 0.3393
   },
   {
-    "nlterm": "paars",
+    "nlterm": "rood",
     "trterm": "turuncu",
-    "dist": 0.3841
-  },
-  {
-    "nlterm": "paars",
-    "trterm": "yesil",
-    "dist": 0.4107
-  },
-  {
-    "nlterm": "rood",
-    "trterm": "bordo",
-    "dist": 0.2551
-  },
-  {
-    "nlterm": "rood",
-    "trterm": "fusya",
-    "dist": 0.1774
-  },
-  {
-    "nlterm": "rood",
-    "trterm": "kahverengi",
-    "dist": 0.1492
-  },
-  {
-    "nlterm": "rood",
-    "trterm": "kirmizi",
-    "dist": 0.0595
-  },
-  {
-    "nlterm": "rood",
-    "trterm": "koyuyesil",
     "dist": 0.2407
   },
   {
     "nlterm": "rood",
-    "trterm": "lacivert",
-    "dist": 0.3715
-  },
-  {
-    "nlterm": "rood",
-    "trterm": "mavi",
-    "dist": 0.3606
-  },
-  {
-    "nlterm": "rood",
-    "trterm": "mor",
-    "dist": 0.2549
-  },
-  {
-    "nlterm": "rood",
-    "trterm": "pembe",
-    "dist": 0.2019
-  },
-  {
-    "nlterm": "rood",
-    "trterm": "siyah",
-    "dist": 0.3434
-  },
-  {
-    "nlterm": "rood",
-    "trterm": "turuncu",
-    "dist": 0.2358
-  },
-  {
-    "nlterm": "rood",
     "trterm": "yesil",
-    "dist": 0.3052
+    "dist": 0.3088
   },
   {
     "nlterm": "roze",
     "trterm": "bordo",
-    "dist": 0.4278
+    "dist": 0.4266
   },
   {
     "nlterm": "roze",
     "trterm": "fusya",
-    "dist": 0.2285
+    "dist": 0.2272
   },
   {
     "nlterm": "roze",
     "trterm": "kahverengi",
-    "dist": 0.3057
+    "dist": 0.3061
   },
   {
     "nlterm": "roze",
     "trterm": "kirmizi",
-    "dist": 0.2432
+    "dist": 0.2428
   },
   {
     "nlterm": "roze",
     "trterm": "koyuyesil",
-    "dist": 0.3766
+    "dist": 0.3764
   },
   {
     "nlterm": "roze",
     "trterm": "lacivert",
-    "dist": 0.4395
+    "dist": 0.438
   },
   {
     "nlterm": "roze",
     "trterm": "mavi",
-    "dist": 0.2853
+    "dist": 0.2868
   },
   {
     "nlterm": "roze",
     "trterm": "mor",
-    "dist": 0.2007
+    "dist": 0.198
   },
   {
     "nlterm": "roze",
     "trterm": "pembe",
-    "dist": 0.03
+    "dist": 0.0315
   },
   {
     "nlterm": "roze",
     "trterm": "siyah",
-    "dist": 0.4994
+    "dist": 0.4981
   },
   {
     "nlterm": "roze",
     "trterm": "turuncu",
-    "dist": 0.2052
+    "dist": 0.2081
   },
   {
     "nlterm": "roze",
     "trterm": "yesil",
-    "dist": 0.306
+    "dist": 0.3085
   },
   {
     "nlterm": "turquoise",
     "trterm": "bordo",
-    "dist": 0.5972
+    "dist": 0.597
   },
   {
     "nlterm": "turquoise",
     "trterm": "fusya",
-    "dist": 0.4638
+    "dist": 0.4644
   },
   {
     "nlterm": "turquoise",
     "trterm": "kahverengi",
-    "dist": 0.3786
+    "dist": 0.3778
   },
   {
     "nlterm": "turquoise",
     "trterm": "kirmizi",
-    "dist": 0.4288
+    "dist": 0.4286
   },
   {
     "nlterm": "turquoise",
     "trterm": "koyuyesil",
-    "dist": 0.4241
+    "dist": 0.4236
   },
   {
     "nlterm": "turquoise",
     "trterm": "lacivert",
-    "dist": 0.5458
+    "dist": 0.5464
   },
   {
     "nlterm": "turquoise",
     "trterm": "mavi",
-    "dist": 0.1263
+    "dist": 0.1272
   },
   {
     "nlterm": "turquoise",
     "trterm": "mor",
-    "dist": 0.4198
+    "dist": 0.4208
   },
   {
     "nlterm": "turquoise",
     "trterm": "pembe",
-    "dist": 0.3055
+    "dist": 0.3059
   },
   {
     "nlterm": "turquoise",
@@ -1312,71 +1432,71 @@
   {
     "nlterm": "turquoise",
     "trterm": "turuncu",
-    "dist": 0.2687
+    "dist": 0.268
   },
   {
     "nlterm": "turquoise",
     "trterm": "yesil",
-    "dist": 0.1607
+    "dist": 0.1602
   },
   {
     "nlterm": "zwart",
     "trterm": "bordo",
-    "dist": 0.1232
+    "dist": 0.123
   },
   {
     "nlterm": "zwart",
     "trterm": "fusya",
-    "dist": 0.2986
+    "dist": 0.2981
   },
   {
     "nlterm": "zwart",
     "trterm": "kahverengi",
-    "dist": 0.3363
+    "dist": 0.336
   },
   {
     "nlterm": "zwart",
     "trterm": "kirmizi",
-    "dist": 0.3021
+    "dist": 0.3015
   },
   {
     "nlterm": "zwart",
     "trterm": "koyuyesil",
-    "dist": 0.2487
+    "dist": 0.2483
   },
   {
     "nlterm": "zwart",
     "trterm": "lacivert",
-    "dist": 0.2373
+    "dist": 0.2371
   },
   {
     "nlterm": "zwart",
     "trterm": "mavi",
-    "dist": 0.5584
+    "dist": 0.558
   },
   {
     "nlterm": "zwart",
     "trterm": "mor",
-    "dist": 0.3976
+    "dist": 0.3975
   },
   {
     "nlterm": "zwart",
     "trterm": "pembe",
-    "dist": 0.4981
+    "dist": 0.4975
   },
   {
     "nlterm": "zwart",
     "trterm": "siyah",
-    "dist": 0.0582
+    "dist": 0.0577
   },
   {
     "nlterm": "zwart",
     "trterm": "turuncu",
-    "dist": 0.5645
+    "dist": 0.5643
   },
   {
     "nlterm": "zwart",
     "trterm": "yesil",
-    "dist": 0.551
+    "dist": 0.5506
   }
 ]

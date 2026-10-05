@@ -1,793 +1,943 @@
 [
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "bla",
-    "dist": 0.3981
+    "dist": 0.2693
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "brun",
-    "dist": 0.3985
+    "dist": 0.3443
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "gron",
-    "dist": 0.2459
+    "dist": 0.1707
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "gul",
-    "dist": 0.1321
+    "dist": 0.2885
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
+    "svterm": "himmelsbla",
+    "dist": 0.1746
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
     "svterm": "lila",
-    "dist": 0.4132
+    "dist": 0.3915
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "limegron",
-    "dist": 0.112
+    "dist": 0.2453
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "ljusbla",
-    "dist": 0.1281
+    "dist": 0.1317
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "ljusgron",
-    "dist": 0.0923
+    "dist": 0.2026
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "marinbla",
-    "dist": 0.6213
+    "dist": 0.5026
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "mintgron",
-    "dist": 0.0745
+    "dist": 0.1774
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "morkbla",
-    "dist": 0.6275
+    "dist": 0.4972
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "morkgron",
-    "dist": 0.4903
+    "dist": 0.3701
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "svterm": "morklila",
-    "dist": 0.5581
-  },
-  {
-    "nlterm": "beige",
-    "svterm": "neongron",
-    "dist": 0.1395
-  },
-  {
-    "nlterm": "beige",
-    "svterm": "orange",
-    "dist": 0.2095
-  },
-  {
-    "nlterm": "beige",
-    "svterm": "rod",
-    "dist": 0.4011
-  },
-  {
-    "nlterm": "beige",
-    "svterm": "rosa",
-    "dist": 0.2365
-  },
-  {
-    "nlterm": "beige",
-    "svterm": "skogsgron",
-    "dist": 0.4708
-  },
-  {
-    "nlterm": "beige",
-    "svterm": "svart",
-    "dist": 0.6563
-  },
-  {
-    "nlterm": "beige",
-    "svterm": "turkos",
-    "dist": 0.1755
-  },
-  {
-    "nlterm": "beige",
-    "svterm": "vinrod",
-    "dist": 0.5499
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "bla",
-    "dist": 0.0359
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "brun",
-    "dist": 0.2893
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "gron",
-    "dist": 0.3006
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "gul",
-    "dist": 0.4897
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "lila",
-    "dist": 0.256
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "limegron",
-    "dist": 0.4505
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "ljusbla",
-    "dist": 0.3087
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "ljusgron",
-    "dist": 0.4219
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "marinbla",
-    "dist": 0.2901
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "mintgron",
-    "dist": 0.3933
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "morkbla",
-    "dist": 0.2589
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "morkgron",
-    "dist": 0.2976
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "morklila",
-    "dist": 0.2816
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "neongron",
-    "dist": 0.4373
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "orange",
-    "dist": 0.3846
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "rod",
-    "dist": 0.3364
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "rosa",
-    "dist": 0.3105
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "skogsgron",
-    "dist": 0.335
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "svart",
-    "dist": 0.3939
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "turkos",
-    "dist": 0.2889
-  },
-  {
-    "nlterm": "blauw",
-    "svterm": "vinrod",
-    "dist": 0.3626
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "bla",
-    "dist": 0.3588
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "brun",
-    "dist": 0.1302
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "gron",
-    "dist": 0.3618
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "gul",
-    "dist": 0.553
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "lila",
-    "dist": 0.3358
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "limegron",
-    "dist": 0.5269
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "ljusbla",
-    "dist": 0.5039
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "ljusgron",
-    "dist": 0.543
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "marinbla",
-    "dist": 0.2312
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "mintgron",
-    "dist": 0.5232
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "morkbla",
-    "dist": 0.2913
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "morkgron",
-    "dist": 0.1824
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "morklila",
-    "dist": 0.1706
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "neongron",
-    "dist": 0.5378
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "orange",
-    "dist": 0.3575
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "rod",
-    "dist": 0.1565
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "rosa",
-    "dist": 0.3775
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "skogsgron",
-    "dist": 0.2015
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "svart",
-    "dist": 0.1899
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "turkos",
-    "dist": 0.4775
-  },
-  {
-    "nlterm": "bordeaux",
-    "svterm": "vinrod",
-    "dist": 0.0599
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "bla",
-    "dist": 0.3287
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "brun",
-    "dist": 0.0774
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "gron",
-    "dist": 0.3092
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "gul",
-    "dist": 0.5018
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "lila",
-    "dist": 0.3297
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "limegron",
-    "dist": 0.4756
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "ljusbla",
-    "dist": 0.4568
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "ljusgron",
-    "dist": 0.4916
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "marinbla",
-    "dist": 0.2583
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "mintgron",
-    "dist": 0.4721
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "morkbla",
-    "dist": 0.3128
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "morkgron",
-    "dist": 0.1461
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "morklila",
-    "dist": 0.1961
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "neongron",
-    "dist": 0.4845
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "orange",
-    "dist": 0.3109
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "rod",
-    "dist": 0.1441
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "rosa",
-    "dist": 0.3457
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "skogsgron",
-    "dist": 0.1685
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "svart",
-    "dist": 0.224
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "turkos",
-    "dist": 0.4298
-  },
-  {
-    "nlterm": "bruin",
-    "svterm": "vinrod",
-    "dist": 0.1106
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "bla",
-    "dist": 0.2355
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "brun",
-    "dist": 0.3104
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "gron",
-    "dist": 0.1564
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "gul",
-    "dist": 0.3037
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "lila",
-    "dist": 0.3666
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "limegron",
-    "dist": 0.2619
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "ljusbla",
-    "dist": 0.1513
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "ljusgron",
-    "dist": 0.2263
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "marinbla",
-    "dist": 0.4643
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "mintgron",
-    "dist": 0.203
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "morkbla",
-    "dist": 0.4608
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "morkgron",
-    "dist": 0.3368
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "morklila",
-    "dist": 0.4349
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "neongron",
-    "dist": 0.2314
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "orange",
-    "dist": 0.2837
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "rod",
-    "dist": 0.3596
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "rosa",
-    "dist": 0.2942
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "skogsgron",
-    "dist": 0.3247
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "svart",
-    "dist": 0.5091
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "turkos",
-    "dist": 0.0807
-  },
-  {
-    "nlterm": "cyaan",
-    "svterm": "vinrod",
-    "dist": 0.4534
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "bla",
-    "dist": 0.2511
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "brun",
-    "dist": 0.3338
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "gron",
-    "dist": 0.4743
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "gul",
-    "dist": 0.6933
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "lila",
-    "dist": 0.3296
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "limegron",
-    "dist": 0.6559
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "ljusbla",
-    "dist": 0.5428
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "ljusgron",
-    "dist": 0.6398
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "marinbla",
-    "dist": 0.0916
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "mintgron",
-    "dist": 0.6128
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "morkbla",
-    "dist": 0.0254
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "morkgron",
-    "dist": 0.2908
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "morklila",
-    "dist": 0.1629
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "neongron",
-    "dist": 0.6483
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "orange",
-    "dist": 0.5343
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "rod",
-    "dist": 0.3641
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "rosa",
-    "dist": 0.4688
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "skogsgron",
-    "dist": 0.3472
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "svart",
-    "dist": 0.2341
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "turkos",
-    "dist": 0.5203
-  },
-  {
-    "nlterm": "donkerblauw",
-    "svterm": "vinrod",
-    "dist": 0.2783
-  },
-  {
-    "nlterm": "donkergroen",
-    "svterm": "bla",
-    "dist": 0.3366
-  },
-  {
-    "nlterm": "donkergroen",
-    "svterm": "brun",
-    "dist": 0.2242
-  },
-  {
-    "nlterm": "donkergroen",
-    "svterm": "gron",
-    "dist": 0.2964
-  },
-  {
-    "nlterm": "donkergroen",
-    "svterm": "gul",
-    "dist": 0.5394
-  },
-  {
-    "nlterm": "donkergroen",
-    "svterm": "lila",
-    "dist": 0.4401
-  },
-  {
-    "nlterm": "donkergroen",
-    "svterm": "limegron",
-    "dist": 0.507
-  },
-  {
-    "nlterm": "donkergroen",
-    "svterm": "ljusbla",
     "dist": 0.4725
   },
   {
+    "nlterm": "appelblauwzeegroen",
+    "svterm": "neongron",
+    "dist": 0.2117
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "svterm": "orange",
+    "dist": 0.2951
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "svterm": "rod",
+    "dist": 0.3878
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "svterm": "rosa",
+    "dist": 0.311
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "svterm": "skogsgron",
+    "dist": 0.3544
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "svterm": "svart",
+    "dist": 0.5479
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "svterm": "turkos",
+    "dist": 0.0502
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
+    "svterm": "vinrod",
+    "dist": 0.4887
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "bla",
+    "dist": 0.4055
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "brun",
+    "dist": 0.4059
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "gron",
+    "dist": 0.2618
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "gul",
+    "dist": 0.1303
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "himmelsbla",
+    "dist": 0.0801
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "lila",
+    "dist": 0.4189
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "limegron",
+    "dist": 0.1155
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "ljusbla",
+    "dist": 0.1373
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "ljusgron",
+    "dist": 0.0959
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "marinbla",
+    "dist": 0.6277
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "mintgron",
+    "dist": 0.0784
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "morkbla",
+    "dist": 0.6337
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "morkgron",
+    "dist": 0.4922
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "morklila",
+    "dist": 0.5641
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "neongron",
+    "dist": 0.1397
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "orange",
+    "dist": 0.2136
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "rod",
+    "dist": 0.4061
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "rosa",
+    "dist": 0.2445
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "skogsgron",
+    "dist": 0.4724
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "svart",
+    "dist": 0.6625
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "turkos",
+    "dist": 0.1825
+  },
+  {
+    "nlterm": "beige",
+    "svterm": "vinrod",
+    "dist": 0.5551
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "bla",
+    "dist": 0.0348
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "brun",
+    "dist": 0.2876
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "gron",
+    "dist": 0.3019
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "gul",
+    "dist": 0.4965
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "himmelsbla",
+    "dist": 0.3379
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "lila",
+    "dist": 0.2535
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "limegron",
+    "dist": 0.4574
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "ljusbla",
+    "dist": 0.3119
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "ljusgron",
+    "dist": 0.4289
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "marinbla",
+    "dist": 0.2839
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "mintgron",
+    "dist": 0.3943
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "morkbla",
+    "dist": 0.252
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "morkgron",
+    "dist": 0.2931
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "morklila",
+    "dist": 0.2764
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "neongron",
+    "dist": 0.4443
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "orange",
+    "dist": 0.388
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "rod",
+    "dist": 0.3347
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "rosa",
+    "dist": 0.3138
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "skogsgron",
+    "dist": 0.3329
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "svart",
+    "dist": 0.3893
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "turkos",
+    "dist": 0.2956
+  },
+  {
+    "nlterm": "blauw",
+    "svterm": "vinrod",
+    "dist": 0.3587
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "bla",
+    "dist": 0.3601
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "brun",
+    "dist": 0.129
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "gron",
+    "dist": 0.3549
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "gul",
+    "dist": 0.5525
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "himmelsbla",
+    "dist": 0.4919
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "lila",
+    "dist": 0.3371
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "limegron",
+    "dist": 0.5258
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "ljusbla",
+    "dist": 0.5036
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "ljusgron",
+    "dist": 0.5421
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "marinbla",
+    "dist": 0.234
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "mintgron",
+    "dist": 0.5167
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "morkbla",
+    "dist": 0.2938
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "morkgron",
+    "dist": 0.1817
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "morklila",
+    "dist": 0.1726
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "neongron",
+    "dist": 0.5381
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "orange",
+    "dist": 0.3571
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "rod",
+    "dist": 0.1561
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "rosa",
+    "dist": 0.3768
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "skogsgron",
+    "dist": 0.2007
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "svart",
+    "dist": 0.1914
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "turkos",
+    "dist": 0.4779
+  },
+  {
+    "nlterm": "bordeaux",
+    "svterm": "vinrod",
+    "dist": 0.0606
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "bla",
+    "dist": 0.3293
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "brun",
+    "dist": 0.0765
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "gron",
+    "dist": 0.3024
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "gul",
+    "dist": 0.5017
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "himmelsbla",
+    "dist": 0.4462
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "lila",
+    "dist": 0.3306
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "limegron",
+    "dist": 0.4748
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "ljusbla",
+    "dist": 0.4565
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "ljusgron",
+    "dist": 0.4906
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "marinbla",
+    "dist": 0.2599
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "mintgron",
+    "dist": 0.4657
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "morkbla",
+    "dist": 0.3144
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "morkgron",
+    "dist": 0.1431
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "morklila",
+    "dist": 0.1969
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "neongron",
+    "dist": 0.485
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "orange",
+    "dist": 0.3108
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "rod",
+    "dist": 0.1439
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "rosa",
+    "dist": 0.3453
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "skogsgron",
+    "dist": 0.1664
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "svart",
+    "dist": 0.2247
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "turkos",
+    "dist": 0.4304
+  },
+  {
+    "nlterm": "bruin",
+    "svterm": "vinrod",
+    "dist": 0.1105
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "bla",
+    "dist": 0.253
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "brun",
+    "dist": 0.3172
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "gron",
+    "dist": 0.1529
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "gul",
+    "dist": 0.2755
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "himmelsbla",
+    "dist": 0.1569
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "lila",
+    "dist": 0.366
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "limegron",
+    "dist": 0.2321
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "ljusbla",
+    "dist": 0.1177
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "ljusgron",
+    "dist": 0.194
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "marinbla",
+    "dist": 0.4826
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "mintgron",
+    "dist": 0.1665
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "morkbla",
+    "dist": 0.4809
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "morkgron",
+    "dist": 0.3505
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "morklila",
+    "dist": 0.4484
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "neongron",
+    "dist": 0.2086
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "orange",
+    "dist": 0.2672
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "rod",
+    "dist": 0.3594
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "rosa",
+    "dist": 0.2813
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "skogsgron",
+    "dist": 0.3381
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "svart",
+    "dist": 0.5269
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "turkos",
+    "dist": 0.0644
+  },
+  {
+    "nlterm": "cyaan",
+    "svterm": "vinrod",
+    "dist": 0.4638
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "bla",
+    "dist": 0.2471
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "brun",
+    "dist": 0.3313
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "gron",
+    "dist": 0.4643
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "gul",
+    "dist": 0.6923
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "himmelsbla",
+    "dist": 0.5564
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "lila",
+    "dist": 0.3288
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "limegron",
+    "dist": 0.6549
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "ljusbla",
+    "dist": 0.5379
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "ljusgron",
+    "dist": 0.638
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "marinbla",
+    "dist": 0.0921
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "mintgron",
+    "dist": 0.6044
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "morkbla",
+    "dist": 0.0272
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "morkgron",
+    "dist": 0.29
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "morklila",
+    "dist": 0.1638
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "neongron",
+    "dist": 0.647
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "orange",
+    "dist": 0.5333
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "rod",
+    "dist": 0.364
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "rosa",
+    "dist": 0.4665
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "skogsgron",
+    "dist": 0.3482
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "svart",
+    "dist": 0.2349
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "turkos",
+    "dist": 0.5175
+  },
+  {
+    "nlterm": "donkerblauw",
+    "svterm": "vinrod",
+    "dist": 0.2793
+  },
+  {
+    "nlterm": "donkergroen",
+    "svterm": "bla",
+    "dist": 0.3396
+  },
+  {
+    "nlterm": "donkergroen",
+    "svterm": "brun",
+    "dist": 0.2256
+  },
+  {
+    "nlterm": "donkergroen",
+    "svterm": "gron",
+    "dist": 0.2865
+  },
+  {
+    "nlterm": "donkergroen",
+    "svterm": "gul",
+    "dist": 0.541
+  },
+  {
+    "nlterm": "donkergroen",
+    "svterm": "himmelsbla",
+    "dist": 0.4829
+  },
+  {
+    "nlterm": "donkergroen",
+    "svterm": "lila",
+    "dist": 0.4436
+  },
+  {
+    "nlterm": "donkergroen",
+    "svterm": "limegron",
+    "dist": 0.5075
+  },
+  {
+    "nlterm": "donkergroen",
+    "svterm": "ljusbla",
+    "dist": 0.4724
+  },
+  {
     "nlterm": "donkergroen",
     "svterm": "ljusgron",
-    "dist": 0.5068
+    "dist": 0.506
   },
   {
     "nlterm": "donkergroen",
     "svterm": "marinbla",
-    "dist": 0.2717
+    "dist": 0.2739
   },
   {
     "nlterm": "donkergroen",
     "svterm": "mintgron",
-    "dist": 0.491
+    "dist": 0.4874
   },
   {
     "nlterm": "donkergroen",
     "svterm": "morkbla",
-    "dist": 0.312
+    "dist": 0.3137
   },
   {
     "nlterm": "donkergroen",
     "svterm": "morkgron",
-    "dist": 0.0871
+    "dist": 0.0952
   },
   {
     "nlterm": "donkergroen",
     "svterm": "morklila",
-    "dist": 0.2905
+    "dist": 0.2927
   },
   {
     "nlterm": "donkergroen",
     "svterm": "neongron",
-    "dist": 0.4898
+    "dist": 0.492
   },
   {
     "nlterm": "donkergroen",
     "svterm": "orange",
-    "dist": 0.4087
+    "dist": 0.4112
   },
   {
     "nlterm": "donkergroen",
     "svterm": "rod",
-    "dist": 0.3101
+    "dist": 0.3124
   },
   {
     "nlterm": "donkergroen",
     "svterm": "rosa",
-    "dist": 0.4592
+    "dist": 0.4624
   },
   {
     "nlterm": "donkergroen",
     "svterm": "skogsgron",
-    "dist": 0.0855
+    "dist": 0.0924
   },
   {
     "nlterm": "donkergroen",
     "svterm": "svart",
-    "dist": 0.2242
+    "dist": 0.2247
   },
   {
     "nlterm": "donkergroen",
     "svterm": "turkos",
-    "dist": 0.4127
+    "dist": 0.4138
   },
   {
     "nlterm": "donkergroen",
     "svterm": "vinrod",
-    "dist": 0.2702
+    "dist": 0.2718
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "bla",
-    "dist": 0.3218
+    "dist": 0.3214
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "brun",
-    "dist": 0.2512
+    "dist": 0.25
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "gron",
-    "dist": 0.4641
+    "dist": 0.4578
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "gul",
-    "dist": 0.6627
+    "dist": 0.6638
+  },
+  {
+    "nlterm": "donkerpaars",
+    "svterm": "himmelsbla",
+    "dist": 0.5563
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "lila",
-    "dist": 0.3117
+    "dist": 0.3128
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "limegron",
-    "dist": 0.6335
+    "dist": 0.634
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "ljusbla",
-    "dist": 0.5583
+    "dist": 0.5575
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "ljusgron",
-    "dist": 0.6337
+    "dist": 0.6343
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "marinbla",
-    "dist": 0.1027
+    "dist": 0.1028
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "mintgron",
-    "dist": 0.6084
+    "dist": 0.6026
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "morkbla",
-    "dist": 0.1608
+    "dist": 0.1612
   },
   {
     "nlterm": "donkerpaars",
@@ -797,112 +947,227 @@
   {
     "nlterm": "donkerpaars",
     "svterm": "morklila",
-    "dist": 0.0566
+    "dist": 0.0571
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "neongron",
-    "dist": 0.6347
+    "dist": 0.6359
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "orange",
-    "dist": 0.4756
+    "dist": 0.4768
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "rod",
-    "dist": 0.2634
+    "dist": 0.2644
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "rosa",
-    "dist": 0.4342
+    "dist": 0.4337
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "skogsgron",
-    "dist": 0.3026
+    "dist": 0.3032
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "svart",
-    "dist": 0.1633
+    "dist": 0.1627
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "turkos",
-    "dist": 0.5401
+    "dist": 0.5409
   },
   {
     "nlterm": "donkerpaars",
     "svterm": "vinrod",
-    "dist": 0.1417
+    "dist": 0.1418
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "bla",
+    "dist": 0.2556
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "brun",
+    "dist": 0.1979
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "gron",
+    "dist": 0.3432
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "gul",
+    "dist": 0.4713
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "himmelsbla",
+    "dist": 0.3626
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "lila",
+    "dist": 0.1293
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "limegron",
+    "dist": 0.4461
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "ljusbla",
+    "dist": 0.3758
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "ljusgron",
+    "dist": 0.4479
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "marinbla",
+    "dist": 0.3123
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "mintgron",
+    "dist": 0.4143
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "morkbla",
+    "dist": 0.3255
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "morkgron",
+    "dist": 0.3088
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "morklila",
+    "dist": 0.2144
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "neongron",
+    "dist": 0.4634
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "orange",
+    "dist": 0.2808
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "rod",
+    "dist": 0.139
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "rosa",
+    "dist": 0.1806
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "skogsgron",
+    "dist": 0.3362
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "svart",
+    "dist": 0.3694
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "turkos",
+    "dist": 0.3842
+  },
+  {
+    "nlterm": "donkerroze",
+    "svterm": "vinrod",
+    "dist": 0.228
   },
   {
     "nlterm": "geel",
     "svterm": "bla",
-    "dist": 0.5024
+    "dist": 0.5043
   },
   {
     "nlterm": "geel",
     "svterm": "brun",
-    "dist": 0.4438
+    "dist": 0.4484
   },
   {
     "nlterm": "geel",
     "svterm": "gron",
-    "dist": 0.268
+    "dist": 0.2809
   },
   {
     "nlterm": "geel",
     "svterm": "gul",
-    "dist": 0.0155
+    "dist": 0.0143
+  },
+  {
+    "nlterm": "geel",
+    "svterm": "himmelsbla",
+    "dist": 0.2069
   },
   {
     "nlterm": "geel",
     "svterm": "lila",
-    "dist": 0.5211
+    "dist": 0.5214
   },
   {
     "nlterm": "geel",
     "svterm": "limegron",
-    "dist": 0.0656
+    "dist": 0.063
   },
   {
     "nlterm": "geel",
     "svterm": "ljusbla",
-    "dist": 0.2443
+    "dist": 0.2455
   },
   {
     "nlterm": "geel",
     "svterm": "ljusgron",
-    "dist": 0.1165
+    "dist": 0.1128
   },
   {
     "nlterm": "geel",
     "svterm": "marinbla",
-    "dist": 0.6954
+    "dist": 0.6978
   },
   {
     "nlterm": "geel",
     "svterm": "mintgron",
-    "dist": 0.1469
+    "dist": 0.1478
   },
   {
     "nlterm": "geel",
     "svterm": "morkbla",
-    "dist": 0.7123
+    "dist": 0.7135
   },
   {
     "nlterm": "geel",
     "svterm": "morkgron",
-    "dist": 0.5252
+    "dist": 0.5249
   },
   {
     "nlterm": "geel",
     "svterm": "morklila",
-    "dist": 0.6341
+    "dist": 0.636
   },
   {
     "nlterm": "geel",
@@ -912,147 +1177,152 @@
   {
     "nlterm": "geel",
     "svterm": "orange",
-    "dist": 0.2299
+    "dist": 0.2319
   },
   {
     "nlterm": "geel",
     "svterm": "rod",
-    "dist": 0.4524
+    "dist": 0.454
   },
   {
     "nlterm": "geel",
     "svterm": "rosa",
-    "dist": 0.34
+    "dist": 0.3426
   },
   {
     "nlterm": "geel",
     "svterm": "skogsgron",
-    "dist": 0.4915
+    "dist": 0.4914
   },
   {
     "nlterm": "geel",
     "svterm": "svart",
-    "dist": 0.7051
+    "dist": 0.7088
   },
   {
     "nlterm": "geel",
     "svterm": "turkos",
-    "dist": 0.2597
+    "dist": 0.2617
   },
   {
     "nlterm": "geel",
     "svterm": "vinrod",
-    "dist": 0.6007
+    "dist": 0.6029
   },
   {
     "nlterm": "grijs",
     "svterm": "bla",
-    "dist": 0.2397
+    "dist": 0.2405
   },
   {
     "nlterm": "grijs",
     "svterm": "brun",
-    "dist": 0.2113
+    "dist": 0.2109
   },
   {
     "nlterm": "grijs",
     "svterm": "gron",
-    "dist": 0.1364
+    "dist": 0.1424
   },
   {
     "nlterm": "grijs",
     "svterm": "gul",
-    "dist": 0.2805
+    "dist": 0.2821
+  },
+  {
+    "nlterm": "grijs",
+    "svterm": "himmelsbla",
+    "dist": 0.1684
   },
   {
     "nlterm": "grijs",
     "svterm": "lila",
-    "dist": 0.2809
+    "dist": 0.2806
   },
   {
     "nlterm": "grijs",
     "svterm": "limegron",
-    "dist": 0.2414
+    "dist": 0.2432
   },
   {
     "nlterm": "grijs",
     "svterm": "ljusbla",
-    "dist": 0.1777
+    "dist": 0.1798
   },
   {
     "nlterm": "grijs",
     "svterm": "ljusgron",
-    "dist": 0.2334
+    "dist": 0.2353
   },
   {
     "nlterm": "grijs",
     "svterm": "marinbla",
-    "dist": 0.4221
+    "dist": 0.4212
   },
   {
     "nlterm": "grijs",
     "svterm": "mintgron",
-    "dist": 0.2048
+    "dist": 0.1995
   },
   {
     "nlterm": "grijs",
     "svterm": "morkbla",
-    "dist": 0.4334
+    "dist": 0.4324
   },
   {
     "nlterm": "grijs",
     "svterm": "morkgron",
-    "dist": 0.2978
+    "dist": 0.2925
   },
   {
     "nlterm": "grijs",
     "svterm": "morklila",
-    "dist": 0.3652
+    "dist": 0.3639
   },
   {
     "nlterm": "grijs",
     "svterm": "neongron",
-    "dist": 0.2502
+    "dist": 0.2514
   },
   {
     "nlterm": "grijs",
     "svterm": "orange",
-    "dist": 0.1818
+    "dist": 0.18
   },
   {
     "nlterm": "grijs",
     "svterm": "rod",
-    "dist": 0.2447
+    "dist": 0.2424
   },
   {
     "nlterm": "grijs",
     "svterm": "rosa",
-    "dist": 0.1959
+    "dist": 0.197
   },
   {
     "nlterm": "grijs",
     "svterm": "skogsgron",
-    "dist": 0.295
+    "dist": 0.2902
   },
   {
     "nlterm": "grijs",
     "svterm": "svart",
-    "dist": 0.4559
+    "dist": 0.4546
   },
   {
     "nlterm": "grijs",
     "svterm": "turkos",
-    "dist": 0.1702
+    "dist": 0.1726
   },
   {
     "nlterm": "grijs",
     "svterm": "vinrod",
-    "dist": 0.3629
+    "dist": 0.3609
   },
   {
     "nlterm": "groen",
     "svterm": "bla",
-    "dist": 0.3098
+    "dist": 0.3123
   },
   {
     "nlterm": "groen",
@@ -1062,137 +1332,147 @@
   {
     "nlterm": "groen",
     "svterm": "gron",
-    "dist": 0.0485
+    "dist": 0.0436
   },
   {
     "nlterm": "groen",
     "svterm": "gul",
-    "dist": 0.2816
+    "dist": 0.281
+  },
+  {
+    "nlterm": "groen",
+    "svterm": "himmelsbla",
+    "dist": 0.2549
   },
   {
     "nlterm": "groen",
     "svterm": "lila",
-    "dist": 0.3895
+    "dist": 0.3906
   },
   {
     "nlterm": "groen",
     "svterm": "limegron",
-    "dist": 0.2459
+    "dist": 0.2441
   },
   {
     "nlterm": "groen",
     "svterm": "ljusbla",
-    "dist": 0.2554
+    "dist": 0.2561
   },
   {
     "nlterm": "groen",
     "svterm": "ljusgron",
-    "dist": 0.2523
+    "dist": 0.2494
   },
   {
     "nlterm": "groen",
     "svterm": "marinbla",
-    "dist": 0.4376
+    "dist": 0.4387
   },
   {
     "nlterm": "groen",
     "svterm": "mintgron",
-    "dist": 0.2425
+    "dist": 0.2371
   },
   {
     "nlterm": "groen",
     "svterm": "morkbla",
-    "dist": 0.4609
+    "dist": 0.4619
   },
   {
     "nlterm": "groen",
     "svterm": "morkgron",
-    "dist": 0.2468
+    "dist": 0.2432
   },
   {
     "nlterm": "groen",
     "svterm": "morklila",
-    "dist": 0.3995
+    "dist": 0.3999
   },
   {
     "nlterm": "groen",
     "svterm": "neongron",
-    "dist": 0.2329
+    "dist": 0.2334
   },
   {
     "nlterm": "groen",
     "svterm": "orange",
-    "dist": 0.2065
+    "dist": 0.2054
   },
   {
     "nlterm": "groen",
     "svterm": "rod",
-    "dist": 0.2823
+    "dist": 0.2814
   },
   {
     "nlterm": "groen",
     "svterm": "rosa",
-    "dist": 0.3063
+    "dist": 0.3092
   },
   {
     "nlterm": "groen",
     "svterm": "skogsgron",
-    "dist": 0.2106
+    "dist": 0.2067
   },
   {
     "nlterm": "groen",
     "svterm": "svart",
-    "dist": 0.4418
+    "dist": 0.442
   },
   {
     "nlterm": "groen",
     "svterm": "turkos",
-    "dist": 0.2056
+    "dist": 0.2071
   },
   {
     "nlterm": "groen",
     "svterm": "vinrod",
-    "dist": 0.3737
+    "dist": 0.3732
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "bla",
-    "dist": 0.3326
+    "dist": 0.3343
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "brun",
-    "dist": 0.4062
+    "dist": 0.4069
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "gron",
-    "dist": 0.2282
+    "dist": 0.2381
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "gul",
-    "dist": 0.2208
+    "dist": 0.2218
+  },
+  {
+    "nlterm": "lichtblauw",
+    "svterm": "himmelsbla",
+    "dist": 0.0851
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "lila",
-    "dist": 0.4048
+    "dist": 0.4039
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "limegron",
-    "dist": 0.1847
+    "dist": 0.1866
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "ljusbla",
-    "dist": 0.0407
+    "dist": 0.0373
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "ljusgron",
-    "dist": 0.1321
+    "dist": 0.1349
   },
   {
     "nlterm": "lichtblauw",
@@ -1202,77 +1482,77 @@
   {
     "nlterm": "lichtblauw",
     "svterm": "mintgron",
-    "dist": 0.104
+    "dist": 0.102
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "morkbla",
-    "dist": 0.5789
+    "dist": 0.5787
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "morkgron",
-    "dist": 0.4643
+    "dist": 0.461
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "morklila",
-    "dist": 0.5399
+    "dist": 0.5393
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "neongron",
-    "dist": 0.1641
+    "dist": 0.1648
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "orange",
-    "dist": 0.2821
+    "dist": 0.2811
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "rod",
-    "dist": 0.4267
+    "dist": 0.4256
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "rosa",
-    "dist": 0.2772
+    "dist": 0.2789
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "skogsgron",
-    "dist": 0.4521
+    "dist": 0.45
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "svart",
-    "dist": 0.6348
+    "dist": 0.635
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "turkos",
-    "dist": 0.0843
+    "dist": 0.0891
   },
   {
     "nlterm": "lichtblauw",
     "svterm": "vinrod",
-    "dist": 0.5531
+    "dist": 0.5522
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "bla",
-    "dist": 0.4343
+    "dist": 0.4383
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "brun",
-    "dist": 0.4179
+    "dist": 0.4215
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "gron",
-    "dist": 0.2025
+    "dist": 0.2161
   },
   {
     "nlterm": "lichtgroen",
@@ -1281,473 +1561,498 @@
   },
   {
     "nlterm": "lichtgroen",
+    "svterm": "himmelsbla",
+    "dist": 0.1644
+  },
+  {
+    "nlterm": "lichtgroen",
     "svterm": "lila",
-    "dist": 0.4876
+    "dist": 0.4906
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "limegron",
-    "dist": 0.0776
+    "dist": 0.0784
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "ljusbla",
-    "dist": 0.1764
+    "dist": 0.1822
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "ljusgron",
-    "dist": 0.0417
+    "dist": 0.0369
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "marinbla",
-    "dist": 0.6463
+    "dist": 0.649
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "mintgron",
-    "dist": 0.0674
+    "dist": 0.0739
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "morkbla",
-    "dist": 0.655
+    "dist": 0.6575
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "morkgron",
-    "dist": 0.4802
+    "dist": 0.4787
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "morklila",
-    "dist": 0.5967
+    "dist": 0.5992
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "neongron",
-    "dist": 0.0726
+    "dist": 0.0732
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "orange",
-    "dist": 0.243
+    "dist": 0.2447
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "rod",
-    "dist": 0.4433
+    "dist": 0.445
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "rosa",
-    "dist": 0.3295
+    "dist": 0.3351
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "skogsgron",
-    "dist": 0.4489
+    "dist": 0.4471
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "svart",
-    "dist": 0.6679
+    "dist": 0.6703
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "turkos",
-    "dist": 0.1676
+    "dist": 0.1712
   },
   {
     "nlterm": "lichtgroen",
     "svterm": "vinrod",
-    "dist": 0.5791
+    "dist": 0.5808
   },
   {
     "nlterm": "lichtpaars",
     "svterm": "bla",
-    "dist": 0.2494
+    "dist": 0.2502
   },
   {
     "nlterm": "lichtpaars",
     "svterm": "brun",
-    "dist": 0.3405
+    "dist": 0.3422
   },
   {
     "nlterm": "lichtpaars",
     "svterm": "gron",
-    "dist": 0.3516
+    "dist": 0.3546
   },
   {
     "nlterm": "lichtpaars",
     "svterm": "gul",
-    "dist": 0.3838
+    "dist": 0.3828
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "himmelsbla",
+    "dist": 0.2273
   },
   {
     "nlterm": "lichtpaars",
     "svterm": "lila",
-    "dist": 0.1768
+    "dist": 0.1798
   },
   {
     "nlterm": "lichtpaars",
     "svterm": "limegron",
-    "dist": 0.3629
+    "dist": 0.3627
   },
   {
     "nlterm": "lichtpaars",
     "svterm": "ljusbla",
-    "dist": 0.2315
+    "dist": 0.2278
   },
   {
     "nlterm": "lichtpaars",
     "svterm": "ljusgron",
-    "dist": 0.3431
+    "dist": 0.344
   },
   {
     "nlterm": "lichtpaars",
     "svterm": "marinbla",
-    "dist": 0.464
+    "dist": 0.4658
   },
   {
     "nlterm": "lichtpaars",
     "svterm": "mintgron",
+    "dist": 0.3039
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "morkbla",
+    "dist": 0.4544
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "morkgron",
+    "dist": 0.4348
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "morklila",
+    "dist": 0.3955
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "neongron",
+    "dist": 0.372
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "orange",
+    "dist": 0.2928
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "rod",
+    "dist": 0.3152
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "rosa",
+    "dist": 0.1289
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "skogsgron",
+    "dist": 0.4488
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "svart",
+    "dist": 0.5413
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "turkos",
+    "dist": 0.282
+  },
+  {
+    "nlterm": "lichtpaars",
+    "svterm": "vinrod",
+    "dist": 0.4342
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "bla",
+    "dist": 0.2619
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "brun",
+    "dist": 0.3364
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "gron",
+    "dist": 0.3347
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "gul",
+    "dist": 0.3468
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "himmelsbla",
+    "dist": 0.1962
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "lila",
+    "dist": 0.2077
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "limegron",
+    "dist": 0.3298
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "ljusbla",
+    "dist": 0.1974
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "ljusgron",
+    "dist": 0.3078
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "marinbla",
+    "dist": 0.4779
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "mintgron",
+    "dist": 0.2699
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "morkbla",
+    "dist": 0.4722
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "morkgron",
+    "dist": 0.4304
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "morklila",
+    "dist": 0.4066
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "neongron",
+    "dist": 0.3388
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "orange",
+    "dist": 0.2689
+  },
+  {
+    "nlterm": "lila",
+    "svterm": "rod",
     "dist": 0.3114
   },
   {
-    "nlterm": "lichtpaars",
-    "svterm": "morkbla",
-    "dist": 0.4526
-  },
-  {
-    "nlterm": "lichtpaars",
-    "svterm": "morkgron",
-    "dist": 0.4383
-  },
-  {
-    "nlterm": "lichtpaars",
-    "svterm": "morklila",
-    "dist": 0.3936
-  },
-  {
-    "nlterm": "lichtpaars",
-    "svterm": "neongron",
-    "dist": 0.374
-  },
-  {
-    "nlterm": "lichtpaars",
-    "svterm": "orange",
-    "dist": 0.2929
-  },
-  {
-    "nlterm": "lichtpaars",
-    "svterm": "rod",
-    "dist": 0.314
-  },
-  {
-    "nlterm": "lichtpaars",
-    "svterm": "rosa",
-    "dist": 0.1286
-  },
-  {
-    "nlterm": "lichtpaars",
-    "svterm": "skogsgron",
-    "dist": 0.4512
-  },
-  {
-    "nlterm": "lichtpaars",
-    "svterm": "svart",
-    "dist": 0.5398
-  },
-  {
-    "nlterm": "lichtpaars",
-    "svterm": "turkos",
-    "dist": 0.2831
-  },
-  {
-    "nlterm": "lichtpaars",
-    "svterm": "vinrod",
-    "dist": 0.4331
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "bla",
-    "dist": 0.2595
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "brun",
-    "dist": 0.3325
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "gron",
-    "dist": 0.3263
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "gul",
-    "dist": 0.3447
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "lila",
-    "dist": 0.2058
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "limegron",
-    "dist": 0.3264
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "ljusbla",
-    "dist": 0.1978
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "ljusgron",
-    "dist": 0.3034
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "marinbla",
-    "dist": 0.4761
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "mintgron",
-    "dist": 0.2734
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "morkbla",
-    "dist": 0.4708
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "morkgron",
-    "dist": 0.4321
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "morklila",
-    "dist": 0.4046
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "neongron",
-    "dist": 0.3375
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "orange",
-    "dist": 0.2663
-  },
-  {
-    "nlterm": "lila",
-    "svterm": "rod",
-    "dist": 0.309
-  },
-  {
     "nlterm": "lila",
     "svterm": "rosa",
-    "dist": 0.1182
+    "dist": 0.1212
   },
   {
     "nlterm": "lila",
     "svterm": "skogsgron",
-    "dist": 0.438
+    "dist": 0.4374
   },
   {
     "nlterm": "lila",
     "svterm": "svart",
-    "dist": 0.5437
+    "dist": 0.5458
   },
   {
     "nlterm": "lila",
     "svterm": "turkos",
-    "dist": 0.2562
+    "dist": 0.2589
   },
   {
     "nlterm": "lila",
     "svterm": "vinrod",
-    "dist": 0.4363
+    "dist": 0.4384
   },
   {
     "nlterm": "magenta",
     "svterm": "bla",
-    "dist": 0.3114
+    "dist": 0.3161
   },
   {
     "nlterm": "magenta",
     "svterm": "brun",
-    "dist": 0.3612
+    "dist": 0.3674
   },
   {
     "nlterm": "magenta",
     "svterm": "gron",
-    "dist": 0.3371
+    "dist": 0.3438
   },
   {
     "nlterm": "magenta",
     "svterm": "gul",
-    "dist": 0.367
+    "dist": 0.3665
+  },
+  {
+    "nlterm": "magenta",
+    "svterm": "himmelsbla",
+    "dist": 0.2651
   },
   {
     "nlterm": "magenta",
     "svterm": "lila",
-    "dist": 0.1894
+    "dist": 0.1949
   },
   {
     "nlterm": "magenta",
     "svterm": "limegron",
-    "dist": 0.3508
+    "dist": 0.3524
   },
   {
     "nlterm": "magenta",
     "svterm": "ljusbla",
-    "dist": 0.2779
+    "dist": 0.2778
   },
   {
     "nlterm": "magenta",
     "svterm": "ljusgron",
-    "dist": 0.3257
+    "dist": 0.3272
   },
   {
     "nlterm": "magenta",
     "svterm": "marinbla",
-    "dist": 0.5067
+    "dist": 0.5125
   },
   {
     "nlterm": "magenta",
     "svterm": "mintgron",
-    "dist": 0.2982
+    "dist": 0.2933
   },
   {
     "nlterm": "magenta",
     "svterm": "morkbla",
-    "dist": 0.506
+    "dist": 0.5114
   },
   {
     "nlterm": "magenta",
     "svterm": "morkgron",
-    "dist": 0.4678
+    "dist": 0.4676
   },
   {
     "nlterm": "magenta",
     "svterm": "morklila",
-    "dist": 0.4234
+    "dist": 0.4291
   },
   {
     "nlterm": "magenta",
     "svterm": "neongron",
-    "dist": 0.3731
+    "dist": 0.3723
   },
   {
     "nlterm": "magenta",
     "svterm": "orange",
-    "dist": 0.2813
+    "dist": 0.2837
   },
   {
     "nlterm": "magenta",
     "svterm": "rod",
-    "dist": 0.3187
+    "dist": 0.3239
   },
   {
     "nlterm": "magenta",
     "svterm": "rosa",
-    "dist": 0.1352
+    "dist": 0.1396
   },
   {
     "nlterm": "magenta",
     "svterm": "skogsgron",
-    "dist": 0.4831
+    "dist": 0.4839
   },
   {
     "nlterm": "magenta",
     "svterm": "svart",
-    "dist": 0.5624
+    "dist": 0.5677
   },
   {
     "nlterm": "magenta",
     "svterm": "turkos",
-    "dist": 0.313
+    "dist": 0.3145
   },
   {
     "nlterm": "magenta",
     "svterm": "vinrod",
-    "dist": 0.4421
+    "dist": 0.4472
   },
   {
     "nlterm": "oranje",
     "svterm": "bla",
-    "dist": 0.3904
+    "dist": 0.3926
   },
   {
     "nlterm": "oranje",
     "svterm": "brun",
-    "dist": 0.271
+    "dist": 0.2739
   },
   {
     "nlterm": "oranje",
     "svterm": "gron",
-    "dist": 0.2228
+    "dist": 0.2326
   },
   {
     "nlterm": "oranje",
     "svterm": "gul",
-    "dist": 0.1958
+    "dist": 0.197
+  },
+  {
+    "nlterm": "oranje",
+    "svterm": "himmelsbla",
+    "dist": 0.214
   },
   {
     "nlterm": "oranje",
     "svterm": "lila",
-    "dist": 0.3594
+    "dist": 0.3595
   },
   {
     "nlterm": "oranje",
     "svterm": "limegron",
-    "dist": 0.1872
+    "dist": 0.1892
   },
   {
     "nlterm": "oranje",
     "svterm": "ljusbla",
-    "dist": 0.2523
+    "dist": 0.2569
   },
   {
     "nlterm": "oranje",
     "svterm": "ljusgron",
-    "dist": 0.2191
+    "dist": 0.2217
   },
   {
     "nlterm": "oranje",
     "svterm": "marinbla",
-    "dist": 0.5361
+    "dist": 0.5373
   },
   {
     "nlterm": "oranje",
     "svterm": "mintgron",
-    "dist": 0.2108
+    "dist": 0.2089
   },
   {
     "nlterm": "oranje",
     "svterm": "morkbla",
-    "dist": 0.5596
+    "dist": 0.5605
   },
   {
     "nlterm": "oranje",
     "svterm": "morkgron",
-    "dist": 0.3923
+    "dist": 0.389
   },
   {
     "nlterm": "oranje",
     "svterm": "morklila",
-    "dist": 0.4583
+    "dist": 0.4586
   },
   {
     "nlterm": "oranje",
     "svterm": "neongron",
-    "dist": 0.2289
+    "dist": 0.231
   },
   {
     "nlterm": "oranje",
@@ -1757,617 +2062,647 @@
   {
     "nlterm": "oranje",
     "svterm": "rod",
-    "dist": 0.2579
+    "dist": 0.2574
   },
   {
     "nlterm": "oranje",
     "svterm": "rosa",
-    "dist": 0.1871
+    "dist": 0.189
   },
   {
     "nlterm": "oranje",
     "svterm": "skogsgron",
-    "dist": 0.3707
+    "dist": 0.3675
   },
   {
     "nlterm": "oranje",
     "svterm": "svart",
-    "dist": 0.546
+    "dist": 0.5468
   },
   {
     "nlterm": "oranje",
     "svterm": "turkos",
-    "dist": 0.2658
+    "dist": 0.2702
   },
   {
     "nlterm": "oranje",
     "svterm": "vinrod",
-    "dist": 0.4161
+    "dist": 0.4157
   },
   {
     "nlterm": "oudroze",
     "svterm": "bla",
-    "dist": 0.2604
+    "dist": 0.2659
   },
   {
     "nlterm": "oudroze",
     "svterm": "brun",
-    "dist": 0.2065
+    "dist": 0.2047
   },
   {
     "nlterm": "oudroze",
     "svterm": "gron",
-    "dist": 0.2211
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "gul",
-    "dist": 0.3096
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "lila",
-    "dist": 0.2257
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "limegron",
-    "dist": 0.2823
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "ljusbla",
-    "dist": 0.2295
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "ljusgron",
-    "dist": 0.2805
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "marinbla",
-    "dist": 0.4185
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "mintgron",
-    "dist": 0.2552
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "morkbla",
-    "dist": 0.431
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "morkgron",
-    "dist": 0.3257
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "morklila",
-    "dist": 0.3431
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "neongron",
-    "dist": 0.2983
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "orange",
-    "dist": 0.1532
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "rod",
-    "dist": 0.2024
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "rosa",
-    "dist": 0.1035
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "skogsgron",
-    "dist": 0.3256
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "svart",
-    "dist": 0.4595
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "turkos",
-    "dist": 0.2395
-  },
-  {
-    "nlterm": "oudroze",
-    "svterm": "vinrod",
-    "dist": 0.3401
-  },
-  {
-    "nlterm": "paars",
-    "svterm": "bla",
     "dist": 0.2258
   },
   {
-    "nlterm": "paars",
-    "svterm": "brun",
-    "dist": 0.2715
-  },
-  {
-    "nlterm": "paars",
-    "svterm": "gron",
-    "dist": 0.3951
-  },
-  {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "gul",
-    "dist": 0.5315
+    "dist": 0.3107
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
+    "svterm": "himmelsbla",
+    "dist": 0.2142
+  },
+  {
+    "nlterm": "oudroze",
     "svterm": "lila",
-    "dist": 0.0553
+    "dist": 0.2281
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "limegron",
-    "dist": 0.5023
+    "dist": 0.2842
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "ljusbla",
-    "dist": 0.3943
+    "dist": 0.2356
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "ljusgron",
-    "dist": 0.4923
+    "dist": 0.2845
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "marinbla",
-    "dist": 0.3006
+    "dist": 0.4186
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "mintgron",
-    "dist": 0.4639
+    "dist": 0.2523
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "morkbla",
-    "dist": 0.2905
+    "dist": 0.4322
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "morkgron",
-    "dist": 0.3577
+    "dist": 0.3206
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "morklila",
-    "dist": 0.2146
+    "dist": 0.342
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "neongron",
-    "dist": 0.5129
+    "dist": 0.3007
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "orange",
-    "dist": 0.3642
+    "dist": 0.1495
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "rod",
-    "dist": 0.241
+    "dist": 0.1961
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "rosa",
-    "dist": 0.2326
+    "dist": 0.106
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "skogsgron",
-    "dist": 0.3905
+    "dist": 0.3205
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "svart",
-    "dist": 0.3891
+    "dist": 0.4581
   },
   {
-    "nlterm": "paars",
+    "nlterm": "oudroze",
     "svterm": "turkos",
-    "dist": 0.4043
+    "dist": 0.2467
+  },
+  {
+    "nlterm": "oudroze",
+    "svterm": "vinrod",
+    "dist": 0.3357
   },
   {
     "nlterm": "paars",
-    "svterm": "vinrod",
-    "dist": 0.2873
-  },
-  {
-    "nlterm": "rood",
     "svterm": "bla",
-    "dist": 0.3199
+    "dist": 0.2235
   },
   {
-    "nlterm": "rood",
+    "nlterm": "paars",
     "svterm": "brun",
-    "dist": 0.1201
+    "dist": 0.2692
   },
   {
-    "nlterm": "rood",
+    "nlterm": "paars",
     "svterm": "gron",
-    "dist": 0.2871
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "gul",
-    "dist": 0.4126
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "lila",
-    "dist": 0.2495
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "limegron",
-    "dist": 0.393
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "ljusbla",
-    "dist": 0.3756
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "ljusgron",
-    "dist": 0.4121
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "marinbla",
-    "dist": 0.3458
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "mintgron",
     "dist": 0.3919
   },
   {
+    "nlterm": "paars",
+    "svterm": "gul",
+    "dist": 0.5329
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "himmelsbla",
+    "dist": 0.3921
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "lila",
+    "dist": 0.0586
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "limegron",
+    "dist": 0.5041
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "ljusbla",
+    "dist": 0.3935
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "ljusgron",
+    "dist": 0.4945
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "marinbla",
+    "dist": 0.297
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "mintgron",
+    "dist": 0.4587
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "morkbla",
+    "dist": 0.2873
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "morkgron",
+    "dist": 0.3514
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "morklila",
+    "dist": 0.2115
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "neongron",
+    "dist": 0.5136
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "orange",
+    "dist": 0.3649
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "rod",
+    "dist": 0.2403
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "rosa",
+    "dist": 0.2318
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "skogsgron",
+    "dist": 0.3864
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "svart",
+    "dist": 0.3859
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "turkos",
+    "dist": 0.4046
+  },
+  {
+    "nlterm": "paars",
+    "svterm": "vinrod",
+    "dist": 0.2852
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "bla",
+    "dist": 0.3206
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "brun",
+    "dist": 0.1202
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "gron",
+    "dist": 0.2877
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "gul",
+    "dist": 0.4172
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "himmelsbla",
+    "dist": 0.3574
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "lila",
+    "dist": 0.2507
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "limegron",
+    "dist": 0.3968
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "ljusbla",
+    "dist": 0.3797
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "ljusgron",
+    "dist": 0.4162
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "marinbla",
+    "dist": 0.3431
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "mintgron",
+    "dist": 0.3897
+  },
+  {
     "nlterm": "rood",
     "svterm": "morkbla",
+    "dist": 0.3786
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "morkgron",
+    "dist": 0.2569
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "morklila",
+    "dist": 0.2479
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "neongron",
+    "dist": 0.4169
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "orange",
+    "dist": 0.2079
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "rod",
+    "dist": 0.0341
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "rosa",
+    "dist": 0.218
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "skogsgron",
+    "dist": 0.2671
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "svart",
+    "dist": 0.349
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "turkos",
+    "dist": 0.3747
+  },
+  {
+    "nlterm": "rood",
+    "svterm": "vinrod",
+    "dist": 0.1934
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "bla",
+    "dist": 0.2996
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "brun",
+    "dist": 0.2855
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "gron",
+    "dist": 0.3287
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "gul",
+    "dist": 0.3485
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "himmelsbla",
+    "dist": 0.2412
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "lila",
+    "dist": 0.1887
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "limegron",
+    "dist": 0.3325
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "ljusbla",
+    "dist": 0.2677
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "ljusgron",
+    "dist": 0.3328
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "marinbla",
+    "dist": 0.4653
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "mintgron",
+    "dist": 0.3004
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "morkbla",
+    "dist": 0.4723
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "morkgron",
+    "dist": 0.4076
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "morklila",
+    "dist": 0.3775
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "neongron",
+    "dist": 0.3569
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "orange",
+    "dist": 0.2053
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "rod",
+    "dist": 0.2377
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "rosa",
+    "dist": 0.0212
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "skogsgron",
+    "dist": 0.4175
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "svart",
+    "dist": 0.5184
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "turkos",
+    "dist": 0.3099
+  },
+  {
+    "nlterm": "roze",
+    "svterm": "vinrod",
     "dist": 0.3809
   },
   {
-    "nlterm": "rood",
-    "svterm": "morkgron",
-    "dist": 0.2631
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "morklila",
-    "dist": 0.2515
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "neongron",
-    "dist": 0.4128
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "orange",
-    "dist": 0.2032
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "rod",
-    "dist": 0.0362
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "rosa",
-    "dist": 0.2154
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "skogsgron",
-    "dist": 0.272
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "svart",
-    "dist": 0.3524
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "turkos",
-    "dist": 0.3706
-  },
-  {
-    "nlterm": "rood",
-    "svterm": "vinrod",
-    "dist": 0.1984
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "bla",
-    "dist": 0.299
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "brun",
-    "dist": 0.2839
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "gron",
-    "dist": 0.3221
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "gul",
-    "dist": 0.345
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "lila",
-    "dist": 0.1908
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "limegron",
-    "dist": 0.3283
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "ljusbla",
-    "dist": 0.2644
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "ljusgron",
-    "dist": 0.3276
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "marinbla",
-    "dist": 0.4659
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "mintgron",
-    "dist": 0.3033
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "morkbla",
-    "dist": 0.4734
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "morkgron",
-    "dist": 0.4117
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "morklila",
-    "dist": 0.3787
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "neongron",
-    "dist": 0.3541
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "orange",
-    "dist": 0.2028
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "rod",
-    "dist": 0.2384
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "rosa",
-    "dist": 0.022
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "skogsgron",
-    "dist": 0.4206
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "svart",
-    "dist": 0.5188
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "turkos",
-    "dist": 0.3067
-  },
-  {
-    "nlterm": "roze",
-    "svterm": "vinrod",
-    "dist": 0.3821
-  },
-  {
     "nlterm": "turquoise",
     "svterm": "bla",
-    "dist": 0.3405
+    "dist": 0.3436
   },
   {
     "nlterm": "turquoise",
     "svterm": "brun",
-    "dist": 0.3951
+    "dist": 0.3959
   },
   {
     "nlterm": "turquoise",
     "svterm": "gron",
-    "dist": 0.1908
+    "dist": 0.1998
   },
   {
     "nlterm": "turquoise",
     "svterm": "gul",
-    "dist": 0.2114
+    "dist": 0.2111
+  },
+  {
+    "nlterm": "turquoise",
+    "svterm": "himmelsbla",
+    "dist": 0.1231
   },
   {
     "nlterm": "turquoise",
     "svterm": "lila",
-    "dist": 0.4267
+    "dist": 0.4284
   },
   {
     "nlterm": "turquoise",
     "svterm": "limegron",
-    "dist": 0.1766
+    "dist": 0.1768
   },
   {
     "nlterm": "turquoise",
     "svterm": "ljusbla",
-    "dist": 0.1117
+    "dist": 0.1136
   },
   {
     "nlterm": "turquoise",
     "svterm": "ljusgron",
-    "dist": 0.1168
+    "dist": 0.1143
   },
   {
     "nlterm": "turquoise",
     "svterm": "marinbla",
-    "dist": 0.5808
+    "dist": 0.5819
   },
   {
     "nlterm": "turquoise",
     "svterm": "mintgron",
-    "dist": 0.0979
+    "dist": 0.0943
   },
   {
     "nlterm": "turquoise",
     "svterm": "morkbla",
-    "dist": 0.579
+    "dist": 0.5799
   },
   {
     "nlterm": "turquoise",
     "svterm": "morkgron",
-    "dist": 0.4446
+    "dist": 0.4412
   },
   {
     "nlterm": "turquoise",
     "svterm": "morklila",
-    "dist": 0.5417
+    "dist": 0.5423
   },
   {
     "nlterm": "turquoise",
     "svterm": "neongron",
-    "dist": 0.1503
+    "dist": 0.1492
   },
   {
     "nlterm": "turquoise",
     "svterm": "orange",
-    "dist": 0.282
+    "dist": 0.2814
   },
   {
     "nlterm": "turquoise",
     "svterm": "rod",
-    "dist": 0.4291
+    "dist": 0.4287
   },
   {
     "nlterm": "turquoise",
     "svterm": "rosa",
-    "dist": 0.3053
+    "dist": 0.3094
   },
   {
     "nlterm": "turquoise",
     "svterm": "skogsgron",
-    "dist": 0.425
+    "dist": 0.4219
   },
   {
     "nlterm": "turquoise",
     "svterm": "svart",
-    "dist": 0.6249
+    "dist": 0.6253
   },
   {
     "nlterm": "turquoise",
     "svterm": "turkos",
-    "dist": 0.0547
+    "dist": 0.0579
   },
   {
     "nlterm": "turquoise",
     "svterm": "vinrod",
-    "dist": 0.5506
+    "dist": 0.5504
   },
   {
     "nlterm": "zwart",
     "svterm": "bla",
-    "dist": 0.3983
+    "dist": 0.3965
   },
   {
     "nlterm": "zwart",
     "svterm": "brun",
-    "dist": 0.3009
+    "dist": 0.2983
   },
   {
     "nlterm": "zwart",
     "svterm": "gron",
-    "dist": 0.491
+    "dist": 0.4799
   },
   {
     "nlterm": "zwart",
     "svterm": "gul",
-    "dist": 0.7123
+    "dist": 0.7117
+  },
+  {
+    "nlterm": "zwart",
+    "svterm": "himmelsbla",
+    "dist": 0.6272
   },
   {
     "nlterm": "zwart",
     "svterm": "lila",
-    "dist": 0.4315
+    "dist": 0.4316
   },
   {
     "nlterm": "zwart",
     "svterm": "limegron",
-    "dist": 0.6821
+    "dist": 0.6808
   },
   {
     "nlterm": "zwart",
     "svterm": "ljusbla",
-    "dist": 0.6251
+    "dist": 0.6223
   },
   {
     "nlterm": "zwart",
     "svterm": "ljusgron",
-    "dist": 0.684
+    "dist": 0.6822
   },
   {
     "nlterm": "zwart",
     "svterm": "marinbla",
-    "dist": 0.1407
+    "dist": 0.1408
   },
   {
     "nlterm": "zwart",
     "svterm": "mintgron",
-    "dist": 0.6627
+    "dist": 0.6556
   },
   {
     "nlterm": "zwart",
     "svterm": "morkbla",
-    "dist": 0.2035
+    "dist": 0.2037
   },
   {
     "nlterm": "zwart",
     "svterm": "morkgron",
-    "dist": 0.2281
+    "dist": 0.2292
   },
   {
     "nlterm": "zwart",
@@ -2377,12 +2712,12 @@
   {
     "nlterm": "zwart",
     "svterm": "neongron",
-    "dist": 0.6787
+    "dist": 0.6784
   },
   {
     "nlterm": "zwart",
     "svterm": "orange",
-    "dist": 0.5338
+    "dist": 0.5337
   },
   {
     "nlterm": "zwart",
@@ -2392,26 +2727,26 @@
   {
     "nlterm": "zwart",
     "svterm": "rosa",
-    "dist": 0.5266
+    "dist": 0.5254
   },
   {
     "nlterm": "zwart",
     "svterm": "skogsgron",
-    "dist": 0.2806
+    "dist": 0.2822
   },
   {
     "nlterm": "zwart",
     "svterm": "svart",
-    "dist": 0.0335
+    "dist": 0.0326
   },
   {
     "nlterm": "zwart",
     "svterm": "turkos",
-    "dist": 0.5929
+    "dist": 0.5916
   },
   {
     "nlterm": "zwart",
     "svterm": "vinrod",
-    "dist": 0.1863
+    "dist": 0.1868
   }
 ]

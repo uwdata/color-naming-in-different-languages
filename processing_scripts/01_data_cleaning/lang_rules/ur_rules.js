@@ -4,6 +4,8 @@ const excludeNames = [
 ];
 
 const nameReplacingRules = [
+    [/۔/, ""],
+
     [/aasmaani/, "آسمانی"],
     [/aasmani/, "آسمانی"],
     [/asmaani/, "آسمانی"],
@@ -44,6 +46,7 @@ const nameReplacingRules = [
 
     [/gehra/, "گہرا"],
     [/ghera/, "گہرا"],
+    [/ghehra/, "گہرا"],
 
     [/haraa/, "ہرا"],
     [/hara/, "ہرا"],
@@ -100,7 +103,12 @@ const nameReplacingRules = [
     ["samandri", "سمندری"],
     ["samandar", "سمندری"],
 
-    ["surmai", "سرمئی"]
+    ["surmai", "سرمئی"],
+
+    ["zard", "زرد"],
+    ["zerd", "زرد"],
+
+    ["kasni", "کاسنی"]
     
 ];
 

@@ -2,7 +2,7 @@
 
 const excludeNames = [
     // English color names:
-    "blue", "brown", "green", "grey", "pink", "purple", "black", "sky blue", "violet", "maroon"
+    "blue", "brown", "green", "grey", "pink", "purple", "black", "sky blue", "violet", "maroon", "orange"
 ];
 
 const nameReplacingRules = [
@@ -53,6 +53,10 @@ const nameReplacingRules = [
     [/bagani/, "बैंगनी"],
     [/baigani/, "बैंगनी"],
     [/baegaini/, "बैंगनी"],
+    [/baigni/, "बैंगनी"],
+
+    [/bhagwa/, "भगवा"],
+    
 
     [/bhura/, "भूरा"],
     [/bhoora/, "भूरा"],
@@ -62,11 +66,14 @@ const nameReplacingRules = [
     [/laal/, "लाल"],
 
     [/saleti/, "सलेटी"],
+    [/sleti/, "सलेटी"],
     
 
     [/hara/, "हरा"],
     [/haara/, "हरा"],
-
+    [/harra/, "हरा"],
+    [/^hra/, "हरा"], // Note: this rule is after words like gehra, so it doesn't mess those up
+    
     [/halka/, "हल्का"],
 
     [/kai/, "काई"],
@@ -74,6 +81,12 @@ const nameReplacingRules = [
     [/magenta/, "मैजेंटा"],
     [/magentaa/, "मैजेंटा"],
     [/majenta/, "मैजेंटा"],
+
+    [/mehandi/, "मेंहदी"],
+    [/mehendi/, "मेंहदी"],
+    [/mehndi/, "मेंहदी"],
+
+    [/mitti/, "मिट्टी"],
 
     [/jamuni/, "जामुनी"],
     [/jamani/, "जामुनी"],

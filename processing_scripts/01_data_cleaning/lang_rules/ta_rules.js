@@ -27,6 +27,9 @@ const nameReplacingRules = [
     [/odha/, "ஊதா"],
     [/ஊதம/, "ஊதா"],
 
+    [/adar/, "அடர்"],
+    [/adhar/, "அடர்"],
+
     [/sivappu/, "சிவப்பு"],
     [/sivapu/, "சிவப்பு"],
     [/sigappu/, "சிவப்பு"],
@@ -60,6 +63,7 @@ const nameReplacingRules = [
     [/karupu/, "கருபபு"],
 
     [/kathiri/, "கத்திரி"],
+    [/kathari/, "கத்திரி"],
 
     [/pazham/, "பழம்"],
 

@@ -66,7 +66,9 @@ const nameReplacingRules = [
     [/mati/g, "মেটে"],
     [/maati/g, "মেটে"],
 
-    [/khub/g, "খুব"]
+    [/khub/g, "খুব"],
+
+    [/shyaula/g, "শ্যাওলা"],
     
 ];
 

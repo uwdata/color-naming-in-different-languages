@@ -5,7 +5,8 @@ const ignoreCharactersForMatching = /[^0-9a-zA-Z]/ig
 
 const excludeNames = [
     // nonsense entries:
-    "a", "c", "d", "w", "y", "b", "as", "asd", "asdf", "adsf", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"
+    "a", "c", "d", "w", "y", "b", "as", "asd", "asdf", "adsf", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
+    "real" // probably misspelling of"teal"
 ];
 const nameReplacingRules = [
     [/avacado/g, "avocado"],
@@ -17,6 +18,9 @@ const nameReplacingRules = [
     [/^blu$/, "blue"],
     [/^bluw$/, "blue"],
     [/^bue$/, "blue"],
+    [/^blur$/, "blue"],
+
+    [/bluish/, "blueish"],
 
     [/burgendy/g, "burgundy"],
     [/burgandy/g, "burgundy"],
@@ -125,6 +129,8 @@ const nameReplacingRules = [
     [/^organge$/, "orange"],
     [/^ornage$/, "orange"],
 
+    [/orangish/, "orangeish"],
+
     [/perrywinkle/g, "periwinkle"],
     [/perriwinkle/g, "periwinkle"],
 
@@ -135,10 +141,13 @@ const nameReplacingRules = [
     [/pruple/g, "purple"],
     [/^pirple$/, "purple"],
     [/^pueple$/, "purple"],
+    [/^purle$/, "purple"],
     [/purpel/g, "purple"],
     [/purpl$/, "purple"],
     [/purplr/g, "purple"],
     [/putple/g, "purple"],
+
+    [/purplish/g, "purpleish"],
 
     [/^puse$/, "puce"],
 

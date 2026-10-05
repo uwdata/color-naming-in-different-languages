@@ -1,1028 +1,1313 @@
 [
   {
+    "frterm": "aubergine",
+    "frterm2": "beige",
+    "dist": 0.5144
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "bleu",
+    "dist": 0.2408
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "bleucanard",
+    "dist": 0.2465
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "bleuciel",
+    "dist": 0.4679
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "bleuclair",
+    "dist": 0.4469
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "bleufonce",
+    "dist": 0.1805
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "bleugris",
+    "dist": 0.2557
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "bleumarine",
+    "dist": 0.1693
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "bleunuit",
+    "dist": 0.1857
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "bleuroi",
+    "dist": 0.2016
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "bleuturquoise",
+    "dist": 0.4445
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "bordeaux",
+    "dist": 0.0781
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "brun",
+    "dist": 0.1434
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "cyan",
+    "dist": 0.4594
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "fuchsia",
+    "dist": 0.2333
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "gris",
+    "dist": 0.2825
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "indigo",
+    "dist": 0.1747
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "jaune",
+    "dist": 0.56
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "jaunemoutarde",
+    "dist": 0.4501
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "kaki",
+    "dist": 0.296
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "lavande",
+    "dist": 0.3145
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "lila",
+    "dist": 0.3468
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "lilas",
+    "dist": 0.3184
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "magenta",
+    "dist": 0.2543
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "marron",
+    "dist": 0.1643
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "marronclair",
+    "dist": 0.2603
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "mauve",
+    "dist": 0.1909
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "noir",
+    "dist": 0.2428
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "ocre",
+    "dist": 0.3738
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "orange",
+    "dist": 0.3764
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "pourpre",
+    "dist": 0.0587
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "prune",
+    "dist": 0.0416
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "rose",
+    "dist": 0.3225
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "rosefonce",
+    "dist": 0.2422
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "rosepale",
+    "dist": 0.4244
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "rouge",
+    "dist": 0.2245
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "rougefonce",
+    "dist": 0.137
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "saumon",
+    "dist": 0.403
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "taupe",
+    "dist": 0.2253
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "turquoise",
+    "dist": 0.4472
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "vert",
+    "dist": 0.4155
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "vertclair",
+    "dist": 0.5389
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "vertd'eau",
+    "dist": 0.4441
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "vertfluo",
+    "dist": 0.567
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "vertfonce",
+    "dist": 0.2438
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "vertforet",
+    "dist": 0.2566
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "vertkaki",
+    "dist": 0.272
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "vertpale",
+    "dist": 0.5602
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "vertpomme",
+    "dist": 0.5206
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "vertsapin",
+    "dist": 0.2447
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "vieuxrose",
+    "dist": 0.34
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "violet",
+    "dist": 0.1707
+  },
+  {
+    "frterm": "aubergine",
+    "frterm2": "violetfonce",
+    "dist": 0.0953
+  },
+  {
     "frterm": "beige",
     "frterm2": "bleu",
-    "dist": 0.3927
+    "dist": 0.4024
   },
   {
     "frterm": "beige",
     "frterm2": "bleucanard",
-    "dist": 0.3604
+    "dist": 0.3678
   },
   {
     "frterm": "beige",
     "frterm2": "bleuciel",
-    "dist": 0.1567
+    "dist": 0.1564
   },
   {
     "frterm": "beige",
     "frterm2": "bleuclair",
-    "dist": 0.1747
+    "dist": 0.1741
   },
   {
     "frterm": "beige",
     "frterm2": "bleufonce",
-    "dist": 0.5547
+    "dist": 0.5646
   },
   {
     "frterm": "beige",
     "frterm2": "bleugris",
-    "dist": 0.3141
+    "dist": 0.319
   },
   {
     "frterm": "beige",
     "frterm2": "bleumarine",
-    "dist": 0.5626
+    "dist": 0.5802
   },
   {
     "frterm": "beige",
     "frterm2": "bleunuit",
-    "dist": 0.6114
+    "dist": 0.6268
   },
   {
     "frterm": "beige",
     "frterm2": "bleuroi",
-    "dist": 0.5061
+    "dist": 0.5159
   },
   {
     "frterm": "beige",
     "frterm2": "bleuturquoise",
-    "dist": 0.1986
+    "dist": 0.1995
   },
   {
     "frterm": "beige",
     "frterm2": "bordeaux",
-    "dist": 0.4825
+    "dist": 0.4872
   },
   {
     "frterm": "beige",
     "frterm2": "brun",
-    "dist": 0.4515
+    "dist": 0.4622
   },
   {
     "frterm": "beige",
     "frterm2": "cyan",
-    "dist": 0.2036
+    "dist": 0.2013
   },
   {
     "frterm": "beige",
     "frterm2": "fuchsia",
-    "dist": 0.3722
+    "dist": 0.3779
   },
   {
     "frterm": "beige",
     "frterm2": "gris",
-    "dist": 0.2414
+    "dist": 0.2508
   },
   {
     "frterm": "beige",
     "frterm2": "indigo",
-    "dist": 0.466
+    "dist": 0.4709
   },
   {
     "frterm": "beige",
     "frterm2": "jaune",
-    "dist": 0.1101
+    "dist": 0.1118
   },
   {
     "frterm": "beige",
     "frterm2": "jaunemoutarde",
-    "dist": 0.1358
+    "dist": 0.1451
   },
   {
     "frterm": "beige",
     "frterm2": "kaki",
-    "dist": 0.3188
+    "dist": 0.3284
   },
   {
     "frterm": "beige",
     "frterm2": "lavande",
-    "dist": 0.2441
+    "dist": 0.2477
   },
   {
     "frterm": "beige",
     "frterm2": "lila",
-    "dist": 0.2296
+    "dist": 0.2335
   },
   {
     "frterm": "beige",
     "frterm2": "lilas",
-    "dist": 0.2246
+    "dist": 0.2316
   },
   {
     "frterm": "beige",
     "frterm2": "magenta",
-    "dist": 0.3504
+    "dist": 0.3567
   },
   {
     "frterm": "beige",
     "frterm2": "marron",
-    "dist": 0.4134
+    "dist": 0.4429
+  },
+  {
+    "frterm": "beige",
+    "frterm2": "marronclair",
+    "dist": 0.2797
   },
   {
     "frterm": "beige",
     "frterm2": "mauve",
-    "dist": 0.3767
+    "dist": 0.3911
   },
   {
     "frterm": "beige",
     "frterm2": "noir",
-    "dist": 0.6816
+    "dist": 0.703
   },
   {
     "frterm": "beige",
     "frterm2": "ocre",
-    "dist": 0.1713
+    "dist": 0.1831
   },
   {
     "frterm": "beige",
     "frterm2": "orange",
-    "dist": 0.1942
+    "dist": 0.2052
   },
   {
     "frterm": "beige",
     "frterm2": "pourpre",
-    "dist": 0.483
+    "dist": 0.4897
   },
   {
     "frterm": "beige",
     "frterm2": "prune",
-    "dist": 0.4981
+    "dist": 0.5111
   },
   {
     "frterm": "beige",
     "frterm2": "rose",
-    "dist": 0.2591
+    "dist": 0.259
   },
   {
     "frterm": "beige",
     "frterm2": "rosefonce",
-    "dist": 0.3467
+    "dist": 0.3528
   },
   {
     "frterm": "beige",
     "frterm2": "rosepale",
-    "dist": 0.116
+    "dist": 0.121
   },
   {
     "frterm": "beige",
     "frterm2": "rouge",
-    "dist": 0.3724
+    "dist": 0.3815
   },
   {
     "frterm": "beige",
     "frterm2": "rougefonce",
-    "dist": 0.4739
+    "dist": 0.4837
   },
   {
     "frterm": "beige",
     "frterm2": "saumon",
-    "dist": 0.1224
+    "dist": 0.1364
   },
   {
     "frterm": "beige",
     "frterm2": "taupe",
-    "dist": 0.2962
+    "dist": 0.3051
   },
   {
     "frterm": "beige",
     "frterm2": "turquoise",
-    "dist": 0.1845
+    "dist": 0.187
   },
   {
     "frterm": "beige",
     "frterm2": "vert",
-    "dist": 0.2323
+    "dist": 0.2398
   },
   {
     "frterm": "beige",
     "frterm2": "vertclair",
-    "dist": 0.1392
+    "dist": 0.1394
   },
   {
     "frterm": "beige",
     "frterm2": "vertd'eau",
-    "dist": 0.1812
+    "dist": 0.1849
   },
   {
     "frterm": "beige",
     "frterm2": "vertfluo",
-    "dist": 0.2376
+    "dist": 0.2402
   },
   {
     "frterm": "beige",
     "frterm2": "vertfonce",
-    "dist": 0.457
+    "dist": 0.4682
   },
   {
     "frterm": "beige",
     "frterm2": "vertforet",
-    "dist": 0.4222
+    "dist": 0.4305
   },
   {
     "frterm": "beige",
     "frterm2": "vertkaki",
-    "dist": 0.3354
+    "dist": 0.3473
   },
   {
     "frterm": "beige",
     "frterm2": "vertpale",
-    "dist": 0.0893
+    "dist": 0.0872
   },
   {
     "frterm": "beige",
     "frterm2": "vertpomme",
-    "dist": 0.1874
+    "dist": 0.1917
   },
   {
     "frterm": "beige",
     "frterm2": "vertsapin",
-    "dist": 0.4106
+    "dist": 0.4193
   },
   {
     "frterm": "beige",
     "frterm2": "vieuxrose",
-    "dist": 0.1727
+    "dist": 0.1839
   },
   {
     "frterm": "beige",
     "frterm2": "violet",
-    "dist": 0.4188
+    "dist": 0.425
   },
   {
     "frterm": "beige",
     "frterm2": "violetfonce",
-    "dist": 0.5492
+    "dist": 0.5628
   },
   {
     "frterm": "bleu",
     "frterm2": "bleucanard",
-    "dist": 0.1477
+    "dist": 0.1493
   },
   {
     "frterm": "bleu",
     "frterm2": "bleuciel",
-    "dist": 0.299
+    "dist": 0.2994
   },
   {
     "frterm": "bleu",
     "frterm2": "bleuclair",
-    "dist": 0.2692
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "bleufonce",
-    "dist": 0.1837
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "bleugris",
-    "dist": 0.121
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "bleumarine",
-    "dist": 0.2015
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "bleunuit",
     "dist": 0.2746
   },
   {
     "frterm": "bleu",
+    "frterm2": "bleufonce",
+    "dist": 0.1808
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "bleugris",
+    "dist": 0.124
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "bleumarine",
+    "dist": 0.2054
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "bleunuit",
+    "dist": 0.2717
+  },
+  {
+    "frterm": "bleu",
     "frterm2": "bleuroi",
-    "dist": 0.1224
+    "dist": 0.1216
   },
   {
     "frterm": "bleu",
     "frterm2": "bleuturquoise",
-    "dist": 0.2752
+    "dist": 0.281
   },
   {
     "frterm": "bleu",
     "frterm2": "bordeaux",
-    "dist": 0.273
+    "dist": 0.2709
   },
   {
     "frterm": "bleu",
     "frterm2": "brun",
-    "dist": 0.2663
+    "dist": 0.2627
   },
   {
     "frterm": "bleu",
     "frterm2": "cyan",
-    "dist": 0.2708
+    "dist": 0.2784
   },
   {
     "frterm": "bleu",
     "frterm2": "fuchsia",
-    "dist": 0.2819
+    "dist": 0.284
   },
   {
     "frterm": "bleu",
     "frterm2": "gris",
-    "dist": 0.1828
+    "dist": 0.185
   },
   {
     "frterm": "bleu",
     "frterm2": "indigo",
-    "dist": 0.11
+    "dist": 0.1036
   },
   {
     "frterm": "bleu",
     "frterm2": "jaune",
-    "dist": 0.4612
+    "dist": 0.4657
   },
   {
     "frterm": "bleu",
     "frterm2": "jaunemoutarde",
-    "dist": 0.374
+    "dist": 0.3806
   },
   {
     "frterm": "bleu",
     "frterm2": "kaki",
-    "dist": 0.2615
+    "dist": 0.2634
   },
   {
     "frterm": "bleu",
     "frterm2": "lavande",
-    "dist": 0.1919
+    "dist": 0.1972
   },
   {
     "frterm": "bleu",
     "frterm2": "lila",
-    "dist": 0.2317
+    "dist": 0.2322
   },
   {
     "frterm": "bleu",
     "frterm2": "lilas",
-    "dist": 0.208
+    "dist": 0.2105
   },
   {
     "frterm": "bleu",
     "frterm2": "magenta",
-    "dist": 0.2798
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "marron",
-    "dist": 0.2509
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "mauve",
-    "dist": 0.158
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "noir",
-    "dist": 0.3884
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "ocre",
-    "dist": 0.3311
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "orange",
-    "dist": 0.3609
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "pourpre",
-    "dist": 0.2409
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "prune",
-    "dist": 0.2334
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "rose",
-    "dist": 0.2808
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "rosefonce",
-    "dist": 0.2945
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "rosepale",
-    "dist": 0.315
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "rouge",
-    "dist": 0.3341
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "rougefonce",
-    "dist": 0.3221
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "saumon",
-    "dist": 0.3407
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "taupe",
-    "dist": 0.195
-  },
-  {
-    "frterm": "bleu",
-    "frterm2": "turquoise",
     "dist": 0.2844
   },
   {
     "frterm": "bleu",
+    "frterm2": "marron",
+    "dist": 0.256
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "marronclair",
+    "dist": 0.2405
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "mauve",
+    "dist": 0.1566
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "noir",
+    "dist": 0.391
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "ocre",
+    "dist": 0.3358
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "orange",
+    "dist": 0.3651
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "pourpre",
+    "dist": 0.2399
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "prune",
+    "dist": 0.2286
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "rose",
+    "dist": 0.2865
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "rosefonce",
+    "dist": 0.2988
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "rosepale",
+    "dist": 0.3177
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "rouge",
+    "dist": 0.3348
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "rougefonce",
+    "dist": 0.3233
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "saumon",
+    "dist": 0.3408
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "taupe",
+    "dist": 0.1964
+  },
+  {
+    "frterm": "bleu",
+    "frterm2": "turquoise",
+    "dist": 0.287
+  },
+  {
+    "frterm": "bleu",
     "frterm2": "vert",
-    "dist": 0.3074
+    "dist": 0.3103
   },
   {
     "frterm": "bleu",
     "frterm2": "vertclair",
-    "dist": 0.4074
+    "dist": 0.4131
   },
   {
     "frterm": "bleu",
     "frterm2": "vertd'eau",
-    "dist": 0.2932
+    "dist": 0.2978
   },
   {
     "frterm": "bleu",
     "frterm2": "vertfluo",
-    "dist": 0.448
+    "dist": 0.4532
   },
   {
     "frterm": "bleu",
     "frterm2": "vertfonce",
-    "dist": 0.2571
+    "dist": 0.2542
   },
   {
     "frterm": "bleu",
     "frterm2": "vertforet",
-    "dist": 0.2459
+    "dist": 0.2463
   },
   {
     "frterm": "bleu",
     "frterm2": "vertkaki",
-    "dist": 0.249
+    "dist": 0.2508
   },
   {
     "frterm": "bleu",
     "frterm2": "vertpale",
-    "dist": 0.4299
+    "dist": 0.4359
   },
   {
     "frterm": "bleu",
     "frterm2": "vertpomme",
-    "dist": 0.4065
+    "dist": 0.4118
   },
   {
     "frterm": "bleu",
     "frterm2": "vertsapin",
-    "dist": 0.2266
+    "dist": 0.2272
   },
   {
     "frterm": "bleu",
     "frterm2": "vieuxrose",
-    "dist": 0.2635
+    "dist": 0.2644
   },
   {
     "frterm": "bleu",
     "frterm2": "violet",
-    "dist": 0.1596
+    "dist": 0.1588
   },
   {
     "frterm": "bleu",
     "frterm2": "violetfonce",
-    "dist": 0.2336
+    "dist": 0.2316
   },
   {
     "frterm": "bleucanard",
     "frterm2": "bleuciel",
-    "dist": 0.3004
+    "dist": 0.2958
   },
   {
     "frterm": "bleucanard",
     "frterm2": "bleuclair",
-    "dist": 0.2722
+    "dist": 0.2725
   },
   {
     "frterm": "bleucanard",
     "frterm2": "bleufonce",
-    "dist": 0.2566
+    "dist": 0.2596
   },
   {
     "frterm": "bleucanard",
     "frterm2": "bleugris",
-    "dist": 0.083
+    "dist": 0.0851
   },
   {
     "frterm": "bleucanard",
     "frterm2": "bleumarine",
-    "dist": 0.2407
+    "dist": 0.2487
   },
   {
     "frterm": "bleucanard",
     "frterm2": "bleunuit",
-    "dist": 0.2729
+    "dist": 0.2806
   },
   {
     "frterm": "bleucanard",
     "frterm2": "bleuroi",
-    "dist": 0.2117
+    "dist": 0.215
   },
   {
     "frterm": "bleucanard",
     "frterm2": "bleuturquoise",
-    "dist": 0.233
+    "dist": 0.234
   },
   {
     "frterm": "bleucanard",
     "frterm2": "bordeaux",
-    "dist": 0.2409
+    "dist": 0.2418
   },
   {
     "frterm": "bleucanard",
     "frterm2": "brun",
-    "dist": 0.1996
+    "dist": 0.198
   },
   {
     "frterm": "bleucanard",
     "frterm2": "cyan",
-    "dist": 0.2657
+    "dist": 0.2672
   },
   {
     "frterm": "bleucanard",
     "frterm2": "fuchsia",
-    "dist": 0.3154
+    "dist": 0.3161
   },
   {
     "frterm": "bleucanard",
     "frterm2": "gris",
-    "dist": 0.1341
+    "dist": 0.1331
   },
   {
     "frterm": "bleucanard",
     "frterm2": "indigo",
-    "dist": 0.2053
+    "dist": 0.2038
   },
   {
     "frterm": "bleucanard",
     "frterm2": "jaune",
-    "dist": 0.4011
+    "dist": 0.4006
   },
   {
     "frterm": "bleucanard",
     "frterm2": "jaunemoutarde",
-    "dist": 0.2954
+    "dist": 0.2976
   },
   {
     "frterm": "bleucanard",
     "frterm2": "kaki",
-    "dist": 0.1363
+    "dist": 0.1359
   },
   {
     "frterm": "bleucanard",
     "frterm2": "lavande",
-    "dist": 0.2284
+    "dist": 0.2291
   },
   {
     "frterm": "bleucanard",
     "frterm2": "lila",
+    "dist": 0.2653
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "lilas",
+    "dist": 0.2355
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "magenta",
+    "dist": 0.3165
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "marron",
+    "dist": 0.1847
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "marronclair",
+    "dist": 0.1584
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "mauve",
+    "dist": 0.2372
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "noir",
+    "dist": 0.3651
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "ocre",
+    "dist": 0.2682
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "orange",
+    "dist": 0.297
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "pourpre",
+    "dist": 0.2546
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "prune",
+    "dist": 0.2372
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "rose",
+    "dist": 0.3067
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "rosefonce",
+    "dist": 0.3095
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "rosepale",
+    "dist": 0.3109
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "rouge",
+    "dist": 0.2947
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "rougefonce",
+    "dist": 0.2809
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "saumon",
+    "dist": 0.3071
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "taupe",
+    "dist": 0.1318
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "turquoise",
+    "dist": 0.2373
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "vert",
+    "dist": 0.2104
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "vertclair",
+    "dist": 0.3463
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "vertd'eau",
+    "dist": 0.2363
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "vertfluo",
+    "dist": 0.358
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "vertfonce",
+    "dist": 0.1593
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "vertforet",
+    "dist": 0.1123
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "vertkaki",
+    "dist": 0.1207
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "vertpale",
+    "dist": 0.3866
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "vertpomme",
+    "dist": 0.3224
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "vertsapin",
+    "dist": 0.0922
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "vieuxrose",
+    "dist": 0.2457
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "violet",
+    "dist": 0.2418
+  },
+  {
+    "frterm": "bleucanard",
+    "frterm2": "violetfonce",
+    "dist": 0.2709
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleuclair",
+    "dist": 0.0298
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleufonce",
+    "dist": 0.4729
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleugris",
+    "dist": 0.2378
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleumarine",
+    "dist": 0.4961
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleunuit",
+    "dist": 0.5506
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleuroi",
+    "dist": 0.4162
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bleuturquoise",
+    "dist": 0.1244
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "bordeaux",
+    "dist": 0.4605
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "brun",
+    "dist": 0.4375
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "cyan",
+    "dist": 0.0939
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "fuchsia",
+    "dist": 0.3648
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "gris",
+    "dist": 0.2036
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "indigo",
+    "dist": 0.3817
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "jaune",
+    "dist": 0.2382
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "jaunemoutarde",
+    "dist": 0.2264
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "kaki",
+    "dist": 0.3106
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "lavande",
+    "dist": 0.1795
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "lila",
+    "dist": 0.1712
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "lilas",
+    "dist": 0.1794
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "magenta",
+    "dist": 0.3459
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "marron",
+    "dist": 0.4201
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "marronclair",
+    "dist": 0.2741
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "mauve",
+    "dist": 0.3293
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "noir",
+    "dist": 0.6484
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "ocre",
+    "dist": 0.2448
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "orange",
+    "dist": 0.2814
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "pourpre",
+    "dist": 0.4482
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "prune",
+    "dist": 0.4622
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "rose",
+    "dist": 0.2643
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "rosefonce",
+    "dist": 0.3518
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "rosepale",
+    "dist": 0.1397
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "rouge",
+    "dist": 0.4029
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "rougefonce",
+    "dist": 0.476
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "saumon",
+    "dist": 0.2049
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "taupe",
+    "dist": 0.276
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "turquoise",
+    "dist": 0.1206
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vert",
+    "dist": 0.2286
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertclair",
+    "dist": 0.1874
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertd'eau",
+    "dist": 0.1437
+  },
+  {
+    "frterm": "bleuciel",
+    "frterm2": "vertfluo",
     "dist": 0.2695
   },
   {
-    "frterm": "bleucanard",
-    "frterm2": "lilas",
-    "dist": 0.237
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "magenta",
-    "dist": 0.3146
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "marron",
-    "dist": 0.176
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "mauve",
-    "dist": 0.2341
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "noir",
-    "dist": 0.3529
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "ocre",
-    "dist": 0.267
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "orange",
-    "dist": 0.2959
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "pourpre",
-    "dist": 0.2542
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "prune",
-    "dist": 0.2365
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "rose",
-    "dist": 0.3046
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "rosefonce",
-    "dist": 0.3078
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "rosepale",
-    "dist": 0.3128
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "rouge",
-    "dist": 0.2941
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "rougefonce",
-    "dist": 0.2799
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "saumon",
-    "dist": 0.3116
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "taupe",
-    "dist": 0.1321
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "turquoise",
-    "dist": 0.2396
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "vert",
-    "dist": 0.2108
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "vertclair",
-    "dist": 0.3452
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "vertd'eau",
-    "dist": 0.2361
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "vertfluo",
-    "dist": 0.357
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "vertfonce",
-    "dist": 0.1619
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "vertforet",
-    "dist": 0.113
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "vertkaki",
-    "dist": 0.1211
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "vertpale",
-    "dist": 0.3857
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "vertpomme",
-    "dist": 0.3213
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "vertsapin",
-    "dist": 0.0927
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "vieuxrose",
-    "dist": 0.2488
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "violet",
-    "dist": 0.2421
-  },
-  {
-    "frterm": "bleucanard",
-    "frterm2": "violetfonce",
-    "dist": 0.2686
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "bleuclair",
-    "dist": 0.0332
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "bleufonce",
-    "dist": 0.4753
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "bleugris",
-    "dist": 0.2446
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "bleumarine",
-    "dist": 0.4912
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "bleunuit",
-    "dist": 0.5501
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "bleuroi",
-    "dist": 0.4175
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "bleuturquoise",
-    "dist": 0.1274
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "bordeaux",
-    "dist": 0.4684
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "brun",
-    "dist": 0.4415
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "cyan",
-    "dist": 0.098
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "fuchsia",
-    "dist": 0.3691
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "gris",
-    "dist": 0.2065
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "indigo",
-    "dist": 0.3885
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "jaune",
-    "dist": 0.2359
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "jaunemoutarde",
-    "dist": 0.2248
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "kaki",
-    "dist": 0.3141
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "lavande",
-    "dist": 0.184
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "lila",
-    "dist": 0.1755
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "lilas",
-    "dist": 0.1811
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "magenta",
-    "dist": 0.3482
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "marron",
-    "dist": 0.4066
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "mauve",
-    "dist": 0.3267
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "noir",
-    "dist": 0.6419
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "ocre",
-    "dist": 0.2446
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "orange",
-    "dist": 0.2815
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "pourpre",
-    "dist": 0.454
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "prune",
-    "dist": 0.4638
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "rose",
-    "dist": 0.2714
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "rosefonce",
-    "dist": 0.3551
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "rosepale",
-    "dist": 0.139
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "rouge",
-    "dist": 0.4067
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "rougefonce",
-    "dist": 0.4796
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "saumon",
-    "dist": 0.2029
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "taupe",
-    "dist": 0.2801
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "turquoise",
-    "dist": 0.1224
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "vert",
-    "dist": 0.2305
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "vertclair",
-    "dist": 0.1844
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "vertd'eau",
-    "dist": 0.1454
-  },
-  {
-    "frterm": "bleuciel",
-    "frterm2": "vertfluo",
-    "dist": 0.2678
-  },
-  {
     "frterm": "bleuciel",
     "frterm2": "vertfonce",
-    "dist": 0.4224
+    "dist": 0.4199
   },
   {
     "frterm": "bleuciel",
     "frterm2": "vertforet",
-    "dist": 0.3863
+    "dist": 0.3816
   },
   {
     "frterm": "bleuciel",
     "frterm2": "vertkaki",
-    "dist": 0.324
+    "dist": 0.3225
   },
   {
     "frterm": "bleuciel",
     "frterm2": "vertpale",
-    "dist": 0.1689
+    "dist": 0.1734
   },
   {
     "frterm": "bleuciel",
     "frterm2": "vertpomme",
-    "dist": 0.2318
+    "dist": 0.2326
   },
   {
     "frterm": "bleuciel",
     "frterm2": "vertsapin",
-    "dist": 0.3705
+    "dist": 0.3661
   },
   {
     "frterm": "bleuciel",
     "frterm2": "vieuxrose",
-    "dist": 0.1865
+    "dist": 0.1872
   },
   {
     "frterm": "bleuciel",
     "frterm2": "violet",
-    "dist": 0.3616
+    "dist": 0.3573
   },
   {
     "frterm": "bleuciel",
     "frterm2": "violetfonce",
-    "dist": 0.4984
+    "dist": 0.4987
   },
   {
     "frterm": "bleuclair",
     "frterm2": "bleufonce",
-    "dist": 0.4466
+    "dist": 0.449
   },
   {
     "frterm": "bleuclair",
     "frterm2": "bleugris",
-    "dist": 0.2166
+    "dist": 0.2145
   },
   {
     "frterm": "bleuclair",
     "frterm2": "bleumarine",
-    "dist": 0.462
+    "dist": 0.4718
   },
   {
     "frterm": "bleuclair",
     "frterm2": "bleunuit",
-    "dist": 0.5209
+    "dist": 0.5262
   },
   {
     "frterm": "bleuclair",
     "frterm2": "bleuroi",
-    "dist": 0.3878
+    "dist": 0.3916
   },
   {
     "frterm": "bleuclair",
     "frterm2": "bleuturquoise",
-    "dist": 0.1155
+    "dist": 0.1157
   },
   {
     "frterm": "bleuclair",
     "frterm2": "bordeaux",
-    "dist": 0.4448
+    "dist": 0.4411
   },
   {
     "frterm": "bleuclair",
@@ -1032,272 +1317,277 @@
   {
     "frterm": "bleuclair",
     "frterm2": "cyan",
-    "dist": 0.0884
+    "dist": 0.0876
   },
   {
     "frterm": "bleuclair",
     "frterm2": "fuchsia",
-    "dist": 0.3534
+    "dist": 0.352
   },
   {
     "frterm": "bleuclair",
     "frterm2": "gris",
-    "dist": 0.1838
+    "dist": 0.185
   },
   {
     "frterm": "bleuclair",
     "frterm2": "indigo",
-    "dist": 0.3605
+    "dist": 0.3585
   },
   {
     "frterm": "bleuclair",
     "frterm2": "jaune",
-    "dist": 0.2521
+    "dist": 0.2525
   },
   {
     "frterm": "bleuclair",
     "frterm2": "jaunemoutarde",
-    "dist": 0.2244
+    "dist": 0.2261
   },
   {
     "frterm": "bleuclair",
     "frterm2": "kaki",
-    "dist": 0.2936
+    "dist": 0.2937
   },
   {
     "frterm": "bleuclair",
     "frterm2": "lavande",
-    "dist": 0.1651
+    "dist": 0.1643
   },
   {
     "frterm": "bleuclair",
     "frterm2": "lila",
-    "dist": 0.1625
+    "dist": 0.1603
   },
   {
     "frterm": "bleuclair",
     "frterm2": "lilas",
-    "dist": 0.1665
+    "dist": 0.1674
   },
   {
     "frterm": "bleuclair",
     "frterm2": "magenta",
-    "dist": 0.3331
+    "dist": 0.3337
   },
   {
     "frterm": "bleuclair",
     "frterm2": "marron",
-    "dist": 0.3844
+    "dist": 0.4016
+  },
+  {
+    "frterm": "bleuclair",
+    "frterm2": "marronclair",
+    "dist": 0.2576
   },
   {
     "frterm": "bleuclair",
     "frterm2": "mauve",
-    "dist": 0.3045
+    "dist": 0.311
   },
   {
     "frterm": "bleuclair",
     "frterm2": "noir",
-    "dist": 0.6144
+    "dist": 0.6254
   },
   {
     "frterm": "bleuclair",
     "frterm2": "ocre",
-    "dist": 0.2401
+    "dist": 0.2416
   },
   {
     "frterm": "bleuclair",
     "frterm2": "orange",
-    "dist": 0.2762
+    "dist": 0.2767
   },
   {
     "frterm": "bleuclair",
     "frterm2": "pourpre",
-    "dist": 0.4299
+    "dist": 0.4285
   },
   {
     "frterm": "bleuclair",
     "frterm2": "prune",
-    "dist": 0.4385
+    "dist": 0.4412
   },
   {
     "frterm": "bleuclair",
     "frterm2": "rose",
-    "dist": 0.2613
+    "dist": 0.2568
   },
   {
     "frterm": "bleuclair",
     "frterm2": "rosefonce",
-    "dist": 0.3406
+    "dist": 0.3398
   },
   {
     "frterm": "bleuclair",
     "frterm2": "rosepale",
-    "dist": 0.1414
+    "dist": 0.1412
   },
   {
     "frterm": "bleuclair",
     "frterm2": "rouge",
-    "dist": 0.3919
+    "dist": 0.3908
   },
   {
     "frterm": "bleuclair",
     "frterm2": "rougefonce",
-    "dist": 0.4579
+    "dist": 0.458
   },
   {
     "frterm": "bleuclair",
     "frterm2": "saumon",
-    "dist": 0.2025
+    "dist": 0.2041
   },
   {
     "frterm": "bleuclair",
     "frterm2": "taupe",
-    "dist": 0.2581
+    "dist": 0.2579
   },
   {
     "frterm": "bleuclair",
     "frterm2": "turquoise",
-    "dist": 0.1135
+    "dist": 0.1138
   },
   {
     "frterm": "bleuclair",
     "frterm2": "vert",
-    "dist": 0.2203
+    "dist": 0.2212
   },
   {
     "frterm": "bleuclair",
     "frterm2": "vertclair",
-    "dist": 0.1955
+    "dist": 0.1971
   },
   {
     "frterm": "bleuclair",
     "frterm2": "vertd'eau",
-    "dist": 0.1385
+    "dist": 0.1393
   },
   {
     "frterm": "bleuclair",
     "frterm2": "vertfluo",
-    "dist": 0.2708
+    "dist": 0.2716
   },
   {
     "frterm": "bleuclair",
     "frterm2": "vertfonce",
-    "dist": 0.3999
+    "dist": 0.4015
   },
   {
     "frterm": "bleuclair",
     "frterm2": "vertforet",
-    "dist": 0.3609
+    "dist": 0.3606
   },
   {
     "frterm": "bleuclair",
     "frterm2": "vertkaki",
-    "dist": 0.3021
+    "dist": 0.3044
   },
   {
     "frterm": "bleuclair",
     "frterm2": "vertpale",
-    "dist": 0.1898
+    "dist": 0.1909
   },
   {
     "frterm": "bleuclair",
     "frterm2": "vertpomme",
-    "dist": 0.2356
+    "dist": 0.2367
   },
   {
     "frterm": "bleuclair",
     "frterm2": "vertsapin",
-    "dist": 0.3445
+    "dist": 0.3446
   },
   {
     "frterm": "bleuclair",
     "frterm2": "vieuxrose",
-    "dist": 0.1759
+    "dist": 0.1778
   },
   {
     "frterm": "bleuclair",
     "frterm2": "violet",
-    "dist": 0.338
+    "dist": 0.3378
   },
   {
     "frterm": "bleuclair",
     "frterm2": "violetfonce",
-    "dist": 0.4712
+    "dist": 0.4761
   },
   {
     "frterm": "bleufonce",
     "frterm2": "bleugris",
-    "dist": 0.2586
+    "dist": 0.2629
   },
   {
     "frterm": "bleufonce",
     "frterm2": "bleumarine",
-    "dist": 0.069
+    "dist": 0.0736
   },
   {
     "frterm": "bleufonce",
     "frterm2": "bleunuit",
-    "dist": 0.1422
+    "dist": 0.14
   },
   {
     "frterm": "bleufonce",
     "frterm2": "bleuroi",
-    "dist": 0.0729
+    "dist": 0.071
   },
   {
     "frterm": "bleufonce",
     "frterm2": "bleuturquoise",
-    "dist": 0.4482
+    "dist": 0.4515
   },
   {
     "frterm": "bleufonce",
     "frterm2": "bordeaux",
-    "dist": 0.2356
+    "dist": 0.2432
   },
   {
     "frterm": "bleufonce",
     "frterm2": "brun",
-    "dist": 0.2696
+    "dist": 0.2705
   },
   {
     "frterm": "bleufonce",
     "frterm2": "cyan",
-    "dist": 0.4495
+    "dist": 0.4541
   },
   {
     "frterm": "bleufonce",
     "frterm2": "fuchsia",
-    "dist": 0.3216
+    "dist": 0.3278
   },
   {
     "frterm": "bleufonce",
     "frterm2": "gris",
-    "dist": 0.3262
+    "dist": 0.3286
   },
   {
     "frterm": "bleufonce",
     "frterm2": "indigo",
-    "dist": 0.1029
+    "dist": 0.1071
   },
   {
     "frterm": "bleufonce",
     "frterm2": "jaune",
-    "dist": 0.6202
+    "dist": 0.6235
   },
   {
     "frterm": "bleufonce",
     "frterm2": "jaunemoutarde",
-    "dist": 0.5179
+    "dist": 0.5242
   },
   {
     "frterm": "bleufonce",
     "frterm2": "kaki",
-    "dist": 0.3612
+    "dist": 0.3643
   },
   {
     "frterm": "bleufonce",
     "frterm2": "lavande",
-    "dist": 0.3359
+    "dist": 0.3402
   },
   {
     "frterm": "bleufonce",
@@ -1307,107 +1597,112 @@
   {
     "frterm": "bleufonce",
     "frterm2": "lilas",
-    "dist": 0.3524
+    "dist": 0.3539
   },
   {
     "frterm": "bleufonce",
     "frterm2": "magenta",
-    "dist": 0.3337
+    "dist": 0.3404
   },
   {
     "frterm": "bleufonce",
     "frterm2": "marron",
-    "dist": 0.2811
+    "dist": 0.2815
+  },
+  {
+    "frterm": "bleufonce",
+    "frterm2": "marronclair",
+    "dist": 0.345
   },
   {
     "frterm": "bleufonce",
     "frterm2": "mauve",
-    "dist": 0.2252
+    "dist": 0.2235
   },
   {
     "frterm": "bleufonce",
     "frterm2": "noir",
-    "dist": 0.2695
+    "dist": 0.2716
   },
   {
     "frterm": "bleufonce",
     "frterm2": "ocre",
-    "dist": 0.4592
+    "dist": 0.4648
   },
   {
     "frterm": "bleufonce",
     "frterm2": "orange",
-    "dist": 0.4753
+    "dist": 0.4809
   },
   {
     "frterm": "bleufonce",
     "frterm2": "pourpre",
-    "dist": 0.1933
+    "dist": 0.2
   },
   {
     "frterm": "bleufonce",
     "frterm2": "prune",
-    "dist": 0.1732
+    "dist": 0.1738
   },
   {
     "frterm": "bleufonce",
     "frterm2": "rose",
-    "dist": 0.3875
+    "dist": 0.3976
   },
   {
     "frterm": "bleufonce",
     "frterm2": "rosefonce",
-    "dist": 0.3442
+    "dist": 0.3521
   },
   {
     "frterm": "bleufonce",
     "frterm2": "rosepale",
-    "dist": 0.4704
+    "dist": 0.472
   },
   {
     "frterm": "bleufonce",
     "frterm2": "rouge",
-    "dist": 0.3675
+    "dist": 0.3733
   },
   {
     "frterm": "bleufonce",
     "frterm2": "rougefonce",
-    "dist": 0.2935
+    "dist": 0.2998
   },
   {
     "frterm": "bleufonce",
     "frterm2": "saumon",
-    "dist": 0.4795
+    "dist": 0.4788
   },
   {
     "frterm": "bleufonce",
     "frterm2": "taupe",
-    "dist": 0.2984
+    "dist": 0.3024
   },
   {
     "frterm": "bleufonce",
     "frterm2": "turquoise",
-    "dist": 0.4583
+    "dist": 0.4584
   },
   {
     "frterm": "bleufonce",
     "frterm2": "vert",
-    "dist": 0.456
+    "dist": 0.4585
   },
   {
     "frterm": "bleufonce",
     "frterm2": "vertclair",
-    "dist": 0.5745
+    "dist": 0.5788
   },
   {
     "frterm": "bleufonce",
     "frterm2": "vertd'eau",
-    "dist": 0.4625
+    "dist": 0.4654
   },
   {
     "frterm": "bleufonce",
     "frterm2": "vertfluo",
-    "dist": 0.6039
+    "dist": 0.6079
   },
   {
     "frterm": "bleufonce",
@@ -1417,77 +1712,77 @@
   {
     "frterm": "bleufonce",
     "frterm2": "vertforet",
-    "dist": 0.2934
+    "dist": 0.2959
   },
   {
     "frterm": "bleufonce",
     "frterm2": "vertkaki",
-    "dist": 0.3392
+    "dist": 0.3415
   },
   {
     "frterm": "bleufonce",
     "frterm2": "vertpale",
-    "dist": 0.5994
+    "dist": 0.6037
   },
   {
     "frterm": "bleufonce",
     "frterm2": "vertpomme",
-    "dist": 0.5635
+    "dist": 0.5677
   },
   {
     "frterm": "bleufonce",
     "frterm2": "vertsapin",
-    "dist": 0.2796
+    "dist": 0.2819
   },
   {
     "frterm": "bleufonce",
     "frterm2": "vieuxrose",
-    "dist": 0.4023
+    "dist": 0.4028
   },
   {
     "frterm": "bleufonce",
     "frterm2": "violet",
-    "dist": 0.1875
+    "dist": 0.1912
   },
   {
     "frterm": "bleufonce",
     "frterm2": "violetfonce",
-    "dist": 0.1263
+    "dist": 0.1285
   },
   {
     "frterm": "bleugris",
     "frterm2": "bleumarine",
-    "dist": 0.2601
+    "dist": 0.2712
   },
   {
     "frterm": "bleugris",
     "frterm2": "bleunuit",
-    "dist": 0.3099
+    "dist": 0.3184
   },
   {
     "frterm": "bleugris",
     "frterm2": "bleuroi",
-    "dist": 0.21
+    "dist": 0.2149
   },
   {
     "frterm": "bleugris",
     "frterm2": "bleuturquoise",
-    "dist": 0.1994
+    "dist": 0.1987
   },
   {
     "frterm": "bleugris",
     "frterm2": "bordeaux",
-    "dist": 0.2554
+    "dist": 0.2553
   },
   {
     "frterm": "bleugris",
     "frterm2": "brun",
-    "dist": 0.2316
+    "dist": 0.2327
   },
   {
     "frterm": "bleugris",
     "frterm2": "cyan",
-    "dist": 0.2237
+    "dist": 0.2231
   },
   {
     "frterm": "bleugris",
@@ -1497,827 +1792,847 @@
   {
     "frterm": "bleugris",
     "frterm2": "gris",
-    "dist": 0.0876
+    "dist": 0.0861
   },
   {
     "frterm": "bleugris",
     "frterm2": "indigo",
-    "dist": 0.1901
+    "dist": 0.189
   },
   {
     "frterm": "bleugris",
     "frterm2": "jaune",
-    "dist": 0.3701
+    "dist": 0.3685
   },
   {
     "frterm": "bleugris",
     "frterm2": "jaunemoutarde",
-    "dist": 0.2741
+    "dist": 0.2758
   },
   {
     "frterm": "bleugris",
     "frterm2": "kaki",
-    "dist": 0.1641
+    "dist": 0.1648
   },
   {
     "frterm": "bleugris",
     "frterm2": "lavande",
-    "dist": 0.158
+    "dist": 0.1565
   },
   {
     "frterm": "bleugris",
     "frterm2": "lila",
-    "dist": 0.1982
+    "dist": 0.1917
   },
   {
     "frterm": "bleugris",
     "frterm2": "lilas",
-    "dist": 0.1723
+    "dist": 0.1688
   },
   {
     "frterm": "bleugris",
     "frterm2": "magenta",
-    "dist": 0.2637
+    "dist": 0.2648
   },
   {
     "frterm": "bleugris",
     "frterm2": "marron",
-    "dist": 0.2067
+    "dist": 0.2215
+  },
+  {
+    "frterm": "bleugris",
+    "frterm2": "marronclair",
+    "dist": 0.1433
   },
   {
     "frterm": "bleugris",
     "frterm2": "mauve",
-    "dist": 0.1905
+    "dist": 0.1941
   },
   {
     "frterm": "bleugris",
     "frterm2": "noir",
-    "dist": 0.4005
+    "dist": 0.4137
   },
   {
     "frterm": "bleugris",
     "frterm2": "ocre",
-    "dist": 0.2389
+    "dist": 0.2399
   },
   {
     "frterm": "bleugris",
     "frterm2": "orange",
-    "dist": 0.2688
+    "dist": 0.2696
   },
   {
     "frterm": "bleugris",
     "frterm2": "pourpre",
-    "dist": 0.2487
+    "dist": 0.2495
   },
   {
     "frterm": "bleugris",
     "frterm2": "prune",
-    "dist": 0.2448
+    "dist": 0.2484
   },
   {
     "frterm": "bleugris",
     "frterm2": "rose",
-    "dist": 0.2472
+    "dist": 0.2478
   },
   {
     "frterm": "bleugris",
     "frterm2": "rosefonce",
-    "dist": 0.263
+    "dist": 0.2641
   },
   {
     "frterm": "bleugris",
     "frterm2": "rosepale",
-    "dist": 0.2531
+    "dist": 0.2494
   },
   {
     "frterm": "bleugris",
     "frterm2": "rouge",
-    "dist": 0.2751
+    "dist": 0.2757
   },
   {
     "frterm": "bleugris",
     "frterm2": "rougefonce",
-    "dist": 0.2834
+    "dist": 0.2856
   },
   {
     "frterm": "bleugris",
     "frterm2": "saumon",
-    "dist": 0.263
+    "dist": 0.2576
   },
   {
     "frterm": "bleugris",
     "frterm2": "taupe",
-    "dist": 0.1127
+    "dist": 0.1133
   },
   {
     "frterm": "bleugris",
     "frterm2": "turquoise",
-    "dist": 0.2085
+    "dist": 0.2045
   },
   {
     "frterm": "bleugris",
     "frterm2": "vert",
-    "dist": 0.2118
+    "dist": 0.2113
   },
   {
     "frterm": "bleugris",
     "frterm2": "vertclair",
-    "dist": 0.3201
+    "dist": 0.3202
   },
   {
     "frterm": "bleugris",
     "frterm2": "vertd'eau",
-    "dist": 0.21
+    "dist": 0.2091
   },
   {
     "frterm": "bleugris",
     "frterm2": "vertfluo",
-    "dist": 0.3525
+    "dist": 0.3529
   },
   {
     "frterm": "bleugris",
     "frterm2": "vertfonce",
-    "dist": 0.2257
+    "dist": 0.226
   },
   {
     "frterm": "bleugris",
     "frterm2": "vertforet",
-    "dist": 0.1773
+    "dist": 0.1788
   },
   {
     "frterm": "bleugris",
     "frterm2": "vertkaki",
-    "dist": 0.1553
+    "dist": 0.1575
   },
   {
     "frterm": "bleugris",
     "frterm2": "vertpale",
-    "dist": 0.3485
+    "dist": 0.3479
   },
   {
     "frterm": "bleugris",
     "frterm2": "vertpomme",
-    "dist": 0.3102
+    "dist": 0.3105
   },
   {
     "frterm": "bleugris",
     "frterm2": "vertsapin",
-    "dist": 0.1567
+    "dist": 0.1586
   },
   {
     "frterm": "bleugris",
     "frterm2": "vieuxrose",
-    "dist": 0.1943
+    "dist": 0.1903
   },
   {
     "frterm": "bleugris",
     "frterm2": "violet",
-    "dist": 0.2017
+    "dist": 0.2016
   },
   {
     "frterm": "bleugris",
     "frterm2": "violetfonce",
-    "dist": 0.2774
+    "dist": 0.2827
   },
   {
     "frterm": "bleumarine",
     "frterm2": "bleunuit",
-    "dist": 0.0868
+    "dist": 0.0783
   },
   {
     "frterm": "bleumarine",
     "frterm2": "bleuroi",
-    "dist": 0.1043
+    "dist": 0.1087
   },
   {
     "frterm": "bleumarine",
     "frterm2": "bleuturquoise",
-    "dist": 0.4514
+    "dist": 0.4614
   },
   {
     "frterm": "bleumarine",
     "frterm2": "bordeaux",
-    "dist": 0.2132
+    "dist": 0.2245
   },
   {
     "frterm": "bleumarine",
     "frterm2": "brun",
-    "dist": 0.2333
+    "dist": 0.2373
   },
   {
     "frterm": "bleumarine",
     "frterm2": "cyan",
-    "dist": 0.4604
+    "dist": 0.4717
   },
   {
     "frterm": "bleumarine",
     "frterm2": "fuchsia",
-    "dist": 0.3396
+    "dist": 0.3512
   },
   {
     "frterm": "bleumarine",
     "frterm2": "gris",
-    "dist": 0.3269
+    "dist": 0.3356
   },
   {
     "frterm": "bleumarine",
     "frterm2": "indigo",
-    "dist": 0.1357
+    "dist": 0.1455
   },
   {
     "frterm": "bleumarine",
     "frterm2": "jaune",
-    "dist": 0.6203
+    "dist": 0.6298
   },
   {
     "frterm": "bleumarine",
     "frterm2": "jaunemoutarde",
-    "dist": 0.5128
+    "dist": 0.5247
   },
   {
     "frterm": "bleumarine",
     "frterm2": "kaki",
-    "dist": 0.3386
+    "dist": 0.3465
   },
   {
     "frterm": "bleumarine",
     "frterm2": "lavande",
-    "dist": 0.3559
+    "dist": 0.3674
   },
   {
     "frterm": "bleumarine",
     "frterm2": "lila",
-    "dist": 0.3961
+    "dist": 0.403
   },
   {
     "frterm": "bleumarine",
     "frterm2": "lilas",
-    "dist": 0.3705
+    "dist": 0.3791
   },
   {
     "frterm": "bleumarine",
     "frterm2": "magenta",
-    "dist": 0.3531
+    "dist": 0.3655
   },
   {
     "frterm": "bleumarine",
     "frterm2": "marron",
-    "dist": 0.2475
+    "dist": 0.2474
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "marronclair",
+    "dist": 0.3428
   },
   {
     "frterm": "bleumarine",
     "frterm2": "mauve",
-    "dist": 0.2495
+    "dist": 0.2555
   },
   {
     "frterm": "bleumarine",
     "frterm2": "noir",
-    "dist": 0.2164
+    "dist": 0.2142
   },
   {
     "frterm": "bleumarine",
     "frterm2": "ocre",
-    "dist": 0.4557
+    "dist": 0.4672
   },
   {
     "frterm": "bleumarine",
     "frterm2": "orange",
+    "dist": 0.4827
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "pourpre",
+    "dist": 0.1981
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "prune",
+    "dist": 0.1577
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "rose",
+    "dist": 0.4213
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "rosefonce",
+    "dist": 0.3701
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "rosepale",
+    "dist": 0.4937
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "rouge",
+    "dist": 0.37
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "rougefonce",
+    "dist": 0.283
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "saumon",
+    "dist": 0.4926
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "taupe",
+    "dist": 0.2999
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "turquoise",
+    "dist": 0.4679
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vert",
+    "dist": 0.4509
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vertclair",
+    "dist": 0.5831
+  },
+  {
+    "frterm": "bleumarine",
+    "frterm2": "vertd'eau",
     "dist": 0.4716
   },
   {
     "frterm": "bleumarine",
-    "frterm2": "pourpre",
-    "dist": 0.1878
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "prune",
-    "dist": 0.1564
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "rose",
-    "dist": 0.4047
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "rosefonce",
-    "dist": 0.3572
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "rosepale",
-    "dist": 0.4852
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "rouge",
-    "dist": 0.3602
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "rougefonce",
-    "dist": 0.2752
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "saumon",
-    "dist": 0.4874
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "taupe",
-    "dist": 0.2901
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "turquoise",
-    "dist": 0.4611
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "vert",
-    "dist": 0.4427
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "vertclair",
-    "dist": 0.5724
-  },
-  {
-    "frterm": "bleumarine",
-    "frterm2": "vertd'eau",
-    "dist": 0.4624
-  },
-  {
-    "frterm": "bleumarine",
     "frterm2": "vertfluo",
-    "dist": 0.594
+    "dist": 0.6032
   },
   {
     "frterm": "bleumarine",
     "frterm2": "vertfonce",
-    "dist": 0.2376
+    "dist": 0.2404
   },
   {
     "frterm": "bleumarine",
     "frterm2": "vertforet",
-    "dist": 0.2607
+    "dist": 0.266
   },
   {
     "frterm": "bleumarine",
     "frterm2": "vertkaki",
-    "dist": 0.3139
+    "dist": 0.3203
   },
   {
     "frterm": "bleumarine",
     "frterm2": "vertpale",
-    "dist": 0.6041
+    "dist": 0.6151
   },
   {
     "frterm": "bleumarine",
     "frterm2": "vertpomme",
-    "dist": 0.5554
+    "dist": 0.5653
   },
   {
     "frterm": "bleumarine",
     "frterm2": "vertsapin",
-    "dist": 0.248
+    "dist": 0.2536
   },
   {
     "frterm": "bleumarine",
     "frterm2": "vieuxrose",
-    "dist": 0.4119
+    "dist": 0.4188
   },
   {
     "frterm": "bleumarine",
     "frterm2": "violet",
-    "dist": 0.2176
+    "dist": 0.2271
   },
   {
     "frterm": "bleumarine",
     "frterm2": "violetfonce",
-    "dist": 0.1079
+    "dist": 0.1099
   },
   {
     "frterm": "bleunuit",
     "frterm2": "bleuroi",
-    "dist": 0.1827
+    "dist": 0.1794
   },
   {
     "frterm": "bleunuit",
     "frterm2": "bleuturquoise",
-    "dist": 0.4992
+    "dist": 0.5066
   },
   {
     "frterm": "bleunuit",
     "frterm2": "bordeaux",
-    "dist": 0.2148
+    "dist": 0.2303
   },
   {
     "frterm": "bleunuit",
     "frterm2": "brun",
-    "dist": 0.229
+    "dist": 0.2368
   },
   {
     "frterm": "bleunuit",
     "frterm2": "cyan",
-    "dist": 0.515
+    "dist": 0.5235
   },
   {
     "frterm": "bleunuit",
     "frterm2": "fuchsia",
-    "dist": 0.3912
+    "dist": 0.3986
   },
   {
     "frterm": "bleunuit",
     "frterm2": "gris",
-    "dist": 0.3727
+    "dist": 0.3788
   },
   {
     "frterm": "bleunuit",
     "frterm2": "indigo",
-    "dist": 0.2145
+    "dist": 0.216
   },
   {
     "frterm": "bleunuit",
     "frterm2": "jaune",
-    "dist": 0.6588
+    "dist": 0.6668
   },
   {
     "frterm": "bleunuit",
     "frterm2": "jaunemoutarde",
-    "dist": 0.5445
+    "dist": 0.5557
   },
   {
     "frterm": "bleunuit",
     "frterm2": "kaki",
-    "dist": 0.3536
+    "dist": 0.3633
   },
   {
     "frterm": "bleunuit",
     "frterm2": "lavande",
-    "dist": 0.4196
+    "dist": 0.4264
   },
   {
     "frterm": "bleunuit",
     "frterm2": "lila",
-    "dist": 0.4602
+    "dist": 0.4622
   },
   {
     "frterm": "bleunuit",
     "frterm2": "lilas",
-    "dist": 0.4324
+    "dist": 0.4363
   },
   {
     "frterm": "bleunuit",
     "frterm2": "magenta",
-    "dist": 0.4082
+    "dist": 0.4152
   },
   {
     "frterm": "bleunuit",
     "frterm2": "marron",
-    "dist": 0.2533
+    "dist": 0.2521
+  },
+  {
+    "frterm": "bleunuit",
+    "frterm2": "marronclair",
+    "dist": 0.3716
   },
   {
     "frterm": "bleunuit",
     "frterm2": "mauve",
-    "dist": 0.3168
+    "dist": 0.3162
   },
   {
     "frterm": "bleunuit",
     "frterm2": "noir",
-    "dist": 0.1382
+    "dist": 0.1444
   },
   {
     "frterm": "bleunuit",
     "frterm2": "ocre",
-    "dist": 0.49
+    "dist": 0.5001
   },
   {
     "frterm": "bleunuit",
     "frterm2": "orange",
-    "dist": 0.5019
+    "dist": 0.5122
   },
   {
     "frterm": "bleunuit",
     "frterm2": "pourpre",
-    "dist": 0.2165
+    "dist": 0.2249
   },
   {
     "frterm": "bleunuit",
     "frterm2": "prune",
-    "dist": 0.1735
+    "dist": 0.1742
   },
   {
     "frterm": "bleunuit",
     "frterm2": "rose",
-    "dist": 0.4616
+    "dist": 0.4737
   },
   {
     "frterm": "bleunuit",
     "frterm2": "rosefonce",
-    "dist": 0.401
+    "dist": 0.4103
   },
   {
     "frterm": "bleunuit",
     "frterm2": "rosepale",
-    "dist": 0.5416
+    "dist": 0.5461
   },
   {
     "frterm": "bleunuit",
     "frterm2": "rouge",
-    "dist": 0.3782
+    "dist": 0.3883
   },
   {
     "frterm": "bleunuit",
     "frterm2": "rougefonce",
-    "dist": 0.2702
+    "dist": 0.2805
   },
   {
     "frterm": "bleunuit",
     "frterm2": "saumon",
-    "dist": 0.5338
+    "dist": 0.536
   },
   {
     "frterm": "bleunuit",
     "frterm2": "taupe",
-    "dist": 0.3254
+    "dist": 0.3341
   },
   {
     "frterm": "bleunuit",
     "frterm2": "turquoise",
-    "dist": 0.5081
+    "dist": 0.5122
   },
   {
     "frterm": "bleunuit",
     "frterm2": "vert",
-    "dist": 0.4718
+    "dist": 0.4799
   },
   {
     "frterm": "bleunuit",
     "frterm2": "vertclair",
-    "dist": 0.613
+    "dist": 0.6223
   },
   {
     "frterm": "bleunuit",
     "frterm2": "vertd'eau",
-    "dist": 0.5054
+    "dist": 0.513
   },
   {
     "frterm": "bleunuit",
     "frterm2": "vertfluo",
-    "dist": 0.6211
+    "dist": 0.6309
   },
   {
     "frterm": "bleunuit",
     "frterm2": "vertfonce",
-    "dist": 0.2263
+    "dist": 0.2343
   },
   {
     "frterm": "bleunuit",
     "frterm2": "vertforet",
-    "dist": 0.2584
+    "dist": 0.2675
   },
   {
     "frterm": "bleunuit",
     "frterm2": "vertkaki",
-    "dist": 0.3276
+    "dist": 0.3359
   },
   {
     "frterm": "bleunuit",
     "frterm2": "vertpale",
-    "dist": 0.6501
+    "dist": 0.6587
   },
   {
     "frterm": "bleunuit",
     "frterm2": "vertpomme",
-    "dist": 0.5863
+    "dist": 0.596
   },
   {
     "frterm": "bleunuit",
     "frterm2": "vertsapin",
-    "dist": 0.2524
+    "dist": 0.2607
   },
   {
     "frterm": "bleunuit",
     "frterm2": "vieuxrose",
-    "dist": 0.4641
+    "dist": 0.4669
   },
   {
     "frterm": "bleunuit",
     "frterm2": "violet",
-    "dist": 0.2863
+    "dist": 0.2889
   },
   {
     "frterm": "bleunuit",
     "frterm2": "violetfonce",
-    "dist": 0.1455
+    "dist": 0.1408
   },
   {
     "frterm": "bleuroi",
     "frterm2": "bleuturquoise",
-    "dist": 0.3904
+    "dist": 0.3951
   },
   {
     "frterm": "bleuroi",
     "frterm2": "bordeaux",
-    "dist": 0.2521
+    "dist": 0.2559
   },
   {
     "frterm": "bleuroi",
     "frterm2": "brun",
-    "dist": 0.2703
+    "dist": 0.2694
   },
   {
     "frterm": "bleuroi",
     "frterm2": "cyan",
-    "dist": 0.3892
+    "dist": 0.3953
   },
   {
     "frterm": "bleuroi",
     "frterm2": "fuchsia",
-    "dist": 0.3095
+    "dist": 0.3143
   },
   {
     "frterm": "bleuroi",
     "frterm2": "gris",
-    "dist": 0.2809
+    "dist": 0.2837
   },
   {
     "frterm": "bleuroi",
     "frterm2": "indigo",
-    "dist": 0.0794
+    "dist": 0.0806
   },
   {
     "frterm": "bleuroi",
     "frterm2": "jaune",
-    "dist": 0.573
+    "dist": 0.5769
   },
   {
     "frterm": "bleuroi",
     "frterm2": "jaunemoutarde",
-    "dist": 0.476
+    "dist": 0.4825
   },
   {
     "frterm": "bleuroi",
     "frterm2": "kaki",
-    "dist": 0.3288
+    "dist": 0.3319
   },
   {
     "frterm": "bleuroi",
     "frterm2": "lavande",
-    "dist": 0.2877
+    "dist": 0.2927
   },
   {
     "frterm": "bleuroi",
     "frterm2": "lila",
-    "dist": 0.326
+    "dist": 0.3265
   },
   {
     "frterm": "bleuroi",
     "frterm2": "lilas",
-    "dist": 0.3066
+    "dist": 0.3088
   },
   {
     "frterm": "bleuroi",
     "frterm2": "magenta",
-    "dist": 0.3162
+    "dist": 0.3221
   },
   {
     "frterm": "bleuroi",
     "frterm2": "marron",
-    "dist": 0.2738
+    "dist": 0.2755
+  },
+  {
+    "frterm": "bleuroi",
+    "frterm2": "marronclair",
+    "dist": 0.3154
   },
   {
     "frterm": "bleuroi",
     "frterm2": "mauve",
-    "dist": 0.2042
+    "dist": 0.2021
   },
   {
     "frterm": "bleuroi",
     "frterm2": "noir",
-    "dist": 0.3125
+    "dist": 0.3149
   },
   {
     "frterm": "bleuroi",
     "frterm2": "ocre",
-    "dist": 0.4251
+    "dist": 0.4305
   },
   {
     "frterm": "bleuroi",
     "frterm2": "orange",
-    "dist": 0.445
+    "dist": 0.4503
   },
   {
     "frterm": "bleuroi",
     "frterm2": "pourpre",
-    "dist": 0.209
+    "dist": 0.2126
   },
   {
     "frterm": "bleuroi",
     "frterm2": "prune",
-    "dist": 0.1956
+    "dist": 0.193
   },
   {
     "frterm": "bleuroi",
     "frterm2": "rose",
-    "dist": 0.358
+    "dist": 0.3668
   },
   {
     "frterm": "bleuroi",
     "frterm2": "rosefonce",
-    "dist": 0.3312
+    "dist": 0.3377
   },
   {
     "frterm": "bleuroi",
     "frterm2": "rosepale",
-    "dist": 0.4234
+    "dist": 0.4257
   },
   {
     "frterm": "bleuroi",
     "frterm2": "rouge",
-    "dist": 0.3631
+    "dist": 0.3672
   },
   {
     "frterm": "bleuroi",
     "frterm2": "rougefonce",
-    "dist": 0.3098
+    "dist": 0.3137
   },
   {
     "frterm": "bleuroi",
     "frterm2": "saumon",
-    "dist": 0.4396
+    "dist": 0.4394
   },
   {
     "frterm": "bleuroi",
     "frterm2": "taupe",
-    "dist": 0.2657
+    "dist": 0.2694
   },
   {
     "frterm": "bleuroi",
     "frterm2": "turquoise",
-    "dist": 0.4004
+    "dist": 0.4018
   },
   {
     "frterm": "bleuroi",
     "frterm2": "vert",
-    "dist": 0.408
+    "dist": 0.4113
   },
   {
     "frterm": "bleuroi",
     "frterm2": "vertclair",
-    "dist": 0.5205
+    "dist": 0.5257
   },
   {
     "frterm": "bleuroi",
     "frterm2": "vertd'eau",
-    "dist": 0.4066
+    "dist": 0.4105
   },
   {
     "frterm": "bleuroi",
     "frterm2": "vertfluo",
-    "dist": 0.5529
+    "dist": 0.5576
   },
   {
     "frterm": "bleuroi",
     "frterm2": "vertfonce",
-    "dist": 0.274
+    "dist": 0.2733
   },
   {
     "frterm": "bleuroi",
     "frterm2": "vertforet",
-    "dist": 0.27
+    "dist": 0.2724
   },
   {
     "frterm": "bleuroi",
     "frterm2": "vertkaki",
-    "dist": 0.3072
+    "dist": 0.3096
   },
   {
     "frterm": "bleuroi",
     "frterm2": "vertpale",
-    "dist": 0.5464
+    "dist": 0.5515
   },
   {
     "frterm": "bleuroi",
     "frterm2": "vertpomme",
-    "dist": 0.5139
+    "dist": 0.5188
   },
   {
     "frterm": "bleuroi",
     "frterm2": "vertsapin",
-    "dist": 0.2524
+    "dist": 0.2545
   },
   {
     "frterm": "bleuroi",
     "frterm2": "vieuxrose",
-    "dist": 0.3616
+    "dist": 0.3624
   },
   {
     "frterm": "bleuroi",
     "frterm2": "violet",
-    "dist": 0.1689
+    "dist": 0.1716
   },
   {
     "frterm": "bleuroi",
@@ -2327,107 +2642,112 @@
   {
     "frterm": "bleuturquoise",
     "frterm2": "bordeaux",
-    "dist": 0.433
+    "dist": 0.4312
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "brun",
-    "dist": 0.3932
+    "dist": 0.394
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "cyan",
-    "dist": 0.0666
+    "dist": 0.0656
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "fuchsia",
-    "dist": 0.3901
+    "dist": 0.3896
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "gris",
-    "dist": 0.1758
+    "dist": 0.1777
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "indigo",
-    "dist": 0.3699
+    "dist": 0.3686
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "jaune",
-    "dist": 0.234
+    "dist": 0.2333
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "jaunemoutarde",
-    "dist": 0.1976
+    "dist": 0.1992
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "kaki",
-    "dist": 0.2365
+    "dist": 0.2372
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "lavande",
-    "dist": 0.2197
+    "dist": 0.2195
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "lila",
-    "dist": 0.2322
+    "dist": 0.2296
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "lilas",
-    "dist": 0.2232
+    "dist": 0.2239
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "magenta",
-    "dist": 0.3756
+    "dist": 0.3769
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "marron",
-    "dist": 0.3574
+    "dist": 0.3746
+  },
+  {
+    "frterm": "bleuturquoise",
+    "frterm2": "marronclair",
+    "dist": 0.2395
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "mauve",
-    "dist": 0.3367
+    "dist": 0.3439
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "noir",
-    "dist": 0.5812
+    "dist": 0.5947
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "ocre",
-    "dist": 0.2322
+    "dist": 0.2336
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "orange",
-    "dist": 0.2749
+    "dist": 0.2755
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "pourpre",
-    "dist": 0.4333
+    "dist": 0.433
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "prune",
-    "dist": 0.4349
+    "dist": 0.4383
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "rose",
-    "dist": 0.3103
+    "dist": 0.3078
   },
   {
     "frterm": "bleuturquoise",
@@ -2437,67 +2757,67 @@
   {
     "frterm": "bleuturquoise",
     "frterm2": "rosepale",
-    "dist": 0.2066
+    "dist": 0.206
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "rouge",
-    "dist": 0.3915
+    "dist": 0.3912
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "rougefonce",
-    "dist": 0.445
+    "dist": 0.4458
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "saumon",
-    "dist": 0.2344
+    "dist": 0.2346
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "taupe",
-    "dist": 0.2418
+    "dist": 0.2426
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "turquoise",
-    "dist": 0.0388
+    "dist": 0.0392
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "vert",
-    "dist": 0.1408
+    "dist": 0.1412
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "vertclair",
-    "dist": 0.1584
+    "dist": 0.1588
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "vertd'eau",
-    "dist": 0.0753
+    "dist": 0.0752
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "vertfluo",
-    "dist": 0.2043
+    "dist": 0.2047
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "vertfonce",
-    "dist": 0.3539
+    "dist": 0.3552
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "vertforet",
-    "dist": 0.3048
+    "dist": 0.3053
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "vertkaki",
-    "dist": 0.2522
+    "dist": 0.2548
   },
   {
     "frterm": "bleuturquoise",
@@ -2507,307 +2827,317 @@
   {
     "frterm": "bleuturquoise",
     "frterm2": "vertpomme",
-    "dist": 0.1691
+    "dist": 0.1694
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "vertsapin",
-    "dist": 0.2936
+    "dist": 0.2946
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "vieuxrose",
-    "dist": 0.2149
+    "dist": 0.216
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "violet",
-    "dist": 0.3671
+    "dist": 0.3677
   },
   {
     "frterm": "bleuturquoise",
     "frterm2": "violetfonce",
-    "dist": 0.4704
+    "dist": 0.4754
   },
   {
     "frterm": "bordeaux",
     "frterm2": "brun",
-    "dist": 0.0923
+    "dist": 0.0952
   },
   {
     "frterm": "bordeaux",
     "frterm2": "cyan",
-    "dist": 0.4555
+    "dist": 0.4539
   },
   {
     "frterm": "bordeaux",
     "frterm2": "fuchsia",
-    "dist": 0.2348
+    "dist": 0.2302
   },
   {
     "frterm": "bordeaux",
     "frterm2": "gris",
-    "dist": 0.2704
+    "dist": 0.2658
   },
   {
     "frterm": "bordeaux",
     "frterm2": "indigo",
-    "dist": 0.2226
+    "dist": 0.2245
   },
   {
     "frterm": "bordeaux",
     "frterm2": "jaune",
-    "dist": 0.528
+    "dist": 0.5228
   },
   {
     "frterm": "bordeaux",
     "frterm2": "jaunemoutarde",
-    "dist": 0.4118
+    "dist": 0.4096
   },
   {
     "frterm": "bordeaux",
     "frterm2": "kaki",
-    "dist": 0.2578
+    "dist": 0.2569
   },
   {
     "frterm": "bordeaux",
     "frterm2": "lavande",
-    "dist": 0.3194
+    "dist": 0.3155
   },
   {
     "frterm": "bordeaux",
     "frterm2": "lila",
-    "dist": 0.3546
+    "dist": 0.3469
   },
   {
     "frterm": "bordeaux",
     "frterm2": "lilas",
-    "dist": 0.3221
+    "dist": 0.3152
   },
   {
     "frterm": "bordeaux",
     "frterm2": "magenta",
-    "dist": 0.255
+    "dist": 0.249
   },
   {
     "frterm": "bordeaux",
     "frterm2": "marron",
-    "dist": 0.1158
+    "dist": 0.1168
+  },
+  {
+    "frterm": "bordeaux",
+    "frterm2": "marronclair",
+    "dist": 0.2218
   },
   {
     "frterm": "bordeaux",
     "frterm2": "mauve",
-    "dist": 0.2222
+    "dist": 0.2185
   },
   {
     "frterm": "bordeaux",
     "frterm2": "noir",
-    "dist": 0.2418
+    "dist": 0.2566
   },
   {
     "frterm": "bordeaux",
     "frterm2": "ocre",
-    "dist": 0.3356
+    "dist": 0.3311
   },
   {
     "frterm": "bordeaux",
     "frterm2": "orange",
-    "dist": 0.3335
+    "dist": 0.3289
   },
   {
     "frterm": "bordeaux",
     "frterm2": "pourpre",
-    "dist": 0.0911
+    "dist": 0.0897
   },
   {
     "frterm": "bordeaux",
     "frterm2": "prune",
-    "dist": 0.0743
+    "dist": 0.0816
   },
   {
     "frterm": "bordeaux",
     "frterm2": "rose",
-    "dist": 0.3092
+    "dist": 0.3088
   },
   {
     "frterm": "bordeaux",
     "frterm2": "rosefonce",
-    "dist": 0.2308
+    "dist": 0.2262
   },
   {
     "frterm": "bordeaux",
     "frterm2": "rosepale",
-    "dist": 0.4142
+    "dist": 0.4064
   },
   {
     "frterm": "bordeaux",
     "frterm2": "rouge",
-    "dist": 0.1741
+    "dist": 0.1692
   },
   {
     "frterm": "bordeaux",
     "frterm2": "rougefonce",
-    "dist": 0.0758
+    "dist": 0.0738
   },
   {
     "frterm": "bordeaux",
     "frterm2": "saumon",
-    "dist": 0.3834
+    "dist": 0.3716
   },
   {
     "frterm": "bordeaux",
     "frterm2": "taupe",
-    "dist": 0.2007
+    "dist": 0.1978
   },
   {
     "frterm": "bordeaux",
     "frterm2": "turquoise",
-    "dist": 0.4364
+    "dist": 0.4316
   },
   {
     "frterm": "bordeaux",
     "frterm2": "vert",
-    "dist": 0.3864
+    "dist": 0.3844
   },
   {
     "frterm": "bordeaux",
     "frterm2": "vertclair",
-    "dist": 0.5114
+    "dist": 0.5094
   },
   {
     "frterm": "bordeaux",
     "frterm2": "vertd'eau",
-    "dist": 0.4264
+    "dist": 0.4242
   },
   {
     "frterm": "bordeaux",
     "frterm2": "vertfluo",
-    "dist": 0.5338
+    "dist": 0.5324
   },
   {
     "frterm": "bordeaux",
     "frterm2": "vertfonce",
-    "dist": 0.2216
+    "dist": 0.2261
   },
   {
     "frterm": "bordeaux",
     "frterm2": "vertforet",
-    "dist": 0.2322
+    "dist": 0.2347
   },
   {
     "frterm": "bordeaux",
     "frterm2": "vertkaki",
-    "dist": 0.2367
+    "dist": 0.2358
   },
   {
     "frterm": "bordeaux",
     "frterm2": "vertpale",
-    "dist": 0.536
+    "dist": 0.5326
   },
   {
     "frterm": "bordeaux",
     "frterm2": "vertpomme",
-    "dist": 0.4875
+    "dist": 0.4858
   },
   {
     "frterm": "bordeaux",
     "frterm2": "vertsapin",
-    "dist": 0.2239
+    "dist": 0.226
   },
   {
     "frterm": "bordeaux",
     "frterm2": "vieuxrose",
-    "dist": 0.3276
+    "dist": 0.318
   },
   {
     "frterm": "bordeaux",
     "frterm2": "violet",
-    "dist": 0.2114
+    "dist": 0.2081
   },
   {
     "frterm": "bordeaux",
     "frterm2": "violetfonce",
-    "dist": 0.1508
+    "dist": 0.16
   },
   {
     "frterm": "brun",
     "frterm2": "cyan",
-    "dist": 0.4224
+    "dist": 0.4233
   },
   {
     "frterm": "brun",
     "frterm2": "fuchsia",
-    "dist": 0.2759
+    "dist": 0.278
   },
   {
     "frterm": "brun",
     "frterm2": "gris",
-    "dist": 0.2395
+    "dist": 0.2383
   },
   {
     "frterm": "brun",
     "frterm2": "indigo",
-    "dist": 0.2489
+    "dist": 0.2469
   },
   {
     "frterm": "brun",
     "frterm2": "jaune",
-    "dist": 0.485
+    "dist": 0.4853
   },
   {
     "frterm": "brun",
     "frterm2": "jaunemoutarde",
-    "dist": 0.3651
+    "dist": 0.368
   },
   {
     "frterm": "brun",
     "frterm2": "kaki",
-    "dist": 0.1948
+    "dist": 0.1951
   },
   {
     "frterm": "brun",
     "frterm2": "lavande",
-    "dist": 0.3167
+    "dist": 0.3169
   },
   {
     "frterm": "brun",
     "frterm2": "lila",
-    "dist": 0.3552
+    "dist": 0.3517
   },
   {
     "frterm": "brun",
     "frterm2": "lilas",
-    "dist": 0.3155
+    "dist": 0.3135
   },
   {
     "frterm": "brun",
     "frterm2": "magenta",
-    "dist": 0.2894
+    "dist": 0.2907
   },
   {
     "frterm": "brun",
     "frterm2": "marron",
-    "dist": 0.0472
+    "dist": 0.0371
+  },
+  {
+    "frterm": "brun",
+    "frterm2": "marronclair",
+    "dist": 0.185
   },
   {
     "frterm": "brun",
     "frterm2": "mauve",
-    "dist": 0.2455
+    "dist": 0.2463
   },
   {
     "frterm": "brun",
     "frterm2": "noir",
-    "dist": 0.2476
+    "dist": 0.257
   },
   {
     "frterm": "brun",
     "frterm2": "ocre",
-    "dist": 0.2989
+    "dist": 0.3007
   },
   {
     "frterm": "brun",
     "frterm2": "orange",
-    "dist": 0.3016
+    "dist": 0.3041
   },
   {
     "frterm": "brun",
@@ -2817,237 +3147,242 @@
   {
     "frterm": "brun",
     "frterm2": "prune",
-    "dist": 0.1354
+    "dist": 0.1342
   },
   {
     "frterm": "brun",
     "frterm2": "rose",
-    "dist": 0.319
+    "dist": 0.3249
   },
   {
     "frterm": "brun",
     "frterm2": "rosefonce",
-    "dist": 0.2623
+    "dist": 0.2646
   },
   {
     "frterm": "brun",
     "frterm2": "rosepale",
-    "dist": 0.3972
+    "dist": 0.3956
   },
   {
     "frterm": "brun",
     "frterm2": "rouge",
-    "dist": 0.1866
+    "dist": 0.1888
   },
   {
     "frterm": "brun",
     "frterm2": "rougefonce",
-    "dist": 0.13
+    "dist": 0.1321
   },
   {
     "frterm": "brun",
     "frterm2": "saumon",
-    "dist": 0.3621
+    "dist": 0.3572
   },
   {
     "frterm": "brun",
     "frterm2": "taupe",
-    "dist": 0.1666
+    "dist": 0.167
   },
   {
     "frterm": "brun",
     "frterm2": "turquoise",
-    "dist": 0.3951
+    "dist": 0.3929
   },
   {
     "frterm": "brun",
     "frterm2": "vert",
-    "dist": 0.329
+    "dist": 0.3289
   },
   {
     "frterm": "brun",
     "frterm2": "vertclair",
-    "dist": 0.4644
+    "dist": 0.4664
   },
   {
     "frterm": "brun",
     "frterm2": "vertd'eau",
-    "dist": 0.3815
+    "dist": 0.382
   },
   {
     "frterm": "brun",
     "frterm2": "vertfluo",
-    "dist": 0.4761
+    "dist": 0.4776
   },
   {
     "frterm": "brun",
     "frterm2": "vertfonce",
-    "dist": 0.1561
+    "dist": 0.1543
   },
   {
     "frterm": "brun",
     "frterm2": "vertforet",
-    "dist": 0.1766
+    "dist": 0.1753
   },
   {
     "frterm": "brun",
     "frterm2": "vertkaki",
-    "dist": 0.1727
+    "dist": 0.1715
   },
   {
     "frterm": "brun",
     "frterm2": "vertpale",
-    "dist": 0.497
+    "dist": 0.4985
   },
   {
     "frterm": "brun",
     "frterm2": "vertpomme",
-    "dist": 0.4331
+    "dist": 0.4348
   },
   {
     "frterm": "brun",
     "frterm2": "vertsapin",
-    "dist": 0.171
+    "dist": 0.1697
   },
   {
     "frterm": "brun",
     "frterm2": "vieuxrose",
-    "dist": 0.3106
+    "dist": 0.3069
   },
   {
     "frterm": "brun",
     "frterm2": "violet",
-    "dist": 0.2492
+    "dist": 0.2475
   },
   {
     "frterm": "brun",
     "frterm2": "violetfonce",
-    "dist": 0.1923
+    "dist": 0.1926
   },
   {
     "frterm": "cyan",
     "frterm2": "fuchsia",
-    "dist": 0.3921
+    "dist": 0.3918
   },
   {
     "frterm": "cyan",
     "frterm2": "gris",
-    "dist": 0.2021
+    "dist": 0.2039
   },
   {
     "frterm": "cyan",
     "frterm2": "indigo",
-    "dist": 0.3689
+    "dist": 0.3688
   },
   {
     "frterm": "cyan",
     "frterm2": "jaune",
-    "dist": 0.2526
+    "dist": 0.2509
   },
   {
     "frterm": "cyan",
     "frterm2": "jaunemoutarde",
-    "dist": 0.2302
+    "dist": 0.2303
   },
   {
     "frterm": "cyan",
     "frterm2": "kaki",
-    "dist": 0.2845
+    "dist": 0.2851
   },
   {
     "frterm": "cyan",
     "frterm2": "lavande",
-    "dist": 0.2069
+    "dist": 0.207
   },
   {
     "frterm": "cyan",
     "frterm2": "lila",
-    "dist": 0.2152
+    "dist": 0.2124
   },
   {
     "frterm": "cyan",
     "frterm2": "lilas",
-    "dist": 0.2095
+    "dist": 0.211
   },
   {
     "frterm": "cyan",
     "frterm2": "magenta",
-    "dist": 0.3744
+    "dist": 0.3758
   },
   {
     "frterm": "cyan",
     "frterm2": "marron",
-    "dist": 0.3888
+    "dist": 0.4062
+  },
+  {
+    "frterm": "cyan",
+    "frterm2": "marronclair",
+    "dist": 0.2728
   },
   {
     "frterm": "cyan",
     "frterm2": "mauve",
-    "dist": 0.3327
+    "dist": 0.3405
   },
   {
     "frterm": "cyan",
     "frterm2": "noir",
-    "dist": 0.6063
+    "dist": 0.6201
   },
   {
     "frterm": "cyan",
     "frterm2": "ocre",
-    "dist": 0.258
+    "dist": 0.2588
   },
   {
     "frterm": "cyan",
     "frterm2": "orange",
-    "dist": 0.2996
+    "dist": 0.2993
   },
   {
     "frterm": "cyan",
     "frterm2": "pourpre",
-    "dist": 0.445
+    "dist": 0.4454
   },
   {
     "frterm": "cyan",
     "frterm2": "prune",
-    "dist": 0.4488
+    "dist": 0.4522
   },
   {
     "frterm": "cyan",
     "frterm2": "rose",
-    "dist": 0.3063
+    "dist": 0.3029
   },
   {
     "frterm": "cyan",
     "frterm2": "rosefonce",
-    "dist": 0.3781
+    "dist": 0.3782
   },
   {
     "frterm": "cyan",
     "frterm2": "rosepale",
-    "dist": 0.1992
+    "dist": 0.1979
   },
   {
     "frterm": "cyan",
     "frterm2": "rouge",
-    "dist": 0.4142
+    "dist": 0.4136
   },
   {
     "frterm": "cyan",
     "frterm2": "rougefonce",
-    "dist": 0.4708
+    "dist": 0.472
   },
   {
     "frterm": "cyan",
     "frterm2": "saumon",
-    "dist": 0.2448
+    "dist": 0.2451
   },
   {
     "frterm": "cyan",
     "frterm2": "taupe",
-    "dist": 0.2707
+    "dist": 0.2717
   },
   {
     "frterm": "cyan",
     "frterm2": "turquoise",
-    "dist": 0.0634
+    "dist": 0.0636
   },
   {
     "frterm": "cyan",
@@ -3057,837 +3392,862 @@
   {
     "frterm": "cyan",
     "frterm2": "vertclair",
-    "dist": 0.1829
+    "dist": 0.1823
   },
   {
     "frterm": "cyan",
     "frterm2": "vertd'eau",
-    "dist": 0.0987
+    "dist": 0.0985
   },
   {
     "frterm": "cyan",
     "frterm2": "vertfluo",
-    "dist": 0.2407
+    "dist": 0.2397
   },
   {
     "frterm": "cyan",
     "frterm2": "vertfonce",
-    "dist": 0.3879
+    "dist": 0.3904
   },
   {
     "frterm": "cyan",
     "frterm2": "vertforet",
-    "dist": 0.3478
+    "dist": 0.3483
   },
   {
     "frterm": "cyan",
     "frterm2": "vertkaki",
-    "dist": 0.2984
+    "dist": 0.3009
   },
   {
     "frterm": "cyan",
     "frterm2": "vertpale",
-    "dist": 0.1967
+    "dist": 0.1952
   },
   {
     "frterm": "cyan",
     "frterm2": "vertpomme",
-    "dist": 0.2062
+    "dist": 0.2054
   },
   {
     "frterm": "cyan",
     "frterm2": "vertsapin",
-    "dist": 0.3344
+    "dist": 0.3356
   },
   {
     "frterm": "cyan",
     "frterm2": "vieuxrose",
-    "dist": 0.2223
+    "dist": 0.2233
   },
   {
     "frterm": "cyan",
     "frterm2": "violet",
-    "dist": 0.3619
+    "dist": 0.3634
   },
   {
     "frterm": "cyan",
     "frterm2": "violetfonce",
-    "dist": 0.479
+    "dist": 0.4852
   },
   {
     "frterm": "fuchsia",
     "frterm2": "gris",
-    "dist": 0.2469
+    "dist": 0.2462
   },
   {
     "frterm": "fuchsia",
     "frterm2": "indigo",
-    "dist": 0.2543
+    "dist": 0.257
   },
   {
     "frterm": "fuchsia",
     "frterm2": "jaune",
-    "dist": 0.45
+    "dist": 0.4483
   },
   {
     "frterm": "fuchsia",
     "frterm2": "jaunemoutarde",
-    "dist": 0.3667
+    "dist": 0.3677
   },
   {
     "frterm": "fuchsia",
     "frterm2": "kaki",
-    "dist": 0.3345
+    "dist": 0.3348
   },
   {
     "frterm": "fuchsia",
     "frterm2": "lavande",
-    "dist": 0.2004
+    "dist": 0.1997
   },
   {
     "frterm": "fuchsia",
     "frterm2": "lila",
-    "dist": 0.2095
+    "dist": 0.2079
   },
   {
     "frterm": "fuchsia",
     "frterm2": "lilas",
-    "dist": 0.1983
+    "dist": 0.1959
   },
   {
     "frterm": "fuchsia",
     "frterm2": "magenta",
-    "dist": 0.0389
+    "dist": 0.0373
   },
   {
     "frterm": "fuchsia",
     "frterm2": "marron",
-    "dist": 0.2727
+    "dist": 0.286
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "marronclair",
+    "dist": 0.2357
   },
   {
     "frterm": "fuchsia",
     "frterm2": "mauve",
-    "dist": 0.146
+    "dist": 0.1485
   },
   {
     "frterm": "fuchsia",
     "frterm2": "noir",
-    "dist": 0.4616
+    "dist": 0.4695
   },
   {
     "frterm": "fuchsia",
     "frterm2": "ocre",
-    "dist": 0.2781
+    "dist": 0.278
   },
   {
     "frterm": "fuchsia",
     "frterm2": "orange",
-    "dist": 0.2736
+    "dist": 0.2735
   },
   {
     "frterm": "fuchsia",
     "frterm2": "pourpre",
-    "dist": 0.188
+    "dist": 0.1876
   },
   {
     "frterm": "fuchsia",
     "frterm2": "prune",
-    "dist": 0.2313
+    "dist": 0.2389
   },
   {
     "frterm": "fuchsia",
     "frterm2": "rose",
-    "dist": 0.1213
+    "dist": 0.1266
   },
   {
     "frterm": "fuchsia",
     "frterm2": "rosefonce",
-    "dist": 0.0634
+    "dist": 0.0649
   },
   {
     "frterm": "fuchsia",
     "frterm2": "rosepale",
-    "dist": 0.2787
+    "dist": 0.2749
   },
   {
     "frterm": "fuchsia",
     "frterm2": "rouge",
-    "dist": 0.1707
+    "dist": 0.1711
   },
   {
     "frterm": "fuchsia",
     "frterm2": "rougefonce",
-    "dist": 0.2315
+    "dist": 0.2331
   },
   {
     "frterm": "fuchsia",
     "frterm2": "saumon",
-    "dist": 0.2646
+    "dist": 0.2583
   },
   {
     "frterm": "fuchsia",
     "frterm2": "taupe",
-    "dist": 0.2244
+    "dist": 0.2242
   },
   {
     "frterm": "fuchsia",
     "frterm2": "turquoise",
-    "dist": 0.3925
+    "dist": 0.3898
   },
   {
     "frterm": "fuchsia",
     "frterm2": "vert",
+    "dist": 0.3983
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertclair",
+    "dist": 0.4556
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertd'eau",
+    "dist": 0.3909
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertfluo",
+    "dist": 0.5201
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertfonce",
+    "dist": 0.3862
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertforet",
+    "dist": 0.3692
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertkaki",
+    "dist": 0.3266
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertpale",
+    "dist": 0.4463
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertpomme",
+    "dist": 0.4639
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vertsapin",
+    "dist": 0.3526
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "vieuxrose",
+    "dist": 0.211
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "violet",
+    "dist": 0.1509
+  },
+  {
+    "frterm": "fuchsia",
+    "frterm2": "violetfonce",
+    "dist": 0.2809
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "indigo",
+    "dist": 0.2449
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "jaune",
+    "dist": 0.2993
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "jaunemoutarde",
+    "dist": 0.2072
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "kaki",
+    "dist": 0.1456
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "lavande",
+    "dist": 0.1319
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "lila",
+    "dist": 0.1656
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "lilas",
+    "dist": 0.1265
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "magenta",
+    "dist": 0.2415
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "marron",
+    "dist": 0.2214
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "marronclair",
+    "dist": 0.0983
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "mauve",
+    "dist": 0.1998
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "noir",
+    "dist": 0.4596
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "ocre",
+    "dist": 0.1634
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "orange",
+    "dist": 0.1988
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "pourpre",
+    "dist": 0.2691
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "prune",
+    "dist": 0.2763
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "rose",
+    "dist": 0.1979
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "rosefonce",
+    "dist": 0.2354
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "rosepale",
+    "dist": 0.1843
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "rouge",
+    "dist": 0.2392
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "rougefonce",
+    "dist": 0.2851
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "saumon",
+    "dist": 0.1804
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "taupe",
+    "dist": 0.0763
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "turquoise",
+    "dist": 0.1753
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vert",
+    "dist": 0.1723
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertclair",
+    "dist": 0.2653
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertd'eau",
+    "dist": 0.1699
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertfluo",
+    "dist": 0.3109
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertfonce",
+    "dist": 0.2485
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertforet",
+    "dist": 0.2096
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertkaki",
+    "dist": 0.1475
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertpale",
+    "dist": 0.2861
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertpomme",
+    "dist": 0.2604
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vertsapin",
+    "dist": 0.1928
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "vieuxrose",
+    "dist": 0.1195
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "violet",
+    "dist": 0.2238
+  },
+  {
+    "frterm": "gris",
+    "frterm2": "violetfonce",
+    "dist": 0.3256
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "jaune",
+    "dist": 0.5348
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "jaunemoutarde",
+    "dist": 0.4399
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "kaki",
+    "dist": 0.3051
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "lavande",
+    "dist": 0.2486
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "lila",
+    "dist": 0.2817
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "lilas",
+    "dist": 0.2601
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "magenta",
+    "dist": 0.2643
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "marron",
+    "dist": 0.2499
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "marronclair",
+    "dist": 0.2731
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "mauve",
+    "dist": 0.1419
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "noir",
+    "dist": 0.3372
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "ocre",
+    "dist": 0.3806
+  },
+  {
+    "frterm": "indigo",
+    "frterm2": "orange",
     "dist": 0.3986
   },
   {
-    "frterm": "fuchsia",
-    "frterm2": "vertclair",
-    "dist": 0.4554
-  },
-  {
-    "frterm": "fuchsia",
-    "frterm2": "vertd'eau",
-    "dist": 0.391
-  },
-  {
-    "frterm": "fuchsia",
-    "frterm2": "vertfluo",
-    "dist": 0.5202
-  },
-  {
-    "frterm": "fuchsia",
-    "frterm2": "vertfonce",
-    "dist": 0.3851
-  },
-  {
-    "frterm": "fuchsia",
-    "frterm2": "vertforet",
-    "dist": 0.3683
-  },
-  {
-    "frterm": "fuchsia",
-    "frterm2": "vertkaki",
-    "dist": 0.3251
-  },
-  {
-    "frterm": "fuchsia",
-    "frterm2": "vertpale",
-    "dist": 0.4466
-  },
-  {
-    "frterm": "fuchsia",
-    "frterm2": "vertpomme",
-    "dist": 0.4638
-  },
-  {
-    "frterm": "fuchsia",
-    "frterm2": "vertsapin",
-    "dist": 0.3517
-  },
-  {
-    "frterm": "fuchsia",
-    "frterm2": "vieuxrose",
-    "dist": 0.2147
-  },
-  {
-    "frterm": "fuchsia",
-    "frterm2": "violet",
-    "dist": 0.1496
-  },
-  {
-    "frterm": "fuchsia",
-    "frterm2": "violetfonce",
-    "dist": 0.2716
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "indigo",
-    "dist": 0.2476
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "jaune",
-    "dist": 0.2982
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "jaunemoutarde",
-    "dist": 0.2034
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "kaki",
-    "dist": 0.1459
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "lavande",
-    "dist": 0.1314
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "lila",
-    "dist": 0.1689
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "lilas",
-    "dist": 0.1274
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "magenta",
-    "dist": 0.2403
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "marron",
-    "dist": 0.2052
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "mauve",
-    "dist": 0.1941
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "noir",
-    "dist": 0.4496
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "ocre",
-    "dist": 0.1608
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "orange",
-    "dist": 0.1968
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "pourpre",
-    "dist": 0.2714
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "prune",
-    "dist": 0.2744
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "rose",
-    "dist": 0.1977
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "rosefonce",
-    "dist": 0.235
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "rosepale",
-    "dist": 0.1851
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "rouge",
-    "dist": 0.2399
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "rougefonce",
-    "dist": 0.2855
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "saumon",
-    "dist": 0.1836
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "taupe",
-    "dist": 0.0775
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "turquoise",
-    "dist": 0.1761
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "vert",
-    "dist": 0.1716
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "vertclair",
-    "dist": 0.2625
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "vertd'eau",
-    "dist": 0.1682
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "vertfluo",
-    "dist": 0.3088
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "vertfonce",
-    "dist": 0.2488
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "vertforet",
-    "dist": 0.2109
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "vertkaki",
-    "dist": 0.1461
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "vertpale",
-    "dist": 0.2837
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "vertpomme",
-    "dist": 0.258
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "vertsapin",
-    "dist": 0.1937
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "vieuxrose",
-    "dist": 0.1214
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "violet",
-    "dist": 0.2252
-  },
-  {
-    "frterm": "gris",
-    "frterm2": "violetfonce",
-    "dist": 0.3224
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "jaune",
-    "dist": 0.5364
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "jaunemoutarde",
-    "dist": 0.4387
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "kaki",
-    "dist": 0.3065
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "lavande",
-    "dist": 0.2486
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "lila",
-    "dist": 0.2859
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "lilas",
-    "dist": 0.2629
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "magenta",
-    "dist": 0.2609
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "marron",
-    "dist": 0.248
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "mauve",
-    "dist": 0.1471
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "noir",
-    "dist": 0.3323
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "ocre",
-    "dist": 0.3799
-  },
-  {
-    "frterm": "indigo",
-    "frterm2": "orange",
-    "dist": 0.3979
-  },
-  {
     "frterm": "indigo",
     "frterm2": "pourpre",
-    "dist": 0.1695
+    "dist": 0.1725
   },
   {
     "frterm": "indigo",
     "frterm2": "prune",
-    "dist": 0.1673
+    "dist": 0.1678
   },
   {
     "frterm": "indigo",
     "frterm2": "rose",
-    "dist": 0.3011
+    "dist": 0.3059
   },
   {
     "frterm": "indigo",
     "frterm2": "rosefonce",
-    "dist": 0.2741
+    "dist": 0.278
   },
   {
     "frterm": "indigo",
     "frterm2": "rosepale",
-    "dist": 0.3794
+    "dist": 0.3762
   },
   {
     "frterm": "indigo",
     "frterm2": "rouge",
-    "dist": 0.3152
+    "dist": 0.3165
   },
   {
     "frterm": "indigo",
     "frterm2": "rougefonce",
-    "dist": 0.2758
+    "dist": 0.279
   },
   {
     "frterm": "indigo",
     "frterm2": "saumon",
-    "dist": 0.3929
+    "dist": 0.3875
   },
   {
     "frterm": "indigo",
     "frterm2": "taupe",
-    "dist": 0.2303
+    "dist": 0.2294
   },
   {
     "frterm": "indigo",
     "frterm2": "turquoise",
-    "dist": 0.3785
+    "dist": 0.374
   },
   {
     "frterm": "indigo",
     "frterm2": "vert",
-    "dist": 0.3861
+    "dist": 0.3839
   },
   {
     "frterm": "indigo",
     "frterm2": "vertclair",
-    "dist": 0.4921
+    "dist": 0.4917
   },
   {
     "frterm": "indigo",
     "frterm2": "vertd'eau",
-    "dist": 0.3825
+    "dist": 0.3807
   },
   {
     "frterm": "indigo",
     "frterm2": "vertfluo",
-    "dist": 0.5319
+    "dist": 0.531
   },
   {
     "frterm": "indigo",
     "frterm2": "vertfonce",
-    "dist": 0.2759
+    "dist": 0.2734
   },
   {
     "frterm": "indigo",
     "frterm2": "vertforet",
-    "dist": 0.2713
+    "dist": 0.2701
   },
   {
     "frterm": "indigo",
     "frterm2": "vertkaki",
-    "dist": 0.2902
+    "dist": 0.2888
   },
   {
     "frterm": "indigo",
     "frterm2": "vertpale",
-    "dist": 0.5122
+    "dist": 0.5117
   },
   {
     "frterm": "indigo",
     "frterm2": "vertpomme",
-    "dist": 0.4884
+    "dist": 0.4877
   },
   {
     "frterm": "indigo",
     "frterm2": "vertsapin",
-    "dist": 0.2533
+    "dist": 0.2518
   },
   {
     "frterm": "indigo",
     "frterm2": "vieuxrose",
-    "dist": 0.3157
+    "dist": 0.3115
   },
   {
     "frterm": "indigo",
     "frterm2": "violet",
-    "dist": 0.1161
+    "dist": 0.117
   },
   {
     "frterm": "indigo",
     "frterm2": "violetfonce",
-    "dist": 0.1458
+    "dist": 0.151
   },
   {
     "frterm": "jaune",
     "frterm2": "jaunemoutarde",
-    "dist": 0.1298
+    "dist": 0.1272
   },
   {
     "frterm": "jaune",
     "frterm2": "kaki",
-    "dist": 0.3313
+    "dist": 0.3307
   },
   {
     "frterm": "jaune",
     "frterm2": "lavande",
-    "dist": 0.3322
+    "dist": 0.3312
   },
   {
     "frterm": "jaune",
     "frterm2": "lila",
-    "dist": 0.3232
+    "dist": 0.3229
   },
   {
     "frterm": "jaune",
     "frterm2": "lilas",
-    "dist": 0.3147
+    "dist": 0.3159
   },
   {
     "frterm": "jaune",
     "frterm2": "magenta",
-    "dist": 0.4315
+    "dist": 0.4307
   },
   {
     "frterm": "jaune",
     "frterm2": "marron",
-    "dist": 0.446
+    "dist": 0.464
+  },
+  {
+    "frterm": "jaune",
+    "frterm2": "marronclair",
+    "dist": 0.3094
   },
   {
     "frterm": "jaune",
     "frterm2": "mauve",
-    "dist": 0.4568
+    "dist": 0.4648
   },
   {
     "frterm": "jaune",
     "frterm2": "noir",
-    "dist": 0.7151
+    "dist": 0.7276
   },
   {
     "frterm": "jaune",
     "frterm2": "ocre",
-    "dist": 0.2029
+    "dist": 0.2019
   },
   {
     "frterm": "jaune",
     "frterm2": "orange",
-    "dist": 0.2219
+    "dist": 0.2207
   },
   {
     "frterm": "jaune",
     "frterm2": "pourpre",
-    "dist": 0.5427
+    "dist": 0.5405
   },
   {
     "frterm": "jaune",
     "frterm2": "prune",
-    "dist": 0.5529
+    "dist": 0.5564
   },
   {
     "frterm": "jaune",
     "frterm2": "rose",
-    "dist": 0.3443
+    "dist": 0.3382
   },
   {
     "frterm": "jaune",
     "frterm2": "rosefonce",
-    "dist": 0.4201
+    "dist": 0.4177
   },
   {
     "frterm": "jaune",
     "frterm2": "rosepale",
-    "dist": 0.2151
+    "dist": 0.2162
   },
   {
     "frterm": "jaune",
     "frterm2": "rouge",
-    "dist": 0.4146
+    "dist": 0.4126
   },
   {
     "frterm": "jaune",
     "frterm2": "rougefonce",
-    "dist": 0.5145
+    "dist": 0.5135
   },
   {
     "frterm": "jaune",
     "frterm2": "saumon",
-    "dist": 0.1968
+    "dist": 0.2005
   },
   {
     "frterm": "jaune",
     "frterm2": "taupe",
-    "dist": 0.3439
+    "dist": 0.3433
   },
   {
     "frterm": "jaune",
     "frterm2": "turquoise",
-    "dist": 0.2191
+    "dist": 0.2205
   },
   {
     "frterm": "jaune",
     "frterm2": "vert",
-    "dist": 0.2276
+    "dist": 0.2273
   },
   {
     "frterm": "jaune",
     "frterm2": "vertclair",
-    "dist": 0.1218
+    "dist": 0.1219
   },
   {
     "frterm": "jaune",
     "frterm2": "vertd'eau",
-    "dist": 0.2054
+    "dist": 0.2056
   },
   {
     "frterm": "jaune",
     "frterm2": "vertfluo",
-    "dist": 0.1821
+    "dist": 0.1812
   },
   {
     "frterm": "jaune",
     "frterm2": "vertfonce",
-    "dist": 0.4822
+    "dist": 0.4832
   },
   {
     "frterm": "jaune",
     "frterm2": "vertforet",
-    "dist": 0.4417
+    "dist": 0.4408
   },
   {
     "frterm": "jaune",
     "frterm2": "vertkaki",
-    "dist": 0.354
+    "dist": 0.3555
   },
   {
     "frterm": "jaune",
     "frterm2": "vertpale",
-    "dist": 0.0932
+    "dist": 0.0936
   },
   {
     "frterm": "jaune",
     "frterm2": "vertpomme",
-    "dist": 0.1398
+    "dist": 0.139
   },
   {
     "frterm": "jaune",
     "frterm2": "vertsapin",
-    "dist": 0.436
+    "dist": 0.4356
   },
   {
     "frterm": "jaune",
     "frterm2": "vieuxrose",
-    "dist": 0.2553
+    "dist": 0.2581
   },
   {
     "frterm": "jaune",
     "frterm2": "violet",
-    "dist": 0.4974
+    "dist": 0.4971
   },
   {
     "frterm": "jaune",
     "frterm2": "violetfonce",
-    "dist": 0.6097
+    "dist": 0.6145
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "kaki",
-    "dist": 0.2144
+    "dist": 0.2164
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "lavande",
-    "dist": 0.2657
+    "dist": 0.2669
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "lila",
-    "dist": 0.268
+    "dist": 0.2683
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "lilas",
-    "dist": 0.2486
+    "dist": 0.2509
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "magenta",
-    "dist": 0.3522
+    "dist": 0.3535
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "marron",
-    "dist": 0.326
+    "dist": 0.3465
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "frterm2": "marronclair",
+    "dist": 0.1952
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "mauve",
-    "dist": 0.3716
+    "dist": 0.3815
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "noir",
-    "dist": 0.5953
+    "dist": 0.6104
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "ocre",
-    "dist": 0.1025
+    "dist": 0.1038
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "orange",
-    "dist": 0.1273
+    "dist": 0.1281
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "pourpre",
-    "dist": 0.4333
+    "dist": 0.434
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "prune",
-    "dist": 0.4398
+    "dist": 0.4459
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "rose",
-    "dist": 0.2796
+    "dist": 0.2769
   },
   {
     "frterm": "jaunemoutarde",
@@ -3897,357 +4257,367 @@
   {
     "frterm": "jaunemoutarde",
     "frterm2": "rosepale",
-    "dist": 0.1859
+    "dist": 0.1866
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "rouge",
-    "dist": 0.3117
+    "dist": 0.3119
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "rougefonce",
-    "dist": 0.3994
+    "dist": 0.4009
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "saumon",
-    "dist": 0.1467
+    "dist": 0.1472
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "taupe",
-    "dist": 0.2324
+    "dist": 0.2347
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "turquoise",
-    "dist": 0.1881
+    "dist": 0.1901
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "vert",
-    "dist": 0.1533
+    "dist": 0.1552
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "vertclair",
-    "dist": 0.1414
+    "dist": 0.1422
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "vertd'eau",
-    "dist": 0.1722
+    "dist": 0.1747
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "vertfluo",
-    "dist": 0.1799
+    "dist": 0.1796
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "vertfonce",
-    "dist": 0.3723
+    "dist": 0.375
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "vertforet",
-    "dist": 0.3274
+    "dist": 0.3292
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "vertkaki",
-    "dist": 0.2362
+    "dist": 0.2405
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "vertpale",
-    "dist": 0.156
+    "dist": 0.1558
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "vertpomme",
-    "dist": 0.1303
+    "dist": 0.1307
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "vertsapin",
-    "dist": 0.3216
+    "dist": 0.324
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "vieuxrose",
-    "dist": 0.1848
+    "dist": 0.1875
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "violet",
-    "dist": 0.4066
+    "dist": 0.4088
   },
   {
     "frterm": "jaunemoutarde",
     "frterm2": "violetfonce",
-    "dist": 0.5011
+    "dist": 0.5082
   },
   {
     "frterm": "kaki",
     "frterm2": "lavande",
-    "dist": 0.2679
+    "dist": 0.2677
   },
   {
     "frterm": "kaki",
     "frterm2": "lila",
-    "dist": 0.3028
-  },
-  {
-    "frterm": "kaki",
-    "frterm2": "lilas",
-    "dist": 0.2645
-  },
-  {
-    "frterm": "kaki",
-    "frterm2": "magenta",
-    "dist": 0.3347
-  },
-  {
-    "frterm": "kaki",
-    "frterm2": "marron",
-    "dist": 0.1589
-  },
-  {
-    "frterm": "kaki",
-    "frterm2": "mauve",
-    "dist": 0.2958
-  },
-  {
-    "frterm": "kaki",
-    "frterm2": "noir",
-    "dist": 0.3943
-  },
-  {
-    "frterm": "kaki",
-    "frterm2": "ocre",
-    "dist": 0.1951
-  },
-  {
-    "frterm": "kaki",
-    "frterm2": "orange",
-    "dist": 0.2182
-  },
-  {
-    "frterm": "kaki",
-    "frterm2": "pourpre",
     "dist": 0.2985
   },
   {
     "frterm": "kaki",
+    "frterm2": "lilas",
+    "dist": 0.2633
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "magenta",
+    "dist": 0.3353
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "marron",
+    "dist": 0.173
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "marronclair",
+    "dist": 0.1141
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "mauve",
+    "dist": 0.301
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "noir",
+    "dist": 0.4081
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "ocre",
+    "dist": 0.1962
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "orange",
+    "dist": 0.2191
+  },
+  {
+    "frterm": "kaki",
+    "frterm2": "pourpre",
+    "dist": 0.2982
+  },
+  {
+    "frterm": "kaki",
     "frterm2": "prune",
-    "dist": 0.2859
+    "dist": 0.2881
   },
   {
     "frterm": "kaki",
     "frterm2": "rose",
-    "dist": 0.3091
+    "dist": 0.3099
   },
   {
     "frterm": "kaki",
     "frterm2": "rosefonce",
-    "dist": 0.3127
+    "dist": 0.3129
   },
   {
     "frterm": "kaki",
     "frterm2": "rosepale",
-    "dist": 0.3013
+    "dist": 0.2995
   },
   {
     "frterm": "kaki",
     "frterm2": "rouge",
-    "dist": 0.2543
+    "dist": 0.2545
   },
   {
     "frterm": "kaki",
     "frterm2": "rougefonce",
-    "dist": 0.267
+    "dist": 0.2674
   },
   {
     "frterm": "kaki",
     "frterm2": "saumon",
-    "dist": 0.2713
+    "dist": 0.2667
   },
   {
     "frterm": "kaki",
     "frterm2": "taupe",
-    "dist": 0.1254
+    "dist": 0.1258
   },
   {
     "frterm": "kaki",
     "frterm2": "turquoise",
-    "dist": 0.2372
+    "dist": 0.2353
   },
   {
     "frterm": "kaki",
     "frterm2": "vert",
-    "dist": 0.145
+    "dist": 0.1453
   },
   {
     "frterm": "kaki",
     "frterm2": "vertclair",
-    "dist": 0.2909
+    "dist": 0.2921
   },
   {
     "frterm": "kaki",
     "frterm2": "vertd'eau",
-    "dist": 0.2188
+    "dist": 0.2193
   },
   {
     "frterm": "kaki",
     "frterm2": "vertfluo",
-    "dist": 0.2888
+    "dist": 0.2899
   },
   {
     "frterm": "kaki",
     "frterm2": "vertfonce",
-    "dist": 0.1765
+    "dist": 0.1759
   },
   {
     "frterm": "kaki",
     "frterm2": "vertforet",
-    "dist": 0.1203
+    "dist": 0.1199
   },
   {
     "frterm": "kaki",
     "frterm2": "vertkaki",
-    "dist": 0.037
+    "dist": 0.0377
   },
   {
     "frterm": "kaki",
     "frterm2": "vertpale",
-    "dist": 0.3398
+    "dist": 0.3405
   },
   {
     "frterm": "kaki",
     "frterm2": "vertpomme",
-    "dist": 0.2504
+    "dist": 0.2516
   },
   {
     "frterm": "kaki",
     "frterm2": "vertsapin",
-    "dist": 0.12
+    "dist": 0.1199
   },
   {
     "frterm": "kaki",
     "frterm2": "vieuxrose",
-    "dist": 0.2356
+    "dist": 0.2329
   },
   {
     "frterm": "kaki",
     "frterm2": "violet",
-    "dist": 0.3153
+    "dist": 0.3148
   },
   {
     "frterm": "kaki",
     "frterm2": "violetfonce",
-    "dist": 0.3415
+    "dist": 0.3447
   },
   {
     "frterm": "lavande",
     "frterm2": "lila",
-    "dist": 0.0499
+    "dist": 0.0454
   },
   {
     "frterm": "lavande",
     "frterm2": "lilas",
-    "dist": 0.0483
+    "dist": 0.0478
   },
   {
     "frterm": "lavande",
     "frterm2": "magenta",
-    "dist": 0.1833
+    "dist": 0.1851
   },
   {
     "frterm": "lavande",
     "frterm2": "marron",
-    "dist": 0.2919
+    "dist": 0.3086
+  },
+  {
+    "frterm": "lavande",
+    "frterm2": "marronclair",
+    "dist": 0.1916
   },
   {
     "frterm": "lavande",
     "frterm2": "mauve",
-    "dist": 0.1541
+    "dist": 0.1616
   },
   {
     "frterm": "lavande",
     "frterm2": "noir",
-    "dist": 0.514
+    "dist": 0.524
   },
   {
     "frterm": "lavande",
     "frterm2": "ocre",
-    "dist": 0.2183
+    "dist": 0.2192
   },
   {
     "frterm": "lavande",
     "frterm2": "orange",
-    "dist": 0.2409
+    "dist": 0.2408
   },
   {
     "frterm": "lavande",
     "frterm2": "pourpre",
-    "dist": 0.2875
+    "dist": 0.2866
   },
   {
     "frterm": "lavande",
     "frterm2": "prune",
-    "dist": 0.3077
+    "dist": 0.3121
   },
   {
     "frterm": "lavande",
     "frterm2": "rose",
-    "dist": 0.1341
+    "dist": 0.1338
   },
   {
     "frterm": "lavande",
     "frterm2": "rosefonce",
-    "dist": 0.1973
+    "dist": 0.1977
   },
   {
     "frterm": "lavande",
     "frterm2": "rosepale",
-    "dist": 0.1451
+    "dist": 0.1422
   },
   {
     "frterm": "lavande",
     "frterm2": "rouge",
-    "dist": 0.273
+    "dist": 0.2721
   },
   {
     "frterm": "lavande",
     "frterm2": "rougefonce",
-    "dist": 0.3338
+    "dist": 0.3343
   },
   {
     "frterm": "lavande",
     "frterm2": "saumon",
-    "dist": 0.1809
+    "dist": 0.1778
   },
   {
     "frterm": "lavande",
     "frterm2": "taupe",
-    "dist": 0.1733
+    "dist": 0.173
   },
   {
     "frterm": "lavande",
     "frterm2": "turquoise",
-    "dist": 0.2218
+    "dist": 0.2197
   },
   {
     "frterm": "lavande",
     "frterm2": "vert",
-    "dist": 0.274
+    "dist": 0.2737
   },
   {
     "frterm": "lavande",
     "frterm2": "vertclair",
-    "dist": 0.309
+    "dist": 0.3096
   },
   {
     "frterm": "lavande",
@@ -4257,252 +4627,262 @@
   {
     "frterm": "lavande",
     "frterm2": "vertfluo",
-    "dist": 0.3806
+    "dist": 0.3804
   },
   {
     "frterm": "lavande",
     "frterm2": "vertfonce",
-    "dist": 0.3525
+    "dist": 0.3533
   },
   {
     "frterm": "lavande",
     "frterm2": "vertforet",
-    "dist": 0.3195
+    "dist": 0.3193
   },
   {
     "frterm": "lavande",
     "frterm2": "vertkaki",
-    "dist": 0.2669
+    "dist": 0.2685
   },
   {
     "frterm": "lavande",
     "frterm2": "vertpale",
-    "dist": 0.3022
+    "dist": 0.3024
   },
   {
     "frterm": "lavande",
     "frterm2": "vertpomme",
-    "dist": 0.3285
+    "dist": 0.3287
   },
   {
     "frterm": "lavande",
     "frterm2": "vertsapin",
-    "dist": 0.2995
+    "dist": 0.2996
   },
   {
     "frterm": "lavande",
     "frterm2": "vieuxrose",
-    "dist": 0.1171
+    "dist": 0.1162
   },
   {
     "frterm": "lavande",
     "frterm2": "violet",
-    "dist": 0.19
+    "dist": 0.1912
   },
   {
     "frterm": "lavande",
     "frterm2": "violetfonce",
-    "dist": 0.3404
+    "dist": 0.3473
   },
   {
     "frterm": "lila",
     "frterm2": "lilas",
-    "dist": 0.0797
+    "dist": 0.0768
   },
   {
     "frterm": "lila",
     "frterm2": "magenta",
-    "dist": 0.1879
+    "dist": 0.1892
   },
   {
     "frterm": "lila",
     "frterm2": "marron",
-    "dist": 0.3304
+    "dist": 0.3434
+  },
+  {
+    "frterm": "lila",
+    "frterm2": "marronclair",
+    "dist": 0.2179
   },
   {
     "frterm": "lila",
     "frterm2": "mauve",
-    "dist": 0.183
+    "dist": 0.1876
   },
   {
     "frterm": "lila",
     "frterm2": "noir",
-    "dist": 0.5548
+    "dist": 0.5594
   },
   {
     "frterm": "lila",
     "frterm2": "ocre",
-    "dist": 0.2301
+    "dist": 0.2295
   },
   {
     "frterm": "lila",
     "frterm2": "orange",
-    "dist": 0.2453
+    "dist": 0.2446
   },
   {
     "frterm": "lila",
     "frterm2": "pourpre",
-    "dist": 0.3226
+    "dist": 0.3183
   },
   {
     "frterm": "lila",
     "frterm2": "prune",
-    "dist": 0.3429
+    "dist": 0.3437
   },
   {
     "frterm": "lila",
     "frterm2": "rose",
-    "dist": 0.1296
+    "dist": 0.1294
   },
   {
     "frterm": "lila",
     "frterm2": "rosefonce",
-    "dist": 0.2095
+    "dist": 0.2084
   },
   {
     "frterm": "lila",
     "frterm2": "rosepale",
-    "dist": 0.126
+    "dist": 0.1255
   },
   {
     "frterm": "lila",
     "frterm2": "rouge",
-    "dist": 0.2914
+    "dist": 0.2888
   },
   {
     "frterm": "lila",
     "frterm2": "rougefonce",
-    "dist": 0.3654
+    "dist": 0.3628
   },
   {
     "frterm": "lila",
     "frterm2": "saumon",
-    "dist": 0.1737
+    "dist": 0.1721
   },
   {
     "frterm": "lila",
     "frterm2": "taupe",
-    "dist": 0.2105
+    "dist": 0.2064
   },
   {
     "frterm": "lila",
     "frterm2": "turquoise",
-    "dist": 0.2324
+    "dist": 0.2286
   },
   {
     "frterm": "lila",
     "frterm2": "vert",
-    "dist": 0.2989
+    "dist": 0.2954
   },
   {
     "frterm": "lila",
     "frterm2": "vertclair",
-    "dist": 0.3074
+    "dist": 0.3071
   },
   {
     "frterm": "lila",
     "frterm2": "vertd'eau",
-    "dist": 0.2472
+    "dist": 0.245
   },
   {
     "frterm": "lila",
     "frterm2": "vertfluo",
-    "dist": 0.3853
+    "dist": 0.3834
   },
   {
     "frterm": "lila",
     "frterm2": "vertfonce",
-    "dist": 0.3944
+    "dist": 0.3907
   },
   {
     "frterm": "lila",
     "frterm2": "vertforet",
-    "dist": 0.3588
+    "dist": 0.354
   },
   {
     "frterm": "lila",
     "frterm2": "vertkaki",
-    "dist": 0.3019
+    "dist": 0.2995
   },
   {
     "frterm": "lila",
     "frterm2": "vertpale",
-    "dist": 0.289
+    "dist": 0.2899
   },
   {
     "frterm": "lila",
     "frterm2": "vertpomme",
-    "dist": 0.3355
+    "dist": 0.3342
   },
   {
     "frterm": "lila",
     "frterm2": "vertsapin",
-    "dist": 0.3388
+    "dist": 0.3342
   },
   {
     "frterm": "lila",
     "frterm2": "vieuxrose",
-    "dist": 0.1299
+    "dist": 0.1283
   },
   {
     "frterm": "lila",
     "frterm2": "violet",
-    "dist": 0.2192
+    "dist": 0.2171
   },
   {
     "frterm": "lila",
     "frterm2": "violetfonce",
-    "dist": 0.3775
+    "dist": 0.3807
   },
   {
     "frterm": "lilas",
     "frterm2": "magenta",
-    "dist": 0.1792
+    "dist": 0.179
   },
   {
     "frterm": "lilas",
     "frterm2": "marron",
-    "dist": 0.2892
+    "dist": 0.304
+  },
+  {
+    "frterm": "lilas",
+    "frterm2": "marronclair",
+    "dist": 0.1825
   },
   {
     "frterm": "lilas",
     "frterm2": "mauve",
-    "dist": 0.1621
+    "dist": 0.1675
   },
   {
     "frterm": "lilas",
     "frterm2": "noir",
-    "dist": 0.5231
+    "dist": 0.5304
   },
   {
     "frterm": "lilas",
     "frterm2": "ocre",
-    "dist": 0.1957
+    "dist": 0.1972
   },
   {
     "frterm": "lilas",
     "frterm2": "orange",
-    "dist": 0.221
+    "dist": 0.2212
   },
   {
     "frterm": "lilas",
     "frterm2": "pourpre",
-    "dist": 0.2934
+    "dist": 0.2894
   },
   {
     "frterm": "lilas",
     "frterm2": "prune",
-    "dist": 0.3145
+    "dist": 0.3161
   },
   {
     "frterm": "lilas",
     "frterm2": "rose",
-    "dist": 0.1209
+    "dist": 0.1183
   },
   {
     "frterm": "lilas",
     "frterm2": "rosefonce",
-    "dist": 0.1883
+    "dist": 0.1868
   },
   {
     "frterm": "lilas",
@@ -4512,657 +4892,802 @@
   {
     "frterm": "lilas",
     "frterm2": "rouge",
-    "dist": 0.2646
+    "dist": 0.262
   },
   {
     "frterm": "lilas",
     "frterm2": "rougefonce",
-    "dist": 0.3332
+    "dist": 0.3313
   },
   {
     "frterm": "lilas",
     "frterm2": "saumon",
-    "dist": 0.1558
+    "dist": 0.1544
   },
   {
     "frterm": "lilas",
     "frterm2": "taupe",
-    "dist": 0.1707
+    "dist": 0.1684
   },
   {
     "frterm": "lilas",
     "frterm2": "turquoise",
-    "dist": 0.2237
+    "dist": 0.2229
   },
   {
     "frterm": "lilas",
     "frterm2": "vert",
-    "dist": 0.2659
+    "dist": 0.2662
   },
   {
     "frterm": "lilas",
     "frterm2": "vertclair",
-    "dist": 0.2966
+    "dist": 0.2993
   },
   {
     "frterm": "lilas",
     "frterm2": "vertd'eau",
-    "dist": 0.2268
+    "dist": 0.2283
   },
   {
     "frterm": "lilas",
     "frterm2": "vertfluo",
-    "dist": 0.3721
+    "dist": 0.3732
   },
   {
     "frterm": "lilas",
     "frterm2": "vertfonce",
-    "dist": 0.354
+    "dist": 0.3534
   },
   {
     "frterm": "lilas",
     "frterm2": "vertforet",
-    "dist": 0.3244
+    "dist": 0.3222
   },
   {
     "frterm": "lilas",
     "frterm2": "vertkaki",
-    "dist": 0.2644
+    "dist": 0.2647
   },
   {
     "frterm": "lilas",
     "frterm2": "vertpale",
-    "dist": 0.2871
+    "dist": 0.2899
   },
   {
     "frterm": "lilas",
     "frterm2": "vertpomme",
-    "dist": 0.32
+    "dist": 0.3217
   },
   {
     "frterm": "lilas",
     "frterm2": "vertsapin",
-    "dist": 0.3057
+    "dist": 0.3038
   },
   {
     "frterm": "lilas",
     "frterm2": "vieuxrose",
-    "dist": 0.0856
+    "dist": 0.0855
   },
   {
     "frterm": "lilas",
     "frterm2": "violet",
-    "dist": 0.2016
+    "dist": 0.1997
   },
   {
     "frterm": "lilas",
     "frterm2": "violetfonce",
-    "dist": 0.3513
+    "dist": 0.3552
   },
   {
     "frterm": "magenta",
     "frterm2": "marron",
-    "dist": 0.2833
+    "dist": 0.2971
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "marronclair",
+    "dist": 0.2325
   },
   {
     "frterm": "magenta",
     "frterm2": "mauve",
-    "dist": 0.1454
+    "dist": 0.1506
   },
   {
     "frterm": "magenta",
     "frterm2": "noir",
-    "dist": 0.482
+    "dist": 0.4893
   },
   {
     "frterm": "magenta",
     "frterm2": "ocre",
-    "dist": 0.2663
+    "dist": 0.2665
   },
   {
     "frterm": "magenta",
     "frterm2": "orange",
-    "dist": 0.2633
+    "dist": 0.2627
   },
   {
     "frterm": "magenta",
     "frterm2": "pourpre",
-    "dist": 0.2101
+    "dist": 0.2088
   },
   {
     "frterm": "magenta",
     "frterm2": "prune",
-    "dist": 0.2515
+    "dist": 0.2582
   },
   {
     "frterm": "magenta",
     "frterm2": "rose",
-    "dist": 0.1002
+    "dist": 0.1057
   },
   {
     "frterm": "magenta",
     "frterm2": "rosefonce",
-    "dist": 0.0557
+    "dist": 0.0548
   },
   {
     "frterm": "magenta",
     "frterm2": "rosepale",
-    "dist": 0.2554
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "rouge",
-    "dist": 0.1828
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "rougefonce",
-    "dist": 0.2537
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "saumon",
-    "dist": 0.2442
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "taupe",
-    "dist": 0.2255
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "turquoise",
-    "dist": 0.3782
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "vert",
-    "dist": 0.3902
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "vertclair",
-    "dist": 0.4373
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "vertd'eau",
-    "dist": 0.377
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "vertfluo",
-    "dist": 0.5065
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "vertfonce",
-    "dist": 0.3924
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "vertforet",
-    "dist": 0.3731
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "vertkaki",
-    "dist": 0.3263
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "vertpale",
-    "dist": 0.4266
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "vertpomme",
-    "dist": 0.45
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "vertsapin",
-    "dist": 0.3555
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "vieuxrose",
-    "dist": 0.1954
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "violet",
-    "dist": 0.1548
-  },
-  {
-    "frterm": "magenta",
-    "frterm2": "violetfonce",
-    "dist": 0.2899
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "mauve",
-    "dist": 0.2351
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "noir",
-    "dist": 0.2808
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "ocre",
-    "dist": 0.263
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "orange",
-    "dist": 0.2687
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "pourpre",
-    "dist": 0.1771
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "prune",
-    "dist": 0.1562
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "rose",
-    "dist": 0.2976
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "rosefonce",
-    "dist": 0.2587
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "rosepale",
-    "dist": 0.3636
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "rouge",
-    "dist": 0.1862
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "rougefonce",
-    "dist": 0.146
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "saumon",
-    "dist": 0.3284
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "taupe",
-    "dist": 0.1342
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "turquoise",
-    "dist": 0.3581
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "vert",
-    "dist": 0.2902
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "vertclair",
-    "dist": 0.4248
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "vertd'eau",
-    "dist": 0.3438
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "vertfluo",
-    "dist": 0.4373
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "vertfonce",
-    "dist": 0.1441
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "vertforet",
-    "dist": 0.1601
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "vertkaki",
-    "dist": 0.1406
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "vertpale",
-    "dist": 0.4577
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "vertpomme",
-    "dist": 0.3934
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "vertsapin",
-    "dist": 0.1546
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "vieuxrose",
-    "dist": 0.2785
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "violet",
-    "dist": 0.2471
-  },
-  {
-    "frterm": "marron",
-    "frterm2": "violetfonce",
-    "dist": 0.2156
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "noir",
-    "dist": 0.4111
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "ocre",
-    "dist": 0.2963
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "orange",
-    "dist": 0.3136
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "pourpre",
-    "dist": 0.167
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "prune",
-    "dist": 0.1882
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "rose",
-    "dist": 0.173
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "rosefonce",
-    "dist": 0.1721
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "rosepale",
-    "dist": 0.2801
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "rouge",
-    "dist": 0.2411
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "rougefonce",
-    "dist": 0.2584
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "saumon",
-    "dist": 0.2902
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "taupe",
-    "dist": 0.1829
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "turquoise",
-    "dist": 0.3396
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "vert",
-    "dist": 0.3548
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "vertclair",
-    "dist": 0.4334
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "vertd'eau",
-    "dist": 0.3418
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "vertfluo",
-    "dist": 0.4957
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "vertfonce",
-    "dist": 0.308
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "vertforet",
-    "dist": 0.3119
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "vertkaki",
-    "dist": 0.2844
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "vertpale",
-    "dist": 0.4382
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "vertpomme",
-    "dist": 0.4416
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "vertsapin",
-    "dist": 0.2935
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "vieuxrose",
-    "dist": 0.2159
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "violet",
-    "dist": 0.0624
-  },
-  {
-    "frterm": "mauve",
-    "frterm2": "violetfonce",
-    "dist": 0.2092
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "ocre",
-    "dist": 0.5398
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "orange",
-    "dist": 0.5447
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "pourpre",
-    "dist": 0.2794
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "prune",
-    "dist": 0.2364
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "rose",
-    "dist": 0.537
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "rosefonce",
-    "dist": 0.4643
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "rosepale",
-    "dist": 0.6218
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "rouge",
-    "dist": 0.4066
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "rougefonce",
-    "dist": 0.2788
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "saumon",
-    "dist": 0.5992
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "taupe",
-    "dist": 0.3898
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "turquoise",
-    "dist": 0.5884
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "vert",
-    "dist": 0.5273
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "vertclair",
-    "dist": 0.6767
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "vertd'eau",
-    "dist": 0.5804
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "vertfluo",
-    "dist": 0.6728
-  },
-  {
-    "frterm": "noir",
-    "frterm2": "vertfonce",
     "dist": 0.2532
   },
   {
+    "frterm": "magenta",
+    "frterm2": "rouge",
+    "dist": 0.1812
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "rougefonce",
+    "dist": 0.2536
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "saumon",
+    "dist": 0.2389
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "taupe",
+    "dist": 0.2259
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "turquoise",
+    "dist": 0.3776
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vert",
+    "dist": 0.3911
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertclair",
+    "dist": 0.439
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertd'eau",
+    "dist": 0.3785
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertfluo",
+    "dist": 0.5071
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertfonce",
+    "dist": 0.3943
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertforet",
+    "dist": 0.374
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertkaki",
+    "dist": 0.3282
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertpale",
+    "dist": 0.4276
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertpomme",
+    "dist": 0.4513
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vertsapin",
+    "dist": 0.3566
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "vieuxrose",
+    "dist": 0.1933
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "violet",
+    "dist": 0.1575
+  },
+  {
+    "frterm": "magenta",
+    "frterm2": "violetfonce",
+    "dist": 0.299
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "marronclair",
+    "dist": 0.1699
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "mauve",
+    "dist": 0.2462
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "noir",
+    "dist": 0.2741
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "ocre",
+    "dist": 0.2827
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "orange",
+    "dist": 0.2881
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "pourpre",
+    "dist": 0.179
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "prune",
+    "dist": 0.1532
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "rose",
+    "dist": 0.3184
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "rosefonce",
+    "dist": 0.273
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "rosepale",
+    "dist": 0.3802
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "rouge",
+    "dist": 0.1989
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "rougefonce",
+    "dist": 0.1495
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "saumon",
+    "dist": 0.3418
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "taupe",
+    "dist": 0.1523
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "turquoise",
+    "dist": 0.3727
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vert",
+    "dist": 0.3055
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertclair",
+    "dist": 0.4436
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertd'eau",
+    "dist": 0.3611
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertfluo",
+    "dist": 0.4541
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertfonce",
+    "dist": 0.1376
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertforet",
+    "dist": 0.1646
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertkaki",
+    "dist": 0.1521
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertpale",
+    "dist": 0.4773
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertpomme",
+    "dist": 0.4114
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vertsapin",
+    "dist": 0.1602
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "vieuxrose",
+    "dist": 0.2929
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "violet",
+    "dist": 0.2541
+  },
+  {
+    "frterm": "marron",
+    "frterm2": "violetfonce",
+    "dist": 0.2098
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "mauve",
+    "dist": 0.2305
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "noir",
+    "dist": 0.4295
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "ocre",
+    "dist": 0.1318
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "orange",
+    "dist": 0.1522
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "pourpre",
+    "dist": 0.2471
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "prune",
+    "dist": 0.256
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "rose",
+    "dist": 0.2076
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "rosefonce",
+    "dist": 0.2113
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "rosepale",
+    "dist": 0.2248
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "rouge",
+    "dist": 0.1778
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "rougefonce",
+    "dist": 0.2236
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "saumon",
+    "dist": 0.1876
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "taupe",
+    "dist": 0.0638
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "turquoise",
+    "dist": 0.238
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "vert",
+    "dist": 0.1942
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "vertclair",
+    "dist": 0.2956
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "vertd'eau",
+    "dist": 0.2275
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "vertfluo",
+    "dist": 0.3232
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "vertfonce",
+    "dist": 0.2349
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "vertforet",
+    "dist": 0.1922
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "vertkaki",
+    "dist": 0.1139
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "vertpale",
+    "dist": 0.3179
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "vertpomme",
+    "dist": 0.2757
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "vertsapin",
+    "dist": 0.1811
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "vieuxrose",
+    "dist": 0.1436
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "violet",
+    "dist": 0.2478
+  },
+  {
+    "frterm": "marronclair",
+    "frterm2": "violetfonce",
+    "dist": 0.3197
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "noir",
+    "dist": 0.4123
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "ocre",
+    "dist": 0.3057
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "orange",
+    "dist": 0.3217
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "pourpre",
+    "dist": 0.164
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "prune",
+    "dist": 0.1886
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "rose",
+    "dist": 0.1854
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "rosefonce",
+    "dist": 0.1775
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "rosepale",
+    "dist": 0.2858
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "rouge",
+    "dist": 0.2447
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "rougefonce",
+    "dist": 0.2604
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "saumon",
+    "dist": 0.2936
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "taupe",
+    "dist": 0.1887
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "turquoise",
+    "dist": 0.3446
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vert",
+    "dist": 0.3617
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertclair",
+    "dist": 0.443
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertd'eau",
+    "dist": 0.3496
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertfluo",
+    "dist": 0.5037
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertfonce",
+    "dist": 0.3105
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertforet",
+    "dist": 0.3142
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertkaki",
+    "dist": 0.2898
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertpale",
+    "dist": 0.4475
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertpomme",
+    "dist": 0.4501
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vertsapin",
+    "dist": 0.2957
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "vieuxrose",
+    "dist": 0.2209
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "violet",
+    "dist": 0.0542
+  },
+  {
+    "frterm": "mauve",
+    "frterm2": "violetfonce",
+    "dist": 0.21
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "ocre",
+    "dist": 0.5527
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "orange",
+    "dist": 0.5576
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "pourpre",
+    "dist": 0.2867
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "prune",
+    "dist": 0.2365
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "rose",
+    "dist": 0.5506
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "rosefonce",
+    "dist": 0.4738
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "rosepale",
+    "dist": 0.63
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "rouge",
+    "dist": 0.4166
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "rougefonce",
+    "dist": 0.288
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "saumon",
+    "dist": 0.6043
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "taupe",
+    "dist": 0.4015
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "turquoise",
+    "dist": 0.5986
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vert",
+    "dist": 0.541
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertclair",
+    "dist": 0.6914
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertd'eau",
+    "dist": 0.5935
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertfluo",
+    "dist": 0.6886
+  },
+  {
+    "frterm": "noir",
+    "frterm2": "vertfonce",
+    "dist": 0.2669
+  },
+  {
     "frterm": "noir",
     "frterm2": "vertforet",
-    "dist": 0.2978
+    "dist": 0.3127
   },
   {
     "frterm": "noir",
     "frterm2": "vertkaki",
-    "dist": 0.3694
+    "dist": 0.3811
   },
   {
     "frterm": "noir",
     "frterm2": "vertpale",
-    "dist": 0.719
+    "dist": 0.7325
   },
   {
     "frterm": "noir",
     "frterm2": "vertpomme",
-    "dist": 0.6401
+    "dist": 0.6554
   },
   {
     "frterm": "noir",
     "frterm2": "vertsapin",
-    "dist": 0.3014
+    "dist": 0.3153
   },
   {
     "frterm": "noir",
     "frterm2": "vieuxrose",
-    "dist": 0.5387
+    "dist": 0.5448
   },
   {
     "frterm": "noir",
     "frterm2": "violet",
-    "dist": 0.3876
+    "dist": 0.3915
   },
   {
     "frterm": "noir",
     "frterm2": "violetfonce",
-    "dist": 0.2251
+    "dist": 0.2208
   },
   {
     "frterm": "ocre",
     "frterm2": "orange",
-    "dist": 0.0647
+    "dist": 0.0644
   },
   {
     "frterm": "ocre",
     "frterm2": "pourpre",
-    "dist": 0.3529
+    "dist": 0.352
   },
   {
     "frterm": "ocre",
     "frterm2": "prune",
-    "dist": 0.3657
+    "dist": 0.3713
   },
   {
     "frterm": "ocre",
     "frterm2": "rose",
-    "dist": 0.2028
+    "dist": 0.2007
   },
   {
     "frterm": "ocre",
     "frterm2": "rosefonce",
-    "dist": 0.2468
+    "dist": 0.2456
   },
   {
     "frterm": "ocre",
     "frterm2": "rosepale",
-    "dist": 0.1681
+    "dist": 0.1675
   },
   {
     "frterm": "ocre",
     "frterm2": "rouge",
-    "dist": 0.221
+    "dist": 0.2198
   },
   {
     "frterm": "ocre",
@@ -5172,257 +5697,257 @@
   {
     "frterm": "ocre",
     "frterm2": "saumon",
-    "dist": 0.1058
+    "dist": 0.1029
   },
   {
     "frterm": "ocre",
     "frterm2": "taupe",
-    "dist": 0.1715
+    "dist": 0.1726
   },
   {
     "frterm": "ocre",
     "frterm2": "turquoise",
-    "dist": 0.2237
+    "dist": 0.2242
   },
   {
     "frterm": "ocre",
     "frterm2": "vert",
-    "dist": 0.1876
+    "dist": 0.1887
   },
   {
     "frterm": "ocre",
     "frterm2": "vertclair",
-    "dist": 0.2213
+    "dist": 0.223
   },
   {
     "frterm": "ocre",
     "frterm2": "vertd'eau",
-    "dist": 0.2061
+    "dist": 0.2082
   },
   {
     "frterm": "ocre",
     "frterm2": "vertfluo",
-    "dist": 0.2708
+    "dist": 0.2714
   },
   {
     "frterm": "ocre",
     "frterm2": "vertfonce",
-    "dist": 0.3355
+    "dist": 0.3376
   },
   {
     "frterm": "ocre",
     "frterm2": "vertforet",
-    "dist": 0.3037
+    "dist": 0.3046
   },
   {
     "frterm": "ocre",
     "frterm2": "vertkaki",
-    "dist": 0.2113
+    "dist": 0.2145
   },
   {
     "frterm": "ocre",
     "frterm2": "vertpale",
-    "dist": 0.2265
+    "dist": 0.2276
   },
   {
     "frterm": "ocre",
     "frterm2": "vertpomme",
-    "dist": 0.2159
+    "dist": 0.2171
   },
   {
     "frterm": "ocre",
     "frterm2": "vertsapin",
-    "dist": 0.296
+    "dist": 0.2974
   },
   {
     "frterm": "ocre",
     "frterm2": "vieuxrose",
-    "dist": 0.1247
+    "dist": 0.126
   },
   {
     "frterm": "ocre",
     "frterm2": "violet",
-    "dist": 0.3342
+    "dist": 0.3354
   },
   {
     "frterm": "ocre",
     "frterm2": "violetfonce",
-    "dist": 0.4293
+    "dist": 0.4356
   },
   {
     "frterm": "orange",
     "frterm2": "pourpre",
-    "dist": 0.3554
+    "dist": 0.3545
   },
   {
     "frterm": "orange",
     "frterm2": "prune",
-    "dist": 0.3691
+    "dist": 0.3752
   },
   {
     "frterm": "orange",
     "frterm2": "rose",
-    "dist": 0.2032
+    "dist": 0.201
   },
   {
     "frterm": "orange",
     "frterm2": "rosefonce",
-    "dist": 0.2336
+    "dist": 0.2322
   },
   {
     "frterm": "orange",
     "frterm2": "rosepale",
-    "dist": 0.186
+    "dist": 0.1849
   },
   {
     "frterm": "orange",
     "frterm2": "rouge",
-    "dist": 0.2029
+    "dist": 0.2022
   },
   {
     "frterm": "orange",
     "frterm2": "rougefonce",
-    "dist": 0.31
+    "dist": 0.3103
   },
   {
     "frterm": "orange",
     "frterm2": "saumon",
-    "dist": 0.1106
+    "dist": 0.1064
   },
   {
     "frterm": "orange",
     "frterm2": "taupe",
-    "dist": 0.1932
+    "dist": 0.1941
   },
   {
     "frterm": "orange",
     "frterm2": "turquoise",
-    "dist": 0.2674
+    "dist": 0.2672
   },
   {
     "frterm": "orange",
     "frterm2": "vert",
-    "dist": 0.2318
+    "dist": 0.2328
   },
   {
     "frterm": "orange",
     "frterm2": "vertclair",
-    "dist": 0.255
+    "dist": 0.2562
   },
   {
     "frterm": "orange",
     "frterm2": "vertd'eau",
-    "dist": 0.254
+    "dist": 0.2555
   },
   {
     "frterm": "orange",
     "frterm2": "vertfluo",
-    "dist": 0.2984
+    "dist": 0.2989
   },
   {
     "frterm": "orange",
     "frterm2": "vertfonce",
-    "dist": 0.3617
+    "dist": 0.3628
   },
   {
     "frterm": "orange",
     "frterm2": "vertforet",
-    "dist": 0.3222
+    "dist": 0.3232
   },
   {
     "frterm": "orange",
     "frterm2": "vertkaki",
-    "dist": 0.2298
+    "dist": 0.2329
   },
   {
     "frterm": "orange",
     "frterm2": "vertpale",
-    "dist": 0.2534
+    "dist": 0.2539
   },
   {
     "frterm": "orange",
     "frterm2": "vertpomme",
-    "dist": 0.2484
+    "dist": 0.2495
   },
   {
     "frterm": "orange",
     "frterm2": "vertsapin",
-    "dist": 0.3146
+    "dist": 0.316
   },
   {
     "frterm": "orange",
     "frterm2": "vieuxrose",
-    "dist": 0.1474
+    "dist": 0.1477
   },
   {
     "frterm": "orange",
     "frterm2": "violet",
-    "dist": 0.3457
+    "dist": 0.3467
   },
   {
     "frterm": "orange",
     "frterm2": "violetfonce",
-    "dist": 0.4378
+    "dist": 0.4443
   },
   {
     "frterm": "pourpre",
     "frterm2": "prune",
-    "dist": 0.0617
+    "dist": 0.0689
   },
   {
     "frterm": "pourpre",
     "frterm2": "rose",
-    "dist": 0.2796
+    "dist": 0.2838
   },
   {
     "frterm": "pourpre",
     "frterm2": "rosefonce",
-    "dist": 0.2009
+    "dist": 0.2014
   },
   {
     "frterm": "pourpre",
     "frterm2": "rosepale",
-    "dist": 0.3999
+    "dist": 0.3955
   },
   {
     "frterm": "pourpre",
     "frterm2": "rouge",
-    "dist": 0.2008
+    "dist": 0.2004
   },
   {
     "frterm": "pourpre",
     "frterm2": "rougefonce",
-    "dist": 0.1322
+    "dist": 0.1328
   },
   {
     "frterm": "pourpre",
     "frterm2": "saumon",
-    "dist": 0.3828
+    "dist": 0.3748
   },
   {
     "frterm": "pourpre",
     "frterm2": "taupe",
-    "dist": 0.215
+    "dist": 0.214
   },
   {
     "frterm": "pourpre",
     "frterm2": "turquoise",
-    "dist": 0.4388
+    "dist": 0.4356
   },
   {
     "frterm": "pourpre",
     "frterm2": "vert",
-    "dist": 0.4116
+    "dist": 0.4107
   },
   {
     "frterm": "pourpre",
     "frterm2": "vertclair",
-    "dist": 0.5236
+    "dist": 0.5238
   },
   {
     "frterm": "pourpre",
     "frterm2": "vertd'eau",
-    "dist": 0.433
+    "dist": 0.4326
   },
   {
     "frterm": "pourpre",
@@ -5432,22 +5957,22 @@
   {
     "frterm": "pourpre",
     "frterm2": "vertfonce",
-    "dist": 0.2689
+    "dist": 0.2696
   },
   {
     "frterm": "pourpre",
     "frterm2": "vertforet",
-    "dist": 0.2742
+    "dist": 0.2748
   },
   {
     "frterm": "pourpre",
     "frterm2": "vertkaki",
-    "dist": 0.2785
+    "dist": 0.2778
   },
   {
     "frterm": "pourpre",
     "frterm2": "vertpale",
-    "dist": 0.5414
+    "dist": 0.5408
   },
   {
     "frterm": "pourpre",
@@ -5457,442 +5982,442 @@
   {
     "frterm": "pourpre",
     "frterm2": "vertsapin",
-    "dist": 0.2614
+    "dist": 0.2618
   },
   {
     "frterm": "pourpre",
     "frterm2": "vieuxrose",
-    "dist": 0.3186
+    "dist": 0.3123
   },
   {
     "frterm": "pourpre",
     "frterm2": "violet",
-    "dist": 0.1438
+    "dist": 0.1428
   },
   {
     "frterm": "pourpre",
     "frterm2": "violetfonce",
-    "dist": 0.1094
+    "dist": 0.1171
   },
   {
     "frterm": "prune",
     "frterm2": "rose",
-    "dist": 0.3118
+    "dist": 0.3235
   },
   {
     "frterm": "prune",
     "frterm2": "rosefonce",
-    "dist": 0.2376
+    "dist": 0.2464
   },
   {
     "frterm": "prune",
     "frterm2": "rosepale",
-    "dist": 0.42
+    "dist": 0.422
   },
   {
     "frterm": "prune",
     "frterm2": "rouge",
-    "dist": 0.2208
+    "dist": 0.228
   },
   {
     "frterm": "prune",
     "frterm2": "rougefonce",
-    "dist": 0.1383
+    "dist": 0.1456
   },
   {
     "frterm": "prune",
     "frterm2": "saumon",
-    "dist": 0.4024
+    "dist": 0.4013
   },
   {
     "frterm": "prune",
     "frterm2": "taupe",
-    "dist": 0.2159
+    "dist": 0.2192
   },
   {
     "frterm": "prune",
     "frterm2": "turquoise",
-    "dist": 0.4394
+    "dist": 0.4397
   },
   {
     "frterm": "prune",
     "frterm2": "vert",
-    "dist": 0.4055
+    "dist": 0.4074
   },
   {
     "frterm": "prune",
     "frterm2": "vertclair",
-    "dist": 0.5286
+    "dist": 0.5331
   },
   {
     "frterm": "prune",
     "frterm2": "vertd'eau",
-    "dist": 0.4332
+    "dist": 0.4361
   },
   {
     "frterm": "prune",
     "frterm2": "vertfluo",
-    "dist": 0.5564
+    "dist": 0.5601
   },
   {
     "frterm": "prune",
     "frterm2": "vertfonce",
-    "dist": 0.2328
+    "dist": 0.2302
   },
   {
     "frterm": "prune",
     "frterm2": "vertforet",
-    "dist": 0.2479
+    "dist": 0.2483
   },
   {
     "frterm": "prune",
     "frterm2": "vertkaki",
-    "dist": 0.2624
+    "dist": 0.2633
   },
   {
     "frterm": "prune",
     "frterm2": "vertpale",
-    "dist": 0.5512
+    "dist": 0.5559
   },
   {
     "frterm": "prune",
     "frterm2": "vertpomme",
-    "dist": 0.51
+    "dist": 0.5142
   },
   {
     "frterm": "prune",
     "frterm2": "vertsapin",
-    "dist": 0.2356
+    "dist": 0.2357
   },
   {
     "frterm": "prune",
     "frterm2": "vieuxrose",
-    "dist": 0.3371
+    "dist": 0.3372
   },
   {
     "frterm": "prune",
     "frterm2": "violet",
-    "dist": 0.1674
+    "dist": 0.1694
   },
   {
     "frterm": "prune",
     "frterm2": "violetfonce",
-    "dist": 0.0934
+    "dist": 0.0921
   },
   {
     "frterm": "rose",
     "frterm2": "rosefonce",
-    "dist": 0.111
+    "dist": 0.1146
   },
   {
     "frterm": "rose",
     "frterm2": "rosepale",
-    "dist": 0.1627
+    "dist": 0.1545
   },
   {
     "frterm": "rose",
     "frterm2": "rouge",
-    "dist": 0.2103
+    "dist": 0.2138
   },
   {
     "frterm": "rose",
     "frterm2": "rougefonce",
-    "dist": 0.3054
-  },
-  {
-    "frterm": "rose",
-    "frterm2": "saumon",
-    "dist": 0.1562
-  },
-  {
-    "frterm": "rose",
-    "frterm2": "taupe",
-    "dist": 0.2049
-  },
-  {
-    "frterm": "rose",
-    "frterm2": "turquoise",
-    "dist": 0.3099
-  },
-  {
-    "frterm": "rose",
-    "frterm2": "vert",
-    "dist": 0.3336
-  },
-  {
-    "frterm": "rose",
-    "frterm2": "vertclair",
-    "dist": 0.3573
-  },
-  {
-    "frterm": "rose",
-    "frterm2": "vertd'eau",
     "dist": 0.311
   },
   {
     "frterm": "rose",
+    "frterm2": "saumon",
+    "dist": 0.1469
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "taupe",
+    "dist": 0.2069
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "turquoise",
+    "dist": 0.3058
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vert",
+    "dist": 0.3316
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vertclair",
+    "dist": 0.3537
+  },
+  {
+    "frterm": "rose",
+    "frterm2": "vertd'eau",
+    "dist": 0.3083
+  },
+  {
+    "frterm": "rose",
     "frterm2": "vertfluo",
-    "dist": 0.4338
+    "dist": 0.4301
   },
   {
     "frterm": "rose",
     "frterm2": "vertfonce",
-    "dist": 0.3945
+    "dist": 0.3986
   },
   {
     "frterm": "rose",
     "frterm2": "vertforet",
-    "dist": 0.3747
+    "dist": 0.3768
   },
   {
     "frterm": "rose",
     "frterm2": "vertkaki",
-    "dist": 0.3088
+    "dist": 0.3119
   },
   {
     "frterm": "rose",
     "frterm2": "vertpale",
-    "dist": 0.3372
+    "dist": 0.3322
   },
   {
     "frterm": "rose",
     "frterm2": "vertpomme",
-    "dist": 0.3758
+    "dist": 0.3728
   },
   {
     "frterm": "rose",
     "frterm2": "vertsapin",
-    "dist": 0.3583
+    "dist": 0.3609
   },
   {
     "frterm": "rose",
     "frterm2": "vieuxrose",
-    "dist": 0.1222
+    "dist": 0.118
   },
   {
     "frterm": "rose",
     "frterm2": "violet",
-    "dist": 0.2113
+    "dist": 0.2176
   },
   {
     "frterm": "rose",
     "frterm2": "violetfonce",
-    "dist": 0.3587
+    "dist": 0.3721
   },
   {
     "frterm": "rosefonce",
     "frterm2": "rosepale",
+    "dist": 0.2538
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "rouge",
+    "dist": 0.1392
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "rougefonce",
+    "dist": 0.223
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "saumon",
+    "dist": 0.2265
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "taupe",
+    "dist": 0.2112
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "turquoise",
+    "dist": 0.3779
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "vert",
+    "dist": 0.3787
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "vertclair",
+    "dist": 0.4328
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "vertd'eau",
+    "dist": 0.3749
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "vertfluo",
+    "dist": 0.4908
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "vertfonce",
+    "dist": 0.3789
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "vertforet",
+    "dist": 0.3551
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "vertkaki",
+    "dist": 0.3063
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "vertpale",
+    "dist": 0.4208
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "vertpomme",
+    "dist": 0.4376
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "vertsapin",
+    "dist": 0.3396
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "vieuxrose",
+    "dist": 0.1888
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "violet",
+    "dist": 0.184
+  },
+  {
+    "frterm": "rosefonce",
+    "frterm2": "violetfonce",
+    "dist": 0.3021
+  },
+  {
+    "frterm": "rosepale",
+    "frterm2": "rouge",
+    "dist": 0.3113
+  },
+  {
+    "frterm": "rosepale",
+    "frterm2": "rougefonce",
+    "dist": 0.4089
+  },
+  {
+    "frterm": "rosepale",
+    "frterm2": "saumon",
+    "dist": 0.0871
+  },
+  {
+    "frterm": "rosepale",
+    "frterm2": "taupe",
+    "dist": 0.2375
+  },
+  {
+    "frterm": "rosepale",
+    "frterm2": "turquoise",
+    "dist": 0.1988
+  },
+  {
+    "frterm": "rosepale",
+    "frterm2": "vert",
     "dist": 0.2576
   },
   {
-    "frterm": "rosefonce",
-    "frterm2": "rouge",
-    "dist": 0.1402
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "rougefonce",
-    "dist": 0.2217
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "saumon",
-    "dist": 0.2339
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "taupe",
-    "dist": 0.2111
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "turquoise",
-    "dist": 0.3801
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "vert",
-    "dist": 0.379
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "vertclair",
-    "dist": 0.4327
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "vertd'eau",
-    "dist": 0.3746
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "vertfluo",
-    "dist": 0.4913
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "vertfonce",
-    "dist": 0.3773
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "vertforet",
-    "dist": 0.3538
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "vertkaki",
-    "dist": 0.3046
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "vertpale",
-    "dist": 0.4215
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "vertpomme",
-    "dist": 0.4377
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "vertsapin",
-    "dist": 0.3381
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "vieuxrose",
-    "dist": 0.1927
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "violet",
-    "dist": 0.1809
-  },
-  {
-    "frterm": "rosefonce",
-    "frterm2": "violetfonce",
-    "dist": 0.2921
-  },
-  {
-    "frterm": "rosepale",
-    "frterm2": "rouge",
-    "dist": 0.3147
-  },
-  {
-    "frterm": "rosepale",
-    "frterm2": "rougefonce",
-    "dist": 0.4115
-  },
-  {
-    "frterm": "rosepale",
-    "frterm2": "saumon",
-    "dist": 0.0855
-  },
-  {
-    "frterm": "rosepale",
-    "frterm2": "taupe",
-    "dist": 0.2401
-  },
-  {
-    "frterm": "rosepale",
-    "frterm2": "turquoise",
-    "dist": 0.1993
-  },
-  {
-    "frterm": "rosepale",
-    "frterm2": "vert",
-    "dist": 0.2581
-  },
-  {
     "frterm": "rosepale",
     "frterm2": "vertclair",
-    "dist": 0.2214
+    "dist": 0.2234
   },
   {
     "frterm": "rosepale",
     "frterm2": "vertd'eau",
-    "dist": 0.2059
+    "dist": 0.2062
   },
   {
     "frterm": "rosepale",
     "frterm2": "vertfluo",
-    "dist": 0.3099
+    "dist": 0.3104
   },
   {
     "frterm": "rosepale",
     "frterm2": "vertfonce",
-    "dist": 0.4222
+    "dist": 0.4217
   },
   {
     "frterm": "rosepale",
     "frterm2": "vertforet",
-    "dist": 0.3894
+    "dist": 0.3871
   },
   {
     "frterm": "rosepale",
     "frterm2": "vertkaki",
-    "dist": 0.3111
+    "dist": 0.3114
   },
   {
     "frterm": "rosepale",
     "frterm2": "vertpale",
-    "dist": 0.187
+    "dist": 0.1896
   },
   {
     "frterm": "rosepale",
     "frterm2": "vertpomme",
-    "dist": 0.2593
+    "dist": 0.2602
   },
   {
     "frterm": "rosepale",
     "frterm2": "vertsapin",
-    "dist": 0.3739
+    "dist": 0.372
   },
   {
     "frterm": "rosepale",
     "frterm2": "vieuxrose",
-    "dist": 0.0894
+    "dist": 0.0914
   },
   {
     "frterm": "rosepale",
     "frterm2": "violet",
-    "dist": 0.3214
+    "dist": 0.3194
   },
   {
     "frterm": "rosepale",
     "frterm2": "violetfonce",
-    "dist": 0.4661
+    "dist": 0.4698
   },
   {
     "frterm": "rouge",
     "frterm2": "rougefonce",
-    "dist": 0.1401
+    "dist": 0.1416
   },
   {
     "frterm": "rouge",
     "frterm2": "saumon",
-    "dist": 0.2621
+    "dist": 0.2545
   },
   {
     "frterm": "rouge",
     "frterm2": "taupe",
-    "dist": 0.1855
+    "dist": 0.1859
   },
   {
     "frterm": "rouge",
     "frterm2": "turquoise",
-    "dist": 0.3895
+    "dist": 0.3871
   },
   {
     "frterm": "rouge",
     "frterm2": "vert",
-    "dist": 0.3452
+    "dist": 0.3446
   },
   {
     "frterm": "rouge",
     "frterm2": "vertclair",
-    "dist": 0.4302
+    "dist": 0.4305
   },
   {
     "frterm": "rouge",
@@ -5902,27 +6427,27 @@
   {
     "frterm": "rouge",
     "frterm2": "vertfluo",
-    "dist": 0.4684
+    "dist": 0.4682
   },
   {
     "frterm": "rouge",
     "frterm2": "vertfonce",
-    "dist": 0.3183
+    "dist": 0.3188
   },
   {
     "frterm": "rouge",
     "frterm2": "vertforet",
-    "dist": 0.3011
+    "dist": 0.3019
   },
   {
     "frterm": "rouge",
     "frterm2": "vertkaki",
-    "dist": 0.2495
+    "dist": 0.2504
   },
   {
     "frterm": "rouge",
     "frterm2": "vertpale",
-    "dist": 0.4371
+    "dist": 0.4367
   },
   {
     "frterm": "rouge",
@@ -5932,12 +6457,12 @@
   {
     "frterm": "rouge",
     "frterm2": "vertsapin",
-    "dist": 0.292
+    "dist": 0.2929
   },
   {
     "frterm": "rouge",
     "frterm2": "vieuxrose",
-    "dist": 0.2336
+    "dist": 0.229
   },
   {
     "frterm": "rouge",
@@ -5947,52 +6472,52 @@
   {
     "frterm": "rouge",
     "frterm2": "violetfonce",
-    "dist": 0.2961
+    "dist": 0.3029
   },
   {
     "frterm": "rougefonce",
     "frterm2": "saumon",
-    "dist": 0.3711
+    "dist": 0.3645
   },
   {
     "frterm": "rougefonce",
     "frterm2": "taupe",
-    "dist": 0.2173
+    "dist": 0.2183
   },
   {
     "frterm": "rougefonce",
     "frterm2": "turquoise",
-    "dist": 0.4485
+    "dist": 0.4467
   },
   {
     "frterm": "rougefonce",
     "frterm2": "vert",
-    "dist": 0.395
+    "dist": 0.3952
   },
   {
     "frterm": "rougefonce",
     "frterm2": "vertclair",
-    "dist": 0.5108
+    "dist": 0.5121
   },
   {
     "frterm": "rougefonce",
     "frterm2": "vertd'eau",
-    "dist": 0.4382
+    "dist": 0.4392
   },
   {
     "frterm": "rougefonce",
     "frterm2": "vertfluo",
-    "dist": 0.532
+    "dist": 0.5329
   },
   {
     "frterm": "rougefonce",
     "frterm2": "vertfonce",
-    "dist": 0.2618
+    "dist": 0.262
   },
   {
     "frterm": "rougefonce",
     "frterm2": "vertforet",
-    "dist": 0.2573
+    "dist": 0.2583
   },
   {
     "frterm": "rougefonce",
@@ -6002,112 +6527,112 @@
   {
     "frterm": "rougefonce",
     "frterm2": "vertpale",
-    "dist": 0.5317
+    "dist": 0.5324
   },
   {
     "frterm": "rougefonce",
     "frterm2": "vertpomme",
-    "dist": 0.484
+    "dist": 0.4852
   },
   {
     "frterm": "rougefonce",
     "frterm2": "vertsapin",
-    "dist": 0.2527
+    "dist": 0.2535
   },
   {
     "frterm": "rougefonce",
     "frterm2": "vieuxrose",
-    "dist": 0.3248
+    "dist": 0.3204
   },
   {
     "frterm": "rougefonce",
     "frterm2": "violet",
-    "dist": 0.2498
+    "dist": 0.2508
   },
   {
     "frterm": "rougefonce",
     "frterm2": "violetfonce",
-    "dist": 0.2132
+    "dist": 0.2186
   },
   {
     "frterm": "saumon",
     "frterm2": "taupe",
-    "dist": 0.2173
+    "dist": 0.2114
   },
   {
     "frterm": "saumon",
     "frterm2": "turquoise",
-    "dist": 0.2269
+    "dist": 0.2275
   },
   {
     "frterm": "saumon",
     "frterm2": "vert",
-    "dist": 0.2454
+    "dist": 0.2445
   },
   {
     "frterm": "saumon",
     "frterm2": "vertclair",
-    "dist": 0.2252
+    "dist": 0.229
   },
   {
     "frterm": "saumon",
     "frterm2": "vertd'eau",
-    "dist": 0.2224
+    "dist": 0.224
   },
   {
     "frterm": "saumon",
     "frterm2": "vertfluo",
-    "dist": 0.3026
+    "dist": 0.3044
   },
   {
     "frterm": "saumon",
     "frterm2": "vertfonce",
-    "dist": 0.4048
+    "dist": 0.4011
   },
   {
     "frterm": "saumon",
     "frterm2": "vertforet",
-    "dist": 0.3712
+    "dist": 0.3661
   },
   {
     "frterm": "saumon",
     "frterm2": "vertkaki",
-    "dist": 0.2827
+    "dist": 0.2802
   },
   {
     "frterm": "saumon",
     "frterm2": "vertpale",
-    "dist": 0.1997
+    "dist": 0.205
   },
   {
     "frterm": "saumon",
     "frterm2": "vertpomme",
-    "dist": 0.2493
+    "dist": 0.2518
   },
   {
     "frterm": "saumon",
     "frterm2": "vertsapin",
-    "dist": 0.3581
+    "dist": 0.3535
   },
   {
     "frterm": "saumon",
     "frterm2": "vieuxrose",
-    "dist": 0.0888
+    "dist": 0.0877
   },
   {
     "frterm": "saumon",
     "frterm2": "violet",
-    "dist": 0.3305
+    "dist": 0.3259
   },
   {
     "frterm": "saumon",
     "frterm2": "violetfonce",
-    "dist": 0.4589
+    "dist": 0.4594
   },
   {
     "frterm": "taupe",
     "frterm2": "turquoise",
-    "dist": 0.2424
+    "dist": 0.2404
   },
   {
     "frterm": "taupe",
@@ -6117,42 +6642,42 @@
   {
     "frterm": "taupe",
     "frterm2": "vertclair",
-    "dist": 0.3168
+    "dist": 0.3182
   },
   {
     "frterm": "taupe",
     "frterm2": "vertd'eau",
-    "dist": 0.2311
+    "dist": 0.2316
   },
   {
     "frterm": "taupe",
     "frterm2": "vertfluo",
-    "dist": 0.3509
+    "dist": 0.3519
   },
   {
     "frterm": "taupe",
     "frterm2": "vertfonce",
-    "dist": 0.2135
+    "dist": 0.2137
   },
   {
     "frterm": "taupe",
     "frterm2": "vertforet",
-    "dist": 0.1809
+    "dist": 0.1806
   },
   {
     "frterm": "taupe",
     "frterm2": "vertkaki",
-    "dist": 0.1186
+    "dist": 0.1201
   },
   {
     "frterm": "taupe",
     "frterm2": "vertpale",
-    "dist": 0.3426
+    "dist": 0.3435
   },
   {
     "frterm": "taupe",
     "frterm2": "vertpomme",
-    "dist": 0.3015
+    "dist": 0.3028
   },
   {
     "frterm": "taupe",
@@ -6162,47 +6687,47 @@
   {
     "frterm": "taupe",
     "frterm2": "vieuxrose",
-    "dist": 0.1584
+    "dist": 0.154
   },
   {
     "frterm": "taupe",
     "frterm2": "violet",
-    "dist": 0.2077
+    "dist": 0.2069
   },
   {
     "frterm": "taupe",
     "frterm2": "violetfonce",
-    "dist": 0.2723
+    "dist": 0.2771
   },
   {
     "frterm": "turquoise",
     "frterm2": "vert",
-    "dist": 0.1324
+    "dist": 0.1315
   },
   {
     "frterm": "turquoise",
     "frterm2": "vertclair",
-    "dist": 0.1431
+    "dist": 0.1459
   },
   {
     "frterm": "turquoise",
     "frterm2": "vertd'eau",
-    "dist": 0.0574
+    "dist": 0.0571
   },
   {
     "frterm": "turquoise",
     "frterm2": "vertfluo",
-    "dist": 0.1963
+    "dist": 0.1983
   },
   {
     "frterm": "turquoise",
     "frterm2": "vertfonce",
-    "dist": 0.3555
+    "dist": 0.3541
   },
   {
     "frterm": "turquoise",
     "frterm2": "vertforet",
-    "dist": 0.3094
+    "dist": 0.3068
   },
   {
     "frterm": "turquoise",
@@ -6212,72 +6737,72 @@
   {
     "frterm": "turquoise",
     "frterm2": "vertpale",
-    "dist": 0.1766
+    "dist": 0.1792
   },
   {
     "frterm": "turquoise",
     "frterm2": "vertpomme",
-    "dist": 0.1555
+    "dist": 0.1574
   },
   {
     "frterm": "turquoise",
     "frterm2": "vertsapin",
-    "dist": 0.2978
+    "dist": 0.2957
   },
   {
     "frterm": "turquoise",
     "frterm2": "vieuxrose",
-    "dist": 0.2097
+    "dist": 0.2098
   },
   {
     "frterm": "turquoise",
     "frterm2": "violet",
-    "dist": 0.3726
+    "dist": 0.3703
   },
   {
     "frterm": "turquoise",
     "frterm2": "violetfonce",
-    "dist": 0.4774
+    "dist": 0.4794
   },
   {
     "frterm": "vert",
     "frterm2": "vertclair",
-    "dist": 0.159
+    "dist": 0.1602
   },
   {
     "frterm": "vert",
     "frterm2": "vertd'eau",
-    "dist": 0.1086
+    "dist": 0.1093
   },
   {
     "frterm": "vert",
     "frterm2": "vertfluo",
-    "dist": 0.1594
+    "dist": 0.1605
   },
   {
     "frterm": "vert",
     "frterm2": "vertfonce",
-    "dist": 0.2861
+    "dist": 0.2862
   },
   {
     "frterm": "vert",
     "frterm2": "vertforet",
-    "dist": 0.2366
+    "dist": 0.236
   },
   {
     "frterm": "vert",
     "frterm2": "vertkaki",
-    "dist": 0.1678
+    "dist": 0.1695
   },
   {
     "frterm": "vert",
     "frterm2": "vertpale",
-    "dist": 0.2262
+    "dist": 0.2271
   },
   {
     "frterm": "vert",
     "frterm2": "vertpomme",
-    "dist": 0.1208
+    "dist": 0.1222
   },
   {
     "frterm": "vert",
@@ -6287,142 +6812,142 @@
   {
     "frterm": "vert",
     "frterm2": "vieuxrose",
-    "dist": 0.2303
+    "dist": 0.2302
   },
   {
     "frterm": "vert",
     "frterm2": "violet",
-    "dist": 0.3861
+    "dist": 0.3855
   },
   {
     "frterm": "vert",
     "frterm2": "violetfonce",
-    "dist": 0.4536
+    "dist": 0.4568
   },
   {
     "frterm": "vertclair",
     "frterm2": "vertd'eau",
-    "dist": 0.1282
+    "dist": 0.1295
   },
   {
     "frterm": "vertclair",
     "frterm2": "vertfluo",
-    "dist": 0.1103
+    "dist": 0.1093
   },
   {
     "frterm": "vertclair",
     "frterm2": "vertfonce",
-    "dist": 0.4346
+    "dist": 0.4371
   },
   {
     "frterm": "vertclair",
     "frterm2": "vertforet",
-    "dist": 0.3903
+    "dist": 0.391
   },
   {
     "frterm": "vertclair",
     "frterm2": "vertkaki",
-    "dist": 0.3142
+    "dist": 0.3175
   },
   {
     "frterm": "vertclair",
     "frterm2": "vertpale",
-    "dist": 0.0844
+    "dist": 0.0847
   },
   {
     "frterm": "vertclair",
     "frterm2": "vertpomme",
-    "dist": 0.0763
+    "dist": 0.0762
   },
   {
     "frterm": "vertclair",
     "frterm2": "vertsapin",
-    "dist": 0.3839
+    "dist": 0.3852
   },
   {
     "frterm": "vertclair",
     "frterm2": "vieuxrose",
-    "dist": 0.2487
+    "dist": 0.2527
   },
   {
     "frterm": "vertclair",
     "frterm2": "violet",
-    "dist": 0.4718
+    "dist": 0.4731
   },
   {
     "frterm": "vertclair",
     "frterm2": "violetfonce",
-    "dist": 0.5756
+    "dist": 0.5817
   },
   {
     "frterm": "vertd'eau",
     "frterm2": "vertfluo",
-    "dist": 0.1804
+    "dist": 0.1808
   },
   {
     "frterm": "vertd'eau",
     "frterm2": "vertfonce",
-    "dist": 0.343
+    "dist": 0.3444
   },
   {
     "frterm": "vertd'eau",
     "frterm2": "vertforet",
-    "dist": 0.2975
+    "dist": 0.2973
   },
   {
     "frterm": "vertd'eau",
     "frterm2": "vertkaki",
-    "dist": 0.2358
+    "dist": 0.2383
   },
   {
     "frterm": "vertd'eau",
     "frterm2": "vertpale",
-    "dist": 0.1686
+    "dist": 0.1695
   },
   {
     "frterm": "vertd'eau",
     "frterm2": "vertpomme",
-    "dist": 0.1403
+    "dist": 0.1412
   },
   {
     "frterm": "vertd'eau",
     "frterm2": "vertsapin",
-    "dist": 0.2874
+    "dist": 0.2877
   },
   {
     "frterm": "vertd'eau",
     "frterm2": "vieuxrose",
-    "dist": 0.2063
+    "dist": 0.2086
   },
   {
     "frterm": "vertd'eau",
     "frterm2": "violet",
-    "dist": 0.3758
+    "dist": 0.3759
   },
   {
     "frterm": "vertd'eau",
     "frterm2": "violetfonce",
-    "dist": 0.4757
+    "dist": 0.4803
   },
   {
     "frterm": "vertfluo",
     "frterm2": "vertfonce",
-    "dist": 0.432
+    "dist": 0.4332
   },
   {
     "frterm": "vertfluo",
     "frterm2": "vertforet",
-    "dist": 0.3797
+    "dist": 0.3806
   },
   {
     "frterm": "vertfluo",
     "frterm2": "vertkaki",
-    "dist": 0.3137
+    "dist": 0.3165
   },
   {
     "frterm": "vertfluo",
     "frterm2": "vertpale",
-    "dist": 0.1758
+    "dist": 0.175
   },
   {
     "frterm": "vertfluo",
@@ -6432,77 +6957,77 @@
   {
     "frterm": "vertfluo",
     "frterm2": "vertsapin",
-    "dist": 0.378
+    "dist": 0.3795
   },
   {
     "frterm": "vertfluo",
     "frterm2": "vieuxrose",
-    "dist": 0.3261
+    "dist": 0.328
   },
   {
     "frterm": "vertfluo",
     "frterm2": "violet",
-    "dist": 0.5273
+    "dist": 0.5279
   },
   {
     "frterm": "vertfluo",
     "frterm2": "violetfonce",
-    "dist": 0.6075
+    "dist": 0.6122
   },
   {
     "frterm": "vertfonce",
     "frterm2": "vertforet",
-    "dist": 0.1022
+    "dist": 0.099
   },
   {
     "frterm": "vertfonce",
     "frterm2": "vertkaki",
-    "dist": 0.1586
+    "dist": 0.1556
   },
   {
     "frterm": "vertfonce",
     "frterm2": "vertpale",
-    "dist": 0.4825
+    "dist": 0.485
   },
   {
     "frterm": "vertfonce",
     "frterm2": "vertpomme",
-    "dist": 0.3996
+    "dist": 0.4011
   },
   {
     "frterm": "vertfonce",
     "frterm2": "vertsapin",
-    "dist": 0.1106
+    "dist": 0.1074
   },
   {
     "frterm": "vertfonce",
     "frterm2": "vieuxrose",
-    "dist": 0.3508
+    "dist": 0.3485
   },
   {
     "frterm": "vertfonce",
     "frterm2": "violet",
-    "dist": 0.3199
+    "dist": 0.319
   },
   {
     "frterm": "vertfonce",
     "frterm2": "violetfonce",
-    "dist": 0.2605
+    "dist": 0.2593
   },
   {
     "frterm": "vertforet",
     "frterm2": "vertkaki",
-    "dist": 0.0988
+    "dist": 0.0966
   },
   {
     "frterm": "vertforet",
     "frterm2": "vertpale",
-    "dist": 0.4421
+    "dist": 0.4425
   },
   {
     "frterm": "vertforet",
     "frterm2": "vertpomme",
-    "dist": 0.3503
+    "dist": 0.3511
   },
   {
     "frterm": "vertforet",
@@ -6512,121 +7037,121 @@
   {
     "frterm": "vertforet",
     "frterm2": "vieuxrose",
-    "dist": 0.3197
+    "dist": 0.3159
   },
   {
     "frterm": "vertforet",
     "frterm2": "violet",
-    "dist": 0.3117
+    "dist": 0.3111
   },
   {
     "frterm": "vertforet",
     "frterm2": "violetfonce",
-    "dist": 0.2879
+    "dist": 0.289
   },
   {
     "frterm": "vertkaki",
     "frterm2": "vertpale",
-    "dist": 0.3596
+    "dist": 0.3627
   },
   {
     "frterm": "vertkaki",
     "frterm2": "vertpomme",
-    "dist": 0.2748
+    "dist": 0.278
   },
   {
     "frterm": "vertkaki",
     "frterm2": "vertsapin",
-    "dist": 0.0946
+    "dist": 0.0932
   },
   {
     "frterm": "vertkaki",
     "frterm2": "vieuxrose",
-    "dist": 0.2425
+    "dist": 0.2415
   },
   {
     "frterm": "vertkaki",
     "frterm2": "violet",
-    "dist": 0.2986
+    "dist": 0.2985
   },
   {
     "frterm": "vertkaki",
     "frterm2": "violetfonce",
-    "dist": 0.3166
+    "dist": 0.3184
   },
   {
     "frterm": "vertpale",
     "frterm2": "vertpomme",
-    "dist": 0.1474
+    "dist": 0.1472
   },
   {
     "frterm": "vertpale",
     "frterm2": "vertsapin",
-    "dist": 0.4327
+    "dist": 0.4337
   },
   {
     "frterm": "vertpale",
     "frterm2": "vieuxrose",
-    "dist": 0.2414
+    "dist": 0.246
   },
   {
     "frterm": "vertpale",
     "frterm2": "violet",
-    "dist": 0.4779
+    "dist": 0.4791
   },
   {
     "frterm": "vertpale",
     "frterm2": "violetfonce",
-    "dist": 0.6009
+    "dist": 0.6072
   },
   {
     "frterm": "vertpomme",
     "frterm2": "vertsapin",
-    "dist": 0.3469
+    "dist": 0.3483
   },
   {
     "frterm": "vertpomme",
     "frterm2": "vieuxrose",
-    "dist": 0.2719
+    "dist": 0.2745
   },
   {
     "frterm": "vertpomme",
     "frterm2": "violet",
-    "dist": 0.4761
+    "dist": 0.4769
   },
   {
     "frterm": "vertpomme",
     "frterm2": "violetfonce",
-    "dist": 0.5629
+    "dist": 0.5681
   },
   {
     "frterm": "vertsapin",
     "frterm2": "vieuxrose",
-    "dist": 0.3043
+    "dist": 0.3008
   },
   {
     "frterm": "vertsapin",
     "frterm2": "violet",
-    "dist": 0.2925
+    "dist": 0.2918
   },
   {
     "frterm": "vertsapin",
     "frterm2": "violetfonce",
-    "dist": 0.2742
+    "dist": 0.2752
   },
   {
     "frterm": "vieuxrose",
     "frterm2": "violet",
-    "dist": 0.2567
+    "dist": 0.2535
   },
   {
     "frterm": "vieuxrose",
     "frterm2": "violetfonce",
-    "dist": 0.3875
+    "dist": 0.3894
   },
   {
     "frterm": "violet",
     "frterm2": "violetfonce",
-    "dist": 0.1763
+    "dist": 0.1825
   }
 ]

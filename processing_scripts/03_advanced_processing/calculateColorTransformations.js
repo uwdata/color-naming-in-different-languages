@@ -2,6 +2,18 @@
 // separately for rgb/p3/rec2020?
 // dark/light
 
+// TODO: find best fit using Local search, specifically hill climbing
+// perhaps linear equation transforms for LCH (e.g., newL = a*oldL + b)
+//   shuffle all coefficients, then go through and change each one. If improvment, use it, and next, otherwise if no changes improved, done
+// note: if entry falls outside of bins, ignore it.
+
+// run this separately by language, an for regular and match data
+// Also, probably coefficients for dark/light, and color gamuts
+
+// error function is: sum of bin errors. Each bin error is the sum of percentage differences for terms for that bin
+// Do I check all mappings and conversions?
+
+
 import fs from 'fs'
 import Color from "colorjs.io";
 import csv from 'csvtojson';

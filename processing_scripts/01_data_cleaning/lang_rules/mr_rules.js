@@ -58,7 +58,11 @@ const nameReplacingRules = [
    
     [/tapkiri/, "तपकिरी"],
 
+    [/tambada/, "तांबडा"],
+    [/tambda/, "तांबडा"],
+
     [/narangi/, "नारिंगी"],
+    [/नारंगी/, "नारिंगी"],
 
     [/popati/, "पोपटी"],
     [/poapati/, "पोपटी"],
@@ -71,7 +75,9 @@ const nameReplacingRules = [
     [/morpankhi/, "मोरपंखी"],
 
     [/rakhadi/, "राखाडी"],
-    [/rakhdi/, "राखाडी"]
+    [/rakhdi/, "राखाडी"],
+
+    [/rang/, "रंग"]
 
 ];
 

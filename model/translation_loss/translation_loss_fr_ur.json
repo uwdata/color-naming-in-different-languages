@@ -1,1408 +1,1508 @@
 [
   {
+    "frterm": "aubergine",
+    "urterm": "بھورا",
+    "dist": 0.246
+  },
+  {
+    "frterm": "aubergine",
+    "urterm": "بیگنی",
+    "dist": 0.3335
+  },
+  {
+    "frterm": "aubergine",
+    "urterm": "جامنی",
+    "dist": 0.2669
+  },
+  {
+    "frterm": "aubergine",
+    "urterm": "سبز",
+    "dist": 0.4971
+  },
+  {
+    "frterm": "aubergine",
+    "urterm": "لال",
+    "dist": 0.2486
+  },
+  {
+    "frterm": "aubergine",
+    "urterm": "نیلا",
+    "dist": 0.4136
+  },
+  {
+    "frterm": "aubergine",
+    "urterm": "پیلا",
+    "dist": 0.6565
+  },
+  {
+    "frterm": "aubergine",
+    "urterm": "کالا",
+    "dist": 0.1809
+  },
+  {
+    "frterm": "aubergine",
+    "urterm": "گلابی",
+    "dist": 0.4548
+  },
+  {
+    "frterm": "aubergine",
+    "urterm": "ہرا",
+    "dist": 0.4418
+  },
+  {
     "frterm": "beige",
     "urterm": "بھورا",
-    "dist": 0.3971
+    "dist": 0.4153
   },
   {
     "frterm": "beige",
     "urterm": "بیگنی",
-    "dist": 0.3757
+    "dist": 0.3767
   },
   {
     "frterm": "beige",
     "urterm": "جامنی",
-    "dist": 0.4738
+    "dist": 0.493
   },
   {
     "frterm": "beige",
     "urterm": "سبز",
-    "dist": 0.2297
+    "dist": 0.2331
   },
   {
     "frterm": "beige",
     "urterm": "لال",
-    "dist": 0.4214
+    "dist": 0.427
   },
   {
     "frterm": "beige",
     "urterm": "نیلا",
-    "dist": 0.369
+    "dist": 0.3695
   },
   {
     "frterm": "beige",
     "urterm": "پیلا",
-    "dist": 0.0982
+    "dist": 0.0974
   },
   {
     "frterm": "beige",
     "urterm": "کالا",
-    "dist": 0.6464
+    "dist": 0.7277
   },
   {
     "frterm": "beige",
     "urterm": "گلابی",
-    "dist": 0.2779
+    "dist": 0.2761
   },
   {
     "frterm": "beige",
     "urterm": "ہرا",
-    "dist": 0.2791
+    "dist": 0.3041
   },
   {
     "frterm": "bleu",
     "urterm": "بھورا",
-    "dist": 0.2764
+    "dist": 0.2766
   },
   {
     "frterm": "bleu",
     "urterm": "بیگنی",
-    "dist": 0.1953
+    "dist": 0.1959
   },
   {
     "frterm": "bleu",
     "urterm": "جامنی",
-    "dist": 0.2333
+    "dist": 0.231
   },
   {
     "frterm": "bleu",
     "urterm": "سبز",
-    "dist": 0.299
+    "dist": 0.3016
   },
   {
     "frterm": "bleu",
     "urterm": "لال",
-    "dist": 0.3414
+    "dist": 0.3409
   },
   {
     "frterm": "bleu",
     "urterm": "نیلا",
-    "dist": 0.0503
+    "dist": 0.0514
   },
   {
     "frterm": "bleu",
     "urterm": "پیلا",
-    "dist": 0.446
+    "dist": 0.4472
   },
   {
     "frterm": "bleu",
     "urterm": "کالا",
-    "dist": 0.3875
+    "dist": 0.4561
   },
   {
     "frterm": "bleu",
     "urterm": "گلابی",
-    "dist": 0.2948
+    "dist": 0.2974
   },
   {
     "frterm": "bleu",
     "urterm": "ہرا",
-    "dist": 0.2847
+    "dist": 0.2797
   },
   {
     "frterm": "bleucanard",
     "urterm": "بھورا",
-    "dist": 0.2244
+    "dist": 0.226
   },
   {
     "frterm": "bleucanard",
     "urterm": "بیگنی",
-    "dist": 0.247
+    "dist": 0.2468
   },
   {
     "frterm": "bleucanard",
     "urterm": "جامنی",
-    "dist": 0.3059
+    "dist": 0.308
   },
   {
     "frterm": "bleucanard",
     "urterm": "سبز",
-    "dist": 0.1728
+    "dist": 0.1776
   },
   {
     "frterm": "bleucanard",
     "urterm": "لال",
-    "dist": 0.2879
+    "dist": 0.2891
   },
   {
     "frterm": "bleucanard",
     "urterm": "نیلا",
-    "dist": 0.197
+    "dist": 0.1927
   },
   {
     "frterm": "bleucanard",
     "urterm": "پیلا",
-    "dist": 0.3588
+    "dist": 0.3614
   },
   {
     "frterm": "bleucanard",
     "urterm": "کالا",
-    "dist": 0.38
+    "dist": 0.4429
   },
   {
     "frterm": "bleucanard",
+    "urterm": "گلابی",
+    "dist": 0.3076
+  },
+  {
+    "frterm": "bleucanard",
+    "urterm": "ہرا",
+    "dist": 0.1745
+  },
+  {
+    "frterm": "bleuciel",
+    "urterm": "بھورا",
+    "dist": 0.4126
+  },
+  {
+    "frterm": "bleuciel",
+    "urterm": "بیگنی",
+    "dist": 0.3439
+  },
+  {
+    "frterm": "bleuciel",
+    "urterm": "جامنی",
+    "dist": 0.452
+  },
+  {
+    "frterm": "bleuciel",
+    "urterm": "سبز",
+    "dist": 0.2313
+  },
+  {
+    "frterm": "bleuciel",
+    "urterm": "لال",
+    "dist": 0.4451
+  },
+  {
+    "frterm": "bleuciel",
+    "urterm": "نیلا",
+    "dist": 0.2744
+  },
+  {
+    "frterm": "bleuciel",
+    "urterm": "پیلا",
+    "dist": 0.2226
+  },
+  {
+    "frterm": "bleuciel",
+    "urterm": "کالا",
+    "dist": 0.691
+  },
+  {
+    "frterm": "bleuciel",
     "urterm": "گلابی",
     "dist": 0.3049
   },
   {
-    "frterm": "bleucanard",
-    "urterm": "ہرا",
-    "dist": 0.1726
-  },
-  {
-    "frterm": "bleuciel",
-    "urterm": "بھورا",
-    "dist": 0.4023
-  },
-  {
-    "frterm": "bleuciel",
-    "urterm": "بیگنی",
-    "dist": 0.3473
-  },
-  {
-    "frterm": "bleuciel",
-    "urterm": "جامنی",
-    "dist": 0.4412
-  },
-  {
-    "frterm": "bleuciel",
-    "urterm": "سبز",
-    "dist": 0.2286
-  },
-  {
-    "frterm": "bleuciel",
-    "urterm": "لال",
-    "dist": 0.4446
-  },
-  {
-    "frterm": "bleuciel",
-    "urterm": "نیلا",
-    "dist": 0.2786
-  },
-  {
-    "frterm": "bleuciel",
-    "urterm": "پیلا",
-    "dist": 0.2218
-  },
-  {
-    "frterm": "bleuciel",
-    "urterm": "کالا",
-    "dist": 0.6171
-  },
-  {
-    "frterm": "bleuciel",
-    "urterm": "گلابی",
-    "dist": 0.3083
-  },
-  {
     "frterm": "bleuciel",
     "urterm": "ہرا",
-    "dist": 0.2653
+    "dist": 0.2828
   },
   {
     "frterm": "bleuclair",
     "urterm": "بھورا",
-    "dist": 0.3778
+    "dist": 0.3886
   },
   {
     "frterm": "bleuclair",
     "urterm": "بیگنی",
-    "dist": 0.3224
+    "dist": 0.3198
   },
   {
     "frterm": "bleuclair",
     "urterm": "جامنی",
-    "dist": 0.414
+    "dist": 0.4253
   },
   {
     "frterm": "bleuclair",
     "urterm": "سبز",
-    "dist": 0.2148
+    "dist": 0.2179
   },
   {
     "frterm": "bleuclair",
     "urterm": "لال",
-    "dist": 0.4224
-  },
-  {
-    "frterm": "bleuclair",
-    "urterm": "نیلا",
-    "dist": 0.2486
-  },
-  {
-    "frterm": "bleuclair",
-    "urterm": "پیلا",
-    "dist": 0.2333
-  },
-  {
-    "frterm": "bleuclair",
-    "urterm": "کالا",
-    "dist": 0.5885
-  },
-  {
-    "frterm": "bleuclair",
-    "urterm": "گلابی",
-    "dist": 0.2952
-  },
-  {
-    "frterm": "bleuclair",
-    "urterm": "ہرا",
-    "dist": 0.247
-  },
-  {
-    "frterm": "bleufonce",
-    "urterm": "بھورا",
-    "dist": 0.3044
-  },
-  {
-    "frterm": "bleufonce",
-    "urterm": "بیگنی",
-    "dist": 0.229
-  },
-  {
-    "frterm": "bleufonce",
-    "urterm": "جامنی",
-    "dist": 0.1834
-  },
-  {
-    "frterm": "bleufonce",
-    "urterm": "سبز",
-    "dist": 0.4244
-  },
-  {
-    "frterm": "bleufonce",
-    "urterm": "لال",
-    "dist": 0.3384
-  },
-  {
-    "frterm": "bleufonce",
-    "urterm": "نیلا",
-    "dist": 0.2007
-  },
-  {
-    "frterm": "bleufonce",
-    "urterm": "پیلا",
-    "dist": 0.5918
-  },
-  {
-    "frterm": "bleufonce",
-    "urterm": "کالا",
-    "dist": 0.2615
-  },
-  {
-    "frterm": "bleufonce",
-    "urterm": "گلابی",
-    "dist": 0.3858
-  },
-  {
-    "frterm": "bleufonce",
-    "urterm": "ہرا",
-    "dist": 0.3975
-  },
-  {
-    "frterm": "bleugris",
-    "urterm": "بھورا",
-    "dist": 0.1978
-  },
-  {
-    "frterm": "bleugris",
-    "urterm": "بیگنی",
-    "dist": 0.1916
-  },
-  {
-    "frterm": "bleugris",
-    "urterm": "جامنی",
-    "dist": 0.2774
-  },
-  {
-    "frterm": "bleugris",
-    "urterm": "سبز",
-    "dist": 0.1514
-  },
-  {
-    "frterm": "bleugris",
-    "urterm": "لال",
-    "dist": 0.2454
-  },
-  {
-    "frterm": "bleugris",
-    "urterm": "نیلا",
-    "dist": 0.185
-  },
-  {
-    "frterm": "bleugris",
-    "urterm": "پیلا",
-    "dist": 0.2815
-  },
-  {
-    "frterm": "bleugris",
-    "urterm": "کالا",
-    "dist": 0.4198
-  },
-  {
-    "frterm": "bleugris",
-    "urterm": "گلابی",
-    "dist": 0.2052
-  },
-  {
-    "frterm": "bleugris",
-    "urterm": "ہرا",
-    "dist": 0.1573
-  },
-  {
-    "frterm": "bleumarine",
-    "urterm": "بھورا",
-    "dist": 0.3212
-  },
-  {
-    "frterm": "bleumarine",
-    "urterm": "بیگنی",
-    "dist": 0.2674
-  },
-  {
-    "frterm": "bleumarine",
-    "urterm": "جامنی",
-    "dist": 0.201
-  },
-  {
-    "frterm": "bleumarine",
-    "urterm": "سبز",
-    "dist": 0.4651
-  },
-  {
-    "frterm": "bleumarine",
-    "urterm": "لال",
-    "dist": 0.3507
-  },
-  {
-    "frterm": "bleumarine",
-    "urterm": "نیلا",
-    "dist": 0.2513
-  },
-  {
-    "frterm": "bleumarine",
-    "urterm": "پیلا",
-    "dist": 0.6398
-  },
-  {
-    "frterm": "bleumarine",
-    "urterm": "کالا",
-    "dist": 0.2259
-  },
-  {
-    "frterm": "bleumarine",
-    "urterm": "گلابی",
     "dist": 0.4236
   },
   {
+    "frterm": "bleuclair",
+    "urterm": "نیلا",
+    "dist": 0.2454
+  },
+  {
+    "frterm": "bleuclair",
+    "urterm": "پیلا",
+    "dist": 0.2337
+  },
+  {
+    "frterm": "bleuclair",
+    "urterm": "کالا",
+    "dist": 0.6632
+  },
+  {
+    "frterm": "bleuclair",
+    "urterm": "گلابی",
+    "dist": 0.2927
+  },
+  {
+    "frterm": "bleuclair",
+    "urterm": "ہرا",
+    "dist": 0.2639
+  },
+  {
+    "frterm": "bleufonce",
+    "urterm": "بھورا",
+    "dist": 0.2973
+  },
+  {
+    "frterm": "bleufonce",
+    "urterm": "بیگنی",
+    "dist": 0.2333
+  },
+  {
+    "frterm": "bleufonce",
+    "urterm": "جامنی",
+    "dist": 0.1775
+  },
+  {
+    "frterm": "bleufonce",
+    "urterm": "سبز",
+    "dist": 0.4253
+  },
+  {
+    "frterm": "bleufonce",
+    "urterm": "لال",
+    "dist": 0.3385
+  },
+  {
+    "frterm": "bleufonce",
+    "urterm": "نیلا",
+    "dist": 0.2027
+  },
+  {
+    "frterm": "bleufonce",
+    "urterm": "پیلا",
+    "dist": 0.5913
+  },
+  {
+    "frterm": "bleufonce",
+    "urterm": "کالا",
+    "dist": 0.3265
+  },
+  {
+    "frterm": "bleufonce",
+    "urterm": "گلابی",
+    "dist": 0.3919
+  },
+  {
+    "frterm": "bleufonce",
+    "urterm": "ہرا",
+    "dist": 0.3867
+  },
+  {
+    "frterm": "bleugris",
+    "urterm": "بھورا",
+    "dist": 0.2059
+  },
+  {
+    "frterm": "bleugris",
+    "urterm": "بیگنی",
+    "dist": 0.1884
+  },
+  {
+    "frterm": "bleugris",
+    "urterm": "جامنی",
+    "dist": 0.284
+  },
+  {
+    "frterm": "bleugris",
+    "urterm": "سبز",
+    "dist": 0.1547
+  },
+  {
+    "frterm": "bleugris",
+    "urterm": "لال",
+    "dist": 0.2465
+  },
+  {
+    "frterm": "bleugris",
+    "urterm": "نیلا",
+    "dist": 0.1796
+  },
+  {
+    "frterm": "bleugris",
+    "urterm": "پیلا",
+    "dist": 0.2842
+  },
+  {
+    "frterm": "bleugris",
+    "urterm": "کالا",
+    "dist": 0.4941
+  },
+  {
+    "frterm": "bleugris",
+    "urterm": "گلابی",
+    "dist": 0.2065
+  },
+  {
+    "frterm": "bleugris",
+    "urterm": "ہرا",
+    "dist": 0.1665
+  },
+  {
+    "frterm": "bleumarine",
+    "urterm": "بھورا",
+    "dist": 0.3099
+  },
+  {
+    "frterm": "bleumarine",
+    "urterm": "بیگنی",
+    "dist": 0.2807
+  },
+  {
+    "frterm": "bleumarine",
+    "urterm": "جامنی",
+    "dist": 0.1888
+  },
+  {
+    "frterm": "bleumarine",
+    "urterm": "سبز",
+    "dist": 0.4692
+  },
+  {
+    "frterm": "bleumarine",
+    "urterm": "لال",
+    "dist": 0.3514
+  },
+  {
+    "frterm": "bleumarine",
+    "urterm": "نیلا",
+    "dist": 0.2623
+  },
+  {
+    "frterm": "bleumarine",
+    "urterm": "پیلا",
+    "dist": 0.6451
+  },
+  {
+    "frterm": "bleumarine",
+    "urterm": "کالا",
+    "dist": 0.2689
+  },
+  {
+    "frterm": "bleumarine",
+    "urterm": "گلابی",
+    "dist": 0.4385
+  },
+  {
     "frterm": "bleumarine",
     "urterm": "ہرا",
-    "dist": 0.4286
+    "dist": 0.4124
   },
   {
     "frterm": "bleunuit",
     "urterm": "بھورا",
-    "dist": 0.3102
+    "dist": 0.2936
   },
   {
     "frterm": "bleunuit",
     "urterm": "بیگنی",
-    "dist": 0.2994
+    "dist": 0.3118
   },
   {
     "frterm": "bleunuit",
     "urterm": "جامنی",
-    "dist": 0.2415
+    "dist": 0.2282
   },
   {
     "frterm": "bleunuit",
     "urterm": "سبز",
-    "dist": 0.4698
+    "dist": 0.4694
   },
   {
     "frterm": "bleunuit",
     "urterm": "لال",
-    "dist": 0.3461
+    "dist": 0.3441
   },
   {
     "frterm": "bleunuit",
     "urterm": "نیلا",
-    "dist": 0.2893
+    "dist": 0.2981
   },
   {
     "frterm": "bleunuit",
     "urterm": "پیلا",
-    "dist": 0.6557
+    "dist": 0.6566
   },
   {
     "frterm": "bleunuit",
     "urterm": "کالا",
-    "dist": 0.1721
+    "dist": 0.2069
   },
   {
     "frterm": "bleunuit",
     "urterm": "گلابی",
-    "dist": 0.4575
+    "dist": 0.4679
   },
   {
     "frterm": "bleunuit",
     "urterm": "ہرا",
-    "dist": 0.4271
+    "dist": 0.4046
   },
   {
     "frterm": "bleuroi",
     "urterm": "بھورا",
-    "dist": 0.3079
+    "dist": 0.2922
   },
   {
     "frterm": "bleuroi",
     "urterm": "بیگنی",
-    "dist": 0.2853
+    "dist": 0.2887
   },
   {
     "frterm": "bleuroi",
     "urterm": "جامنی",
-    "dist": 0.2302
+    "dist": 0.2064
   },
   {
     "frterm": "bleuroi",
     "urterm": "سبز",
-    "dist": 0.4572
+    "dist": 0.4562
   },
   {
     "frterm": "bleuroi",
     "urterm": "لال",
-    "dist": 0.3474
+    "dist": 0.3443
   },
   {
     "frterm": "bleuroi",
     "urterm": "نیلا",
-    "dist": 0.2684
+    "dist": 0.2732
   },
   {
     "frterm": "bleuroi",
     "urterm": "پیلا",
-    "dist": 0.6395
+    "dist": 0.6388
   },
   {
     "frterm": "bleuroi",
     "urterm": "کالا",
-    "dist": 0.2025
+    "dist": 0.2451
   },
   {
     "frterm": "bleuroi",
     "urterm": "گلابی",
-    "dist": 0.4429
+    "dist": 0.449
   },
   {
     "frterm": "bleuroi",
     "urterm": "ہرا",
-    "dist": 0.4177
+    "dist": 0.3969
   },
   {
     "frterm": "bleuturquoise",
     "urterm": "بھورا",
-    "dist": 0.3768
+    "dist": 0.3848
   },
   {
     "frterm": "bleuturquoise",
     "urterm": "بیگنی",
-    "dist": 0.3417
+    "dist": 0.3389
   },
   {
     "frterm": "bleuturquoise",
     "urterm": "جامنی",
+    "dist": 0.4382
+  },
+  {
+    "frterm": "bleuturquoise",
+    "urterm": "سبز",
+    "dist": 0.1897
+  },
+  {
+    "frterm": "bleuturquoise",
+    "urterm": "لال",
     "dist": 0.4312
   },
   {
     "frterm": "bleuturquoise",
-    "urterm": "سبز",
-    "dist": 0.1882
-  },
-  {
-    "frterm": "bleuturquoise",
-    "urterm": "لال",
-    "dist": 0.4307
-  },
-  {
-    "frterm": "bleuturquoise",
     "urterm": "نیلا",
-    "dist": 0.2527
+    "dist": 0.2491
   },
   {
     "frterm": "bleuturquoise",
     "urterm": "پیلا",
-    "dist": 0.2604
+    "dist": 0.2599
   },
   {
     "frterm": "bleuturquoise",
     "urterm": "کالا",
-    "dist": 0.5779
+    "dist": 0.6428
   },
   {
     "frterm": "bleuturquoise",
     "urterm": "گلابی",
-    "dist": 0.3466
+    "dist": 0.3447
   },
   {
     "frterm": "bleuturquoise",
     "urterm": "ہرا",
-    "dist": 0.2165
+    "dist": 0.2303
   },
   {
     "frterm": "bordeaux",
     "urterm": "بھورا",
-    "dist": 0.1907
+    "dist": 0.179
   },
   {
     "frterm": "bordeaux",
     "urterm": "بیگنی",
-    "dist": 0.2799
+    "dist": 0.276
   },
   {
     "frterm": "bordeaux",
     "urterm": "جامنی",
-    "dist": 0.2492
-  },
-  {
-    "frterm": "bordeaux",
-    "urterm": "سبز",
-    "dist": 0.435
-  },
-  {
-    "frterm": "bordeaux",
-    "urterm": "لال",
-    "dist": 0.1681
-  },
-  {
-    "frterm": "bordeaux",
-    "urterm": "نیلا",
-    "dist": 0.3794
-  },
-  {
-    "frterm": "bordeaux",
-    "urterm": "پیلا",
-    "dist": 0.5845
-  },
-  {
-    "frterm": "bordeaux",
-    "urterm": "کالا",
-    "dist": 0.1534
-  },
-  {
-    "frterm": "bordeaux",
-    "urterm": "گلابی",
-    "dist": 0.3808
-  },
-  {
-    "frterm": "bordeaux",
-    "urterm": "ہرا",
-    "dist": 0.3965
-  },
-  {
-    "frterm": "brun",
-    "urterm": "بھورا",
-    "dist": 0.1688
-  },
-  {
-    "frterm": "brun",
-    "urterm": "بیگنی",
-    "dist": 0.2753
-  },
-  {
-    "frterm": "brun",
-    "urterm": "جامنی",
-    "dist": 0.2522
-  },
-  {
-    "frterm": "brun",
-    "urterm": "سبز",
-    "dist": 0.4107
-  },
-  {
-    "frterm": "brun",
-    "urterm": "لال",
-    "dist": 0.1671
-  },
-  {
-    "frterm": "brun",
-    "urterm": "نیلا",
-    "dist": 0.3594
-  },
-  {
-    "frterm": "brun",
-    "urterm": "پیلا",
-    "dist": 0.5675
-  },
-  {
-    "frterm": "brun",
-    "urterm": "کالا",
-    "dist": 0.1573
-  },
-  {
-    "frterm": "brun",
-    "urterm": "گلابی",
-    "dist": 0.3738
-  },
-  {
-    "frterm": "brun",
-    "urterm": "ہرا",
-    "dist": 0.371
-  },
-  {
-    "frterm": "cyan",
-    "urterm": "بھورا",
-    "dist": 0.4387
-  },
-  {
-    "frterm": "cyan",
-    "urterm": "بیگنی",
-    "dist": 0.4108
-  },
-  {
-    "frterm": "cyan",
-    "urterm": "جامنی",
-    "dist": 0.5058
-  },
-  {
-    "frterm": "cyan",
-    "urterm": "سبز",
-    "dist": 0.2282
-  },
-  {
-    "frterm": "cyan",
-    "urterm": "لال",
-    "dist": 0.4884
-  },
-  {
-    "frterm": "cyan",
-    "urterm": "نیلا",
-    "dist": 0.3401
-  },
-  {
-    "frterm": "cyan",
-    "urterm": "پیلا",
-    "dist": 0.1948
-  },
-  {
-    "frterm": "cyan",
-    "urterm": "کالا",
-    "dist": 0.6634
-  },
-  {
-    "frterm": "cyan",
-    "urterm": "گلابی",
-    "dist": 0.3664
-  },
-  {
-    "frterm": "cyan",
-    "urterm": "ہرا",
-    "dist": 0.2712
-  },
-  {
-    "frterm": "fuchsia",
-    "urterm": "بھورا",
-    "dist": 0.3102
-  },
-  {
-    "frterm": "fuchsia",
-    "urterm": "بیگنی",
-    "dist": 0.1781
-  },
-  {
-    "frterm": "fuchsia",
-    "urterm": "جامنی",
-    "dist": 0.2001
-  },
-  {
-    "frterm": "fuchsia",
-    "urterm": "سبز",
-    "dist": 0.3932
-  },
-  {
-    "frterm": "fuchsia",
-    "urterm": "لال",
-    "dist": 0.2661
-  },
-  {
-    "frterm": "fuchsia",
-    "urterm": "نیلا",
-    "dist": 0.3184
-  },
-  {
-    "frterm": "fuchsia",
-    "urterm": "پیلا",
-    "dist": 0.4307
-  },
-  {
-    "frterm": "fuchsia",
-    "urterm": "کالا",
-    "dist": 0.4567
-  },
-  {
-    "frterm": "fuchsia",
-    "urterm": "گلابی",
-    "dist": 0.1117
-  },
-  {
-    "frterm": "fuchsia",
-    "urterm": "ہرا",
-    "dist": 0.3978
-  },
-  {
-    "frterm": "gris",
-    "urterm": "بھورا",
-    "dist": 0.2262
-  },
-  {
-    "frterm": "gris",
-    "urterm": "بیگنی",
-    "dist": 0.2225
-  },
-  {
-    "frterm": "gris",
-    "urterm": "جامنی",
-    "dist": 0.3151
-  },
-  {
-    "frterm": "gris",
-    "urterm": "سبز",
-    "dist": 0.1317
-  },
-  {
-    "frterm": "gris",
-    "urterm": "لال",
-    "dist": 0.2678
-  },
-  {
-    "frterm": "gris",
-    "urterm": "نیلا",
-    "dist": 0.2185
-  },
-  {
-    "frterm": "gris",
-    "urterm": "پیلا",
-    "dist": 0.2295
-  },
-  {
-    "frterm": "gris",
-    "urterm": "کالا",
-    "dist": 0.464
-  },
-  {
-    "frterm": "gris",
-    "urterm": "گلابی",
-    "dist": 0.2003
-  },
-  {
-    "frterm": "gris",
-    "urterm": "ہرا",
-    "dist": 0.1504
-  },
-  {
-    "frterm": "indigo",
-    "urterm": "بھورا",
-    "dist": 0.3277
-  },
-  {
-    "frterm": "indigo",
-    "urterm": "بیگنی",
-    "dist": 0.2314
-  },
-  {
-    "frterm": "indigo",
-    "urterm": "جامنی",
-    "dist": 0.168
-  },
-  {
-    "frterm": "indigo",
-    "urterm": "سبز",
-    "dist": 0.4605
-  },
-  {
-    "frterm": "indigo",
-    "urterm": "لال",
-    "dist": 0.3501
-  },
-  {
-    "frterm": "indigo",
-    "urterm": "نیلا",
-    "dist": 0.226
-  },
-  {
-    "frterm": "indigo",
-    "urterm": "پیلا",
-    "dist": 0.6161
-  },
-  {
-    "frterm": "indigo",
-    "urterm": "کالا",
-    "dist": 0.2827
-  },
-  {
-    "frterm": "indigo",
-    "urterm": "گلابی",
-    "dist": 0.3813
-  },
-  {
-    "frterm": "indigo",
-    "urterm": "ہرا",
-    "dist": 0.4335
-  },
-  {
-    "frterm": "jaune",
-    "urterm": "بھورا",
-    "dist": 0.4614
-  },
-  {
-    "frterm": "jaune",
-    "urterm": "بیگنی",
-    "dist": 0.4827
-  },
-  {
-    "frterm": "jaune",
-    "urterm": "جامنی",
-    "dist": 0.5778
-  },
-  {
-    "frterm": "jaune",
-    "urterm": "سبز",
-    "dist": 0.2537
-  },
-  {
-    "frterm": "jaune",
-    "urterm": "لال",
-    "dist": 0.485
-  },
-  {
-    "frterm": "jaune",
-    "urterm": "نیلا",
-    "dist": 0.4609
-  },
-  {
-    "frterm": "jaune",
-    "urterm": "پیلا",
-    "dist": 0.0703
-  },
-  {
-    "frterm": "jaune",
-    "urterm": "کالا",
-    "dist": 0.7109
-  },
-  {
-    "frterm": "jaune",
-    "urterm": "گلابی",
-    "dist": 0.3868
-  },
-  {
-    "frterm": "jaune",
-    "urterm": "ہرا",
-    "dist": 0.3068
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "urterm": "بھورا",
-    "dist": 0.3265
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "urterm": "بیگنی",
-    "dist": 0.3846
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "urterm": "جامنی",
-    "dist": 0.4703
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "urterm": "سبز",
-    "dist": 0.1704
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "urterm": "لال",
-    "dist": 0.3487
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "urterm": "نیلا",
-    "dist": 0.3862
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "urterm": "پیلا",
-    "dist": 0.1084
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "urterm": "کالا",
-    "dist": 0.5794
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "urterm": "گلابی",
-    "dist": 0.3026
-  },
-  {
-    "frterm": "jaunemoutarde",
-    "urterm": "ہرا",
-    "dist": 0.2099
-  },
-  {
-    "frterm": "kaki",
-    "urterm": "بھورا",
-    "dist": 0.1572
-  },
-  {
-    "frterm": "kaki",
-    "urterm": "بیگنی",
-    "dist": 0.2944
-  },
-  {
-    "frterm": "kaki",
-    "urterm": "جامنی",
-    "dist": 0.3508
-  },
-  {
-    "frterm": "kaki",
-    "urterm": "سبز",
-    "dist": 0.1626
-  },
-  {
-    "frterm": "kaki",
-    "urterm": "لال",
-    "dist": 0.2185
-  },
-  {
-    "frterm": "kaki",
-    "urterm": "نیلا",
-    "dist": 0.3007
-  },
-  {
-    "frterm": "kaki",
-    "urterm": "پیلا",
-    "dist": 0.3437
-  },
-  {
-    "frterm": "kaki",
-    "urterm": "کالا",
-    "dist": 0.3616
-  },
-  {
-    "frterm": "kaki",
-    "urterm": "گلابی",
-    "dist": 0.3276
-  },
-  {
-    "frterm": "kaki",
-    "urterm": "ہرا",
-    "dist": 0.1139
-  },
-  {
-    "frterm": "lavande",
-    "urterm": "بھورا",
-    "dist": 0.3255
-  },
-  {
-    "frterm": "lavande",
-    "urterm": "بیگنی",
-    "dist": 0.1934
-  },
-  {
-    "frterm": "lavande",
-    "urterm": "جامنی",
-    "dist": 0.2911
-  },
-  {
-    "frterm": "lavande",
-    "urterm": "سبز",
-    "dist": 0.2937
-  },
-  {
-    "frterm": "lavande",
-    "urterm": "لال",
-    "dist": 0.3371
-  },
-  {
-    "frterm": "lavande",
-    "urterm": "نیلا",
-    "dist": 0.253
-  },
-  {
-    "frterm": "lavande",
-    "urterm": "پیلا",
-    "dist": 0.3007
-  },
-  {
-    "frterm": "lavande",
-    "urterm": "کالا",
-    "dist": 0.5239
-  },
-  {
-    "frterm": "lavande",
-    "urterm": "گلابی",
-    "dist": 0.1595
-  },
-  {
-    "frterm": "lavande",
-    "urterm": "ہرا",
-    "dist": 0.3164
-  },
-  {
-    "frterm": "lila",
-    "urterm": "بھورا",
-    "dist": 0.3415
-  },
-  {
-    "frterm": "lila",
-    "urterm": "بیگنی",
-    "dist": 0.2073
-  },
-  {
-    "frterm": "lila",
-    "urterm": "جامنی",
-    "dist": 0.3039
-  },
-  {
-    "frterm": "lila",
-    "urterm": "سبز",
-    "dist": 0.3071
-  },
-  {
-    "frterm": "lila",
-    "urterm": "لال",
-    "dist": 0.3527
-  },
-  {
-    "frterm": "lila",
-    "urterm": "نیلا",
-    "dist": 0.2629
-  },
-  {
-    "frterm": "lila",
-    "urterm": "پیلا",
-    "dist": 0.3041
-  },
-  {
-    "frterm": "lila",
-    "urterm": "کالا",
-    "dist": 0.5387
-  },
-  {
-    "frterm": "lila",
-    "urterm": "گلابی",
-    "dist": 0.1718
-  },
-  {
-    "frterm": "lila",
-    "urterm": "ہرا",
-    "dist": 0.3302
-  },
-  {
-    "frterm": "lilas",
-    "urterm": "بھورا",
-    "dist": 0.2618
-  },
-  {
-    "frterm": "lilas",
-    "urterm": "بیگنی",
-    "dist": 0.1435
-  },
-  {
-    "frterm": "lilas",
-    "urterm": "جامنی",
-    "dist": 0.2404
-  },
-  {
-    "frterm": "lilas",
-    "urterm": "سبز",
-    "dist": 0.2686
-  },
-  {
-    "frterm": "lilas",
-    "urterm": "لال",
-    "dist": 0.2779
-  },
-  {
-    "frterm": "lilas",
-    "urterm": "نیلا",
-    "dist": 0.2205
-  },
-  {
-    "frterm": "lilas",
-    "urterm": "پیلا",
-    "dist": 0.3072
-  },
-  {
-    "frterm": "lilas",
-    "urterm": "کالا",
-    "dist": 0.4708
-  },
-  {
-    "frterm": "lilas",
-    "urterm": "گلابی",
-    "dist": 0.1105
-  },
-  {
-    "frterm": "lilas",
-    "urterm": "ہرا",
-    "dist": 0.2815
-  },
-  {
-    "frterm": "magenta",
-    "urterm": "بھورا",
-    "dist": 0.3435
-  },
-  {
-    "frterm": "magenta",
-    "urterm": "بیگنی",
-    "dist": 0.208
-  },
-  {
-    "frterm": "magenta",
-    "urterm": "جامنی",
-    "dist": 0.2361
-  },
-  {
-    "frterm": "magenta",
-    "urterm": "سبز",
-    "dist": 0.4075
-  },
-  {
-    "frterm": "magenta",
-    "urterm": "لال",
-    "dist": 0.296
-  },
-  {
-    "frterm": "magenta",
-    "urterm": "نیلا",
-    "dist": 0.3453
-  },
-  {
-    "frterm": "magenta",
-    "urterm": "پیلا",
-    "dist": 0.4279
-  },
-  {
-    "frterm": "magenta",
-    "urterm": "کالا",
-    "dist": 0.493
-  },
-  {
-    "frterm": "magenta",
-    "urterm": "گلابی",
-    "dist": 0.1148
-  },
-  {
-    "frterm": "magenta",
-    "urterm": "ہرا",
-    "dist": 0.417
-  },
-  {
-    "frterm": "marron",
-    "urterm": "بھورا",
-    "dist": 0.0808
-  },
-  {
-    "frterm": "marron",
-    "urterm": "بیگنی",
-    "dist": 0.247
-  },
-  {
-    "frterm": "marron",
-    "urterm": "جامنی",
-    "dist": 0.2772
-  },
-  {
-    "frterm": "marron",
-    "urterm": "سبز",
-    "dist": 0.2783
-  },
-  {
-    "frterm": "marron",
-    "urterm": "لال",
-    "dist": 0.1115
-  },
-  {
-    "frterm": "marron",
-    "urterm": "نیلا",
-    "dist": 0.319
-  },
-  {
-    "frterm": "marron",
-    "urterm": "پیلا",
-    "dist": 0.4382
-  },
-  {
-    "frterm": "marron",
-    "urterm": "کالا",
-    "dist": 0.2553
-  },
-  {
-    "frterm": "marron",
-    "urterm": "گلابی",
-    "dist": 0.3111
-  },
-  {
-    "frterm": "marron",
-    "urterm": "ہرا",
-    "dist": 0.2404
-  },
-  {
-    "frterm": "mauve",
-    "urterm": "بھورا",
-    "dist": 0.2295
-  },
-  {
-    "frterm": "mauve",
-    "urterm": "بیگنی",
-    "dist": 0.0778
-  },
-  {
-    "frterm": "mauve",
-    "urterm": "جامنی",
-    "dist": 0.0938
-  },
-  {
-    "frterm": "mauve",
-    "urterm": "سبز",
-    "dist": 0.3479
-  },
-  {
-    "frterm": "mauve",
-    "urterm": "لال",
     "dist": 0.2394
   },
   {
+    "frterm": "bordeaux",
+    "urterm": "سبز",
+    "dist": 0.4312
+  },
+  {
+    "frterm": "bordeaux",
+    "urterm": "لال",
+    "dist": 0.164
+  },
+  {
+    "frterm": "bordeaux",
+    "urterm": "نیلا",
+    "dist": 0.3718
+  },
+  {
+    "frterm": "bordeaux",
+    "urterm": "پیلا",
+    "dist": 0.5809
+  },
+  {
+    "frterm": "bordeaux",
+    "urterm": "کالا",
+    "dist": 0.2309
+  },
+  {
+    "frterm": "bordeaux",
+    "urterm": "گلابی",
+    "dist": 0.3796
+  },
+  {
+    "frterm": "bordeaux",
+    "urterm": "ہرا",
+    "dist": 0.3828
+  },
+  {
+    "frterm": "brun",
+    "urterm": "بھورا",
+    "dist": 0.1401
+  },
+  {
+    "frterm": "brun",
+    "urterm": "بیگنی",
+    "dist": 0.2757
+  },
+  {
+    "frterm": "brun",
+    "urterm": "جامنی",
+    "dist": 0.2529
+  },
+  {
+    "frterm": "brun",
+    "urterm": "سبز",
+    "dist": 0.3934
+  },
+  {
+    "frterm": "brun",
+    "urterm": "لال",
+    "dist": 0.1563
+  },
+  {
+    "frterm": "brun",
+    "urterm": "نیلا",
+    "dist": 0.348
+  },
+  {
+    "frterm": "brun",
+    "urterm": "پیلا",
+    "dist": 0.5539
+  },
+  {
+    "frterm": "brun",
+    "urterm": "کالا",
+    "dist": 0.2278
+  },
+  {
+    "frterm": "brun",
+    "urterm": "گلابی",
+    "dist": 0.3742
+  },
+  {
+    "frterm": "brun",
+    "urterm": "ہرا",
+    "dist": 0.3388
+  },
+  {
+    "frterm": "cyan",
+    "urterm": "بھورا",
+    "dist": 0.4492
+  },
+  {
+    "frterm": "cyan",
+    "urterm": "بیگنی",
+    "dist": 0.4077
+  },
+  {
+    "frterm": "cyan",
+    "urterm": "جامنی",
+    "dist": 0.5164
+  },
+  {
+    "frterm": "cyan",
+    "urterm": "سبز",
+    "dist": 0.2283
+  },
+  {
+    "frterm": "cyan",
+    "urterm": "لال",
+    "dist": 0.4889
+  },
+  {
+    "frterm": "cyan",
+    "urterm": "نیلا",
+    "dist": 0.3365
+  },
+  {
+    "frterm": "cyan",
+    "urterm": "پیلا",
+    "dist": 0.1943
+  },
+  {
+    "frterm": "cyan",
+    "urterm": "کالا",
+    "dist": 0.7315
+  },
+  {
+    "frterm": "cyan",
+    "urterm": "گلابی",
+    "dist": 0.3629
+  },
+  {
+    "frterm": "cyan",
+    "urterm": "ہرا",
+    "dist": 0.2897
+  },
+  {
+    "frterm": "fuchsia",
+    "urterm": "بھورا",
+    "dist": 0.325
+  },
+  {
+    "frterm": "fuchsia",
+    "urterm": "بیگنی",
+    "dist": 0.18
+  },
+  {
+    "frterm": "fuchsia",
+    "urterm": "جامنی",
+    "dist": 0.2283
+  },
+  {
+    "frterm": "fuchsia",
+    "urterm": "سبز",
+    "dist": 0.397
+  },
+  {
+    "frterm": "fuchsia",
+    "urterm": "لال",
+    "dist": 0.2698
+  },
+  {
+    "frterm": "fuchsia",
+    "urterm": "نیلا",
+    "dist": 0.3191
+  },
+  {
+    "frterm": "fuchsia",
+    "urterm": "پیلا",
+    "dist": 0.4278
+  },
+  {
+    "frterm": "fuchsia",
+    "urterm": "کالا",
+    "dist": 0.5512
+  },
+  {
+    "frterm": "fuchsia",
+    "urterm": "گلابی",
+    "dist": 0.1133
+  },
+  {
+    "frterm": "fuchsia",
+    "urterm": "ہرا",
+    "dist": 0.4061
+  },
+  {
+    "frterm": "gris",
+    "urterm": "بھورا",
+    "dist": 0.2342
+  },
+  {
+    "frterm": "gris",
+    "urterm": "بیگنی",
+    "dist": 0.2183
+  },
+  {
+    "frterm": "gris",
+    "urterm": "جامنی",
+    "dist": 0.323
+  },
+  {
+    "frterm": "gris",
+    "urterm": "سبز",
+    "dist": 0.1318
+  },
+  {
+    "frterm": "gris",
+    "urterm": "لال",
+    "dist": 0.267
+  },
+  {
+    "frterm": "gris",
+    "urterm": "نیلا",
+    "dist": 0.2127
+  },
+  {
+    "frterm": "gris",
+    "urterm": "پیلا",
+    "dist": 0.233
+  },
+  {
+    "frterm": "gris",
+    "urterm": "کالا",
+    "dist": 0.536
+  },
+  {
+    "frterm": "gris",
+    "urterm": "گلابی",
+    "dist": 0.2002
+  },
+  {
+    "frterm": "gris",
+    "urterm": "ہرا",
+    "dist": 0.1611
+  },
+  {
+    "frterm": "indigo",
+    "urterm": "بھورا",
+    "dist": 0.3219
+  },
+  {
+    "frterm": "indigo",
+    "urterm": "بیگنی",
+    "dist": 0.2341
+  },
+  {
+    "frterm": "indigo",
+    "urterm": "جامنی",
+    "dist": 0.1625
+  },
+  {
+    "frterm": "indigo",
+    "urterm": "سبز",
+    "dist": 0.4618
+  },
+  {
+    "frterm": "indigo",
+    "urterm": "لال",
+    "dist": 0.3495
+  },
+  {
+    "frterm": "indigo",
+    "urterm": "نیلا",
+    "dist": 0.2275
+  },
+  {
+    "frterm": "indigo",
+    "urterm": "پیلا",
+    "dist": 0.6143
+  },
+  {
+    "frterm": "indigo",
+    "urterm": "کالا",
+    "dist": 0.3502
+  },
+  {
+    "frterm": "indigo",
+    "urterm": "گلابی",
+    "dist": 0.3851
+  },
+  {
+    "frterm": "indigo",
+    "urterm": "ہرا",
+    "dist": 0.426
+  },
+  {
+    "frterm": "jaune",
+    "urterm": "بھورا",
+    "dist": 0.4737
+  },
+  {
+    "frterm": "jaune",
+    "urterm": "بیگنی",
+    "dist": 0.4799
+  },
+  {
+    "frterm": "jaune",
+    "urterm": "جامنی",
+    "dist": 0.5909
+  },
+  {
+    "frterm": "jaune",
+    "urterm": "سبز",
+    "dist": 0.2513
+  },
+  {
+    "frterm": "jaune",
+    "urterm": "لال",
+    "dist": 0.4853
+  },
+  {
+    "frterm": "jaune",
+    "urterm": "نیلا",
+    "dist": 0.4577
+  },
+  {
+    "frterm": "jaune",
+    "urterm": "پیلا",
+    "dist": 0.0695
+  },
+  {
+    "frterm": "jaune",
+    "urterm": "کالا",
+    "dist": 0.7822
+  },
+  {
+    "frterm": "jaune",
+    "urterm": "گلابی",
+    "dist": 0.3809
+  },
+  {
+    "frterm": "jaune",
+    "urterm": "ہرا",
+    "dist": 0.3278
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "urterm": "بھورا",
+    "dist": 0.3407
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "urterm": "بیگنی",
+    "dist": 0.3845
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "urterm": "جامنی",
+    "dist": 0.4833
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "urterm": "سبز",
+    "dist": 0.1693
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "urterm": "لال",
+    "dist": 0.3513
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "urterm": "نیلا",
+    "dist": 0.3844
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "urterm": "پیلا",
+    "dist": 0.1071
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "urterm": "کالا",
+    "dist": 0.652
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "urterm": "گلابی",
+    "dist": 0.2981
+  },
+  {
+    "frterm": "jaunemoutarde",
+    "urterm": "ہرا",
+    "dist": 0.2313
+  },
+  {
+    "frterm": "kaki",
+    "urterm": "بھورا",
+    "dist": 0.1503
+  },
+  {
+    "frterm": "kaki",
+    "urterm": "بیگنی",
+    "dist": 0.2942
+  },
+  {
+    "frterm": "kaki",
+    "urterm": "جامنی",
+    "dist": 0.3434
+  },
+  {
+    "frterm": "kaki",
+    "urterm": "سبز",
+    "dist": 0.1757
+  },
+  {
+    "frterm": "kaki",
+    "urterm": "لال",
+    "dist": 0.2182
+  },
+  {
+    "frterm": "kaki",
+    "urterm": "نیلا",
+    "dist": 0.2938
+  },
+  {
+    "frterm": "kaki",
+    "urterm": "پیلا",
+    "dist": 0.3626
+  },
+  {
+    "frterm": "kaki",
+    "urterm": "کالا",
+    "dist": 0.3974
+  },
+  {
+    "frterm": "kaki",
+    "urterm": "گلابی",
+    "dist": 0.336
+  },
+  {
+    "frterm": "kaki",
+    "urterm": "ہرا",
+    "dist": 0.1079
+  },
+  {
+    "frterm": "lavande",
+    "urterm": "بھورا",
+    "dist": 0.3387
+  },
+  {
+    "frterm": "lavande",
+    "urterm": "بیگنی",
+    "dist": 0.1906
+  },
+  {
+    "frterm": "lavande",
+    "urterm": "جامنی",
+    "dist": 0.3089
+  },
+  {
+    "frterm": "lavande",
+    "urterm": "سبز",
+    "dist": 0.2986
+  },
+  {
+    "frterm": "lavande",
+    "urterm": "لال",
+    "dist": 0.3393
+  },
+  {
+    "frterm": "lavande",
+    "urterm": "نیلا",
+    "dist": 0.2534
+  },
+  {
+    "frterm": "lavande",
+    "urterm": "پیلا",
+    "dist": 0.3018
+  },
+  {
+    "frterm": "lavande",
+    "urterm": "کالا",
+    "dist": 0.6087
+  },
+  {
+    "frterm": "lavande",
+    "urterm": "گلابی",
+    "dist": 0.1609
+  },
+  {
+    "frterm": "lavande",
+    "urterm": "ہرا",
+    "dist": 0.3318
+  },
+  {
+    "frterm": "lila",
+    "urterm": "بھورا",
+    "dist": 0.3528
+  },
+  {
+    "frterm": "lila",
+    "urterm": "بیگنی",
+    "dist": 0.2052
+  },
+  {
+    "frterm": "lila",
+    "urterm": "جامنی",
+    "dist": 0.3229
+  },
+  {
+    "frterm": "lila",
+    "urterm": "سبز",
+    "dist": 0.308
+  },
+  {
+    "frterm": "lila",
+    "urterm": "لال",
+    "dist": 0.3541
+  },
+  {
+    "frterm": "lila",
+    "urterm": "نیلا",
+    "dist": 0.2622
+  },
+  {
+    "frterm": "lila",
+    "urterm": "پیلا",
+    "dist": 0.3015
+  },
+  {
+    "frterm": "lila",
+    "urterm": "کالا",
+    "dist": 0.6231
+  },
+  {
+    "frterm": "lila",
+    "urterm": "گلابی",
+    "dist": 0.172
+  },
+  {
+    "frterm": "lila",
+    "urterm": "ہرا",
+    "dist": 0.3421
+  },
+  {
+    "frterm": "lilas",
+    "urterm": "بھورا",
+    "dist": 0.278
+  },
+  {
+    "frterm": "lilas",
+    "urterm": "بیگنی",
+    "dist": 0.1429
+  },
+  {
+    "frterm": "lilas",
+    "urterm": "جامنی",
+    "dist": 0.2615
+  },
+  {
+    "frterm": "lilas",
+    "urterm": "سبز",
+    "dist": 0.273
+  },
+  {
+    "frterm": "lilas",
+    "urterm": "لال",
+    "dist": 0.2821
+  },
+  {
+    "frterm": "lilas",
+    "urterm": "نیلا",
+    "dist": 0.222
+  },
+  {
+    "frterm": "lilas",
+    "urterm": "پیلا",
+    "dist": 0.3065
+  },
+  {
+    "frterm": "lilas",
+    "urterm": "کالا",
+    "dist": 0.561
+  },
+  {
+    "frterm": "lilas",
+    "urterm": "گلابی",
+    "dist": 0.1128
+  },
+  {
+    "frterm": "lilas",
+    "urterm": "ہرا",
+    "dist": 0.2953
+  },
+  {
+    "frterm": "magenta",
+    "urterm": "بھورا",
+    "dist": 0.3591
+  },
+  {
+    "frterm": "magenta",
+    "urterm": "بیگنی",
+    "dist": 0.2097
+  },
+  {
+    "frterm": "magenta",
+    "urterm": "جامنی",
+    "dist": 0.263
+  },
+  {
+    "frterm": "magenta",
+    "urterm": "سبز",
+    "dist": 0.4128
+  },
+  {
+    "frterm": "magenta",
+    "urterm": "لال",
+    "dist": 0.2999
+  },
+  {
+    "frterm": "magenta",
+    "urterm": "نیلا",
+    "dist": 0.3471
+  },
+  {
+    "frterm": "magenta",
+    "urterm": "پیلا",
+    "dist": 0.4284
+  },
+  {
+    "frterm": "magenta",
+    "urterm": "کالا",
+    "dist": 0.5859
+  },
+  {
+    "frterm": "magenta",
+    "urterm": "گلابی",
+    "dist": 0.12
+  },
+  {
+    "frterm": "magenta",
+    "urterm": "ہرا",
+    "dist": 0.4298
+  },
+  {
+    "frterm": "marron",
+    "urterm": "بھورا",
+    "dist": 0.0663
+  },
+  {
+    "frterm": "marron",
+    "urterm": "بیگنی",
+    "dist": 0.2463
+  },
+  {
+    "frterm": "marron",
+    "urterm": "جامنی",
+    "dist": 0.2648
+  },
+  {
+    "frterm": "marron",
+    "urterm": "سبز",
+    "dist": 0.2819
+  },
+  {
+    "frterm": "marron",
+    "urterm": "لال",
+    "dist": 0.1253
+  },
+  {
+    "frterm": "marron",
+    "urterm": "نیلا",
+    "dist": 0.306
+  },
+  {
+    "frterm": "marron",
+    "urterm": "پیلا",
+    "dist": 0.448
+  },
+  {
+    "frterm": "marron",
+    "urterm": "کالا",
+    "dist": 0.3063
+  },
+  {
+    "frterm": "marron",
+    "urterm": "گلابی",
+    "dist": 0.3207
+  },
+  {
+    "frterm": "marron",
+    "urterm": "ہرا",
+    "dist": 0.2269
+  },
+  {
+    "frterm": "marronclair",
+    "urterm": "بھورا",
+    "dist": 0.0996
+  },
+  {
+    "frterm": "marronclair",
+    "urterm": "بیگنی",
+    "dist": 0.2714
+  },
+  {
+    "frterm": "marronclair",
+    "urterm": "جامنی",
+    "dist": 0.3115
+  },
+  {
+    "frterm": "marronclair",
+    "urterm": "سبز",
+    "dist": 0.2437
+  },
+  {
+    "frterm": "marronclair",
+    "urterm": "لال",
+    "dist": 0.1276
+  },
+  {
+    "frterm": "marronclair",
+    "urterm": "نیلا",
+    "dist": 0.3274
+  },
+  {
+    "frterm": "marronclair",
+    "urterm": "پیلا",
+    "dist": 0.3913
+  },
+  {
+    "frterm": "marronclair",
+    "urterm": "کالا",
+    "dist": 0.3721
+  },
+  {
+    "frterm": "marronclair",
+    "urterm": "گلابی",
+    "dist": 0.3016
+  },
+  {
+    "frterm": "marronclair",
+    "urterm": "ہرا",
+    "dist": 0.2043
+  },
+  {
+    "frterm": "mauve",
+    "urterm": "بھورا",
+    "dist": 0.2373
+  },
+  {
+    "frterm": "mauve",
+    "urterm": "بیگنی",
+    "dist": 0.0767
+  },
+  {
+    "frterm": "mauve",
+    "urterm": "جامنی",
+    "dist": 0.1121
+  },
+  {
+    "frterm": "mauve",
+    "urterm": "سبز",
+    "dist": 0.3507
+  },
+  {
+    "frterm": "mauve",
+    "urterm": "لال",
+    "dist": 0.2421
+  },
+  {
     "frterm": "mauve",
     "urterm": "نیلا",
-    "dist": 0.211
+    "dist": 0.21
   },
   {
     "frterm": "mauve",
     "urterm": "پیلا",
-    "dist": 0.4466
+    "dist": 0.4487
   },
   {
     "frterm": "mauve",
     "urterm": "کالا",
-    "dist": 0.3644
+    "dist": 0.4505
   },
   {
     "frterm": "mauve",
     "urterm": "گلابی",
-    "dist": 0.1643
+    "dist": 0.172
   },
   {
     "frterm": "mauve",
     "urterm": "ہرا",
-    "dist": 0.3371
+    "dist": 0.3388
   },
   {
     "frterm": "noir",
     "urterm": "بھورا",
-    "dist": 0.2786
+    "dist": 0.3833
   },
   {
     "frterm": "noir",
     "urterm": "بیگنی",
-    "dist": 0.3517
+    "dist": 0.4858
   },
   {
     "frterm": "noir",
     "urterm": "جامنی",
-    "dist": 0.3039
+    "dist": 0.4123
   },
   {
     "frterm": "noir",
     "urterm": "سبز",
-    "dist": 0.4814
+    "dist": 0.5914
   },
   {
     "frterm": "noir",
     "urterm": "لال",
-    "dist": 0.296
+    "dist": 0.4144
   },
   {
     "frterm": "noir",
     "urterm": "نیلا",
-    "dist": 0.3945
+    "dist": 0.5086
   },
   {
     "frterm": "noir",
     "urterm": "پیلا",
-    "dist": 0.6694
+    "dist": 0.7844
   },
   {
     "frterm": "noir",
     "urterm": "کالا",
-    "dist": 0.0361
+    "dist": 0.0568
   },
   {
     "frterm": "noir",
     "urterm": "گلابی",
-    "dist": 0.4906
+    "dist": 0.6236
   },
   {
     "frterm": "noir",
     "urterm": "ہرا",
-    "dist": 0.4351
+    "dist": 0.517
   },
   {
     "frterm": "ocre",
     "urterm": "بھورا",
-    "dist": 0.2266
+    "dist": 0.2424
   },
   {
     "frterm": "ocre",
     "urterm": "بیگنی",
-    "dist": 0.3104
+    "dist": 0.3106
   },
   {
     "frterm": "ocre",
     "urterm": "جامنی",
-    "dist": 0.3864
+    "dist": 0.3999
   },
   {
     "frterm": "ocre",
     "urterm": "سبز",
-    "dist": 0.1686
+    "dist": 0.1684
   },
   {
     "frterm": "ocre",
     "urterm": "لال",
-    "dist": 0.2383
+    "dist": 0.2423
   },
   {
     "frterm": "ocre",
     "urterm": "نیلا",
-    "dist": 0.3431
+    "dist": 0.3407
   },
   {
     "frterm": "ocre",
     "urterm": "پیلا",
-    "dist": 0.2085
+    "dist": 0.2055
   },
   {
     "frterm": "ocre",
     "urterm": "کالا",
-    "dist": 0.4827
+    "dist": 0.556
   },
   {
     "frterm": "ocre",
     "urterm": "گلابی",
-    "dist": 0.2468
+    "dist": 0.2424
   },
   {
     "frterm": "ocre",
     "urterm": "ہرا",
-    "dist": 0.1829
+    "dist": 0.1989
   },
   {
     "frterm": "orange",
     "urterm": "بھورا",
-    "dist": 0.29
+    "dist": 0.306
   },
   {
     "frterm": "orange",
@@ -1412,272 +1512,272 @@
   {
     "frterm": "orange",
     "urterm": "جامنی",
-    "dist": 0.4189
+    "dist": 0.4347
   },
   {
     "frterm": "orange",
     "urterm": "سبز",
-    "dist": 0.2092
+    "dist": 0.2097
   },
   {
     "frterm": "orange",
+    "urterm": "لال",
+    "dist": 0.2927
+  },
+  {
+    "frterm": "orange",
+    "urterm": "نیلا",
+    "dist": 0.3738
+  },
+  {
+    "frterm": "orange",
+    "urterm": "پیلا",
+    "dist": 0.1548
+  },
+  {
+    "frterm": "orange",
+    "urterm": "کالا",
+    "dist": 0.6222
+  },
+  {
+    "frterm": "orange",
+    "urterm": "گلابی",
+    "dist": 0.2295
+  },
+  {
+    "frterm": "orange",
+    "urterm": "ہرا",
+    "dist": 0.2564
+  },
+  {
+    "frterm": "pourpre",
+    "urterm": "بھورا",
+    "dist": 0.2094
+  },
+  {
+    "frterm": "pourpre",
+    "urterm": "بیگنی",
+    "dist": 0.1786
+  },
+  {
+    "frterm": "pourpre",
+    "urterm": "جامنی",
+    "dist": 0.102
+  },
+  {
+    "frterm": "pourpre",
+    "urterm": "سبز",
+    "dist": 0.4224
+  },
+  {
+    "frterm": "pourpre",
+    "urterm": "لال",
+    "dist": 0.2065
+  },
+  {
+    "frterm": "pourpre",
+    "urterm": "نیلا",
+    "dist": 0.3024
+  },
+  {
+    "frterm": "pourpre",
+    "urterm": "پیلا",
+    "dist": 0.5602
+  },
+  {
+    "frterm": "pourpre",
+    "urterm": "کالا",
+    "dist": 0.3147
+  },
+  {
+    "frterm": "pourpre",
+    "urterm": "گلابی",
+    "dist": 0.3019
+  },
+  {
+    "frterm": "pourpre",
+    "urterm": "ہرا",
+    "dist": 0.3784
+  },
+  {
+    "frterm": "prune",
+    "urterm": "بھورا",
+    "dist": 0.2343
+  },
+  {
+    "frterm": "prune",
+    "urterm": "بیگنی",
+    "dist": 0.288
+  },
+  {
+    "frterm": "prune",
+    "urterm": "جامنی",
+    "dist": 0.2083
+  },
+  {
+    "frterm": "prune",
+    "urterm": "سبز",
+    "dist": 0.4763
+  },
+  {
+    "frterm": "prune",
+    "urterm": "لال",
+    "dist": 0.2449
+  },
+  {
+    "frterm": "prune",
+    "urterm": "نیلا",
+    "dist": 0.3574
+  },
+  {
+    "frterm": "prune",
+    "urterm": "پیلا",
+    "dist": 0.6392
+  },
+  {
+    "frterm": "prune",
+    "urterm": "کالا",
+    "dist": 0.1873
+  },
+  {
+    "frterm": "prune",
+    "urterm": "گلابی",
+    "dist": 0.4241
+  },
+  {
+    "frterm": "prune",
+    "urterm": "ہرا",
+    "dist": 0.4224
+  },
+  {
+    "frterm": "rose",
+    "urterm": "بھورا",
+    "dist": 0.314
+  },
+  {
+    "frterm": "rose",
+    "urterm": "بیگنی",
+    "dist": 0.2118
+  },
+  {
+    "frterm": "rose",
+    "urterm": "جامنی",
+    "dist": 0.2933
+  },
+  {
+    "frterm": "rose",
+    "urterm": "سبز",
+    "dist": 0.3299
+  },
+  {
+    "frterm": "rose",
     "urterm": "لال",
     "dist": 0.2897
   },
   {
-    "frterm": "orange",
-    "urterm": "نیلا",
-    "dist": 0.3753
-  },
-  {
-    "frterm": "orange",
-    "urterm": "پیلا",
-    "dist": 0.156
-  },
-  {
-    "frterm": "orange",
-    "urterm": "کالا",
-    "dist": 0.5467
-  },
-  {
-    "frterm": "orange",
-    "urterm": "گلابی",
-    "dist": 0.2342
-  },
-  {
-    "frterm": "orange",
-    "urterm": "ہرا",
-    "dist": 0.2368
-  },
-  {
-    "frterm": "pourpre",
-    "urterm": "بھورا",
-    "dist": 0.2096
-  },
-  {
-    "frterm": "pourpre",
-    "urterm": "بیگنی",
-    "dist": 0.1753
-  },
-  {
-    "frterm": "pourpre",
-    "urterm": "جامنی",
-    "dist": 0.1049
-  },
-  {
-    "frterm": "pourpre",
-    "urterm": "سبز",
-    "dist": 0.4194
-  },
-  {
-    "frterm": "pourpre",
-    "urterm": "لال",
-    "dist": 0.2028
-  },
-  {
-    "frterm": "pourpre",
-    "urterm": "نیلا",
-    "dist": 0.3043
-  },
-  {
-    "frterm": "pourpre",
-    "urterm": "پیلا",
-    "dist": 0.5579
-  },
-  {
-    "frterm": "pourpre",
-    "urterm": "کالا",
-    "dist": 0.2307
-  },
-  {
-    "frterm": "pourpre",
-    "urterm": "گلابی",
-    "dist": 0.2944
-  },
-  {
-    "frterm": "pourpre",
-    "urterm": "ہرا",
-    "dist": 0.386
-  },
-  {
-    "frterm": "prune",
-    "urterm": "بھورا",
-    "dist": 0.2413
-  },
-  {
-    "frterm": "prune",
-    "urterm": "بیگنی",
-    "dist": 0.2789
-  },
-  {
-    "frterm": "prune",
-    "urterm": "جامنی",
-    "dist": 0.216
-  },
-  {
-    "frterm": "prune",
-    "urterm": "سبز",
-    "dist": 0.4725
-  },
-  {
-    "frterm": "prune",
-    "urterm": "لال",
-    "dist": 0.2411
-  },
-  {
-    "frterm": "prune",
-    "urterm": "نیلا",
-    "dist": 0.3546
-  },
-  {
-    "frterm": "prune",
-    "urterm": "پیلا",
-    "dist": 0.6348
-  },
-  {
-    "frterm": "prune",
-    "urterm": "کالا",
-    "dist": 0.1187
-  },
-  {
-    "frterm": "prune",
-    "urterm": "گلابی",
-    "dist": 0.4131
-  },
-  {
-    "frterm": "prune",
-    "urterm": "ہرا",
-    "dist": 0.4334
-  },
-  {
-    "frterm": "rose",
-    "urterm": "بھورا",
-    "dist": 0.298
-  },
-  {
-    "frterm": "rose",
-    "urterm": "بیگنی",
-    "dist": 0.2134
-  },
-  {
-    "frterm": "rose",
-    "urterm": "جامنی",
-    "dist": 0.2706
-  },
-  {
-    "frterm": "rose",
-    "urterm": "سبز",
-    "dist": 0.3273
-  },
-  {
-    "frterm": "rose",
-    "urterm": "لال",
-    "dist": 0.2872
-  },
-  {
     "frterm": "rose",
     "urterm": "نیلا",
-    "dist": 0.3039
+    "dist": 0.3031
   },
   {
     "frterm": "rose",
     "urterm": "پیلا",
-    "dist": 0.3149
+    "dist": 0.3151
   },
   {
     "frterm": "rose",
     "urterm": "کالا",
-    "dist": 0.5141
+    "dist": 0.6034
   },
   {
     "frterm": "rose",
     "urterm": "گلابی",
-    "dist": 0.0422
+    "dist": 0.0414
   },
   {
     "frterm": "rose",
     "urterm": "ہرا",
-    "dist": 0.342
+    "dist": 0.3551
   },
   {
     "frterm": "rosefonce",
     "urterm": "بھورا",
-    "dist": 0.1882
+    "dist": 0.2003
   },
   {
     "frterm": "rosefonce",
     "urterm": "بیگنی",
-    "dist": 0.1491
+    "dist": 0.1521
   },
   {
     "frterm": "rosefonce",
     "urterm": "جامنی",
-    "dist": 0.1827
+    "dist": 0.2018
   },
   {
     "frterm": "rosefonce",
     "urterm": "سبز",
-    "dist": 0.3117
+    "dist": 0.315
   },
   {
     "frterm": "rosefonce",
     "urterm": "لال",
-    "dist": 0.1419
+    "dist": 0.1439
   },
   {
     "frterm": "rosefonce",
     "urterm": "نیلا",
-    "dist": 0.2787
+    "dist": 0.2798
   },
   {
     "frterm": "rosefonce",
     "urterm": "پیلا",
-    "dist": 0.3931
+    "dist": 0.3905
   },
   {
     "frterm": "rosefonce",
     "urterm": "کالا",
-    "dist": 0.3568
+    "dist": 0.4504
   },
   {
     "frterm": "rosefonce",
     "urterm": "گلابی",
-    "dist": 0.141
+    "dist": 0.1423
   },
   {
     "frterm": "rosefonce",
     "urterm": "ہرا",
-    "dist": 0.3053
+    "dist": 0.3129
   },
   {
     "frterm": "rosepale",
     "urterm": "بھورا",
-    "dist": 0.4036
+    "dist": 0.4183
   },
   {
     "frterm": "rosepale",
     "urterm": "بیگنی",
-    "dist": 0.364
+    "dist": 0.3615
   },
   {
     "frterm": "rosepale",
     "urterm": "جامنی",
-    "dist": 0.4607
+    "dist": 0.478
   },
   {
     "frterm": "rosepale",
     "urterm": "سبز",
-    "dist": 0.2524
+    "dist": 0.2535
   },
   {
     "frterm": "rosepale",
     "urterm": "لال",
-    "dist": 0.4247
+    "dist": 0.4265
   },
   {
     "frterm": "rosepale",
     "urterm": "نیلا",
-    "dist": 0.3623
+    "dist": 0.3606
   },
   {
     "frterm": "rosepale",
@@ -1687,397 +1787,397 @@
   {
     "frterm": "rosepale",
     "urterm": "کالا",
-    "dist": 0.6484
+    "dist": 0.7298
   },
   {
     "frterm": "rosepale",
     "urterm": "گلابی",
-    "dist": 0.2619
+    "dist": 0.2579
   },
   {
     "frterm": "rosepale",
     "urterm": "ہرا",
-    "dist": 0.3009
+    "dist": 0.3227
   },
   {
     "frterm": "rouge",
     "urterm": "بھورا",
-    "dist": 0.1402
+    "dist": 0.1487
   },
   {
     "frterm": "rouge",
     "urterm": "بیگنی",
-    "dist": 0.2047
+    "dist": 0.2071
   },
   {
     "frterm": "rouge",
     "urterm": "جامنی",
-    "dist": 0.2446
+    "dist": 0.2583
   },
   {
     "frterm": "rouge",
     "urterm": "سبز",
-    "dist": 0.2904
+    "dist": 0.2873
   },
   {
     "frterm": "rouge",
     "urterm": "لال",
-    "dist": 0.0565
+    "dist": 0.061
   },
   {
     "frterm": "rouge",
     "urterm": "نیلا",
-    "dist": 0.3228
+    "dist": 0.32
   },
   {
     "frterm": "rouge",
     "urterm": "پیلا",
-    "dist": 0.3901
+    "dist": 0.3867
   },
   {
     "frterm": "rouge",
     "urterm": "کالا",
-    "dist": 0.3301
+    "dist": 0.4123
   },
   {
     "frterm": "rouge",
     "urterm": "گلابی",
-    "dist": 0.2104
+    "dist": 0.2111
   },
   {
     "frterm": "rouge",
     "urterm": "ہرا",
-    "dist": 0.2735
+    "dist": 0.2734
   },
   {
     "frterm": "rougefonce",
     "urterm": "بھورا",
-    "dist": 0.1256
+    "dist": 0.1216
   },
   {
     "frterm": "rougefonce",
     "urterm": "بیگنی",
-    "dist": 0.2329
+    "dist": 0.2355
   },
   {
     "frterm": "rougefonce",
     "urterm": "جامنی",
-    "dist": 0.2319
+    "dist": 0.2338
   },
   {
     "frterm": "rougefonce",
     "urterm": "سبز",
-    "dist": 0.3606
+    "dist": 0.3604
   },
   {
     "frterm": "rougefonce",
     "urterm": "لال",
-    "dist": 0.0865
+    "dist": 0.0908
   },
   {
     "frterm": "rougefonce",
     "urterm": "نیلا",
-    "dist": 0.3448
+    "dist": 0.3424
   },
   {
     "frterm": "rougefonce",
     "urterm": "پیلا",
-    "dist": 0.5008
+    "dist": 0.5027
   },
   {
     "frterm": "rougefonce",
     "urterm": "کالا",
-    "dist": 0.2152
+    "dist": 0.2872
   },
   {
     "frterm": "rougefonce",
     "urterm": "گلابی",
-    "dist": 0.3126
+    "dist": 0.3191
   },
   {
     "frterm": "rougefonce",
     "urterm": "ہرا",
-    "dist": 0.3269
+    "dist": 0.317
   },
   {
     "frterm": "saumon",
     "urterm": "بھورا",
+    "dist": 0.3381
+  },
+  {
+    "frterm": "saumon",
+    "urterm": "بیگنی",
+    "dist": 0.3248
+  },
+  {
+    "frterm": "saumon",
+    "urterm": "جامنی",
+    "dist": 0.4259
+  },
+  {
+    "frterm": "saumon",
+    "urterm": "سبز",
+    "dist": 0.2712
+  },
+  {
+    "frterm": "saumon",
+    "urterm": "لال",
+    "dist": 0.3109
+  },
+  {
+    "frterm": "saumon",
+    "urterm": "نیلا",
+    "dist": 0.3766
+  },
+  {
+    "frterm": "saumon",
+    "urterm": "پیلا",
+    "dist": 0.1857
+  },
+  {
+    "frterm": "saumon",
+    "urterm": "کالا",
+    "dist": 0.654
+  },
+  {
+    "frterm": "saumon",
+    "urterm": "گلابی",
+    "dist": 0.1844
+  },
+  {
+    "frterm": "saumon",
+    "urterm": "ہرا",
+    "dist": 0.3174
+  },
+  {
+    "frterm": "taupe",
+    "urterm": "بھورا",
+    "dist": 0.1453
+  },
+  {
+    "frterm": "taupe",
+    "urterm": "بیگنی",
+    "dist": 0.1737
+  },
+  {
+    "frterm": "taupe",
+    "urterm": "جامنی",
+    "dist": 0.2584
+  },
+  {
+    "frterm": "taupe",
+    "urterm": "سبز",
+    "dist": 0.1737
+  },
+  {
+    "frterm": "taupe",
+    "urterm": "لال",
+    "dist": 0.1853
+  },
+  {
+    "frterm": "taupe",
+    "urterm": "نیلا",
+    "dist": 0.2038
+  },
+  {
+    "frterm": "taupe",
+    "urterm": "پیلا",
+    "dist": 0.318
+  },
+  {
+    "frterm": "taupe",
+    "urterm": "کالا",
+    "dist": 0.4415
+  },
+  {
+    "frterm": "taupe",
+    "urterm": "گلابی",
+    "dist": 0.2085
+  },
+  {
+    "frterm": "taupe",
+    "urterm": "ہرا",
+    "dist": 0.1656
+  },
+  {
+    "frterm": "turquoise",
+    "urterm": "بھورا",
+    "dist": 0.3714
+  },
+  {
+    "frterm": "turquoise",
+    "urterm": "بیگنی",
+    "dist": 0.3329
+  },
+  {
+    "frterm": "turquoise",
+    "urterm": "جامنی",
+    "dist": 0.4312
+  },
+  {
+    "frterm": "turquoise",
+    "urterm": "سبز",
+    "dist": 0.1745
+  },
+  {
+    "frterm": "turquoise",
+    "urterm": "لال",
+    "dist": 0.4187
+  },
+  {
+    "frterm": "turquoise",
+    "urterm": "نیلا",
+    "dist": 0.2435
+  },
+  {
+    "frterm": "turquoise",
+    "urterm": "پیلا",
+    "dist": 0.2512
+  },
+  {
+    "frterm": "turquoise",
+    "urterm": "کالا",
+    "dist": 0.633
+  },
+  {
+    "frterm": "turquoise",
+    "urterm": "گلابی",
+    "dist": 0.335
+  },
+  {
+    "frterm": "turquoise",
+    "urterm": "ہرا",
+    "dist": 0.2149
+  },
+  {
+    "frterm": "vert",
+    "urterm": "بھورا",
+    "dist": 0.2605
+  },
+  {
+    "frterm": "vert",
+    "urterm": "بیگنی",
+    "dist": 0.317
+  },
+  {
+    "frterm": "vert",
+    "urterm": "جامنی",
+    "dist": 0.4012
+  },
+  {
+    "frterm": "vert",
+    "urterm": "سبز",
+    "dist": 0.0393
+  },
+  {
+    "frterm": "vert",
+    "urterm": "لال",
     "dist": 0.3215
   },
   {
-    "frterm": "saumon",
-    "urterm": "بیگنی",
-    "dist": 0.3263
-  },
-  {
-    "frterm": "saumon",
-    "urterm": "جامنی",
-    "dist": 0.408
-  },
-  {
-    "frterm": "saumon",
-    "urterm": "سبز",
-    "dist": 0.2701
-  },
-  {
-    "frterm": "saumon",
-    "urterm": "لال",
-    "dist": 0.3092
-  },
-  {
-    "frterm": "saumon",
-    "urterm": "نیلا",
-    "dist": 0.3777
-  },
-  {
-    "frterm": "saumon",
-    "urterm": "پیلا",
-    "dist": 0.184
-  },
-  {
-    "frterm": "saumon",
-    "urterm": "کالا",
-    "dist": 0.5721
-  },
-  {
-    "frterm": "saumon",
-    "urterm": "گلابی",
-    "dist": 0.1903
-  },
-  {
-    "frterm": "saumon",
-    "urterm": "ہرا",
-    "dist": 0.299
-  },
-  {
-    "frterm": "taupe",
-    "urterm": "بھورا",
-    "dist": 0.1374
-  },
-  {
-    "frterm": "taupe",
-    "urterm": "بیگنی",
-    "dist": 0.1747
-  },
-  {
-    "frterm": "taupe",
-    "urterm": "جامنی",
-    "dist": 0.252
-  },
-  {
-    "frterm": "taupe",
-    "urterm": "سبز",
-    "dist": 0.1697
-  },
-  {
-    "frterm": "taupe",
-    "urterm": "لال",
-    "dist": 0.1851
-  },
-  {
-    "frterm": "taupe",
-    "urterm": "نیلا",
-    "dist": 0.2075
-  },
-  {
-    "frterm": "taupe",
-    "urterm": "پیلا",
-    "dist": 0.3155
-  },
-  {
-    "frterm": "taupe",
-    "urterm": "کالا",
-    "dist": 0.3655
-  },
-  {
-    "frterm": "taupe",
-    "urterm": "گلابی",
-    "dist": 0.2051
-  },
-  {
-    "frterm": "taupe",
-    "urterm": "ہرا",
-    "dist": 0.1595
-  },
-  {
-    "frterm": "turquoise",
-    "urterm": "بھورا",
-    "dist": 0.3636
-  },
-  {
-    "frterm": "turquoise",
-    "urterm": "بیگنی",
-    "dist": 0.3355
-  },
-  {
-    "frterm": "turquoise",
-    "urterm": "جامنی",
-    "dist": 0.4247
-  },
-  {
-    "frterm": "turquoise",
-    "urterm": "سبز",
-    "dist": 0.1729
-  },
-  {
-    "frterm": "turquoise",
-    "urterm": "لال",
-    "dist": 0.4186
-  },
-  {
-    "frterm": "turquoise",
-    "urterm": "نیلا",
-    "dist": 0.2475
-  },
-  {
-    "frterm": "turquoise",
-    "urterm": "پیلا",
-    "dist": 0.2517
-  },
-  {
-    "frterm": "turquoise",
-    "urterm": "کالا",
-    "dist": 0.568
-  },
-  {
-    "frterm": "turquoise",
-    "urterm": "گلابی",
-    "dist": 0.3372
-  },
-  {
-    "frterm": "turquoise",
-    "urterm": "ہرا",
-    "dist": 0.2014
-  },
-  {
-    "frterm": "vert",
-    "urterm": "بھورا",
-    "dist": 0.2664
-  },
-  {
-    "frterm": "vert",
-    "urterm": "بیگنی",
-    "dist": 0.3219
-  },
-  {
-    "frterm": "vert",
-    "urterm": "جامنی",
-    "dist": 0.4047
-  },
-  {
-    "frterm": "vert",
-    "urterm": "سبز",
-    "dist": 0.04
-  },
-  {
-    "frterm": "vert",
-    "urterm": "لال",
-    "dist": 0.326
-  },
-  {
     "frterm": "vert",
     "urterm": "نیلا",
-    "dist": 0.2807
+    "dist": 0.2704
   },
   {
     "frterm": "vert",
     "urterm": "پیلا",
-    "dist": 0.2194
+    "dist": 0.2363
   },
   {
     "frterm": "vert",
     "urterm": "کالا",
-    "dist": 0.4951
+    "dist": 0.5374
   },
   {
     "frterm": "vert",
     "urterm": "گلابی",
-    "dist": 0.3253
+    "dist": 0.328
   },
   {
     "frterm": "vert",
     "urterm": "ہرا",
-    "dist": 0.0637
+    "dist": 0.0666
   },
   {
     "frterm": "vertclair",
     "urterm": "بھورا",
-    "dist": 0.4665
+    "dist": 0.4782
   },
   {
     "frterm": "vertclair",
     "urterm": "بیگنی",
-    "dist": 0.4682
+    "dist": 0.4659
   },
   {
     "frterm": "vertclair",
     "urterm": "جامنی",
-    "dist": 0.5644
+    "dist": 0.5764
   },
   {
     "frterm": "vertclair",
     "urterm": "سبز",
-    "dist": 0.2378
+    "dist": 0.237
   },
   {
     "frterm": "vertclair",
     "urterm": "لال",
-    "dist": 0.5032
+    "dist": 0.5045
   },
   {
     "frterm": "vertclair",
     "urterm": "نیلا",
-    "dist": 0.4231
+    "dist": 0.4203
   },
   {
     "frterm": "vertclair",
     "urterm": "پیلا",
-    "dist": 0.1125
+    "dist": 0.1114
   },
   {
     "frterm": "vertclair",
     "urterm": "کالا",
-    "dist": 0.7067
+    "dist": 0.7771
   },
   {
     "frterm": "vertclair",
     "urterm": "گلابی",
-    "dist": 0.3907
+    "dist": 0.386
   },
   {
     "frterm": "vertclair",
     "urterm": "ہرا",
-    "dist": 0.2916
+    "dist": 0.3133
   },
   {
     "frterm": "vertd'eau",
     "urterm": "بھورا",
-    "dist": 0.4257
+    "dist": 0.4379
   },
   {
     "frterm": "vertd'eau",
     "urterm": "بیگنی",
-    "dist": 0.4011
+    "dist": 0.3987
   },
   {
     "frterm": "vertd'eau",
     "urterm": "جامنی",
-    "dist": 0.4982
+    "dist": 0.5112
   },
   {
     "frterm": "vertd'eau",
     "urterm": "سبز",
-    "dist": 0.2203
+    "dist": 0.2207
   },
   {
     "frterm": "vertd'eau",
     "urterm": "لال",
-    "dist": 0.4622
+    "dist": 0.4641
   },
   {
     "frterm": "vertd'eau",
     "urterm": "نیلا",
-    "dist": 0.3533
+    "dist": 0.3503
   },
   {
     "frterm": "vertd'eau",
@@ -2087,387 +2187,387 @@
   {
     "frterm": "vertd'eau",
     "urterm": "کالا",
-    "dist": 0.6612
+    "dist": 0.7347
   },
   {
     "frterm": "vertd'eau",
     "urterm": "گلابی",
-    "dist": 0.3317
+    "dist": 0.3287
   },
   {
     "frterm": "vertd'eau",
     "urterm": "ہرا",
+    "dist": 0.29
+  },
+  {
+    "frterm": "vertfluo",
+    "urterm": "بھورا",
+    "dist": 0.4147
+  },
+  {
+    "frterm": "vertfluo",
+    "urterm": "بیگنی",
+    "dist": 0.4317
+  },
+  {
+    "frterm": "vertfluo",
+    "urterm": "جامنی",
+    "dist": 0.5354
+  },
+  {
+    "frterm": "vertfluo",
+    "urterm": "سبز",
+    "dist": 0.169
+  },
+  {
+    "frterm": "vertfluo",
+    "urterm": "لال",
+    "dist": 0.4444
+  },
+  {
+    "frterm": "vertfluo",
+    "urterm": "نیلا",
+    "dist": 0.3913
+  },
+  {
+    "frterm": "vertfluo",
+    "urterm": "پیلا",
+    "dist": 0.1139
+  },
+  {
+    "frterm": "vertfluo",
+    "urterm": "کالا",
+    "dist": 0.7121
+  },
+  {
+    "frterm": "vertfluo",
+    "urterm": "گلابی",
+    "dist": 0.366
+  },
+  {
+    "frterm": "vertfluo",
+    "urterm": "ہرا",
+    "dist": 0.2493
+  },
+  {
+    "frterm": "vertfonce",
+    "urterm": "بھورا",
+    "dist": 0.1786
+  },
+  {
+    "frterm": "vertfonce",
+    "urterm": "بیگنی",
+    "dist": 0.3206
+  },
+  {
+    "frterm": "vertfonce",
+    "urterm": "جامنی",
+    "dist": 0.3306
+  },
+  {
+    "frterm": "vertfonce",
+    "urterm": "سبز",
     "dist": 0.2692
   },
   {
-    "frterm": "vertfluo",
-    "urterm": "بھورا",
-    "dist": 0.4037
-  },
-  {
-    "frterm": "vertfluo",
-    "urterm": "بیگنی",
-    "dist": 0.4335
-  },
-  {
-    "frterm": "vertfluo",
-    "urterm": "جامنی",
-    "dist": 0.5252
-  },
-  {
-    "frterm": "vertfluo",
-    "urterm": "سبز",
-    "dist": 0.1709
-  },
-  {
-    "frterm": "vertfluo",
-    "urterm": "لال",
-    "dist": 0.4434
-  },
-  {
-    "frterm": "vertfluo",
-    "urterm": "نیلا",
-    "dist": 0.3943
-  },
-  {
-    "frterm": "vertfluo",
-    "urterm": "پیلا",
-    "dist": 0.1152
-  },
-  {
-    "frterm": "vertfluo",
-    "urterm": "کالا",
-    "dist": 0.6455
-  },
-  {
-    "frterm": "vertfluo",
-    "urterm": "گلابی",
-    "dist": 0.371
-  },
-  {
-    "frterm": "vertfluo",
-    "urterm": "ہرا",
-    "dist": 0.2284
-  },
-  {
-    "frterm": "vertfonce",
-    "urterm": "بھورا",
-    "dist": 0.1729
-  },
-  {
-    "frterm": "vertfonce",
-    "urterm": "بیگنی",
-    "dist": 0.297
-  },
-  {
-    "frterm": "vertfonce",
-    "urterm": "جامنی",
-    "dist": 0.3325
-  },
-  {
-    "frterm": "vertfonce",
-    "urterm": "سبز",
-    "dist": 0.2338
-  },
-  {
     "frterm": "vertfonce",
     "urterm": "لال",
-    "dist": 0.2393
+    "dist": 0.2608
   },
   {
     "frterm": "vertfonce",
     "urterm": "نیلا",
-    "dist": 0.291
+    "dist": 0.3041
   },
   {
     "frterm": "vertfonce",
     "urterm": "پیلا",
-    "dist": 0.4439
+    "dist": 0.4796
   },
   {
     "frterm": "vertfonce",
     "urterm": "کالا",
-    "dist": 0.2792
+    "dist": 0.2975
   },
   {
     "frterm": "vertfonce",
     "urterm": "گلابی",
-    "dist": 0.3778
+    "dist": 0.4106
   },
   {
     "frterm": "vertfonce",
     "urterm": "ہرا",
-    "dist": 0.1788
+    "dist": 0.191
   },
   {
     "frterm": "vertforet",
     "urterm": "بھورا",
-    "dist": 0.2059
+    "dist": 0.2002
   },
   {
     "frterm": "vertforet",
     "urterm": "بیگنی",
-    "dist": 0.3103
+    "dist": 0.3204
   },
   {
     "frterm": "vertforet",
     "urterm": "جامنی",
-    "dist": 0.3541
+    "dist": 0.3488
   },
   {
     "frterm": "vertforet",
     "urterm": "سبز",
-    "dist": 0.1964
+    "dist": 0.2323
   },
   {
     "frterm": "vertforet",
     "urterm": "لال",
-    "dist": 0.266
+    "dist": 0.2731
   },
   {
     "frterm": "vertforet",
     "urterm": "نیلا",
-    "dist": 0.2851
+    "dist": 0.2914
   },
   {
     "frterm": "vertforet",
     "urterm": "پیلا",
-    "dist": 0.4058
+    "dist": 0.4409
   },
   {
     "frterm": "vertforet",
     "urterm": "کالا",
-    "dist": 0.333
+    "dist": 0.3477
   },
   {
     "frterm": "vertforet",
     "urterm": "گلابی",
-    "dist": 0.3768
+    "dist": 0.4022
   },
   {
     "frterm": "vertforet",
     "urterm": "ہرا",
-    "dist": 0.1448
+    "dist": 0.1526
   },
   {
     "frterm": "vertkaki",
     "urterm": "بھورا",
-    "dist": 0.1608
+    "dist": 0.1583
   },
   {
     "frterm": "vertkaki",
     "urterm": "بیگنی",
-    "dist": 0.3044
+    "dist": 0.3118
   },
   {
     "frterm": "vertkaki",
     "urterm": "جامنی",
-    "dist": 0.3497
+    "dist": 0.3443
   },
   {
     "frterm": "vertkaki",
     "urterm": "سبز",
-    "dist": 0.187
+    "dist": 0.2122
   },
   {
     "frterm": "vertkaki",
     "urterm": "لال",
-    "dist": 0.225
+    "dist": 0.2326
   },
   {
     "frterm": "vertkaki",
     "urterm": "نیلا",
-    "dist": 0.3059
+    "dist": 0.3067
   },
   {
     "frterm": "vertkaki",
     "urterm": "پیلا",
-    "dist": 0.3784
+    "dist": 0.4086
   },
   {
     "frterm": "vertkaki",
     "urterm": "کالا",
+    "dist": 0.3604
+  },
+  {
+    "frterm": "vertkaki",
+    "urterm": "گلابی",
+    "dist": 0.3717
+  },
+  {
+    "frterm": "vertkaki",
+    "urterm": "ہرا",
+    "dist": 0.1326
+  },
+  {
+    "frterm": "vertpale",
+    "urterm": "بھورا",
+    "dist": 0.5061
+  },
+  {
+    "frterm": "vertpale",
+    "urterm": "بیگنی",
+    "dist": 0.4872
+  },
+  {
+    "frterm": "vertpale",
+    "urterm": "جامنی",
+    "dist": 0.5985
+  },
+  {
+    "frterm": "vertpale",
+    "urterm": "سبز",
+    "dist": 0.2697
+  },
+  {
+    "frterm": "vertpale",
+    "urterm": "لال",
+    "dist": 0.5285
+  },
+  {
+    "frterm": "vertpale",
+    "urterm": "نیلا",
+    "dist": 0.4433
+  },
+  {
+    "frterm": "vertpale",
+    "urterm": "پیلا",
+    "dist": 0.1236
+  },
+  {
+    "frterm": "vertpale",
+    "urterm": "کالا",
+    "dist": 0.8068
+  },
+  {
+    "frterm": "vertpale",
+    "urterm": "گلابی",
+    "dist": 0.4008
+  },
+  {
+    "frterm": "vertpale",
+    "urterm": "ہرا",
+    "dist": 0.3458
+  },
+  {
+    "frterm": "vertpomme",
+    "urterm": "بھورا",
+    "dist": 0.4012
+  },
+  {
+    "frterm": "vertpomme",
+    "urterm": "بیگنی",
+    "dist": 0.4133
+  },
+  {
+    "frterm": "vertpomme",
+    "urterm": "جامنی",
+    "dist": 0.5206
+  },
+  {
+    "frterm": "vertpomme",
+    "urterm": "سبز",
+    "dist": 0.1689
+  },
+  {
+    "frterm": "vertpomme",
+    "urterm": "لال",
+    "dist": 0.426
+  },
+  {
+    "frterm": "vertpomme",
+    "urterm": "نیلا",
+    "dist": 0.387
+  },
+  {
+    "frterm": "vertpomme",
+    "urterm": "پیلا",
+    "dist": 0.0771
+  },
+  {
+    "frterm": "vertpomme",
+    "urterm": "کالا",
+    "dist": 0.7062
+  },
+  {
+    "frterm": "vertpomme",
+    "urterm": "گلابی",
     "dist": 0.3376
   },
   {
-    "frterm": "vertkaki",
-    "urterm": "گلابی",
-    "dist": 0.3515
-  },
-  {
-    "frterm": "vertkaki",
-    "urterm": "ہرا",
-    "dist": 0.1293
-  },
-  {
-    "frterm": "vertpale",
-    "urterm": "بھورا",
-    "dist": 0.4938
-  },
-  {
-    "frterm": "vertpale",
-    "urterm": "بیگنی",
-    "dist": 0.4894
-  },
-  {
-    "frterm": "vertpale",
-    "urterm": "جامنی",
-    "dist": 0.5855
-  },
-  {
-    "frterm": "vertpale",
-    "urterm": "سبز",
-    "dist": 0.2704
-  },
-  {
-    "frterm": "vertpale",
-    "urterm": "لال",
-    "dist": 0.5273
-  },
-  {
-    "frterm": "vertpale",
-    "urterm": "نیلا",
-    "dist": 0.4461
-  },
-  {
-    "frterm": "vertpale",
-    "urterm": "پیلا",
-    "dist": 0.1243
-  },
-  {
-    "frterm": "vertpale",
-    "urterm": "کالا",
-    "dist": 0.7345
-  },
-  {
-    "frterm": "vertpale",
-    "urterm": "گلابی",
-    "dist": 0.4055
-  },
-  {
-    "frterm": "vertpale",
-    "urterm": "ہرا",
-    "dist": 0.3242
-  },
-  {
-    "frterm": "vertpomme",
-    "urterm": "بھورا",
-    "dist": 0.3895
-  },
-  {
-    "frterm": "vertpomme",
-    "urterm": "بیگنی",
-    "dist": 0.4157
-  },
-  {
-    "frterm": "vertpomme",
-    "urterm": "جامنی",
-    "dist": 0.5092
-  },
-  {
-    "frterm": "vertpomme",
-    "urterm": "سبز",
-    "dist": 0.1714
-  },
-  {
-    "frterm": "vertpomme",
-    "urterm": "لال",
-    "dist": 0.4252
-  },
-  {
-    "frterm": "vertpomme",
-    "urterm": "نیلا",
-    "dist": 0.3905
-  },
-  {
-    "frterm": "vertpomme",
-    "urterm": "پیلا",
-    "dist": 0.078
-  },
-  {
-    "frterm": "vertpomme",
-    "urterm": "کالا",
-    "dist": 0.6379
-  },
-  {
-    "frterm": "vertpomme",
-    "urterm": "گلابی",
-    "dist": 0.3425
-  },
-  {
     "frterm": "vertpomme",
     "urterm": "ہرا",
-    "dist": 0.2286
+    "dist": 0.2497
   },
   {
     "frterm": "vertsapin",
     "urterm": "بھورا",
-    "dist": 0.1919
+    "dist": 0.1866
   },
   {
     "frterm": "vertsapin",
     "urterm": "بیگنی",
-    "dist": 0.294
+    "dist": 0.3001
   },
   {
     "frterm": "vertsapin",
     "urterm": "جامنی",
-    "dist": 0.3417
+    "dist": 0.3365
   },
   {
     "frterm": "vertsapin",
     "urterm": "سبز",
-    "dist": 0.1746
+    "dist": 0.2039
   },
   {
     "frterm": "vertsapin",
     "urterm": "لال",
-    "dist": 0.2554
+    "dist": 0.2563
   },
   {
     "frterm": "vertsapin",
     "urterm": "نیلا",
-    "dist": 0.2713
+    "dist": 0.273
   },
   {
     "frterm": "vertsapin",
     "urterm": "پیلا",
-    "dist": 0.3857
+    "dist": 0.4136
   },
   {
     "frterm": "vertsapin",
     "urterm": "کالا",
-    "dist": 0.3392
+    "dist": 0.3662
   },
   {
     "frterm": "vertsapin",
     "urterm": "گلابی",
-    "dist": 0.3529
+    "dist": 0.3734
   },
   {
     "frterm": "vertsapin",
     "urterm": "ہرا",
-    "dist": 0.1238
+    "dist": 0.1264
   },
   {
     "frterm": "vieuxrose",
     "urterm": "بھورا",
-    "dist": 0.2248
+    "dist": 0.2373
   },
   {
     "frterm": "vieuxrose",
     "urterm": "بیگنی",
-    "dist": 0.2053
+    "dist": 0.2027
   },
   {
     "frterm": "vieuxrose",
     "urterm": "جامنی",
-    "dist": 0.2972
+    "dist": 0.3096
   },
   {
     "frterm": "vieuxrose",
     "urterm": "سبز",
-    "dist": 0.1811
+    "dist": 0.1852
   },
   {
     "frterm": "vieuxrose",
@@ -2477,126 +2577,126 @@
   {
     "frterm": "vieuxrose",
     "urterm": "نیلا",
-    "dist": 0.2305
+    "dist": 0.228
   },
   {
     "frterm": "vieuxrose",
     "urterm": "پیلا",
-    "dist": 0.2405
+    "dist": 0.2415
   },
   {
     "frterm": "vieuxrose",
     "urterm": "کالا",
-    "dist": 0.4626
+    "dist": 0.5448
   },
   {
     "frterm": "vieuxrose",
     "urterm": "گلابی",
-    "dist": 0.1575
+    "dist": 0.1538
   },
   {
     "frterm": "vieuxrose",
     "urterm": "ہرا",
-    "dist": 0.1971
+    "dist": 0.2122
   },
   {
     "frterm": "violet",
     "urterm": "بھورا",
-    "dist": 0.2599
+    "dist": 0.2657
   },
   {
     "frterm": "violet",
     "urterm": "بیگنی",
-    "dist": 0.0964
+    "dist": 0.0973
   },
   {
     "frterm": "violet",
     "urterm": "جامنی",
-    "dist": 0.0781
+    "dist": 0.1013
   },
   {
     "frterm": "violet",
     "urterm": "سبز",
-    "dist": 0.3773
+    "dist": 0.38
   },
   {
     "frterm": "violet",
     "urterm": "لال",
-    "dist": 0.2587
+    "dist": 0.2606
   },
   {
     "frterm": "violet",
     "urterm": "نیلا",
-    "dist": 0.2319
+    "dist": 0.2306
   },
   {
     "frterm": "violet",
     "urterm": "پیلا",
-    "dist": 0.4768
+    "dist": 0.478
   },
   {
     "frterm": "violet",
     "urterm": "کالا",
-    "dist": 0.3674
+    "dist": 0.4535
   },
   {
     "frterm": "violet",
     "urterm": "گلابی",
-    "dist": 0.1831
+    "dist": 0.1898
   },
   {
     "frterm": "violet",
     "urterm": "ہرا",
-    "dist": 0.3672
+    "dist": 0.3685
   },
   {
     "frterm": "violetfonce",
     "urterm": "بھورا",
-    "dist": 0.229
+    "dist": 0.2214
   },
   {
     "frterm": "violetfonce",
     "urterm": "بیگنی",
-    "dist": 0.2131
+    "dist": 0.2295
   },
   {
     "frterm": "violetfonce",
     "urterm": "جامنی",
-    "dist": 0.1517
+    "dist": 0.1494
   },
   {
     "frterm": "violetfonce",
     "urterm": "سبز",
-    "dist": 0.4211
+    "dist": 0.4253
   },
   {
     "frterm": "violetfonce",
     "urterm": "لال",
-    "dist": 0.2479
+    "dist": 0.2537
   },
   {
     "frterm": "violetfonce",
     "urterm": "نیلا",
-    "dist": 0.2646
+    "dist": 0.2732
   },
   {
     "frterm": "violetfonce",
     "urterm": "پیلا",
-    "dist": 0.5903
+    "dist": 0.5969
   },
   {
     "frterm": "violetfonce",
     "urterm": "کالا",
-    "dist": 0.1701
+    "dist": 0.2282
   },
   {
     "frterm": "violetfonce",
     "urterm": "گلابی",
-    "dist": 0.3661
+    "dist": 0.3811
   },
   {
     "frterm": "violetfonce",
     "urterm": "ہرا",
-    "dist": 0.3818
+    "dist": 0.3667
   }
 ]

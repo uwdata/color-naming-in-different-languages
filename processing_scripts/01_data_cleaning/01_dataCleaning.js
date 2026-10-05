@@ -295,6 +295,8 @@ if(removedData.length > 0){
 // Color name Matches
 let color_name_matches = await csv().fromFile(COLOR_MATCHES_I)
 
+const color_name_match_term_changes = {}
+
 for(const cn of color_name_matches){
 
   cn.langAbv = getLangAbv(cn.lang)
@@ -303,9 +305,13 @@ for(const cn of color_name_matches){
   await refine.refine(cn)
   let newName = cn.name
   if(oldName != newName){
-      console.log("WARNING: Name changed when transferring color name match")
-      console.log("  lang", cn.lang)
-      console.log("  names: ", oldName, ", ", newName)
+      const name_change_info = `lang ${cn.lang}; old name ${oldName} ; new name ${newName}`
+      if(!(name_change_info in color_name_match_term_changes)){
+        console.log("WARNING: Name changed when transferring color name match")
+        console.log("  lang", cn.lang)
+        console.log("  names: ", oldName, ", ", newName)
+        color_name_match_term_changes[name_change_info] = true
+      }
   }
 
   if(cn.name != ""){

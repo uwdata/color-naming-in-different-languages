@@ -1,1267 +1,1502 @@
 [
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
+    "nlterm2": "beige",
+    "dist": 0.1534
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "blauw",
-    "dist": 0.3549
+    "dist": 0.315
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "bordeaux",
-    "dist": 0.4571
+    "dist": 0.4851
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "bruin",
-    "dist": 0.3683
+    "dist": 0.3805
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "cyaan",
-    "dist": 0.1703
+    "dist": 0.0412
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "donkerblauw",
-    "dist": 0.5165
+    "dist": 0.4889
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "donkergroen",
-    "dist": 0.4261
+    "dist": 0.3996
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "donkerpaars",
-    "dist": 0.4747
+    "dist": 0.4826
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
+    "nlterm2": "donkerroze",
+    "dist": 0.4075
+  },
+  {
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "geel",
-    "dist": 0.1424
+    "dist": 0.2079
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "grijs",
-    "dist": 0.1733
+    "dist": 0.1885
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "groen",
-    "dist": 0.1951
+    "dist": 0.1626
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "lichtblauw",
-    "dist": 0.1487
+    "dist": 0.0969
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "lichtgroen",
-    "dist": 0.1207
+    "dist": 0.114
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "lichtpaars",
-    "dist": 0.215
+    "dist": 0.2401
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "lila",
-    "dist": 0.2015
+    "dist": 0.2454
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "magenta",
-    "dist": 0.3172
+    "dist": 0.3819
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "oranje",
-    "dist": 0.1396
+    "dist": 0.2553
   },
   {
-    "nlterm": "beige",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "oudroze",
-    "dist": 0.2037
-  },
-  {
-    "nlterm": "beige",
-    "nlterm2": "paars",
-    "dist": 0.3771
-  },
-  {
-    "nlterm": "beige",
-    "nlterm2": "rood",
-    "dist": 0.3237
-  },
-  {
-    "nlterm": "beige",
-    "nlterm2": "roze",
-    "dist": 0.2334
-  },
-  {
-    "nlterm": "beige",
-    "nlterm2": "turquoise",
-    "dist": 0.1621
-  },
-  {
-    "nlterm": "beige",
-    "nlterm2": "zwart",
-    "dist": 0.6051
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "bordeaux",
-    "dist": 0.3002
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "bruin",
-    "dist": 0.2463
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "cyaan",
-    "dist": 0.2799
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "donkerblauw",
-    "dist": 0.1922
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "donkergroen",
-    "dist": 0.2395
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "donkerpaars",
-    "dist": 0.2218
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "geel",
-    "dist": 0.4752
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "grijs",
-    "dist": 0.1953
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "groen",
-    "dist": 0.2993
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "lichtblauw",
-    "dist": 0.305
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "lichtgroen",
-    "dist": 0.3863
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "lichtpaars",
-    "dist": 0.2129
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "lila",
-    "dist": 0.2427
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "magenta",
-    "dist": 0.2557
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "oranje",
-    "dist": 0.3589
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "oudroze",
-    "dist": 0.2403
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "paars",
-    "dist": 0.1691
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "rood",
-    "dist": 0.3301
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "roze",
-    "dist": 0.2877
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "turquoise",
-    "dist": 0.2883
-  },
-  {
-    "nlterm": "blauw",
-    "nlterm2": "zwart",
-    "dist": 0.3587
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "bruin",
-    "dist": 0.1128
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "cyaan",
-    "dist": 0.4545
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "donkerblauw",
-    "dist": 0.2315
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "donkergroen",
-    "dist": 0.1953
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "donkerpaars",
-    "dist": 0.1384
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "geel",
-    "dist": 0.5533
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "grijs",
-    "dist": 0.3136
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "groen",
-    "dist": 0.3926
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "lichtblauw",
-    "dist": 0.4941
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "lichtgroen",
-    "dist": 0.5054
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "lichtpaars",
-    "dist": 0.3491
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "lila",
-    "dist": 0.3818
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "magenta",
-    "dist": 0.2806
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "oranje",
-    "dist": 0.3639
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "oudroze",
-    "dist": 0.2711
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "paars",
-    "dist": 0.2455
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "rood",
-    "dist": 0.1935
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "roze",
-    "dist": 0.3372
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "turquoise",
-    "dist": 0.4701
-  },
-  {
-    "nlterm": "bordeaux",
-    "nlterm2": "zwart",
-    "dist": 0.1929
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "cyaan",
-    "dist": 0.3546
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "donkerblauw",
-    "dist": 0.2424
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "donkergroen",
-    "dist": 0.1331
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "donkerpaars",
-    "dist": 0.1793
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "geel",
-    "dist": 0.4582
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "grijs",
-    "dist": 0.2256
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "groen",
-    "dist": 0.2858
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "lichtblauw",
-    "dist": 0.4051
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "lichtgroen",
-    "dist": 0.4043
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "lichtpaars",
-    "dist": 0.2884
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "lila",
-    "dist": 0.3212
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "magenta",
     "dist": 0.2652
   },
   {
-    "nlterm": "bruin",
-    "nlterm2": "oranje",
-    "dist": 0.2866
-  },
-  {
-    "nlterm": "bruin",
-    "nlterm2": "oudroze",
-    "dist": 0.2004
-  },
-  {
-    "nlterm": "bruin",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "paars",
-    "dist": 0.2363
+    "dist": 0.3961
   },
   {
-    "nlterm": "bruin",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "rood",
-    "dist": 0.1783
+    "dist": 0.3996
   },
   {
-    "nlterm": "bruin",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "roze",
-    "dist": 0.2938
+    "dist": 0.3167
   },
   {
-    "nlterm": "bruin",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "turquoise",
-    "dist": 0.3721
+    "dist": 0.0287
   },
   {
-    "nlterm": "bruin",
+    "nlterm": "appelblauwzeegroen",
     "nlterm2": "zwart",
-    "dist": 0.248
+    "dist": 0.6103
   },
   {
-    "nlterm": "cyaan",
+    "nlterm": "beige",
+    "nlterm2": "blauw",
+    "dist": 0.3722
+  },
+  {
+    "nlterm": "beige",
+    "nlterm2": "bordeaux",
+    "dist": 0.4746
+  },
+  {
+    "nlterm": "beige",
+    "nlterm2": "bruin",
+    "dist": 0.3807
+  },
+  {
+    "nlterm": "beige",
+    "nlterm2": "cyaan",
+    "dist": 0.1672
+  },
+  {
+    "nlterm": "beige",
     "nlterm2": "donkerblauw",
-    "dist": 0.4531
+    "dist": 0.5329
   },
   {
-    "nlterm": "cyaan",
+    "nlterm": "beige",
     "nlterm2": "donkergroen",
-    "dist": 0.3634
+    "dist": 0.4406
   },
   {
-    "nlterm": "cyaan",
+    "nlterm": "beige",
     "nlterm2": "donkerpaars",
-    "dist": 0.449
+    "dist": 0.4944
   },
   {
-    "nlterm": "cyaan",
+    "nlterm": "beige",
+    "nlterm2": "donkerroze",
+    "dist": 0.3628
+  },
+  {
+    "nlterm": "beige",
     "nlterm2": "geel",
-    "dist": 0.2362
+    "dist": 0.1278
   },
   {
-    "nlterm": "cyaan",
+    "nlterm": "beige",
     "nlterm2": "grijs",
-    "dist": 0.1652
+    "dist": 0.1872
   },
   {
-    "nlterm": "cyaan",
+    "nlterm": "beige",
     "nlterm2": "groen",
-    "dist": 0.1349
+    "dist": 0.2059
   },
   {
-    "nlterm": "cyaan",
+    "nlterm": "beige",
     "nlterm2": "lichtblauw",
-    "dist": 0.112
+    "dist": 0.1464
   },
   {
-    "nlterm": "cyaan",
+    "nlterm": "beige",
     "nlterm2": "lichtgroen",
-    "dist": 0.1326
+    "dist": 0.1192
   },
   {
-    "nlterm": "cyaan",
+    "nlterm": "beige",
     "nlterm2": "lichtpaars",
-    "dist": 0.2388
+    "dist": 0.2195
   },
   {
-    "nlterm": "cyaan",
+    "nlterm": "beige",
     "nlterm2": "lila",
-    "dist": 0.2416
-  },
-  {
-    "nlterm": "cyaan",
-    "nlterm2": "magenta",
-    "dist": 0.3601
-  },
-  {
-    "nlterm": "cyaan",
-    "nlterm2": "oranje",
-    "dist": 0.2564
-  },
-  {
-    "nlterm": "cyaan",
-    "nlterm2": "oudroze",
-    "dist": 0.2489
-  },
-  {
-    "nlterm": "cyaan",
-    "nlterm2": "paars",
-    "dist": 0.3697
-  },
-  {
-    "nlterm": "cyaan",
-    "nlterm2": "rood",
-    "dist": 0.3845
-  },
-  {
-    "nlterm": "cyaan",
-    "nlterm2": "roze",
-    "dist": 0.3113
-  },
-  {
-    "nlterm": "cyaan",
-    "nlterm2": "turquoise",
-    "dist": 0.0294
-  },
-  {
-    "nlterm": "cyaan",
-    "nlterm2": "zwart",
-    "dist": 0.5586
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "donkergroen",
-    "dist": 0.2051
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "donkerpaars",
-    "dist": 0.1232
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "geel",
-    "dist": 0.6308
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "grijs",
-    "dist": 0.3459
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "groen",
-    "dist": 0.4364
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "lichtblauw",
-    "dist": 0.4912
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "lichtgroen",
-    "dist": 0.5475
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "lichtpaars",
-    "dist": 0.3614
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "lila",
-    "dist": 0.3979
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "magenta",
-    "dist": 0.3343
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "oranje",
-    "dist": 0.4787
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "oudroze",
-    "dist": 0.3504
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "paars",
-    "dist": 0.2202
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "rood",
-    "dist": 0.3608
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "roze",
-    "dist": 0.4037
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "turquoise",
-    "dist": 0.4657
-  },
-  {
-    "nlterm": "donkerblauw",
-    "nlterm2": "zwart",
-    "dist": 0.1986
-  },
-  {
-    "nlterm": "donkergroen",
-    "nlterm2": "donkerpaars",
     "dist": 0.2147
   },
   {
-    "nlterm": "donkergroen",
+    "nlterm": "beige",
+    "nlterm2": "magenta",
+    "dist": 0.3408
+  },
+  {
+    "nlterm": "beige",
+    "nlterm2": "oranje",
+    "dist": 0.1498
+  },
+  {
+    "nlterm": "beige",
+    "nlterm2": "oudroze",
+    "dist": 0.2214
+  },
+  {
+    "nlterm": "beige",
+    "nlterm2": "paars",
+    "dist": 0.3954
+  },
+  {
+    "nlterm": "beige",
+    "nlterm2": "rood",
+    "dist": 0.3371
+  },
+  {
+    "nlterm": "beige",
+    "nlterm2": "roze",
+    "dist": 0.2481
+  },
+  {
+    "nlterm": "beige",
+    "nlterm2": "turquoise",
+    "dist": 0.1659
+  },
+  {
+    "nlterm": "beige",
+    "nlterm2": "zwart",
+    "dist": 0.6385
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "bordeaux",
+    "dist": 0.297
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "bruin",
+    "dist": 0.2436
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "cyaan",
+    "dist": 0.2836
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "donkerblauw",
+    "dist": 0.1894
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "donkergroen",
+    "dist": 0.2393
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "donkerpaars",
+    "dist": 0.2189
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "donkerroze",
+    "dist": 0.2729
+  },
+  {
+    "nlterm": "blauw",
     "nlterm2": "geel",
-    "dist": 0.5077
+    "dist": 0.4777
   },
   {
-    "nlterm": "donkergroen",
+    "nlterm": "blauw",
     "nlterm2": "grijs",
-    "dist": 0.2747
+    "dist": 0.2
   },
   {
-    "nlterm": "donkergroen",
+    "nlterm": "blauw",
     "nlterm2": "groen",
     "dist": 0.2999
   },
   {
+    "nlterm": "blauw",
+    "nlterm2": "lichtblauw",
+    "dist": 0.3105
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "lichtgroen",
+    "dist": 0.3902
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "lichtpaars",
+    "dist": 0.216
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "lila",
+    "dist": 0.2442
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "magenta",
+    "dist": 0.2543
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "oranje",
+    "dist": 0.3619
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "oudroze",
+    "dist": 0.2436
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "paars",
+    "dist": 0.1672
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "rood",
+    "dist": 0.3289
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "roze",
+    "dist": 0.287
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "turquoise",
+    "dist": 0.298
+  },
+  {
+    "nlterm": "blauw",
+    "nlterm2": "zwart",
+    "dist": 0.3628
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "bruin",
+    "dist": 0.1206
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "cyaan",
+    "dist": 0.4565
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "donkerblauw",
+    "dist": 0.2301
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "donkergroen",
+    "dist": 0.1969
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "donkerpaars",
+    "dist": 0.1405
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "donkerroze",
+    "dist": 0.2101
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "geel",
+    "dist": 0.5563
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "grijs",
+    "dist": 0.3157
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "groen",
+    "dist": 0.3865
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "lichtblauw",
+    "dist": 0.496
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "lichtgroen",
+    "dist": 0.5047
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "lichtpaars",
+    "dist": 0.3546
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "lila",
+    "dist": 0.3836
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "magenta",
+    "dist": 0.2778
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "oranje",
+    "dist": 0.3669
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "oudroze",
+    "dist": 0.2699
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "paars",
+    "dist": 0.2416
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "rood",
+    "dist": 0.1964
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "roze",
+    "dist": 0.3379
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "turquoise",
+    "dist": 0.4748
+  },
+  {
+    "nlterm": "bordeaux",
+    "nlterm2": "zwart",
+    "dist": 0.2081
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "cyaan",
+    "dist": 0.3519
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "donkerblauw",
+    "dist": 0.2448
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "donkergroen",
+    "dist": 0.1297
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "donkerpaars",
+    "dist": 0.1864
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "donkerroze",
+    "dist": 0.213
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "geel",
+    "dist": 0.4559
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "grijs",
+    "dist": 0.2235
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "groen",
+    "dist": 0.2723
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "lichtblauw",
+    "dist": 0.4028
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "lichtgroen",
+    "dist": 0.3971
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "lichtpaars",
+    "dist": 0.29
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "lila",
+    "dist": 0.3218
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "magenta",
+    "dist": 0.2677
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "oranje",
+    "dist": 0.2859
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "oudroze",
+    "dist": 0.1973
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "paars",
+    "dist": 0.2368
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "rood",
+    "dist": 0.1821
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "roze",
+    "dist": 0.2945
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "turquoise",
+    "dist": 0.3704
+  },
+  {
+    "nlterm": "bruin",
+    "nlterm2": "zwart",
+    "dist": 0.27
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "donkerblauw",
+    "dist": 0.4555
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "donkergroen",
+    "dist": 0.3676
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "donkerpaars",
+    "dist": 0.4513
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "donkerroze",
+    "dist": 0.3849
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "geel",
+    "dist": 0.2325
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "grijs",
+    "dist": 0.1617
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "groen",
+    "dist": 0.1476
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "lichtblauw",
+    "dist": 0.1064
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "lichtgroen",
+    "dist": 0.1336
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "lichtpaars",
+    "dist": 0.2247
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "lila",
+    "dist": 0.235
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "magenta",
+    "dist": 0.3631
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "oranje",
+    "dist": 0.2538
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "oudroze",
+    "dist": 0.2482
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "paars",
+    "dist": 0.3694
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "rood",
+    "dist": 0.3815
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "roze",
+    "dist": 0.3059
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "turquoise",
+    "dist": 0.0265
+  },
+  {
+    "nlterm": "cyaan",
+    "nlterm2": "zwart",
+    "dist": 0.5774
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "donkergroen",
+    "dist": 0.2096
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "donkerpaars",
+    "dist": 0.1201
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "donkerroze",
+    "dist": 0.3098
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "geel",
+    "dist": 0.6315
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "grijs",
+    "dist": 0.3485
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "groen",
+    "dist": 0.4314
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "lichtblauw",
+    "dist": 0.4936
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "lichtgroen",
+    "dist": 0.5476
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "lichtpaars",
+    "dist": 0.3676
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "lila",
+    "dist": 0.3989
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "magenta",
+    "dist": 0.3295
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "oranje",
+    "dist": 0.4802
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "oudroze",
+    "dist": 0.3508
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "paars",
+    "dist": 0.2172
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "rood",
+    "dist": 0.3617
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "roze",
+    "dist": 0.4024
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "turquoise",
+    "dist": 0.4714
+  },
+  {
+    "nlterm": "donkerblauw",
+    "nlterm2": "zwart",
+    "dist": 0.2003
+  },
+  {
+    "nlterm": "donkergroen",
+    "nlterm2": "donkerpaars",
+    "dist": 0.2187
+  },
+  {
+    "nlterm": "donkergroen",
+    "nlterm2": "donkerroze",
+    "dist": 0.3185
+  },
+  {
+    "nlterm": "donkergroen",
+    "nlterm2": "geel",
+    "dist": 0.5088
+  },
+  {
+    "nlterm": "donkergroen",
+    "nlterm2": "grijs",
+    "dist": 0.276
+  },
+  {
+    "nlterm": "donkergroen",
+    "nlterm2": "groen",
+    "dist": 0.2897
+  },
+  {
     "nlterm": "donkergroen",
     "nlterm2": "lichtblauw",
-    "dist": 0.4335
+    "dist": 0.4358
   },
   {
     "nlterm": "donkergroen",
     "nlterm2": "lichtgroen",
-    "dist": 0.4344
+    "dist": 0.4313
   },
   {
     "nlterm": "donkergroen",
     "nlterm2": "lichtpaars",
-    "dist": 0.3537
+    "dist": 0.3566
   },
   {
     "nlterm": "donkergroen",
     "nlterm2": "lila",
-    "dist": 0.3882
+    "dist": 0.3906
   },
   {
     "nlterm": "donkergroen",
     "nlterm2": "magenta",
-    "dist": 0.3561
+    "dist": 0.3581
   },
   {
     "nlterm": "donkergroen",
     "nlterm2": "oranje",
-    "dist": 0.376
+    "dist": 0.3772
   },
   {
     "nlterm": "donkergroen",
     "nlterm2": "oudroze",
-    "dist": 0.291
+    "dist": 0.2902
   },
   {
     "nlterm": "donkergroen",
     "nlterm2": "paars",
-    "dist": 0.2961
+    "dist": 0.2966
   },
   {
     "nlterm": "donkergroen",
     "nlterm2": "rood",
-    "dist": 0.3031
+    "dist": 0.3044
   },
   {
     "nlterm": "donkergroen",
     "nlterm2": "roze",
-    "dist": 0.3893
+    "dist": 0.3902
   },
   {
     "nlterm": "donkergroen",
     "nlterm2": "turquoise",
-    "dist": 0.3837
+    "dist": 0.3851
   },
   {
     "nlterm": "donkergroen",
     "nlterm2": "zwart",
-    "dist": 0.2093
+    "dist": 0.2278
+  },
+  {
+    "nlterm": "donkerpaars",
+    "nlterm2": "donkerroze",
+    "dist": 0.214
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "geel",
-    "dist": 0.5914
+    "dist": 0.5946
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "grijs",
-    "dist": 0.3124
+    "dist": 0.3167
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "groen",
-    "dist": 0.4191
+    "dist": 0.416
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "lichtblauw",
-    "dist": 0.4773
+    "dist": 0.4808
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "lichtgroen",
-    "dist": 0.5234
+    "dist": 0.5253
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "lichtpaars",
-    "dist": 0.3149
+    "dist": 0.3236
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "lila",
-    "dist": 0.3509
+    "dist": 0.3537
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "magenta",
-    "dist": 0.2517
+    "dist": 0.2485
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "oranje",
-    "dist": 0.4122
+    "dist": 0.4167
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "oudroze",
-    "dist": 0.2858
+    "dist": 0.2882
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "paars",
-    "dist": 0.1625
+    "dist": 0.1596
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "rood",
-    "dist": 0.2612
+    "dist": 0.2654
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "roze",
-    "dist": 0.3296
+    "dist": 0.3309
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "turquoise",
-    "dist": 0.4608
+    "dist": 0.4681
   },
   {
     "nlterm": "donkerpaars",
     "nlterm2": "zwart",
-    "dist": 0.2038
+    "dist": 0.21
   },
   {
-    "nlterm": "geel",
+    "nlterm": "donkerroze",
+    "nlterm2": "geel",
+    "dist": 0.4672
+  },
+  {
+    "nlterm": "donkerroze",
     "nlterm2": "grijs",
-    "dist": 0.2977
+    "dist": 0.2368
   },
   {
-    "nlterm": "geel",
+    "nlterm": "donkerroze",
     "nlterm2": "groen",
-    "dist": 0.2293
+    "dist": 0.3671
   },
   {
-    "nlterm": "geel",
+    "nlterm": "donkerroze",
     "nlterm2": "lichtblauw",
-    "dist": 0.2375
+    "dist": 0.3856
   },
   {
-    "nlterm": "geel",
+    "nlterm": "donkerroze",
     "nlterm2": "lichtgroen",
-    "dist": 0.1293
+    "dist": 0.4317
   },
   {
-    "nlterm": "geel",
+    "nlterm": "donkerroze",
     "nlterm2": "lichtpaars",
-    "dist": 0.3521
+    "dist": 0.206
   },
   {
-    "nlterm": "geel",
+    "nlterm": "donkerroze",
     "nlterm2": "lila",
-    "dist": 0.3381
-  },
-  {
-    "nlterm": "geel",
-    "nlterm2": "magenta",
-    "dist": 0.4479
-  },
-  {
-    "nlterm": "geel",
-    "nlterm2": "oranje",
-    "dist": 0.2151
-  },
-  {
-    "nlterm": "geel",
-    "nlterm2": "oudroze",
-    "dist": 0.3238
-  },
-  {
-    "nlterm": "geel",
-    "nlterm2": "paars",
-    "dist": 0.5099
-  },
-  {
-    "nlterm": "geel",
-    "nlterm2": "rood",
-    "dist": 0.4217
-  },
-  {
-    "nlterm": "geel",
-    "nlterm2": "roze",
-    "dist": 0.3612
-  },
-  {
-    "nlterm": "geel",
-    "nlterm2": "turquoise",
-    "dist": 0.2311
-  },
-  {
-    "nlterm": "geel",
-    "nlterm2": "zwart",
-    "dist": 0.6964
-  },
-  {
-    "nlterm": "grijs",
-    "nlterm2": "groen",
-    "dist": 0.1632
-  },
-  {
-    "nlterm": "grijs",
-    "nlterm2": "lichtblauw",
-    "dist": 0.186
-  },
-  {
-    "nlterm": "grijs",
-    "nlterm2": "lichtgroen",
-    "dist": 0.2244
-  },
-  {
-    "nlterm": "grijs",
-    "nlterm2": "lichtpaars",
-    "dist": 0.1354
-  },
-  {
-    "nlterm": "grijs",
-    "nlterm2": "lila",
-    "dist": 0.1539
-  },
-  {
-    "nlterm": "grijs",
-    "nlterm2": "magenta",
     "dist": 0.2232
   },
   {
+    "nlterm": "donkerroze",
+    "nlterm2": "magenta",
+    "dist": 0.0876
+  },
+  {
+    "nlterm": "donkerroze",
+    "nlterm2": "oranje",
+    "dist": 0.2682
+  },
+  {
+    "nlterm": "donkerroze",
+    "nlterm2": "oudroze",
+    "dist": 0.1556
+  },
+  {
+    "nlterm": "donkerroze",
+    "nlterm2": "paars",
+    "dist": 0.1429
+  },
+  {
+    "nlterm": "donkerroze",
+    "nlterm2": "rood",
+    "dist": 0.12
+  },
+  {
+    "nlterm": "donkerroze",
+    "nlterm2": "roze",
+    "dist": 0.1501
+  },
+  {
+    "nlterm": "donkerroze",
+    "nlterm2": "turquoise",
+    "dist": 0.4009
+  },
+  {
+    "nlterm": "donkerroze",
+    "nlterm2": "zwart",
+    "dist": 0.3923
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "grijs",
+    "dist": 0.2942
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "groen",
+    "dist": 0.2386
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "lichtblauw",
+    "dist": 0.2338
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "lichtgroen",
+    "dist": 0.1273
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "lichtpaars",
+    "dist": 0.341
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "lila",
+    "dist": 0.3365
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "magenta",
+    "dist": 0.4556
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "oranje",
+    "dist": 0.2146
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "oudroze",
+    "dist": 0.3241
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "paars",
+    "dist": 0.5112
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "rood",
+    "dist": 0.4209
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "roze",
+    "dist": 0.3609
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "turquoise",
+    "dist": 0.2264
+  },
+  {
+    "nlterm": "geel",
+    "nlterm2": "zwart",
+    "dist": 0.7172
+  },
+  {
+    "nlterm": "grijs",
+    "nlterm2": "groen",
+    "dist": 0.1619
+  },
+  {
+    "nlterm": "grijs",
+    "nlterm2": "lichtblauw",
+    "dist": 0.1863
+  },
+  {
+    "nlterm": "grijs",
+    "nlterm2": "lichtgroen",
+    "dist": 0.2227
+  },
+  {
+    "nlterm": "grijs",
+    "nlterm2": "lichtpaars",
+    "dist": 0.1296
+  },
+  {
+    "nlterm": "grijs",
+    "nlterm2": "lila",
+    "dist": 0.1549
+  },
+  {
+    "nlterm": "grijs",
+    "nlterm2": "magenta",
+    "dist": 0.2292
+  },
+  {
     "nlterm": "grijs",
     "nlterm2": "oranje",
-    "dist": 0.1848
+    "dist": 0.184
   },
   {
     "nlterm": "grijs",
     "nlterm2": "oudroze",
-    "dist": 0.1177
+    "dist": 0.1203
   },
   {
     "nlterm": "grijs",
     "nlterm2": "paars",
-    "dist": 0.2317
+    "dist": 0.2353
   },
   {
     "nlterm": "grijs",
     "nlterm2": "rood",
-    "dist": 0.24
+    "dist": 0.239
   },
   {
     "nlterm": "grijs",
     "nlterm2": "roze",
-    "dist": 0.1909
+    "dist": 0.1904
   },
   {
     "nlterm": "grijs",
     "nlterm2": "turquoise",
-    "dist": 0.1758
+    "dist": 0.1816
   },
   {
     "nlterm": "grijs",
     "nlterm2": "zwart",
-    "dist": 0.4449
+    "dist": 0.4626
   },
   {
     "nlterm": "groen",
     "nlterm2": "lichtblauw",
-    "dist": 0.2148
+    "dist": 0.2255
   },
   {
     "nlterm": "groen",
     "nlterm2": "lichtgroen",
-    "dist": 0.1412
+    "dist": 0.1479
   },
   {
     "nlterm": "groen",
     "nlterm2": "lichtpaars",
-    "dist": 0.2821
+    "dist": 0.2768
   },
   {
     "nlterm": "groen",
     "nlterm2": "lila",
-    "dist": 0.2932
+    "dist": 0.297
   },
   {
     "nlterm": "groen",
     "nlterm2": "magenta",
-    "dist": 0.367
+    "dist": 0.3729
   },
   {
     "nlterm": "groen",
     "nlterm2": "oranje",
-    "dist": 0.218
+    "dist": 0.2207
   },
   {
     "nlterm": "groen",
     "nlterm2": "oudroze",
-    "dist": 0.2355
+    "dist": 0.2354
   },
   {
     "nlterm": "groen",
     "nlterm2": "paars",
-    "dist": 0.3763
+    "dist": 0.3754
   },
   {
     "nlterm": "groen",
     "nlterm2": "rood",
-    "dist": 0.3333
+    "dist": 0.3291
   },
   {
     "nlterm": "groen",
     "nlterm2": "roze",
-    "dist": 0.3268
+    "dist": 0.3285
   },
   {
     "nlterm": "groen",
     "nlterm2": "turquoise",
-    "dist": 0.1531
+    "dist": 0.1596
   },
   {
     "nlterm": "groen",
     "nlterm2": "zwart",
-    "dist": 0.5002
+    "dist": 0.5101
   },
   {
     "nlterm": "lichtblauw",
     "nlterm2": "lichtgroen",
-    "dist": 0.1606
+    "dist": 0.1655
   },
   {
     "nlterm": "lichtblauw",
     "nlterm2": "lichtpaars",
-    "dist": 0.2069
+    "dist": 0.1976
   },
   {
     "nlterm": "lichtblauw",
     "nlterm2": "lila",
-    "dist": 0.1932
+    "dist": 0.192
   },
   {
     "nlterm": "lichtblauw",
     "nlterm2": "magenta",
-    "dist": 0.341
+    "dist": 0.3485
   },
   {
     "nlterm": "lichtblauw",
     "nlterm2": "oranje",
-    "dist": 0.2602
+    "dist": 0.2595
   },
   {
     "nlterm": "lichtblauw",
     "nlterm2": "oudroze",
-    "dist": 0.2539
+    "dist": 0.257
   },
   {
     "nlterm": "lichtblauw",
     "nlterm2": "paars",
-    "dist": 0.3658
+    "dist": 0.3697
   },
   {
     "nlterm": "lichtblauw",
     "nlterm2": "rood",
-    "dist": 0.398
+    "dist": 0.3968
   },
   {
     "nlterm": "lichtblauw",
     "nlterm2": "roze",
-    "dist": 0.2781
+    "dist": 0.2773
   },
   {
     "nlterm": "lichtblauw",
     "nlterm2": "turquoise",
-    "dist": 0.0884
+    "dist": 0.098
   },
   {
     "nlterm": "lichtblauw",
     "nlterm2": "zwart",
-    "dist": 0.6144
+    "dist": 0.6309
   },
   {
     "nlterm": "lichtgroen",
     "nlterm2": "lichtpaars",
-    "dist": 0.2987
+    "dist": 0.2915
   },
   {
     "nlterm": "lichtgroen",
     "nlterm2": "lila",
-    "dist": 0.2923
+    "dist": 0.2952
   },
   {
     "nlterm": "lichtgroen",
     "nlterm2": "magenta",
-    "dist": 0.4083
+    "dist": 0.4173
   },
   {
     "nlterm": "lichtgroen",
     "nlterm2": "oranje",
-    "dist": 0.2208
+    "dist": 0.2193
   },
   {
     "nlterm": "lichtgroen",
     "nlterm2": "oudroze",
-    "dist": 0.2827
+    "dist": 0.284
   },
   {
     "nlterm": "lichtgroen",
     "nlterm2": "paars",
-    "dist": 0.4464
+    "dist": 0.4491
   },
   {
     "nlterm": "lichtgroen",
     "nlterm2": "rood",
-    "dist": 0.4008
+    "dist": 0.3976
   },
   {
     "nlterm": "lichtgroen",
     "nlterm2": "roze",
-    "dist": 0.3369
+    "dist": 0.3391
   },
   {
     "nlterm": "lichtgroen",
     "nlterm2": "turquoise",
-    "dist": 0.1307
-  },
-  {
-    "nlterm": "lichtgroen",
-    "nlterm2": "zwart",
-    "dist": 0.6301
-  },
-  {
-    "nlterm": "lichtpaars",
-    "nlterm2": "lila",
-    "dist": 0.0454
-  },
-  {
-    "nlterm": "lichtpaars",
-    "nlterm2": "magenta",
-    "dist": 0.1508
-  },
-  {
-    "nlterm": "lichtpaars",
-    "nlterm2": "oranje",
-    "dist": 0.224
-  },
-  {
-    "nlterm": "lichtpaars",
-    "nlterm2": "oudroze",
-    "dist": 0.124
-  },
-  {
-    "nlterm": "lichtpaars",
-    "nlterm2": "paars",
-    "dist": 0.1803
-  },
-  {
-    "nlterm": "lichtpaars",
-    "nlterm2": "rood",
-    "dist": 0.25
-  },
-  {
-    "nlterm": "lichtpaars",
-    "nlterm2": "roze",
-    "dist": 0.1081
-  },
-  {
-    "nlterm": "lichtpaars",
-    "nlterm2": "turquoise",
-    "dist": 0.2355
-  },
-  {
-    "nlterm": "lichtpaars",
-    "nlterm2": "zwart",
-    "dist": 0.4886
-  },
-  {
-    "nlterm": "lila",
-    "nlterm2": "magenta",
-    "dist": 0.1645
-  },
-  {
-    "nlterm": "lila",
-    "nlterm2": "oranje",
-    "dist": 0.2223
-  },
-  {
-    "nlterm": "lila",
-    "nlterm2": "oudroze",
-    "dist": 0.1448
-  },
-  {
-    "nlterm": "lila",
-    "nlterm2": "paars",
-    "dist": 0.2122
-  },
-  {
-    "nlterm": "lila",
-    "nlterm2": "rood",
-    "dist": 0.2689
-  },
-  {
-    "nlterm": "lila",
-    "nlterm2": "roze",
-    "dist": 0.1069
-  },
-  {
-    "nlterm": "lila",
-    "nlterm2": "turquoise",
-    "dist": 0.2351
-  },
-  {
-    "nlterm": "lila",
-    "nlterm2": "zwart",
-    "dist": 0.5257
-  },
-  {
-    "nlterm": "magenta",
-    "nlterm2": "oranje",
-    "dist": 0.2681
-  },
-  {
-    "nlterm": "magenta",
-    "nlterm2": "oudroze",
-    "dist": 0.1565
-  },
-  {
-    "nlterm": "magenta",
-    "nlterm2": "paars",
     "dist": 0.1296
   },
   {
+    "nlterm": "lichtgroen",
+    "nlterm2": "zwart",
+    "dist": 0.6461
+  },
+  {
+    "nlterm": "lichtpaars",
+    "nlterm2": "lila",
+    "dist": 0.0437
+  },
+  {
+    "nlterm": "lichtpaars",
+    "nlterm2": "magenta",
+    "dist": 0.1636
+  },
+  {
+    "nlterm": "lichtpaars",
+    "nlterm2": "oranje",
+    "dist": 0.2184
+  },
+  {
+    "nlterm": "lichtpaars",
+    "nlterm2": "oudroze",
+    "dist": 0.126
+  },
+  {
+    "nlterm": "lichtpaars",
+    "nlterm2": "paars",
+    "dist": 0.1923
+  },
+  {
+    "nlterm": "lichtpaars",
+    "nlterm2": "rood",
+    "dist": 0.2527
+  },
+  {
+    "nlterm": "lichtpaars",
+    "nlterm2": "roze",
+    "dist": 0.1095
+  },
+  {
+    "nlterm": "lichtpaars",
+    "nlterm2": "turquoise",
+    "dist": 0.2344
+  },
+  {
+    "nlterm": "lichtpaars",
+    "nlterm2": "zwart",
+    "dist": 0.5067
+  },
+  {
+    "nlterm": "lila",
+    "nlterm2": "magenta",
+    "dist": 0.1719
+  },
+  {
+    "nlterm": "lila",
+    "nlterm2": "oranje",
+    "dist": 0.2229
+  },
+  {
+    "nlterm": "lila",
+    "nlterm2": "oudroze",
+    "dist": 0.1501
+  },
+  {
+    "nlterm": "lila",
+    "nlterm2": "paars",
+    "dist": 0.2161
+  },
+  {
+    "nlterm": "lila",
+    "nlterm2": "rood",
+    "dist": 0.2691
+  },
+  {
+    "nlterm": "lila",
+    "nlterm2": "roze",
+    "dist": 0.1067
+  },
+  {
+    "nlterm": "lila",
+    "nlterm2": "turquoise",
+    "dist": 0.2431
+  },
+  {
+    "nlterm": "lila",
+    "nlterm2": "zwart",
+    "dist": 0.5399
+  },
+  {
+    "nlterm": "magenta",
+    "nlterm2": "oranje",
+    "dist": 0.2766
+  },
+  {
+    "nlterm": "magenta",
+    "nlterm2": "oudroze",
+    "dist": 0.1644
+  },
+  {
+    "nlterm": "magenta",
+    "nlterm2": "paars",
+    "dist": 0.1262
+  },
+  {
     "nlterm": "magenta",
     "nlterm2": "rood",
-    "dist": 0.183
+    "dist": 0.1851
   },
   {
     "nlterm": "magenta",
     "nlterm2": "roze",
-    "dist": 0.1087
+    "dist": 0.1151
   },
   {
     "nlterm": "magenta",
     "nlterm2": "turquoise",
-    "dist": 0.3616
+    "dist": 0.3762
   },
   {
     "nlterm": "magenta",
     "nlterm2": "zwart",
-    "dist": 0.4374
+    "dist": 0.4441
   },
   {
     "nlterm": "oranje",
     "nlterm2": "oudroze",
-    "dist": 0.1443
+    "dist": 0.144
   },
   {
     "nlterm": "oranje",
     "nlterm2": "paars",
-    "dist": 0.342
+    "dist": 0.3441
   },
   {
     "nlterm": "oranje",
     "nlterm2": "rood",
-    "dist": 0.2108
+    "dist": 0.2101
   },
   {
     "nlterm": "oranje",
     "nlterm2": "roze",
-    "dist": 0.1934
+    "dist": 0.195
   },
   {
     "nlterm": "oranje",
     "nlterm2": "turquoise",
-    "dist": 0.2593
+    "dist": 0.2615
   },
   {
     "nlterm": "oranje",
     "nlterm2": "zwart",
-    "dist": 0.5317
+    "dist": 0.5521
   },
   {
     "nlterm": "oudroze",
     "nlterm2": "paars",
-    "dist": 0.2048
+    "dist": 0.2078
   },
   {
     "nlterm": "oudroze",
     "nlterm2": "rood",
-    "dist": 0.1531
+    "dist": 0.149
   },
   {
     "nlterm": "oudroze",
     "nlterm2": "roze",
-    "dist": 0.1185
+    "dist": 0.121
   },
   {
     "nlterm": "oudroze",
     "nlterm2": "turquoise",
-    "dist": 0.2538
+    "dist": 0.2609
   },
   {
     "nlterm": "oudroze",
     "nlterm2": "zwart",
-    "dist": 0.4312
+    "dist": 0.4457
   },
   {
     "nlterm": "paars",
     "nlterm2": "rood",
-    "dist": 0.2383
+    "dist": 0.2378
   },
   {
     "nlterm": "paars",
     "nlterm2": "roze",
-    "dist": 0.2046
+    "dist": 0.2051
   },
   {
     "nlterm": "paars",
     "nlterm2": "turquoise",
-    "dist": 0.3742
+    "dist": 0.3845
   },
   {
     "nlterm": "paars",
     "nlterm2": "zwart",
-    "dist": 0.3595
+    "dist": 0.3641
   },
   {
     "nlterm": "rood",
     "nlterm2": "roze",
-    "dist": 0.1925
+    "dist": 0.192
   },
   {
     "nlterm": "rood",
     "nlterm2": "turquoise",
-    "dist": 0.3935
+    "dist": 0.3966
   },
   {
     "nlterm": "rood",
     "nlterm2": "zwart",
-    "dist": 0.3827
+    "dist": 0.4006
   },
   {
     "nlterm": "roze",
     "nlterm2": "turquoise",
-    "dist": 0.3084
+    "dist": 0.3152
   },
   {
     "nlterm": "roze",
     "nlterm2": "zwart",
-    "dist": 0.5041
+    "dist": 0.5172
   },
   {
     "nlterm": "turquoise",
     "nlterm2": "zwart",
-    "dist": 0.5768
+    "dist": 0.5952
   }
 ]
