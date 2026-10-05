@@ -108,10 +108,10 @@ csv().fromFile(FILE_I)
       numLineNames: lang.numLineNames,
       numFullNames: lang.numFullNames,
       numLineColorTerms: lang.terms
-           .filter(g_term => g_term.numLineNames >= MIN_LINE_COLOR_NAMES)
+           .filter(g_term => g_term.numLineParticipantIds >= MIN_PARTICIPANT_IDS_PER_COLOR_NAME && g_term.numLineNames >= MIN_LINE_COLOR_NAMES)
            .length,
       numFullColorTerms: lang.terms
-           .filter(g_term => g_term.numFullNames >= MIN_FULL_COLOR_NAMES)
+           .filter(g_term => g_term.numFullParticipantIds >= MIN_PARTICIPANT_IDS_PER_COLOR_NAME && g_term.numFullNames >= MIN_FULL_COLOR_NAMES)
            .length,
     })
 
