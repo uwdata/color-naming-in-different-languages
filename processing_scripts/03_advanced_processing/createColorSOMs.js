@@ -15,6 +15,11 @@ const SOM_TRAIN_ITERATIONS = 20000
 let commonColorNameLookup = {};
   
 const namingData = await csv().fromFile("../../model/cleaned_color_names.csv")
+for(const colorName of namingData){
+  if(!colorName.langAbv){
+    colorName.langAbv = colorName.lang
+  }
+}
 const basicColorInfo  = await csv().fromFile("../../model/basic_colors_info.csv")
 const fullColorInfo  = await csv().fromFile("../../model/full_colors_info.csv")
 const lang_info = await csv().fromFile("../../model/lang_info.csv")

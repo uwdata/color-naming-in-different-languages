@@ -31,6 +31,11 @@ const FILE_LANG_BIN_BLUR_O = "../../model/binned_full_colors/full_color_lang_bin
 
 
 const colorNames = await csv().fromFile(I_NAMES_DATA_FILE)
+for(const colorName of colorNames){
+  if(!colorName.langAbv){
+    colorName.langAbv = colorName.lang
+  }
+}
 const basicColorInfo = await csv().fromFile(I_BASIC_COLOR_INFO_FILE)
 const lang_info = await csv().fromFile(I_LANG_INFO_FILE)
 

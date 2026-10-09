@@ -57,6 +57,13 @@ for(const entry of colorNames){
  // make sure all values are actually hue colors (some got mislabeled)
 colorNames = colorNames.filter((response) => Math.max(response.r, response.g, response.b) == 255 && Math.min(response.r, response.g, response.b) == 0)
 
+for(const colorName of colorNames){
+  if(!colorName.langAbv){
+    colorName.langAbv = colorName.lang
+  }
+}
+
+
 // blur info
 const blurWeights = {}
 let totalBlurWeight = 0
