@@ -2,6 +2,7 @@ import fs from "fs";
 import csv from 'csvtojson';
 import csvWriter from 'csv-write-stream'
 import * as refine from "./refine.js"
+import sanitize from "sanitize-filename"
 
 
 import participantLangChanges from "./participant_lang_changes.js"
@@ -128,7 +129,7 @@ for(const [cn_i, cn] of colorNames.entries()){
 // Add language abbreviation to each color name
 for(const colorName of colorNames){
   if(lang_name_changes.map(lnc => lnc.lang).includes(colorName.lang)){
-    colorName.originalLangAbv = colorName.lang
+    colorName.originalLangAbv = sanitize(colorName.lang)
     colorName.lang = lang_name_changes.find(lnc => lnc.lang == colorName.lang).newLang
   }
   colorName.langAbv = getLangAbv(colorName.lang)
