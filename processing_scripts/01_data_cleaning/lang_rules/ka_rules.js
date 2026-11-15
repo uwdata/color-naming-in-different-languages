@@ -9,8 +9,15 @@ const nameReplacingRules = [
     [/lurji/, "ლურჯი"],
 
     [/iasamnisferi/, "იასამნისფერი"],
+    
+    [/stafilosferi/, "სტაფილოსფერი"],
 
-    [/gia/, "ღია"]
+    [/gia/, "ღია"],
+
+    [/muki/, "მუქი"],
+    [/muqi/, "მუქი"],
+
+    [/shavi/, "შავი"],
 ];
 
 export default {

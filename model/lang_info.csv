@@ -1,14 +1,14 @@
 lang,langAbv,numLineNames,numFullNames,numLineColorTerms,numFullColorTerms
 "Abkhaz (аҧсуа бызшәа, аҧсшәа)",ab,13,0,0,0
 Afar (Afaraf),aa,12,0,0,0
-Afrikaans (Afrikaans),af,60,0,0,0
+Afrikaans (Afrikaans),af,60,72,0,0
 Akan (Akan),ak,34,0,0,0
 Albanian (Shqip),sq,71,31,0,0
 Amharic (አማርኛ),am,72,0,0,0
-Arabic (العربية),ar,833,297,20,3
+Arabic (العربية),ar,833,403,20,5
 Assamese (অসমীয়া),as,0,47,0,0
 Azerbaijani (azərbaycan dili),az,46,0,0,0
-"Bengali, Bangla (বাংলা)",bn,98,579,0,10
+"Bengali, Bangla (বাংলা)",bn,98,697,0,11
 Bihari (भोजपुरी),bh,0,35,0,0
 bisaya,bisaya,36,0,0,0
 Bulgarian (български език),bg,423,149,16,1
@@ -17,47 +17,48 @@ Cape Verdean Creol,Cape Verdean Creol,12,0,0,0
 Catalan (català),ca,433,107,14,0
 Chamorro (Chamoru),ch,0,24,0,0
 "Chichewa, Chewa, Nyanja (chiCheŵa, chinyanja)",ny,35,12,0,0
-"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,1720,6542,58,91
+"Chinese (中文 (Zhōngwén), 汉语, 漢語)",zh,1720,6590,58,91
 Cree (ᓀᐦᐃᔭᐍᐏᐣ),cr,12,0,0,0
-Croatian (hrvatski jezik),hr,184,196,8,5
-"Czech (čeština, český jazyk)",cs,648,243,12,1
-Danish (dansk),da,926,144,24,2
-"Dutch (Nederlands, Vlaams)",nl,888,2090,27,25
-English (English),en,55144,208354,343,707
+Croatian (hrvatski jezik),hr,184,327,8,5
+"Czech (čeština, český jazyk)",cs,648,311,12,3
+Danish (dansk),da,926,275,24,4
+"Dutch (Nederlands, Vlaams)",nl,888,2270,27,26
+English (English),en,56209,217286,349,724
 "Estonian (eesti, eesti keel)",et,310,72,15,0
 Filipino,Filipino,23,0,0,0
-"Finnish (suomi, suomen kieli)",fi,837,671,22,14
-"French (français, langue française)",fr,2162,3998,48,54
-Georgian (ქართული),ka,111,12,6,0
-German (Deutsch),de,2640,5885,49,70
-Greek (modern) (ελληνικά),el,964,241,21,2
+"Finnish (suomi, suomen kieli)",fi,837,755,22,14
+"French (français, langue française)",fr,2174,4629,48,59
+Georgian (ქართული),ka,111,84,6,0
+German (Deutsch),de,2640,6458,49,76
+Greek (modern) (ελληνικά),el,964,289,21,2
 Gujarati (ગુજરાતી),gu,52,526,1,7
-Hebrew (modern) (עברית),he,598,108,16,1
-"Hindi (हिन्दी, हिंदी)",hi,215,2491,6,24
-Hungarian (magyar),hu,730,108,25,0
-Indonesian (Bahasa Indonesia),id,729,261,21,3
+Hebrew (modern) (עברית),he,598,120,16,2
+"Hindi (हिन्दी, हिंदी)",hi,216,2678,6,24
+Hungarian (magyar),hu,730,252,25,2
+Indonesian (Bahasa Indonesia),id,729,357,21,6
 Irish (Gaeilge),ga,36,0,0,0
-Italian (italiano),it,2059,889,39,17
+Italian (italiano),it,2059,1104,39,21
 Ixil,Ixil,36,0,0,0
 Japanese (日本語 (にほんご)),ja,217,15,10,0
-Kannada (ಕನ್ನಡ),kn,24,236,0,4
+Kannada (ಕನ್ನಡ),kn,24,242,0,4
 "Kashmiri (कश्मीरी, كشميري‎)",ks,0,21,0,0
 Konkani,Konkani,0,11,0,0
-"Korean (한국어, 조선어)",ko,2995,13503,72,139
-Latvian (latviešu valoda),lv,97,0,0,0
+"Korean (한국어, 조선어)",ko,2995,13533,72,139
+Latvian (latviešu valoda),lv,97,12,0,0
 Lithuanian (lietuvių kalba),lt,416,0,12,0
 "Luxembourgish, Letzeburgesch (Lëtzebuergesch)",lb,46,0,0,0
 Macedonian (македонски јазик),mk,216,26,9,0
 "Malay (bahasa Melayu, بهاس ملايو‎)",ms,425,83,14,0
 Malayalam (മലയാളം),ml,81,500,5,6
 Manipuri,Manipuri,0,10,0,0
-Marathi (Marāṭhī) (मराठी),mr,55,737,3,11
+Marathi (Marāṭhī) (मराठी),mr,55,767,3,12
 Marwadi,Marwadi,0,12,0,0
 Mauritian creole,Mauritian creole,36,0,0,0
+Mizo,Mizo,0,8,0,0
 Mongolian (Монгол хэл),mn,0,36,0,0
 Nepali (नेपाली),ne,104,143,0,3
 Norwegian (Norsk),no,47,0,0,0
-Norwegian Bokmål (Norsk bokmål),nb,637,144,19,0
+Norwegian Bokmål (Norsk bokmål),nb,637,156,19,0
 Norwegian Nynorsk (Norsk nynorsk),nn,72,0,0,0
 "Occitan (occitan, lenga d'òc)",oc,12,0,0,0
 Odia,Odia,12,0,0,0
@@ -65,30 +66,30 @@ Oriya (ଓଡ଼ିଆ),or,0,37,0,0
 "Panjabi, Punjabi (ਪੰਜਾਬੀ, پنجابی‎)",pa,48,108,0,0
 "Pashto, Pushto (پښتو)",ps,16,36,0,0
 Persian (Farsi) (فارسی),fa,1005,3245,26,46
-"Polish (język polski, polszczyzna)",pl,1454,1676,27,27
-Portuguese (português),pt,1454,2180,31,30
-Romanian (limba română),ro,869,619,25,9
-Russian (Русский),ru,1255,2578,34,44
+"Polish (język polski, polszczyzna)",pl,1454,2036,27,29
+Portuguese (português),pt,1478,2505,31,32
+Romanian (limba română),ro,893,690,25,12
+Russian (Русский),ru,1290,2709,38,45
 Samoan (gagana fa'a Samoa),sm,28,0,0,0
 Serbian (српски језик),sr,250,68,10,0
 "Sindhi (सिन्धी, سنڌي، سندھی‎)",sd,0,57,0,0
 "Sinhalese, Sinhala (සිංහල)",si,48,36,0,0
-"Slovak (slovenčina, slovenský jazyk)",sk,180,179,8,1
-"Slovene (slovenski jezik, slovenščina)",sl,252,72,12,0
+"Slovak (slovenčina, slovenský jazyk)",sk,216,190,9,2
+"Slovene (slovenski jezik, slovenščina)",sl,252,108,12,0
 "Somali (Soomaaliga, af Soomaali)",so,4,0,0,0
 Southern Sotho (Sesotho),st,0,3,0,0
-Spanish (español),es,2432,5238,46,65
+Spanish (español),es,2468,5286,46,67
 Sundanese (Basa Sunda),su,48,0,0,0
 Swahili (Kiswahili),sw,0,42,0,0
-Swedish (svenska),sv,1445,1141,23,22
-Tagalog (Wikang Tagalog),tl,191,105,7,0
+Swedish (svenska),sv,1445,1213,23,22
+Tagalog (Wikang Tagalog),tl,191,141,7,3
 Tamil (தமிழ்),ta,92,458,2,5
 telugu,telugu,0,4,0,0
-Telugu (తెలుగు),te,70,337,0,4
+Telugu (తెలుగు),te,102,337,1,4
 Thai (ไทย),th,408,36,15,0
-Turkish (Türkçe),tr,940,630,19,12
-Ukrainian (Українська),uk,202,167,13,1
-Urdu (اردو),ur,138,711,7,10
-Vietnamese (Tiếng Việt),vi,729,70,30,0
+Turkish (Türkçe),tr,940,753,19,14
+Ukrainian (Українська),uk,202,239,13,1
+Urdu (اردو),ur,138,721,7,10
+Vietnamese (Tiếng Việt),vi,729,106,30,0
 Welsh (Cymraeg),cy,12,0,0,0
 Yoruba (Yorùbá),yo,36,24,0,0

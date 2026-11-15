@@ -79,6 +79,11 @@ for(const participant_row of study_2_data){
             outputData = (new Date(data)).getFullYear()
         }
 
+        // for age, round ot nearest 10s for better anonymization
+        if(lastLocation == "demographics-age"){
+            outputData = Math.round(outputData / 10) * 10
+        }
+
         currObject[lastLocation] = outputData
     }
     if(!PARTICIPANTS_TO_IGNORE.includes(participant.participant_id)){
@@ -186,6 +191,7 @@ for(const participant of participantInfo){
         
     }
 }
+
 
 // Get final data structure (so we can track new information and make sure to filter out potentially sensitive data)
 function addFields(participantInfoSubset, structureObjectSubset){

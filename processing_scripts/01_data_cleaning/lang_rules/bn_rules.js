@@ -18,6 +18,10 @@ const nameReplacingRules = [
 
     [/garo/g, "গাঢ"],
     [/gaarho/g, "গাঢ"],
+    [/গাডো/g, "গাঢ"],
+    [/গাড়ো/g, "গাঢ"],
+    [/gadho/g, "গাঢ"],
+    [/gaarho/g, "গাঢ"],
 
     [/golapi/g, "গোলাপি"],
     [/golabi/g, "গোলাপি"],
@@ -34,6 +38,7 @@ const nameReplacingRules = [
     [/বাদামী/g, "বাদামি"],
 
     [/beguni/g, "বেগুনি"],
+    [/beguini/g, "বেগুনি"],
 
     [/lal/g, "লাল"],
     [/laal/g, "লাল"],
@@ -48,6 +53,7 @@ const nameReplacingRules = [
     [/holud/g, "হলুদ"],
 
     [/halka/g, "হালকা"],
+    [/haalka/g, "হালকা"],
 
     [/magenda/g, "মেজেনটা"],
     [/magenta/g, "মেজেনটা"],
@@ -69,6 +75,10 @@ const nameReplacingRules = [
     [/khub/g, "খুব"],
 
     [/shyaula/g, "শ্যাওলা"],
+
+    [/dhusor/g, "ধূসর"],
+
+    [/kalche/g, "কালচে"],
     
 ];
 

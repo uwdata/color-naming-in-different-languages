@@ -28,6 +28,9 @@ const nameReplacingRules = [
     [/lal/, "लाल"],
     [/laal/, "लाल"],
 
+    [/halaka/, "हलका"],
+    [/halka/, "हलका"],
+
     [/hirava/, "हिरवा"],
     [/hirva/, "हिरवा"],
     [/hirwa/, "हिरवा"],
@@ -55,6 +58,10 @@ const nameReplacingRules = [
     [/chochlatey/, "चाॅकलेटी"],
     [/choclatey/, "चाॅकलेटी"],
     [/chocolaty/, "चाॅकलेटी"],
+    [/चॉकलेटी/,"चाॅकलेटी"],
+    [/chocolatey/, "चाॅकलेटी"],
+    [/chochlaty/, "चाॅकलेटी"],
+    
    
     [/tapkiri/, "तपकिरी"],
 

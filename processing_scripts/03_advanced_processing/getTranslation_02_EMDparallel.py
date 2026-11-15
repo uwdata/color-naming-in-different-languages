@@ -81,8 +81,8 @@ def job(lang1_lang2_terms):
 		  				lang1Term[TINY_RES_BIN]["term"], lang2Term[TINY_RES_BIN]["term"])
 				raise Exception("Unexpected error: distance was 0 and high res not available")
 			
-			# Round to like 4 significant digits to not waste file space
-			returnval["dist"] = float(f"{returnval['dist']:.4f}")
+			# Round to like 3 significant digits to not waste file space
+			returnval["dist"] = float(f"{returnval['dist']:.3f}")
 
 	except Exception as err:
 		print("error from thread" + mp.current_process().name)
@@ -207,7 +207,7 @@ def main():
 				emdDistances = [x for x in emdDistances if 'dist' in x]
 
 				with open("../../model/translation_loss/translation_loss_"+lang1+"_"+lang2+".json", "wb") as text_file:
-					text_file.write(json.dumps(emdDistances, indent = 2, ensure_ascii=False).encode('utf-8'))
+					text_file.write(json.dumps(emdDistances, ensure_ascii=False).encode('utf-8'))
 	except Exception as err:
 		pool.terminate()
 		raise err

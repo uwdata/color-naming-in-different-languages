@@ -23,6 +23,7 @@ const nameReplacingRules = [
     [/ghra/g, "गहरा"],
     [/gehara/, "गहरा"],
     [/gehr/, "गहरा"],
+    [/गहra/, "गहरा"],
 
     [/gulabi\./, "गुलाबी"],
     [/gulabi/, "गुलाबी"],
@@ -54,6 +55,7 @@ const nameReplacingRules = [
     [/baigani/, "बैंगनी"],
     [/baegaini/, "बैंगनी"],
     [/baigni/, "बैंगनी"],
+    [/बैगनी/, "बैंगनी"],
 
     [/bhagwa/, "भगवा"],
     
@@ -119,7 +121,20 @@ const nameReplacingRules = [
     [/totia/, "तोतई"],
     [/tota/, "तोतई"],
 
-    [/feeka/, "फीका"]
+    [/feeka/, "फीका"],
+
+    [/dhani/, "धानी"],
+    [/धानि/, "धानी"],
+
+    [/pyaazi/, "प्याज़ी"],
+    [/pyaziii/, "प्याज़ी"],
+    [/pyazi/, "प्याज़ी"],
+
+    [/rang/, "रंग"],
+
+
+    // extra rules put later to prevent overlap
+    [/hra/, "हरा"]
 
 ];
 

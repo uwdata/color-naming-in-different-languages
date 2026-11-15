@@ -41,6 +41,7 @@ const nameReplacingRules = [
 
     [/paccha/g, "పచ్చ"],
     [/pacha/g, "పచ్చ"],
+    [/pachcha/g, "పచ్చ"],
 
     [/pasupu/g, "పసుపు"],
 
